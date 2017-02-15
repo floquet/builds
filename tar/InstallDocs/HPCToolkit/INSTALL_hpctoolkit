@@ -1,0 +1,364 @@
+
+Some general information
+
+ for intel compiler, to have line map information, compile with
+ -g -debug inline_debug_info
+
+ Gnu  -g -O3
+ PGI  -gopt (not -g) and? -fast
+
+ run with hpcrun or hpclink
+
+           e@p
+PAPI_TOT_CYC@4000001
+   event    @  after every p events
+  --event e@p --event e@p (different e & p)
+
+  export HPCRUN_EVENT_LIST="e1@p1;e2@p2"
+
+
+ dynamically linked
+ mpi-launcher  hpcrun hpcrun-options  app.exe app-args
+
+ statically linked, link with
+ hpclink linker -o app.exe linker-args
+ hpcrun-options as environment variables e.g.
+ export HPCRUN_EVENT_LIST="PAPI_TOT_CYC@4000001"
+ mpi-launcher  app.exe app-args
+
+  and also do on binary hpcstruct, e.g.
+  hpcstruct app.exe
+
+ hpcprof -S app.hpcstruct -I <app-src>/'*' \   ( '*' recursive search)
+    hpctoolkit-app-measurements1 [...ments2]   (Can use more than one db)
+        OR
+ mpi-launcher hpcprof-mpi -S app.hpcstruct -I <app-src>/'*' \
+    hpctoolkit-app-measurements1 [...ments2]
+    
+ (-R 'old-path=new-path)
+
+ hpcviewer output-of-mpcprof (named ..-database)
+
+
+Here is a description for my procedure for building HPC Toolkit.
+Compiled with Gnu.
+
+Got help from hpctoolkit-team@mailman.rice.edu
+
+Assume only pub in HOME directory on garnet is visible to others.
+
+ssh -Y garnet03
+cd pub
+mkdir bin  lib  libexec  share  src
+cd src
+svn co https://outreach.scidac.gov/svn/hpctoolkit/externals
+svn co https://outreach.scidac.gov/svn/hpctoolkit/trunk hpctoolkit
+# convert to Megan's naming convention
+mv externals hpctoolkit-externals-svn
+mv hpctoolkit hpctoolkit-svn
+
+module swap PrgEnv-pgi PrgEnv-gnu
+# Do not load perftools nor papi when compiling externals.
+
+# Do not compile with Cray wrappers cc and CC because then try
+# to compile statically.
+export CC=gcc
+export CXX=g++
+
+cd hpctoolkit-externals-svn
+mkdir BUILD
+cd BUILD
+
+Mark of the hpctoolkit-team said that on hopper (Cray XE at NERSC)
+PrgEnv-gnu sets environment variable CC and CXX to gcc and g++
+respectively, but on garnet the values are set to cc and CC,
+the Cray wrappers.
+
+# Add "CC=gcc CXX=g++" to configure command line even though doing
+# so is redundant after setting the environment variables.
+# Do so in order to have the settings documented in config.log
+ ../configure CC=gcc CXX=g++ --prefix=`pwd`/../x86_64-linux
+
+After building I did
+find ../x86_64-linux -name lib\*
+to see which applications are missing lib*.a files
+but that may not be necessary.
+
+make install
+
+# Note, if Cray wrappers are used there is the error that file
+# /opt/cray/xe-sysroot/4.0.46.securitypatch.20120321/usr/lib64/libpthread.a
+# results in multiple definitions of
+# __lll_unlock_wake_private and __lll_lock_wake_private
+# when building libunwind.
+# If cc is used for some other code, the problem could be solved
+# by using LDFLAGS="-Wl,--allow-multiple-definition"
+
+When I first, mistakenly, used cc and CC, there was a problem that
+building libdwarf only built a dynamic library.  Just in case, though
+probably not necessary, I built also the static library.
+
+cd /u/scheinin/pub/src/hpctoolkit-externals-svn/BUILD/libdwarf/work
+
+make clean
+cd ..
+rm .build-done .install-done
+cd work
+
+config.log shows configure command line was  --disable-nonshared,
+change to --enable-nonshared, and changed CC from cc to gcc.
+
+../dwarf-20110113/libdwarf/configure CC="cc" CFLAGS="-g -O2 -fPIC -I/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libelf/include -g -O2" CPPFLAGS="-I/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libelf/include" LDFLAGS="-L/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libelf/lib" --prefix=/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libdwarf --enable-shared --enable-nonshared
+
+New, based on whatever config.log shows with changes described above.
+../dwarf-20110113/libdwarf/configure CC="gcc" CFLAGS="-g -O2 -fPIC -I/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libelf/include -g -O2" CPPFLAGS="-I/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libelf/include" LDFLAGS="-L/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libelf/lib" --prefix=/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libdwarf --enable-shared --enable-nonshared
+
+cd /u/scheinin/pub/src/hpctoolkit-externals-svn/BUILD
+make install
+
+Note that libdward.a is not moved to x86_64-linux/libdwarf/lib
+need to do
+cp \
+/u/scheinin/pub/src/hpctoolkit-externals-svn/BUILD/libdwarf/work/libdwarf.a \
+ /u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libdwarf/lib/
+
+Another step that is probably not necessary.
+Static libcommon.a and libsymtabAPI.a was not built.
+Look at how dynamic library was built then modify the long line
+to use with the "ar rv" command.
+
+cd /usr/local/u/scheinin/pub/src/hpctoolkit-externals-svn/BUILD/symtabAPI/symtabAPI/src/dyninst/common/x86_64-unknown-linux2.4
+Building of dynamic library
+g++  -L../../../x86_64-unknown-linux2.4/lib    -L../../../x86_64-unknown-linux2.4/lib  -shared  -o libcommon.so V_libcommon.o linuxKludges.o timing-linux.o parseauxv.o addrtranslate-sysv.o addrtranslate-auxv.o addrtranslate-linux.o Ident.o string-regex.o Timer.o Types.o debugOstream.o lprintf.o pathName.o Time.o fraction.o timing.o stats.o Annotatable.o MappedFile.o sha1.o serialize-bin.o serialize-xml.o util.o Node.o Graph.o Edge.o DOT.o dyn_regs.o AST.o addrtranslate.o arch-x86.o arch-power.o arch-sparc.o -ldl
+Newly created command to build static library
+ar rv libcommon.a V_libcommon.o linuxKludges.o timing-linux.o parseauxv.o addrtranslate-sysv.o addrtranslate-auxv.o addrtranslate-linux.o Ident.o string-regex.o Timer.o Types.o debugOstream.o lprintf.o pathName.o Time.o fraction.o timing.o stats.o Annotatable.o MappedFile.o sha1.o serialize-bin.o serialize-xml.o util.o Node.o Graph.o Edge.o DOT.o dyn_regs.o AST.o addrtranslate.o arch-x86.o arch-power.o arch-sparc.o
+copy over installation destination the result
+cp libcommon.a /u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/symtabAPI/lib/
+
+cd /usr/local/u/scheinin/pub/src/hpctoolkit-externals-svn/BUILD/symtabAPI/symtabAPI/src/dyninst/symtabAPI/x86_64-unknown-linux2.4
+Building of dynamic library
+g++  -L../../../x86_64-unknown-linux2.4/lib   -L../../common/x86_64-unknown-linux2.4 -lcommon -ldl -shared  -o libsymtabAPI.so V_libsymtabAPI.o Object-elf.o Elf_X.o Archive.o Archive-elf.o parseDwarf.o parseStab.o emitElf.o emitElf-64.o LinkMap.o emitElfStatic.o emitElfStatic-x86.o relocationEntry-elf-x86.o Object.o Aggregate.o Function.o Variable.o Symbol.o LineInformation.o Symtab.o Symtab-edit.o Symtab-lookup.o Symtab-deprecated.o Module.o Region.o Collections.o Type.o AddrLookup.o annotations.o debug.o SymtabReader.o -L/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libdwarf/lib -L/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/libelf/lib -ldwarf -lelf
+Newly created command to build static library
+ar rv libsymtabAPI.a V_libsymtabAPI.o Object-elf.o Elf_X.o Archive.o Archive-elf.o parseDwarf.o parseStab.o emitElf.o emitElf-64.o LinkMap.o emitElfStatic.o emitElfStatic-x86.o relocationEntry-elf-x86.o Object.o Aggregate.o Function.o Variable.o Symbol.o LineInformation.o Symtab.o Symtab-edit.o Symtab-lookup.o Symtab-deprecated.o Module.o Region.o Collections.o Type.o AddrLookup.o annotations.o debug.o SymtabReader.o
+copy over installation destination the result
+cp libsymtabAPI.a /u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux/symtabAPI/lib/
+
+End of creating a few extra static libraries in case needed on Cray.
+The command make install should end with output
+
+Externals build complete at Tue Jul 31 14:27:59 CDT 2012
+
+After having built the externals, below is building HPC Toolkit
+
+cd /u/scheinin/pub/src/hpctoolkit-svn/
+mkdir BUILD
+cd BUILD
+
+Loaded papi but not perftools.  There is the strange behavior
+that when perftools is loaded the linker changes to
+/opt/cray/perftools/5.3.2/libexec64/ld
+Using papi and not xt-papi.
+
+module list
+module show papi
+Under /opt/cray/papi/4.3.0.1/perf_events/no-cuda/
+there is bin lib include (and other directories)
+just as is the case for /opt/cray/perftools/papi/3.7.2.0.5/v282
+
+When module perftools was loaded there was the error
+[LD] Original link intercepted by '/opt/cray/perftools/5.3.2/libexec64/ld'
+/usr/bin/ld: cannot find -l_pat_ovhd_null
+which is likely related to CrayPat.
+Did
+ module unload perftools
+ module load papi/4.3.0.1
+in order to have papi but without CrayPat
+
+mkdir /u/scheinin/pub/hpctoolkit-install
+
+
+cannot do
+export CC=cc ; export CXX=CC
+because doing so results in
+configure: WARNING: Mismatched C or C++ compiler.
+configure: WARNING: The C or C++ compiler does not match the one used to build
+configure: WARNING: hpctoolkit-externals.  Check the externals configure summary
+configure: WARNING: and try again with the same compilers.
+
+export CC=gcc ; export CXX=g++
+
+The configure option MPICXX="CC" is given in the HPC Toolkit instructions
+and the resulting executables worked correctly.
+Location of papi root can be found using "module show papi"
+
+  ../configure MPICXX="CC" \
+ --prefix=/u/scheinin/pub/hpctoolkit-install \
+ HPC_LT_LDFLAGS="-all-static -L../../lib/stubs-gcc_s" \
+ --with-externals=/u/scheinin/pub/src/hpctoolkit-externals-svn/x86_64-linux \
+ --with-papi=/opt/cray/papi/4.3.0.1/perf_events/no-cuda
+
+make install
+
+
+copy using same scheme as Megan
+
+cd /u/scheinin/pub/hpctoolkit-install
+
+cd bin
+cp * /usr/local/u/scheinin/pub/bin
+
+cd ../lib
+cp -R hpctoolkit /usr/local/u/scheinin/pub/lib
+
+cd ../libexec
+cp -R hpctoolkit /usr/local/u/scheinin/pub/libexec
+
+cd ../include
+cp * /usr/local/u/scheinin/pub/include
+
+cd ../share
+cp -R * /usr/local/u/scheinin/pub/share
+
+Modify permissions
+
+cd /u/scheinin/pub
+
+find . -type d -exec chmod ugo+rx {} \;
+find . -exec chmod go-w {} \;
+find . -exec chmod ugo+r {} \;
+
+cd /u/scheinin/pub/hpctoolkit-install
+
+find . -perm -u+x  -exec chmod ugo+rx {} \;
+
+ -----------------------------------------------
+
+Here are some notes on running HPC Toolkit.
+The more definitive description of the profiling procedure,
+the procedure actually used, is imbedded in
+sclavi:/Develop/PX/Framework/DPFW-0.1/MD-0.3/Makefile.garnet_gcc_prfl
+and
+sclavi:/Develop/PX/Framework/DPFW-0.1/MD-0.3/garnet_runs/garnet_mkbatB.pl
+with command-line option target=garnet_gcc_prfl
+HPC Toolkit compiled with gcc can be used on executables compiled with
+PGI and Cray as well as Gnu.
+To simplify my life with regard to profiling miniMD,
+I am using HPC Toolkit with Gnu, TAU with PGI and CrayPat with Cray compiler.
+
+PAPI or WALLCLOCK
+
+-e PAPI_TOT_CYC@15000000 -e PAPI_L2_TCM@400000
+
+use ";" when there is more than one event list
+
+WALLCLOCK@5000
+
+export HPCRUN_EVENT_LIST='  '
+
+export PATH=$PATH:/usr/local/u/scheinin/pub/hpctoolkit-install/bin
+
+ statically linked, link with
+ hpclink linker -o app.exe linker-args
+ hpcrun-options as environment variables e.g.
+ export HPCRUN_EVENT_LIST="PAPI_TOT_CYC@4000001"
+ mpi-launcher  app.exe app-args
+
+ --------------
+Tom Oppe had an email that included the following instructions.
+His final comments were
+Well I got past that error by adding “--disable-mpi” as the last line of the “configure” line for building HPCToolkit.  However, I had to make some changes to the PAPI module being used.  I believe this works on Garnet.  At least the AVUS  benchmark program ran to completion, and “hpcviewer” is able to process the “hpctoolkit-avus-database-1481859.sdb” file.  My file of instructions is attached.
+
+
+Using HPCToolkit on Garnet
+
+Obtain two files from http://www.hpctoolkit.org:
+
+hpctoolkit-externals-5.2.1-r3646.tar
+hpctoolkit-5.2.1-r3646.tar
+
+Generally follow instructions at the site below, for which 
+example "configure" lines are given for Cray XT/XE/XK platforms:
+
+http://www.hpctoolkit.org/software-instructions.html
+
+To build HPCToolkit-externals:
+
+tar xvf hpctoolkit-externals-5.2.1-r3646.tar
+cd hpctoolkit-externals-5.2.1-r3646
+mkdir BUILD
+cd BUILD
+module swap PrgEnv-pgi PrgEnv-gnu
+module swap xtpe-interlagos xtpe-target-native
+setenv CRAYPE_COMPILE_TARGET native
+setenv XTPE_LINK_TYPE dynamic
+setenv CRAY_ROOTFS DSL
+../configure --prefix=`pwd`/../x86_64-linux
+make install
+make distclean
+
+To build HPCToolkit:
+
+tar xvf hpctoolkit-5.2.1-r3646.tar
+cd hpctoolkit-5.2.1-r3646
+mkdir BUILD
+cd BUILD
+module load perftools
+../configure MPIF77="ftn" MPICC="cc" MPICXX="CC" \
+     HPC_LT_LDFLAGS="-all-static -L../../lib/stubs-gcc_s" \
+     --prefix=${HOME} \
+     --with-externals=${HOME}/hpctoolkit-externals-5.2.1-r3646/x86_64-linux \
+     --with-papi=/opt/cray/papi/4.3.0.1/perf_events/no-cuda \
+     --disable-mpi
+make install
+
+
+To run HPCToolkit (assuming it was built as shown above):
+
+(1)  Before compiling, set these environment variables:
+
+setenv HPCTOOLKIT $HOME
+module load perftools
+
+(2)  For static builds, do:
+
+unsetenv XTPE_LINK_TYPE
+unsetenv CRAY_ROOTFS
+
+(3)  Assuming PGI compilers, add "-gopt" to compiler options, and 
+     change the link line to:
+
+    hpclink --verbose CC <compiler> <options>
+
+(4)  In PBS scripts, add at the top:
+
+. ${MODULESHOME}/init/ksh
+module unload xt-papi
+module unload papi
+module load perftools
+module list
+export HPCRUN_TRACE=0
+export HPCRUN_EVENT_LIST="WALLCLOCK@1000"
+export HPCTOOLKIT=$HOME
+
+(5)  After job completes, do
+
+   hpcstruct <exec> 
+
+   This creates another executable called <exec>.hpcstruct
+
+   hpcprof -S <exec>.hpcstruct -I `pwd`/'*' hpctoolkit-<exec>-measurements-1481859.sdb
+
+   This creates a directory called  hpctoolkit-<exec>-database-1481859.sdb
+
+(6)  I tarred up this file and sftp-ed it to my Linux workstation.  I untarred 
+     it there.  From the HPCToolkit web site, I downloaded and untarred the two
+     files:
+
+       hpcviewer-5.3.0-r1424-linux.gtk.x86.tgz
+       hpctraceviewer-5.3.0-r1424-linux.gtk.x86.tgz
+
+       This creates directories called "hpcviewer" and "hpctraceviewer".
+
+       cd hpcviewer
+       ./hpcviewer ../ hpctoolkit-<exec>-database-1481859.sdb
+

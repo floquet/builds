@@ -1,0 +1,512 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Comparison of two Trace Files</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Caching"
+HREF="x2722.html"><LINK
+REL="NEXT"
+TITLE="Comparison Charts"
+HREF="x2820.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x2722.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x2820.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="CHAP.COMPARISON"
+></A
+>Chapter 7. Comparison of two Trace Files</H1
+><P
+>The simplest way to compare two trace files or two time
+intervals from the same trace file is to open two Views and to look at
+them next to each other. While this provides a rough overview, a
+Comparison View allows to calculate the exact differences and speedups
+between two runs or between two ranges of the same run. To open a
+Comparison View for two files, open the files and choose
+<SPAN
+CLASS="guimenu"
+>View Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>View</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Compare</SPAN
+>
+in one of the Views.</P
+><P
+>Choose the other View from the dialog that appears. Notice that
+the dialog provides the opportunity to open another file.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FRESHLY.OPENED.COMPARISON.VIEW"
+></A
+><P
+><B
+>Figure 7-1. A comparison View</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_fresh_poisson.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+> <A
+HREF="c2725.html#FIG.FRESHLY.OPENED.COMPARISON.VIEW"
+>Figure 7-1</A
+> shows a
+comparison View. The two labels right below the View's menu bar
+indicate which trace files are shown in the Comparison View. These
+files are denoted as file A and B in the entire Comparison
+View.</P
+><P
+>If you move the mouse pointer into the View's status bar you
+will notice that it now consists of two lines: one for file A and another for
+file B. The labels and controls for file B are shaded as
+are the charts that refer to file B only. Note that the
+comparison View inherits the time interval, aggregation and filter
+settings from the normal Views that are chosen to create the
+comparison View from.</P
+><P
+>It is perfectly valid to create a comparison View from two
+regular Views showing the same file. This allows to compare either
+different time intervals or different subsets of processes.</P
+><P
+>When creating a comparison View, three Charts open by default:
+an Event Timeline each for A and B and a Comparison Function
+Profile.</P
+><P
+>The rules that a View imposes on its Charts, namely that it
+enforces the same time interval, aggregation and filters on the Charts
+are extended for Comparison Views. The Comparison View holds two
+sets of time interval, aggregation and filters, one for each file.
+</P
+><P
+>All Charts that were described in <A
+HREF="c876.html"
+>Chapter 4</A
+>
+so far can only show data from a single trace file. This will stay the
+same and they will be tied exactly to one set of the constraints. If
+you choose
+<SPAN
+CLASS="guimenu"
+>View Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Charts</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Qualitative Timeline</SPAN
+>
+in a comparison View then actually two timelines will appear, one for each file.
+</P
+><P
+>Until now a Comparison View does not provide a really striking
+advantage over just having two regular Views side by side. Additional
+benefit comes in when you open one of the now available Comparison
+Charts. The Charts menu of a Comparison Chart contains new comparing
+variants of the profiles that will calculate differences and speedups
+between the two runs. These new Chart variants are explained in <A
+HREF="x2820.html"
+>Section 7.2</A
+>. In a nutshell they provide the same displays
+as the usual profiles but they can calculate values for A-B, B-A, A/B
+and B/A.</P
+><P
+>An additional menu entry
+<SPAN
+CLASS="guimenu"
+>View Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Comparison</SPAN
+>
+provides some control over the Comparison View's behavior.
+</P
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.MENU"
+></A
+><P
+><B
+>Figure 7-2. Comparison Menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_menu.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>&#13;<SPAN
+CLASS="guimenu"
+>View Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Comparison</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Same Time Scaling</SPAN
+>
+is switched off per default. Selecting this option causes all
+timelines to use the same scaling. For example, when you look at 2
+seconds of file A and 4 seconds of file B the timelines for A are
+shortened so that they occupy half the width of the timelines for B to
+allow for easier visual comparison.</P
+><P
+>If however the time intervals for A and B differ by more than a
+factor of hundred, this setting is ignored and the timelines are
+aligned as usually to avoid numeric exceptions and distorted
+diagrams.</P
+><P
+>&#13;<SPAN
+CLASS="guimenu"
+>View Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Comparison</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Couple Navigation Keys</SPAN
+>
+is switched off per default. This switch controls the behavior of the
+navigation keys in comparison mode. When switched off, the result of
+pressing a navigation key such as the right arrow depends on the Chart
+that currently has the focus. If the Chart belongs for example to file
+A then the time interval for A will change. If this switch is on then
+all navigation keys will have an effect on both of the zoom stacks
+(refer to <A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).  
+</P
+><P
+>&#13;<SPAN
+CLASS="guimenu"
+>View Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Comparison</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Couple Mouse Zoom</SPAN
+>
+is switched off per default. If switched on zooming with the mouse in
+a timeline that belongs to file A will zoom to a corresponding time interval
+in file B and vice versa.
+</P
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="COMP.MAPPINGS"
+>7.1. Mappings in Comparison Views</A
+></H1
+><P
+>The proverbial error in doing any comparison is to compare
+apples and oranges. When comparing two program runs this could be to
+compare the time that a process A.P0 spent in a function in run A to
+the time of another process B.P0 in run B with or without caring for
+the fact that B.P0 did only half of the work because run B used twice
+as much processes.
+</P
+><P
+>It is quite easy to see that depending on the domain
+decomposition or load balancing that is done in the application the
+meaningful mapping between the processes of two runs can not be
+determined automatically. There might be even no such mapping: imagine
+to compare a run that did a domain decomposition of a cube into 8
+processes 2x2x2 with a run that used a 3x3x3 decomposition.
+</P
+><P
+>But functions and function groups can be mapped between the runs
+just by their fully qualified name. This works as long as the
+structure of modules, namespaces and classes is not changed
+dramatically.</P
+><P
+>It is next to impossible to even enumerate all combinations of
+parameters that might have changed between two runs. To foresee all
+these cases in terms of a automatically adapting GUI does not look
+promising.</P
+><P
+>Based on these considerations the mappings of processes, functions,
+communicators and message tags between the runs are handled
+differently:</P
+><P
+>Communicators are mapped by their Ids. Message tags are mapped
+literally by their value.</P
+><P
+>The mapping of processes and process groups is controlled by
+choosing the process aggregations for both files as outlined in <A
+HREF="c2725.html#COMP.MAP.PROC"
+>Section 7.1.1</A
+>.</P
+><P
+>The mapping between functions and function groups is handled
+automatically as outlined in <A
+HREF="c2725.html#COMP.MAP.FUNC"
+>Section 7.1.2</A
+>.</P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COMP.MAP.PROC"
+>7.1.1. Mapping of Processes</A
+></H2
+><P
+>Assume that run A had A.P0, A.P1 and run B had B.P0, B.P1, B.P2,
+B.P3 and assume that A.P0 did the same work as B.P0 and B.P1 and A.P1
+did the same work as B.P2 and B.P3. To get a Comparison Message
+Profile that is meaningful under these assumptions choose the
+aggregation as shown in <A
+HREF="c2725.html#COMP.PROCAGGREG.EDITOR"
+>Figure 7-3</A
+> and <A
+HREF="c2725.html#COMP.PROCAGGREG"
+>Figure 7-4</A
+>. Here for the run B a process aggregations
+into two halves was chosen.</P
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.PROCAGGREG.EDITOR"
+></A
+><P
+><B
+>Figure 7-3. Creating a suitable process group for the comparison between a 2 and a 4 processor run in the Process Group Editor</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_procaggreged.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.PROCAGGREG"
+></A
+><P
+><B
+>Figure 7-4. Comparing run A with 2 processes to run B with 4 processes</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_procaggreg.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The message profile shows the quotient B/A of the average
+transfer rate. The rule that the Comparison Message Profile (and
+in fact the whole Comparison View) uses to map the senders and
+receivers of the two runs onto each other is quite simple: child
+number <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>i</I
+></SPAN
+> of run A's process aggregation is always
+compared with (mapped to) child number <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>i</I
+></SPAN
+> of run
+B's process aggregation.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COMP.MAP.FUNC"
+>7.1.2. Mapping of Functions</A
+></H2
+><P
+>Functions of the two files A and B are mapped onto each other by
+their fully qualified name. This name contains not only the mere
+function name, but a hierarchical name that is constructed by the Intel® Trace Collector using any information about modules, name
+spaces and classes that was available at trace time.</P
+><P
+>For example the fully qualified name of
+<SAMP
+CLASS="computeroutput"
+>MPI_Allreduce</SAMP
+> will be
+<SAMP
+CLASS="computeroutput"
+>MPI:MPI_Allreduce</SAMP
+> because Intel Trace
+Collector puts all MPI functions into the group MPI. Function groups
+that were defined by the user in ITA have no influence on these full
+function names.  The function group editor described in <A
+HREF="x2307.html"
+>Section 5.4</A
+> shows the fully qualified name of a function in a
+small tooltip window when the mouse hovers long enough over an
+entry.</P
+><P
+>The mapping of function groups is a little more subtle. For
+function groups that are within the hierarchy of the automatically
+created function group <SPAN
+CLASS="QUOTE"
+>"Major Function Groups"</SPAN
+> in file A
+it is tried to find a matching group in B with the same name and
+nesting level in the corresponding hierarchy in B.  </P
+><P
+>For automatically generated groups this works quite good. For
+example MPI is always mapped to MPI even if the groups differ because
+the two program runs did use a different subset of MPI calls. The same
+is true for groups that were created by instrumentation using the API
+provided by Intel Trace Collector.</P
+><P
+>When you create new function groups either by using the Function
+Group Editor or the ubiquitous context menu entries to ungroup
+existing function groups for one file then there will be created
+matching groups for the other file. You can find these read only
+groups under the header <SPAN
+CLASS="QUOTE"
+>"Generated Groups"</SPAN
+> in the
+Function Group Editor.</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x2722.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x2820.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Caching</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Comparison Charts</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

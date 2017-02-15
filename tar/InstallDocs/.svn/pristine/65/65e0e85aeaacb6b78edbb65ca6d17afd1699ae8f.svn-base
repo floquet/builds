@@ -1,0 +1,183 @@
+
+
+http://www.gromacs.org/
+
+   %%% Generalized Intel install below. %%%
+
+export INTEL_VERSION=15.0.2
+OR
+export INTEL_VERSION=15.0.3
+OR
+export INTEL_VERSION=16.0.0
+
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+
+# For parallel version.
+export MPI_VENDOR=sgimpt
+OR
+export MPI_VENDOR=intelmpi
+# Swap mpi if necessary.
+# For intelmpi, not sgimpt:
+module swap mpi/sgimpt mpi/intelmpi/$INTEL_VERSION
+
+export GROMACS_VERSION=5.0.5
+
+export FFTW3_VERSION=3.3.4
+export FFTWDIR=/p/home/apps/unsupported/fftw-serial/${FFTW3_VERSION}-intel-${INTEL_VERSION}
+export LD_LIBRARY_PATH=${FFTWDIR}/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=${FFTWDIR}/lib/pkgconfig
+
+export PREFIX=/p/home/apps/unsupported/gromacs/${GROMACS_VERSION}-intel-${INTEL_VERSION}-${MPI_VENDOR}
+mkdir $PREFIX
+
+export BUILD_DIR=/p/home/scheinin/build/gromacs/${GROMACS_VERSION}-intel-${INTEL_VERSION}-${MPI_VENDOR}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+export I_MPI_CXX=icpc 
+export I_MPI_CC=icc 
+export I_MPI_FC=ifort 
+export I_MPI_F90=ifort 
+export I_MPI_F77=ifort 
+export MPICXX_CXX=icpc 
+export MPICC_CC=icc 
+export MPIF90_F90=ifort 
+
+export CC=mpicc
+export CXX=mpicxx
+export MPICXX_CXX=icpc 
+export MPICC_CC=icc 
+export MPIF90_F90=ifort 
+
+export PATH=/p/home/apps/unsupported/cmake/3.2.3-intel/bin:$PATH
+
+tar xzf gromacs-5.0.5.tar.gz
+cd gromacs-5.0.5
+mkdir build-cmake
+cd build-cmake
+
+# checking
+find $PREFIX ; pwd ; icc --version
+
+cmake ..
+
+Edit CMakeCache.txt
+
+# $ENV{FFTWDIR} works for cmake, but during "make"
+# the value used is \$ENV{FFTWDIR} which fails.
+# So replace with actual path.
+CMAKE_VERBOSE_MAKEFILE:BOOL=TRUE
+CMAKE_CXX_COMPILER:FILEPATH=[ which mpicxx ]
+CMAKE_CXX_FLAGS:STRING=-O2 -fPIC
+CMAKE_C_COMPILER:FILEPATH=[ which mpicc ]
+CMAKE_C_FLAGS:STRING=-O2 -fPIC
+CMAKE_EXE_LINKER_FLAGS:STRING=-O2 -fPIC
+CMAKE_INSTALL_PREFIX:PATH=$ENV{PREFIX}
+FFTWF_INCLUDE_DIR:PATH=$ENV{FFTWDIR}/include
+FFTWF_LIBRARY:FILEPATH=$ENV{FFTWDIR}/lib/libfftw3f.so
+
+cmake ..
+
+Check CMakeCache.txt
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+grep -i fail check.log
+find $PREFIX
+make install
+find $PREFIX
+
+Fix permissions.
+
+   %%% Generalized Intel install below. %%%
+
+
+export PREFIX=/p/home/apps/unsupported/gromacs/5.0.5-intel-sgimpt
+mkdir $PREFIX
+# Cannot use wget because of a "cloud" address, but clicking
+# on link to get the tar file.
+cd /p/home/scheinin/build/gromacs/src/gromacs-5.0.5
+
+# module list includes
+# intel-mkl-15/15.0.1.133
+# intel-compilers-15/15.0.1.133
+# mpt/2.11-sgi711r13
+
+export CC=mpicc
+export CXX=mpicxx
+export MPICXX_CXX=icpc 
+export MPICC_CC=icc 
+export MPIF90_F90=ifort 
+
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel/lib/pkgconfig
+
+export PATH=/p/home/apps/unsupported/cmake/3.2.3-intel/bin:$PATH
+
+mkdir build-cmake
+cd build-cmake
+cmake ..
+
+Edit CMakeCache.txt 
+
+CMAKE_CXX_COMPILER:FILEPATH=/p/home/apps/sgi/mpt-sgi711r13/bin/mpicxx
+CMAKE_CXX_FLAGS:STRING="-fPIC"
+CMAKE_C_COMPILER:FILEPATH=/p/home/apps/sgi/mpt-sgi711r13/bin/mpicc
+CMAKE_C_FLAGS:STRING="-fPIC"
+CMAKE_EXE_LINKER_FLAGS:STRING="-fPIC"
+CMAKE_INSTALL_PREFIX:PATH=/p/home/apps/unsupported/gromacs/5.0.5-intel-sgimpt
+FFTWF_INCLUDE_DIR:PATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel/include
+FFTWF_LIBRARY:FILEPATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel/lib/libfftw3f.so
+
+cmake ..
+
+make
+make check
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+README
+
+# For gromacs/5.0.5-intel-sgimpt
+export PATH=/p/home/apps/unsupported/gromacs/5.0.5-intel-sgimpt/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/gromacs/5.0.5-intel-sgimpt/lib64:$LD_LIBRARY_PATH
+
+For directories
+5.0.5-intel-15.0.3-sgimpt
+5.0.5-intel-16.0.0-sgimpt
+5.0.5-intel-15.0.3-intelmpi
+5.0.5-intel-16.0.0-intelmpi 
+
+export INTEL_VERSION=15.0.3
+OR
+export INTEL_VERSION=16.0.0
+
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+
+export MPI_VENDOR=sgimpt
+OR
+export MPI_VENDOR=intelmpi
+# Swap mpi if necessary.
+# For intelmpi, not sgimpt:
+module swap mpi/sgimpt mpi/intelmpi/$INTEL_VERSION
+
+export GROMACS_VERSION=5.0.5
+
+export FFTW3_VERSION=3.3.4
+export FFTWDIR=/p/home/apps/unsupported/fftw-serial/${FFTW3_VERSION}-intel-${INTEL_VERSION}
+export LD_LIBRARY_PATH=${FFTWDIR}/lib:$LD_LIBRARY_PATH
+
+export GROMACSDIR=/p/home/apps/unsupported/gromacs/${GROMACS_VERSION}-intel-${INTEL_VERSION}-${MPI_VENDOR}
+
+export LD_LIBRARY_PATH=${GROMACSDIR}/lib64:$LD_LIBRARY_PATH
+
+export PATH=${GROMACSDIR}/bin:$PATH
+

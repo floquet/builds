@@ -1,0 +1,46 @@
+
+I was able to compile FUN3D on a login node
+using the following options.
+Of course, your choice of PREFIX will be different
+and your choice of --with-zoltan would be different.
+Note that the order of -lstd -lC is important.
+With regard to --with-parmetis , it would be better
+to recompile parmetis with the current version of
+PGI compilers.  The ftune for ftn is wrong, it assumes
+that the compiler is Cray's cce and also assumes
+that the Endianess requires byteswap; so the configure
+option --disable-ftune is used.
+
+export PREFIX=/lustre/work1/scheinin/FUN3D/fun3d_opt
+export FC=ftn
+export CC=cc
+export CXX=CC
+export LIBS=" -lstd -lC"
+
+./configure --prefix=$PREFIX --disable-ftune \
+  --with-mpif90=ftn  --with-mpicc=cc  --with-mpicxx=CC \
+  --with-mpiexec=aprun \
+  --with-parmetis=/usr/local/usp/parmetis/4.0.3-pgi \
+  --with-zoltan=/lustre/work1/scheinin/FUN3D/zoltan_opt \
+  --enable-hefss
+
+For some reason that I do not understand,
+the config.h was empty.  It will be necessary
+to get a copy from a previous "configure" procedure
+that generated a non-empty version before running "make".
+
+In directory 
+/lustre/work1/scheinin/FUN3D/fun3d-12.8-dc8fb20/Adjoint
+the Makefile needs to be edited.
+The line
+#am__append_4 = -L/usr/local/usp/parmetis/4.0.3-pgi/lib -lparmetis -lmetis
+needs to be modified by removing the "#".
+
+The above is for PrgEnv-pgi.  For PrgEnv-intel two
+configure files need to be changed: ./configure and
+./PHYSICS_MODULES/configure so that the version test
+has the options "-c" to prevent linking and that the
+running of an executable is skipped.  With regard to
+the latter, the Intel compiler makes an executable
+that is too CPU version specific.
+

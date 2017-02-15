@@ -1,0 +1,339 @@
+----------------------------------------------------
+Intel(R) Trace Analyzer and Collector for Linux* OS
+Release Notes
+----------------------------------------------------
+
+--------
+Overview
+--------
+
+The Intel(R) Trace Collector is a low-overhead tracing library that performs
+event-based tracing in applications. You can analyze the collected trace data
+for performance hotspots and bottlenecks. The product is completely thread safe
+and integrates with C/C++, FORTRAN and multithreaded processes with and
+without MPI. It supports binary instrumentation and fail-safe mode.
+Additionally it can check for MPI programming and system errors.
+The Intel(R) Trace Analyzer provides a convenient way to monitor application
+activities gathered by the Intel Trace Collector through graphical displays.
+You can view the desired level of detail, quickly identify performance hotspots
+and bottlenecks, and analyze their causes. The Intel Trace Analyzer is
+available on Linux* OS and Microsoft* Windows* XP OS .
+
+Bundled together, the Intel(R) Trace Analyzer and Collector provide optimized
+analysis and visualization capabilities. Together they offer fast graphical
+rendering of complex profiling data and they easily scale up to hundreds of
+processes.
+
+----------
+What's New
+----------
+
+New Features and Benefits in versions 7.2.1:
+- Linux* Standard Base (LSB) compliant RPMs
+- Intel(R) Trace Analyzer GUI improvements
+
+New Features and Benefits in versions 7.2:
+- Correctness checking reports now available in the Intel Trace Analyzer GUI
+- Intel(R) Compiler 11.0 support
+- Migration to Qt 4.x (formerly Trolltech)
+
+New Features and Benefits in versions 7.1.1:
+- Intel Trace Collector configuration assistant GUI utility 
+- Improved functionality of binary instrumentation (itcpin) on 
+  Microsoft* Windows Compute Cluster Server* OS
+
+New Features and Benefits in versions 7.1:
+- Intel Trace Collector on Microsoft* Windows Compute Cluster Server* OS
+- Distributed memory checking
+- Command line interface for the Intel Trace Analyzer
+- Improved statistics gathering with Intel Trace Collector
+
+------------
+Key features
+------------
+
+This release of the Intel(R) Trace Analyzer and Collector suppports
+the following major features:
+- Advanced GUI: user-friendly interface, high-level scalability,
+  support of structured trace file (STF) trace data, runs on Linux*
+  and Microsoft* Windows*
+- Aggregating and Filtering: detailed views of runtime behavior
+  grouped by functions or processes
+- MPI Communicator: display of communication metrics for an arbitrary
+  time interval for MPI
+- Fail-Safe Tracing: improved functionality on prematurely terminated
+  applications with deadlock detection
+- Intel(R) MPI Library Interface: support of tracing on internal MPI
+  states, support of MPI-IO
+- Correctness checking: check for MPI and system errors at run-time
+- ROMIO: extended support of MPI-2 standard parallel file I/O
+- Binary instrumentation on the IA32 and Intel(R) 64 architectures
+- Comparison feature: compare two trace files and/or two regions (in
+  one or two trace files)
+- Counter Timeline: analyze counter data collected through provided 
+  PAPI and OS modules or through manual use of Intel Trace
+  Collector API
+- Integrated online help for the Intel Trace Analyzer
+
+
+----------------
+Product Contents
+----------------
+
+This Product package contains the following components:
+
+The Intel(R) Trace Analyzer and Collector for Linux*
+
+Documentation for the Intel(R) Trace Analyzer and Collector can be found at
+<installation_directory>/doc. The ITA_Reference_Guide.pdf includes a tutorial
+introduction for the Intel Trace Analyzer and the ITC_Reference_Guide.pdf
+documents the Intel Trace Collector.
+The Intel Trace Analyzer comes with an online help system (html) while the
+Intel Trace Collector provides man pages on Linux*.
+
+NOTES: Adobe Acrobat Reader* or another pdf reader such as xpdf is required to
+view the product documentation.
+
+Third-party sources of the components of the Intel Trace Analyzer and Collector, for
+example those released under GPL, may be downloaded
+from ftp://ftp.ikn.intel.com/pub/opensource.
+
+
+------------
+Installation
+------------
+
+Linux Systems:
+
+To install the Intel Trace Analyzer and Collector, execute 'install.sh'. You
+will be prompted for an installation directory which defaults to
+/opt/intel/itac/7.2.<package#>. You will also be asked to select components
+from a list which you want to be installed and for which MPI implementation
+the default paths should be set. It is recommended to use identical install
+paths on all nodes, through appropriate mounting or creating multiple copies.
+Please refer to the built-in help pages (--help) to get more information about
+the installer.
+
+After installation, read the documentation in '<installation_directory>/doc'.
+
+Prior to using the Intel Trace Analyzer and Collector, you should source
+<installation_directory>/bin/itacvars.[c]sh to set the appropriate environment
+variables for smooth functioning of the software. Read the user guide for
+details on how to switch between different MPI implementations.
+
+To invoke the Intel(R) Trace Analyzer execute
+'<installation_directory>/bin/traceanalyzer'.
+
+Microsoft* Windows* Operating Systems:
+
+To install the Intel(R) Trace Analyzer and Collector double-click the installer
+file setup.exe and follow the instructions given during the installation. You
+will be asked for the location of your license file and for components to be
+installed. For your convenience the installer also offers you to register the
+Trace Analyzer with trace files created by the Trace Collector (*.stf).
+
+After installation, read
+'<installation_directory>/doc/ITC_Reference_Guide.pdf' and
+'<installation_directory>/doc/ITA_Reference_Guide.pdf'.
+
+Prior to using the Intel Trace Collector, you should source
+<installation_directory>/bin/itacvars.bat to set the appropriate environment
+variables for smooth functioning of the software.
+
+You can invoke Intel Trace Analyzer via its entry in the Start Menu, or by
+double-clicking '<installation_directory>/bin/traceanalyzer.exe', or by
+executing it from a command shell. If registered, double-clicking tracefiles
+(*.stf) opens them with the Intel Trace Analyzer.
+
+----------------------
+Installing the license
+----------------------
+
+The Intel Trace Analyzer and Collector uses Macrovision Corporation FLEXlm*
+electronic licensing technology. License management is transparent to the user.
+During the installation you will be prompted for a valid license, which is
+required to successfully complete the installation of the Intel Trace Analyzer
+and Collector. On Linux* the provided scripts itacvars.sh or itacvars.csh will
+ensure that the path of your license file is contained in the environment
+variable INTEL_LICENSE_FILE.
+
+Since the Intel(R) Trace Analyzer uses a time-limited license, the license file
+must remain in place on the system.
+
+-------------------------------------
+Uninstalling the Intel Trace Analyzer
+-------------------------------------
+
+Linux* Systems:
+
+To uninstall the Intel Trace Analyzer and Collector run the script
+'<installation_directory>/uninstall.sh'. 
+
+Microsoft* Windows* Operating Systems:
+
+Uninstalling the Intel Trace Analyzer is done in the usual way via the
+Start->Settings->Control Panel->Add or Remove Programs menu selection. Choose
+the Intel Trace Analyzer and select Remove.
+
+Note: Uninstalling the Intel Trace Analyzer will remove the software components
+while keeping the license file and other files in <installation_directory>
+which may have been created by you. It may also not reset its entry in the
+INTEL_LICENSE_FILE environment variable.
+
+The Intel Trace Analyzer and Collector software and licenses can coexist with
+previous versions.
+
+------------------
+Known Limitations:
+------------------
+
+The Intel Trace Analyzer may get into an undefined state if too many files
+are opened at the same time. 
+
+Certain versions of ld (for example the ones distributed with Red Hat Enterprise
+Linux* 3 and 4) have problems linking with the Intel Trace Collector shared
+libraries. As a workaround you can use the static libraries or specify the
+following options to ld: "-Wl,--allow-shlib-undefined -Wl,--noinhibit-exec"
+which will result in a correct binary.
+
+In some cases symbols information may appear incorrectly in the Intel Trace
+Analyzer if you discarded symbols information from object files.
+
+MPI Correctness Checking is available for the Intel(R) MPI Library only.
+
+Binary instrumentation (itcpin) is not supported on SGI MPT*.
+
+The Intel Trace Collector for Microsoft* Windows* CCS OS has the following
+limitations compared to Version for Linux* OS:
+- no distributed memory checking
+- itcpin is not supported if the "McAfee Host Intrusion Prevention"* antivirus
+  software is active
+
+Please read the Reference Guides for details.
+
+
+--------------------
+System Requirements:
+--------------------
+
+Supported Hardware
+
+    Systems based on the IA-32 architecture:
+      A system based on the Intel(R) Pentium(R) 4 processor
+      Intel(R) Xeon(R) processor recommended
+      2 GB of RAM (4 GB of RAM recommended)
+      1 GB of free hard disk space
+  
+    Systems based on the Intel(R) 64 architecture:   
+      Intel(R) Xeon(R) processor
+      Intel(R) Core(TM) 2 Duo processor family recommended 
+      4 GB of RAM (8 GB of RAM recommended)
+      1 GB of free hard disk space
+
+    Itanium(R) 2 based systems:
+      Itanium(R) 2 processor recommended
+      4 GB of RAM (8 GB of RAM recommended)
+      1 GB of free hard disk space
+
+Supported Software
+
+
+Operating Systems
+
+    Systems based on the IA-32 architecture:
+      Red Hat* Enterprise Linux* 4.0, or
+      Red Hat Enterprise Linux 5.0, or
+      SuSE* Linux Enterprise Server* 9, or
+      SuSE Linux Enterprise Server 10
+
+    Systems based on the Intel(R) 64 architecture:   
+      Red Hat Enterprise Linux 4.0, or
+      Red Hat Enterprise Linux 5.0, or
+      Fedora* 7 through 8 or
+      cAos* 2, or
+      CentOS* 4.6, or
+      CentOS 5.1, or
+      SuSE Linux Enterprise Server 9, or
+      SuSE Linux Enterprise Server 10, or
+      openSuSE* Linux* 10.3, or
+      SGI* Propack* 5.0
+
+    Itanium(R) 2 based systems:
+      Red Hat Enterprise Linux 4.0, or
+      Red Hat Enterprise Linux 5.0, or
+      SuSE Linux Enterprise Server 9, or
+      SuSE Linux Enterprise Server 10, or
+      SGI Propack 5.0
+
+MPI implementations
+
+    Systems based on the IA-32 or Intel(R) 64 architectures:   
+      Intel(R) MPI Library 3.x
+      Intel(R) MPI Library 2.x
+      MPICH* 1.2.5
+
+    Itanium(R) 2 based systems:
+
+      Intel(R) MPI Library 3.x
+      Intel(R) MPI Library 2.x
+      MPICH* 1.2.5
+      SGI MPT*
+
+-----------------
+Technical Support
+-----------------
+
+However your feedback is very important to us. To receive technical support,
+you need to be registered for an Intel(R) Premier Support account on our
+secure web site. You can use your Intel(R) Premier Support Account for the
+Intel(R) Trace Analyzer and Collector to file issues/comments and
+recommendations for the product.
+
+--------------------------------
+Disclaimer and Legal Information
+--------------------------------
+
+INFORMATION IN THIS DOCUMENT IS PROVIDED IN CONNECTION WITH INTEL®
+PRODUCTS. NO LICENSE, EXPRESS OR IMPLIED, BY ESTOPPEL OR OTHERWISE, TO
+ANY INTELLECTUAL PROPERTY RIGHTS IS GRANTED BY THIS DOCUMENT. EXCEPT
+AS PROVIDED IN INTEL'S TERMS AND CONDITIONS OF SALE FOR SUCH PRODUCTS,
+INTEL ASSUMES NO LIABILITY WHATSOEVER, AND INTEL DISCLAIMS ANY EXPRESS
+OR IMPLIED WARRANTY, RELATING TO SALE AND/OR USE OF INTEL PRODUCTS
+INCLUDING LIABILITY OR WARRANTIES RELATING TO FITNESS FOR A PARTICULAR
+PURPOSE, MERCHANTABILITY, OR INFRINGEMENT OF ANY PATENT, COPYRIGHT OR
+OTHER INTELLECTUAL PROPERTY RIGHT.
+
+UNLESS OTHERWISE AGREED IN WRITING BY INTEL, THE INTEL PRODUCTS ARE
+NOT DESIGNED NOR INTENDED FOR ANY APPLICATION IN WHICH THE FAILURE OF
+THE INTEL PRODUCT COULD CREATE A SITUATION WHERE PERSONAL INJURY OR
+DEATH MAY OCCUR.
+
+Intel may make changes to specifications and product descriptions at
+any time, without notice. Designers must not rely on the absence or
+characteristics of any features or instructions marked "reserved" or
+"undefined." Intel reserves these for future definition and shall have
+no responsibility whatsoever for conflicts or incompatibilities
+arising from future changes to them. The information here is subject
+to change without notice. Do not finalize a design with this
+information.
+
+The products described in this document may contain design defects or
+errors known as errata which may cause the product to deviate from
+published specifications. Current characterized errata are available
+on request.
+
+Contact your local Intel sales office or your distributor to obtain
+the latest specifications and before placing your product order.
+
+Copies of documents which have an order number and are referenced in
+this document, or other Intel literature, may be obtained by calling
+1-800-548-4725, or by visiting Intel's Web Site.
+
+Intel, Itanium, Pentium, VTune, and Xeon are trademarks of Intel
+Corporation in the U.S. and other countries.
+
+
+* Other names and brands may be claimed as the property of others.
+
+
+Copyright (c) 1996-2009, Intel Corporation. All rights reserved.

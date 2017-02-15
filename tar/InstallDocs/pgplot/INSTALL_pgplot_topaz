@@ -1,0 +1,66 @@
+
+
+export PREFIX=/p/home/apps/unsupported/pgplot/5.2.2-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/pgplot/src
+wget ftp://ftp.astro.caltech.edu/pub/pgplot/pgplot522.tar.gz
+tar xzf pgplot522.tar.gz
+cd pgplot
+
+For drivers.list, used a copy from garnet,
+left a copy in /p/home/scheinin/build/pgplot/src/
+
+Edited ../src/sys_linux/g77_gcc_aout.conf
+From: FCOMPL="g77"
+To: FCOMPL="gfortran"
+
+From:
+ LIBS="-L/usr/X11R6/lib -lX11 \`\$(SRC)/cpg/libgcc_path.sh\` -lgcc -lm -lc"
+To:
+ LIBS="-L/usr/X11R6/lib64 -lX11 \`\$(SRC)/cpg/libgcc_path.sh\` -lgcc -lm -lc"
+
+ ./makemake `pwd` linux g77_gcc_aout
+
+Reading configuration file: /p/home/scheinin/build/pgplot/src/pgplot/sys_linux/g77_gcc_aout.conf
+Selecting uncommented drivers from ./drivers.list
+Found drivers GIDRIV LXDRIV NUDRIV PNDRIV PPDRIV PSDRIV TTDRIV WDDRIV XWDRIV
+
+makefile has line
+# pndriv.o : ./png.h ./pngconf.h ./zlib.h ./zconf.h
+but this is wrong.
+I checked, all these are in /usr/include ,
+so commented-out that line.
+
+make
+
+make cpg
+ 
+Note that if you plan to install PGPLOT in a different
+directory than the current one, the following files will be
+needed.
+ 
+       libpgplot.a
+       grfont.dat
+       rgb.txt
+       pgxwin_server
+ 
+Also note that subsequent usage of PGPLOT programs requires that
+the full path of the chosen installation directory be named in
+an environment variable named PGPLOT_DIR.
+ 
+Note that if you plan to install the library in a different
+directory than the current one, both libcpgplot.a and cpgplot.h
+will be needed.
+ 
+cp libpgplot.a  grfont.dat  pgxwin_server  cpgplot.h  libcpgplot.a  pgplot.doc  rgb.txt  $PREFIX/
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+
+

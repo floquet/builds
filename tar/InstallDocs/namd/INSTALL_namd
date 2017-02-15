@@ -1,0 +1,232 @@
+
+Building on diamond.
+
+One source of information is installation on copper.
+ ssh -Y copper02.ors.hpc.mil
+ copper has
+ 2.9-gnu
+ CVS-2013-02-25-gnu
+done by
+Edward Kornkven:/u/kornkven
+copper02:/usr/local/usp/namd/2.9-gnu/wrk/README.ORS
+copper02:/usr/local/usp/namd/2.9-gnu/wrk/build_namd.sh
+
+Source at
+http://www.ks.uiuc.edu/Research/namd/
+
+Environment is
+module list
+ 1) compiler/intel11.1.056   2) mpi/sgi_mpi-2.04
+
+cd /usr/local/usp/namd
+# make destination directories
+mkdir NAMD_2.9
+mkdir NAMD_CVS-2013-06-05
+mkdir source
+cd source
+Extract two sources
+
+tar xzf NAMD_2.9_Source.tar.gz
+tar xzf NAMD_CVS-2013-06-05_Source.tar.gz
+
+# Build charm each source.
+cd NAMD_2.9_Source
+tar xf charm-6.4.0.tar
+cd ..
+cd NAMD_CVS-2013-06-05_Source
+tar xf charm-6.5.0.tar
+
+export MPICXX=icpc
+export CC=icc
+export CXX=icpc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+# Do same procedure of building charm++ for
+cd NAMD_2.9_Source/charm-6.4.0
+# and also
+cd NAMD_CVS-2013-06-05_Source/charm-6.5.0
+
+./build charm++ mpi-linux-x86_64 --with-production
+
+for charm-6.4.0 there was an error concerning f90 but
+build continued and testing of charm (megatest/pgm) went OK
+
+# test
+cd mpi-linux-x86_64/tests/charm++/megatest
+make pgm
+
+qsub -A ERDCS97290STA -q debug -l select=4:ncpus=8:mpiprocs=8,place=scatter:excl,walltime=0:59:00 -I
+
+cd /usr/local/usp/namd/source/NAMD_2.9_Source/charm-6.4.0/mpi-linux-x86_64/tests/charm++/megatest
+OR
+cd /usr/local/usp/namd/source/NAMD_CVS-2013-06-05_Source/charm-6.5.0/mpi-linux-x86_64/tests/charm++/megatest
+
+mpiexec_mpt -np 4 ./pgm
+ran OK
+
+mpiexec_mpt -np 32 ./pgm
+for charm-6.4.0
+Charm++> Running on 4 unique compute nodes (16-way SMP).
+Charm++> cpu topology info is gathered in 0.002 seconds.
+Megatest is running on 32 nodes 32 processors.
+[program output]
+All tests completed, exiting
+for charm-6.5.0
+Charm++> Running on 4 unique compute nodes (16-way SMP).
+Charm++> cpu topology info is gathered in 0.003 seconds.
+Megatest is running on 32 nodes 32 processors. 
+[program output]
+All tests completed, exiting
+
+Not obvious from above how processes are actually distributed.
+
+# In each source get fftw and tcl.
+cd NAMD_2.9_Source
+wget http://www.ks.uiuc.edu/Research/namd/libraries/fftw-linux-x86_64.tar.gz
+wget http://www.ks.uiuc.edu/Research/namd/libraries/tcl8.5.9-linux-x86_64.tar.gz
+wget http://www.ks.uiuc.edu/Research/namd/libraries/tcl8.5.9-linux-x86_64-threaded.tar.gz
+
+tar xzf fftw-linux-x86_64.tar.gz
+tar xzf tcl8.5.9-linux-x86_64.tar.gz
+tar xzf tcl8.5.9-linux-x86_64-threaded.tar.gz
+mv linux-x86_64 fftw
+mv tcl8.5.9-linux-x86_64 tcl
+mv tcl8.5.9-linux-x86_64-threaded tcl-threaded
+
+cd .. ; cd NAMD_CVS-2013-06-05_Source
+do same procedure to get fftw and tcl
+
+/usr/local/usp/namd/source/NAMD_2.9_Source below
+
+./config Linux-x86_64-icc --charm-arch mpi-linux-x86_64 \
+  --cxx icpc \
+  --cxx-opts "-O2 -lmpi" \
+  --cc icc \
+  --cc-opts "-O2 -lmpi" \
+  2>&1 | tee config_log.eo
+
+cd Linux-x86_64-icc
+
+make 2>&1 | tee make_log.eo
+
+cd /usr/local/usp/namd/source
+wget http://www.ks.uiuc.edu/Research/namd/utilities/f1atpase.tar.gz
+wget http://www.ks.uiuc.edu/Research/namd/utilities/apoa1.tar.gz
+ 
+For apoa1 change file apoa1.namd
+From
+outputname           /usr/tmp/apoa1-out
+To
+outputname           ./apoa1-out
+
+qsub -A ERDCS97290STA -q debug -l select=4:ncpus=8:mpiprocs=8,place=scatter:excl,walltime=0:59:00 -I
+
+cd /usr/local/usp/namd/source/apoa1
+export OMP_NUM_THREADS=1
+
+mpiexec_mpt -np 32 /usr/local/usp/namd/source/NAMD_2.9_Source/Linux-x86_64-icc/namd2 apoa1.namd
+
+mkdir /usr/local/usp/namd/NAMD_2.9/Linux-x86_64-icc
+mkdir /usr/local/usp/namd/NAMD_2.9/Linux-x86_64-icc/bin
+for i in flipbinpdb flipdcd namd2 psfgen sortreplicas ; do
+cp /usr/local/usp/namd/source/NAMD_2.9_Source/Linux-x86_64-icc/$i /usr/local/usp/namd/NAMD_2.9/Linux-x86_64-icc/bin
+done
+
+mpiexec_mpt -np 32 /usr/local/usp/namd/NAMD_2.9/Linux-x86_64-icc/bin/namd2 apoa1.namd
+
+cd ../f1atpase
+For file f1atpase.namd change from
+outputname              /usr/tmp/f1atpase
+to
+outputname              /usr/tmp/f1atpase
+
+mpiexec_mpt -np 32 /usr/local/usp/namd/NAMD_2.9/Linux-x86_64-icc/bin/namd2 f1atpase.namd
+
+removed apoa1 and f1atpase and recreated from tar file for
+testing the CVS version
+
+/usr/local/usp/namd/source/NAMD_2.9_Source above
+/usr/local/usp/namd/source/NAMD_CVS-2013-06-05_Source below
+
+vi Make.charm
+CHARMBASE = /usr/local/usp/namd/source/NAMD_CVS-2013-06-05_Source/charm-6.5.0
+
+./config Linux-x86_64-icc --charm-arch mpi-linux-x86_64 \
+  --cxx icpc \
+  --cxx-opts "-O2 -lmpi" \
+  --cc icc \
+  --cc-opts "-O2 -lmpi" \
+  2>&1 | tee config_log.eo
+
+cd Linux-x86_64-icc
+
+make 2>&1 | tee make_log.eo
+
+In directory /usr/local/usp/namd/source/NAMD_CVS-2013-06-05_Source/Linux-x86_64-icc
+
+mkdir /usr/local/usp/namd/NAMD_CVS-2013-06-05/Linux-x86_64-icc
+mkdir /usr/local/usp/namd/NAMD_CVS-2013-06-05/Linux-x86_64-icc/bin
+for i in flipbinpdb flipdcd namd2 psfgen sortreplicas ; do
+cp $i /usr/local/usp/namd/NAMD_CVS-2013-06-05/Linux-x86_64-icc/bin
+done
+
+# wget may already have been done
+cd /usr/local/usp/namd/source
+wget http://www.ks.uiuc.edu/Research/namd/utilities/f1atpase.tar.gz
+wget http://www.ks.uiuc.edu/Research/namd/utilities/apoa1.tar.gz
+
+untar the test cases
+For apoa1 change file apoa1.namd
+From
+outputname           /usr/tmp/apoa1-out
+To
+outputname           ./apoa1-out
+For file f1atpase.namd change from
+outputname              /usr/tmp/f1atpase
+to
+outputname              /usr/tmp/f1atpase
+
+qsub -A ERDCS97290STA -q debug -l select=4:ncpus=8:mpiprocs=8,place=scatter:excl,walltime=0:59:00 -I
+
+cd /usr/local/usp/namd/source/apoa1
+export OMP_NUM_THREADS=1
+
+mpiexec_mpt -np 32 /usr/local/usp/namd/NAMD_CVS-2013-06-05/Linux-x86_64-icc/bin/namd2 apoa1.namd
+
+cd /usr/local/usp/namd/source/f1atpase
+export OMP_NUM_THREADS=1
+
+mpiexec_mpt -np 32 /usr/local/usp/namd/NAMD_CVS-2013-06-05/Linux-x86_64-icc/bin/namd2 f1atpase.namd
+
+/usr/local/usp/namd/source/NAMD_CVS-2013-06-05_Source above
+
+Did not put charmrun into bin directory.  Did not modify charmrun
+for diamond.
+
+topdir=/usr/local/usp/namd
+
+cd $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+cd source
+chmod -R o-rwx *
+
+copy this to topdir
+
+README_namd
+namd2 was compiled with the Intel compiler and SGI MPI
+using the default modules
+  1) compiler/intel11.1.056   2) mpi/sgi_mpi-2.04
+The executables are in two directories
+NAMD_2.9/Linux-x86_64-icc/bin
+NAMD_CVS-2013-06-05/Linux-x86_64-icc/bin
+where NAMD_2.9 is the standard production version and
+NAMD_CVS-2013-06-05 is a development version downloaded June 5, 2013.
+
+A typical command to launch namd2 is the following
+mpiexec_mpt -np 32 /usr/local/usp/namd/NAMD_CVS-2013-06-05/Linux-x86_64-icc/bin/namd2 apoa1.namd
+

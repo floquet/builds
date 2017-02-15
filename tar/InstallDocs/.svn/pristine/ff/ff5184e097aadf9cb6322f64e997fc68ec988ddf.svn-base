@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>The Configuration Dialogs</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Dialogs"
+HREF="c2028.html"><LINK
+REL="PREVIOUS"
+TITLE="The New View Dialog"
+HREF="x2517.html"><LINK
+REL="NEXT"
+TITLE="The Find Dialog"
+HREF="x2559.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x2517.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Dialogs</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x2559.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="CFGDLGS"
+>5.10. The Configuration Dialogs</A
+></H1
+><P
+>These dialog boxes enable manipulating the configuration that is
+usually stored in the file <SAMP
+CLASS="computeroutput"
+>.itarc</SAMP
+> in
+the user's home directory upon program exit. The configuration consists of
+the global information found under the option <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>File
+Default</I
+></SPAN
+> and the per file information found under the
+respective file name.</P
+><P
+>The global information consists of the recent file list and the
+list of search paths that find the source code files. The latter is
+stored in the option <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>File Default/UserDefines
+SCLSearchPaths</I
+></SPAN
+> and contains a list of directories,
+separated by semi-colons (<KBD
+CLASS="userinput"
+>;</KBD
+>). These directories
+are searched in the given order for source code files to be shown in
+the Source View dialog box (see <A
+HREF="x2483.html"
+>Section 5.7</A
+>).</P
+><P
+>The per file information holds all user-defined process
+groups, function groups and function group colors.</P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="SAVEEDITCFGDLG"
+>5.10.1. The Edit Configuration Dialog</A
+></H2
+><P
+>This dialog box allows editing the configuration; for example, by changing
+values or removing entries from the configuration.</P
+><P
+>This dialog box together with the Load Configuration dialog box allows
+to store per trace file settings together with the trace file so that
+definitions of process groups and function groups are shared in a
+work group.</P
+><P
+>The entries are shown with check box like handles that
+are all checked by default. Unchecking entries removes them from
+the current configuration when the button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>OK</I
+></SPAN
+> is
+pressed. To edit a value double click on the respective entry.</P
+><P
+>Group definitions and color assignments are dragged and dropped
+from one trace file branch to another or even onto the branch
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>File Default</I
+></SPAN
+> to make them available for each new
+trace file. The dialog box allows dragging and dropping every child
+node in the configuration tree, and thus the configuration is easily
+manipulated in a way that leads to surprising results. In such cases, start it again with a well-known configuration.</P
+><P
+>Generally, it is best to avoid moving options whose values are
+files or lists of files. For example, a cache file usually corresponds
+to a particular trace file, and hence, moving a <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>UserDefines
+Cachefile</I
+></SPAN
+> to another trace file or the default section
+would not make sense, unless the intent is to reuse that cache file
+with a different trace. On the other hand, color definitions can
+typically be dragged and dropped from trace to trace or to default
+(the latter would define that color for all trace files, unless they
+provide their own definition). Moving group definitions, however,
+requires more attention, since group ids in one trace might not
+make sense in another. Examination and possible value editing can
+solve such issues.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.SAVEDCONFIG"
+></A
+><P
+><B
+>Figure 5-14. The Edit Configuration Dialog</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/savedconfig.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="LOADCFGDLG"
+>5.10.2. The Load Configuration Dialog</A
+></H2
+><P
+>&#13;This dialog box allows to read configuration data from files into the
+program. The information to be loaded is chosen on a file per file
+basis. Directly saving a configuration in the Intel Trace Analyzer
+is not possible. To save portions of the .itarc, use a text editor and
+save in the usual manner.
+</P
+><P
+>The check box <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Merge with the current
+configuration</I
+></SPAN
+> allows choosing if the eventually present
+configuration in memory for chosen files should be replaced by or
+merged with the configuration from the selected file.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x2517.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x2559.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The New View Dialog</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c2028.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Find Dialog</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

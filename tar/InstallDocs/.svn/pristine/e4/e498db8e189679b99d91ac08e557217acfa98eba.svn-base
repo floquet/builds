@@ -1,0 +1,524 @@
+
+Wed Dec  3 10:38:03 CST 2014  below
+
+Get source from
+
+http://www.nwchem-sw.org/index.php/Download
+
+Compiling information in
+http://www.nwchem-sw.org/index.php/Compiling_NWChem
+
+Download is called
+Nwchem-6.5.revision26243-src.2014-09-10.tar.gz
+but there are 11 patches described as
+Patches for the 26243 revision of NWChem 6.5 
+
+http://www.nwchem-sw.org/index.php/Download
+Patches listed on Download web page.
+
+# 6.5-GEMINI-mpich6 and 6.5-DMAPP-mpich6 used MPICH v6.
+# Otherwise, used MPICH v7, as shown in following lines.
+module swap xt-asyncpe/5.24 xt-asyncpe/5.28
+module swap pgi/13.6.0 pgi/14.7.0
+# cray-mpich/7.0.2 has subdirectory 141, though there is no pgi/14.1
+module unload cray-mpich/6.0.0
+module load cray-mpich/7.0.2
+module load cray-mpich-compat/v7
+#   Swapping cray-mpich to version 7.0.2
+#   Swapping cray-libsci to version 13.0.0
+
+In 2013, NWCHEM-6.3, what worked was
+export ARMCI_NETWORK=DMAPP
+whereas
+export ARMCI_NETWORK=GEMINI
+failed at runtime.
+In 2014, NWCHEM-6.5, Ed Kronkven found that
+ARMCI_NETWORK=GEMINI was faster than ARMCI_NETWORK=MPI-TS
+but ARMCI_NETWORK=GEMINI failed for c240 example.
+
+# MPI-TS below
+# export NWCHEM_TOP=<top of source>
+# change directory name because full pathname
+# must be less than 64 characters.
+mv Nwchem-6.5.revision26243-src.2014-09-10 Nwchem-6.5
+export NWCHEM_TOP=/usr/local/usp/nwchem/6.5-MPI-pgi/src/Nwchem-6.5
+export ARMCI_NETWORK=MPI-TS
+# MPI-TS above
+
+# GEMINI below
+# For 6.5-GEMINI-mpich6 as an experiment,
+# do not use craype-hugepages64M.
+# export NWCHEM_TOP=/usr/local/usp/nwchem/6.5-GEMINI-mpich6/src/Nwchem-6.5
+
+# For 6.5-GEMINI-nohuge as an experiment,
+# do not use craype-hugepages64M but used mpich7.
+# export NWCHEM_TOP=/usr/local/usp/nwchem/6.5-GEMINI-nohuge/src/Nwchem-6.5
+
+module load onesided
+module load craype-hugepages64M
+
+# export NWCHEM_TOP=<top of source>
+# change directory name because full pathname
+# must be less than 64 characters.
+mv Nwchem-6.5.revision26243-src.2014-09-10 Nwchem-6.5
+export NWCHEM_TOP=/usr/local/usp/nwchem/6.5-GEMINI-pgi/src/Nwchem-6.5
+export ARMCI_NETWORK=GEMINI
+export ONESIDED_UDREG_ENTRIES=2048
+export ONESIDED_USE_UDREG=1
+# GEMINI above
+
+# DMAPP below
+
+module load onesided
+
+# For 6.5-DMAPP-nohuge did not use hugepages.
+# Otherwise 6.5-DMAPP-mpich6 and 6.5-DMAPP-pgi used hugepages.
+module load craype-hugepages64M
+
+# export NWCHEM_TOP=<top of source>
+# change directory name because full pathname
+# must be less than 64 characters.
+mv Nwchem-6.5.revision26243-src.2014-09-10 Nwchem-6.5
+
+export NWCHEM_TOP=/usr/local/usp/nwchem/6.5-DMAPP-nohuge/src/Nwchem-6.5
+export NWCHEM_TOP=/usr/local/usp/nwchem/6.5-DMAPP-mpich6/src/Nwchem-6.5
+export NWCHEM_TOP=/usr/local/usp/nwchem/6.5-DMAPP-pgi/src/Nwchem-6.5
+
+export ARMCI_NETWORK=DMAPP
+export ONESIDED_UDREG_ENTRIES=2048
+export ONESIDED_USE_UDREG=1
+cd ${NWCHEM_TOP}/src/tools
+wget https://github.com/ryanolson/ga/archive/cray.zip -O cray.zip
+unzip cray.zip
+export GA_DIR=ga-cray
+# DMAPP above
+
+export NWCHEM_TARGET=LINUX64
+
+export USE_MPI=y
+export USE_MPIF=y
+export USE_MPIF4=y
+export LIBMPI=""
+export MPI_LIB=${CRAY_MPICH2_DIR}/lib
+export MPI_INCLUDE=${CRAY_MPICH2_DIR}/include
+
+export NWCHEM_MODULES="all"
+
+export USE_NOFSCHECK=TRUE
+export USE_NOIO=TRUE
+export LIB_DEFINES="-DDFLT_TOT_MEM=3758096384"
+export MRCC_THEORY=TRUE
+
+export LAPACK_LIB="-lsci_pgi"
+export USE_SCALAPACK=y
+export SCALAPACK=-L${CRAY_LIBSCI_PREFIX_DIR}/lib
+export SCALAPACK_LIB="-lsci_pgi"
+export HAS_BLAS=yes
+export BLAS_LIB="-lsci_pgi"
+export BLASOPT="-lsci_pgi"
+
+export USE_64TO32=y
+export LARGE_FILES=TRUE
+
+export FC=ftn
+export CC=cc
+
+# skipped linking in NBO
+
+After extracting Nwchem-6.5.revision26243-src.2014-09-10
+
+wget http://www.nwchem-sw.org/images/Util_md_sockets.patch.gz
+wget http://www.nwchem-sw.org/images/Hbar.patch.gz
+wget http://www.nwchem-sw.org/images/Tcenxtask.patch.gz
+wget http://www.nwchem-sw.org/images/Hnd_giaxyz_noinline.patch.gz
+wget http://www.nwchem-sw.org/images/Parallelmpi.patch.gz
+wget http://www.nwchem-sw.org/images/Makefile_gcc4x.patch.gz
+wget http://www.nwchem-sw.org/images/Bcast_ccsd.patch.gz
+wget http://www.nwchem-sw.org/images/Elpa_syncs.patch.gz
+wget http://www.nwchem-sw.org/images/Xlmpoles_ifort15.patch.gz
+wget http://www.nwchem-sw.org/images/Ifort15_fpp_offload.patch.gz
+
+gunzip *patch.gz
+
+ppp=`/bin/ls *.patch`
+# Later learned that need to do Hnd_giaxyz_noinline.patch separately.
+# After fixing ppp to remove one patch to be done by hand
+ppp="Bcast_ccsd.patch Elpa_syncs.patch Hbar.patch Ifort15_fpp_offload.patch Makefile_gcc4x.patch Parallelmpi.patch Tcenxtask.patch Util_md_sockets.patch Xlmpoles_ifort15.patch"
+
+cd Nwchem-6.5/src
+
+for i in $ppp ; do
+echo "working on $i below"
+patch -p0 < ../../$i
+done
+
+Need to do /Hnd_giaxyz_noinline.patch separately
+because it looks for hnd_giaxyz.F without going down
+into NWints/hondo/
+cd NWints/hondo/
+patch -p0 < ../../../../Hnd_giaxyz_noinline.patch
+
+cd $NWCHEM_TOP/src
+
+make nwchem_config
+
+make 64_to_32 2>&1 | tee convert.log
+
+In the past, a security patch by Cray resulted in multiple definitions,
+so added for linking --allow-multiple-definition
+In Dec. 2014, the error was
+/opt/cray/xe-sysroot/4.2.34/usr/lib64/libhugetlbfs.a(elflink.o): In function `__libhugetlbfs_do_remap_segments':
+/usr/src/packages/BUILD/cray-libhugetlbfs-2.11/elflink.c:2012: multiple definition of `__libhugetlbfs_do_remap_segments'
+/opt/cray/xe-sysroot/4.2.34/usr/lib64/libhugetlbfs.a(elflink.o):/usr/src/packages/BUILD/cray-libhugetlbfs-2.11/elflink.c:2012: first defined here
+Hence, use --allow-multiple-definition
+
+# GEMINI and DMAPP below
+# Need " -Wl,--allow-multiple-definition" for hugepages.
+make LDFLAGS="-Wl,--allow-multiple-definition -Wl,-L${NWCHEM_TOP}/lib/LINUX64 -Wl,-L${NWCHEM_TOP}/src/tools/install/lib" 2>&1 | tee make.log
+# Note that did not use allow-multiple-definition for
+# 6.5-GEMINI-mpich6, 6.5-GEMINI-nohuge and 6.5-DMAPP-nohuge
+# GEMINI and DMAPP above
+
+# MPI-TS below
+make LDFLAGS="-Wl,-L${NWCHEM_TOP}/lib/LINUX64 -Wl,-L${NWCHEM_TOP}/src/tools/install/lib" 2>&1 | tee make.log
+# MPI-TS above
+
+
+Some warnings, not errors, such as:
+/usr/bin/ld: Warning: size of symbol `mpifcmb9_' changed from 8 in /usr/local/usp/nwchem/6.5-MPI-pgi/src/Nwchem-6.5/lib/LINUX64/libnwpwlib.a(Parallel-mpi.o) to 4 in /opt/cray/mpt/7.0.2/gni/mpich2-pgi/141/lib/libmpich_pgi.a(setbot.o)
+
+# Installation
+
+# Do either one of the following
+export PREFIX=/usr/local/usp/nwchem/6.5-MPI-pgi
+export PREFIX=/usr/local/usp/nwchem/6.5-GEMINI-pgi
+export PREFIX=/usr/local/usp/nwchem/6.5-GEMINI-mpich6
+export PREFIX=/usr/local/usp/nwchem/6.5-GEMINI-nohuge
+export PREFIX=/usr/local/usp/nwchem/6.5-DMAPP-pgi
+export PREFIX=/usr/local/usp/nwchem/6.5-DMAPP-mpich6
+export PREFIX=/usr/local/usp/nwchem/6.5-DMAPP-nohuge
+
+mkdir ${PREFIX}/bin
+mkdir ${PREFIX}/data
+
+# Check that executables are where it is expected to be
+ls $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem
+# Copy to outside of src
+cp $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem ${PREFIX}/bin/
+
+cd $NWCHEM_TOP/src/basis
+cp -R libraries ${PREFIX}/data/
+
+cd $NWCHEM_TOP/src/
+cp -R data ${PREFIX}
+
+cd $NWCHEM_TOP/src/nwpw
+cp -R libraryps ${PREFIX}/data
+
+# Create data/default.nwchemrc
+cd $PREFIX/data
+#
+echo "nwchem_basis_library ${PREFIX}/data/libraries/" >> default.nwchemrc
+echo "nwchem_nwpw_library ${PREFIX}/data/libraryps/" >> default.nwchemrc
+echo "ffield amber" >> default.nwchemrc
+echo "amber_1 ${PREFIX}/data/amber_s/" >> default.nwchemrc
+echo "amber_2 ${PREFIX}/data/amber_q/" >> default.nwchemrc
+echo "amber_3 ${PREFIX}/data/amber_x/" >> default.nwchemrc
+echo "amber_4 ${PREFIX}/data/amber_u/" >> default.nwchemrc
+echo "spce    ${PREFIX}/data/solvents/spce.rst" >> default.nwchemrc
+echo "charmm_s ${PREFIX}/data/charmm_s/" >> default.nwchemrc
+echo "charmm_x ${PREFIX}/data/charmm_x/" >> default.nwchemrc
+
+# Users need to create a .nwchemrc
+# ln -s /usr/local/usp/nwchem/x.x/data/default.nwchemrc  $HOME/.nwchemrc
+
+topdir=$PREFIX
+
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In src/ directory
+cd $PREFIX/src
+chmod -R o-rwx *
+
+# Compiled version uses alot of space, so remove built stuff.
+cd $NWCHEM_TOP/src/
+make clean
+
+Testing.
+
+mkdir $WORKDIR/nwchem
+
+ln -s $PREFIX/data/default.nwchemrc  $HOME/.nwchemrc
+
+See
+/usr/local/Example_Codes/Applications/nwchem for a test.
+
+For example
+wget http://www.nwchem-sw.org/images/Input_c240_pbe0.nw
+wget http://www.nwchem-sw.org/images/Input_p2ta.nw
+
+Ed wrote:
+Great—thanks, Alan. The test that failed under GEMINI
+for me is a benchmark from the website called “c240.”
+I can send it to you if you want.
+
+Several versions of nwchem were built that utilized different
+communication protocols.  The only version that ran for the
+c240 test case was the simple MPI version in directory
+nwchem/6.5-MPI-pgi.
+When it runs correctly, nwchem with GEMINI or DMAPP can run
+faster than the simple MPI version.
+Every build environment built without error, but then errors
+occured at runtime.
+All the built versions are left installed in case GEMINI
+or DMAPP works and is faster for the experiment utilized
+by some user.
+
+                              MPICH Ver.   craype-hugepages64M  c240 ran OK
+nwchem/6.5-MPI-pgi            7            No                   Yes
+nwchem/6.5-GEMINI-pgi         7            Yes                  No
+nwchem/6.5-GEMINI-mpich6      6            No                   No
+nwchem/6.5-GEMINI-nohuge      7            No                   No
+nwchem/6.5-DMAPP-pgi          7            Yes                  No
+nwchem/6.5-DMAPP-mpich6       6            Yes                  No
+nwchem/6.5-DMAPP-nohuge       7            No                   No
+
+A summary of the errors for example c240 are the following.
+
+6.5-DMAPP-nohuge
+   Error message advises using hugepages.
+6.5-DMAPP-pgi
+   libhugetlbfs [nid00181:18368]: WARNING:
+   New heap segment map at 0x10004000000 failed: Cannot allocate memory
+   then later
+   LIBDMAPP ERROR: Unsuccessful memory registration.
+6.5-GEMINI-mpich6
+   libhugetlbfs [nid00181:18368]: WARNING:
+   New heap segment map at 0x10004000000 failed: Cannot allocate memory
+   then later
+   LIBDMAPP ERROR: Unsuccessful memory registration.
+6.5-GEMINI-mpich6
+   Segmentation fault near start of program.
+6.5-GEMINI-nohuge
+   Ran a substantial part of the procedure then at Caching 1-el integrals
+   MemRegister in mem_register; err 3
+6.5-GEMINI-pgi
+   Ran a substantial part of the procedure then at Caching 1-el integrals
+   MemRegister in mem_register; err 3
+
+
+Wed Dec  3 10:38:03 CST 2014  above
+
+Tue Oct  9 16:20:03 CDT 2013, below
+
+Can get source from http://www.nwchem-sw.org/
+Build information in
+http://www.nwchem-sw.org/index.php/Compiling_NWChem
+
+# Using PrgEnv-pgi/4.0.46 , pgi/13.6.0 and cray-mpich/6.0.0
+
+module load xt-libsci/12.1.00
+module load craype-hugepages64M
+
+# Maybe onesided is not necessary if ARMCI_NETWORK=DMAPP
+module load onesided
+export ONESIDED_UDREG_ENTRIES=2048
+export ONESIDED_USE_UDREG=1
+
+export NWCHEM_TOP=<top of source>
+export NWCHEM_MODULES="all"
+export NWCHEM_TARGET=LINUX64
+export USE_NOFSCHECK=TRUE
+export LARGE_FILES=TRUE
+export USE_MPI=y
+export USE_MPIF=y
+export USE_MPIF4=y
+export USE_64TO32=y
+export LAPACK_LIB="-lsci_pgi"
+export USE_SCALAPACK=y
+export SCALAPACK=-L${CRAY_LIBSCI_PREFIX_DIR}/lib
+export SCALAPACK_LIB="-lsci_pgi"
+export HAS_BLAS=yes
+export BLAS_LIB="-lsci_pgi"
+export BLASOPT="-lsci_pgi"
+export LIBMPI=""
+export ARMCI_NETWORK=DMAPP
+# export ARMCI_NETWORK=GEMINI fails at runtime.
+export MPI_LIB=${CRAY_MPICH2_DIR}/lib
+export MPI_INCLUDE=${CRAY_MPICH2_DIR}/include
+export LIB_DEFINES="-DDFLT_TOT_MEM=3758096384"
+
+export FC=ftn
+export CC=cc
+
+# skipped linking in NBO
+
+cd src
+
+# If you have a patch to install
+patch -p0 < $WORKDIR/Ccsdadapt.patch
+(patch -p0 < /lustre/work1/scheinin/Nwchem/src/Ccsdadapt.patch)
+
+# A security patch created multiple definitions for
+# a library related to hugepages.
+export LDFLAGS="-Wl,--allow-multiple-definition -Wl,-L${NWCHEM_TOP}/lib/LINUX64 -Wl,-L${NWCHEM_TOP}/src/tools/install/lib"
+
+make nwchem_config
+make 64_to_32 2>&1 | tee convert.log
+make LDFLAGS="-Wl,--allow-multiple-definition -Wl,-L${NWCHEM_TOP}/lib/LINUX64 -Wl,-L${NWCHEM_TOP}/src/tools/install/lib" 2>&1 | tee make.log
+
+There were warnings such as
+/usr/bin/ld: Warning: size of symbol `mpifcmb3_' changed from 8 in /lustre/work1/scheinin/Nwchem/src/nwchem-6.3-src.2013-05-28/lib/LINUX64/libnwpwlib.a(Parallel-mpi.o) to 4 in /opt/cray/mpt/6.0.0/gni/mpich2-pgi/121/lib/libmpich_pgi.a(setbot.o)
+
+export PREFIX=/lustre/work1/scheinin/Nwchem
+mkdir ${PREFIX}/bin
+mkdir ${PREFIX}/data
+ls $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem
+cp $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem ${PREFIX}/bin
+
+cd $NWCHEM_TOP/src/basis
+cp -R libraries ${PREFIX}/data
+
+cd $NWCHEM_TOP/src/
+cp -R data ${PREFIX}
+
+cd $NWCHEM_TOP/src/nwpw
+cp -R libraryps ${PREFIX}/data
+
+# Chris writes:
+# Check paths in data/default.nwchemrc
+
+cp /usr/local/usp/nwchem/6.3/data/default.nwchemrc /lustre/work1/scheinin/Nwchem/data
+Change
+/lustre/work1/scheinin/Nwchem/data/default.nwchemrc
+What needs to be changed is the NWCHEM_TOP part.
+
+# change permissions for general use
+
+# Users need to create a .nwchemrc
+# ln -s /usr/local/usp/nwchem/x.x/data/default.nwchemrc  $HOME/.nwchemrc
+
+# Chris wrote
+# Check paths in data/default.nwchemrc
+
+Move to /usr/local/usp/nwchem/<version-compiler>
+# Set permissions.
+
+topdir=/usr/local/usp/nwchem/6.3-pgi
+
+cd $topdir
+chmod ugo+xr $topdir
+chown scheinin.97290STA $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R scheinin.97290STA *
+
+# Make sure last minute changes such as the README file are readable.
+
+Batch job needs:
+
+export HUGETLB_MORECORE=yes
+export HUGETLB_ELFMAP=W
+export HUGETLB_FORCE_ELFMAP=yes+
+setenv           HUGETLB_MORECORE yes 
+setenv           HUGETLB_ELFMAP W 
+setenv           HUGETLB_FORCE_ELFMAP yes+ 
+
+The following does not seem to be necessary
+but if a job fails in a way related to hugepages,
+try also
+export HUGETLB_DEFAULT_PAGE_SIZE=64M
+setenv HUGETLB_DEFAULT_PAGE_SIZE 64M 
+
+# The above can be seen from
+module show craype-hugepages64M
+but the following did not work in a batch job script
+/opt/modules/default/init/<your shell>
+module load craype-hugepages64M
+
+See
+/usr/local/Example_Codes/Applications/nwchem for test.
+
+ --------
+
+Chris,
+   I built 6.1.1 using the same environment variable
+as I used 6.3 , and adding the patch, of course.  I
+installed in the data subdirectory the files that came
+with 6.1.1 which are a little different from the data
+supplied with 6.3.  I called the version 6.1.1-pgi .
+
+   For the test case you gave me, using the patched
+6.1.1, for 32 processes on one node, with a 55-minute
+time limit the stdout paused on the line
+ "Restarting from old vector in ./benchmark.t2"
+ -- or more precisely it wrote the header of the
+table.  After 55 minutes the standard output showed
+one iteration and then an ARMCI error.  The stderr
+from the job showed that the time limit was exceeded.
+
+   For 6.1.1 patched, with a 55-minute time limit,
+using 128 processors on 4 nodes, after 7 minutes
+the job arrived at the same place as the previous
+case of 32 processes,
+   "Restarting from old vector in ./benchmark.t2"
+   followed by table header
+After 55 minutes the standard output showed an
+ARMCI error.  The stderr from the job showed that
+the time limit was exceeded.  Not even one
+iteration was shown.  The ARMCI error was probably
+related to the job being killed because of the
+time limit being exceeded.
+
+   Next I tried 6.1.1 without the patch, the version
+built on Nov 23, 2012.  Using 32 processes, one node,
+after 54 minutes one iteration was done.  Because of
+the time limit I had set, the job stopped after
+55 minutes.  The standard output DID NOT show an
+ARMCI error. If the newer build of 6.1.1, with the
+patch, only shows the ARMCI error when arriving at the
+time limit, then it may not be a problem because the
+libraries supplied by Cray are different from last
+year.  Even the error that occured for 6.3-pgi,
+that is, "double free or corruption" may be related
+to the time limit being exceeded.  The output stopped
+at the same place as the other jobs but the stderr
+does not have mention the time limit being exceeded.
+
+   In sum, it would be useful to compare the various
+versions using a dataset with a known, modest runtime.
+
+   So next I tried 6.1.1-pgi with a two-hour time limit.
+Using 32 processes on one node.
+Yes the job had an error message at the end,
+
+0:Terminate signal was sent, status=: 15
+(rank:0 hostname:nid00038 pid:4632):ARMCI DASSERT fail
+. ../../ga-5-1/armci/src/common/signaltrap.c:SigTermHandler():472 cond:0
+
+However, that occured at the end of two hours in response to
+the job getting killed.
+
+The table after the line
+ "Restarting from old vector in ./benchmark.t2"
+arrived at iteration 4 (rather than iteration 1 after
+1 hour of running) but the job did not finish
+even after two hours.
+
+
+
+
+
+
+
+
+

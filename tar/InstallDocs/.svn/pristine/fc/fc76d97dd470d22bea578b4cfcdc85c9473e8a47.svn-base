@@ -1,0 +1,865 @@
+
+First group, delimited "garnet March 16, 2016"
+is a more generalized procedure than the older recipes.
+
+ --- garnet March 16, 2016 below ---
+
+  Generalized procedure.
+
+# Choose one
+export GSL_VERSION=1.6
+# OR
+export GSL_VERSION=2.1
+
+export PGI_VERSION=15.10.0
+# OR
+export INTEL_VERSION=14.0.2.144
+# OR
+export INTEL_VERSION=15.0.6.233
+export GNU_VERSION=5.2.0
+# OR
+export GNU_VERSION=5.2.0
+
+# PGI
+module unload pgi/14.2.0  # Whatever is the default at the time.
+export PGI_VERSION=15.10.0   # Unloading of compiler cancels this.
+module load pgi/$PGI_VERSION
+
+# Intel version 14.0.2.144
+module swap PrgEnv-pgi PrgEnv-intel
+module unload intel/14.0.2.144  # Whatever is the default at the time.
+export INTEL_VERSION=14.0.2.144   # Unloading of compiler cancels this.
+module load intel/$INTEL_VERSION
+# Intel version 15.0.6.233 , added GNU compatibility
+module swap PrgEnv-pgi PrgEnv-intel
+module unload intel  # Whatever is the default at the time.
+module load gcc/$GNU_VERSION
+export INTEL_VERSION=15.0.6.233   # Unloading of compiler cancels this.
+module load intel/$INTEL_VERSION
+# > which gcc
+# /opt/gcc/5.2.0/bin/gcc
+# default gcc is no long /usr/bin/gcc
+# > which icc
+# /opt/intel/composer_xe_2015.6.233/bin/intel64/icc
+
+# Gnu
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+# Choose one.
+export PREFIX=/usr/local/usp/gsl/${GSL_VERSION}-pgi-${PGI_VERSION}
+export PREFIX=/usr/local/usp/gsl/${GSL_VERSION}-intel-${INTEL_VERSION}
+export PREFIX=/usr/local/usp/gsl/${GSL_VERSION}-gnu-${GNU_VERSION}
+
+mkdir $PREFIX
+
+# Choose one.
+export BUILD_DIR=$HOME/build/gsl-${GSL_VERSION}-pgi-${PGI_VERSION}
+export BUILD_DIR=$HOME/build/gsl-${GSL_VERSION}-intel-${INTEL_VERSION}
+export BUILD_DIR=$HOME/build/gsl-${GSL_VERSION}-gnu-${GNU_VERSION}
+
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+tar xzf gsl-${GSL_VERSION}.tar.gz
+cd gsl-${GSL_VERSION}
+
+# Choose one.
+export CC=pgcc
+export CPPFLAGS=
+export CFLAGS="-O2 -fPIC"
+export F90=pgf90
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export FFLAGS="-fPIC"
+export CXX=pgCC
+export CXXFLAGS="-O2-fPIC"
+export LIBS=
+export LDFLAGS=
+# OR
+# -gcc-name and -gxx-name only used if result of which
+# is not in /usr/bin
+export CC=icc
+export CPPFLAGS=
+export CFLAGS="-O2 -fPIC -gcc-name=`which gcc`"
+export F90=ifort
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export FFLAGS="-fPIC"
+export CXX=icpc
+export CXXFLAGS="-O2 -fPIC -gxx-name=`which g++`"
+export LIBS=
+export LDFLAGS="-O2 -gcc-name=`which gcc` -gxx-name=`which g++`"
+# OR
+export CC=gcc
+export CPPFLAGS=
+export CFLAGS="-O2 -fPIC"
+export F90=gfortran
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export FFLAGS="-fPIC"
+export CXX=g++
+export CXXFLAGS="-O2-fPIC"
+export LIBS=
+export LDFLAGS=
+
+./configure --prefix=$PREFIX \
+  --enable-static --enable-shared
+
+For one case, GSL-2.1 PGI-15.10 it was necessary
+to do the following.
+In file config.h change two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+make install
+
+topdir=$PREFIX
+
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# As root.
+topdir= < make sure this is correct >
+cd $topdir
+chown cots.staff $topdir
+chown -R cots.staff *
+
+Failures from "make check"
+
+PREFIX=/usr/local/usp/gsl/1.6-pgi-15.10
+drotmg
+
+PREFIX=/usr/local/usp/gsl/1.6-intel-14.0.2.144
+gsl_isinf
+gsl_finite
+gsl_vector_char
+QR Solve
+SVD Solve
+Exponential/Sine/Cosine Integrals
+Hypergeometric Functions
+Legendre Functions
+Trigonometric and Related Functions
+dnewton on Trig
+
+PREFIX=/u/scheinin/build/gsl-1.6-gnu-5.2.0/gsl-1.6
+[none]
+
+PREFIX=/usr/local/usp/gsl/2.1-pgi-15.10
+cblas
+linalg
+specfunc
+multifit
+ode-initval2
+diff
+
+PREFIX=/usr/local/usp/gsl/2.1-intel-14.0.2.144
+linalg
+specfunc
+multifit
+ode-initval2
+multiroots
+
+PREFIX=/usr/local/usp/gsl/2.1-intel-15.0.6.233
+linalg
+specfunc
+multifit
+ode-initval2
+
+PREFIX=/usr/local/usp/gsl/2.1-gnu-5.2.0
+[none]
+
+ --- garnet March 16, 2016 above ---
+
+Below, jade, around Feb 21, 2008, gsl-1.7
+
+setenv CC cc
+setenv CFLAGS "-tp k8-64 -fast -Mscalarsse"
+./configure --host=cray --prefix=/usr/local/usp/gsl/gsl-1.7
+make
+make install
+
+Above, jade, around Feb 21, 2008, gsl-1.7
+
+Below, sapphire, around May 29 and June 9, 2009, gsl-1.11
+
+# Information, such as which is the latest version, found at
+# http://www.gnu.org/software/gsl/
+# Actually downloaded from
+# http://mirrors.kernel.org/gnu/gsl/gsl-1.11.tar.gz
+# http://mirrors.kernel.org/gnu/gsl/gsl-1.12.tar.gz
+
+# Did installation in my work directory in order to see if
+# there are any glitches when building.  Later, user cots can
+# redo this for all users.
+
+# Recent documentation from PGI says -tp barcelona-64
+# is not necessary and that -fast implies -fastsse .
+# Moreover, on sapphire -fastsse is an unknown switch.
+
+# Based on my experience, version 1.11 needs to be installed
+# instead of the latest 1.12.  For 1.12, it seems that there
+# is a change in the configuration of the Makefile for the
+# application siman (simulated annealing) that results in
+# that library having a copy of the random number generator,
+# resulting in the linker failing due to the error that the
+# same routine is defined in two places.  Let me add that
+# no optimization level solved the problem, neither
+# export CFLAGS="-fast -Mipa=fast,inline"
+# export LDFLAGS="-fast -Mipa=fast,inline"
+# nor
+# export CFLAGS="-fast -Mipa=fast"
+# export LDFLAGS="-fast -Mipa=fast"
+# nor
+# export CFLAGS="-fast"
+# export LDFLAGS="-fast"
+# nor
+# export CFLAGS="-O1"
+# export LDFLAGS="-O1"
+
+# The problem with 1.12 does not occur if the Gnu compiler
+# is used (the compute node cc compiler) so perhaps the error
+# is a subtle interpretation of syntax.  But GSL is a set
+# libraries to be linked with user code, so the best choice
+# is the default compiler PGI.
+
+# The notes from the previous install show the choice
+# --host=cray.  However, the commands
+# grep cray config.guess  OR
+# grep xt3 config.guess
+# can show the options, there is nothing appropriate.
+# The choice --host=cray resulted in configuration declaration
+# > checking host system type... j90-cray-unicos
+# which is based on an old architecture.
+# So "--host=cray" was not used.
+
+# With regard to compile options and link options, I would
+# like to note the -Mipa (inter-procedural optimization) needs
+# to be used for both.
+
+# For compiling GSL version 1.11, aggressive optimization was used.
+# The steps are shown below.  It would probably be a good idea
+# to redo the compilation at the final location as user cots.
+
+# The choice of gsl-1.11 as the destination (prefix) corresponds
+# to the directory names used in jade.  Warning, doing
+# "tar xzf gsl-1.11.tar.gz" again would make a mess in that directory.
+
+tar xzf gsl-1.11.tar.gz
+mv gsl-1.11 src-gsl-1.11
+mkdir gsl-1.11
+
+export CC=cc
+export CFLAGS="-fast -Mipa=fast,inline"
+export LDFLAGS="-fast -Mipa=fast,inline"
+
+ ./configure --prefix=/work/scheinin/GSL/gsl-1.11 \
+   --enable-static --disable-shared
+
+make
+make install
+
+make check
+
+#  Many tests succeeded but "make check" stopped on the first
+#  test that failed, which was in the GSL package called "diff",
+#  for which the error was in the 7th decimal place.
+#  I then used "make -k check" to go past errors.  There is no
+#  summary at the end, but it seems that all other packages passed.
+
+Above, sapphire, around May 29 and June 9, 2009, gsl-1.11
+ ==================================================================
+Below, jade, Dec. 2009, gsl-1.13
+
+cd /usr/local/usp/gsl/1.13-cnl/src/gsl-1.13
+
+# Overall problem is a function declaration included in a header
+# is put into a library as being defined even if it is not used
+# in the function.  Moreover, this happens if the function
+# definition is prefixed with "extern inline".
+# The extra symbols cause errors when linking due to
+# duplicated symbols.
+
+export CC=cc
+export CFLAGS="-fast"
+export LDFLAGS="-fast"
+
+File gsl_inline.h ,
+after #ifdef HAVE_INLINE paragraph
+
+#undef INLINE_DECL
+#define INLINE_DECL extern
+#undef INLINE_FUN
+#define INLINE_FUN extern
+
+ ./configure --prefix=/usr/local/usp/gsl/1.13-cnl \
+   --enable-static --disable-shared
+
+In file config.h changed two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make
+
+make -k check 2>&1 | tee check.log
+
+# Test in subdirectory diff/ had small numerical difference.
+# Unfortunately, vector/test , vector/test_static , matrix/test and
+# matrix/test_static all FAILED with segmentation fault.
+# Other tests passed.
+
+make install
+make clean
+
+ --------------------------------------------------------------
+
+cd /usr/local/usp/gsl/1.13-pgi/src/gsl-1.13
+
+# Overall problem is a function declaration included in a header
+# is put into a library as being defined even if it is not used
+# in the function.  Moreover, this happens if the function
+# definition is prefixed with "extern inline".
+# The extra symbols cause errors when linking due to
+# duplicated symbols.
+
+export CC=pgcc
+export CFLAGS="-fast"
+export LDFLAGS="-fast"
+
+File gsl_inline.h ,
+after #ifdef HAVE_INLINE paragraph
+
+#undef INLINE_DECL
+#define INLINE_DECL extern
+#undef INLINE_FUN
+#define INLINE_FUN extern
+
+ ./configure --prefix=/usr/local/usp/gsl/1.13-pgi \
+   --enable-static --enable-shared
+
+In file config.h changed two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make
+
+make -k check 2>&1 | tee check.log
+
+# Test in subdirectory diff/ had small numerical difference.
+# Unfortunately, vector/test , vector/test_static , matrix/test and
+# matrix/test_static all FAILED with segmentation fault.
+# Other tests passed.
+
+make install
+make clean
+
+ --------------------------------------------------------------
+
+cd /usr/local/usp/gsl/1.13-gnu/src/gsl-1.13
+
+module unload PrgEnv-pgi
+module load PrgEnv-gnu
+
+export CC=gcc
+export CFLAGS="-fPIC -O3"
+export LDFLAGS="-O3"
+
+ ./configure --prefix=/usr/local/usp/gsl/1.13-gnu \
+   --enable-static --enable-shared
+
+make
+make check 2>&1 | tee check.log
+# All passed
+make install
+make clean
+
+Above, jade, Dec. 2009, gsl-1.13
+ ==================================================================
+
+Test of new PGI on onyx01.
+
+module swap pgi/9.0.4 pgi/10.3.0
+which pgcc
+   /opt/pgi/10.3.0/linux86-64/10.3/bin/pgcc
+
+setenv CC pgcc
+setenv CFLAGS "-fast"
+setenv LDFLAGS "-fast"
+
+./configure --prefix=/work/scheinin/GSL \
+  --enable-static --enable-shared
+
+make
+
+Same problem as before, with two definitions of routines
+related to random number generator.
+
+make clean
+
+File gsl_inline.h ,
+after #ifdef HAVE_INLINE paragraph
+
+#undef INLINE_DECL
+#define INLINE_DECL extern
+#undef INLINE_FUN
+#define INLINE_FUN extern
+
+./configure --prefix=/work/scheinin/GSL \
+  --enable-static --enable-shared
+
+In file config.h changed two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make
+make install
+
+bash
+module load pgi/10.3.0
+make -k check 2>&1 | tee check.log
+
+Segmentation fault when checking
+/work/scheinin/GSL/src/gsl-1.13/vector
+Segmentation fault when checking
+/work/scheinin/GSL/src/gsl-1.13/matrix
+Numerical problem in
+/work/scheinin/GSL/src/gsl-1.13/diff
+
+The above failures were also seen for PGI version 9.
+
+ --- garnet, below ---
+
+Oct. 22, 2010
+ftp://mirror.anl.gov/pub/gnu/gsl/gsl-1.14.tar.gz
+
+cle compile with cc and pgi compiled with pgcc
+
+   ---- cc compiler below ----
+
+module list includes
+Currently Loaded Modulefiles:
+  pgi/10.6.0
+  xt-libsci/10.4.9
+  xt-mpt/5.1.2
+  PrgEnv-pgi/3.1.37E
+  xtpe-mc8
+
+export CC=cc
+export CPPFLAGS=
+export CFLAGS="-O2"
+export F90=ftn
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export CXX=CC
+export CXXFLAGS="-O2"
+export LIBS=
+export LDFLAGS=
+
+export TMPDIR=${WORKDIR}/tmp
+
+cd /usr/local/usp/gsl/1.14-cle
+mkdir  bin  include  lib  share  src
+
+# Unpack source and
+cd /usr/local/usp/gsl/1.14-cle/src/gsl-1.14
+
+File gsl_inline.h ,
+after #ifdef HAVE_INLINE paragraph
+
+#undef INLINE_DECL
+#define INLINE_DECL extern
+#undef INLINE_FUN
+#define INLINE_FUN extern
+
+ ./configure --prefix=/usr/local/usp/gsl/1.14-cle \
+   --enable-static --disable-shared
+
+In file config.h changed two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+# Failed test:
+    exp(-x^2), x=0.5, backward diff, valid error estimate
+# Other tests passed.
+
+make install
+make clean
+
+   ---- cc compiler above, pgi compiler below ----
+
+export CC=pgcc
+export CPPFLAGS=
+export CFLAGS="-fast -fPIC"
+# Declarations below probably not needed.
+export F90=pgf90
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-fast -fPIC"
+export CXX=pgCC
+export CXXFLAGS="-fast -fPIC"
+export LIBS=
+export LDFLAGS="-fast"
+
+export TMPDIR=${WORKDIR}/tmp
+
+cd /usr/local/usp/gsl/1.14-pgi
+mkdir  bin  include  lib  share  src
+
+# Unpack source and
+cd /usr/local/usp/gsl/1.14-pgi/src/gsl-1.14
+
+File gsl_inline.h ,
+after #ifdef HAVE_INLINE paragraph
+
+#undef INLINE_DECL
+#define INLINE_DECL extern
+#undef INLINE_FUN
+#define INLINE_FUN extern
+
+ ./configure --prefix=/usr/local/usp/gsl/1.14-pgi \
+   --enable-static --enable-shared
+
+In file config.h changed two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+# Failed tests:
+    drotmg (cblas) failed with numerical discrepency
+    svd decomp bigsparse (linalg) failed
+    exp(-x^2), x=0.5, backward diff, valid error estimate
+# Other tests passed.
+
+make install
+make clean
+
+   ---- pgi compiler above, gnu compiler below ----
+
+module unload pgi
+module unload PrgEnv-pgi
+module load gcc
+module load PrgEnv-gnu
+
+# Note, the actual gcc module is  gcc/4.5.1
+
+export CC=gcc
+export CFLAGS="-fPIC -O3"
+export LDFLAGS="-O3"
+# Declarations below probably not needed.
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export FCFLAGS="-O3"
+export CXX=g++
+export CXXFLAGS="-O3"
+
+export TMPDIR=${WORKDIR}/tmp
+
+cd /usr/local/usp/gsl/1.14-gnu
+mkdir  bin  include  lib  share  src
+
+# Unpack source and
+cd /usr/local/usp/gsl/1.14-gnu/src/gsl-1.14
+
+ ./configure --prefix=/usr/local/usp/gsl/1.14-gnu \
+   --enable-static --enable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+make clean
+   ---- gnu compiler above ----
+
+Need to change permissions.
+
+cd /usr/local/usp/gsl
+Make sure last minute changes such as the README file are readable.
+
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd /usr/local/usp/gsl
+chown -R scheinin.staff *
+
+  --- garnet above ---
+  --- utility server, below ---
+
+PGI below
+
+export PATH=/opt/pgi/linux86-64/10.9/bin:$PATH
+
+export CC=pgcc
+export CPPFLAGS=
+export CFLAGS="-fast -fPIC"
+# Declarations below probably not needed.
+export F90=pgf90
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-fast -fPIC"
+export CXX=pgCC
+export CXXFLAGS="-fast -fPIC"
+export LIBS=
+export LDFLAGS="-fast"
+
+export PREFIX=/app/gsl/1.14-pgi
+
+cd /app/gsl/1.14-pgi
+mkdir  bin  include  lib  share  src
+
+# Unpack source in src
+
+File gsl_inline.h ,
+after #ifdef HAVE_INLINE paragraph
+
+#undef INLINE_DECL
+#define INLINE_DECL extern
+#undef INLINE_FUN
+#define INLINE_FUN extern
+
+ ./configure --prefix=$PREFIX \
+   --enable-static --enable-shared
+
+In file config.h changed two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+# Failed tests:
+    drotmg (cblas) failed with numerical discrepency
+    svd decomp bigsparse (linalg) failed
+    exp(-x^2), x=0.5, backward diff, valid error estimate
+# Other tests passed.
+
+make install
+make clean
+
+PGI above
+GNU below
+
+# $ which gcc
+# /usr/bin/gcc
+# $ gcc -v
+# gcc version 4.1.2 20080704 (Red Hat 4.1.2-50)
+
+export CC=gcc
+export CFLAGS="-fPIC -O3"
+export LDFLAGS="-O3"
+# Declarations below probably not needed.
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export FCFLAGS="-O3"
+export CXX=g++
+export CXXFLAGS="-O3"
+
+export PREFIX=/app/gsl/1.14-gnu
+
+ ./configure --prefix=$PREFIX \
+   --enable-static --enable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+make clean
+
+GNU above
+
+
+Need to change permissions.
+
+topdir=/app/gsl
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+# Make sure last minute changes such as the README file are readable.
+
+  --- utility server, above ---
+
+ --- garnet Dec. 12, 2013 below ---
+
+/usr/local/usp/gsl/1.16-pgi
+PrgEnv-pgi
+
+export CC=pgcc
+export CPPFLAGS=
+export CFLAGS="-O2"
+export F90=pgf90
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export CXX=pgCC
+export CXXFLAGS="-O2"
+export LIBS=
+export LDFLAGS=
+
+Modifying gsl_inline.h before configure and config.h after configure
+done as described above.
+
+./configure --prefix=/usr/local/usp/gsl/1.16-pgi  --enable-static --enable-shared
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+Fail: multiset linalg ode-initval2 diff
+make install
+
+/usr/local/usp/gsl/1.16-gnu
+PrgEnv-gnu
+
+export CC=gcc
+export CPPFLAGS=
+export CFLAGS="-O2"
+export F90=gfortran
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export CXX=g++
+export CXXFLAGS="-O2"
+export LIBS=
+export LDFLAGS=
+
+Modifying gsl_inline.h before configure and config.h after configure
+done as described above.
+
+./configure --prefix=/usr/local/usp/gsl/1.16-gnu  --enable-static --enable-shared
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+Fail: none
+make install
+
+/usr/local/usp/gsl/1.16-intel
+PrgEnv-intel
+
+export CC=icc
+export CPPFLAGS=
+export CFLAGS="-O2"
+export F90=ifort
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export CXX=icpc
+export CXXFLAGS="-O2"
+export LIBS=
+export LDFLAGS=
+
+Modifying gsl_inline.h before configure and config.h after configure
+done as described above.
+
+./configure --prefix=/usr/local/usp/gsl/1.16-intel  --enable-static --enable-shared
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+Fail: linalg specfunc poly ode-initval2
+make install
+
+
+/usr/local/usp/gsl/1.16-pgi-cle
+PrgEnv-pgi
+
+export CC=cc
+export CPPFLAGS=
+export CFLAGS="-O2"
+export F90=ftn
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export CXX=CC
+export CXXFLAGS="-O2"
+export LIBS=
+export LDFLAGS=
+
+Modifying gsl_inline.h before configure and config.h after configure
+done as described above.
+
+./configure --prefix=/usr/local/usp/gsl/1.16-pgi-cle  --enable-static --disable-shared
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+Fail: diff
+make install
+
+
+/usr/local/usp/gsl/1.16-gnu-cle
+PrgEnv-gnu
+
+export CC=cc
+export CPPFLAGS=
+export CFLAGS="-O2"
+export F90=ftn
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export CXX=CC
+export CXXFLAGS="-O2"
+export LIBS=
+export LDFLAGS=
+
+Modifying gsl_inline.h before configure and config.h after configure
+done as described above.
+
+./configure --prefix=/usr/local/usp/gsl/1.16-gnu-cle  --enable-static --disable-shared
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+Fail: many failures, the check script seems to always fail
+make install
+
+
+/usr/local/usp/gsl/1.16-intel-cle
+PrgEnv-intel
+
+export CC=cc
+export CPPFLAGS=
+export CFLAGS="-O2"
+export F90=ftn
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export CXX=CC
+export CXXFLAGS="-O2"
+export LIBS=
+export LDFLAGS=
+
+Modifying gsl_inline.h before configure and config.h after configure
+done as described above.
+
+./configure --prefix=/usr/local/usp/gsl/1.16-intel-cle  --enable-static --disable-shared
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+FAIL: linalg specfunc poly ode-initval2
+make install
+
+Permissions changed as shown in other installation cases.
+
+ --- garnet Dec. 12, 2013 above ---
+
+

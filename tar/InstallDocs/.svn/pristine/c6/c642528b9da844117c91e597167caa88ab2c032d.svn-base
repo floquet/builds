@@ -1,0 +1,419 @@
+
+For Luong, Phu V  (ERDC-CHL-MS) and Nguyen, Hung V (ERDC-ITL-MS)
+
+ GLUT
+ ----
+
+The application plot3d requires glut.  The frontend nodes of jade have
+/usr/lib64/libglut.so.3
+However, jade does not have glut.h.  That is, the frontends have
+enough for running executables that need glut but not enough for
+compiling applications that link with glut.
+
+Installation of glut requires the use of  ./mkmkfiles.imake
+I found that this did not work with CC=pgcc,
+it was necessary to use CC=gcc.
+
+Please note that the default gcc is different from the gcc if
+module PrgEnv-gnu is invoked.  The gcc of PrgEnv-gnu is supplied
+by Cray whereas the default gcc (not using PrgEnv-gnu) is part
+of the SUSE installation.  I am using the default gcc.
+$ which gcc
+ /usr/bin/gcc
+$ /usr/bin/gcc --version
+ gcc (GCC) 3.3.3 (SuSE Linux)
+$ which g77
+ /usr/bin/g77
+
+It is likely that the OpenGL libraries are compatible with this
+old gcc.  But we must keep in mind that the g77 here is now
+considered obsolete.
+
+plot3d should really be compiled on a workstation that has
+software that is more uptodate than jade, for example,
+my workstation shows 
+$ gcc --version
+gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-44)
+
+
+ wget http://www.opengl.org/resources/libraries/glut/glut-3.7.tar.gz
+ tar xzf glut-3.7.tar.gz
+ cd glut-3.7
+
+export CC=gcc 
+
+cp Glut.cf Glut.cf.bak
+ ./mkmkfiles.imake
+cd lib/glut
+cp Makefile Makefile.bak
+
+instructions in linux/README
+say that libglut.so would have been made and then do
+	  ln -s libglut.so.3.7 libglut.so.3
+	  ln -s libglut.so.3.7 libglut.so
+however, I found that only libglut.a was made.
+
+ PLOT3D
+ ------
+
+Many variables that are typicals of a configure file, such as LDFLAGS,
+are not read from the environment in the configure file of plot3d.
+Need to edit the file "configure".
+
+In the first use of "system" change from
+system=NONE
+change to
+system=jade
+
+Then in the "configure" file, after the after linux*) paragraph
+add the following
+
+   jade*) 
+       F77="g77"
+       CPP="/lib/cpp -traditional"
+       CFLAGS="-g -fno-globals"
+       F77FLAGS="-g -fno-globals"
+       CPPFLAGS="-DLINUX"
+       AR="ar"
+       ARFLAGS="-rv"
+       LIBIMAGECFLAGS="$CFLAGS"
+       INCLUDES="-I/usr/include \
+		-I/usr/include/GL \
+		-I/usr/include/X11/Xmu "
+       LDFLAGS="-L/usr/X11R6/lib64 -L/usr/lib64 \
+		-lglut -lGLU -lGL -lXmu -lXt -lX11 -lXext -lm"
+       CGNSUNDERSCORE="-fno-second-underscore"
+       CGNSLIB=
+       ;;
+
+# Note that in the configuration file above, the compiler option
+ " -fconvert=big-endian " was not used because it gave an error.
+The tests might not work for the already existing data which,
+I assume was generated on an SGI using a MIPS processor.  
+
+The value of CC is taken from the environment.
+export CC=gcc
+
+rm -f config.cache
+./configure --prefix=/work/scheinin/HungNguyen/plot3d_installed \
+ --with-glutdir=/work/scheinin/HungNguyen/glut-3.7
+
+From configure there is the message
+checking for glutInit in -lglut... no
+however, both /usr/lib64/libglut.so.3 and 
+/work/scheinin/HungNguyen/glut-3.7/lib/glut/libglut.a
+have this routine.
+
+check that Makefile has the location of glut
+LDFLAGS       = -L/work/scheinin/HungNguyen/glut-3.7/lib/glut \
+ -L/usr/X11R6/lib64 -L/usr/lib64 \
+ -lglut -lGLU -lGL -lXmu -lXt -lX11 -lXext -lm
+
+ make clean
+ rm ./lib/libimage/libimage.a
+
+make
+
+Problems
+--------
+This contains an analysis of the warnings from the compiler.
+Many of the warnings can be ignored.  The recommended
+changes are tagged with the text  >>> * SPECIAL NOTE * <<<
+
+ ---
+
+ >>> * SPECIAL NOTE * <<<
+
+mrakevec.f: In subroutine `colsca':
+mrakevec.f:594: warning:
+        &          'with a return after each color): ')
+                   ^
+same problem line 1808
+        &        '(return=none): ',$)
+ ---
+In many places
+mrakevec.f:1348: warning:
+            call cread(iunit,nbytes,ibuf,ios)
+                 1
+mrakevec.f:1395: (continued):
+            call cread(iunit, nbytes, buf(indseg(ns),7), ios)
+                 2
+Argument #3 of `cread' is one type at (2) but is some other type at (1) [info -f g77 M GLOBALS]
+
+The routine is defined in unixc.c as "int *buf"
+but read as character
+if (fread(buf,sizeof(char),*len,fileptr[ifile]) != *len)
+
+Source file is actually mrakevec.F which uses "*len" in order to
+use the same function for any type, so the warning can be ignored.
+
+ ---
+
+Many warnings
+commands.F:8216: warning: extra tokens at end of #endif directive
+This is due to cpp structures such as
+#ifndef NOBINARY
+         ELSE IF (IFMT.EQ.3) THEN
+            CALL CWRITE(IUNIT,NCHPWD,NGRID,ISTAT)
+#endif  NOBINARY
+and can be ignored.
+
+ ---
+
+commands.f:1182: warning:
+            CALL COPY(NCOLOR,ICOLOR,ICOLOC(1,1))
+                 1
+commands.f:3183: (continued):
+                  CALL COPY(LENC,WORK(INDEX+4*LEN1),
+                       2
+Argument #3 of `copy' is one type at (2) but is some other type at (1) [info -f g77 M GLOBALS]
+
+The program is written very badly because the types are not
+declared explicitly.  In many, many places there are lines such as
+      DIMENSION WORK(*)
+where the type is not declared.
+The warning will be ignored with the assumption that the default
+size of both default integer and default real are four bytes.
+The program should have used INTRINSIC NONE
+
+ ---
+
+ >>> * SPECIAL NOTE * <<<
+
+commands.f:1584: warning:
+         CALL MORE(' ',0,ISTAT)
+              1
+commands.f:3244: (continued):
+            CALL MORE(TEXT,6)
+                 2
+added ISTAT at end
+
+ ---
+
+commands.f: In subroutine `demote8':
+commands.f:8433: warning:
+            CALL DEMOTE8(WORK4(INDEX),ARRAY,NARRAY)
+                 1
+commands.f:11589: (continued):
+         SUBROUTINE DEMOTE8(WORK8,ARRAY,NARRAY)
+                    2
+Argument #1 (named `work8') of `demote8' is one precision at (2) but is some other precision at (1) [info -f g77 M GLOBALS]
+
+The apparent error is a (sick) program trick.
+        CALL GETARR(NARRAY*2,WORK4,INDEX)
+puts 8-byte values into the array WORK4.
+C  WORK4(INDEX) in DEMOTE8 will be captured as REAL*8 (!).
+         CALL DEMOTE8(WORK4(INDEX),ARRAY,NARRAY)
+
+ ---
+
+2d.f: In subroutine `con2cc':
+2d.f:235: warning:
+                        CALL TRAN(IDIM,JDIM,KDIM,X,IOR,IP,IIDIM,IJDIM,
+                             1
+2d.f:242: (continued):
+        C                CALL TRAN(IDIM,JDIM,KDIM,IBLANK,IOR,IP,
+                              2
+Argument #4 of `tran' is one type at (2) but is some other type at (1) [info -f g77 M GLOBALS]
+
+In SUBROUTINE TRAN() the fourth argument is "F" which is treated
+as shown below.
+C
+C   Transpose part of a plane of function F into FP.
+C
+      DIMENSION F(IDIM,JDIM,KDIM),FP(IIDIM,IJDIM)
+
+So it is assumed to be four bytes without regard to the type.
+
+ ---
+
+2d.f:192: warning:
+                           CALL CON2CB(IIDIM,IJDIM,IIS,IIE,IJS,IJE,
+                                1
+2d.f:248: (continued):
+                           CALL CON2CB(IIDIM,IJDIM,IIS,IIE,IJS,IJE,
+                                2
+Argument #10 of `con2cb' is one type at (2) but is some other type at (1) [info -f g77 M GLOBALS]
+
+This is problematical.  The 10th argument in one case is IBLANK and in another
+case is WORK.  It is used in a test of whether elements in the array are
+equal to 0.  The array WORK is passed as an argument and is defined as
+ DIMENSION WORK(*) and is used in many, many subroutine calls.  I will assume
+for now that no changes are needed, for the following reason.  The author
+of the program knew very well that WORK would default as real despite
+being used as an integer, so it is probably treated as a general purpose
+workspace that would be real or integer, depending on how it is used
+in various subroutines.
+
+ ---
+
+There are many, many other cases related to calls that use IBLANK or BLANK.
+The interchange of float and integer in this case is so common that
+one must assume that the author know what he or she was doing.
+
+ ---
+
+gcc -g -fno-globals -DLINUX -DNOCGNS -I/work/scheinin/HungNguyen/glut-3.7/include -I/usr/include 		-I/usr/include/GL 		-I/usr/include/X11/Xmu  -I../include \
+-I../lib/libimage/include -c oglscr.c
+In file included from oglscr.c:24:
+/work/scheinin/HungNguyen/glut-3.7/include/GL/glut.h:63:1: warning: "APIENTRY" redefined
+In file included from oglscr.c:19:
+/usr/include/GL/gl.h:90:1: warning: this is the location of the previous definition
+
+The two include files are different but they have the same basic goal of
+dealing with WIN32, CYGWIN, etc. so I assume they both result in the
+same (correct) definition for Linux.
+
+ ---
+
+ >>> * SPECIAL NOTE * <<<
+
+gcc -g -fno-globals -DLINUX -DNOCGNS -I/work/scheinin/HungNguyen/glut-3.7/include -I/usr/include 		-I/usr/include/GL 		-I/usr/include/X11/Xmu  -I../include \
+-I../lib/libimage/include -c unixc.c
+unixc.c: In function `kbdatt':
+unixc.c:1082: warning: passing arg 2 of `signal' from incompatible pointer type
+unixc.c: In function `sysmod':
+unixc.c:1278: warning: passing arg 2 of `signal' from incompatible pointer type
+
+The definition of signal() is
+
+       #include <signal.h>
+       typedef void (*sighandler_t)(int);
+       sighandler_t signal(int signum, sighandler_t handler);
+
+    change
+    extern trpatt();
+    to
+    typedef void (*sighandler_t)(int);
+    extern sighandler_t trpatt;
+
+    change
+    extern syserr();
+    to
+    // extern syserr();
+
+The difference between the two solutions is
+because trpatt() is declared after it is used whereas syserr() is
+declared before it is used.
+
+ --------------------------------------------------
+
+Summary
+-------
+Compilation does not fail, but there are many warnings.
+
+The only changes that are important to make are denoted above
+by the flag >>> * SPECIAL NOTE * <<<
+
+ --------------------------------------------------
+
+The next step is
+make install
+which required a few corrections.
+
+The use of --prefix in configure did not work.
+The top-level Makefile had
+INSTALLDIR    = $(HOME)/bin
+which was changed to what I chose as the "prefix" plus "bin".
+Also, the install target in the makefile is
+install:	all
+		mv plot3d	$(INSTALLDIR)
+		mv plot3d.hlb	$(INSTALLDIR)
+so the "bin" directory must exist.
+Also, the line is wrong because after building the results are put into a
+subdirectory called bin, not at the top level.  The lines should be
+		mv bin/plot3d	$(INSTALLDIR)
+		mv bin/plot3d.hlb	$(INSTALLDIR)
+where in my case
+INSTALLDIR    = /work/scheinin/HungNguyen/plot3d_installed/bin
+
+From the "install:" target in the Makefile, I assume that the
+only files that need to be installed are the two shown above.
+
+Note that bin/ inside the source hierarchy has
+
+$ ls bin
+  addrake    dmprake  mrakevec  plot3d.hlb
+  crehlplib  gethelp  plot3d    plot3d.hlp
+
+and perhaps some of the other executables are useful but the
+author forgot to move them.
+
+ev6.5
+-----
+
+Makefile used cc and f77.
+Changed these to $(CC) and $(F77) and
+at the top defined these two macros.
+
+CC = gcc
+F77 = g77
+
+In Makefile, changed everywhere
+/usr/include/gl.h
+to
+/usr/include/GL/gl.h
+
+Changed in Makefile
+CFLAGS= -DDOUBLE
+to
+CFLAGS= -DDOUBLE -I/usr/include/GL
+
+Changed in panel.c
+#define INIT_GLOBALS
+to
+/* #define INIT_GLOBALS */
+
+panel.h:378: error: parse error before "pnl_white_color"
+panel.h:378: warning: data definition has no type or storage class
+
+The above error is because Colorindex is nowhere defined.
+It is not in GL,
+grep Colorindex /usr/include/GL/*.h
+and in ev6.5 "grep Colorindex *.h *.c *.f"
+shows that it is not defined anywhere.
+In the file /usr/include/GL/gl.h
+there is the definition
+#define GL_COLOR_INDEX  0x1900
+so it seems to me that Colorindex should be "int" and
+not "unsigned char".
+
+After further study, I am 99.9 percent certain that the
+developers packages of OpenGL need to be installed.
+
+ ================================================================
+(gdb) bt
+#0  0x00002b0152655b4a in l_read () from /usr/lib64/libg2c.so.0
+#1  0x00002b015265285c in do_lio () from /usr/lib64/libg2c.so.0
+#2  0x0000000000423faf in readwb_ (ifmt=0x7fff58e5b5fc, narray=0x7fff58e5b3f0, 
+    array=0x7fff58e562ec, nirray=0x7fff58e5b3f4, iarray=0x800153a6b010, 
+    iunit=0x7fff58e5b404, irecn=0x7fff58e5b3fc, status=0x7fff58e5b408)
+    at commands.f:8761
+#3  0x0000000000423414 in readx_ (ndim=0x7fff58e5b600, ixyz=0x7fff58e5b63c, 
+    ifmt=0x7fff58e5b5fc, iorder=0x7fff58e5b5f8, mltdat=0x7fff58e5b61c, 
+    imltda=0x7fffffffeac0, mltgrd=0x7fff58e5b618, blank=0x7fff58e5b610, 
+    work=0x7fff58e5b7f0, initia=0x7fff58e5b52c, status=0x7fff58e5b528)
+    at commands.f:8603
+#4  0x000000000041d431 in reacm1_ (ndim=0x7fff58e5b600, lxyz=0x7fff58e5b628, 
+    ixyz=0x7fff58e5b63c, lq=0x7fff58e5b624, iq=0x7fff58e5b640, 
+    lfunc=0x7fff58e5b620, ifunc=0x7fff58e5b644, mltdat=0x7fff58e5b61c, 
+    imltda=0x7fff58e5b648, mltgrd=0x7fff58e5b618, ifmt=0x7fff58e5b5fc, 
+    iorder=0x7fff58e5b5f8, jacobi=0x7fff58e5b614, blank=0x7fff58e5b610, 
+    check=0x7fff58e5b60c, cgns=0x7fff58e5b608, work=0x7fff58e5b7f0)
+    at commands.f:7102
+#5  0x000000000041d9c5 in reacmd_ (work=0x7fff58e5b7f0, icomma=0x7fff58e5b730)
+    at commands.f:7310
+#6  0x0000000000416363 in p3dcom_ (work=0x7fff58e5b7f0, nwork=0x50b730)
+    at commands.f:4899
+#7  0x000000000042e209 in p3derr_ (work=0x7fff58e5b7f0, nwork=0x50b730)
+    at commandsc.c:66
+#8  0x0000000000416794 in p3dini_ (work=0x7fff58e5b7f0, nwork=0x50b730)
+    at commands.f:5071
+#9  0x0000000000405113 in MAIN__ () at commands.f:19
+#10 0x000000000050b5d2 in main ()
+
+ ==========
+
+ Hung said,
+ Makefile has a /u/scheinin/ of something that should not be enabled
+ also, he saw the use of long which changes between m32 and m64

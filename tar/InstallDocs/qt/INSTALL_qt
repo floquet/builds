@@ -1,0 +1,45 @@
+
+utility server, below
+
+Download page had only
+http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.7.1.tar.gz
+whereas Paraview needs version 4.6.2 .
+Using wget, in fact the previous version was available
+wget \
+http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.6.2.tar.gz
+
+source in
+/app/Qt/4.6.2/src/qt-everywhere-opensource-src-4.6.2
+Use prefix /app/Qt/4.6.2
+
+ ./configure -prefix /app/Qt/4.6.2 \
+ 2>&1 | tee qt.config.out
+
+qt.config.out has the line
+   Qt will be installed into /app/Qt/4.6.2
+
+Build ............... libs tools examples demos docs translations
+
+gmake 2>&1 | tee make.log
+gmake install 2>&1 | tee install.log
+make clean
+
+# Change permissions
+
+topdir=/app/Qt
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+# Make sure last minute changes such as the README file are readable.
+
+utility server, above

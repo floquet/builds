@@ -1,0 +1,101 @@
+
+jade Fri May 28 12:18:17 CDT 2010
+
+Reference
+file:///home/scheinin/Desktop/lammps-30May10/doc/Section_start.html
+
+ which CC
+/opt/cray/xt-asyncpe/3.3/bin/CC
+
+In src/
+
+make help
+
+cd MAKE
+cp Makefile.xt3 Makefile.jade
+
+make jade
+
+module load  fftw/2.1.5.1
+
+src/fft3d.h
+Change to (fftw.h -> dfftw.h)   IN TWO PLACES
+
+#ifdef FFT_FFTW
+#include "dfftw.h"
+typedef FFTW_COMPLEX FFT_DATA;
+#endif
+
+From lammps, below.
+By default, LAMMPS runs by reading commands from stdin; e.g. lmp_linux < in.file. This means you first create an input script (e.g. in.file) containing the desired commands. This section describes how input scripts are structured and what commands they contain.
+
+You can test LAMMPS on any of the sample inputs provided in the examples directory. Input scripts are named in.* and sample outputs are named log.*.name.P where name is a machine and P is the number of processors it was run on.
+
+Here is how you might run one of the Lennard-Jones tests on a Linux box, using mpirun to launch a parallel job:
+
+cd src
+make linux
+cp lmp_linux ../examples/lj
+cd ../examples/lj
+mpirun -np 4 lmp_linux < in.lj.nve 
+From lammps, above.
+
+Alan,
+
+I was able to compile LAMMPS, though it had errors.  I believe the errors being received now are entirely from the code, not problems with the makefile itself.  After modifying the example script, it is working now.  I believe that a command used in the script is no longer supported, so I had to implement it in a different way.
+
+You can obtain LAMMPS here: http://lammps.sandia.gov/download.html
+I am using the most up-to-date version.
+
+The makefile I am currently using is located on Jade: /usr/local/usp/petccm/lammps/lammps-3Feb10/src/MAKE/Makefile.jade_noreax
+I copied this into the MAKE directory under the new version of LAMMPS, from the tarball.  I just discovered this makefile today; previously, I was using one emailed to me by another user, but I think it was old.
+
+To enable the peridynamics module, enter this command: make yes-peri
+
+Then the code is ready to be compiled.  I used: make jade_noreax
+
+The executable should be called lmp_jade_noreax.  There is the option of using -j to allow multiple processors to compile the code, but it didn't work properly for me.  I also directed the output and error into files.  Those are attached.
+
+I was trying to run the script: lammps/examples/peri/in.peri
+
+I moved the script and executable to my work directory.  To run a script, I submit a job as I normally would, including the executable and the script: aprun -n 4 lmp_jade_noreax < in.peri
+
+This particular script will produce an error on the indenter line, but I have since removed any reference to vel and instead used variables to make my indenter position time-dependent.
+
+
+
+Joshua M. Koch
+Office: 601.634.4331
+Cell: 505.206.4852
+ERDC-GSL BLDG 5008 RM 112 
+
+
+-----Original Message-----
+From: Scheinine, Alan ERDC-ITL-MS Contractor
+Sent: Friday, May 28, 2010 12:07 PM
+To: Koch, Joshua M ERDC-GSL-MS
+Subject: RE: LAMMPS Issues
+
+Dr. Koch,
+   I have never used LAMMPS and I have never built it.  Nonetheless, I can sometimes find the cause of errors based on my knowledge of the operating system and programming languages.  Could you tell me where I can find the code and data in order to try to reproduce the error?  Any information you can provide on the parameters you used for compiling and the nature of the errors that you mention would also be helpful. 
+
+Best regards,
+Alan Scheinine, HPC Service Helpdesk, ERDC, Vicksburg 
+ 
+
+-----Original Message-----
+From: Koch, Joshua M ERDC-GSL-MS
+Sent: Friday, May 28, 2010 11:08 AM
+To: Scheinine, Alan ERDC-ITL-MS Contractor
+Subject: LAMMPS Issues
+
+Alan,
+
+David Dumas suggested that I contact you regarding problems I am having with LAMMPS.  I have had trouble building it on jade, though I was able to compile with few errors.  The compiled code will run some examples, but will not run the peridynamics example that I am interested in.  I have tried modifying the script in various ways with no luck.
+
+Joshua M. Koch
+Office: 601.634.4331
+Cell: 505.206.4852
+ERDC-GSL BLDG 5008 RM 112 
+
+

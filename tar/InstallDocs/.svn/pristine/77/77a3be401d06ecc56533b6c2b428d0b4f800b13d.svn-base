@@ -1,0 +1,342 @@
+
+http://www.msg.ameslab.gov/GAMESS/GAMESS.html
+
+export PREFIX=/usr/local/usp/gamess/05Dec2014R1
+mkdir $PREFIX
+
+# Download on July 24, 2015
+# On garnet, moved to /u/scheinin/build/gamess/src/
+# Rename downloaded file in order to keep track of versions.
+mv gamess-current.tar.gz gamess-05Dec2014R1.tar.gz
+tar xzf gamess-05Dec2014R1.tar.gz
+# Untar'ed directory name is "gamess".
+mv gamess gamess-05Dec2014R1
+
+# Use default modules plus acml
+module load acml
+
+> module list
+Currently Loaded Modulefiles:
+  1) modules/3.2.6.7
+  2) eswrap/1.0.20-1.010102.662.0
+  3) craype-network-gemini
+  4) xt-asyncpe/5.24
+  5) pgi/13.6.0
+  6) cray-libsci/12.1.00
+  7) udreg/2.3.2-1.0402.7546.1.5.gem
+  8) ugni/5.0-1.0402.7551.1.10.gem
+  9) pmi/5.0.1-1.0000.9799.94.9.gem
+ 10) dmapp/4.0.1-1.0402.7784.4.1.gem
+ 11) gni-headers/2.1-1.0402.7541.1.5.gem
+ 12) xpmem/0.1-2.0402.45248.1.5.gem
+ 13) job/1.5.5-0.1_2.0402.45272.1.5.gem
+ 14) csa/3.0.0-1_2.0402.45268.1.90.gem
+ 15) rca/1.0.0-2.0402.47290.7.1.gem
+ 16) audit/1.0.0-1.0402.45273.1.86.gem
+ 17) ccm/2.2.0-1.0402.46086.4.120
+ 18) configuration/1.0-1.0402.45284.1.2.gem
+ 19) hosts/1.0-1.0402.45251.1.86.gem
+ 20) lbcd/2.1-1.0402.45245.1.2.gem
+ 21) nodehealth/5.1-1.0402.45895.3.76.gem
+ 22) pdsh/2.26-1.0402.45278.1.1.gem
+ 23) shared-root/1.0-1.0402.46893.3.17.gem
+ 24) switch/1.0-1.0402.45840.2.63.gem
+ 25) xe-sysroot/4.2.34
+ 26) atp/1.7.1
+ 27) PrgEnv-pgi/4.2.34
+ 28) craype-interlagos
+ 29) cray-mpich/6.0.0
+ 30) pbs/12.1.404
+ 31) java/jdk1.7.0_45
+ 32) acml/5.3.1
+
+cd /u/scheinin/build/gamess/src/gamess-05Dec2014R1
+
+./config
+please enter your target machine name:
+cray-xt
+GAMESS directory? [/lustre/home1/u/scheinin/build/gamess/src/gamess] <return>
+GAMESS build directory?
+ [/lustre/home1/u/scheinin/build/gamess/src/gamess] <return>
+Version? [00] <return>
+
+The 'ftn' compiler is selected based on your module settings.
+This is best tested if your modules pick Portland Group compilers.
+The math library will be ACML.  DDI will run over Cray's MPI.
+You can type      'module list'      to see if your software
+environment includes the 'PrgEnv-pgi' and 'acml' modules, if not,
+you may need to uncomment two lines in the 'comp' script.
+ 
+You probably should review the machine dimensions in 'compddi' script
+to match your number of nodes (MAXNODES), and cores/node (MAXCPUS).
+
+Your configuration for GAMESS compilation is now in
+     /lustre/home1/u/scheinin/build/gamess/src/gamess-05Dec2014R1/install.info
+Now, please follow the directions in
+     /lustre/home1/u/scheinin/build/gamess/src/gamess-05Dec2014R1/machines/readme.unix
+
+With regard to file "comp" , comments about it but no changes.
+See file install.info
+setenv GMS_TARGET cray-xt
+In comp, inside that if-then section
+#         two choices not included in the configuration step
+#         These must match 'compddi' and 'lked', and loaded software modules.
+#            valid choices: pathscale, intel, cray, pgi
+   set GMS_XT_COMP = 'pgi'
+#            valid choices: i7, barcelona, shanghai, or blank
+   set GMS_XT_ARCH = ' '
+      default:
+         echo "Using default K8 flags"
+         set XT_OPT = ' '
+         breaksw
+# Note, this is good because other XT_OPT choices set
+# the architecture (-tp) but that should be left to the
+# compiler wrapper.
+
+File ./ddi/compddi and ./lked
+if ($TARGET == cray-xt) then
+   set GMS_XT_COMP = 'pgi'
+#            valid choices: i7, barcelona, shanghai, or blank
+   set GMS_XT_ARCH = ' '
+
+# Older versions had cray-xt3 as keyword, not it seems the role
+# is played by cray-xt.
+
+cd ddi
+# Edit compddi under cray-xt section setting MAXCPUS=32 and MAXNODES=3200
+Previously maximum was 1260 but now large jobs have 102400 as the
+maximum number of cores.  102400/32 = 3200
+The text of the file
+#      you might want to bump MAXCPUS or MAXNODES to match your XT
+if ($TARGET == cray-xt) then
+   set MAXCPUS=32
+   set MAXNODES=3200
+endif
+
+./compddi  2>&1 | tee compddi.log
+
+   libddi.a was created and ddikick.x was not created.
+Text in compddi seems to say that ddikick.x is only needed for sockets
+
+cd ..
+
+./compall 2>&1 | tee compall.log
+
+# Previously, for cray-xt3 needed to set ${ACML_DIR}
+# Now, ACML_DIR does not need to be defined.
+
+# If not already done:
+   rm gamess.00.x
+# could do "./lked gamess 01"
+# doing the minimum results in gamess.00.x
+
+./lked gamess 2>&1 | tee lked.log
+
+Choices for some optional plug-in codes are
+   Tinker/SIMOMM code skipped, using dummy file qmmm.o
+   Valence Bond program VB2000 object files are vb2000.o vb2gms.o
+   Nuclear Electron Orbital code skipped, using dummy file neostb.o
+   Natural Bond Orbital (NBO) code skipped, using dummy file nbostb.o
+   MPQC code skipped, using dummy file mpqcst.o
+
+# In directory src/gamess-05Dec2014R1
+cp gamess.00.x $PREFIX
+# For earlier versions, data to move was mcpdata/ and ericfmt.dat.
+cp -R auxdata $PREFIX
+cp gms-files.csh rungms $PREFIX
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+# First installation, may need "chmod ugo+xr" next level up.
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify
+# only gms-files.csh and rungms , not the data.
+chmod g+w,o-w gms-files.csh rungms
+chmod -R go-w $topdir/auxdata
+
+# Use appwrap
+# On garnet
+mv rungms rungms.orig
+ln -s /usr/local/usp/appwrap/appwrap.pl rungms
+# Topaz does not yet have an appwrap.
+
+# Edit rungms.org or rungms (depending on whether appwrap is setup).
+
+# garnet
+set TARGET=cray-xt
+
+# topaz
+set TARGET=altix
+
+# Modified by A.L.S.
+set SCR=$GAMESSRUN/tmp$$
+set USERSCR=$GAMESSRUN/tmp$$
+set GMSPATH=$GAMESSBIN
+mkdir $SCR
+#
+# A.L.S. removed choice of version number.
+set JOB=$1      # name of the input file xxx.inp, give only the xxx part
+set VERNO=00    # revision number of the executable created by 'lked' step
+set NCPUS=$2    # number of compute processes to be run
+
+if ($SCHED == PBS) then
+   #    our ISU clusters have different names for local working disk space.
+   if ($?TMPDIR) then
+      if (-d $TMPDIR/tmp) then
+         set SCR=$TMPDIR/tmp
+      endif
+# A.L.S. commented-out setting of SCR , use job subdirectory.
+#   else
+#      set SCR=/scratch/$PBS_JOBID
+   endif
+   echo "PBS has assigned the following compute nodes to this run:"
+   uniq $PBS_NODEFILE
+endif
+
+# A.L.S. commented-out df
+# echo "Available scratch disk space (Kbyte units) at beginning of the job is"
+# df -k $SCR
+
+# garnet changes to rungms, below.
+
+if ($TARGET == cray-xt) then
+# A.L.S. everywhere that "$SRC/$JOB" is used as a directory name,
+#        change to "$SCR"
+       #   path to binary, and number of cores per node.
+# A.L.S. remove change of GMSPATH
+#   set GMSPATH=/u/sciteam/spruitt/gamess
+
+# A.L.S.
+   set SMP_SIZE=32
+# A.L.S.
+#   set TPN=$4
+   set TPN=$3
+
+# A.L.S. there is already a mkdir $SCR near the top of this script.
+# Do not use $JOB subdirectory.
+#   if (!(-e $SCR/$JOB)) mkdir $SCR/$JOB
+
+# A.L.S. everywhere that "$SRC/$JOB" is used as a directory name,
+#        change to "$SCR"
+       # copy auxiliary data files to working disk, redefine their location.
+#   cp    $ERICFMT $SCR/$JOB/ericfmt.dat
+#   cp -r $MCPPATH $SCR/$JOB/MCP
+#   setenv ERICFMT $SCR/$JOB/ericfmt.dat
+#   setenv MCPPATH $SCR/$JOB/MCP
+   set echo
+   cp    $ERICFMT $SCR/ericfmt.dat
+   cp -r $MCPPATH $SCR/MCP
+   setenv ERICFMT $SCR/ericfmt.dat
+   setenv MCPPATH $SCR/MCP
+
+# A.L.S.
+#   chdir $SCR/$JOB
+   chdir $SCR
+# A.L.S.
+   aprun -n $NCPUS -N $TPN $GMSPATH/gamess.$VERNO.x $JOB
+#   aprun -r 1 -d 1 -j 1 -n $NCPUS -N $TPN $GMSPATH/gamess.$VERNO.x $JOB
+
+# A.L.S. The user may not have a $USERSCR directory.
+# A.L.S. Rather than have the script do the copy and cleanup
+# A.L.S. It does not make sense to copy from $SCR to $USERSCR if they
+# are the same.  All lines concerning $USERSCR have been commented-out.
+# A specific user might want to modify this script with regard $USERSCR.
+#             Rescue the supplementary ASCII output files,
+#             from /lustre to one's permanent disk storage.
+#             This user is doing FMO trajectories, mainly,
+#             and ends up saving all those files...
+#   set PERMSCR=/u/sciteam/spruitt/scr
+#   if (-e $USERSCR/$JOB.efp)   cp $USERSCR/$JOB.efp   $PERMSCR
+#   if (-e $USERSCR/$JOB.gamma) cp $USERSCR/$JOB.gamma $PERMSCR
+#   if (-e $USERSCR/$JOB.trj)   cp $USERSCR/$JOB.trj   $PERMSCR
+#   if (-e $USERSCR/$JOB.rst)   cp $USERSCR/$JOB.rst   $PERMSCR
+#   if (-e $USERSCR/$JOB.dat)   cp $USERSCR/$JOB.dat   $PERMSCR
+#                               cp $USERSCR/$JOB.trj.000* $PERMSCR
+#   rm -f  $USERSCR/$JOB.*
+#              clean SCR, e.g. the RAM disk /tmp
+#   rm -f  $SCR/$JOB/$JOB.F*
+#   rm -f  $SCR/$JOB/ericfmt.dat
+#   rm -rf $SCR/$JOB/MCP
+#   rmdir  $SCR/$JOB
+#             perhaps these next things are batch queue related files?
+#             this is dangerous if jobs are launched from home directory,
+#             as it will wipe out input and output!
+   #---rm -f  /u/sciteam/spruitt/$JOB.*
+
+# garnet changes to rungms, above.
+
+# topaz changes to rungms, below.
+
+# topaz
+if ($TARGET == altix) then
+# A.L.S. remove change of GMSPATH
+#   setenv GMSPATH /usr/local/u/boatzj/gamess
+
+# A.L.S. Do not double the number of nodes.
+#   setenv PBS_NODEFILE $SCR/$JOB.2xnodes.$$
+
+# A.L.S. Do not run with double the number of nodes.
+#   mpiexec_mpt -v -n $NPROCS $GMSPATH/gamess.$VERNO.x $JOB
+
+# topaz changes to rungms, above.
+
+# Near end of script rungms, below.
+
+#   Clean up the master's scratch directory.
+#
+# A.L.S. Notice that some files are deleted.
+echo Files used on the master node $master were:
+ls -lF $SCR/$JOB.*
+rm -f  $SCR/$JOB.F*
+#
+# A.L.S. User may not have a $USERSCR or might be moving to self
+# so commented-out.
+#   Clean/Rescue any files created by the VB2000 plug-in
+#if (-e $SCR/$JOB.V84)        mv $SCR/$JOB.V84     $USERSCR
+#if (-e $SCR/$JOB.V80)        rm -f $SCR/$JOB.V*
+#if (-e $SCR/$JOB.TEMP02)     rm -f $SCR/$JOB.TEMP*
+#if (-e $SCR/$JOB.orb)        mv $SCR/$JOB.orb     $USERSCR
+#if (-e $SCR/$JOB.vec)        mv $SCR/$JOB.vec     $USERSCR
+#if (-e $SCR/$JOB.mol)        mv $SCR/$JOB.mol     $USERSCR
+#if (-e $SCR/$JOB.molf)       mv $SCR/$JOB.molf    $USERSCR
+#if (-e $SCR/$JOB.mkl)        mv $SCR/$JOB.mkl     $USERSCR
+#if (-e $SCR/$JOB.xyz)        mv $SCR/$JOB.xyz     $USERSCR
+#ls $SCR/${JOB}-*.cube > $SCR/${JOB}.lis
+#if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.cube $USERSCR
+#rm -f $SCR/${JOB}.lis
+#ls $SCR/${JOB}-*.grd > $SCR/${JOB}.lis
+#if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.grd $USERSCR
+#rm -f $SCR/${JOB}.lis
+#ls $SCR/${JOB}-*.csv > $SCR/${JOB}.lis
+#if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.csv $USERSCR
+#rm -f $SCR/${JOB}.lis
+
+# Near end of script rungms, above.
+
+
+# start here <<<<<<<<<<<<<<<<<<<<<
+
+
+Run tests
+See diamond/source diamond/tests_on_diamond
+and
+Tests-gamess-garnet
+and
+
+Create interactive submit for gamess.
+
+Save files in InstallDoc...
+
+[scheinin@ascheinine-dt STALL]$ ls *gamess*
+INSTALL_gamess  INSTALL_gamess_topaz
+
+gamess:
+.   forAlanS_rungmsEtc.tar.gz      gamess_mpimixed_diamond.tar.bz2
+..  gamess_config_diamond.tar.bz2  gamess.txt
+
+gamess_examples:
+.   harold-rungms  rungms.orig~            rungms.orig01OCT2010R1
+..  rungms.orig    rungms.orig01MAY2012R1
+

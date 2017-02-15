@@ -1,0 +1,202 @@
+
+
+The download page says that you will get files with names
+OpenFOAM-4.x-version-4.1 and ThirdParty-version-4.1
+but that is not true.  The download is named version-4.1
+The following procedure works
+
+export BUILD_DIR=/p/home/scheinin/build/openfoam_sgimpt
+
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+wget http://dl.openfoam.org/source/4-1
+tar xzf version-4.1
+mv version-4.1  OpenFOAM-version-4.1
+mv OpenFOAM-4.x-version-4.1  OpenFOAM-4.1
+
+wget http://dl.openfoam.org/third-party/4-1
+tar xzf version-4.1
+mv version-4.1 ThirdParty-version-4.1
+mv ThirdParty-4.x-version-4.1 ThirdParty-4.1
+
+# Do build on a compute node on topaz.
+
+qsub -l walltime=4:00:00 -l select=1:ncpus=36:mpiprocs=36 -A ERDCS97290STA -q standard -I
+
+export BUILD_DIR=/p/home/scheinin/build/openfoam_sgimpt
+
+cd $BUILD_DIR
+
+Note, maybe interesting: http://techpubs.sgi.com/library/dynaweb_docs/linux/SGI_EndUser/books/Openfoam_UG/sgi_html/index.html
+
+qsub -l walltime=4:00:00 -l select=1:ncpus=36:mpiprocs=36 -A ERDCS97290STA -q standard -I
+
+mkdir /p/home/scheinin/build/openfoam
+cd /p/home/scheinin/build/openfoam
+
+wget http://dl.openfoam.org/source/4-1
+tar xzf version-4.1
+mv version-4.1  OpenFOAM-version-4.1
+mv OpenFOAM-4.x-version-4.1  OpenFOAM-4.1
+
+wget http://dl.openfoam.org/third-party/4-1
+tar xzf version-4.1
+mv version-4.1 ThirdParty-version-4.1
+mv ThirdParty-4.x-version-4.1 ThirdParty-4.1
+
+module swap compiler/intel/15.0.3 compiler/gcc/5.3.0
+module unload mpi/sgimpt/2.12-11218
+
+export PATH=/apps/unsupported/cmake/3.2.3-gcc49/bin:$PATH
+export PATH=/apps/unsupported/git/2.4.3-gcc43/bin:$PATH
+export PATH=/apps/unsupported/CSE/CSE.20160624/Release/openmpi-1.10.2/bin:$PATH
+export PATH=/apps/unsupported/gnuplot/5.0.4-gnu-4.9.3/bin:$PATH
+
+export LD_LIBRARY_PATH=/apps/unsupported/git/2.4.3-gcc43/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/CSE/CSE.20160624/Release/openmpi-1.10.2/lib:$LD_LIBRARY_PATH
+
+Edit file OpenFOAM-4.1/etc/bashrc
+(In my case /p/home/scheinin/build/openfoam/OpenFOAM-4.1/etc/bashrc )
+
+export /p/home/scheinin/build/openfoam/OpenFOAM-4.1
+export FOAMY_HEX_MESH=no
+
+source  /p/home/scheinin/build/openfoam/OpenFOAM-4.1/etc/bashrc
+
+cd ThirdParty-4.1
+
+./Allwmake
+
+./makeParaView
+CMake Error at /p/home/apps/unsupported/cmake/3.2.3-gcc49/share/cmake-3.2/Modules/FindPackageHandleStandardArgs.cmake:138 (message):
+  Could NOT find Qt4: Found unsuitable version "4.6.3", but required is at
+  least "4.7.0" (found /usr/bin/qmake)
+
+# Try instead
+
+export PATH=/app/DAAC/paraview/5.1.2_osmesa/bin:$PATH
+export LD_LIBRARY_PATH=/app/DAAC/paraview/5.1.2_osmesa/lib:$LD_LIBRARY_PATH
+
+export BOOST_ARCH_PATH=/apps/unsupported/COST/boost/1.58.0/gnu
+Edit ./makeCGAL 
+
+after 
+
+BOOST_ARCH_PATH=$installBASE/$boostPACKAGE
+BOOST_SOURCE_DIR=$WM_THIRD_PARTY_DIR/$boostPACKAGE
+
+add
+
+BOOST_ARCH_PATH=/apps/unsupported/COST/boost/1.58.0/gnu
+
+Download
+/p/home/scheinin/build/openfoam/ThirdParty-4.1/cgal-releases-CGAL-4.9.tar.gz
+cd cgal-releases-CGAL-4.9
+
+mkdir /p/home/scheinin/build/openfoam/ThirdParty-4.1/CGAL-4.9
+
+/apps/unsupported/gmp/6.0.0a
+edit CMakeCache.txt
+
+//The directory containing the GMP header files
+GMP_INCLUDE_DIR:PATH=/apps/unsupported/gmp/6.0.0a/include
+
+//Path to the GMP library
+GMP_LIBRARIES:FILEPATH=/apps/unsupported/gmp/6.0.0a/lib/libgmp.so
+
+//The directory containing the MPFR header files
+MPFR_INCLUDE_DIR:PATH=/apps/unsupported/mpfr/3.1.2/include
+
+//Path to the MPFR library
+MPFR_LIBRARIES:FILEPATH=/apps/unsupported/mpfr/3.1.2/lib/libmpfr.so
+
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=/apps/unsupported/COST/boost/1.58.0/gnu
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/apps/unsupported/COST/boost/1.58.0/gnu/include
+
+CMAKE_INSTALL_PREFIX:PATH=/p/home/scheinin/build/openfoam/ThirdParty-4.1/CGAL-4.9
+CGAL_INSTALL_DOC_DIR:STRING=doc/CGAL-4.9-I-900
+CGAL_INSTALL_MAN_DIR:STRING=share/man/man1
+
+cmake .
+make
+
+export BOOST_ARCH_PATH=/apps/unsupported/COST/boost/1.58.0/gnu
+export CGAL_ARCH_PATH=/p/home/scheinin/build/openfoam/ThirdParty-4.1/CGAL-4.9
+export MPFR_ARCH_PATH=/apps/unsupported/mpfr/3.1.2
+export GMP_ARCH_PATH=/apps/unsupported/gmp/6.0.0a
+
+cd /p/home/scheinin/build/openfoam/ThirdParty-4.1/CGAL-4.9/
+ln -s lib64 lib
+cd /apps/unsupported/mpfr/3.1.2/
+ln -s lib lib64
+
+export LD_LIBRARY_PATH=/apps/unsupported/COST/boost/1.58.0/gnu/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/scheinin/build/openfoam/ThirdParty-4.1/CGAL-4.9/lib64:$LD_LIBRARY_PATH
+
+export WM_LDFLAGS='-m64 -Wl,-rpath-link /apps/unsupported/COST/boost/1.58.0/gnu/lib -Wl,-rpath-link /apps/unsupported/mpfr/3.1.2/lib -Wl,-rpath-link /apps/unsupported/gmp/6.0.0a/lib -Wl,-rpath-link /p/home/scheinin/build/openfoam/ThirdParty-4.1/CGAL-4.9/lib64'
+
+edit ./wmake/rules/General/CGAL
+add rpath-link of WM_LDFLAGS, because WM_LDFLAGS does not seem
+to be used where there was a problem in
+/p/home/scheinin/build/openfoam/OpenFOAM-4.1/applications/utilities/mesh/generation/foamyMesh/foamyQuadMesh
+
+Make sure scotch has been built.
+
+cd OpenFOAM-4.1
+
+(my case, cd /p/home/scheinin/build/openfoam/OpenFOAM-4.1)
+
+./Allwmake 2>&1 | tee make4.log
+
+
+
+
+
+Someone suggested for UV
+
+#Use SGI MPI
+export PATH=/opt/sgi/mpt/mpt-2.08/bin:$PATH
+export LD_LIBRARY_PATH=/opt/sgi/mpt/mpt-2.08/lib:$LD_LIBRARY_PATH
+
+#setting the flags and installation directory
+export WM_CFLAGS="$WM_CFLAGS -DMPI_NO_CPPBIND -DSGIMPI"
+export FOAM_INST_DIR=/apps/OpenFOAM
+foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.3.0/etc/bashrc
+
+[ -f $foamDotFile ] && . $foamDotFile
+
+See how to get OpenFOAM to use SGI MPT
+I have found the reason behind error 1. In ptscotchDecomp.C, we have
+
+Code:
+
+ 
+extern C {
+   ...
+   #include "mpi.h"
+   ...
+}
+
+Move #include "mpi.h" outside of extern C {...} . 
+
+The "-DMPI_NO_CPPBIND" is indeed the best option, because it's the same method used with OpenMPI and the file above. If you check the file "wmake/rules/General/mplibOPENMPI" and you'll see "-DOMPI_SKIP_MPICXX" being used as well.
+Additionally, using "-DSGIMPI" seems to be a crucial setting as well, since there might be some corner cases that are fixed with this macro definition.
+
+insertFeaturePoints.C:(.text+0x584): undefined reference to `__gmpn_copyi'
+insertFeaturePoints.C:(.text+0x59c): undefined reference to `__gmpn_copyi'
+insertFeaturePoints.C:(.text+0x5b4): undefined reference to `__gmpn_copyi'
+insertFeaturePoints.C:(.text+0x5cc): undefined reference to `__gmpn_copyi'
+insertFeaturePoints.C:(.text+0x5e1): undefined reference to `__gmpn_copyi'
+/p/home/scheinin/build/openfoam/OpenFOAM-4.1/platforms/linux64GccDPInt32Opt/applications/utilities/mesh/generation/foamyMesh/foamyQuadMesh/insertFeaturePoints.o:insertFeaturePoints.C:(.text+0x5f5): more undefined references to `__gmpn_copyi' follow
+/apps/unsupported/mpfr/3.1.2/lib64/libmpfr.so: undefined reference to `__gmpn_set_str'
+/apps/unsupported/mpfr/3.1.2/lib64/libmpfr.so: undefined reference to `__gmpz_add'
+
+problem seems to be order of libraries
+
+./Allwmake 2>&1 | tee make.log

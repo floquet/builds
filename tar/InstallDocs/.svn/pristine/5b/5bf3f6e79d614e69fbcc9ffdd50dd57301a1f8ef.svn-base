@@ -1,0 +1,1155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>The Function Profile Chart</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Charts"
+HREF="c876.html"><LINK
+REL="PREVIOUS"
+TITLE="Counter Timeline"
+HREF="x1212.html"><LINK
+REL="NEXT"
+TITLE="The Message Profile"
+HREF="x1569.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1212.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Charts</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1569.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="FUNCPROF"
+>4.5. The Function Profile Chart</A
+></H1
+><P
+>The Function Profile provides detailed profiling information on the performance data. It consists of four different tabs, namely the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Flat Profile</I
+></SPAN
+> tab, the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Load Balance</I
+></SPAN
+> tab, the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Call Tree</I
+></SPAN
+> tab and the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Call Graph</I
+></SPAN
+> tab.</P
+><P
+>All four of these tabs use the same column headers with the same
+semantics, and use the same raw data. The default column headers on
+display are <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Name, TSelf, TTotal, #Calls and
+TSelf/Call</I
+></SPAN
+>. For a detailed explanation of all available column headers refer to <A
+HREF="x1330.html#FUNCPROFSD"
+>Section 4.5.5.1</A
+>. The order of these columns are
+adjusted by dragging headers of columns.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FUNCPROF"
+></A
+><P
+><B
+>Figure 4-24. Function Profile</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/funcproftab.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>To sort a list in ascending or descending order, click on a column header. To see which process spends the most time (or the least time) in a function, click <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>TSelf</I
+></SPAN
+> and the entries are sorted by this column. The arrow symbol in the column header indicates whether it is arranged in ascending or descending order.</P
+><DIV
+CLASS="tip"
+><BLOCKQUOTE
+CLASS="tip"
+><P
+><B
+>Note: </B
+>Sorting by the name column does not sort
+alphabetically. Instead, it sorts in the order given by the layout of
+the current process or function group.</P
+></BLOCKQUOTE
+></DIV
+><P
+>&#13;The number formatting options are preset globally via the Number
+Formatting Settings dialog (refer to <A
+HREF="x2608.html"
+>Section 5.13</A
+>). To
+increase the number of digits locally by three (or one) digits press the key
+<SPAN
+CLASS="QUOTE"
+>"+"</SPAN
+> (or CTRL<SPAN
+CLASS="QUOTE"
+>"+"</SPAN
+>). Use the keys
+<SPAN
+CLASS="QUOTE"
+>"-"</SPAN
+> (or CTRL<SPAN
+CLASS="QUOTE"
+>"-"</SPAN
+>) to revert this
+action. Notice that the exact effect of asking for additional digits
+depends on the format chosen in the Number Formatting Settings dialog
+for the respective unit.
+</P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="FLATPROF"
+>4.5.1. Flat Profile</A
+></H2
+><P
+>By default, the Flat Profile summarizes all major
+groups of functions and presents statistics over the processes. The
+exact contents of these groups depend on the group definitions stored
+in the trace file or as defined by the user; in the file
+<SAMP
+CLASS="computeroutput"
+>poisson_icomm.single.stf</SAMP
+>, 
+this is only <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPI</I
+></SPAN
+> and
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Application</I
+></SPAN
+>. </P
+><P
+>The Chart in <A
+HREF="x1330.html#FIG.FUNCPROF"
+>Figure 4-24</A
+> shows that most of the time was spent in MPI,
+which is considered as pure overhead. To see the distribution of
+execution time over the individual MPI routines, right-click on the
+MPI entry and select <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Ungroup Group MPI</I
+></SPAN
+> from the context menu as shown
+in <A
+HREF="x1330.html#FIG.CMUNGP"
+>Figure 4-25</A
+>.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.CMUNGP"
+></A
+><P
+><B
+>Figure 4-25. Ungrouping the function group MPI via the context menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/groupungroup.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>This causes the single MPI entry to be replaced by several entries - one for each MPI function (see <A
+HREF="x1330.html#FIG.FLATPROFEXP"
+>Figure 4-26</A
+>). To regroup the children of MPI, right-click on a child and choose <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Regroup MPI</I
+></SPAN
+> from the context menu or select <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Major Function Groups</I
+></SPAN
+> from the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Group Editor</I
+></SPAN
+> (<SPAN
+CLASS="guimenu"
+>Views Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Advanced</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Function Aggregation</SPAN
+>).</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FLATPROFEXP"
+></A
+><P
+><B
+>Figure 4-26. Flat Profile after ungrouping MPI</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/ffp-per-tg.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The default settings ensure that all statistics are summarized
+over all threads into a single profile. All tabs provide the option of
+viewing the data for each process separately. To do this, use the combo
+box at the top of the tab as shown in <A
+HREF="x1330.html#FIG.SELPROFPROC"
+>Figure 4-27</A
+>. For example, selecting <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Children
+of Group All_Processes</I
+></SPAN
+> results in <A
+HREF="x1330.html#FIG.CHILDPROC"
+>Figure 4-28</A
+>. The processes are now listed as the
+top-level entries in the tree (first column). To expand and collapse
+the processes of interest, use the plus and minus handles (see <A
+HREF="x1330.html#FIG.CHILDPROC"
+>Figure 4-28</A
+>).</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.SELPROFPROC"
+></A
+><P
+><B
+>Figure 4-27. Selecting Profiles per process</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/ffp-per-tg-cm.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.CHILDPROC"
+></A
+><P
+><B
+>Figure 4-28. Showing children of process group All Processes</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/childproc.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="LOADBAL"
+>4.5.2. Load Balance</A
+></H2
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Load Balance</I
+></SPAN
+> tab displays the same data
+as the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Flat Profile</I
+></SPAN
+> except that it is grouped by
+function instead of by process. The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Load Balance</I
+></SPAN
+>
+tab compares the profiles of the same function across several
+processes. Here, the top level entries of the tree, given in the
+first column, are functions. <A
+HREF="x1330.html#FIG.LOADBALFUNC"
+>Figure 4-29</A
+> shows
+that <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>TSelf</I
+></SPAN
+> for <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPI_Allreduce</I
+></SPAN
+>
+is pretty unbalanced across processes.
+</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.LOADBALFUNC"
+></A
+><P
+><B
+>Figure 4-29. Load Balance for MPI_Allreduce</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/ffp-per-fg.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>As in the Flat Profile, the Load Balance summarizes the statistics into a single profile using <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Group All_Processes</I
+></SPAN
+>. To view the data for each individual process in a given function, use <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Children of Group All_Processes</I
+></SPAN
+>. Similarly, the functions in the Load Balance tab are ungrouped using <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Ungroup/Regroup</I
+></SPAN
+> on the context menu. Ungrouping displays all major function groups. To group all processes together and to view it as a single profile, select <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Group All_Processes</I
+></SPAN
+>.
+</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.LOADBAL.PIE"
+></A
+><P
+><B
+>Figure 4-30. Pie diagrams in the Load Balance tab</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/loadbalpie.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The Load Balance tab offers to display the data in form of pie
+diagrams (refer to <A
+HREF="x1330.html#FIG.LOADBAL.PIE"
+>Figure 4-30</A
+>). The button in
+the top right corner of the tab allows to switch back and forth
+between the usual list and the pie diagrams. This allows to judge the
+overall load balance pattern (for TSelf) even among a huge number of
+processes in a relatively confined space. Above the pie diagrams are
+two sliders. The left one controls the minimum radius of the pies and
+the right one controls how many pie diagrams appear in a row.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="CALLTREE"
+>4.5.3. Call Tree</A
+></H2
+><P
+>When the Load Balance and Flat Profile tabs do not show enough detail, use the Call Tree tab to include calling dependencies in your analysis. The Call Tree tab shows the same information as the Flat
+Profile and Load Balance, but also includes the calling
+hierarchy.</P
+><P
+>Select a certain entry in the Call Tree to focus on it. The focus remains on this entry even when the time interval is changed due to scrolling or zooming. It stays selected and visible when possible. If a corresponding entry is absent for the new time
+interval, then its parent is selected. This feature is very useful in large and deeply nested call
+trees.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.CALLTREE"
+></A
+><P
+><B
+>Figure 4-31. The Call Tree tab</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/calltree.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="CALLGRPH"
+>4.5.4. Call Graph</A
+></H2
+><P
+>The Call Graph tab shows a small part of the call graph for
+each process or process group: a single node (called central function)
+with its inbound and outbound edges. Each process entry has three
+children: the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Callers</I
+></SPAN
+>, the central function and
+the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Callees</I
+></SPAN
+>.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.CALLGRAPH"
+></A
+><P
+><B
+>Figure 4-32. The Call Graph tab</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/callgraph.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>To navigate through the Call Graph, double-click on a
+caller or callee and press the space bar or Enter key to make the respective function the central
+node.</P
+><P
+>The time shown for the central function is the same as shown in 
+the Flat Profile tab and the Load Balance tab. The times shown for the callers represent the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>time spent in the central function</I
+></SPAN
+> when called from the respective function. </P
+><P
+>If a function is used within different contexts (by different
+algorithms for example), then it can be observed which algorithm
+causes a function to consume more or less time. In <A
+HREF="x1330.html#FIG.CALLGRAPH"
+>Figure 4-32</A
+> it is seen which caller is responsible for
+most of the time spent in MPI: it is the function group Application
+(and not Forward, Adjoin, cg or Smoother). Using the Call Graph this
+way helps finding places in the code that cause expensive calls, even
+when the call tree gets too big to navigate through it.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="USGFNPROF"
+>4.5.5. Using the Function Profile</A
+></H2
+><P
+>The following sections describe the columns
+headers of the Function Profile and how to define these headers using the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Profile Settings</I
+></SPAN
+> dialog box.</P
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="FUNCPROFSD"
+>4.5.5.1. Function Profile Settings</A
+></H3
+><P
+>The Function Profile Settings dialog box enables customizing
+display options for all four tabs of the Function Profile Chart. To
+access the Settings dialog box, right click and select
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Profile settings</I
+></SPAN
+> from the context
+menu.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FUNCPROFSD"
+></A
+><P
+><B
+>Figure 4-33. The Function Profile settings dialog</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/funcprofset.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences Tab</I
+></SPAN
+></P
+><P
+>In the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences</I
+></SPAN
+> tab, there are four groups of
+options. The first one is the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Display</I
+></SPAN
+> Group,
+which consists of check boxes. Use these check boxes to select the
+attributes to be displayed. There are a total of eight attributes
+available, out of which four are selected by default (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time
+Self, Time Total, #Calls</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Self per
+Call</I
+></SPAN
+>). All eight attributes are described below: </P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Self (TSelf):</I
+></SPAN
+> Time spent in the given function, excluding time spent in functions called from it</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Total (TTotal):</I
+></SPAN
+> Time spent in the given function, including time spent in functions called from it</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>#Calls:</I
+></SPAN
+> Number of
+			calls to this function. This can be zero even if
+			other attributes are non-zero, because the
+			actual calls to the respective function can occur
+			outside the current time interval.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Self per Call
+			(TSelf/Call): Time Self</I
+></SPAN
+> averaged over <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>#Calls</I
+></SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Total per Call: Time Total</I
+></SPAN
+> averaged over <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>#Calls</I
+></SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>#Processes:</I
+></SPAN
+> Number of processes in this function</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Self per Process: Time Self:</I
+></SPAN
+> averaged over <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>#Processes</I
+></SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Total per Process: Time Total</I
+></SPAN
+> averaged over <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>#Processes</I
+></SPAN
+></P
+></LI
+></UL
+><P
+>Using the given check boxes, the displaying of the above
+attributes either as text or as a bar graph can be switched on or off
+independently.</P
+><P
+>Use the radio buttons to specify the format for time (seconds or ticks) or to specify time as a percentage of the time interval.</P
+><P
+>There are three scaling modes in the Preferences tab and these are given as radio buttons. The default (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Visible Items</I
+></SPAN
+>) scales the bars to the respective maximum of all expanded items. <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>All Items</I
+></SPAN
+> uses the global maximum of all values, regardless if they are expanded or not. <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Siblings</I
+></SPAN
+> uses only the maximum of the direct siblings. In all three scaling modes only values from the same column are taken into account.</P
+><P
+>At the bottom of the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences</I
+></SPAN
+> tab, there
+is a <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Colors</I
+></SPAN
+> command button. Clicking on
+this opens the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Group Color Editor</I
+></SPAN
+> (see
+<A
+HREF="x2332.html"
+>Section 5.5</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>The Processes Tab</I
+></SPAN
+></P
+><P
+>In the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes</I
+></SPAN
+> tab, select the processes
+to be displayed in the Chart by enabling the check box of the
+process. After selecting these in the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes</I
+></SPAN
+>
+tab, the selected processes are shown in any of the Function Profile
+tabs by choosing the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>As selected in Settings</I
+></SPAN
+>
+option from the combo box (See <A
+HREF="x1330.html#FIG.SELPROFPROC"
+>Figure 4-27</A
+>). An
+easy way to select all but one process is to choose the process not
+required and then using the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Invert All</I
+></SPAN
+> to reverse
+the selection. Doing this has no influence on the current process
+group of the View, it only allows to focus the Function Profile on a
+subset of all processes.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Pie Tab</I
+></SPAN
+></P
+><P
+>The Pie tab contains check boxes to switch the individual
+diagram titles and the global legend on and off.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="FLATPROFCM"
+>4.5.5.2. The Context Menu</A
+></H3
+><P
+>The context menu, obtained by right-clicking on an item, contains a set of operations that are performed on the clicked item and on the Chart as a whole. The context menu adjusts itself to suit the selected entry in the Chart.</P
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Show All_Processes/xxx in</I
+></SPAN
+> entry in the context menu shows the given profile in a different tab. Here, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>xxx</I
+></SPAN
+> stands for the Function group name. For the given example, this would be either the function groups <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPI, Application</I
+></SPAN
+> or the function group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Other</I
+></SPAN
+>.</P
+><P
+>Another context menu entry is the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Ungroup</I
+></SPAN
+> option. This ungroups the selected group
+and shows the distribution of execution time over the individual
+routines, as is illustrated in <A
+HREF="x1330.html#FIG.CMUNGP"
+>Figure 4-25</A
+> and <A
+HREF="x1330.html#FIG.FLATPROFEXP"
+>Figure 4-26</A
+>. To revert the ungrouping, right-click a child of a recently
+ungrouped function group and select <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Regroup</I
+></SPAN
+> from the context menu. To restore
+the summarized display after ungrouping a number of times, it is
+easier to open the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Group Editor</I
+></SPAN
+> using
+<SPAN
+CLASS="guimenu"
+>Views Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Advanced</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Function Aggregation</SPAN
+> and select
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Major Function Groups</I
+></SPAN
+>.</P
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Find</I
+></SPAN
+> entry searches for a
+process/function (See <A
+HREF="x2559.html"
+>Section 5.11</A
+>).</P
+><P
+>To save the flat profile data in text form, choose the context menu entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Export (Flat) Data</I
+></SPAN
+>. This opens a <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>File Save</I
+></SPAN
+> dialog box. Specify the filename or choose the file in which to store the data here. This includes all data of the flat profile also taking into account the child
+processes. The default option is to save it as a .txt
+file.</P
+><P
+><SPAN
+CLASS="guimenu"
+>Context Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Charts</SPAN
+> opens another sub-menu, which
+contains entries to print, save, clone and move the Chart (see <A
+HREF="x1974.html"
+>Section 4.8</A
+>).</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FPCONMEN"
+></A
+><P
+><B
+>Figure 4-34. A context menu with a submenu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/conmenchart.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="FLATPROFFT"
+>4.5.5.3. Filtering and Tagging</A
+></H3
+><P
+>Tagged entries are shown
+using a bold font for the name column. Entries with tagged descendants
+are shown with underlined names. This helps to see or find the required entry, especially when the tree is large. For more details on tagging and
+filtering refer to <A
+HREF="x3057.html"
+>Section 10.3</A
+>.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FLATPROFFT"
+></A
+><P
+><B
+>Figure 4-35. Tagged entries in the function profile</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/flatprofft.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1212.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1569.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Counter Timeline</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c876.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Message Profile</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

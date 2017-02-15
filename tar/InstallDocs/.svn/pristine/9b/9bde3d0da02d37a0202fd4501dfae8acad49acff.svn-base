@@ -1,0 +1,113 @@
+
+The installation of the Rmpi module has several obstacles.
+The following description is probably not the ideal approach,
+but it does show how to work-around some problems.
+
+First step is to load R module
+
+module load R/intel-15.0.3/3.2.2
+
+Download from
+http://www.stats.uwo.ca/faculty/yu/Rmpi/
+
+Let's have a look at the software installation information:
+
+tar xzf Rmpi_0.6-5.tar.gz
+cd Rmpi
+./configure --help
+Some important output lines are:
+  --prefix=PREFIX         install architecture-independent files in PREFIX
+  --with-Rmpi-type=MPI_TYPE
+                          the type of MPI: OPENMPI,LAM,MPICH,MPICH2, or CRAY
+  CC          C compiler command
+
+Notice that MPI_TYPE does not include SGI MPT.  If the wrong
+choice is made, then the configuration procedure looks for
+libraries that do not exist, and fails.
+
+The file configure.ac was modified by adding SGIMPT as an MPI_TYPE.
+
+  CRAY)
+    PKG_LIBS="-L${MPI_LIBPATH} -lmpich_cray_default64 -lmpl -lopa ${MPI_LIBS}"
+    ;;
+  SGIMPT)
+    PKG_LIBS="-L${MPI_LIBPATH} ${MPI_LIBS}"
+    ;;
+  *)
+    AC_MSG_ERROR([Unknown type of mpi: use --with-Rmpi-type or RMPI_TYPE to spec
+ify it])
+    ;;
+esac
+
+Notice in the above how the wrong choice results in non-existant
+libraries being added to the linking command, e.g. "-lopa".
+The three lines starting with "SGIMPT)" were newly added.
+
+After making the change, run the command
+
+autoconf
+
+With regard to the compiler, I chose
+export CC=mpicc
+but this had not affect.  So the output from
+./configure --help
+is wrong.
+
+Let's look at configure.ac
+
+CC=`"${R_HOME}/bin/R" CMD config CC`
+CFLAGS=`"${R_HOME}/bin/R" CMD config CFLAGS`
+CC="mpicc"  # Added by me
+AC_PROG_CC
+
+Run "autoconf".
+
+Contrary to what is said by "./configure --help",
+the value of CC is set by R.  I added afterwards
+the line CC="mpicc" but the build procedure
+failed as shown below.
+
+R CMD INSTALL Rmpi_0.6-6.tar.gz --configure-args="--prefix=$PREFIX --with-Rmpi-type=SGIMPT  2>&1 | tee configure.output
+checking for mpicc option to accept ISO C89... none needed
+icc -std=gnu99 -I/p/home/apps/unsupported/R/3.2.2-intel-15.0.3/lib64/R/include -DNDEBUG -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -I/p/home/apps/sgi/mpt-2.12-sgi712r26/include  -DMPI2 -DSGIMPT -I/usr/local/include    -fpic  -g -O2 -std=c99  -c Rmpi.c -o Rmpi.o
+
+What we see is that "configure" finds "mpicc" to be acceptable,
+but then the build procedure is given to R and R insists on
+using the compiler with which it was built, i.e. "icc".
+
+The solution is to use "MPI_LIBS=-lmpi" , that is,
+
+export PREFIX=/p/home/scheinin/build/Rmpi/dest
+R CMD INSTALL Rmpi_0.6-6.tar.gz --configure-args="--prefix=$PREFIX --with-Rmpi-type=SGIMPT MPI_LIBS=-lmpi" --no-test-load  2>&1 | tee configure.output
+
+The --prefix=$PREFIX option in the above line was useless.
+The software R insisted on installing the software under R,
+in location,
+/p/home/apps/unsupported/R/3.2.2-intel-15.0.3/lib64/R/library
+so an ordinary user would not be able to install the software
+unless he/she had their own R installation.
+
+The option "--no-test-load" is necessary because the last
+stage of the installation procedure tests the executable
+and it fails with the message that it needs to be launched
+with mpiexec_mpt, and then R kindly erases Rmpi from where
+it was installed.  The "--no-test-load" option avoids this
+last mis-step.
+
+To have the changes in configure.ac remain valid I did the
+following.
+
+Make changes in configure.ac and run autoconf.
+cd ..
+
+tar czf Rmpi_0.6-6.tar.gz Rmpi
+rm -r Rmpi
+
+The original source was Rmpi_0.6-5.tar.gz , but notice that
+R CMS INSTALL [...]
+command is uses the newly created tar archive.
+
+The Rmpi version is 0.6.  A version number less the one indicates
+that software is not ready for production.
+
+

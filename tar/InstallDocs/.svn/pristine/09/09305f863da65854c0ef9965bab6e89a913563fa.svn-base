@@ -1,0 +1,228 @@
+
+
+The download page says that you will get files with names
+OpenFOAM-4.x-version-4.1 and ThirdParty-version-4.1
+but that is not true.  The download is named version-4.1
+The following procedure works
+
+export BUILD_DIR=/p/home/scheinin/build/openfoam_sgimpt
+
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+wget http://dl.openfoam.org/source/4-1
+tar xzf version-4.1
+mv version-4.1  OpenFOAM-version-4.1
+mv OpenFOAM-4.x-version-4.1  OpenFOAM-4.1
+
+wget http://dl.openfoam.org/third-party/4-1
+tar xzf version-4.1
+mv version-4.1 ThirdParty-version-4.1
+mv ThirdParty-4.x-version-4.1 ThirdParty-4.1
+
+# Do build on a compute node on topaz.
+
+qsub -l walltime=8:00:00 -l select=1:ncpus=36:mpiprocs=36 -A ERDCS97290STA -q standard -I
+
+export BUILD_DIR=/p/home/scheinin/build/openfoam_sgimpt
+cd $BUILD_DIR
+
+module swap compiler/intel/15.0.3 compiler/gcc/5.3.0
+
+export PATH=/p/home/apps/unsupported/cmake/3.2.3-gcc-5.3.0/bin:$PATH
+export PATH=/apps/unsupported/git/2.4.3-gcc43/bin:$PATH
+export PATH=/apps/unsupported/gnuplot/5.0.4-gnu-4.9.3/bin:$PATH
+
+export LD_LIBRARY_PATH=/apps/unsupported/git/2.4.3-gcc43/lib:$LD_LIBRARY_PATH
+
+Edit file OpenFOAM-4.1/etc/bashrc
+(In my case $BUILD_DIR/OpenFOAM-4.1/etc/bashrc )
+
+export FOAM_INST_DIR=/p/home/scheinin/build/openfoam_mpt
+export WM_MPLIB=SGIMPI
+(did not change to export FOAMY_HEX_MESH=no)
+
+source  $BUILD_DIR/OpenFOAM-4.1/etc/bashrc
+
+cd ThirdParty-4.1
+
+export PATH=/app/DAAC/paraview/5.1.2_osmesa/bin:$PATH
+export LD_LIBRARY_PATH=/app/DAAC/paraview/5.1.2_osmesa/lib:$LD_LIBRARY_PATH
+
+export BOOST_ARCH_PATH=/apps/unsupported/COST/boost/1.58.0/gnu
+
+Edit ./makeCGAL 
+# after 
+BOOST_ARCH_PATH=$installBASE/$boostPACKAGE
+BOOST_SOURCE_DIR=$WM_THIRD_PARTY_DIR/$boostPACKAGE
+# add
+BOOST_ARCH_PATH=/apps/unsupported/COST/boost/1.58.0/gnu
+
+Download cgal-releases-CGAL-4.9.tar.gz to
+$BUILD_DIR/ThirdParty-4.1/cgal-releases-CGAL-4.9.tar.gz
+cd cgal-releases-CGAL-4.9
+
+mkdir $BUILD_DIR/ThirdParty-4.1/CGAL-4.9
+
+cmake .
+edit CMakeCache.txt
+
+//C compiler.
+CMAKE_C_COMPILER:FILEPATH=/apps/gnu_compiler/5.3.0/bin/gcc
+
+//CXX compiler.
+CMAKE_CXX_COMPILER:FILEPATH=/apps/gnu_compiler/5.3.0/bin/g++
+
+//The directory containing the GMP header files
+GMP_INCLUDE_DIR:PATH=/apps/unsupported/gmp/6.1.1-gcc-5.3.0/include
+
+//Path to the GMP library
+GMP_LIBRARIES:FILEPATH=/apps/unsupported/gmp/6.1.1-gcc-5.3.0/lib/libgmp.so
+
+//The directory containing the MPFR header files
+MPFR_INCLUDE_DIR:PATH=/apps/unsupported/mpfr/3.1.5-gcc-5.3.0/include
+ 
+//Path to the MPFR library
+MPFR_LIBRARIES:FILEPATH=/apps/unsupported/mpfr/3.1.5-gcc-5.3.0/lib/libmpfr.so
+
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=/apps/unsupported/COST/boost/1.58.0/gnu
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/apps/unsupported/COST/boost/1.58.0/gnu/include
+
+CMAKE_INSTALL_PREFIX:PATH=/p/home/scheinin/build/openfoam_sgimpt/ThirdParty-4.1/CGAL-4.9
+CGAL_INSTALL_DOC_DIR:STRING=doc/CGAL-4.9-I-900
+CGAL_INSTALL_MAN_DIR:STRING=share/man/man1
+
+cmake .
+make
+make install
+
+export BOOST_ARCH_PATH=/apps/unsupported/COST/boost/1.58.0/gnu
+export CGAL_ARCH_PATH=${BUILD_DIR}/ThirdParty-4.1/CGAL-4.9
+export MPFR_ARCH_PATH=/apps/unsupported/mpfr/3.1.5-gcc-5.3.0
+export GMP_ARCH_PATH=/apps/unsupported/gmp/6.1.1-gcc-5.3.0
+
+cd ${BUILD_DIR}/ThirdParty-4.1/CGAL-4.9/
+ln -s lib64 lib
+cd $MPFR_ARCH_PATH
+ln -s lib lib64
+
+export LD_LIBRARY_PATH=/apps/unsupported/COST/boost/1.58.0/gnu/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${MPFR_ARCH_PATH}/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${GMP_ARCH_PATH}/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${BUILD_DIR}/ThirdParty-4.1/CGAL-4.9/lib64:$LD_LIBRARY_PATH
+
+export WM_LDFLAGS='-m64 -Wl,-rpath-link ${BOOST_ARCH_PATH}/lib -Wl,-rpath-link ${MPFR_ARCH_PATH}/lib -Wl,-rpath-link ${GMP_ARCH_PATH}/lib -Wl,-rpath-link ${BUILD_DIR}/ThirdParty-4.1/CGAL-4.9/lib64'
+
+edit OpenFOAM-4.1/wmake/rules/General/CGAL
+add rpath-link of WM_LDFLAGS, because WM_LDFLAGS does not seem
+to be used where there was a problem in
+${BUILD_DIR}/OpenFOAM-4.1/applications/utilities/mesh/generation/foamyMesh/foamyQuadMesh
+
+cd ThirdParty-4.1/
+
+./Allwmake
+
+Make sure scotch has been built.
+
+
+cd ${BUILD_DIR}/OpenFOAM-4.1
+
+./Allwmake 2>&1 | tee make.log
+(./Allwmake 2>&1 | tee make2.log make3.log etc. if fix things and try again.)
+
+# Need to test parallel version
+
+# File ./etc/config.sh/settings has
+export FOAM_RUN=$WM_PROJECT_USER_DIR/run
+# and for C shell and tcsh
+# file ./etc/config.csh/settings has
+setenv FOAM_RUN $WM_PROJECT_USER_DIR/run
+# When building OpenFOAM I found
+> echo $FOAM_RUN
+/p/home/scheinin/OpenFOAM/scheinin-4.1/run
+# which is not what I want.
+# Also,
+> echo $WM_PROJECT_USER_DIR
+/p/home/scheinin/OpenFOAM/scheinin-4.1
+# WM_PROJECT_USER_DIR is set in
+${BUILD_DIR}/OpenFOAM-4.1/etc/cshrc
+${BUILD_DIR}/OpenFOAM-4.1/etc/bashrc
+
+We see that ${BUILD_DIR}/OpenFOAM-4.1/etc/bashrc sources many files
+> grep config ${BUILD_DIR}/OpenFOAM-4.1/etc/bashrc
+. $WM_PROJECT_DIR/etc/config.sh/functions
+_foamSource $WM_PROJECT_DIR/etc/config.sh/settings
+_foamSource $WM_PROJECT_DIR/etc/config.sh/aliases
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/mpi`
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/paraview`
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/ensight`
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/gperftools`
+    _foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/CGAL`
+. $WM_PROJECT_DIR/etc/config.sh/functions
+
+so the affect of sourcing bashrc can depend on configuration
+information in many other files.
+
+Another way to view dependencies is the following command
+> grep WM_PROJECT_DIR ${BUILD_DIR}/OpenFOAM-4.1/etc/bashrc
+foamOldDirs="$WM_PROJECT_DIR $WM_THIRD_PARTY_DIR \
+export WM_PROJECT_DIR=$WM_PROJECT_INST_DIR/$WM_PROJECT-$WM_PROJECT_VERSION
+. $WM_PROJECT_DIR/etc/config.sh/functions
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile prefs.sh`
+foamClean=$WM_PROJECT_DIR/bin/foamCleanPath
+_foamSource $WM_PROJECT_DIR/etc/config.sh/settings
+_foamSource $WM_PROJECT_DIR/etc/config.sh/aliases
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/mpi`
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/paraview`
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/ensight`
+_foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/gperftools`
+    _foamSource `$WM_PROJECT_DIR/bin/foamEtcFile config.sh/CGAL`
+. $WM_PROJECT_DIR/etc/config.sh/functions
+
+> grep WM_PROJECT_USER_DIR ${BUILD_DIR}/OpenFOAM-4.1/etc/bashrc
+export WM_PROJECT_USER_DIR=$HOME/$WM_PROJECT/$USER-$WM_PROJECT_VERSION
+
+Try changing ${BUILD_DIR}/OpenFOAM-4.1/etc/bashrc , so that
+export WM_PROJECT_USER_DIR=$WORKDIR/$WM_PROJECT/$USER-$WM_PROJECT_VERSION
+Notice, $WORKDIR instead of $HOME .
+
+source etc/bashrc
+mkdir $WM_PROJECT_USER_DIR
+mkdir $WM_PROJECT_USER_DIR/run
+
+ls $FOAM_TUTORIALS
+cd $FOAM_RUN
+cp -R $FOAM_TUTORIALS .
+
+See
+http://cfd.direct/openfoam/user-guide/tutorials/
+for running tests.
+
+In file
+/p/home/scheinin/build/openfoam_sgimpt/OpenFOAM-4.1/bin/tools/RunFunctions
+change mpirun to mpiexec_mpt
+
+    The simplest way to run a tutorial in OpenFOAM is to run blockMesh followed by the name of the solver, such as icoFoam. To know the name of the solver in question, have a look into the file system/controlDict and see the name defined for the keyword application.
+    But the situation changes when the case is more complicated. In those cases, there are a couple of helper scripts inside the case folder or inside the parent folder of that case, named Allrun and Allclean. To run them, simply prepend ./ to the script's name, e.g.:
+
+    ./Allrun
+
+    Some examples of tutorials that have these scripts:
+        In OpenFOAM 2.1, the tutorial incompressible/simpleFoam/motorBike has got the Allrun script.
+        Also in OpenFOAM 2.1, the tutorial incompressible/icoFoam/cavity does not have the Allrun script, but the parent folder incompressible/icoFoam does have that script. This means that this Allrun script will run all tutorials within the folder incompressible/icoFoam.
+
+E.g.
+cd /p/work2/scheinin/OpenFOAM/scheinin-4.1/run/tutorials/mesh/foamyHexMesh
+./Allrun
+Running foamyHexMesh in parallel on /p/work2/scheinin/OpenFOAM/scheinin-4.1/run/tutorials/mesh/foamyHexMesh/mixerVessel using 8  processes
+and much more
+One error
+Running reconstructParMesh on /p/work2/scheinin/OpenFOAM/scheinin-4.1/run/tutorials/mesh/foamyHexMesh/mixerVessel
+cp: cannot stat `/polyMesh': No such file or directory
+Difficult to determine where it failed.
+
+No summary to say if overall it failed or succeeded.
+

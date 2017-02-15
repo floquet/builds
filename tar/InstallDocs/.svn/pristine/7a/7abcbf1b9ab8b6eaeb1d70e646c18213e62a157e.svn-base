@@ -1,0 +1,148 @@
+
+
+Source
+https://www.r-project.org/
+
+export R_VERSION=3.2.2
+
+# Topaz below
+
+export INTEL_VERSION=15.0.3
+# OR
+export INTEL_VERSION=16.0.0
+# OR
+export GNU_VERSION=4.9.3
+
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+# OR
+module swap compiler/intel compiler/gcc/4.9.3
+
+module unload mpi/sgimpt/2.12-11218
+
+export PREFIX=/p/home/apps/unsupported/R/${R_VERSION}-intel-${INTEL_VERSION}
+# OR
+export PREFIX=/p/home/apps/unsupported/R/${R_VERSION}-gcc-${GNU_VERSION}
+
+export BUILD_DIR=${HOME}/build/R-intel-${INTEL_VERSION}
+# OR
+export BUILD_DIR=${HOME}/build/R-gnu-${GNU_VERSION}
+
+# Topaz above
+
+# Garnet below
+
+module swap PrgEnv-pgi PrgEnv-intel
+module load java/jdk1.7.0_45
+# To get more recent compiler
+module load PrgEnv-test
+
+export PREFIX=/usr/local/usp/R/${R_VERSION}-intel
+export BUILD_DIR=${HOME}/build/R-intel
+
+module swap PrgEnv-pgi PrgEnv-gnu
+module load java/jdk1.7.0_45
+# To get more recent compiler
+module load PrgEnv-test
+
+export PREFIX=/usr/local/usp/R/${R_VERSION}-gnu
+export BUILD_DIR=${HOME}/build/R-gnu
+
+# Garnet above
+
+mkdir $PREFIX
+
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+# OR
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+# For both garnet and topaz.
+export TCLTK_LIBS="-L/usr/lib64 -ltcl8.5 -ltk8.5"
+export TCLTK_CPPFLAGS="-I/usr/include"
+
+# Do not call configure output config.log because that file
+# is used by configure.
+# Garnet
+# module java/jdk1.7.0_45 defines JAVA_HOME environment variable
+export JAVAC="javac -J-Xms64m -J-Xmx512m"
+./configure --prefix=$PREFIX \
+  --enable-R-shlib  --enable-R-static-lib \
+  --enable-static  --enable-shared \
+  --with-tcltk \
+  --with-tcl-config=/usr/lib64/tclConfig.sh \
+  --with-tk-config=/usr/lib64/tkConfig.sh \
+  --with-x \
+  --with-cairo  --with-libpng  --with-jpeglib --with-libtiff \
+  --with-system-zlib --with-system-bzlib  --with-readline \
+  2>&1 | tee config.output
+
+# Topaz
+export JAVAC="javac -J-Xms64m -J-Xmx512m"
+./configure --prefix=$PREFIX \
+  --enable-R-shlib  --enable-R-static-lib \
+  --enable-static  --enable-shared \
+  --with-tcltk \
+  --with-tcl-config=/usr/lib64/tclConfig.sh \
+  --with-tk-config=/usr/lib64/tkConfig.sh \
+  --with-x \
+  --with-cairo   --with-libpng  --with-jpeglib --with-libtiff \
+  --with-system-zlib  --with-readline \
+   2>&1 | tee config.output
+
+
+make  2>&1 | tee make.log
+make check  2>&1 | tee check.log
+# then
+make check-all  2>&1 | tee check-all.log
+find $PREFIX
+make install
+find $PREFIX
+
+cd $PREFIX/lib64/R/doc/
+wget https://cran.r-project.org/doc/manuals/R-FAQ.pdf
+wget https://cran.r-project.org/doc/manuals/R-admin.pdf
+wget https://cran.r-project.org/doc/manuals/R-data.pdf
+wget https://cran.r-project.org/doc/manuals/R-exts.pdf
+wget https://cran.r-project.org/doc/manuals/R-intro.pdf
+wget https://cran.r-project.org/doc/manuals/R-lang.pdf
+
+# Note, there is more than one choice of $PREFIX .
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+export PATH=${PREFIX}/bin:$PATH
+R
+install.packages("ggplot2")
+install.packages("reshape")
+
+Picked (HTTP mirrors) OK , then USA (TX) OK
+
+topdir=$PREFIX
+cd $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+
+Currently there are not any modules set up for R, but I will try to get that out there next week. In the meantime, the installation is perfectly usable as is. You will just need to set up your personal environment to point to the installation you prefer. 
+PATH
+maybe LD_LIBRARY_PATH
+warn if compiler module is wrong
+
+module swap compiler/intel compiler/gcc/4.9.3

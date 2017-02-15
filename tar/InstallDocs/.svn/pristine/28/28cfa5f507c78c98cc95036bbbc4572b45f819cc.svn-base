@@ -1,0 +1,369 @@
+
+Source
+http://gmt.soest.hawaii.edu/
+
+got:
+gmt-5.1.2-src.tar.bz2
+gshhg-gmt-2.3.4.tar.gz
+dcw-gmt-1.1.1.tar.gz
+
+Did not install GDAL.
+
+ --- Intel below ---
+
+   %%% Generalized Intel install below. %%%
+
+export INTEL_VERSION=15.0.2
+OR
+export INTEL_VERSION=15.0.3
+OR
+export INTEL_VERSION=16.0.0
+
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+module unload mpi/sgimpt
+
+export GMT_VERSION=5.1.2
+
+export PREFIX=/p/home/apps/unsupported/gmt/${GMT_VERSION}-intel-${INTEL_VERSION}
+mkdir $PREFIX
+
+export BUILD_DIR=/p/home/scheinin/build/gmt/${GMT_VERSION}-intel-${INTEL_VERSION}
+mkdir $BUILD_DIR
+
+# Instructions say that subversion is needed,
+# but perhaps only for checkout.
+export PATH=/p/home/apps/unsupported/subversion/1.8.13-gcc43/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/subversion/1.8.13-gcc43/lib:$LD_LIBRARY_PATH
+
+export SZIP_VERSION=2.1
+export HDF5_VERSION=1.8.15
+export NETCDF_VERSION=4.3.3.1
+export FFTW3_VERSION=3.3.4
+
+export SZDIR=/p/home/apps/unsupported/szip/${SZIP_VERSION}-intel-${INTEL_VERSION}
+export H5DIR=/p/home/apps/unsupported/hdf5/${HDF5_VERSION}-intel-${INTEL_VERSION}
+export NETCDFDIR=/p/home/apps/unsupported/netcdf/${NETCDF_VERSION}-intel-${INTEL_VERSION}
+export FFTWDIR=/p/home/apps/unsupported/fftw-serial/${FFTW3_VERSION}-intel-${INTEL_VERSION}
+
+export PATH=${NETCDFDIR}/bin:$PATH
+export LD_LIBRARY_PATH=${SZDIR}/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${H5DIR}/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${NETCDFDIR}/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${FFTWDIR}/lib:$LD_LIBRARY_PATH
+
+export PATH=/p/home/apps/unsupported/cmake/3.2.3-intel/bin:$PATH
+
+cp dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz $PREFIX
+cd $PREFIX
+tar xzf dcw-gmt-1.1.1.tar.gz
+tar xzf gshhg-gmt-2.3.4.tar.gz
+rm dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz
+
+cd $BUILD_DIR
+# tar extract, e.g. tar xjf gmt-5.1.2-src.tar.bz2
+cd ${BUILD_DIR}/gmt-$GMT_VERSION
+
+Refer to README.CMake for further details.
+In subdirectory cmake
+cp ConfigUserTemplate.cmake ConfigUser.cmake
+Edit ConfigUser.cmake
+
+set (CMAKE_INSTALL_PREFIX $ENV{PREFIX})
+set (GSHHG_ROOT $ENV{PREFIX}/gshhg-gmt-2.3.4)
+set (DCW_ROOT $ENV{PREFIX}/dcw-gmt-1.1.1)
+set (NETCDF_ROOT $ENV{NETCDFDIR})
+# It is likely the FFTW3 will fail because it was compiled
+# only for double precision and README.CMake says it needs
+# single precision.
+set (FFTW3_ROOT "$FFTWDIR")
+# zlib-devel has been installed
+# set (ZLIB_ROOT "/p/home/apps/unsupported/zlib/1.2.8-intel")
+
+export CXX=icpc
+export CXXFLAGS="-O2 -fPIC"
+export CC=icc
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+mkdir ${BUILD_DIR}/build
+cd ${BUILD_DIR}/build
+
+# checking
+find $PREFIX ; pwd ; icc --version
+
+cmake ../gmt-$GMT_VERSION
+# Exact values depend on INTEL_VERSION
+Found NETCDF: /p/home/apps/unsupported/netcdf/4.3.3.1-intel-15.0.2/lib/libnetcdf.so
+Could NOT find FFTW3 
+User variable GMT_OPENMP not set: disabling OpenMP
+Found ZLIB: /usr/lib64/libz.so
+*  Found GSHHG database       : /p/home/apps/unsupported/gmt/5.1.2-intel-15.0.2/gshhg-gmt-2.3.4 (2.3.4)
+*  Found DCW-GMT database     : /p/home/apps/unsupported/gmt/5.1.2-intel-15.0.2/dcw-gmt-1.1.1
+
+Edit CMakeCache.txt
+CMAKE_VERBOSE_MAKEFILE:BOOL=TRUE
+CMAKE_INSTALL_PREFIX:PATH=[whatever is value of $PREFIX]
+
+cmake ../gmt-$GMT_VERSION
+# Check that values set did not change.
+
+make 2>&1 | tee make.log
+# Compiler was icc even though no file in top-level
+# build directory has "icc" string.
+
+make check 2>&1 | tee check.log
+Nothing done.
+
+find $PREFIX
+make install
+find $PREFIX
+
+Fix permissions.
+
+# not yet studied above
+
+   %%% Generalized Intel install above. %%%
+
+export PREFIX=/p/home/apps/unsupported/gmt/5.1.2-intel
+mkdir $PREFIX
+cd /p/home/scheinin/build/gmt-intel/src/gmt-5.1.2
+
+# Instructions say that subversion is needed,
+# but perhaps only for checkout.
+export PATH=/p/home/apps/unsupported/subversion/1.8.13-gcc43/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/subversion/1.8.13-gcc43/lib:$LD_LIBRARY_PATH
+
+export PATH=/p/home/apps/unsupported/netcdf/4.3.3.1-intel/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/intel/parallel_studio_2015/composer_xe_2015.1.133/compiler/lib/intel64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/szip/2.1-intel/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/hdf5/1.8.15-intel/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/netcdf/4.3.3.1-intel/lib:$LD_LIBRARY_PATH
+
+export PATH=/p/home/apps/unsupported/cmake/3.2.3-intel/bin:$PATH
+
+cp dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz $PREFIX
+cd $PREFIX
+tar xzf dcw-gmt-1.1.1.tar.gz
+tar xzf gshhg-gmt-2.3.4.tar.gz
+rm dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz
+
+Refer to README.CMake for further details.
+In subdirectory cmake
+cp ConfigUserTemplate.cmake ConfigUser.cmake
+Edit ConfigUser.cmake
+
+# set CMAKE_INSTALL_PREFIX to $PREFIX
+set (CMAKE_INSTALL_PREFIX "/p/home/apps/unsupported/gmt/5.1.2-intel")
+set (GMT_INSTALL_RELOCATABLE TRUE)
+set (GSHHG_ROOT "/p/home/apps/unsupported/gmt/5.1.2-intel/gshhg-gmt-2.3.4")
+set (DCW_ROOT "/p/home/apps/unsupported/gmt/5.1.2-intel/dcw-gmt-1.1.1")
+set (NETCDF_ROOT "/p/home/apps/unsupported/netcdf/4.3.3.1-intel")
+set (FFTW3_ROOT "/p/home/apps/unsupported/fftw-serial/3.3.4-intel")
+set (ZLIB_ROOT "/p/home/apps/unsupported/zlib/1.2.8-intel")
+
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+mkdir /p/home/scheinin/build/gmt-intel/src/build
+cd build
+cmake ../gmt-5.1.2
+
+CMakeCache.txt
+Good that
+CMAKE_C_COMPILER:FILEPATH=/p/home/apps/intel/parallel_studio_2015/composer_xe_2015.1.133/bin/intel64/icc
+Need to change to
+CMAKE_INSTALL_PREFIX:PATH=/p/home/apps/unsupported/gmt/5.1.2-intel
+Add
+GMT_OPENMP:BOOL=ON
+ZLIB_LIBRARY:FILEPATH=/p/home/apps/unsupported/zlib/1.2.8-intel/libso/libz.so
+
+ FFTW library found, but it is either too old (<3.3) or statically-linked.
+
+cmake ../gmt-5.1.2
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+No tests were found!!!
+Need GraphicsMagick if you wish to enable running the tests.
+make install
+
+Only shared libraries *.so were built.
+
+ --- Intel above ---
+ --- Linux distribution gcc below ---
+
+export PREFIX=/p/home/apps/unsupported/gmt/5.1.2-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/gmt-gcc43/src/gmt-5.1.2
+
+# Instructions say that subversion is needed,
+# but perhaps only for checkout.
+export PATH=/p/home/apps/unsupported/subversion/1.8.13-gcc43/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/subversion/1.8.13-gcc43/lib:$LD_LIBRARY_PATH
+
+export PATH=/p/home/apps/unsupported/cmake/3.2.3-gcc49/bin:$PATH
+
+export PATH=/p/home/apps/unsupported/netcdf/4.3.3.1-gcc43/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/szip/2.1-gcc43/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/hdf5/1.8.15-gcc43/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/netcdf/4.3.3.1-gcc43/lib:$LD_LIBRARY_PATH
+
+cp dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz $PREFIX
+cd $PREFIX
+tar xzf dcw-gmt-1.1.1.tar.gz
+tar xzf gshhg-gmt-2.3.4.tar.gz
+rm dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz
+cd /p/home/scheinin/build/gmt-gcc43/src/gmt-5.1.2
+
+# Refer to README.CMake for further details.
+# In subdirectory cmake
+cp ConfigUserTemplate.cmake ConfigUser.cmake
+# Edit ConfigUser.cmake
+
+# set CMAKE_INSTALL_PREFIX to $PREFIX
+set (CMAKE_INSTALL_PREFIX "/p/home/apps/unsupported/gmt/5.1.2-gcc43")
+set (GMT_INSTALL_RELOCATABLE TRUE)
+set (GSHHG_ROOT "/p/home/apps/unsupported/gmt/5.1.2-gcc43/gshhg-gmt-2.3.4")
+set (DCW_ROOT "/p/home/apps/unsupported/gmt/5.1.2-gcc43/dcw-gmt-1.1.1")
+set (NETCDF_ROOT "/p/home/apps/unsupported/netcdf/4.3.3.1-gcc43")
+set (FFTW3_ROOT "/p/home/apps/unsupported/fftw-serial/3.3.4-gcc43")
+
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+mkdir /p/home/scheinin/build/gmt-gcc43/src/build
+cd build
+cmake ../gmt-5.1.2
+
+CMakeCache.txt
+Good that
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc
+Need to change to
+CMAKE_INSTALL_PREFIX:PATH=/p/home/apps/unsupported/gmt/5.1.2-gcc49
+Add
+GMT_OPENMP:BOOL=ON
+
+ FFTW library found, but it is either too old (<3.3) or statically-linked.
+
+cmake ../gmt-5.1.2
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+No tests were found!!!
+Need GraphicsMagick if you wish to enable running the tests.
+make install
+
+Only shared libraries *.so were built.
+
+ --- Linux distribution gcc above ---
+ --- Hand-built gcc 4.9 below ---
+
+export PREFIX=/p/home/apps/unsupported/gmt/5.1.2-gcc49
+mkdir $PREFIX
+cd /p/home/scheinin/build/gmt-gcc49/src/gmt-5.1.2
+
+# Instructions say that subversion is needed,
+# but perhaps only for checkout.
+export PATH=/p/home/apps/unsupported/subversion/1.8.13-gcc43/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/subversion/1.8.13-gcc43/lib:$LD_LIBRARY_PATH
+
+export GCCROOT=/apps/unsupported/gcc/4.9.2
+export PATH=${GCCROOT}/bin:$PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpc/1.0.3/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${GCCROOT}/lib64:$LD_LIBRARY_PATH
+
+export PATH=/p/home/apps/unsupported/cmake/3.2.3-gcc49/bin:$PATH
+
+export PATH=/p/home/apps/unsupported/netcdf/4.3.3.1-gcc49/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/szip/2.1-gcc49/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/hdf5/1.8.15-gcc49/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/netcdf/4.3.3.1-gcc49/lib:$LD_LIBRARY_PATH
+
+cp dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz $PREFIX
+cd $PREFIX
+tar xzf dcw-gmt-1.1.1.tar.gz
+tar xzf gshhg-gmt-2.3.4.tar.gz
+rm dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz
+cd /p/home/scheinin/build/gmt-gcc49/src/gmt-5.1.2
+
+# Refer to README.CMake for further details.
+# In subdirectory cmake
+cp ConfigUserTemplate.cmake ConfigUser.cmake
+# Edit ConfigUser.cmake
+
+# set CMAKE_INSTALL_PREFIX to $PREFIX
+set (CMAKE_INSTALL_PREFIX "/p/home/apps/unsupported/gmt/5.1.2-gcc49")
+set (GMT_INSTALL_RELOCATABLE TRUE)
+set (GSHHG_ROOT "/p/home/apps/unsupported/gmt/5.1.2-gcc49/gshhg-gmt-2.3.4")
+set (DCW_ROOT "/p/home/apps/unsupported/gmt/5.1.2-gcc49/dcw-gmt-1.1.1")
+set (NETCDF_ROOT "/p/home/apps/unsupported/netcdf/4.3.3.1-gcc49")
+set (FFTW3_ROOT "/p/home/apps/unsupported/fftw-serial/3.3.4-gcc43")
+
+export CXX=/apps/unsupported/gcc/4.9.2/bin/g++
+export CXXFLAGS="-O2"
+export CC=/apps/unsupported/gcc/4.9.2/bin/gcc
+export CFLAGS="-O2"
+export FC=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F77=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F90=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export LIBS=""
+export LDFLAGS=""
+
+mkdir /p/home/scheinin/build/gmt-gcc49/src/build
+cd build
+cmake ../gmt-5.1.2
+
+CMakeCache.txt
+Good that
+CMAKE_C_COMPILER:FILEPATH=/apps/unsupported/gcc/4.9.2/bin/gcc
+Need to change to
+CMAKE_INSTALL_PREFIX:PATH=/p/home/apps/unsupported/gmt/5.1.2-gcc49
+Add
+GMT_OPENMP:BOOL=ON
+
+ FFTW library found, but it is either too old (<3.3) or statically-linked.
+
+cmake ../gmt-5.1.2
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+No tests were found!!!
+Need GraphicsMagick if you wish to enable running the tests.
+make install
+
+Only shared libraries *.so were built.
+
+ --- Hand-built gcc 4.9 above ---
+
+# There is more than one $PREFIX.
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+

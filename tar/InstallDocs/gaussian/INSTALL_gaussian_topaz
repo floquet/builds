@@ -1,0 +1,151 @@
+
+See
+Gaussian 09 Help Table of Contents
+http://www.gaussian.com/g_tech/g_ur/g09help.htm
+Running Gaussian
+http://www.gaussian.com/g_tech/g_ur/m_running.htm
+Configuring Gaussian
+http://www.gaussian.com/g_tech/g_ur/m_cfenv.htm
+
+On workstation:
+
+G09 Rev D.01
+Version: Intel EM64T SSE4/Linux w/LINDA Binary
+mkdir $HOME/E64-114N
+cp -R /media/CDROM/* $HOME/E64-114N
+md5sum /media/CDROM/tar/E64-114N.tgz
+a99d5025400fd0a70f35de0664930d7c  /media/CDROM/tar/E64-114N.tgz
+md5sum $HOME/E64-114N/tar/E64-114N.tgz
+a99d5025400fd0a70f35de0664930d7c  /home/scheinin/E64-114N/tar/E64-114N.tgz
+cd $HOME
+tar cf E64-114N.tar E64-114N
+
+G09 Rev D.01
+Version: Source Code Source
+mkdir $HOME/gaussian_allsrc
+cp -R /media/CDROM/* $HOME/gaussian_allsrc
+md5sum /media/CDROM/tar/allsrc.tgz
+3c42da8093ed670396918ae672d2137a  /media/CDROM/tar/allsrc.tgz
+md5sum $HOME/gaussian_allsrc/tar/allsrc.tgz
+3c42da8093ed670396918ae672d2137a  /home/scheinin/gaussian_allsrc/tar/allsrc.tgz
+cd $HOME
+tar cf gaussian_allsrc.tar gaussian_allsrc
+
+On topaz
+mkdir Gaussian
+On workstation
+Upload (sftp) the two tar files and have destination
+only user readable.
+Check md5sums on topaz.
+
+sudo
+cd /p/home/apps
+mkdir -p gaussian/g09.D01
+chown scheinin.9729LSTA gaussian
+cd gaussian
+chown -R scheinin.9729LSTA *
+exit sudo
+cd /p/home/apps/gaussian
+ln -s g09.D01 default
+cd /p/home/apps/gaussian/g09.D01
+tar xzf /p/home/scheinin/Gaussian/E64-114N/tar/E64-114N.tgz
+export g09root=/p/home/apps/gaussian/g09.D01
+cd g09
+./bsd/install
+
+Examples of permissions
+garnet:
+drwxr-x---  5 cots     vigauss  4096 Sep 10  2013 gaussian
+topaz:
+drwxr-x---   3 cots    viensigh  4096 May 19 15:36 ensight
+
+# tapaz has group vigauss
+sudo
+cd /p/home/apps
+chown -R cots.vigauss gaussian
+chmod -R o-rwx gaussian
+chmod -R g-w gaussian
+# Next line not recursive, just top directory.
+chmod g+rx gaussian
+cd gaussian
+find . -perm /u=x -exec chmod ug+x {} \;
+chmod -R ug+r *
+
+# Users should set
+# csh, tcsh
+setenv g09root /p/home/apps/gaussian/g09.D01
+setenv GAUSS_SCRDIR $WORKDIR/tmp
+source $g09root/g09/bsd/g09.login
+# ksh, bash
+export g09root=/p/home/apps/gaussian/g09.D01
+export GAUSS_SCRDIR=$WORKDIR/tmp
+. $g09root/g09/bsd/g09.profile
+
+
+mkdir $WORKDIR/gaussian
+cd $WORKDIR/gaussian
+export g09root=/p/home/apps/gaussian/g09.D01
+export GAUSS_SCRDIR=$WORKDIR/tmp
+. $g09root/g09/bsd/g09.profile
+
+cp $g09root/g09/tests/com/test0389.com test.user
+
+
+
+  notes below
+
+/p/home/apps/gaussian/g09.D01/g09/tests/com
+
+#Interactive experiment using
+ qsub -A  ERDCS97290STA -q standard \
+ -l select=4:ncpus=8:mpiprocs=8,place=scatter:excl,walltime=1:00:00 -I
+
+cd $PBS_O_WORKDIR
+
+export g09root=/usr/local/applic/gaussian/g09.B01
+export GAUSS_SCRDIR=/u/scheinin/tmp
+source $g09root/g09/bsd/g09.profile
+
+# Define remote shell command
+# export GAUSS_LFLAGS="$GAUSS_LFLAGS -opt \"Tsnet.Node.lindarsharg: ssh\""
+# There is no other text in GAUSS_LFLAGS so no need to use $GAUSS_LFLAGS.
+export GAUSS_LFLAGS=" -opt \"Tsnet.Node.lindarsharg: ssh\""
+
+# Note that /usr/bin/ssh would be a more precise file pathname but
+# Gaussian parsing of needs the simpler executable name or
+# linda_rsh in Gaussian need to be modified.
+# /usr/local/applic/gaussian/g09.B01/g09/linda8.2/opteron-linux/bin/linda_rsh
+
+# Generate a test command file using
+
+lindaworkers='%LindaWorkers'
+workerstmp=`cat -n ${PBS_NODEFILE} | \
+  sort -k2 | uniq -f1 -c | \
+  awk '{print $2, $3}' | \
+  sort -n | awk '{print $2}'`
+
+for i in $workerstmp ; do
+   lindaworkers=${lindaworkers},$i
+done
+lindaworkers=`echo ${lindaworkers} | sed -e "s/LindaWorkers,/LindaWorkers=/"`
+
+cp /work/scheinin/gaussian/original/com/test397.com test.user
+
+echo " "  > test.preamble
+echo "$lindaworkers" >> test.preamble
+echo '%NProcShared=8' >> test.preamble
+
+cat test.preamble test.user > test.com
+
+look at $lindaworkers in order to know which nodes I can log-into in
+order to watch the CPU usage.
+
+# Can run using
+# tee does not seem to work on compute node
+# time g09 test.com 2>&1 | tee test.log
+
+TBEGIN=`echo "print time();" | perl` ; \
+time g09 test.com > test.log 2>&1 ; \
+TEND=`echo "print time();" | perl` ; \
+echo "walltime: `expr $TEND - $TBEGIN` seconds"
+

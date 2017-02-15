@@ -1,0 +1,188 @@
+
+On garnet06, installed parallel-netcdf-1.2.0 with a procedure analogous
+to what is described in INSTALL_pnetcdf_jade .
+
+diamond, Intel compiler, below
+
+module load mpt/1.24
+module load cc_11.0.074
+module load fc_11.0.074
+module load mkl_10.1.0.015
+
+export CC=icc
+export CFLAGS="-fPIC -O2"
+export MPICC=$CC
+export F90=ifort
+export FC=ifort
+export MPIF77=ifort
+export F77=ifort
+export CXX=$MPICH_HOME/bin/mpiCC
+export CPPFLAGS="-fPIC -I/opt/sgi/mpt/mpt-1.24/include"
+export FPPFLAGS="-fPIC -I/opt/sgi/mpt/mpt-1.24/include -O2"
+export LDFLAGS="-L/opt/sgi/mpt/mpt-1.24/lib -L/opt/intel/mkl/10.1.0.015/lib/em64t"
+export LIBS="-lmpi"
+
+Did build in
+/work/scheinin/PNetCDF/1.1.0/src/parallel-netcdf-1.1.0
+
+./configure --prefix=/work/scheinin/PNetCDF/1.1.0 \
+  --with-mpi=/opt/sgi/mpt/mpt-1.26
+
+parallel-netCDF features:
+. parallel-netcdf configured WITH support for large files
+. parallel-netcdf configured WITH fortran bindings
+. parallel-netcdf configured WITH nonblocking routines
+. parallel-netcdf configured WITH giant variable support
+
+make
+# did not test running in parallel
+make install
+
+cp pnetcdf.inc pnetcdf.mod /work/scheinin/PNetCDF/1.1.0/include/pnetcdf.inc
+is part of the install and is an error.
+Do "cd src/libf" then
+cp pnetcdf.inc pnetcdf.mod /work/scheinin/PNetCDF/1.1.0/include/
+
+to be sure everything was installed, in directories
+src/lib  src/libf  src/utils
+did "make install"
+
+diamond, Intel compiler, above
+ ------------------------------------------------------------
+ranger, Intel compiler, below
+
+module unload  mvapich/1.0.1
+module unload pgi/7.2-5
+module load intel/10.1
+module load  mvapich2
+module load mkl/10.0
+
+setenv CC $MPICH_HOME/bin/mpicc
+setenv CFLAGS "-fPIC -O2"
+setenv MPICC $CC
+setenv F90 $MPICH_HOME/bin/mpif90
+setenv FC $F90
+setenv MPIF77 $F90
+setenv F77 $F90
+setenv CXX $MPICH_HOME/bin/mpiCC
+setenv CPPFLAGS "-I$MPICH_HOME/include"
+setenv FPPFLAGS "-I$MPICH_HOME/include -fPIC"
+setenv LDFLAGS "-L$MPICH_HOME/lib"
+
+Did build in
+/work/01228/scheinin/PNetCDF/1.1.0/src/parallel-netcdf-1.1.0
+
+./configure --prefix=/work/01228/scheinin/PNetCDF/1.1.0
+
+parallel-netCDF features:
+. parallel-netcdf configured WITH support for large files
+. parallel-netcdf configured WITH fortran bindings
+. parallel-netcdf configured WITH nonblocking routines
+. parallel-netcdf configured WITH giant variable support
+
+make
+# did not test running in parallel
+make install
+
+cp pnetcdf.inc pnetcdf.mod /work/scheinin/PNetCDF/1.1.0/include/pnetcdf.inc
+is part of the install and is an error.
+Do "cd src/libf" then
+cp pnetcdf.inc pnetcdf.mod /work/scheinin/PNetCDF/1.1.0/include/
+
+to be sure everything was installed, in directories
+src/lib  src/libf  src/utils
+did "make install"
+
+ranger, Intel compiler, above
+ ------------------------------------------------------------
+ranger, PGI compiler, below
+
+export CC=$MPICH_HOME/bin/mpicc
+export MPICC=$CC
+export F90=$MPICH_HOME/bin/mpif90
+export FC=$F90
+export MPIF77=$F90
+export F77=$F90
+export CXX=$MPICH_HOME/bin/mpiCC
+export CPPFLAGS="-I$MPICH_HOME/include"
+export FPPFLAGS="-I$MPICH_HOME/include"
+export LDFLAGS="-L$MPICH_HOME/lib"
+
+Did build in
+/work/01228/scheinin/Parallel-NetCDF/src/parallel-netcdf-1.0.3
+
+./configure --prefix=/work/01228/scheinin/Parallel-NetCDF
+
+make
+make install
+
+ranger, PGI compiler, above
+sapphire, PGI compiler, below
+
+export CC=/opt/cray/xt-asyncpe/2.4/bin/cc
+export MPICC=$CC
+export F90=/opt/cray/xt-asyncpe/2.4/bin/ftn
+export FC=$F90
+export MPIF77=$F90
+export F77=$F90
+export CXX=/opt/cray/xt-asyncpe/2.4/bin/CC
+#export CPPFLAGS="-I$MPICH_HOME/include"
+#export FPPFLAGS="-I$MPICH_HOME/include"
+#export LDFLAGS="-L$MPICH_HOME/lib"
+
+Did build in
+/work/scheinin/Parallel-NetCDF/src/parallel-netcdf-1.0.3
+
+./configure --prefix=/work/scheinin/Parallel-NetCDF
+
+make
+make install
+
+sapphire, PGI compiler, above
+ ------------------------------------------------------------
+jade with CNL 2.2 PGI compiler, below
+
+# "module list" includes
+# xt-os/2.2.41A_PS05
+# pgi/9.0.4
+# xt-mpt/3.5.0
+# xt-pe/2.2.41A_PS05
+
+# Prefix directory /work/scheinin/PNetCDF/1.1.0 has
+# bin  include  lib  man  src
+
+export CC=/opt/cray/xt-asyncpe/3.3/bin/cc
+export MPICC=$CC
+export CFLAGS="-O2"
+export F90=/opt/cray/xt-asyncpe/3.3/bin/ftn
+export FC=$F90
+export MPIF77=$F90
+export F77=$F90
+export CXX=/opt/cray/xt-asyncpe/3.3/bin/CC
+
+cd /work/scheinin/PNetCDF/1.1.0/src/parallel-netcdf-1.1.0
+
+./configure --prefix=/work/scheinin/PNetCDF/1.1.0
+
+parallel-netCDF features:
+. parallel-netcdf configured WITH support for large files
+. parallel-netcdf configured WITH fortran bindings
+. parallel-netcdf configured WITH nonblocking routines
+. parallel-netcdf configured WITH giant variable support
+
+make
+# did not test running in parallel
+make install
+
+cp pnetcdf.inc pnetcdf.mod /work/scheinin/PNetCDF/1.1.0/include/pnetcdf.inc
+is part of the install and is an error.
+Do "cd src/libf" then
+cp pnetcdf.inc pnetcdf.mod /work/scheinin/PNetCDF/1.1.0/include/
+
+to be sure everything was installed, in directories
+src/lib  src/libf  src/utils
+did "make install"
+
+jade with CNL 2.2 PGI compiler, above
+ ------------------------------------------------------------
+

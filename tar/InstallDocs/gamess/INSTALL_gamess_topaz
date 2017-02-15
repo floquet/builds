@@ -1,0 +1,514 @@
+
+http://www.msg.ameslab.gov/GAMESS/GAMESS.html
+
+Download on July 23, 2015
+/p/home/scheinin/build/gamess/src
+tar xzf gamess-current.tar.gz
+OR
+tar xzf gamess-05Dec2014R1.tar.gz
+mv gamess gamess-05Dec2014R1
+
+export PREFIX=/p/home/apps/unsupported/gamess/05Dec2014R1-intel
+mkdir $PREFIX
+
+cd /p/home/scheinin/build/gamess/src/gamess-05Dec2014R1
+
+./config
+please enter your target machine name:
+linux64
+GAMESS directory? [/p/home/scheinin/build/gamess/src/gamess-05Dec2014R1] <return>GAMESS build directory? [/p/home/scheinin/build/gamess/src/gamess-05Dec2014R1] <return>
+Version? [00] <return>
+Please enter your choice of FORTRAN: ifort
+Version? 15
+Enter your choice of 'mkl' or 'atlas' or 'acml' or 'none': mkl
+# value of $MKLROOT
+MKL pathname? /p/home/apps/intel/parallel_studio_2015_u2/composer_xe_2015.2.164/mkl
+/p/home/apps/intel/parallel_studio_2015_u2/composer_xe_2015.2.164/mkl
+MKL version (or 'skip')? skip
+communication library ('sockets' or 'mpi')? mpi
+Enter MPI library (impi, mvapich2, mpt, sockets): mpt
+Please enter your mpt's location: /p/home/apps/sgi/mpt-2.12-11203
+Do you want to try LIBCCHEM?  (yes/no): no
+
+Your configuration for GAMESS compilation is now in
+     /p/home/scheinin/build/gamess/src/gamess-05Dec2014R1/install.info
+Now, please follow the directions in
+     /p/home/scheinin/build/gamess/src/gamess-05Dec2014R1/machines/readme.unix
+
+cd ddi
+# Edit compddi, setting MAXCPUS=36 and MAXNODES=2370
+Large jobs have 85320 as the maximum number of cores.  85320/36 = 2370
+The text of the file
+set MAXCPUS=36
+set MAXNODES=2370
+
+./compddi  2>&1 | tee compddi.log
+
+#       Note that in all cases, we use the gcc compiler from GNU for
+#       the compilation of DDI, even if a non-GNU FORTRAN is used.
+
+   libddi.a was created and ddikick.x was not created.
+Text in compddi seems to say that ddikick.x is only needed for sockets
+
+cd ..
+
+./compall 2>&1 | tee compall.log
+
+# If not already done:
+   rm gamess.00.x
+# could do "./lked gamess 01"
+# doing the minimum results in gamess.00.x
+
+./lked gamess 2>&1 | tee lked.log
+
+Choices for some optional plug-in codes are
+   Tinker/SIMOMM code skipped, using dummy file qmmm.o
+   Valence Bond program VB2000 object files are vb2000.o vb2gms.o
+   Nuclear Electron Orbital code skipped, using dummy file neostb.o
+   Natural Bond Orbital (NBO) code skipped, using dummy file nbostb.o
+   MPQC code skipped, using dummy file mpqcst.o
+
+# In directory src/gamess-05Dec2014R1
+cp gamess.00.x $PREFIX
+# For earlier versions, data to move was mcpdata/ and ericfmt.dat.
+cp -R auxdata $PREFIX
+cp gms-files.csh rungms $PREFIX
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+# First installation, may need "chmod ugo+xr" next level up.
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify
+# only gms-files.csh and rungms , not the data.
+chmod g+w,o-w gms-files.csh rungms
+chmod -R go-w $topdir/auxdata
+
+# Use appwrap
+# On garnet
+mv rungms rungms.orig
+ln -s /usr/local/usp/appwrap/appwrap.pl rungms
+# Topaz does not yet have an appwrap.
+
+
+# Edit rungms.org or rungms (depending on whether appwrap is setup).
+
+# garnet
+set TARGET=cray-xt
+
+# topaz
+set TARGET=altix
+
+# Modified by A.L.S.
+set SCR=$GAMESSRUN/tmp$$
+set USERSCR=$GAMESSRUN/tmp$$
+set GMSPATH=$GAMESSBIN
+mkdir $SCR
+#
+# A.L.S. removed choice of version number.
+set JOB=$1      # name of the input file xxx.inp, give only the xxx part
+set VERNO=00    # revision number of the executable created by 'lked' step
+set NCPUS=$2    # number of compute processes to be run
+
+if ($SCHED == PBS) then
+   #    our ISU clusters have different names for local working disk space.
+   if ($?TMPDIR) then
+      if (-d $TMPDIR/tmp) then
+         set SCR=$TMPDIR/tmp
+      endif
+# A.L.S. commented-out setting of SCR , use job subdirectory.
+#   else
+#      set SCR=/scratch/$PBS_JOBID
+   endif
+   echo "PBS has assigned the following compute nodes to this run:"
+   uniq $PBS_NODEFILE
+endif
+
+# A.L.S. commented-out df
+# echo "Available scratch disk space (Kbyte units) at beginning of the job is"
+# df -k $SCR
+
+# garnet changes to rungms, below.
+
+if ($TARGET == cray-xt) then
+# A.L.S. everywhere that "$SRC/$JOB" is used as a directory name,
+#        change to "$SCR"
+       #   path to binary, and number of cores per node.
+# A.L.S. remove change of GMSPATH
+#   set GMSPATH=/u/sciteam/spruitt/gamess
+
+# A.L.S.
+   set SMP_SIZE=32
+# A.L.S.
+#   set TPN=$4
+   set TPN=$3
+
+# A.L.S. there is already a mkdir $SCR near the top of this script.
+# Do not use $JOB subdirectory.
+#   if (!(-e $SCR/$JOB)) mkdir $SCR/$JOB
+
+# A.L.S. everywhere that "$SRC/$JOB" is used as a directory name,
+#        change to "$SCR"
+       # copy auxiliary data files to working disk, redefine their location.
+#   cp    $ERICFMT $SCR/$JOB/ericfmt.dat
+#   cp -r $MCPPATH $SCR/$JOB/MCP
+#   setenv ERICFMT $SCR/$JOB/ericfmt.dat
+#   setenv MCPPATH $SCR/$JOB/MCP
+   set echo
+   cp    $ERICFMT $SCR/ericfmt.dat
+   cp -r $MCPPATH $SCR/MCP
+   setenv ERICFMT $SCR/ericfmt.dat
+   setenv MCPPATH $SCR/MCP
+
+# A.L.S.
+#   chdir $SCR/$JOB
+   chdir $SCR
+# A.L.S.
+   aprun -n $NCPUS -N $TPN $GMSPATH/gamess.$VERNO.x $JOB
+#   aprun -r 1 -d 1 -j 1 -n $NCPUS -N $TPN $GMSPATH/gamess.$VERNO.x $JOB
+
+# A.L.S. The user may not have a $USERSCR directory.
+# A.L.S. Rather than have the script do the copy and cleanup
+# A.L.S. It does not make sense to copy from $SCR to $USERSCR if they
+# are the same.  All lines concerning $USERSCR have been commented-out.
+# A specific user might want to modify this script with regard $USERSCR.
+#             Rescue the supplementary ASCII output files,
+#             from /lustre to one's permanent disk storage.
+#             This user is doing FMO trajectories, mainly,
+#             and ends up saving all those files...
+#   set PERMSCR=/u/sciteam/spruitt/scr
+#   if (-e $USERSCR/$JOB.efp)   cp $USERSCR/$JOB.efp   $PERMSCR
+#   if (-e $USERSCR/$JOB.gamma) cp $USERSCR/$JOB.gamma $PERMSCR
+#   if (-e $USERSCR/$JOB.trj)   cp $USERSCR/$JOB.trj   $PERMSCR
+#   if (-e $USERSCR/$JOB.rst)   cp $USERSCR/$JOB.rst   $PERMSCR
+#   if (-e $USERSCR/$JOB.dat)   cp $USERSCR/$JOB.dat   $PERMSCR
+#                               cp $USERSCR/$JOB.trj.000* $PERMSCR
+#   rm -f  $USERSCR/$JOB.*
+#              clean SCR, e.g. the RAM disk /tmp
+#   rm -f  $SCR/$JOB/$JOB.F*
+#   rm -f  $SCR/$JOB/ericfmt.dat
+#   rm -rf $SCR/$JOB/MCP
+#   rmdir  $SCR/$JOB
+#             perhaps these next things are batch queue related files?
+#             this is dangerous if jobs are launched from home directory,
+#             as it will wipe out input and output!
+   #---rm -f  /u/sciteam/spruitt/$JOB.*
+
+# garnet changes to rungms, above.
+
+# topaz changes to rungms, below.
+
+# topaz
+if ($TARGET == altix) then
+# A.L.S. remove change of GMSPATH
+#   setenv GMSPATH /usr/local/u/boatzj/gamess
+
+# A.L.S. Do not double the number of nodes.
+#   setenv PBS_NODEFILE $SCR/$JOB.2xnodes.$$
+
+# A.L.S. Do not run with double the number of nodes.
+#   mpiexec_mpt -v -n $NPROCS $GMSPATH/gamess.$VERNO.x $JOB
+
+# topaz changes to rungms, above.
+
+# Near end of script rungms, below.
+
+#   Clean up the master's scratch directory.
+#
+# A.L.S. Notice that some files are deleted.
+echo Files used on the master node $master were:
+ls -lF $SCR/$JOB.*
+rm -f  $SCR/$JOB.F*
+#
+# A.L.S. User may not have a $USERSCR or might be moving to self
+# so commented-out.
+#   Clean/Rescue any files created by the VB2000 plug-in
+#if (-e $SCR/$JOB.V84)        mv $SCR/$JOB.V84     $USERSCR
+#if (-e $SCR/$JOB.V80)        rm -f $SCR/$JOB.V*
+#if (-e $SCR/$JOB.TEMP02)     rm -f $SCR/$JOB.TEMP*
+#if (-e $SCR/$JOB.orb)        mv $SCR/$JOB.orb     $USERSCR
+#if (-e $SCR/$JOB.vec)        mv $SCR/$JOB.vec     $USERSCR
+#if (-e $SCR/$JOB.mol)        mv $SCR/$JOB.mol     $USERSCR
+#if (-e $SCR/$JOB.molf)       mv $SCR/$JOB.molf    $USERSCR
+#if (-e $SCR/$JOB.mkl)        mv $SCR/$JOB.mkl     $USERSCR
+#if (-e $SCR/$JOB.xyz)        mv $SCR/$JOB.xyz     $USERSCR
+#ls $SCR/${JOB}-*.cube > $SCR/${JOB}.lis
+#if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.cube $USERSCR
+#rm -f $SCR/${JOB}.lis
+#ls $SCR/${JOB}-*.grd > $SCR/${JOB}.lis
+#if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.grd $USERSCR
+#rm -f $SCR/${JOB}.lis
+#ls $SCR/${JOB}-*.csv > $SCR/${JOB}.lis
+#if (! -z $SCR/${JOB}.lis) mv $SCR/${JOB}*.csv $USERSCR
+#rm -f $SCR/${JOB}.lis
+
+# Near end of script rungms, above.
+
+SGI MPT version (denoted 05Dec2014R1-intel)
+always fails for more than one node.
+
+ impi below
+
+tar xzf gamess-05Dec2014R1.tar.gz
+mv gamess gamess-05Dec2014R1
+
+export PREFIX=/p/home/apps/unsupported/gamess/05Dec2014R1-impi
+mkdir $PREFIX
+
+cd /p/home/scheinin/build/gamess-impi/src/gamess-05Dec2014R1
+
+module unload mpi/sgimpt/2.12-11218
+module load mpi/intelmpi/15.0.2
+
+./config
+please enter your target machine name:
+linux64
+GAMESS directory? [/p/home/scheinin/build/gamess-impi/src/gamess-05Dec2014R1]
+<return>
+GAMESS build directory? [/p/home/scheinin/build/gamess-impi/src/gamess-05Dec2014R1] 
+<return>
+Version? [00] <return>
+Please enter your choice of FORTRAN: ifort
+Version? 15
+Enter your choice of 'mkl' or 'atlas' or 'acml' or 'none': mkl
+MKL pathname? /p/home/apps/intel/parallel_studio_2015_u2/composer_xe_2015.2.164/mkl
+MKL version (or 'skip')? skip
+communication library ('sockets' or 'mpi')? mpi
+Enter MPI library (impi, mvapich2, mpt, sockets): impi
+Please enter your mpt's location: /p/home/apps/sgi/mpt-2.12-11203
+Do you want to try LIBCCHEM?  (yes/no): no
+Please enter your impi's location: /p/home/apps/intel/parallel_studio_2015_u2/impi/5.0.3.048
+Do you want to try LIBCCHEM?  (yes/no): no
+ 
+Your configuration for GAMESS compilation is now in
+     /p/home/scheinin/build/gamess-impi/src/gamess-05Dec2014R1/install.info
+Now, please follow the directions in
+     /p/home/scheinin/build/gamess-impi/src/gamess-05Dec2014R1/machines/readme.unix
+
+cd ddi
+# Edit compddi, setting MAXCPUS=36 and MAXNODES=2370
+Large jobs have 85320 as the maximum number of cores.  85320/36 = 2370
+The text of the file
+set MAXCPUS=36
+set MAXNODES=2370
+
+./compddi  2>&1 | tee compddi.log
+
+cd ..
+
+./compall 2>&1 | tee compall.log
+
+# If not already done:
+   rm gamess.00.x
+# could do "./lked gamess 01"
+# doing the minimum results in gamess.00.x
+
+./lked gamess 2>&1 | tee lked.log
+ 
+Choices for some optional plug-in codes are
+   Tinker/SIMOMM code skipped, using dummy file qmmm.o
+   Valence Bond program VB2000 object files are vb2000.o vb2gms.o
+   Nuclear Electron Orbital code skipped, using dummy file neostb.o
+   Natural Bond Orbital (NBO) code skipped, using dummy file nbostb.o
+   MPQC code skipped, using dummy file mpqcst.o
+
+# In directory src/gamess-05Dec2014R1
+cp gamess.00.x $PREFIX
+# For earlier versions, data to move was mcpdata/ and ericfmt.dat.
+cp -R auxdata $PREFIX
+cp gms-files.csh rungms $PREFIX
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+# First installation, may need "chmod ugo+xr" next level up.
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify
+# only gms-files.csh and rungms , not the data.
+chmod g+w,o-w gms-files.csh rungms
+chmod -R go-w $topdir/auxdata
+
+# topaz changes to rungms, same as changes shown for SGI MPT
+# except 
+
+if ($TARGET == altix) then
+# A.L.S. remove change of GMSPATH
+#   setenv GMSPATH /usr/local/u/boatzj/gamess
+
+# A.L.S. Do not double the number of nodes.
+#   setenv PBS_NODEFILE $SCR/$JOB.2xnodes.$$
+
+# Did not set this for SGI MPT.
+# Have solution for SGI MPT documented in
+# ${SAMPLES_HOME}/Applications/gamess/gamess_sgimpt.pbs
+   setenv DDI_DS_PER_NODE 4
+
+# A.L.S. Do not run with double the number of nodes.
+#   mpirun -np $NPROCS $GMSPATH/gamess.$VERNO.x $JOB
+   mpirun -np $NCPUS $GMSPATH/gamess.$VERNO.x $JOB
+
+# topaz changes to rungms, above.
+
+ impi above
+
+Run tests
+
+cd /p/home/apps/unsupported/gamess/Tests/05Dec2014R1-impi
+mkdir checktst  tests  work18  work72
+mkdir work16/workdir  work64/workdir
+
+cp /p/home/scheinin/build/gamess-impi/src/gamess-05Dec2014R1/tests/standard/scripts/* /apps/unsupported/gamess/Tests/05Dec2014R1-impi/checktst/
+cp /p/home/scheinin/build/gamess-impi/src/gamess-05Dec2014R1/tests/standard/checktst /apps/unsupported/gamess/Tests/05Dec2014R1-impi/checktst/
+cp /p/home/scheinin/build/gamess-impi/src/gamess-05Dec2014R1/tests/standard/*.inp /apps/unsupported/gamess/Tests/05Dec2014R1-impi/tests
+
+for i in checktst chkabs ; do
+cp /apps/unsupported/gamess/Tests/05Dec2014R1-impi/checktst/$i /p/home/apps/unsupported/gamess/Tests/05Dec2014R1-impi/work18
+cp /apps/unsupported/gamess/Tests/05Dec2014R1-impi/checktst/$i /p/home/apps/unsupported/gamess/Tests/05Dec2014R1-impi/work72
+done
+
+cp work18_gamess.pbs work72_gamess.pbs into work18 and work72 respectively
+In work18 and work72 , edit *.pbs file to adjust range set by
+first_test and last_test
+
+Edit checktst in work18 and work72 .
+set CHECKPATH=$0
+set CHECKPATH=$CHECKPATH:h/scripts
+set CHECKPATH=../checktst # Added by A.L.S.
+if(! -e $CHECKPATH/chkabs && -e ./scripts) set CHECKPATH=./scripts
+if(! -e $CHECKPATH/chkabs) then
+
+grep -l "EXECUTION OF GAMESS TERMINATED NORMALLY" *.log
+grep -L "EXECUTION OF GAMESS TERMINATED NORMALLY" *.log
+
+./checktst > checktst.out 2>&1
+
+rm -rf *.tag tmp*
+
+More information.
+-----------------
+
+Jerry Boatz says:
+   For a GAMESS run using N cores, the ranks of the
+compute processes are 0 through (N-1). 
+The ranks of the data servers are N through (2N-1).
+Each core is supposed to be running one c.p.
+with rank K (0 <= K <= N-1) and one d.s. with rank K+N.
+ 
+For example, a 16-core job running on two 8-core nodes
+should have the following mapping
+of MPI compute processes and data servers:
+ 
+Node 0:
+  core 0:  rank 0 (c.p.) and rank 16 (d.s.)
+  core 1:  rank 1     "   and rank 17   "
+  ...
+  core 7:  rank 7    "    and rank 23   "
+ 
+Node 1:
+   core 0:  rank 8 (c.p.) and rank 24 (d.s.)
+   core 1:  rank 9    "    and rank 25    "
+   ...
+   core 7:  rank 15   "   and rank 31   "
+ 
+ 
+Paul Bennett distributes processes using the following.
+For a binary compiled to use SGI MPT, traditional
+computation/communication process pairing on every core,
+where all the comp processes are placed and then all the comms,
+I set up the following variable definition for MPI_DSM_CPULIST.
+MPI_DSM_CPULIST=0,9,18,27,1,10,19,28,2,11,20,29,3,12,21,30,4,13,22,31,5,14,23,32,6,15,24,33,7,16,25,34,8,17,26,35,36,45,54,63,37,46,55,64,38,47,56,65,39,48,57,66,40,49,58,67,41,50,59,68,42,51,60,69,43,52,61,70,44,53,62,71:allhosts
+
+Also, PBS_NODEFILE is changed.
+
+Paul Bennett also writes: 
+It’s a round-robin assignment, with the intent to place
+the communication processes on the same NUMA node as their
+computation processes.  If the node is full, the pairing is on
+the same core.  But if the node has only 28 processes, which
+one will if you are running 4096 compute tasks – (you get the
+select statement
+#PBS –l select= 1:ncpus=36:mpiprocs=28+113:ncpus=36:mpiprocs=36)
+then the comm. processes will land in the same NUMA node but not
+on the same core, but no biggie.
+Then after the definition, you also have the jcl that
+adds 1 communication process to each computation process,
+adjusts the PBS_NODEFILE properly, and then fires off the job
+to use 8192 MPI tasks.
+ 
+The problem is that the node with short count throws off the pinning.
+It looks like the way MPI_DSM_CPULIST is set up is buggy.
+You either have to copy the first node’s assignment
+with “:allhosts” keyword at the end of the first node’s description,
+like above, or else you must describe the placement for each and
+every process in that variable.  And the problem with that is that
+the system might get easily confused or worse, the variable doesn’t
+have enough storage to hold all that info.
+ 
+But if all the nodes are fully occupied, then it might be easier.
+Try
+MPI_DSM_CPULIST=”0-71:allhosts”
+ 
+The best performance I got using a code with 1 comm process per
+computation process, all comps placed and then all comms, was to
+set up 32 processes per node, and then write
+MPI_DSM_CPULIST=”0-7,9-16,18-25,27-34,36-43,45-52,54-61,63-70:allhosts”
+ 
+But the best performance I got was using an alternative compilation
+method described by Tom Oppe for a DFT problem specifically, that
+uses Cray’s method of setting up no communications processes per node.
+The shmem calls were enabled except for the shmem initialization call,
+which was commented out, in the complib step.  I believe Tom Oppe and
+Laura Brown worked that out together.  I can forward it if applicable.
+
+End of Paul's comments. 
+
+If there is the fatal error
+MPT ERROR: Failed to create necessary IB QueuePairs
+then add to job script
+export MPI_CONNECTIONS_THRESHOLD=72
+
+Was not needed on larger jobs.
+
+Batch job uses mpiprocs=72 for hyperthreading and
+modification of PBS_NODEFILE
+
+cat ${PBS_NODEFILE} | sort | uniq  > uniq_nodes.txt
+/bin/rm -f partial_nodefile.txt
+unique_nodes=`cat uniq_nodes.txt`
+for i in $unique_nodes ; do
+    for j in `seq 36` ; do
+       echo $i >> partial_nodefile.txt
+    done
+done
+cat partial_nodefile.txt partial_nodefile.txt > new_nodefile.txt
+export PBS_NODEFILE=`pwd`/new_nodefile.txt
+
+# To avoid busy wait for the communication processes, set MPI_NAP
+# to one milisecond polling.
+export MPI_NAP="1"
+
+For a TI test called dft-grad-b
+for a reference run (on an unknown computer) using resources
+#PBS -l select=128:ncpus=16:mpiprocs=16
+the time was 121 minutes.
+For the same TI input data,
+on topaz using SGI MPT using the following resources
+#PBS -l select=114:ncpus=36:mpiprocs=72
+the time was 103 minutes without MPI_NAP.
+With
+export MPI_NAP="1"
+around 57 minutes
+walltime: 3399 seconds
+
+For MPI_NAP, the value of 1 does not mean
+ "enabled", but rather, 1 millisecond polling.
+Could be other numerical values
+The suggestion in the manual (man mpi) of
+export MPI_NAP=""  (setenv MPI_NAP)
+did not reduce the CPU usage of the communication processes.
+
+MPI_NAP is for SGI MPT.
+See "man mpi" on topaz.
+

@@ -1,0 +1,350 @@
+
+Source
+
+https://earthsystemcog.org/
+Tab Software -> Link Download to fill-out form then goes to page for download.
+
+Documentation
+http://www.earthsystemmodeling.org/esmf_releases/public/last/ESMF_refdoc.pdf
+http://www.earthsystemmodeling.org/esmf_releases/public/last/ESMF_usrdoc.pdf
+
+ --- Intel SGI-MPT below ---
+
+   %%% Generalized Intel install below. %%%
+
+export INTEL_VERSION=15.0.2
+OR
+export INTEL_VERSION=15.0.3
+OR
+export INTEL_VERSION=16.0.0
+
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+
+export ESMF_VERSION=6.3.0rp1
+
+export MPI_VENDOR=sgimpt
+OR
+export MPI_VENDOR=intelmpi
+
+# Swap mpi if appropriate.
+
+export PREFIX=/p/home/apps/unsupported/esmf/${ESMF_VERSION}-intel-${INTEL_VERSION}-${MPI_VENDOR}
+mkdir $PREFIX
+
+# Build metis and parmetis in same subdirectory metis-${WORDSIZE}bit.
+export BUILD_DIR=/p/home/scheinin/build/esmf/${ESMF_VERSION}-intel-${INTEL_VERSION}-${MPI_VENDOR}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+# Need to fill-out form on Web page to get source.
+# Also get documentation.
+# Untar'ing generates subdirectory "esmf".
+
+tar xzf esmf_6_3_0rp1_src.tar.gz
+cd esmf
+
+# checking
+find $PREFIX ; pwd ; icc --version
+
+export I_MPI_CXX=icpc 
+export I_MPI_CC=icc 
+export I_MPI_FC=ifort 
+export I_MPI_F90=ifort 
+export I_MPI_F77=ifort 
+export MPICXX_CXX=icpc 
+export MPICC_CC=icc 
+export MPIF90_F90=ifort 
+
+export ESMF_INSTALL_PREFIX=$PREFIX
+export ESMF_DIR=${BUILD_DIR}/esmf
+export ESMF_COMPILER=intel
+export ESMF_COMM=mpi
+export ESMF_F90DEFAULT=mpif90
+export ESMF_CXXDEFAULT=mpiCC
+export ESMF_MPIRUN=mpiexec_mpt
+export ESMF_OPENMP=ON
+
+# capital oh
+export ESMF_BOPT=O
+export ESMF_OPTLEVEL=3
+
+export ESMF_F90COMPILEOPTS="-O3 -fPIC -openmp"
+export ESMF_F90LINKOPTS="-O3 -fPIC -openmp"
+export ESMF_CXXCOMPILEOPTS="-O3 -fPIC -openmp"
+export ESMF_CXXLINKOPTS="-O3 -fPIC -openmp"
+
+export ESMF_LAPACK=mkl
+export ESMF_LAPACK_LIBPATH=$MKLROOT/lib/intel64
+export ESMF_LAPACK_LIBS="-lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core"
+
+In file build_config/Linux.intel.default/build_rules.mk
+From
+ESMF_ABISTRING := x86_64_small
+to
+ESMF_ABISTRING := x86_64_medium
+
+# Can use "make info" to see result of environment choices.
+
+make 2>&1 | tee make.log
+
+# Use -V to have build environment.
+qsub -q debug -A ERDCS97290STA -l select=2:ncpus=36:mpiprocs=36,walltime=1:00:00 -V -I
+cd ${BUILD_DIR}/esmf
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+# swap mpi if appropriate
+# checking
+find $PREFIX ; pwd ; icc --version
+make check 2>&1 | tee check.log
+exit
+qsub -q standard -A ERDCS97290STA -l select=2:ncpus=36:mpiprocs=36,walltime=2:00:00 -V -I
+cd ${BUILD_DIR}/esmf
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+# swap mpi if appropriate
+# checking
+find $PREFIX ; pwd ; icc --version
+make all tests 2>&1 | tee alltests.log
+# At end, message said this target was obsolete.
+make unit_tests  2>&1 | tee unit_tests.log
+exit
+
+find $PREFIX
+make install
+find $PREFIX
+
+cp ../ESMF_refdoc.pdf ../ESMF_usrdoc.pdf $PREFIX/doc/
+
+Installation locations are rather strange.
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel-15.0.2-sgimpt/bin/binO/Linux.intel.64.mpi.default
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel-15.0.2-sgimpt/mod/modO/Linux.intel.64.mpi.default
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel-15.0.2-sgimpt/include
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel-15.0.2-sgimpt/doc
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel-15.0.2-sgimpt/lib/libO/Linux.intel.64.mpi.default
+
+Fix permissions.
+
+   %%% Generalized Intel install above. %%%
+
+
+export PREFIX=/p/home/apps/unsupported/esmf/6.3.0rp1-intel
+mkdir $PREFIX
+tar xzf esmf_6_3_0rp1_src.tar.gz
+cd /p/home/scheinin/build/esmf-intel/src/esmf
+
+export MPICC_CC=icc
+export MPICXX_CXX=icpc
+export MPIF90_F90=ifort
+
+export ESMF_INSTALL_PREFIX=$PREFIX
+export ESMF_DIR=/p/home/scheinin/build/esmf-intel/src/esmf
+export ESMF_COMPILER=intel
+export ESMF_COMM=mpi
+export ESMF_F90DEFAULT=mpif90
+export ESMF_CXXDEFAULT=mpiCC
+export ESMF_MPIRUN=mpiexec_mpt
+# Set ESMF_OPENMP to OFF just to simplify the code.
+export ESMF_OPENMP=OFF
+
+# capital oh
+export ESMF_BOPT=O
+export ESMF_OPTLEVEL=3
+
+# The above concept of optimization option format is rather restricted.
+# For other compilers used more complicated optimization options
+# for the compiler options below.  But for diamond (and now topaz)
+# I will use very simple options.
+export ESMF_F90COMPILEOPTS="-O3"
+export ESMF_F90LINKOPTS="-O3"
+export ESMF_CXXCOMPILEOPTS="-O3"
+export ESMF_CXXLINKOPTS="-O3"
+
+export ESMF_LAPACK=mkl
+export ESMF_LAPACK_LIBPATH=$MKLROOT/lib/intel64
+export ESMF_LAPACK_LIBS="-lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core"
+
+# Did not use "-ipo" for topaz because the experience from other
+# applications is that when libraries are created the "-ipo" results
+# in the useless libraries.  Perhaps because first-pass objects that
+# are incompletely compiled are put into the library.
+
+# on diamond, do also on topaz
+In file build_config/Linux.intel.default/build_rules.mk
+From ESMF_ABISTRING := x86_64_small to
+ESMF_ABISTRING := x86_64_medium
+
+# Can use "make info" to see result of environment choices.
+
+make 2>&1 | tee make.log
+
+# Use -V to have build environment.
+qsub -q workq -l place=scatter:excl -l select=2:ncpus=36:mpiprocs=36,walltime=1:00:00 -V -I
+cd /p/home/scheinin/build/esmf-intel/src/esmf
+make check 2>&1 | tee check.log
+# Documentation says that "make all tests" is a more extensive set of tests.
+# Did not do "make all tests" because even "make test" runs for a long time.
+# make all tests 2>&1 | tee all_tests.log
+
+make install
+
+src/esmf> cp ../ESMF_refdoc.pdf ../ESMF_usrdoc.pdf $PREFIX/doc/
+
+Installed in
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel/bin/binO/Linux.intel.64.mpi.default/
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel/mod/modO/Linux.intel.64.mpi.default/
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel/lib/libO/Linux.intel.64.mpi.default/
+/p/home/apps/unsupported/esmf/6.3.0rp1-intel/include/
+
+ --- Intel SGI-MPT above ---
+ --- Distribution gcc and SGI-MPT below ---
+
+export PREFIX=/p/home/apps/unsupported/esmf/6.3.0rp1-gcc43
+mkdir $PREFIX
+tar xzf esmf_6_3_0rp1_src.tar.gz
+cd /p/home/scheinin/build/esmf-gcc43/src/esmf
+
+export MPICC_CC=gcc
+export MPICXX_CXX=g++
+export MPIF90_F90=gfortran
+
+export ESMF_INSTALL_PREFIX=$PREFIX
+export ESMF_DIR=/p/home/scheinin/build/esmf-gcc43/src/esmf
+export ESMF_COMPILER=gfortran
+export ESMF_COMM=mpi
+export ESMF_F90DEFAULT=mpif90
+export ESMF_CXXDEFAULT=mpiCC
+export ESMF_MPIRUN=mpiexec_mpt
+# Set ESMF_OPENMP to OFF just to simplify the code.
+export ESMF_OPENMP=OFF
+
+# capital oh
+export ESMF_BOPT=O
+export ESMF_OPTLEVEL=3
+
+# The above concept of optimization option format is rather restricted.
+# For other compilers used more complicated optimization options
+# for the compiler options below.  But for diamond (and now topaz)
+# I will use very simple options.
+# Also, "make install" results in a compilation using gfortran
+# of an MPI file, results in an error unless MPI paths are added.
+export ESMF_F90COMPILEOPTS="-O3 -I${MPI_ROOT}/include"
+export ESMF_F90LINKOPTS="-O3 -L${MPI_ROOT}/lib"
+export ESMF_CXXCOMPILEOPTS="-O3 -I${MPI_ROOT}/include"
+export ESMF_CXXLINKOPTS="-O3 -L${MPI_ROOT}/lib"
+
+# have nothing for ESMF_LAPACK for gcc
+
+In file build_config/Linux.gfortran.default/build_rules.mk
+From ESMF_ABISTRING := x86_64_small to
+ESMF_ABISTRING := x86_64_medium
+
+# Can use "make info" to see result of environment choices.
+
+make 2>&1 | tee make.log
+
+# Use -V to have build environment.
+qsub -q workq -l place=scatter:excl -l select=2:ncpus=36:mpiprocs=36,walltime=1:00:00 -V -I
+cd /p/home/scheinin/build/esmf-gcc43/src/esmf
+make check 2>&1 | tee check.log
+# Testing failed because gfortran was not put onto compute nodes.
+# Cannot use version 4.9 because 
+   Fatal Error: Cannot read module file 'esmf.mod' opened at (1),
+   because it was created by a different version of GNU Fortran
+# Documentation says that "make all tests" is a more extensive set of tests.
+# Did not do "make all tests" because even "make test" runs for a long time.
+# make all tests 2>&1 | tee all_tests.log
+
+make install
+
+src/esmf> cp ../ESMF_refdoc.pdf ../ESMF_usrdoc.pdf $PREFIX/doc/
+
+Installed in
+/p/home/apps/unsupported/esmf/6.3.0rp1-gcc43/bin/binO/Linux.gfortran.64.mpi.default
+/p/home/apps/unsupported/esmf/6.3.0rp1-gcc43/mod/modO/Linux.gfortran.64.mpi.default
+/p/home/apps/unsupported/esmf/6.3.0rp1-gcc43/include
+/p/home/apps/unsupported/esmf/6.3.0rp1-gcc43/lib/libO/Linux.gfortran.64.mpi.default
+
+ --- Distribution gcc and SGI-MPT above ---
+ --- Hand-built gcc 4.9 and SGI-MPT below ---
+
+export PREFIX=/p/home/apps/unsupported/esmf/6.3.0rp1-gcc49
+mkdir $PREFIX
+tar xzf esmf_6_3_0rp1_src.tar.gz
+cd /p/home/scheinin/build/esmf-gcc49/src/esmf
+
+export GCCROOT=/apps/unsupported/gcc/4.9.2
+export PATH=${GCCROOT}/bin:$PATH
+export LD_LIBRARY_PATH=${GCCROOT}/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpc/1.0.3/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+
+export MPICC_CC=gcc
+export MPICXX_CXX=g++
+export MPIF90_F90=gfortran
+
+export ESMF_INSTALL_PREFIX=$PREFIX
+export ESMF_DIR=/p/home/scheinin/build/esmf-gcc49/src/esmf
+export ESMF_COMPILER=gfortran
+export ESMF_COMM=mpi
+export ESMF_F90DEFAULT=mpif90
+export ESMF_CXXDEFAULT=mpiCC
+export ESMF_MPIRUN=mpiexec_mpt
+# Set ESMF_OPENMP to OFF just to simplify the code.
+export ESMF_OPENMP=OFF
+
+# capital oh
+export ESMF_BOPT=O
+export ESMF_OPTLEVEL=3
+
+# The above concept of optimization option format is rather restricted.
+# For other compilers used more complicated optimization options
+# for the compiler options below.  But for diamond (and now topaz)
+# I will use very simple options.
+# Also, "make install" results in a compilation using gfortran
+# of an MPI file, results in an error unless MPI paths are added.
+export ESMF_F90COMPILEOPTS="-O3 -I${MPI_ROOT}/include"
+export ESMF_F90LINKOPTS="-O3 -L${MPI_ROOT}/lib"
+export ESMF_CXXCOMPILEOPTS="-O3 -I${MPI_ROOT}/include"
+export ESMF_CXXLINKOPTS="-O3 -L${MPI_ROOT}/lib"
+
+# have nothing for ESMF_LAPACK for gcc
+
+In file build_config/Linux.gfortran.default/build_rules.mk
+From ESMF_ABISTRING := x86_64_small to
+ESMF_ABISTRING := x86_64_medium
+
+# Can use "make info" to see result of environment choices.
+
+make 2>&1 | tee make.log
+
+# Use -V to have build environment.
+qsub -q workq -l place=scatter:excl -l select=2:ncpus=36:mpiprocs=36,walltime=1:00:00 -V -I
+cd /p/home/scheinin/build/esmf-gcc49/src/esmf
+make check 2>&1 | tee check.log
+# Documentation says that "make all tests" is a more extensive set of tests.
+# Did not do "make all tests" because even "make test" runs for a long time.
+make all tests 2>&1 | tee all_tests.log
+make unit_tests 2>&1 | tee unit_tests.log
+exit
+
+make install
+
+src/esmf> cp ../ESMF_refdoc.pdf ../ESMF_usrdoc.pdf $PREFIX/doc/
+
+Installed in
+/p/home/apps/unsupported/esmf/6.3.0rp1-gcc49/bin/binO/Linux.gfortran.64.mpi.default
+/p/home/apps/unsupported/esmf/6.3.0rp1-gcc49/mod/modO/Linux.gfortran.64.mpi.default
+/p/home/apps/unsupported/esmf/6.3.0rp1-gcc49/include
+/p/home/apps/unsupported/esmf/6.3.0rp1-gcc49/lib/libO/Linux.gfortran.64.mpi.default
+
+ --- Hand-built gcc 4.9 and SGI-MPT above ---
+
+Note, there is more than one PREFIX.
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+

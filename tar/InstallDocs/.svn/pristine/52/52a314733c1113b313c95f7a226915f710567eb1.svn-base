@@ -1,0 +1,55 @@
+
+Source code from  http://valgrind.org/
+
+ =================== Installation for COST, below ===================
+
+Carrie doing it on garnet April 28, so skip it.
+COST installation seems to be gnu-gcc
+
+ =================== Installation for COST, above ===================
+
+garnet
+
+export PREFIX=/usr/local/usp/COST/valgrind-3.10.1-gnu-gcc
+export CC=gcc
+export CFLAGS=""
+export CXX=g++
+export CXXFLAGS=""
+export LDFLAGS=""
+export CFLAGS_MPI=""
+export LDFLAGS_MPI="-L/usr/lib/alps -lalps -lalpslli -lalpsutil"
+export MPI_CC=cc
+
+module unload atp
+
+cd /u/scheinin/build/valgrind/valgrind-3.10.1
+
+./configure --prefix=$PREFIX \
+ --with-mpicc=cc \
+ --with-tmpdir=$WORKDIR/tmp
+
+make 2>&1 | tee make.log
+
+make check 2>&1 | tee check.log
+
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+
+Did not do, i.e. did and had errors, but keep as reference
+export PREFIX=/usr/local/usp/COST/valgrind-3.10.1-gnu-cc
+export CC=cc
+export CFLAGS="-dynamic"
+export CXX=CC
+export CXXFLAGS="-dynamic"
+export LDFLAGS="-L/usr/lib/alps -dynamic"
+export CFLAGS_MPI="-dynamic"
+export LDFLAGS_MPI="-L/usr/lib/alps -dynamic"
+export MPI_CC=cc

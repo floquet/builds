@@ -1,0 +1,46 @@
+
+ ============ garnet below ============
+
+Need to look at web site to discover the most recent versions.
+In src/ parent directory
+
+wget http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.1.tar.gz
+wget http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.6.0.tar.gz
+wget http://www.cise.ufl.edu/research/sparse/amd/AMD-2.2.2.tar.gz
+
+
+Need to create lib and include
+/usr/local/usp/umfpack/5.5.1-cle/lib
+/usr/local/usp/umfpack/5.5.1-cle/include
+
+make sure module list has 
+xt-libsci
+
+Modify 
+/usr/local/usp/umfpack/5.5.1-cle/src/UFconfig
+
+cd /usr/local/usp/umfpack/5.5.1-cle/src/UMFPACK
+
+Removed cd Demo in /work/local/usp/umfpack/5.5.1-cle/src/UMFPACK/Makefile
+
+make
+make install
+
+
+topdir=/usr/local/usp/umfpack
+
+cd $topdir
+chmod ugo+xr $topdir
+chown scheinin.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory and in source/
+chmod -R o-rwx *
+cd $topdir
+chown -R scheinin.staff *
+
+ ============ garnet above ============
+
+

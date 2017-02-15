@@ -1,0 +1,19 @@
+#!/bin/csh
+#PBS -A erdcssta
+#PBS -l ncpus=16
+#PBS -l walltime=0:10:00
+#PBS -q debug
+#PBS -j oe
+#PBS -N smalltest
+
+cd $PBS_O_WORKDIR
+
+module load blcr
+
+setenv LD_PRELOAD /usr/lib64/libcr_run.so.0
+setenv TMPDIR /work/scheinin/tmp
+rm -f ${TMPDIR}/fort*
+rm -f ${TMPDIR}/runparams.out
+
+aprun -n 16 ./smalltest.exe
+

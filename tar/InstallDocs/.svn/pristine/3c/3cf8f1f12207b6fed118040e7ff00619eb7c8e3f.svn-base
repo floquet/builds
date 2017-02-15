@@ -1,0 +1,165 @@
+
+
+Phoenix on May 21, 2015 .
+
+Get source from
+
+http://www.nwchem-sw.org/index.php/Download
+
+Compiling information in
+http://www.nwchem-sw.org/index.php/Compiling_NWChem
+
+http://www.nwchem-sw.org/index.php/Download#Source_Code
+has a long list of patches.
+
+# Use default
+# compiler/intel/15.0.2  and  mpi/sgimpt/2.11
+
+# APPS_HOME is not a default environment variable on garnet
+# It is used here to make the recipe general, independent of
+# top level directory structure.
+export APPS_HOME=/home/scheinin/apps
+export PREFIX=${APPS_HOME}/nwchem-6.5-intel
+export NWCHEM_TOP=${PREFIX}/src/Nwchem-6.5
+# Put Nwchem-6.5.revision26243-src.2014-09-10.tar.bz2 into ${PREFIX}/src
+# and extract.
+# Rename untar'ed directory
+mv Nwchem-6.5.revision26243-src.2014-09-10 Nwchem-6.5
+
+# In ${PREFIX}/src download patches.
+
+wget http://www.nwchem-sw.org/images/Util_md_sockets.patch.gz
+wget http://www.nwchem-sw.org/images/Hbar.patch.gz
+wget http://www.nwchem-sw.org/images/Tcenxtask.patch.gz
+wget http://www.nwchem-sw.org/images/Hnd_giaxyz_noinline.patch.gz
+wget http://www.nwchem-sw.org/images/Parallelmpi.patch.gz
+wget http://www.nwchem-sw.org/images/Makefile_gcc4x.patch.gz
+wget http://www.nwchem-sw.org/images/Bcast_ccsd.patch.gz
+wget http://www.nwchem-sw.org/images/Elpa_syncs.patch.gz
+wget http://www.nwchem-sw.org/images/Xlmpoles_ifort15.patch.gz
+wget http://www.nwchem-sw.org/images/Ifort15_fpp_offload.patch.gz
+wget http://www.nwchem-sw.org/images/Texas_iorb.patch.gz
+wget http://www.nwchem-sw.org/images/Dmapp_inc.patch.gz
+wget http://www.nwchem-sw.org/images/Print1e.patch.gz
+wget http://www.nwchem-sw.org/images/Hnd_rys.patch.gz
+wget http://www.nwchem-sw.org/images/Tddft_grad.patch.gz
+
+gunzip *.patch.gz
+
+# Make list of patches except Hnd_giaxyz_noinline.patch with needs
+# to be done separately.
+ppp="Util_md_sockets.patch Hbar.patch Tcenxtask.patch Parallelmpi.patch Makefile_gcc4x.patch Bcast_ccsd.patch Elpa_syncs.patch Xlmpoles_ifort15.patch Ifort15_fpp_offload.patch Texas_iorb.patch Dmapp_inc.patch Print1e.patch Hnd_rys.patch Tddft_grad.patch"
+
+cd Nwchem-6.5/src
+
+for i in $ppp ; do
+echo "working on $i below"
+patch -p0 < ../../$i
+done
+
+# Need to do /Hnd_giaxyz_noinline.patch separately
+# because it looks for hnd_giaxyz.F without going down
+# into NWints/hondo/
+cd NWints/hondo/
+patch -p0 < ../../../../Hnd_giaxyz_noinline.patch
+
+# Choose MKL options using
+# https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor
+
+export FC=ifort
+export CC=icc
+export NWCHEM_TARGET=LINUX64
+export NWCHEM_MODULES="all"
+export USE_64TO32=y
+export LARGE_FILES=TRUE
+export USE_NOFSCHECK=TRUE
+export USE_MPI=y
+export USE_MPIF=y
+export USE_MPIF4=y
+export MPI_LOC=${MPI_ROOT}
+export MPI_LIB=${MPI_ROOT}/lib
+export MPI_INCLUDE=${MPI_ROOT}/include
+export LIBMPI="-lmpi"
+export USE_SCALAPACK=y
+export HAS_BLAS=yes
+export BLASOPT="-L${MKLROOT}/lib/intel64"
+export BLAS_LIB="-lmkl_blas95_lp64"
+export LAPACK_LIB="-lmkl_lapack95_lp64"
+export USE_SCALAPACK=y
+export SCALAPACK="-L${MKLROOT}/lib/intel64"
+export SCALAPACK_LIB="${MKLROOT}/lib/intel64/mkl_blacs_sgimpt_lp64.a -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -lpthread -lm"
+export LIB_DEFINES="-I${MKLROOT}/include/intel64/lp64 -I${MKLROOT}/include"
+export CPPFLAGS="-I${MKLROOT}/include/intel64/lp64 -I${MKLROOT}/include"
+
+
+For scalapack, would be better to have one for SGI MPT.
+Using libmkl_scalapack_lp64 may fail.
+
+
+
+
+cd $NWCHEM_TOP/src
+make nwchem_config
+make 64_to_32 2>&1 | tee convert.log
+
+# Use the command
+date +%a_%b_%d_%H:%M:%S_%Y
+# and copy the result, e.g. "Tue_Jun_16_15:09:47_2015"
+Edit Nwchem-6.5/src/GNUmakefile
+Change from
+  LIB_DEFINES =  -DCOMPILATION_DATE="`date +%a_%b_%d_%H:%M:%S_%Y`" \
+Change to
+  LIB_DEFINES =  -DCOMPILATION_DATE="Tue_Jun_16_15:09:47_2015" \
+
+make LDFLAGS="-Wl,-L${NWCHEM_TOP}/lib/LINUX64 -Wl,-L${NWCHEM_TOP}/src/tools/install/lib" 2>&1 | tee make.log
+
+Went no further on phoenix.
+ ----
+
+web site, INSTALL file and INSTALL_nwchem
+describe data directories to create and tests
+
+
+
+
+
+
+
+http://www.nwchem-sw.org/index.php/Compiling_NWChem#How-to:_Linux_workstation_platforms
+
+Has useful but nothing specific to SGI or Intel MPI.
+
+below https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor
+
+ One possibility, when using BLACS but not ScaLAPACK
+ and sequential rather than multithreaded
+ 64-bit integers, for C and C++
+
+ Note SGI MPI is not one of the possible choices and the above
+ is for intelmpi
+
+ Compiler options
+ -DMKL_ILP64 -I${MKLROOT}/include
+
+Notes:
+  o Set the INCLUDE, MKLROOT, LD_LIBRARY_PATH, LIBRARY_PATH, CPATH, FPATH and NLSPATH environment variables in the command shell using one of mklvars script files in the 'bin' subdirectory of the Intel(R) MKL installation directory. Please see also the Intel(R) MKL User Guide.
+o Please be sure that you have used the recommended compiler options for the selected interface layer. Caution: linking Intel(R) MKL libraries with your objects compiled for different interface layer may lead to run-time errors.
+o If you are using a non-default MPI, assign the same appropriate value to MKL_BLACS_MPI on all nodes. Set MKL_BLACS_MPI variable to one of the following values: INTELMPI, MPICH2 or MSMPI. 
+
+above https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor
+
+
+See also
+
+http://www.nwchem-sw.org/index.php/Special:AWCforum/sc/id2
+go to link Compiling NWChem
+http://www.nwchem-sw.org/index.php/Special:AWCforum/st/id180/How_to_build_on_SGI_Altix_ICE.html
+
+Shows a setup that creates an error
+Note, 64-bit integers would be OK with a certain MKL BLAS,
+but may still need
+export USE_64TO32=y
+
+because MPI uses 32-bit integers.
+In which case (32-bit integers) use lp rather than ilp libraries
+

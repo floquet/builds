@@ -1,0 +1,401 @@
+
+Source
+https://www.olcf.ornl.gov/center-projects/adios/
+
+get separately
+wget http://users.nccs.gov/~pnorbert/ADIOS-UsersManual-1.8.0.pdf
+
+export INTEL_VERSION=15.0.2
+export INTEL_VERSION=15.0.3
+export INTEL_VERSION=16.0.0
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+
+export CXX=icpc
+export CXXFLAGS="-O2 -fPIC"
+export CC=icc
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=" -fPIC"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+export MPICXX_CXX=icpc 
+export MPICC_CC=icc 
+export MPIF90_F90=ifort 
+export MPICC=mpicc
+export MPICXX=mpicxx
+export MPIFC=mpif90
+
+(For Intel MPI, not done,
+export I_MPI_CXX icpc 
+export I_MPI_CC icc 
+export I_MPI_FC ifort 
+export I_MPI_F90 ifort 
+export I_MPI_F77 ifort 
+export MPICC=mpiicc
+export MPICXX=mpiicpc
+export MPIFC=mpiifort
+)
+
+Prerequisites:
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Mini-XML
+
+# For Intel 15.0.1 did not use INTEL_VERSION
+export PREFIX=/p/home/apps/unsupported/mxml/2.9-intel
+# for more general case
+export PREFIX=/p/home/apps/unsupported/mxml/2.9-intel-$INTEL_VERSION
+mkdir $PREFIX
+
+mkdir /p/home/scheinin/build/adios-intel-$INTEL_VERSION-sgimpt
+cd /p/home/scheinin/build/adios-intel-$INTEL_VERSION-sgimpt
+# Use definitions of CC, etc. prepared for ADIOS
+wget http://www.msweet.org/files/project3/mxml-2.9.tar.gz
+tar xzf mxml-2.9.tar.gz
+cd mxml-2.9
+./configure --prefix=$PREFIX
+
+make 2>&1 | tee make.log
+(no make check)
+make install
+
+# Fix permissions at $PREFIX .
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Serial NetCDF-3
+# For Intel 15.0.1 did not use INTEL_VERSION
+export PREFIX=/p/home/apps/unsupported/netcdf/3.6.2-intel
+# for more general case
+export PREFIX=/p/home/apps/unsupported/netcdf/3.6.2-intel-$INTEL_VERSION
+mkdir $PREFIX
+
+mkdir /p/home/scheinin/build/netcdf-intel-$INTEL_VERSION
+cd /p/home/scheinin/build/netcdf-intel-$INTEL_VERSION
+# Use definitions of CC, etc. prepared for ADIOS
+wget ftp://ftp.unidata.ucar.edu/pub/netcdf/old/netcdf-3.6.2.tar.gz
+tar xzf netcdf-3.6.2.tar.gz
+cd netcdf-3.6.2
+
+For Intel, edit configure "--version" change to "-V"
+for $ac_compiler and $CC.
+
+Edit cxx/ncvalues.cpp , add
+#include <string.h>
+
+Edit ./examples/CXX/sfc_pres_temp_rd.cpp , add
+#include <string.h>
+
+./configure --prefix=$PREFIX \
+  --enable-fortran --enable-f90  \
+  --enable-large-file-tests --enable-largefile \
+  --with-temp-large=/p/work2/scheinin/tmp \
+  --enable-shared --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+
+# Fix permissions at $PREFIX .
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Do not build dataspaces because there were many compilation errors.
+
+# Dataspaces
+# For Intel 15.0.1 did not use INTEL_VERSION
+export PREFIX=/p/home/apps/unsupported/dataspaces/1.5.0-intel
+# for more general case
+export PREFIX=/p/home/apps/unsupported/dataspaces/1.5.0-intel-$INTEL_VERSION
+mkdir $PREFIX
+
+# Use definitions of CC, etc. prepared for ADIOS
+mkdir /p/home/scheinin/build/dataspaces-intel-$INTEL_VERSION
+cd /p/home/scheinin/build/dataspaces-intel-$INTEL_VERSION
+# There is a dataspaces 1.6.0 but this version of ADIOS was
+# probably developed with 1.5.0.
+# Getting it requires registering, so use what was gotten previously.
+cp /p/home/scheinin/build/dataspaces/src/dataspaces-latest.tar.gz .
+tar xzf dataspaces-latest.tar.gz
+cd dataspaces-1.5.0
+
+./configure --prefix=$PREFIX \
+  --enable-dimes
+
+Probably will not have DIMES because DIMES
+is only supported on Cray Gemini networks, Infiniband cluster
+and on IBM BG/P and BG/Q systems.  Though there is
+/usr/lib64/libibverbs.so.1, there is no header file
+infiniband/verbs.h
+
+Network transport layer
+No Cray UGNI.
+No Cray Portals.
+No Infiniband.
+No IBM DCMF.
+No IBM PAMI.
+
+make 2>&1 | tee make.log
+
+Stopped here, many errors during compilation.
+
+make check 2>&1 | tee check.log
+make install
+
+# Fix permissions at $PREFIX .
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# On September 30, 2015 there was available version 1.9.0
+# with release date of December 2015.  Strange use of date.
+export ADIOS_VERSION=1.8.0
+
+export SZIP_VERSION=2.1
+#export SZIP_DIR=/p/home/apps/unsupported/szip/2.1-intel
+export SZIP_DIR=/p/home/apps/unsupported/szip/${SZIP_VERSION}-intel-$INTEL_VERSION
+
+export BZIP_VERSION=1.0.6
+#export BZIP_DIR=/p/home/apps/unsupported/bzip2/1.0.6-intel
+export BZIP_DIR=/p/home/apps/unsupported/bzip2/${BZIP_VERSION}-intel-$INTEL_VERSION
+
+export MXML_VERSION=2.9
+#export MXML_DIR=/p/home/apps/unsupported/mxml/2.9-intel
+export MXML_DIR=/p/home/apps/unsupported/mxml/${MXML_VERSION}-intel-$INTEL_VERSION
+
+export HDF5_VERSION=1.8.15
+#export HDF5_DIR=/p/home/apps/unsupported/hdf5/1.8.15-intel
+export HDF5_DIR=/p/home/apps/unsupported/hdf5/${HDF5_VERSION}-intel-$INTEL_VERSION
+
+export NETCDF_VERSION=3.6.2
+#export NETCDF_DIR=/p/home/apps/unsupported/netcdf/3.6.2-intel
+export NETCDF_DIR=/p/home/apps/unsupported/netcdf/${NETCDF_VERSION}-intel-$INTEL_VERSION
+
+   export LD_LIBRARY_PATH=${SZIP_DIR}/lib:$LD_LIBRARY_PATH
+
+# After first installation, zlib installed in operating system.
+#   export LD_LIBRARY_PATH=/p/home/apps/unsupported/zlib/1.2.8-intel/libso:$LD_LIBRARY_PATH
+
+   export LD_LIBRARY_PATH=${BZIP_DIR}/lib:$LD_LIBRARY_PATH
+   export PATH=${BZIP_DIR}/bin:$PATH
+
+   export LD_LIBRARY_PATH=${MXML_DIR}/lib:$LD_LIBRARY_PATH
+   export PATH=${MXML_DIR}/bin:$PATH
+
+   export LD_LIBRARY_PATH=${HDF5_DIR}/lib:$LD_LIBRARY_PATH
+   export PATH=${HDF5_DIR}/bin:$PATH
+
+   export LD_LIBRARY_PATH=${NETCDF_DIR}/lib:$LD_LIBRARY_PATH
+   export PATH=${NETCDF_DIR}/bin:$PATH
+
+#   export LD_LIBRARY_PATH=/p/home/apps/unsupported/hdf5-parallel/1.8.15-intel/lib:$LD_LIBRARY_PATH
+
+# After first installation, zlib installed in operating system.
+#export LDFLAGS="-L/p/home/apps/unsupported/mxml/2.9-intel/lib -L/p/home/apps/unsupported/netcdf/3.6.2-intel/lib -L/p/home/apps/unsupported/hdf5/1.8.15-intel/lib -L/p/home/apps/unsupported/hdf5-parallel/1.8.15-intel/lib -L/p/home/apps/unsupported/szip/2.1-intel/lib -L/p/home/apps/unsupported/zlib/1.2.8-intel/lib -L/p/home/apps/unsupported/zlib/1.2.8-intel/libso -L/p/home/apps/unsupported/bzip2/1.0.6-intel/lib"
+export LDFLAGS="-L${MXML_DIR}/lib -L${NETCDF_DIR}/lib -L${HDF5_DIR}/lib -L${SZIP_DIR}/lib -L${BZIP_DIR}/lib"
+
+# After first installation, zlib installed in operating system.
+#export CPPFLAGS="-I/p/home/apps/unsupported/mxml/2.9-intel/include -I/p/home/apps/unsupported/netcdf/3.6.2-intel/include -I/p/home/apps/unsupported/hdf5/1.8.15-intel/include -I/p/home/apps/unsupported/hdf5-parallel/1.8.15-intel/include -I/p/home/apps/unsupported/szip/2.1-intel/include -I/p/home/apps/unsupported/zlib/1.2.8-intel/include -I/p/home/apps/unsupported/bzip2/1.0.6-intel/include"
+export CPPFLAGS="-I${MXML_DIR}/include -I${NETCDF_DIR}/include -I${HDF5_DIR}/include -I${SZIP_DIR}/include -I${BZIP_DIR}/include"
+
+# For Intel 15.0.1 did not use INTEL_VERSION
+export PREFIX=/p/home/apps/unsupported/adios/1.8.0-intel-sgimpt
+# for more general case
+export PREFIX=/p/home/apps/unsupported/adios/${ADIOS_VERSION}-intel-${INTEL_VERSION}-sgimpt
+mkdir $PREFIX
+
+mkdir /p/home/scheinin/build/adios-intel-${INTEL_VERSION}-sgimpt
+cd /p/home/scheinin/build/adios-intel-${INTEL_VERSION}-sgimpt
+wget http://users.nccs.gov/~pnorbert/adios-${ADIOS_VERSION}.tar.gz
+tar xzf adios-${ADIOS_VERSION}.tar.gz
+cd adios-${ADIOS_VERSION}
+
+# After first installation, zlib installed in operating system.
+# Have not compiled parallel HDF5 for various Intel compilers
+./configure --prefix=$PREFIX \
+ --with-netcdf=$NETCDF_DIR \
+ --with-hdf5=$HDF5_DIR \
+ --with-lustre=/usr/lib64 \
+ --with-bzip2=$BZIP_DIR \
+ --with-szip=$SZIP_DIR
+
+# --with-phdf5=/p/home/apps/unsupported/hdf5-parallel/1.8.15-intel \
+#  --with-zlib=/p/home/apps/unsupported/zlib/1.2.8-intel \
+
+When location of Parallel HDF5 was specified, nevertheless
+concluded configure with message
+   No PHDF5 to build PHDF5 transport method
+
+make 2>&1 | tee make.log
+
+qsub -q test -A ERDCS97290STA -l select=2:ncpus=36:mpiprocs=36,walltime=2:00:00 -I
+
+export INTEL_VERSION=15.0.2
+OR
+export INTEL_VERSION=15.0.3
+OR
+export INTEL_VERSION=16.0.0
+
+export ADIOS_VERSION=1.8.0
+
+export SZIP_VERSION=2.1
+#export SZIP_DIR=/p/home/apps/unsupported/szip/2.1-intel
+export SZIP_DIR=/p/home/apps/unsupported/szip/${SZIP_VERSION}-intel-$INTEL_VERSION
+
+export BZIP_VERSION=1.0.6
+#export BZIP_DIR=/p/home/apps/unsupported/bzip2/1.0.6-intel
+export BZIP_DIR=/p/home/apps/unsupported/bzip2/${BZIP_VERSION}-intel-$INTEL_VERSION
+
+export MXML_VERSION=2.9
+#export MXML_DIR=/p/home/apps/unsupported/mxml/2.9-intel
+export MXML_DIR=/p/home/apps/unsupported/mxml/${MXML_VERSION}-intel-$INTEL_VERSION
+
+export HDF5_VERSION=1.8.15
+#export HDF5_DIR=/p/home/apps/unsupported/hdf5/1.8.15-intel
+export HDF5_DIR=/p/home/apps/unsupported/hdf5/${HDF5_VERSION}-intel-$INTEL_VERSION
+
+export NETCDF_VERSION=3.6.2
+#export NETCDF_DIR=/p/home/apps/unsupported/netcdf/3.6.2-intel
+export NETCDF_DIR=/p/home/apps/unsupported/netcdf/${NETCDF_VERSION}-intel-$INTEL_VERSION
+
+   export LD_LIBRARY_PATH=${SZIP_DIR}/lib:$LD_LIBRARY_PATH
+
+# After first installation, zlib installed in operating system.
+#   export LD_LIBRARY_PATH=/p/home/apps/unsupported/zlib/1.2.8-intel/libso:$LD_LIBRARY_PATH
+
+   export LD_LIBRARY_PATH=${BZIP_DIR}/lib:$LD_LIBRARY_PATH
+   export PATH=${BZIP_DIR}/bin:$PATH
+
+   export LD_LIBRARY_PATH=${MXML_DIR}/lib:$LD_LIBRARY_PATH
+   export PATH=${MXML_DIR}/bin:$PATH
+
+   export LD_LIBRARY_PATH=${HDF5_DIR}/lib:$LD_LIBRARY_PATH
+   export PATH=${HDF5_DIR}/bin:$PATH
+
+   export LD_LIBRARY_PATH=${NETCDF_DIR}/lib:$LD_LIBRARY_PATH
+   export PATH=${NETCDF_DIR}/bin:$PATH
+
+#   export LD_LIBRARY_PATH=/p/home/apps/unsupported/hdf5-parallel/1.8.15-intel/lib:$LD_LIBRARY_PATH
+
+cd /p/home/scheinin/build/adios-intel-${INTEL_VERSION}-sgimpt/adios-$ADIOS_VERSION
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+
+export MPICXX_CXX=icpc 
+export MPICC_CC=icc 
+export MPIF90_F90=ifort 
+export MPICC=mpicc
+export MPICXX=mpicxx
+export MPIFC=mpif90
+
+make check 2>&1 | tee check.log
+
+# cd /p/home/scheinin/build/adios-intel-sgimpt/src/adios-${ADIOS_VERSION}/examples/C/arrays
+cd /p/home/scheinin/build/adios-intel-${INTEL_VERSION}-sgimpt/examples/C/arrays
+
+export MPI_DISPLAY_SETTINGS=disabled
+
+mpiexec_mpt -n 4 ./arrays_write
+mpiexec_mpt -n 4 ./arrays_read
+mpiexec_mpt -n 72 ./arrays_write
+mpiexec_mpt -n 72 ./arrays_read
+
+exit
+
+make install
+
+mkdir $PREFIX/doc
+cd $PREFIX/doc
+wget http://users.nccs.gov/~pnorbert/ADIOS-UsersManual-${ADIOS_VERSION}.pdf
+
+Fix permissions.
+ ----------------
+
+
+mpiexec_mpt -n 1 adios_config -m
+
+Available write methods (in XML <method> element or in adios_select_method()):
+    "MPI"
+    "POSIX"
+    "MPI_LUSTRE"
+    "POSIX1"
+    "MPI_AGGREGATE"
+    "VAR_MERGE"
+Available read methods (constants after #include "adios_read.h"):
+    ADIOS_READ_METHOD_BP (=0)
+    ADIOS_READ_METHOD_BP_AGGREGATE (=1)
+Available data transformation methods (in XML transform tags in <var> elements):
+    "none"	: No data transform
+    "identity"	: Identity transform
+    "zlib"	: zlib compression
+    "bzip2"	: bzip2 compression
+    "szip"	: szip compression
+Available query methods (in adios_query_set_method()):
+[none listed]
+
+Available write methods that are available, according to the manual,
+could be
+    "MPI"
+    "POSIX"
+    "DATASPACES"  -- missing
+    "PHDF5"       -- missing
+    "MPI_LUSTRE"
+    "POSIX1"
+    "NC4"         -- missing
+    "MPI_AGGREGATE"
+    "FLEXPATH"    -- missing
+    "VAR_MERGE"
+
+
+Info in UsersManual concerning prerequisites.
+
+Mini-XML required
+   /p/home/apps/unsupported/mxml/2.9-intel
+MPI-IO required
+   assume it is part of MPI
+Python required
+   Will use Linux distribution python
+   Note that there is also COST/python/2.7.10/intel
+done Serial NetCDF-3, optional
+   /p/home/apps/unsupported/netcdf/3.6.2-intel
+Serial HDF5 optional
+   /p/home/apps/unsupported/hdf5/1.8.15-intel
+Lusterapi optional
+   /usr/lib64/liblustreapi.a  /usr/lib64/liblustreapi.so
+DataSpaces, DIMES or Flexpath
+   Need to request software.
+   www.dataspaces.org
+      http://nsfcac.rutgers.edu/request-software
+ibverbs and rdmacm libraries for Infiniband
+   Not infiniband/verbs.h
+zlib bzip2 szip
+   Yes I have them.
+fastbit optional
+   Ignore.
+parallel hdf5 optional
+   /p/home/apps/unsupported/hdf5-parallel/1.8.15-intel
+parallel NetCDF-4 , which needs parallel hdf5
+   --with-nc4par=DIR
+   ignored this
+
+   ----------------------------------------------------------
+
+Fixing permisssions.
+--------------------
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+   ----------------------------------------------------------
+
+Created $SAMPLES_HOME/Parallel_IO/ADIOS
+Created /p/home/apps/unsupported/modules/usp-adios/intel/sgimpt/1.8.0
+Created /p/home/apps/unsupported/modules/usp-adios/intel-${INTEL_VERSION}/sgimpt/1.8.0
+
+
+
+

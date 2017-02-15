@@ -1,0 +1,96 @@
+
+On sapphire02, Python-2.6.2
+June 9, 2009
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+# Do not use cc and CC because Python needs dynamic libraries.
+
+export CC=gcc
+export CXX=g++
+export F77=gfortran
+export PREFIX=/work/scheinin/Python/2.6.2
+
+./configure --prefix=$PREFIX
+
+# A few modules were not built, as indicated by the output at
+# the end of the build:
+
+# Failed to find the necessary bits to build these modules:
+#   _sqlite3           bsddb185           dl              
+#   imageop            sunaudiodev                        
+#   To find the necessary bits, look in setup.py in detect_modules()
+#   for the module's name.
+
+make test
+
+# 324 tests OK.
+# 1 test failed:
+#     test_threaded_import
+# 
+# I'll add just for completeness:
+# 37 tests skipped:
+#     test_aepack test_al test_applesingle test_bsddb185 test_bsddb3
+#     test_cd test_cl test_codecmaps_cn test_codecmaps_hk
+#     test_codecmaps_jp test_codecmaps_kr test_codecmaps_tw test_curses
+#     test_dl test_gl test_imageop test_imgfile test_kqueue
+#     test_linuxaudiodev test_macos test_macostools test_normalization
+#     test_ossaudiodev test_pep277 test_py3kwarn test_scriptpackages
+#     test_socketserver test_sqlite test_startfile test_sunaudiodev
+#     test_timeout test_unicode_file test_urllib2net test_urllibnet
+#     test_winreg test_winsound test_zipfile64
+# Those skips are all expected on linux2.
+
+The problem of creating executables when Python expects
+dynamic libraries is described in
+http://code.google.com/p/pyprop/wiki/Installation_CrayXT4
+
+ ----------------------
+ utility server below
+
+Python for paraview.
+
+CC=gcc
+CXX=g++
+CFLAGS="-fPIC -O2"
+export F77=gfortran
+
+./configure --prefix=/app/Python/2.7.1 \
+ --enable-shared  --disable-ipv6 \
+ 2>&1 | tee fig.log
+
+make 2>&1 | tee make.log
+
+Python build finished, but the necessary bits to build these modules
+were not found:
+bsddb185  dl  imageop  sunaudiodev                                           
+To find the necessary bits, look in setup.py in detect_modules()
+for the module's name.
+Failed to build these modules:
+bz2  (no /usr/lib64/libbz2.*)
+
+# Use -k in expectation of errors.
+make -k test 2>&1 | tee check.log
+
+make install
+make clean
+
+# Need to change permissions.
+
+topdir=/app/Python
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+# Make sure last minute changes such as the README file are readable.
+
+ utility server above

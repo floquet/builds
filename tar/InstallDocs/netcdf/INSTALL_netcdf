@@ -1,0 +1,685 @@
+
+For OLD installation garnet, see file INSTALL_netcdf_jade
+
+   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+April 11, 2016 below
+
+# Only compiled serial version for base compiler,
+# without Cray compiler wrappers.
+
+export NETCDF_VERSION=4.4.0
+
+export HDF5_VERSION=1.8.16
+export SZIP_VERSION=2.1
+export HDF4_VERSION=4.2.11-nonetcdf
+
+# Will use Linux distribution
+# zlib-1.2.7-0.12.3 and zlib-devel-1.2.7-0.12.3
+
+export PGI_VERSION=15.10.0
+prgenv=pgi
+compiler_ver=$PGI_VERSION
+# OR
+# For Intel compiler with GNU compatibility
+export INTEL_VERSION=15.0.6.233
+export GNU_VERSION=5.2.0
+prgenv=intel
+compiler_ver=$INTEL_VERSION
+# OR
+export GNU_VERSION=5.2.0
+prgenv=gnu
+compiler_ver=$GNU_VERSION
+
+# PGI
+module unload pgi/14.2.0  # Whatever is the default at the time.
+export PGI_VERSION=15.10.0   # Unloading of compiler cancels this.
+module load pgi/$PGI_VERSION
+# Module pgi/15.10.0 defines setenv PGI_VERSION 15.10 
+export PGI_VERSION=15.10.0
+
+# Intel
+# Intel with GNU compatibility
+module swap PrgEnv-pgi PrgEnv-intel
+module unload intel  # Whatever is the default at the time.
+module load gcc/$GNU_VERSION
+export INTEL_VERSION=15.0.6.233   # Unloading of compiler cancels this.
+module load intel/$INTEL_VERSION
+
+# Gnu
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+export HDF5_DIR=/usr/local/usp/hdf5/${HDF5_VERSION}-${prgenv}-${compiler_ver}
+export LD_LIBRARY_PATH=${HDF5_DIR}/lib:$LD_LIBRARY_PATH
+
+export SZIP_DIR=/usr/local/usp/szip/${SZIP_VERSION}-${prgenv}-${compiler_ver}
+export LD_LIBRARY_PATH=${SZIP_DIR}/lib:$LD_LIBRARY_PATH
+
+# Missing HDF4 for most recent GNU and PGI compiler.
+export HDF4_DIR=/usr/local/usp/hdf4/${HDF4_VERSION}-${prgenv}-${compiler_ver}
+# Put library last.
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HDF4_DIR}/lib
+
+export PREFIX=/usr/local/usp/netcdf/${NETCDF_VERSION}-${prgenv}-${compiler_ver}
+mkdir $PREFIX
+
+export BUILD_DIR=$HOME/build/netcdf-${NETCDF_VERSION}-${prgenv}-${compiler_ver}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+
+wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.4.0.tar.gz
+wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-fortran-4.4.3.tar.gz
+wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-cxx4-4.2.tar.gz
+# (There is also https://github.com/Unidata/netcdf-cxx4/ that
+# has version 4.2.1)
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Choose one.
+# Missing HDF4 for most recent GNU and PGI compiler, that may change.
+# PGI
+export CXX=pgCC
+export CC=pgcc
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS="-I${HDF5_DIR}/include -I${SZIP_DIR}/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export FFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export CXXFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -lsz -lz -lm"
+export LDFLAGS="-L${HDF5_DIR}/lib -L${SZIP_DIR}/lib"
+# If including HDF4
+export CPPFLAGS="-I${HDF5_DIR}/include -I${SZIP_DIR}/include -I${HDF4_DIR}/include -I${HDF4_DIR}/include/hdf"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -ldf -lsz -lz -lm"
+export LDFLAGS="-L${HDF5_DIR}/lib -L${SZIP_DIR}/lib -L${HDF4_DIR}/lib"
+# Intel
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export CFLAGS="-O2 -fPIC -gcc-name=`which gcc`"
+export CPPFLAGS="-I${HDF5_DIR}/include -I${SZIP_DIR}/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export FFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export CXXFLAGS="-O2 -fPIC -gxx-name=`which g++` -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -lsz -lz -lm"
+export LDFLAGS="-L${HDF5_DIR}/lib -L${SZIP_DIR}/lib"
+# If including HDF4
+export CPPFLAGS="-I${HDF5_DIR}/include -I${SZIP_DIR}/include -I${HDF4_DIR}/include -I${HDF4_DIR}/include/hdf -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -ldf -lsz -lz -lm"
+export LDFLAGS="-L${HDF5_DIR}/lib -L${SZIP_DIR}/lib -L${HDF4_DIR}/lib -O2 -gcc-name=`which gcc` -gxx-name=`which g++` "
+# GNU
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS="-I${HDF5_DIR}/include -I${SZIP_DIR}/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export FFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export CXXFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -lsz -lz -lm"
+export LDFLAGS="-L${HDF5_DIR}/lib -L${SZIP_DIR}/lib"
+# If including HDF4
+export CPPFLAGS="-I${HDF5_DIR}/include -I${SZIP_DIR}/include -I${HDF4_DIR}/include -I${HDF4_DIR}/include/hdf"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -ldf -lsz -lz -lm"
+export LDFLAGS="-L${HDF5_DIR}/lib -L${SZIP_DIR}/lib -L${HDF4_DIR}/lib"
+
+# C language (base) distribution configure.
+# If don't have HDF4
+./configure --prefix=$PREFIX  \
+ --enable-static --enable-shared \
+ --enable-netcdf-4 --disable-pnetcdf \
+ --enable-large-file-tests \
+ --with-temp-large=$TMPDIR
+# If have HDF4, but currently Intel-built libraries
+# for HDF4 are only static.
+./configure --prefix=$PREFIX  \
+ --enable-static --enable-shared \
+ --enable-netcdf-4 --enable-hdf4 --disable-pnetcdf \
+ --enable-large-file-tests \
+ --with-temp-large=$TMPDIR
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+
+PGI: FAIL: tst_large , FAIL: large_files
+Intel: No failures.
+GNU: FAIL: tst_large
+
+make install
+
+# Going to Fortran directory.
+
+export CPPFLAGS=" -I${PREFIX}/include $CPPFLAGS"
+export LIBS=" -lnetcdf $LIBS"
+export LDFLAGS="-L${PREFIX}/lib $LDFLAGS"
+export LD_LIBRARY_PATH="${PREFIX}/lib:$LD_LIBRARY_PATH"
+
+./configure --prefix=$PREFIX  \
+ --enable-static --enable-shared \
+ --with-temp-large=$TMPDIR
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+
+PGI: No failures.
+Intel: No failures.
+GNU: No failures.
+
+make install
+
+# Going to C++ directory.
+
+./configure --prefix=$PREFIX  \
+ --enable-static --enable-shared \
+ --with-temp-large=$TMPDIR
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+
+PGI: No failures.
+Intel: No failures.
+GNU: No failures.
+
+make install
+
+Change permissions.
+
+April 11, 2016 above
+   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+garnet for COST below ================================================
+
+ ----------- below, building serial NetCDF on May 2015 -----------
+
+Source
+http://www.unidata.ucar.edu/software/netcdf/
+wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.3.3.1.tar.gz
+
+ --------------------------------------------------------------
+below, PGI serial May 2015
+
+module swap pgi/13.6.0 pgi/14.2.0
+
+# Will not have HDF4 Support support.
+
+export PREFIX=/usr/local/usp/COST/netcdf-4.3.3.1-pgi-pgcc
+export HDF5_ROOT=/usr/local/usp/COST/hdf5-1.8.14-pgi-pgcc
+export SZIP_ROOT=/usr/local/usp/COST/szip-2.1-pgi-pgcc-May2015
+export ZLIB_ROOT=/usr/local/usp/COST/zlib-1.2.8-pgi-pgcc
+
+export CXX=pgCC
+export CXXFLAGS="-O2"
+export CC=pgcc
+export CFLAGS="-O2"
+export CPPFLAGS="-I${HDF5_ROOT}/include -I${SZIP_ROOT}/include -I${ZLIB_ROOT}/include"
+export LDFLAGS="-L${HDF5_ROOT}/lib -L${SZIP_ROOT}/lib -L${ZLIB_ROOT}/lib -L${ZLIB_ROOT}/libso"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -lsz -lz -lm"
+export FC=pgf90
+export F77=pgf90
+export F90=pgf90
+export TMPDIR=${WORKDIR}/tmp
+
+export LD_LIBRARY_PATH=${HDF5_ROOT}/lib:${SZIP_ROOT}/lib:${ZLIB_ROOT}/libso:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+  --enable-shared --enable-static \
+  --enable-netcdf-4 --disable-pnetcdf \
+  --enable-fortran --enable-large-file-tests
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+make install
+
+above, PGI serial May 2015
+ --------------------------------------------------------------
+below, GNU serial May 2015
+
+module swap PrgEnv-pgi  PrgEnv-gnu
+# Make sure compiler module is gcc/4.8.2
+
+# Will not have HDF4 Support support.
+
+export PREFIX=/usr/local/usp/COST/netcdf-4.3.3.1-gnu-gcc
+export HDF5_ROOT=/usr/local/usp/COST/hdf5-1.8.14-gnu-gcc
+export SZIP_ROOT=/usr/local/usp/COST/szip-2.1-gnu-gcc-May2015
+export ZLIB_ROOT=/usr/local/usp/COST/zlib-1.2.8-gnu-gcc
+
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS="-I${HDF5_ROOT}/include -I${SZIP_ROOT}/include -I${ZLIB_ROOT}/include"
+export LDFLAGS="-L${HDF5_ROOT}/lib -L${SZIP_ROOT}/lib -L${ZLIB_ROOT}/lib -L${ZLIB_ROOT}/libso"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -lsz -lz -lm"
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export TMPDIR=${WORKDIR}/tmp
+
+export LD_LIBRARY_PATH=${HDF5_ROOT}/lib:${SZIP_ROOT}/lib:${ZLIB_ROOT}/libso:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+  --enable-shared --enable-static \
+  --enable-netcdf-4 --disable-pnetcdf \
+  --enable-fortran --enable-large-file-tests
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+make install
+
+above, GNU serial May 2015
+ --------------------------------------------------------------
+below, Intel serial May 2015
+
+# Will not have HDF4 Support support, but will have HDF5 support.
+# No parallel I/O.
+
+module swap PrgEnv-pgi  PrgEnv-intel
+# Make sure compiler module is intel/14.0.2.144
+
+export PREFIX=/usr/local/usp/COST/netcdf-4.3.3.1-intel-icc
+export HDF5_ROOT=/usr/local/usp/COST/hdf5-1.8.14-intel-icc
+export SZIP_ROOT=/usr/local/usp/COST/szip-2.1-intel-icc-May2015
+export ZLIB_ROOT=/usr/local/usp/COST/zlib-1.2.8-intel-icc
+
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2 -no-ipo"
+export CPPFLAGS="-I${HDF5_ROOT}/include -I${SZIP_ROOT}/include -I${ZLIB_ROOT}/include"
+export LDFLAGS="-L${HDF5_ROOT}/lib -L${SZIP_ROOT}/lib -L${ZLIB_ROOT}/lib -L${ZLIB_ROOT}/libso"
+export LIBS=" -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -lsz -lz -lm"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export TMPDIR=${WORKDIR}/tmp
+
+export LD_LIBRARY_PATH=${HDF5_ROOT}/lib:${SZIP_ROOT}/lib:${ZLIB_ROOT}/libso:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+  --enable-shared --enable-static \
+  --enable-netcdf-4 --disable-pnetcdf \
+  --enable-fortran --enable-large-file-tests
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+make install
+
+above, Intel serial May 2015
+ --------------------------------------------------------------
+
+Result from configuration is the following.
+
+# Features
+--------
+NetCDF-2 API:		yes
+NetCDF-4 API:		yes
+HDF4 Support:		no
+HDF5 Support:		yes
+PNetCDF Support:	no
+Parallel Support:	no
+DAP Support:		yes
+Diskless Support:	yes
+MMap Support:		no
+JNA Support:		no
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+# Did not change in May 2015 because someone removed "src/"
+# from every COST application.
+# chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *	
+
+ ----------- above, building serial NetCDF on May 2015 -----------
+
+garnet for COST above ================================================
+
+WRF on diamond, below
+
+module load mpt/1.24
+module load cc_11.0.074
+module load fc_11.0.074
+module load mkl_10.1.0.015
+
+export NETCDF=${WORKDIR}/NetCDF/4.0.1
+export PNETCDF=${WORKDIR}/PNetCDF/1.1.0
+export PHDF5=${WORKDIR}/HDF5/1.8.4
+
+# For my collection of related applications
+# hdf5 and netcdf depend on ${WORKDIR}/szip/2.1
+
+export WRFIO_NCD_LARGE_FILE_SUPPORT=1
+
+ ./configure
+
+Chose
+  9.  Linux x86_64 i486 i586 i686, ifort compiler with icc  (dm+sm)
+Nesting, default 1.
+
+
+
+ ./compile wrf
+
+libwrflib.a(module_comm_dm.o):module_comm_dm.f90:(.text+0x1fca07): more undefined references to `rsl_lite_pack_period_' follow
+
+WRF on diamond, above
+
+
+diamond (Intel compiler) and jade (PGI compiler) and
+Intel compiler on ranger, below
+
+NetCDF 4.0.1
+
+<workdir>/NetCDF/4.0.1 has directories
+bin/  include/  lib/  man/  src/
+
+<workdir>/NetCDF/4.0.1 is the prefix
+
+In src/ have    netcdf-4.0.1/  netcdf.tar.gz
+
+  --- diamond below ---
+
+module load mpt/1.24
+module load cc_11.0.074
+module load fc_11.0.074
+module load mkl_10.1.0.015
+
+export CXX=icc
+export CXXFLAGS="-fPIC -O2"
+export CC=icc
+export CFLAGS="-fPIC -O2"
+export CPPFLAGS="-DNDEBUG -DpgiFortran -I/opt/sgi/mpt/mpt-1.24/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/scheinin/szip/2.1/include"
+export LIBS="-lmpi -lsz"
+export LDFLAGS="-L/opt/sgi/mpt/mpt-1.24/lib -L/opt/intel/mkl/10.1.0.015/lib/em64t -L/work/scheinin/szip/2.1/lib -no-prec-div -no-multibyte-chars"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export FCFLAGS="-fPIC -I/opt/sgi/mpt/mpt-1.24/include -O2 -no-prec-div"
+export FFFLAGS="-fPIC -I/opt/sgi/mpt/mpt-1.24/include -O2 -no-prec-div"
+
+export TMPDIR=${WORKDIR}/tmp
+
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/work/scheinin/szip/2.1/lib:/work/scheinin/HDF5/1.8.4/lib
+
+# Do not use "-ipo" because using it causes libraries to have few items.
+# Changed LDFLAGS, LIBS and CPPFLAGS to reference sz library.
+# HDF5 was compiled with
+# -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+# so added that to CPPFLAGS.
+# Did not compile for C++
+# Disabled making documents because /usr/bin/tex is missing.
+# Libtool had the correct definition "wl="-Wl,"
+# yet some test programs was missing this.
+
+ ./configure --prefix=/work/scheinin/NetCDF/4.0.1  \
+  --enable-f77  --enable-f90 \
+--enable-static  --enable-shared \
+--enable-ncgen4  --enable-netcdf-4 \
+--with-hdf5=/work/scheinin/HDF5/1.8.4 \
+--with-szlib=/work/scheinin/szip/2.1 \
+--with-temp-large=$TMPDIR \
+--disable-cxx \
+--disable-docs-install
+
+  --- diamond above ---
+  --- ranger below ---
+
+# The instructions below are for the Intel 10.X compiler,
+# not the default PGI compiler on ranger.  The motive is to
+# learn more about compiling using the Intel compiler on diamond.
+# The machine diamond is new when this work was done, so the
+# diamond environment may be less mature than the environment
+# on ranger.tacc.utexas.edu.
+
+module unload  mvapich/1.0.1
+module unload pgi/7.2-5
+module load intel/10.1
+module load  mvapich2
+module load mkl/10.0
+
+setenv CXX mpicxx
+setenv CXXFLAGS "-fPIC -O"
+setenv CC mpicc
+setenv CFLAGS "-fPIC -O"
+setenv CPPFLAGS "-DNDEBUG -DpgiFortran -I${MPICH_HOME}/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/01228/scheinin/szip/2.1/include -no-prec-div -no-multibyte-chars"
+setenv FC mpif90
+setenv F77 mpif77
+setenv F90 mpif90
+setenv FCFLAGS "-fPIC -I${MPICH_HOME}/include -O -no-prec-div"
+setenv FFLAGS "-fPIC -I${MPICH_HOME}/include -O -no-prec-div"
+setenv LIBS "-lsz"
+setenv LDFLAGS "-L/work/01228/scheinin/szip/2.1/lib -no-prec-div -no-multibyte-chars"
+
+# --------------------------------------------------------
+# User Craig Mattocks reports, below.
+#  New versions of the Intel compilers, new flags...
+# Build netCDF 3.6.3 on (64-bit x86_64-redhat-linux-gnu) with Intel
+# icc/ifort 11.0 compilers:
+# setenv CPP 'icc -E'
+# setenv CXXCPP 'icpc -E'
+# setenv CC icc
+# setenv CXX icpc
+# setenv CPPFLAGS '-DNDEBUG -DpgiFortran'
+# setenv CFLAGS'-O3 -xT -ip -no-prec-div -static -no-multibyte-chars'
+# setenv CXXFLAGS'-O3 -xT -ip -no-prec-div -static -no-multibyte-chars'
+# setenv FC ifort
+# setenv F77 ifort
+# setenv F90 ifort
+# setenv FFLAGS'-O3 -xT -ip -no-prec-div -static -no-multibyte-chars'
+# setenv AR xiar
+# setenv LD ifort
+# setenv LDFLAGS '-O3 -xT -ip -no-prec-div -static -no-multibyte-chars'
+# User Craig Mattocks reports, above.
+# --------------------------------------------------------
+
+# "-ipo" results in library not being built.
+# It seems (though I'm not certain) that -ipo is implied by -O2
+# when Intel compiler version 10.X is used, so use "-O".
+
+setenv TMPDIR ${WORK}/tmp
+
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/work/01228/scheinin/szip/2.1/lib:/work/01228/scheinin/HDF5/1.8.4
+
+ ./configure --prefix=/work/01228/scheinin/NetCDF/4.0.1  \
+  --enable-f77  --enable-f90 \
+--enable-static  --enable-shared \
+--enable-ncgen4  --enable-netcdf-4 \
+--with-hdf5=/work/01228/scheinin/HDF5/1.8.4 \
+--with-szlib=/work/01228/scheinin/szip/2.1 \
+--with-temp-large=$TMPDIR \
+--disable-cxx \
+--disable-docs-install
+
+# Changed LDFLAGS, LIBS and CPPFLAGS to reference sz library.
+# HDF5 was compiled with
+# -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+# so added that to CPPFLAGS.
+# Did not compile for C++
+# Disabled making documents because /usr/bin/tex is missing.
+# For configure, library dependencies on szip and hdf5
+# needed to be added to LD_LIBRARY_PATH
+# The Intel compiler likes the pgiFortran flag.
+# Added -fPIC because without it there was the error
+# ld: ../f90/.libs/libnetcdff90.a(netcdf4.o):
+# relocation R_X86_64_32S against `a local symbol' can not be used
+# when making a shared object; recompile with -fPIC
+# Libtool had the correct definition "wl="-Wl,"
+# yet compilation of some test programs (make check) did not have this.
+# Made three changed by hand then gave up.  Most (all?) tests before
+# the compilation problem were successful.
+
+make
+make check
+make install
+
+  --- ranger above ---
+  --- jade below ---
+
+# "module list" includes
+# xt-os/2.2.41A_PS05
+# pgi/9.0.4
+# xt-mpt/3.5.0
+# xt-pe/2.2.41A_PS05
+
+export CXX=/opt/cray/xt-asyncpe/3.3/bin/CC
+export CXXFLAGS="-O2"
+export CC=/opt/cray/xt-asyncpe/3.3/bin/cc
+export CFLAGS="-O2"
+export CPPFLAGS="-DpgiFortran -I/work/scheinin/szip/2.1/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export LIBS="-lsz"
+export LDFLAGS="-L/work/scheinin/szip/2.1/lib"
+export FC=/opt/cray/xt-asyncpe/3.3/bin/ftn
+export F77=/opt/cray/xt-asyncpe/3.3/bin/ftn
+export F90=/opt/cray/xt-asyncpe/3.3/bin/ftn
+
+ ./configure --prefix=/work/scheinin/NetCDF/4.0.1  \
+  --enable-f77  --enable-f90 \
+--enable-static  --disable-shared \
+--enable-ncgen4  --enable-netcdf-4 \
+--with-hdf5=/work/scheinin/HDF5/1.8.4 \
+--with-szlib=/work/scheinin/szip/2.1 \
+--with-temp-large=$TMPDIR \
+--disable-cxx \
+--disable-docs-install
+
+# Notice that shared is disabled for Cray XT4
+# Despite setting --with-szlib=, it is not included in library list
+# -- based on nc-config -- when LIBS was empty,
+# so changed LDFLAGS, LIBS and CPPFLAGS to include it.
+# "configure" did not recognize that compiler was PGI,
+# so set that in CPPFLAGS.
+# HDF5 was compiled with
+# -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+# so added that to CPPFLAGS.
+# Did not compile for C++
+# Disabled making documents because /usr/bin/tex is missing.
+# Documentation says --enable-docs-install does not cause the documentation
+# to be built from source; it causes the documentation which was shipped
+# with the distribution to be installed, and yet, --disable-docs-install
+# was needed to avoid error concerning missing /usr/bin/tex.
+
+make
+make check
+make install
+
+  --- jade above ---
+
+diamond (Intel compiler) and jade (PGI compiler) and
+Intel compiler on ranger, above
+
+ ====================================================================
+  --- utility server below ---
+
+
+export PREFIX=/app/netcdf/4.1.1-pgi
+export SZIP_ROOT=/app/szip/2.1-pgi
+export HDF5_ROOT=/app/hdf5/1.8.5p1-pgi-serial
+export PATH=/opt/pgi/linux86-64/10.9/bin:$PATH
+export CC=pgcc
+export CPPFLAGS="-DpgiFortran -I${SZIP_ROOT}/include -I${HDF5_ROOT}/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export CFLAGS="-O2 -fPIC"
+export F90=pgf90
+export FC=$F90
+# Choice of "export F77=pgf77" causes error during testing
+#    libnetcdff.so: undefined reference to `pgf90_*'
+# so set F77 to F90 compiler.
+export F77=$F90
+export FPPFLAGS="-O2 -fPIC"
+export CXX=pgCC
+export CXXFLAGS="-O2 -fPIC"
+export LIBS="-lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran -lsz"
+export LDFLAGS="-L${HDF5_ROOT}/lib -L${SZIP_ROOT}/lib"
+export LDFLAGS="${LDFLAGS} -L/usr/lib64"
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${HDF5_ROOT}/lib:$LD_LIBRARY_PATH
+
+ ./configure --prefix=$PREFIX  \
+  --enable-f77  --enable-f90 \
+--enable-static  --enable-shared \
+--enable-ncgen4  --enable-netcdf-4 \
+--with-hdf5=${HDF5_ROOT} \
+--with-szlib=${SZIP_ROOT} \
+--with-temp-large=/tmp \
+--disable-cxx \
+--disable-docs-install
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+make -k check- 2>&1 | tee check.log
+some tests failed e.g. HDF5-DIAG
+make install
+make clean
+
+
+export PREFIX=/app/netcdf/4.1.1-gnu
+export SZIP_ROOT=/app/szip/2.1-gnu
+export HDF5_ROOT=/app/hdf5/1.8.5p1-gnu-serial
+export CC=gcc
+export CPPFLAGS="-I${SZIP_ROOT}/include -I${HDF5_ROOT}/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export CFLAGS="-O2 -fPIC"
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export FPPFLAGS="-O2 -fPIC"
+export FCFLAGS="-O2 -fPIC"
+export CXX=g++
+export CXXFLAGS="-O2 -fPIC"
+export LIBS="-lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran -lsz"
+export LDFLAGS="-L${HDF5_ROOT}/lib -L${SZIP_ROOT}/lib"
+export LDFLAGS="${LDFLAGS} -L/usr/lib64"
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${HDF5_ROOT}/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+ --enable-f77  --enable-f90 \
+ --enable-static  --enable-shared \
+ --enable-ncgen4  --enable-netcdf-4 \
+ --with-hdf5=${HDF5_ROOT} \
+ --with-szlib=${SZIP_ROOT} \
+ --with-temp-large=/tmp \
+ --enable-cxx \
+ --disable-docs-install
+
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+make -k check 2>&1 | tee check.log
+some tests failed e.g. HDF5-DIAG
+make install
+make clean
+
+Need to change permissions.
+
+
+topdir=/app/netcdf
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+# Make sure last minute changes such as the README file are readable.
+
+  --- utility server above ---
+ ====================================================================
+

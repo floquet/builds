@@ -1,0 +1,80 @@
+
+
+setenv F77 ftn
+setenv FC ftn
+setenv CC cc
+
+setenv LIBS "-lfftw3 -lfftw3f"
+setenv FCFLAGS "-fast"
+setenv FORT_C_NAME ftn
+setenv DFLAGS "-D__PGI -D__FFTSG -D__parallel -D__BLACS -D__SCALAPACK -D__FFTW3"
+
+See $HOME/grph.s
+
+ #!/bin/csh
+
+source /opt/modules/3.2.6.5/init/csh
+module load fftw/3.2.2.1
+module load xt-libsci
+
+
+
+created new machine file and modified machine.F to use
+XE6  should later change it to XE6PGI
+
+
+
+module load fftw/3.2.2.1
+module load xt-libsci
+
+tar xzf cp2k-2_1-branch.tar.gz
+mv cp2k cp2k-modified
+tar xf cp2k-modified.tar
+cd cp2k-modified/makefiles
+make ARCH=CRAY-XE6 VERSION=popt
+# make ARCH=CRAY-XE6 VERSION=pdbg
+ ------------
+
+/work/local/u/scheinin/cp2k/src/cp2k-modified/exe/CRAY-XE6/cp2k.popt
+
+ See $HOME/cp2k
+
+
+Alan,
+
+In the past we were able to compile cp2k only using commercial compilers
+such as intel and pgi compilers. Gfortran was a big no but Mike gave that a
+try this time 
+and it worked. I am using the same trick to build it on chugach. Now, why
+would it work for GF and not for pgi is a question for another day. 
+
+I am going to ask Mike what prompted him to use it. Here is the arch file he
+used:
+
+# tested with gcc 4.4.0
+FFTW3DIR = /usr/local/usp/petccm/libraries/fftw-3.2.2
+CC       = cc
+CPP      =
+FC       = ftn
+LD       = ftn
+AR       = ar -r
+CPPFLAGS = -I$(FFTW3DIR)/include
+DFLAGS   = -D__GFORTRAN -D__FFTSG -D__FFTW3 -D__LIBINT -D__parallel
+-D__SCALAPACK -D__BLACS
+FCFLAGS  = -g -O2 -ffast-math -funroll-loops -ftree-vectorize -march=native
+-ffree-form $(DFLAGS) -I$(FFTW3DIR)/include -I$(GFORTRAN_INC)
+LDFLAGS  = $(FCFLAGS)
+LIBS     = /usr/local/usp/petccm/libraries/libint-1.1.4/lib/libderiv.a
+/usr/local/usp/petccm/libraries/libint-1.1.4/lib/libint.a
+/opt/acml/4.4.0/gfortran64/lib/libacml.a
+/opt/acml/4.4.0/gfortran64/lib/libacml_mv.a -lstdc++ -L$(FFTW3DIR)/lib
+-lfftw3
+
+OBJECTS_ARCHITECTURE = machine_gfortran.o
+
+
+Rad
+
+Note added later, the "forum" confirmed that PGI compilers have
+issues in compiling cp2k.
+ 

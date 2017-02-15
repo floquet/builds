@@ -1,0 +1,2495 @@
+
+HDF5
+
+garnet for COST below ================================================
+
+April 11, 2014 and May 1, 2015
+
+Source is
+http://www.hdfgroup.org/
+
+prerequisites include szip and zlib.
+
+zlib on garnet , below
+
+Build for compute nodes using cc.
+Build both static and dynamic libraries because different applications
+may need one or the other.
+
+wget http://zlib.net/zlib-1.2.8.tar.gz
+
+Installation locations on garnet will be
+/usr/local/usp/COST/
+zlib-1.2.8-pgi
+zlib-1.2.8-gnu
+zlib-1.2.8-intel
+Also, build a purely serial version; needed, for example, by Grace.
+zlib-1.2.8-pgi-pgcc
+zlib-1.2.8-gnu-gcc
+zlib-1.2.8-intel-icc
+
+cd zlib-1.2.8
+
+Default PrgEnv-pgi
+
+# below for 2014
+export PREFIX=/usr/local/usp/COST/zlib-1.2.8-pgi
+export CC=cc
+export CFLAGS="-static"
+# above for 2014
+# below for May 2015
+module swap pgi/13.6.0 pgi/14.2.0
+export PREFIX=/usr/local/usp/COST/zlib-1.2.8-pgi-pgcc
+export CC=pgcc
+export CFLAGS="-Bstatic -fPIC"
+# above for May 2015
+./configure --prefix=$PREFIX --static
+make
+make install
+mv $PREFIX/lib/pkgconfig/zlib.pc $PREFIX/lib/pkgconfig/zlib.pc_static
+# below for 2014
+export CFLAGS="-dynamic"
+# above for 2014
+# below for May 2015
+export CFLAGS="-Bdynamic -fPIC"
+# above for May 2015
+make clean
+./configure --prefix=$PREFIX --shared
+make
+make install
+mv $PREFIX/lib/pkgconfig/zlib.pc $PREFIX/lib/pkgconfig/zlib.pc_shared
+# The assembler (/usr/bin/as) uses libz.so and if LD_LIBRARY_PATH is
+# changed to include $PREFIX/lib when building some application
+# then linking fails because this libz.so is not the right one
+# for the assembler.
+cd $PREFIX
+mkdir libso
+mv lib/libz.so* libso/
+
+# Note, pkgconfig with _static or _shared suffix rather than pc
+# will not work with pkgconfig but do not expect to use pkgconfig.
+# The files are just for documentation, though in fact the files
+# do not show the values of CC or CFLAGS used when building.
+
+# Curiously, the make command builds executables
+# examplesh, minigzipsh, example64 and minigzip64
+# but these are not installed.
+
+# delete build directory, and re-extract from tar
+cd zlib-1.2.8
+module swap PrgEnv-pgi PrgEnv-gnu
+
+# below for 2014
+export PREFIX=/usr/local/usp/COST/zlib-1.2.8-gnu
+export CC=cc
+export CFLAGS="-static"
+# above for 2014
+# below for May 2015
+# Make sure compiler module is gcc/4.8.2
+export PREFIX=/usr/local/usp/COST/zlib-1.2.8-gnu-gcc
+export CC=gcc
+export CFLAGS="-static -fPIC"
+# above for May 2015
+./configure --prefix=$PREFIX --static
+make
+make install
+mv $PREFIX/lib/pkgconfig/zlib.pc $PREFIX/lib/pkgconfig/zlib.pc_static
+# below for 2014
+export CFLAGS="-dynamic"
+# above for 2014
+# below for May 2015
+export CFLAGS="-shared -fPIC"
+# above for May 2015
+make clean
+./configure --prefix=$PREFIX --shared
+make
+make install
+mv $PREFIX/lib/pkgconfig/zlib.pc $PREFIX/lib/pkgconfig/zlib.pc_shared
+# The assembler (/usr/bin/as) uses libz.so and if LD_LIBRARY_PATH is
+# changed to include $PREFIX/lib when building some application
+# then linking fails because this libz.so is not the right one
+# for the assembler.
+cd $PREFIX
+mkdir libso
+mv lib/libz.so* libso/
+
+# delete build directory, and re-extract from tar
+cd zlib-1.2.8
+module swap PrgEnv-pgi PrgEnv-intel
+
+# below for 2014
+export PREFIX=/usr/local/usp/COST/zlib-1.2.8-intel
+export CC=cc
+export CFLAGS="-static"
+# above for 2014
+# below for May 2015
+Make sure compiler module is intel/14.0.2.144
+export PREFIX=/usr/local/usp/COST/zlib-1.2.8-intel-icc
+export CC=icc
+export CFLAGS="-Bstatic -fPIC"
+# above for May 2015
+./configure --prefix=$PREFIX --static
+make
+make install
+mv $PREFIX/lib/pkgconfig/zlib.pc $PREFIX/lib/pkgconfig/zlib.pc_static
+# below for 2014
+export CFLAGS="-dynamic"
+# above for 2014
+# below for May 2015
+export CFLAGS="-Bdynamic -fPIC"
+# above for May 2015
+make clean
+./configure --prefix=$PREFIX --shared
+make
+make install
+mv $PREFIX/lib/pkgconfig/zlib.pc $PREFIX/lib/pkgconfig/zlib.pc_shared
+# The assembler (/usr/bin/as) uses libz.so and if LD_LIBRARY_PATH is
+# changed to include $PREFIX/lib when building some application
+# then linking fails because this libz.so is not the right one
+# for the assembler.
+cd $PREFIX
+mkdir libso
+mv lib/libz.so* libso/
+
+For choices
+topdir=/usr/local/usp/COST/zlib-1.2.8-pgi
+topdir=/usr/local/usp/COST/zlib-1.2.8-gnu
+topdir=/usr/local/usp/COST/zlib-1.2.8-intel
+topdir=/usr/local/usp/COST/zlib-1.2.8-pgi-pgcc
+topdir=/usr/local/usp/COST/zlib-1.2.8-gnu-gcc
+topdir=/usr/local/usp/COST/zlib-1.2.8-intel-icc
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+# Did not change in May 2015 because someone removed "src/"
+# from every COST application.
+chmod -R g+w,o-w *
+
+zlib on garnet , above
+
+szip on garnet , below
+
+Got from hdfgroup because initial use will be for HDF5.
+
+wget http://www.hdfgroup.org/ftp/lib-external/szip/2.1/src/szip-2.1.tar.gz
+
+Installation locations on garnet
+/usr/local/usp/COST/
+szip-2.1-gnu-cc
+szip-2.1-pgi-cc
+szip-2.1-intel-cc
+szip-2.1-gnu-gcc
+szip-2.1-pgi-pgcc
+szip-2.1-intel-icc
+
+szip-2.1-pgi-pgcc-May2015
+szip-2.1-gnu-gcc-May2015
+szip-2.1-intel-icc-May2015
+
+Build for front-end (login nodes) and compute nodes.
+szip is used for I/O and users may have applications that use
+either login node or compute node, though of course execution
+on a login node must be of short duration.
+
+Default PrgEnv-pgi
+
+# below 2014 PGI compiler
+
+export PREFIX=/usr/local/usp/COST/szip-2.1-pgi-cc
+
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-static"
+export CXXFLAGS="-static"
+export FFLAGS="-static"
+./configure --prefix=$PREFIX \
+   --enable-static --disable-shared
+make
+make check
+make install
+
+# remove szip-2.1 and extract again from tar archive
+# Need to build dynamic library for compute nodes on a batch
+# node because "configure" tries linking and needs alps.
+qsub -A ERDCS97290STA -l select=1:ncpus=32:mpiprocs=32 -q standard -l walltime=2:00:00 -I
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-dynamic -fPIC"
+export CXXFLAGS="-dynamic -fPIC"
+export FFLAGS="-dynamic -fPIC"
+./configure --prefix=$PREFIX \
+   --enable-shared --disable-static
+make
+make check
+make install
+
+export PREFIX=/usr/local/usp/COST/szip-2.1-pgi-pgcc
+
+# remove szip-2.1 and extract again from tar archive
+export CXX=pgCC
+export CC=pgcc
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+./configure --prefix=$PREFIX \
+   --enable-static  --enable-shared
+make
+make check
+make install
+
+# below 2014 PGI compiler
+
+# below May 2015 , PGI serial only
+
+module swap pgi/13.6.0 pgi/14.2.0
+export PREFIX=/usr/local/usp/COST/szip-2.1-pgi-pgcc-May2015
+export CXX=pgCC
+export CC=pgcc
+export FC=pgf90
+export F77=pgf90
+export F90=pgf90
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+./configure --prefix=$PREFIX \
+   --enable-static  --enable-shared
+make
+make check
+make install
+# below May 2015 , PGI serial only
+
+# below 2014 Gnu Compiler Suite
+
+module swap PrgEnv-pgi  PrgEnv-gnu
+
+export PREFIX=/usr/local/usp/COST/szip-2.1-gnu-cc
+
+# remove szip-2.1 and extract again from tar archive
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-static"
+export CXXFLAGS="-static"
+export FFLAGS="-static"
+./configure --prefix=$PREFIX \
+   --enable-static --disable-shared
+make
+make check
+make install
+
+# remove szip-2.1 and extract again from tar archive
+# Need to build dynamic library for compute nodes on a batch
+# node because "configure" tries linking and needs alps.
+qsub -A ERDCS97290STA -l select=1:ncpus=32:mpiprocs=32 -q standard -l walltime=2:00:00 -I
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-dynamic -fPIC"
+export CXXFLAGS="-dynamic -fPIC"
+export FFLAGS="-dynamic -fPIC"
+./configure --prefix=$PREFIX \
+   --enable-shared --disable-static
+make
+make check
+make install
+
+export PREFIX=/usr/local/usp/COST/szip-2.1-gnu-gcc
+
+# remove szip-2.1 and extract again from tar archive
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+./configure --prefix=$PREFIX \
+   --enable-static  --enable-shared
+make
+make check
+make install
+
+# above 2014 Gnu Compiler Suite
+
+# below May 2015 , GNU serial only
+# Make sure compiler module is gcc/4.8.2
+export PREFIX=/usr/local/usp/COST/szip-2.1-gnu-gcc-May2015
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+./configure --prefix=$PREFIX \
+   --enable-static  --enable-shared
+make
+make check
+make install
+# above May 2015 , GNU serial only
+
+# below 2014 Intel Compiler
+
+module swap PrgEnv-gnu  PrgEnv-intel
+
+export PREFIX=/usr/local/usp/COST/szip-2.1-intel-cc
+
+# remove szip-2.1 and extract again from tar archive
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-static"
+export CXXFLAGS="-static"
+export FFLAGS="-static"
+./configure --prefix=$PREFIX \
+   --enable-static --disable-shared
+make
+make check
+make install
+
+# remove szip-2.1 and extract again from tar archive
+# Need to build dynamic library for compute nodes on a batch
+# node because "configure" tries linking and needs alps.
+qsub -A ERDCS97290STA -l select=1:ncpus=32:mpiprocs=32 -q standard -l walltime=2:00:00 -I
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-dynamic -fPIC"
+export CXXFLAGS="-dynamic -fPIC"
+export FFLAGS="-dynamic -fPIC"
+./configure --prefix=$PREFIX \
+   --enable-shared --disable-static
+make
+make check
+make install
+
+export PREFIX=/usr/local/usp/COST/szip-2.1-intel-icc
+
+# remove szip-2.1 and extract again from tar archive
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+./configure --prefix=$PREFIX \
+   --enable-static  --enable-shared
+make
+make check
+make install
+
+# below 2014 Intel Compiler
+
+# below May 2015 , Intel serial only
+# Make sure compiler module is intel/14.0.2.144
+export PREFIX=/usr/local/usp/COST/szip-2.1-intel-icc-May2015
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+./configure --prefix=$PREFIX \
+   --enable-static  --enable-shared
+make
+make check
+make install
+# above May 2015 , Intel serial only
+
+For choices
+topdir=/usr/local/usp/COST/szip-2.1-pgi-cc
+topdir=/usr/local/usp/COST/szip-2.1-pgi-pgcc
+topdir=/usr/local/usp/COST/szip-2.1-gnu-cc
+topdir=/usr/local/usp/COST/szip-2.1-gnu-gcc
+topdir=/usr/local/usp/COST/szip-2.1-intel-cc
+topdir=/usr/local/usp/COST/szip-2.1-intel-icc
+
+szip-2.1-pgi-pgcc-May2015
+szip-2.1-gnu-gcc-May2015
+szip-2.1-intel-icc-May2015
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+# Did not change in May 2015 because someone removed "src/"
+# from every COST application.
+chmod -R g+w,o-w *
+
+szip on garnet , above
+
+
+Installation locations on garnet for April 2014.
+
+/usr/local/usp/COST/
+szip-2.1-gnu-cc
+szip-2.1-pgi-cc
+szip-2.1-intel-cc
+szip-2.1-gnu-gcc
+szip-2.1-pgi-pgcc
+szip-2.1-intel-icc
+Note the zlib built for compute nodes using cc.
+zlib-1.2.8-gnu
+zlib-1.2.8-pgi
+zlib-1.2.8-intel
+hdf5-1.8.12-gnu-gcc
+hdf5-1.8.12-pgi-pgcc
+hdf5-1.8.12-intel-icc
+hdf5-parallel-1.8.12-gnu-cc
+hdf5-parallel-1.8.12-pgi-cc
+hdf5-parallel-1.8.12-intel-cc
+
+As of April 16, 2014 garnet has
+hdf5/1.8.11(default)
+hdf5/1.8.5.0
+hdf5/1.8.7
+hdf5/1.8.8
+hdf5-parallel/1.8.11(default)
+hdf5-parallel/1.8.5.0
+hdf5-parallel/1.8.7
+hdf5-parallel/1.8.8
+so it is not really necessary to build HDF5.
+These instructions may be useful if someone needs a
+particular version of HDF5 for compatibility with
+other code.  Also, these instructions might be a
+useful reference for building something similar.
+
+For each build
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.12.tar.bz2
+tar xjf hdf5-1.8.12.tar.bz2
+cd hdf5-1.8.12
+A general note concerning configure.
+    --with-xxx=INC,LIB - Specify individually the include directory and
+                         library directory separated by a comma
+    --with-xxx=DIR     - Specify only the directory which contains the
+                         include/ and lib/ subdirectories
+INSTALL file says
+        Starting with release 1.6.3, Szip library binaries are distributed
+        with the encoder enabled (a license may be required to use this binary)
+        and with the encoder disabled (freely usable without a license).
+        If the encoder enabled binary is used, Szip compression encoding is
+        available for an HDF5 application; if the encoder disabled binary is
+        used, Szip compression is not available.  Szip decoding is always
+        available for applications (i.e., an HDF5 application can always read
+        Szip-compressed data) if the Szip filter is present, regardless of the
+        binary used.
+In fact, enable szip only for case that user already has an szipped
+data file.
+INSTALL file also says
+There are configure options: --enable-fortran  --enable-cxx
+        Note: The Fortran and C++ interfaces are not supported on all the
+              platforms the main HDF5 Library supports. Also, the Fortran
+              interface supports parallel HDF5 while the C++ interface does
+              not.
+
+Need to log-into batch node because otherwise configuration
+tests for MPI fail.
+
+qsub -l select=1:ncpus=32:mpiprocs=32,walltime=02:00:00 -A ERDCS97290STA -q standard -I
+
+export PREFIX=/usr/local/usp/COST/hdf5-parallel-1.8.12-pgi-cc
+export CXX=CC
+export CXXFLAGS="-O2"
+export CC=cc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export TMPDIR=$WORKDIR/tmp
+
+# Documentation says next two lines needed for "make check".
+# Might also be needed for configure.
+export RUNPARALLEL="aprun -n 6"
+export RUNSERIAL="aprun -n 1"
+
+./configure --prefix=$PREFIX \
+ --with-zlib=/usr/local/usp/COST/zlib-1.2.8-pgi \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-pgi-cc \
+ --enable-parallel  --enable-fortran  --disable-cxx \
+ --enable-static  --disable-shared
+
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.12
+                  Configured on: Thu Apr 17 15:56:21 CDT 2014
+                  Configured by: scheinin@batch17-wlm
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux batch17-wlm 2.6.32.59-0.7.1_1.0401.6845-cray_gem_s #1 SMP Thu Nov 15 00:27:45 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: static
+             Installation point: /usr/local/usp/COST/hdf5-parallel-1.8.12-pgi-cc
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/cray/xt-asyncpe/5.21/bin/cc
+                         CFLAGS: -O2
+                      H5_CFLAGS:   -c99 -Minform=inform -fast -s
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_C_SOURCE=199506L   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/COST/szip-2.1-pgi-cc/include -I/usr/local/usp/COST/zlib-1.2.8-pgi/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_BSD_SOURCE 
+               Shared C Library: no
+               Static C Library: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/local/usp/COST/zlib-1.2.8-pgi/lib -L/usr/local/usp/COST/szip-2.1-pgi-cc/lib
+                Extra libraries:  -lsz -lz -ldl -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: /opt/cray/xt-asyncpe/5.21/bin/ftn
+          Fortran 2003 Compiler: no
+                  Fortran Flags: 
+               H5 Fortran Flags:  -fast -s -Mnoframe
+               AM Fortran Flags: 
+         Shared Fortran Library: no
+         Static Fortran Library: yes
+
+                            C++: no
+
+Features:
+---------
+                  Parallel HDF5: yes
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: 
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+       Large File Support (LFS): yes
+
+
+make 2>&1 | tee make.log
+
+[stuff]
+ aprun -n 1 ./H5make_libsettings > H5lib_settings.c
+[stuff]
+PGC-S-0035-Syntax error: Recovery attempted by replacing integer 25405519 by '(' (H5lib_settings.c: 106)
+
+ vi ./src/H5lib_settings.c
+remove last line
+Application 25405519 resources: utime ~0s, stime ~0s
+
+# If restart make, next line.
+make 2>&1 | tee -a make.log
+
+[stuff]
+aprun -n 1 ./H5detect > H5Tinit.c 
+[stuff]
+PGC-S-0035-Syntax error: Recovery attempted by replacing integer 25405528 by ';' (H5Tinit.c: 857)
+
+src/H5Tinit.c
+Had
+dt->shared->u.atomic.u.iApplication 25405528 resources: utime ~0s, stime ~0s
+which is awfully wrong, missing last part.
+cd src
+aprun -n 1 ./H5detect > H5Tinit.c 
+Then removed last line
+
+make 2>&1 | tee -a make.log
+
+vi fortran/src/H5fortran_detect.f90
+Remove last line concerning execution time.
+
+make 2>&1 | tee -a make.log
+
+vi fortran/src/H5fort_type_defines.h
+Remove last line concerning execution time.
+
+make 2>&1 | tee -a make.log
+
+make -k check 2>&1 | tee check.log
+
+(There is also the option "make check-s" or "make check-p"
+for only checking serial or parallel.)
+Use -k because there are error that would other cause "make check"
+to stop before doing all of the tests.
+Many "make check" failures but it is not clear how many failures are real
+and how many are due to different timestamps or different
+functionality.  For example,
+Compare tay5.h5 to ./testfiles/tall.h5                                *FAILED*
+    Expected result (*.ddl) differs from actual result (*.out)
+    *** ./tay5.out      2014-04-17 18:34:42.000000000 -0500
+    --- tall.out        2014-04-17 18:34:44.000000000 -0500
+    ***************
+    *** 1,4 ****
+    ! HDF5 "./testfiles/tall.h5" {
+      GROUP "/" {
+         ATTRIBUTE "attr1" {
+            DATATYPE  H5T_STD_I8BE
+    --- 1,4 ----
+    ! HDF5 "tay5.h5" {
+      GROUP "/" {
+         ATTRIBUTE "attr1" {
+            DATATYPE  H5T_STD_I8BE
+    ***************
+    *** 95,98 ****
+         }
+      }
+      }
+    ! Application 25410429 resources: utime ~0s, stime ~0s
+    --- 95,98 ----
+         }
+      }
+      }
+    ! Application 25410433 resources: utime ~0s, stime ~0s
+
+
+echo $PREFIX # (just to double check)
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+
+qsub -l select=1:ncpus=32:mpiprocs=32,walltime=02:00:00 -A ERDCS97290STA -q standard -I
+
+module swap PrgEnv-pgi  PrgEnv-gnu
+export PREFIX=/usr/local/usp/COST/hdf5-parallel-1.8.12-gnu-cc
+export CXX=CC
+export CXXFLAGS="-O2"
+export CC=cc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export TMPDIR=$WORKDIR/tmp
+
+# Documentation says next two lines needed for "make check".
+
+# Might also be needed for configure.
+export RUNPARALLEL="aprun -n 6"
+export RUNSERIAL="aprun -n 1"
+
+./configure --prefix=$PREFIX \
+ --with-zlib=/usr/local/usp/COST/zlib-1.2.8-gnu \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-gnu-cc \
+ --enable-parallel  --enable-fortran  --disable-cxx \
+ --enable-static  --disable-shared
+
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.12
+                  Configured on: Thu Apr 17 16:33:09 CDT 2014
+                  Configured by: scheinin@batch11-wlm
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux batch11-wlm 2.6.32.59-0.7.1_1.0401.6845-cray_gem_s #1 SMP Thu Nov 15 00:27:45 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: static
+             Installation point: /usr/local/usp/COST/hdf5-parallel-1.8.12-gnu-cc
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/cray/xt-asyncpe/5.21/bin/cc
+                         CFLAGS: -O2
+                      H5_CFLAGS: -std=c99 -pedantic -Wall -Wextra -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -Wfloat-equal -Wmissing-format-attribute -Wmissing-noreturn -Wpacked -Wdisabled-optimization -Wformat=2 -Wunreachable-code -Wendif-labels -Wdeclaration-after-statement -Wold-style-definition -Winvalid-pch -Wvariadic-macros -Winit-self -Wmissing-include-dirs -Wswitch-default -Wswitch-enum -Wunused-macros -Wunsafe-loop-optimizations -Wc++-compat -Wstrict-overflow -Wlogical-op -Wlarger-than=2048 -Wvla -Wsync-nand -Wframe-larger-than=16384 -Wpacked-bitfield-compat -Wstrict-overflow=5 -Wjump-misses-init -Wunsuffixed-float-constants -Wdouble-promotion -Wsuggest-attribute=const -Wtrampolines -Wstack-usage=8192 -Wvector-operation-performance -Wsuggest-attribute=pure -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -O3 -fomit-frame-pointer -finline-functions
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_C_SOURCE=199506L   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/COST/szip-2.1-gnu-cc/include -I/usr/local/usp/COST/zlib-1.2.8-gnu/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_BSD_SOURCE 
+               Shared C Library: no
+               Static C Library: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/local/usp/COST/zlib-1.2.8-gnu/lib -L/usr/local/usp/COST/szip-2.1-gnu-cc/lib
+                Extra libraries:  -lsz -lz -ldl -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: /opt/cray/xt-asyncpe/5.21/bin/ftn
+          Fortran 2003 Compiler: no
+                  Fortran Flags: 
+               H5 Fortran Flags:  
+               AM Fortran Flags: 
+         Shared Fortran Library: no
+         Static Fortran Library: yes
+
+                            C++: no
+
+Features:
+---------
+                  Parallel HDF5: yes
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: 
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+       Large File Support (LFS): yes
+
+
+make 2>&1 | tee make.log
+
+Error as shown above for PGI compilation.
+ vi ./src/H5lib_settings.c
+remove last line
+Application 25405519 resources: utime ~0s, stime ~0s
+
+# If restart make, next line.
+make 2>&1 | tee -a make.log
+
+Error as shown above for PGI compilation.
+Needed to run the following several times to get Application ...
+to be on last line without messing up the rest of the text.
+aprun -n 1 ./H5detect > H5Tinit.c
+
+vi ./src/H5Tinit.c
+Remove
+Application 25405590 resources: utime ~0s, stime ~0s
+
+make 2>&1 | tee -a make.log
+
+vi fortran/src/H5fortran_detect.f90
+Remove last line concerning execution time.
+
+make 2>&1 | tee -a make.log
+
+vi fortran/src/H5fort_type_defines.h
+Remove last line concerning execution time.
+
+make 2>&1 | tee -a make.log
+
+cd src
+aprun -n 1 ./H5detect > H5Tinit.c
+Failed again and again by not writing complete output until used
+aprun -n 1 -T ./H5detect > H5Tinit.c
+vi H5Tinit.c
+remove last line
+cd ..
+
+make -k check 2>&1 | tee check.log
+(There is also the option "make check-s" or "make check-p"
+for only checking serial or parallel.)
+Use -k because there are error that would other cause "make check"
+to stop before doing all of the tests.
+Many "make check" failures but it is not clear how many failures are real
+and how many are due to different timestamps or different
+functionality.
+
+echo $PREFIX # (just to double check)
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+
+qsub -l select=1:ncpus=32:mpiprocs=32,walltime=02:00:00 -A ERDCS97290STA -q standard -I
+
+module swap PrgEnv-pgi  PrgEnv-intel
+export PREFIX=/usr/local/usp/COST/hdf5-parallel-1.8.12-intel-cc
+export CXX=CC
+export CXXFLAGS="-O2"
+export CC=cc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export TMPDIR=$WORKDIR/tmp
+
+# Documentation says next two lines needed for "make check".
+# Might also be needed for configure.
+# Definitely need for "make" that builds the code.
+export RUNPARALLEL="aprun -n 6"
+export RUNSERIAL="aprun -n 1"
+
+./configure --prefix=$PREFIX \
+ --with-zlib=/usr/local/usp/COST/zlib-1.2.8-intel \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-intel-cc \
+ --enable-parallel  --enable-fortran  --disable-cxx \
+ --enable-static  --disable-shared
+
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.12
+                  Configured on: Thu Apr 17 17:07:48 CDT 2014
+                  Configured by: scheinin@batch13-wlm
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux batch13-wlm 2.6.32.59-0.7.1_1.0401.6845-cray_gem_s #1 SMP Thu Nov 15 00:27:45 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: static
+             Installation point: /usr/local/usp/COST/hdf5-parallel-1.8.12-intel-cc
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/cray/xt-asyncpe/5.21/bin/cc
+                         CFLAGS: -O2
+                      H5_CFLAGS: -std=c99  -O
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_C_SOURCE=199506L   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/COST/szip-2.1-intel-cc/include -I/usr/local/usp/COST/zlib-1.2.8-intel/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_BSD_SOURCE 
+               Shared C Library: no
+               Static C Library: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/local/usp/COST/zlib-1.2.8-intel/lib -L/usr/local/usp/COST/szip-2.1-intel-cc/lib
+                Extra libraries:  -lsz -lz -ldl -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: /opt/cray/xt-asyncpe/5.21/bin/ftn
+          Fortran 2003 Compiler: no
+                  Fortran Flags: 
+               H5 Fortran Flags:  -O3
+               AM Fortran Flags: 
+         Shared Fortran Library: no
+         Static Fortran Library: yes
+
+                            C++: no
+
+Features:
+---------
+                  Parallel HDF5: yes
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: 
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+       Large File Support (LFS): yes
+
+make 2>&1 | tee make.log
+
+vi ./src/H5lib_settings.c
+Remove last line of timing information.
+
+# If restart make, next line.
+make 2>&1 | tee -a make.log
+
+make 2>&1 | tee -a make.log
+
+vi fortran/src/H5fortran_detect.f90
+Remove last line concerning execution time.
+
+make 2>&1 | tee -a make.log
+
+vi fortran/src/H5fort_type_defines.h
+Remove last line concerning execution time.
+
+make 2>&1 | tee -a make.log
+
+make -k check 2>&1 | tee check.log
+(There is also the option "make check-s" or "make check-p"
+for only checking serial or parallel.)
+Use -k because there are error that would other cause "make check"
+to stop before doing all of the tests.
+Many "make check" failures but it is not clear how many failures are real
+and how many are due to different timestamps or different
+functionality.
+
+echo $PREFIX # (just to double check)
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+None parallel version compiled for front-end.
+
+export PREFIX=/usr/local/usp/COST/hdf5-1.8.12-pgi-pgcc
+export CXX=pgCC
+export CXXFLAGS="-O2"
+export CC=pgcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+export TMPDIR=$WORKDIR/tmp
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-pgi-pgcc \
+ --disable-parallel  --enable-fortran  --enable-cxx \
+ --enable-static  --enable-shared
+
+# zlib compiled for compute nodes, try to use /usr/lib64/libz.a
+# by having removed the following line
+# --with-zlib=/usr/local/usp/COST/zlib-1.2.8-pgi \
+
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.12
+                  Configured on: Fri Apr 18 10:07:30 CDT 2014
+                  Configured by: scheinin@garnet05
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux garnet05 2.6.32.59-0.7-default #1 SMP 2012-07-13 15:50:56 +0200 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: static, shared
+             Installation point: /usr/local/usp/COST/hdf5-1.8.12-pgi-pgcc
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/pgi/13.6.0/linux86-64/13.6/bin/pgcc ( pgcc 13.6-0 64-bit target on x86-64 Linux -tp shanghai )
+                         CFLAGS: -O2
+                      H5_CFLAGS:   -c99 -Minform=inform -fast -s
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_C_SOURCE=199506L   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/COST/szip-2.1-pgi-pgcc/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_BSD_SOURCE 
+               Shared C Library: yes
+               Static C Library: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/local/usp/COST/szip-2.1-pgi-pgcc/lib
+                Extra libraries:  -lsz -lz -lrt -ldl -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: /opt/pgi/13.6.0/linux86-64/13.6/bin/pgf90 ( pgf90 13.6-0 64-bit target on x86-64 Linux -tp shanghai )
+          Fortran 2003 Compiler: no
+                  Fortran Flags: 
+               H5 Fortran Flags:  -fast -s -Mnoframe
+               AM Fortran Flags: 
+         Shared Fortran Library: yes
+         Static Fortran Library: yes
+
+                            C++: yes
+                   C++ Compiler: /opt/pgi/13.6.0/linux86-64/13.6/bin/pgCC ( pgCC 13.6-0 64-bit target on x86-64 Linux -tp shanghai )
+                      C++ Flags: -O2
+                   H5 C++ Flags:  
+                   AM C++ Flags: 
+             Shared C++ Library: yes
+             Static C++ Library: yes
+
+Features:
+---------
+                  Parallel HDF5: no
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: no
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+       Large File Support (LFS): yes
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+No failures at all. (Unlike the parallel version.)
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+None parallel version compiled for front-end.
+
+module swap PrgEnv-pgi  PrgEnv-gnu
+export PREFIX=/usr/local/usp/COST/hdf5-1.8.12-gnu-gcc
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export TMPDIR=$WORKDIR/tmp
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-gnu-gcc \
+ --disable-parallel  --enable-fortran  --enable-cxx \
+ --enable-static  --enable-shared
+
+# zlib compiled for compute nodes, try to use /usr/lib64/libz.a
+# by having removed the following line
+# --with-zlib=/usr/local/usp/COST/zlib-1.2.8-gnu \
+
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.12
+                  Configured on: Fri Apr 18 10:12:10 CDT 2014
+                  Configured by: scheinin@garnet05
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux garnet05 2.6.32.59-0.7-default #1 SMP 2012-07-13 15:50:56 +0200 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: static, shared
+             Installation point: /usr/local/usp/COST/hdf5-1.8.12-gnu-gcc
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/gcc/4.8.0/bin/gcc ( gcc (GCC) 4.8.0 20130322 )
+                         CFLAGS: -O2
+                      H5_CFLAGS: -std=c99 -pedantic -Wall -Wextra -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -Wfloat-equal -Wmissing-format-attribute -Wmissing-noreturn -Wpacked -Wdisabled-optimization -Wformat=2 -Wunreachable-code -Wendif-labels -Wdeclaration-after-statement -Wold-style-definition -Winvalid-pch -Wvariadic-macros -Winit-self -Wmissing-include-dirs -Wswitch-default -Wswitch-enum -Wunused-macros -Wunsafe-loop-optimizations -Wc++-compat -Wstrict-overflow -Wlogical-op -Wlarger-than=2048 -Wvla -Wsync-nand -Wframe-larger-than=16384 -Wpacked-bitfield-compat -Wstrict-overflow=5 -Wjump-misses-init -Wunsuffixed-float-constants -Wdouble-promotion -Wsuggest-attribute=const -Wtrampolines -Wstack-usage=8192 -Wvector-operation-performance -Wsuggest-attribute=pure -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -O3 -fomit-frame-pointer -finline-functions
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_C_SOURCE=199506L   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/COST/szip-2.1-gnu-gcc/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_BSD_SOURCE 
+               Shared C Library: yes
+               Static C Library: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/local/usp/COST/szip-2.1-gnu-gcc/lib
+                Extra libraries:  -lsz -lz -lrt -ldl -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: /opt/gcc/4.8.0/bin/gfortran ( GNU Fortran (GCC) 4.8.0 20130322 )
+          Fortran 2003 Compiler: no
+                  Fortran Flags: 
+               H5 Fortran Flags:  
+               AM Fortran Flags: 
+         Shared Fortran Library: yes
+         Static Fortran Library: yes
+
+                            C++: yes
+                   C++ Compiler: /opt/gcc/4.8.0/bin/g++ ( g++ (GCC) 4.8.0 20130322 )
+                      C++ Flags: -O2
+                   H5 C++ Flags:  
+                   AM C++ Flags: 
+             Shared C++ Library: yes
+             Static C++ Library: yes
+
+Features:
+---------
+                  Parallel HDF5: no
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: no
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+       Large File Support (LFS): yes
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+No failures at all. (Unlike the parallel version.)
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+
+None parallel version compiled for front-end.
+
+module swap PrgEnv-pgi  PrgEnv-intel
+export PREFIX=/usr/local/usp/COST/hdf5-1.8.12-intel-icc
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export TMPDIR=$WORKDIR/tmp
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-intel-icc \
+ --disable-parallel  --enable-fortran  --enable-cxx \
+ --enable-static  --enable-shared
+
+# zlib compiled for compute nodes, try to use /usr/lib64/libz.a
+# by having removed the following line
+# --with-zlib=/usr/local/usp/COST/zlib-1.2.8-intel \
+
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.12
+                  Configured on: Fri Apr 18 10:17:57 CDT 2014
+                  Configured by: scheinin@garnet05
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux garnet05 2.6.32.59-0.7-default #1 SMP 2012-07-13 15:50:56 +0200 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: static, shared
+             Installation point: /usr/local/usp/COST/hdf5-1.8.12-intel-icc
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/intel/composer_xe_2013.4.183/bin/intel64/icc ( Intel(R) C Intel(R) 64 Compiler Version 13.1.2.183 Build 20130514)
+                         CFLAGS: -O2
+                      H5_CFLAGS: -std=c99  -O
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_C_SOURCE=199506L   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/COST/szip-2.1-intel-icc/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_BSD_SOURCE 
+               Shared C Library: yes
+               Static C Library: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/local/usp/COST/szip-2.1-intel-icc/lib
+                Extra libraries:  -lsz -lz -lrt -ldl -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: /opt/intel/composer_xe_2013.4.183/bin/intel64/ifort ( Intel(R) Fortran Intel(R) 64 Compiler Version 13.1.2.183 Build 20130514)
+          Fortran 2003 Compiler: no
+                  Fortran Flags: 
+               H5 Fortran Flags:  -O3
+               AM Fortran Flags: 
+         Shared Fortran Library: yes
+         Static Fortran Library: yes
+
+                            C++: yes
+                   C++ Compiler: /opt/intel/composer_xe_2013.4.183/bin/intel64/icpc ( Intel(R) C++ Intel(R) 64 Compiler Version 13.1.2.183 Build 20130514)
+                      C++ Flags: -O2
+                   H5 C++ Flags:  
+                   AM C++ Flags: 
+             Shared C++ Library: yes
+             Static C++ Library: yes
+
+Features:
+---------
+                  Parallel HDF5: no
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: no
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+       Large File Support (LFS): yes
+
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+No failures at all. (Unlike the parallel version.)
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+For six choices
+topdir=/usr/local/usp/COST/hdf5-1.8.12-gnu-gcc
+topdir=/usr/local/usp/COST/hdf5-1.8.12-intel-icc
+topdir=/usr/local/usp/COST/hdf5-1.8.12-pgi-pgcc
+topdir=/usr/local/usp/COST/hdf5-parallel-1.8.12-gnu-cc
+topdir=/usr/local/usp/COST/hdf5-parallel-1.8.12-intel-cc
+topdir=/usr/local/usp/COST/hdf5-parallel-1.8.12-pgi-cc
+
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+ ----------- below, building serial HDF5 on May 2015 -----------
+
+Serial version can be useful when do not want any dependencies on MPI.
+
+Subdirectories
+hdf5-1.8.14-pgi-pgcc
+hdf5-1.8.14-gnu-gcc
+hdf5-1.8.14-intel-icc
+
+cd src
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.14.tar.bz2
+tar xjf hdf5-1.8.14.tar.bz2
+cd hdf5-1.8.14
+
+temp notes below
+mkdir libso
+mv lib/libz.so* libso/
+temp notes above
+
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Generalized approach for serial version, below.
+ April 2016
+
+export HDF5_VERSION=1.8.16
+export SZIP_VERSION=2.1
+
+export PGI_VERSION=15.10.0
+export GNU_VERSION=5.2.0
+# For Intel compiler with GNU compatibility
+export INTEL_VERSION=15.0.6.233
+export GNU_VERSION=5.2.0
+
+# PGI
+module unload pgi/14.2.0  # Whatever is the default at the time.
+export PGI_VERSION=15.10.0   # Unloading of compiler cancels this.
+module load pgi/$PGI_VERSION
+
+# Intel
+module swap PrgEnv-pgi PrgEnv-intel
+module unload intel/14.0.2.144  # Whatever is the default at the time.
+export INTEL_VERSION=14.0.2.144   # Unloading of compiler cancels this.
+module load intel/$INTEL_VERSION
+# Intel version 15.0.6.233 , added GNU compatibility
+module swap PrgEnv-pgi PrgEnv-intel
+module unload intel  # Whatever is the default at the time.
+module load gcc/$GNU_VERSION
+export INTEL_VERSION=15.0.6.233   # Unloading of compiler cancels this.
+module load intel/$INTEL_VERSION
+
+# Gnu
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+# Choose one.
+export PREFIX=/usr/local/usp/hdf5/${HDF5_VERSION}-pgi-${PGI_VERSION}
+export PREFIX=/usr/local/usp/hdf5/${HDF5_VERSION}-intel-${INTEL_VERSION}
+export PREFIX=/usr/local/usp/hdf5/${HDF5_VERSION}-gnu-${GNU_VERSION}
+
+mkdir $PREFIX
+
+# Choose one.
+export SZIP_DIR=/usr/local/usp/szip/${SZIP_VERSION}-pgi-${PGI_VERSION}
+export SZIP_DIR=/usr/local/usp/szip/${SZIP_VERSION}-intel-${INTEL_VERSION}
+export SZIP_DIR=/usr/local/usp/szip/${SZIP_VERSION}-gnu-${GNU_VERSION}
+
+export LD_LIBRARY_PATH=${SZIP_DIR}/lib:$LD_LIBRARY_PATH
+
+# Choose one.
+export BUILD_DIR=$HOME/build/hdf5-${HDF5_VERSION}-pgi-${PGI_VERSION}
+export BUILD_DIR=$HOME/build/hdf5-${HDF5_VERSION}-intel-${INTEL_VERSION}
+export BUILD_DIR=$HOME/build/hdf5-${HDF5_VERSION}-gnu-${GNU_VERSION}
+
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+tar xjf hdf5-${HDF5_VERSION}.tar.bz2
+cd hdf5-${HDF5_VERSION}
+
+# Choose one.
+export CXX=pgCC
+export CC=pgcc
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+export CFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export LDFLAGS=""
+# OR
+# -gcc-name and -gxx-name only used if result of which
+# is not in /usr/bin
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export CFLAGS="-O2 -fPIC -gcc-name=`which gcc`"
+export FFLAGS="-fPIC"
+export CXXFLAGS="-O2 -fPIC -gxx-name=`which g++`"
+export LDFLAGS="-O2 -gcc-name=`which gcc` -gxx-name=`which g++`"
+# OR
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export LDFLAGS=""
+
+export TMPDIR=$WORKDIR/tmp
+
+./configure --prefix=$PREFIX \
+ --with-szlib=$SZIP_DIR \
+ --disable-parallel --with-default-plugindir=${PREFIX}/lib/plugin \
+ --enable-fortran --enable-fortran2003 --enable-cxx \
+ --enable-static  --enable-shared
+
+# Do not use configure option  --enable-netcdf so that this HDF5
+# can be used for building NetCDF.
+# Note that --enable-cxx and --enable-threadsafe flags are incompatible.
+
+make 2>&1 | tee make.log
+
+make -k check 2>&1 | tee check.log
+
+echo $PREFIX # (just to double check)
+make install
+ls $PREFIX # (to see what was installed)
+
+Need to change permissions.
+
+ Generalized approach for serial version, above.
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ---------------------------------------
+below, PGI serial May 2015
+
+module swap pgi/13.6.0 pgi/14.2.0
+
+export PREFIX=/usr/local/usp/COST/hdf5-1.8.14-pgi-pgcc
+export CXX=pgCC
+export CXXFLAGS="-O2"
+export CC=pgcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+export TMPDIR=$WORKDIR/tmp
+
+export LD_LIBRARY_PATH=/usr/local/usp/COST/szip-2.1-pgi-pgcc-May2015/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/zlib-1.2.8-pgi-pgcc/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-pgi-pgcc-May2015 \
+ --with-zlib=/usr/local/usp/COST/zlib-1.2.8-pgi-pgcc \
+ --disable-parallel --with-default-plugindir=${PREFIX}/lib/plugin \
+ --enable-fortran --enable-fortran2003 --enable-cxx \
+ --enable-static  --enable-shared
+
+# Note that --enable-cxx and --enable-threadsafe flags are incompatible.
+
+# check value of --with-default-plugindir=location
+
+make 2>&1 | tee make.log
+
+make -k check 2>&1 | tee check.log
+Many successful tests, two errors:
+ ERROR: INCORRECT VALIDATION h5fget_file_image_f
+ ERROR: INCORRECT VALIDATION h5fget_file_image_f
+
+echo $PREFIX # (just to double check)
+make install
+ls $PREFIX # (to see what was installed)
+
+above, PGI serial May 2015
+ ---------------------------------------
+below, GNU serial May 2015
+
+module swap PrgEnv-pgi  PrgEnv-gnu
+# Make sure compiler module is gcc/4.8.2
+
+export PREFIX=/usr/local/usp/COST/hdf5-1.8.14-gnu-gcc
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export TMPDIR=$WORKDIR/tmp
+
+export LD_LIBRARY_PATH=/usr/local/usp/COST/szip-2.1-gnu-gcc-May2015/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/zlib-1.2.8-gnu-gcc/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-gnu-gcc-May2015 \
+ --with-zlib=/usr/local/usp/COST/zlib-1.2.8-gnu-gcc \
+ --disable-parallel --with-default-plugindir=${PREFIX}/lib/plugin \
+ --enable-fortran --enable-fortran2003 --enable-cxx \
+ --enable-static  --enable-shared
+
+# Note that --enable-cxx and --enable-threadsafe flags are incompatible.
+
+make 2>&1 | tee make.log
+
+make -k check 2>&1 | tee check.log
+No errors.
+
+echo $PREFIX # (just to double check)
+make install
+ls $PREFIX # (to see what was installed)
+
+above, GNU serial May 2015
+ ---------------------------------------
+below, Intel serial May 2015
+
+module swap PrgEnv-pgi  PrgEnv-intel
+Make sure compiler module is intel/14.0.2.144
+
+export PREFIX=/usr/local/usp/COST/hdf5-1.8.14-intel-icc
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export TMPDIR=$WORKDIR/tmp
+
+export LD_LIBRARY_PATH=/usr/local/usp/COST/szip-2.1-intel-icc-May2015/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/zlib-1.2.8-intel-icc/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/usr/local/usp/COST/szip-2.1-intel-icc-May2015 \
+ --with-zlib=/usr/local/usp/COST/zlib-1.2.8-intel-icc \
+ --disable-parallel --with-default-plugindir=${PREFIX}/lib/plugin \
+ --enable-fortran --enable-fortran2003 --enable-cxx \
+ --enable-static  --enable-shared
+
+# Note that --enable-cxx and --enable-threadsafe flags are incompatible.
+
+make 2>&1 | tee make.log
+
+make -k check 2>&1 | tee check.log
+No errors.
+
+echo $PREFIX # (just to double check)
+make install
+ls $PREFIX # (to see what was installed)
+
+above, Intel serial May 2015
+ ---------------------------------------
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+# Did not change in May 2015 because someone removed "src/"
+# from every COST application.
+chmod -R g+w,o-w *
+
+ ----------- above, building serial HDF5 on May 2015 -----------
+
+garnet for COST above ================================================
+
+
+HDF5
+
+Source is
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4.tar.gz
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4.tar.md5
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4-RELEASE.txt
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10.tar.gz
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10.tar.md5
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10-RELEASE.txt
+
+Organize as
+/work/scheinin/HDF5
+/work/scheinin/HDF5/1.6.10
+/work/scheinin/HDF5/1.6.10/src
+/work/scheinin/HDF5/1.6.10/src/hdf5-1.6.10-RELEASE.txt
+/work/scheinin/HDF5/1.6.10/src/hdf5-1.6.10.tar.bz2
+/work/scheinin/HDF5/1.6.10/src/hdf5-1.6.10.tar.md5
+/work/scheinin/HDF5/1.8.4
+/work/scheinin/HDF5/1.8.4/src
+/work/scheinin/HDF5/1.8.4/src/hdf5-1.8.4-RELEASE.txt
+/work/scheinin/HDF5/1.8.4/src/hdf5-1.8.4.tar.gz
+/work/scheinin/HDF5/1.8.4/src/hdf5-1.8.4.tar.md5
+
+On ranger $WORK is /work/01228/scheinin
+
+  --- diamond below ---
+
+module load mpt/1.24
+module load cc_11.0.074
+module load fc_11.0.074
+module load mkl_10.1.0.015
+
+export CXX=icc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS="-I/opt/sgi/mpt/mpt-1.24/include"
+export LIBS="-lmpi"
+export LDFLAGS="-L/opt/sgi/mpt/mpt-1.24/lib -L/opt/intel/mkl/10.1.0.015/lib/em64t"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export FCFLAGS="-I/opt/sgi/mpt/mpt-1.24/include -O2"
+
+# Do not use "-ipo" because using it causes libraries to have few items.
+
+cd /work/scheinin/HDF5/1.8.4/src/hdf5-1.8.4
+
+# Change
+# /work/scheinin/HDF5/1.8.4/src/hdf5-1.8.4/config/intel-fflags
+# so that -O3 becomes -O2 .
+
+./configure --prefix=/work/scheinin/HDF5/1.8.4 \
+   --enable-fortran \
+   --enable-parallel \
+   --disable-mpi-size \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --enable-shared  --enable-static \
+   --with-szlib=/work/scheinin/szip/2.1
+
+# Building both shared and static is the default and yet
+# without "--enable-shared  --enable-static" configure
+# decides the only build static.
+
+# --disable-mpi-size because SGI Altix Propack 4 has a problem
+
+# --enable-cxx removed this because with it there was the error
+# configure: error: --enable-cxx and --enable-parallel flags are incompatible
+# Use -O2 rather than -O3 because the HDF5 configure procedure
+# adds -02 to the compile line.  I assume they have a reason for
+# choosing that level.  On the other hand, the configure script
+# set optimization to -O3 for Fortran (-02 for C) but -O3 seems
+# to invoke -ipo which causes an error.
+
+Changing config/intel-fflags
+results in SUMMARY OF THE HDF5 CONFIGURATION
+showing
+               H5 Fortran Flags:  -O2
+rather than the default
+               H5 Fortran Flags:  -O3
+
+ ---------------------------------------------------------------------
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.4
+                  Configured on: Tue Dec  1 15:44:54 CST 2009
+                  Configured by: scheinin@login01
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux login01 2.6.16.60-0.42.7-smp #1 SMP Tue Nov 3 11:20:42 UTC 2009 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: 
+             Installation point: /work/scheinin/HDF5/1.8.4
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/intel/cc/11.0.074/bin/intel64/icc (icc-11.0)
+                         CFLAGS: -O2
+                      H5_CFLAGS: -std=c99  -O2 -Wl,-s
+                      AM_CFLAGS: 
+                       CPPFLAGS: -I/opt/sgi/mpt/mpt-1.24/include
+                    H5_CPPFLAGS: -D_POSIX_SOURCE   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/work/scheinin/szip/2.1/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_BSD_SOURCE 
+               Shared Libraries: yes
+               Static Libraries: yes
+  Statically Linked Executables: no
+                        LDFLAGS: -L/opt/sgi/mpt/mpt-1.24/lib -L/opt/intel/mkl/10.1.0.015/lib/em64t
+                     AM_LDFLAGS:  -L/usr/lib64 -L/work/scheinin/szip/2.1/lib
+                Extra libraries:  -lsz -lz -lm -lmpi
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: ifort
+                  Fortran Flags: -I/opt/sgi/mpt/mpt-1.24/include -O2
+               H5 Fortran Flags:  -O2
+               AM Fortran Flags:   -fPIC
+                            C++: no
+
+Features:
+---------
+                  Parallel HDF5: yes
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: 
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+ Linux Large File Support (LFS): yes
+ ---------------------------------------------------------------------
+
+make
+make check
+# Parallel operation was not tested.
+make install
+
+  ------------------
+
+cd /work/scheinin/HDF5/1.6.10/src/hdf5-1.6.10
+
+modify config/intel-flags  Added:
+    icc-11.0*)
+        PROD_CFLAGS="-O1 -Wl,-s"
+        ;;
+
+and changed to
+    PROD_CFLAGS="-O1 -Wl,-s"
+
+In directory
+/work/scheinin/HDF5/1.6.10/src/hdf5-1.6.10/fortran/config
+Files intel-flags and intel-fflags: changed -O3 to -O1
+Version 1.8.4 does not have fortran/config
+
+export FFLAGS="-I. -I/opt/sgi/mpt/mpt-1.24/include -O1"
+
+./configure --prefix=/work/scheinin/HDF5/1.6.10 \
+   --enable-fortran \
+   --enable-parallel \
+   --disable-mpi-size \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --enable-shared  --enable-static \
+   --with-szlib=/work/scheinin/szip/2.1
+
+
+  --- diamond above ---
+
+  --- ranger below ---
+
+# The instructions below are for the Intel 10.X compiler,
+# not the default PGI compiler on ranger.  The motive is to
+# learn more about compiling using the Intel compiler on diamond.
+# The machine diamond is new when this work was done, so the
+# diamond environment may be less mature than the environment
+# on ranger.tacc.utexas.edu.
+
+module unload  mvapich/1.0.1
+module unload pgi/7.2-5
+module load intel/10.1
+module load  mvapich2
+module load mkl/10.0
+
+setenv CXX mpicxx
+setenv CXXFLAGS "-O"
+setenv CC mpicc
+setenv CFLAGS "-O"
+setenv CPPFLAGS "-I${MPICH_HOME}/include"
+setenv FC mpif90
+setenv F77 mpif77
+setenv F90 mpif90
+setenv FCFLAGS "-I${MPICH_HOME}/include -O"
+setenv LIBS ""
+setenv LDFLAGS ""
+
+# "-ipo" results in library not being built.
+# It seems (though I'm not certain) that -ipo is implied by -O2
+# when Intel compiler version 10.X is used, so use "-O".
+
+# For 1.8.4 make sure intel-fflags and intel-flags in
+# /work/01228/scheinin/HDF5/1.8.4/src/hdf5-1.8.4/config/
+# has "-O" rather than higher level.
+
+./configure --prefix=/work/01228/scheinin/HDF5/1.8.4 \
+   --enable-fortran \
+   --enable-parallel \
+   --disable-mpi-size \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --enable-shared  --enable-static \
+   --with-szlib=/work/01228/scheinin/szip/2.1
+
+# Building both shared and static is the default and yet
+# without "--enable-shared  --enable-static" configure
+# decides the only build static.
+
+# --disable-mpi-size because SGI Altix Propack 4 has a problem
+
+# --enable-cxx removed this because with it there was the error
+# configure: error: --enable-cxx and --enable-parallel flags are incompatible
+# Use -O2 rather than -O3 because the HDF5 configure procedure
+# adds -02 to the compile line.  I assume they have a reason for
+# choosing that level.  On the other hand, the configure script
+# set optimization to -O3 for Fortran (-02 for C) but that seems
+# to invoke -ipo which causes a problem.
+
+Changing config/intel-fflags
+Check level of optimization and intention to compiler for both
+static and dynamic libraries in SUMMARY OF THE HDF5 CONFIGURATION
+
+ ---------------------------------------------------------------------
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.4
+                  Configured on: Wed Dec  2 11:13:20 CST 2009
+                  Configured by: scheinin@login3.ranger.tacc.utexas.edu
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux login3.ranger.tacc.utexas.edu 2.6.9-78.0.22.EL_lustre_TACC #9 SMP Wed Nov 4 16:21:54 CST 2009 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: 
+             Installation point: /work/01228/scheinin/HDF5/1.8.4
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/apps/intel10_1/mvapich2/1.2/bin/mpicc (icc-10.1)
+                         CFLAGS: -O
+                      H5_CFLAGS: -std=c99  -O -Wl,-s
+                      AM_CFLAGS: 
+                       CPPFLAGS: -I/opt/apps/intel10_1/mvapich2/1.2/include
+                    H5_CPPFLAGS: -D_POSIX_SOURCE   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/work/01228/scheinin/szip/2.1/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_BSD_SOURCE 
+               Shared Libraries: yes
+               Static Libraries: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/lib64 -L/work/01228/scheinin/szip/2.1/lib
+                Extra libraries:  -lsz -lz -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: mpif90
+                  Fortran Flags: -I/opt/apps/intel10_1/mvapich2/1.2/include -O
+               H5 Fortran Flags:  -O
+               AM Fortran Flags:   -fPIC
+                            C++: no
+
+Features:
+---------
+                  Parallel HDF5: yes
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: 
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+ Linux Large File Support (LFS): yes
+ ---------------------------------------------------------------------
+
+make
+libtool: link: mpif90 -fPIC -O -I../../src -I../../fortran/src -I/opt/apps/intel10_1/mvapich2/1.2/include -O -o H5test_kind H5test_kind_SIZEOF.o  -L/usr/lib64 -L/work/01228/scheinin/szip/2.1/lib /work/01228/scheinin/szip/2.1/lib/libsz.so -lz -lm -rpath /work/01228/scheinin/szip/2.1/lib -rpath /work/01228/scheinin/szip/2.1/lib
+ifort: command line warning #10156: ignoring option '-r'; no argument required
+
+Should be -Wl,-rpath -Wl,/work/01228/scheinin/szip/2.1/lib
+
+Curiously, 1.6.10 version works OK.  The form of rpath is determined
+by ../../libtool .
+
+In libtool change wl="" to wl="-Wl,"
+
+make check
+make install
+
+Above for /work/01228/scheinin/HDF5/1.8.4/src/hdf5-1.8.4,
+below for version 1.6.10 .
+
+cd /work/01228/scheinin/HDF5/1.6.10/src/hdf5-1.6.10
+
+There are two directories
+./config  ./fortran/config
+where intel-* need to be changed.
+
+./configure --prefix=/work/01228/scheinin/HDF5/1.6.10 \
+   --enable-fortran \
+   --enable-parallel \
+   --disable-mpi-size \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --enable-shared  --enable-static \
+   --with-szlib=/work/01228/scheinin/szip/2.1
+
+make
+make check
+make install
+
+  --- ranger above ---
+  --- jade below ---
+
+"module list" includes
+xt-os/2.2.41A_PS05
+pgi/9.0.4
+xt-mpt/3.5.0
+xt-pe/2.2.41A_PS05
+
+export CXX=/opt/cray/xt-asyncpe/3.3/bin/CC
+export CXXFLAGS="-O2"
+export CC=/opt/cray/xt-asyncpe/3.3/bin/cc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=/opt/cray/xt-asyncpe/3.3/bin/ftn
+export F77=/opt/cray/xt-asyncpe/3.3/bin/ftn
+export F90=/opt/cray/xt-asyncpe/3.3/bin/ftn
+
+cd /work/scheinin/HDF5/1.8.4/src/hdf5-1.8.4
+
+./configure --prefix=/work/scheinin/HDF5/1.8.4 \
+   --enable-fortran \
+   --enable-parallel \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=/work/scheinin/szip/2.1
+
+# --enable-cxx removed this because with it there was the error
+# configure: error: --enable-cxx and --enable-parallel flags are incompatible
+# Use -O2 rather than -O3 because the HDF5 configure procedure
+# adds -02 to the compile line.  I assume they have a reason for
+# choosing that level.  On the other hand, the configure script
+# set optimization to -O3 for Fortran (-02 for C).
+
+ ---------------------------------------------------------------------
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.4
+                  Configured on: Tue Dec  1 11:04:53 CST 2009
+                  Configured by: scheinin@jade03
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux jade03 2.6.16.60-0.39_1.0102.4787.2.2.41A_PS05-ss #1 SMP Fri Nov 13 15:29:04 CST 2009 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: 
+             Installation point: /work/scheinin/HDF5/1.8.4
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/cray/xt-asyncpe/3.3/bin/cc (pgcc-9.0-4)
+                         CFLAGS: -O2
+                      H5_CFLAGS:   -Minform,warn -fast -s -Mnoframe
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_SOURCE   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/work/scheinin/szip/2.1/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_BSD_SOURCE 
+               Shared Libraries: no
+               Static Libraries: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/lib64 -L/work/scheinin/szip/2.1/lib
+                Extra libraries:  -lsz -lz -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: /opt/cray/xt-asyncpe/3.3/bin/ftn
+                  Fortran Flags: 
+               H5 Fortran Flags:  -fast -s -Mnoframe
+               AM Fortran Flags:  
+                            C++: no
+
+Features:
+---------
+                  Parallel HDF5: yes
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: 
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+ Linux Large File Support (LFS): yes
+ ---------------------------------------------------------------------
+
+make
+make check
+make install
+
+cd /work/scheinin/HDF5/1.6.10/src/hdf5-1.6.10
+
+./configure --prefix=/work/scheinin/HDF5/1.6.10 \
+   --enable-fortran \
+   --enable-parallel \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=/work/scheinin/szip/2.1
+
+make
+make check
+make install
+
+  --- jade above ---
+
+  --- garnet below ---
+
+/usr/local/usp/hdf5/ subdirectories
+ 1.6.10-cle  1.6.10-pgi   1.8.5p1-gnu
+ 1.6.10-gnu  1.8.5p1-cle  1.8.5p1-pgi
+with subdirectories
+bin lib include src
+
+Use source on Oct. 19, 2010
+  hdf5-1.6.10.tar.gz
+  hdf5-1.8.5-patch1.tar.gz
+
+   ---- cc/ftn compiler below ----
+
+# For versions with suffix cle
+export CXX=CC
+export CXXFLAGS="-O2"
+export CC=cc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ftn
+export F77=ftn
+export F90=ftn
+
+export SZIP_ROOT=/usr/local/usp/szip/2.1-cle
+
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+export WORKDIR=/work/scheinin
+export TMPDIR=$WORKDIR/tmp
+
+cd /usr/local/usp/hdf5/1.8.5p1-cle/src/hdf5-1.8.5-patch1
+
+./configure --prefix=/usr/local/usp/hdf5/1.8.5p1-cle \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran \
+   --enable-parallel
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+# make check-s 2>&1 | tee check.log
+# Did not check parallel part (make check-p)
+# Actually needed to use "make -k" because there was
+# an error during checking
+make -k check-s 2>&1 | tee check.log
+     err_compat failed
+     error_test failed
+     h5diff tests failed with 1 errors
+make install
+make clean
+
+
+cd /usr/local/usp/hdf5/1.6.10-cle/src/hdf5-1.6.10
+
+./configure --prefix=/usr/local/usp/hdf5/1.6.10-cle \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran \
+   --enable-parallel
+
+make 2>&1 | tee make.log
+# Use -k in expectation of errors.
+make -k check-s 2>&1 | tee check.log
+# tcheck_version.sh failed
+# Did not check parallel part
+make install
+make clean
+
+   ---- cc/ftn compiler above, pgi compiler below ----
+
+# For versions with suffix pgi
+# Don't change modules but change compiler names
+export CXX=pgCC
+export CXXFLAGS="-O2"
+export CC=pgcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+
+export SZIP_ROOT=/usr/local/usp/szip/2.1-pgi
+
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+export WORKDIR=/work/scheinin
+export TMPDIR=$WORKDIR/tmp
+
+cd /usr/local/usp/hdf5/1.8.5p1-pgi/src/hdf5-1.8.5-patch1
+
+./configure --prefix=/usr/local/usp/hdf5/1.8.5p1-pgi \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran --enable-cxx \
+   --enable-shared --enable-static
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+# Needed to use "make -k" because there was
+# an error during checking
+make -k check 2>&1 | tee check.log
+   errors in h5diff h5ls h5repack h5stat h5dump h5dumpxml
+make install
+make clean
+
+
+cd /usr/local/usp/hdf5/1.6.10-pgi/src/hdf5-1.6.10
+
+./configure --prefix=/usr/local/usp/hdf5/1.6.10-pgi \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran --enable-cxx \
+   --enable-shared --enable-static
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+   h5repack tests failed
+make install
+make clean
+
+# Below, with -i8 -r8 , without szlib
+
+export CXX=pgCC
+export CXXFLAGS="-O2"
+export CC=pgcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+export FCFLAGS="-i8 -r8"
+
+export WORKDIR=/work/scheinin
+export TMPDIR=$WORKDIR/tmp
+
+cd /usr/local/usp/hdf5/1.8.5p1-i8r8/src/hdf5-1.8.5-patch1
+
+# Note that the HL Fortran API is not compatible with "-i8 -r8".
+
+./configure --prefix=/usr/local/usp/hdf5/1.8.5p1-i8r8 \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --enable-fortran --disable-hl \
+   --enable-shared --enable-static
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+# Needed to use "make -k" because there was
+# an error during checking
+make -k check 2>&1 | tee check.log
+   errors in h5diff h5ls h5repack h5stat h5dump h5dumpxml
+make install
+make clean
+
+
+# Above, with -i8 -r8 , without szlib
+
+   ---- pgi compiler above, gnu compiler below ----
+
+# Change modules in order to avoid /usr/bin/gcc
+module unload pgi
+module unload PrgEnv-pgi
+module load gcc
+module load PrgEnv-gnu
+
+# Note, the actual gcc module is  gcc/4.5.1
+
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+export SZIP_ROOT=/usr/local/usp/szip/2.1-gnu
+
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+export WORKDIR=/work/scheinin
+export TMPDIR=$WORKDIR/tmp
+
+cd /usr/local/usp/hdf5/1.8.5p1-gnu/src/hdf5-1.8.5-patch1
+
+./configure --prefix=/usr/local/usp/hdf5/1.8.5p1-gnu \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran --enable-cxx \
+   --enable-shared --enable-static
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+make check 2>&1 | tee check.log
+make install
+make clean
+
+
+cd /usr/local/usp/hdf5/1.6.10-gnu/src/hdf5-1.6.10
+
+./configure --prefix=/usr/local/usp/hdf5/1.6.10-gnu \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran --enable-cxx \
+   --enable-shared --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+  random sw derived floating-point -> derived floating-point conversions
+  random hw short -> signed char conversions
+  random hw int -> signed char conversions
+  random hw long -> signed char conversions
+  random hw long -> short conversions
+  and other similar conversions failed.
+make install
+make clean
+
+   ---- gnu compiler above ----
+
+# Set permissions.
+
+cd /usr/local/usp/hdf5
+
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+# In each src/ directory
+chmod -R o-rwx *
+
+cd /usr/local/usp/hdf
+chown -R scheinin.staff *
+
+Make sure last minute changes such as the README file are readable.
+
+  --- garnet above ---
+ ====================================================================
+  --- utility server below ---
+
+export PREFIX=/app/hdf5/1.8.5p1-pgi-parallel
+export PATH=$PATH:/opt/pgi/linux86-64/10.9/bin
+export PATH=/opt/openmpi/pgi/1.4.3/bin:$PATH
+export LD_LIBRARY_PATH=/opt/openmpi/pgi/1.4.3/lib:$LD_LIBRARY_PATH
+export CXX=mpiCC
+export CXXFLAGS="-O2 -fPIC"
+export CC=mpicc
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=mpif90
+export F77=mpif77
+export F90=mpif90
+export FCFLAGS="-O2 -fPIC"
+export SZIP_ROOT=/app/szip/2.1-pgi
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran \
+   --enable-shared --enable-static \
+   --enable-parallel
+
+make -k 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+make -k check 2>&1 | tee check.log
+ ph5diff failed
+
+An Open MPI warning that may be useful in the future.
+    The OpenFabrics (openib) BTL failed to initialize while trying to
+    allocate some locked memory.  This typically can indicate that the
+    memlock limits are set too low.
+    libibverbs: Warning: RLIMIT_MEMLOCK is 32768 bytes.
+    This will severely limit memory registrations.
+But note, this error was on  Local host: viutill-0001,
+whereas the tests should really be done on a computer node.
+
+   --- interactive MPI check, below
+When interactive login become available, it would be useful to do
+the following.
+
+export PATH=/app/pbs/default/bin:$PATH
+qsub -l select=4:ncpus=16:mpiprocs=2 -q workq -l walltime=2:00:00 -I
+
+cd /app/hdf5/1.8.5p1-pgi-parallel/src/hdf5-1.8.5-patch1
+
+setenv PATH /opt/openmpi/pgi/1.4.3/bin:$PATH
+setenv LD_LIBRARY_PATH /opt/openmpi/pgi/1.4.3/lib
+
+make -k 2>&1 | tee make.log
+
+   --- interactive MPI check, above
+
+make install
+make clean
+
+---
+
+export PREFIX=/app/hdf5/1.8.5p1-gnu-parallel
+export PATH=/opt/openmpi/gnu/1.4.3/bin:$PATH
+export LD_LIBRARY_PATH=/opt/openmpi/gnu/1.4.3/lib:$LD_LIBRARY_PATH
+export CXX=mpiCC
+export CXXFLAGS="-O2 -fPIC"
+export CC=mpicc
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=mpif90
+export F77=mpif77
+export F90=mpif90
+export FCFLAGS="-O2 -fPIC"
+export SZIP_ROOT=/app/szip/2.1-gnu
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran \
+   --enable-shared --enable-static \
+   --enable-parallel
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+make -k check 2>&1 | tee check.log
+problems with parallel tests
+make install
+make clean
+
+---
+
+export PREFIX=/app/hdf5/1.8.5p1-pgi-serial
+export PATH=/opt/pgi/linux86-64/10.9/bin:$PATH
+export CXX=pgCC
+export CXXFLAGS="-O2 -fPIC"
+export CC=pgcc
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+export FCFLAGS="-O2 -fPIC"
+export SZIP_ROOT=/app/szip/2.1-pgi
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran \
+   --enable-shared --enable-static \
+   --enable-cxx
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+make -k check-s 2>&1 | tee check.log
+   Some failures such as ph5diff
+make install
+make clean
+
+---
+
+export PREFIX=/app/hdf5/1.8.5p1-gnu-serial
+export CXX=g++
+export CXXFLAGS="-O2 -fPIC"
+export CC=gcc
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export FCFLAGS="-O2 -fPIC"
+export SZIP_ROOT=/app//szip/2.1-gnu
+export LD_LIBRARY_PATH=${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=$SZIP_ROOT \
+   --enable-fortran \
+   --enable-shared --enable-static \
+   --enable-cxx
+
+make 2>&1 | tee make.log
+# If restart make, next line.
+# make 2>&1 | tee -a make.log
+make -k check-s 2>&1 | tee check.log
+   Some failures such as ph5diff
+make install
+make clean
+
+# Need to change permissions.
+
+topdir=/app/hdf5
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+# Make sure last minute changes such as the README file are readable.
+
+  --- utility server above ---
+ ====================================================================

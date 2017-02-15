@@ -1,0 +1,127 @@
+
+Aquamarine does not have tcl-devel, so does not have
+any tcl header file in /usr/include and "configure" fails.
+So install on topaz.
+
+Jared said to use /usr/bin/gcc
+
+I'll put it in /apps/ directory,
+/p/home/apps/ on topaz.
+This is similar to Cray machines which has "modules" directory
+at a high level, under /opt .
+
+  -------------------- below: notes, comparisons --------------------
+Using armstrong and garnet as a reference
+scheinin@armstrong02:~> ls -l /opt/modules
+drwxr-xr-x  3 root root 4096 Nov 18  2014 .
+drwxr-xr-x  7 root root 4096 Jul 15  2014 3.2.6.7
+lrwxrwxrwx  1 root root   20 Nov 18  2014 default -> /opt/modules/3.2.6.7
+Armstrong
+"module" results in
+/opt/modules/3.2.6.7/bin/modulecmd bash $*
+Garnet has
+> echo $MODULESHOME
+/opt/modules/3.2.6.7
+Moreover, init scripts are in
+/opt/modules/default/init
+> echo $MODULESHOME
+/opt/modules/3.2.6.7
+  -------------------- above: notes, comparisons --------------------
+
+export PREFIX=/p/home/apps/modules_dest
+mkdir $PREFIX
+# Have a destination that is similar to other machines,
+# use symbolic links to modules_dest.
+mkdir /p/home/apps/modules
+above actually involves a bit of sudo
+Made me be owner of $PREFIX then change to root after installation.
+
+Note, on topaz there is /apps/modulefiles directory but initially
+no directory /apps/modules_dest nor /apps/modules.
+
+Note that $PREFIX is unusual here.  The installation procedure
+puts the build results into $PREFIX/Modules/3.2.10/ .
+I could use export PREFIX=/p/home/apps but that would
+be dangerous if something was installed in $PREFIX rather than
+$PREFIX/Modules .  The configuration file has "Modules" in
+many places, so cannot change it to "modules".
+
+cd $HOME/build/modules
+tar xzf modules-3.2.10.tar.gz
+cd modules-3.2.10
+
+./configure --help
+# shows many options, e.g. logging and also
+  --enable-shell-funcs    use sh functions [[test]]
+  --enable-shell-alias    use sh aliases [[test]]
+  --enable-shell-eval     use shell alias eval [[yes]]
+  --enable-free           use free() calls [[no]]
+  --enable-cache          use directory cache [[no]]
+  --enable-version-magic  set .version magic requirement [[yes]]
+
+Decisions, decisions ... I'll just use simple configure.
+On topaz
+> rpm -qil Modules-3.1.6-39.11.1sgi711r2.sles11sp3
+does not show any file that looks like it describes how it was built.
+
+./configure --prefix=$PREFIX
+
+make 2>&1 | tee make.log
+
+find $PREFIX
+make install
+find $PREFIX
+
+cd /p/home/apps/modules
+ln -s /p/home/apps/modules_dest/Modules/3.2.10 3.2.10
+ln -s 3.2.10 default
+
+cd /p/home/apps/modules_dest/Modules/3.2.10
+diff -r ./init /usr/share/modules/init > $HOME/init.diff
+Instead of "perl" there is "perl.pm".
+Instead of "python" there is "python.py"
+
+The installation did NOT provide modules.csh or modules.sh
+for installation in /etc/profile.d .
+Those files will need to be changed by hand.     !!!!!!!!!!!!!!
+
+$MODULEHOME/init/.modulespath will need to be modified.     !!!!!!!!!!!!!!
+/p/home/apps/modules_dest/Modules/3.2.10/init/.modulespath
+
+As a test:
+
+env | grep MODULESHOME
+env | grep MODULEPATH
+env | grep LOADEDMODULES
+
+source /p/home/apps/modules_dest/Modules/3.2.10/init/bash
+
+env | grep MODULESHOME
+env | grep MODULEPATH
+env | grep LOADEDMODULES
+
+Values remain the same except MODULESHOME changes.
+
+Fix permisions.
+topdir=/p/home/apps/modules_dest
+chmod ugo+xr $topdir
+chown root.root $topdir
+cd $topdir
+# Double check where I am in directory structure, then
+chown -R root.root *
+find . -perm /u=x -exec chmod go+x {} \;
+chmod -R ugo+r *
+chmod -R go-w *
+
+chmod ugo+xr /p/home/apps/modules
+chown root.root /p/home/apps/modules
+cd modules
+# Next command does not change symbolic links from owner scheinin.9729LSTA 
+chown root.root *
+# Instead, deleted and remade the links as root.
+
+Interesting note, garnet init/bash and others hav execution permission,
+whereas, topaz init/bash and other do not.  Latter is better.
+
+
+

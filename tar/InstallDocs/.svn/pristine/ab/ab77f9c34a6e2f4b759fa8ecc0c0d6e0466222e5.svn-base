@@ -1,0 +1,134 @@
+ # Version information for this restart file 
+ # current date Tue Jun 19 08:15:31 2007
+ # current working dir /mnt/lustre/usrvartmp/wmattson/879508
+ # Program compiled at                              Tue May 22 13:15:40 EDT 2007
+ # Program compiled on                                                    jvn-l6
+ # Program compiled for                                       Linux-x86-64-intel
+ # Last CVS entry                   virial_types.F/1.16/Mon May  7 22:07:12 2007
+ &GLOBAL
+   BLACS_GRID  SQUARE
+   PREFERRED_FFT_LIBRARY FFTW
+   EXTENDED_FFT_LENGTHS T
+   PROGRAM_NAME  CP2K
+   PROJECT_NAME graphene
+   OUTPUT_FILE_NAME 
+   RUN_TYPE MD
+ &END GLOBAL
+ &MOTION
+   &MD
+    ENSEMBLE NVT
+    STEPS 5000
+    TIMESTEP 1.0
+    TEMPERATURE 300.0
+    TEMP_TOL 15.0
+    &THERMOSTAT
+       TYPE NOSE
+       &NOSE
+       &END NOSE
+    &END THERMOSTAT
+     &PRINT
+       &ENERGY  LOW
+         &EACH
+         &END EACH
+         ADD_LAST  NO
+         COMMON_ITERATION_LEVELS               1
+         FILENAME
+       &END ENERGY
+     &END PRINT
+   &END MD
+   &PRINT
+     &TRAJECTORY  ON
+        &EACH
+          MD       1
+         &END EACH
+        ADD_LAST  NO
+        COMMON_ITERATION_LEVELS               1
+        FILENAME ./Trajectory
+        FORMAT  DCD
+     &END TRAJECTORY
+     &VELOCITIES  ON
+       &EACH
+         MD       1
+         &END EACH
+       ADD_LAST  NO
+       COMMON_ITERATION_LEVELS               1
+       FILENAME ./Velocities
+       FORMAT  ATOMIC
+     &END VELOCITIES
+     &FORCES  ON
+       &EACH
+        MD       1
+         &END EACH
+       ADD_LAST  NO
+       COMMON_ITERATION_LEVELS               1
+       FILENAME ./Forces
+       FORMAT  ATOMIC
+     &END FORCES
+   &END PRINT
+ &END MOTION
+ &FORCE_EVAL
+   METHOD  QS
+   &DFT
+     BASIS_SET_FILE_NAME   BASIS_SET
+     POTENTIAL_FILE_NAME   POTENTIAL
+     WFN_RESTART_FILE_NAME graphene.wfn
+     &POISSON
+     &END POISSON
+     &QS
+       EPS_DEFAULT     9.9999999999999998E-13
+       EXTRAPOLATION  PS
+       EXTRAPOLATION_ORDER               3
+       MAP_CONSISTENT T
+     &END QS
+      &SCF
+       &OUTER_SCF
+         EPS_SCF 1.0E-6
+         MAX_SCF 400
+       &END OUTER_SCF
+       EPS_SCF 1.0E-6
+       MAX_SCF 800
+       MAX_DIIS       4
+       SCF_GUESS ATOMIC
+       &OT
+         MINIMIZER DIIS
+         STEPSIZE 0.01
+         PRECONDITIONER FULL_ALL
+        &END OT
+       CHOLESKY OFF
+     &END SCF
+    &MGRID
+       CUTOFF     350
+       ngrids     4
+     &END MGRID
+     &XC
+      &XC_FUNCTIONAL PBE
+      &END XC_FUNCTIONAL
+    &END XC
+   &END DFT
+   &SUBSYS
+     &CELL
+         a   18.42   -31.90437585   0.00
+         b   18.42    31.90437585   0.00
+         c    0.00     0.00        12.00
+     &END CELL
+     &COORD
+C         0.00000000          0.00000000    0.0
+C         1.22800000          0.70898613    0.0
+C         0.00000000          0.00000000    6.696
+C         1.22800000         -0.70898613    6.696
+C         1.22800000          2.12695839    0.0
+C         2.45600000          2.83594452    0.0
+C         1.22800000          2.12695839    6.696
+C        35.61200000         -0.70898613    6.696
+     &END COORD
+     &KIND C
+      BASIS_SET DZVP-GTH-PBE
+      POTENTIAL  GTH-PBE-q4
+     &END KIND
+    &END SUBSYS
+&END FORCE_EVAL 
+# &EXT_RESTART
+#   RESTART_FILE_NAME graphene.restart
+#   RESTART_POS  T
+#   RESTART_VEL  T
+# &END EXT_RESTART

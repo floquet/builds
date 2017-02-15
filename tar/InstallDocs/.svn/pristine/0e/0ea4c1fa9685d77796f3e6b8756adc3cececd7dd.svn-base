@@ -1,0 +1,121 @@
+
+ ======= garnet, below =======
+
+Download from a link on page
+http://www.unidata.ucar.edu/downloads/udunits/index.jsp
+
+/usr/local/usp/udunits/2.1.21-cle/bin
+/usr/local/usp/udunits/2.1.21-cle/lib
+/usr/local/usp/udunits/2.1.21-cle/src
+/usr/local/usp/udunits/2.1.21-pgi
+/usr/local/usp/udunits/2.1.21-pgi/bin
+/usr/local/usp/udunits/2.1.21-pgi/lib
+/usr/local/usp/udunits/2.1.21-pgi/src
+
+ -- cle below ---
+
+export CC=cc
+export CXX=CC
+export F77=ftn
+export FC=ftn
+
+./configure --prefix=/usr/local/usp/udunits/2.1.21-cle \
+  --enable-static --disable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+   All 0 tests passed
+make install
+make clean
+
+ -- cle above ---
+ -- pgi below ---
+
+export CC=pgcc
+export CXX=pgCC
+export F77=pgf90
+export FC=pgf90
+
+./configure --prefix=/usr/local/usp/udunits/2.1.21-pgi \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+   All 0 tests passed
+make install
+make clean
+
+ -- pgi above ---
+
+# Need to change permissions.
+
+topdir=/usr/local/usp/udunits
+
+cd $topdir
+chmod ugo+xr $topdir
+chown scheinin.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R scheinin.staff *
+
+# Make sure last minute changes such as the README file are readable.
+
+ ======= garnet, above =======
+ ======= utility server, below =======
+ --- pgi below ---
+
+export PATH=/opt/pgi/linux86-64/10.9/bin:$PATH
+export CC=pgcc
+export CXX=pgCC
+export F77=pgf90
+export FC=pgf90
+
+./configure --prefix=/app/udunits/2.1.21-pgi \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+   All 0 tests passed
+make install
+make clean
+
+ --- pgi above ---
+ --- gnu below ---
+
+export CC=gcc
+export CXX=g++
+export F77=gfortran
+export FC=gfortran
+
+./configure --prefix=/app/udunits/2.1.21-gnu \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+   All 0 tests passed
+make install
+make clean
+ --- gnu above ---
+
+# Need to change permissions.
+
+topdir=/app/udunits
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+ ======= utility server, above =======

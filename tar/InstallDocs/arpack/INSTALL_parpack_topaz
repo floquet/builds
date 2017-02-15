@@ -1,0 +1,300 @@
+
+download from
+http://www.caam.rice.edu/software/ARPACK/
+
+ --- Intel below. ---
+
+   %%% Generalized Intel install below. %%%
+
+export INTEL_VERSION=15.0.2
+OR
+export INTEL_VERSION=15.0.3
+OR
+export INTEL_VERSION=16.0.0
+
+export PARPACK_VERSION=9.6
+
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+
+export MPI_VENDOR=sgimpt
+OR
+export MPI_VENDOR=intelmpi
+
+# Swap mpi module if necessary.
+
+export PREFIX=/p/home/apps/unsupported/parpack/${PARPACK_VERSION}-intel-${INTEL_VERSION}-${MPI_VENDOR}
+mkdir $PREFIX
+
+export BUILD_DIR=/p/home/scheinin/build/parpack/${PARPACK_VERSION}-intel-${INTEL_VERSION}-${MPI_VENDOR}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+# checking
+find $PREFIX ; pwd ; icc --version
+
+wget http://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz
+wget http://www.caam.rice.edu/software/ARPACK/SRC/patch.tar.gz
+wget http://www.caam.rice.edu/software/ARPACK/SRC/parpack96.tar.gz
+wget http://www.caam.rice.edu/software/ARPACK/SRC/ppatch.tar.gz
+tar xzf arpack96.tar.gz
+tar xzf patch.tar.gz
+tar xzf parpack96.tar.gz
+tar xzf ppatch.tar.gz
+
+find . -name mpif.h
+./ARPACK/PARPACK/UTIL/MPI/mpif.h
+./ARPACK/PARPACK/SRC/MPI/mpif.h
+./ARPACK/PARPACK/EXAMPLES/MPI/mpif.h
+# Same result for  "find . -name mpi\*.h"
+# In each subdirectory,
+mv mpif.h old_mpif.h
+ln -s $MPI_ROOT/include/mpif.h
+See notes in non-generalized recipe to understand why.
+
+Did not use MKL.  See notes in non-generalized recipe to understand why.
+
+Created a file ${BUILD_DIR}/ARPACK/ARmake-MPT-Intel.inc
+from ${BUILD_DIR}/ARPACK/ARMAKES/ARmake.MPI-SUN4
+cp ARmake-MPT-Intel.inc ARmake.inc
+
+< home          = $(HOME)/ARPACK
+---
+> home = ${BUILD_DIR}/ARPACK
+
+< PLAT          = SUN4
+---
+> PLAT = MPT-INTEL
+
+< MPILIBS = 
+---
+> MPILIBS = -L${MPI_ROOT}/lib -lmpi
+
+< FC		= f77
+< FFLAGS	= -O -cg89
+---
+> FC	= ifort
+> FFLAGS	= -O2
+
+< PFC     = $(HOME)/sun4/mpich/bin/mpif77
+< PFFLAGS = -O -cg89
+---
+> PFC     = mpif90
+> PFFLAGS = -O2
+
+< MAKE	 = /bin/make
+---
+> MAKE	 = make
+
+< SHELL	 = /bin/sh
+---
+> SHELL	 = /bin/bash
+
+File ${BUILD_DIR}/ARPACK/UTIL/second.f
+needs to be changed
+FROM
+      REAL               ETIME
+      EXTERNAL           ETIME
+TO
+      EXTERNAL REAL ETIME
+
+# Compiling uses mpif90, so set to Intel compiler.
+export I_MPI_CXX=icpc 
+export I_MPI_CC=icc 
+export I_MPI_FC=ifort 
+export I_MPI_F90=ifort 
+export I_MPI_F77=ifort 
+export MPICXX_CXX=icpc 
+export MPICC_CC=icc 
+export MPIF90_F90=ifort 
+
+make lib 2>&1 | tee makelib.log
+
+cd BLAS
+make all  2>&1 | tee make.log
+cd LAPACK
+make all  2>&1 | tee make.log
+
+make plib 2>&1 | tee makeplib.log
+
+mkdir $PREFIX/include
+mkdir $PREFIX/lib
+
+cp ARmake.inc $PREFIX/include
+cp libarpack_MPT-INTEL.a parpack_MPI-MPT-INTEL.a $PREFIX/lib
+cd $PREFIX/lib
+ln -s libarpack_MPT-INTEL.a libarpack.a
+ln -s parpack_MPI-MPT-INTEL.a libparpack.a
+
+cd ${BUILD_DIR}/ARPACK/PARPACK/EXAMPLES/MPI
+
+make nonsym
+make sym
+make complex
+
+mkdir work
+cp p*_MPT-INTEL work
+
+Use -V to pass definition of $BUILD_DIR
+qsub -q test -A ERDCS97290STA -l select=2:ncpus=36:mpiprocs=36,walltime=1:00:00 -V -I
+
+cd ${BUILD_DIR}/ARPACK/PARPACK/EXAMPLES/MPI/work
+
+mpiexec_mpt -np 4 ./pcndrv1_MPT-INTEL
+above hangs for number of processors greater than 4.
+mpiexec_mpt -np 8 ./pdndrv1_MPT-INTEL
+above hangs for number of processors greater than 10.
+mpiexec_mpt -np 32 ./pdndrv3_MPT-INTEL
+mpiexec_mpt -np 64 ./pdndrv3_MPT-INTEL
+mpiexec_mpt -np 8 ./psndrv1_MPT-INTEL
+above hangs for number of processors 16.
+mpiexec_mpt -np 32 ./psndrv3_MPT-INTEL
+mpiexec_mpt -np 64 ./psndrv3_MPT-INTEL
+mpiexec_mpt -np 4 ./pssdrv1_MPT-INTEL
+segmentation fault for number of processors greater than 4.
+mpiexec_mpt -np 8 ./pdsdrv1_MPT-INTEL
+above hangs for number of processors greater than 10.
+mpiexec_mpt -np 2 ./pzndrv1_MPT-INTEL
+segmentation error for number of processes greater than 2,
+
+Fix permissions.
+
+   %%% Generalized Intel install below. %%%
+
+export PREFIX=/p/home/apps/unsupported/parpack/9.6-intel
+mkdir $PREFIX
+cd /p/home/scheinin/build/parpack-intel/src
+wget http://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz
+wget http://www.caam.rice.edu/software/ARPACK/SRC/patch.tar.gz
+wget http://www.caam.rice.edu/software/ARPACK/SRC/parpack96.tar.gz
+wget http://www.caam.rice.edu/software/ARPACK/SRC/ppatch.tar.gz
+tar xzf arpack96.tar.gz
+tar xzf patch.tar.gz
+tar xzf parpack96.tar.gz
+tar xzf ppatch.tar.gz
+
+All extracted files go into ARPACK/ directory.
+
+Use default
+mpt/2.11-sgi711r13
+intel-compilers-15/15.0.1.133
+
+Instructions say:
+
+#  *** If you are using a VENDOR SUPPLIED VERSION of MPI, you  ***
+#  *** must replace the mpif.h in the following directories    ***
+#  ***                                                         ***
+#  ***            ARPACK/PARPACK/SRC/MPI/mpif.h                ***
+#  ***            ARPACK/PARPACK/UTIL/MPI/mpif.h               ***
+#  ***            ARPACK/PARPACK/EXAMPLES/MPI/mpif.h           ***
+#  ***                                                         ***
+#  *** with the one for the native implementation.             ***
+
+# So in each subdirectory,
+mv mpif.h old_mpif.h
+ln -s $MPI_ROOT/include/mpif.h
+
+The instructions say:
+
+   *** NOTE ***   Unless the LAPACK library on your system is version 2.0,
+   we strongly recommend that you install the LAPACK routines provided with
+   ARPACK. Note that the current LAPACK release is version 3.0; if you are 
+   not sure which version of LAPACK is installed, pleaase compile and link 
+   to the subset of LAPACK included with ARPACK. 
+
+So did not use MKL.
+
+Created a file /p/home/scheinin/build/parpack-intel/ARmake-MPT-Intel.inc
+based on /p/home/scheinin/build/parpack-intel/src/ARPACK/ARMAKES/ARmake.MPI-SUN4
+and copied it to /p/home/scheinin/build/parpack-intel/src/ARPACK/ARmake.inc
+ARmake-MPT-Intel.inc needs to have "home" changed to
+home = /p/home/scheinin/build/parpack-intel/src/ARPACK
+Also
+PLAT = MPT-INTEL
+COMMLIB       = MPI
+MPILIBS = -L/p/home/apps/sgi/mpt-sgi711r13/lib -lmpi
+FC	= ifort
+FFLAGS	= -O2
+PFC     = mpif90
+PFFLAGS = -O2
+MAKE	 = make
+SHELL	 = /bin/bash
+
+File /usr/local/usp/COST/arpack-9.6-gnu-cc/src/ARPACK/UTIL/second.f
+needs to be changed
+FROM
+      REAL               ETIME
+      EXTERNAL           ETIME
+TO
+      EXTERNAL REAL ETIME
+
+# Compiling uses mpif90, so set to Intel compiler.
+export MPICC_CC=icc
+export MPICXX_CXX=icpc
+export MPIF90_F90=ifort
+
+make lib 2>&1 | tee makelib.log
+
+Strangely, some functions were not made until I did
+cd BLAS
+make all
+cd LAPACK
+make all
+
+make plib 2>&1 | tee makeplib.log
+
+mkdir $PREFIX/include
+mkdir $PREFIX/lib
+# ARmake.inc is not really useful because there is no
+# corresponding makefile.
+cp ARmake.inc $PREFIX/include
+cp libarpack_MPT-INTEL.a parpack_MPI-MPT-INTEL.a $PREFIX/lib
+cd $PREFIX/lib
+ln -s libarpack_MPT-INTEL.a libarpack.a
+ln -s parpack_MPI-MPT-INTEL.a libparpack.a
+
+cd /p/home/scheinin/build/parpack-intel/src/ARPACK/PARPACK/EXAMPLES/MPI
+
+make nonsym
+make sym
+make complex
+
+mkdir work
+cp p*_MPT-INTEL work
+
+qsub -q workq -l place=scatter:excl -l select=2:ncpus=36:mpiprocs=36,walltime=1:00:00 -I
+
+cd /p/home/scheinin/build/parpack-intel/src/ARPACK/PARPACK/EXAMPLES/MPI/work
+
+mpiexec_mpt -np 4 ./pcndrv1_MPT-INTEL
+above hangs for number of processors greater than 4.
+mpiexec_mpt -np 8 ./pdndrv1_MPT-INTEL
+above hangs for number of processors greater than 8.
+mpiexec_mpt -np 32 ./pdndrv3_MPT-INTEL
+above, error /opt/pbs/default/bin/pbs_attach: tm_attach: system error -
+ MOM cannot be contacted when -np is 64
+mpiexec_mpt -np 8 ./psndrv1_MPT-INTEL
+above hangs for number of processors 16
+mpiexec_mpt -np 32 ./psndrv3_MPT-INTEL
+above, error /opt/pbs/default/bin/pbs_attach: tm_attach: system error -
+ MOM cannot be contacted when -np is 64
+mpiexec_mpt -np 4 ./pssdrv1_MPT-INTEL
+above hangs for number of processors greater than 4.
+mpiexec_mpt -np 8 ./pdsdrv1_MPT-INTEL
+above hangs for number of processors greater than 10.
+mpiexec_mpt -np 2 ./pzndrv1_MPT-INTEL
+above error for number of processes greater than 2,
+hangs for number of processes 2.
+
+Change permissions in $PREFIX.
+
+ --- Intel above. ---
+
+# For first time, do one level above $PREFIX
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+

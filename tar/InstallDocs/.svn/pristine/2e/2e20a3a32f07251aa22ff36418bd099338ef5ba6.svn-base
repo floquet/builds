@@ -1,0 +1,937 @@
+
+http://glaros.dtc.umn.edu/gkhome/metis/parmetis/download
+
+   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Garnet, generalized approach, below.
+April 7, 2016
+
+export PARMETIS_VERSION=4.0.3
+export METIS_VERSION=5.1.0
+
+export PGI_VERSION=15.10.0
+prgenv=pgi
+compiler_ver=$PGI_VERSION
+# OR
+# For Intel compiler with GNU compatibility
+export INTEL_VERSION=15.0.6.233
+export GNU_VERSION=5.2.0
+prgenv=intel
+compiler_ver=$INTEL_VERSION
+# OR
+export GNU_VERSION=5.2.0
+prgenv=gnu
+compiler_ver=$GNU_VERSION
+
+# PGI
+module unload pgi/14.2.0  # Whatever is the default at the time.
+export PGI_VERSION=15.10.0   # Unloading of compiler cancels this.
+module load pgi/$PGI_VERSION
+# Module pgi/15.10.0 defines setenv PGI_VERSION 15.10 
+export PGI_VERSION=15.10.0
+
+# Intel
+# Intel with GNU compatibility
+module swap PrgEnv-pgi PrgEnv-intel
+module unload intel  # Whatever is the default at the time.
+module load gcc/$GNU_VERSION
+export INTEL_VERSION=15.0.6.233   # Unloading of compiler cancels this.
+module load intel/$INTEL_VERSION
+
+# Gnu
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+export CMAKE_VERSION=3.5.1
+export PATH=/usr/local/usp/cmake/${CMAKE_VERSION}-${prgenv}-${compiler_ver}/bin:$PATH
+
+export WORDSIZE=32
+# OR
+export WORDSIZE=64
+
+export PREFIX=/usr/local/usp/metis-${WORDSIZE}bit/${METIS_VERSION}-${prgenv}-${compiler_ver}
+mkdir $PREFIX
+
+export BUILD_DIR=$HOME/build/metis-${WORDSIZE}bit/${METIS_VERSION}-${prgenv}-${compiler_ver}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+# Choose one.
+export CXX=pgCC
+export CC=pgcc
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+export CFLAGS="-O2 -mp=numa -fPIC"
+export FFLAGS="-O2 -mp=numa -fPIC"
+export CXXFLAGS="-O2 -mp=numa -fPIC"
+export LIBS=""
+export LDFLAGS="-mp=numa"
+# OR
+# -gcc-name and -gxx-name only used if result of which
+# is not in /usr/bin
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export CFLAGS="-O2 -openmp -fPIC -gcc-name=`which gcc`"
+export FFLAGS="-O2 -openmp -fPIC"
+export CXXFLAGS="-O2 -openmp -fPIC -gxx-name=`which g++`"
+export LIBS=""
+export LDFLAGS="-O2 -openmp -gcc-name=`which gcc` -gxx-name=`which g++`"
+# OR
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CFLAGS="-O2 -fopenmp -fPIC"
+export FFLAGS="-O2 -fopenmp -fPIC"
+export CXXFLAGS="-O2 -fopenmp -fPIC"
+export LIBS=""
+export LDFLAGS="-fopenmp"
+
+export CMAKE_CXX_FLAGS=$CXXFLAGS
+export CMAKE_C_FLAGS=$CFLAGS
+export CMAKE_EXE_LINKER_FLAGS=$LDFLAGS
+export GKLIB_PATH=$BUILD_DIR/metis-${METIS_VERSION}/GKlib
+
+# checking
+find $PREFIX ; pwd
+<compiler> --version
+
+# Next lines will change as versions change.
+# October 5, 2015 most recent versions were
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-4.0.3.tar.gz
+
+tar xzf metis-${METIS_VERSION}.tar.gz
+
+For 64bit versions, compile with
+metis-${METIS_VERSION}/include/metis.h
+#define IDXTYPEWIDTH 64
+#define REALTYPEWIDTH 64
+
+cd $BUILD_DIR
+mkdir build
+cd build
+ccmake ../metis-${METIS_VERSION} -DCMAKE_INSTALL_PREFIX=$PREFIX -DGKLIB_PATH=$GKLIB_PATH
+c  (configure)
+
+edit CMakeCache.txt as shown below
+
+First do shared.
+Note, below $(PREFIX) must be substituted by text that
+defined $PREFIX
+
+CMAKE_INSTALL_PREFIX:PATH=$(PREFIX)
+GKLIB_PATH:PATH=[source dir]/metis-${METIS_VERSION}/GKlib
+CMAKE_CXX_FLAGS:STRING=' $(CXXFLAGS) '
+CMAKE_C_FLAGS:STRING=' $(CFLAGS) '
+CMAKE_EXE_LINKER_FLAGS:STRING=' $(LDFLAGS) '
+SHARED:BOOL=TRUE
+
+Expect to find correct compilers in CMakeCache.txt
+CMAKE_CXX_COMPILER:FILEPATH=[compiler path]
+CMAKE_C_COMPILER:FILEPATH=[compiler path]
+
+ccmake ../metis-${METIS_VERSION}
+c  (configure)
+g  (generate)
+
+make 2>&1 | tee make.log
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+# Do it again for static library.
+cd $BUILD_DIR/build
+rm -rf *
+above was for SHARED:BOOL=TRUE and below is for SHARED:BOOL=FALSE
+ccmake ../metis-${METIS_VERSION} -DCMAKE_INSTALL_PREFIX=$PREFIX -DGKLIB_PATH=$GKLIB_PATH
+c  (configure)
+
+edit CMakeCache.txt as shown above and also
+SHARED:BOOL=FALSE
+
+ccmake ../metis-${METIS_VERSION}
+c  (configure)
+g  (generate)
+
+make 2>&1 | tee make.log
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+Result is that $PREFIX/lib has both
+libmetis.a  libmetis.so
+
+It seems that SHARED:BOOL=TRUE generates dynamic executables in bin/
+that need libmetis.so whereas using SHARED:BOOL=FALSE generates
+dynamic executables (also) in bin/ that do not need any libmetis.
+
+April 8, 2016
+
+qsub -l walltime=3:00:00 -l select=1:ncpus=32:mpiprocs=32 -A ERDCS97290STA -q test -I
+
+export PARMETIS_VERSION=4.0.3
+export METIS_VERSION=5.1.0
+
+export PGI_VERSION=15.10.0
+prgenv=pgi
+compiler_ver=$PGI_VERSION
+# OR
+# For Intel compiler with GNU compatibility
+export INTEL_VERSION=15.0.6.233
+export GNU_VERSION=5.2.0
+prgenv=intel
+compiler_ver=$INTEL_VERSION
+# OR
+export GNU_VERSION=5.2.0
+prgenv=gnu
+compiler_ver=$GNU_VERSION
+
+# PGI
+module unload pgi/14.2.0  # Whatever is the default at the time.
+export PGI_VERSION=15.10.0   # Unloading of compiler cancels this.
+module load pgi/$PGI_VERSION
+# Module pgi/15.10.0 defines setenv PGI_VERSION 15.10 
+export PGI_VERSION=15.10.0
+
+# Intel
+# Intel with GNU compatibility
+module swap PrgEnv-pgi PrgEnv-intel
+module unload intel  # Whatever is the default at the time.
+module load gcc/$GNU_VERSION
+export INTEL_VERSION=15.0.6.233   # Unloading of compiler cancels this.
+module load intel/$INTEL_VERSION
+
+# Gnu
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+export CMAKE_VERSION=3.5.1
+export PATH=/usr/local/usp/cmake/${CMAKE_VERSION}-${prgenv}-${compiler_ver}/bin:$PATH
+
+export WORDSIZE=32
+# OR
+export WORDSIZE=64
+
+export PREFIX=/usr/local/usp/parmetis-${WORDSIZE}bit/${PARMETIS_VERSION}-${prgenv}-${compiler_ver}
+mkdir $PREFIX
+
+export BUILD_DIR=$HOME/build/parmetis-${WORDSIZE}bit/${PARMETIS_VERSION}-${prgenv}-${compiler_ver}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+export METIS_BUILD_DIR=$HOME/build/metis-${WORDSIZE}bit/${METIS_VERSION}-${prgenv}-${compiler_ver}
+
+# Choose one.
+# Steps shown below are first for dynamic, then for static.
+exec_type="-dynamic"
+# exec_type="-static"
+
+# Choose one.
+# PGI
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-O2 -mp=numa -fPIC $exec_type"
+export FFLAGS="-O2 -mp=numa -fPIC $exec_type"
+export CXXFLAGS="-O2 -mp=numa -fPIC $exec_type"
+export LIBS=""
+export LDFLAGS="-mp=numa $exec_type"
+# OR
+# Intel
+# -gcc-name and -gxx-name only used if result of which
+# is not in /usr/bin
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-O2 -openmp -fPIC -gcc-name=`which gcc` $exec_type"
+export FFLAGS="-O2 -openmp -fPIC $exec_type"
+export CXXFLAGS="-O2 -openmp -fPIC -gxx-name=`which g++` $exec_type"
+export LIBS=""
+export LDFLAGS="-O2 -openmp -gcc-name=`which gcc` -gxx-name=`which g++` $exec_type"
+# OR
+# GNU
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-O2 -fopenmp -fPIC $exec_type"
+export FFLAGS="-O2 -fopenmp -fPIC $exec_type"
+export CXXFLAGS="-O2 -fopenmp -fPIC $exec_type"
+export LIBS=""
+export LDFLAGS="-fopenmp $exec_type"
+
+export CMAKE_CXX_FLAGS=$CXXFLAGS
+export CMAKE_C_FLAGS=$CFLAGS
+export CMAKE_EXE_LINKER_FLAGS=$LDFLAGS
+export GKLIB_PATH=$METIS_BUILD_DIR/metis-${METIS_VERSION}/GKlib
+export METIS_PATH=$METIS_BUILD_DIR/metis-${METIS_VERSION}
+
+# checking
+find $PREFIX ; pwd
+<compiler> --version
+
+# Next lines will change as versions change.
+# October 5, 2015 most recent versions were
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-4.0.3.tar.gz
+
+tar xzf parmetis-${PARMETIS_VERSION}.tar.gz
+
+For 64bit versions, compile with
+$METIS_BUILD_DIR/metis-${METIS_VERSION}/include/metis.h
+#define IDXTYPEWIDTH 64
+#define REALTYPEWIDTH 64
+$BUILD_DIR/parmetis-${PARMETIS_VERSION}/metis/include/metis.h
+#define IDXTYPEWIDTH 64
+#define REALTYPEWIDTH 64
+
+cd $BUILD_DIR
+mkdir build
+cd build
+ccmake ../parmetis-${PARMETIS_VERSION} -DCMAKE_INSTALL_PREFIX=$PREFIX -DGKLIB_PATH=$GKLIB_PATH -DMETIS_PATH=$METIS_PATH
+c  (configure)
+
+# First for dynamic library
+edit CMakeCache.txt
+CMAKE_EXE_LINKER_FLAGS:STRING= -dynamic [and etc.]
+CMAKE_MODULE_LINKER_FLAGS:STRING= -dynamic [and etc.]
+CMAKE_SHARED_LINKER_FLAGS:STRING= -dynamic [and etc.]
+CMAKE_CXX_FLAGS:STRING=[see above]
+CMAKE_C_FLAGS:STRING=[see above]
+SHARED:BOOL=TRUE
+OPENMP:BOOL=ON
+//path to GKlib
+GKLIB_PATH:PATH=[metis source path]/GKlib
+//path to METIS
+METIS_PATH:PATH=[metis source path]
+
+ccmake ../parmetis-${PARMETIS_VERSION}
+c  (configure)
+c  (configure)
+g  (generate)
+
+make 2>&1 | tee make.log
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+# Do it again for static library.
+cd $BUILD_DIR/build
+rm -rf *
+above was for SHARED:BOOL=TRUE and below is for SHARED:BOOL=FALSE
+
+# Choose one.
+# Steps shown above are first for dynamic, then below for static.
+# exec_type="-dynamic"
+exec_type="-static"
+
+# Choose one.
+# PGI
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-O2 -mp=numa -fPIC $exec_type"
+export FFLAGS="-O2 -mp=numa -fPIC $exec_type"
+export CXXFLAGS="-O2 -mp=numa -fPIC $exec_type"
+export LIBS=""
+export LDFLAGS="-mp=numa $exec_type"
+# OR
+# Intel
+# -gcc-name and -gxx-name only used if result of which
+# is not in /usr/bin
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-O2 -openmp -fPIC -gcc-name=`which gcc` $exec_type"
+export FFLAGS="-O2 -openmp -fPIC $exec_type"
+export CXXFLAGS="-O2 -openmp -fPIC -gxx-name=`which g++` $exec_type"
+export LIBS=""
+export LDFLAGS="-O2 -openmp -gcc-name=`which gcc` -gxx-name=`which g++` $exec_type"
+# OR
+# GNU
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+export CFLAGS="-O2 -fopenmp -fPIC $exec_type"
+export FFLAGS="-O2 -fopenmp -fPIC $exec_type"
+export CXXFLAGS="-O2 -fopenmp -fPIC $exec_type"
+export LIBS=""
+export LDFLAGS="-fopenmp $exec_type"
+
+export CMAKE_CXX_FLAGS=$CXXFLAGS
+export CMAKE_C_FLAGS=$CFLAGS
+export CMAKE_EXE_LINKER_FLAGS=$LDFLAGS
+# done already export GKLIB_PATH=$METIS_BUILD_DIR/metis-${METIS_VERSION}/GKlib
+# done already export METIS_PATH=$METIS_BUILD_DIR/metis-${METIS_VERSION}
+
+ccmake ../parmetis-${PARMETIS_VERSION} -DCMAKE_INSTALL_PREFIX=$PREFIX -DGKLIB_PATH=$GKLIB_PATH -DMETIS_PATH=$METIS_PATH
+c  (configure)
+
+edit CMakeCache.txt as shown above and also
+SHARED:BOOL=FALSE
+
+ccmake ../parmetis-${PARMETIS_VERSION}
+c  (configure)
+c  (configure)
+g  (generate)
+
+make 2>&1 | tee make.log
+find $PREFIX # (just to double check)
+make install
+find $PREFIX # (to see what was installed)
+
+
+# Get documenation
+mkdir $PREFIX/doc
+cd $PREFIX/doc
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/manual.pdf
+mv manual.pdf metis_manual.pdf
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf
+mv manual.pdf parmetis_manual.pdf
+
+# Change permissions
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+Garnet, generalized approach, above.
+   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  ---------------------------------------------------------------
+For Intel, below
+Thu Feb 27 15:48:15 CST 2014
+
+Compiled with
+metis-5.1.0/include/metis.h
+#define IDXTYPEWIDTH 32
+#define REALTYPEWIDTH 32
+For large meshes, the above could be changed to 64
+before building metis.
+
+module swap PrgEnv-pgi/4.1.40 PrgEnv-intel
+
+The following recipe has many lines repeated in two places.
+This is not an error.  The first set of instructions is
+for building Metis and the second set of instructions is
+for building Parmetis.  Metis and Parmetis source are in
+directory /usr/local/usp/parmetis/4.0.3-intel/src/
+
+# In Feb 2014 the versions were the following.
+module list
+PrgEnv-intel/4.1.40
+intel/13.1.2.183
+
+# Choose a cmake.
+export PATH=/usr/local/usp/PETtools/CE/pkgs/cmake-2.8.11.2/bin:$PATH
+
+# Despite putting -dynamic in CMakeCache.txt the next line is necessary.
+export LDFLAGS='-dynamic'
+
+# Create a build directory.
+mkdir /usr/local/usp/parmetis/4.0.3-intel/src/build_metis-intel
+cd build_metis-intel
+# Note that this is for building Metis.
+ccmake ../metis-5.1.0
+c  (configure)
+
+edit CMakeCache.txt as shown below
+
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/parmetis/4.0.3-intel
+For Intel compiler, because of problem with strcmp,
+need to have
+CMAKE_EXE_LINKER_FLAGS:STRING=' -dynamic '
+CMAKE_MODULE_LINKER_FLAGS:STRING=' -dynamic '
+CMAKE_SHARED_LINKER_FLAGS:STRING=' -dynamic '
+GKLIB_PATH:PATH=/usr/local/usp/parmetis/4.0.3-intel/src/metis-5.1.0/GKlib
+CMAKE_CXX_FLAGS:STRING=' -openmp '
+CMAKE_C_FLAGS:STRING=' -openmp '
+
+Note, CMakeCache.txt has
+SHARED:BOOL=FALSE
+
+ccmake ../metis-5.1.0
+c  (configure)
+g  (generate)
+
+make
+make install
+
+# Below is for building Parmetis after Metis has been built.
+
+mkdir /usr/local/usp/parmetis/4.0.3-intel/src/build_parmetis-intel
+cd build_parmetis-intel
+ccmake ../parmetis-4.0.3
+c  (configure)
+
+edit CMakeCache.txt
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/parmetis/4.0.3-intel
+For Intel compiler, because of problem with strcmp,
+need to have
+CMAKE_EXE_LINKER_FLAGS:STRING=' -dynamic '
+CMAKE_MODULE_LINKER_FLAGS:STRING=' -dynamic '
+CMAKE_SHARED_LINKER_FLAGS:STRING=' -dynamic '
+//path to GKlib
+GKLIB_PATH:PATH=/usr/local/usp/parmetis/4.0.3-intel/src/parmetis-4.0.3/metis/GKlib
+//path to METIS
+METIS_PATH:PATH=/usr/local/usp/parmetis/4.0.3-intel/src/metis-5.1.0
+CMAKE_CXX_FLAGS:STRING=' -openmp '
+CMAKE_C_FLAGS:STRING=' -openmp '
+
+ccmake ../parmetis-4.0.3
+c  (configure)
+g  (generate)
+
+make
+make install
+
+Building shared library for Intel compiler, below.
+
+module swap PrgEnv-pgi/4.1.40 PrgEnv-intel
+module list
+PrgEnv-intel/4.1.40
+intel/13.1.2.183
+
+export PATH=/usr/local/usp/PETtools/CE/pkgs/cmake-2.8.11.2/bin:$PATH
+# Despite putting -dynamic in CMakeCache.txt the next line is necessary.
+export LDFLAGS='-dynamic'
+
+cd /usr/local/usp/parmetis/4.0.3-intel/src
+mkdir build_metis_dyna-intel
+mkdir build_parmetis_dyna-intel
+cp metis-intel-CMakeCache.txt metis-intel-dyna-CMakeCache.txt
+cp parmetis-intel-CMakeCache.txt parmetis-intel-dyna-CMakeCache.txt
+
+vi metis-intel-dyna-CMakeCache.txt
+changed to
+//build a shared library
+SHARED:BOOL=TRUE
+//Value Computed by CMake
+METIS_BINARY_DIR:STATIC=/usr/local/usp/parmetis/4.0.3-intel/src/build_metis_dyna-intel
+//This is the directory where this CMakeCache.txt was created
+CMAKE_CACHEFILE_DIR:INTERNAL=/usr/local/usp/parmetis/4.0.3-intel/src/build_metis_dyna-intel
+
+There is no "SHARED" option in parmetis-intel-dyna-CMakeCache.txt
+vi parmetis-intel-dyna-CMakeCache.txt
+//Value Computed by CMake
+ParMETIS_BINARY_DIR:STATIC=/usr/local/usp/parmetis/4.0.3-intel/src/build_parmetis_dyna-intel
+//This is the directory where this CMakeCache.txt was created
+CMAKE_CACHEFILE_DIR:INTERNAL=/usr/local/usp/parmetis/4.0.3-intel/src/build_parmetis_dyna-intel
+# Added the next line.  There was no similar line initially.
+//build a shared library
+SHARED:BOOL=TRUE
+
+cp metis-intel-dyna-CMakeCache.txt build_metis_dyna-intel/CMakeCache.txt
+cp parmetis-intel-dyna-CMakeCache.txt build_parmetis_dyna-intel/CMakeCache.txt
+
+cd build_metis_dyna-intel
+ccmake ../metis-5.1.0
+c  (configure)
+
+diff CMakeCache.txt ../metis-intel-dyna-CMakeCache.txt
+Only difference is a comment line.
+
+ccmake ../metis-5.1.0
+c  (configure)
+g  (generate)
+
+make
+# Did not do "make install" but only
+cp libmetis/libmetis.so ../../lib/
+chmod g+rwx,o+rx ../../lib/libmetis.so
+
+Compiled with
+parmetis-4.0.3/metis/include/metis.h
+metis-5.1.0/include/metis.h
+#define IDXTYPEWIDTH 32
+#define REALTYPEWIDTH 32
+For large meshes, the above could be changed to 64
+before building metis.
+
+cd build_parmetis_dyna-intel
+ccmake ../parmetis-4.0.3
+c  (configure)
+
+diff CMakeCache.txt ../parmetis-intel-dyna-CMakeCache.txt
+# Only change is a comment and
+# "SHARED:BOOL=TRUE" changed location in file.
+
+ccmake ../parmetis-4.0.3
+c  (configure)
+g  (generate)
+
+/usr/local/usp/parmetis/4.0.3-intel/src/build_parmetis_dyna-intel/libparmetis/CMakeFiles/parmetis.dir/link.txt
+change from
+ ../libmetis/libmetis.a 
+change to
+ /usr/local/usp/parmetis/4.0.3-intel/lib/libmetis.so
+
+make
+
+failed to build executables
+ld: warning: libmetis.so, needed by ../libparmetis/libparmetis.so
+
+# Did not do "make install" but only
+cp libparmetis/libparmetis.so ../../lib/
+chmod g+rwx,o+rx ../../lib/libparmetis.so
+
+Building shared library for Intel compiler, above.
+
+cd /usr/local/usp/parmetis/4.0.3-intel/doc
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/manual.pdf
+mv manual.pdf metis_manual.pdf
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf
+mv manual.pdf parmetis_manual.pdf
+
+topdir=/usr/local/usp/parmetis/4.0.3-intel
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+# In each src/ directory
+chmod -R o-rwx *
+
+Save most recent version of this file under src.
+
+For Intel, above
+  ---------------------------------------------------------------
+
+For PGI, below
+Fri Feb 28 10:17:41 CST 2014
+
+Compiled with
+metis-5.1.0/include/metis.h
+#define IDXTYPEWIDTH 32
+#define REALTYPEWIDTH 32
+For large meshes, the above could be changed to 64
+before building metis.
+
+relevant modules (default upon login) are
+PrgEnv-pgi/4.1.40
+pgi/13.6.0
+
+export PATH=/usr/local/usp/PETtools/CE/pkgs/cmake-2.8.11.2/bin:$PATH
+
+mkdir /usr/local/usp/parmetis/4.0.3-pgi/src/build_metis-pgi
+cd build_metis-pgi
+ccmake ../metis-5.1.0
+c  (configure)
+
+edit CMakeCache.txt
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/parmetis/4.0.3-pgi
+CMAKE_CXX_FLAGS:STRING=' -mp -fast '
+CMAKE_C_FLAGS:STRING=' -mp -fast '
+GKLIB_PATH:PATH=/usr/local/usp/parmetis/4.0.3-pgi/src/metis-5.1.0/GKlib
+
+ccmake ../metis-5.1.0
+c  (configure)
+g  (generate)
+
+make
+make install
+
+Compiled with
+parmetis-4.0.3/metis/include/metis.h
+metis-5.1.0/include/metis.h
+#define IDXTYPEWIDTH 32
+#define REALTYPEWIDTH 32
+For large meshes, the above could be changed to 64
+before building metis.
+
+mkdir /usr/local/usp/parmetis/4.0.3-pgi/src/build_parmetis-pgi
+cd build_parmetis-pgi
+ccmake ../parmetis-4.0.3
+c  (configure)
+
+edit CMakeCache.txt
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/parmetis/4.0.3-pgi
+GKLIB_PATH:PATH=/usr/local/usp/parmetis/4.0.3-pgi/src/parmetis-4.0.3/metis/GKlib
+METIS_PATH:PATH=/usr/local/usp/parmetis/4.0.3-pgi/src/metis-5.1.0
+CMAKE_CXX_FLAGS:STRING=' -mp -fast '
+CMAKE_C_FLAGS:STRING=' -mp -fast '
+
+ccmake ../parmetis-4.0.3
+c  (configure)
+g  (generate)
+
+make
+make install
+
+cd /usr/local/usp/parmetis/4.0.3-pgi/doc
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/manual.pdf
+mv manual.pdf metis_manual.pdf
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf
+mv manual.pdf parmetis_manual.pdf
+
+topdir=/usr/local/usp/parmetis/4.0.3-pgi
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+# In each src/ directory
+chmod -R o-rwx *
+
+Save most recent version of this file under src.
+
+For PGI, above
+  ---------------------------------------------------------------
+For Intel compiler on Spirit, below
+
+March 16, 2015 downloaded
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-4.0.3.tar.gz
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
+
+# module list shows  mpt/2.11
+# use more recent Intel compiler
+module swap intel-compilers/12.1.0 intel-compilers/14.0.2
+
+# On spirit
+$ which cmake
+/hafs_x86_64/cmake
+
+# Do everything below, twice, with one of the two PREFIX values.
+export PREFIX=/home/scheinin/parmetis/4.0.3-mpt-32
+export PREFIX=/home/scheinin/parmetis/4.0.3-mpt-64
+
+build metis, below
+
+cd $PREFIX/src
+tar xzf metis-5.1.0.tar.gz
+
+# Edit
+metis-5.1.0/include/metis.h
+#define IDXTYPEWIDTH 32
+#define REALTYPEWIDTH 32
+
+# Create a build directory.
+mkdir $PREFIX/src/build_metis-intel
+cd build_metis-intel
+# Note that this is for building Metis.
+ccmake ../metis-5.1.0
+c  (configure)
+
+CMake Error at CMakeLists.txt:9 (ADD_EXECUTABLE):
+   Cannot find source file:
+     GKlib/conf/check_thread_storage.c
+
+edit CMakeCache.txt as shown below
+
+Note, below $(PREFIX) must be substituted by text that
+defined $PREFIX
+
+CMAKE_INSTALL_PREFIX:PATH=$(PREFIX)
+GKLIB_PATH:PATH=$(PREFIX)/src/metis-5.1.0/GKlib
+CMAKE_CXX_FLAGS:STRING=' -openmp -fPIC '
+CMAKE_C_FLAGS:STRING=' -openmp -fPIC '
+CMAKE_EXE_LINKER_FLAGS:STRING=' -openmp -fPIC '
+SHARED:BOOL=TRUE
+
+Expect to find in CMakeCache.txt
+CMAKE_CXX_COMPILER:FILEPATH=/app/intel/compilers/14/bin/icpc
+CMAKE_C_COMPILER:FILEPATH=/app/intel/compilers/14/bin/icc
+
+ccmake ../metis-5.1.0
+c  (configure)
+g  (generate)
+
+make
+make install
+
+# Do it again for static library.
+cd build_metis-intel
+rm -rf *
+above was for SHARED:BOOL=TRUE and below is for SHARED:BOOL=FALSE
+ccmake ../metis-5.1.0
+c  (configure)
+
+CMake Error at CMakeLists.txt:9 (ADD_EXECUTABLE):
+   Cannot find source file:
+     GKlib/conf/check_thread_storage.c
+
+edit CMakeCache.txt as shown below
+
+Note below $(PREFIX) must be substituted by text that
+defined $PREFIX
+
+CMAKE_INSTALL_PREFIX:PATH=$(PREFIX)
+GKLIB_PATH:PATH=$(PREFIX)/src/metis-5.1.0/GKlib
+CMAKE_CXX_FLAGS:STRING=' -openmp -fPIC '
+CMAKE_C_FLAGS:STRING=' -openmp -fPIC '
+CMAKE_EXE_LINKER_FLAGS:STRING=' -openmp -fPIC '
+SHARED:BOOL=FALSE
+
+ccmake ../metis-5.1.0
+c  (configure)
+g  (generate)
+
+make
+make install
+
+Result is that $PREFIX/lib has both
+libmetis.a  libmetis.so
+
+It seems that SHARED:BOOL=TRUE generates dynamic executables in bin/
+that need libmetis.so whereas using SHARED:BOOL=FALSE generates
+dynamic executables (also) in bin/ that do not need any libmetis.
+
+# Below is for building Parmetis after Metis has been built.
+
+mkdir $PREFIX/src/build_parmetis-intel
+cd build_parmetis-intel
+ccmake ../parmetis-4.0.3
+c  (configure)
+
+Note, below $(PREFIX) must be substituted by text that
+defined $PREFIX
+
+Note that parmetis has a version of metis, but using it results
+in metis.h not being installed.
+edit CMakeCache.txt
+CMAKE_INSTALL_PREFIX:PATH=$(PREFIX)
+//path to GKlib
+GKLIB_PATH:PATH=$(PREFIX)/src/parmetis-4.0.3/metis/GKlib
+//path to METIS
+METIS_PATH:PATH=$(PREFIX)/src/metis-5.1.0
+CMAKE_CXX_FLAGS:STRING=' -openmp -I/opt/sgi/mpt/mpt-2.11/include -fPIC '
+CMAKE_C_FLAGS:STRING=' -openmp -I/opt/sgi/mpt/mpt-2.11/include -fPIC '
+CMAKE_EXE_LINKER_FLAGS:STRING=' -fPIC -L/opt/sgi/mpt/mpt-2.11/lib -lmpi '
+//enable OpenMP support
+OPENMP:BOOL=ON
+SHARED:BOOL=TRUE
+
+# Need to do twice, first run that does fail generates OPENMP line.
+ccmake ../parmetis-4.0.3
+c  (configure)
+g  (generate)
+
+make
+make install
+
+# Do it again to generate static library
+cd build_parmetis-intel
+rm -rf *
+ccmake ../parmetis-4.0.3
+c  (configure)
+
+Note, below $(PREFIX) must be substituted by text that
+defined $PREFIX
+
+Note that parmetis has a version of metis, but using it results
+in metis.h not being installed.
+edit CMakeCache.txt
+CMAKE_INSTALL_PREFIX:PATH=$(PREFIX)/home/scheinin/parmetis/4.0.3-mpt-64
+//path to GKlib
+GKLIB_PATH:PATH=$(PREFIX)/src/parmetis-4.0.3/metis/GKlib
+//path to METIS
+METIS_PATH:PATH=$(PREFIX)/src/metis-5.1.0
+CMAKE_CXX_FLAGS:STRING=' -openmp -I/opt/sgi/mpt/mpt-2.11/include -fPIC '
+CMAKE_C_FLAGS:STRING=' -openmp -I/opt/sgi/mpt/mpt-2.11/include -fPIC '
+CMAKE_EXE_LINKER_FLAGS:STRING=' -fPIC -L/opt/sgi/mpt/mpt-2.11/lib -lmpi '
+//enable OpenMP support
+OPENMP:BOOL=ON
+SHARED:BOOL=FALSE
+
+# Need to do twice, first run that does fail generates OPENMP line.
+ccmake ../parmetis-4.0.3
+c  (configure)
+g  (generate)
+
+make
+make install
+
+# Note that doing SHARED:BOOL=TRUE and then SHARED:BOOL=FALSE
+# results in binaries are dynamic but do not depend on
+# metis libraries.
+
+# Testing
+
+Only one test works correctly.
+Others fail the same way on garnet as well as spirit.
+
+mkdir $HOME/pmtest
+cp $PREFIX/src/parmetis-4.0.3/Graphs/* $HOME/pmtest/
+
+qsub -l ncpus=16,walltime=1:00:00 -A ERDCS97290STA -q debug -I
+module swap intel-compilers/12.1.0 intel-compilers/14.0.2
+cd  $HOME/pmtest/
+# either
+export PREFIX=/home/scheinin/parmetis/4.0.3-mpt-32
+# or
+export PREFIX=/home/scheinin/parmetis/4.0.3-mpt-64
+
+mpiexec_mpt -np 4 ${PREFIX}/bin/ptest rotor.graph
+
+For bricks.hex3d, seems to get stuck.
+For rotor.graph.xyz, seems to get stuck with one process
+and has error for more than one process.
+
+For garnet
+qsub -l select=1:ncpus=32:mpiprocs=32,walltime=1:00:00 -A ERDCS97290STA -q test -I
+cd  $HOME/pmtest/
+export PREFIX=/usr/local/usp/parmetis/4.0.3-pgi
+aprun -n 4 ${PREFIX}/bin/ptest rotor.graph
+
+# Get documenation
+mkdir $PREFIX/doc
+cd $PREFIX/doc
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/manual.pdf
+mv manual.pdf metis_manual.pdf
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf
+mv manual.pdf parmetis_manual.pdf
+
+# Change permissions
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+ 
+# Above is for building Parmetis after Metis has been built.
+
+Create a README file.
+
+4.0.3-mpt-32 and 4.0.3-mpt-64
+were built with intel-compilers/14.0.2 and mpt/2.11
+The directories contain both metis-5.1.0 and parmetis-4.0.3
+
+4.0.3-mpt-32 compiled with
+#define IDXTYPEWIDTH 32
+#define REALTYPEWIDTH 32
+
+4.0.3-mpt-64 compiled with
+#define IDXTYPEWIDTH 64
+#define REALTYPEWIDTH 64
+
+For Intel compiler on Spirit, above
+  ---------------------------------------------------------------

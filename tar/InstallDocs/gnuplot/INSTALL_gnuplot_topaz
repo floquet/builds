@@ -1,0 +1,48 @@
+
+
+Source in
+http://sourceforge.net/projects/gnuplot/files/gnuplot/
+
+export PREFIX=/p/home/apps/unsupported/gnuplot/4.6.7-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/gnuplot/src
+Downloaded gnuplot-4.6.7.tar.gz
+
+export CC=gcc
+export CXX=g++
+
+./configure --prefix=$PREFIX \
+  --with-x  --x-includes=/usr/include/X11  --x-libraries=/usr/lib64
+
+June 2, 2015
+
+  jpeg terminal: no (requires libgd with jpeg support)
+  gif terminal: no (requires libgd with gif support)
+  png terminal: no (requires libgd with png support)
+    (jpeg, gif and png terminals cannot use TTF fonts, requires libgd support)
+  pdf terminal: no (requires libpdf)
+  Qt terminal: no (requires C++, Qt >= 4.5)
+
+June 3, 2015
+
+  jpeg terminal: yes
+  gif terminal: yes (with animated gif)
+  png terminal: yes
+    (jpeg, gif and png terminals can use TTF fonts)
+  pdf terminal: no (requires libpdf)
+  Qt terminal: no (requires C++, Qt >= 4.5)
+
+The configure decision on Qt is wrong because we have RPM
+libqt4-devel-4.6.3-5.32.1
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *

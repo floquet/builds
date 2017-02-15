@@ -1,0 +1,247 @@
+HDF5
+
+Source is
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4.tar.gz
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4.tar.md5
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4-RELEASE.txt
+
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10.tar.gz
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10.tar.md5
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10-RELEASE.txt
+
+# diamond on Dec. 28, 2009
+module load mpt/1.26
+module load cc_11.1.056
+module load fc_11.1.056
+module load mkl_10.2.0.013
+
+# For Intel compiler
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS="-I/opt/sgi/mpt/mpt-1.26/include -I/opt/intel/mkl/10.2.0.013/include"
+export CXX=icc
+export CXXFLAGS="-O2"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export FFLAGS="-I/opt/sgi/mpt/mpt-1.26/include -O2"
+# Next line only done for parallel version.
+export LIBS="-lmpi"
+# For serial version use the next line
+# export LIBS=""
+export LDFLAGS="-L/opt/sgi/mpt/mpt-1.26/lib -L/opt/intel/mkl/10.2.0.013/lib/em64t"
+
+export TMPDIR=${WORKDIR}/tmp
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-intel/lib:$LD_LIBRARY_PATH
+
+cd /usr/local/usp/hdf5/1.6.10-intel/src/hdf5-1.6.10
+
+./configure --prefix=/usr/local/usp/hdf5/1.6.10-intel \
+   --enable-fortran \
+   --enable-parallel \
+   --enable-shared  --enable-static \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=/usr/local/usp/szip/2.1-intel
+
+make
+make check 2>&1 | tee check.log
+# Did not check parallel part.
+make install
+make clean
+
+-------------------------------------------
+
+# diamond on Dec. 28, 2009
+module load mpt/1.26
+module load cc_11.1.056
+module load fc_11.1.056
+module load mkl_10.2.0.013
+
+# For Intel compiler
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS="-I/opt/sgi/mpt/mpt-1.26/include -I/opt/intel/mkl/10.2.0.013/include"
+export CXX=icc
+export CXXFLAGS="-O2"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export FFLAGS="-O2 -I/opt/sgi/mpt/mpt-1.26/include -I/opt/intel/mkl/10.2.0.013/include"
+# Next line only done for parallel version.
+# export LIBS="-lmpi"
+# For serial version use the next line
+export LIBS=""
+export LDFLAGS="-L/opt/sgi/mpt/mpt-1.26/lib -L/opt/intel/mkl/10.2.0.013/lib/em64t"
+
+export TMPDIR=${WORKDIR}/tmp
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-intel/lib:$LD_LIBRARY_PATH
+
+cd /usr/local/usp/hdf5/1.8.4-serial-intel/src/hdf5-1.8.4
+
+# Serial configure
+./configure --prefix=/usr/local/usp/hdf5/1.8.4-serial-intel \
+   --enable-fortran \
+   --disable-parallel \
+   --disable-mpi-size \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --enable-shared  --enable-static \
+   --with-szlib=/usr/local/usp/szip/2.1-intel
+
+# Building both shared and static is the default and yet
+# without "--enable-shared  --enable-static" configure
+# decides the only build static.
+
+# --disable-mpi-size because SGI Altix Propack 4 has a problem
+# and so as a precaution, use it even if the Altix O/S is at
+# a different level
+
+# --enable-cxx removed because with it there was the error
+# configure: error: --enable-cxx and --enable-parallel flags are incompatible
+# Use -O2 rather than -O3 because the HDF5 configure procedure
+# adds -02 to the compile line.  I assume they have a reason for
+# choosing that level.
+
+make
+make check 2>&1 | tee check.log
+make install
+make clean
+
+-------------------------------------------
+
+# diamond on Dec. 28, 2009
+module load mpt/1.26
+module load cc_11.1.056
+module load fc_11.1.056
+module load mkl_10.2.0.013
+
+# For Intel compiler
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS="-I/opt/sgi/mpt/mpt-1.26/include -I/opt/intel/mkl/10.2.0.013/include"
+export CXX=icc
+export CXXFLAGS="-O2"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export FFLAGS="-O2 -I/opt/sgi/mpt/mpt-1.26/include -I/opt/intel/mkl/10.2.0.013/include"
+# Next line only done for parallel version.
+export LIBS="-lmpi"
+# For serial version use the next line
+# export LIBS=""
+export LDFLAGS="-L/opt/sgi/mpt/mpt-1.26/lib -L/opt/intel/mkl/10.2.0.013/lib/em64t"
+
+export TMPDIR=${WORKDIR}/tmp
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-intel/lib:$LD_LIBRARY_PATH
+
+cd /usr/local/usp/hdf5/1.8.4-intel/src/hdf5-1.8.4
+
+change config/intel-fflags
+    PROD_FCFLAGS="-O2"
+
+export RUNPARALLEL="mpiexec_mpt -np \$\${NPROCS:=3}"
+
+# Parallel configure
+./configure --prefix=/usr/local/usp/hdf5/1.8.4-intel \
+   --enable-fortran \
+   --enable-parallel \
+   --disable-mpi-size \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --enable-shared  --enable-static \
+   --with-szlib=/usr/local/usp/szip/2.1-intel
+
+# Building both shared and static is the default and yet
+# without "--enable-shared  --enable-static" configure
+# decides the only build static.
+
+# --disable-mpi-size because SGI Altix Propack 4 has a problem
+# and so as a precaution, use it even if the Altix O/S is at
+# a different level
+
+# --enable-cxx removed because with it there was the error
+# configure: error: --enable-cxx and --enable-parallel flags are incompatible
+# Use -O2 rather than -O3 because the HDF5 configure procedure
+# adds -02 to the compile line.  I assume they have a reason for
+# choosing that level.
+
+
+ qsub -A erdcssta -q standard -l select=4:mpiprocs=8,walltime=1:00:00 -I
+
+. /usr/share/modules/init/bash
+module load mpt/1.26
+module load cc_11.1.056
+module load fc_11.1.056
+module load mkl_10.2.0.013
+
+cd /usr/local/usp/hdf5/1.8.4-intel/src/hdf5-1.8.4
+
+export MPI_TYPE_DEPTH=32
+
+cd ./testpar
+make check
+
+cd ../fortran/testpar
+make check
+
+cd /usr/local/usp/hdf5/1.8.4-intel/src/hdf5-1.8.4
+
+make check 2>&1 | tee check.log
+# One test had an MPI error: h5diff_basic2.h5
+
+# After logging-out of interactive PBS job
+
+make install
+make clean
+
+When using this HDF5 build, should set
+
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-intel/lib:/usr/local/usp/hdf5/1.8.4-intel/lib:$LD_LIBRARY_PATH
+
+-------------------------------------------
+
+# For Gnu compiler
+export CC=gcc
+export CFLAGS="-O"
+export CPPFLAGS=""
+export CXX=g++
+export CXXFLAGS="-O"
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export FFLAGS="-O"
+export LIBS=""
+export LDFLAGS=""
+
+export TMPDIR=${WORKDIR}/tmp
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-gnu/lib:$LD_LIBRARY_PATH
+
+cd /usr/local/usp/hdf5/1.8.4-gnu/src/hdf5-1.8.4
+
+# It is important that setup for Intel compiler is not done
+# for the Gnu case, when it was "make check" failed.
+
+# Serial configure
+./configure --prefix=/usr/local/usp/hdf5/1.8.4-gnu \
+   --enable-fortran \
+   --disable-parallel \
+   --disable-mpi-size \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --enable-shared  --enable-static \
+   --with-szlib=/usr/local/usp/szip/2.1-gnu
+
+make
+make check 2>&1 | tee check.log
+make install
+make clean
+
+-------------------------------------------
+
+cd /usr/local/usp/hdf5
+find . -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \;
+find . -exec chmod ugo+r {} \;
+
+cd <particular subdirectory>/src
+chmod -R o-rwx { hdf5-1.6.10 | hdf5-1.8.4 }
+cd ../..
+chown -R scheinin:staff .
+

@@ -1,0 +1,1230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Views</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="The Help Menu"
+HREF="x445.html"><LINK
+REL="NEXT"
+TITLE="The Status Bar"
+HREF="x767.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x445.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x767.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="CHAP.VIEWS"
+></A
+>Chapter 3. Views</H1
+><P
+>For a flexible analysis of a trace file it is helpful to look at
+multiple partitions of the data from various perspectives. The concept of
+Views is introduced here. A View holds a collection of Charts in a
+single window. These Charts, inherent in the same View, use the same
+perspective on the data. This perspective is made up of the
+following attributes: the time interval, process aggregation, function
+aggregation and filters. For an in-depth explanation of aggregation
+and filters, refer to <A
+HREF="c3010.html"
+>Chapter 10</A
+>.
+</P
+><P
+>Whenever an attribute in the current perspective is changed for one
+of the Charts, all other Charts follow. Opening several Views offers a very flexible and variable mechanism for exploring, analyzing
+and comparing trace data. The View's status bar shows the
+current perspective on the data and allows to quickly change the
+perspective. More about the status bar is described in <A
+HREF="x767.html"
+>Section 3.2</A
+>.
+</P
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="VMNU"
+>3.1. The View's Main Menu</A
+></H1
+><P
+>&#13;All operations that can be performed on a View are found on the View's menu bar. This menu bar consists of five menu options:
+</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>View Menu</I
+></SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Charts Menu</I
+></SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Navigate Menu</I
+></SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Advanced Menu</I
+></SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Layout Menu</I
+></SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Comparison Menu</I
+></SPAN
+></P
+></LI
+></UL
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="VIEWMNU"
+>3.1.1. The View Menu</A
+></H2
+><P
+>The View menu consists of options that are carried out on the entire View. These options are described below:</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.VWMNU"
+></A
+><P
+><B
+>Figure 3-1. The View Menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/view-viewmnu.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Open New (Ctrl+Alt+O)</I
+></SPAN
+></P
+><P
+>This opens the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>New View</I
+></SPAN
+> dialog box, which opens a
+new View with the selected Charts. The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>New View</I
+></SPAN
+>
+dialog box is explained in <A
+HREF="x2517.html"
+>Section 5.9</A
+>.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tracefile Info (Ctrl+Alt+I)</I
+></SPAN
+></P
+><P
+>This opens the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tracefile Info</I
+></SPAN
+> dialog box, which
+contains the full information about the current trace.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Clone (Ctrl+Alt+D)</I
+></SPAN
+></P
+><P
+>&#13;This command replicates the existing View. It creates a one-to-one clone of the current View.
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Save (Ctrl+Alt+S)</I
+></SPAN
+></P
+><P
+>This command saves the entire View as a picture. 
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Print (Ctrl+Alt+P)</I
+></SPAN
+></P
+><P
+>This entry prints a copy of the View.
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Redraw (Ctrl+Alt+R)</I
+></SPAN
+></P
+><P
+>This command repaints the entire View. 
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Close (Ctrl+Alt+W)</I
+></SPAN
+></P
+><P
+>This command closes the current View. If the last View for a trace file is closed, the trace file is closed as well.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Compare</I
+></SPAN
+></P
+><P
+>This opens a dialog to select a file for comparison with the present one. This can be the current file of another trace file that is already open. After choosing the file, a new Comparison View will be opened that displays data from the two files. See <A
+HREF="c2725.html"
+>Chapter 7</A
+>.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="CHARTMNU"
+>3.1.2. The Charts Menu</A
+></H2
+><P
+>&#13;The Charts menu contains entries to open the various Charts of the Intel® Trace Analyzer. There are seven entries in this menu:
+</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.CHRTMNU"
+></A
+><P
+><B
+>Figure 3-2. The Charts Menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/view-chartmnu.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>TimeScale</I
+></SPAN
+></P
+><P
+>&#13;	This TimeScale entry displays the Timescale. The Timescale also appears automatically on first opening of any Timeline Chart. 
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Event Timeline (Ctrl+Alt+E)</I
+></SPAN
+></P
+><P
+>&#13;	The Event Timeline is a Chart that visualizes what the individual processes are doing. The Event Timeline is explained in detail in <A
+HREF="c876.html#EVETIM"
+>Section 4.1</A
+>.  
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Qualitative Timeline (Ctrl+Alt+L)</I
+></SPAN
+></P
+><P
+>&#13;	The Qualitative Timeline shows event attributes as they occur over time. This timeline is explained in <A
+HREF="x1003.html"
+>Section 4.2</A
+>. 
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Quantitative Timeline (Ctrl+Alt+N)</I
+></SPAN
+></P
+><P
+>&#13;	This entry opens the Quantitative Timeline. It gives an overview of the parallel behavior of the application and is explained in <A
+HREF="x1099.html"
+>Section 4.3</A
+>.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Counter Timeline (Ctrl+Alt+U)</I
+></SPAN
+></P
+><P
+>&#13;The Counter Timeline shows the values of all counters that are present in
+the trace file. For more information on the Counter Timeline, see
+<A
+HREF="x1212.html"
+>Section 4.4</A
+>.
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Profile (Ctrl+Alt+F)</I
+></SPAN
+></P
+><P
+>&#13;	This entry opens the Function Profile. On opening a trace file in the Intel Trace Analyzer, the Function Profile is shown by default. For more information on the Function Profile, see <A
+HREF="x1330.html"
+>Section 4.5</A
+>.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Message Profile (Ctrl+Alt+M)</I
+></SPAN
+></P
+><P
+>&#13;	The Message Profile provides statistical information on MPI
+	point to point messages. Messages are categorized by
+	grouping them in two dimensions. A detailed description of
+	the Message Profile is available in <A
+HREF="x1569.html"
+>Section 4.6</A
+>.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Collective Operations Profile
+	(Ctrl+Alt+C)</I
+></SPAN
+></P
+><P
+>The Collective Operations
+	Profile provides statistical information on MPI's collective
+	operations. Operations are categorized by grouping them in
+	two dimensions. For more information on the Collective Operations Profile, refer to <A
+HREF="x1790.html"
+>Section 4.7</A
+>.
+	</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="NAVIMNU"
+>3.1.3. The Navigate Menu</A
+></H2
+><P
+>All functions provided by the Navigation Menu are also available
+through convenient keyboard shortcuts. Please note that these
+keyboard shortcuts work only when a timeline has the keyboard
+focus. To give the keyboard focus to a timeline just left-click into
+it. The keyboard focus is indicated by a black rectangle around the
+timeline.</P
+><P
+>The entries in the Navigate menu are:</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.NAVIMNU"
+></A
+><P
+><B
+>Figure 3-3. The Navigate Menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/navigate.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Back (B):</I
+></SPAN
+></P
+><P
+>Pops the current
+interval from the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Zoom In (I):</I
+></SPAN
+></P
+><P
+>Magnifies by a factor of two around the current center and pushes this new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Zoom Out (O):</I
+></SPAN
+></P
+><P
+>Scales by a factor of 1/2 around the current center and pushes this new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Reset Zoom (R):</I
+></SPAN
+></P
+><P
+>Clears the zoom stack and then pushes a time interval onto the zoom stack  (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>) that corresponds to the complete trace file.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Zoom Up (U):</I
+></SPAN
+></P
+><P
+>Maintains the current center and goes back to the previous zoom step.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Left 1/1 (Ctrl-Left):</I
+></SPAN
+></P
+><P
+>Moves one whole screen to the left and pushes the new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Right 1/1 (Ctrl-Right):</I
+></SPAN
+></P
+><P
+>Moves one whole screen to the right and pushes the new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Left 1/2 (Left):</I
+></SPAN
+></P
+><P
+>Moves half a screen to the left and pushes the new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Right 1/2 (Right):</I
+></SPAN
+></P
+><P
+>Moves half a screen to the right and pushes the new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Left 1/4 (Shift-Left):</I
+></SPAN
+></P
+><P
+>Moves a quarter of a screen to the left and pushes the new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Right 1/4 (Shift-Right):</I
+></SPAN
+></P
+><P
+>Moves a quarter of a screen to the right and pushes the new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>To Start (Home):</I
+></SPAN
+></P
+><P
+>Moves to the start of the trace file and pushes the new interval onto the zoom stack. (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>)</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>To End (End):</I
+></SPAN
+></P
+><P
+>Moves to the end of the trace file and pushes the new interval onto the zoom stack (<A
+HREF="x806.html#ZOOMSTACK"
+>Section 3.3.1</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Goto (G):</I
+></SPAN
+></P
+><P
+>Opens the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Interval Selection</I
+></SPAN
+> dialog box (<A
+HREF="x2499.html"
+>Section 5.8</A
+>).</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="ADVMNU"
+>3.1.4. The Advanced Menu</A
+></H2
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.ADVMNU"
+></A
+><P
+><B
+>Figure 3-4. The Advanced Menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/view-advmnu.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tagging</I
+></SPAN
+></P
+><P
+>Tagging highlights events that satisfy specific user-defined conditions. Click on this entry to open the dialog box where the tagging conditions are specified. For more information on the Tagging dialog box. refer to <A
+HREF="x2253.html"
+>Section 5.2</A
+>. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Filtering</I
+></SPAN
+></P
+><P
+>Filtering shows only those events that satisfy a condition as defined by the user. All other events are suppressed as if they had never been written to the trace file. The filtering dialog box is explained in <A
+HREF="c2028.html#FLTRDLG"
+>Section 5.1</A
+>.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Reset Tagging/Filtering</I
+></SPAN
+></P
+><P
+>This menu entry is active only when the chart has been either filtered or tagged. It undoes the tagging/filtering. All events are shown and none are filtered or tagged.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Process Aggregation</I
+></SPAN
+></P
+><P
+><A
+HREF="x3028.html#THREAD.AGGREG"
+>Process Aggregation</A
+> focusses on
+the processes that are of importance to the user and aggregates the
+results to Process Groups. It accesses the Process Group Editor (<A
+HREF="x2264.html"
+>Section 5.3</A
+>) where the appropriate process groups can be constructed and/or chosen. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Aggregation</I
+></SPAN
+></P
+><P
+><A
+HREF="x3028.html#FUNCTION.AGGREG"
+>Function Aggregation</A
+> focuses on a
+subset of functions and aggregates these into Function Groups, without
+being distracted by other functions that are currently not significant
+to the user. Use the Function Group Editor (<A
+HREF="x2307.html"
+>Section 5.4</A
+>)
+to do this.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Default Aggregation</I
+></SPAN
+></P
+><P
+>Default aggregation sets the aggregation values back to the default settings which are
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>All Processes</I
+></SPAN
+> for process aggregation and
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Major Function Groups</I
+></SPAN
+> for function
+aggregation.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Show Process Group <SPAN
+CLASS="QUOTE"
+>"Other"</SPAN
+></I
+></SPAN
+></P
+><P
+>If the process aggregation does not cover all processes present
+in the trace file then all data for uncovered processes are subsumed in
+the artificially created process group
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Other</I
+></SPAN
+>.</P
+><P
+>Use this switch to show or hide the process group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Other</I
+></SPAN
+>. The default is to
+hide this group.</P
+><P
+>The Quantitative Timeline and the Function Profile allow
+selecting a subset of the current processes to be shown and can hence
+override this switch.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Show Function Group <SPAN
+CLASS="QUOTE"
+>"Other"</SPAN
+></I
+></SPAN
+></P
+><P
+>If the current function aggregation does not cover all functions
+in the trace file then all uncovered function events are subsumed in the artificially created function group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Other</I
+></SPAN
+>.</P
+><P
+>Use this switch to show or hide this group. By default, the switch is enabled to show this group.
+</P
+><P
+>The Event Timeline always shows the Function Group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Other</I
+></SPAN
+>
+wherever applicable instead of showing <SPAN
+CLASS="QUOTE"
+>"holes"</SPAN
+>. The
+Quantitative Timeline and the Function Profile enable selecting a
+subset of the current functions to be shown and can therefore override
+this switch.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="LAYMNU"
+>3.1.5. The Layout Menu</A
+></H2
+><P
+>&#13;Generally, every View is split into two sections: one for timelines and the other for Profiles. The Layout menu adjusts the position of the Charts or the respective sections on screen. For example, it provides the option of viewing the timelines and profiles next to each other or like the default, one below the other. The different entries of the layout menu, which are enabled when two or more charts are open, are explained below. 
+</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.LAYMNU"
+></A
+><P
+><B
+>Figure 3-5. The Layout Menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/layout.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Timelines to Top</I
+></SPAN
+></P
+><P
+>Use this entry to move the timelines to the upper portion of the View
+and the profiles to the bottom.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Timelines to Bottom</I
+></SPAN
+></P
+><P
+>Use this entry to move the timelines to the lower portion of the
+View and the profiles to the top.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Timelines to Left</I
+></SPAN
+></P
+><P
+>Use this entry to place the timelines to the left of the
+View. For example, to display the Charts next to each other, select the
+option 
+<SPAN
+CLASS="guimenu"
+>View Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Layout</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Timelines to Left</SPAN
+>. This moves
+the timeline(s) being shown in the View to the left of the screen, and
+thereby also shifts the profiles being shown to the other
+side. In case multiple timelines are open, these are collectively
+shown one below the other on the chosen side.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Timelines to Right</I
+></SPAN
+></P
+><P
+>Use this entry to place all the timelines to the right of the
+View. It works the same way as <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Timelines to
+Left</I
+></SPAN
+>.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.LAYLEFT"
+></A
+><P
+><B
+>Figure 3-6. Placing timelines to the right</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/layout-left.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Swap Layout of Timelines</I
+></SPAN
+></P
+><P
+>Swaps the position of the timelines relative to
+each other. It is useful only when two or more timelines are open at
+the same time. If the timelines are stacked and aligned on top of each
+other, use this option to present them next to each other (or
+vice versa). The menu entry switches between the two choices.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Swap Layout of Profiles</I
+></SPAN
+></P
+><P
+>Swaps the position of the profiles relative
+to each other, similar to that of the timelines as explained
+above.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Default Layout</I
+></SPAN
+></P
+><P
+>This option brings the layout of the View back to the default
+settings. By default, timelines are stacked in the upper portion of the View and Profiles in the lower portion, side by side.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COMPMNU"
+>3.1.6. The Comparison Menu</A
+></H2
+><P
+>&#13;The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Comparison</I
+></SPAN
+> menu is displayed in the Views
+menu only when the Comparison mode is activated 
+(<SPAN
+CLASS="guimenu"
+>View
+Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Compare</SPAN
+>). This menu has four entries which are explained in <A
+HREF="c2725.html"
+>Chapter 7</A
+>.</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x445.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x767.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Help Menu</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Status Bar</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

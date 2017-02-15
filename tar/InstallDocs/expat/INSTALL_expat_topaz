@@ -1,0 +1,37 @@
+
+
+Download from http://sourceforge.net/projects/expat/
+
+As of June 3, 2015, libexpat-devel has been installed on topaz.
+
+# When machine first became available,
+# TMPDIR and WORKDIR were not defined.
+# In that case,
+export WORKDIR=/p/work1/scheinin
+export TMPDIR=$WORKDIR/tmp
+mkdir $TMPDIR
+
+export PREFIX=/p/home/apps/unsupported/expat/2.1.0-intel
+mkdir $PREFIX
+cd /p/home/scheinin/build/expat/src/expat-2.1.0
+
+export CXX=icpc
+export CXXFLAGS="-fPIC -O2"
+export CC=icc
+export CFLAGS="-fPIC -O2"
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+

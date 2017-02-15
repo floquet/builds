@@ -1,0 +1,199 @@
+
+Source from www.cmake.org
+
+# When machine first became available,
+# TMPDIR and WORKDIR were not defined.
+# In that case,
+export WORKDIR=/p/work1/scheinin
+export TMPDIR=$WORKDIR/tmp
+mkdir $TMPDIR
+
+# Cannot build GUI using configure options such as
+#  --qt-gui --qt-qmake=/app/Qt/4.6.2/bin/qmake
+# because there is on qmake on topaz as of June 2nd.
+
+ --- Intel below ---
+
+June 2, 2015
+
+Using the following modules, which are the default
+> module list
+Currently Loaded Modulefiles:
+  1) mpt/2.11-sgi711r13              6) intel-mkl-15/15.0.1.133
+  2) pbs/12.2.4.142262               7) intel-tbb-15/15.0.1.133
+  3) intel-cc-15/15.0.1.133          8) intel-ipp-15/15.0.1.133
+  4) intel-fc-15/15.0.1.133          9) intel-compilers-15/15.0.1.133
+  5) intel-debug-15/15.0.1.133
+
+export PREFIX=/p/home/apps/unsupported/cmake/3.2.3-intel
+mkdir $PREFIX
+cd /p/home/scheinin/build/cmake-intel/src
+wget http://www.cmake.org/files/v3.2/cmake-3.2.3.tar.gz
+
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+
+One Feb. 1, 2017
+Had error /usr/include/c++/4.3/ext/new_allocator.h(114): error: a value of type "int" cannot be used to initialize an entity of type "const char *"
+  	{ ::new((void *)__p) _Tp(std::forward<_Args>(__args)...); }
+  	                         ^
+failed during configure.
+The Gnu compiler worked.  Made one change
+ export CXXFLAGS="-fPIC -std=c++11"
+in case it was a new C++ construct,
+but that did not solve the problem.
+Configured with
+export PREFIX=/apps/unsupported/cmake/3.7.2-intel-17.0.1
+and
+module swap compiler/intel/15.0.3 compiler/intel/17.0.1
+Did the following also,
+export PATH=/apps/gnu_compiler/6.1.0/bin:$PATH
+and then compilation was successful.
+The last step may have cause icpc to use g++6.1.0 syntax.
+
+./configure --prefix=$PREFIX
+
+# configure actually runs bootstrap
+
+make 2>&1 | tee make.log
+make test 2>&1 | tee check.log
+
+99% tests passed, 1 tests failed out of 377
+The following tests FAILED:
+	124 - CPackComponentsForAll-RPM-IgnoreGroup (Failed)
+
+Below, Feb 1 2017
+98% tests passed, 9 tests failed out of 454
+
+Label Time Summary:
+Label1    =   0.04 sec (1 test)
+Label2    =   0.04 sec (1 test)
+
+Total Test time (real) = 7921.40 sec
+
+The following tests FAILED:
+	 34 - CompileFeatures (Failed)
+	120 - CPackComponentsForAll-RPM-default (Failed)
+	121 - CPackComponentsForAll-RPM-OnePackPerGroup (Failed)
+	122 - CPackComponentsForAll-RPM-IgnoreGroup (Failed)
+	123 - CPackComponentsForAll-RPM-AllInOne (Failed)
+	179 - CTest.UpdateSVN (Failed)
+	208 - Server (Failed)
+	262 - CMakeOnly.AllFindModules (Failed)
+	403 - RunCMake.CPack_RPM (Failed)
+Errors while running CTest
+Above, Feb 1 2017
+
+make install
+
+ --- Intel above ---
+ --- GNU below ---
+  --- Using native gcc, below ---
+
+Not done because as of June 2nd native gfortran (/usr/bin/gfortran)
+had not been installed.
+
+export PREFIX=/p/home/apps/unsupported/cmake/3.2.3-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/cmake-gcc43/src
+wget http://www.cmake.org/files/v3.2/cmake-3.2.3.tar.gz
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+
+./configure --prefix=$PREFIX
+
+# configure actually runs bootstrap
+
+make 2>&1 | tee make.log
+make test 2>&1 | tee check.log
+make install
+
+  --- Using native gcc, above ---
+  --- Using newer gcc, below ---
+
+export PREFIX=/p/home/apps/unsupported/cmake/3.2.3-gcc49
+mkdir $PREFIX
+cd /p/home/scheinin/build/cmake-gcc49/src
+wget http://www.cmake.org/files/v3.2/cmake-3.2.3.tar.gz
+
+export GCC_PATH=/apps/unsupported/gcc/4.9.2
+
+# Need to add compilers to PATH.
+export PATH=${GCC_PATH}/bin:$PATH
+
+# Need to add shared libraries to LD_LIBRARY_PATH.
+export LD_LIBRARY_PATH=${GCC_PATH}/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpc/1.0.3/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+
+export CXX=${GCC_PATH}/bin/g++
+export CC=${GCC_PATH}/bin/gcc
+export FC=${GCC_PATH}/bin/gfortran
+export F77=${GCC_PATH}/bin/gfortran
+export F90=${GCC_PATH}/bin/gfortran
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+
+Feb. 1, 2017
+wget https://cmake.org/files/v3.7/cmake-3.7.2.tar.gz
+module swap compiler/intel/15.0.3 compiler/gcc/6.1.0
+export PREFIX=/apps/unsupported/cmake/3.7.2-gcc-6.1.0
+
+./configure --prefix=$PREFIX
+
+# configure actually runs bootstrap
+
+make 2>&1 | tee make.log
+make test 2>&1 | tee check.log
+
+99% tests passed, 1 tests failed out of 382
+The following tests FAILED:
+	127 - CPackComponentsForAll-RPM-IgnoreGroup (Failed)
+
+Feb. 1, 2017, below
+98% tests passed, 9 tests failed out of 458
+
+Label Time Summary:
+Label1    =   0.06 sec (1 test)
+Label2    =   0.06 sec (1 test)
+
+Total Test time (real) = 5321.82 sec
+
+The following tests FAILED:
+	 79 - Qt4Deploy (Failed)
+	123 - CPackComponentsForAll-RPM-default (Failed)
+	124 - CPackComponentsForAll-RPM-OnePackPerGroup (Failed)
+	125 - CPackComponentsForAll-RPM-IgnoreGroup (Failed)
+	126 - CPackComponentsForAll-RPM-AllInOne (Failed)
+	183 - CTest.UpdateSVN (Failed)
+	212 - Server (Failed)
+	266 - CMakeOnly.AllFindModules (Failed)
+	407 - RunCMake.CPack_RPM (Failed)
+Feb. 1, 2017, above
+
+make install
+
+  --- Using newer gcc, above ---
+
+ --- GNU above ---
+
+# Note, there is more than one choice of $PREFIX .
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *

@@ -1,0 +1,363 @@
+
+Source is
+http://www.hdfgroup.org/ftp/lib-external/szip/2.1/src/szip-2.1.tar.gz
+
+  --- diamond below ---
+Below, in my $WORKDIR
+module load mpt/1.24
+module load cc_11.0.074
+module load fc_11.0.074
+
+export CXX=icc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+cd /work/scheinin/szip/2.1
+mkdir lib include src
+in src/ have
+szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+./configure --prefix=/work/scheinin/szip/2.1
+make
+make check
+make install
+
+Above, in my $WORKDIR
+Below, in /usr/local/usp
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> This should change from
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> /usr/local/usp/hdf5/szip/
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> to /usr/local/usp/szip/
+
+module load mpt/1.24
+module load cc_11.0.074
+module load fc_11.0.074
+
+export CXX=icc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+cd /usr/local/usp/hdf5/szip/2.1
+mkdir lib include src
+in src/ have
+szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+./configure --prefix=/usr/local/usp/hdf5/szip/2.1
+make
+make check
+make install
+
+Above, in /usr/local/usp
+  --- diamond above ---
+/usr/local/usp/hdf5/szip/2.1/src/szip-2.1
+  --- ranger below ---
+
+module unload  mvapich/1.0.1
+module unload pgi/7.2-5
+module load intel/10.1
+module load  mvapich2
+module load mkl/10.0
+
+setenv CXX icc
+setenv CC icc
+setenv FC ifort
+setenv F77 ifort
+setenv F90 ifort
+
+cd /work/01228/scheinin/szip/2.1
+mkdir lib include src
+in src/ have
+szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+./configure --prefix=/work/01228/scheinin/szip/2.1
+make
+make check
+make install
+
+  --- ranger above ---
+  --- jade below ---
+
+Source is
+http://www.hdfgroup.org/ftp/lib-external/szip/2.1/src/szip-2.1.tar.gz
+
+Dec. 15, 2009
+
+"module list" includes
+xt-os/2.2.41A_PS05
+pgi/9.0.4
+xt-mpt/3.5.0
+xt-pe/2.2.41A_PS05
+
+# /usr/local/usp/szip/2.1-cnl
+# /usr/local/usp/szip/2.1-cnl/lib
+# /usr/local/usp/szip/2.1-cnl/include
+# /usr/local/usp/szip/2.1-cnl/src
+# /usr/local/usp/szip/2.1-cnl/src/szip-2.1.tar.gz
+
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+
+cd /usr/local/usp/szip/2.1-cnl
+mkdir lib include src
+# in src/ have
+# szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+export CFLAGS=""
+export FFLAGS=""
+export CXXFLAGS=""
+export LDFLAGS=""
+
+./configure --prefix=/usr/local/usp/szip/2.1-cnl \
+  -disable-shared --enable-static
+
+make
+make check
+make install
+ls /usr/local/usp/szip/2.1-cnl/include
+ls /usr/local/usp/szip/2.1-cnl/lib
+make clean
+
+   ---- cc compiler above, pgcc compiler below ----
+
+# /usr/local/usp/szip/2.1-pgi
+# /usr/local/usp/szip/2.1-pgi/lib
+# /usr/local/usp/szip/2.1-pgi/include
+# /usr/local/usp/szip/2.1-pgi/src
+# /usr/local/usp/szip/2.1-pgi/src/szip-2.1.tar.gz
+
+export CXX=pgCC
+export CC=pgcc
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+
+export CFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export LDFLAGS=""
+
+cd /usr/local/usp/szip/2.1-pgi
+mkdir lib include src
+# in src/ have
+# szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+./configure --prefix=/usr/local/usp/szip/2.1-pgi \
+  --enable-shared  --enable-static
+
+make
+make check
+make install
+ls /usr/local/usp/szip/2.1-pgi/include
+ls /usr/local/usp/szip/2.1-pgi/lib
+make clean
+
+  --- jade above ---
+  --- garnet below ---
+
+garnet Oct. 15, 2010
+
+2.1-cle  2.1-gnu  2.1-pgi
+cle compile with cc and pgi compiled with pgcc
+
+   ---- cc compiler below ----
+
+module list includes
+Currently Loaded Modulefiles:
+ pgi/10.6.0
+ xt-libsci/10.4.9
+ xt-mpt/5.1.2
+ PrgEnv-pgi/3.1.37E
+ xtpe-mc8
+
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+
+cd /usr/local/usp/szip/2.1-cle
+mkdir lib include src
+# in src/ have
+# szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+export CFLAGS=""
+export FFLAGS=""
+export CXXFLAGS=""
+export LDFLAGS=""
+
+./configure --prefix=/usr/local/usp/szip/2.1-cle \
+  -disable-shared --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+ls /usr/local/usp/szip/2.1-cle/include
+ls /usr/local/usp/szip/2.1-cle/lib
+make clean
+
+   ---- cc compiler above, pgi compiler below ----
+
+export CXX=pgCC
+export CC=pgcc
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+
+export CFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export LDFLAGS=""
+
+cd /usr/local/usp/szip/2.1-pgi
+mkdir lib include src
+# in src/ have
+# szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+./configure --prefix=/usr/local/usp/szip/2.1-pgi \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+ls /usr/local/usp/szip/2.1-pgi/include
+ls /usr/local/usp/szip/2.1-pgi/lib
+make clean
+
+   ---- pgi compiler below, gnu compiler below ----
+
+module unload pgi
+module unload PrgEnv-pgi
+module load gcc
+module load PrgEnv-gnu
+
+Note, the actual gcc module is  gcc/4.5.1
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+cd /usr/local/usp/szip/2.1-gnu/src/szip-2.1
+
+./configure --prefix=/usr/local/usp/szip/2.1-gnu \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+ls /usr/local/usp/szip/2.1-gnu/include
+ls /usr/local/usp/szip/2.1-gnu/lib
+make clean
+
+   ---- gnu compiler above ----
+
+Need to change permissions.
+
+cd /usr/local/usp/szip
+Make sure last minute changes such as the README file are readable.
+
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd /usr/local/usp/szip
+chown -R scheinin.staff *
+
+  --- garnet above ---
+  --- utility server below ---
+   ---- pgi compiler below ----
+
+export PATH=/opt/pgi/linux86-64/10.9/bin:$PATH
+export prefix=/app/szip/2.1-pgi
+
+export CXX=pgCC
+export CC=pgcc
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+
+export CFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export LDFLAGS=""
+
+cd $prefix/src/szip-2.1
+
+./configure --prefix=$prefix \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+make clean
+
+   ---- pgi compiler above ----
+   ---- gnu compiler below ----
+
+export prefix=/app/szip/2.1-gnu
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+export CFLAGS="-fPIC"
+export FFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export LDFLAGS=""
+
+cd $prefix/src/szip-2.1
+
+./configure --prefix=$prefix \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+make clean
+
+   ---- gnu compiler above ----
+
+Need to change permissions.
+
+topdir=/app/szip
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+# Make sure last minute changes such as the README file are readable.
+
+  --- utility server above ---

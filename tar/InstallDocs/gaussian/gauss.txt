@@ -1,0 +1,129 @@
+
+    Alan,
+
+      So a quick read on the Cray-XE6 literature I am guessing that you have two 8-core AMD processors in each node and how much memory?
+
+      Your results for the SMP scaling don't seem at all consistent with my local machine.  Running with 4 SMP processors goes from 3318 seconds down to 974 seconds for a speedup of about 3.4.  Where are you taking the timing data from?  This is especially inconsistent with the case of using a single Linda worker where your numbers give a speed up of nearly 3.7 on 4 processors.  This mode of operation should be no different than running just starting SMP so I don't see why there is such a disparity.
+
+      Second, when you are getting up to 128 processors working on this case it is a fairly small case and not too surprising that you are hitting
+the limits of scalability.   Gaussian does not attempt to implement a 
+version which would for example scale water on 1000 processors in any meaningful way.  This case only uses the 3-21G basis set so it does not require a lot of memory  Again looking at your Linda cases you have a 5.5 speedup on 16 SMP processors but I suspect part of this is that you have reached the limit for this case.
+
+     If you run this with 6-31G(d) in place of 3-21G, a 50% increase in the size of the basis set and a modest increase in the amount of memory needed what do you see for a couple of these numbers?  You may need to increase 
+the memory as well.   At least remove the %mem=16MW which is present.
+
+above, about running on garnet
+
+
+ ------------
+
+Diamond, below.
+
+Need to use csh
+
+module unload compiler/intel11.1.056
+module load compiler/intel11.1.072
+
+Need to add everything from source, then
+mv l607.F l607.F_original
+mv l607.exe l607.exe_original
+cp g09nbo.f l607.F
+cd bsd
+cp ia64.make diamond_ia64.make
+and inside change MKLLIB = $(INTELDIR)/mkl/lib/64 to
+MKLLIB = $(INTELDIR)/mkl/lib/em64t
+Libraries have cyclic dependencies so need the following
+BLAS = -Wl,--start-group $(MKLLIB)/libmkl_intel_ilp64.a $(MKLLIB)/libmkl_intel_thread.a $(MKLLIB)/libmkl_core.a -Wl,--end-group
+
+By the way, Intel Math Kernel Library for Linux OS User's Guide,
+section 5-7 (around page 50) shows various linking lines.
+
+# setenv g09root /usr/local/applic/NBO/g09.B01
+setenv g09root  /usr/local/applic/nbo/g09.B01_59
+cp /usr/local/applic/NBO/g09.B01/g09/gau-machine .
+source bsd/g09.login
+ unsetenv PGI PGIDIR PGI_TERM LINDA_FORTRAN POSTFL_FORTRAN LINDA_FORTRAN_LINK
+
+make sure
+ env | grep pg
+does not show anything related to PGI
+
+./bsd/install
+
+change bsd/bldg09 from
+else if ("$x" == "amd64") then
+  @ i386 = 1
+  (cd bsd ; ln -s i386.make g09.make)
+  if ($em64t || ((! $doamd64) && ("`bsd/x86type`" == "intel"))) touch em64t.flag
+change to ln -s diamond_ia64.make
+
+ bsd/bldg09 all em64t
+
+Above does not build lnnn.exe
+
+# remove the executable, otherwise it won't be rebuilt
+rm g09
+
+ bsd/bldg09 linkrest em64t
+
+For ALL files
+chmod -R o-rwx *
+chmod -R g-w *
+
+/usr/local/applic/nbo
+
+# Not on diamond:
+# mg l607.exe
+# mg linda
+
+Diamond, above.
+Garnet, below.
+
+cd /usr/local/applic/nbo/src/nbo_59
+tar xf NBO.tar
+
+module swap PrgEnv-pgi PrgEnv-gnu
+gfortran ENABLE.F -o enable.exe
+./enable.exe
+ (2) 64-bit Unix   UNIX/LINUX
+ (2) G09      Gaussian 09
+
+module swap PrgEnv-gnu PrgEnv-pgi
+
+cd /usr/local/applic/nbo/g09.B01_59/g09
+
+cp /usr/local/applic/nbo/src/nbo_59/g09nbo.f \
+ /usr/local/applic/nbo/g09.B01_59/g09/
+
+# There might not be an l607.F
+mv l607.F l607.F_original
+mv l607.exe l607.exe_original
+# Note that there is no l607.exel
+
+cp g09nbo.f l607.F
+
+csh
+
+setenv g09root  /usr/local/applic/nbo/g09.B01_59
+
+# cp /usr/local/applic/NBO/g09.B01/g09/gau-machine
+
+source bsd/g09.login
+
+cp /work/local/applic/nbo/src/CDROM_source/tar/g09/bsd/i386.make \
+ /work/local/applic/nbo/g09.B01_59/g09/bsd
+cp /work/local/applic/nbo/src/CDROM_source/tar/g09/bsd/*.F \
+ /work/local/applic/nbo/g09.B01_59/g09/bsd
+
+cd bsd
+ln -s i386.make g09.make
+cd ..
+
+bsd/bldg09 utilronly
+
+mg l607.exe
+
+Garnet, above.
+
+ -------------------------------
+

@@ -1,0 +1,2208 @@
+http://www.msg.ameslab.gov/GAMESS/GAMESS.html
+
+gamess-01May2013R1 , garnet , Nov. 26, 2013 , below
+
+On gamess download site the tinker link does not exist,
+so perhaps tinker modified for gamess is no longer available.
+
+Temporarily changed ownership of source to scheinin.
+mkdir /usr/local/usp/gamess/01May2013R1/src
+cd /usr/local/usp/gamess/source
+cp gamess-01May2013R1.tar.gz /usr/local/usp/gamess/01May2013R1/src
+
+change source subdirectory back to
+ # ls -ld source
+drwxr----- 4 cots 97290STA 4096 Nov 26 11:19 source
+because that is what it was, but r for group without x for group
+may not be useful.
+# ls -l source
+-rw-r----- 1 cots 97290STA 29013211 Nov 26 10:41 gamess-01May2013R1.tar.gz
+-rw-r----- 1 cots 97290STA 16118151 Oct 27  2010 gamess-01OCT2010R1.tar.gz
+
+cd /usr/local/usp/gamess/01May2013R1/src
+tar xf gamess-01May2013R1.tar.gz
+cd gamess
+instructions in 01May2013R1/machines/readme.unix
+module load acml
+./config
+cray-xt
+GAMESS directory? /lustre/home1/local/usp/gamess/01May2013R1/src/gamess
+GAMESS build directory? the same
+version? 00
+The math library will be ACML.  DDI will run over Cray's MPI.
+
+cd ddi
+# Edit compddi under cray-xt section setting MAXCPUS=32 and MAXNODES=3200
+Previously maximum was 1260 but now large jobs have 102400 as the
+maximum number of cores.  102400/32 = 3200
+./compddi  2>&1 | tee compddi.log
+
+cd ..
+
+./compall 2>&1 | tee compall.log
+
+./lked gamess 2>&1 | tee lked.log
+
+Messages from lked:
+
+Choices for some optional plug-in codes are
+   Tinker/SIMOMM code skipped, using dummy file qmmm.o
+   Both VB programs skipped, using dummy file vbdum.o
+   Nuclear Electron Orbital code skipped, using dummy file neostb.o
+   Natural Bond Orbital (NBO) code skipped, using dummy file nbostb.o
+   MPQC code skipped, using dummy file mpqcst.o
+ 
+   The message passing libraries searched are
+/lustre/home1/local/usp/gamess/01May2013R1/src/gamess/ddi/libddi.a
+ 
+   Other libraries, including math libraries, to be searched are
+-lhugetlbfs
+ 
+cp gamess.00.x /usr/local/usp/gamess/01May2013R1/
+cp gms-files.csh rungms /usr/local/usp/gamess/01May2013R1/
+
+chmod 755 /usr/local/usp/gamess/01May2013R1
+
+cd /usr/local/usp/gamess/01May2013R1
+
+mv rungms rungms.orig
+ln -s /usr/local/usp/appwrap/appwrap.pl rungms
+
+Modify rungms.orig
+
+set TARGET=cray-xt
+set SCR=$GAMESSRUN/tmp$$
+set USERSCR=$GAMESSRUN/tmp$$
+set GMSPATH=$GAMESSBIN
+mkdir $SRC
+
+setenv ERICFMT ${GAMESSBIN}/ericfmt.dat
+setenv MCPPATH ${GAMESSBIN}/mcpdata
+setenv   INPUT $SCR/$JOB.F05
+setenv   PUNCH $SCR/$JOB.dat
+
+#
+set JOB=$1      # name of the input file xxx.inp, give only the xxx part
+set VERNO=00    # revision number of the executable created by 'lked' step
+set NCPUS=$2    # number of compute processes to be run
+#
+# Comment out SRC
+if ($SCHED == PBS) then
+   # set SCR=/scratch/$PBS_JOBID
+# Comment out df
+#echo "Available scratch disk space (Kbyte units) at beginning of the job is"
+#df -k $SCR
+
+# setenv NBOEXE /u1/mike/nbo6/bin/nbo6.i8.exe
+setenv NBOEXE /dev/null
+
+# Added next two before "set ngddi=..".
+setenv   INPUT $SCR/$JOB.F05
+setenv   PUNCH $SCR/$JOB.dat
+
+set ngddi=`grep -i '^ \$GDDI' $SCR/$JOB.F05 | grep -iv 'NGROUP=0 ' | wc -l`
+
+if ($TARGET == cray-xt) then
+   #set GMSPATH=/u/home/boatzj/gamess
+   set SMP_SIZE=32  # number of cpus/cores per node (XT3 = dual CPU nodes)
+   set TPN=$3  # changed from $4
+
+Comment-out (tmp$$ has already been created)
+#   if (!(-e $SCR/$JOB)) mkdir $SCR/$JOB
+
+everywhere that "$SRC/$JOB" is used as a directory name,
+change to "$SRC"
+
+Changed from
+aprun -r 1 -d 1 -j 1 -n $NCPUS -N $TPN $GMSPATH/gamess.$VERNO.x $JOB
+Changed to
+aprun -n $NCPUS -N $TPN $GMSPATH/gamess.$VERNO.x $JOB
+
+remove all lines related to PERSRC
+
+eliminiate all "rm -f" commands
+user can later decide on whether to remove files
+
+Current errors:
+
+GAMESS temporary binary files will be written to /u/scheinin/tmp22045
+GAMESS supplementary output files will be written to /u/scheinin/u/scheinin
+Copying input file exam01.inp to your run's scratch directory...
+cp exam01.inp /u/scheinin/tmp22045/exam01.F05
+
+
+Ask Tom about
+setenv DDI_DS_PER_NODE 1
+setenv OMP_NUM_THREADS 1
+setenv MPICH_MAX_SHORT_MSG_SIZE 4000
+chdir /u/scheinin/tmp22045
+aprun -n 16 -N 16 /usr/local/usp/gamess/01May2013R1/gamess.00.x exam01
+MPI is using 0 data servers/node. (DDI_DS_PER_NODE)
+
+
+
+
+topdir=/usr/local/usp/gamess/01May2013R1
+chmod ugo+xr $topdir
+chown cots.97290STA $topdir
+cd $topdir
+find . -perm /u=x -exec chmod go+x {} \;
+chmod -R go+r,go-w *
+# In src/ directory
+chmod -R o-rwx *
+chmod -R g-w *
+cd $topdir
+chown -R cots.97290STA *
+
+
+
+notes on tests above
+
+qsub  -A ERDCS97290STA -q debug -l select=1:ncpus=32:mpiprocs=32 -l walltime=0:50:00 -I
+
+module load acml
+
+cd /u/scheinin/gamess_test_01May2013R1/work32/standard
+
+export GAMESSBIN=/usr/local/usp/gamess/01May2013R1
+export GAMESSRUN=`pwd`
+
+${GAMESSBIN}/rungms exam01.inp 32 > exam01.log 2>&1
+
+
+
+for i in `seq -w 1 43` ; do
+  if test $i != 05 -a $i != 23 -a $i != 25 -a $i != 27 ; then
+     if test $i != 32 -a $i != 36 -a $i != 39 -a $i != 42 ; then
+        echo "./run_gms_orig exam${i}.inp 4 > exam{i}.log 2>&1"
+        ./run_gms_orig exam${i}.inp 4 > exam{i}.log 2>&1
+#        ./run_gms_orig exam${i}.inp 16 > exam{i}.log 2>&1
+     fi
+  fi
+done
+
+ ERROR OPENING NEW FILE PUNCH,
+ ASSIGNED TO EXPLICIT FILE NAME /u/scheinin/u/scheinin/gamess_test_01May2013R1/wo
+rk32/standard/exam01.dat,
+ PLEASE CHECK THE -SETENV- FILE ASSIGNMENTS IN YOUR -RUNGMS- SCRIPT.
+
+temporary copy of runs
+   Skipped 23 25 27 32 39 42 which are non-parallel tests
+   and 05 that needs nuclear gradients.
+
+        12JAN2009R3  12JAN2009R3-tinker  01OCT2010R1  01OCT2010R1-tinker
+        -n 4  -n 16     -n 4  -n 16      -n 4  -n 16      -n 4  -n 16
+exam01   OK    OK        OK    OK         OK    OK         OK    OK
+exam02   OK    OK        OK    OK         OK    OK         OK    OK
+exam03   OK    OK        OK    OK         OK    OK         OK    OK
+exam04   OK    OK        OK    OK         OK    OK         OK    OK
+exam06   OK    OK        OK    OK         OK    OK         OK    OK
+exam07   OK    OK        OK    OK         OK    OK         OK    OK
+exam08  fail  fail      fail  fail        OK    OK         OK    OK
+exam09  fail  fail      fail  fail        OK    OK         OK    OK
+exam10   OK    OK        OK    OK         OK    OK         OK    OK
+exam11   OK    OK        OK    OK         OK    OK         OK    OK
+exam12   OK    OK        OK    OK         OK    OK         OK    OK
+exam13   OK    OK        OK    OK         OK    OK         OK    OK
+exam14   OK    OK        OK    OK         OK    OK         OK    OK
+exam15   OK    OK        OK    OK         OK    OK         OK    OK
+exam16   OK    OK        OK    OK         OK    OK         OK    OK
+exam17   OK    OK        OK    OK         OK    OK         OK    OK
+exam18   OK    OK        OK    OK         OK    OK         OK    OK
+exam19   OK    OK        OK    OK         OK    OK         OK    OK
+exam20   OK    OK        OK    OK         OK    OK         OK    OK
+exam21   OK    OK        OK    OK         OK    OK         OK    OK
+exam22  fail  fail      fail  fail        OK    OK         OK    OK
+exam24   OK    OK        OK    OK         OK    OK         OK    OK
+exam26  fail  fail      fail  fail        OK    OK         OK    OK
+exam28   OK    OK        OK    OK         OK    OK         OK    OK
+exam29  fail  fail      fail  fail        OK    OK         OK    OK
+exam30   OK    OK        OK    OK         OK    OK         OK    OK
+exam31   OK    OK        OK    OK         OK    OK         OK    OK
+exam33   OK    OK        OK    OK         OK    OK         OK    OK
+exam34   OK    OK        OK    OK         OK    OK         OK    OK
+exam35   OK    OK        OK    OK         OK    OK         OK    OK
+exam36  hangs fail      hangs fail        OK    OK         OK    OK
+exam37   OK    OK        OK    OK         OK    OK         OK    OK
+exam38        missing MCP-DZP             OK    OK         OK    OK
+exam40   OK    OK        OK    OK         OK    OK         OK    OK
+exam41   OK    OK        OK    OK         OK    OK         OK    OK
+exam43  fail  fail      fail  fail        OK    OK         OK    OK
+exam44       DCSUB not defined            OK    OK         OK    OK
+
+notes on tests above
+
+
+
+
+
+
+Following gamess/01MAY2012R1 , put this information into INSTALL
+that can be read by anyone.
+gamess/01MAY2012R1> ls -l INSTALL 
+-rw-r--r-- 1 cots 97290STA 535 Dec  6  2012 INSTALL
+
+gamess-01May2013R1 , garnet , Nov. 26, 2013 , above
+
+
+See forAlanS_rungmsEtc  forAlanS_rungmsEtc.tar.gz
+from Mark Cowan.
+
+New information: should avoid the BLAS internal to this distribution.
+In the past the use of the internal BLAS was found to cause gamess
+to run very slowly.
+
+Table of Contents
+Section 1) Notes from previous installation on jade.
+Section 2) Notes from manual.
+Section 3) Build on sapphire, June 2009.
+Section 3-bis) Build on diamond, February 2010.
+Section 4) Organization of top level directories.
+Section 5) Testing
+Appendix I) Running tests on sapphire after the upgrade.
+Appendix II) Running tests on jade.
+
+Section 1) Notes from previous installation on jade.
+----------------------------------------------------
+First sections below are from jade.  Afterwards there is information
+about installation on sapphire after upgrade from Catamount to CNL.
+ ----------------------------------------------------
+Below, INSTALL from jade, without tinker
+
+# edit comp, compall, lked, ddi/compddi and change TARGET to cray-xt3
+# edit comp, compall, lked and remove chdir mike
+# edit comp, compall, lked, ddi/compddi and change -tp to barcelona-64
+# edit lked, comp and force use of ACML with module load acml
+# edit lked and remove iobuf
+
+rm gamess.00.x
+rm object/*.o
+
+./compall
+
+./comp blas
+
+cd ddi
+rm *.a
+./compddi
+
+cd ..
+./lked
+
+# use rungms from previous version
+
+Above, INSTALL from jade, without tinker
+ ----------------------------------------------------
+ ----------------------------------------------------
+Below, INSTALL from jade, with tinker
+
+Copy tinker dir into gamess/
+
+# edit comp, compall, lked, ddi/compddi and change TARGET to cray-xt3
+# edit comp, compall, lked and remove chdir mike
+# edit comp, compall, lked, ddi/compddi and change -tp to barcelona-64
+# edit lked, comp and force use of ACML with module load acml
+# edit lked and remove iobuf
+# edit compall and lked and set TINKER=true
+
+rm gamess.00.x
+rm object/*.o
+
+./compall
+
+./comp blas
+
+cd ddi
+rm *.a
+./compddi
+
+cd ..
+./lked
+
+# use rungms from previous version
+
+Above, INSTALL from jade, with tinker
+ ----------------------------------------------------
+ ----------------------------------------------------
+
+Section 2) Notes from manual.
+-----------------------------
+--------------------------------------------------
+Below, preliminary, quotes from the documentation.
+You can probably ignore the next few paragraphs below,
+they are notes taken from the manuals.
+--------------------------------------------------
+
+Installation information from the developers is in
+PROG.DOC and misc/readme.unix
+
+The instructions say the following:
+
+The first step in installing GAMESS should be to print 
+the manual.
+
+The second step would be to get the source code activator 
+compiled and linked (note that the activator must be 
+activated manually before it is compiled).
+The term "activate" means *.SRC --->  *.FOR
+
+Third, you  should now compile all the quantum chemistry sources.
+In  ~/gamess/source
+ 
+Fourth, compile the DDI message passing library, and its 
+process kickoff program.  In ~/gamess/ddi
+         chdir ~/gamess/ddi
+         compddi >& compddi.log &
+         mv ddikick.x ..
+    The library libddi.a should not be moved from gamess/ddi!
+
+Fifth, link the GAMESS program.
+        cd src [ was initially gamess when untar'ed ]
+        lked gamess 01 > lked.log
+        or just ./lked to get gamess.00.x
+
+Finally, run all the short examples provided with GAMESS, 
+and very carefully compare the key results shown in the 
+'sample input' section against your outputs.
+
+Scripts needed from compiling and testing:
+    comp    compiles a single quantum chemistry module.
+    compall compiles all quantum chemistry source modules.
+    compddi compiles the distributed data interface, and
+            generates a process kickoff program, ddikick.x.
+    lked    link-edit (links) together quantum chemistry
+            object code, and the DDI library, to produce a
+            binary executable gamess.x.
+    rungms  runs a GAMESS job, in serial or parallel.
+    runall  uses RUNGMS to run all the example jobs.
+
+    Edit them as indicated in each.  The edits are very simple,
+    and, except for "rungms", are almost exclusively near the top of 
+    each file.
+  Edit 'rungms' and 'runall' so the default version number
+    is not 00, but rather what you what you used with lked.
+    In fact, left number as default 00.
+
+The readme.unix instructions say to compile actvte.f
+        cd ~/tools
+        cp actvte.code actvte.f
+        vi actvte.f
+        :%s/^\*UNX/    /     <--- 4 blanks between the strokes
+        :wq
+        gfortran -o actvte.x actvte.f
+        rm actvte.f
+
+The change of actvte.f described in readme.unix is not needed
+because it is done by compall, in particular, the section
+of file compall
+#  For the Cray-XT3, the login nodes run linux, so we
+#  must compile actvte.x for linux, not catamount.
+if ($TARGET == cray-xt3) then
+   sed -e "s/\*UNX/    /" actvte.code > actvte.f
+   /usr/bin/g77 -o actvte.x actvte.f
+   rm actvte.f
+endif
+
+    Extensive directions about the arguments to ddikick.x may be
+    found in ~/gamess/ddi/readme.ddi.  A little bit of customization
+    for your computer's name, and how many CPUs are included inside
+    it may be necessary.
+
+--------------------------------------------------
+Above, preliminary, quotes from the documentation.
+You can probably ignore the previous few paragraphs above,
+they are notes taken from the manuals.
+--------------------------------------------------
+
+Section 3) Build on sapphire, June 2009.
+----------------------------------------
+
+Installation on sapphire, June 2009.
+
+Addendum. News not directly related to June 2009 installation.
+Chris installed a newer version that was too large to link.
+He found that the solution was to use the option -fPIC.
+Even though it might seem that -fPIC is related to dynamic libraries,
+the gamess.00.x executable was statically linkes.  By the way, the
+newer gamess (not the one installed in this description) have
+the following sizes:
+cots@jade04:/work/cots/gamess> size gamess.00.x
+    text           data       bss             dec           hex    filename
+42424548        3397052 106643224       152464824       9166db8 gamess.00.x
+cots@sapphire05:/work/cots/gamess> size gamess.00.x
+   text            data       bss             dec           hex    filename
+37117070        3405272 106145600       146667942       8bdf9a6 gamess.00.x
+End of addendum.
+
+# In order to duplicate the directory hierarchy on jade
+# the following can be done.
+
+uncompress tinker.tar.Z
+gzip tinker.tar
+mkdir gamess
+mkdir gamess/11APR2008R1
+mkdir gamess/11APR2008R1-tinker
+cp gamess-11APR2008R1.tar.gz  gamess/11APR2008R1/
+cp gamess-11APR2008R1.tar.gz  gamess/11APR2008R1-tinker/
+cp tinker.tar.gz  gamess/11APR2008R1-tinker/
+cd gamess/11APR2008R1/
+tar xzf gamess-11APR2008R1.tar.gz
+mv gamess src
+cd ../11APR2008R1-tinker
+tar xzf gamess-11APR2008R1.tar.gz
+mv gamess src
+tar xzf tinker.tar.gz
+mv tinker src
+
+In both 11APR2008R1 and 11APR2008R1-tinker
+for both src/compall and src/machines/compall.csh change
+   /usr/bin/g77  to  f77  because sapphire does not have g77.
+This change is not for the main executable of the application,
+but rather, for compiling a tool needed for building.
+
+module load acml
+
+env | grep ACML
+  ACML_DIR=/opt/acml/4.2.0
+This is OK for comp where we find
+if (($TARGET == cray-xd1)||($TARGET == cray-xt3)) then
+    if (-e $ACML_DIR) set BLAS3=true
+    if (-e $PGI/linux86-64/$PGI_VERS_STR/lib/libblas.a) set BLAS3=true
+endif
+However, lked needs to be edited, see below.
+
+edit comp
+   change to
+set TARGET=cray-xt3
+   remove chdir mike
+   change from
+   $USE_FTN -c $OPT -Mnosecond_underscore -tp $AMD_TRGT -i8 $MODULE.f
+   to
+   $USE_FTN -c $OPT -Mnosecond_underscore -tp barcelona-64 -i8 $MODULE.f
+
+edit compall
+   change to
+set TARGET=cray-xt3
+   remove chdir mike
+   change to
+if ($TARGET == cray-xt3) \
+       set extraflags='-DCRAYXT3 -fastsse -tp barcelona-64 -Minfo=all'
+
+edit lked
+   change to
+set TARGET=cray-xt3
+   remove chdir mike
+   added whatever is value of $ACML_DIR after loading that module
+set ACML_DIR=/opt/acml/4.2.0
+   change to
+   if ($TARGET == cray-xt3) set LDR='ftn'
+#    choose 'amd64e' in next line if your Opteron supports SSE3 instructions
+   set LDOPTS='-tp barcelona-64 -i8 -fast -Mnosecond_underscore'
+   After
+   if (-e $ACML_DIR/lib/libacml.a) then
+      set LIBRARIES="$ACML_DIR/lib/libacml.a"
+      echo "Found BLAS in $LIBRARIES"
+   add
+   else if (-e ${ACML_DIR}/pgi64/lib/libacml.a) then
+      set LIBRARIES="${ACML_DIR}/pgi64/lib/libacml.a"
+      echo "Found BLAS in $LIBRARIES"
+   changed from
+   if ($TARGET == cray-xt3) then
+      module load iobuf      # required for good I/O performance to stdout
+      set LIBRARIES="$LIBRARIES -lsma64"
+   endif
+   to the following by removing "module load iobuf"
+   if ($TARGET == cray-xt3) then
+#      module load iobuf      # required for good I/O performance to stdout
+#      set LIBRARIES="$LIBRARIES -lsma64"
+   endif
+Note that instruction for jade do not mentioning cancelling the
+line with " -lsma64" but there is no sma64 library
+
+
+lked.csh
+Also changed src/machines/lked.csh as I did for lked,
+but that may not be necessary.
+
+edit ddi/compddi
+   change to
+set TARGET=cray-xt3
+   the -tp amd64 is only in the XD1, no change of -tp needed for XT3.
+
+# NOTE FOR TINKER: for tinker version
+# in directory hierarchy 11APR2008R1-tinker
+# edit compall and lked and set TINKER=true
+# Do not make this change in file "comp".
+# NOTE FOR TINKER, the following should be OK by default:
+# The parameter MAXATM counting the number of MM atoms chosen in
+# tinker/sizes.i must match source/inputb.src.  The parameter MXATM
+# (careful, one "A" in that) counting the number of ab initio atoms
+# in GAMESS must match the value chosen in Tdrive.f and Toys.f.
+# (You need be concerned about these two matching if and only if you
+# are doing some redimensioning, e.g. "mung", or "vi sizes.i".)
+# The values in the original files are consistent.
+
+
+# Show above but in case you missed it.
+module load acml
+
+cd gamess/11APR2008R1/src
+    OR
+cd gamess/11APR2008R1-tinker/src
+
+rm gamess.00.x
+rm object/*.o
+
+./compall
+
+Of the source/*.src files, the three missing corresponding
+object/*.o files are  blas.o  mthlib.o  vector.o
+
+   blas: should only be done (./comp blas) if linker does
+         not find some BLAS routines.  ACML should provide the routines.
+   vector: Only needed for vector computers.  In fact, was not needed.
+
+   mthlib:
+./comp mthlib
+failed because the line
+    if (-e $ACML_DIR) set BLAS3=true
+results in an error even though ACML_DIR is an environmental variable.
+Works correctly when the line is changed to the value of $ACML_DIR
+ if (-e /opt/acml/4.2.0) set BLAS3=true
+
+cd ddi
+rm *.a
+./compddi
+Instructions say
+         mv ddikick.x ..
+yet there is no ddikick.x ,
+but this is OK because when running compddi there is the message
+There is no kickoff program, Shmem handles the kickoff.
+
+cd ..
+
+# If not already done:
+   rm gamess.00.x
+# could do "./lked gamess 01"
+# doing the minimum results in gamess.00.x
+./lked
+
+For non-tinker version, some relevant output from linking:
+   Object code list begins with gamess.o unport.o, followed by
+   BLAS code=" ", VECTOR code=" ", quiche="zunix.o",
+   followed by the standard GAMESS object code list,
+   Choices for some optional plug-ins are
+      Using qmmm.o, Tinker/SIMOMM code is not linked.
+      Using vbdum.o, neither VB program is linked.
+      Using neostb.o, Nuclear Electron Orbital code is not linked.
+   Message passing libraries are ../ddi/libddi.a
+   Other libraries to be searched are /opt/acml/4.2.0/pgi64/lib/libacml.a
+ 
+For tinker version, some relevant output from linking:
+   Object code list begins with gamess.o unport.o, followed by
+   BLAS code=" ", VECTOR code=" ", quiche="zunix.o",
+   followed by the standard GAMESS object code list,
+   Choices for some optional plug-ins are
+      Tinker/SIMOMM files are Libtad.o Libteac.o Libtedl.o Libtemo.o Libterx.o Libtfi.o Libtjo.o Libtpr.o Libtsx.o Tdrive.o Tinkin.o Toys.o
+      Using vbdum.o, neither VB program is linked.
+      Using neostb.o, Nuclear Electron Orbital code is not linked.
+   Message passing libraries are ../ddi/libddi.a
+   Other libraries to be searched are /opt/acml/4.2.0/pgi64/lib/libacml.a
+ 
+# In directory src
+ cp gamess.00.x ..
+
+In runall, commented-out the following line:
+# chdir /u1/mike/gamess
+
+Section 3-bis) Build on diamond, February 2010.
+-------------------------------------------------
+Below, INSTALL on diamond.
+Feb. 24, 2010 - March 22, 2010
+
+module load compilers/mkl_10.2.0
+> module list
+  1) compilers/intel11.1   2) mpi/sgi_mpi-1.26    3) compilers/mkl_10.2.0
+
+Below is different from what was done for other applications.
+The procedure here just follows the old tradition for gamess.
+In particular, instead of a source directory "src/gamess",
+there is a source directory "src" and executables
+are not placed in a "bin" subdirectory.  This is how it
+was since before I arrived.
+
+mkdir gamess
+mkdir gamess/12JAN2009R3
+mkdir gamess/12JAN2009R3/sockets
+mkdir gamess/12JAN2009R3/shmem
+mkdir gamess/12JAN2009R3/mpi
+mkdir gamess/12JAN2009R3-tinker
+mkdir gamess/12JAN2009R3-tinker/sockets
+mkdir gamess/12JAN2009R3-tinker/shmem
+mkdir gamess/12JAN2009R3-tinker/mpi
+# In each of the above leaf directories
+cp gamess-12JAN2009R3.tar.gz  <leaf directory>
+cd <leaf directory>
+tar xzf gamess-12JAN2009R3.tar.gz
+mv gamess src
+
+# TINKER: For the tinker subdirectories
+uncompress tinker-12JAN2009R3.tar.Z
+gzip tinker-12JAN2009R3.tar
+cp tinker-12JAN2009R3.tar.gz  gamess/11APR2008R1-tinker/{sockets|shmem|mpi}
+cd gamess/11APR2008R1-tinker/{sockets|shmem|mpi}
+tar xzf tinker-12JAN2009R3.tar.gz
+# For the next line, the directory "src/" already exists.
+mv tinker src
+
+Remove gamess-12JAN2009R3.tar.gz and tinker-12JAN2009R3.tar.gz.
+
+(For src/compall, for Cray needed to change
+   /usr/bin/g77 because sapphire does not have g77.
+This change is not for the main executable of the application,
+but rather, for compiling a tool needed for building.
+Building of actvte.x is done by hand for all other architectures.)
+
+cd tools
+cp actvte.code actvte.f
+vi actvte.f
+ :%s/^\*UNX/    /     <--- 4 blanks between the strokes
+ :wq
+ifort -o actvte.x actvte.f
+rm actvte.f
+
+Edit comp
+change from
+set TARGET=ibm64
+change to
+set TARGET=linux-ia64
+change from
+chdir /u1/mike/gamess
+change to
+chdir /usr/local/usp/gamess/{12JAN2009R3|12JAN2009R3-tinker}/{sockets|shmem|mpi}/src
+Notice that
+if  ($TARGET == linux-ia64)   set BLAS3=true
+Under if ($TARGET == linux-ia64) then
+Below shmem and mpi-mixed
+change from
+  ifort -c -i8 $OPT -ftz -auto -assume byterecl \
+         -vec-report0 -w95 -cm $MODULE.f
+change to
+  ifort -c -i8 $OPT -ftz -auto -assume byterecl \
+         -vec-report0 -w95 -xSSE4.2 -align dcommons -cm $MODULE.f
+because SGI did that for their TI10 bid.
+Above shmem and mpi-mixed
+For sockets need to eliminate  -xSSE4.2
+Below, sockets
+   ifort -c -i8 $OPT -ftz -auto -assume byterecl \
+         -vec-report0 -w95 -align dcommons -cm $MODULE.f
+Above, sockets
+For shmem, in same area, add
+   if ($MODULE == ddio3k) set OPT="-fpp"
+
+
+Edit compall
+change from
+set TARGET=ibm64
+change to
+set TARGET=linux-ia64
+change from
+chdir /u1/mike/gamess
+change to
+chdir /usr/local/usp/gamess/{12JAN2009R3|12JAN2009R3-tinker}/{sockets|shmem|mpi}/src
+For mpi mixed and shmem below
+change from
+if  ($TARGET == linux-ia64) set CCOMP='gcc'
+change to
+if  ($TARGET == linux-ia64) set CCOMP='icc'
+For mpi mixed and shmem above
+For sockets below
+Leave CCOMP as gcc even though Fortran compiler is ifort, otherwise
+many test programs run for awhile then give a segmentation fault.
+For sockets above
+Add last line inside
+if ($TARGET == linux-ia64) then
+#   set extraflags='-DLINUX64 -m64' # in case uname doesn't give good response
+#   if (`uname -p` == x86_64) set extraflags='-DLINUX64 -m64'
+#   if (`uname -p` == ia64)   set extraflags='-DLINUX64'  # its always 64 bits
+For mpi mixed below
+   set extraflags='-DLINUX64 -DSGI_MPT -DUSE_EPOLL'
+For shmem and sockets below
+   set extraflags='-DLINUX64'
+endif
+# TINKER: If tinker is being used
+change from
+set TINKER=false
+change to
+set TINKER=true
+
+Edit lked
+change from
+set TARGET=ibm64
+change to
+set TARGET=linux-ia64
+change from
+chdir /u1/mike/gamess
+change to
+chdir /usr/local/usp/gamess/{12JAN2009R3|12JAN2009R3-tinker}/{sockets|shmem|mpi}/src
+# TINKER: If tinker is being used
+change from
+set TINKER=false
+change to
+set TINKER=true
+Within the group
+if ($TARGET == linux-ia64) then
+   set LDR='ifort'
+Running the script should result in
+      case 10:
+   set LIBRARIES="-L$MKLPATH -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core"
+# Notice the use of _ilp64 rather than _lp64, since compiled with -i8
+# Below, SOCKETS: ddikick.x does not pass the environment, so use below
+      set LIBRARIES="-L$MKLPATH ${MKLPATH}/libmkl_solver_ilp64_sequential.a ${MKLPATH}/libmkl_intel_ilp64.a ${MKLPATH}/libmkl_sequential.a ${MKLPATH}/libmkl_core.a -lpthread"
+# Above, SOCKETS: ddikick.x does not pass the environment, so use above
+# SHMEM: For shared memory have also "-lsma -lmpi"
+# MIXED: For SGI mpi have also "-lmpi"
+# In future will need to add "case 11:" for newer MKL.
+set mklver=`ls /opt/intel/mkl` fails because
+there is more than one directory so remove 
+         set mklver=`ls /opt/intel/mkl`
+         set mklver=$mklver:r  # burn off decimal points
+         set mklver=$mklver:r  # Intel's paths contain as many as 3 decimals
+         set mklver=$mklver:r
+and add, depending on version being used
+         setenv MKLPATH /opt/intel/mkl/10.2.0.013/lib/em64t
+         set mklver=10
+
+For shmem, use special version from SGI
+Dave Anderson wrote:
+ > Alan,
+ > You definitely want to use ddio3k.f from the
+ > src.shmem/gamess/src directory.  On one hand I cleaned it up,
+ > while on the other hand I threw in a bunch of extraneous stuff
+ > (which is probably all commented out).
+ > Regards.
+ > Dave Anderson wrote
+It appears from reading the comp file that ddio3k.src is just
+simple fortran and preprocessing will just use "cp"
+So for the two shmem cases
+cd /usr/local/usp/gamess/12JAN2009R3/shmem/src/ddi/shmem
+  OR
+cd /usr/local/usp/gamess/12JAN2009R3-tinker/shmem/src/ddi/shmem
+cp ddio3k.src ddio3k.src_orig
+cp ../../../../../source/ddio3k.f_shmem ddio3k.src
+
+
+For mpi-mixed get modified files (originally from SGI)
+/usr/local/usp/gamess/source/mpi/ddi/include/mysystem.h
+/usr/local/usp/gamess/source/mpi/ddi/src/ddi_recvany.c
+/usr/local/usp/gamess/source/mpi/ddi/src/ddi_init.c
+
+zunix.c was not changed because code compiles fine without
+the change.  If someone has alot of time it might be useful
+to look at src/source/zunix.c and compare to version from SGI
+/usr/local/usp/gamess/source/src.mixed.epoll.a.3/gamess/src/zunix.c
+
+SGI did on file unport.
+" Enabled all directives that start with '*FGE' "
+This corresponds to using in file comp
+if ($TARGET == ibm-bg) set FGEhack=true
+and subsequent processing of unport.
+Not done for diamond, seems to not be necessary.  The motivation is that
+sometimes MPI implementations will need this, if mpirun does not pass
+the environment on to the processes it creates.
+
+Edit ddi/compddi
+change to
+    set TARGET = linux-ia64
+Either
+set COMM = sockets
+Or
+set COMM = shmem
+Or
+set COMM = mixed
+      set MAXCPUS  = 8
+      set MAXNODES = 1024
+For diamond, as the default expect to have " set SYSV = true "
+if($COMM == mixed) then
+     set DDI_COMM = '-DDDI_MPI -DDDI_SOC -DUSE_SYSV -DSGI_MPT -DUSE_EPOLL'
+endif
+If not sockets, under
+  if(($TARGET == linux64) || ($TARGET == linux-ia64)) then
+change from
+     set CC = 'gcc'
+change to
+     set CC = 'icc'
+For sockets need set CC = 'gcc', otherwise there is a segmentation
+fault during runtime for most tests.
+For shmem, at the end of the if()then - endif that begins
+as shown below
+#
+#    ***** You must select your FORTRAN compiler's name just below *****
+#
+  if(($TARGET == linux64) || ($TARGET == linux-ia64)) then
+
+add after  " set RANLIB_FLAGS = ' ' "
+           echo "Compiling: ddio3k.o"
+           ../comp ddio3k
+           mv -f ../object/ddio3k.o .
+           if(-e ddio3k.o) then
+              ar -cr libddi.a ddio3k.o
+              rm -f ddio3k.o
+              echo "Finished compiling: ddio3k.o"
+              goto finishOK
+           else
+              echo "Error compiling: ddio3k.o"
+              goto bombout
+           endif
+
+
+Edit graphics/complink
+change from
+chdir /u1/mike/gamess/graphics
+chdir /usr/local/usp/gamess/{12JAN2009R3|12JAN2009R3-tinker}/{sockets|shmem|mpi}/src/graphics
+change from
+set TARGET=ibm
+change to
+set TARGET=linux-pc
+change from
+if ($TARGET == linux-pc)   set FORT='g77 -O2 -Wno-globals -fno-globals'
+change to
+if ($TARGET == linux-pc)   set FORT='gfortran -O2 -Wno-globals -fno-globals'
+change from
+if ($TARGET == linux-pc) set XWLIBS='-Wl,-L/usr/X11R6/lib -lX11'
+change to
+if ($TARGET == linux-pc) set XWLIBS='-Wl,-L/usr/X11R6/lib64 -lX11'
+
+In tinker directory,
+Libtfi.f , Libtjo.f and mutant.i
+changed class0 and class1 to claas0 and claas1.
+There seems to be an error in the ifort compiler with regard to
+the use of the word "class", but only in certain specific cases.
+
+# Shown above but in case you missed it.
+module load compilers/mkl_10.2.0
+
+rm gamess.00.x
+rm object/*.o
+
+./compall 2>&1 | tee compall.log
+
+ddi/src/tcp_sockets.c lines 34, 64, 103 and 135 have missing value
+change from
+fprintf(stdout," TCP send error: return value errno=%d\n");
+change to
+fprin
+tf(stdout," TCP send error: return value errno=%d\n",errno);
+
+cd ddi
+rm *.a
+./compddi 2>&1 | tee compddi.log
+
+# ddikick.x needed for sockets, not needed for shmem nor mpi.
+mv ddikick.x ..
+cd ..
+cp  ddikick.x ..
+
+# If not already done:
+   rm gamess.00.x
+# could do "./lked gamess 01"
+# doing the minimum, which results in gamess.00.x
+./lked 2>&1 | tee lked.log
+mv gamess.00.x ..
+
+-----------------------------------------------------------
+For sockets and not tinker, results were
+
+Fri Mar 19 13:15:48 CDT 2010
+GAMESS will be linked into the binary file gamess.00.x.
+Linking to Intel Math Kernel Library version 10
+ 
+The name of the linker on this machine is ifort,
+and the linker options are "-i8".
+ 
+Object code list begins with gamess.o unport.o, followed by
+BLAS code=" ", VECTOR code=" ", quiche="zunix.o",
+followed by the standard GAMESS object code list,
+  
+Choices for some optional plug-ins are
+   Using qmmm.o, Tinker/SIMOMM code is not linked.
+   Using vbdum.o, neither VB program is linked.
+   Using neostb.o, Nuclear Electron Orbital code is not linked.
+ 
+Message passing libraries are ../ddi/libddi.a -lpthread
+Other libraries to be searched are -L/opt/intel/mkl/10.2.0.013/lib/em64t /opt/intel/mkl/10.2.0.013/lib/em64t/libmkl_solver_ilp64_sequential.a /opt/intel/mkl/10.2.0.013/lib/em64t/libmkl_intel_ilp64.a /opt/intel/mkl/10.2.0.013/lib/em64t/libmkl_sequential.a /opt/intel/mkl/10.2.0.013/lib/em64t/libmkl_core.a -lpthread
+ 
+-----------------------------------------------------------
+For sockets and with tinker, results were
+
+Fri Mar 19 13:15:51 CDT 2010
+GAMESS will be linked into the binary file gamess.00.x.
+Linking to Intel Math Kernel Library version 10
+ 
+The name of the linker on this machine is ifort,
+and the linker options are "-i8".
+ 
+Object code list begins with gamess.o unport.o, followed by
+BLAS code=" ", VECTOR code=" ", quiche="zunix.o",
+followed by the standard GAMESS object code list,
+ 
+Choices for some optional plug-ins are
+   Tinker/SIMOMM files are Libtad.o Libteac.o Libtedl.o Libtemo.o Libterx.o Libtfi.o Libtjo.o Libtpr.o Libtsx.o Tdrive.o Tinkin.o Toys.o
+   Using vbdum.o, neither VB program is linked.
+   Using neostb.o, Nuclear Electron Orbital code is not linked.
+ 
+Message passing libraries are ../ddi/libddi.a -lpthread
+Other libraries to be searched are -L/opt/intel/mkl/10.2.0.013/lib/em64t /opt/intel/mkl/10.2.0.013/lib/em64t/libmkl_solver_ilp64_sequential.a /opt/intel/mkl/10.2.0.013/lib/em64t/libmkl_intel_ilp64.a /opt/intel/mkl/10.2.0.013/lib/em64t/libmkl_sequential.a /opt/intel/mkl/10.2.0.013/lib/em64t/libmkl_core.a -lpthread
+ 
+ -----------------------------------------------------------
+For SGI MPI TARGET=mixed and not tinker, results were
+The name of the linker on this machine is ifort,
+and the linker options are "-i8".
+Choices for some optional plug-ins are
+   Using qmmm.o, Tinker/SIMOMM code is not linked.
+   Using vbdum.o, neither VB program is linked.
+   Using neostb.o, Nuclear Electron Orbital code is not linked.
+ 
+Message passing libraries are ../ddi/libddi.a -lpthread
+Other libraries to be searched are -L/opt/intel/mkl/10.2.0.013/lib/em64t -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lmpi -Vaxlib
+-----------------------------------------------------------
+For SGI MPI TARGET=mixed and with tinker, results were
+
+Mon Mar 22 09:25:56 CDT 2010
+GAMESS will be linked into the binary file gamess.00.x.
+Linking to Intel Math Kernel Library version 10
+ls: /opt/intel/fce: No such file or directory
+ 
+The name of the linker on this machine is ifort,
+and the linker options are "-i8".
+ 
+Object code list begins with gamess.o unport.o, followed by
+BLAS code=" ", VECTOR code=" ", quiche="zunix.o",
+followed by the standard GAMESS object code list,
+  
+Choices for some optional plug-ins are
+   Tinker/SIMOMM files are Libtad.o Libteac.o Libtedl.o Libtemo.o Libterx.o Libtfi.o Libtjo.o Libtpr.o Libtsx.o Tdrive.o Tinkin.o Toys.o
+   Using vbdum.o, neither VB program is linked.
+   Using neostb.o, Nuclear Electron Orbital code is not linked.
+ 
+Message passing libraries are ../ddi/libddi.a -lpthread
+Other libraries to be searched are -L/opt/intel/mkl/10.2.0.013/lib/em64t -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lmpi -Vaxlib
+ 
+-----------------------------------------------------------
+For SGI mpi and not tinker, results were
+Choices for some optional plug-ins are
+   Using qmmm.o, Tinker/SIMOMM code is not linked.
+   Using vbdum.o, neither VB program is linked.
+   Using neostb.o, Nuclear Electron Orbital code is not linked.
+ 
+Message passing libraries are ../ddi/libddi.a -lpthread
+Other libraries to be searched are -L/opt/intel/mkl/10.2.0.013/lib/em64t -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmpi -Vaxlib
+-----------------------------------------------------------
+For shmem and with tinker, results were
+
+Fri Mar 19 17:01:51 CDT 2010
+GAMESS will be linked into the binary file gamess.00.x.
+Linking to Intel Math Kernel Library version 10
+ls: /opt/intel/fce: No such file or directory
+ 
+The name of the linker on this machine is ifort,
+and the linker options are "-i8".
+ 
+Object code list begins with gamess.o unport.o, followed by
+BLAS code=" ", VECTOR code=" ", quiche="zunix.o",
+followed by the standard GAMESS object code list,
+ 
+Choices for some optional plug-ins are
+   Tinker/SIMOMM files are Libtad.o Libteac.o Libtedl.o Libtemo.o Libterx.o Libtfi.o Libtjo.o Libtpr.o Libtsx.o Tdrive.o Tinkin.o Toys.o
+   Using vbdum.o, neither VB program is linked.
+   Using neostb.o, Nuclear Electron Orbital code is not linked.
+ 
+Message passing libraries are ../ddi/libddi.a -lpthread
+Other libraries to be searched are -L/opt/intel/mkl/10.2.0.013/lib/em64t -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lsma -lmpi -Vaxlib
+ 
+-----------------------------------------------------------
+ 
+# In directory src
+cp gamess.00.x ..
+cp ericfmt.dat ..
+cp -R mcpdata ..
+cd ..
+chmod ugo+x gamess.00.x
+chmod ugo-w gamess.00.x ericfmt.dat
+chmod ugo+r gamess.00.x ericfmt.dat
+chmod ugo+x mcpdata
+chmod -R ugo-w mcpdata
+chmod -R ugo+r mcpdata
+
+# For sockets, in directory src
+cp ddikick.x ..
+# There should not be a ddikick.x if compiled with shmem or mpi.
+
+Edit runall
+commented-out the following line:
+# chdir /u1/mike/gamess
+
+# rungms  Needs alot of study.
+# After changing it
+cp rungms  ../games.standard.run
+
+Install directory above src/ has the following structure
+
+ ddikick.x
+ doc
+ ericfmt.dat
+ gamess.00.x
+ games.standard.run
+ mcpdata
+ rungms -> /usr/local/usp/appwrap/appwrap.pl
+ rungms.orig -> games.standard.run
+
+cd gamess
+
+mkdir 12JAN2009R3/sockets/doc
+mkdir 12JAN2009R3/shmem/doc
+mkdir 12JAN2009R3/mpi/doc
+mkdir 12JAN2009R3-tinker/sockets/doc
+mkdir 12JAN2009R3-tinker/shmem/doc
+mkdir 12JAN2009R3-tinker/mpi/doc
+
+Copy from some src/ directory *.DOC to the above subdirectories.
+
+# For cleanup need to delete files in directory object/.
+cd object
+rm -f *.o
+
+Need to save the whole thing on gold because it is hard to reproduce.
+
+# Just above each src/
+
+chmod -R o-rwx src/
+find src -type d -exec chmod g+rx {} \;
+chmod ugo+x doc mcpdata
+chmod -R ugo+r doc
+chmod -R ugo+r mcpdata
+chmod ugo+r ericfmt.dat
+chmod ugo+rx gamess.00.x  games.standard.run  ddikick.x
+
+
+For testing,
+
+Created directory
+/usr/local/usp/gamess/tests_on_diamond/26feb2010
+and under it directories
+checktst/ and tests/
+copied from the distribution and directories
+mpi/         shmem/         sockets/
+mpi-tinker/  shmem-tinker/  sockets-tinker/
+
+# Testing done by
+rm -f *.log
+rm -rf tmp*
+qsub gamess.pbs
+
+where gamess.pbs is rather complicated.
+It is different for each of the six cases.
+It copies  games.standard.run   from the appropriate directory
+(different for each case) calls it rungms at the destination
+and adds a timer.
+In that file use for full test
+first_test=1
+last_test=44
+and for quick debugging something like
+first_test=20
+last_test=21
+there is also a subdirectory big/ for testing a larger dataset
+used by the SSP group.
+
+Each testing subdirectory has a copy of "checktst"
+that checks the results of exam*.  Only the parallel tests
+are done in gamess.pbs and checking is done by ./checktst
+
+Testing subdirectories are
+mkdir /usr/local/usp/gamess/tests_on_diamond
+mkdir /usr/local/usp/gamess/tests_on_diamond/26feb2010
+cp -R /usr/local/usp/gamess/12JAN2009R3/mpi/src/tools/checktst /usr/local/usp/gamess/tests_on_diamond/26feb2010
+chmod -R ugo-w /usr/local/usp/gamess/tests_on_diamond/26feb2010/checktst
+cp -R /usr/local/usp/gamess/12JAN2009R3/mpi/src/tests /usr/local/usp/gamess/tests_on_diamond/26feb2010
+chmod -R ugo-w /usr/local/usp/gamess/tests_on_diamond/26feb2010/tests
+mkdir /usr/local/usp/gamess/tests_on_diamond/26feb2010/mpi
+mkdir /usr/local/usp/gamess/tests_on_diamond/26feb2010/sockets
+mkdir /usr/local/usp/gamess/tests_on_diamond/26feb2010/shmem
+mkdir /usr/local/usp/gamess/tests_on_diamond/26feb2010/mpi-tinker
+mkdir /usr/local/usp/gamess/tests_on_diamond/26feb2010/sockets-tinker
+mkdir /usr/local/usp/gamess/tests_on_diamond/26feb2010/shmem-tinker
+
+Above, INSTALL on diamond.
+ ----------------------------------------------------
+ ----------------------------------------------------
+Below, 01OCT2010R1 on diamond.
+
+Modules
+1) compiler/intel11.1.056
+2) mpi/sgi_mpi-1.26
+
+extract gamess-01OCT2010R1.tar.gz and rename directory src, as in
+/usr/local/usp/gamess/01OCT2010R1/src
+/usr/local/usp/gamess/01OCT2010R1-tinker/src
+For 01OCT2010R1-tinker , extract tinker-01OCT2010R1.tar.gz inside src/
+and rename tinker-01OCT2010R1 to "tinker" directory.
+
+./config
+
+target machine  linux64
+fortran  ifort
+version 11
+mkl pathname
+start with /opt/intel/Compiler
+then answered 11.1 then 056
+communication library  mpi [then] mpt
+
+%%%%%%%%%%%% temp reached this point
+Please follow the directions in
+ /usr/local/usp/gamess/01OCT2010R1[-tinker]/src/misc/readme.unix
+
+> cat install.info 
+#!/bin/csh
+#   compilation configuration for GAMESS
+#   generated on diamond02
+#   generated at Wed Nov 10 10:13:10 CST 2010
+setenv GMS_PATH            /usr/local/usp/gamess/01OCT2010R1/src
+[setenv GMS_PATH            /usr/local/usp/gamess/01OCT2010R1-tinker/src]
+#         machine type
+setenv GMS_TARGET          linux64
+#         FORTRAN compiler setup
+setenv GMS_FORTRAN         ifort
+setenv GMS_IFORT_VERNO     11
+#         mathematical library setup
+setenv GMS_MATHLIB         mkl
+setenv GMS_MATHLIB_PATH    /opt/intel/Compiler/11.1/056/mkl/lib/em64t
+setenv GMS_MKL_VERNO       11
+#         parallel message passing model setup
+setenv GMS_DDI_COMM        mpi
+setenv GMS_MPI_LIB         mpt
+setenv GMS_MPI_PATH        /opt/sgi/mpt/mpt-1.26
+
+edit ddi/compddi
+   Near top of file change to
+set MAXCPUS  = 8
+set MAXNODES = 2000
+Note that for Cray the values are changed later, e.g. for garnet
+if ($TARGET == cray-xt) then
+   set MAXCPUS=16
+   set MAXNODES=2000
+endif
+but there is no 
+if ($TARGET == linux64) then
+part that changes the MAXCPUS or MAXNODES
+Change from
+  if($COMM == mpi) then
+     set DDI_COMM = '-DDDI_MPI'
+  endif
+change to
+  if($COMM == mpi) then
+     set DDI_COMM = '-DDDI_MPI -DSGI_MPT'
+  endif
+
+
+# NOTE FOR TINKER: for tinker version
+For 01OCT2010R1
+# edit compall, comp and lked and set TINKER=true
+
+rm gamess.00.x
+rm object/*.o
+
+In tinker directory,
+Libtfi.f , Libtjo.f and mutant.i
+changed class0 and class1 to claas0 and claas1.
+There seems to be an error in the ifort compiler with regard to
+the use of the word "class", but only in certain specific cases
+because "class(" does not cause an error.
+
+./compall 2>&1 | tee compall.log
+
+cd ddi
+
+rm *.a
+
+./compddi 2>&1 | tee compddi.log
+
+#   libddi.a was created and ddikick.x was not created.
+
+cd ..
+
+# If not already done:
+   rm gamess.00.x
+# could do "./lked gamess 01"
+# doing the minimum results in gamess.00.x
+
+./lked 2>&1 | tee lked.log
+
+# In directory src
+ mv gamess.00.x ..
+
+ln -s /usr/local/usp/appwrap/appwrap.pl rungms
+got games.standard.run from jade, the 01OCT2010R1 version
+ln -s gamess.standard.run rungms.orig
+
+Made change in games.standard.run depending on whether tinker.
+< set GAMESSBIN=/usr/local/usp/gamess/01OCT2010R1-tinker
+< # set GAMESSBIN=/usr/local/usp/gamess/01OCT2010R1
+---
+> # set GAMESSBIN=/usr/local/usp/gamess/01OCT2010R1-tinker
+> set GAMESSBIN=/usr/local/usp/gamess/01OCT2010R1
+
+Needed to make many changes in gamess.standard.run
+set TARGET=altix
+and many other changes.
+
+# Ran tests.
+# Exclude tests that only run in serial 23 25 27 32 39 42
+# and 05 that needs nuclear gradients.
+
+# Note that the number of computational processes is half
+# the number of nodes.
+
+/usr/local/usp/gamess/tests_on_diamond/10nov2010/01OCT2010R1/work4
+/usr/local/usp/gamess/tests_on_diamond/10nov2010/01OCT2010R1/work16
+/usr/local/usp/gamess/tests_on_diamond/10nov2010/01OCT2010R1-tinker/work4
+/usr/local/usp/gamess/tests_on_diamond/10nov2010/01OCT2010R1-tinker/work16
+
+qsub gamess.pbs
+./checktst > checktst.out 2>&1
+
+Four processes worked, 16 processes failed miserably.
+
+Running 8 compute processes and 8 data server processess.
+ddi_init: got j= 8, expected np= 16
+ DDI Error: Sum of PPN over all nodes != NP
+ DDI Process 0: error code 911
+MPI: Global rank 0 is aborting with error code 911.
+
+After first pass of SGI changes
+Running 8 compute processes and 8 data server processess.
+
+more changes, below
+
+Changed common.h but actually compilation was done using
+ -DMAX_SMP_PROCS=8 -DMAX_NODES=2000 
+
+// Changed by A.L.S. from 64 to 512.
+ # if !defined MAX_NODES
+ # define MAX_NODES 2000
+ # endif
+
+// Changed by A.L.S. from 4 to 8.
+ # if !defined MAX_SMP_PROCS
+ # define MAX_SMP_PROCS 8
+ # endif
+
+more changes, above
+
+ ============================ bad diamond below
+
+
+ DDI Process 4: error determining smpme on node 0.
+ DDI Process 4: smpme=4 >= nc_by_node[0]=4
+ DDI Process 5: error determining smpme on node 0.
+ DDI Process 5: smpme=4 >= nc_by_node[0]=4
+ DDI Process 6: error determining smpme on node 0.
+ DDI Process 6: smpme=4 >= nc_by_node[0]=4
+ DDI Process 7: error determining smpme on node 0.
+ DDI Process 7: smpme=4 >= nc_by_node[0]=4
+
+ DDI Process 8: smpme=4 >= nd_by_node[1]=4
+ DDI Process 8: error determining smpme on node 1.
+ DDI Process 9: smpme=4 >= nd_by_node[1]=4
+ DDI Process 9: error determining smpme on node 1.
+ DDI Process 10: smpme=4 >= nd_by_node[1]=4
+ DDI Process 10: error determining smpme on node 1.
+ DDI Process 11: smpme=4 >= nd_by_node[1]=4
+ DDI Process 11: error determining smpme on node 1.
+
+
+
+
+MPI: #11 0x0000000001e26653 in Init_smp () at ddi_init.c:1290
+MPI: #12 0x0000000001e24f75 in DDI_Init (argc=2, argv=0x9071960) at ddi_init.c:8
+5
+MPI: #13 0x0000000001e1cd42 in ddi_init_ () at ddi_fortran.c:66
+MPI: #14 0x0000000001e1cd55 in ddi_pbeg_ (nwdvar=0x39abd30) at ddi_fortran.c:76
+
+   --------
+
+MPI: #11 0x0000000001e2677f in Init_smp () at ddi_init.c:1304
+MPI: #12 0x0000000001e24f75 in DDI_Init (argc=2, argv=0x9071960) at ddi_init.c:8
+5
+MPI: #13 0x0000000001e1cd42 in ddi_init_ () at ddi_fortran.c:66
+MPI: #14 0x0000000001e1cd55 in ddi_pbeg_ (nwdvar=0x39abd30) at ddi_fortran.c:76
+
+
+ ============================ bad diamond above
+
+/work/tsimeon/fmo/fmo_208
+
+write herehere  delete this line
+
+need to change permissions
+
+
+
+Above, 01OCT2010R1 on diamond.
+ ----------------------------------------------------
+
+Section 4) Organization of top level directories.
+-------------------------------------------------
+
+Previous installation on jade had the following top-level
+directory structure.
+-rwxr-xr-x         410 Jul 18  2008 INSTALL
+-rwxr-xr-x      585748 Jul 18  2008 ericfmt.dat
+lrwxrwxrwx           6 Jul 18  2008 gamess -> rungms
+-rwxr-xr-x    47876524 Jul 18  2008 gamess.00.x
+lrwxrwxrwx          11 Jul 29  2008 gamess.cray-xt3.x -> gamess.00.x
+-rwxr-xr-x       15313 Jul 29  2008 gamess.dual.large.shm.run
+-rwxr-xr-x       15275 Jul 29  2008 gamess.dual.standard.shm.run
+lrwxrwxrwx          11 Jul 18  2008 gamess.orig -> rungms.orig
+-rwxr-xr-x       15318 Jul 29  2008 gamess.single.large.shm.run
+-rwxr-xr-x       15280 Jul 29  2008 gamess.single.standard.shm.run
+lrwxrwxrwx           6 Jul 18  2008 gms -> rungms
+lrwxrwxrwx          11 Jul 18  2008 gms.orig -> rungms.orig
+lrwxrwxrwx          33 Jul 18  2008 rungms -> /usr/local/usp/appwrap/appwrap.pl
+lrwxrwxrwx          25 Jul 29  2008 rungms.orig -> gamess.dual.large.shm.run
+
+INSTALL and ericfmt.dat probably got executable permission because
+entire set of files at this level were made executable but these
+two should not be executable.  
+
+Copied gamess.dual.large.shm.run, gamess.dual.standard.shm.run,
+gamess.single.large.shm.run and gamess.single.standard.shm.run
+from previous installation.
+
+HERE ARE SOME IMPORTANT NOTES CONCERNING gamess.*.*.shm.run .
+
+The files in 
+/work/scheinin/gamess/11APR2008R1/
+/work/scheinin/gamess/11APR2008R1-tinker/
+are different from was was supplied by Cray.
+There is a version inside the distribution (src/rungms) that defines
+a larger number of environment variables associated with file names.
+It is not simple to integrate the one supplied by the distribution
+with the one provided by Cray because the run files provided by Cray
+used the Korn shell whereas the one in the distribution uses the C shell.
+I tried to very carefully change the Cray-provided script by adding a
+few more definitions found in the rungms in the distribution.
+Also important, on jade, the non-tinker default run script
+is gamess.dual.large.shm.run whereas the tinker hierarchy
+(/usr/local/usp/gamess/11APR2008R1-tinker/) has
+gamess.single.large.shm.run as the default.
+In fact, when using tinker on jade, the gamess.dual.large.shm.run
+script fails to launch the executable because the requested heap size
+is too large.  Using gamess.single.large.shm.run avoids that problem
+but at the cost of having just one process per node.
+
+The situation can be shown by looking at the aprun command, on jade:
+grep aprun /usr/local/usp/gamess/11APR2008R1-tinker/gamess.dual.large.shm.run
+    aprun -n $NP $BINDIR/$GMSEXE $JOB.F05 
+grep aprun /usr/local/usp/gamess/11APR2008R1-tinker/gamess.single.large.shm.run
+    aprun -N 1 -n $NP $BINDIR/$GMSEXE $JOB.F05 
+
+On sapphire, in the directories
+/work/scheinin/gamess/11APR2008R1/
+/work/scheinin/gamess/11APR2008R1-tinker/
+the gamess.*.*.shm.run files are different from the previous versions on
+jade because of the additional environment variables.  Also, in the
+script a test is done to see if the directory hierarchy starts with
+"*-tinker", in which case XT_SYMMETRIC_HEAP_SIZE is 2/3 as much as the
+previous files.  The consequence is that gamess.dual.large.shm.run
+can be used for tinker.  The script also determines whether the machine
+is sapphire or jade but later it was determined that the value of
+XT_SYMMETRIC_HEAP_SIZE depends on tinker or non-tinker and does not
+depend on the machine, so the machine name is determined but not used.
+After all, the amount of memory per core is the same on both machines.
+
+Section 5) Testing
+
+Both the previous installation on jade and the new installation
+on had some tests that failed seriously as well as tests that
+gave numerical results that the automatic test procedure said
+were incorrect.  Both the previous installation and the new installation
+on sapphire had the same serious failures.  With regard to the numeric
+failures, it is possible that the failures are due to small changes
+due to optimization.  There is no practical way to track down the
+cause of the numerical inconsistencies, moreover, there are nearly an
+infinite number of ways that the program can be used.  So each user
+will need to compare the results on sapphire with the results from
+other installations in order to determine if the numercial results
+are reasonable.
+
+Created a file testgms for testing.
+
+It appears to me that the script now being used cannot be correct.
+The directory /usr/local/usp/gamess/11APR2008R1/
+has ericfmt.dat and gamess.00.x, which are needed.
+There is also a directory src/ but 
+ cd src
+-bash: cd: src: Permission denied
+
+The script uses $BINDIR/$GMSEXE as the executable,
+so BINDIR is /usr/local/usp/gamess/11APR2008R1/
+and GMSEXE is gamess.00.x
+but the script geta a copy of ericfmt.dat by doing the following
+    cd $BINDIR 
+    cd ../src
+    BASE=`pwd`
+    cp $BASE/ericfmt.dat $WRKDIR 
+but cd $BINDIR ; cd ../src is impossible,
+there is no src directory one level above BINDIR.
+
+Tests were done both with interactive login and automatically.
+The next subsection shows an interactive login.
+It is important that GAMESSBIN and GAMESSRUN be set.
+
+qsub -A erdcssta -q debug -l ncpus=4,walltime=1:00:00 -I
+
+
+# Either one or the other.
+#export GAMESSBIN=/work/scheinin/gamess/11APR2008R1
+export GAMESSBIN=/work/scheinin/gamess/11APR2008R1-tinker
+
+# Either one or the other.
+#export GAMESSRUN=/work/scheinin/gamess/11APR2008R1/test
+export GAMESSRUN=/work/scheinin/gamess/11APR2008R1-tinker/test
+
+# For comparison, on jade
+#export GAMESSBIN=/usr/local/usp/gamess/11APR2008R1
+export GAMESSBIN=/usr/local/usp/gamess/11APR2008R1-tinker
+export GAMESSRUN=/work/scheinin/gamess/test
+cd /work/scheinin/gamess/test
+# Run example:
+/usr/local/usp/gamess/11APR2008R1-tinker/rungms exam01.inp 4
+/usr/local/usp/gamess/11APR2008R1-tinker/gamess.dual.large.shm.run exam01.inp 4
+
+cd /work/scheinin/gamess/11APR2008R1/test
+
+The following will not run in parallel:
+   05 - CI gradient is not enabled for parallel execution
+   23,25,27 - MOPAC is not enabled for parallel execution
+   32,42 - only RHF-based CCSD and CCSD(T) runs in parallel
+   39 - RUNTYP=TDHFX is not enabled for parallel execution
+
+The text of the output is much different from what is described
+in the input file.  At first, tests were done by hand, where
+some tests done with 11APR2008R1 and some tests done with 11APR2008R1-tinker;
+some tests done with 4 CPUs and some tests done with 8 CPUs.
+
+Later I found the automatic testing procedure.  I won't list the
+results of testing by hand because the results of the automatic
+procedure are more comprehensive.  Though the new installation
+failed some tests, the previous installation on jade also failed
+some tests.  I mentioned previously that I modified the script for
+launching the job.  The tests on jade used the previous launch
+script, so we see that tests that failed are not due to any changes
+that I made.
+
+ =================
+
+tinker information
+
+Information about Tinker can be found in the file
+tinker/simomm.doc
+
+The include file sizes.i can be used to adjust dimensions.  Note that
+the parameter MAXATM in this file is used in GAMESS' file INPUTB.SRC,
+and the values given must match exactly.
+
+To add TINKER to GAMESS, you must recompile and relink.  The steps
+for installing GAMESS are fully described in the file
+    ~/gamess/misc/readme.unix
+so here it is only necessary to say what small changes are needed in
+this procedure. 
+
+The procedure for installing GAMESS is modified as follows:
+    1. edit "compall" to set the variable TINKER to true.
+    2. edit "lked" to set the variable TINKER to true.
+
+For tinker (in directory gamess/11APR2008R1-tinker) the files
+gamess.dual.large.shm.run
+gamess.dual.standard.shm.run
+gamess.single.large.shm.run
+gamess.single.standard.shm.run
+were changed.  The value of XT_SYMMETRIC_HEAP_SIZE for sapphire
+is set to 2/3 that of the value for non-tinker.
+
+For tinker on jade
+rungms corresponds to gamess.single.large.shm.run
+This tinker default results in just one process per node.
+On jade, using gamess.dual.large.shm.run -- the same as non-tinker --
+results in the run aborting, probably due to XT_SYMMETRIC_HEAP_SIZE
+being too large.
+
+Appendix I) Running tests on sapphire after the upgrade.
+--------------------------------------------------------
+
+Cases were not tested that were described as only running in serial
+mode.  Some tests failed but one can see from Appendix II that
+even the previous installation failed some tests.
+
+# In directories
+# /work/scheinin/gamess/11APR2008R1/test
+# /work/scheinin/gamess/11APR2008R1-tinker/test
+
+# Run
+batchall.sh
+# which uses batch.qsub
+
+# The standard output and standard error that is written in
+# the directory output (jobid.pbs.OU) can be copied to
+# the work directory using
+/bin/bash copy_cmds.lis
+# where copy_cmds.lis copies the batch output to a file
+# with the canonical name exam##.log .
+
+# If finished looking at results, to reduce disk space,
+# remove the directories
+ rm -rf tmp*
+
+# If copy_cmds.lis did its job, delete it.
+
+In Appendix II, OK means that the job finished, but no numerical
+comparison was made.  For the table below, "OK" means that the
+numerical check done by checktst passed.  "Failed" means numercial
+check failure.
+
+         non-tinker, tinker
+exam01   OK          OK
+exam02   OK          OK
+exam03   OK          OK
+exam04   OK          OK
+exam06   Failed      Failed
+exam07   OK          OK
+exam08   MEMORY REQUEST EXCEEDS AVAILABLE MEMORY
+exam09   Failed      Failed   2ND ORDER ENERGY CORRECTION  =  NaN
+exam10   OK          OK
+exam11   OK          OK
+exam12   OK          OK
+exam13   OK          OK
+exam14   OK          OK
+exam15   OK          OK
+exam16   OK          OK
+exam17   OK          OK
+exam18   OK          OK
+exam19   OK          OK
+exam20   OK          OK
+exam21   OK          OK
+exam22   MEMORY REQUEST EXCEEDS AVAILABLE MEMORY
+exam24   OK          OK
+exam26   Failed      Failed
+exam28   OK          OK
+exam29   Failed      Failed
+exam30   OK          OK
+exam31   OK          OK
+exam33   Failed      Failed
+exam34   OK          OK
+exam35   OK          OK
+exam37   OK          OK
+exam38   _pmii_daemon(SIGCHLD): PE 0 exit signal Segmentation fault
+exam40   OK          OK
+exam41   OK          OK
+exam43   Group DDI is not implemented in the SHMEM version of DDI
+
+ -----------------------------------------
+
+Appendix II) Running tests on jade.
+----------------------------------
+
+These tests were run using PBS interactive login whereas
+the tests on sapphire used a PBS batch.
+
+It should be noted that even using the previously installed
+software -- these tests -- some tests failed.  The cases that
+only run as serial jobs were not tested.
+
+For non-tinker, below
+
+qsub -A erdcssta -q debug -l ncpus=4,walltime=1:00:00 -I
+
+cd /work/scheinin/gamess/test
+export GAMESSBIN=/usr/local/usp/gamess/11APR2008R1
+export GAMESSRUN=`pwd`
+
+Excluded tests that the documentation said did not run in parallel
+and also excluded exam36.inp because it seemed to hang.
+Use script:
+
+#! /bin/bash
+
+cd /work/scheinin/gamess/test
+export GAMESSBIN=/usr/local/usp/gamess/11APR2008R1
+export GAMESSRUN=`pwd`
+
+for i in `seq -w 1 43` ; do
+  if test $i != 05 -a $i != 23 -a $i != 25 -a $i != 27 ; then
+     if test $i != 32 -a $i != 36 -a $i != 39 -a $i != 42 ; then
+        echo "./run_gms_orig exam${i}.inp 4 > exam{i}.log 2>&1"
+        ./run_gms_orig exam${i}.inp 4 > exam{i}.log 2>&1
+     fi
+  fi
+done
+
+Local run_gms_orig is a copy of
+/usr/local/usp/gamess/11APR2008R1/gamess.dual.large.shm.run
+except one line cancelled-out
+#    cd ../src
+
+For non-tinker, above
+For tinker, below
+
+qsub -A erdcssta -q debug -l ncpus=16,walltime=1:00:00 -I
+
+cd /work/scheinin/gamess/test-tinker
+export GAMESSBIN=/usr/local/usp/gamess/11APR2008R1-tinker
+export GAMESSRUN=`pwd`
+
+Excluded tests that the documentation said did not run in parallel
+and also excluded exam36.inp because it seemed to hang.
+Use script:
+
+#! /bin/bash
+
+cd /work/scheinin/gamess/test-tinker
+export GAMESSBIN=/usr/local/usp/gamess/11APR2008R1-tinker
+export GAMESSRUN=`pwd`
+
+for i in `seq -w 1 43` ; do
+  if test $i != 05 -a $i != 23 -a $i != 25 -a $i != 27 ; then
+     if test $i != 32 -a $i != 36 -a $i != 39 -a $i != 42 ; then
+        echo "./run_gms_orig exam${i}.inp 4 > exam{i}.log 2>&1"
+        ./run_gms_orig exam${i}.inp 4 > exam{i}.log 2>&1
+#        ./run_gms_orig exam${i}.inp 16 > exam{i}.log 2>&1
+     fi
+  fi
+done
+
+Local run_gms_orig is a copy of
+/usr/local/usp/gamess/11APR2008R1-tinker/gamess.single.large.shm.run
+except one line cancelled-out
+#    cd ../src
+
+For tinker, above
+
+Results on Jade, four processes
+These runs have been put into
+/work/scheinin/gamess/tests_on_jade/18jun2009/test
+/work/scheinin/gamess/tests_on_jade/18jun2009/test-tinker
+The tag "OK" does not mean that the numerical result was checked,
+but rather, it means that the file exam##.log (standard output and
+standard error) has the text "EXECUTION OF GAMESS TERMINATED NORMALLY".
+These tests on jade used the default rungms,
+which for non-tinker was
+aprun -n $NP $BINDIR/$GMSEXE $JOB.F05
+where for tinker was one process per node
+aprun -N 1 -n $NP $BINDIR/$GMSEXE $JOB.F05
+These tests skipped cases that will not run in parallel.
+
+         non-tinker, tinker
+exam01   OK          OK
+exam02   OK          OK
+exam03   OK          OK
+exam04   OK          OK
+exam06   OK          OK
+exam07   OK          OK
+exam08   MEMORY REQUEST EXCEEDS AVAILABLE MEMORY
+exam09   OK except   OK except  2ND ORDER ENERGY CORRECTION  =  NaN
+exam10   OK          OK
+exam11   OK          OK
+exam12   OK          OK
+exam13   OK          OK
+exam14   OK          OK
+exam15   OK          OK
+exam16   OK          OK
+exam17   OK          OK
+exam18   OK          OK
+exam19   OK          OK
+exam20   OK          OK
+exam21   OK          OK
+exam22   MEMORY REQUEST EXCEEDS AVAILABLE MEMORY
+exam24   OK          OK
+exam26   OK          OK
+exam28   OK          OK
+exam29   OK          OK
+exam30   OK          OK
+exam31   OK          OK
+exam33   OK          OK
+exam34   OK          OK
+exam35   OK          OK
+exam37   OK          OK
+exam38   _pmii_daemon(SIGCHLD): PE 0 exit signal Segmentation fault
+exam40   OK          OK
+exam41   OK          OK
+exam43   Group DDI is not implemented in the SHMEM version of DDI
+
+Above, running tests on jade
+ ----------------------------------------------------
+ ----------------------------------------------------
+
+
+
+ --- jade 01OCT2010R1 below ---
+
+module load acml
+
+./config
+See that install.info has TARGET=cray-xt
+
+Compilation on the Cray-XT has no further questions.
+ 
+The 'ftn' compiler is selected based on your module settings.
+This is best tested if your modules pick Portland Group compilers.
+The math library will be ACML.  DDI will run over Cray's MPI.
+ 
+You probably should review the machine dimensions in 'compddi' to
+match your number of nodes (MAXNODES), and cores/node (MAXCPUS).
+ 
+Your configuration for GAMESS compilation is now in install.info
+Please follow the directions in
+ /usr/local/usp/gamess/01OCT2010R1-tinker/src/misc/readme.unix
+
+For 01OCT2010R1
+edit ddi/compddi
+   change to
+if ($TARGET == cray-xt) then
+   set MAXCPUS=4
+   set MAXNODES=2000
+endif
+
+# NOTE FOR TINKER: for tinker version
+For 01OCT2010R1-tinker
+# edit compall, comp and lked and set TINKER=true
+
+# Shown above but in case you missed it.
+module load acml
+
+rm gamess.00.x
+rm object/*.o
+
+./compall 2>&1 | tee compall.log
+
+cd ddi
+./compddi
+
+   libddi.a was created and ddikick.x was not created.
+Text in compddi seems to say that ddikick.x is only needed for sockets
+
+cd ..
+
+# If not already done:
+   rm gamess.00.x
+# could do "./lked gamess 01"
+# doing the minimum results in gamess.00.x
+
+./lked 2>&1 | tee lked.log
+
+# In directory src
+ cp gamess.00.x ..
+
+# In directory
+# /usr/local/usp/gamess/01OCT2010R1/
+# modified rungms and renamed it gamess.standard.run
+# to correspond with ancient tradition of there being
+# several gamess.<problem-type>.run
+ln -s gamess.standard.run rungms.orig
+ln -s /usr/local/usp/appwrap/appwrap.pl rungms
+
+Did same in /usr/local/usp/gamess/01OCT2010R1-tinker/
+with only difference that location of binary in file gamess.standard.run
+changed from 01OCT2010R1 to 01OCT2010R1-tinker .
+
+# Testing
+
+cp /usr/local/usp/gamess/01OCT2010R1/src/tests/* \
+   /usr/local/usp/gamess/Tests-gamess-jade/29oct2010/01OCT2010R1/tests/
+
+cp /usr/local/usp/gamess/01OCT2010R1/src/tools/checktst/* \
+   /usr/local/usp/gamess/Tests-gamess-jade/29oct2010/01OCT2010R1/checktst/
+
+Same for 01OCT2010R1-tinker and also
+   12JAN2009R3 and  12JAN2009R3-tinker
+
+Generated as subdirectories work4 and work16 for two different
+number of CPUs.  There is an appropriate  gamess.pbs  in each
+subdirectory and a modified checktst in each subdirectory.
+
+Can also test interactively using
+qsub -A ERDCS97290STA -q debug -l ncpus=16,walltime=1:00:00 -I
+
+# Need to change permissions.
+
+cd /usr/local/usp/gamess
+Make sure last minute changes such as the README file are readable.
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd /usr/local/usp/gamess
+chmod -R o-rwx Tests-gamess-jade
+# remove write permissions to checktst/ and  tests/ under Tests-gamess-jade
+chown -R scheinin.staff *
+
+# Do not permit others to get the source.
+chmod -R o-rwx /usr/local/usp/gamess/source
+
+ --- jade test results below, around end-Oct. beginning-Nov. 2010
+
+   Note that jade has four cores per node so 16 processes
+   uses more than one node on jade.
+
+   Skipped 23 25 27 32 39 42 which are non-parallel tests
+   and 05 that needs nuclear gradients.
+move below
+qsub  -A ERDCS97290STA -q debug -l select=1:ncpus=32:mpiprocs=32 -l walltime=0:50:00 -I
+
+module load acml
+
+cd /u/scheinin/gamess_test_01May2013R1/work32/standard
+
+export GAMESSBIN=/usr/local/usp/gamess/01May2013R1
+export GAMESSRUN=`pwd`
+
+${GAMESSBIN}/rungms exam01 32 > exam01.log 2>&1
+
+ask liushi64:x:44016:1292:Shi Liu:/u/liushi64:/bin/bash
+
+see /u/scheinin/gamess_test_01OCT2010R1/work8/gamess.pbs
+
+for i in `seq -w 1 43` ; do
+  if test $i != 05 -a $i != 23 -a $i != 25 -a $i != 27 ; then
+     if test $i != 32 -a $i != 36 -a $i != 39 -a $i != 42 ; then
+        echo "./run_gms_orig exam${i}.inp 4 > exam{i}.log 2>&1"
+        ./run_gms_orig exam${i}.inp 4 > exam{i}.log 2>&1
+#        ./run_gms_orig exam${i}.inp 16 > exam{i}.log 2>&1
+     fi
+  fi
+done
+
+ ERROR OPENING NEW FILE PUNCH,
+ ASSIGNED TO EXPLICIT FILE NAME /u/scheinin/u/scheinin/gamess_test_01May2013R1/wo
+rk32/standard/exam01.dat,
+ PLEASE CHECK THE -SETENV- FILE ASSIGNMENTS IN YOUR -RUNGMS- SCRIPT.
+
+temporary copy of runs
+   Skipped 23 25 27 32 39 42 which are non-parallel tests
+   and 05 that needs nuclear gradients.
+
+        12JAN2009R3  12JAN2009R3-tinker  01OCT2010R1  01OCT2010R1-tinker
+        -n 4  -n 16     -n 4  -n 16      -n 4  -n 16      -n 4  -n 16
+exam01   OK    OK        OK    OK         OK    OK         OK    OK
+exam02   OK    OK        OK    OK         OK    OK         OK    OK
+exam03   OK    OK        OK    OK         OK    OK         OK    OK
+exam04   OK    OK        OK    OK         OK    OK         OK    OK
+exam06   OK    OK        OK    OK         OK    OK         OK    OK
+exam07   OK    OK        OK    OK         OK    OK         OK    OK
+exam08  fail  fail      fail  fail        OK    OK         OK    OK
+exam09  fail  fail      fail  fail        OK    OK         OK    OK
+exam10   OK    OK        OK    OK         OK    OK         OK    OK
+exam11   OK    OK        OK    OK         OK    OK         OK    OK
+exam12   OK    OK        OK    OK         OK    OK         OK    OK
+exam13   OK    OK        OK    OK         OK    OK         OK    OK
+exam14   OK    OK        OK    OK         OK    OK         OK    OK
+exam15   OK    OK        OK    OK         OK    OK         OK    OK
+exam16   OK    OK        OK    OK         OK    OK         OK    OK
+exam17   OK    OK        OK    OK         OK    OK         OK    OK
+exam18   OK    OK        OK    OK         OK    OK         OK    OK
+exam19   OK    OK        OK    OK         OK    OK         OK    OK
+exam20   OK    OK        OK    OK         OK    OK         OK    OK
+exam21   OK    OK        OK    OK         OK    OK         OK    OK
+exam22  fail  fail      fail  fail        OK    OK         OK    OK
+exam24   OK    OK        OK    OK         OK    OK         OK    OK
+exam26  fail  fail      fail  fail        OK    OK         OK    OK
+exam28   OK    OK        OK    OK         OK    OK         OK    OK
+exam29  fail  fail      fail  fail        OK    OK         OK    OK
+exam30   OK    OK        OK    OK         OK    OK         OK    OK
+exam31   OK    OK        OK    OK         OK    OK         OK    OK
+exam33   OK    OK        OK    OK         OK    OK         OK    OK
+exam34   OK    OK        OK    OK         OK    OK         OK    OK
+exam35   OK    OK        OK    OK         OK    OK         OK    OK
+exam36  hangs fail      hangs fail        OK    OK         OK    OK
+exam37   OK    OK        OK    OK         OK    OK         OK    OK
+exam38        missing MCP-DZP             OK    OK         OK    OK
+exam40   OK    OK        OK    OK         OK    OK         OK    OK
+exam41   OK    OK        OK    OK         OK    OK         OK    OK
+exam43  fail  fail      fail  fail        OK    OK         OK    OK
+exam44       DCSUB not defined            OK    OK         OK    OK
+
+move above
+
+        12JAN2009R3  12JAN2009R3-tinker  01OCT2010R1  01OCT2010R1-tinker
+        -n 4  -n 16     -n 4  -n 16      -n 4  -n 16      -n 4  -n 16
+exam01   OK    OK        OK    OK         OK    OK         OK    OK
+exam02   OK    OK        OK    OK         OK    OK         OK    OK
+exam03   OK    OK        OK    OK         OK    OK         OK    OK
+exam04   OK    OK        OK    OK         OK    OK         OK    OK
+exam06   OK    OK        OK    OK         OK    OK         OK    OK
+exam07   OK    OK        OK    OK         OK    OK         OK    OK
+exam08  fail  fail      fail  fail        OK    OK         OK    OK
+exam09  fail  fail      fail  fail        OK    OK         OK    OK
+exam10   OK    OK        OK    OK         OK    OK         OK    OK
+exam11   OK    OK        OK    OK         OK    OK         OK    OK
+exam12   OK    OK        OK    OK         OK    OK         OK    OK
+exam13   OK    OK        OK    OK         OK    OK         OK    OK
+exam14   OK    OK        OK    OK         OK    OK         OK    OK
+exam15   OK    OK        OK    OK         OK    OK         OK    OK
+exam16   OK    OK        OK    OK         OK    OK         OK    OK
+exam17   OK    OK        OK    OK         OK    OK         OK    OK
+exam18   OK    OK        OK    OK         OK    OK         OK    OK
+exam19   OK    OK        OK    OK         OK    OK         OK    OK
+exam20   OK    OK        OK    OK         OK    OK         OK    OK
+exam21   OK    OK        OK    OK         OK    OK         OK    OK
+exam22  fail  fail      fail  fail        OK    OK         OK    OK
+exam24   OK    OK        OK    OK         OK    OK         OK    OK
+exam26  fail  fail      fail  fail        OK    OK         OK    OK
+exam28   OK    OK        OK    OK         OK    OK         OK    OK
+exam29  fail  fail      fail  fail        OK    OK         OK    OK
+exam30   OK    OK        OK    OK         OK    OK         OK    OK
+exam31   OK    OK        OK    OK         OK    OK         OK    OK
+exam33   OK    OK        OK    OK         OK    OK         OK    OK
+exam34   OK    OK        OK    OK         OK    OK         OK    OK
+exam35   OK    OK        OK    OK         OK    OK         OK    OK
+exam36  hangs fail      hangs fail        OK    OK         OK    OK
+exam37   OK    OK        OK    OK         OK    OK         OK    OK
+exam38        missing MCP-DZP             OK    OK         OK    OK
+exam40   OK    OK        OK    OK         OK    OK         OK    OK
+exam41   OK    OK        OK    OK         OK    OK         OK    OK
+exam43  fail  fail      fail  fail        OK    OK         OK    OK
+exam44       DCSUB not defined            OK    OK         OK    OK
+
+   The tests of 12JAN2009R3 and 12JAN2009R3-tinker are a repeat of
+   tests done previously because on jade those two are not a new
+   installation.  The failures are similar to what failed previously.
+
+ --- jade test results above, around end-Oct. beginning-Nov. 2010
+
+ --- jade 01OCT2010R1 above ---
+
+ --- garnet below ---
+
+In directory
+/usr/local/usp/gamess/source
+
+gamess-01OCT2010R1.tar.gz  tinker-01OCT2010R1.tar.gz
+gamess-12JAN2009R3.tar.gz  tinker-12JAN2009R3.tar.gz
+
+In directory /usr/local/usp/gamess
+01OCT2010R1         12JAN2009R3
+01OCT2010R1-tinker  12JAN2009R3-tinker
+
+Untar source/gamess-01OCT2010R1.tar.gz into 
+01OCT2010R1 and 01OCT2010R1-tinker and rename as "src".
+Untar 01OCT2010R1-tinker into 01OCT2010R1-tinker/src and
+rename as directory "tinker".
+In 01OCT2010R1 and 01OCT2010R1-tinker make directory doc and
+copy 01OCT2010R1/src/*.DOC
+Make tar file of 01OCT2010R1/src/mcpdata and untar at next higher
+level in 01OCT2010R1 and 01OCT2010R1-tinker so users can see it
+without going into "src".
+Also, copy from src to next higher level the file ericfmt.dat
+Do above for 12JAN2009R3 also.
+
+Using default modules plus acml
+module load acml
+
+> module list
+Currently Loaded Modulefiles:
+  1) modules
+  2) eswrap/1.0.8
+  3) xtpe-network-gemini
+  4) pgi/10.6.0
+  5) xt-libsci/10.4.6
+  6) xt-mpt/5.0.1
+  7) udreg/1.3-1.0301.2251.2.1.gem
+  8) ugni/1.0-1.0301.2255.2.2.gem
+  9) pmi/1.0-1.0000.7901.22.1.gem
+ 10) dmapp/1.0-1.0301.2252.2.2.gem
+ 11) gni-headers/1.0-1.0301.2250.2.1.gem
+ 12) xpmem/0.1-2.0301.21781.11.1.gem
+ 13) xe-sysroot/3.1.27A
+ 14) xt-asyncpe/4.1
+ 15) PrgEnv-pgi/3.1.27A
+ 16) xtpe-mc8
+ 17) pbs/10.4.0.101257
+ 18) acml/4.4.0
+
+edit comp
+   change to
+For 12JAN2009R3
+set TARGET=cray-xt3
+   remove "chdir mike"
+   change from
+   $USE_FTN -c $OPT -Mnosecond_underscore -tp $AMD_TRGT -i8 $MODULE.f
+   to
+   $USE_FTN -c $OPT -Mnosecond_underscore -i8 $MODULE.f
+
+For 01OCT2010R1
+./config
+Expect to read
+The 'ftn' compiler is selected based on your module settings.
+This is best tested if your modules pick Portland Group compilers.
+The math library will be ACML.  DDI will run over Cray's MPI.
+Notice that MPI is used rather than shmem.
+
+For 12JAN2009R3
+edit compall
+   change to
+set TARGET=cray-xt3
+   remove chdir mike
+   change to
+if ($TARGET == cray-xt3) \
+       set extraflags='-DCRAYXT3 -fastsse -Minfo=all'
+(that is, get rid of -tp)
+
+For 12JAN2009R3
+edit lked
+   change to
+set TARGET=cray-xt3
+   remove chdir mike
+   added whatever is value of $ACML_DIR after loading that module
+set ACML_DIR=/opt/acml/4.2.0
+   change to
+   if ($TARGET == cray-xt3) set LDR='ftn'
+#    choose 'amd64e' in next line if your Opteron supports SSE3 instructions
+   set LDOPTS='-i8 -fast -Mnosecond_underscore'
+   After
+   if (-e $ACML_DIR/lib/libacml.a) then
+      set LIBRARIES="$ACML_DIR/lib/libacml.a"
+      echo "Found BLAS in $LIBRARIES"
+   add
+   else if (-e ${ACML_DIR}/pgi64/lib/libacml.a) then
+      set LIBRARIES="${ACML_DIR}/pgi64/lib/libacml.a"
+      echo "Found BLAS in $LIBRARIES"
+   changed from
+   if ($TARGET == cray-xt3) then
+      module load iobuf      # required for good I/O performance to stdout
+      set LIBRARIES="$LIBRARIES -lsma64"
+   endif
+   to the following by removing "module load iobuf"
+#   if ($TARGET == cray-xt3) then
+#      module load iobuf      # required for good I/O performance to stdout
+#      set LIBRARIES="$LIBRARIES -lsma64"
+#   endif
+
+For 12JAN2009R3
+edit ddi/compddi
+   change to
+set TARGET = cray-xt3
+   (Note that the -tp amd64 is only in the XD1)
+         if ($TARGET == cray-xt3) set MAXCPUS=16
+         if ($TARGET == cray-xt3) set MAXNODES=1200
+
+For 01OCT2010R1
+edit ddi/compddi
+   change to
+if ($TARGET == cray-xt) then
+   set MAXCPUS=16
+   set MAXNODES=1200
+endif
+
+# NOTE FOR TINKER: for tinker version
+For 01OCT2010R1
+# edit compall, comp and lked and set TINKER=true
+For 12JAN2009R3
+# edit compall and lked and set TINKER=true
+# Do not make this change in file "comp" , check that
+# TINKER is used but not set in comp.
+
+# I repeat, for 01OCT2010R1 change compall, comp and lked
+# but for 12JAN2009R3 change compall and lked but do not change "comp"
+# file with regard to "set TINKER=true"
+
+# Shown above but in case you missed it.
+module load acml
+
+rm object/*.o
+
+./compall 2>&1 | tee compall.log
+
+For 12JAN2009R3
+make sure there is  object/mthlib.o
+If not, here are some notes.
+./comp mthlib
+failed because the line
+    if (-e $ACML_DIR) set BLAS3=true
+results in an error even though ACML_DIR is an environmental variable.
+Works correctly when the line is changed to the value of $ACML_DIR
+ if (-e /opt/acml/4.2.0) set BLAS3=true
+
+cd ddi
+rm *.a
+
+./compddi 2>&1 | tee compddi.log
+
+For 12JAN2009R3
+Instructions say
+         mv ddikick.x ..
+yet there is no ddikick.x ,
+but this is OK because when running compddi there is the message
+There is no kickoff program, shmem handles the kickoff.
+Text in compddi seems to say that ddikick.x is only needed for
+sockets as transport.
+
+For 01OCT2010R1
+   libddi.a was created and ddikick.x will not be created for MPI.
+Text in compddi seems to say that ddikick.x is only needed for
+
+cd ..
+
+# If not already done:
+   rm gamess.00.x
+# could do "./lked gamess 01"
+# doing the minimum results in gamess.00.x
+
+./lked 2>&1 | tee lked.log
+
+/usr/local/usp/gamess/01OCT2010R1/src/runmsg
+is much different from
+/usr/local/usp/gamess/12JAN2009R3/gamess.dual.large.shm.run
+Also see version on diamond that might be more modern.
+
+MPICH_GNI_NUM_BUFS  default 64
+MPICH_GNI_RDMA_THRESHOLD  default 1024  max 65536
+MPICH_GNI_MAX_EAGER_MSG_SIZE  default is 8192 bytes
+Study  MPICH_RANK_REORDER_METHOD
+
+
+# In directory src
+ cp gamess.00.x ..
+
+temp below
+ need to create good copy of rungms
+
+In runall, commented-out the following line:
+# chdir /u1/mike/gamess
+runall is for testing
+
+
+Need to run many tests.
+
+temp above
+
+
+# Need to change permissions.
+
+cd /usr/local/usp/gamess
+Make sure last minute changes such as the README file are readable.
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd /usr/local/usp/gamess
+chmod -R o-rwx Tests-gamess-jade
+chown -R scheinin.staff *
+
+# Do not permit others to get the source.
+chmod -R o-rwx /usr/local/usp/gamess/source
+
+ --- garnet above ---
+

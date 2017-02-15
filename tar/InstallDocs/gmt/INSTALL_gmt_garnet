@@ -1,0 +1,346 @@
+
+
+Source
+http://gmt.soest.hawaii.edu/
+
+# Older version in case someone needs previous major release, below.
+
+export GMT_VERSION=4.5.14
+
+export GNU_VERSION=5.2.0
+prgenv=gnu
+compiler_ver=$GNU_VERSION
+
+export PREFIX=/usr/local/usp/gmt/${GMT_VERSION}-${prgenv}-${compiler_ver}
+mkdir $PREFIX
+
+export BUILD_DIR=$HOME/build/gmt-${GMT_VERSION}-${prgenv}-${compiler_ver}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+# Edit GMTparam4.5.14.txt
+# What needs to be changed each version is
+# GMT_prefix= and netcdf_path=
+
+find $PREFIX # just a check
+for i in bin include lib man share ; do
+   mkdir ${PREFIX}/$i
+done
+find $PREFIX
+
+cd $BUILD_DIR
+
+export NETCDF_VERSION=4.4.0
+export NETCDF_DIR=/usr/local/usp/netcdf/${NETCDF_VERSION}-${prgenv}-${compiler_ver}
+
+# Now have GMT_ftp=y
+# May need to do instead
+# cp <original download location>/gmt-4.5.14-src.tar.gz  .
+# Got from mirror site
+# ftp://ftp.star.nesdis.noaa.gov/pub/sod/lsa/gmt/gmt-4.5.14-src.tar.bz2
+# Source does not have install_gmt
+
+wget ftp://ftp.star.nesdis.noaa.gov/pub/sod/lsa/gmt/install_gmt4.sh
+
+# Try the install procedure to see what gets downloaded,
+# then continue by hand.
+
+./install_gmt4.sh GMTparam4.5.14.txt  2>&1 | tee install.out
+
+Stuck on
+--> RETR gmt-4.5.14-src.tar.bz2
+--> RETR gshhg-gmt-2.3.4.tar.gz
+Got them instead from mirror site and set
+GSHHG_ftp=n
+GMT_ftp=n
+in  GMTparam4.5.14.txt
+
+# Automatic configure script was (making substitutions of env vars)
+./configure --prefix=${PREFIX} --bindir=${PREFIX}/bin --libdir=${PREFIX}/lib --includedir=${PREFIX}/include    --enable-netcdf=$NETCDF_DIR   --disable-flock --enable-shared     --mandir=${PREFIX}/man --docdir=${PREFIX}/share/doc/gmt --datadir=${PREFIX}/share --enable-update=   --disable-mex --disable-xgrid    --with-gshhg-dir=$BUILD_DIR/gshhg-gmt-2.3.4
+
+# Failed during build.  Need to add more definitions, as shown below.
+
+cd $BUILD_DIR/gmt-4.5.14
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS="-I${NETCDF_DIR}/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export FFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export CXXFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export LIBS="  -lm"
+export LDFLAGS="-L${NETCDF_DIR}/lib"
+export CPPFLAGS="-I${NETCDF_DIR}/include"
+export LIBS=" -lm"
+export LDFLAGS="-L${NETCDF_DIR}/lib"
+
+# flock not good for network drives
+
+export LD_LIBRARY_PATH=$NETCDF_DIR/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=${PREFIX} --bindir=${PREFIX}/bin --libdir=${PREFIX}/lib --includedir=${PREFIX}/include    --enable-netcdf=$NETCDF_DIR   --disable-flock --enable-shared     --mandir=${PREFIX}/man --docdir=${PREFIX}/share/doc/gmt --datadir=${PREFIX}/share --enable-update=   --disable-mex --disable-xgrid  \
+  --with-gshhg-dir=$BUILD_DIR/gshhg-gmt-2.3.4 --disable-flock \
+ --enable-shared
+#  --enable-static   not recognized
+# Octave/Matlab mex supplement will be skipped
+
+
+make 2>&1 | tee make.log
+make -k check 2>&1 | tee check.log
+# There is no check target.
+make install
+
+cd $PREFIX
+tar xzf $BUILD_DIR/gshhg-gmt-2.3.4.tar.gz
+
+# Need to fix permissions.
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+# Older version in case someone needs previous major release, above.
+# Newer version, April 2016, below.
+
+GDAL - Geospatial Data Abstraction Library
+Most recent GMT does not find GDAL but tries to build
+software that has GDAL definitions.  So need GDAL.
+
+Got source from ftp://ftp.remotesensing.org/gdal/
+had as latest gdal-1.9.2.tar.gz
+or http://trac.osgeo.org/gdal/wiki/DownloadSource
+had as latest gdal-2.0.2.tar.gz
+
+export GDAL_VERSION=1.9.2
+# OR
+export GDAL_VERSION=2.0.2
+
+export GNU_VERSION=5.2.0
+prgenv=gnu
+compiler_ver=$GNU_VERSION
+
+export PREFIX=/usr/local/usp/gdal/${GDAL_VERSION}-${prgenv}-${compiler_ver}
+mkdir $PREFIX
+
+export BUILD_DIR=$HOME/build/gdal-${GDAL_VERSION}-${prgenv}-${compiler_ver}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+export HDF5_VERSION=1.8.16
+export SZIP_VERSION=2.1
+
+export HDF5_DIR=/usr/local/usp/hdf5/${HDF5_VERSION}-${prgenv}-${compiler_ver}
+export LD_LIBRARY_PATH=${HDF5_DIR}/lib:$LD_LIBRARY_PATH
+
+export SZIP_DIR=/usr/local/usp/szip/${SZIP_VERSION}-${prgenv}-${compiler_ver}
+export LD_LIBRARY_PATH=${SZIP_DIR}/lib:$LD_LIBRARY_PATH
+
+export NETCDF_VERSION=4.4.0
+export NETCDF_DIR=/usr/local/usp/netcdf/${NETCDF_VERSION}-${prgenv}-${compiler_ver}
+export PATH=${NETCDF_DIR}/bin:$PATH
+which ncdump
+
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CFLAGS="-O2 -fPIC"
+export CPPFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export FFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export CXXFLAGS="-O2 -fPIC -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export LIBS="  -lm"
+export LDFLAGS=""
+export CPPFLAGS=""
+export LIBS=" -lm"
+export LDFLAGS=""
+
+./configure --prefix=$PREFIX \
+ --without-python \
+ --with-geotiff=internal \
+ --with-hdf5=$HDF5_DIR \
+ --with-netcdf=$NETCDF_DIR
+
+If you find build problems with one of the format drivers
+that you don't care about, just remove the format from the
+GDAL_FORMATS line at the bottom of gdal/GDALmake.opt,
+do a make clean, and make.  This will drop it from the build
+and default runtime registration. 
+
+make 2>&1 | tee make.log
+
+(make -k check 2>&1 | tee check.log)
+(make -k test 2>&1 | tee test.log)
+# There is no check or test target.
+
+find $PREFIX
+make install
+find $PREFIX
+
+export PATH=${PREFIX}/bin:$PATH
+export LD_LIBRARY_PATH=${PREFIX}/lib:$LD_LIBRARY_PATH
+export GDAL_DATA=${PREFIX}/share/gdal
+
+gdalinfo --version
+
+# Fix file permissions.
+
+Got
+gmt-5.2.1-src.tar.gz
+dcw-gmt-1.1.2.tar.gz
+gshhg-gmt-2.3.5.tar.gz
+
+export GMT_VERSION=5.2.1
+
+export GNU_VERSION=5.2.0
+prgenv=gnu
+compiler_ver=$GNU_VERSION
+
+export PREFIX=/usr/local/usp/gmt/${GMT_VERSION}-${prgenv}-${compiler_ver}
+mkdir $PREFIX
+
+export GSHHG_VERSION=2.3.5
+export DCW_VERSION=1.1.2
+
+# The location of the tar files could be
+# different from the current directory.
+cd $PREFIX
+tar xzf dcw-gmt-${DCW_VERSION}.tar.gz
+tar xzf gshhg-gmt-${GSHHG_VERSION}.tar.gz
+
+export BUILD_DIR=$HOME/build/gmt-${GMT_VERSION}-${prgenv}-${compiler_ver}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+export CMAKE_VERSION=3.5.1
+export CMAKE_DIR=/usr/local/usp/cmake/${CMAKE_VERSION}-${prgenv}-${compiler_ver}
+export PATH=${CMAKE_DIR}/bin:$PATH
+which cmake
+
+export NETCDF_VERSION=4.4.0
+export NETCDF_DIR=/usr/local/usp/netcdf/${NETCDF_VERSION}-${prgenv}-${compiler_ver}
+export PATH=${NETCDF_DIR}/bin:$PATH
+which ncdump
+
+export HDF5_VERSION=1.8.16
+export SZIP_VERSION=2.1
+export HDF4_VERSION=4.2.11-nonetcdf
+
+export HDF5_DIR=/usr/local/usp/hdf5/${HDF5_VERSION}-${prgenv}-${compiler_ver}
+export LD_LIBRARY_PATH=${HDF5_DIR}/lib:$LD_LIBRARY_PATH
+
+export SZIP_DIR=/usr/local/usp/szip/${SZIP_VERSION}-${prgenv}-${compiler_ver}
+export LD_LIBRARY_PATH=${SZIP_DIR}/lib:$LD_LIBRARY_PATH
+
+# Missing HDF4 for most recent GNU and PGI compiler.
+export HDF4_DIR=/usr/local/usp/hdf4/${HDF4_VERSION}-${prgenv}-${compiler_ver}
+# Put library last.
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HDF4_DIR}/lib
+
+# For GMT use
+export GDAL_VERSION=1.9.2
+# because 2.x.x is rather new.
+export GDAL_DIR=/usr/local/usp/gdal/${GDAL_VERSION}-${prgenv}-${compiler_ver}
+export LD_LIBRARY_PATH=${GDAL_DIR}/lib:$LD_LIBRARY_PATH
+
+module unload cray-libsci
+module load acml
+
+module load fftw/3.3.4.6
+
+export FFTW_DIR=/opt/cray/fftw/3.3.4.6/x86_64
+export PATH=$FFTW_DIR/bin:$PATH
+
+# It is likely the FFTW3 will fail because it was compiled
+# only for double precision and README.CMake says it needs
+# single precision.
+
+export CXX=`which g++`
+export CXXFLAGS="-O2"
+export CC=`which gcc`
+export CFLAGS="-O2"
+export FC=`which gfortran`
+export F77=`which gfortran`
+export F90=`which gfortran`
+export LIBS="-lsci_gnu_49 -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran -lsz -lz -lm"
+export LDFLAGS="-L${CRAY_LIBSCI_BASE_DIR}/${prgenv}/49/x86_64/lib/libsci_gnu_49 -L${HDF5_DIR}/lib -L${SZIP_DIR}/lib"
+export CPPFLAGS="-I${HDF5_DIR}/include -I${SZIP_DIR}/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+
+In subdirectory cmake of source
+cp ConfigUserTemplate.cmake ConfigUser.cmake
+Edit ConfigUser.cmake
+set (CMAKE_INSTALL_PREFIX $ENV{PREFIX})
+set (GSHHG_ROOT $ENV{PREFIX}/gshhg-gmt-$ENV{GSHHG_VERSION})
+set (DCW_ROOT $ENV{PREFIX}/dcw-gmt-$ENV{DCW_VERSION})
+set (NETCDF_ROOT $ENV{NETCDF_DIR})
+set (GDAL_ROOT $ENV{GDAL_DIR})
+
+tar xzf gmt-${GMT_VERSION}-src.tar.gz
+mkdir build
+cd build
+
+cmake ../gmt-${GMT_VERSION} \
+ -DCMAKE_INSTALL_PREFIX=$PREFIX \
+ -DGMT_INSTALL_RELOCATABLE=TRUE \
+ -DGSHHG_ROOT=${PREFIX}/gshhg-gmt-${GSHHG_VERSION} \
+ -DGSHHG_PATH=${PREFIX}/gshhg-gmt-${GSHHG_VERSION} \
+ -DDCW_ROOT=${PREFIX}/dcw-gmt-${DCW_VERSION} \
+ -DDCW_PATH=${PREFIX}/dcw-gmt-${DCW_VERSION} \
+ -DNETCDF_ROOT=${NETCDF_DIR} \
+ -DFFTW3_ROOT=${FFTW_DIR} \
+ -DFFTW3F_LIBRARY=${FFTW_DIR}/lib/libfftw3.so \
+ -DBLAS_blas_LIBRARY=${ACML_BASE_DIR}/gfortran64_mp/lib/libacml_mp.a \
+ -DBLAS_acml_mp_LIBRARY=${ACML_BASE_DIR}/gfortran64_mp/lib/libacml_mp.a \
+ -DLAPACK_LIBRARY=${ACML_BASE_DIR}/gfortran64_mp/lib/libacml_mp.a \
+ -DCMAKE_C_COMPILER=${CC} \
+ -DCMAKE_C_FLAGS="${CFLAGS} ${CPPFLAGS}" \
+ -DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
+ -DNETCDF_CONFIG=${NETCDF_DIR}/bin/nc-config \
+ -DGDAL_CONFIG=${GDAL_DIR}/bin/gdal-config \
+ -DGDAL_INCLUDE_DIR=${GDAL_DIR}/include \
+ -DGDAL_LIBRARY=${GDAL_DIR}/lib/libgdal.so
+
+# No explanation for the following errors
+#-- A library with BLAS API not found. Please specify library location.
+#-- LAPACK requires BLAS
+#-- A library with LAPACK API not found. Please specify library location.
+
+make 2>&1 | tee make.log
+
+make check 2>&1 | tee check.log
+# No tests found.
+make test 2>&1 | tee test.log
+No rule to make target `test'.
+
+find $PREFIX
+make install
+find $PREFIX
+
+Fix permissions.
+
+# Newer version, April 2016, above.
+
+
+ ---

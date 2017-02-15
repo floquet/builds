@@ -1,0 +1,1542 @@
+
+
+Instructions
+http://www.ncl.ucar.edu/Download/build_from_src.shtml
+
+Initial state on diamond
+
+diamond> pwd
+/usr/local/usp/ncarg
+
+diamond> find
+.
+./ncarg-4.4.1
+./ncarg-4.4.1/bin
+./ncarg-4.4.1/include
+./ncarg-4.4.1/lib
+./ncarg-4.4.1/man
+./ncarg-4.4.1/src
+./ncarg-4.4.1/src/ncarg-4.4.1.src.tar.gz
+./ncl_ncarg-5.1.0
+./ncl_ncarg-5.1.0/bin
+./ncl_ncarg-5.1.0/include
+./ncl_ncarg-5.1.0/lib
+./ncl_ncarg-5.1.0/man
+./ncl_ncarg-5.1.0/src
+./ncl_ncarg-5.1.0/src/ncl_ncarg_src-5.1.0.tar.gz
+./ncl_ncarg-5.1.1
+./ncl_ncarg-5.1.1/bin
+./ncl_ncarg-5.1.1/include
+./ncl_ncarg-5.1.1/lib
+./ncl_ncarg-5.1.1/man
+./ncl_ncarg-5.1.1/src
+./ncl_ncarg-5.1.1/src/ncl_ncarg_src-5.1.1.tar.gz
+
+Initial stat on jade
+
+jade> pwd
+/usr/local/usp/ncarg
+
+jade> find
+./ncarg-4.4.1_cnl
+./ncarg-4.4.1_cnl/bin
+./ncarg-4.4.1_cnl/include
+./ncarg-4.4.1_cnl/lib
+./ncarg-4.4.1_cnl/man
+./ncarg-4.4.1_cnl/src
+./ncarg-4.4.1_cnl/src/ncarg-4.4.1.src.tar.gz
+./ncarg-4.4.1_linux
+./ncarg-4.4.1_linux/bin
+./ncarg-4.4.1_linux/include
+./ncarg-4.4.1_linux/lib
+./ncarg-4.4.1_linux/man
+./ncarg-4.4.1_linux/src
+./ncarg-4.4.1_linux/src/ncarg-4.4.1.src.tar.gz
+./ncl_ncarg-5.1.0_cnl
+./ncl_ncarg-5.1.0_cnl/bin
+./ncl_ncarg-5.1.0_cnl/include
+./ncl_ncarg-5.1.0_cnl/lib
+./ncl_ncarg-5.1.0_cnl/man
+./ncl_ncarg-5.1.0_cnl/src
+./ncl_ncarg-5.1.0_cnl/src/ncl_ncarg_src-5.1.0.tar.gz
+./ncl_ncarg-5.1.0_linux
+./ncl_ncarg-5.1.0_linux/bin
+./ncl_ncarg-5.1.0_linux/include
+./ncl_ncarg-5.1.0_linux/lib
+./ncl_ncarg-5.1.0_linux/man
+./ncl_ncarg-5.1.0_linux/src
+./ncl_ncarg-5.1.0_linux/src/ncl_ncarg_src-5.1.0.tar.gz
+./ncl_ncarg-5.1.1_cnl
+./ncl_ncarg-5.1.1_cnl/bin
+./ncl_ncarg-5.1.1_cnl/include
+./ncl_ncarg-5.1.1_cnl/lib
+./ncl_ncarg-5.1.1_cnl/man
+./ncl_ncarg-5.1.1_cnl/src
+./ncl_ncarg-5.1.1_cnl/src/ncl_ncarg_src-5.1.1.tar.gz
+./ncl_ncarg-5.1.1_linux
+./ncl_ncarg-5.1.1_linux/bin
+./ncl_ncarg-5.1.1_linux/include
+./ncl_ncarg-5.1.1_linux/lib
+./ncl_ncarg-5.1.1_linux/man
+./ncl_ncarg-5.1.1_linux/src
+./ncl_ncarg-5.1.1_linux/src/ncl_ncarg_src-5.1.1.tar.gz
+
+ncarg-4.4.1 diamond, below
+
+module load mpt/1.24
+module load cc_11.0.074
+module load fc_11.0.074
+module load mkl_10.1.0.015
+
+export CC=icc
+export F77=ifort
+export CXX=icc
+export FC=ifort
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+# For ncarg-4.4.1, the name of the directory after tar extract
+# is ncarg-4.4.1, however, the ymake script expects "ncarg"
+# so the directory needs to be renamed.
+
+cd /usr/local/usp/ncarg/ncarg-4.4.1/src
+mv ncarg-4.4.1 ncarg
+
+export NCARG=/usr/local/usp/ncarg/ncarg-4.4.1/src/ncarg
+export NCARG_ROOT=/usr/local/usp/ncarg/ncarg-4.4.1
+
+# Need
+# /usr/local/usp/ncarg/HDF4.2r4
+# /usr/local/usp/hdf5/hdf5-1.8.4
+# /usr/local/usp/netcdf/netcdf-4.0.1-serial
+# /usr/local/usp/hdf5/szip/2.1
+
+# Within the distribution
+cd config
+make -f Makefile.ini
+ ./ymake -config `pwd`
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.INTEL
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.INTEL LINUX
+
+From
+#define CcOptions    -ansi
+#define FcOptions
+remove      -size_lp64
+
+cd ..
+./Configure -v
+
+ make Everything 2>&1 | tee make-output
+
+# To continue
+
+ make All | tee -a make-output 2>>&1
+
+There was an error
+../../../.././ncarview/src/lib/libictrans/libictrans.o: In function `giargs_':
+(.text+0x9575): undefined reference to `for_cpystr'
+make[5]: *** [ictrans] Error 1
+but libictrans.o is a stub where giargs should be defined elsewhere.(?)
+It is possible that something related to
+/usr/local/usp/ncarg/ncarg-4.4.1/src/ncarg/ncarview/src/bin/ictrans
+will not work.
+
+cd /usr/local/usp/ncarg/ncarg-4.4.1
+find . -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+chmod -R o-rwx src
+chown -R scheinin:staff /usr/local/usp/ncarg/ncarg-4.4.1
+
+ncarg-4.4.1 diamond, above
+ncarg-4.4.1_linux, below
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=pgcc
+export F77=pgf77
+export CXX=pgCC
+export FC=pgf77
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+# For ncarg-4.4.1, the name of the directory after tar extract
+# is ncarg-4.4.1, however, the ymake script expects "ncarg"
+# so the directory needs to be renamed.
+
+cd /usr/local/usp/ncarg/ncarg-4.4.1_linux/src
+mv ncarg-4.4.1 ncarg
+
+export NCARG=/usr/local/usp/ncarg/ncarg-4.4.1_linux/src/ncarg
+export NCARG_ROOT=/usr/local/usp/ncarg/ncarg-4.4.1_linux
+
+# Need
+# /usr/local/usp/ncarg/HDF4.2r4
+# /usr/local/usp/ncarg/hdf5-1.8.4-serial
+# /usr/local/usp/ncarg/netcdf-4.0.1-serial
+# /usr/local/usp/ncarg/szip-2.1
+
+# Within the distribution
+cd config
+make -f Makefile.ini
+ ./ymake -config `pwd`
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+cd ..
+./Configure -v
+
+ make Everything 2>&1 | tee make-output
+
+# To continue
+
+ make All | tee -a make-output 2>>&1
+
+cd /usr/local/usp/ncarg
+
+find . -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+ddd=`/bin/ls -d /usr/local/usp/ncarg/*/src`
+for i in $ddd ; do
+chmod -R o-rwx $i
+done
+
+chown -R scheinin:staff /usr/local/usp/ncarg
+
+ncarg-4.4.1_linux, above
+ncarg-4.4.1_cnl, below
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=cc
+export F77=ftn
+export CXX=CC
+export FC=ftn
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+# For ncarg-4.4.1, the name of the directory after tar extract
+# is ncarg-4.4.1, however, the ymake script expects "ncarg"
+# so the directory needs to be renamed.
+
+cd /usr/local/usp/ncarg/ncarg-4.4.1_cnl/src
+mv ncarg-4.4.1 ncarg
+
+export NCARG=/usr/local/usp/ncarg/ncarg-4.4.1_cnl/src/ncarg
+export NCARG_ROOT=/usr/local/usp/ncarg/ncarg-4.4.1_cnl
+
+# Need
+# /usr/local/usp/ncarg/HDF4.2r4
+# /usr/local/usp/ncarg/hdf5-1.8.4-serial
+# /usr/local/usp/ncarg/netcdf-4.0.1-serial
+# /usr/local/usp/ncarg/szip-2.1
+
+# Within the distribution
+cd config
+make -f Makefile.ini
+ ./ymake -config `pwd`
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+emacs LINUX
+
+#define CCompiler     cc
+#define FCompiler     ftn
+#define COptimizeFlag  -O
+#define FOptimizeFlag  -O
+
+FC = ftn
+
+#define XLibrary -lXpm -lX11 -lXext
+
+remove -ansi from
+#define CcOptions
+
+# end of editing
+
+cd ..
+./Configure -v
+
+ make Everything 2>&1 | tee make-output
+
+# To continue
+
+ make All | tee -a make-output 2>>&1
+
+# If the commands below have been done once,
+# then just do them for the subdirectory
+# /usr/local/usp/ncarg/ncarg-4.4.1_cnl
+find . -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+ddd=`/bin/ls -d /usr/local/usp/ncarg/*/src`
+for i in $ddd ; do
+chmod -R o-rwx $i
+done
+chown -R scheinin:staff /usr/local/usp/ncarg
+
+ncarg-4.4.1_cnl, above
+ =======================================================================
+ncl_ncarg-5.1.0_linux on jade, below
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=pgcc
+export F77=pgf90
+export CXX=pgCC
+export FC=pgf90
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/usr/local/usp/ncarg/ncl_ncarg-5.1.0_linux/src/ncl_ncarg-5.1.0
+export NCARG_ROOT=/usr/local/usp/ncarg/ncl_ncarg-5.1.0_linux
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+Changed from
+/*
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpghpf
+ */
+#define CtoFLibraries -pgf90libs
+to
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpghpf -laio
+/*
+#define CtoFLibraries -pgf90libs
+*/
+
+Have
+#define XToolLibrary -lXt -lSM -lICE
+Add
+#define XLibrary -lXpm -lX11 -lXext
+
+From
+FC = $(F77)
+to
+FC = pgf77 -fPIC
+
+Changed to
+/*
+#define CCompiler     pgcc -tp k8-64 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler     pgf90 -tp k8-64 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+*/
+#define CCompiler     pgcc -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler     pgf90 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+
+
+# Need
+# /usr/local/usp/ncarg/HDF4.2r4-nonetcdf
+# /usr/local/usp/ncarg/hdf5-1.8.4-serial
+# /usr/local/usp/ncarg/netcdf-4.0.1-serial
+# /usr/local/usp/ncarg/szip-2.1
+
+cd ..
+./Configure -v
+
+Build NCL? y
+Parent installation directory : /usr/local/usp/ncarg/ncl_ncarg-5.1.0_linux
+(Must already have subdirectories bin include lib man)
+System temp space directory   : /work/scheinin/tmp
+Build png/zlib support (optional) into GKS library? y
+Did you build HDF-4 with szip support? n
+Build Triangle support (optional) into NCL? n
+Build NetCDF-4 support (optional) into NCL? y
+Build Udunits support (optional) into NCL? n
+Build Vis5d+ support (optional) into NCL? n
+Build HDFEOS support (optional) into NCL? n
+Build GRIB2 support (optional) into NCL? n
+Build OPeNDAP support (optional) into NCL? n
+Enter local library search path(s) >  /usr/lib64 /usr/X11R6/lib64 /usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib /usr/local/usp/ncarg/hdf5-1.8.4-serial/lib /usr/local/usp/ncarg/netcdf-4.0.1-serial/lib /usr/local/usp/ncarg/szip-2.1/lib
+Enter local include search path(s) > /usr/include /usr/X11R6/include /usr/local/usp/ncarg/HDF4.2r4-nonetcdf/include /usr/local/usp/ncarg/hdf5-1.8.4-serial/include /usr/local/usp/ncarg/netcdf-4.0.1-serial/include  /usr/local/usp/ncarg/szip-2.1/include
+
+ make Everything 2>&1 | tee make-output
+../../../.././ncarview/src/lib/libcgm/libcgm.a(meta_edit.o): In function `CGM_initMetaEdit':
+./meta_edit.c:1041: warning: the use of `mktemp' is dangerous, better use `mkstemp'
+/opt/pgi/9.0.4/linux86-64/9.0-4/libso/libpgf90.so: undefined reference to `aio_read'
+
+aio_write is not in any library in
+/opt/pgi/9.0.4/linux86-64/9.0/lib/lib*.a
+
+ncl_ncarg-5.1.0_linux on jade, above
+ =======================================================================
+ncl_ncarg-5.1.0_cnl on jade, below
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=cc
+export F77=ftn
+export CXX=CC
+export FC=ftn
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/usr/local/usp/ncarg/ncl_ncarg-5.1.0_cnl/src/ncl_ncarg-5.1.0
+export NCARG_ROOT=/usr/local/usp/ncarg/ncl_ncarg-5.1.0_cnl
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# For ncl_ncarg-5.1.0, for the compute nodes the changes were
+emacs LINUX
+
+#define CCompiler  cc -O -Msignextend -Mreentrant -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler  ftn -O -Msignextend -Mreentrant -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+/*
+#define ExtraExportFlags -Wl,--export-dynamic
+*/
+FC = ftn
+
+#define XLibrary -lXpm -lX11 -lXext
+
+# above, editing of file LINUX for ncl_ncarg-5.1.0 for the compute nodes
+
+# Need
+# /usr/local/usp/ncarg/HDF4.2r4-nonetcdf
+# /usr/local/usp/ncarg/hdf5-1.8.4-serial
+# /usr/local/usp/ncarg/netcdf-4.0.1-serial
+# /usr/local/usp/ncarg/szip-2.1
+
+cd ..
+./Configure -v
+
+Build NCL? y
+Parent installation directory : /usr/local/usp/ncarg/ncl_ncarg-5.1.0_cnl
+(Must already have subdirectories bin include lib man)
+System temp space directory   : /work/scheinin/tmp
+Build png/zlib support (optional) into GKS library? y
+Did you build HDF-4 with szip support? n
+Build Triangle support (optional) into NCL? n
+Build NetCDF-4 support (optional) into NCL? y
+Build Udunits support (optional) into NCL? n
+Build Vis5d+ support (optional) into NCL? n
+Build HDFEOS support (optional) into NCL? n
+Build GRIB2 support (optional) into NCL? n
+Build OPeNDAP support (optional) into NCL? n
+Enter local library search path(s) >  /usr/lib64 /usr/X11R6/lib64 /usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib /usr/local/usp/ncarg/hdf5-1.8.4-serial/lib /usr/local/usp/ncarg/netcdf-4.0.1-serial/lib /usr/local/usp/ncarg/szip-2.1/lib
+Enter local include search path(s) > /usr/include /usr/X11R6/include /usr/local/usp/ncarg/HDF4.2r4-nonetcdf/include /usr/local/usp/ncarg/hdf5-1.8.4-serial/include /usr/local/usp/ncarg/netcdf-4.0.1-serial/include /usr/local/usp/ncarg/szip-2.1/include
+
+ make Everything 2>&1 | tee make-output
+
+
+ncl_ncarg-5.1.0_cnl on jade, above
+ =======================================================================
+ncl_ncarg-5.1.0 on diamond, below
+
+module load mpt/1.24
+module load cc_11.0.074
+module load fc_11.0.074
+module load mkl_10.1.0.015
+
+export CC=icc
+export F77=ifort
+export CXX=icc
+export FC=ifort
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/usr/local/usp/ncarg/ncl_ncarg-5.1.0/src/ncl_ncarg-5.1.0
+export NCARG_ROOT=/usr/local/usp/ncarg/ncl_ncarg-5.1.0
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.INTEL
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.INTEL LINUX
+
+# Need
+# /usr/local/usp/ncarg/HDF4.2r4-nonetcdf
+# /usr/local/usp/hdf5/hdf5-1.8.4
+# /usr/local/usp/netcdf/netcdf-4.0.1-serial
+# /usr/local/usp/hdf5/szip/2.1
+
+cd ..
+./Configure -v
+
+Build NCL > y
+Parent installation directory > /usr/local/usp/ncarg/ncl_ncarg-5.1.0
+System temp space directory > /work/scheinin/tmp
+# Diamond does not have /usr/include/png.h even though
+# there is /usr/lib64/libpng.a
+Build png/zlib support (optional) into GKS library? > n
+Did you build HDF-4 with szip support? > n
+Build Triangle support (optional) into NCL > n
+Build NetCDF-4 support (optional) into NCL > y
+Build Udunits support (optional) into NCL > n
+Build Vis5d+ support (optional) into NCL > n
+Build HDFEOS support (optional) into NCL > n
+Build GRIB2 support (optional) into NCL > n
+Build OPeNDAP support (optional) into NCL > n
+Enter local library search path(s) > /usr/lib64 /usr/X11R6/lib64 /usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib /usr/local/usp/hdf5/hdf5-1.8.4/lib /usr/local/usp/netcdf/netcdf-4.0.1-serial/lib /usr/local/usp/hdf5/szip/2.1/lib
+Enter local include search path(s) > /usr/X11R6/include /usr/local/usp/ncarg/HDF4.2r4-nonetcdf/include /usr/local/usp/hdf5/hdf5-1.8.4/include /usr/local/usp/netcdf/netcdf-4.0.1-serial/include /usr/local/usp/hdf5/szip/2.1/include
+
+ make Everything 2>&1 | tee make-output
+
+jade linux (pgi)
+cannot find include file "Xm/PanedW.h"
+/usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib/libdf.a(dfr8.o): In function `DFR8getimage':
+./dfr8.c:363: undefined reference to `__c_mcopy1_bwd'
+/usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib/libdf.a(dfimcomp.o): In function `init_global':
+./dfimcomp.c:319: undefined reference to `__c_mzero1'
+./dfimcomp.c:324: undefined reference to `__c_mset4'
+/usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib/libdf.a(dfimcomp.o): In function `cnt_color':
+./dfimcomp.c:346: undefined reference to `__c_mset4'
+/usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib/libdf.a(dfimcomp.o): In function `init':
+./dfimcomp.c:665: undefined reference to `__c_mzero4'
+./dfimcomp.c:666: undefined reference to `__c_mset4'
+/usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib/libdf.a(hchunks.o): In function `HMCcreate':
+./hchunks.c:1523: undefined reference to `__c_bzero'
+./hchunks.c:1523: undefined reference to `__c_bzero'
+/usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib/libdf.a(hchunks.o): In function `HMCgetdatasize':
+./hchunks.c:2229: undefined reference to `__c_bzero'
+/usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib/libdf.a(hchunks.o): In function `HMCIstaccess':
+./hchunks.c:954: undefined reference to `__c_bzero'
+./hchunks.c:954: undefined reference to `__c_bzero'
+collect2: ld returned 1 exit status
+make[5]: *** [ictrans] Error 1
+make[5]: Leaving directory `/usr/local/usp/ncarg/ncl_ncarg-5.1.1_linux/src/ncl_ncarg-5.1.1/ncarview/src/bin/ictrans'
+
+/opt/pgi/9.0.4/linux86-64/9.0/lib/libpgc.a
+
+
+meta_edit.c:(.text+0x2e60): warning: the use of `mktemp' is dangerous, better use `mkstemp'
+../../../.././ncarview/src/lib/libictrans/libictrans.o: In function `giargs_':
+(.text+0x9575): undefined reference to `for_cpystr'
+make[5]: *** [ictrans] Error 1
+make[5]: Leaving directory `/usr/local/usp/ncarg/ncl_ncarg-5.1.0/src/ncl_ncarg-5.1.0/ncarview/src/bin/ictrans'
+
+xerbla.f:(.text+0x5d): undefined reference to `for_write_seq_fmt_xmit'
+xerbla.f:(.text+0x75): undefined reference to `for_stop_core'
+make[4]: *** [ncl] Error 1
+make[4]: Leaving directory `/usr/local/usp/ncarg/ncl_ncarg-5.1.0/src/ncl_ncarg-5.1.0/ni/src/ncl'
+dgesvd.f:(.text+0xe9): undefined reference to `for_concat'
+oto    -c -o mapngb.o mapngb.c
+mapngb.c(14): catastrophic error: could not open source file "png.h"
+  #include <png.h>
+                  ^
+ifort  -O2    -o ncargworld ncargworld.o ../../../.././ncarg2d/src/libncarg_gks/awi/ggkwdr_stub.o  -L../../../.././ncarg2d/src/libncarg -lncarg -L../../../.././ncarg2d/src/libncarg_gks -lncarg_gks -L../../../.././common/src/libncarg_c -lncarg_c -L/usr/local/usp/ncarg/ncl_ncarg-5.1.0/lib -L/usr/lib64 -L/usr/X11R6/lib64 -L/usr/local/usp/ncarg/HDF4.2r4-nonetcdf/lib -L/usr/local/usp/hdf5/hdf5-1.8.4/lib -L/usr/local/usp/netcdf/netcdf-4.0.1-serial/lib -L/usr/local/usp/hdf5/szip/2.1/lib    
+ncargworld.o: In function `MAIN__':
+ncargworld.f:(.text+0x1d4): undefined reference to `maproj_'
+ncargworld.f:(.text+0x208): undefined reference to `mapstr_'
+ncargworld.f:(.text+0x21e): undefined reference to `mapstr_'
+ncargworld.f:(.text+0x234): undefined reference to `mapstr_'
+ncargworld.f:(.text+0x25b): undefined reference to `mapset_'
+ncargworld.f:(.text+0x271): undefined reference to `mapsti_'
+ncargworld.f:(.text+0x287): undefined reference to `mapsti_'
+ncargworld.f:(.text+0x29d): undefined reference to `mapsti_'
+ncargworld.f:(.text+0x2a4): undefined reference to `mapint_'
+ncargworld.f:(.text+0x3d9): undefined reference to `maptri_'
+ncargworld.f:(.text+0x601): undefined reference to `mapdrw_'
+../../../.././ncarg2d/src/libncarg/libncarg.a(pcmpxy.o): In function `pcmpxy_':
+pcmpxy.f:(.text+0x219): undefined reference to `maptra_'
+pcmpxy.f:(.text+0x3b1): undefined reference to `maptra_'
+pcmpxy.f:(.text+0x3e5): undefined reference to `maptri_'
+make[5]: *** [ncargworld] Error 1
+make[5]: Leaving directory `/usr/local/usp/ncarg/ncl_ncarg-5.1.0/src/ncl_ncarg-5.1.0/ncarg2d/src/bin/ncargworld'
+gztowk.f:(.text+0x746): undefined reference to `ggkwdr_'
+../../../.././ncarg2d/src/libncarg_gks/libncarg_gks.a(gziqwk.o): In function `gziqwk_':
+gziqwk.f:(.text+0x10c): undefined reference to `ggkwdr_'
+make[5]: *** [tdpackdemo] Error 1
+make[5]: Leaving directory `/usr/local/usp/ncarg/ncl_ncarg-5.1.0/src/ncl_ncarg-5.1.0/ncarg2d/src/bin/tdpackdemo'
+gztowk.f:(.text+0x746): undefined reference to `ggkwdr_'
+make[5]: *** [ezmapdemo] Error 1
+make[5]: Leaving directory `/usr/local/usp/ncarg/ncl_ncarg-5.1.0/src/ncl_ncarg-5.1.0/ncarg2d/src/bin/ezmapdemo'
+
+
+  cd $NCARG/ncarg2d/src/libncarg_gks/awi
+  /bin/rm ggkwdr_stub.o
+  cd ../
+  make all install 
+
+for_write_seq_lis'
+cdf_dp.f:(.text+0x1a8): undefined reference to `for_write_seq_lis_xmit'
+
+xerbla.f:(.text+0x75): undefined reference to `for_stop_core'
+
+Jade has  /usr/include/png.h,
+diamond does not
+
+      cd $NCARG/config
+        make -f Makefile.ini
+        ./ymake -config `pwd`
+
+      When modifying your configuration file, pay particular attention
+      to how the following macros are being set:
+
+      *CCompiler*          The C compiler
+      *FCompiler*          The Fortran compiler
+      *CcOptions*          C compiler options (besides the optimize flag)
+      *FcOptions*          Fortran compiler options (besides the optimize flag)
+      *COptimizeFlag*      C optimize flag(s) (the default is "-O")
+      *FOptimizeFlag*      Fortran optimize flag(s) (the default is "-O")
+      *ExtraSysLibraries*  Extra system libraries that might be needed
+                           to get executables to link
+      *CtoFLibraries*      Extra Fortran libraries that might be needed to
+                           get executables to link ("-lgfortran" is one
+                           example, if you are using the gfortran Fortran
+                           compiler)
+
+      *NgCallF*            The macro for handling how Fortran routine names
+                           are named in the library.
+
+      and change or add them as desired.
+
+      If you don't see these macros being defined in your system
+      configuration file, then that means that the default value, which
+      is defined in the $NCARG/config/Template file, is being used. To
+      change the default, just add it to your system configuration file
+      with the new value.
+
+      For example, on Sun systems, the default "cc" compiler is used. If
+      you want to change this to "gcc", then modify the file
+      $NCARG/config/Sun4Solaris, and add the line:
+
+      #define CCompiler  gcc
+
+      along with the other macro definitions.
+
+
+    Test the NCL and/or NCAR Graphics installation
+
+You can quickly test if NCL is installed properly by typing "ncl" with
+the "-V" option to get the version, and then running a quick program:
+
+    ncl -V
+    ng4ex gsun01n
+
+The *ng4ex* command will copy an NCL script called *gsun01n.ncl* into
+your current working directory, and run it with NCL. An X11 window
+should pop up with an XY plot drawn on it. Click on this plot with your
+left mouse button to keep advancing to the next frame.
+
+Once this file is in your directory, you can also run it yourself with:
+
+    ncl gsun01n.ncl
+
+If "ncl" seems to be working, then this indicates that your build of
+NCAR Graphics was at least mostly successful, since NCL depends on the
+NCAR Graphics libraries.
+
+To test NCAR Graphics only, there's an extensive suite of examples
+available. You should refer to the /NCAR Graphics Fundamentals
+<http://www.ncarg.ucar.edu/fund/fundhome.html>/. It will show you how to
+run examples and test programs, and how to view the resulting graphics.
+Using the *ncargex* and *ctrans* programs is the easiest way to test the
+installation and become familiar with the use of NCAR Graphics.
+
+For a quick test, try the following:
+
+    ncargex cpex08
+    ctrans -d X11 cpex08.ncgm
+
+The first command will copy a file called *cpex08.f* into your current
+working directory, compile, link, and execute it, and create a graphics
+file called *cpex08.ncgm*. The second command will display the graphic
+on an X11 window on your screen. You must have your DISPLAY environment
+variable set correctly for this command to work. Right-click on the X11
+window to make the graphic go away.
+
+  Troubleshooting and known problems
+
+   1. If you are using the Intel icc/ifort compilers, and "icc" can't
+      find the "ifcore" library, then you may need to include a "-L"
+      option that includes the path to this library in your
+      configuration file in $NCARG/config.
+
+      For example, if you are on a LINUX system and "libifcore.{a.so}"
+      is in /opt/intel/fc/10.1.013/lib, then edit $NCARG/config/LINUX
+      and change the CtoFLibraries line to have:
+
+      #define CtoFLibraries   -lm -L/opt/intel/fc/10.1.013/lib -lifcore
+
+   3. If you get the following errors when you try to compile a Fortran
+      or C NCAR Graphics program:
+
+       /usr/local/ncarg/lib/libncarg_gks.a(gziqwk.o): In function `gziqwk_':
+       gziqwk.f:(.text+0x187): undefined reference to `ggkwdr_'
+       /usr/local/ncarg/lib/libncarg_gks.a(gztowk.o): In function `gztowk_':
+       gztowk.f:(.text+0x295): undefined reference to `ggkwdr_'
+       gztowk.f:(.text+0x7d7): undefined reference to `ggkwdr_'
+       gztowk.f:(.text+0xc30): undefined reference to `ggkwdr_'
+
+      then try this:
+
+         cd $NCARG/ncarg2d/src/libncarg_gks
+         rm awi/ggkwdr_stub.o
+         make all install
+
+See also
+*3. Modify machine-dependent routines*
+in INSTALL.txt
+
+ncl_ncarg-5.1.0 on diamond, above
+
+==============
+Registration
+Old below, user name already taken (by me) but I do not know
+the URL for logging in.
+Login name: si29em3xa
+Password: eov9ndkw8x
+
+The U.S. Army Engineering Research and Development Center (ERDC) hosts several supercomputers that are part of the DoD Supercomputer Resource Centers (DSRC).  Interested in downloading NCARG to be built for the users of these supercomputers.
+Welcome to the Earth System Grid. Your request for an account with the ESG portal has been approved.
+If you are interested in joining the ESG users email discussion list, please click the link below:
+http://mailman.ucar.edu/mailman/listinfo/esg-users
+If you are interested in joining the NCL discussion list, please click the linkbelow:
+http://mailman.ucar.edu/mailman/listinfo/ncl-talk
+https://www.earthsystemgrid.org/security/loginout.htm
+Old above.
+New 2012 registration, below.
+Login name: psofemsus
+Password: vau2ndky7w
+New 2012 registration, above.
+
+Login to
+https://www.earthsystemgrid.org/ac/guest/secure/sso.htm
+then put into form
+https://www.earthsystemgrid.org/myopenid/psofemsus
+========================
+us.afrl.hpc.mil
+requested help from
+Darwin Adams  Lockheed Martin AFRL DSRC WPAFB OH  Tel (937) 904-8265
+
+ module swap compiler/pgi/11.10 compiler/gcc/4.4
+ module load cseinit-devel
+
+(# Check result of swapping module.
+$ which gcc
+alias gcc='gcc44'
+        /usr/bin/gcc44
+$ which g++
+alias g++='g++44'
+        /usr/bin/g++44
+$ which gfortran
+alias gfortran='gfortran44'
+        /usr/bin/gfortran44)
+
+export TMPDIR=${WORKDIR}/tmp
+mkdir $TMPDIR
+
+(Below setting DESTINATION and PREFIX is probably not needed
+ because the installation destination is set in the Configure dialog.
+export DESTINATION=/u/home/scheinin/ncl_ncarg
+export PREFIX=${DESTINATION}
+mkdir $PREFIX)
+
+export CC=gcc
+export F77=gfortran
+export CXX=g++
+export FC=gfortran
+
+cd /u/home/scheinin/ncl_ncarg/src/ncl_ncarg-5.2.1/config
+
+$ make -f Makefile.ini
+$  ./ymake -config `pwd`
+
+cd ..
+./Configure -v
+Parent install directory
+> /u/home/scheinin/ncl_ncarg
+temp space
+> /u/work/scheinin/tmp
+cairo
+> n
+says that NCL needs HDF-4 whereas /app/CSE/20120612/Datamodels/
+only had HDF-5
+built hdf-4 with szip
+> n
+triangle
+> n
+NetCDF-4
+> y
+But may not work because there is the comment
+(Requires compiling NetCDF-4 library available from
+http://www.unidata.ucar.edu/software/netcdf/
+and building with '--enable-netcdf-4')
+OPenNDAP
+> n
+GDAL
+> n
+Udunits-2
+> n
+Vis5d+
+> n
+HDF-EOS2
+> n
+HDF-EOS5
+> n
+GRIB2
+> n
+
+Enter local library search path(s) : /usr/lib64 /app/CSE/20120612/Datamodels/hdf5-1.8.5/lib /app/CSE/20120612/Datamodels/netcdf-4.1.1/lib
+Enter local include search path(s) : /usr/X11R6/include /app/CSE/20120612/Datamodels/hdf5-1.8.5/include /app/CSE/20120612/Datamodels/netcdf-4.1.1/include
+
+        Every user of NCL and NCAR Graphics will need to set
+        the following environment variable:
+
+        setenv NCARG_ROOT /u/home/scheinin/ncl_ncarg
+        export NCARG_ROOT=/u/home/scheinin/ncl_ncarg
+review?
+> n
+save?
+> y
+
+make Everything >& make-output &
+
+( do partial build with
+ make All >>& make-output & )
+
+ tail -f make-output
+
+ls /u/home/scheinin/ncl_ncarg/bin
+
+
+export NCARG_ROOT=/u/home/scheinin/ncl_ncarg
+export PATH=${NCARG_ROOT}/bin:$PATH
+
+
+========================
+
+==============
+
+# Around June 15-17, 2009
+# Build done for ncl_ncarg-5.1.0 on jade and
+# for both ncarg-4.4.1 and ncl_ncarg-5.1.0 on sapphire.
+# (Jade already has ncarg-4.4.1 of course.)
+# Since the two version differ in major version number,
+# the mode of usage and procedure call signatures could
+# be different, so version 4 is maintained for people whose
+# programs run just fine with version 4.
+# The application was compiled for both the compute nodes (cc & ftn)
+# and the front-end nodes (pgcc & pgf90).
+
+# Did the builds in a subdirectory of my $WORKDIR,
+# to be generic I defined
+
+export DESTINATION=${WORKDIR}/ncarg
+
+# Temporary directory needs to be specified for NCARG.
+# The value of TMPDIR may not matter for NCARG but in general
+# the value of this environment variable is used by applications
+# if a temporary directory is needed.  Make sure ${WORKDIR}/tmp
+# does exist.
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Created installation directories
+# ${DESTINATION}/HDF4.2r4
+# ${DESTINATION}/ncarg-4.4.1_cnl
+# ${DESTINATION}/ncarg-4.4.1_linux
+# ${DESTINATION}/ncl_ncarg-5.1.0_cnl
+# ${DESTINATION}/ncl_ncarg-5.1.0_linux
+
+# Made source directory
+# ${DESTINATION}/src
+# moved source files in there and untar'ed.
+
+# As well as ncarg-4.4.1, even ncl_ncarg-5.1.0 requires HDF-4 for the
+# NCAR Graphics part, specifically HDF-4 is described as non-optional.
+# Sapphire only has HDF-5.  Though jade as HDF4, to be consistent
+# I will build the latest HDF4 under the ncarg hierarchy.
+
+export PREFIX=${DESTINATION}/HDF4.2r4
+mkdir $PREFIX
+
+export CC=cc
+export F77=ftn
+export CXX=CC
+
+# Note that ${DESTINATION}src/HDF4.2r4 is different
+# from ${DESTINATION}/HDF4.2r4; the former is the source
+# and the later is the installation destination (prefix).
+
+cd ${DESTINATION}/src/HDF4.2r4
+
+ ./configure --prefix=$PREFIX
+
+# whether the compiler is gcc, pgcc or cc, configure always
+# decides not to build shared libraries even though building
+# both static and shared is the default.
+
+make
+
+make check
+
+# One test failed (buffer) but then with "make -k check" the testing
+# went further and there were many other failures in HDF Utilities
+# and HDFIMPORT.
+
+# Be certain I did not forget to set $PREFIX
+echo $PREFIX
+make install
+
+# Look at result
+find $PREFIX
+
+make clean
+
+# Also, very important, NCARG sometimes looks for files "hdf.h"
+# and sometimes <hdf/hdf.h> so need to put include files into
+# subdirectory hdf/ and need to have both levels in list
+# of include directory.
+
+cd $PREFIX
+mv include hdf
+mkdir include
+mv hdf include
+
+# Above for HDF4, below for NCARG
+
+# Destination here is just to be generic wherever possible
+# so as not to distinguish my own workspace $WORKDIR/ncarg from
+# the global installation location /usr/local/usp/ncarg.
+export DESTINATION=${WORKDIR}/ncarg
+
+# Got from the previous installation the files
+# INSTALL.cnl, INSTALL.linux and ncarg_test.f
+# so that historical information would not be lost.
+
+cd $DESTINATION
+sftp jade06:/usr/local/usp/ncarg/INSTALL.cnl
+sftp jade06:/usr/local/usp/ncarg/INSTALL.linux
+sftp jade06:/usr/local/usp/ncarg/ncarg_test.f
+
+# NCARG does not use PREFIX, at least no explicitly, but it might
+# be an internal variable, so to avoid confusion don't leave it
+# as the value used to install HDF4.
+# In addition, it is very convenient for several reasons,
+# I use it to remind me which session is for which target
+# and to quickly see if all the libraries have been installed
+# I can do "ls $PREFIX/lib"
+
+# This is for the compute nodes, later there are instructions
+# for compiling for the front-end.
+# Depending on which version is being compiled
+export PREFIX=${DESTINATION}/ncarg-4.4.1_cnl
+export PREFIX=${DESTINATION}/ncl_ncarg-5.1.0_cnl
+
+# put ncarg-4.4.1.src.tar.gz and ncl_ncarg_src-5.1.0.tar.gz
+# into ncarg/src and ncarg/src_fe  (not respectively, but rather,
+# both into both) so unlike other packages,
+# the directory src is not directly the unpacked source code.
+# src_fe is the version build for the front-end using PGI
+
+# For compute nodes.
+# (This is for the compute nodes, later there are instructions
+# for compiling for the front-end.)
+export CC=cc
+export F77=ftn
+export CXX=CC
+export FC=ftn
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+# For ncarg-4.4.1, the name of the directory after tar extract
+# is ncarg-4.4.1, however, the ymake script expects "ncarg"
+# so the directory needs to be renamed.
+# Set either
+mv ncarg-4.4.1 ncarg ; export NCARG=${DESTINATION}/src/ncarg
+export NCARG=${DESTINATION}/src/ncl_ncarg-5.1.0
+
+# Both jade and sapphire have external packages in
+# ${DESTINATION}/HDF4.2r4
+# ${PET_HOME}/pkgs/netcdf-4.0.1-serial
+# ${PET_HOME}/pkgs/hdf5-1.8.3-serial
+
+# Will build ncl_ncarg-5.1.0 on jade and will build both
+# ncarg-4.4.1 and ncarg-5.1.0 on sapphire.
+# Moreover, will build for both the compute nodes and the front-end
+# by using either PGI explicitly or using cc/ftn.
+
+# Within the distribution
+cd config
+make -f Makefile.ini
+ ./ymake -config `pwd`
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+# For ncarg-4.4.1, for the compute node
+# The two OptimizeFlag lines were added rather than changed.
+emacs LINUX
+
+#define CCompiler     cc
+#define FCompiler     ftn
+#define COptimizeFlag  -O
+#define FOptimizeFlag  -O
+
+FC = ftn
+
+#define XLibrary -lXpm -lX11 -lXext
+
+# above, editing of file LINUX for ncarg-4.4.1 for the compute nodes
+
+# For ncl_ncarg-5.1.0, for the compute nodes the changes were
+emacs LINUX
+
+#define CCompiler  cc -O -Msignextend -Mreentrant -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler  ftn -O -Msignextend -Mreentrant -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+/*
+#define ExtraExportFlags -Wl,--export-dynamic
+*/
+FC = ftn
+
+#define XLibrary -lXpm -lX11 -lXext
+
+# above, editing of file LINUX for ncl_ncarg-5.1.0 for the compute nodes
+
+# (Perhaps in another session window,
+# make sure there are the installation directories
+cd /work/scheinin/ncarg/ncl_ncarg-5.1.0_cnl
+mkdir bin include lib man
+chmod ugo+rx *
+chmod go-w *
+# )
+
+cd ..
+./Configure -v
+
+# Note, did not include szip because a commercial user may have to acquire
+# an appropriate license.
+# Note also, though linking with HDF-4, need
+# /usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-serial
+# because netcdf-4.0.1-serial is linked with it.
+
+For ncl_ncarg-5.1.0, below
+Build NCL > y
+Parent installation directory > /work/scheinin/ncarg/ncl_ncarg-5.1.0_cnl
+System temp space directory > /work/scheinin/tmp
+Build png/zlib support (optional) into GKS library? > y
+   (Found in /usr/lib64)
+Did you build HDF-4 with szip support? > n
+Build Triangle support (optional) into NCL > n
+Build NetCDF-4 support (optional) into NCL > y
+Build Udunits support (optional) into NCL > n
+Build Vis5d+ support (optional) into NCL > n
+Build HDFEOS support (optional) into NCL > n
+Build GRIB2 support (optional) into NCL > n
+Build OPeNDAP support (optional) into NCL > n
+Enter local library search path(s) > /usr/X11R6/lib64 /work/scheinin/ncarg/HDF4.2r4/lib /usr/local/usp/PETtools/CE/pkgs/netcdf-4.0.1-serial/lib /usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-serial/lib
+Enter local include search path(s) > /usr/X11R6/include /work/scheinin/ncarg/HDF4.2r4/include /work/scheinin/ncarg/HDF4.2r4/include/hdf /usr/local/usp/PETtools/CE/pkgs/netcdf-4.0.1-serial/include /usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-serial/include
+For ncl_ncarg-5.1.0, above
+
+For ncarg-4.4.1, below.
+Executable installation directory : /work/scheinin/ncarg/ncarg-4.4.1_cnl/bin
+Library installation directory    : /work/scheinin/ncarg/ncarg-4.4.1_cnl/lib
+Include file installation directory    : /work/scheinin/ncarg/ncarg-4.4.1_cnl/include
+Man page installation directory   : /work/scheinin/ncarg/ncarg-4.4.1_cnl/man
+System temp space directory   : /work/scheinin/tmp
+Use Fortran 90 to build Fortran libraries? y
+What is the name of your Fortran 90 compiler? ftn
+Build HDF support (optional) into raster library? y
+Enter local library search path(s) : /usr/X11R6/lib64 /work/scheinin/ncarg/HDF4.2r4/lib /usr/local/usp/PETtools/CE/pkgs/netcdf-4.0.1-serial/lib /usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-serial/lib
+Enter local include search path(s) : /usr/X11R6/include /work/scheinin/ncarg/HDF4.2r4/include /work/scheinin/ncarg/HDF4.2r4/include/hdf /usr/local/usp/PETtools/CE/pkgs/netcdf-4.0.1-serial/include /usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-serial/include
+For ncarg-4.4.1, above.
+
+# might want to glance at config/Site.local
+
+# Below is bash syntax.
+make Everything 2>&1 > make-output &
+# (csh syntax would be  make Everything >& make-output &)
+tail -f make-output
+# Look for keyword "error" in make-output
+
+# Please take note, it is not uncommon to have errors such as
+# pgf77-Fatal-Could not fork
+# /bin/sh: fork: Resource temporarily unavailable
+# which I would recommend redoing the build.
+# Perhaps the lustre file system is sick.
+
+# If need to restart in middle of compilation
+ make All >>make-output 2>>&1 &
+
+ls $PREFIX/lib
+
+# Need to do
+
+make install
+
+# because, comparing previous installation on jade with
+# what was put into $PREFIX/lib, much less was installed,
+# though the libraries existed, scattered around the source hierarchy.
+# There was one set of errors during build
+
+PGC-S-0039-Use of undeclared variable NC_64BIT_OFFSET (NclNetCdf.c: 755)
+PGC-S-0039-Use of undeclared variable NC_NETCDF4 (NclNetCdf.c: 761)
+PGC-S-0039-Use of undeclared variable NC_CLASSIC_MODEL (NclNetCdf.c: 761)
+PGC/x86-64 Linux 7.1-6: compilation completed with severe errors
+make[4]: *** [NclNetCdf.o] Error 2
+make[4]: Leaving directory 
+`/work/scheinin/ncarg/src/ncl_ncarg-5.1.0/ni/src/ncl'
+
+# so not all of ncl was built, but nobody has actually asked for NCL
+# so the error was ignored, but perhaps the error resulted in the
+# "make install" stopping too soon.
+
+# The above errors when compiling NclNetCdf.c occured for both
+# jade and sapphire.  In any case, the ncarg libraries were created.
+
+Test for compiling for a compute node.
+
+# Assuming that PREFIX is installation location such as
+# /work/scheinin/ncarg/ncl_ncarg-5.1.0_cnl
+
+export NCARG_ROOT=$PREFIX
+ftn -i8 -r8 ncarg_test.f -o ncarg_test.x \
+  -L$PREFIX/lib -L/usr/X11R6/lib64 \
+  -lncarg -lncarg_gks -lncarg_c -lpng -lX11 -lz
+
+# Assuming work is being done in /work/scheinin/ncarg/test
+mkdir output
+
+File ncarg_test.pbs:
+#!/bin/csh
+#PBS -A erdcssta
+#PBS -q debug
+#PBS -l ncpus=1
+#PBS -N ncarg_test
+#PBS -l walltime=0:05:00
+#PBS -o /work/scheinin/ncarg/test/output
+#PBS -j oe
+#
+cd $PBS_O_WORKDIR
+aprun -n 1 ncarg_test.x
+
+# Result should be a file named "gmeta" equal to the file generated
+# using the front-end version.
+
+ -----------------------------------------------------------
+ Above for the compute nodes, below for the front-end nodes.
+ -----------------------------------------------------------
+
+# For the front-end, in order to save what was compiled until everything
+# had been tested, created ${DESTINATION}/src_fe (fe = front-end)
+
+# For front-end nodes.
+export CC=pgcc
+export F77=pgf90
+export CXX=pgCC
+export FC=pgf90
+
+# For ncarg-4.4.1, the name of the directory after tar extract
+# is ncarg-4.4.1, however, the ymake script expects "ncarg"
+# so the directory needs to be renamed.
+# Set either
+mv ncarg-4.4.1 ncarg ; export NCARG=${DESTINATION}/src_fe/ncarg
+export NCARG=${DESTINATION}/src_fe/ncl_ncarg-5.1.0
+
+# PREFIX not used by NCARG but I use it to remind me
+# which session is for which target.
+# These two choices below are for the front-end nodes.
+# Depending on which version is being compiled
+export PREFIX=${DESTINATION}/ncarg-4.4.1_linux
+export PREFIX=${DESTINATION}/ncl_ncarg-5.1.0_linux
+
+mkdir $PREFIX
+cd $PREFIX
+mkdir bin include lib man
+chmod ugo+rx *
+chmod go-w *
+
+# Within the distribution
+cd config
+make -f Makefile.ini
+ ./ymake -config `pwd`
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+# For the front-end, ncarg-4.4.1, done only on sapphire
+# because it has already been installed for jade.
+# The two OptimizeFlag lines were added rather than changed.
+emacs LINUX
+
+#define CCompiler     pgcc -fPIC
+#define FCompiler     pgf90 -fPIC
+#define COptimizeFlag  -O
+#define FOptimizeFlag  -O
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpgf90rtl -lrt
+
+FC = pgf77
+
+#define XLibrary -lXpm -lX11 -lXext
+
+# above, editing of file LINUX for ncarg-4.4.1 for the front-end.
+
+# For ncl_ncarg-5.1.0, for the front end the changes were
+emacs LINUX
+
+#define CCompiler     pgcc -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler     pgf90 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+
+FC = pgf77 -fPIC
+
+#define XLibrary -lXpm -lX11 -lXext
+
+# above, editing of file LINUX for ncl_ncarg-5.1.0 for the front-end.
+
+cd ..
+./Configure -v
+# For ncl_ncarg-5.1.0, same choices as shown above except
+Parent installation directory > /work/scheinin/ncarg/ncl_ncarg-5.1.0_linux
+# Script writes the reminder:
+        Every user of NCL and NCAR Graphics will need to set
+        the following environment variable:
+setenv NCARG_ROOT /work/scheinin/ncarg/ncl_ncarg-5.1.0_linux
+export NCARG_ROOT=/work/scheinin/ncarg/ncl_ncarg-5.1.0_linux
+
+# For ncarg-4.4.1, same choices as above except
+Executable installation directory : /work/scheinin/ncarg/ncarg-4.4.1_linux/bin
+Library installation directory    : /work/scheinin/ncarg/ncarg-4.4.1_linux/lib
+Include file installation directory    : /work/scheinin/ncarg/ncarg-4.4.1_linux/include
+Man page installation directory   : /work/scheinin/ncarg/ncarg-4.4.1_linux/man
+What is the name of your Fortran 90 compiler? pgf90
+
+make Everything > make-output 2>&1 &
+# (csh syntax would be  make Everything >& make-output &)
+tail -f make-output
+# Look for keyword "error" in make-output
+
+# For ncl_ncarg-5.1.0_linux there was the same error as when
+# compiling for the compute nodes, that not all of NCL was built.
+# Unlike what was done for the compute nodes, all the expected
+# libraries were put into $PREFIX/lib.
+
+In the end, for the front-end version the executables
+files in
+$DESTINATION/ncl_ncarg-5.1.0_linux/bin/
+use dynamic libraries but the libraries created were only lib*.a
+for example,
+ /work/scheinin/ncarg/ncl_ncarg-5.1.0_linux/lib/libncarg.a
+at least judging by the library suffix.
+
+Test of running on front end.
+
+# Assuming that PREFIX is installation location such as
+# /work/scheinin/ncarg/ncl_ncarg-5.1.0_linux
+export NCARG_ROOT=$PREFIX
+export PATH=$PREFIX/bin:$PATH
+ncargex cpex08
+ctrans -d X11 cpex08.ncgm
+   For ncarg-5.1.0, in graph window: <return> <return>
+   because the first screen is black.
+   For ncarg-4.4.1, in graph window: <return>
+   because there is only one image after the black screen.
+
+pgf77 -i8 -r8 ncarg_test.f -o ncarg_test.x \
+  -L$PREFIX/lib -L/usr/X11R6/lib64 \
+  -lncarg -lncarg_gks -lncarg_c -lpng -lX11
+
+Running ncarg_test.x creates a file gmeta.
+
+ ======= utility server, below =======
+ --- pgi below ---
+
+export PATH=/opt/pgi/linux86-64/10.9/bin:$PATH
+export CC=pgcc
+export CXX=pgCC
+export F77=pgf90
+export FC=pgf90
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/app/ncarg/ncl_ncarg-5.2.1-pgi/src/ncl_ncarg-5.2.1
+export NCARG_ROOT=/app/ncarg/ncl_ncarg-5.2.1-pgi
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+Edit Project
+
+change from
+#define	PNGlib	-lpng -lz
+change to
+#define	PNGlib	-lpng12 -lz
+
+Edit Template
+
+change from
+#define XLibrary -lX11
+change to
+#define XLibrary -lX11 -ldl
+
+Edit LINUX
+
+Changed from
+/*
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpghpf
+ */
+#define CtoFLibraries -pgf90libs
+to
+#define CtoFLibraries -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpgf90rtl -lpghpf -lrt -lsz
+/*
+#define CtoFLibraries -pgf90libs
+*/
+
+# Note that previously above included  -lpgc  but that now conflicts with
+# -lpgmp that is added by cc compiler.
+
+# Note that the symbol aio_return is not defined in
+# /usr/lib64/libaio.a but rather
+# it is defined in /usr/lib64/librt.a .
+
+Change to
+#define CCompiler  pgcc -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler  pgf90 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+/*
+#define ExtraExportFlags -Wl,--export-dynamic
+*/
+FC = pgf90 -fPIC
+
+Make sure X11 library is 64-bit
+utility server: #define ArchRecLibSearch -L/usr/lib64
+(jade was : #define ArchRecLibSearch -L/usr/X11R6/lib64)
+#define ArchRecIncSearch -I/usr/include/X11
+
+Add
+#define XawLibrary  -lXaw7
+
+Change to
+#define XToolLibrary -lXt -lXpm -lSM -lICE
+
+End of editing of LINUX
+
+cd ..
+
+module load szip/2.1-pgi
+module load hdf5/1.8.5p1-pgi-serial
+module load netcdf/4.1.1-pgi
+module load udunits/2.1.21-pgi
+
+./Configure -v
+
+Build NCL (y)? y
+Parent installation directory : /app/ncarg/ncl_ncarg-5.2.1-pgi
+System temp space directory   : /tmp
+Build cairo support (optional) into GKS library? n
+Did you build HDF-4 with szip support? y
+Build Triangle support (optional) into NCL? n
+Build NetCDF-4 support (optional) into NCL? y
+Build OPeNDAP support (optional) into NCL? n
+Build Udunits support (optional) into NCL? y
+Build Vis5d+ support (optional) into NCL? n
+Build HDFEOS support (optional) into NCL? n
+Build GRIB2 support (optional) into NCL? n
+Enter local library search path(s) : /usr/lib64 /app/hdf5/1.8.5p1-pgi-serial/lib /app/netcdf/4.1.1-pgi/lib /app/szip/2.1-pgi/lib /app/udunits/2.1.21-pgi/lib
+Enter local include search path(s) : /usr/include /usr/include/X11 /app/hdf5/1.8.5p1-pgi-serial/include /app/netcdf/4.1.1-pgi/include /app/szip/2.1-pgi/include /app/udunits/2.1.21-pgi/include
+ 
+ make Everything 2>&1 | tee make.log
+
+# To continue if compiled only partially
+ make All 2>&1 | tee -a make.log
+
+# In the end, did not make various files related to "ras".
+ --- pgi above ---
+ --- gnu below ---
+
+export CC=gcc
+export CXX=g++
+export F77=gfortran
+export FC=gfortran
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/app/ncarg/ncl_ncarg-5.2.1-gnu/src/ncl_ncarg-5.2.1
+export NCARG_ROOT=/app/ncarg/ncl_ncarg-5.2.1-gnu
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+mv LINUX LINUX_original
+cp LINUX.64.GNU LINUX
+
+Edit Project
+
+change from
+#define	PNGlib	-lpng -lz
+change to
+#define	PNGlib	-lpng12 -lz
+
+Edit Template
+
+change from
+#define XLibrary -lX11
+change to
+#define XLibrary -lX11 -ldl
+
+Edit LINUX
+
+Make sure X11 library is 64-bit
+utility server: #define ArchRecLibSearch -L/usr/lib64
+(jade was : #define ArchRecLibSearch -L/usr/X11R6/lib64)
+#define ArchRecIncSearch -I/usr/include/X11
+
+Add
+#define XawLibrary  -lXaw7
+
+Change to
+#define XToolLibrary -lXt -lXpm -lSM -lICE -lXext
+
+End of editing of LINUX
+
+cd ..
+
+module load szip/2.1-gnu
+module load hdf5/1.8.5p1-gnu-serial
+module load netcdf/4.1.1-gnu
+module load udunits/2.1.21-gnu
+
+./Configure -v
+
+Build NCL (y)? y
+Parent installation directory : /app/ncarg/ncl_ncarg-5.2.1-gnu
+System temp space directory   : /tmp
+Build cairo support (optional) into GKS library? n
+Did you build HDF-4 with szip support? y
+Build Triangle support (optional) into NCL? n
+Build NetCDF-4 support (optional) into NCL? y
+Build OPeNDAP support (optional) into NCL? n
+Build Udunits support (optional) into NCL? y
+Build Vis5d+ support (optional) into NCL? n
+Build HDFEOS support (optional) into NCL? n
+Build GRIB2 support (optional) into NCL? n
+Enter local library search path(s) : /usr/lib64 /app/hdf5/1.8.5p1-gnu-serial/lib /app/netcdf/4.1.1-gnu/lib /app/szip/2.1-gnu/lib /app/udunits/2.1.21-gnu/lib
+Enter local include search path(s) : /usr/include /usr/include/X11 /app/hdf5/1.8.5p1-gnu-serial/include /app/netcdf/4.1.1-gnu/include /app/szip/2.1-gnu/include /app/udunits/2.1.21-gnu/include
+ 
+ make Everything 2>&1 | tee make.log
+
+# To continue if compiled only partially
+ make All 2>&1 | tee -a make.log
+
+ --- gnu above ---
+
+# Need to change permissions.
+
+topdir=/app/ncarg
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+ ======= utility server, above =======
+
+
+#%Module
+
+proc ModulesHelp { } {
+   global NCARG_LEVEL
+   puts stderr "This modulefile defines the system paths and"
+   puts stderr "environment variables needed to use the"
+   puts stderr "NCARG software package, version $NCARG_LEVEL."
+   puts stderr ""
+}
+
+conflict ncarg/ncl_ncarg-5.2.1-gnu
+
+set NCARG_LEVEL ncl_ncarg-5.2.1-pgi
+set NCARG_CURPATH /app/ncarg/$NCARG_LEVEL
+
+setenv NCARG_ROOT $NCARG_CURPATH
+prepend-path PATH $NCARG_CURPATH/bin
+prepend-path LD_LIBRARY_PATH $NCARG_CURPATH/lib
+prepend-path MANPATH $NCARG_CURPATH/man
+
+module load netcdf/4.1.1-pgi
+module load udunits/2.1.21-pgi

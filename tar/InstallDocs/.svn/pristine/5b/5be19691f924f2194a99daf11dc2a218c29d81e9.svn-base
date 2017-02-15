@@ -1,0 +1,59 @@
+#%Module1.0########-*- mode: tcl; -*- ######################################
+##
+proc ModulesHelp { } {
+    puts stderr "\t[module-info name] - loads the $name environment"
+    puts stderr "\tThe following env variables are prepended:"
+    puts stderr "\tPATH"
+    puts stderr "\tLD_LIBRARY_PATH"
+    puts stderr "\tMANPATH"
+}
+
+module-whatis   "loads the [module-info name] environment"
+
+conflict usp-netcdf/intel/4.3.3.1
+conflict usp-netcdf/gcc43/4.3.3.1
+conflict usp-netcdf/gcc49/4.3.3.1
+conflict usp-netcdf/intel/4.3.3.1
+conflict usp-netcdf/intel-15.0.2/4.3.3.1
+conflict usp-netcdf/intel-15.0.3/4.3.3.1
+conflict usp-netcdf/intel-16.0.0/4.3.3.1
+conflict usp-netcdf/gcc-6.1.0/4.4.1.1
+
+if { [module-info mode load] } {
+   if { ! [ is-loaded compiler/intel/17.0.1 ] } {
+      puts stderr "Error, to be used with compiler/intel/17.0.1"
+   }
+}
+
+set szip_dir      /apps/unsupported/szip/2.1-intel-17.0.1
+set hdf5_dir      /apps/unsupported/hdf5/1.8.18-intel-17.0.1
+set hdf4_dir      /apps/unsupported/hdf4/4.2.12-nonetcdf-intel-17.0.1
+set netcdf_dir    /apps/unsupported/netcdf/4.4.1.1-intel-17.0.1
+
+prepend-path PATH             ${netcdf_dir}/bin
+prepend-path LD_LIBRARY_PATH  ${szip_dir}/lib
+prepend-path LD_LIBRARY_PATH  ${hdf5_dir}/lib
+prepend-path LD_LIBRARY_PATH  ${hdf4_dir}/lib
+prepend-path LD_LIBRARY_PATH  ${netcdf_dir}/lib
+prepend-path MANPATH          ${netcdf_dir}/share/man
+
+prepend-path --delim { }  CPPFLAGS   "-I${szip_dir}/include"
+prepend-path --delim { }  CPPFLAGS   "-I${hdf5_dir}/include"
+prepend-path --delim { }  CPPFLAGS   "-I${hdf4_dir}/include"
+prepend-path --delim { }  CPPFLAGS   "-I${netcdf_dir}/include"
+prepend-path              CMAKE_INCLUDE_PATH  "${szip_dir}/include"
+prepend-path              CMAKE_INCLUDE_PATH  "${hdf5_dir}/include"
+prepend-path              CMAKE_INCLUDE_PATH  "${hdf4_dir}/include"
+prepend-path              CMAKE_INCLUDE_PATH  "${netcdf_dir}/include"
+
+prepend-path --delim { }  LDFLAGS   "-L${szip_dir}/lib"
+prepend-path --delim { }  LDFLAGS   "-L${hdf5_dir}/lib"
+prepend-path --delim { }  LDFLAGS   "-L${hdf4_dir}/lib"
+prepend-path --delim { }  LDFLAGS   "-L${netcdf_dir}/lib"
+prepend-path              CMAKE_LIBRARY_PATH  "${szip_dir}/lib"
+prepend-path              CMAKE_LIBRARY_PATH  "${hdf5_dir}/lib"
+prepend-path              CMAKE_LIBRARY_PATH  "${hdf4_dir}/lib"
+prepend-path              CMAKE_LIBRARY_PATH  "${netcdf_dir}/lib"
+
+prepend-path              PKG_CONFIG_PATH  "${netcdf_dir}/lib/pkgconfig"
+

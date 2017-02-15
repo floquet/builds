@@ -1,0 +1,495 @@
+
+Grace is the successor to ACE/gr, also known as Xmgr.
+Home page
+http://plasma-gate.weizmann.ac.il/Grace/
+http://plasma-gate.weizmann.ac.il/Grace/doc/UsersGuide.html#ss2.1
+The FTP home of Grace is ftp://plasma-gate.weizmann.ac.il/pub/grace/ 
+
+ =============================================
+ below, garnet, grace-5.1.25, May 1, 2015
+
+ wget ftp://plasma-gate.weizmann.ac.il/pub/grace/src/grace5/grace-5.1.25.tar.gz
+ ---------------------------------------
+ below, PrgEnv-pgi
+
+export PREFIX=/usr/local/usp/Grace/5.1.25-pgi
+export NETCDF_ROOT=/usr/local/usp/COST/netcdf-4.3.3.1-pgi-pgcc
+export HDF5_ROOT=/usr/local/usp/COST/hdf5-1.8.14-pgi-pgcc
+export SZIP_ROOT=/usr/local/usp/COST/szip-2.1-pgi-pgcc-May2015
+export ZLIB_ROOT=/usr/local/usp/COST/zlib-1.2.8-pgi-pgcc
+
+export CPPFLAGS="-I${NETCDF_ROOT}/include -I${HDF5_ROOT}/include -I${SZIP_ROOT}/include -I${ZLIB_ROOT}/include"
+export LDFLAGS="-L${NETCDF_ROOT}/lib -L${HDF5_ROOT}/lib -L${SZIP_ROOT}/lib -L${ZLIB_ROOT}/lib -L${ZLIB_ROOT}/libso"
+
+export LD_LIBRARY_PATH=${NETCDF_ROOT}/lib:${HDF5_ROOT}/lib:${SZIP_ROOT}/lib:${ZLIB_ROOT}/libso:$LD_LIBRARY_PATH
+
+module list includes
+PrgEnv-pgi/4.2.34
+pgi/13.6.0 --- to be changed
+xt-asyncpe/5.24
+
+# numerical libraries use PGI 12 or PGI 14, so change to PGI 14
+module swap pgi/13.6.0 pgi/14.2.0
+
+# It looks like xmgrace does not use hdf5 and
+# for netcdf, the configure file says it is the wrong version.
+# So do not load either.
+# module load cray-netcdf/4.3.2
+# module load cray-hdf5/1.8.13
+# Do not load module fftw/2.1.5.7 because it needs MPI.
+
+export CC=pgcc
+export CXX=pgCC
+export F77=pgf90
+export FC=pgf90
+export CFLAGS="-O2"
+
+ cd $PREFIX/src
+ tar xzf grace-5.1.25.tar.gz
+ cd grace-5.1.25
+
+# > rpm -qa | grep jpeg
+# libjpeg-devel-6.2.0-879.12.1
+# suggests that building jpeg driver will work
+# > rpm -qa | grep png
+# libpng-devel-1.2.31-5.33.1
+# suggests that building png driver will work
+
+export LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+export X_EXTRA_LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+
+# Use the default operating system PNG, though it is old.
+
+./configure --prefix=$PREFIX \
+  --enable-netcdf  --enable-jpegdrv  --enable-pngdrv \
+  --enable-f77-wrapper  --enable-editres  --enable-xmhtml \
+  --with-png-library="-lpng12" \
+  --with-fftw \
+   2>&1 | tee first.log
+
+make 2>&1 | tee make.log
+make check # Shown on screen.
+make install
+# check that software had been installed, then
+make clean
+
+# Note, installs in $PREFIX/grace
+
+ See end of the chapter of changing permissions.
+
+ above, PrgEnv-pgi
+ ---------------------------------------
+ ---------------------------------------
+ below, PrgEnv-gnu
+
+export PREFIX=/usr/local/usp/Grace/5.1.25-gnu
+export NETCDF_ROOT=/usr/local/usp/COST/netcdf-4.3.3.1-gnu-gcc
+export HDF5_ROOT=/usr/local/usp/COST/hdf5-1.8.14-gnu-gcc
+export SZIP_ROOT=/usr/local/usp/COST/szip-2.1-gnu-gcc-May2015
+export ZLIB_ROOT=/usr/local/usp/COST/zlib-1.2.8-gnu-gcc
+
+export CPPFLAGS="-I${NETCDF_ROOT}/include -I${HDF5_ROOT}/include -I${SZIP_ROOT}/include -I${ZLIB_ROOT}/include"
+export LDFLAGS="-L${NETCDF_ROOT}/lib -L${HDF5_ROOT}/lib -L${SZIP_ROOT}/lib -L${ZLIB_ROOT}/lib -L${ZLIB_ROOT}/libso"
+
+export LD_LIBRARY_PATH=${NETCDF_ROOT}/lib:${HDF5_ROOT}/lib:${SZIP_ROOT}/lib:${ZLIB_ROOT}/libso:$LD_LIBRARY_PATH
+
+module swap PrgEnv-pgi PrgEnv-gnu
+module list includes
+PrgEnv-gnu/4.2.34
+gcc/4.8.2
+xt-asyncpe/5.24
+
+# It looks like xmgrace does not use hdf5 and
+# for netcdf, the configure file says it is the wrong version.
+# So do not load either.
+# module load cray-netcdf/4.3.2
+# module load cray-hdf5/1.8.13
+# Do not load module fftw/2.1.5.7 because it needs MPI.
+# The test
+# checking for netCDF API version >= 3.0... yes
+# is successful when version compiled from scratch is used.
+
+export CC=gcc
+export CXX=g++
+export F77=gfortran
+export FC=gfortran
+export CFLAGS="-O2"
+
+export LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+export X_EXTRA_LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+
+cd $PREFIX/src
+tar xzf grace-5.1.25.tar.gz
+cd grace-5.1.25
+
+# Use the default operating system PNG, though it is old.
+
+./configure --prefix=$PREFIX \
+  --enable-netcdf  --enable-jpegdrv  --enable-pngdrv \
+  --enable-f77-wrapper  --enable-editres  --enable-xmhtml \
+  --with-png-library="-lpng12" \
+  --with-fftw \
+   2>&1 | tee first.log
+
+make 2>&1 | tee make.log
+make check # Shown on screen.
+make install
+# check that software had been installed, then
+make clean
+
+ above, PrgEnv-gnu
+ ---------------------------------------
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+# Did not change in May 2015 because someone removed "src/"
+# from every COST application.
+# chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+
+README file needs to explain the need to do the following.
+
+To use the executables in
+/usr/local/usp/Grace/5.1.25-gnu/grace/bin
+the user first needs to add the following to the LD_LIBRARY_PATH.
+
+export LD_LIBRARY_PATH=/usr/local/usp/COST/netcdf-4.3.3.1-gnu-gcc/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/hdf5-1.8.14-gnu-gcc/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/szip-2.1-gnu-gcc-May2015/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/zlib-1.2.8-gnu-gcc/lib:$LD_LIBRARY_PATH
+
+To use the executables in
+/usr/local/usp/Grace/5.1.25-pgi/grace/bin
+the user first needs to add the following to the LD_LIBRARY_PATH.
+
+export LD_LIBRARY_PATH=/usr/local/usp/COST/netcdf-4.3.3.1-pgi-pgcc/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/hdf5-1.8.14-pgi-pgcc/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/szip-2.1-pgi-pgcc-May2015/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/usp/COST/zlib-1.2.8-pgi-pgcc/lib:$LD_LIBRARY_PATH
+
+ above, garnet, grace-5.1.25, May 1, 2015
+ =============================================
+
+"rpm -aq" indicates that (at least the front-end) has
+libjpeg libjpeg-devel libpng libpng-devel
+
+Previous build in 2010.
+$ module list
+Currently Loaded Modulefiles:
+  1) compilers/intel11.1
+  2) compilers/mkl_10.2.0
+Module MKL loaded because HDF5 and NetCDF were built with MKL.
+
+Now, MKL is part of compiler module.
+scheinin@diamond03> module unload mpi
+scheinin@diamond03> module list
+Currently Loaded Modulefiles:
+  1) compiler/intel11.1.056
+We have
+ MKLPATH /opt/intel/Compiler/11.1/056/mkl/lib/em64t
+
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-intel/include -I/usr/local/usp/hdf5/1.8.4-serial-intel/include -I/usr/local/usp/netcdf/netcdf-4.0.1-serial-intel/include -I/usr/local/usp/fftw-2.1.5/include"
+
+export LDFLAGS="-L/usr/lib64 -L/usr/local/usp/szip/2.1-intel/lib -L/usr/local/usp/hdf5/1.8.4-serial-intel/lib -lhdf5 -lhdf5_fortran -lhdf5_hl -lhdf5hl_fortran -L/usr/local/usp/netcdf/netcdf-4.0.1-serial-intel/lib -L/usr/local/usp/fftw-2.1.5/lib -lfftw -lrfftw"
+
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-intel/lib:/usr/local/usp/hdf5/1.8.4-serial-intel/lib:/usr/local/usp/netcdf/netcdf-4.0.1-serial-intel/lib:/usr/local/usp/fftw-2.1.5/lib:/opt/intel/Compiler/11.1/056/lib/intel64
+
+
+Previous build 2010
+cd /usr/local/usp/Grace/5.1.22-intel/src
+tar xzf grace-5.1.22.tar.gz ; cd grace-5.1.22
+July 2013
+cd /usr/local/usp/Grace/5.1.23-intel/src
+tar xzf grace-5.1.23.tar.gz ; cd grace-5.1.23
+
+Building grace-5.1.23.tar.gz because previous version
+uses libXm.so.3 but not only libXm.so.4 is available.
+ 
+Previous: export prefix=/usr/local/usp/Grace/5.1.22-intel
+export prefix=/usr/local/usp/Grace/5.1.23-intel
+
+export CC=icc
+export CXX=icpc
+export F77=ifort
+export FC=ifort
+
+./configure --prefix=$prefix \
+  --enable-netcdf  --enable-jpegdrv  --enable-pngdrv \
+  --enable-f77-wrapper  --enable-editres  --enable-xmhtml \
+  --with-fftw  --with-fftw-library="-lfftw -lrfftw"
+
+make 2>&1 | tee make.log
+make check
+make install
+
+Installation procedure does not install in $prefix, but rather,
+in $prefix/grace  ( /bin  /lib  /doc/ and etc. )
+
+ --- Intel compiler above, Gnu compiler below
+
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-gnu/include -I/usr/local/usp/hdf5/1.8.4-gnu/include -I/usr/local/usp/netcdf/netcdf-4.0.1-gnu/include -I/usr/local/usp/fftw-2.1.5/include"
+
+export LDFLAGS="-L/usr/lib64 -L/usr/local/usp/szip/2.1-gnu/lib -L/usr/local/usp/hdf5/1.8.4-gnu/lib -lhdf5 -lhdf5_fortran -lhdf5_hl -lhdf5hl_fortran -L/usr/local/usp/netcdf/netcdf-4.0.1-gnu/lib -L/usr/local/usp/fftw-2.1.5/lib -lfftw -lrfftw"
+
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-gnu/lib:/usr/local/usp/hdf5/1.8.4-gnu/lib:/usr/local/usp/netcdf/netcdf-4.0.1-gnu/lib:/usr/local/usp/fftw-2.1.5/lib:/usr/lib64
+
+cd /usr/local/usp/Grace/5.1.22-gnu/src
+tar xzf grace-5.1.22.tar.gz ; cd grace-5.1.22
+
+export prefix=/usr/local/usp/Grace/5.1.22-gnu
+
+export CC=gcc
+export CXX=g++
+export F77=gfortran
+export FC=gfortran
+
+./configure --prefix=$prefix \
+  --enable-netcdf  --enable-jpegdrv  --enable-pngdrv \
+  --enable-f77-wrapper  --enable-editres  --enable-xmhtml \
+  --with-fftw  --with-fftw-library="-lfftw -lrfftw"
+
+make 2>&1 | tee make.log
+make check
+make install
+
+ ====== below, on jade and garnet ======
+
+On garnet will compile with both my NetCDF and with the one
+supplied by Cray (for PGI, will also use my Gnu builds of
+NetCDF).  On jade there is not Cray module for NetCDF and
+on jade /opt/cray/netcdf/default is a broken link that points
+to a non-existant 4.0.1.1 directory.  Sometime in the future
+garnet and jade will be more similar.
+
+Make directories
+/usr/local/usp/Grace/
+5.1.22-gnu  5.1.22-pgi  5.1.22-cle
+where cle uses the Cray-provided modules.
+On jade, around Dec. 2010, nothing is built in 5.1.22-cle because
+there is nothing in /opt/cray/netcdf/ .
+
+ --- CLE below ---
+
+garnet below
+
+CLE version uses Cray-supplied HDF5, etc.
+
+module load fftw/2.1.5.2
+module load hdf5/1.8.5.0
+module load netcdf/4.1.1.0
+
+# need libpng devel along with berkeley db 4
+
+# below not used
+# export CPPFLAGS="-dynamic"
+
+export LDFLAGS="-L/usr/lib64"
+
+export LIBS="-lhdf5 -lhdf5_fortran -lhdf5_hl -lhdf5hl_fortran -ldrfftw -ldfftw -lX11 -lxcb -lxcb-xlib -lXau -ldl"
+
+export X_EXTRA_LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+
+export CC=cc
+export CXX=CC
+export F77=ftn
+export FC=ftn
+
+export prefix=/usr/local/usp/Grace/5.1.22-cle
+
+./configure --prefix=$prefix \
+  --enable-netcdf  --enable-jpegdrv  --enable-pngdrv \
+  --enable-f77-wrapper  --enable-editres  --enable-xmhtml \
+  --with-fftw  --with-fftw-library="-ldrfftw -ldfftw" \
+  2>&1 | tee first.log
+
+# Unable to generate xmgrace because libXm.a has undefined
+# symbols such as  XftTextExtentsUtf8  which I would expect
+# to find in /usr/lib64/libXft.a .  There does exist
+#  /usr/lib64/libXft.so  but no   /usr/lib64/libXft.a .
+
+# In practice, fftw not used because file names are not what
+# the configure script expects.
+
+make 2>&1 | tee make.log
+make check
+make install
+# check that software had been installed, then
+make clean
+
+garnet above
+jade below
+jade does not have modules such as hdf5
+jade above
+
+ --- CLE above ---
+ --- PGI below ---
+jade below
+
+# Do not do module load fftw/2.1.5.2
+# Do not do module load hdf5/1.8.5.0
+# Do not do module load netcdf/4.1.1.0
+
+# garnet below
+module unload xt-mpt
+module unload pmi
+# garnet above
+
+jade below
+
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-pgi/include -I/usr/local/usp/hdf5/1.8.4-pgi/include -I/usr/local/usp/netcdf/netcdf-4.0.1-pgi/include -I/opt/fftw/2.1.5.1/cnos/include -I/usr/X11R6/include"
+
+export LDFLAGS="-L/usr/lib64 -L/usr/local/usp/szip/2.1-pgi/lib -L/usr/local/usp/hdf5/1.8.4-pgi/lib -lhdf5 -lhdf5_fortran -lhdf5_hl -lhdf5hl_fortran -L/usr/local/usp/netcdf/netcdf-4.0.1-pgi/lib -L/opt/fftw/2.1.5.1/cnos/lib -ldfftw -ldrfftw -L/usr/X11R6/lib64"
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/usp/szip/2.1-pgi/lib:/usr/local/usp/hdf5/1.8.4-pgi/lib:/usr/local/usp/netcdf/netcdf-4.0.1-pgi/lib:/opt/fftw/2.1.5.1/cnos/lib:/usr/lib64:/usr/X11R6/lib64
+
+jade above
+garnet below
+
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-pgi/include -I/usr/local/usp/hdf5/1.8.5p1-pgi/include -I/usr/local/usp/netcdf/netcdf-4.1.1-pgi/include -I/usr/local/usp/libpng/1.4.4-pgi/include/libpng14"
+
+export LDFLAGS="-L/usr/lib64 -L/usr/local/usp/szip/2.1-pgi/lib -L/usr/local/usp/hdf5/1.8.5p1-pgi/lib -lhdf5 -lhdf5_fortran -lhdf5_hl -lhdf5hl_fortran -L/usr/local/usp/netcdf/netcdf-4.1.1-pgi/lib -L/usr/local/usp/libpng/1.4.4-pgi/lib -lpng14"
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/usp/szip/2.1-pgi/lib:/usr/local/usp/hdf5/1.8.5p1-pgi/lib:/usr/local/usp/netcdf/netcdf-4.1.1-pgi/lib:/usr/local/usp/libpng/1.4.4-pgi/lib:/usr/lib64
+
+export LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+
+export X_EXTRA_LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+
+garnet above
+
+cd /usr/local/usp/Grace/5.1.22-pgi/src
+tar xzf grace-5.1.22.tar.gz ; cd grace-5.1.22
+
+export prefix=/usr/local/usp/Grace/5.1.22-pgi
+
+export CC=pgcc
+export CXX=pgCC
+export F77=pgf90
+export FC=pgf90
+
+./configure --prefix=$prefix \
+  --enable-netcdf  --enable-jpegdrv  --enable-pngdrv \
+  --enable-f77-wrapper  --enable-editres  --enable-xmhtml \
+  --with-png-library="-lpng14" \
+   2>&1 | tee first.log
+
+#  --with-fftw  --with-fftw-library="-ldfftw -ldrfftw" \
+# The Cray-supplied FFTW requires MPI
+
+make 2>&1 | tee make.log
+make check
+make install
+# check that software had been installed, then
+make clean
+
+Installation procedure does not install in $prefix, but rather,
+in $prefix/grace  ( /bin  /lib  /doc/ and etc. )
+
+ --- PGI above ---
+ --- Gnu below ---
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+jade> which gcc
+/opt/gcc/4.4.1/bin/gcc
+
+garnet> which gcc
+/opt/gcc/4.5.1/bin/gcc
+ 
+jade below
+
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-gnu/include -I/usr/local/usp/hdf5/1.8.4-gnu/include -I/usr/local/usp/netcdf/netcdf-4.0.1-gnu/include -I/opt/fftw/2.1.5.1/cnos/include"
+
+export LDFLAGS="-L/usr/lib64 -L/usr/local/usp/szip/2.1-gnu/lib -L/usr/local/usp/hdf5/1.8.4-gnu/lib -lhdf5 -lhdf5_fortran -lhdf5_hl -lhdf5hl_fortran -L/usr/local/usp/netcdf/netcdf-4.0.1-gnu/lib -L/opt/fftw/2.1.5.1/cnos/lib -ldfftw -ldrfftw"
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/usp/szip/2.1-gnu/lib:/usr/local/usp/hdf5/1.8.4-gnu/lib:/usr/local/usp/netcdf/netcdf-4.0.1-gnu/lib:/opt/fftw/2.1.5.1/cnos/lib:/usr/lib64
+
+jade above
+garnet below
+
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-gnu/include -I/usr/local/usp/hdf5/1.8.5p1-gnu/include -I/usr/local/usp/netcdf/netcdf-4.1.1-gnu/include -I/usr/local/usp/libpng/1.4.4-gnu/include/libpng14"
+
+export LDFLAGS="-L/usr/lib64 -L/usr/local/usp/szip/2.1-gnu/lib -L/usr/local/usp/hdf5/1.8.5p1-gnu/lib -lhdf5 -lhdf5_fortran -lhdf5_hl -lhdf5hl_fortran -L/usr/local/usp/netcdf/netcdf-4.1.1-gnu/lib -L/usr/local/usp/libpng/1.4.4-gnu/lib -lpng14"
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/usp/szip/2.1-gnu/lib:/usr/local/usp/hdf5/1.8.5p1-gnu/lib:/usr/local/usp/netcdf/netcdf-4.1.1-gnu/lib:/usr/local/usp/libpng/1.4.4-gnu/lib:/usr/lib64
+
+export LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+
+export X_EXTRA_LIBS="-lX11 -lxcb -lxcb-xlib -lXau -ldl"
+
+garnet above
+
+cd /usr/local/usp/Grace/5.1.22-gnu/src
+tar xzf grace-5.1.22.tar.gz ; cd grace-5.1.22
+
+export prefix=/usr/local/usp/Grace/5.1.22-gnu
+
+export CC=gcc
+export CXX=g++
+export F77=gfortran
+export FC=gfortran
+
+# jade below
+./configure --prefix=$prefix \
+  --enable-netcdf  --enable-jpegdrv  --enable-pngdrv \
+  --enable-f77-wrapper  --enable-editres  --enable-xmhtml \
+  --with-fftw  --with-fftw-library="-ldfftw -ldrfftw" \
+   2>&1 | tee first.log
+# jade above
+# garnet below
+./configure --prefix=$prefix \
+  --enable-netcdf  --enable-jpegdrv  --enable-pngdrv \
+  --enable-f77-wrapper  --enable-editres  --enable-xmhtml \
+  --with-png-library="-lpng14" \
+   2>&1 | tee first.log
+# garnet above
+
+jade configure problem (not fatal)
+   checking for FFTW library >= 2.1.3... no
+   --> using legacy unoptimized FFT code
+because program uses "#include <fftw.h>" whereas header directory
+has dfftw.h .
+
+make 2>&1 | tee make.log
+make check
+make install
+# check that software had been installed, then
+make clean
+
+Installation procedure does not install in $prefix, but rather,
+in $prefix/grace  ( /bin  /lib  /doc/ and etc. )
+
+ --- Gnu above ---
+
+garnet problems for gnu, need X11 develop, but also,
+what did netCDF fail?
+checking for netCDF API version >= 3.0... no
+--> support for netCDF is disabled
+checking for FFTW library >= 2.1.3... no
+--> using legacy unoptimized FFT code
+
+
+Need to change permissions.
+
+cd /usr/local/usp/Grace
+Make sure last minute changes such as the README file are readable.
+
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd /usr/local/usp/Grace
+chown -R scheinin.staff *
+
+On garnet, locked-down 5.1.22-cle/ like src/ because there were
+linking problems.
+
+ ====== above, on jade and garnet ======
+

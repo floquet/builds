@@ -1,0 +1,1406 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Dialogs</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Common Chart Features"
+HREF="x1974.html"><LINK
+REL="NEXT"
+TITLE="The Tagging Dialog"
+HREF="x2253.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1974.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x2253.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="CHAP.DIALOGS"
+></A
+>Chapter 5. Dialogs</H1
+><P
+>Apart from the Settings Dialog boxes of each chart, there are a
+number of other dialog boxes in the Intel® Trace Analyzer. All dialog boxes have
+the same semantics regarding the buttons <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>OK</I
+></SPAN
+>,
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Cancel</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Apply</I
+></SPAN
+>.</P
+><P
+>In case the current settings of the dialog boxes are
+inconsistent or out of bounds, the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>OK</I
+></SPAN
+> and
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Apply</I
+></SPAN
+> buttons are both disabled.</P
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="FLTRDLG"
+>5.1. The Filtering Dialog</A
+></H1
+><P
+>&#13;The filtering dialog box is accessed through the Advanced Menu 
+(<SPAN
+CLASS="guimenu"
+>Views Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Advanced</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Filtering</SPAN
+>)
+This dialog box allows specifying filter expressions that
+describe which function events, messages and collective operations are
+to be analyzed and shown. The two radio buttons in the group
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Definition of Filter Expression</I
+></SPAN
+> at the top switch
+between two fundamental modes: <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Using GUI
+Interface</I
+></SPAN
+> is chosen by default and allows generating the
+filter expression via a graphical interface,
+while <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Manually</I
+></SPAN
+> allows to type in the filter
+expression directly. Building the expression with the graphical interface 
+is a lot easier and recommended for beginners or infrequent use.
+</P
+><P
+>An expression is built using either the point and click
+interface or using the manual mode. Either way the resulting
+expression is parsed upon each change.</P
+><P
+>If the current expression can not be converted into a proper
+filter definition then the dialog shows a red warning at the bottom
+which indicates the reason.</P
+><P
+>If the expression makes use of filter attributes that require to
+bypass the in-memory trace cache and to process detailed data from the trace
+file then a warning message is shown. In this case it can be expected
+that the analysis using this filter expression will need considerably
+more time than usual.</P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="FILTER.POINTANDCLICK"
+>5.1.1. Building Filter Expressions Using the Graphical Interface</A
+></H2
+><P
+>The Filtering dialog box allows specifying filter expressions separately 
+for function events, messages and collective operations via three
+separate tabs. It provides a fourth tab labeled
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes</I
+></SPAN
+> to additionally restrict the events to only a subset of processes.
+</P
+><P
+>Some of the text fields in the filter dialog box can
+take <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>triplets</I
+></SPAN
+> that are of the form
+<KBD
+CLASS="userinput"
+>start:stop:incr</KBD
+> or the short form
+<KBD
+CLASS="userinput"
+>start:stop</KBD
+> if the increment is one. Such a
+triplet describes all numbers greater than or equal to <KBD
+CLASS="userinput"
+>start</KBD
+> and
+smaller than or equal to <KBD
+CLASS="userinput"
+>stop</KBD
+> and that are of the form
+<KBD
+CLASS="userinput"
+>start+incr*n</KBD
+>. The <KBD
+CLASS="userinput"
+>stop</KBD
+> value is optional, too. 
+When <KBD
+CLASS="userinput"
+>stop</KBD
+> is omitted, all numbers beginning 
+from <KBD
+CLASS="userinput"
+>start</KBD
+> match.</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes Tab</I
+></SPAN
+></P
+><P
+>This tab specifies the processes that may pass the
+filter. It has effects on all three sub-expressions.
+</P
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Show Processes</I
+></SPAN
+> text field
+defines the processes that are filtered according to the settings of the other three tabs. Processes
+not listed in the text field are filtered out completely unless the text
+field is empty: this is the default and indicates that the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes</I
+></SPAN
+>
+tab has no effect. The text field can take a comma-separated list of process ids,
+process group ids, triplets thereof, unquoted or double-quoted names
+of threads, processes or process groups. Names given match all equally 
+named processes/groups.</P
+><P
+>The button labeled <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> opens the dialog box
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Process Group Selection</I
+></SPAN
+> where one or more
+processes or process groups are selected (see below). The
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Invert</I
+></SPAN
+> check box swaps the
+selection. For example, if all processes except one pass the filter, select the process to be
+filtered out and use the check box <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Invert</I
+></SPAN
+>.
+</P
+><P
+>Checking <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Invert</I
+></SPAN
+> means to let only events
+pass that do not match this predicate. It is a logical NOT and shown
+as a exclamation mark before the predicate in the filter
+expression.</P
+><P
+>&#13;Below the filter clauses, the resulting filter expression is
+shown. To reuse the expression elsewhere, select and copy the expression 
+in the manual mode of the filtering dialog box. The selection is done using 
+the mouse. The context menu of the filter expression contains a 
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Copy (Ctrl+C)</I
+></SPAN
+> entry and a 
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Select All (Ctrl+A)</I
+></SPAN
+> entry.   
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Functions</I
+></SPAN
+></P
+><P
+>In the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Functions</I
+></SPAN
+> tab, the mode of filtering is
+selected by means of radio buttons - <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>All, None</I
+></SPAN
+>
+and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Custom</I
+></SPAN
+>.</P
+><P
+>Again, on selecting the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Custom</I
+></SPAN
+> radio
+button, the filter clause tab is enabled. This consists of the following entries:</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Functions:</I
+></SPAN
+> The text field can take
+	a comma-separated list of functions or function group ids,
+	triplets thereof, unquoted or double-quoted names of functions
+	or function groups that describe functions passing the
+	filter. Names given match all equally named functions/groups.
+	The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> opens the
+	<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Group Selection</I
+></SPAN
+> subdialog which
+	allows choosing the function names from a list.  In addition,
+	the subdialog provides a checkbox <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Add Function
+	Id</I
+></SPAN
+>: if checked, not only is the name of a selected
+	function written into the text field, but also its Id.  This
+	is useful to resolve ambiguities of function/group names: if
+	only the name is written into the text field, all functions
+	with this name pass the filter; if the name is replaced by an
+	id, only the function with this id passes the filter, not
+	other functions with the same name.
+        </P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes:</I
+></SPAN
+> The text field can take
+	a comma-separated list of process ids, process group ids,
+	triplets thereof, unquoted or double-quoted thread, process or
+	process group names that describe processes and threads in the
+	functions passing the filter. Names given match all equally
+	named processes/groups. The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+>
+	allows choosing from a list. The corresponding <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Process Group Selection</I
+></SPAN
+> 
+        subdialog provides a checkbox <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Add Process Id</I
+></SPAN
+>
+        which is similar to the above <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Group Selection</I
+></SPAN
+>
+        subdialog. </P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FILTERFNGPSEL"
+></A
+><P
+><B
+>Figure 5-1. Function group selection opened via the filter dialog box</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/filter-dlg-Fngpsel.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Add New Clause</I
+></SPAN
+> specifies another filter clause. To remove an existing
+	filter clause tab, use the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Remove Current
+	Clause</I
+></SPAN
+> button. Clauses are connected by a
+	logical OR, while attributes from the same tab are connected
+	by a logical AND; they form a so-called <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>And
+	Clause</I
+></SPAN
+>.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Messages</I
+></SPAN
+></P
+><P
+>&#13;	On selecting the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Custom</I
+></SPAN
+> radio button (see <A
+HREF="c2028.html#FIG.FILTERFNGPSEL"
+>Figure 5-1</A
+>), the filter clause tab in the Messages tab is enabled. It has the following entries:
+	</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Communicator: </I
+></SPAN
+>The text field can
+	take a comma-separated list of communicator ids, unquoted
+	communicator names or communicator names in double quotes that pass the filter. The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+>
+	allows choosing from a list.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tag: </I
+></SPAN
+>The text field can take a comma-separated list of non-negative integers and triplets that
+	describe tag values that pass the filter.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Message Size: </I
+></SPAN
+>The text field can
+	take a comma-separated list of non-negative integers and
+	triplets that describe message sizes (in bytes) that pass
+	the filter.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Sender: </I
+></SPAN
+>The text field can take a
+	comma-separated list of process ids, process group ids,
+	triplets thereof, unquoted or double-quoted names of threads,
+	processes or process groups that describe processes and
+	threads in the message sender that make the message
+	pass the filter. Names given match all equally named
+	processes/groups. The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> allows
+	choosing from a list.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Receiver: </I
+></SPAN
+>Analogous to Sender.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes:</I
+></SPAN
+> Makes a message pass the filter if
+	either the sender or the receiver matches. Analogous to the logical
+	OR of Sender and Receiver.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Ranks of Sender: </I
+></SPAN
+>The text field can
+	take a comma-separated list of non-negative integers and
+	triplets that describe sender ranks (in the MPI communicator) that can pass the filter.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Ranks of Receiver: </I
+></SPAN
+>Analogous to Rank
+	of Sender.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Ranks: </I
+></SPAN
+>Makes a message pass if
+	either the sender or the receiver matches. Analogous to the logical OR of
+	Rank of Sender and Rank of Receiver.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Sending Function: </I
+></SPAN
+> The text field can take
+	a comma-separated list of functions or function group ids,
+	triplets thereof, unquoted or double-quoted names of functions
+	or function groups that describe functions from which the message was sent.
+	Names given match all equally named functions/groups.
+	The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> allows choosing from a list.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Receiving Function: </I
+></SPAN
+> The text field can take
+	a comma-separated list of functions or function group ids,
+	triplets thereof, unquoted or double-quoted names of functions
+	or function groups that describe functions which received the sent message.
+	Names given match all equally named functions/groups.
+	The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> allows choosing from a list.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Start Time: </I
+></SPAN
+>The text field can take
+	a comma-separated list of non-negative integers and triplets
+	that describe start time (in ticks) of the message that make the operation pass the filter. The button
+	<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> allows to enter/edit the time in
+	ticks or seconds (default depending on the View's current time
+	unit).</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>End Time: </I
+></SPAN
+>Analogous to Start Time.
+	</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Duration: </I
+></SPAN
+>The text field can take
+	a comma-separated list of non-negative integers and triplets
+	that describe the duration (in ticks) of the message that make the operation pass the filter. The button
+	<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> allows to enter/edit the duration
+	(shown as a time interval) in ticks or seconds (default
+	depending on the View's current time unit).</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FLTRDLGMSGTAB"
+></A
+><P
+><B
+>Figure 5-2. The filtering dialog box showing the Messages tab</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/filter-dlg-msg.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Collective Operations</I
+></SPAN
+></P
+><P
+>&#13;	On selecting the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Custom</I
+></SPAN
+> radio button the
+	filter clause tab in the Messages tab is enabled. It has the
+	following entries:
+	</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Communicator: </I
+></SPAN
+>The text field can
+	take a comma-separated list of communicator ids, unquoted
+	communicator names or communicator names in double quotes that pass the filter. The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+>
+	allows choosing from a list.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Collective Operation: </I
+></SPAN
+>The text field can
+	take a comma-separated list of unquoted or double-quoted names of collective operations like <SPAN
+CLASS="QUOTE"
+>"MPI_Allreduce"</SPAN
+> that
+	pass the filter. The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+>
+	allows choosing from a list.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Transferred Volume: </I
+></SPAN
+>The text field
+	can take a comma-separated list of non-negative integers and
+	triplets that describe all volumes (in total bytes per
+	operation) that make a collective operation make pass
+	the filter.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes: </I
+></SPAN
+>The text field can take
+	a comma-separated list of process ids, process group ids,
+	triplets thereof, unquoted or double-quoted names of threads,
+	processes or process groups that describe processes and
+	threads participating in the operation that make the
+	operation pass the filter. Names given match all equally named
+	processes/groups. The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> allows choosing
+	from a list.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Root: </I
+></SPAN
+>The text field can take a
+	comma-separated list of process ids, process group ids,
+	triplets thereof, unquoted or double-quoted names of threads,
+	processes or process groups that describe processes and
+	threads serving as Root in the operation that make the
+	operation pass the filter. Names given match all equally named
+	processes/groups. The button <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+>
+	allows choosing from a list.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Rank of Root: </I
+></SPAN
+>The text field can take a
+	comma-separated list of non-negative integers and triplets that
+	describe root ranks of the operation that make the
+	operation pass the filter.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Start Time: </I
+></SPAN
+>The text field can take
+	a comma-separated list of non-negative integers and triplets
+	that describe start time (in ticks) of the operation that make the operation pass the filter. The button
+	<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> allows to enter/edit the time in
+	ticks or seconds (default depending on the View's current time
+	unit).</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>End Time: </I
+></SPAN
+>Analogous to Start Time.
+	</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Duration: </I
+></SPAN
+>The text field can take
+	a comma-separated list of non-negative integers and triplets
+	that describe the duration (in ticks) of the operation that make the operation pass the filter. The button
+	<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>...</I
+></SPAN
+> allows to enter/edit the duration
+	(shown as a time interval) in ticks or seconds (default
+	depending on the View's current time unit).</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="FILTER.MANUAL"
+>5.1.2. Building Filter Expressions Manually</A
+></H2
+><P
+>Manual mode allows constructing any filter expression that is
+valid as described by the expression grammar in <A
+HREF="c2028.html#FILTER.GRAMMAR"
+>Section 5.1.3</A
+>.</P
+><P
+>Note that for convenience there are context menu entries
+that allow to select processes, functions, communicators and
+collective operations from a dialog box in the same way as from the point
+and click interface and to insert them into the expression at the
+current cursor position.</P
+><P
+>The percentage sign (<KBD
+CLASS="userinput"
+>%</KBD
+>) inserts single line comments and there are context menu
+entries to comment out (or in) selected text blocks.</P
+><P
+>There is no operator precedence in the Intel Trace Analyzer; the
+expressions are evaluated from left to right. However, you can use parentheses if needed.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.FILTERDLGMANUAL"
+></A
+><P
+><B
+>Figure 5-3. The Filtering dialog box in manual mode showing its context menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/filter-dlg-manual.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="FILTER.GRAMMAR"
+>5.1.3. The Filter Expression Grammar</A
+></H2
+><P
+>The filter expression grammar creates a filter, which
+a set of function (<KBD
+CLASS="userinput"
+>funcfilter</KBD
+>), message
+(<KBD
+CLASS="userinput"
+>p2pfilter</KBD
+>), and collective operation
+(<KBD
+CLASS="userinput"
+>collfilter</KBD
+>) filters, each defining a filter
+for its respective kind of data. These sub-filter specifications are
+separated by a <KBD
+CLASS="userinput"
+>#</KBD
+> and come in any order. Each
+filter class is specified once, more than once (in which case a
+Boolean AND is created from all subfilters for a given class), or not specified
+at all. An example where three classes of filters are specified is the expression generated by the graphical interface.</P
+><P
+>Each filter class specifier (<KBD
+CLASS="userinput"
+>funcfilter</KBD
+>,
+<KBD
+CLASS="userinput"
+>p2pfilter</KBD
+>, or
+<KBD
+CLASS="userinput"
+>collfilter</KBD
+>) is followed by an expression put in
+parentheses. That expression can consist of any number of predicates
+that are different for each filter class and correspond to
+the entries described in <A
+HREF="c2028.html#FILTER.POINTANDCLICK"
+>Section 5.1.1</A
+>. (See a
+formal description of the grammar in <A
+HREF="c2028.html#FILTER.GRAMMAR.FORMAL"
+>Section 5.1.3.1</A
+>.)
+These predicates are joined by using Boolean AND
+(<KBD
+CLASS="userinput"
+>&#38;&#38;</KBD
+>) and OR (<KBD
+CLASS="userinput"
+>||</KBD
+>)
+operators. Boolean expressions are parenthesized as needed. Also, a
+Boolean NOT (<KBD
+CLASS="userinput"
+>!</KBD
+>) operator in front
+of any predicate or parenthesized expression negates the predicate/expression.</P
+><P
+>A filter class allows defining a special expression for a filter
+that lets all or no data of that kind pass through it. For example,
+<KBD
+CLASS="userinput"
+>p2pfilter(NONE)</KBD
+> filters out all messages, while
+<KBD
+CLASS="userinput"
+>collfilter(ALL)</KBD
+> lets all collective operations
+pass. When the keywords <KBD
+CLASS="userinput"
+>ALL</KBD
+> or <KBD
+CLASS="userinput"
+>NONE</KBD
+> are used, ensure that it is the only argument to
+<KBD
+CLASS="userinput"
+>funcfilter</KBD
+>, <KBD
+CLASS="userinput"
+>p2pfilter</KBD
+>,
+or <KBD
+CLASS="userinput"
+>collfilter</KBD
+>.</P
+><P
+>Keyword specification in the filter expression grammar is
+case-insensitive. Specifying names (for functions, processes and
+communicators, amongst others), however, is case-sensitive.  Double quotes are
+needed for names that consist of several words or do not start with a
+letter or an underscore character (for example, <KBD
+CLASS="userinput"
+>"Major Function
+Groups"</KBD
+>). Use double quotes for single word names (for example, <KBD
+CLASS="userinput"
+>MPI</KBD
+>) if necessary. White space
+(space and tab characters, as well as newlines) is ignored, unless it
+is part of a quoted name. If a process/group or function/group name is
+ambiguous then it is evaluated as if all matching groups were
+given.</P
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="FILTER.GRAMMAR.FORMAL"
+>5.1.3.1. A Formal Description of the Grammar</A
+></H3
+><P
+>Here is a formal description of the filter expression grammar:</P
+><P
+><PRE
+CLASS="screen"
+>&#13;# The filter itself
+
+FILTER ::= AFILTER
+      | FILTER # AFILTER
+
+AFILTER ::= funcfilter ( FUNCFILTARG )
+       | collfilter ( COLLFILTARG )
+       | p2pfilter ( P2PFILTARG )
+
+# Specifying functions
+
+FUNCFILTARG ::= FUNCEXPR
+           | all
+           | none
+
+FUNCEXPR ::= FUNCATOM
+        | FUNCEXPR &#38;&#38; FUNCATOM
+        | FUNCEXPR || FUNCATOM
+
+FUNCATOM ::= TG
+        | FG
+        | STARTTIME
+        | ( FUNCEXPR )
+        | ! FUNCATOM
+
+# Specifying messages
+
+P2PFILTARG ::= P2PEXPR
+          | all
+          | none
+
+P2PEXPR ::= P2PATOM
+       | P2PEXPR &#38;&#38; P2PATOM
+       | P2PEXPR || P2PATOM
+
+P2PATOM ::= DURATION
+       | COMM
+       | TAG
+       | P2PVOLUME
+       | TGSENDER
+       | TGRECEIVER
+       | COMMSENDER
+       | COMMRECEIVER
+       | TGSRPAIR
+       | COMMSRPAIR
+       | TG
+       | COMMSR
+       | STARTTIME
+       | ENDTIME
+       | SENDER_FG
+       | RECEIVER_FG
+       | ( P2PEXPR )
+       | ! P2PATOM
+
+# Specifying collective operations
+
+COLLFILTARG ::= COLLEXPR
+           | all
+           | none
+
+COLLEXPR ::= COLLATOM
+        | COLLEXPR &#38;&#38; COLLATOM
+        | COLLEXPR || COLLATOM
+
+COLLATOM ::= DURATION
+        | COMM
+        | COLLOPTYPE
+        | COLLVOLUME
+        | TGROOT
+        | COMMROOT
+        | TG
+        | STARTTIME
+        | ENDTIME
+        | ( COLLEXPR )
+        | ! COLLATOM
+
+# Specifying times
+
+STARTTIME ::= start ( TRIPLETS ; INTEGER )
+         | start ( TRIPLETS )
+
+ENDTIME ::= end ( TRIPLETS ; INTEGER )
+       | end ( TRIPLETS )
+
+DURATION ::= duration ( TRIPLETS )
+
+# Specifying TGroups and FGroups
+
+TG ::= tg ( NAMES )
+
+FG ::= fg ( NAMES )
+
+SENDER_FG ::= send_fg ( NAMES )
+
+RECEIVER_FG ::= recv_fg ( NAMES )
+
+# Specifying collective operation and message properties
+
+COMM ::= comm ( TRIPLETS )
+
+TAG ::= tag ( TRIPLETS )
+
+COLLOPTYPE ::= type ( COLLNAMES )
+
+COLLVOLUME ::= volume ( TRIPLETS )
+
+P2PVOLUME ::= volume ( TRIPLETS )
+
+# Specifying root, sender, or receiver, either by a TGroup name
+# or by position in the communicator. If the operation has no
+# root, then root() is always false.
+
+TGROOT ::= root ( NAMES )
+
+TGSENDER ::= sender ( NAMES )
+
+TGRECEIVER ::= receiver ( NAMES )
+
+# The predicate sr specifies both sender and receiver, separated
+#  by a semicolon.
+
+TGSRPAIR ::= sr ( NAMES ; NAMES )
+
+COMMROOT ::= root@ ( TRIPLETS )
+
+COMMSENDER ::= sender@ ( TRIPLETS )
+
+COMMRECEIVER ::= receiver@ ( TRIPLETS )
+
+# The predicate sr@ specifies both sender and receiver ranks,
+# separated by a semicolon.
+
+COMMSRPAIR ::= sr@ ( TRIPLETS ; TRIPLETS )
+
+COMMSR ::= tg@ ( TRIPLETS )
+
+# Names containing fancy characters have to be double-quoted.
+# Names map to TGroup and thread names, FGroup and function
+# names, or collective operation types, depending on the context.
+
+NAMES ::= NAME
+     | TRIPLET
+     | NAMES , NAME
+     | NAMES , TRIPLET
+
+COLLNAMES ::= COLLNAMELIST
+         | TRIPLETS
+
+COLLNAMELIST ::= NAME
+            | COLLNAMELIST , NAME
+
+NAME ::= [_a-zA-Z][_a-zA-Z0-9.]*
+    | \"[^\"]*\"
+
+# Specifying triplets and numbers
+
+TRIPLETS ::= TRIPLET
+        | TRIPLETS , TRIPLET
+
+TRIPLET ::= INTEGER
+       | INTEGER :
+       | INTEGER : INTEGER
+       | INTEGER : INTEGER : INTEGER
+
+INTEGER ::= [0-9]+
+</PRE
+></P
+></DIV
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="FILTER.GRAMMAR.EXAMPLES"
+>5.1.3.2. Examples of Advanced Usage of the Grammar</A
+></H3
+><P
+>This section includes several examples of manually using the
+filter expression grammar and how it provides advanced capabilities in
+filtering trace data and speeding up the process of selecting exactly
+what the user would like to be analyzed.</P
+><P
+>For the first example, consider a parenthesized structure that
+can not be built by the point and click interface as easily (messages
+sent by process 0 and starting or ending between 70000 and 80000
+ticks):</P
+><P
+><KBD
+CLASS="userinput"
+>p2pfilter( sender( 0 ) &#38;&#38; ( start( 70000:80000 ) ||
+end( 70000:80000 ) ) )</KBD
+></P
+><P
+>The following example uses the predicate
+<KBD
+CLASS="userinput"
+>sr</KBD
+>, which is not available in the point and
+click interface, to efficiently filter out all messages between
+processes 0 and 1:</P
+><P
+><KBD
+CLASS="userinput"
+>p2pfilter( ! sr( 0:1; 0:1 ) )</KBD
+></P
+><P
+>Finally, consider the following scenario. With the point and
+click interface, a complicated filter is specified for a certain
+filter class with a large number of predicates and Boolean operators (both
+AND and OR, the latter added by using the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Add New
+Clause</I
+></SPAN
+> button). Now, to negate
+everything that has been specified so far (that is, to get exactly the trace
+data that was previously being filtered out), use <KBD
+CLASS="userinput"
+>!</KBD
+> in front
+of the whole expression when in the manual mode. For example, the filter below specifies
+MPI_Barrier collective operations that last no longer than 2000 ticks,
+plus all collective operations with process 0 as the root:</P
+><P
+><KBD
+CLASS="userinput"
+>collfilter( type( MPI_Barrier ) &#38;&#38; duration( 0:2000 )
+|| root( 0 ) )</KBD
+></P
+><P
+>while this filter specifies all the collective operations that
+do not match the description above:</P
+><P
+><KBD
+CLASS="userinput"
+>collfilter( ! ( type( MPI_Barrier ) &#38;&#38; duration( 0:2000 )
+|| root( 0 ) ) )</KBD
+></P
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="FILTER.COMP"
+>5.1.4. Filter Expressions in Comparison Mode</A
+></H2
+><P
+>In Comparison mode (see <A
+HREF="c2725.html"
+>Chapter 7</A
+>) the
+dialog is extended by a label and a combo box that allows to apply the
+chosen filter expression to the other trace file shown in the
+View. Choosing the option "If expression is valid in other file." will
+check if the resulting expression is valid in the name space of the
+other file and if so then apply the expression as if you had manually
+typed it in the other file's filter dialog. Any previous input in the
+target dialog will be overwritten.</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1974.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x2253.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Common Chart Features</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Tagging Dialog</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

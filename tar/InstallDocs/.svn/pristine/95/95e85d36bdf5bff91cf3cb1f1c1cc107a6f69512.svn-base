@@ -1,0 +1,174 @@
+
+
+NCL NGARG need a more recent Cairo than is available
+as part of the Linux distribution on garnet.
+
+Source
+http://cairographics.org/releases/
+got cairo-1.14.4.tar.xz and pixman-0.32.8.tar.gz
+uncompress cairo-1.14.4.tar.xz using unxz.
+
+export CAIRO_VERSION=1.14.4
+export PIXMAN_VERSION=0.32.8
+
+export PGI_VERSION=14.2.0
+export INTEL_VERSION=14.0.2.144
+export GNU_VERSION=4.9.2
+
+# I would prefer to use subdirectory name 14.0.2 for Intel,
+# but the PrgEnv-intel or intel/14.0.2.144 module sets
+# INTEL_VERSION=14.0.2.144 so I want my INTEL_VERSION
+# to be consistent with what the module sets.
+
+# INTEL:
+module swap PrgEnv-pgi PrgEnv-intel
+# Intel module found to be set to intel/14.0.2.144
+export BUILD_DIR=/u/scheinin/build/cairo/${CAIRO_VERSION}-intel-${INTEL_VERSION}
+export PREFIX=/usr/local/usp/cairo/${CAIRO_VERSION}-intel-${INTEL_VERSION}
+
+# PGI:
+# PGI module found to be set to pgi/14.2.0
+export BUILD_DIR=/u/scheinin/build/cairo/${CAIRO_VERSION}-pgi-${PGI_VERSION}
+export PREFIX=/usr/local/usp/cairo/${CAIRO_VERSION}-pgi-${PGI_VERSION}
+
+# GNU:
+module swap PrgEnv-pgi PrgEnv-gnu
+# Gcc module found to be set to gcc/4.9.2
+export BUILD_DIR=/u/scheinin/build/cairo/${CAIRO_VERSION}-gnu-${GNU_VERSION}
+export PREFIX=/usr/local/usp/cairo/${CAIRO_VERSION}-gnu-${GNU_VERSION}
+
+mkdir $BUILD_DIR
+mkdir $PREFIX
+export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
+
+# INTEL:
+export CXX=icpc
+export CXXFLAGS="-g"
+export CC=icc
+export CFLAGS="-g"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS="-g"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+# PGI:
+export CXX=pgCC
+export CXXFLAGS="-g"
+export CC=pgcc
+export CFLAGS="-g"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS="-g"
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+
+# GNU:
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS="-O2"
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+cd $BUILD_DIR/pixman-$PIXMAN_VERSION
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+
+# PGI make check
+ only failure is
+ FAIL: composite
+ when either "-O2", "-O" or "-g" is used.
+# GNU make check
+ no failures
+# INTEL make check
+ many failures when "-O2" or "-O" was used
+ no failures when "-g" was used
+
+cd $BUILD_DIR/cairo-$CAIRO_VERSION
+
+# Need to put pixman first in order to avoid Linux distribution pixman.
+export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
+
+# Just to make sure, w.r.t. pixman
+export pixman_CFLAGS="-I$PREFIX/include -I$PREFIX/include/pixman-1"
+export pixman_LIBS="-L$PREFIX/lib -lpixman-1"
+
+# For PGI compiler, needed to set ax_cv_c_float_words_bigendian=no
+# in configure script.
+# For PGI compiler,
+export CC_FOR_BUILD=pgcc
+# used by build/config.guess
+# Note, ./configure has host_os = linux-gnu which does not seem to have
+# any special treatment in configure
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+# For debugging add  --enable-silent-rules=no
+ 
+W.r.t. not using --enable-xlib-xcb
+Could not enable xcb because version is not sufficiently recent.
+W.r.t. not using --enable-qt=yes
+Did not enable Qt (no is default) because
+The Qt surface backend feature is still under active development and is
+included in this release only as a preview.
+W.r.t. not using --enable-xml=yes
+Did not enable XML (no is default) because
+The xml surface backend feature is still under active development and is
+included in this release only as a preview.
+
+# For PGI and Intel, edit libtool and config.status
+# change all /lib /usr/lib to /lib64 /usr/lib64
+# search for "/lib "
+# The particular problem is the use of /usr/lib/libXext.so when
+# linking, for which linker does not ignore but gives error
+# /usr/lib/libXext.so: could not read symbols: File in wrong format
+
+make 2>&1 | tee make.log
+
+# For checking,
+# must have logged-in as -Y because checking involves
+# writing to DISPLAY.
+make check 2>&1 | tee check.log
+# For PGI and Intel must use
+make -i check 2>&1 | tee check.log
+# because for PGI some testing assumes gcc syntax and gcc behavior.
+
+PGI:
+FAIL: check-def.sh
+FAIL: check-plt.sh
+FAIL: cairo-test-suite
+Testing spent more than an hour drawing on remote display.
+
+INTEL:
+FAIL: check-def.sh
+FAIL: cairo-test-suite
+Testing spent more than an hour drawing on remote display.
+
+GNU:
+FAIL: cairo-test-suite
+But in general, worked fine.
+Testing spent around an hour drawing on remote display.
+
+make install
+
+For each PREFIX.
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+

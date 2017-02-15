@@ -1,0 +1,661 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Charts</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Navigation In Time"
+HREF="x806.html"><LINK
+REL="NEXT"
+TITLE="Qualitative Timeline"
+HREF="x1003.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x806.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1003.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="CHAP.CHARTS"
+></A
+>Chapter 4. Charts</H1
+><P
+>Charts in the Intel® Trace Analyzer are graphical or
+alphanumerical diagrams that are parameterized with a time interval, a
+process grouping and a function grouping (see <A
+HREF="x3028.html"
+>Section 10.2</A
+>)
+and an optional filter. Together they define the structure in which
+data is presented and the amount of data to be displayed.</P
+><P
+>The Charts supported by the Intel Trace Analyzer is divided into: </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Timelines:</I
+></SPAN
+> the Event Timeline, the
+Qualitative Timeline, the Quantitative Timeline and the Counter
+Timeline.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Profiles:</I
+></SPAN
+> the Function Profile, the Message
+Profile and the Collective Operations Profile.</P
+></LI
+></OL
+><P
+>&#13;Charts are grouped into Views. These Views provide ways to choose the
+time interval, the process grouping and optional filters that all
+Charts in the View use. For more details on Views, refer to <A
+HREF="c451.html"
+>Chapter 3</A
+>.</P
+><P
+>While the former show trace data in graphical form over a
+horizontal axis representing runtime, the latter show statistical
+data. All these Charts are found under <SPAN
+CLASS="guimenu"
+>Views
+Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Charts</SPAN
+>. Opening
+a file in the Intel Trace Analyzer, displays a View containing the
+Function Profile Chart (showing the Flat Profile tab) for the opened
+file.
+</P
+><P
+>The following sections describe each Chart in detail. For each
+Chart there is a subsection about Mouse Hovering, the context menu,
+the settings dialog box, the effects of filtering and tagging and the
+effects of aggregation, if it is applicable.</P
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="EVETIM"
+>4.1. Event Timeline</A
+></H1
+><P
+>The Event Timeline provides a graphical display of the
+individual process' activities.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.EVETIM"
+></A
+><P
+><B
+>Figure 4-1. The Event Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/evetim.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The horizontal axis represents an interval of the runtime of the
+inspected program. Vertical bars show the function in which the
+process is. The bars consist of rectangles labeled with the current
+function's name and in its color. Black lines indicate messages sent
+between processes; they connect the sender and receiver processes.Blue
+lines, forming a grid, represent collective operations, such as
+broadcast or reduce operations. The status bar at the bottom of this
+panel shows information on events under the mouse cursor. By default,
+the entire runtime of the trace is visible. To get a better impression
+on the visualization primitives, use zooming. Zooming and navigation
+are explained in detail in <A
+HREF="c451.html#NAVIMNU"
+>Section 3.1.3</A
+>.</P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="EVETIMMH"
+>4.1.1. Mouse Hover</A
+></H2
+><P
+>When the mouse pointer hovers over the Event
+Timeline, its exact position in terms of time is shown in the status
+bar. The status bar also shows which function, collective operations
+or messages are under the mouse cursor at the moment. The
+status bar of the Event Timeline Chart in <A
+HREF="c876.html#FIG.EVETIM"
+>Figure 4-1</A
+>, shows that the mouse is currently at
+2.01214 seconds over a message from P13 to P14.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="EVETIMSD"
+>4.1.2. Event Timeline Settings</A
+></H2
+><P
+>Use the Event Timeline Settings to change the display settings,
+the layout settings and the colors of the Event Timeline Chart. The
+display options, which are enabled using check boxes, include</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Process Labels:</I
+></SPAN
+> Displays the name of the
+process or process group to the left.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Labels:</I
+></SPAN
+> Displays the name of the
+function or function group inside the colored bars</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Timescale at top:</I
+></SPAN
+> Displays a timescale above the Chart</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Timescale at bottom:</I
+></SPAN
+> Displays a timescale below the Chart</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Messages over Collective Operations:</I
+></SPAN
+> This
+specifies what is drawn first. If enabled, messages are drawn over the
+collective operations such that the messages are seen and the
+collective operations are concealed. If disabled, the collective
+operations are drawn over the messages. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Use thick Lines for Messages:</I
+></SPAN
+> Displays messages
+using thick lines</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Use thick Lines for Collective Operations:</I
+></SPAN
+> Displays collective
+operations using thick lines</P
+></LI
+></UL
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.EVETIMSD"
+></A
+><P
+><B
+>Figure 4-2. Settings dialog box for the Event Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/evetim-setdlg.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The Layout option consists of two sliders and two check boxes. The slider <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Minimal Spacing Between Bars</I
+></SPAN
+> adjusts the space between the function bars. The
+slider <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Minimal Bar Height</I
+></SPAN
+> adjusts the
+height of the function bar itself. For both, the unit is pixels.</P
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Adjust Minimal Bar Height to Labels</I
+></SPAN
+> check box alters the size of the  bars. Check this box to make the bars tall enough to display a function label. This option is checked by
+default.</P
+><P
+>The check box <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Use Available Vertical Space</I
+></SPAN
+>
+influences the overall vertical layout of the bars and is also checked by
+default. For a better understanding, refer to <A
+HREF="c876.html#FIG.EVETIMVSW"
+>Figure 4-3</A
+> where the Event Timeline is shown without
+checking the given option and <A
+HREF="c876.html#FIG.EVETIMVS"
+>Figure 4-4</A
+> where the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Use Available Vertical Space</I
+></SPAN
+> is checked.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.EVETIMVSW"
+></A
+><P
+><B
+>Figure 4-3. Event Timeline: <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Use Available Vertical Space</I
+></SPAN
+> unchecked</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/evetim-setdlgwithout.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.EVETIMVS"
+></A
+><P
+><B
+>Figure 4-4. Event Timeline: <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Use Available Vertical Space</I
+></SPAN
+> checked</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/evetim-setdlgwith.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>To change the colors of the functions, messages or collective
+operations, use the three <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Colors</I
+></SPAN
+> buttons at the
+bottom of the Settings dialog box. <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function
+Colors</I
+></SPAN
+> call up the Function Group Color Editor (<A
+HREF="x2332.html"
+>Section 5.5</A
+>). To change the color in which
+the messages are displayed, click on the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Message
+Color</I
+></SPAN
+> button. This opens a dialog box where the required
+color is chosen. Change the color of the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Collective
+Operations</I
+></SPAN
+> in the same way if need be.</P
+><P
+>Colors chosen for messages and collectives are local to the
+Event Timeline Chart. Colors chosen for functions or function groups
+are shared by all Charts and Views belonging to the same trace
+file.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="SECT.EVETIMCM"
+>4.1.3. The Context Menu</A
+></H2
+><P
+>Apart from the general options common to all Charts (see <A
+HREF="x1974.html"
+>Section 4.8</A
+>), the context menu of the Event Timeline
+provides details pertaining to the function, the message or the
+Collective Operation. For example, to access details about a
+particular message in the Event Timeline, right-click on the message
+and select the option <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Details on Message</I
+></SPAN
+>. This
+opens a new dialog box displaying information on sender, receiver and
+other message attributes. This is further explained in <A
+HREF="x2349.html"
+>Section 5.6</A
+>.
+</P
+><P
+>When invoked for a collective operation the context menu will
+offer the entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Zoom to Collective</I
+></SPAN
+> that will set
+the View's time interval to the time covered by the respective collective
+operation.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.EVETIMCM"
+></A
+><P
+><B
+>Figure 4-5. Event Timeline: context menu example</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/evetim-conmen.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>Furthermore, the context menu has an entry to ungroup/regroup
+the function, which works the same way in every Chart. To display
+functions, messages and/or collective operations,
+select <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Show</I
+></SPAN
+> from the context
+menu. Select/deselect one or more of the above from the sub-menu that
+opens on clicking <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Show</I
+></SPAN
+>.</P
+><P
+>The context menu entries that are common to all Charts are explained in <A
+HREF="x1974.html"
+>Section 4.8</A
+>.
+</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="EVETIMFT"
+>4.1.4. Filtering and Tagging</A
+></H2
+><P
+>Tagged functions in the Event Timeline are shown with a frame
+around them and with the function label rendered in a bold
+font. Tagged messages and collectives are shown with thicker
+lines.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.EVETIMTAG"
+></A
+><P
+><B
+>Figure 4-6. Tagging functions in a process in the Event Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/evetim-tagging.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+><A
+HREF="c876.html#FIG.EVETIMTAG"
+>Figure 4-6</A
+> shows an Event Timeline where the
+MPI function in process number 8 (P8) is tagged. On filtering the Event
+Timeline with the same clause (MPI in P8), only the MPI functions of
+P8 pass the filter and are displayed, while all other functions and
+processes are filtered out as shown in <A
+HREF="c876.html#FIG.EVETIMFLTR"
+>Figure 4-7</A
+>. More on tagging and filtering is available in  <A
+HREF="x3057.html"
+>Section 10.3</A
+>.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.EVETIMFLTR"
+></A
+><P
+><B
+>Figure 4-7. Filtering functions in a process in the Event Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/evetim-filtering.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x806.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1003.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Navigation In Time</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Qualitative Timeline</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

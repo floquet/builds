@@ -1,0 +1,673 @@
+
+Build of visit late June, early July 2009
+
+export VISITHOME=/usr/local/usp/visit
+(Or /work/scheinin/Visit for my testing of the build procedure.)
+
+Directories that need to be made:
+
+ ls $VISITHOME
+ 1.11.2  mesa  python  qt  qt-x11-free-3.3.8b  silo  src  vtk
+
+ls $VISITHOME/src
+Python-2.6.2.tar.bz2       silo-4.7-smalltest.tar.gz
+VTK                        silo-4.7.tar.gz
+Mesa-5.0                 Visit_BUILD_NOTES          visit1.11.2
+Mesa-5.0-mangled.tar.gz  qt-x11-free-3.3.8b         visit1.11.2.tar.gz
+MesaLib-6.4.2.tar.gz     qt-x11-free-3.3.8b.tar.gz  vtk-5.0.0c.tar.gz
+Python-2.6.2             silo-4.7
+
+# Use "Cray official" gnu compilers, rather than the compilers
+# that are part of the SUSE distribution.
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+Qt
+==
+
+# Web site is http://www.trolltech.com
+
+# Most recent Visit, 1.11.2, BUILD_NOTES says that Qt 3.3.2 is recommended
+# (can use 2.3.0, 3.0.2 or 3.3.2) whereas Qt is now at version 4.5.
+
+# At ftp.qtsoftware.com in directory
+# /qt/source/
+# got qt-x11-free-3.3.8b.tar.gz based on assumption that last number
+# of the version refers to bug fixes that do not change the behavior.
+
+# The result of "which gcc" changes after doing
+module swap PrgEnv-pgi PrgEnv-gnu
+
+# Did the above module swap in order to use a "supported" g++.
+
+cd qt-x11-free-3.3.8b
+
+export QTDIR=`pwd`
+
+# The following is probably not necessary during compilation but
+# the build notes say to do the next two lines
+
+export PATH=$QTDIR/bin:$PATH
+export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+
+# In any case, the above is not correct after Qt has been installed
+# since the installation destination (prefix) is different.
+
+# Note, need -thread , discovered by the next command
+ ./configure --help
+ > WARNING: /usr/lib/libGLU.so is threaded!
+ > The Qt OpenGL module requires Qt to be configured with -thread.
+
+export PREFIX=/work/scheinin/Visit/qt
+
+# The prefix is not necessary of supporting visit, there are specific
+# instructions about what needs to be copied for visit
+# (VisIt really only needs libqt, moc, and libqui.) but Qt
+# is generally useful.
+
+./configure -prefix $PREFIX \
+ -platform linux-g++-64 -L/usr/lib64 -shared -qt-libpng -thread
+
+# Sapphire, June 2009 result of configure.
+
+ > Build type:    linux-g++-64
+ > 
+ > Configuration .......  nocrosscompiler
+ >  minimal-config small-config medium-config large-config full-config
+ >  styles tools kernel widgets dialogs iconview workspace network canvas
+ >  table xml opengl sql release dll thread largefile stl ipv6 png no-gif
+ >  zlib nis cups bigcodecs x11sm xshape xinerama xcursor xrandr xrender
+ >  xftfreetype xkb
+ > STL support ......... yes
+ > PCH support ......... no
+ > IPv6 support ........ yes
+ > Thread support ...... yes
+ > NIS support ......... yes
+ > CUPS support ........ yes
+ > Large File support .. partial
+ > GIF support ......... no
+ > MNG support ......... plugin (qt)
+ > JPEG support ........ plugin (qt)
+ > PNG support ......... yes (qt)
+ > zlib support ........ yes
+ > OpenGL support ...... yes
+ > NAS sound support ... no
+ > Session management .. yes
+ > XShape support ...... yes
+ > Xinerama support .... yes
+ > Tablet support ...... no
+ > Xcursor support ..... yes
+ > XRandR support ...... yes
+ > XRender support ..... yes
+ > Xft support ......... yes
+ > XKB Support ......... yes
+
+# Note, make sure OpenGL support is yes.
+
+make
+make install
+
+# It must be emphasized that the compile time can be reduced and the
+# installation size reduced by only compiling what is needed for visit.
+# In that case, the procedure (instead of just "make" at the top
+# level) is
+
+make symlinks src-qmake src-moc sub-src
+cd tools/designer/uilib
+make
+cd ../../../
+
+# It is important to note that what visit needs is not the installed
+# software -- I now realize after doing "make install".
+# The bin directory in the qt source has the following files
+# that are not installed: findtr, qt20fix and qtrename140.
+# Moreover, visit uses the private qt header files.
+# I'll do the following, change the name of the destination (prefix)
+# to qt-x11-free-3.3.8b, and then make another qt just for what
+# visit needs.
+# Let $VISITDIR be /usr/local/usp/visit (or my temporary location
+# for testing the build procedure).
+# cd source-location e.g. src/qt-x11-free-3.3.8b
+
+mkdir ${VISITDIR}/qt/3.3.8b
+mkdir ${VISITDIR}/qt/3.3.8b/bin
+mkdir ${VISITDIR}/qt/3.3.8b/include
+mkdir ${VISITDIR}/qt/3.3.8b/lib
+mkdir ${VISITDIR}/qt/3.3.8b/include/private
+cp bin/findtr   ${VISITDIR}/qt/3.3.8b/bin/
+cp bin/moc      ${VISITDIR}/qt/3.3.8b/bin/
+cp bin/qt20fix  ${VISITDIR}/qt/3.3.8b/bin/
+cp bin/qtrename140  ${VISITDIR}/qt/3.3.8b/bin/
+cp include/*.h  ${VISITDIR}/qt/3.3.8b/include/
+cp include/private/*.h  ${VISITDIR}/qt/3.3.8b/include/private/
+
+cd lib
+find . -print | cpio -pvmud ${VISITDIR}/qt/3.3.8b/lib
+
+End of Qt-specific instructions
+===============================
+
+Silo
+====
+
+Though visit suggests
+    Silo     4.5.1     File I/O library       http://silo.llnl.gov
+I'll get the latest.  On July 2, 2009 that is silo-4.7.
+
+The first steps of the previous instructions are
+sh silo060605.sh
+cd silo060605
+
+but I downloaded a tarball in which there is no silo*.sh
+
+# The Opteron instructions say:
+export CFLAGS="-m64 -fPIC -O2"
+# Did not specify szip but need the library because PETtool hdf5 is compiled
+# with it.
+export LDFLAGS="-L/usr/local/usp/PETtools/CE/pkgs/szip-2.1-gnu/lib"
+export LIBS="-lsz"
+export F77=gfortran
+
+export PREFIX=/work/scheinin/Visit/silo
+
+# The Opteron instructions say: You will also need to disable
+# SDX by adding --disable-sdx to the end of the configure command.
+# However, in practice sdx files were copied as if sdx was enabled.
+
+# I'll build the whole kit-and-kaboodle of silo.
+# Read hdf5 lib/libhdf5.settings to see that
+# hdf5-1.8.3-serial is PGI and
+# hdf5-1.8.3-gnu is not parallel.
+
+Note that this LD_LIBRARY_PATH is much different from the default
+when logging in and going to PrgEnv-gnu because the default assumes
+that the program will run on a compute node.
+
+export LD_LIBRARY_PATH=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib:$VISITDIR/qt/3.3.8b/lib:/usr/local/usp/PETtools/CE/pkgs/szip-2.1-gnu/lib
+
+./configure --prefix=$PREFIX \
+ -with-hdf5=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/include,/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib \
+ --without-qt --disable-silex \
+ --enable-shared --enable-static
+
+No Qt, that is, tried
+ --with-qt=/work/scheinin/Visit/qt-x11-free-3.3.8b
+but need Qt version 4.4.0 or higher to compile Silo's silex tool.
+
+make
+
+In order to compiler successfully needed to modify the file
+(the need to change the code is kind'a scary)
+
+src/hdf5_drv/silo_hdf5.c
+from
+static H5Z_class_t db_hdf5_fpzip_class;
+static H5Z_class_t db_hdf5_hzip_class;
+to
+static H5Z_class2_t db_hdf5_fpzip_class;
+static H5Z_class2_t db_hdf5_hzip_class;
+
+cd tests
+make check
+
+ERROR: 57 tests were run,
+1 failed unexpectedly
+   .47: compression minratio1000 
+4 tests were skipped.
+
+
+Note the for subsequent builds that use this, need to add
+/work/scheinin/Visit/silo/lib to LD_LIBRARY_PATH
+
+make install
+
+Visit-specific instructions say to do
+
+cp silo/silo/silo.h /usr/local/usp/visit/silo/4.5.1/include/
+cp silo/silo/silo.inc /usr/local/usp/visit/silo/4.5.1/include/
+cp silo/sdx/sdx.h /usr/local/usp/visit/silo/4.5.1/include/
+cp silo/sdx/sdx.inc /usr/local/usp/visit/silo/4.5.1/include/
+cp lib/libsilo.a  /usr/local/usp/visit/silo/4.5.1/lib/
+
+However, for silo 4.7 the locations of the files are different and also
+there is no "sdx*" anywhere.
+
+Did download of silo-4.7-smalltest.tar.gz but did not use it.
+
+End of Silo-specific instructions
+=================================
+
+Mesa
+=====
+
+Mesa is a 3-D graphics library with an API which is very similar to that of
+OpenGL.  It is used for performing off-screen rendering.
+
+For Mesa, you must build a mangled version of Mesa.  The distribution
+provided has already been set up to build a mangled version so no
+additional work is required if you use it.
+
+The previous paragraph is from the build instructions.  I do not
+understand the remark that the distribution has already been set up
+to build a mangled version.  The mangled version is not part of the
+distribution though it is available at the Visit WWW site.
+
+cd src
+tar xvzf Mesa-5.0-mangled.tar.gz
+cd Mesa-5.0 
+
+make linux
+
+export VISITDIR=/usr/local/usp/visit
+(or some other local build experiment directory)
+
+mkdir $VISITDIR/mesa
+mkdir $VISITDIR/mesa/5.0
+mkdir $VISITDIR/mesa/5.0/lib
+mkdir $VISITDIR/mesa/5.0/include
+mkdir $VISITDIR/mesa/5.0/include/GL
+cp include/GL/*.h $VISITDIR/mesa/5.0/include/GL/
+cp lib/*.so $VISITDIR/mesa/5.0/lib/
+
+End of Mesa-specific instructions
+=================================
+
+
+Recap, up to this point LD_LIBRARY_PATH will need to include
+
+export LD_LIBRARY_PATH=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib:$VISITDIR/qt/3.3.8b/lib:/usr/local/usp/PETtools/CE/pkgs/szip-2.1-gnu/lib:/work/scheinin/Visit/silo/lib:/work/scheinin/Visit/mesa/5.0/lib
+
+
+VTK
+====
+
+For VTK, you must use the March 23, 2004 distribution provided.
+https://wci.llnl.gov/codes/visit/source.html ,
+see bottom of page.
+
+VTK is an object oriented library for visualizing 3D data.  VisIt uses it
+for all its visualization functionality. Follow the directions listed below
+to build VTK.  If you have any problems building or installing VTK, read the
+VTK/README.html file included in the VTK distribution for more information.
+
+The instructions say
+
+# Build CMake which is used by VTK to configure its distribution
+gunzip cmake-2.4.5.tar.gz
+tar xf cmake-2.4.5.tar
+cd cmake-2.4.5
+env CXXFLAGS=""  CFLAGS="" ./bootstrap
+
+However, it should already be available in
+/usr/local/usp/PETtools/CE/pkgs/cmake-2.6.4/bin
+so just do
+PATH=/usr/local/usp/PETtools/CE/pkgs/cmake-2.6.4/bin:$PATH
+
+cd src
+tar xzf vtk-5.0.0c.tar.gz
+cd VTK
+
+cmake .
+
+Got error:
+-- Looking for glXGetProcAddressARB in GL/glx.h
+-- Looking for glXGetProcAddressARB in GL/glx.h - FALSE
+
+# Edit CMakeCache.txt.
+# Turn BUILD_SHARED_LIBS and VTK_USE_MANGLED_MESA on.
+# Turn BUILD_TESTING off.
+#
+# If you want to change the compilers you should modify CMAKE_CXX_COMPILER
+# and CMAKE_C_COMPILER.  If you want to change the compiler flags you should
+# modify CMAKE_C_FLAGS and CMAKE_CXX_FLAGS.
+# I left them empty, default optimization instead of "-O2"
+
+cmake .
+
+# Edit CMakeCache.txt , used what $VISITDIR evaluates to
+
+# MANGLED_MESA_INCLUDE_DIR:PATH=$VISITDIR/mesa/5.0/include
+# MANGLED_MESA_LIBRARY:FILEPATH=$VISITDIR/mesa/5.0/lib/libMesaGL.so
+# MANGLED_OSMESA_INCLUDE_DIR:PATH=$VISITDIR/mesa/5.0/include
+# MANGLED_OSMESA_LIBRARY:FILEPATH=$VISITDIR/mesa/5.0/lib/libOSMesa.so
+
+# Yes, again cmake for third time
+cmake .
+
+gmake
+
+Got as far as 97%, then needed to make the following changes
+in Utilities/DICOMParser/
+
+DICOMFile.cxx , DICOMParser.cxx and DICOMAppHelper.cxx
+After #include <string> added #include <cstring>
+
+# Several of the header files in MangleMesaInclude have absolute paths
+# of other headers files that are located in the directories you built
+# VTK in.  This means that even though the header files were copied to
+# the visit/vtk directory, there are still references to header files
+# in directories where you built VTK.  This may cause problems if you
+# later remove the directories where you built VTK, or if someone else
+# were to use your installation and the permissions in your directories
+# were incorrect.
+
+export VISITDIR=/usr/local/usp/visit
+(or wherever build is being done)
+
+mkdir $VISITDIR/vtk
+mkdir $VISITDIR/vtk/5.0.0c
+
+for i in Common Filtering GenericFiltering Graphics Hybrid IO Imaging MangleMesaInclude Rendering Utilities VolumeRendering lib vtkstd Utilities/vtktiff Utilities/vtkexpat Utilities/vtkzlib ; do
+mkdir $VISITDIR/vtk/5.0.0c/$i
+done
+
+cp vtkConfigure.h $VISITDIR/vtk/5.0.0c/
+cp vtkToolkits.h $VISITDIR/vtk/5.0.0c/
+cp vtk*Instantiator.h $VISITDIR/vtk/5.0.0c/
+cp Common/*.h $VISITDIR/vtk/5.0.0c/Common/
+cp Common/*.txx $VISITDIR/vtk/5.0.0c/Common/
+cp Filtering/*.h $VISITDIR/vtk/5.0.0c/Filtering/
+cp Filtering/*.txx $VISITDIR/vtk/5.0.0c/Filtering/
+cp GenericFiltering/*.h $VISITDIR/vtk/5.0.0c/GenericFiltering/
+cp Graphics/*.h $VISITDIR/vtk/5.0.0c/Graphics/
+cp Hybrid/*.h $VISITDIR/vtk/5.0.0c/Hybrid/
+cp IO/*.h $VISITDIR/vtk/5.0.0c/IO/
+cp Imaging/*.h $VISITDIR/vtk/5.0.0c/Imaging/
+cp Rendering/*.h $VISITDIR/vtk/5.0.0c/Rendering/
+cp Utilities/*.h $VISITDIR/vtk/5.0.0c/Utilities/
+cp Utilities/vtktiff/*.h $VISITDIR/vtk/5.0.0c/Utilities/vtktiff/
+cp Utilities/vtkexpat/*.h $VISITDIR/vtk/5.0.0c/Utilities/vtkexpat/
+cp Utilities/vtkzlib/*.h $VISITDIR/vtk/5.0.0c/Utilities/vtkzlib/
+cp VolumeRendering/*.h $VISITDIR/vtk/5.0.0c/VolumeRendering/
+cp MangleMesaInclude/*.h $VISITDIR/vtk/5.0.0c/MangleMesaInclude/
+cp vtkstd/* $VISITDIR/vtk/5.0.0c/vtkstd/
+cp -d bin/*.so* $VISITDIR/vtk/5.0.0c/lib/
+
+End of VTK-specific instructions
+=================================
+
+HDF5
+====
+
+HDF5 can be built as a serial or a parallel library.  Always build the
+serial version of HDF5 for VisIt.  Both the serial and parallel versions
+of VisIt use the serial version of HDF5.
+Available at  http://hdf.ncsa.uiuc.edu/HDF5/
+
+Was built for previous installation.  This time, use
+/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu
+
+PATH=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/bin:$PATH
+LD_LIBRARY_PATH=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib:$LD_LIBRARY_PATH
+
+HDF5 above
+==========
+
+Python
+======
+
+A recent version of Python was compiled for the upgraded sapphire
+in June 2009, however, it has not yet been installed.  The Python
+in the SUSE distribution on sapphire is 2.4, whereas, at least 2.5
+is needed.   So compile it just for Visit.
+
+Source
+http://www.python.org/download/
+
+mkdir $VISITDIR/python
+mkdir $VISITDIR/python/2.6.2
+
+export PREFIX=$VISITDIR/python/2.6.2
+cd src
+tar xjf Python-2.6.2.tar.bz2
+cd Python-2.6.2
+
+Make sure the following was done
+module swap PrgEnv-pgi PrgEnv-gnu
+
+# Do not use cc and CC because Python needs dynamic libraries.
+
+export OPT="-fPIC"
+export CC=gcc
+export CXX=g++
+export F77=gfortran
+export PREFIX=$VISITDIR/python/2.6.2
+
+./configure --prefix=$PREFIX \
+  --with-gcc=gcc --with-cxx=g++
+
+make
+make install
+make test
+
+#
+# You will also need to create a shared version of the python library.
+#
+mkdir tmpdir
+cd tmpdir
+ar -x ../libpython2.6.a
+g++  -m64 -shared -o ../libpython2.6.so *.o
+cd ..
+cp libpython2.6.so $VISITDIR/python/2.6.2/lib/python2.6/config/
+rm -rf tmpdir
+
+End of PYTHON-specific instructions
+===================================
+
+netCDF (Optional)
+=================
+
+# Initially, used version in
+# $PET_HOME/pkgs/netcdf-4.0.1-gnu
+# however there was the error
+#    /usr/bin/ld:
+#    /usr/local/usp/PETtools/CE/pkgs/netcdf-4.0.1-gnu/lib/libnetcdf.a(nc4attr.o):
+#    relocation R_X86_64_32 against `a local symbol' can not be used when
+#    making a shared object; recompile with -fPIC
+
+# Most recent versions are netcdf-3.6.3 and netcdf-4.0.1 .
+# Compiled netcdf-3.6.3 because Visit build instructions say to use 3.6.0
+# and 4.x.x might have a different API.
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+export PREFIX=/work/scheinin/Visit/netcdf/3.6.3
+mkdir $PREFIX
+
+# Did not use $VISITARCH in the prefix path.
+
+export CC=/opt/gcc/4.3.2/bin/gcc
+export CFLAGS="-fPIC -m64"
+# export CPPFLAGS=
+export FC=/opt/gcc/4.3.2/bin/gfortran
+# export FCFLAGS=
+export F77=/opt/gcc/4.3.2/bin/gfortran
+# export FFLAGS=
+export CXX=/opt/gcc/4.3.2/bin/g++
+export CXXFLAGS="-fPIC -m64"
+
+./configure --prefix=$PREFIX \
+ --enable-separate-fortran
+
+make
+make install
+make check
+
+Many tests passed but
+/work/scheinin/Visit/src/netcdf-3.6.3/nf_test
+and some other directories such as 
+/work/scheinin/Visit/src/netcdf-3.6.3/f90
+/work/scheinin/Visit/src/netcdf-3.6.3/examples/F77
+failed with undefined references such as
+ nf_<stuff> which seem to be in $PREFIX/lib/libnetcdff.a
+The Visit instructions say "Build netCDF (without Fortran support)"
+so I used for configure "--enable-separate-fortran" but it seems
+that the testing did not take into account that possibility.
+
+netCDF above
+============
+
+Did not add to Visit optional packages Mili, HDF4, Boxlib, CGNS, GDAL,
+CFITSIO, ExodusII, H5Part and CCMIO.
+
+Most of the third party libraries necessary to build VisIt are available for
+download from ftp://ftp.llnl.gov/pub/visit/3rd_party.  It is suggested that
+you start there and then go to the "For More Information" web sites for
+any remaining libraries.
+
+-------------------------
+
+export VISITDIR=/work/scheinin/Visit
+export VISITHOME=$VISITDIR
+
+# Recap, up to this point LD_LIBRARY_PATH will need to include
+
+export LD_LIBRARY_PATH=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib:$VISITDIR/qt/3.3.8b/lib:/usr/local/usp/PETtools/CE/pkgs/szip-2.1-gnu/lib:$VISITDIR/silo/lib:$VISITDIR/mesa/5.0/lib:$VISITDIR/vtk/5.0.0c/lib:$VISITDIR/python/2.6.2/lib/python2.6/config/:/work/scheinin/Visit/netcdf/3.6.3/lib
+
+# Need next line, otherwise wrong libstdc++.so and libgcc_s.so are used
+export LD_LIBRARY_PATH=/opt/gcc/4.3.2/snos/lib64:$LD_LIBRARY_PATH
+
+PATH=/usr/local/usp/PETtools/CE/pkgs/cmake-2.6.4/bin:$PATH
+PATH=/$VISITDIR/qt/3.3.8b/bin:$PATH
+PATH=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/bin:$PATH
+PATH=$VISITDIR/python/2.6.2/bin:$PATH
+export PATH
+
+VisIt
+=====
+
+get manuals at
+https://wci.llnl.gov/codes/visit/manuals.html
+
+get example data at
+https://wci.llnl.gov/codes/visit/datafiles.html
+
+# Presumably, the following has already been done
+module swap PrgEnv-pgi PrgEnv-gnu
+export CC=gcc
+export CXX=g++
+
+cd  ${VISITHOME}/src/visit1.11.2
+
+cd src/config-site/
+echo VISITHOME=$VISITDIR > `hostname`.conf
+# Do not use $VISITARCH hence the line below
+sed "s/ARCH\///" Template.conf | sed "s/ARCH//" >> `hostname`.conf
+
+Edit `hostname`.conf
+Need to fix directories, such as Qt path
+QT_BIN=$VISITHOME/qt/3.3.8b/bin
+QT_INCLUDE=$VISITHOME/qt/3.3.8b/include
+QT_LIB=$VISITHOME/qt/3.3.8b/lib
+Add 2.6.2 to Python path
+and changing versionm
+PYDIR=$VISITHOME/python/2.6.2
+PYVERSION=python2.6
+Changed HDF5
+DEFAULT_HDF5_INCLUDE=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/include
+DEFAULT_HDF5_LIB=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib
+Also, silo did not have a version number subdirectory (perhaps the
+wrong convention was used during installation.)
+
+export PREFIX=${VISITDIR}/1.11.2
+
+export CFLAGS="-m64 -fPIC -O"
+export CXXFLAGS="-m64 -fPIC -O"
+export LDFLAGS="-L$VISITDIR/silo/lib -L/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib"
+# Use of JAVAFLAGS or JAVAC has no effect on javac command in
+# src/visit1.11.2/src/java
+# export JAVAFLAGS="-J-Xms64m -J-Xmx512m"
+# export JAVAC="javac -J-Xms64m -J-Xmx512m"
+
+# note that default "module list" includes a java
+
+cd .. , that is, to directory src .
+
+Needed to change file "configure",
+below  ## Check for supported versions of Qt.
+added "3.3.8b"
+
+Also, there was an error:
+configure: error: Silo appears to have a dependence on HDF5. Add dependent libs after ':' in --with-silo arg.
+but what they mean by the above statement is totally obscure.
+I tried may combinations but they always failed to be parsed by
+configure and there is not example.
+The solution seems to be, before the test add in file "configure"
+SILO_LIB="$SILO_LIB -lhdf5"
+
+./configure --prefix=$PREFIX \
+ --with-hdf5=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/include,/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib \
+ --with-netcdf=/work/scheinin/Visit/netcdf/3.6.3/include,/work/scheinin/Visit/netcdf/3.6.3/lib \
+ --with-silo=$VISITDIR/silo \
+ --enable-java  --enable-buildall
+
+#  --with-netcdf=INC,LIB   Location of NetCDF header and library
+#  --with-hdf5=INC,LIB     Location of HDF5 header and library
+#  --enable-java           build the Java interface library
+#  --enable-buildall       build all plugins
+
+# Since JAVAC and JAVAFLAGS has no effect, after configuration
+# change $VISITDIR/src/visit1.11.2/src/java/Makefile
+# from
+JAVAC=javac
+# to
+JAVAC=javac -J-Xms64m -J-Xmx512m
+
+make
+
+# also need to do java compilation on an application node
+
+qsub -A erdcssta -q debug -l ncpus=0,walltime=1:00:00 -I
+<OR>
+qsub -A erdcssta -q debug -l ncpus=4,walltime=1:00:00 -I
+
+cd /work/scheinin/Visit/src/visit1.11.2/src/java
+make
+
+# Also problem in $VISITDIR/src/visit1.11.2/src/plots/FilledBoundary
+# so edited
+# $VISITDIR/src/visit1.11.2/src/include/make-variables
+# change from
+# JAVAC=javac
+# to
+# JAVAC=javac -J-Xms64m -J-Xmx512m
+
+# $VISITDIR/src/visit1.11.2/src/plots/FilledBoundary/Makefile
+# to add -J-Xms64m -J-Xmx512m to JAVAPLUGINFLAGS
+JAVAPLUGINFLAGS=-J-Xms64m -J-Xmx512m -d /work/scheinin/Visit/src/visit1.11.2/src/java -classpath /work/scheinin/Visit/src/visit1.11.2/src/java
+
+# There was the error
+# make[2]: Entering directory `/work/scheinin/Visit/src/visit1.11.2/src/plots/Boundary'
+# /work/scheinin/Visit/src/visit1.11.2/src/java/llnl/visit/plots/BoundaryAttributes.class:1: warning: NUL character seen; rest of line ignored
+# /work/scheinin/Visit/src/visit1.11.2/src/java/llnl/visit/plots/BoundaryAttributes.class:1: *** missing separator.  Stop.
+# in many directories.
+# The problem seems to be related to the last line in the Makefile
+include /work/scheinin/Visit/src/visit1.11.2/src/include/make-targets
+# Near the end of make-targets there is the line
+ -include $(DEP)
+# which seems to be the problem, the solution is to comment-out the line.
+
+# In directory /work/scheinin/Visit/src/visit1.11.2/src/plots/Volume
+javac -J-Xms64m -J-Xmx512m  -source 1.4 -d /work/scheinin/Visit/src/visit1.11.2/src/java -classpath /work/scheinin/Visit/src/visit1.11.2/src/java TransferFunctionWidget.java VolumeAttributes.java
+javac: file not found: TransferFunctionWidget.java
+# In fact, there does not exist TransferFunctionWidget.java
+# There exists many files ./plots/Volume/TransferFunctionWidget.* ,
+# including ./plots/Volume/TransferFunctionWidget.C
+# The general scheme seems to be that for every C file there is also
+# a java file, but not in this case.
+# The solution was to remove the last dependency $(JAVACLASS) in
+# /work/scheinin/Visit/src/visit1.11.2/src/plots/Volume/Makefile
+
+svn_bin/visit-bin-dist
+
+# An error was
+# cp: cannot stat `/work/scheinin/Visit/src/visit1.11.2/src/lib/libhdf5.so.5.0.1': No such file or directory
+# Unresolved link
+# lrwxrwxrwx 1 scheinin erdcssta       16 Jul 13 11:57 libhdf5.so.5 -> libhdf5.so.5.0.1
+# But using PET HDF5 installed by PET which has libhdf5.so.6
+
+svn_bin/visit-install 1.11.2 linux-x86_64 $VISITDIR/1.11.2
+
+Everything in $VISITDIR/1.11.2/bin are not dynamic executables.
+If there is a problem with using libhdf5.so.6 instead of libhdf5.so.5
+it might show up when using a plugin.

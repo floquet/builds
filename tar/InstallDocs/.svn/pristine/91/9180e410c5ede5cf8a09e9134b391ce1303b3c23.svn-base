@@ -1,0 +1,527 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Qualitative Timeline</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Charts"
+HREF="c876.html"><LINK
+REL="PREVIOUS"
+TITLE="Charts"
+HREF="c876.html"><LINK
+REL="NEXT"
+TITLE="Quantitative Timeline"
+HREF="x1099.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c876.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Charts</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1099.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="QUALTIM"
+>4.2. Qualitative Timeline</A
+></H1
+><P
+>The Qualitative Timeline (<SPAN
+CLASS="guimenu"
+>Views Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Charts</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Qualitative Timeline</SPAN
+>) shows event attributes like the data
+volume of messages as they occur over time. The value of this
+attribute is plotted along the y-axis while time is plotted along the
+x-axis. Select the required event type and attributes from the context menu. It helps detect patterns and irregular behavior such as extreme deviations
+or long-term changes in attribute values.</P
+><P
+>For the Poisson example, <A
+HREF="x1003.html#FIG.QUALTIM"
+>Figure 4-8</A
+> shows that
+the Qualitative Timeline gives a good impression of the pattern of
+function events <SPAN
+CLASS="guimenu"
+>Context Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Events to show</SPAN
+>. <A
+HREF="x806.html"
+>Zooming</A
+> to a bunch of iterations again
+shows the staircase pattern observed above (see <A
+HREF="x217.html"
+>Section 1.5</A
+>).
+Showing the transfer rates for messages results in a very instructive
+pattern for the given trace file.  </P
+><P
+>A vertical line in the Qualitative Timeline either represents a
+single event (denoted as <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Single</I
+></SPAN
+> in the legend) or
+several events grouped together (denoted as
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Multi</I
+></SPAN
+> in the legend). Refer to <A
+HREF="c3010.html#LOD"
+>Section 10.1</A
+> to find details on the merging of events.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUALTIM"
+></A
+><P
+><B
+>Figure 4-8. Qualitative Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/qltl.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="QUALTIMMH"
+>4.2.1. Mouse Hover</A
+></H2
+><P
+>When the mouse hovers over the Qualitative Timeline Chart, the value of the x-axis (representing time) for the given position is shown in the status bar. The status bar also shows details regarding the given position of the mouse. For example, when the Qualitative Timeline displays the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Message</I
+></SPAN
+> attribute, the status bar shows how
+many messages are represented at that point. In case there is only
+one message, the sender and the receiver of the message are displayed as well. In the case where function events are displayed, mouse
+hovering indicates which Function/Group is present at the given
+position. </P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUALTIMMH"
+></A
+><P
+><B
+>Figure 4-9. Status Bar when the mouse hovers over the Qualitative Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/qualtim-mousehover.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="QUALTIMSD"
+>4.2.2. Qualitative Timeline Settings</A
+></H2
+><P
+>The settings dialog box of the Qualitative Timeline consists of a
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Display</I
+></SPAN
+> group with check boxes and a <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Vertical scaling</I
+></SPAN
+> combo box. Use the combo box to adjust the vertical scaling of the timeline.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUALTIMSD"
+></A
+><P
+><B
+>Figure 4-10. The Qualitative Timeline settings dialog box</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/qualtimset.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>The Display Group</I
+></SPAN
+> specifies which scales to
+show and whether an own legend needs to be displayed for the
+timeline. By default, the vertical scale and the legend are
+shown. </P
+><P
+>Use the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Vertical Scaling</I
+></SPAN
+> group to switch
+between the default <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Automatic Scaling</I
+></SPAN
+> and the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Manual Scaling</I
+></SPAN
+> of the y-axis. To explicitly specify the maximum scale value, use <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Manual scaling</I
+></SPAN
+>. To visually compare two or more Charts in the same or distinct Views, specify the same maximum value for the charts.
+</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="QUALTIMCM"
+>4.2.3. Context Menu</A
+></H2
+><P
+>The entry <SPAN
+CLASS="guimenu"
+>Context Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Events to show</SPAN
+> allows to choose
+the event type from <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Events</I
+></SPAN
+>,
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Messages</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Collective Ops</I
+></SPAN
+> via a
+sub-menu.</P
+><P
+>The entry <SPAN
+CLASS="guimenu"
+>Context Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Attribute to show</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>xxx</SPAN
+> allows
+to choose the particular attribute value of the event from
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Duration</I
+></SPAN
+>, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Transfer Rate</I
+></SPAN
+> or
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Data Volume</I
+></SPAN
+> via a sub-menu. Note that not all
+attributes are available for all event types.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="QUALTIMTF"
+>4.2.4. Filtering and Tagging</A
+></H2
+><P
+>Tagged items in the Qualitative Timeline are highlighted by coloring them red. For example, to tag all messages sent by P9, open the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tagging</I
+></SPAN
+> dialog box (<A
+HREF="x2253.html"
+>Section 5.2</A
+>) and go to the Messages tab.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUALTIMTAG"
+></A
+><P
+><B
+>Figure 4-11. Tagging in the Qualitative Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/qualtim-fltrdlg.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>Here, in the group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Messages to be Tagged</I
+></SPAN
+>
+select the radio button titled <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Custom</I
+></SPAN
+>. Specify
+whatever needs to be tagged in the given field. <A
+HREF="x1003.html#FIG.QUALTIMTAG"
+>Figure 4-11</A
+> shows that P9 is tagged, resulting in the
+timeline shown in <A
+HREF="x1003.html#FIG.QUALTIMTAGOBJ"
+>Figure 4-12</A
+>.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUALTIMTAGOBJ"
+></A
+><P
+><B
+>Figure 4-12. Qualitative Timeline with tagged messages</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/qualtim-tagged.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>Similarly, to filter out all messages except those sent by P9, use the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Filtering</I
+></SPAN
+> dialog box (<A
+HREF="c2028.html#FLTRDLG"
+>Section 5.1</A
+>) for details regarding the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Filtering dialog box</I
+></SPAN
+>. It results in the following timeline:</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUALTIMFLTR"
+></A
+><P
+><B
+>Figure 4-13. Qualitative Timeline after filtering</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/qualtim-fltrd.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>Using tagging in the Qualitative Timeline is an efficient
+way to find specific events that occur infrequently. This is because it is
+guaranteed that a grouped multiple event is tagged if at least one of
+the singular events it represents matches the tagging filter
+expression.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c876.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1099.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Charts</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c876.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Quantitative Timeline</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

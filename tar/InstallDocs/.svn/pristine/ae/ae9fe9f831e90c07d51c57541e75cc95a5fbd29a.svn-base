@@ -1,0 +1,78 @@
+
+Getting software
+wget http://zlib.net/zlib-1.2.8.tar.gz
+
+HDF5, for example, uses this.
+
+Build in my $HOME directory in case someone decides
+to remove src/ directory from destination.
+
+build in
+/p/home/scheinin/build/zlib/src/zlib-1.2.8
+
+Using the following modules, which are the default
+> module list
+Currently Loaded Modulefiles:
+  1) mpt/2.11-sgi711r13              6) intel-mkl-15/15.0.1.133
+  2) pbs/12.2.4.142262               7) intel-tbb-15/15.0.1.133
+  3) intel-cc-15/15.0.1.133          8) intel-ipp-15/15.0.1.133
+  4) intel-fc-15/15.0.1.133          9) intel-compilers-15/15.0.1.133
+  5) intel-debug-15/15.0.1.133
+
+Fri May 29 13:25:14 CDT 2015
+There is no GNU compiler suite installation aside from the
+compiler that comes with the distribution.  So for now only
+build for Intel compiler suite.
+
+# The assembler (/usr/bin/as) uses libz.so and if LD_LIBRARY_PATH is
+# changed to include $PREFIX/lib when building some application
+# then linking fails because this libz.so is not the right one
+# for the assembler.  So have a libso just for libz.so .
+
+# The choice of destination name is not consistent with COST
+# but is similar the naming convention of excalibur, though
+# excalibur is not consistent.  Also similar to naming
+# convention on garnet of /usr/local/usp
+
+export PREFIX=/p/home/apps/unsupported/zlib/1.2.8-intel
+
+export CC=icc
+export CFLAGS="-Bstatic -fPIC"
+
+./configure --prefix=$PREFIX --static
+make
+make install
+mv $PREFIX/lib/pkgconfig/zlib.pc $PREFIX/lib/pkgconfig/zlib.pc_static
+
+# delete source and untar again
+
+export CC=icc
+export CFLAGS="-Bdynamic -fPIC"
+
+./configure --prefix=$PREFIX --shared
+make
+make install
+
+mv $PREFIX/lib/pkgconfig/zlib.pc $PREFIX/lib/pkgconfig/zlib.pc_shared
+
+# The assembler (/usr/bin/as) uses libz.so and if LD_LIBRARY_PATH is
+# changed to include $PREFIX/lib when building some application
+# then linking fails because this libz.so is not the right one
+# for the assembler.
+cd $PREFIX
+mkdir libso
+mv lib/libz.so* libso/
+# The above results in the soft links also being moved.
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+
+
+
+

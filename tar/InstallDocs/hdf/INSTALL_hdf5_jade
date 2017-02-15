@@ -1,0 +1,482 @@
+
+HDF5
+
+Source is
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4.tar.gz
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4.tar.md5
+http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.4-RELEASE.txt
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10.tar.gz
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10.tar.md5
+http://www.hdfgroup.org/ftp/HDF5/current16/src/hdf5-1.6.10-RELEASE.txt
+
+Organize as
+/usr/local/usp/hdf5/1.8.4-pgi
+/usr/local/usp/hdf5/1.8.4-pgi/bin
+/usr/local/usp/hdf5/1.8.4-pgi/include
+/usr/local/usp/hdf5/1.8.4-pgi/lib
+/usr/local/usp/hdf5/1.8.4-pgi/src
+/usr/local/usp/hdf5/1.8.4-pgi/src/hdf5-1.8.4-RELEASE.txt
+/usr/local/usp/hdf5/1.8.4-pgi/src/hdf5-1.8.4.tar.gz
+/usr/local/usp/hdf5/1.8.4-pgi/src/hdf5-1.8.4.tar.md5
+/usr/local/usp/hdf5/1.8.4-cnl
+/usr/local/usp/hdf5/1.8.4-cnl/bin
+/usr/local/usp/hdf5/1.8.4-cnl/include
+/usr/local/usp/hdf5/1.8.4-cnl/lib
+/usr/local/usp/hdf5/1.8.4-cnl/src
+/usr/local/usp/hdf5/1.8.4-cnl/src/hdf5-1.8.4-RELEASE.txt
+/usr/local/usp/hdf5/1.8.4-cnl/src/hdf5-1.8.4.tar.gz
+/usr/local/usp/hdf5/1.8.4-cnl/src/hdf5-1.8.4.tar.md5
+/usr/local/usp/hdf5/1.6.10-pgi
+/usr/local/usp/hdf5/1.6.10-pgi/bin
+/usr/local/usp/hdf5/1.6.10-pgi/include
+/usr/local/usp/hdf5/1.6.10-pgi/lib
+/usr/local/usp/hdf5/1.6.10-pgi/src
+/usr/local/usp/hdf5/1.6.10-pgi/src/hdf5-1.6.10-RELEASE.txt
+/usr/local/usp/hdf5/1.6.10-pgi/src/hdf5-1.6.10.tar.gz
+/usr/local/usp/hdf5/1.6.10-pgi/src/hdf5-1.6.10.tar.md5
+/usr/local/usp/hdf5/1.6.10-cnl
+/usr/local/usp/hdf5/1.6.10-cnl/bin
+/usr/local/usp/hdf5/1.6.10-cnl/include
+/usr/local/usp/hdf5/1.6.10-cnl/lib
+/usr/local/usp/hdf5/1.6.10-cnl/src
+/usr/local/usp/hdf5/1.6.10-cnl/src/hdf5-1.6.10.tar.gz
+/usr/local/usp/hdf5/1.6.10-cnl/src/hdf5-1.6.10.tar.md5
+/usr/local/usp/hdf5/1.6.10-cnl/src/hdf5-1.6.10-RELEASE.txt
+
+On jade "module list" includes
+xt-os/2.2.41A_PS05
+pgi/9.0.4
+xt-mpt/3.5.0
+xt-pe/2.2.41A_PS05
+
+# For versions with suffix cnl
+export CXX=CC
+export CXXFLAGS="-O2"
+export CC=cc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ftn
+export F77=ftn
+export F90=ftn
+
+# For onyx where I have the C shell
+setenv CXX CC
+setenv CXXFLAGS "-O2"
+setenv CC cc
+setenv CFLAGS "-O2"
+setenv CPPFLAGS ""
+setenv LIBS ""
+setenv LDFLAGS ""
+setenv FC ftn
+setenv F77 ftn
+setenv F90 ftn
+
+cd /usr/local/usp/hdf5/1.6.10-cnl/src/hdf5-1.6.10
+
+./configure --prefix=/usr/local/usp/hdf5/1.6.10-cnl \
+   --enable-fortran \
+   --enable-parallel \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=/usr/local/usp/szip/2.1-cnl
+
+make
+make check 2>&1 | tee check.log
+# Did not check parallel part.
+make install
+make clean
+
+cd /usr/local/usp/hdf5/1.8.4-cnl/src/hdf5-1.8.4
+
+./configure --prefix=/usr/local/usp/hdf5/1.8.4-cnl \
+   --enable-fortran \
+   --enable-parallel \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=/usr/local/usp/szip/2.1-cnl
+
+# --enable-cxx removed this because with it there was the error
+# configure: error: --enable-cxx and --enable-parallel flags are incompatible
+# Use -O2 rather than -O3 because the HDF5 configure procedure
+# adds -02 to the compile line.  I assume they have a reason for
+# choosing that level.  On the other hand, the configure script
+# set optimization to -O3 for Fortran (-02 for C).
+
+make
+# Bourne
+make check 2>&1 | tee check.log
+# C-shell
+make check |& tee check.log
+# Did not check parallel part.
+make install
+make clean
+
+  ------------------ cnl/MPI above , pgi/serial below ------------------
+
+# For versions with suffix pgi
+export CXX=pgCC
+export CXXFLAGS="-O2"
+export CC=pgcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=pgf90
+export F77=pgf77
+export F90=pgf90
+
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-pgi/lib:$LD_LIBRARY_PATH
+
+cd /usr/local/usp/hdf5/1.6.10-pgi/src/hdf5-1.6.10
+
+./configure --prefix=/usr/local/usp/hdf5/1.6.10-pgi \
+   --enable-fortran \
+   --enable-shared --enable-static \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=/usr/local/usp/szip/2.1-pgi
+
+make
+make check 2>&1 | tee check.log
+make install
+make clean
+
+cd /usr/local/usp/hdf5/1.8.4-pgi/src/hdf5-1.8.4
+
+./configure --prefix=/usr/local/usp/hdf5/1.8.4-pgi \
+   --enable-fortran \
+   --enable-shared --enable-static \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=/usr/local/usp/szip/2.1-pgi
+
+# --enable-cxx removed this because with it there was the error
+# configure: error: --enable-cxx and --enable-parallel flags are incompatible
+# Use -O2 rather than -O3 because the HDF5 configure procedure
+# adds -02 to the compile line.  I assume they have a reason for
+# choosing that level.  On the other hand, the configure script
+# set optimization to -O3 for Fortran (-02 for C).
+
+make
+make check 2>&1 | tee check.log
+make install
+make clean
+
+
+Configuration summaries, below
+ ----------------------------------------------------------------------
+/usr/local/usp/hdf5/1.6.10-pgi/src/hdf5-1.6.10
+Configure Summary
+Compiling Options:
+               Compilation Mode:  Production
+                     C Compiler:  pgcc
+                         CFLAGS:   -O2 -fast -s -Mnoframe
+                       CPPFLAGS:  -UH5_DEBUG_API -DNDEBUG -I/usr/local/usp/szip/2.1-pgi/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_POSIX_SOURCE -D_BSD_SOURCE 
+                        LDFLAGS:   -L/usr/lib64 -L/usr/local/usp/szip/2.1-pgi/lib
+                     Debug Mode:  None
+               Shared Libraries:  No
+               Static Libraries:  Yes
+  Statically Linked Executables:  No
+                        Tracing:  No
+   Optimization Instrumentation:  No
+
+Languages:
+----------
+                            C++:  No
+                        Fortran:  Yes
+               Fortran Compiler:  pgf90
+                         FFLAGS:  -I.  -fPIC -fast -s -Mnoframe -I.
+                     C Compiler:  pgcc
+                         CFLAGS:   -O2 -fast -s -Mnoframe
+                       CPPFLAGS:  -D_BSD_SOURCE -D_POSIX_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -I/usr/local/usp/szip/2.1-pgi/include
+                        LDFLAGS:   -L/usr/lib64 -L/usr/local/usp/szip/2.1-pgi/lib
+
+
+Features:
+---------
+                        dmalloc:  No
+         Function Stack Tracing:  Disabled
+                           GPFS:  No
+      Strict File Format Checks:  Disabled
+        HDF5 v1.4 Compatibility:  No
+         I/O filters (external):  deflate,szip(encoder)
+         I/O filters (internal):  shuffle,fletcher32
+ Linux Large File Support (LFS):  Enabled
+                            MPE:  No
+                  Parallel HDF5:  No
+                   Threadsafety:  Disabled
+             High Level library:  Enabled
+ ----------------------------------------------------------------------
+/usr/local/usp/hdf5/1.6.10-cnl/src/hdf5-1.6.10
+Configure Summary
+Compiling Options:
+               Compilation Mode:  Production
+                     C Compiler:  cc
+                         CFLAGS:   -O2 -fast -s -Mnoframe
+                       CPPFLAGS:  -UH5_DEBUG_API -DNDEBUG -I/usr/local/usp/szip/2.1-cnl/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_POSIX_SOURCE -D_BSD_SOURCE 
+                        LDFLAGS:   -L/usr/lib64 -L/usr/local/usp/szip/2.1-cnl/lib
+                     Debug Mode:  None
+               Shared Libraries:  No
+               Static Libraries:  Yes
+  Statically Linked Executables:  No
+                        Tracing:  No
+   Optimization Instrumentation:  No
+
+Languages:
+----------
+                            C++:  No
+                        Fortran:  Yes
+               Fortran Compiler:  ftn
+                         FFLAGS:  -I.  -fast -s -Mnoframe -I.
+                     C Compiler:  cc
+                         CFLAGS:   -O2 -fast -s -Mnoframe
+                       CPPFLAGS:  -D_BSD_SOURCE -D_POSIX_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -I/usr/local/usp/szip/2.1-cnl/include
+                        LDFLAGS:   -L/usr/lib64 -L/usr/local/usp/szip/2.1-cnl/lib
+
+
+Features:
+---------
+                        dmalloc:  No
+         Function Stack Tracing:  Disabled
+                           GPFS:  No
+      Strict File Format Checks:  Disabled
+        HDF5 v1.4 Compatibility:  No
+         I/O filters (external):  deflate,szip(encoder)
+         I/O filters (internal):  shuffle,fletcher32
+ Linux Large File Support (LFS):  Enabled
+                            MPE:  No
+                  Parallel HDF5:  Yes
+                   Threadsafety:  Disabled
+             High Level library:  Enabled
+ ----------------------------------------------------------------------
+/usr/local/usp/hdf5/1.8.4-pgi/src/hdf5-1.8.4
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.4
+                  Configured on: Tue Dec 15 16:31:01 CST 2009
+                  Configured by: scheinin@jade04
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux jade04 2.6.16.60-0.39_1.0102.4787.2.2.41A_PS05-ss #1 SMP Fri Nov 13 15:29:04 CST 2009 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: 
+             Installation point: /usr/local/usp/hdf5/1.8.4-pgi
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/pgi/9.0.4/linux86-64/9.0/bin/pgcc (pgcc-9.0-4)
+                         CFLAGS: -O2
+                      H5_CFLAGS:   -Minform,warn -fast -s -Mnoframe
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_SOURCE   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/szip/2.1-pgi/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_BSD_SOURCE 
+               Shared Libraries: yes
+               Static Libraries: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/lib64 -L/usr/local/usp/szip/2.1-pgi/lib
+                Extra libraries:  -lsz -lz -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: pgf90
+                  Fortran Flags: 
+               H5 Fortran Flags:  -fast -s -Mnoframe
+               AM Fortran Flags:  -fPIC
+                            C++: no
+
+Features:
+---------
+                  Parallel HDF5: no
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: no
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+ Linux Large File Support (LFS): yes
+ ----------------------------------------------------------------------
+/usr/local/usp/hdf5/1.8.4-cnl/src/hdf5-1.8.4
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.4
+                  Configured on: Tue Dec 15 16:36:25 CST 2009
+                  Configured by: scheinin@jade04
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux jade04 2.6.16.60-0.39_1.0102.4787.2.2.41A_PS05-ss #1 SMP Fri Nov 13 15:29:04 CST 2009 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: 
+             Installation point: /usr/local/usp/hdf5/1.8.4-cnl
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/cray/xt-asyncpe/3.3/bin/cc (pgcc-9.0-4)
+                         CFLAGS: -O2
+                      H5_CFLAGS:   -Minform,warn -fast -s -Mnoframe
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_SOURCE   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/szip/2.1-cnl/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_BSD_SOURCE 
+               Shared Libraries: no
+               Static Libraries: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/lib64 -L/usr/local/usp/szip/2.1-cnl/lib
+                Extra libraries:  -lsz -lz -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: ftn
+                  Fortran Flags: 
+               H5 Fortran Flags:  -fast -s -Mnoframe
+               AM Fortran Flags:  
+                            C++: no
+
+Features:
+---------
+                  Parallel HDF5: yes
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: 
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+ Linux Large File Support (LFS): yes
+ ----------------------------------------------------------------------
+
+Gnu below
+
+module unload pgi
+module unload PrgEnv-pgi
+module load gcc
+module load PrgEnv-gnu
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+cd /usr/local/usp/hdf5/1.8.4-gnu/src/hdf5-1.8.4
+
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-gnu/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=/usr/local/usp/hdf5/1.8.4-gnu \
+   --enable-fortran --enable-cxx \
+   --enable-shared --enable-static \
+   --with-zlib=/usr/include,/usr/lib64 \
+   --with-szlib=/usr/local/usp/szip/2.1-gnu
+
+            SUMMARY OF THE HDF5 CONFIGURATION
+            =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.8.4
+                  Configured on: Wed Dec 23 15:53:40 CST 2009
+                  Configured by: scheinin@jade04
+                 Configure mode: production
+                    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux jade04 2.6.16.60-0.39_1.0102.4787.2.2.41A_PS05-ss #1 SMP Fri Nov 13 15:29:04 CST 2009 x86_64 x86_64 x86_64 GNU/Linux
+                       Byte sex: little-endian
+                      Libraries: 
+             Installation point: /usr/local/usp/hdf5/1.8.4-gnu
+
+Compiling Options:
+------------------
+               Compilation Mode: production
+                     C Compiler: /opt/gcc/4.4.1/bin/gcc (gcc-4.4.1)
+                         CFLAGS: 
+                      H5_CFLAGS: -std=c99 -pedantic -Wall -Wextra -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -Wno-long-long -Wfloat-equal -Wmissing-format-attribute -Wmissing-noreturn -Wpacked -Wdisabled-optimization -Wformat=2 -Wunreachable-code -Wendif-labels -Wdeclaration-after-statement -Wold-style-definition -Winvalid-pch -Wvariadic-macros -Wnonnull -Winit-self -Wmissing-include-dirs -Wswitch-default -Wswitch-enum -Wunused-macros -Wunsafe-loop-optimizations -Wc++-compat -Wstrict-overflow -Wlogical-op -Wlarger-than=2048 -Wvla -Wsync-nand -Wframe-larger-than=16384 -Wpacked-bitfield-compat -O0 -fomit-frame-pointer -finline-functions
+                      AM_CFLAGS: 
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_POSIX_SOURCE   -DNDEBUG -UH5_DEBUG_API
+                    AM_CPPFLAGS: -I/usr/local/usp/szip/2.1-gnu/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_BSD_SOURCE 
+               Shared Libraries: yes
+               Static Libraries: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+                     AM_LDFLAGS:  -L/usr/lib64 -L/usr/local/usp/szip/2.1-gnu/lib
+                Extra libraries:  -lsz -lz -lm 
+                       Archiver: ar
+                         Ranlib: ranlib
+              Debugged Packages: 
+                    API Tracing: no
+
+Languages:
+----------
+                        Fortran: yes
+               Fortran Compiler: gfortran
+                  Fortran Flags: 
+               H5 Fortran Flags:  
+               AM Fortran Flags:  
+                            C++: yes
+                   C++ Compiler: g++
+                      C++ Flags: 
+                   H5 C++ Flags:  
+                   AM C++ Flags: 
+
+Features:
+---------
+                  Parallel HDF5: no
+             High Level library: yes
+                   Threadsafety: no
+            Default API Mapping: v18
+ With Deprecated Public Symbols: yes
+         I/O filters (external): deflate(zlib),szip(encoder)
+         I/O filters (internal): shuffle,fletcher32,nbit,scaleoffset
+                            MPE: no
+                     Direct VFD: no
+                        dmalloc: no
+Clear file buffers before write: yes
+           Using memory checker: no
+         Function Stack Tracing: no
+                           GPFS: no
+      Strict File Format Checks: no
+   Optimization Instrumentation: no
+ Linux Large File Support (LFS): yes
+End of  SUMMARY OF THE HDF5 CONFIGURATION
+
+make
+make check 2>&1 | tee check.log
+# passed
+make install
+make clean
+
+Gnu above 

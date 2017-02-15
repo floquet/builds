@@ -1,0 +1,114 @@
+
+Version with netcdfcpp.h
+
+ 1009  wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-cxx-4.2.tar.gz
+ 1010  wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-fortran-4.2.tar.gz
+ 1011  wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.2.1.1.tar.gz
+
+
+
+cd /usr/local/usp/netcdf/netcdf-4.2.1.1-pgi/src/netcdf-4.2.1.1
+
+PrgEnv-pgi/4.2.34
+pgi/13.6.0
+
+module load cray-hdf5/1.8.11
+
+export CC=cc
+export CXX=CC
+export MPICC=cc
+
+export CPPFLAGS="-DpgiFortran -I/usr/local/usp/szip/2.1-pgi/include -I$HDF5_INCLUDE_OPTS -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+
+export F90=ftn
+export FC=ftn
+export MPIF77=ftn
+export F77=ftn
+
+export FPPFLAGS="-O2 -fPIC"
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran"
+
+export TMPDIR=${WORKDIR}/tmp
+export LD_LIBRARY_PATH=${HDF5_DIR}/lib:/usr/local/usp/szip/2.1-pgi/lib:$LD_LIBRARY_PATH
+
+export TMPDIR=${WORKDIR}/tmp
+
+export PREFIX=/usr/local/usp/netcdf/netcdf-4.2.1.1-pgi
+
+export CFLAGS="-O2 -fPIC"
+export CXXFLAGS="-O2 -fPIC"
+export FPPFLAGS="-O2 -fPIC"
+export LDFLAGS="-static -L/usr/local/usp/szip/2.1-pgi/lib -L${HDF5_DIR}/lib"
+
+ ./configure --prefix=$PREFIX  \
+--enable-static --disable-shared \
+--enable-netcdf-4 \
+--with-temp-large=$TMPDIR
+
+make 2>&1 | tee make_static.log
+
+cd ncgen3
+cc -O2 -fPIC -o ncgen3 main.o load.o escapes.o getfill.o init.o genlib.o ncgentab.o  -L/usr/local/usp/szip/2.1-pgi/lib -L/opt/cray/hdf5/1.8.11/PGI/121/lib ../liblib/.libs/libnetcdf.a /usr/local/usp/szip/2.1-pgi/lib/libsz.a -lm -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran -rpath /usr/local/usp/szip/2.1-pgi/lib -rpath /usr/local/usp/szip/2.1-pgi/lib
+
+make
+
+cd ncgen
+cc -O2 -fPIC -o ncgen generate.o main.o cdata.o bindata.o genchar.o cvt.o data.o debug.o escapes.o genc.o genbin.o generr.o genlib.o getfill.o odom.o offsets.o semantics.o ncgentab.o dump.o util.o bytebuffer.o list.o genf77.o f77data.o genj.o jdata.o nciter.o ConvertUTF.o  -L/usr/local/usp/szip/2.1-pgi/lib -L/opt/cray/hdf5/1.8.11/PGI/121/lib ../liblib/.libs/libnetcdf.a /usr/local/usp/szip/2.1-pgi/lib/libsz.a -lm -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran -rpath /usr/local/usp/szip/2.1-pgi/lib -rpath /usr/local/usp/szip/2.1-pgi/lib
+
+make
+
+cd ncdump
+
+linking correctly does not convince libtool to not try again and fail
+
+make install
+
+extract directory again
+
+export CFLAGS="-O2 -fPIC -dynamic"
+export CXXFLAGS="-O2 -fPIC -dynamic"
+export FPPFLAGS="-O2 -fPIC -dynamic"
+export LDFLAGS="-L/usr/local/usp/szip/2.1-pgi/lib -L${HDF5_DIR}/lib"
+or
+export LDFLAGS="-shared -L/usr/local/usp/szip/2.1-pgi/lib -L${HDF5_DIR}/lib"
+
+ ./configure --prefix=$PREFIX  \
+ --enable-shared --disable-static \
+--enable-netcdf-4 \
+--with-temp-large=$TMPDIR
+
+segmentation fault of test program
+
+make 2>&1 | tee make_dynamic.log
+make check 2>&1 | tee check_dynamic.log
+make install
+
+cd /usr/local/usp/netcdf/netcdf-4.2.1.1-pgi/src/netcdf-cxx-4.2
+
+Did static compile shown above for C++ stuff.
+
+
+export CFLAGS="-O2 -fPIC"
+export CXXFLAGS="-O2 -fPIC"
+export FPPFLAGS="-O2 -fPIC"
+export CPPFLAGS="-DpgiFortran -I/usr/local/usp/szip/2.1-pgi/include -I${PREFIX}/include -I$HDF5_INCLUDE_OPTS -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+export LDFLAGS="-static -L${PREFIX}/lib -L/usr/local/usp/szip/2.1-pgi/lib -L${HDF5_DIR}/lib "
+
+ ./configure --prefix=$PREFIX  \
+--enable-static --disable-shared \
+--with-temp-large=$TMPDIR
+
+make 2>&1 | tee make_static.log
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+
+
+

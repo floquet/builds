@@ -1,0 +1,83 @@
+
+Source is
+http://www.hdfgroup.org/ftp/lib-external/szip/2.1/src/szip-2.1.tar.gz
+
+2.1-gnu
+
+Both login node and application node have same version of gcc
+ qsub -A erdcssta -q standard -l ncpus=4,walltime=1:00:00 -I
+gcc --version
+gcc (GCC) 4.1.2 20070115 (SUSE Linux)
+
+export TMPDIR=${WORKDIR}/tmp
+
+export CC=gcc
+export CXX=g++
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+cd /usr/local/usp/szip/2.1-gnu
+mkdir lib include src
+in src/ have
+szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+./configure --prefix=/usr/local/usp/szip/2.1-gnu \
+  --enable-shared  --enable-static
+
+make
+make check 2>&1 | tee check.log
+make install
+make clean
+
+cd /usr/local/usp/szip/2.1-gnu
+find . -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \;
+cd src
+chmod -R o-rwx szip-2.1
+cd ..
+chown -R scheinin:staff .
+
+   ----------------------------------------------------------
+
+2.1-intel
+
+export TMPDIR=${WORKDIR}/tmp
+
+# diamond on Dec. 28, 2009
+module load mpt/1.26
+module load cc_11.1.056
+module load fc_11.1.056
+module load mkl_10.2.0.013
+
+export CC=icc
+export CXX=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+cd /usr/local/usp/szip/2.1-intel
+mkdir lib include src
+in src/ have
+szip-2.1/  szip-2.1.tar.gz
+
+cd src/szip-2.1
+
+./configure --prefix=/usr/local/usp/szip/2.1-intel \
+  --enable-shared  --enable-static
+
+make
+make check 2>&1 | tee check.log
+make install
+make clean
+
+cd /usr/local/usp/szip/2.1-intel
+find . -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \;
+cd src
+chmod -R o-rwx szip-2.1
+cd ..
+chown -R scheinin:staff .
+

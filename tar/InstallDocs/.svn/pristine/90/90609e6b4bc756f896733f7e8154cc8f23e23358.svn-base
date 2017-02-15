@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Concepts</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Detailed Description"
+HREF="x2951.html"><LINK
+REL="NEXT"
+TITLE="Aggregation"
+HREF="x3028.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x2951.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x3028.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="CHAP.CONCEPTS"
+></A
+>Chapter 10. Concepts</H1
+><P
+>This Chapter contains explanations of some abstract concepts of Intel® Trace Analyzer.</P
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="LOD"
+>10.1. Level of Detail</A
+></H1
+><P
+>Tracing all available events over time can generate billions of
+events even for a moderate program runtime of a few minutes and a
+handful of CPUs. The sheer amount of data is a challenge for any
+analysis tool that has to cope with this data. This is even worse as
+in most cases the analysis tool cannot make use of the same system
+resources as the parallel computer on which the trace was
+generated.</P
+><P
+>An aspect of this problem arises when generating graphical
+diagrams of the event data. Obviously, it is next to impossible to
+graphically display all the data. Firstly, it would take ages to do that. Secondly,
+it would depend on round-off errors in the scaling and on the order of
+the data traversal which events would actually make it to the screen
+without being erased by others. So it is clear that only
+representatives of the actual events are shown.</P
+><P
+>A valid choice would be to paint only every 100th or 1000th
+event and to hope that the resulting diagram gives a valid impression
+of the data. But this approach has its problems, because the pattern selects the representatives can interfere with the patterns in
+the underlying data.</P
+><P
+>The Intel Trace Analyzer uses a <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Level of
+Detail</I
+></SPAN
+> concept to solve this problem. The Event Timeline
+Chart (as the other timelines) calculates a hint for the analysis
+that describes a time span that can reasonably be painted and
+selected with the mouse. This hint is called 
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Resolution</I
+></SPAN
+>. The resolution requested by the
+timeline takes into account the currently available screen space and
+the length of the current time interval. Hence a higher screen
+resolution or a wider timeline results in more data being displayed
+for the same time interval.</P
+><P
+>The Intel Trace Analyzer then tries to find a near match for
+the requested resolution. The exact resolution depends on
+internals, which will not be discussed here.</P
+><P
+>The Intel Trace Analyzer divides the requested time interval
+into <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>slots</I
+></SPAN
+> of length resolution. After that,
+representatives for the function events, the messages and the
+collectives in these slots are chosen in a deterministic way. If a
+functions spans more than the given resolution it results in a
+larger slot.</P
+><P
+>The representatives for function events are chosen as follows:
+for each slot and each process (or thread group respectively) there is
+only a single function event representing the function where the
+thread or group spent most of its time.</P
+><P
+>The representatives for messages are chosen as follows: for each
+tuple (sender, receiver, sender slot, receiver slot)
+only one message is generated that carries averaged attributes. These
+attributes are averaged over all messages matching the tuple.</P
+><P
+>The representatives for collective operations are chosen as
+follows: for each tuple (communicator, first slot) one collective
+operation is generated. So it can happen that an operation of type
+MPI_Gather is merged with an operation of type MPI_Bcast resulting in a
+merged operation with no particular type at all (mixed).</P
+><P
+>To prevent misconceptions, emphasis is given to the fact that the merging
+of events only applies to the timelines and not to the profiles. The
+profiles always show sums, minima, maxima or averages over the
+complete set of events. The calculation of these results does
+obviously not depend on the screen resolution.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x2951.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x3028.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Detailed Description</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Aggregation</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

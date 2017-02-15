@@ -1,0 +1,190 @@
+
+ ================ installation in COST below ================
+
+May 2, 2016 installation on garnet below
+
+export GNUPLOT_VERSION=4.6.7
+# OR
+export GNUPLOT_VERSION=5.0.3
+
+export GNU_VERSION=4.3.4
+# OR
+export GNU_VERSION=5.2.0
+
+prgenv=gnu
+compiler_ver=$GNU_VERSION
+
+
+export PREFIX=/usr/local/usp/gnuplot/${GNUPLOT_VERSION}-${prgenv}-${compiler_ver}
+mkdir $PREFIX
+
+export BUILD_DIR=$HOME/build/gnuplot-${GNUPLOT_VERSION}-${prgenv}-${compiler_ver}
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+module unload PrgEnv-pgi
+# OR
+module swap PrgEnv-pgi PrgEnv-gnu
+module unload gcc/4.9.2   # Whatever is the default at the time.
+export GNU_VERSION=5.2.0   # Unloading of compiler cancels this.
+module load gcc/$GNU_VERSION
+
+# Just to check
+find $PREFIX ; gcc --version ; pwd
+
+export CC=`which gcc`
+export CXX=`which g++`
+
+./configure --prefix=$PREFIX \
+  --with-x  --x-includes=/usr/include/X11  --x-libraries=/usr/lib64 \
+  2>&1 | tee config.out
+
+# See below to compare list of capabilities.
+
+make  2>&1 | tee make.log
+
+make check
+# With X capability and X forwarding enabled,
+# shows a large number of plots.
+
+find $PREFIX  # to check destination
+make install
+find $PREFIX  # to check result
+
+Fix permissions.
+
+May 2, 2016 installation on garnet above
+
+Source in
+http://sourceforge.net/projects/gnuplot/files/gnuplot/
+
+April 22, 2014  version 4.6.5
+
+Login into garnet using -Y so can see graphs during testing.
+
+module swap PrgEnv-pgi PrgEnv-gnu
+export PREFIX=/usr/local/usp/COST/gnuplot-4.6.5
+
+which gcc
+which g++
+garnet:
+export CC=/opt/gcc/4.8.0/bin/gcc
+export CXX=/opt/gcc/4.8.0/bin/g++
+copper:
+export CC=/opt/gcc/4.8.2/bin/gcc
+export CXX=/opt/gcc/4.8.2/bin/g++
+
+
+# Save results of "configure" (not in config.log because that
+# filename is used by configure) because the output described
+# what has been enabled.
+
+./configure --prefix=$PREFIX \
+  --with-x  --x-includes=/usr/include/X11  --x-libraries=/usr/lib64 \
+  2>&1 | tee config.out
+
+Not the complete list of capabilities -- for the sake of brevity --
+but a partial list of important capabilities is the following.
+  
+  Standalone terminals: yes (always builtin)
+    canvas, cgm, context, corel, dumb, dxf, eepic, emf, emtex,
+    epslatex, fig, gpic, hp2623a, hp2648, hpgl, imagen,
+    latex, metafont, metapost, mif, pcl5, postscript, pslatex,
+    pstex, pstricks, qms, regis, svg,
+    tek40xx, tek410x, texdraw, tgif, tkcanvas, tpic, vttek
+
+  X Window System terminal: yes
+    (with multi-byte fonts)
+    (enable plotting to windows opened by external apps) 
+    (with application defaults, in /etc/X11/app-defaults/)
+  jpeg terminal: no (requires libgd with jpeg support)
+  gif terminal: no (requires libgd with gif support)
+  png terminal: no (requires libgd with png support)
+    (jpeg, gif and png terminals cannot use TTF fonts, requires libgd support)
+  pdf terminal: no (requires libpdf)
+
+make  2>&1 | tee make.log
+
+# With X capability and X forwarding enabled,
+# shows a large number of plots.
+make check
+
+find $PREFIX  # to check destination
+make install
+find $PREFIX  # to check result
+
+Curiously, though end of configure says
+" png terminal: no (requires libgd with png support) "
+the command
+ ldd /usr/local/usp/COST/gnuplot-4.6.5/bin/gnuplot
+shows features such as
+libpng12.so.0 => /usr/lib64/libpng12.so.0
+libfreetype.so.6 => /usr/lib64/libfreetype.so.6
+libexpat.so.1 => /lib64/libexpat.so.1
+
+topdir=$PREFIX
+
+cd $topdir
+# Look carefully at actual working directory before doing the following.
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+ ================ installation in COST above ================
+
+ ---------------------------------
+
+http://www.gnuplot.info/download.html
+Source at sourceforge.
+As well as downloading source, downloaded manual in PDF format.
+
+
+./configure --prefix=/usr/local/usp/gnuplot/4.2.5
+make
+make install
+
+On garnet, below.
+
+module unload pgi
+module unload PrgEnv-pgi
+module load gcc
+module load PrgEnv-gnu
+
+# Note, the actual gcc module is  gcc/4.5.1
+
+./configure --prefix=/usr/local/usp/gnuplot/4.4.2 > config.out
+
+# End of config.out has list of what was enabled.
+
+# Would provide much more if /usr/lib64/libgd.so was more recent
+# configure: WARNING: libgd not found or too old, version >= 2.0 is required
+# or development package was installed.
+
+# Done on Oct. 26, 2010 when not new software was being installed.
+# Next time:
+# Verify jpeg and png and gif and pfd in config.out are 'yes'
+# For Jan. 2010 build the above feature were not built.
+
+make
+# make check should show many plots
+make check
+make install
+
+# What was in /usr/local/usp/gnuplot/4.2.5/lib/X11/app-defaults
+# when installed on jade is now (on garnet) in
+# /usr/local/usp/gnuplot/4.4.2/share/gnuplot/4.4/app-defaults
+
+cd /usr/local/usp/gnuplot
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd /usr/local/usp/gnuplot
+chown -R scheinin.staff *
+
+On garnet, above.
+

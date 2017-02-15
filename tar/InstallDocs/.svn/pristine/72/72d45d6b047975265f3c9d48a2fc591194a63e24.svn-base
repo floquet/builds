@@ -1,0 +1,108 @@
+
+ wget http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.5.1.tar.gz
+
+ tar xzf petsc-3.5.1.tar.gz
+
+ cd petsc-3.5.1
+
+ ./configure --help > help.txt
+
+ (Output is huge, need editor to read.)
+
+If configure wants to know the location of mpiexe (which
+in our case is aprun), then must compile on a batch node.
+
+ qsub  -A ERDCS97290STA -q debug -l select=1:ncpus=32:mpiprocs=32 -l walltime=0:50:00 -I
+
+ module load cray-libsci/12.1.00
+ module unload cudatoolkit
+ module unload atp/1.7.1
+
+ module show cray-libsci/12.1.00 to get library for blas and lapack
+
+Determine absolute paths just in case "configure" needs
+absolute paths.
+ which cc
+   /opt/cray/xt-asyncpe/5.24/bin/cc
+ which ftn
+   /opt/cray/xt-asyncpe/5.24/bin/ftn
+ which aprun
+   /usr/bin/aprun
+
+export PREFIX=/u/scheinin/petsc
+export PETSC_ARCH=linux-pgi
+export PETSC_DIR=/u/scheinin/petsc/petsc-3.5.1
+export CC=cc
+export CXX=CC
+export F77=ftn
+export FC=ftn
+export F90=ftn
+export FC_LINKER_FLAGS="-Wl,--undefined=_ATP_Data_Globals -Wl,--undefined=__atpHandlerInstall -Wl,--undefined=_ATP_Text_Globals"
+export CC_LINKER_FLAGS="-Wl,--undefined=_ATP_Data_Globals -Wl,--undefined=__atpHandlerInstall -Wl,--undefined=_ATP_Text_Globals"
+export CXX_LINKER_FLAGS="-Wl,--undefined=_ATP_Data_Globals -Wl,--undefined=__atpHandlerInstall -Wl,--undefined=_ATP_Text_Globals"
+export LIBS="/opt/pgi/13.6.0/linux86-64/13.6/lib/libzceh.a"
+
+vi petsc-3.5.1/config/BuildSystem/config/packages/MPI.py
+around line 159 change from
+ mpiexecs = ['mpiexec -n 1', 'mpirun -n 1', 'mprun -n 1', 'mpiexec', 'mpirun', 'mprun']
+change to
+ mpiexecs = ['aprun -n 1', 'mpiexec -n 1', 'mpirun -n 1', 'mprun -n 1', 'aprun' , 'mpiexec', 'mpirun', 'mprun']
+
+
+  ./configure --prefix=$PREFIX \
+   --FC_LINKER_FLAGS="$FC_LINKER_FLAGS" \
+   --CC_LINKER_FLAGS="$CC_LINKER_FLAGS" \
+   --CXX_LINKER_FLAGS="$CXX_LINKER_FLAGS" \
+   --LIBS="$LIBS" \
+   CC=$CC CXX=$CXX F77=$F77 FC=$FC F90=$F90 \
+   --with-cc=/opt/cray/xt-asyncpe/5.24/bin/cc \
+   --with-cxx=/opt/cray/xt-asyncpe/5.24/bin/CC \
+   --with-mpi-f90=/opt/cray/xt-asyncpe/5.24/bin/ftn \
+   --with-mpiexe="/usr/bin/aprun" \
+   --with-large-file-io=1 \
+   --with-pic=1 \
+ --with-blas-lib=/opt/cray/libsci/12.1.00/PGI/121/interlagos/lib/libsci_pgi.a \
+ --with-lapack-lib=/opt/cray/libsci/12.1.00/PGI/121/interlagos/lib/libsci_pgi.a \
+ --with-cuda=0
+
+  make PETSC_ARCH=linux-pgi all test
+  make install DESTDIR=$PREFIX
+
+
+which python ?
+
+later can add expat, metis, parmetis, numpy, scalapack, fftw, superlu, hdf5, netcdf (zoltan, yaml)
+
+
+later, complex version
+
+  ./configure --prefix=$PREFIX \
+   --with-scalar-type=complex \
+   --with-cc=/opt/cray/xt-asyncpe/5.24/bin/cc \
+   --with-cxx=/opt/cray/xt-asyncpe/5.24/bin/CC \
+   --with-mpi-f90=/opt/cray/xt-asyncpe/5.24/bin/ftn \
+   --with-mpiexe=/usr/bin/aprun \
+   --with-large-file-io=1 \
+   --with-pic=1 \
+ --with-blas-lib=/opt/cray/libsci/12.1.00/PGI/121/interlagos/lib/libsci_pgi.a \
+ --with-lapack-lib=/opt/cray/libsci/12.1.00/PGI/121/interlagos/lib/libsci_pgi.a
+
+   --with-scalar-type=complex
+   --with-mpiexe=aprun
+   --with-large-file-io=1
+   --with-pic=1
+
+
+
+
+Does petsc need to run using aprun?
+Petsc seems to use the variable MPIEXEC so perhaps
+it starts a script that then calls aprun.
+Probably this observation is not relavant for
+programs that just use the petsc library.
+
+
+
+
+
+ ???????????

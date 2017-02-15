@@ -1,0 +1,164 @@
+Gromacs changed to cmake build.
+ garnet Thu Feb  6 09:26:47 CST 2014
+
+http://www.gromacs.org/
+
+cd /usr/local/usp/gromacs/4.6.5/src/gromacs-4.6.5
+
+CMake Warning at CMakeLists.txt:316 (message):
+  All tested PGI compiler versions (up to 12.9.0) generate binaries which
+  produce incorrect results, or even fail to compile Gromacs.  Highly
+  recommended to use a different compiler.  If you choose to use PGI, make
+  sure to run the regressiontests.
+
+module swap PrgEnv-pgi/4.1.40 PrgEnv-intel
+(Actually loaded PrgEnv-intel/4.1.40)
+module load fftw/3.3.0.3
+
+export PATH=/usr/local/usp/PETtools/CE/pkgs/cmake-2.8.11.2/bin:$PATH
+
+export CMAKE_INSTALL_PREFIX=/usr/local/usp/gromacs/4.6.5
+
+mkdir build-cmake
+cd build-cmake
+ccmake ..
+Set installation location using ccmake
+
+modify file CMakeCache.txt
+
+CMAKE_C_FLAGS:STRING=-dynamic
+CMAKE_EXE_LINKER_FLAGS:STRING=-dynamic
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/4.6.5
+FFTWF_INCLUDE_DIR:PATH=/opt/fftw/3.3.0.3/interlagos/include
+FFTWF_LIBRARY:FILEPATH=/opt/fftw/3.3.0.3/interlagos/lib/libfftw3f.so
+
+cmake ..
+
+-- Run output: /usr/local/usp/gromacs/4.6.5/src/gromacs-4.6.5/build-cmake/CMakeFiles/CMakeTmp/cmTryCompileExec117713416: error while loading shared libraries: libalpslli.so.0: cannot open shared object file: No such file or directory
+
+check that
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/4.6.5
+It was changed to src directory during cmake
+Would probably need to redo "cmake .." if wrong.
+
+make
+
+make install
+
+check that installed where expected
+
+# Need to change permissions.
+
+topdir=/usr/local/usp/gromacs/4.6.5
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.97290STA $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.97290STA *
+
+ ---------------------
+
+For user who wanted 4.6.3.
+
+Gongyi Hong writes:
+Hi Alan,
+I am doing free energy calculation with dual topology.
+Version 5.0.4 seems no working in this case and since I saw
+people doing similar calculation with version 4.6.3,
+So I want to try this version.
+
+export PREFIX=/usr/local/usp/gromacs/4.6.3-intel-mpich6
+mkdir -p $PREFIX/src
+cd $PREFIX/src
+wget ftp://ftp.gromacs.org/pub/gromacs/gromacs-4.6.3.tar.gz
+tar xzf gromacs-4.6.3.tar.gz
+cd gromacs-4.6.3
+
+module swap PrgEnv-pgi PrgEnv-intel
+(Actually
+PrgEnv-intel/4.2.34
+intel/14.0.2.144)
+# Load the most recent, not the default
+module load fftw/3.3.4.1
+# cmake adds the MKL libraries
+module unload cray-libsci/12.1.00
+
+# Add cmake to path.
+export PATH=/usr/local/usp/cmake/2.8.12.2-intel/bin:$PATH
+
+export CMAKE_INSTALL_PREFIX=$PREFIX
+
+mkdir build-cmake
+cd build-cmake
+cmake ..
+
+-- Check for working C compiler: /opt/cray/xt-asyncpe/5.24/bin/cc -- broken
+CMake Error at /usr/local/usp/cmake/2.8.12.2-intel/share/cmake-2.8/Modules/CMakeTestCCompiler.cmake:61 (message):
+  The C compiler "/opt/cray/xt-asyncpe/5.24/bin/cc" is not able to compile a
+  simple test program.
+[ ... ]
+ld: dynamic STT_GNU_IFUNC symbol `strcmp' with pointer equality in
+  `/opt/cray/xe-sysroot/4.2.34/usr/lib64/libc.a(strcmp.o)' can not be used
+  when making an executable; recompile with -fPIE and relink with -pie
+
+modify file CMakeCache.txt
+
+CMAKE_C_FLAGS:STRING=-dynamic
+CMAKE_EXE_LINKER_FLAGS:STRING=-dynamic
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/4.6.3-intel-mpich6
+FFTWF_INCLUDE_DIR:PATH=/opt/cray/fftw/3.3.4.1/interlagos/include
+FFTWF_LIBRARY:FILEPATH=/opt/cray/fftw/3.3.4.1/interlagos/lib/libfftw3f.so
+
+export LD_LIBRARY_PATH=/usr/lib/alps:$LD_LIBRARY_PATH
+
+cmake ..
+
+check that
+CMAKE_INSTALL_PREFIX:PATH=
+is set to $PREFIX
+
+make
+
+make install
+
+check that installed where expected
+
+# Need to change permissions.
+
+topdir=$PREFIX
+
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+
+
+README
+
+# Because the binary executables use shared libraries,
+# in your batch script you will need to load the modules
+# used to compile the executables.
+
+source /opt/modules/default/init/tcsh
+module unload PrgEnv-pgi
+module load PrgEnv-intel
+module unload cray-libsci
+module load fftw/3.3.4.1
+
+# Add the directory of the gromacs dynamic libraries.
+setenv LD_LIBRARY_PATH "/usr/local/usp/gromacs/4.6.3-intel-mpich6/lib:$LD_LIBRARY_PATH"
+
+# Add gramacs binaries to PATH
+setenv PATH "/usr/local/usp/gromacs/4.6.3-intel-mpich6/bin:$PATH"
+

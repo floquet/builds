@@ -1,0 +1,183 @@
+   I was given three parallel compression executables to test: pigz,
+pbzip2 and mpibzip2.  This week I reviewed the results with Bob Alter
+and he O.K.'ed the installation of mpibzip2.  The other two have problems.
+Yesterday I downloaded the source and recompiled on jade and sapphire,
+also I prepared some test scripts.  (At the end of this note is my 
+original report on all three programs just for the historical record.)
+
+The download site is
+http://compression.ca/mpibzip2/
+
+The program has not been changed since the 0.6 beta version was
+released and running the program in verbose mode shows the message
+
+ > MPI BZIP2 v0.6  -  by: Jeff Gilchrist [http://compression.ca]
+ > [Jul. 18, 2007]        (uses libbzip2  by Julian Seward)
+ > ** This is a BETA version - Use at your own risk! **
+
+Nonetheless, running tests on files of 792 MB and 1.89 GB, there
+were no errors.  I compressed with mpibzip2 and decompressed with
+with the same program or with bunzip2; and checked that the md5 sums
+were always equal to the original files.
+
+(If you are reading this after June 2009, the following information
+about the location in my $WORKDIR will no longer be true.)
+On either jade or sapphire, the source is at
+/work/scheinin/mpibzip2/mpibzip2-0.6.tar.gz
+and compiled executables are in directories
+/work/scheinin/mpibzip2/sapphire/mpibzip2-0.6/
+/work/scheinin/mpibzip2/jade/mpibzip2-0.6/
+(The /work/scheinin/mpibzip2/ directories on jade and sapphire differ
+in the test results in /work/scheinin/mpibzip2/Data/ .)
+
+The program was compiled with
+
+CC -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -o mpibzip2 mpibzip2.cpp -lbz2 -lpthread
+
+One strange anomaly is that I tried to compile with cc and got the error
+message that C++ code requires CC, but the code looks like the C language.
+Anyway, compiling had no errors.  It only runs on the compute nodes.
+There is also a file mpibzip2.1 which could be placed in man/man1/ .
+
+Here is a quick summary of the performance.  Executing with two CPUs
+is not much better than serial bzip2, I suppose there is an overhead
+for the parallel execution.  On the other hand, 16 CPUs is around 13
+times faster than serial bzip2.  The only error is that mpibzip2 cannot
+be used to decompress a file compressed with serial bzip2.  For a file
+compressed with mpibzip2, either mpibzip2 or serial bunzip2 can used
+for decompression.
+
+Testing is semi-automatic.  In the directories
+/work/scheinin/mpibzip2/Data/jade/ and /work/scheinin/mpibzip2/Data/sapphire/
+are the PBS scripts test01.qsub, test02.qsub and test03.qsub which use,
+respectively, files ran01.orig, ran02.orig and ran03.orig in the
+directory /work/scheinin/mpibzip2/Data/Original/ .
+If the machine changes or the location changes, then the following lines
+need to be changed in the PBS scripts
+#PBS -o /work/scheinin/mpibzip2/Data/jade/output
+setenv exec_file /work/scheinin/mpibzip2/${platform}/mpibzip2-0.6/mpibzip2
+There is a bit of logic in the script to set $platform to sapphire or jade.
+
+The README_summary file in the output/ directory gives a suggestion
+on how to clean up a nnnnnn.pbs.OU file into a more readable format.
+
+Alan Scheinine, June 18, 2009
+
+Appendix.  Tests of pigz, pbzip2 and mpibzip2 done in May 2009.
+
+I have tested three parallel compression programs
+
+  pigz  pbzip2  mpibzip2
+
+pigz
+----
+
+The small amount of documentation available says
+
+ > A parallel implementation of gzip for modern
+ > multi-processor, multi-core machines
+
+The program was written by Mark Adler.
+The biography of Dr. Adler in Wikipedia begins with
+ > Dr. Mark Adler (b. April 3, 1959) is best known for his
+ > work in the field of data compression.
+
+I was given the binaries to test.  When using aprun to
+launch a multi-processor job there is the error message
+
+ > pigz abort: write error on /work/scheinin/ZIP/Data/ran10.orig.gz
+
+The source code page (http://www.zlib.net/pigz/) says
+ > To compile and use pigz, please read the README file in the
+ > source code distribution. 
+
+so I downloaded the source, but the README file does NOT provide
+any useful information on running the program, aside from saying to
+type "pigz" to read the command line options.
+
+On one node on jade, the speedup is a little less than a factor of
+two.  For one large file, the time needed by serial gzip was 18.6 sec;
+for pigz using 2 or 4 threads was 10.9 and 10.8 sec, respectively;
+for 8 threads the time was 11.5 sec.
+
+pbzip2
+------
+
+This program only uses shared memory and (like pigz) the best
+speedup was only a factor of two on jade.  First, the good news.
+The program pbzip2 gave no errors when files were compressed with
+pbzip2 and decompressed with bunzip2.  Compressing with bzip2 and
+decompressing with pbzip2 was also tested, as was the pure pbzip2
+case also with no errors.
+Correctness was assessed by comparing against the original the md5sum
+on files after a cycle of compression and decompression.
+
+Now for the not-so-good news.
+The pbzip2 uses shared memory and not MPI.  The value of OMP_NUM_THREADS
+has no effect on the number of threads, the option -p# must be used,
+where "#" is a number.  File sizes of 37 MB, 170 MB and 1.48 GB were
+tested.  The choice of number of threads did not have an effect beyond 2.
+On jade, -p2 was approximately a factor of 1.8 faster than -p1, but the
+options -p4 and -p8 were slightly slower than -p2.
+
+mpibzip2
+--------
+
+The verbose mode displays an important message:
+
+> MPI BZIP2 v0.6  -  by: Jeff Gilchrist [http://compression.ca]
+> [Jul. 18, 2007]        (uses libbzip2  by Julian Seward)
+> ** This is a BETA version - Use at your own risk! **
+
+The program is a beta version that has not been changed since mid-2007.
+
+Two file sizes were tested, 25 MB and 1.48 GB.
+First the bad news, then the good news.
+If a file is compressed serially with bzip2,
+then a parallel decompression using mpibzip2 -d results in a program error
+
+> *WARNING: Compressed block size is large [1600736346 bytes].
+>           If program aborts, use regular BZIP2 to decompress.
+> aborting job:
+
+leaving a zero-size file with the name of what should have
+been the uncompressed file.
+
+Otherwise, the program mpibzip2 works correctly,
+based on the md5sums after a compression/decompression cycle.
+Most importantly, it is the only program of the three that shows
+good scaling beyond a factor of two.
+
+Various compression and decompression modes were tested.
+For parallel compression, the number of processes ranged from
+ 2 to 16, so even compression with two nodes was tested.
+In some cases, serial "bzip2 -d" was used for decompression.
+In addition, a file compressed with 8 parallel processes was
+decompressed with 2 parallel processes and a file compressed
+with 4 parallel processes was decompressed with 8 parallel processes.
+
+On jade:
+    Serial compression: 611 seconds.
+
+    # CPUs: 1 Master, 1 Slaves
+    Wall Clock: 530.283365 seconds
+
+    # CPUs: 1 Master, 3 Slaves
+    Wall Clock: 210.859952 seconds
+
+    # CPUs: 1 Master, 7 Slaves
+    Wall Clock: 94.533660 seconds
+
+    # CPUs: 1 Master, 15 Slaves
+    Wall Clock: 45.698141 seconds
+
+As we see, scaling was good even when more than one node was used.
+The the same file, the OpenMP program, pbzip2 had a wallclock time
+of around 352.742787 for two CPUs and did not do better when it was
+told that 4 or 8 CPUs were available.  We see that the MPI version is
+not impressive when only two processes are used, but it does scale
+nicely when more processes are used.  The good scaling with 4 or 8
+processes on the same node indicates that the OpenMP version is not
+limited by a memory bottleneck.
+
+

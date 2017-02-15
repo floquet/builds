@@ -1,0 +1,135 @@
+
+garnet below
+Description:
+Gaussian used for calculating molecular electronic structure and properties. 
+The package includes a wide range of ab initio and semi-empirical methods
+for energy, gradient, frequency and property calculations.
+
+This directory contains a small test case g09.pbs that you can copy
+to your personal directory and submit as a batch job.  Be sure to
+change the account (-A) option.
+
+Gaussian is a restricted access application, contact the ERDC DSRC for access.
+
+Your batch script is interpreted on a "batch" node that is shared by
+many users, so be certain not to run the executable, g09, on the
+"batch" node.  That is, do not use the command
+g09 test.com  # Wrong
+
+Using aprun will launch gaussian on a "compute" node but all threads will
+use the same core, which is very inefficient.  So, do not use the command
+aprun -n 1 g09 test.com  # Wrong
+
+The correct way to run Gaussian is to use the Cluster Compatible Mode
+(CCM) which is started by using the PBS option " -l ccm=1 ".
+The job should be launched using the command
+
+ccmrun g09 test.com # Correct
+
+Notice that in order to use more than one node, the nodes listed in
+$PBS_NODEFILE must be added as a line in your Gaussian command file.
+The script g09.pbs shows how to do that.
+
+        Gaussian g09.B01 on Garnet , 2010
+        Executation time of test397.com (seconds)
+                          number of nodes (LindaWorkers)
+ number of processes      1      2      4      8
+ on same node
+ (NProcShared)
+    1                  5247   2758   1552    962
+    2                  2663   1459    858    554
+    4                  1424    804    498    347
+    8                   952    561    370    267
+   16                   950    546    349    257
+
+
+        Gaussian g09.D01 on Garnet , 2014
+        Executation time of test0397.com (seconds)
+                          number of nodes (LindaWorkers)
+ number of processes      1      2      4      8
+ on same node
+ (NProcShared)
+    1                  4132   2396   1649   1351
+    2                  2096   1400   1195   1226
+    4                  1085   1392    926   1070
+    8                   604    690    930   1209
+   16                   433    581    857   1242
+   32                   404    589    806   1099
+
+
+        Gaussian g09.E01 on Garnet , 2016
+        Executation time of test0397.com (seconds)
+                          number of nodes (LindaWorkers)
+ number of processes      1      2      4      8
+ on same node
+ (NProcShared)
+    1                  4063   2820  2749439j
+    2                  2074   1836  2749438j
+    4                  1068   1340  2749440j
+    8                   581   1003   1753
+   16                   338    950
+   32                   273    921  >1814
+
+2 nodes 8 shared , no ccm 2749392j
+need to change ccmrun to aprun  /lustre/work2/scheinin/gaussian_test
+
+
+        Gaussian g09.E01 on Copper , 2016
+        Executation time of test0397.com (seconds)
+                          number of nodes (LindaWorkers)
+ number of processes      1      2      4      8
+ on same node
+ (NProcShared)
+    1                   
+    2                  
+    4                  
+    8                   621
+   16                   
+   32                    
+
+Note that the example is taken from
+ $g09root/g09/tests/com/test397.com
+and shows %mem=16MW
+For actual calculations this value can be much higher.  It is the
+amount of memory on one node, which is a maximum of %mem=60GB per
+node (of memory available for user processes) on Garnet.
+
+garnet above
+
+
+        Gaussian g09.D01 on Topaz , July 2015
+        Executation time of test0397.com (seconds)
+                          number of nodes (LindaWorkers)
+ number of processes      1      2      4      8
+ on same node
+ (NProcShared)
+    1                  2810   1875    794    483
+    2                  1361    746    432    278
+    4                   737    427    274    216
+    8                   381    273    320    420
+   16                   239    187    385    620
+   32                   236    178    415    654
+
+        Gaussian g09.E01 on Topaz , February 2016
+        Executation time of test0397.com (seconds)
+                          number of nodes (LindaWorkers)
+ number of processes      1      2      4      8
+ on same node
+ (NProcShared)
+    1                  2143   1154    653    398
+    2                  1097    608    356    228
+    4                   571    325    199    136
+    8                   303    182    120     90
+   16                   184    125     83     68
+   32                   175    111     79     64
+
+
+bash
+Use of
+ulimit -c 0 
+in batch script does not work.
+csh
+limit coredumpsize 0
+
+touch core 
+chmod ugo-w core

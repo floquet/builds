@@ -1,0 +1,61 @@
+qsub -A  erdcssta -q standard -l select=8:ncpus=8:mpiprocs=8,place=scatter:excl,walltime=1:00:00 -I
+
+module load compilers/mkl_10.2.0
+cd /work/scheinin/scalapack/module_mkl/scalapack-1.8.0/TESTING
+
+mpiexec_mpt -np 64 ./xdpblas3tim
+
+ MPI_BUFFER_MAX
+ MPI_BUFS_PER_HOST  default 96
+ MPI_BUFS_PER_PROC  default 32   
+ MPI_BUFS_THRESHOLD default 64
+ MPI_DEFAULT_SINGLE_COPY_BUFFER_MAX default 2000
+ MPI_DEFAULT_SINGLE_COPY_OFF default off
+ MPI_IB_SINGLE_COPY_BUFFER_MAX default 32767
+ MPI_IB_BUFFER_SIZE
+   Default:  131072   Valid Values: 8192 - 131072
+
+ grep PDGEMM run01.log
+
+No change
+run01.log  base, no special environment variables
+run02.log  MPI_BUFS_PER_HOST=1024
+run03.log  MPI_BUFS_PER_PROC=1024
+run04.log  MPI_BUFS_THRESHOLD=1024
+run05.log  should be same as base, in fact, there was some variation
+run06.log  MPI_DEFAULT_SINGLE_COPY_BUFFER_MAX=8000
+run07.log  MPI_DEFAULT_SINGLE_COPY_OFF=1
+run08.log  MPI_IB_SINGLE_COPY_BUFFER_MAX=16383
+run09.log  MPI_IB_SINGLE_COPY_BUFFER_MAX=65534
+run10.log  MPI_IB_BUFFER_SIZE=32768
+
+mpiexec_mpt -np 64 ./xdpblas3tim   2>&1 | tee run01.log
+
+
+need to modify the timing program so that the time interval
+in not infinitesmal
+and need to see why CPU time is zero
+
+$(dpb3tim) : $(SCALAPACKLIB) $(dpb3t)
+	$(F77LOADER) $(F77LOADFLAGS) -o $(dpb3tim) $(dpb3t) $(LIBS)
+dpb3t         = pdblas3tim.o pdblastim.o $(pbtcom)
+pbtcom        = pblastim.o PB_Cwarn.o PB_Cabort.o
+
+
+For example:
+â¢ Intel Fortran intrinsic procedures, such as SECNDS, CPU_TIME, SYSTEM_CLOCK, TIME, and
+DATE_AND_TIME.
+â¢ Portability library routines, such as DCLOCK, ETIME, SECNDS, or TIME.
+
+result = SECNDS (x)
+midnight - x
+DWALLTIME00()
+
+DCPUTIME00, DWALLTIME00
+
+USE IFPORT
+result = DCLOCK( )
+real8 output
+clock time since start of process
+
+CALL CPU_TIME (time)  time is type "real"

@@ -1,0 +1,65 @@
+Gromacs changed to cmake build.
+ garnet Thu Feb  6 09:26:47 CST 2014
+
+http://www.gromacs.org/
+
+cd /usr/local/usp/gromacs/4.6.5/src/gromacs-4.6.5
+
+CMake Warning at CMakeLists.txt:316 (message):
+  All tested PGI compiler versions (up to 12.9.0) generate binaries which
+  produce incorrect results, or even fail to compile Gromacs.  Highly
+  recommended to use a different compiler.  If you choose to use PGI, make
+  sure to run the regressiontests.
+
+module swap PrgEnv-pgi/4.1.40 PrgEnv-intel
+(Actually loaded PrgEnv-intel/4.1.40)
+module load fftw/3.3.0.3
+
+export PATH=/usr/local/usp/PETtools/CE/pkgs/cmake-2.8.11.2/bin:$PATH
+
+export CMAKE_INSTALL_PREFIX=/usr/local/usp/gromacs/4.6.5
+
+mkdir build-cmake
+cd build-cmake
+ccmake ..
+Set installation location using ccmake
+
+modify file CMakeCache.txt
+
+CMAKE_C_FLAGS:STRING=-dynamic
+CMAKE_EXE_LINKER_FLAGS:STRING=-dynamic
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/4.6.5
+FFTWF_INCLUDE_DIR:PATH=/opt/fftw/3.3.0.3/interlagos/include
+FFTWF_LIBRARY:FILEPATH=/opt/fftw/3.3.0.3/interlagos/lib/libfftw3f.so
+
+cmake ..
+
+-- Run output: /usr/local/usp/gromacs/4.6.5/src/gromacs-4.6.5/build-cmake/CMakeFiles/CMakeTmp/cmTryCompileExec117713416: error while loading shared libraries: libalpslli.so.0: cannot open shared object file: No such file or directory
+
+check that
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/4.6.5
+It was changed to src directory during cmake
+Would probably need to redo "cmake .." if wrong.
+
+make
+
+make install
+
+check that installed where expected
+
+# Need to change permissions.
+
+topdir=/usr/local/usp/gromacs/4.6.5
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.97290STA $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.97290STA *
+

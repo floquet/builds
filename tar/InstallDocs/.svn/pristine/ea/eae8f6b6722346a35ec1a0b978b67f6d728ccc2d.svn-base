@@ -1,0 +1,29 @@
+
+Users of VASP need to be in the group "vasp".
+
+The wrappers for running vasp are in the directory
+/usr/local/applic/vasp/4.6.36/bin
+
+There are five variants:
+
+runvasp          Serial execution
+runvasp-gamma    Serial execution with gamma (may run faster)
+
+runvasp-mpi-gamma        Parallel execution with scalapack and gamma.
+runvasp-mpi-scalapack    Parallel execution with scalapack
+runvasp-mpi-large        Same as runvasp-mpi-scalapack but with
+                         NIOND set to 1024 rather than the default 256.
+
+The default parallel version does not use gamma, it actually runs
+runvasp-mpi-scalapack and is called:
+runvasp-mpi
+
+These scripts take one argument, the number of processors.
+
+The scripts were compiled with the modules
+compilers/intel11.1   mpi/sgi_mpi-1.26   compilers/mkl_10.2.0
+The Scalapack versions use the library in /usr/local/usp/scalapack .
+The serial versions use
+/usr/local/usp/PETtools/CE/pkgs/fftw-3.2.2
+
+Jan. 27, 2010

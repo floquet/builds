@@ -1,0 +1,41 @@
+#%Module1.0########-*- mode: tcl; -*- ######################################
+##
+
+proc ModulesHelp { } {
+    puts stderr "\t[module-info name] - loads the $name environment"
+    puts stderr "\tThe following env variables are prepended:"
+    puts stderr "\tPATH"
+    puts stderr "\tLD_LIBRARY_PATH"
+    puts stderr "\tMANPATH"
+    puts stderr "\tINFOPATH"
+}
+
+conflict compiler/intel
+conflict compiler/gcc
+# During first months, module hierarchy includes directory devel.
+conflict devel/compiler/intel
+conflict devel/compiler/gcc
+
+set              gcc_path         /p/home/oppe
+
+prepend-path     PATH             ${gcc_path}/bin
+prepend-path     LD_LIBRARY_PATH  ${gcc_path}/lib64 
+prepend-path     MANPATH          ${gcc_path}/share/man
+prepend-path     INFOPATH         ${gcc_path}/share/info
+
+# For compliance with Baseline Configuration policy.
+setenv CC       gcc
+setenv CXX      g++
+setenv F77      gfortran
+setenv F90      gfortran
+
+# For MPI.
+setenv I_MPI_CXX    g++
+setenv I_MPI_CC     gcc
+setenv I_MPI_FC     gfortran
+setenv I_MPI_F90    gfortran
+setenv I_MPI_F77    gfortran
+setenv MPICXX_CXX     g++
+setenv MPICC_CC       gcc
+setenv MPIF90_F90     gfortran
+

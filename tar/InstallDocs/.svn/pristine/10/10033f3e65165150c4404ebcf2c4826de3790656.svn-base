@@ -1,0 +1,21 @@
+For topaz:
+make -f Makefile.topaz SYSDEFS="-DSYSVR4 -D_XOPEN_SOURCE=500" TERMCAPLIB=-lncurses install
+
+See jove_Makefile.topaz
+
+For garnet:
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+See jove_Makefile.garnet
+
+mkdir $PREFIX/bin
+mkdir $PREFIX/lib
+mkdir -p $PREFIX/man/man1
+
+make -f Makefile.garnet SYSDEFS="-DSYSVR4 -D_XOPEN_SOURCE=500" TERMCAPLIB=-lncurses install
+
+Use needs to do
+export PATH=/usr/local/usp/jove/4.16.0.65/bin/jove:$PATH
+or
+setenv PATH /usr/local/usp/jove/4.16.0.65/bin/jove:$PATH

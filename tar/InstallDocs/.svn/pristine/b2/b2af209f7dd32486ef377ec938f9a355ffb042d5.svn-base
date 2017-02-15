@@ -1,0 +1,105 @@
+
+Build of Global Arrays
+
+Get from
+http://hpc.pnl.gov/globalarrays/index.shtml
+Need to fill-in form before downloading.
+
+There are ga-5-3b.tgz  ga-5-3.tgz  ga-5-4b.tgz but the "b"
+seems to imply the beta version.
+
+June 19, 2015
+
+In the end, failed tests.
+
+export PREFIX=/p/home/apps/unsupported/ga/5.3-intel
+mkdir $PREFIX
+cd /p/home/scheinin/build/ga/src/ga-5-3
+
+export CC=icc
+export FC=ifort
+export F77=ifort
+export CXX=icpc
+
+export CFLAGS=""
+export CXXFLAGS=""
+export FFLAGS=""
+
+export CPPFLAGS="-I${MKLROOT}/include/intel64/lp64 -I${MKLROOT}/include  -I${MKLROOT}/include/intel64"
+
+export LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--start-group -lmkl_lapack95_lp64 -lmkl_blacs_sgimpt_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -Wl,--end-group"
+
+export LIBS="-Wl,--start-group -lmkl_lapack95_lp64 -lmkl_blacs_sgimpt_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -Wl,--end-group"
+
+export FLIBS="-Wl,--start-group -lmkl_lapack95_lp64 -lmkl_blacs_sgimpt_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -Wl,--end-group"
+
+# The configure procedure has a flaw in that "-Wl" or "-Wl" are put in
+# SCALAPACK_LDFLAGS whereas "-l" are put into SCALAPACK_LIBS, so
+# --start-group and --end-group are put together.  Need to check
+# actual linking command to see if problem occurs.
+
+SCALAPACK_LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--start-group -lmkl_lapack95_lp64 -lmkl_blacs_sgimpt_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -Wl,--end-group"
+SCALAPACK_LIBS="-Wl,--start-group -lmkl_lapack95_lp64 -lmkl_blacs_sgimpt_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -Wl,--end-group"
+SCALAPACK_CPPFLAGS="-I${MKLROOT}/include/intel64/lp64 -I${MKLROOT}/include  -I${MKLROOT}/include/intel64"
+
+export GA_COPT="-O2"
+export GA_FOPT="-02"
+export GA_CXXOPT="-O2"
+
+# Compiling might use mpicc so set to Intel compiler.
+export MPICC_CC=icc
+export MPICXX_CXX=icpc
+export MPIF90_F90=ifort
+
+export MPICC=mpicc
+export MPIF77=mpif90
+export MPICXX=mpicxx
+
+export MPIEXEC="mpiexec_mpt -np %NP%"
+
+# --with-scalapack instead of --with-scalapack8 implies 4-byte integers.
+# --with-mpi-ts corresponds do nwchem "export ARMCI_NETWORK=MPI-TS"
+# Chose --enable-i4 because MPI may have that limitation, also
+# chose MKL lp rather than ilp in order to use 4-byte integers.
+# Did not use --enable-gparrays because nwchem does not seem to
+# specify that anywhere.
+./configure --prefix=$PREFIX \
+ --with-x --with-pic \
+ --with-scalapack --with-blas \
+ --with-mpi-ts --enable-i4 \
+ --enable-cxx --enable-f77 --enable-largefile \
+ --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+# Use -V to preserve build environment.
+qsub -q workq -l place=scatter:excl -l select=2:ncpus=36:mpiprocs=36,walltime=1:00:00 -V -I
+# As an interactive job
+make check 2>&1 | tee check.log
+
+FAIL: testing/perf
+lt-perf: testing/perf.c:42: main: Assertion `nproc == 2' failed.
+PASS: testing/perf_amo
+FAIL: testing/perf_contig
+lt-perf_contig: testing/perf_contig.c:42: main: Assertion `nproc == 2' failed.
+FAIL: testing/perf_strided
+lt-perf_strided: testing/perf_strided.c:42: main: Assertion `nproc == 2' failed.
+PASS: testing/shift
+See ./test-suite.log
+Please report to hpctools@pnl.gov
+
+configure.ac:AS_IF([test "x$NPROCS" = x], [NPROCS=4])
+
+I wrote to hpctools@pnl.gov .
+
+make install
+
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+

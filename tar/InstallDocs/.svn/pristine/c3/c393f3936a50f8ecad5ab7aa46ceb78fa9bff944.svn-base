@@ -1,0 +1,583 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Quantitative Timeline</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Charts"
+HREF="c876.html"><LINK
+REL="PREVIOUS"
+TITLE="Qualitative Timeline"
+HREF="x1003.html"><LINK
+REL="NEXT"
+TITLE="Counter Timeline"
+HREF="x1212.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1003.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Charts</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1212.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="QUANTIM"
+>4.3. Quantitative Timeline</A
+></H1
+><P
+>The Quantitative Timeline (<SPAN
+CLASS="guimenu"
+>Views Menu</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Charts</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Quantitative Timeline</SPAN
+>) gives an overview of the parallel behavior of the application. It shows - over time - how many processes or threads are involved in which function. Along the time axis, the different functions are presented as vertically stacked color bars. The height of these bars is proportional to the number of processes that are currently within the respective function. </P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="QUANTIMMH"
+>4.3.1. Mouse Hover</A
+></H2
+><P
+>When the mouse hovers over the Quantitative Timeline, the status
+bar displays the present position of the cursor with respect to
+time. It also shows details pertaining to the function group under the
+cursor.  <A
+HREF="x1099.html#FIG.QUANTIMMH"
+>Figure 4-14</A
+> shows that the mouse is
+currently at 2.01171 seconds and that it hovers over MPI.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="QUANTIMSD"
+>4.3.2. Quantitative Timeline Settings</A
+></H2
+><P
+>The Settings dialog box in the Quantitative Timeline has two tabs - the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences</I
+></SPAN
+> tab and the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Functions</I
+></SPAN
+> tab.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUANTIMMH"
+></A
+><P
+><B
+>Figure 4-14. Quantitative Timeline without a grid</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/quantim-mouhov.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences Tab</I
+></SPAN
+></P
+><P
+>Use the options in this tab to adjust the display options and the scaling of the timeline. It has a <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Display</I
+></SPAN
+> group and a <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Vertical Scaling</I
+></SPAN
+> group. In the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Display</I
+></SPAN
+> group, there are six check boxes. These are:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Scale:</I
+></SPAN
+>  This displays a time scale along the x-axis. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Vertical Scale:</I
+></SPAN
+>  This scale is on the y-axis. By default, this option is enabled so that the scale is shown.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Legend:</I
+></SPAN
+>  This shows the legend in the right margin of the timeline. This is also enabled by default.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Adjust Graphics to Legend Height:</I
+></SPAN
+> This forces the size of the diagram to be large enough to show all legend items.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Frames:</I
+></SPAN
+> Frames give an outline to the bars. The usage of frames becomes visible only when zooming in very closely such that each bar is separated from the other. <A
+HREF="x1099.html#FIG.QUANTIMFRAME"
+>Figure 4-15</A
+> illustrates the Quantitative Timeline with frames. In this figure, the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Application</I
+></SPAN
+> function group is shown with a black outline, while the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPIs</I
+></SPAN
+> are shown with a white outline. 
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Grid:</I
+></SPAN
+> Use this checkbox to turn the grid on or off. The grid is drawn on top of the data and is aligned
+        with the ticks on the scales.  By default, this checkbox is
+        activated.
+	</P
+></LI
+></UL
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUANTIMFRAME"
+></A
+><P
+><B
+>Figure 4-15. Using frames in the Quantitative Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/quantim-frm.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Vertical Scaling</I
+></SPAN
+></P
+><P
+>The vertical
+scaling option functions the same way as in the Qualitative Timeline
+(see <A
+HREF="x1003.html#QUALTIMSD"
+>Section 4.2.2</A
+>). </P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUANTIMSD"
+></A
+><P
+><B
+>Figure 4-16. The Quantitative Timeline settings dialog box</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/quantim-setdlg.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>The Functions Tab</I
+></SPAN
+></P
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Functions Tab</I
+></SPAN
+> selects the functions to be hidden/displayed. It is also possible to change the stacking order with this tab.</P
+><P
+>Radio buttons in this tab specify whether
+each individual process is counted (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Count individual
+Processes</I
+></SPAN
+>) or whether merely the uppermost entries of
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Group All_Processes</I
+></SPAN
+>(<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Count Top Level
+Entries of Group All_Processes Only</I
+></SPAN
+>) are counted.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="QUANTIMCM"
+>4.3.3. The Context Menu</A
+></H2
+><P
+>The context menu entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Ungroup</I
+></SPAN
+> in the
+Quantitative Timeline provides the option of ungrouping the given
+function group, like in the Function Profile (refer to <A
+HREF="x1330.html#FLATPROFCM"
+>Section 4.5.5.2</A
+>). Similarly, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Regroup</I
+></SPAN
+>
+allows undoing a previous ungrouping.</P
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Hide</I
+></SPAN
+> option in the context menu conceals the chosen activity. To unhide all the hidden items, use the check boxes in the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Functions</I
+></SPAN
+> tab of the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Settings Dialog</I
+></SPAN
+> box.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUANTIMCM"
+></A
+><P
+><B
+>Figure 4-17. Quantitative Timeline: context menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/quantim-conmen.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Move Group</I
+></SPAN
+> entry in the context menu changes the position of the different groups. The opted group can be moved to the top, to the bottom, upward by one position or downward by one position. Click on the legend to obtain a context menu with these options. </P
+><P
+>The other context menu entries are explained in <A
+HREF="x1974.html"
+>Section 4.8</A
+>.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="QUANTIMTF"
+>4.3.4. Filtering and Tagging</A
+></H2
+><P
+>Tagging in the Quantitative Timeline is indicated by a mesh
+pattern being placed over the tagged item. <A
+HREF="x1099.html#FIG.QUANTIMTAG"
+>Figure 4-18</A
+> shows a Quantitative Timeline for the file
+<SAMP
+CLASS="computeroutput"
+>poisson_icomm.single.stf</SAMP
+> with the
+tagged function <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPI_Finalize</I
+></SPAN
+> on the right-hand
+side of the display.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUANTIMTAG"
+></A
+><P
+><B
+>Figure 4-18. Tagging the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPI_Finalize</I
+></SPAN
+> function in the Quantitative Timeline</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/quantim-tag.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>Filtering in the Quantitative Timeline works the same way as in any other Chart. <A
+HREF="x1099.html#FIG.QUANTIMFLTR"
+>Figure 4-19</A
+> shows the result when only <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPI_Finalize</I
+></SPAN
+> passes the filter.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.QUANTIMFLTR"
+></A
+><P
+><B
+>Figure 4-19. Quantitative Timeline after filtering</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/quantim-fltr.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1003.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1212.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Qualitative Timeline</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c876.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Counter Timeline</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

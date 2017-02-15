@@ -1,0 +1,109 @@
+
+Source is
+http://www.hdfgroup.org/ftp/lib-external/szip/2.1/src/szip-2.1.tar.gz
+
+HDF5, for example, uses this.
+
+Build in my $HOME directory in case someone decides
+to remove src/ directory from destination.
+
+build in
+/p/home/scheinin/build/szip/src/szip-2.1
+
+Using the following modules, which are the default
+> module list
+Currently Loaded Modulefiles:
+  1) mpt/2.11-sgi711r13              6) intel-mkl-15/15.0.1.133
+  2) pbs/12.2.4.142262               7) intel-tbb-15/15.0.1.133
+  3) intel-cc-15/15.0.1.133          8) intel-ipp-15/15.0.1.133
+  4) intel-fc-15/15.0.1.133          9) intel-compilers-15/15.0.1.133
+  5) intel-debug-15/15.0.1.133
+
+Fri May 29 13:25:14 CDT 2015
+There is no GNU compiler suite installation aside from the
+compiler that comes with the distribution.  So for now only
+build for Intel compiler suite.
+
+# The choice of destination name is not consistent with COST
+# but is similar the naming convention of excalibur, though
+# excalibur is not consistent.  Also similar to naming
+# convention on garnet of /usr/local/usp
+
+ --- Intel below ---
+
+export PREFIX=/p/home/apps/unsupported/szip/2.1-intel
+
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+./configure --prefix=$PREFIX
+make
+make check
+make install
+
+# Note that both libsz.so and libsz.a were built.
+
+ --- Intel above ---
+ --- GNU below ---
+
+# Using native gcc.
+
+export PREFIX=/p/home/apps/unsupported/szip/2.1-gcc43
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+./configure --prefix=$PREFIX
+make
+make check
+make install
+
+    --- new GNU below
+
+export PREFIX=/p/home/apps/unsupported/szip/2.1-gcc49
+mkdir $PREFIX
+
+# Need to add compilers to PATH.
+export PATH=/apps/unsupported/gcc/4.9.2/bin:$PATH
+
+# Need to add shared libraries of compiler to LD_LIBRARY_PATH.
+export LD_LIBRARY_PATH=/apps/unsupported/gcc/4.9.2/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpc/1.0.3/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+
+export CXX=/apps/unsupported/gcc/4.9.2/bin/g++
+export CXXFLAGS="-O2"
+export CC=/apps/unsupported/gcc/4.9.2/bin/gcc
+export CFLAGS="-O2"
+export FC=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F77=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F90=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export LIBS=""
+export LDFLAGS=""
+
+cd /p/home/scheinin/build/szip-gcc49/src/szip-2.1
+
+./configure --prefix=$PREFIX
+make
+make check
+make install
+
+    --- new GNU above
+
+ --- GNU above ---
+
+# Note, there is more than one choice of $PREFIX .
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *

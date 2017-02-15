@@ -1,0 +1,720 @@
+
+Instructions
+http://www.ncl.ucar.edu/Download/build_from_src.shtml
+
+Initial state on jade
+
+jade> pwd
+/usr/local/usp/ncarg
+
+jade> find
+./ncarg-4.4.1-cnl
+./ncarg-4.4.1-cnl/bin
+./ncarg-4.4.1-cnl/include
+./ncarg-4.4.1-cnl/lib
+./ncarg-4.4.1-cnl/man
+./ncarg-4.4.1-cnl/src
+./ncarg-4.4.1-cnl/src/ncarg-4.4.1.src.tar.gz
+./ncarg-4.4.1-pgi
+./ncarg-4.4.1-pgi/bin
+./ncarg-4.4.1-pgi/include
+./ncarg-4.4.1-pgi/lib
+./ncarg-4.4.1-pgi/man
+./ncarg-4.4.1-pgi/src
+./ncarg-4.4.1-pgi/src/ncarg-4.4.1.src.tar.gz
+./ncl_ncarg-5.1.0-cnl
+./ncl_ncarg-5.1.0-cnl/bin
+./ncl_ncarg-5.1.0-cnl/include
+./ncl_ncarg-5.1.0-cnl/lib
+./ncl_ncarg-5.1.0-cnl/man
+./ncl_ncarg-5.1.0-cnl/src
+./ncl_ncarg-5.1.0-cnl/src/ncl_ncarg_src-5.1.0.tar.gz
+./ncl_ncarg-5.1.0-pgi
+./ncl_ncarg-5.1.0-pgi/bin
+./ncl_ncarg-5.1.0-pgi/include
+./ncl_ncarg-5.1.0-pgi/lib
+./ncl_ncarg-5.1.0-pgi/man
+./ncl_ncarg-5.1.0-pgi/src
+./ncl_ncarg-5.1.0-pgi/src/ncl_ncarg_src-5.1.0.tar.gz
+./ncl_ncarg-5.1.1-cnl
+./ncl_ncarg-5.1.1-cnl/bin
+./ncl_ncarg-5.1.1-cnl/include
+./ncl_ncarg-5.1.1-cnl/lib
+./ncl_ncarg-5.1.1-cnl/man
+./ncl_ncarg-5.1.1-cnl/src
+./ncl_ncarg-5.1.1-cnl/src/ncl_ncarg_src-5.1.1.tar.gz
+./ncl_ncarg-5.1.1-pgi
+./ncl_ncarg-5.1.1-pgi/bin
+./ncl_ncarg-5.1.1-pgi/include
+./ncl_ncarg-5.1.1-pgi/lib
+./ncl_ncarg-5.1.1-pgi/man
+./ncl_ncarg-5.1.1-pgi/src
+./ncl_ncarg-5.1.1-pgi/src/ncl_ncarg_src-5.1.1.tar.gz
+
+ ------------------------------------------------------------
+ncarg-4.4.1-pgi, below
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=pgcc
+export F77=pgf77
+export CXX=pgCC
+export FC=pgf77
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+# For ncarg-4.4.1, the name of the directory after tar extract
+# is ncarg-4.4.1, however, the ymake script expects "ncarg"
+# so the directory needs to be renamed.
+
+cd /usr/local/usp/ncarg/ncarg-4.4.1-pgi/src
+mv ncarg-4.4.1 ncarg
+
+export NCARG=/usr/local/usp/ncarg/ncarg-4.4.1-pgi/src/ncarg
+export NCARG_ROOT=/usr/local/usp/ncarg/ncarg-4.4.1-pgi
+
+# Need
+# /usr/local/usp/hdf4/4.2r4-nonetcdf
+# /usr/local/usp/hdf5/1.8.4-pgi
+# /usr/local/usp/netcdf/netcdf-4.0.1-pgi
+# /usr/local/usp/szip/2.1-pgi
+
+# Within the distribution
+cd config
+make -f Makefile.ini
+ ./ymake -config `pwd`
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+Edit LINUX and add -lrt and -lsz
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lrt  -lsz
+
+Make sure X11 library is 64-bit
+#define ArchRecLibSearch -L/usr/X11R6/lib64
+
+# The symbol aio_return is not defined in /usr/lib64/libaio.a but rather
+# it is defined in /usr/lib64/librt.a .
+
+cd ..
+./Configure -v
+
+Above change of config/LINUX is not enough, also added -lsz to Site.local
+after running Configure.
+#define LibSearch -L/usr/lib64 -L/usr/X11R6/lib64 -L/usr/local/usp/hdf4/4.2r4-nonetcdf/lib -L/usr/local/usp/hdf5/1.8.4-pgi/lib -L/usr/local/usp/netcdf/netcdf-4.0.1-pgi/lib -L/usr/local/usp/szip/2.1-pgi/lib -lsz
+
+export LD_LIBRARY_PATH=/usr/local/usp/hdf4/4.2r4-nonetcdf/lib:/usr/local/usp/hdf5/1.8.4-pgi/lib:/usr/local/usp/netcdf/netcdf-4.0.1-pgi/lib:/usr/local/usp/szip/2.1-pgi/lib:$LD_LIBRARY_PATH
+
+ make Everything 2>&1 | tee make.log
+
+# To continue when partially compiled, use
+ make All 2>&1 | tee -a make.log
+# but I always use make Everything.
+
+It is very important to read make.log and search for "error"
+because the build continues even though some tools are not made,
+for example, not finding "aio" related routines was just a few
+lines of an error message out of thousands of lines.
+
+cd $NCARG_ROOT
+find . -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+cd src
+chmod -R o-rwx ncarg
+cd ..
+chown -R scheinin:staff .
+
+cd $NCARG
+make clean
+
+ncarg-4.4.1-pgi, above
+ ------------------------------------------------------------
+ncarg-4.4.1-cnl, below
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=cc
+export F77=ftn
+export CXX=CC
+export FC=ftn
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+# For ncarg-4.4.1, the name of the directory after tar extract
+# is ncarg-4.4.1, however, the ymake script expects "ncarg"
+# so the directory needs to be renamed.
+
+cd /usr/local/usp/ncarg/ncarg-4.4.1-cnl/src
+mv ncarg-4.4.1 ncarg
+
+export NCARG=/usr/local/usp/ncarg/ncarg-4.4.1-cnl/src/ncarg
+export NCARG_ROOT=/usr/local/usp/ncarg/ncarg-4.4.1-cnl
+
+# Need
+# /usr/local/usp/hdf4/4.2r4-nonetcdf
+# /usr/local/usp/hdf5/1.8.4-cnl
+# /usr/local/usp/netcdf/netcdf-4.0.1-cnl
+# /usr/local/usp/szip/2.1-cnl
+
+# Within the distribution
+cd config
+make -f Makefile.ini
+ ./ymake -config `pwd`
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+emacs LINUX
+
+#define CCompiler     cc
+#define FCompiler     ftn
+#define COptimizeFlag  -O
+#define FOptimizeFlag  -O
+
+FC = ftn
+
+#define XLibrary -lXpm -lX11 -lXext
+
+remove -ansi from
+#define CcOptions
+
+Removed   "-lg2c"
+#define CtoFLibraries  -lgcc -lm
+
+Make sure library search is 64-bit lib64.
+#define ArchRecLibSearch    -L/usr/X11R6/lib64
+
+# end of editing LINUX
+
+File named "Project"
+add lsz to HDFlib after -ldf
+#define	HDFlib	-lmfhdf -ldf -ljpeg -lsz -lz
+
+cd ..
+./Configure -v
+
+Edit config/Site.local to add -lsz
+#define LibSearch -L/usr/lib64 -L/usr/X11R6/lib64 -L/usr/local/usp/hdf4/4.2r4-nonetcdf/lib -L/usr/local/usp/hdf5/1.8.4-cnl/lib -L/usr/local/usp/netcdf/netcdf-4.0.1-cnl/lib -L/usr/local/usp/szip/2.1-cnl/lib -lsz
+
+# It should not be necessary to add the hdf4, hdf5, netcdf and szip libraries
+# to the LD_LIBRARY_PATH because the software compiled with ftn should be
+# static.
+
+ make Everything 2>&1 | tee make.log
+
+# To continue if compiled only partially
+ make All 2>&1 | tee -a make.log
+
+
+cd $NCARG_ROOT
+find .  -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+# The next line should not be necessary for an installed directory
+# but curiously hdf5 installed some without "other" read permission.
+find . -exec chmod ugo+r {} \; -print
+cd src
+chmod -R o-rwx ncarg
+cd ..
+chown -R scheinin:staff .
+
+cd $NCARG
+make clean
+
+ncarg-4.4.1-cnl, above
+ ------------------------------------------------------------
+ncl_ncarg-5.1.0-pgi below
+
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=pgcc
+export F77=pgf90
+export CXX=pgCC
+export FC=pgf90
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/usr/local/usp/ncarg/ncl_ncarg-5.1.0-pgi/src/ncl_ncarg-5.1.0
+export NCARG_ROOT=/usr/local/usp/ncarg/ncl_ncarg-5.1.0-pgi
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+
+Edit LINUX
+
+Changed from
+/*
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpghpf
+ */
+#define CtoFLibraries -pgf90libs
+to
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpgf90rtl -lpghpf -lrt -lsz
+/*
+#define CtoFLibraries -pgf90libs
+*/
+
+Have
+#define XToolLibrary -lXt -lSM -lICE
+
+From
+FC = $(F77)
+to
+FC = pgf90 -fPIC
+
+Changed to
+/*
+#define CCompiler     pgcc -tp k8-64 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler     pgf90 -tp k8-64 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+*/
+#define CCompiler     pgcc -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler     pgf90 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+
+
+# Note that the symbol aio_return is not defined in
+# /usr/lib64/libaio.a but rather
+# it is defined in /usr/lib64/librt.a .
+
+Make sure X11 library is 64-bit
+#define ArchRecLibSearch -L/usr/X11R6/lib64
+
+End of editing LINUX
+
+cd ..
+./Configure -v
+
+# Need
+# /usr/local/usp/hdf4/4.2r4-nonetcdf
+# /usr/local/usp/hdf5/1.8.4-pgi
+# /usr/local/usp/netcdf/netcdf-4.0.1-pgi
+# /usr/local/usp/szip/2.1-pgi
+
+export LD_LIBRARY_PATH=/usr/local/usp/hdf4/4.2r4-nonetcdf/lib:/usr/local/usp/hdf5/1.8.4-pgi/lib:/usr/local/usp/netcdf/netcdf-4.0.1-pgi/lib:/usr/local/usp/szip/2.1-pgi/lib:$LD_LIBRARY_PATH
+
+Build NCL (y)? y
+Parent installation directory : /usr/local/usp/ncarg/ncl_ncarg-5.1.0-pgi
+System temp space directory   : /work/scheinin/tmp
+Build png/zlib support (optional) into GKS library? y
+Did you build HDF-4 with szip support? y
+Build Triangle support (optional) into NCL? no
+Build NetCDF-4 support (optional) into NCL? y
+Build Udunits support (optional) into NCL? n
+Build Vis5d+ support (optional) into NCL? n
+Build HDFEOS support (optional) into NCL? n
+Build GRIB2 support (optional) into NCL? n
+Build OPeNDAP support (optional) into NCL? n
+Enter local library search path(s) : /usr/lib64 /usr/X11R6/lib64 /usr/local/usp/hdf4/4.2r4-nonetcdf/lib /usr/local/usp/hdf5/1.8.4-pgi/lib /usr/local/usp/netcdf/netcdf-4.0.1-pgi/lib /usr/local/usp/szip/2.1-pgi/lib
+Enter local include search path(s) : /usr/include /usr/X11R6/include /usr/local/usp/hdf4/4.2r4-nonetcdf/include /usr/local/usp/hdf5/1.8.4-pgi/include /usr/local/usp/netcdf/netcdf-4.0.1-pgi/include /usr/local/usp/szip/2.1-pgi/include
+
+ make Everything 2>&1 | tee make.log
+
+# To continue if compiled only partially
+ make All 2>&1 | tee -a make.log
+
+cd $NCARG_ROOT
+find .  -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+# The next line should not be necessary for an installed directory
+# but curiously hdf5 installed some without "other" read permission.
+find . -exec chmod ugo+r {} \; -print
+cd src
+chmod -R o-rwx <ncarg_something>
+cd ..
+chown -R scheinin:staff .
+
+cd $NCARG
+make clean
+
+ncl_ncarg-5.1.0-pgi above
+ ------------------------------------------------------------
+ncl_ncarg-5.1.0-cnl below
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=cc
+export F77=ftn
+export CXX=CC
+export FC=ftn
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/usr/local/usp/ncarg/ncl_ncarg-5.1.0-cnl/src/ncl_ncarg-5.1.0
+export NCARG_ROOT=/usr/local/usp/ncarg/ncl_ncarg-5.1.0-cnl
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+Edit LINUX
+
+Changed from
+/*
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpghpf
+ */
+#define CtoFLibraries -pgf90libs
+to
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpgf90rtl -lpghpf -lrt -lsz
+/*
+#define CtoFLibraries -pgf90libs
+*/
+
+# Note that the symbol aio_return is not defined in
+# /usr/lib64/libaio.a but rather
+# it is defined in /usr/lib64/librt.a .
+
+Change to
+#define CCompiler  cc -O -Msignextend -Mreentrant -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler  ftn -O -Msignextend -Mreentrant -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+/*
+#define ExtraExportFlags -Wl,--export-dynamic
+*/
+FC = ftn
+
+Make sure X11 library is 64-bit
+#define ArchRecLibSearch -L/usr/X11R6/lib64
+
+Change to
+#define XToolLibrary -lXt -lXpm -lSM -lICE
+
+End of editing of LINUX
+
+# Need
+# /usr/local/usp/hdf4/4.2r4-nonetcdf
+# /usr/local/usp/hdf5/1.8.4-cnl
+# /usr/local/usp/netcdf/netcdf-4.0.1-cnl
+# /usr/local/usp/szip/2.1-cnl
+
+cd ..
+./Configure -v
+
+Build NCL (y)? y
+Parent installation directory : /usr/local/usp/ncarg/ncl_ncarg-5.1.0-cnl
+System temp space directory   : /work/scheinin/tmp
+Build png/zlib support (optional) into GKS library? y
+Did you build HDF-4 with szip support? y
+Build Triangle support (optional) into NCL? n
+Build NetCDF-4 support (optional) into NCL? y
+Build Udunits support (optional) into NCL? n
+Build Vis5d+ support (optional) into NCL? n
+Build HDFEOS support (optional) into NCL? n
+Build GRIB2 support (optional) into NCL? n
+Build OPeNDAP support (optional) into NCL? n
+Enter local library search path(s) : /usr/lib64 /usr/X11R6/lib64 /usr/local/usp/hdf4/4.2r4-nonetcdf/lib /usr/local/usp/hdf5/1.8.4-cnl/lib /usr/local/usp/netcdf/netcdf-4.0.1-cnl/lib /usr/local/usp/szip/2.1-cnl/lib
+Enter local include search path(s) : /usr/include /usr/X11R6/include /usr/local/usp/hdf4/4.2r4-nonetcdf/include /usr/local/usp/hdf5/1.8.4-cnl/include /usr/local/usp/netcdf/netcdf-4.0.1-cnl/include /usr/local/usp/szip/2.1-cnl/include
+
+ make Everything 2>&1 | tee make.log
+
+# To continue if compiled only partially
+ make All 2>&1 | tee -a make.log
+
+cd $NCARG_ROOT
+find .  -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+# The next line should not be necessary for an installed directory
+# but curiously hdf5 installed some without "other" read permission.
+find . -exec chmod ugo+r {} \; -print
+cd src
+chmod -R o-rwx <ncarg_something>
+cd ..
+chown -R scheinin:staff .
+
+cd $NCARG
+make clean
+
+ncl_ncarg-5.1.0-cnl above
+ ------------------------------------------------------------
+ncl_ncarg-5.1.1-pgi below
+
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=pgcc
+export F77=pgf90
+export CXX=pgCC
+export FC=pgf90
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/usr/local/usp/ncarg/ncl_ncarg-5.1.1-pgi/src/ncl_ncarg-5.1.1
+export NCARG_ROOT=/usr/local/usp/ncarg/ncl_ncarg-5.1.1-pgi
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+
+Edit LINUX
+
+Changed from
+/*
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpghpf
+ */
+#define CtoFLibraries -pgf90libs
+to
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpgf90rtl -lpghpf -lrt -lsz
+/*
+#define CtoFLibraries -pgf90libs
+*/
+
+Change to
+#define XToolLibrary -lXt -lXpm -lSM -lICE
+
+From
+FC = $(F77)
+to
+FC = pgf90 -fPIC
+
+Changed to
+/*
+#define CCompiler     pgcc -tp k8-64 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler     pgf90 -tp k8-64 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+*/
+#define CCompiler     pgcc -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler     pgf90 -O -Msignextend -Mreentrant -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+
+
+# Note that the symbol aio_return is not defined in
+# /usr/lib64/libaio.a but rather
+# it is defined in /usr/lib64/librt.a .
+
+Make sure X11 library is 64-bit
+#define ArchRecLibSearch -L/usr/X11R6/lib64
+
+End of editing LINUX
+
+cd ..
+./Configure -v
+
+# Need
+# /usr/local/usp/hdf4/4.2r4-nonetcdf
+# /usr/local/usp/hdf5/1.8.4-pgi
+# /usr/local/usp/netcdf/netcdf-4.0.1-pgi
+# /usr/local/usp/szip/2.1-pgi
+
+export LD_LIBRARY_PATH=/usr/local/usp/hdf4/4.2r4-nonetcdf/lib:/usr/local/usp/hdf5/1.8.4-pgi/lib:/usr/local/usp/netcdf/netcdf-4.0.1-pgi/lib:/usr/local/usp/szip/2.1-pgi/lib:$LD_LIBRARY_PATH
+
+Build NCL (y)? y
+Parent installation directory : /usr/local/usp/ncarg/ncl_ncarg-5.1.1-pgi
+System temp space directory   : /work/scheinin/tmp
+Build png/zlib support (optional) into GKS library? y
+Did you build HDF-4 with szip support? y
+Build Triangle support (optional) into NCL? n
+Build NetCDF-4 support (optional) into NCL? y
+Build GDAL support (optional) into NCL? n
+Build Udunits support (optional) into NCL? n
+Build Vis5d+ support (optional) into NCL? n
+Build HDFEOS support (optional) into NCL? n
+Build GRIB2 support (optional) into NCL? n
+Build OPeNDAP support (optional) into NCL? n
+Enter local library search path(s) : /usr/lib64 /usr/X11R6/lib64 /usr/local/usp/hdf4/4.2r4-nonetcdf/lib /usr/local/usp/hdf5/1.8.4-pgi/lib /usr/local/usp/netcdf/netcdf-4.0.1-pgi/lib /usr/local/usp/szip/2.1-pgi/lib
+Enter local include search path(s) : /usr/include /usr/X11R6/include /usr/local/usp/hdf4/4.2r4-nonetcdf/include /usr/local/usp/hdf5/1.8.4-pgi/include /usr/local/usp/netcdf/netcdf-4.0.1-pgi/include /usr/local/usp/szip/2.1-pgi/include
+
+ make Everything 2>&1 | tee make.log
+
+# To continue if compiled only partially
+ make All 2>&1 | tee -a make.log
+
+cd $NCARG_ROOT
+find .  -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+# The next line should not be necessary for an installed directory
+# but curiously hdf5 installed some without "other" read permission.
+find . -exec chmod ugo+r {} \; -print
+cd src
+chmod -R o-rwx <ncarg_something>
+cd ..
+chown -R scheinin:staff .
+
+cd $NCARG
+make clean
+
+ncl_ncarg-5.1.1-pgi above
+ ------------------------------------------------------------
+ncl_ncarg-5.1.1-cnl below
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CC=cc
+export F77=ftn
+export CXX=CC
+export FC=ftn
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Environment variable NCARG is source and
+# NCARG_ROOT is the installation location that users need to set.
+
+export NCARG=/usr/local/usp/ncarg/ncl_ncarg-5.1.1-cnl/src/ncl_ncarg-5.1.1
+export NCARG_ROOT=/usr/local/usp/ncarg/ncl_ncarg-5.1.1-cnl
+
+ cd $NCARG/config
+ make -f Makefile.ini
+ ./ymake -config `pwd`
+
+ grep SYSTEM_INCLUDE Makefile
+SYSTEM_INCLUDE          = "LINUX"
+
+# This really should be LINUX.64.PGI
+# but just do the following.
+mv LINUX LINUX_original
+cp LINUX.64.PGI LINUX
+
+Edit LINUX
+
+Changed from
+/*
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpghpf
+ */
+#define CtoFLibraries -pgf90libs
+to
+#define CtoFLibraries -lpgc -lpgf90  -lpgf90_rpm1  -lpgf902 -lpgftnrtl -lpgf90rtl -lpghpf -lrt -lsz
+/*
+#define CtoFLibraries -pgf90libs
+*/
+
+# Note that the symbol aio_return is not defined in
+# /usr/lib64/libaio.a but rather
+# it is defined in /usr/lib64/librt.a .
+
+Change to
+#define CCompiler  cc -O -Msignextend -Mreentrant -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+#define FCompiler  ftn -O -Msignextend -Mreentrant -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+/*
+#define ExtraExportFlags -Wl,--export-dynamic
+*/
+FC = ftn
+
+Change to
+#define XToolLibrary -lXt -lXpm -lSM -lICE
+
+Make sure X11 library is 64-bit
+#define ArchRecLibSearch -L/usr/X11R6/lib64
+
+End of editing of LINUX
+
+# Need
+# /usr/local/usp/hdf4/4.2r4-nonetcdf
+# /usr/local/usp/hdf5/1.8.4-cnl
+# /usr/local/usp/netcdf/netcdf-4.0.1-cnl
+# /usr/local/usp/szip/2.1-cnl
+
+cd ..
+./Configure -v
+
+Build NCL (y)? y
+Parent installation directory : /usr/local/usp/ncarg/ncl_ncarg-5.1.1-cnl
+System temp space directory   : /work/scheinin/tmp
+Build png/zlib support (optional) into GKS library? y
+Did you build HDF-4 with szip support? y
+Build Triangle support (optional) into NCL? n
+Build NetCDF-4 support (optional) into NCL? y
+Build GDAL support (optional) into NCL? n
+Build Udunits support (optional) into NCL? n
+Build Vis5d+ support (optional) into NCL? n
+Build HDFEOS support (optional) into NCL? n
+Build GRIB2 support (optional) into NCL? n
+Build OPeNDAP support (optional) into NCL? n
+Enter local library search path(s) : /usr/lib64 /usr/X11R6/lib64 /usr/local/usp/hdf4/4.2r4-nonetcdf/lib /usr/local/usp/hdf5/1.8.4-cnl/lib /usr/local/usp/netcdf/netcdf-4.0.1-cnl/lib /usr/local/usp/szip/2.1-cnl/lib
+Enter local include search path(s) : /usr/include /usr/X11R6/include /usr/local/usp/hdf4/4.2r4-nonetcdf/include /usr/local/usp/hdf5/1.8.4-cnl/include /usr/local/usp/netcdf/netcdf-4.0.1-cnl/include /usr/local/usp/szip/2.1-cnl/include
+
+ make Everything 2>&1 | tee make.log
+
+# To continue if compiled only partially
+ make All 2>&1 | tee -a make.log
+
+cd $NCARG_ROOT
+find .  -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \; -print
+# The next line should not be necessary for an installed directory
+# but curiously hdf5 installed some without "other" read permission.
+find . -exec chmod ugo+r {} \; -print
+cd src
+chmod -R o-rwx <ncarg_something>
+cd ..
+chown -R scheinin:staff .
+
+cd $NCARG
+make clean
+
+ncl_ncarg-5.1.1-cnl above
+ ------------------------------------------------------------
+

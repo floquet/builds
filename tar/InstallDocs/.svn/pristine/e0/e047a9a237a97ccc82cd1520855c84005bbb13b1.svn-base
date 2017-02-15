@@ -1,0 +1,208 @@
+
+Download from a link on page
+http://www.unidata.ucar.edu/downloads/udunits/index.jsp
+
+# When machine first became available,
+# TMPDIR and WORKDIR were not defined.
+# In that case,
+export WORKDIR=/p/work1/scheinin
+export TMPDIR=$WORKDIR/tmp
+mkdir $TMPDIR
+(Later, actually, I was assigned /p/work2/scheinin for $WORKDIR.)
+
+Cannot build CUnit-2.1-3 for testing
+because it uses an old configure.in .
+
+ --- Intel below ---
+
+export INTEL_VERSION=15.0.2
+export INTEL_VERSION=15.0.3
+export INTEL_VERSION=16.0.0
+export INTEL_VERSION=17.0.1
+
+export UDUNITS_VERSION=2.2.19
+export UDUNITS_VERSION=2.2.24
+
+export PATH=/apps/gnu_compiler/6.1.0/bin:$PATH
+module unload mpi/sgimpt
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+
+export BUILD_DIR=/p/home/scheinin/build/udunits/${UDUNITS_VERSION}-intel-${INTEL_VERSION}
+mkdir $BUILD_DIR
+export PREFIX=/p/home/apps/unsupported/udunits/${UDUNITS_VERSION}-intel-${INTEL_VERSION}
+mkdir $PREFIX
+cd $BUILD_DIR
+wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-${UDUNITS_VERSION}.tar.gz
+tar xzf udunits-${UDUNITS_VERSION}.tar.gz ; cd udunits-${UDUNITS_VERSION}
+
+Rely on RPM libexpat-devel having been installed.
+
+# Initially, topaz missing expat-devel so needed to build it.
+# As of June 3, 2015, libexpat-devel has been installed on topaz.
+# So future udunits will not need /apps/unsupported/expat .
+# Removed line below because
+# libexpat-devel-2.0.1-88.34.1 has been installed.
+# export EXPATDIR=/p/home/apps/unsupported/expat/2.1.0-intel
+
+export CXX=icpc
+export CXXFLAGS="-fPIC -O2"
+export CC=icc
+export CFLAGS="-fPIC -O2"
+# Changed line below because
+# libexpat-devel-2.0.1-88.34.1 has been installed.
+#export CPPFLAGS="-I${EXPATDIR}/include"
+export CPPFLAGS=""
+export FC=ifort
+# Changed two lines below because
+# libexpat-devel-2.0.1-88.34.1 has been installed.
+#export FFLAGS="-fPIC -O2 -I${EXPATDIR}/include"
+#export LDFLAGS="-L${EXPATDIR}/lib"
+export FFLAGS="-fPIC -O2"
+export LDFLAGS=""
+export LIBS=""
+
+# Removed line below because
+# libexpat-devel-2.0.1-88.34.1 has been installed.
+# export LD_LIBRARY_PATH=${EXPATDIR}/lib:$LD_LIBRARY_PATH
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+Version 2.2.19 but not version 2.2.24 there is the warning
+# configure: Checking for the CUNIT unit-testing package.
+# Not found.
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+(It seems that there are no tests.)
+make install
+
+fix permissions
+ --- Intel above ---
+ --- GNU below. ---
+    --- native GNU below
+June 14, 2015
+
+export PREFIX=/p/home/apps/unsupported/udunits/2.2.19-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/udunits-gcc43/src
+wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.2.19.tar.gz
+tar xzf udunits-2.2.19.tar.gz ; cd udunits-2.2.19
+
+Rely on RPM libexpat-devel having been installed.
+
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+configure: CUNIT not found.
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+(It seems that there are no tests.)
+make install
+
+    --- native GNU above
+    --- new GNU below
+June 14, 2015
+
+export PREFIX=/p/home/apps/unsupported/udunits/2.2.19-gcc49
+mkdir $PREFIX
+cd /p/home/scheinin/build/udunits-gcc49/src
+wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.2.19.tar.gz
+tar xzf udunits-2.2.19.tar.gz ; cd udunits-2.2.19
+
+Rely on RPM libexpat-devel having been installed.
+
+# Need to add compilers to PATH.
+export PATH=/apps/unsupported/gcc/4.9.2/bin:$PATH
+
+# Need to add shared libraries to LD_LIBRARY_PATH.
+export LD_LIBRARY_PATH=/apps/unsupported/gcc/4.9.2/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpc/1.0.3/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+
+export CXX=/apps/unsupported/gcc/4.9.2/bin/g++
+export CXXFLAGS="-O2"
+export CC=/apps/unsupported/gcc/4.9.2/bin/gcc
+export CFLAGS="-O2"
+export FC=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F77=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F90=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export LIBS=""
+export LDFLAGS=""
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+configure: CUNIT not found.
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+(It seems that there are no tests.)
+make install
+
+    --- new GNU above
+
+February 2, 2017 below
+
+module unload compiler/intel/15.0.3
+module load compiler/gcc/6.1.0
+export BUILD_DIR=/p/home/scheinin/build/udunits/2.2.24-gcc-6.1.0
+export PREFIX=/apps/unsupported/udunits/2.2.24-gcc-6.1.0
+mkdir $PREFIX
+cd $BUILD_DIR
+wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.2.24.tar.gz
+tar xzf udunits-2.2.24.tar.gz ; cd udunits-2.2.24
+
+Rely on RPM libexpat-devel having been installed.
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export CXXFLAGS="-O2"
+export CFLAGS="-O2"
+export LIBS=""
+export LDFLAGS=""
+
+echo $BUILD_DIR ; echo $PREFIX ; $CC --version
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+# configure: Checking for the CUNIT unit-testing package.
+# Not found.
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+(It seems that there are no tests.)
+make install
+
+fix permissions
+February 2, 2017 above
+
+ --- GNU above. ---
+
+# For each PREFIX or (for the first time)
+# topdir=/p/home/apps/unsupported/udunits
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+

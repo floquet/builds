@@ -1,0 +1,126 @@
+
+
+export NETCDF_INC=/usr/local/usp/netcdf/netcdf-4.1.1-pgi/include
+export NETCDF_LIB=/usr/local/usp/netcdf/netcdf-4.1.1-pgi/lib
+export NETCDF4_ROOT=/usr/local/usp/netcdf/netcdf-4.1.1-pgi
+export HDF5_LIB_DIR=/usr/local/usp/hdf5/1.8.5p1-pgi/lib
+
+export CC=pgcc
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-pgi/include -I/usr/local/usp/hdf5/1.8.5p1-pgi/include -I/usr/local/usp/netcdf/netcdf-4.1.1-pgi/include -I/usr/local/usp/gsl/1.14-pgi/include"
+export CFLAGS="-O2 -fPIC"
+export F90=pgf90
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2 -fPIC"
+export CXX=pgCC
+export CXXFLAGS="-O2 -fPIC"
+export LIBS="-lnetcdf -lnetcdff -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran -lsz"
+export LDFLAGS="-L/usr/local/usp/netcdf/netcdf-4.1.1-pgi/lib -L/usr/local/usp/hdf5/1.8.5p1-pgi/lib -L/usr/local/usp/szip/2.1-pgi/lib -L/usr/local/usp/gsl/1.14-pgi/lib"
+
+export LD_LIBRARY_PATH=/usr/local/usp/netcdf/netcdf-4.1.1-pgi/lib:/usr/local/usp/hdf5/1.8.5p1-pgi/lib:/usr/local/usp/szip/2.1-pgi/lib:/usr/local/usp/gsl/1.14-pgi/lib:$LD_LIBRARY_PATH
+
+export PATH=/usr/local/usp/gsl/1.14-pgi/bin:$PATH
+
+./configure --prefix=/u/scheinin/NCO \
+ --enable-gsl --enable-netcdf4 --enable-ncoxx 
+
+ENABLE_DAP_NETCDF.... no
+ENABLE_DAP_OPENDAP... no
+ENABLE_UDUNITS....... no
+ENABLE_UDUNITS2...... no
+
+make 2>&1 | tee make.log
+
+pgCC-Warning-prelink_objects switch is deprecated
+pgCC-Warning-instantiation_dir switch is deprecated
+/usr/lib64/crt1.o: In function `_start':
+/usr/src/packages/BUILD/glibc-2.9/csu/../sysdeps/x86_64/elf/start.S:109: undefined reference to `main'
+.libs/nco_att_utl.o: In function `nco_aed_prc':
+/work/local/u/scheinin/NCO/nco-4.0.6/src/nco/./nco_att_utl.c:65: undefined reference to `nco_mss_val_sng_get'
+
+make check 2>&1 | tee check.log
+make install
+make clean
+
+ ------------
+
+ module swap PrgEnv-pgi PrgEnv-gnu
+
+export NETCDF_INC=/usr/local/usp/netcdf/netcdf-4.1.1-gnu/include
+export NETCDF_LIB=/usr/local/usp/netcdf/netcdf-4.1.1-gnu/lib
+export NETCDF4_ROOT=/usr/local/usp/netcdf/netcdf-4.1.1-gnu
+export HDF5_LIB_DIR=/usr/local/usp/hdf5/1.8.5p1-gnu/lib
+
+export CC=gcc
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-gnu/include -I/usr/local/usp/hdf5/1.8.5p1-gnu/include -I/usr/local/usp/netcdf/netcdf-4.1.1-gnu/include -I/usr/local/usp/gsl/1.14-gnu/include"
+export CFLAGS="-O2 -fPIC"
+export F90=gfortran
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2 -fPIC"
+export CXX=g++
+export CXXFLAGS="-O2 -fPIC"
+export LIBS="-lnetcdf -lnetcdff -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran -lsz"
+export LDFLAGS="-L/usr/local/usp/netcdf/netcdf-4.1.1-gnu/lib -L/usr/local/usp/hdf5/1.8.5p1-gnu/lib -L/usr/local/usp/szip/2.1-gnu/lib -L/usr/local/usp/gsl/1.14-gnu/lib"
+
+export LD_LIBRARY_PATH=/usr/local/usp/netcdf/netcdf-4.1.1-gnu/lib:/usr/local/usp/hdf5/1.8.5p1-gnu/lib:/usr/local/usp/szip/2.1-gnu/lib:/usr/local/usp/gsl/1.14-gnu/lib:$LD_LIBRARY_PATH
+
+export PATH=/usr/local/usp/gsl/1.14-gnu/bin:$PATH
+
+./configure --prefix=/u/scheinin/NCO \
+ --enable-gsl --enable-netcdf4 --enable-ncoxx 
+
+ENABLE_DAP_NETCDF.... no
+ENABLE_DAP_OPENDAP... no
+ENABLE_UDUNITS....... no
+ENABLE_UDUNITS2...... no
+
+make 2>&1 | tee make.log
+
+Invoke.cc:15:25: fatal error: antlr/AST.hpp: No such file or directory
+
+make check 2>&1 | tee check.log
+make install
+make clean
+
+./configure --prefix=/u/scheinin/NCO \
+ --enable-gsl --enable-netcdf4  --disable-ncoxx 
+
+DEBUG: enable_ncoxx: yes and NCOXX = nco++
+Why, why, why? !
+
+make 2>&1 | tee make.log
+
+Invoke.cc:15:25: fatal error: antlr/AST.hpp: No such file or directory
+Why try to compile programs in nco-4.0.6/src/nco++ when configuration
+says --disable-ncoxx ?
+
+make check 2>&1 | tee check.log
+
+make install
+make clean
+
+
+./configure --prefix=/u/scheinin/NCO \
+ --enable-gsl --enable-netcdf4 \
+ --disable-ncap2  --disable-ncoxx 
+
+make 2>&1 | tee make.log
+
+OK
+
+make check 2>&1 | tee check.log
+
+make[3]: Entering directory `/work/local/u/scheinin/NCO/nco-4.0.6/src/nco_c++'
+libnco_c++ version  1.3 last modified 2010/12/21 20:12:07 built Feb 17 2011 on garnet03 by scheinin
+nco_err_exit(): ERROR netCDF library returned error code 2
+nco_err_exit(): ERROR nco_open
+No such file or directory
+
+Why, why, why enter nco_c++ when it has been disabled.
+
+make -k check 2>&1 | tee check.log
+
+It turns out that there are no other checks implemented aside
+from nco_c++ .
+

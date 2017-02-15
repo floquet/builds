@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Tagging and Filtering</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Concepts"
+HREF="c3010.html"><LINK
+REL="PREVIOUS"
+TITLE="Aggregation"
+HREF="x3028.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x3028.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Concepts</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="TAG.AND.FLTR"
+>10.3. Tagging and Filtering</A
+></H1
+><P
+>Both concepts use the same filter grammar in their filter expressions.
+See <A
+HREF="c2028.html#FLTRDLG"
+>Section 5.1</A
+> and <A
+HREF="x2253.html"
+>Section 5.2</A
+> for usage
+hints.</P
+><P
+>Conceptually there is a different filter for each class of
+events: function events, messages and collective operations. During
+analysis the right filter expression is evaluated for each event and
+the event is tagged or passed on, if the expression is true while it
+is left untagged or suppressed, if the expression is false.</P
+><P
+>The behavior of a filter is determined at the time of its
+creation. A filter will continue filtering the same way until it
+is changed, even if the thread groups or function groups that it
+references are changed. Events will be treated as belonging to
+these groups based on the state of the groups at the time the
+filter was first created.</P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="TAG"
+>10.3.1. Tagging</A
+></H2
+><P
+>If several events are merged as described in <A
+HREF="c3010.html#LOD"
+>Section 10.1</A
+> then the merged event is tagged if at least one of the
+singular events is tagged.</P
+><P
+>Therefore tagging in particular together with the Qualitative Timeline
+Chart (see <A
+HREF="x1003.html"
+>Section 4.2</A
+>) is a very powerful tool
+to find events matching a certain criterion. This is because only if a
+single event out of billions matches the criteria of the tag filter,
+then it is guaranteed that there will be a highlighted peak in the Qualitative
+Timeline Chart that indicates where to zoom into the trace.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="FLTR"
+>10.3.2. Filtering</A
+></H2
+><P
+>If an event is suppressed by filtering then the effect is as if
+it were never written to the trace file. This is relatively easy to
+understand for messages and collective operations. </P
+><P
+>However, if a filter is designed that lets all functions except
+MPI pass, then there won't be holes in the Event Timeline, instead it will look as if MPI was not called. This means that it will look as if the
+thread was in the calling function instead of being in MPI. The same is true 
+for the call tree and the call graph.</P
+><P
+>What happens if there are functions A, B and C in the trace where
+A calls B and B calls C and then suppress B by filtering it out? It
+would appear as if A had called C directly! This is quite different from
+choosing a function aggregation that does not cover B, because that
+will show the function group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>other</I
+></SPAN
+> wherever
+B was shown before. Again: Filtering and Aggregation are orthogonal.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x3028.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Aggregation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c3010.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

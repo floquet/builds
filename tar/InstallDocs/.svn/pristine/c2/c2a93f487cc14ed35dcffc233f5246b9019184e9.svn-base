@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>The Status Bar</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Views"
+HREF="c451.html"><LINK
+REL="PREVIOUS"
+TITLE="Views"
+HREF="c451.html"><LINK
+REL="NEXT"
+TITLE="Navigation In Time"
+HREF="x806.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c451.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Views</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x806.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="STATBAR"
+>3.2. The Status Bar</A
+></H1
+><P
+>When moving the mouse cursor over an event in a timeline or an
+entry in a profile, expanded information on the respective entry is seen in the status bar at the bottom of the View for a few
+seconds. After this, or when the mouse moves into the status bar, it
+provides buttons that show the current settings and that enable changing the current settings. These shortcut buttons are described
+below:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Interval</I
+></SPAN
+></P
+><P
+>The leftmost button in the status bar opens a dialog box that sets the time
+interval. More about the time interval dialog box is available
+in <A
+HREF="x2499.html"
+>Section 5.8</A
+>. The title on this button is of the form
+<SPAN
+CLASS="QUOTE"
+>"$Start, $End: $Duration"</SPAN
+>. The status bar in <A
+HREF="c451.html#FIG.LAYLEFT"
+>Figure 3-6</A
+> shows that the
+start position of the time interval is at 0.0 seconds, the end
+position at 2.072 seconds and that the duration is 2.072 seconds. The
+button appears flat when the full time range of the file is
+shown.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Sec./Tick</I
+></SPAN
+></P
+><P
+>This button shows the current unit of time and switches the unit
+from seconds to ticks and vice versa. The button appears flat if the
+unit in use is seconds and appears raised when using ticks. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Process Aggregation</I
+></SPAN
+></P
+><P
+>This button shows the current process aggregation. By default,
+this is <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>All_Processes</I
+></SPAN
+>. Click this button to open the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Process Group Editor</I
+></SPAN
+> dialog box, which is explained in
+<A
+HREF="x2264.html"
+>Section 5.3</A
+>. The button appears flat for the default
+process aggregation.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Aggregation</I
+></SPAN
+></P
+><P
+>This button shows the current function aggregation. Per default,
+this is <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Major Function Groups</I
+></SPAN
+>. Clicking this button 
+opens the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Function Group Editor</I
+></SPAN
+> dialog box, which is
+explained in <A
+HREF="x2307.html"
+>Section 5.4</A
+>. The button appears flat for the
+default function aggregation.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tagging and Filtering</I
+></SPAN
+></P
+><P
+>The buttons labeled <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tag</I
+></SPAN
+> and
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Filter</I
+></SPAN
+> open the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tagging</I
+></SPAN
+>
+dialog box (see <A
+HREF="x2253.html"
+>Section 5.2</A
+>) and the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Filtering</I
+></SPAN
+> dialog box (see <A
+HREF="c2028.html#FLTRDLG"
+>Section 5.1</A
+>)
+respectively. These buttons appear
+flat if no tagging/filtering is selected.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c451.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x806.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Views</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c451.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Navigation In Time</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

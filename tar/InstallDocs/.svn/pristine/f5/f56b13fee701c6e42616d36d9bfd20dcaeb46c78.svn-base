@@ -1,0 +1,599 @@
+
+Download from
+https://wci.llnl.gov/codes/silo/downloads.html
+Installation of silo-4.7.2 , July 2010
+
+Test build directory
+diamond:/work/scheinin/SILO/src/silo-4.7.2
+
+For better control, use the options below.
+
+Fine tuning of the installation directories:
+  --bindir=DIR           user executables [EPREFIX/bin]
+  --sbindir=DIR          system admin executables [EPREFIX/sbin]
+  --libexecdir=DIR       program executables [EPREFIX/libexec]
+  --sysconfdir=DIR       read-only single-machine data [PREFIX/etc]
+  --sharedstatedir=DIR   modifiable architecture-independent data [PREFIX/com]
+  --localstatedir=DIR    modifiable single-machine data [PREFIX/var]
+  --libdir=DIR           object code libraries [EPREFIX/lib]
+  --includedir=DIR       C header files [PREFIX/include]
+  --oldincludedir=DIR    C header files for non-gcc [/usr/include]
+  --datarootdir=DIR      read-only arch.-independent data root [PREFIX/share]
+  --datadir=DIR          read-only architecture-independent data [DATAROOTDIR]
+  --infodir=DIR          info documentation [DATAROOTDIR/info]
+  --localedir=DIR        locale-dependent data [DATAROOTDIR/locale]
+  --mandir=DIR           man documentation [DATAROOTDIR/man]
+  --docdir=DIR           documentation root [DATAROOTDIR/doc/silo]
+  --htmldir=DIR          html documentation [DOCDIR]
+  --dvidir=DIR           dvi documentation [DOCDIR]
+  --pdfdir=DIR           pdf documentation [DOCDIR]
+  --psdir=DIR            ps documentation [DOCDIR]
+
+Program names:
+  --program-prefix=PREFIX            prepend PREFIX to installed program names
+  --program-suffix=SUFFIX            append SUFFIX to installed program names
+  --program-transform-name=PROGRAM   run sed PROGRAM on installed program names
+
+System types:
+  --build=BUILD     configure for building on BUILD [guessed]
+  --host=HOST       cross-compile to build programs to run on HOST [BUILD]
+
+Optional Features:
+  --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
+  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+  --enable-maintainer-mode  enable make rules and dependencies not useful
+                          (and sometimes confusing) to the casual installer
+  --enable-pythonmodule   build python module [default=no]
+  --enable-shared[=PKGS]  build shared libraries [default=yes]
+  --enable-fortran        compile Fortran interface to Silo [default=yes]
+  --disable-dependency-tracking  speeds up one-time build
+  --enable-dependency-tracking   do not reject slow dependency extractors
+  --enable-static[=PKGS]  build static libraries [default=yes]
+  --enable-fast-install[=PKGS]
+                          optimize for fast installation [default=yes]
+  --disable-libtool-lock  avoid locking (might break parallel builds)
+  --enable-optimization   compile with optimization [default=no]
+  --enable-legacy-datatyped-pointers
+                          compile using legacy (float) pointers for datatype'd
+                          pointers [default=no]
+  --enable-browser        build browser [default=yes]
+  --enable-silex          build the silex browser [default=no]
+  --enable-hzip           enable Lindstrom hex/quad mesh compression
+                          [default=yes]
+  --enable-fpzip          enable Lindstrom float 1,2,3D array compression
+                          [default=yes]
+  --enable-portable-binary
+                          disable compiler optimizations that would produce
+                          unportable binaries
+
+Optional Packages:
+  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
+  --with-pic              try to use only PIC/non-PIC objects [default=use
+                          both]
+  --with-tags[=TAGS]      include additional configurations [automatic]
+  --with-readline         enable detection of GNU readline [default=yes]
+  --with-zlib=INC,DIR     Use the GNU zlib compression [default=yes]
+  --with-gcc-arch=<arch>  use architecture <arch> for gcc -march/-mtune,
+                          instead of guessing
+  --with-szlib=DIR        Use szlib library for external szlib I/O filter
+                          [default=no]
+  --with-hdf5=INC,LIB     Location of HDF5 header and library
+  --with-qt               specify top-level Qt directory [default=yes]
+  --with-qt-bin           specify Qt bin directory
+  --with-qt-include       specify Qt include directory
+  --with-qt-lib           specify Qt lib directory
+
+Some influential environment variables:
+  CXX         C++ compiler command
+  CXXFLAGS    C++ compiler flags
+  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+              nonstandard directory <lib dir>
+  LIBS        libraries to pass to the linker, e.g. -l<library>
+  CPPFLAGS    C/C++/Objective C preprocessor flags, e.g. -I<include dir> if
+              you have headers in a nonstandard directory <include dir>
+  CC          C compiler command
+  CFLAGS      C compiler flags
+  CPP         C preprocessor
+  FC          Fortran compiler command
+  FCFLAGS     Fortran compiler flags
+  CXXCPP      C++ preprocessor
+  F77         Fortran 77 compiler command
+  FFLAGS      Fortran 77 compiler flags
+
+Though visit suggests
+    Silo     4.5.1     File I/O library       http://silo.llnl.gov
+I'll get the latest.  On July 2, 2009 that is silo-4.7.
+
+The first steps of the previous instructions are
+sh silo060605.sh
+cd silo060605
+
+but I downloaded a tarball in which there is no silo*.sh
+
+# The Opteron instructions say:
+export CFLAGS="-m64 -fPIC -O2"
+# Did not specify szip but need the library because PETtool hdf5 is compiled
+# with it.
+export LDFLAGS="-L/usr/local/usp/PETtools/CE/pkgs/szip-2.1-gnu/lib"
+export LIBS="-lsz"
+export F77=gfortran
+
+export PREFIX=/work/scheinin/Visit/silo
+
+# The Opteron instructions say: You will also need to disable
+# SDX by adding --disable-sdx to the end of the configure command.
+# However, in practice sdx files were copied as if sdx was enabled.
+
+# I'll build the whole kit-and-kaboodle of silo.
+# Read hdf5 lib/libhdf5.settings to see that
+# hdf5-1.8.3-serial is PGI and
+# hdf5-1.8.3-gnu is not parallel.
+
+Note that this LD_LIBRARY_PATH is much different from the default
+when logging in and going to PrgEnv-gnu because the default assumes
+that the program will run on a compute node.
+
+export LD_LIBRARY_PATH=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib:$VISITDIR/qt/3.3.8b/lib:/usr/local/usp/PETtools/CE/pkgs/szip-2.1-gnu/lib
+
+./configure --prefix=$PREFIX \
+ -with-hdf5=/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/include,/usr/local/usp/PETtools/CE/pkgs/hdf5-1.8.3-gnu/lib \
+ --without-qt --disable-silex \
+ --enable-shared --enable-static
+
+No Qt, that is, tried
+ --with-qt=/work/scheinin/Visit/qt-x11-free-3.3.8b
+but need Qt version 4.4.0 or higher to compile Silo's silex tool.
+
+make
+
+In order to compiler successfully needed to modify the file
+(the need to change the code is kind'a scary)
+
+src/hdf5_drv/silo_hdf5.c
+from
+static H5Z_class_t db_hdf5_fpzip_class;
+static H5Z_class_t db_hdf5_hzip_class;
+to
+static H5Z_class2_t db_hdf5_fpzip_class;
+static H5Z_class2_t db_hdf5_hzip_class;
+
+cd tests
+make check
+
+ERROR: 57 tests were run,
+1 failed unexpectedly
+   .47: compression minratio1000 
+4 tests were skipped.
+
+
+Note the for subsequent builds that use this, need to add
+/work/scheinin/Visit/silo/lib to LD_LIBRARY_PATH
+
+make install
+
+Visit-specific instructions say to do
+
+cp silo/silo/silo.h /usr/local/usp/visit/silo/4.5.1/include/
+cp silo/silo/silo.inc /usr/local/usp/visit/silo/4.5.1/include/
+cp silo/sdx/sdx.h /usr/local/usp/visit/silo/4.5.1/include/
+cp silo/sdx/sdx.inc /usr/local/usp/visit/silo/4.5.1/include/
+cp lib/libsilo.a  /usr/local/usp/visit/silo/4.5.1/lib/
+
+However, for silo 4.7 the locations of the files are different and also
+there is no "sdx*" anywhere.
+
+Did download of silo-4.7-smalltest.tar.gz but did not use it.
+
+---------------------------------------------
+config-site subdirectory
+
+This directory contains examples of site configuration files.  
+The selection order of the configure files is:
+`hostname`.conf
+CPU-VENDOR-OS.conf
+VENDOR-OS.conf
+CPU-OS.conf
+CPU-VENDOR.conf
+OS.conf
+VENDOR.conf
+CPU.conf
+`uname`.conf
+
+To quote from the autoconf manual:
+
+    If the environment variable `CONFIG_SITE' is set,
+    `configure' uses its value as the name of a shell script
+    to read.  Otherwise, it reads the shell script
+    `PREFIX/share/config.site' if it exists, then
+    `PREFIX/etc/config.site' if it exists.  Thus, settings in
+    machine-specific files override those in
+    machine-independent ones in case of conflict.
+
+ ls /usr/local/usp/hdf5
+.             1.8.4-gnu           hdf5-1.8.4.old           README_hdf5
+..            1.8.4-intel         hdf5-1.8.4-parallel.old  szip.old
+1.6.10-intel  1.8.4-serial-intel  INSTALL_hdf5_diamond
+See /usr/local/usp/hdf5/README_hdf5
+
+pingo:
+/usr/local/pkg/silo/silo-4.6.2.gnu.snl/lib/libsiloh5.settings
+
+
+Silo Version:           4.6.2
+Configured on:          Fri Feb 13 09:27:50 AKST 2009
+Configured by:          nudson@pingo3
+Configure command:      /usr/local/pkg/silo/silo-4.6.2.gnu.snl/configure '--prefix=/usr/local/pkg/silo/silo-4.6.2.gnu.snl' '--without-readline' '--without-python' '--disable-sdx' '--with-hdf5=/usr/local/pkg/hdf/hdf-5-1.8.1.gnu/include,/usr/local/pkg/hdf/hdf-5-1.8.1.gnu/lib' 'CXX=g++' 'LDFLAGS=-L/usr/lib64/qt3/lib64' 'CC=gcc' 'FC=gfortran' 'F77=gfortran'
+Host system:            x86_64-unknown-linux-gnu
+Build system:           x86_64-unknown-linux-gnu
+Installation point:     /usr/local/pkg/silo/silo-4.6.2.gnu.snl
+Source directory:       @UsingSrcDir@
+Archiver:               ar
+Ranlib:                 ranlib
+
+Configure Summary
+Compiling Options:
+                     C Compiler /opt/gcc/4.1.2/bin/gcc
+                       CPPFLAGS -I/usr/local/pkg/hdf/hdf-5-1.8.1.gnu/include 
+                         CFLAGS -fPIC -D_LARGEFILE64_SOURCE -Wdeclaration-after-statement
+                        LDFLAGS -L/usr/local/pkg/hdf/hdf-5-1.8.1.gnu/lib -L/usr/lib64/qt3/lib64
+                           LIBS -lhdf5 -ldl -lz  -lm -lreadline
+Languages:
+                   C++ Compiler /opt/gcc/4.1.2/bin/g++
+                       CXXFLAGS -fPIC
+               Fortran Compiler /opt/gcc/4.1.2/bin/gfortran
+                        FCFLAGS -g -O2
+                         FCLIBS  -L/usr/lib64/qt3/lib64 -L/opt/gcc/4.1.2/snos/lib/gcc/x86_64-suse-linux/4.1.2 -L/opt/gcc/4.1.2/snos/lib/gcc/x86_64-suse-linux/4.1.2/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -lgfortranbegin -lgfortran -lm
+Features:
+                        Browser @UsingBrowser@
+                       Readline @UsingReadline@
+                           HDF5 @UsingHDF5@
+                          Silex @UsingSilex@
+                             Qt @UsingQt@
+                Qt moc Compiler /usr/lib/qt3/bin/moc
+                    Qt CXXFLAGS -I/usr/lib/qt3/include -DQT_THREAD_SUPPORT
+                        Qt LIBS -L/usr/lib/qt3/lib -lqt-mt   -lX11 -lXext -lXmu -lXt -lXi 
+                         Python @UsingPython@
+                Python Compiler 
+                Python CPPFLAGS 
+Makefile Summary
+Compile command:         gcc -DHAVE_CONFIG_H -I. -I..   -I/usr/local/pkg/hdf/hdf-5-1.8.1.gnu/include   -fPIC -D_LARGEFILE64_SOURCE -Wdeclaration-after-statement 
+Libtool command:         /bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -I/usr/local/pkg/hdf/hdf-5-1.8.1.gnu/include   -fPIC -D_LARGEFILE64_SOURCE -Wdeclaration-after-statement 
+Link command:            /bin/sh ../libtool --tag=CC   --mode=link gcc  -fPIC -D_LARGEFILE64_SOURCE -Wdeclaration-after-statement  -L/usr/local/pkg/hdf/hdf-5-1.8.1.gnu/lib -L/usr/lib64/qt3/lib64 -o make.settings -lhdf5 -ldl -lz  -lm -lreadline 
+
+ --- garnet below ---
+   ---- cc compiler below ----
+
+export CC=cc
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-cle/include -I/usr/local/usp/hdf5/1.8.5p1-cle/include"
+export CFLAGS="-O2"
+export F90=ftn
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2"
+export FCFLAGS=-O2
+export FFLAGS=-O2
+export CXX=CC
+export CXXFLAGS="-O2"
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran"
+export LDFLAGS="-L/usr/local/usp/szip/2.1-cle/lib -L/usr/local/usp/hdf5/1.8.5p1-cle/lib -lhdf5"
+
+export TMPDIR=${WORKDIR}/tmp
+
+cd /usr/local/usp/silo/4.8-cle
+mkdir bin  include  lib   src
+
+# Unpack source and
+cd /usr/local/usp/silo/4.8-cle/src/silo-4.8
+
+ ./configure --prefix=/usr/local/usp/silo/4.8-cle  \
+ -with-hdf5=/usr/local/usp/hdf5/1.8.5p1-cle/include,/usr/local/usp/hdf5/1.8.5p1-cle/lib \
+  --with-zlib=/usr/include,/usr/lib64 \
+  --with-szlib=/usr/local/usp/szip/2.1-cle \
+ --without-qt --disable-silex \
+ --enable-static \
+ --enable-fortran
+
+make 2>&1 | tee make.log
+
+In file 
+/usr/local/usp/silo/4.8-cle/src/silo-4.8/tests/Makefile
+need to remove -I/usr/include .
+
+make check 2>&1 | tee check.log
+   failure of Fortran linked with C++ when done on Jan. 7, 2011
+
+make install
+make clean
+
+   ---- cc compiler above, pgi compiler below ----
+
+export CC=pgcc
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-pgi/include -I/usr/local/usp/hdf5/1.8.5p1-pgi/include"
+export CFLAGS="-O2 -fPIC"
+export F90=pgf90
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2 -fPIC"
+export FCFLAGS=-O2
+export FFLAGS=-O2
+export CXX=pgCC
+export CXXFLAGS="-O2 -fPIC"
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran"
+export LDFLAGS="-L/usr/local/usp/szip/2.1-pgi/lib -L/usr/local/usp/hdf5/1.8.5p1-pgi/lib"
+
+export LD_LIBRARY_PATH=/usr/local/usp/hdf5/1.8.5p1-pgi/lib:/usr/local/usp/szip/2.1-pgi/lib:$LD_LIBRARY_PATH
+
+export TMPDIR=${WORKDIR}/tmp
+
+cd /usr/local/usp/silo/4.8-pgi
+mkdir bin  include  lib   src
+
+# Unpack source and
+cd /usr/local/usp/silo/4.8-pgi/src/silo-4.8
+
+ ./configure --prefix=/usr/local/usp/silo/4.8-pgi  \
+ -with-hdf5=/usr/local/usp/hdf5/1.8.5p1-pgi/include,/usr/local/usp/hdf5/1.8.5p1-pgi/lib \
+  --with-zlib=/usr/include,/usr/lib64 \
+  --with-szlib=/usr/local/usp/szip/2.1-pgi \
+ --without-qt --disable-silex \
+ --enable-shared --enable-static \
+ --enable-fortran
+
+make 2>&1 | tee make.log
+
+In file 
+/usr/local/usp/silo/4.8-pgi/src/silo-4.8/tests/Makefile
+need to remove -I/usr/include .
+
+make -k check 2>&1 | tee check.log
+   failure of Fortran linked with C++ when done on Jan. 7, 2011
+make install
+make clean
+
+   ---- pgi compiler above, intel compiler below ----
+
+export PREFIX=/usr/local/usp/silo/silo-4.10.2-intel
+export BUILD_DIR=/u/scheinin/build/silo-4.10.2-intel
+
+export SZIP_DIR=/usr/local/usp/szip/szip-2.1-intel
+
+module swap PrgEnv-pgi PrgEnv-intel
+module load cray-hdf5
+On Dec. 2, 2015
+PrgEnv-intel/5.2.82
+intel/14.0.2.144
+cray-hdf5/1.8.13
+
+export CC=icc
+export CPPFLAGS="-I${SZIP_DIR}/include -I$HDF5_INCLUDE_OPTS"
+export CFLAGS="-O2 -fPIC"
+export F90=ifort
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2 -fPIC"
+export FCFLAGS=-O2
+export FFLAGS=-O2
+export CXX=icpc
+export CXXFLAGS="-O2 -fPIC"
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran"
+export LDFLAGS="-L${SZIP_DIR}/lib -L${HDF5_DIR}/lib"
+ 
+export LD_LIBRARY_PATH=${HDF5_DIR}/lib:${SZIP_DIR}/lib:$LD_LIBRARY_PATH
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Unpack source and
+cd ${BUILD_DIR}/silo-4.10.2
+
+ ./configure --prefix=$PREFIX  \
+ -with-hdf5=${HDF5_DIR}/include,${HDF5_DIR}/lib \
+  --with-zlib=/usr/include,/usr/lib64 \
+  --with-szlib=$SZIP_DIR \
+ --without-qt --disable-silex \
+ --enable-shared --enable-static \
+ --enable-fortran
+
+make 2>&1 | tee make.log
+
+For 2011 build, in file 
+${BUILD_DIR}/silo-4.10.2/tests/Makefile
+need to remove -I/usr/include .
+
+make -k check 2>&1 | tee check.log
+   failure of Fortran linked with C++
+      when done on Jan. 7, 2011 and Dec. 2, 2015
+find $PREFIX
+make install
+find $PREFIX
+make clean
+
+   ---- intel compiler above, gnu compiler below ----
+
+module unload pgi
+module unload PrgEnv-pgi
+module load gcc
+module load PrgEnv-gnu
+
+# Note, the actual gcc module is  gcc/4.5.1
+
+export CC=gcc
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-gnu/include -I/usr/local/usp/hdf5/1.8.5p1-gnu/include"
+export CFLAGS="-O2"
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export FPPFLAGS="-O2"
+export FCFLAGS="-O2"
+export FCFLAGS=-O2
+export FFLAGS=-O2
+export CXX=g++
+export CXXFLAGS="-O2"
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran"
+export LDFLAGS="-L/usr/local/usp/szip/2.1-gnu/lib -L/usr/local/usp/hdf5/1.8.5p1-gnu/lib"
+
+
+export LD_LIBRARY_PATH=/usr/local/usp/hdf5/1.8.5p1-gnu/lib:/usr/local/usp/szip/2.1-gnu/lib:$LD_LIBRARY_PATH
+
+export TMPDIR=${WORKDIR}/tmp
+
+cd /usr/local/usp/silo/4.8-gnu
+mkdir bin  include  lib  src
+
+# Unpack source and
+cd /usr/local/usp/silo/4.8-gnu/src/silo-4.8
+
+./configure --prefix=/usr/local/usp/silo/4.8-gnu  \
+ -with-hdf5=/usr/local/usp/hdf5/1.8.5p1-gnu/include,/usr/local/usp/hdf5/1.8.5p1-gnu/lib \
+  --with-zlib=/usr/include,/usr/lib64 \
+  --with-szlib=/usr/local/usp/szip/2.1-gnu \
+ --without-qt --disable-silex \
+ --enable-shared --enable-static \
+ --enable-fortran
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+    HDF5 Specific 49: compression minratio1000  FAILED
+    the rest passed or were skipped
+make install
+make clean
+
+   ---- gnu compiler above ----
+ --- pgi with no rtti below ---
+
+export CC=pgcc
+export CPPFLAGS="-I/usr/local/usp/szip/2.1-pgi/include -I/usr/local/usp/hdf5/1.8.5p1-pgi/include"
+export CFLAGS="-O2 -fPIC"
+export F90=pgf90
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2 -fPIC"
+export FCFLAGS=-O2
+export FFLAGS=-O2
+export CXX=pgCC
+export CXXFLAGS="-O2 -fPIC --no_exceptions --no_rtti"
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran"
+export LDFLAGS="-L/usr/local/usp/szip/2.1-pgi/lib -L/usr/local/usp/hdf5/1.8.5p1-pgi/lib"
+
+export LD_LIBRARY_PATH=/usr/local/usp/hdf5/1.8.5p1-pgi/lib:/usr/local/usp/szip/2.1-pgi/lib:$LD_LIBRARY_PATH
+
+export TMPDIR=${WORKDIR}/tmp
+
+cd /usr/local/usp/silo/4.8-nortti-pgi
+mkdir bin  include  lib   src
+
+# Unpack source and
+cd /usr/local/usp/silo/4.8-nortti-pgi/src/silo-4.8
+
+ ./configure --prefix=/usr/local/usp/silo/4.8-nortti-pgi  \
+ -with-hdf5=/usr/local/usp/hdf5/1.8.5p1-pgi/include,/usr/local/usp/hdf5/1.8.5p1-pgi/lib \
+  --with-zlib=/usr/include,/usr/lib64 \
+  --with-szlib=/usr/local/usp/szip/2.1-pgi \
+ --without-qt --disable-silex \
+ --enable-shared --enable-static \
+ --enable-fortran
+
+make 2>&1 | tee make.log
+
+In file 
+/usr/local/usp/silo/4.8-nortti-pgi/src/silo-4.8/tests/Makefile
+need to remove -I/usr/include .
+
+make -k check 2>&1 | tee check.log
+   failure of Fortran linked with C++
+make install
+make clean
+
+ --- pgi with no rtti above ---
+
+   ---- pgi compiler below ----
+
+Jan 2016
+
+module load cray-hdf5/1.8.13
+module list includes
+PrgEnv-pgi/5.2.82
+pgi/14.2.0
+export COMPILER_VERSION=14.2.0
+
+export SZIP_ROOT=/usr/local/usp/szip/2.1-pgi-${COMPILER_VERSION}
+export PREFIX=/usr/local/usp/silo/4.10.2-pgi-${COMPILER_VERSION}
+
+export BUILD_DIR=/u/scheinin/build/silo-4.10.2-pgi-${COMPILER_VERSION}
+mkdir $PREFIX
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+
+wget https://wci.llnl.gov/content/assets/docs/simulation/computer-codes/silo/silo-4.10.2/silo-4.10.2.tar.gz
+
+export CC=pgcc
+export CPPFLAGS="-I${SZIP_ROOT}/include -I${HDF5_ROOT}/include"
+export CFLAGS="-O2 -fPIC"
+export F90=pgf90
+export FC=$F90
+export F77=$F90
+export FPPFLAGS="-O2 -fPIC"
+export FCFLAGS=-O2
+export FFLAGS=-O2
+export CXX=pgCC
+export CXXFLAGS="-O2 -fPIC"
+export LIBS="-lsz -lz -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran"
+export LDFLAGS="-L${SZIP_ROOT}/lib -L${HDF5_ROOT}/lib"
+
+export LD_LIBRARY_PATH=${HDF5_ROOT}/lib:${SZIP_ROOT}/lib:$LD_LIBRARY_PATH
+
+export TMPDIR=${WORKDIR}/tmp
+
+# Unpack source and
+cd silo-4.10.2
+
+ ./configure --prefix=$PREFIX  \
+ -with-hdf5=${HDF5_ROOT}/include,${HDF5_ROOT}/lib \
+  --with-zlib=/usr/include,/usr/lib64 \
+  --with-szlib=${SZIP_ROOT} \
+ --without-qt --disable-silex \
+ --enable-shared --enable-static \
+ --enable-fortran
+
+In file libtool,
+everywhere there is --prelink_objects option, add
+" -c \$LDFLAGS \$LIBS "
+on the same line (not at end of line).
+Because prelink_objects switch is deprecated,
+but also, using the switch with current compiler
+results in linker looking for "main".
+
+make 2>&1 | tee make.log
+
+make -k check 2>&1 | tee check.log
+   Compiling rocket_silo.cxx had errors.
+   Errors when using pgf90 when compiler f77 code.
+
+make install
+make clean
+
+Change permissions.
+
+   ---- pgi compiler above
+
+
+ --- garnet above ---
+
+Need to change permissions.
+
+cd /usr/local/usp/silo
+Make sure last minute changes such as the README file are readable.
+
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd /usr/local/usp/silo
+chown -R scheinin.staff *
+
+
+ --------
+

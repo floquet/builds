@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>The Process Group Editor</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Dialogs"
+HREF="c2028.html"><LINK
+REL="PREVIOUS"
+TITLE="The Tagging Dialog"
+HREF="x2253.html"><LINK
+REL="NEXT"
+TITLE="The Function Group Editor"
+HREF="x2307.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x2253.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Dialogs</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x2307.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="PROCGPED"
+>5.3. The Process Group Editor</A
+></H1
+><P
+>The Process Group Editor is found at (<SPAN
+CLASS="guimenu"
+>Advanced</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Process Aggregation</SPAN
+>. The Process Group Editor provides two functions. One is to
+select a process group (or function group in general) for process
+aggregation. The other is to create new groups beyond the ones that
+are provided by default. Group definitions are stored in the
+file .itarc in the user's home directory (for an English Microsoft* Windows* XP*
+installation this will be something like <SAMP
+CLASS="computeroutput"
+>C:\Documents
+and Settings\%username%\.itarc</SAMP
+>). Refer to
+<A
+HREF="x2529.html"
+>Section 5.10</A
+> for other ways to save, edit and load
+configuration information.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.PROCGPED"
+></A
+><P
+><B
+>Figure 5-5. The Process Group Editor</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/tge.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>To select a process group for aggregation (see <A
+HREF="x3028.html"
+>Section 10.2</A
+> for an explanation of the concept of Aggregation) select the group by using the mouse or the cursor/arrow keys and press
+the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Apply</I
+></SPAN
+> button or the 
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>OK</I
+></SPAN
+> button. Note that the dialog box only accepts
+a single, non-empty process group that contains each of its functions 
+no more than once.
+</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.PROCGPEDCM"
+></A
+><P
+><B
+>Figure 5-6. The Process Group Editor's context menu</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/procgped-cm.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>Right-click an item in the editor to bring up a context menu
+with several entries.</P
+><P
+>The entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Undo (Ctrl-Z)</I
+></SPAN
+> allows to revert
+the last actions (del, cut, move, copy etc.).</P
+><P
+>The entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>New Group</I
+></SPAN
+> creates a new group as
+a child of the clicked item. The entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Delete</I
+></SPAN
+>
+removes an item. This entry is disabled for items that originate of
+the trace file. Only user-created items are deleted.</P
+><P
+>The entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Rename (F2)</I
+></SPAN
+> allows to rename
+user-created items. The entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Find (Ctrl+F)</I
+></SPAN
+> opens
+the Find dialog box (see <A
+HREF="x2559.html"
+>Section 5.11</A
+>) and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Find
+Next (F3) </I
+></SPAN
+> searches for the next match if a search was
+started before.</P
+><P
+>The entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Move Item(s)</I
+></SPAN
+> allows to move
+several selected siblings up or down relative to their unselected
+siblings via a submenu. It is much more convenient to use the keyboard
+shortcuts shown in the submenu instead of the menu itself.</P
+><P
+>The entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Select</I
+></SPAN
+> opens a submenu that
+allows conveniently selecting subsets of the tree under the clicked
+item. The entries provided distinguish between selecting processes,
+selecting process groups or both, and if the selection should include
+only the direct children or all descendants.</P
+><P
+>Another way of editing is to drag a group, a process, or the
+entire current selection and to drop it into a target group. This can
+result in groups that contain the same function twice or more. In the
+group hierarchy, such groups are accepted for storage but not for
+aggregation.  Empty groups are deleted automatically when the dialog
+box is closed.</P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="PROCGPED.COMP"
+>5.3.1. Comparison Mode</A
+></H2
+><P
+>In comparison mode (see <A
+HREF="c2725.html"
+>Chapter 7</A
+>) the
+dialog is extended by a label and a combo box that allows to apply the
+chosen aggregation to the other trace file shown in the
+View. Basically using the option "If match found."  will try to find a
+process group of the same name in the other file and choose it.</P
+><P
+>For many usage scenarios that allows to choose a new aggregation
+in comparison mode for both trace files at once.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x2253.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x2307.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Tagging Dialog</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c2028.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Function Group Editor</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

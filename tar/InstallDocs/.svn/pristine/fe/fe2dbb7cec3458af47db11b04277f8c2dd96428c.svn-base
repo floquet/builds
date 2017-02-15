@@ -1,0 +1,108 @@
+
+diamond below
+
+http://www.libpng.org/pub/png/libpng.html
+
+With no modules loaded
+
+cd /usr/local/usp/libpng/1.4.0-gnu/src/libpng-1.4.0
+
+export CC=gcc
+
+> gcc --version
+gcc (GCC) 4.1.2 20070115 (SUSE Linux)
+
+./configure --prefix=/usr/local/usp/libpng/1.4.0-gnu
+
+make
+make check
+make install
+make clean
+
+   ------------------------------------------------------------------
+
+cd /usr/local/usp/libpng/1.4.0-intel/src/libpng-1.4.0
+
+module load mpt/1.26
+module load cc_11.1.056
+module load fc_11.1.056
+module load mkl_10.2.0.013
+
+export CC=icc
+
+./configure --prefix=/usr/local/usp/libpng/1.4.0-intel
+
+make
+make check
+make install
+make clean
+
+   ------------------------------------------------------------------
+
+cd /usr/local/usp/libpng
+
+find . -type d -exec chmod ugo+rx {} \; -print
+find . -exec chmod o-w {} \;
+chown -R scheinin:staff .
+
+diamond above
+
+garnet below
+
+Oct. 26, 2010
+
+   ---- pgi compiler below ----
+
+export CC=pgcc
+export CFLAGS="-fast -fPIC"
+
+export TMPDIR=${WORKDIR}/tmp
+
+./configure --prefix=/usr/local/usp/libpng/1.4.4-pgi \
+   --enable-static --enable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+make clean
+
+   ---- pgi compiler above, gnu compiler below ----
+
+module unload pgi
+module unload PrgEnv-pgi
+module load gcc
+module load PrgEnv-gnu
+
+# Note, the actual gcc module is  gcc/4.5.1
+
+export CC=gcc
+export CFLAGS="-fPIC -O2"
+
+export TMPDIR=${WORKDIR}/tmp
+
+./configure --prefix=/usr/local/usp/libpng/1.4.4-gnu \
+   --enable-static --enable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+make clean
+
+   ---- gnu compiler above ----
+
+Need to change permissions.
+
+cd /usr/local/usp/libpng
+Make sure last minute changes such as the README file are readable.
+
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd /usr/local/usp/libpng
+chown -R scheinin.staff *
+
+garnet above
+

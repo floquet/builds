@@ -1,0 +1,63 @@
+
+
+http://www.gromacs.org/
+
+
+export PREFIX=/p/home/apps/unsupported/gromacs/5.0.5-intel-sgimpt
+mkdir $PREFIX
+# Cannot use wget because of a "cloud" address, but clicking
+# no link get the tar file.
+cd /p/home/scheinin/build/gromacs/src/gromacs-5.0.5
+
+# module list includes
+# intel-mkl-15/15.0.1.133
+# intel-compilers-15/15.0.1.133
+# mpt/2.11-sgi711r13
+
+export CC=mpicc
+export CXX=mpicxx
+export MPICXX_CXX=icpc 
+export MPICC_CC=icc 
+export MPIF90_F90=ifort 
+
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel/lib/pkgconfig
+
+export PATH=/p/home/apps/unsupported/cmake/3.2.3-intel/bin:$PATH
+
+mkdir build-cmake
+cd build-cmake
+cmake ..
+
+Edit CMakeCache.txt 
+
+CMAKE_CXX_COMPILER:FILEPATH=/p/home/apps/sgi/mpt-sgi711r13/bin/mpicxx
+CMAKE_CXX_FLAGS:STRING="-fPIC"
+CMAKE_C_COMPILER:FILEPATH=/p/home/apps/sgi/mpt-sgi711r13/bin/mpicc
+CMAKE_C_FLAGS:STRING="-fPIC"
+CMAKE_EXE_LINKER_FLAGS:STRING="-fPIC"
+CMAKE_INSTALL_PREFIX:PATH=/p/home/apps/unsupported/gromacs/5.0.5-intel-sgimpt
+FFTWF_INCLUDE_DIR:PATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel/include
+FFTWF_LIBRARY:FILEPATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel/lib/libfftw3f.so
+
+cmake ..
+
+make
+make check
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+README
+
+# For gromacs/5.0.5-intel-sgimpt
+export PATH=/p/home/apps/unsupported/gromacs/5.0.5-intel-sgimpt/bin:$PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/COST/fftw3/3.3.4/intel/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/gromacs/5.0.5-intel-sgimpt/lib64:$LD_LIBRARY_PATH
+

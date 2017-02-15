@@ -1,0 +1,1081 @@
+
+OpenFoam on garnet, below.
+May 2014
+
+Downloads include both OpenFOAM and Third-Party.
+Put source into /usr/local/usp/OpenFOAM/2.3.0-pgi/src
+
+Third-Party includes
+cmake
+Qt
+Paraview4
+OpenMPI
+Scotch
+CGAL
+Boost
+
+For reference, if user can change O/S using RPMs,
+the software recommended to be loaded are the following.
+ cmake zlib1g-dev qt4-dev-tools libqt4-dev gnuplot
+ libreadline-dev libncurses-dev libxt-dev
+ libscotch-dev libopenmpi-dev libcgal-dev
+ libqt4-devel boost-devel gnuplot 
+
+See installation instructions in
+http://matveichev.blogspot.fr/2014/04/building-openfoam-on-os-x.html
+http://www.tfd.chalmers.se/~hani/kurser/OS_CFD/OpenFOAMonYourOwnLaptop.html
+The above instructions are far from complete but might
+provide useful hints.
+
+OpenMPI, below
+
+ qsub -A ERDCS97290STA -q standard -l select=1:ncpus=32:mpiprocs=32 -l walltime=3:00:00 -l ccm=1 -I
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+export PREFIX=/usr/local/usp/OpenFOAM/2.3.0-gnu
+
+export CC=gcc
+export CXX=g++
+export FC=gfortran
+
+cd /usr/local/usp/OpenFOAM/2.3.0-gnu/src/openmpi-1.8.1
+
+./configure --prefix=$PREFIX
+make
+make install
+
+Testing
+cd $HOME/Memory_Usage_openmpi
+export PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/lib:$LD_LIBRARY_PATH
+cp $PBS_NODEFILE hostfile
+
+compile with mpicc and mpif90
+
+ccmlogin
+cd $HOME/Memory_Usage_openmpi
+export PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/lib:$LD_LIBRARY_PATH
+
+mpirun -mca btl tcp,self -prefix /usr/local/usp/OpenFOAM/2.3.0-gnu -hostfile hostfile -np 32 ./memtest_c.exe
+
+/usr/local/usp/OpenFOAM/2.3.0-gnu/bin/mpirun  -mca btl tcp,self -hostfile hostfile -np 32 ./memtest_c.exe
+
+Using absolute path for mpirun has same effect as using -prefix
+
+export OMPI_MCA_btl=tcp,self
+mpirun -prefix /usr/local/usp/OpenFOAM/2.3.0-gnu -hostfile hostfile -np 32 ./memtest_c.exe
+
+User can have
+$HOME/.openmpi/mca-params.conf 
+## Define the MPI interconnects
+btl = tcp,self
+
+Note, format of hostfile is the following.
+hostfile
+processorA slots=32
+processorB slots=32
+
+OpenMPI, above
+
+http://www.openfoam.org/download/source.php
+Documentation says that the default compiler for OpenFOAM is GCC,
+and that it also compiles with the Intel compiler.
+
+ qsub -A ERDCS97290STA -q standard -l select=1:ncpus=32:mpiprocs=32 -l walltime=3:00:00 -l ccm=1 -I
+
+module swap PrgEnv-pgi PrgEnv-gnu
+# module list shows
+# PrgEnv-gnu/4.2.34
+# gcc/4.8.2
+
+# Things that say OK are in bashrc and cshrc
+# but bashrc and cshrc delete files so it seems it should
+# only be used before building.
+
+# WM_PROJECT_SITE not defined here, may be useful for setup
+# WM_PROJECT_USER_DIR not defined here, may be useful
+# See also files in
+# ./etc/config/example
+
+What is set in settings.* is denoted by SOK.
+
+export PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/wmake:$PATH
+export PATH=/usr/local/usp/cmake/2.8.12.2-gnu/bin:$PATH
+export PATH=/usr/local/usp/COST/gnuplot-4.6.5/bin:$PATH
+# For Qt
+export PATH=/usr/local/usp/DAAC/visit/2.7.1/linux-x86_64/bin:$PATH
+# For Qt
+export LD_LIBRARY_PATH=/usr/local/usp/DAAC/visit/2.7.1/linux-x86_64/lib:$LD_LIBRARY_PATH
+# Paraview
+export PATH=/usr/local/usp/DAAC/paraview/4.1.0_osmesa/bin:$PATH
+# Paraview
+export LD_LIBRARY_PATH=/usr/local/usp/DAAC/paraview/4.1.0_osmesa/lib/paraview-4.1:$LD_LIBRARY_PATH
+# For MPI
+export PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/bin:$PATH
+# For MPI
+export LD_LIBRARY_PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/lib:$LD_LIBRARY_PATH
+
+# The WM_* found by roaming around etc/config and by
+# figuring-out causes of errors.
+
+OK export WM_PROJECT=OpenFOAM
+OK export WM_PROJECT_VERSION=2.3.0
+OK export WM_THIRD_PARTY_DIR=/usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0
+OK export FOAM_INST_DIR=/usr/local/usp/OpenFOAM/2.3.0-gnu
+OK export WM_PROJECT_INST_DIR=$FOAM_INST_DIR
+export WM_PROJECT_DIR=/usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0
+SOK export WM_ARCH=linux64
+OK export WM_ARCH_OPTION=64
+OK export WM_COMPILER=Gcc
+OK export WM_COMPILE_OPTION=Opt
+export WM_COMPILER_LIB_ARCH=64
+SOK export WM_CC=gcc
+SOK export WM_CXX=c++
+# export WM_CXX=g++ might also be chosen
+SOK export MPI_ARCH_PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu
+SOK export WM_CFLAGS="-m64 -fPIC -I${MPI_ARCH_PATH}/include/openmpi"
+SOK export WM_CXXFLAGS="-m64 -fPIC -I${MPI_ARCH_PATH}/include/openmpi"
+export WM_LDFLAGS=''
+SOK export WM_DIR=$WM_PROJECT_DIR/wmake
+SOK export WM_LINK_LANGUAGE=c++
+OK export WM_PRECISION_OPTION=DP
+SOK export WM_OPTIONS=$WM_ARCH$WM_COMPILER$WM_PRECISION_OPTION$WM_COMPILE_OPTION
+export WM_COMPILER_DIR=/opt/gcc/4.8.2/bin
+SOK export FOAM_APPBIN=$WM_PROJECT_DIR/platforms/$WM_OPTIONS/bin
+SOK export FOAM_LIBBIN=$WM_PROJECT_DIR/platforms/$WM_OPTIONS/lib
+
+
+OK export WM_MPLIB=OPENMPI
+
+SOK FOAM_MPI=openmpi-1.8.1
+SOK export MPI_ARCH_PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu
+SOK export OPAL_PREFIX=$MPI_ARCH_PATH
+export PATH=${MPI_ARCH_PATH}/bin:$PATH
+export LD_LIBRARY_PATH=${MPI_ARCH_PATH}/lib:$LD_LIBRARY_PATH
+export MANPATH=${MPI_ARCH_PATH}/share/man:$MANPATH
+
+OK export WM_OSTYPE=POSIX
+export ParaView_LIB_DIR=/usr/local/usp/DAAC/paraview/4.1.0_osmesa/lib/paraview-4.1
+export ParaView_INCLUDE_DIR=/usr/local/usp/DAAC/paraview/4.1.0_osmesa/lib/paraview-4.1/include
+export ParaView_DIR=/usr/local/usp/DAAC/paraview/4.1.0_osmesa
+export ParaView_MAJOR=4
+
+source ${WM_PROJECT_DIR}/etc/config/settings.sh
+
+# Look at what has then changed
+
+echo $FOAM_INST_DIR $WM_PROJECT_INST_DIR $WM_PROJECT_DIR
+echo $WM_ARCH $WM_ARCH_OPTION $WM_COMPILER $WM_COMPILE_OPTION
+echo $WM_COMPILER_LIB_ARCH $WM_CC $WM_CXX $WM_CFLAGS $WM_CXXFLAGS
+echo $WM_LDFLAGS $WM_DIR $WM_LINK_LANGUAGE $WM_OPTIONS $WM_COMPILER_DIR
+echo $WM_PROJECT $WM_PROJECT_VERSION $WM_PRECISION_OPTION
+echo $WM_MPLIB $MPI_ARCH_PATH $WM_OSTYPE
+
+# MPI_ARCH_PATH converted to wrong value, change it to
+
+export MPI_ARCH_PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu
+export WM_CFLAGS="-m64 -fPIC -I${MPI_ARCH_PATH}/include/openmpi"
+export WM_CXXFLAGS="-m64 -fPIC -I${MPI_ARCH_PATH}/include/openmpi"
+
+export METIS_VERSION=metis-5.1.0
+export METIS_ARCH_PATH=$WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$METIS_VERSION
+export SCOTCH_VERSION=scotch_6.0.0
+export SCOTCH_ARCH_PATH=$WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$SCOTCH_VERSION
+
+export PATH=$METIS_ARCH_PATH/bin:$PATH
+export LD_LIBRARY_PATH=$METIS_ARCH_PATH/lib:$LD_LIBRARY_PATH
+export PATH=$SCOTCH_ARCH_PATH/bin:$PATH
+
+Building Metis, below.
+
+put metis-5.1.0.tar.gz
+into directory /usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0
+cd metis-5.1.0
+modify include/metis.h
+#define IDXTYPEWIDTH 64
+#define REALTYPEWIDTH 64
+
+cd ..
+mkdir build_metis-gnu
+cd build_metis-gnu
+ccmake ../metis-5.1.0
+c  (configure)
+
+export METIS_VERSION=metis-5.1.0
+export METIS_ARCH_PATH=$WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$METIS_VERSION
+
+# to find CMAKE_INSTALL_PREFIX:PATH
+echo $METIS_ARCH_PATH
+
+edit CMakeCache.txt as shown below
+
+CMAKE_CXX_COMPILER:FILEPATH=/opt/gcc/4.8.2/bin/g++
+CMAKE_C_COMPILER:FILEPATH=/opt/gcc/4.8.2/bin/gcc
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0/platforms/linux64Gcc/metis-5.1.0
+GKLIB_PATH:PATH=/usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0/metis-5.1.0/GKlib
+CMAKE_CXX_FLAGS:STRING=' -fopenmp '
+CMAKE_C_FLAGS:STRING=' -fopenmp '
+
+Note, CMakeCache.txt has
+SHARED:BOOL=FALSE
+
+ccmake ../metis-5.1.0
+c  (configure)
+g  (generate)
+
+make
+make install
+
+Modify CMakeCache.txt to
+SHARED:BOOL=TRUE
+
+ccmake ../metis-5.1.0
+c  (configure)
+g  (generate)
+
+make
+cp  ./libmetis/libmetis.so  /usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0/platforms/linux64Gcc/metis-5.1.0/lib
+
+cp ${METIS_ARCH_PATH}/bin/* ${FOAM_INST_DIR}/bin/
+cp ${METIS_ARCH_PATH}/lib/* ${FOAM_INST_DIR}/lib/
+cp ${METIS_ARCH_PATH}/include/* ${FOAM_INST_DIR}/include/
+
+# /usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/etc/config/metis.sh
+# should be modified to read
+export METIS_VERSION=metis-5.1.0
+export METIS_ARCH_PATH=$WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$METIS_VERSION
+
+Building Metis, above.
+
+cd $WM_THIRD_PARTY_DIR
+
+./Allwmake 2>&1 | tee make.log
+
+It looks like Metis was rebuilt.
+
+Allwmake command tried to build openmpi from its source
+even though mpicc is in PATH!  E.g.
+> which mpicc
+/usr/local/usp/OpenFOAM/2.3.0-gnu/bin/mpicc
+
+========================================
+Build CGAL
+    optional component was not found
+========================================
+
+There does exist a file ./makeGCAL
+
+./makeCGAL 2>&1 | tee makeCGAL.log
+
+Andrew Guarendi wrote:
+ CGAL is needed for one of the mesh creation tools which was added
+ in the newest iteration of OpenFOAM - it wasn't required/included
+ in the last version so I could manage without it if needed.
+
+As well as using the command ./makeCGAL ,
+I went into the build directory for CGAL and used
+the cmake procedure directly.
+
+Several build errors.
+
+X11 requires libxcb and libxcb-xlib but I cannot find a way
+to add it to cmake.  After adding it to CMakeCache.txt in the
+same place as other X11 libraries are defined, then doing
+cmake configure, those two libraries were removed.
+
+There is a boost in the operating system, /usr/include and
+/usr/lib64, however, compilation fails because static_assert()
+is not defined.  It is possible that the compiler needs
+to see boost::static_assert() or something similar in places
+were the code has only static_assert().
+
+The code users std::move() but move() is not part of the
+standard library.  This std::move() is not used if 
+CGAL_CFG_NO_CPP0X_RVALUE_REFERENCE one can see from the
+code.  Though I do not know what CGAL_CFG_NO_CPP0X_RVALUE_REFERENCE
+means, I added to the CMakeCache.txt the option
+-DCGAL_CFG_NO_CPP0X_RVALUE_REFERENCE were C and C++ flags
+are defined.  In any case, the static_assert problem remained
+an obstacle to compilation.
+
+CGAL has a large international community of developers.
+Nonetheless, they seem to me to be too clever by half
+because they added boost features that make the code
+less portable.  Moreover, as is typical with cmake,
+it is not clear what variable I need to change in
+CMakeCache.txt.
+
+There is no "make install" for the third-party software.
+
+cd $WM_PROJECT_DIR
+
+./Allwmake 2>&1 | tee make.log
+
+Compilation continues even when there are errors,
+which makes it hard to see when errors occur.
+
+There is no "make install"
+The following directories have been populated:
+ /usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/
+    platforms/linux64GccDPOpt/bin
+    platforms/linux64GccDPOpt/lib
+
+Previously I had
+export WM_COMPILE_OPTION=Opt
+export WM_PRECISION_OPTION=DP
+
+
+# testing example
+# serial testing
+
+export PATH=${FOAM_APPBIN}:$PATH
+export LD_LIBRARY_PATH=${FOAM_LIBBIN}:$LD_LIBRARY_PATH
+
+echo $FOAM_RUN
+/run
+export FOAM_RUN=/usr/local/usp/OpenFOAM/2.3.0-gnu/run
+mkdir -p $FOAM_RUN
+cd $FOAM_RUN
+cp -r $FOAM_TUTORIALS/incompressible/icoFoam/cavity .
+cd cavity
+blockMesh
+icoFoam
+paraFoam
+
+> which blockMesh
+/usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/platforms/linux64GccDPOpt/bin/blockMesh
+> which icoFoam
+/usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/platforms/linux64GccDPOpt/bin/icoFoam
+> which paraFoam
+/usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/bin/paraFoam
+
+cd $FOAM_UTILITIES/postProcessing/graphics/PV4Readers
+export ParaView_VERSION=4
+export PV_PLUGIN_PATH=/usr/local/usp/DAAC/paraview/4.1.0_osmesa/lib/paraview-4.1
+./Allwclean
+./Allwmake
+
+Error: could not open file vtkTextProperty.h for source file vtkPV4blockMesh.C due to No such file or directory
+
+In paraview source the file is found in many places.
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/loginnodebuild/paraview/src/paraview/VTK/Rendering/Core/vtkTextProperty.h
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/tools/paraview/src/paraview/VTK/Rendering/Core/vtkTextProperty.h
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/cross/paraview/src/paraview/VTK/Rendering/Core/vtkTextProperty.h
+
+export ParaView_INCLUDE_DIR=/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/tools/paraview/src/paraview/VTK/Rendering/Core
+
+could not open file vtkCellArray.h for source file vtkPV4FoamMeshSet.C due to No such file or directory
+
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/loginnodebuild/paraview/src/paraview/VTK/Common/DataModel/vtkCellArray.h
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/tools/paraview/src/paraview/VTK/Common/DataModel/vtkCellArray.h
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/cross/paraview/src/paraview/VTK/Common/DataModel/vtkCellArray.h
+
+Notice that location of include are different directories whereas
+vtkPV4Readers/Make/options uses only one ParaView_INCLUDE_DIR
+E.g. in file PV4blockMeshReader/vtkPV4blockMesh/Make/linux64GccDPOpt/options
+EXE_INC = -I$(LIB_SRC)/meshTools/lnInclude -I$(LIB_SRC)/mesh/blockMesh/lnInclude -I$(ParaView_INCLUDE_DIR) -I../../vtkPV4Readers/lnInclude -I../PV4blockMeshReader
+
+CMake Error at CMakeLists.txt:12 (FIND_PACKAGE):
+  By not providing "FindParaView.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "ParaView",
+  but CMake did not find one.
+  Could not find a package configuration file provided by "ParaView" with any
+  of the following names:
+    ParaViewConfig.cmake
+    paraview-config.cmake
+
+The file ParaViewConfig.cmake can be found in many places
+
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/loginnodebuild/paraview/src/paraview-build/CMakeFiles/ParaViewConfig.cmake
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/loginnodebuild/paraview/src/paraview-build/ParaViewConfig.cmake
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/tools/paraview/src/paraview-build/CMakeFiles/ParaViewConfig.cmake
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/tools/paraview/src/paraview-build/ParaViewConfig.cmake
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/cross/paraview/src/paraview-build/CMakeFiles/ParaViewConfig.cmake
+/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/cross/paraview/src/paraview-build/ParaViewConfig.cmake
+
+Tried both
+export CMAKE_MODULE_PATH=/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/tools/paraview/src/paraview-build/CMakeFiles/ParaViewConfig.cmake
+export CMAKE_MODULE_PATH=/usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All/tools/paraview/src/paraview-build/CMakeFiles
+
+and both failed with same error, as shown above.  Perhaps what is
+needed is file FindParaView.cmake .  That file is nowhere to be
+found in /usr/local/usp/DAAC/paraview/source/ParaView-4.1.0-All .
+
+# Parallel test.
+
+export PATH=${FOAM_APPBIN}:$PATH
+export LD_LIBRARY_PATH=${FOAM_LIBBIN}:$LD_LIBRARY_PATH
+
+cd $FOAM_RUN
+cd cavity/system
+vi decomposeParDict
+
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      decomposeParDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+numberOfSubdomains 4;
+
+method          scotch;
+[end of file, previous line]
+
+cd ..
+pwd
+/usr/local/usp/OpenFOAM/2.3.0-gnu/run/cavity
+
+decomposePar
+
+cp $PBS_NODEFILE hostfile
+ which icoFoam
+/usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/platforms/linux64GccDPOpt/bin/icoFoam
+
+ccmrun /usr/local/usp/OpenFOAM/2.3.0-gnu/bin/mpirun -mca btl tcp,self -prefix /usr/local/usp/OpenFOAM/2.3.0-gnu -hostfile hostfile -np 4 /usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/platforms/linux64GccDPOpt/bin/icoFoam -parallel
+
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0/platforms/linux64Gcc/openmpi-1.6.5/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+
+OpenFOAM looked for openmpi stuff in
+ /usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0
+whereas correct OpenMPI is in /usr/local/usp/OpenFOAM/2.3.0-gnu
+
+# Next two lines are not just testing, but a change that needs to be made.
+cd /usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0/platforms/linux64Gcc
+ln -s /usr/local/usp/OpenFOAM/2.3.0-gnu openmpi-1.6.5
+
+ccmrun /usr/local/usp/OpenFOAM/2.3.0-gnu/bin/mpirun -mca btl tcp,self -prefix /usr/local/usp/OpenFOAM/2.3.0-gnu -hostfile hostfile -np 4 /usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/platforms/linux64GccDPOpt/bin/icoFoam -parallel
+
+Ran OK.
+
+Note that library libmetisDecomp.so
+was not built.  Decomposition uses Scotch.
+Build error
+make.log:SOURCE=metisDecomp.C ;  g++ -m64 -Dlinux64 -DWM_DP -Wall -Wextra -Wno-unused-parameter -Wold-style-cast -Wnon-virtual-dtor -O3  -DNoRepository -ftemplate-depth-100 -I/usr/local/usp/OpenFOAM/2.3.0-gnu/src/ThirdParty-2.3.0/platforms/linux64Gcc/metis-5.1.0/include -I../decompositionMethods/lnInclude -IlnInclude -I. -I/usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/src/OpenFOAM/lnInclude -I/usr/local/usp/OpenFOAM/2.3.0-gnu/src/OpenFOAM-2.3.0/src/OSspecific/POSIX/lnInclude   -fPIC -c $SOURCE -o Make/linux64GccDPOpt/metisDecomp.o
+make.log:metisDecomp.C: In member function 'Foam::label Foam::metisDecomp::decompose(const Foam::List<int>&, const Foam::List<int>&, const scalarField&, Foam::List<int>&)':
+make.log:metisDecomp.C:72:44: error: cannot convert 'Foam::UList<int>::iterator {aka int*}' to 'idx_t* {aka long int*}' for argument '1' to 'int METIS_SetDefaultOptions(idx_t*)'
+make.log:     METIS_SetDefaultOptions(options.begin());
+
+batch node
+ENVIRONMENT BATCH
+PBS_NODEFILE <something>
+HOST batch...
+nid
+ENVIRONMENT
+PBS_NODEFILE
+HOST
+
+HOST=nid05511
+
+Spirit contact:
+openfoam:x:22312:22312:Mr. Terrence D. McClurg (Contractor),APP/CTR/USA,DRC,(937) 656-6382:/app/openfoam:/bin/csh
+Terry.McClurg@wpafb.af.mil
+
+   spirit.afrl.hpc.mil (spirit01.afrl.hpc.mil) successful login
+[scheinin@spirit07 ~ ]$ module show openfoam
+-------------------------------------------------------------------
+/hafs_x86_64/modulefiles/openfoam/2.2.0:
+
+setenv           p /app/openfoam/platform/x86_64 
+setenv           FOAM_INST_DIR /app/openfoam/platform/x86_64 
+setenv           foamDotFile /app/openfoam/platform/x86_64/OpenFOAM-2.2.0/etc/cshrc 
+-------------------------------------------------------------------
+
+Make sure all PATH and LD_LIBRARY_PATH files can be read by
+ordinary users.
+
+Add all initialization to
+/usr/local/usp/OpenFOAM/2.3.0-gnu/etc/setup.sh
+/usr/local/usp/OpenFOAM/2.3.0-gnu/etc/setup.csh
+
+find . -perm /u=x -exec chmod ugo+x {} \;
+
+changed  $HOME/.bashrc
+
+
+OpenFoam on garnet, above.
+
+> module list
+Currently Loaded Modulefiles:
+  1) compilers/intel11.1   2) mpi/sgi_mpi-1.26
+
+The following is for the bash shell.
+The syntax would be different for the tcsh shell.
+
+# Next line depends on where you put the source.
+export FOAM_INST_DIR=/work/scheinin/OpenFoam
+
+# The directory hierarcy "Changes" has modified versions of some files.
+
+# The following are defined in OpenFOAM-1.6/etc/ settings.sh or bashrc
+# but are also defined in the user's shell because of settings
+# of these values is rather intricate and doing it explicitly
+# makes certain that they are set correctly.
+# (Note that the C shell syntax would be different from the lines
+# shown below.)
+
+export WM_PROJECT_INST_DIR=$FOAM_INST_DIR
+export WM_PROJECT_DIR=${FOAM_INST_DIR}/OpenFOAM-1.6
+export WM_ARCH=linux
+export WM_COMPILER=Icc
+export WM_COMPILE_OPTION=Opt
+export WM_MPLIB=MPI
+export WM_COMPILER_LIB_ARCH=64
+export WM_CC='icc'
+export WM_CXX='icpc'
+export WM_CFLAGS='-fPIC'
+export WM_CXXFLAGS='-fPIC'
+export WM_LDFLAGS=''
+export WM_DIR=$WM_PROJECT_DIR/wmake
+export WM_LINK_LANGUAGE=icpc
+export WM_OPTIONS=$WM_ARCH$WM_COMPILER$WM_PRECISION_OPTION$WM_COMPILE_OPTION
+
+# Line that sets WM_COMPILER_DIR should correspond to prepend-path PATH
+# shown in "module show compilers/intel11.1" (or whatever version
+# of the Intel compiler that is being used).
+
+export WM_COMPILER_DIR=/opt/intel/Compiler/11.1/056/bin/intel64
+
+# The files OpenFOAM-1.6/etc/aliases.sh, OpenFOAM-1.6/etc/bashrc and
+# OpenFOAM-1.6/etc/settings.sh should be copied from
+# Changes/OpenFOAM-1.6/etc/
+# Modified versions of aliases.csh, cshrc and settings.csh have not
+# been edited, only the files for bash shell have been corrected.
+
+source ${FOAM_INST_DIR}/OpenFOAM-1.6/etc/bashrc
+
+# Copy all modified files from directories
+# Changes/ThirdParty-1.6 and Changes/OpenFOAM-1.6 to
+# ThirdParty-1.6 and OpenFOAM-1.6 respectively.
+
+First make the ThirdParty software.
+
+# Some modified files in "Changes" directory hierarchy may need to be
+# added after Allwmake has run once with errors because it makes
+# directories such as "linux64IccDPOptMPI"
+
+cd ${FOAM_INST_DIR}/OpenFOAM-1.6
+./Allwmake  check 2>&1 | tee make.log
+
+Use an editor to look for "error" in make.log.
+
+------------------------------------------------------------------------
+
+ThirdParty-1.6/metis-5.0pre2
+
+module list
+Currently Loaded Modulefiles:
+  1) compilers/intel11.1   2) mpi/sgi_mpi-1.26
+
+Edited Makefile.in
+
+ CC = icc
+ OPTFLAGS = -O2
+ COPTIONS = -DUNIX -fPIC                 
+ RANLIB = ranlib $@
+# (Though I read that RANLIB is not needed now with a modern Linux "ar".)
+
+Edit the file include/metis.h and specify the width (32 or 64 bits) of the
+elementary data type used in METIS. This is controled by the IDXTYPEWIDTH
+I put
+ #define IDXTYPEWIDTH 64
+
+make all
+results are put into
+ThirdParty-1.6/metis-5.0pre2/build/Linux-x86_64
+
+The result is not what the documentation says should happen.
+Object files are built but executables such as kmetis are
+not built!!!
+
+I don't understand why, perhaps the Makefile was modified for OpenFoam.
+------------------------------------------------------------------------
+
+ParMetis-3.1
+
+Modified Makefile.in
+CC = icc
+OPTFLAGS = -O2
+INCDIR = -I/opt/sgi/mpt/mpt-1.26/include
+COPTIONS = -fPIC
+LD = icc
+LIBDIR = -L.. 
+XTRALIBS = -lmpi
+
+make
+
+At top level there was made
+
+./libmetis.a
+./libparmetis.a
+
+# Using the definitions of FOAM_INST_DIR and WM_OPTIONS
+# Might need to be done later after incomplete run of
+# OpenFOAM-1.6/Allwmake because directory $WM_OPTIONS might not
+# exist initially.
+cp libmetis.a $FOAM_INST_DIR/OpenFOAM-1.6/lib/$WM_OPTIONS/mpi/
+cp libparmetis.a  $FOAM_INST_DIR/OpenFOAM-1.6/lib/$WM_OPTIONS/mpi/
+
+qsub -A  erdcssta -q standard -l select=8:ncpus=8:mpiprocs=8,place=scatter:excl,walltime=0:30:00 -I
+
+cd /work/scheinin/OpenFoam/ThirdParty-1.6/ParMetis-3.1/Graphs
+
+ mpiexec_mpt -np 4 ptest rotor.graph
+
+# It seemed to run OK.
+
+exit # From compute node
+
+-------------------------------------------------------------------------
+
+cd ThirdParty-1.6/ParMGridGen-1.0
+
+Edit Makefile.in
+
+CC = icc
+PARCC = icc
+OPTFLAGS = -O2 -fPIC
+LD = icc
+PARLD = icc
+LDOPTIONS = -O2
+Left PARLIBS as it was, it has -lmpi.
+PARLIBS = -lparmgrid -lmgrid -lmpi -lm
+
+make
+make parallel
+
+Made:
+ MGridGen/IMlib/libIMlib.a
+ libmgrid.a
+ mgridgen
+ ParMGridGen/IMParMetis-2.0/libIMparmetis.a
+ libparmgrid.a
+ parmgridgen
+
+cd Graphs
+  ../mgridgen M6.metis 3 4 6 1 4 128
+
+qsub -A  erdcssta -q standard -l select=8:ncpus=8:mpiprocs=8,place=scatter:excl,walltime=0:30:00 -I
+
+cd /work/scheinin/OpenFoam/ThirdParty-1.6/ParMGridGen-1.0/Graphs
+
+  mpiexec_mpt -np 4 ../parmgridgen M6.metis 3 4 6 1 4 128
+
+Wrote files, nothing to stdout.
+
+exit # From compute node
+
+Please read the instructions in the file Graphs/README on how to go and
+test the various programs.
+
+-------------------------------------------------------------------------
+
+In ThirdParty-1.6 I did not compile gmp-4.2.4, mpfr-2.4.1 nor scotch_5.1
+because these did not seem to be absolutely necessary for building
+OpenFoam, because the work done above was sufficient from running
+Allwmake without an error.  Nonetheless, they probably should be built.
+
+-------------------------------------------------------------------------
+
+Below, installation using gcc with wrapper cc and CC.
+March 2015
+
+From http://www.openfoam.org/download/source.php
+get Source Packs
+OpenFOAM-2.3.1.tgz ThirdParty-2.3.1.tgz
+cd ${PREFIX}/src
+tar xzf OpenFOAM-2.3.1.tgz
+tar xzf ThirdParty-2.3.1.tgz
+
+ qsub -A ERDCS97290STA -q debug -l select=1:ncpus=32:mpiprocs=32 -l walltime=1:00:00 -I
+OR
+ qsub -A ERDCS97290STA -q test -l select=1:ncpus=32:mpiprocs=32 -l walltime=4:00:00 -I
+
+export PREFIX=/usr/local/usp/OpenFOAM/2.3.1-gnu-cc
+
+URL
+http://www.archer.ac.uk/documentation/software/openfoam/compile_2.2.2_archer.php
+has a list of changes to OpenFOAM for Cray XC30 using Cray's native MPICH2.
+It is for older version 2.2.2 , nonetheless , the information
+should be useful.
+
+# Use updated modules.
+source /p/cwfs/scheinin/pub/module_update/module_update_gnu.sh
+OR
+source /u/scheinin/module_copy/module_update_gnu.sh
+module unload cray-hdf5/1.8.13
+module load cray-hdf5-parallel/1.8.13
+module unload cray-netcdf/4.3.2
+module load cray-netcdf-hdf5parallel/4.3.2
+############## for running test flipped from parallel to not parallel netcdf.
+############## why parallel?
+# For next build get rid of trilinos, cray-trilinos/11.8.1.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CRAY_LD_LIBRARY_PATH
+# Add to LD_LIBRARY_PATH, at the end,
+# /opt/cray/mpt/7.0.2/gni/mpich2-gnu/48/lib because
+# needed by /opt/cray/fftw/3.3.4.1/interlagos/lib/libfftw3f_mpi.so.mpi31.3
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cray/mpt/7.0.2/gni/mpich2-gnu/48/lib
+# (Needed temporarily because pmi version is wrong on batch nodes.
+# module swap pmi/2.1.2-1.0000.8396.13.5.gem pmi/5.0.1-1.0000.9799.94.9.gem)
+# module list includes
+# PrgEnv-gnu/4.2.34
+# gcc/4.9.0
+
+
+Third-Party includes
+cmake   Qt   Paraview4   OpenMPI   Scotch   CGAL   Boost
+
+For reference, if user can change O/S using RPMs,
+the software recommended to be loaded are the following.
+ cmake zlib1g-dev qt4-dev-tools libqt4-dev gnuplot
+ libreadline-dev libncurses-dev libxt-dev
+ libscotch-dev libopenmpi-dev libcgal-dev
+ libqt4-devel boost-devel gnuplot 
+
+Cannot add RPMs for missing software, try to get as much as possible
+from already installed software.
+
+# Location of wmake
+export PATH=${PREFIX}/src/OpenFOAM-2.3.1/wmake:$PATH
+# cmake
+export PATH=/usr/local/usp/cmake/2.8.12.2-gnu/bin:$PATH
+# gnuplot
+export PATH=/usr/local/usp/COST/gnuplot-4.6.5/bin:$PATH
+# For Qt
+export PATH=$PATH:/usr/local/usp/DAAC/visit/2.9.0/linux-x86_64/bin
+# For Qt
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/usp/DAAC/visit/2.9.0/linux-x86_64/lib
+
+export ParaView_LIB_DIR=/usr/local/usp/DAAC/paraview/4.3.1_osmesa/lib/paraview-4.3
+export ParaView_INCLUDE_DIR=/usr/local/usp/DAAC/paraview/4.1.0_osmesa/lib/paraview-4.1/include
+export ParaView_DIR=/usr/local/usp/DAAC/paraview/4.3.1_osmesa
+export ParaView_MAJOR=4
+
+# Paraview
+# Paraview has a library 
+# libpmi.so.0 and others that should, instead, be supplied by Cray
+# For libpmi
+# ls -l /usr/local/usp/DAAC/paraview/4.3.1_osmesa/lib/paraview-4.3/libpmi.so.0 /opt/cray/pmi/5.0.1-1.0000.9799.94.9.gem/lib64/libpmi.so.0.5.0
+# -rwxr-xr-x 1 root  root 160264 Nov  6  2013 /opt/cray/pmi/5.0.1-1.0000.9799.94.9.gem/lib64/libpmi.so.0.5.0
+# -rwxrwxr-x 1 angel daac 160264 Nov  6  2013 /usr/local/usp/DAAC/paraview/4.3.1_osmesa/lib/paraview-4.3/libpmi.so.0
+# We see that the libraries are exactly the same size.
+# export PATH=$PATH:${ParaView_DIR}/bin
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${ParaView_LIB_DIR}
+
+export FOAM_INST_DIR=${PREFIX}/src
+
+# WM_PROJECT_SITE not defined,
+# would be something like $PREFIX/src/site
+# WM_PROJECT_USER_DIR not defined,
+# would be something like
+# $HOME/$WM_PROJECT/$USER-$WM_PROJECT_VERSION
+# or
+# ${PREFIX}/src/$WM_PROJECT/$USER-$WM_PROJECT_VERSION
+
+# Edit
+# ${PREFIX}/src/OpenFOAM-2.3.1/etc/bashrc
+# and put a copy into ${PREFIX}/src/openfoam/etc/
+# 
+# In the editing below, $(PREFIX) means to expand fully to value
+# of environment variable $PREFIX when editing the file.
+
+# Location of the OpenFOAM installation
+foamInstall=$(PREFIX)/src
+
+# The later definitions in the bashrc file suggests
+# foamInstall should be $(PREFIX)/src, that is,
+# ${FOAM_INST_DIR:=$foamInstall}
+# export WM_PROJECT_INST_DIR=$FOAM_INST_DIR
+# export WM_PROJECT_DIR=$WM_PROJECT_INST_DIR/$WM_PROJECT-$WM_PROJECT_VERSION
+# _foamSource $WM_PROJECT_DIR/etc/config/settings.sh
+
+# Should already find
+#- Architecture:
+export WM_ARCH_OPTION=64
+
+# Should already find
+#- Compiler location:
+#    foamCompiler= system | ThirdParty (OpenFOAM)
+foamCompiler=system
+
+# Change to
+#- MPI implementation
+export WM_MPLIB=MPICH2
+
+# Expect to find
+#- Operating System:
+#    WM_OSTYPE = POSIX | ???
+export WM_OSTYPE=POSIX
+
+Changes to ${PREFIX}/src/OpenFOAM-2.3.1/etc/bashrc above
+
+cp ${PREFIX}/src/OpenFOAM-2.3.1/etc/bashrc ${PREFIX}/src/openfoam/etc/
+OR
+diff ${PREFIX}/src/OpenFOAM-2.3.1/etc/bashrc ${PREFIX}/src/openfoam/etc/bashrc
+
+Changes to source ${PREFIX}/src/OpenFOAM-2.3.1/etc/config/settings.sh below
+
+# Change to
+#    x86_64)
+#        case "$WM_ARCH_OPTION" in
+# [ ... ]
+       64)
+            WM_ARCH=linux64
+            export WM_COMPILER_LIB_ARCH=64
+            export WM_CC='cc'
+            export WM_CXX='CC'
+            export WM_CFLAGS='-fPIC'
+            export WM_CXXFLAGS='-fPIC'
+            export WM_LDFLAGS='-fPIC'
+            ;;
+
+# Note that $MPICH_DIR is defined on garnet.
+# case "$WM_MPLIB" in
+# Add lines
+MPICH2)
+    export FOAM_MPI=mpich2
+    export FOAM_MPI_LIBBIN=$FOAM_LIBBIN/mpich2
+    export MPI_ARCH_PATH=$MPICH_DIR
+    ;;
+
+Changes to source ${PREFIX}/src/OpenFOAM-2.3.1/etc/config/settings.sh above
+
+cp ${PREFIX}/src/OpenFOAM-2.3.1/etc/config/settings.sh ${PREFIX}/src/openfoam/etc/config/
+OR
+diff ${PREFIX}/src/OpenFOAM-2.3.1/etc/config/settings.sh ${PREFIX}/src/openfoam/etc/config/settings.sh
+
+Need to change in directory
+${PREFIX}/src/OpenFOAM-2.3.1/wmake/rules/linux64Gcc
+Not certain whether need to change directory
+${PREFIX}/src/OpenFOAM-2.3.1/wmake/rules/linux64Gcc49
+but no harm in changing files in the latter as well.
+Use files in linux64Gcc49/ as reference.  The few differences
+may be improvements over the generic linux64Gcc/.
+
+Pstream depends on OpenFoam and vice versa,
+somehow
+" -Xlinker --add-needed -Xlinker --no-as-needed"
+solves that problem.
+In particular, Pstream is done first and needs FatalError
+defined in ./src/OpenFOAM/db/error/error.C
+
+In those directories
+
+Change file "c" change to
+cc          = cc
+LINK_LIBS   = -Wl,--allow-multiple-definition
+LINKLIBSO   = $(cc) $(cFLAGS) -shared
+
+In file "c++" change to
+CC          = CC
+LINKLIBSO   = $(CC) $(c++FLAGS) -shared -Xlinker --add-needed -Xlinker --no-as-needed
+
+Directory
+${PREFIX}/src/ThirdParty-2.3.1/etc/wmakeFiles/scotch/
+file
+Makefile.inc.i686_pc_linux2.shlib-OpenFOAM-64
+Change to
+AR              = cc
+CCS		= cc
+CCP		= cc
+CCD		= cc
+LDFLAGS		= -lz -lm -lrt
+
+In order to make debugging of build procedure easier
+change file $PREFIX/src/ThirdParty-2.3.1/etc/tools/ThirdPartyFunctions
+from
+export WM_NCOMPPROCS=$(egrep "^processor" /proc/cpuinfo 2>/dev/null | wc -l)
+to
+export WM_NCOMPPROCS=1
+
+# Should have already been done above,
+# module swap to PrgEnv-gnu and also gcc/4.9.0,
+# do that by using
+source /p/cwfs/scheinin/pub/module_update/module_update_gnu.sh
+module unload cray-hdf5/1.8.13
+module load cray-hdf5-parallel/1.8.13
+module unload cray-netcdf/4.3.2
+module load cray-netcdf-hdf5parallel/4.3.2
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CRAY_LD_LIBRARY_PATH
+# Add to LD_LIBRARY_PATH, at the end,
+# /opt/cray/mpt/7.0.2/gni/mpich2-gnu/48/lib because
+# needed by /opt/cray/fftw/3.3.4.1/interlagos/lib/libfftw3f_mpi.so.mpi31.3
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cray/mpt/7.0.2/gni/mpich2-gnu/48/lib
+
+In /usr/local/usp/OpenFOAM/2.3.1-gnu-cc/src/OpenFOAM-2.3.1/wmake/Makefile got
+rid of @ in second-to-last line
+(LIB).$(SO): $(OBJECTS)
+             @$(WM_SCRIPTS)/makeTargetDir $(LIB)
+             @rm -f so_locations
+             @cd $(OBJECTS_DIR) ; \
+             $(LINKLIBSO) $(LOCAL_OBJECTS) -L$(LIB_PLATFORMS) $(LIB_LIBS) $(GLIB_LIBS) 
+
+# Build dynamically by setting
+export CRAYPE_LINK_TYPE=dynamic
+export WM_64=ON
+source etc/bashrc
+export PATH=${FOAM_APPBIN}:$PATH
+export LD_LIBRARY_PATH=${FOAM_LIBBIN}:$LD_LIBRARY_PATH
+
+./Allwmake 2>&1 | tee make1.log
+
+If there are errors, may need to do
+
+./Allwmake 2>&1 | tee make2.log
+
+Note that CGAL parts of the package related to CGAL did not compile.
+Note that subdirectory
+/usr/local/usp/OpenFOAM/2.3.1-gnu-cc/src/ThirdParty-2.3.1/build/linux64Gcc/CGAL-4.3
+has a CMakeCache.txt which has option
+CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+Do "which cmake" and make sure right one being used
+Need STL, Boost, GMP, MPFR, OpenGL, Qt3 and Qt4
+
+Before trying to resolve CGAL problems, test OpenFoam.
+There are some test examples above.
+
+Only parallel runs seem to be
+$PREFIX/src/OpenFOAM-2.3.1/tutorials/heatTransfer/chtMultiRegionSimpleFoam/multiRegionHeaterRadiation/Allrun-parallel
+See mpirun in that file.
+
+For first test
+/usr/local/usp/OpenFOAM/2.3.1-gnu-cc/src/OpenFOAM-2.3.1/platforms/linux64GccDPOpt/bin/changeDictionary
+always fails with "Illegal instruction (core dumped)"
+
+At this point OpenFOAM-dev should work on your system. You can try it in this way:
+    cd ~/home/alberto/OpenFOAM/OpenFOAM-1.4.1-dev/tutorials/icoFoam
+    blockMesh . cavity
+    icoFoam . cavity
+
+ ---------------
+
+
+scheinin@garnet02:..src/OpenFOAM-2.3.1> find . -type f -exec grep -i mpirun {} \; -print
+
+mpirun -np 2 Test-patchRegion -parallel
+./applications/test/patchRegion/cavity_pinched/README.txt
+
+        mpirun -np ddd redistributePar -parallel
+./applications/utilities/parallelProcessing/redistributePar/redistributePar.C
+
+#         mpirun -np <nProcs> \
+./bin/foamExec
+
+    # locate mpirun
+    mpirun=`findExec mpirun` || usage "'mpirun' not found"
+        echo "Executing: $mpirun $mpiopts $APPLICATION $(echoArgs "$@") -parallel | tee log"
+        $mpirun $mpiopts $APPLICATION "$@" -parallel | tee log
+        echo "Executing: $mpirun $mpiopts $APPLICATION $(echoArgs "$@") -parallel > log 2>&1"
+        $mpirun $mpiopts $APPLICATION "$@" -parallel > log 2>&1 &
+./bin/foamJob
+
+#     mpirunDebug
+* This will run like mpirun but with each process in an XTerm
+rm -f $PWD/mpirun.schema
+touch $PWD/mpirun.schema
+        echo "${node}$procCmdFile" >> $PWD/mpirun.schema
+        echo "${node}xterm -font fixed -title 'processor'$proc $geom -e $procCmdFile" >> $PWD/mpirun.schema
+        echo "${node}$procCmdFile" >> $PWD/mpirun.schema
+        echo "${node}$procCmdFile" >> $PWD/mpirun.schema
+        echo "${node}xterm -font fixed -title 'processor'$proc $geom -e $procCmdFile" >> $PWD/mpirun.schema
+        echo "${node}xterm -font fixed -title 'processor'$proc $geom -e $procCmdFile" >> $PWD/mpirun.schema
+        echo "${node}$procCmdFile" >> $PWD/mpirun.schema
+    cmd="mpirun -app $PWD/mpirun.schema </dev/null"
+    done < $PWD/mpirun.schema
+echo "Constructed $PWD/mpirun.schema file."
+./bin/mpirunDebug
+
+        #    $WM_SCHEDULER -np $nProcs "( mpirun -np $nProcs $APP_RUN -parallel "$@" < /dev/null > log.$APP_NAME 2>&1 )"
+            ( mpirun -np $nProcs $APP_RUN -parallel "$@" < /dev/null > log.$APP_NAME 2>&1 )
+./bin/tools/RunFunctions
+        mpirun -np 4 dgpart 2 'region0_%r.dgr'
+./src/parallel/decompose/ptscotchDecomp/ptscotchDecomp.C
+    mpirun -np 4 faceAgglomerate -region $i -dict constant/viewFactorsDict -parallel>   log.faceAgglomerate.$i 2>&1
+    mpirun -np 4 viewFactorsGen -region $i -parallel > log.viewFactorsGen.$i 2>&1
+./tutorials/heatTransfer/chtMultiRegionSimpleFoam/multiRegionHeaterRadiation/Allrun-parallel
+
+ ------------
+
+For user adding his or her own code.
+Hi Alan,
+
+Sorry for the delay in responding, I was out of the office Monday and Tuesday.
+
+Well, when I simply defined the environmental variables for FOAM_USER_LIBBIN and APPBIN, these variables existed, for example I could enter "echo $FOAM_USER_LIBBIN" and get out the correct directory, but OpenFOAM didn't actually know these were there, or what this meant since the FOAM_USER_LIB/APPBIN directories were not added to the APP & LIB paths where OF would look. After reading your email and thinking about it, I went and added a few things to the end of your setup.sh file to try and do what was not happening above - telling OF to use these files. So I added the following:
+
+# user executables/libraries
+export FOAM_USER_APPBIN=$WM_PROJECT_USER_DIR/platforms/$WM_OPTIONS/bin
+export FOAM_USER_LIBBIN=$WM_PROJECT_USER_DIR/platforms/$WM_OPTIONS/lib
+
+_foamAddPath()
+{
+while [ $# -ge 1 ]
+do
+export PATH=$1:$PATH
+shift
+done
+}
+
+_foamAddLib()
+{
+while [ $# -ge 1 ]
+do
+export LD_LIBRARY_PATH=$1:$LD_LIBRARY_PATH
+shift
+done
+}
+
+_foamAddPath $FOAM_USER_APPBIN:$FOAM_SITE_APPBIN:$FOAM_APPBIN
+
+_foamAddLib $FOAM_USER_LIBBIN:$FOAM_SITE_LIBBIN:$FOAM_LIBBIN:$FOAM_EXT_LIBBIN:$$
+FOAM_LIBBIN/dummy
+
+This seems to have fixed the issue I was having initially with the setup.sh file, and OpenFOAM now knows where the FOAM_USER_LIB/APPBIN folders are, and is able to use them. I will continue to use this with the setup.sh file instead of sourcing the bashrc file as I was initially. Let me know your thoughts and if you have any suggestions. Thank you!
+
+Andrew Guarendi
+
+ ------------
+
+scheinin@garnet02:..Samples/nativeOF> ls -l 0/constant/ system/
+0:
+total 16
+drwxr----- 2 scheinin 9729LSTA 4096 Jun  2  2014 .
+drwxr----- 5 scheinin 9729LSTA 4096 May  5 12:26 ..
+-rw-r----- 1 scheinin 9729LSTA 1103 Jun  2  2014 p
+-rw-r----- 1 scheinin 9729LSTA 1187 Jun  2  2014 U
+
+constant/:
+total 16
+drwxr----- 3 scheinin 9729LSTA 4096 Jun  2  2014 .
+drwxr----- 5 scheinin 9729LSTA 4096 May  5 12:26 ..
+drwxr----- 2 scheinin 9729LSTA 4096 Jun  2  2014 polyMesh
+-rw-r----- 1 scheinin 9729LSTA  917 Jun  2  2014 transportProperties
+
+system:
+total 24
+drwxr----- 2 scheinin 9729LSTA 4096 Jun  2  2014 .
+drwxr----- 5 scheinin 9729LSTA 4096 May  5 12:26 ..
+-rw-r----- 1 scheinin 9729LSTA 1214 Jun  2  2014 controlDict
+-rw-r----- 1 scheinin 9729LSTA  835 Jun  2  2014 decomposeParDict
+-rw-r----- 1 scheinin 9729LSTA 1300 Jun  2  2014 fvSchemes
+-rw-r----- 1 scheinin 9729LSTA 1274 Jun  2  2014 fvSolution
+
+ -----------
+

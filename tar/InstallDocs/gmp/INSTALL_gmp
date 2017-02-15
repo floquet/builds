@@ -1,0 +1,98 @@
+
+GNU multiple precision arithmetic library
+https://gmplib.org/manual/Installing-GMP.html#Installing-GMP
+
+Below, Nov. 17, 2016 on topaz
+
+export INTEL_VERSION=15.0.2
+# OR
+export INTEL_VERSION=15.0.3
+# OR
+export INTEL_VERSION=16.0.0
+# OR
+export GNU_VERSION=4.9.3
+# OR
+export GNU_VERSION=5.3.0
+# OR
+export GNU_VERSION=6.1.0
+
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+# OR
+module swap compiler/intel compiler/gcc/$GNU_VERSION
+
+module unload mpi/sgimpt/2.12-11218
+
+export GMP_VERSION=6.1.1
+
+export PREFIX=/p/home/apps/unsupported/gmp/${GMP_VERSION}-intel-${INTEL_VERSION}
+# OR
+export PREFIX=/p/home/apps/unsupported/gmp/${GMP_VERSION}-gcc-${GNU_VERSION}
+
+mkdir $PREFIX
+
+export BUILD_DIR=/p/home/scheinin/build/gmp/gmp-${GMP_VERSION}-intel-${INTEL_VERSION}
+# OR
+export BUILD_DIR=/p/home/scheinin/build/gmp/gmp-${GMP_VERSION}-gcc-${GNU_VERSION}
+
+mkdir $BUILD_DIR
+cp gmp-6.1.1.tar.bz2 $BUILD_DIR
+cd $BUILD_DIR
+tar xjf gmp-6.1.1.tar.bz2
+cd gmp-6.1.1
+
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2 -fPIC"
+export CXXFLAGS="-O2 -fPIC"
+export FFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ifort
+export F77=ifort
+export F90=ifort
+# OR
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2 -fPIC"
+export CXXFLAGS="-O2 -fPIC"
+export FFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+./configure --prefix=$PREFIX \
+  --enable-cxx \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+find $PREFIX
+make install
+find $PREFIX
+
+install destination: /p/home/apps/unsupported/gmp/6.1.1-intel-15.0.2
+FAIL: t-ops2
+install destination: /p/home/apps/unsupported/gmp/6.1.1-intel-15.0.3
+FAIL: t-ops2
+install destination: /p/home/apps/unsupported/gmp/6.1.1-intel-16.0.0
+FAIL: t-ops2
+
+
+# Note, there is more than one choice of $PREFIX .
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+Above, Nov. 17, 2016 on topaz
+
+

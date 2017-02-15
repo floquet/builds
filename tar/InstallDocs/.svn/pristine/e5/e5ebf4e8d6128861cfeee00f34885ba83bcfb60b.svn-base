@@ -1,0 +1,563 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Comparison Charts</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Comparison of two Trace Files"
+HREF="c2725.html"><LINK
+REL="PREVIOUS"
+TITLE="Comparison of two Trace Files"
+HREF="c2725.html"><LINK
+REL="NEXT"
+TITLE="Command Line Interface (CLI)"
+HREF="c2917.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c2725.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 7. Comparison of two Trace Files</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c2917.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="COMP.CHARTS"
+>7.2. Comparison Charts</A
+></H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COMP.FUNC"
+>7.2.1. The Comparison Function Profile</A
+></H2
+><P
+>The Comparison Function Profile is very similar to the regular
+Function Profile. It does not have the pie diagrams in the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Load Balance</I
+></SPAN
+> tab and no <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Call
+Graph</I
+></SPAN
+> tab at all.
+</P
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.FUNCPROF"
+></A
+><P
+><B
+>Figure 7-5. A Comparison Function Profile Chart</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_funcprof.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The column headers are the same as in the regular Function
+Profile with the exception of the first column. In the Comparison
+Function Profile this column header is used to display the currently
+selected comparison operation. This operation can be selected from the
+context menu (see below).</P
+><P
+>Wherever the regular Function Profile shows the name of a
+function, function group, process, or process group the Comparison
+Function Profile shows either a pair of mapped names formatted as
+<SPAN
+CLASS="QUOTE"
+>"NameA; NameB"</SPAN
+> if the names are different, <SPAN
+CLASS="QUOTE"
+>"A
+unmapped; NameB"</SPAN
+> or vice versa if there is no mapping for one
+file or just as <SPAN
+CLASS="QUOTE"
+>"Name"</SPAN
+> if the names are equal for both
+files.</P
+><P
+><A
+HREF="x2820.html#COMP.FUNCPROF"
+>Figure 7-5</A
+> shows a case where
+<SAMP
+CLASS="computeroutput"
+>MPI_Sendrecv</SAMP
+> in A was replaced by
+<SAMP
+CLASS="computeroutput"
+>MPI_Isend</SAMP
+>,
+<SAMP
+CLASS="computeroutput"
+>MPI_Recv</SAMP
+> and
+<SAMP
+CLASS="computeroutput"
+>MPI_Waitall</SAMP
+> in B. Note that the first
+column of the profile flags which functions are present in which
+trace. The other columns indicate for which of the traces there was
+valid data. When there is only valid data from one file, no
+meaningful comparison can be done.</P
+><P
+>Even for a function <SPAN
+CLASS="QUOTE"
+>"F"</SPAN
+> that is present in both
+traces the currently selected time intervals (or aggregations, or
+filters) can have the effect that there is no data from one of the
+traces. In this case the first column would carry the label
+<SPAN
+CLASS="QUOTE"
+>"F"</SPAN
+> since the mapping is ok but the other columns would
+have <SPAN
+CLASS="QUOTE"
+>"A only"</SPAN
+> or <SPAN
+CLASS="QUOTE"
+>"B only"</SPAN
+>
+respectively.</P
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.FUNCPROFMISMATCH"
+></A
+><P
+><B
+>Figure 7-6. Undefined fields in the profile due to the chosen aggregations</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_funcprofmismatch.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>If you choose <SPAN
+CLASS="QUOTE"
+>"Major Function Groups"</SPAN
+> and
+<SPAN
+CLASS="QUOTE"
+>"All Functions"</SPAN
+> for the function aggregation in both runs
+then all fields will show remarks indicating that no comparison could
+be made because of lacking data - at least as long as the current
+comparison operation needs data from A and B. If you switch to a
+comparison operation of <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>A</I
+></SPAN
+> or
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>B</I
+></SPAN
+> then the respective fields will show values
+even when the function aggregations do not fit.  <A
+HREF="x2820.html#COMP.FUNCPROFMISMATCH"
+>Figure 7-6</A
+> shows such a case: there is data for
+run A and B but in the rightmost profile there is nothing to calculate
+the comparison operation B/A on.</P
+><P
+>The horizontal bars in the graphical columns work similar to the
+regular Function Profile except when the comparison operation is set
+to <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>A/B</I
+></SPAN
+> or <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>B/A</I
+></SPAN
+>. In this case
+the length of the bars is proportional to the logarithm of the given
+value. A value of for example 1/5 results in a bar from the middle to
+the left, while a value of 5 results in a bar of the same length but
+from the middle to the right. So switching between
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>A/B</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>B/A</I
+></SPAN
+> will mirror the
+bars around the middle. Please note that the full column width shows
+at least the range from 1/2 to 2 so that factors near to 1 do not
+generate big bars that would invite to misinterpret them as very big
+changes between the two runs.</P
+><P
+>&#13;The context menu of the Comparison Function Profile is pretty much the
+same as the one found in the regular Function Profile (refer to <A
+HREF="x1330.html#FLATPROFCM"
+>Section 4.5.5.2</A
+>) with the addition of a submenu to choose the
+comparison operation. See below.</P
+><P
+>&#13;The settings dialog of the Comparison Function Profile is the same as
+the one for the regular Function Profile (refer to <A
+HREF="x1330.html#FUNCPROFSD"
+>Section 4.5.5.1</A
+>) with an additional tab that allows to switch
+the comparison operation.</P
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.FUNCPROFCM"
+></A
+><P
+><B
+>Figure 7-7. The Comparison Function Profile's context menu with the available comparison operations</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_funcprof_compop.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COMP.MSG"
+>7.2.2. The Comparison Message Profile</A
+></H2
+><P
+>The Comparison Message Profile is very similar to the regular
+Message Profile. <A
+HREF="x2820.html#COMP.MSGPROF"
+>Figure 7-8</A
+> shows a Comparison
+Message Profile with poisson_sendrecv.single.stf as run A and
+poisson_icomm.single.stf as run B.</P
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.MSGPROF"
+></A
+><P
+><B
+>Figure 7-8. The Comparison Message Profile</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_msgprof.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The values shown in the cells are calculated using the currently
+selected comparison operation shown in the title of the Chart. The
+comparison operation can be switched from the context menu or from the
+settings dialog. If the comparison operation makes use of A and B and
+only one of the values is present for a given cell, then this cell is
+labeled with <SPAN
+CLASS="QUOTE"
+>"A"</SPAN
+> or <SPAN
+CLASS="QUOTE"
+>"B"</SPAN
+> indicating for which
+trace data is present. If there is no data at all the cell is left
+empty.</P
+><P
+>Some groupings are dependent on the mapping rules in that they
+either use processes, process groups or communicators as row or column
+labels. If differing labels are mapped onto the same column or row
+then the label is made up of two lines with the first line holding the
+label for file A and the second for file B. This can happen for the
+groupings Sender, Receiver, Sender/Receiver and Communicator. In <A
+HREF="x2820.html#COMP.MSGPROF"
+>Figure 7-8</A
+> the process aggregation is
+<SPAN
+CLASS="QUOTE"
+>"All_Processes"</SPAN
+> for one file and <SPAN
+CLASS="QUOTE"
+>"All_Nodes"</SPAN
+>
+for the other which results in double line labels in the
+profile.</P
+><P
+>There can be cases where a whole row or column does not apply to
+one of the traces. In these cases the double line label holds <SPAN
+CLASS="QUOTE"
+>"A
+missing"</SPAN
+> or <SPAN
+CLASS="QUOTE"
+>"B missing"</SPAN
+>. This can happen for the
+groupings Sender, Receiver and Sender/Receiver that may have
+unmappable TGroups in the labels or for groupings like Tag,
+Communicator or Volume that directly depend on the data that is
+present in the trace. The Settings Dialog box of the Comparison
+Message Profile has means to suppress such rows and columns, but they
+are shown by default.</P
+><P
+>&#13;The Context Menu of the Comparison Message Profile is pretty much the
+same as in the normal Message Profile (refer to <A
+HREF="x1569.html#MSGPROFCM"
+>Section 4.6.3</A
+>, with the difference that it has an additional
+entry, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Comparison Operation</I
+></SPAN
+>, where the type of
+comparison can be selected from a submenu.</P
+><P
+>&#13;The Settings Dialog box of the Comparison Message Profile is pretty
+much the same as for the normal Message Profile (refer to <A
+HREF="x1569.html#MSGPROFSD"
+>Section 4.6.2</A
+>. In the Preferences tab there are two additional
+check boxes to suppress rows or columns that only apply to one trace
+and the Data tab has an additional combo box to choose the comparison
+operation.  </P
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.COMPOP"
+></A
+><P
+><B
+>Figure 7-9. Available Comparison Operations</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_compop.png"
+ALIGN="center"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COMP.COLLOP"
+>7.2.3. The Comparison Collective Operations Profile</A
+></H2
+><P
+>The Comparison Collective Operations Profile is very similar to
+the regular Collective Operations Profile. The values shown in the
+cells are calculated using the currently selected comparison operation
+shown in the title of the Chart. The comparison operation can be
+switched from the context menu or from the settings dialog.</P
+><P
+>Regarding missing values and unmappable column or row labels the
+Comparison Collective Operations Profile behaves identically to the
+Comparison Message Profile (refer to <A
+HREF="x2820.html#COMP.MSG"
+>Section 7.2.2</A
+>).</P
+><DIV
+CLASS="figure"
+><A
+NAME="COMP.COLLOPPROF"
+></A
+><P
+><B
+>Figure 7-10. The Comparison Collective Operations Profile</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/comp_collopprof.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>&#13;The Context Menu of the Comparison Collective Operations Profile is
+pretty much the same as in the normal Collective Operations Profile
+(refer to <A
+HREF="x1790.html#COLLOPCM"
+>Section 4.7.3</A
+>), with the difference that it has
+an additional entry, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Comparison Operation</I
+></SPAN
+>, where
+the type of comparison can be selected from a submenu.</P
+><P
+>&#13;The Settings Dialog box of the Comparison Collective Operations
+Profile is pretty much the same as for the normal Collective
+Operations Profile (refer to <A
+HREF="x1790.html#SECT.COLLOPSD"
+>Section 4.7.2</A
+>.  In the
+Preferences tab there are two additional check boxes to suppress rows
+or columns that only apply to one trace and the Data tab has an
+additional combo box to choose the comparison operation.  </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c2725.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c2917.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Comparison of two Trace Files</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c2725.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Command Line Interface (CLI)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

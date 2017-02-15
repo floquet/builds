@@ -1,0 +1,161 @@
+Done.
+
+David 
+
+-----Original Message-----
+From: Borchert, Christopher B ERDC-ITL-MS Contractor
+Sent: Tuesday, June 23, 2009 10:03 AM
+To: Scheinine, Alan ERDC-ITL-MS Contractor
+Cc: Dumas, David M ERDC-ITL-MS
+Subject: FW: Application for a copy of DLPOLY Software
+
+David, Please put Alan in dlpoly group. Thanks. 
+
+Alan,
+I have placed some files in your workdir on jade. These are slightly newer versions of DL_POLY. Below are the unencrypting notes.
+
+Thanks,
+Chris 
+
+-----Original Message-----
+From: W Smith [mailto:w.smith@dl.ac.uk]
+Sent: Monday, June 22, 2009 5:03 PM
+To: Borchert, Christopher B ERDC-ITL-MS Contractor
+Subject: Application for a copy of DLPOLY Software
+
+DL_POLY Software Download Instructions
+
+The DL_POLY software is available by FTP from Daresbury Laboratory. A special directory exists in the CCP5 Program Library, from which the software may be copied. For copyright reasons the software is ENCRYPTED and INVISIBLE to the external user, but you will be allowed priviledged access and decrypting facilities.  PLEASE DO NOT REVEAL THESE PROCEDURES TO THIRD PARTIES. Access to the software is reserved for licence holders only.
+
+You can obtain DL_POLY using a web browser in the following way:
+
+1. Connect your browser to the address:
+   ftp://ftp.dl.ac.uk/ccp5/DL_POLY/
+
+2. You should now be able to see the directory TRANSFERS
+
+3. Open the TRANSFERS  directory - this will appear empty, but don't worry!
+
+4. In the web browser address window append the name of the file you
+   want to download - you will need to get the following files:
+
+   dl_poly_2.20.tar.gE
+   dl_poly_3.09.tar.gE
+   decrypt.c
+
+   For example, to get the decrypt.c file you need to have this
+   text in the address window.
+
+   ftp://ftp.dl.ac.uk/ccp5/DL_POLY/TRANSFERS/decrypt.c
+
+5. The browser will then ask if you want to download the file. Select
+   yes. Store the file where you want to unpack it.
+
+6. The files with the suffix `.gE' are encrypted. To decrypt them
+   proceed as follows. Note that this procedure must be performed
+   on a UNIX platform.
+
+   a) Take a backup copy of the original file!!!!!!!!!!
+
+   b) Compile the decryption program with a C compiler.
+  
+   c) Run the decryption program, it will ask for the password
+      and the name of an encrypted file. The result will be a
+      UNIX tar file (some_name.tar.gz)
+
+   d) Your decryption password is: qno9f!hrt?sp
+
+   e) Uncompress the tar file:
+
+      gunzip some_name.tar.gz
+
+      this will create the file: some_name.tar
+
+   f) Unpack the tar file using tar with the -xvf flags. 
+
+      tar -xvf some_name.tar
+
+   g) You should now have access to the software.
+
+7. Please note that there is no internal check on the correctness
+   of the password and if you make a mistake you will probably
+   get as far as step e) before finding out something is
+   wrong. If this happens do not despair, experience shows that
+   just repeating the procedure more carefully usually yields
+   results. If you have delayed in transferring the files you may
+   find that the password no longer applies, in which case ask
+   for the new password.
+
+8. Please get in touch with me (w.smith@dl.ac.uk) if these
+   procedures are obstinately unsuccessful.
+
+
+W. Smith
+Name        : Mr Chris Borchert
+Department  : HPC Service Center
+Institution : U.S. Army Corps of Engineers Engineer Research and Development Center DSRC
+Address     : 3909 Halls Ferry Rd
+
+Town_City   : Vicksburg, MS
+Postcode    : 39180
+Country     : USA
+Email       : Christopher.B.Borchert@usace.army.mil
+Date        : 2009-06-22
+________________________________________________________________
+
+File /usr/local/usp/DL_POLY/INSTALL-2 :
+
+cp build/MakePAR srcmod/Makefile
+
+Add this to Makefile:
+
+cray:
+        $(MAKE) LD="ftn -o" \
+        LDFLAGS="-fast -Mscalarsse" \
+        FC="ftn -c" \
+        FFLAGS="-fast -Mscalarsse" \
+        EX=$(EX) BINROOT=$(BINROOT) $(TYPE)
+
+Also, changed CC from gcc to cc, though it is not used.
+
+make cray
+Copy files from execute
+Previous version of these instructions had -tp k8-64
+but the cray ftn makes the right choice.
+
+
+On jade, 24 June 2009:
+which javac
+/opt/java/jdk1.5.0_10/bin/javac
+On sapphire, 
+ which javac24 June 2009:
+/opt/java/jdk1.6.0_13/bin/javac
+
+Run build in java directory
+Copy run,GUI.jar to gui directory
+On sapphire, needed to change first line of build to
+javac -J-Xms64m -J-Xmx512m *.java
+and also, to log-into an application node
+qsub -A erdcssta -q debug -l ncpus=0,walltime=1:00:00 -I
+in order to avoid the error
+ > Error occurred during initialization of VM
+ > Could not reserve enough space for object heap
+ > Could not create the Java virtual machine.
+
+
+File /usr/local/usp/DL_POLY/INSTALL-3 :
+
+cp build/Makefile_MPI source/Makefile
+
+Add this to Makefile:
+
+cray:
+        $(MAKE) LD="ftn -o" \
+        LDFLAGS="-fast -Mscalarsse" \
+        FC="ftn -c" \
+        FCFLAGS="-fast -Mscalarsse" \
+        EX=$(EX) BINROOT=$(BINROOT) $(TYPE)
+
+make cray
+Copy files from execute
+

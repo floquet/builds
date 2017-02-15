@@ -1,0 +1,103 @@
+ jade, Dec. 2009, gsl-1.13
+
+cd /usr/local/usp/gsl/1.13-cnl/src/gsl-1.13
+
+# Overall problem is a function declaration included in a header
+# is put into a library as being defined even if it is not used
+# in the function.  Moreover, this happens if the function
+# definition is prefixed with "extern inline".
+# The extra symbols cause errors when linking due to
+# duplicated symbols.
+
+export CC=cc
+export CFLAGS="-fast"
+export LDFLAGS="-fast"
+
+File gsl_inline.h,
+after #ifdef HAVE_INLINE paragraph
+
+#undef INLINE_DECL
+#define INLINE_DECL extern
+#undef INLINE_FUN
+#define INLINE_FUN extern
+
+ ./configure --prefix=/usr/local/usp/gsl/1.13-cnl \
+   --enable-static --disable-shared
+
+In file config.h changed two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make
+
+make -k check 2>&1 | tee check.log
+
+# Test in subdirectory diff/ had small numerical difference.
+# Unfortunately, vector/test , vector/test_static , matrix/test and
+# matrix/test_static all FAILED with segmentation fault.
+# Other tests passed.
+
+make install
+make clean
+
+ --------------------------------------------------------------
+
+cd /usr/local/usp/gsl/1.13-pgi/src/gsl-1.13
+
+# Overall problem is a function declaration included in a header
+# is put into a library as being defined even if it is not used
+# in the function.  Moreover, this happens if the function
+# definition is prefixed with "extern inline".
+# The extra symbols cause errors when linking due to
+# duplicated symbols.
+
+export CC=pgcc
+export CFLAGS="-fast"
+export LDFLAGS="-fast"
+
+File gsl_inline.h,
+after #ifdef HAVE_INLINE paragraph
+
+#undef INLINE_DECL
+#define INLINE_DECL extern
+#undef INLINE_FUN
+#define INLINE_FUN extern
+
+ ./configure --prefix=/usr/local/usp/gsl/1.13-pgi \
+   --enable-static --enable-shared
+
+In file config.h changed two inline macros to being undefined.
+#undef HAVE_C99_INLINE
+#undef HAVE_INLINE
+
+make
+
+make -k check 2>&1 | tee check.log
+
+# Test in subdirectory diff/ had small numerical difference.
+# Unfortunately, vector/test , vector/test_static , matrix/test and
+# matrix/test_static all FAILED with segmentation fault.
+# Other tests passed.
+
+make install
+make clean
+
+ --------------------------------------------------------------
+
+cd /usr/local/usp/gsl/1.13-gnu/src/gsl-1.13
+
+module unload PrgEnv-pgi
+module load PrgEnv-gnu
+
+export CC=gcc
+export CFLAGS="-fPIC -O3"
+export LDFLAGS="-O3"
+
+ ./configure --prefix=/usr/local/usp/gsl/1.13-gnu \
+   --enable-static --enable-shared
+
+make
+make check 2>&1 | tee check.log
+# All passed
+make install
+make clean

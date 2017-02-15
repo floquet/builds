@@ -1,0 +1,1029 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>The Message Profile</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Charts"
+HREF="c876.html"><LINK
+REL="PREVIOUS"
+TITLE="The Function Profile Chart"
+HREF="x1330.html"><LINK
+REL="NEXT"
+TITLE="The Collective Operations Profile"
+HREF="x1790.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1330.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Charts</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1790.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="MSGPROF"
+>4.6. The Message Profile</A
+></H1
+><P
+>The Message Profile Chart categorizes messages by groupings in a matrix and shows the value of several attributes in each cell.</P
+><P
+>By default the matrix is square with the sending processes as row labels and the receiving processes as column labels. It shows in cell (i, j) the total time spent in transferring messages from sender i to receiver j. </P
+><P
+>This chart also includes per row and per column statistics, which give the sum, the average and the standard deviation for the respective row or column.</P
+><P
+>The grouping that defines the row and column headers of this matrix and therefore the categorization of the data are changed in the context menu and the settings dialog box. Available groupings in addition to <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Sender</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Receiver</I
+></SPAN
+> are for example <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tag</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Communicator</I
+></SPAN
+>.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.MSGPROF"
+></A
+><P
+><B
+>Figure 4-36. The Message Profile</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/p2p1.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The attribute shown in the cells is chosen via the context menu
+or the settings dialog box. Apart from the Total Time shown by default
+there are other time values, transfer rates, volumes, and
+counts. </P
+><P
+>&#13;The cell sizes can either be set automatically or manually. If
+manual sizing is selected you can change the size of the cell by using
+the slider above the matrix. If the cells are too small to display
+numeric data, hover your mouse over a cell and view data in the
+status bar.
+</P
+><P
+> 
+The number formatting options are preset globally via the Number
+Formatting Settings dialog (refer to <A
+HREF="x2608.html"
+>Section 5.13</A
+>). To
+increase the number of digits locally by three (or one) digits press the key
+<SPAN
+CLASS="QUOTE"
+>"+"</SPAN
+> (or CTRL<SPAN
+CLASS="QUOTE"
+>"+"</SPAN
+>). Use the keys
+<SPAN
+CLASS="QUOTE"
+>"-"</SPAN
+> (or CTRL<SPAN
+CLASS="QUOTE"
+>"-"</SPAN
+>) to revert this
+action. Notice that the exact effect of asking for additional digits
+depends on the format chosen in the Number Formatting Settings dialog
+for the respective unit.
+</P
+><P
+>You can restrict the display to a rectangular area of the
+matrix. To select rows or columns click on row or column headers. For
+an arbitrary area of the matrix keep the mouse button pressed
+and select the respective cells. To restrict the display to the selection,
+right-click and select <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Zoom to Selection</I
+></SPAN
+> from the
+context menu. To change the position of the row and column headers,
+hold down the Ctrl key and drag the header to the required
+position. </P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="MsgProfMH"
+>4.6.1. Mouse Hover</A
+></H2
+><P
+>When the mouse is positioned over any point in the matrix then
+detailed information for the current position is shown in the View's
+status bar in the form "$AttributeValue ($RowLabel,
+$ColumnLabel)". This allows getting exact attribute values even if the
+cells are configured to be very small or to show no alphanumerical
+entries at all.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="MSGPROFSD"
+>4.6.2. Message Profile Settings</A
+></H2
+><P
+>The Settings dialog box provides three tabs: Preferences, Colors and Data.</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences Tab</I
+></SPAN
+></P
+><P
+>The
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Display</I
+></SPAN
+> group provides check boxes and radio
+buttons to configure some visual details. The check boxes
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Row Labels</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Column Labels</I
+></SPAN
+>
+switch the respective row and column headers. The check box
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Scale</I
+></SPAN
+> switches the colored scale next to the
+matrix. The check box <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Grid</I
+></SPAN
+> shows/removes the
+black grid shown between cells.</P
+><P
+>The checkbox <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Keep Empty Rows/Columns when using
+Sender/Receiver Groupings</I
+></SPAN
+> switches a special feature
+on/off. This feature is only relevant for the Groupings
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Sender</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Receiver</I
+></SPAN
+>. For
+these groupings, a checked state indicates that all processes should
+always be shown, like for example, showing even empty rows and
+columns. That keeps the form of the matrix constant and makes it easy
+to look for patterns in the data. An unchecked state means that empty
+rows and columns even for these groupings are suppressed. All other
+groupings suppress empty rows and columns to save screen space
+regardless of the state of this check box.</P
+><P
+>The radio buttons <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Communicator Names</I
+></SPAN
+> and
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Communicator Ids</I
+></SPAN
+> allow to either see helpful
+communicator names (if available in the trace file) that may take a
+lot of valuable screen space or to restrict the display to show only
+concise communicator ids.</P
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Layout</I
+></SPAN
+> group allows switching between
+two fundamentally different modes for the layout of the matrix. By
+default the mode is <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Automatic Cell Sizes</I
+></SPAN
+> and the
+cell sizes are adjusted to make all text readable. In this mode
+checking <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Equal Cell Sizes</I
+></SPAN
+> basically results in
+equal column widths and enables the check box <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Square Cell
+Sizes</I
+></SPAN
+> to get square cells. The other options of the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Layout group</I
+></SPAN
+> are disabled by default. </P
+><P
+>Choosing <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Manual Cell Sizes</I
+></SPAN
+> allows
+specifying the size of the cells in pixels either in the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Cell Size</I
+></SPAN
+> group at the bottom of the tab or using
+the slider that is available on top of the matrix as soon as this
+setting is applied. In this mode, the alphanumerical data in the cells
+is displayed only if it fits or if it is switched off entirely by
+un-checking the check box <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Text in Cells</I
+></SPAN
+>. By
+default, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Manual Cell Sizes</I
+></SPAN
+> is checked. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Colors Tab</I
+></SPAN
+></P
+><P
+>The push buttons
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Maximum Color</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Minimum
+Color</I
+></SPAN
+> allow choosing the colors for the maximum and minimum
+attribute values. The text input field allows specifying the number of
+color steps (1-255).</P
+><P
+>The chosen colors are considered as points in a color space and
+the colors of the scale are interpolated on a line through color space
+connecting these two points. The combo box to the right of the text
+input field allows using either the HSV or the RGB color space. HSV is
+more fancy and colorful, but RGB is often more useful and
+readable. For monochrome printing, it is advisable to choose a very
+light and a very dark color. Choosing white for the minimum and black
+for the maximum is not at all bad. </P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.MSGPROFSD"
+></A
+><P
+><B
+>Figure 4-37. The three tabs of the Message Profile settings dialog box</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/p2p-prop_entire.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>By checking the box <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Manual Scaling</I
+></SPAN
+> it is
+possible to specify the minimum and maximum values for the color scale
+in the two text input fields below. This is very convenient when
+comparing two Message Profile Charts that may live in different
+Views.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Data Tab</I
+></SPAN
+></P
+><P
+>The
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Grouping</I
+></SPAN
+> group provides two combo boxes to choose
+the row and column headers or better said to choose how the data is
+grouped into categories. The groupings for rows and columns are chosen
+independently. However not all combinations are possible. It is not
+possible to have the same grouping for rows and columns and it is not
+possible to have Sender/Receiver at one axis and any one of Sender or
+Receiver on the other axis.</P
+><P
+>The available groupings
+are:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Sender</I
+></SPAN
+></P
+><P
+>Categorizes the messages by Sender. The exact labels are defined by the current thread group that is given by the View (see <A
+HREF="c451.html"
+>Chapter 3</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Receiver</I
+></SPAN
+></P
+><P
+>Categorizes the messages by Receiver. The exact labels are defined by the current process group that is given by the View (see <A
+HREF="c451.html"
+>Chapter 3</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Sender/Receiver</I
+></SPAN
+></P
+><P
+>Categorizes the messages by Sender/Receiver pairs. The exact labels are defined by the current process group that is given by the View (see <A
+HREF="c451.html"
+>Chapter 3</A
+>).</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tag</I
+></SPAN
+></P
+><P
+>Categorizes the messages by the MPI tag assigned to the message by the program at the sender side.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Communicator</I
+></SPAN
+></P
+><P
+>Categorizes the messages by the MPI communicator. The labels are either communicator ids or names. Names are displayed if they are available in the trace file and if they are chosen in the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences</I
+></SPAN
+> tab of the Message Profile Settings dialog box. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Volume</I
+></SPAN
+></P
+><P
+>Categorizes the messages by their Volume; for example, size in bytes. This is seen in <A
+HREF="x1569.html#FIG.GRPVOLREC"
+>Figure 4-38</A
+>, where only messages with a volume of 2000 bytes were sent. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Sending Function</I
+></SPAN
+></P
+><P
+>Categorizes the messages by the function that sends them. Labels are names of MPI functions such as <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPI_Irsend</I
+></SPAN
+>. This categorization is not influenced by the current Function Aggregation.</P
+><DIV
+CLASS="tip"
+><BLOCKQUOTE
+CLASS="tip"
+><P
+><B
+>Note: </B
+>This information is only available with traces created by the Intel Trace Collector Version 6 and higher.</P
+></BLOCKQUOTE
+></DIV
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Receiving Function</I
+></SPAN
+></P
+><P
+>Categorize the messages by the function that receives them. Labels are names of MPI functions like <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>MPI_Waitany</I
+></SPAN
+>. This is not influenced by the current Function Aggregation.
+		</P
+><DIV
+CLASS="tip"
+><BLOCKQUOTE
+CLASS="tip"
+><P
+><B
+>Note: </B
+>This information is only available with traces created by the Intel Trace Collector 6 and higher.</P
+></BLOCKQUOTE
+></DIV
+></LI
+></UL
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.GRPVOLREC"
+></A
+><P
+><B
+>Figure 4-38. Grouping Volume by Receiver</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/p2p-vol.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The Datum group allows choosing which attribute should be printed or painted in the cells. The available attributes are:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Total Time, [s] or [tick]</I
+></SPAN
+></P
+><P
+>The total travel time of the messages, accumulated over all messages that fall into this cell. The unit is either [s] or [tick] depending on the View setting.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Minimum Time, [s] or [tick]</I
+></SPAN
+></P
+><P
+>The minimum travel time of a message, minimized over all messages that fall into this cell.  The unit is either [s] or [tick] depending on the View setting.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Maximum Time, [s] or [tick]</I
+></SPAN
+></P
+><P
+>The maximum travel time of a message, maximized over all messages that fall into this cell. The unit is either [s] or [tick] depending on the View setting.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Average Transfer Rate, [B/s]</I
+></SPAN
+></P
+><P
+>The average transfer rate, averaged over the transfer rates of all messages that fall into this cell. Messages are not weighted; for example, transfer rates of short messages have the same impact as transfer rates of long messages.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Minimum Transfer Rate, [B/s]</I
+></SPAN
+></P
+><P
+>The minimum transfer rate, minimized over all messages that fall into this cell.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Maximum Transfer Rate, [B/s]</I
+></SPAN
+></P
+><P
+>The maximum transfer rate, maximized over all messages that fall into this cell.</P
+></LI
+></UL
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Total Data Volume, [B]</I
+></SPAN
+></P
+><P
+>The total data volume, accumulated over all messages that fall into this cell.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Minimum Data Volume, [B]</I
+></SPAN
+></P
+><P
+>The minimum data volume, minimized over all messages that fall into this cell.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Maximum Data Volume, [B]</I
+></SPAN
+></P
+><P
+>The maximum data volume, maximized over all messages that fall into this cell.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Count, [1]</I
+></SPAN
+></P
+><P
+>The number of messages that fall into this cell.</P
+></LI
+></UL
+><P
+>The group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Row Statistics</I
+></SPAN
+> allows switching the individual columns on or off. These columns hold the statistics for the rows.</P
+><P
+>The group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Column Statistics</I
+></SPAN
+> allows switching the individual rows on or off. These hold the statistics for the columns.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="MSGPROFCM"
+>4.6.3. Context Menu</A
+></H2
+><P
+>The context menu provides shortcuts with which the attributes and groupings are selected. To do this, use the entries <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Attribute to show, Columns show</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Rows show</I
+></SPAN
+>. These entries are the same as those explained in <A
+HREF="x1569.html#MSGPROFSD"
+>Section 4.6.2</A
+> (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Message Profile Settings dialog box</I
+></SPAN
+>).</P
+><P
+>The entry sort allows to sort rows by the values of the column clicked on, or to sort columns by the values in a row clicked on and to switch back to the default order. Switching back to the default order is also useful if the columns or rows were rearranged by dragging the row or column headers around (hold the Ctrl key down while dragging to do that).</P
+><P
+>When a given area of the matrix is selected, then the context menu provides entries to either zoom into/out of the selected area or to suppress the display of the selected area (all row and columns that are partially selected are suppressed).</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.MATSEL"
+></A
+><P
+><B
+>Figure 4-39. Selecting an area in the matrix and zooming into</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/p2p-zoom.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.ZOOMAREA"
+></A
+><P
+><B
+>Figure 4-40. Zoomed into the selected area</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/p2p-zoom-result.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>If something is hidden then the context menu provides an entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Show All</I
+></SPAN
+> and the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Hide</I
+></SPAN
+> submenu contains enabled entries to unhide all hidden rows or columns or all. </P
+><P
+>Actually the zoom feature of the Message Profile relies on
+storing the row and column labels to be suppressed. This can
+have surprising effects: if <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Volume</I
+></SPAN
+> is selected
+as row grouping and the rows with labels 17 and 19 are hidden, then
+scrolling into an area containing messages with volume 18 results
+in these messages being shown. To suppress all messages with certain
+volumes, use filtering (see <A
+HREF="c2028.html#FLTRDLG"
+>Section 5.1</A
+>).</P
+><P
+>The entry <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Export Data</I
+></SPAN
+> opens a File Save
+dialog box to select a file to store textual data in. This includes
+all data cells that contain at least one message, even if they are
+currently hidden. It does not contain row or column statistics. For
+each cell, it stores all available attributes.</P
+><P
+>Additionally the context menu contains the usual operations as described in <A
+HREF="x1974.html"
+>Section 4.8</A
+>.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="MSGPROFFT"
+>4.6.4. Filtering and Tagging</A
+></H2
+><P
+>Tagged cells are emphasized by a small additional frame around the cell in the color of the alphanumerical entry in the cell. A cell is tagged as soon as a single tagged message exists in that cell.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.MSGPROFTAG"
+></A
+><P
+><B
+>Figure 4-41. Tagging a process in the Message Profile</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/msgprof-tag.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>Messages that do not pass a filter are not accounted for and
+may result in a smaller matrix when this results in empty rows and
+columns. For more information on filtering and tagging, refer to <A
+HREF="x3057.html"
+>Section 10.3</A
+>. </P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="SECT.MSGPROFAGG"
+>4.6.5. Aggregation</A
+></H2
+><P
+>The View's thread group influences the labels of the Sender, Receiver and Sender/Receiver groups. The View's function group has no influence. If the View shows the thread group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+><SPAN
+CLASS="QUOTE"
+>"Other"</SPAN
+></I
+></SPAN
+>, then this results in additional rows and columns for the groupings Sender, Receiver and Sender/Receiver.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1330.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1790.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Function Profile Chart</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c876.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Collective Operations Profile</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

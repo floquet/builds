@@ -1,0 +1,23 @@
+
+The graphics plotting application Grace has been built for both
+the Intel and the Gnu compilers.
+
+The built software can be found in
+
+Intel compiler:
+/usr/local/usp/Grace/5.1.22-intel/grace
+
+Gnu compiler:
+/usr/local/usp/Grace/5.1.22-gnu/grace
+
+In order to be generally useful, Grace has been compiled with the
+ability to read NetCDF files.  The NetCDF software requires several
+other dynamic libraries, so the user will need to set the LD_LIBRARY_PATH,
+as shown below.
+
+Intel compiler:
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-intel/lib:/usr/local/usp/hdf5/1.8.4-serial-intel/lib:/usr/local/usp/netcdf/netcdf-4.0.1-serial-intel/lib:/usr/local/usp/fftw-2.1.5/lib:/opt/intel/Compiler/11.1/056/lib/intel64:$LD_LIBRARY_PATH
+
+Gnu compiler:
+export LD_LIBRARY_PATH=/usr/local/usp/szip/2.1-gnu/lib:/usr/local/usp/hdf5/1.8.4-gnu/lib:/usr/local/usp/netcdf/netcdf-4.0.1-gnu/lib:/usr/local/usp/fftw-2.1.5/lib:/usr/lib64:$LD_LIBRARY_PATH
+

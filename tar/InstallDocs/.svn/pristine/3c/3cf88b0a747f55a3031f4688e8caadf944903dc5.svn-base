@@ -1,0 +1,202 @@
+
+Download from
+https://wci.llnl.gov/simulation/computer-codes/silo/downloads
+
+# When machine first became available,
+# TMPDIR and WORKDIR were not defined.
+# In that case,
+export WORKDIR=/p/work1/scheinin
+export TMPDIR=$WORKDIR/tmp
+mkdir $TMPDIR
+
+# As of June 3, readline-devel was installed.
+# The version of readline built by hand is different from the RPM.
+
+ --- Intel below. ---
+
+export PREFIX=/apps/unsupported/silo/4.10.2-intel
+mkdir $PREFIX
+cd /p/home/scheinin/build/silo/src
+wget https://wci.llnl.gov/content/assets/docs/simulation/computer-codes/silo/silo-4.10.2/silo-4.10.2.tar.gz
+
+export LD_LIBRARY_PATH=/app/unsupported/readline/6.3-intel/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/app/unsupported/szip/2.1-intel/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/app/unsupported/hdf5/1.8.15-intel/lib:$LD_LIBRARY_PATH
+
+export PATH=/app/unsupported/hdf5/1.8.15-intel/bin:$PATH
+
+export CPPFLAGS="-I/app/unsupported/readline/6.3-intel/include -I/app/unsupported/szip/2.1-intel/include -I/app/unsupported/hdf5/1.8.15-intel/include"
+
+export LDFLAGS="-L/app/unsupported/readline/6.3-intel/lib -L/app/unsupported/szip/2.1-intel/lib -L/app/unsupported/hdf5/1.8.15-intel/lib"
+
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran"
+
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+./configure --prefix=$PREFIX \
+  --with-readline \
+  --with-szlib=/app/unsupported/szip/2.1-intel \
+  --with-hdf5=/app/unsupported/hdf5/1.8.15-intel/include,/app/unsupported/hdf5/1.8.15-intel/lib \
+  --with-qt \
+  --enable-fortran \
+  --enable-shared --enable-static
+
+
+make 2>&1 | tee make.log
+cd tests
+make check 2>&1 | tee check.log
+
+# Change CXXLINK in tests/Makefile , otherwise,
+# testing fails because tries to link Fortran using icpc
+arrayf77$(EXEEXT): $(arrayf77_OBJECTS) $(arrayf77_DEPENDENCIES)
+        $(CXXLINK) $(arrayf77_OBJECTS) $(arrayf77_LDADD) $(LIBS)
+arrayf90$(EXEEXT): $(arrayf90_OBJECTS) $(arrayf90_DEPENDENCIES)
+        $(CXXLINK) $(arrayf90_OBJECTS) $(arrayf90_LDADD) $(LIBS)
+to F77LINK or FCLINK (for F90)
+
+cd ..
+make install
+
+ --- Intel above. ---
+ --- GNU below. ---
+
+    --- native GNU below
+
+June 12, 2015
+
+export PREFIX=/apps/unsupported/silo/4.10.2-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/silo/src-gcc43
+wget https://wci.llnl.gov/content/assets/docs/simulation/computer-codes/silo/silo-4.10.2/silo-4.10.2.tar.gz
+
+export LD_LIBRARY_PATH=/app/unsupported/readline/6.3-gcc43/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/app/unsupported/szip/2.1-gcc43/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/app/unsupported/hdf5/1.8.15-gcc43/lib:$LD_LIBRARY_PATH
+
+export PATH=/app/unsupported/hdf5/1.8.15-gcc43/bin:$PATH
+
+export CPPFLAGS="-I/app/unsupported/readline/6.3-gcc43/include -I/app/unsupported/szip/2.1-gcc43/include -I/app/unsupported/hdf5/1.8.15-gcc43/include"
+
+export LDFLAGS="-L/app/unsupported/readline/6.3-gcc43/lib -L/app/unsupported/szip/2.1-gcc43/lib -L/app/unsupported/hdf5/1.8.15-gcc43/lib"
+
+# GCC 4.3 was not able to compiler the Fortran libraries of HDF5.
+
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5"
+
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+./configure --prefix=$PREFIX \
+  --with-readline \
+  --with-szlib=/app/unsupported/szip/2.1-gcc43 \
+  --with-hdf5=/app/unsupported/hdf5/1.8.15-gcc43/include,/app/unsupported/hdf5/1.8.15-gcc43/lib \
+  --with-qt \
+  --disable-fortran \
+  --enable-shared --enable-static
+
+make 2>&1 | tee make.log
+cd tests
+
+# Change tests/Makefile .
+#  mk_nasf_h5 needs to be linked with g++
+Change from
+mk_nasf_h5$(EXEEXT): $(mk_nasf_h5_OBJECTS) $(mk_nasf_h5_DEPENDENCIES)
+        @rm -f mk_nasf_h5$(EXEEXT)
+        $(LINK) $(mk_nasf_h5_OBJECTS) $(mk_nasf_h5_LDADD) $(LIBS)
+Change to
+mk_nasf_h5$(EXEEXT): $(mk_nasf_h5_OBJECTS) $(mk_nasf_h5_DEPENDENCIES)
+        @rm -f mk_nasf_h5$(EXEEXT)
+        $(CXXLINK) $(mk_nasf_h5_OBJECTS) $(mk_nasf_h5_LDADD) $(LIBS)
+
+make check 2>&1 | tee check.log
+
+# If in tests,
+cd ..
+make install
+
+# Fix permissions of installed files.
+
+    --- native GNU above
+    --- new GNU below
+
+June 12, 2015
+
+export PREFIX=/apps/unsupported/silo/4.10.2-gcc49
+mkdir $PREFIX
+cd /p/home/scheinin/build/silo/src-gcc49
+wget https://wci.llnl.gov/content/assets/docs/simulation/computer-codes/silo/silo-4.10.2/silo-4.10.2.tar.gz
+
+export LD_LIBRARY_PATH=/app/unsupported/readline/6.3-gcc49/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/app/unsupported/szip/2.1-gcc49/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/app/unsupported/hdf5/1.8.15-gcc49/lib:$LD_LIBRARY_PATH
+
+export PATH=/app/unsupported/hdf5/1.8.15-gcc49/bin:$PATH
+
+export CPPFLAGS="-I/app/unsupported/readline/6.3-gcc49/include -I/app/unsupported/szip/2.1-gcc49/include -I/app/unsupported/hdf5/1.8.15-gcc49/include"
+
+export LDFLAGS="-L/app/unsupported/readline/6.3-gcc49/lib -L/app/unsupported/szip/2.1-gcc49/lib -L/app/unsupported/hdf5/1.8.15-gcc49/lib"
+
+export LIBS="-lsz -lhdf5 -lhdf5_hl -lhdf5 -lhdf5_fortran -lhdf5hl_fortran"
+
+# Need to add compilers to PATH.
+export PATH=/apps/unsupported/gcc/4.9.2/bin:$PATH
+
+# Need to add shared libraries to LD_LIBRARY_PATH.
+export LD_LIBRARY_PATH=/apps/unsupported/gcc/4.9.2/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpc/1.0.3/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+
+export CXX=/apps/unsupported/gcc/4.9.2/bin/g++
+export CXXFLAGS="-O2"
+export CC=/apps/unsupported/gcc/4.9.2/bin/gcc
+export CFLAGS="-O2"
+export FC=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F77=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F90=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export LIBS=""
+export LDFLAGS=""
+
+./configure --prefix=$PREFIX \
+  --with-readline \
+  --with-szlib=/app/unsupported/szip/2.1-gcc49 \
+  --with-hdf5=/app/unsupported/hdf5/1.8.15-gcc49/include,/app/unsupported/hdf5/1.8.15-gcc49/lib \
+  --with-qt \
+  --enable-fortran \
+  --enable-shared --enable-static
+
+make 2>&1 | tee make.log
+cd tests
+make check 2>&1 | tee check.log
+
+# If in tests,
+cd ..
+make install
+
+# Fix permissions of installed files.
+
+    --- new GNU above
+
+ --- GNU above. ---
+
+# Note, there is more than one PREFIX .
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *

@@ -1,0 +1,98 @@
+
+The MPFR library is a C library for multiple-precision
+floating-point computations with correct rounding.
+http://www.mpfr.org/
+
+
+Below, Nov. 17, 2016 on topaz
+
+export INTEL_VERSION=15.0.2
+# OR
+export INTEL_VERSION=15.0.3
+# OR
+export INTEL_VERSION=16.0.0
+# OR
+export GNU_VERSION=4.9.3
+# OR
+export GNU_VERSION=5.3.0
+# OR
+export GNU_VERSION=6.1.0
+
+module swap compiler/intel compiler/intel/$INTEL_VERSION
+# OR
+module swap compiler/intel compiler/gcc/$GNU_VERSION
+
+module unload mpi/sgimpt/2.12-11218
+
+export MPFR_VERSION=3.1.5
+
+export PREFIX=/p/home/apps/unsupported/mpfr/${MPFR_VERSION}-intel-${INTEL_VERSION}
+# OR
+export PREFIX=/p/home/apps/unsupported/mpfr/${MPFR_VERSION}-gcc-${GNU_VERSION}
+
+mkdir $PREFIX
+
+export BUILD_DIR=/p/home/scheinin/build/mpfr/mpfr-${MPFR_VERSION}-intel-${INTEL_VERSION}
+# OR
+export BUILD_DIR=/p/home/scheinin/build/mpfr/mpfr-${MPFR_VERSION}-gcc-${GNU_VERSION}
+
+mkdir $BUILD_DIR
+cp mpfr-3.1.5.tar.bz2 $BUILD_DIR
+cd $BUILD_DIR
+tar xjf mpfr-3.1.5.tar.bz2
+cd mpfr-3.1.5
+
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2 -fPIC"
+export CXXFLAGS="-O2 -fPIC"
+export FFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ifort
+export F77=ifort
+export F90=ifort
+# OR
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2 -fPIC"
+export CXXFLAGS="-O2 -fPIC"
+export FFLAGS="-O2 -fPIC"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+export GMP_VERSION=6.1.1
+
+export GMP_DIR=/p/home/apps/unsupported/gmp/${GMP_VERSION}-intel-${INTEL_VERSION}
+# OR
+export GMP_DIR=/p/home/apps/unsupported/gmp/${GMP_VERSION}-gcc-${GNU_VERSION}
+
+./configure --prefix=$PREFIX \
+  --with-gmp=${GMP_DIR} \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+find $PREFIX
+make install
+find $PREFIX
+
+# Note, there is more than one choice of $PREFIX .
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+Above, Nov. 17, 2016 on topaz
+
+

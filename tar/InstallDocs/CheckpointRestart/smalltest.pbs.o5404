@@ -1,0 +1,13 @@
+Warning: no access to tty (Bad file descriptor).
+Thus no job control in this shell.
+ scratchfile = /work/scheinin/tmp/fort0003                                                                                                     
+ scratchfile = /work/scheinin/tmp/fort0002                                                                                                     
+ scratchfile = /work/scheinin/tmp/fort0001                                                                                                     
+ scratchfile = /work/scheinin/tmp/fort0000                                                                                                     
+aborting job:
+Fatal error in MPI_Recv: Invalid rank, error stack:
+MPI_Recv(186): MPI_Recv(buf=0x6601f0, count=1, MPI_INTEGER, src=4, tag=1, MPI_COMM_WORLD, status=0x660220) failed
+MPI_Recv(105): Invalid rank has value 4 but must be nonnegative and less than 4
+[NID 00009] 2010-02-16 16:10:11 Apid 866: initiated application termination
+Application 866 exit codes: 1
+Application 866 resources: utime 0, stime 0

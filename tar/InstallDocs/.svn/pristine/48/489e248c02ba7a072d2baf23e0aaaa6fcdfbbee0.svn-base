@@ -1,0 +1,410 @@
+
+
+Source is
+http://www.hdfgroup.org/
+
+Prerequisites include szip and zlib.
+
+Note for future, on June 3, 2015 libjpeg-devel was installed,
+so future builds will not need /p/home/apps/unsupported/jpeg/ .
+
+# When machine first became available,
+# TMPDIR and WORKDIR were not defined.
+# In that case,
+export WORKDIR=/p/work1/scheinin
+export TMPDIR=$WORKDIR/tmp
+mkdir $TMPDIR
+
+export CXX=icpc
+export CC=icc
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+ ------------ HDF4 below ------------
+
+ --- Intel below. ---
+
+export PREFIX=/p/home/apps/unsupported/hdf4/4.2.11-intel
+mkdir $PREFIX
+cd /p/home/scheinin/build/hdf4/src
+wget http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.11.tar.bz2
+
+./configure --prefix=$PREFIX \
+  --with-szlib=/p/home/apps/unsupported/szip/2.1-intel \
+  --enable-netcdf  --disable-fortran  \
+  --with-jpeg=/p/home/apps/unsupported/jpeg/9a-intel \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+# Some errors were detected from GRsetcompress and GRsetchunk
+make install
+
+Created both *.so and *.a libraries.
+
+ --- Intel above. ---
+ --- GNU below. ---
+
+# Using native gcc.
+
+export PREFIX=/p/home/apps/unsupported/hdf4/4.2.11-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/hdf4/src
+wget http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/hdf-4.2.11.tar.bz2
+
+export CXX=g++
+export CC=gcc
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+./configure --prefix=$PREFIX \
+  --with-szlib=/p/home/apps/unsupported/szip/2.1-gcc43 \
+  --enable-netcdf  --disable-fortran  \
+  --with-jpeg=/p/home/apps/unsupported/jpeg/9a-gcc43 \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+# Some errors were detected from GRsetcompress and GRsetchunk
+make install
+
+ --- GNU above. ---
+
+# Note, there is more than one PREFIX .
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+ ------------ HDF4 above ------------
+ ------------ HDF5 serial below ------------
+
+ --- Intel below. ---
+
+export PREFIX=/p/home/apps/unsupported/hdf5/1.8.15-intel
+
+Later (September 28, 2015),
+did the following for different versions of Intel compiler
+module unload mpi/sgimpt/2.12-11218
+
+module compiler/intel/15.0.2
+export PREFIX=/p/home/apps/unsupported/hdf5/1.8.15-intel-15.0.2
+cd /p/home/scheinin/build/hdf5-intel-15.0.2
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.15-patch1.tar.bz2
+
+module compiler/intel/15.0.3
+export PREFIX=/p/home/apps/unsupported/hdf5/1.8.15-intel-15.0.3
+cd /p/home/scheinin/build/hdf5-intel-15.0.3
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.15-patch1.tar.bz2
+
+module compiler/intel/16.0.0
+export PREFIX=/p/home/apps/unsupported/hdf5/1.8.15-intel-16.0.0
+cd /p/home/scheinin/build/hdf5-intel-16.0.0
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.15-patch1.tar.bz2
+
+mkdir $PREFIX
+cd /p/home/scheinin/build/hdf5/src
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.15.tar.bz2
+
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+cd /p/home/scheinin/build/hdf5/src/hdf5-1.8.15
+
+# In the end, turned off C++.
+# The error was
+# /usr/include/c++/4.3/x86_64-suse-linux/bits/gthr-default.h(101):
+# error: function "__gthrw_pthread_getspecific" was referenced but not defined
+# The error may be that icpc does not utilize certain Gnu
+# macros or pragmas.
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/p/home/apps/unsupported/szip/2.1-intel \
+ --disable-parallel  --enable-fortran  --disable-cxx \
+ --with-zlib=/p/home/apps/unsupported/zlib/1.2.8-intel \
+ --enable-static  --enable-shared
+
+Later (September 28, 2015),
+./configure --prefix=$PREFIX \
+ --with-szlib=/p/home/apps/unsupported/szip/2.1-intel-15.0.2 \
+ --disable-parallel  --enable-fortran  --disable-cxx \
+ --enable-static  --enable-shared
+./configure --prefix=$PREFIX \
+ --with-szlib=/p/home/apps/unsupported/szip/2.1-intel-15.0.3 \
+ --disable-parallel  --enable-fortran  --disable-cxx \
+ --enable-static  --enable-shared
+./configure --prefix=$PREFIX \
+ --with-szlib=/p/home/apps/unsupported/szip/2.1-intel-16.0.0 \
+ --disable-parallel  --enable-fortran  --disable-cxx \
+ --enable-static  --enable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+# No "FAIL" or "fail" in the file.
+make install
+
+# Made both *.a and *.so .
+
+ --- Intel above. ---
+ --- GNU below. ---
+
+    --- native GNU below
+
+June 12, 2015
+
+export PREFIX=/p/home/apps/unsupported/hdf5/1.8.15-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/hdf5-gcc43/src
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.15-patch1.tar.bz2
+
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+# Error during make, export FCFLAGS="-std=gnu"
+   Failed with
+H5fortran_detect.f90:164.17:
+    REAL(KIND= 16) :: a
+Error: Kind 16 not supported for type REAL
+
+# Error during make, export FCFLAGS="-std=f95"
+   Failed with
+H5fortran_detect.f90:38.18:
+ USE ISO_C_BINDING
+Error: Fortran 2003: ISO_C_BINDING module
+
+# Error during make, export FCFLAGS="-std=f2003"
+   Failed with
+H5fortran_detect.f90:164.17:
+    REAL(KIND= 16) :: a
+Error: Kind 16 not supported for type REAL
+
+cd /p/home/scheinin/build/hdf5-gcc43/src/hdf5-1.8.15-patch1
+
+# Notice option --disable-fortran because of errors shown above.
+# Error when compiling Fortran did not occur for gcc-4.9.2.
+./configure --prefix=$PREFIX \
+ --with-szlib=/p/home/apps/unsupported/szip/2.1-gcc43 \
+ --disable-parallel  --disable-fortran  --enable-cxx \
+ --enable-static  --enable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+
+make install
+
+    --- native GNU above
+    --- new GNU below
+
+June 12, 2015
+
+export PREFIX=/p/home/apps/unsupported/hdf5/1.8.15-gcc49
+mkdir $PREFIX
+cd /p/home/scheinin/build/hdf5-gcc49/src
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.15-patch1.tar.bz2
+
+# Need to add compilers to PATH.
+export PATH=/apps/unsupported/gcc/4.9.2/bin:$PATH
+
+# Need to add shared libraries to LD_LIBRARY_PATH.
+export LD_LIBRARY_PATH=/apps/unsupported/gcc/4.9.2/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpc/1.0.3/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+
+export CXX=/apps/unsupported/gcc/4.9.2/bin/g++
+export CXXFLAGS="-O2"
+export CC=/apps/unsupported/gcc/4.9.2/bin/gcc
+export CFLAGS="-O2"
+export FC=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F77=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F90=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export LIBS=""
+export LDFLAGS=""
+
+cd /p/home/scheinin/build/hdf5-gcc43/src/hdf5-1.8.15-patch1
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/p/home/apps/unsupported/szip/2.1-gcc49 \
+ --disable-parallel  --enable-fortran  --enable-cxx \
+ --enable-static  --enable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+
+make install
+
+    --- new GNU above
+
+ --- GNU above. ---
+
+For each PREFIX
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+ ------------ HDF5 serial above ------------
+ ------------ HDF5 parallel below ------------
+
+export PREFIX=/p/home/apps/unsupported/hdf5-parallel/1.8.15-intel
+mkdir $PREFIX
+cd /p/home/scheinin/build/hdf5-parallel/src
+wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.15.tar.bz2
+
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS="-I${MPI_ROOT}/include -I${MKLROOT}/include"
+export LIBS="-lmpi"
+export LDFLAGS="-L${MPI_ROOT}/lib -L${MKLROOT}/lib/intel64"
+export FC=ifort
+export F77=ifort
+export F90=ifort
+export FFLAGS="-O2 -I${MPI_ROOT}/include -I${MKLROOT}/include"
+export RUNPARALLEL="mpiexec_mpt -np \$\${NPROCS:=3}"
+
+# In the end, turned off C++.
+# The error was
+# /usr/include/c++/4.3/x86_64-suse-linux/bits/gthr-default.h(101):
+# error: function "__gthrw_pthread_getspecific" was referenced but not defined
+# The error may be that icpc does not utilize certain Gnu
+# macros or pragmas.
+
+export LD_LIBRARY_PATH=/p/home/apps/unsupported/szip/2.1-intel/lib:/p/home/apps/unsupported/zlib/1.2.8-intel/lib:$LD_LIBRARY_PATH
+
+cd /p/home/scheinin/build/hdf5-parallel/src/hdf5-1.8.15
+
+./configure --prefix=$PREFIX \
+ --with-szlib=/p/home/apps/unsupported/szip/2.1-intel \
+ --enable-parallel  --enable-fortran  --disable-cxx \
+ --with-zlib=/p/home/apps/unsupported/zlib/1.2.8-intel \
+ --enable-static  --enable-shared
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+Tries also to do parallel tests.
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+Parallel tests, below.
+
+Basically, failed.
+
+# Need scatter, otherwise 72 processes run on just one node.
+qsub -q workq -l place=scatter:excl -l select=2:ncpus=36:mpiprocs=36,walltime=2:00:00 -I
+"module list" shows that modules have been loaded
+
+cd /p/home/scheinin/build/hdf5-parallel/src/hdf5-1.8.15
+
+export MPI_TYPE_DEPTH=32
+export NPROCS=4
+
+cd ./testpar
+make check
+
+Error:
+ testphdf5  Test Log
+============================
+Not invoked from a known Work Load Manager:
+ o For PBS   : PBS_NODEFILE is not set.
+But $PBS_NODEFILE is defined.
+
+cd ../fortran/testpar
+make check
+
+Error:
+ Writing/reading dataset by hyperslabs (contiguous layout, collective MPI I/O)
+MPT ERROR: rank:0, function:MPI_TYPE_GET_ENVELOPE, Invalid datatype argument
+
+Parallel tests, above.
+
+ -------------------------------  further tests below
+export VERBOSE=1
+make check
+
+e[2]: Leaving directory `/p/home/scheinin/build/hdf5-parallel/src/hdf5-1.8.15/testpar'
+make[2]: Entering directory `/p/home/scheinin/build/hdf5-parallel/src/hdf5-1.8.15/testpar'
+===Parallel tests in testpar begin Tue Jul  7 12:26:03 CDT 2015===
+**** Hint ****
+Parallel test files reside in the current directory by default.
+Set HDF5_PARAPREFIX to use another directory. E.g.,
+    HDF5_PARAPREFIX=/PFS/user/me
+    export HDF5_PARAPREFIX
+    make check
+**** end of Hint ****
+make[3]: Entering directory `/p/home/scheinin/build/hdf5-parallel/src/hdf5-1.8.15/testpar'
+============================
+No need to test t_mpi again.
+make[3]: Leaving directory `/p/home/scheinin/build/hdf5-parallel/src/hdf5-1.8.15/testpar'
+make[3]: Entering directory `/p/home/scheinin/build/hdf5-parallel/src/hdf5-1.8.15/testpar'
+
+[...]
+Test filenames are:
+    ParaTest.h5
+Testing  -- fapl_mpio duplicate (mpiodup) 
+Testing  -- dataset using split communicators (split) 
+Testing  -- dataset using split communicators (split) 
+Testing  -- dataset using split communicators (split) 
+Testing  -- dataset independent write (idsetw) 
+Testing  -- dataset independent write (idsetw) 
+Testing  -- dataset independent write (idsetw) 
+Testing  -- dataset independent read (idsetr) 
+Testing  -- dataset independent read (idsetr) 
+Testing  -- dataset independent read (idsetr) 
+Testing  -- dataset collective write (cdsetw) 
+Testing  -- dataset collective write (cdsetw) 
+Testing  -- dataset collective write (cdsetw) 
+MPT ERROR: rank:0, function:MPI_TYPE_GET_ENVELOPE, Invalid datatype argument
+MPT ERROR: rank:1, function:MPI_TYPE_GET_ENVELOPE, Invalid datatype argument
+MPT ERROR: rank:2, function:MPI_TYPE_GET_ENVELOPE, Invalid datatype argument
+MPT: Global rank 0 is aborting with error code 0.
+
+export MPI_TYPE_DEPTH=32
+export NPROCS=4
+
+============================
+Testing  testphdf5 
+Testing  -- dataset collective write (cdsetw) 
+MPT ERROR: rank:0, function:MPI_TYPE_GET_ENVELOPE, Invalid datatype argument
+MPT ERROR: rank:1, function:MPI_TYPE_GET_ENVELOPE, Invalid datatype argument
+MPT ERROR: rank:2, function:MPI_TYPE_GET_ENVELOPE, Invalid datatype argument
+MPT ERROR: rank:3, function:MPI_TYPE_GET_ENVELOPE, Invalid datatype argument
+MPT: Global rank 0 is aborting with error code 0.
+
+MPT: #7  0x00002aaaabd035d1 in PMPI_Type_get_envelope (type=75, 
+./fortran/testpar/parallel_test.chklog
+
+ -------------------------------  further tests above

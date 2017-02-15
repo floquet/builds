@@ -1,0 +1,333 @@
+garnet below
+
+(Further down in this file is installation instructions
+for COST collection on garnet, git version 2.3.6 done
+on April 17, 2015.)
+
+Thu Jun 26 13:14:10 CDT 2014 , below
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+export CC=gcc
+export CFLAGS="-fPIC"
+export LIBS="-L/usr/krb5/lib -lgssapi_krb5 -lk5crypto"
+export PKG_CONFIG_PATH=/usr/krb5/openssl/lib/pkgconfig
+# configure uses krb5-config which is in /usr/krb5/bin
+export PATH=/usr/krb5/bin:$PATH
+
+cd /usr/local/usp/git/1.9.4-gnu/src
+wget http://curl.haxx.se/download/curl-7.37.0.tar.gz
+tar xzf curl-7.37.0.tar.gz
+cd curl-7.37.0
+
+Problem is that "configure" links with "-lgssapi"
+when it should use -lgssapi_krb5 .
+Change file "configure
+ from
+#  elif test -z "$GSSAPI_LIB_DIR"; then
+ to
+   elif test 1 == 1 ; then
+
+so the the following is used
+     *)
+        if test -f "$GSSAPI_ROOT/bin/krb5-config"; then
+
+./configure --prefix=/usr/local/usp/git/1.9.4-gnu \
+   --with-ssl=/usr/krb5/openssl \
+   --enable-crypto-auth --enable-http \
+   --enable-static --enable-shared \
+   --with-gssapi=/usr/krb5 \
+   --with-gssapi-includes=/usr/krb5/include/gssapi \
+   --with-gssapi-libs=/usr/krb5/lib \
+  > run_configure.log 2>&1
+
+export LD_LIBRARY_PATH=/usr/krb5/lib:/usr/krb5/openssl/lib:$LD_LIBRARY_PATH
+
+make
+make install
+
+cd /usr/local/usp/git/1.9.4-gnu/src
+ wget --no-check-certificate http://www.kernel.org/pub/software/scm/git/git-1.9.4.tar.gz
+tar xzf git-1.9.4.tar.gz
+cd git-1.9.4
+
+Without building my own curl, below.
+Don't do this, below.
+
+./configure --prefix=/usr/local/usp/git/1.9.4-gnu \
+    --with-openssl=/usr/krb5/openssl \
+    --with-curl --with-expat \
+  > run_configure.log 2>&1
+ 
+make
+/usr/bin/ld: warning: libcrypto.so.0.9.8, needed by /usr/lib/../lib64/libcurl.so, may conflict with libcrypto.so.1.0.0
+make install
+make test
+
+Ran hundreds of tests.  Seemed OK, however,
+when using this git, not download happened.
+No error message but stopped before downloading.
+
+Don't do this, above.
+Without building my own curl, above.
+
+# Assuming changes of environment for curl are still valid.
+
+# Add pkgconfig directory that has curl information.
+export PKG_CONFIG_PATH=/usr/krb5/openssl/lib/pkgconfig:/usr/local/usp/git/1.9.4-gnu/lib/pkgconfig
+
+# Add location of curl executable.
+export PATH=/usr/local/usp/git/1.9.4-gnu/bin:$PATH
+
+./configure --prefix=/usr/local/usp/git/1.9.4-gnu \
+    --with-openssl=/usr/krb5/openssl \
+    --with-curl=/usr/local/usp/git/1.9.4-gnu --with-expat \
+  > run_configure.log 2>&1
+
+make
+make install
+
+topdir=/usr/local/usp/git/1.9.4-gnu
+
+cd $topdir
+chmod ugo+xr $topdir
+chown scheinin.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R scheinin.staff *
+
+
+When using git
+
+fatal: unable to access 'https://code.google.com/p/lbm-c/': SSL certificate problem: unable to get local issuer certificate
+
+Solution is to set an environment variable
+
+sh, bash, ksh
+
+export GIT_SSL_NO_VERIFY=true
+
+csh, tcsh
+
+setenv GIT_SSL_NO_VERIFY true
+
+             ----------------------------------
+
+In git/2.0.1-gnu/src first build curl as shown above
+
+EXCEPT FOR configure USE DIFFERENT --prefix
+./configure --prefix=/usr/local/usp/git/2.0.1-gnu \
+
+cd /usr/local/usp/git/2.0.1-gnu/src
+ wget --no-check-certificate http://www.kernel.org/pub/software/scm/git/git-2.0.1.tar.gz
+tar xzf git-2.0.1.tar.gz
+cd git-2.0.1
+
+# Assuming changes of environment for curl are still valid.
+
+# Add pkgconfig directory that has curl information.
+export PKG_CONFIG_PATH=/usr/krb5/openssl/lib/pkgconfig:/usr/local/usp/git/2.0.1-gnu/lib/pkgconfig
+
+# Add location of curl executable.
+export PATH=/usr/local/usp/git/2.0.1-gnu/bin:$PATH
+
+./configure --prefix=/usr/local/usp/git/2.0.1-gnu \
+    --with-openssl=/usr/krb5/openssl \
+    --with-curl=/usr/local/usp/git/2.0.1-gnu --with-expat \
+  > run_configure.log 2>&1
+
+make
+make install
+make test
+
+# Testing runs for a long time.
+
+topdir=/usr/local/usp/git/2.0.1-gnu
+
+cd $topdir
+chmod ugo+xr $topdir
+chown scheinin.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R scheinin.staff *
+
+
+Thu Jun 26 13:14:10 CDT 2014 , above
+
+ ------------
+
+
+ wget http://www.kernel.org/pub/software/scm/git/git-1.7.4.tar.gz
+
+Directory hierarchy
+/usr/local/usp/git/1.7.4/src/ (and bin  lib  libexec  share)
+
+export CC=gcc
+export CFLAGS="-fPIC"
+
+./configure --prefix=/usr/local/usp/git/1.7.4 \
+    --with-openssl=/usr/local/usp/openssl
+
+./configure --prefix=/app/git/1.7.4 \
+    --with-openssl=/usr/KRB5/openssl
+
+make 2>&1 | tee make.log
+make -k test 2>&1 | tee check.log
+make doc
+make install
+make clean
+
+# Need to change permissions.
+
+topdir=/usr/local/usp/git
+
+cd $topdir
+chmod ugo+xr $topdir
+chown scheinin.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R scheinin.staff *
+
+topdir=/app/git
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+ =====================
+New installation for COST on garnet, below.
+April 17, 2015
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+export CC=gcc
+export CFLAGS="-fPIC"
+export LIBS="-L/usr/krb5/lib -lgssapi_krb5 -lk5crypto"
+# PKG_CONFIG_PATH is already defined but is it all "gem" directories.
+export PKG_CONFIG_PATH=/usr/krb5/openssl/lib/pkgconfig
+# configure uses krb5-config which is in /usr/krb5/bin
+export PATH=/usr/krb5/bin:$PATH
+
+# When I did not build my own curl,
+# ran hundreds of tests, seemed OK; however,
+# when using this git, no download happened.
+# No error message but stopped before downloading.
+
+export PREFIX=/usr/local/usp/COST/git-2.3.6
+# Making directory PREFIX and setting ownership many require
+# root privileges.
+mkdir $PREFIX/src
+cd $PREFIX/src
+wget http://curl.haxx.se/download/curl-7.42.0.tar.gz
+tar xzf curl-7.42.0.tar.gz
+cd curl-7.42.0
+
+Problem is that "configure" links with "-lgssapi"
+when it should use -lgssapi_krb5 .
+Change file "configure
+ from
+#  elif test -z "$GSSAPI_LIB_DIR"; then
+ to
+   elif test 1 == 1 ; then
+
+so that the following is used
+     *)
+        if test -f "$GSSAPI_ROOT/bin/krb5-config"; then
+                                 gss_libs=`$GSSAPI_ROOT/bin/krb5-config --libs gssapi`
+           LIBS="$gss_libs $LIBS"
+           echo "Setting LIBS to $LIBS"
+
+./configure --prefix=$PREFIX \
+   --with-ssl=/usr/krb5/openssl \
+   --enable-crypto-auth --enable-http \
+   --enable-static --enable-shared \
+   --with-gssapi=/usr/krb5 \
+   --with-gssapi-includes=/usr/krb5/include/gssapi \
+   --with-gssapi-libs=/usr/krb5/lib \
+  > run_configure.log 2>&1
+
+export LD_LIBRARY_PATH=/usr/krb5/lib:/usr/krb5/openssl/lib:$LD_LIBRARY_PATH
+
+make 2>&1 | tee make.log
+make install
+
+cd $PREFIX/src
+ wget --no-check-certificate http://www.kernel.org/pub/software/scm/git/git-2.3.6.tar.gz
+tar xzf git-2.3.6.tar.gz
+cd git-2.3.6
+
+# Assuming changes of environment for curl are still valid.
+
+# Add pkgconfig directory that has curl information.
+export PKG_CONFIG_PATH=/usr/krb5/openssl/lib/pkgconfig:$PREFIX/lib/pkgconfig
+
+# Add location of curl executable.
+export PATH=$PREFIX/bin:$PATH
+
+export LDFLAGS="-L/usr/krb5/lib -L/usr/krb5/openssl/lib -L/usr/local/krb5.20150319/lib"
+export LIBS="-lgssapi_krb5 -lk5crypto -lpthread"
+
+./configure --prefix=$PREFIX \
+    --with-openssl=/usr/krb5/openssl \
+    --with-curl=$PREFIX --with-expat \
+  > run_configure.log 2>&1
+
+# Adding -lpthread to LIBS does not help with missing pthread routines.
+# Edit Makefile and change
+from
+EXTLIBS += -lz
+to
+EXTLIBS += -lz -lpthread
+# There are other EXTLIBS in the Makefile, the one that already has -lz
+# is the one to change.
+
+# To see Makefile commands, use "export V=1".
+
+make 2>&1 | tee make.log
+make install
+make test
+
+# Testing runs for a long time.
+
+topdir=$PREFIX
+
+cd $topdir
+chmod ugo+xr $topdir
+chown scheinin.9729LSTA $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R scheinin.9729LSTA *
+
+For COST, need to create a module.
+
+New installation for COST on garnet, above.
+ =====================
+

@@ -1,0 +1,204 @@
+
+Need to get directories with potential data, specifically,
+
+pot  pot_GGA  potpaw  potpaw_GGA  potpaw_PBE
+
+The above are not installed during the default installation
+procedure.  I chose to put them at the top level of the
+installation, see for example /usr/local/applic/vasp
+
+Of course, it would be best to get the most recent data.
+
+Another item not installed by default is the documentation,
+would can be put into a subdirectory doc/
+
+For system-wide installation, each version of vasp has its own subdir
+
+Under /usr/local/applic/vasp
+mkdir 4.6.36
+ln -s 4.6.36 default
+
+Old, had as default the modules
+   compilers/intel11.1
+   mpi/sgi_mpi-1.26
+module load compilers/mkl_10.2.0
+
+More recently on diamond MKL is part of the Intel module.
+
+When the tar files are extracted, the directory name does not
+include the third level of the version number.
+Moreover, inside the distribution there is no indication of the
+version, as far as I can find.
+The files vasp.4.6.36.lib.tar.gz and vasp.4.6.36.tar.gz
+become directories vasp.4.6 and vasp.4.lib .
+I changed to include the subsubversion in order to avoid confusion.
+
+Library source name changed to
+   src-vasp.4.6.36.lib
+The other tar file of vasp was unpacked four times
+and given the names
+   src-vasp.4.6.36
+   src-vasp.4.6.36-gamma
+   src-vasp.4.6.36-mpi-gamma
+   src-vasp.4.6.36-mpi-scalapack
+
+In /usr/local/applic/vasp/4.6.36/src-vasp.4.6.36.lib
+
+The first step is to compile in lib subdirectory.
+The name of the library source directory was set to
+src-vasp.4.6.36.lib whereas the installation directory
+was set to lib .
+
+created makefile.linux_intel from a linux makefile that has
+CPP     = gcc -E -P -C $*.F >$*.f
+specified the following
+FC=ifort
+CC=icc
+CFLAGS = -O3
+FFLAGS = -O3
+FREE   =  -free
+
+make -f makefile.linux_intel
+cp lapack_atlas.o libdmy.a linpack_double.o  ../lib/
+# Might not use lapack_atlas.o and linpack_double.o
+
+cp makefile.linux_intel ../SRC/makefile.linux_intel-lib
+
+ -------- building lib above , building plain vanilla vasp below --------
+
+cd /usr/local/applic/vasp/4.6.36/src-vasp.4.6.36
+Only the pgi makefile has "-i8" option.  This option cannot
+be used with the scalapack that was compiled because the
+MKL libraries for which integer is 4 bytes were used.
+
+cp makefile.linux_ifc_opt makefile.linux_intel
+After editing, cp makefile.linux_intel Makefile
+
+Put library list in the definition of SCA.
+For non-parallel version did not include the following libraries:
+#  -lmpi -lpthread
+
+Scalapack does not have some routines of linpack,
+for example, it is missing zgedi, so in fact linpack_double.o
+of vasp is needed.
+
+make
+
+cp vasp ../bin/vasp
+cp makefile.linux_intel ../SRC/makefile.linux_intel-plain
+
+make clean
+
+ -------- building plain vanilla vasp above, serial gamma below --------
+
+cd /usr/local/applic/vasp/4.6.36/src-vasp.4.6.36-gamma
+cp /usr/local/applic/vasp/4.6.36/src-vasp.4.6.36/makefile.linux_intel .
+In makefile.linux_intel
+Added cpp macro  -DwNGZhalf
+cp makefile.linux_intel Makefile
+
+cp vasp ../bin/vasp-gamma
+cp makefile.linux_intel ../SRC/makefile.linux_intel-gamma
+
+make clean
+
+ -------- serial gamma above, parallel gamma below  --------
+
+This version also has scalapack.
+
+cd /usr/local/applic/vasp/4.6.36/src-vasp.4.6.36-mpi-gamma
+cp /usr/local/applic/vasp/4.6.36/src-vasp.4.6.36-gamma/makefile.linux_intel .
+
+In makefile.linux_intel
+Change CPP to
+CPP     = $(CPP_)  -DHOST=\"LinuxIFC\" -DwNGZhalf \
+          -Dkind8 -DCACHE_SIZE=12000 -DRACCMU_DGEMV \
+          -DscaLAPACK -DMPI
+and added -lmpi -lpthread to SCA.
+Changed from fftw to
+FFT3D   = fftmpi.o fftmpi_map.o fft3dlib.o 
+and removed -I/usr/local/usp/PETtools/CE/pkgs/fftw-3.2.2/include
+because MAPSET() is needed.
+
+cp makefile.linux_intel Makefile
+
+cp vasp ../bin/vasp-mpi-gamma
+cp makefile.linux_intel ../SRC/makefile.linux_intel-mpi-gamma
+
+make clean
+
+ -------- parallel gamma above, parallel with scalapack below --------
+
+This version also has scalapack, but without gamma.
+
+cd /usr/local/applic/vasp/4.6.36/src-vasp.4.6.36-mpi-scalapack
+cp /usr/local/applic/vasp/4.6.36/src-vasp.4.6.36-mpi-gamma/makefile.linux_intel .
+
+In makefile.linux_intel
+remove -DwNGZhalf from CPP
+
+cp makefile.linux_intel Makefile
+
+cp vasp ../bin/vasp-mpi-scalapack
+cp makefile.linux_intel ../SRC/makefile.linux_intel-mpi-scalapack
+
+make clean
+
+ -------- parallel with scalapack above --------
+
+Testing below.
+
+Note that benchmark.tar.gz does not have a subdirectory.
+Same problem with bench.Hg.tar.gz
+so put the tar files into a subdirectory before tar extract.
+
+mkdir benchmark-intel
+cp bench.Hg.tar.gz benchmark-intel
+cd benchmark-intel
+tar xvzf bench.Hg.tar.gz
+mkdir output
+
+Add vasp to PATH.
+For example,
+PATH=/usr/local/applic/vasp/4.6.36/bin:$PATH
+
+Make sure that the file INCAR has
+   IALGO  =     48
+
+Batch jobs cannot be run in /usr/local/applic for security
+reasons.  Can do
+cd /usr/local/applic/vasp/4.6.36/SRC
+cp -R benchmark-intel $WORKDIR
+and change the #PBS -o ... appropriately.
+
+If testing interactively then login to computer node using
+ qsub -A  erdcssta -q standard -l select=8:ncpus=8:mpiprocs=8,place=scatter:excl,walltime=1:00:00 -I
+
+Testing above.
+
+
+Made
+runvasp
+runvasp-gamma
+runvasp-mpi-gamma
+runvasp-mpi-scalapack
+where first part is always (this list of modules is old, needs to be updated)
+------------------------------------------------
+#!/bin/csh -f
+
+source /usr/share/modules/init/csh
+module load compilers/intel11.1
+module load mpi/sgi_mpi-1.26
+module load compilers/mkl_10.2.0
+
+set VASP_PATH = /usr/local/applic/vasp/4.6.36/bin
+------------------------------------------------
+and last line is one of the following
+$VASP_PATH/vasp
+$VASP_PATH/vasp-gamma
+mpiexec_mpt -np $1 $VASP_PATH/vasp-mpi-gamma
+mpiexec_mpt -np $1 $VASP_PATH/vasp-mpi-scalapack
+
+# The ldd command indicates that the serial versions need
+# the mpi and mkl libraries.
+

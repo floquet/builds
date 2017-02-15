@@ -1,0 +1,20 @@
+
+export PREFIX=/p/home/apps/unsupported/nano/2.4.1
+mkdir $PREFIX
+cd /p/home/scheinin/build/nano/src
+wget http://www.nano-editor.org/dist/v2.4/nano-2.4.1.tar.gz
+
+export CC=gcc
+
+./configure --prefix=$PREFIX
+make
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+

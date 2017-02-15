@@ -1,0 +1,113 @@
+
+ --- utility server below ---
+
+export PATH=/opt/openmpi/gnu/1.4.3/bin:$PATH
+export LD_LIBRARY_PATH=/opt/openmpi/gnu/1.4.3/lib:$LD_LIBRARY_PATH
+export PATH=/app/Python/2.7.1/bin:$PATH
+export LD_LIBRARY_PATH=/app/Python/2.7.1/lib:$LD_LIBRARY_PATH
+export PATH=/app/Qt/4.6.2/bin:$PATH
+export LD_LIBRARY_PATH=/app/Qt/4.6.2/src/qt-everywhere-opensource-src-4.6.2/lib:$LD_LIBRARY_PATH
+
+
+export PARAVIEW_USE_MPI=ON
+export MPI_LIBRARY=/opt/openmpi/gnu/1.4.3/lib/libmpi.so
+export MPI_EXTRA_LIBRARY=/opt/openmpi/gnu/1.4.3/lib/libmpi_cxx.so
+export MPI_INCLUDE_PATH=/opt/openmpi/gnu/1.4.3/include
+export PARAVIEW_ENABLE_PYTHON=ON
+export PARAVIEW_BUILD_QT_GUI=ON
+export QT_QMAKE_EXECUTABLE=/app/Qt/4.6.2/bin/qmake
+
+export CC=gcc
+export CXX=g++
+
+mkdir /app/Paraview/3.10.0/build
+cd /app/Paraview/3.10.0/build
+
+/app/cmake/2.8.3/bin/ccmake \
+   ../src/ParaView-3.8.1
+
+specified installation location  (?)
+
+gmake
+gmake install
+gmake clean
+
+Note that the directory name is an error since 3.8.1 was installed.
+Installed under /app/Paraview/3.10.0/
+
+# Need to change permissions.
+
+topdir=/app/Paraview
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.staff $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory and build/ directory.
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.staff *
+
+# Make sure last minute changes such as the README file are readable.
+
+ --- utility server above ---
+ --- garnet below ---
+
+# export PATH=/app/Python/2.7.1/bin:$PATH
+# export LD_LIBRARY_PATH=/app/Python/2.7.1/lib:$LD_LIBRARY_PATH
+export PATH=/usr/local/usp/paraview/qt/4.6.2/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/usp/paraview/qt/4.6.2/lib:$LD_LIBRARY_PATH
+
+export PARAVIEW_USE_MPI=ON
+export \
+ MPI_LIBRARY=/opt/cray/mpt/5.1.2/xt/gemini/mpich2-pgi/lib/libmpich.a
+export \
+ MPI_EXTRA_LIBRARY=/opt/cray/mpt/5.1.2/xt/gemini/mpich2-pgi/lib/libmpichcxx.a
+export MPI_INCLUDE_PATH=/opt/cray/mpt/5.1.2/xt/gemini/mpich2-pgi/include
+# export PARAVIEW_ENABLE_PYTHON=ON
+export PARAVIEW_BUILD_QT_GUI=ON
+export QT_QMAKE_EXECUTABLE=/usr/local/usp/paraview/qt/4.6.2/bin/qmake
+
+export CC=cc
+export CXX=CC
+
+mkdir /usr/local/usp/paraview/3.8.1/build
+cd /usr/local/usp/paraview/3.8.1/build
+
+/usr/local/usp/PETtools/CE/pkgs/cmake-2.8.3/bin/ccmake \
+   ../src/ParaView-3.8.1
+
+c to configure, but static build is a problem.
+
+Randall writes:
+* ParaView
+So I got ParaView 3.8.1 (With MPI & Python support) installed and working on Garnet.  If you want, I can share some instructions on what I did.
+The cliff-notes version:
+1) Compile & Install OpenMPI
+2) Compile & Install Python 2.7.1
+3) Compile & Install QT 4.6.2
+4) Compile & Install ParaView, linking against 1, 2, &3
+It's currently available in /usr/local/usp/ezViz/paraview-3.8.1 .
+--
+Randall E. Hand, Scientific Visualization Lead - http://daac.hpc.mil
+601-634-3072
+Lockheed Martin IS&GS
+ERDC DSRC, Vicksburg MS 
+
+Note, he compiled with Gnu on garnet.
+Moreover, he later explained
+Garnet has no openGL hardware available, so you have to provide a
+software equivalent (Mesa).  EnSight comes with this built-in
+(via the -glsw option), but for PAraView you'll have to install
+your own copy of Mesa and tell ParaView to link against it
+at compile-time. 
+
+In particular, paraview can have errors when X tunneling and
+should use client-server mode (or Mesa).
+Typical users of paraview on garnet use the client-server mode.
+
+ --- garnet above ---
+

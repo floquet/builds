@@ -1,0 +1,135 @@
+
+Tue Oct  9 16:20:03 CDT 2013
+Can get source from http://www.nwchem-sw.org/
+Build information in
+http://www.nwchem-sw.org/index.php/Compiling_NWChem
+
+# Using PrgEnv-pgi/4.0.46 , pgi/13.6.0 and cray-mpich/6.0.0
+
+module load xt-libsci/12.1.00
+module load craype-hugepages64M
+
+# Maybe onesided is not necessary if ARMCI_NETWORK=DMAPP
+module load onesided
+export ONESIDED_UDREG_ENTRIES=2048
+export ONESIDED_USE_UDREG=1
+
+export NWCHEM_TOP=<top of source>
+export NWCHEM_MODULES="all"
+export NWCHEM_TARGET=LINUX64
+export USE_NOFSCHECK=TRUE
+export LARGE_FILES=TRUE
+export USE_MPI=y
+export USE_MPIF=y
+export USE_MPIF4=y
+export USE_64TO32=y
+export LAPACK_LIB="-lsci_pgi"
+export USE_SCALAPACK=y
+export SCALAPACK=-L${CRAY_LIBSCI_PREFIX_DIR}/lib
+export SCALAPACK_LIB="-lsci_pgi"
+export HAS_BLAS=yes
+export BLAS_LIB="-lsci_pgi"
+export BLASOPT="-lsci_pgi"
+export LIBMPI=""
+export ARMCI_NETWORK=DMAPP
+# export ARMCI_NETWORK=GEMINI fails at runtime.
+export MPI_LIB=${CRAY_MPICH2_DIR}/lib
+export MPI_INCLUDE=${CRAY_MPICH2_DIR}/include
+export LIB_DEFINES="-DDFLT_TOT_MEM=3758096384"
+
+export FC=ftn
+export CC=cc
+
+# skipped linking in NBO
+
+cd src
+
+# If you have a patch to install
+patch -p0 < $WORKDIR/Ccsdadapt.patch
+(patch -p0 < /lustre/work1/scheinin/Nwchem/src/Ccsdadapt.patch)
+
+# A security patch created multiple definitions for
+# a library related to hugepages.
+export LDFLAGS="-Wl,--allow-multiple-definition -Wl,-L${NWCHEM_TOP}/lib/LINUX64 -Wl,-L${NWCHEM_TOP}/src/tools/install/lib"
+
+make nwchem_config
+make 64_to_32 2>&1 | tee convert.log
+make LDFLAGS="-Wl,--allow-multiple-definition -Wl,-L${NWCHEM_TOP}/lib/LINUX64 -Wl,-L${NWCHEM_TOP}/src/tools/install/lib" 2>&1 | tee make.log
+
+There were warnings such as
+/usr/bin/ld: Warning: size of symbol `mpifcmb3_' changed from 8 in /lustre/work1/scheinin/Nwchem/src/nwchem-6.3-src.2013-05-28/lib/LINUX64/libnwpwlib.a(Parallel-mpi.o) to 4 in /opt/cray/mpt/6.0.0/gni/mpich2-pgi/121/lib/libmpich_pgi.a(setbot.o)
+
+export PREFIX=/lustre/work1/scheinin/Nwchem
+mkdir ${PREFIX}/bin
+mkdir ${PREFIX}/data
+ls $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem
+cp $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem ${PREFIX}/bin
+
+cd $NWCHEM_TOP/src/basis
+cp -R libraries ${PREFIX}/data
+
+cd $NWCHEM_TOP/src/
+cp -R data ${PREFIX}
+
+cd $NWCHEM_TOP/src/nwpw
+cp -R libraryps ${PREFIX}/data
+
+# Chris writes:
+# Check paths in data/default.nwchemrc
+
+cp /usr/local/usp/nwchem/6.3/data/default.nwchemrc /lustre/work1/scheinin/Nwchem/data
+Change
+/lustre/work1/scheinin/Nwchem/data/default.nwchemrc
+What needs to be changed is the NWCHEM_TOP part.
+
+# change permissions for general use
+
+# Users need to create a .nwchemrc
+# ln -s /usr/local/usp/nwchem/x.x/data/default.nwchemrc  $HOME/.nwchemrc
+
+# Chris wrote
+# Check paths in data/default.nwchemrc
+
+Move to /usr/local/usp/nwchem/<version-compiler>
+# Set permissions.
+
+topdir=/usr/local/usp/nwchem/6.3-pgi
+
+cd $topdir
+chmod ugo+xr $topdir
+chown scheinin.97290STA $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R scheinin.97290STA *
+
+# Make sure last minute changes such as the README file are readable.
+
+Batch job needs:
+
+export HUGETLB_MORECORE=yes
+export HUGETLB_ELFMAP=W
+export HUGETLB_FORCE_ELFMAP=yes+
+setenv           HUGETLB_MORECORE yes 
+setenv           HUGETLB_ELFMAP W 
+setenv           HUGETLB_FORCE_ELFMAP yes+ 
+
+The following does not seem to be necessary
+but if a job fails in a way related to hugepages,
+try also
+export HUGETLB_DEFAULT_PAGE_SIZE=64M
+setenv HUGETLB_DEFAULT_PAGE_SIZE 64M 
+
+# The above can be seen from
+module show craype-hugepages64M
+but the following did not work in a batch job script
+/opt/modules/default/init/<your shell>
+module load craype-hugepages64M
+
+See
+/usr/local/Example_Codes/Applications/nwchem for test.
+

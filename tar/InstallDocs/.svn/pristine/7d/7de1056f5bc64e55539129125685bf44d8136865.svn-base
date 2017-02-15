@@ -1,0 +1,43 @@
+#! /bin/ksh
+#PBS -A erdcssta
+#PBS -l walltime=07:50:00
+#PBS -N katrinaLex
+#PBS -q standard
+#PBS -o /work/scheinin/Hurr_morphos/katrinaL/nt
+#PBS -j oe
+#PBS -l select=150:ncpus=8:mpiprocs=8
+#PBS -l place=scatter:excl
+
+cd $PBS_O_WORKDIR
+
+export MPI_DSM_DISTRIBUTE=yes
+export MPI_GROUP_MAX=1200
+
+# if your executable uses shared libraries from the suggested modules, add:
+. /usr/share/modules/init/ksh
+module list
+module load compilers/intel11.1
+module load mpi/sgi_mpi-1.26
+
+date
+
+echo "PBS_NODEFILE below"
+echo $PBS_NODEFILE
+cat $PBS_NODEFILE
+
+mpiexec_mpt -np 1200 ./padcswan309 -W 10
+
+exit
+
+
+#If you are not using a /bin/ksh shell script. replace ". /usr/share/modules/init/ksh"
+#bash -> . /usr/share/modules/init/bash
+#sh   -> . /usr/share/modules/init/sh
+#csh  -> source /usr/share/modules/init/csh
+#
+#The file /usr/local/bin/2009_Nov_suggested_modules contains the current suggestions.
+# You should created your own file for the modules of your choice.
+#
+###### basic script for a 1 hour job 64 MPI processes, in standard queue
+######  on 8 nodes with one MPI process on each of the 8 cores on each node 
+######   to submit >  qsub  run_script

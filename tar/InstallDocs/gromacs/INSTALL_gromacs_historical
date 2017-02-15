@@ -1,0 +1,586 @@
+
+below garnet Fri Feb  6, 2015
+
+http://www.gromacs.org/
+
+Two builds, 5.0.4-intel-mpich6 just has
+module swap PrgEnv-pgi PrgEnv-intel
+whereas, 5.0.4-intel-mpich7 uses
+source /p/cwfs/scheinin/pub/module_update/module_update_intel.sh
+This group is for 5.0.4-intel-mpich6.
+
+cd /usr/local/usp/gromacs/5.0.4-intel-mpich6/src/gromacs-5.0.4
+module swap PrgEnv-pgi PrgEnv-intel
+module load fftw
+# Actual environment includes
+PrgEnv-intel/4.2.34
+intel/14.0.2.144
+fftw/3.3.0.4
+
+export PATH=/usr/local/usp/cmake/2.8.12.2-intel/bin:$PATH
+
+mkdir build-cmake
+cd build-cmake
+# Need to use dynamic because of strcpy error.
+# See http://www.gromacs.org/Documentation/Installation_Instructions
+# SIMD support.
+# The choice of AVX_128_FMA is appropriate for AMD CPUs
+# but not for Intel CPUs.  However, setting a value for GMX_SIMD
+# results in a compiler error, so use None and count on Cray wrapper
+# making the right choice.
+# Do module show on the fftw version being used to set
+# FFTWF_LIBRARY and FFTWF_INCLUDE_DIR.
+ccmake ..  \
+    -DCMAKE_C_COMPILER=`which cc` \
+    -DCMAKE_CXX_COMPILER=`which CC` \
+    -DCMAKE_INSTALL_PREFIX=/usr/local/usp/gromacs/5.0.4-intel-mpich6 \
+    -DGMX_FFT_LIBRARY=fftw3 \
+    -DCMAKE_C_FLAGS="-dynamic" \
+    -DCMAKE_CXX_FLAGS="-dynamic" \
+    -DCMAKE_EXE_LINKER_FLAGS="-dynamic" \
+    -DGMX_SIMD=None \
+    -DFFTWF_LIBRARY="${FFTW_DIR}/libfftw3f.so" \
+    -DFFTWF_INCLUDE_DIR="$FFTW_INC" \
+    -DGMX_MPI=ON \
+    -DGMX_GPU=OFF
+c
+c
+g
+
+# Further comment, it is not clear whether the choice for GMX_SIMD
+# affects which lines in the code are used or just affects the
+# choice of compiler flags.  Since choice of AVX_128_FMA failed
+# because of compiler flag problems, use None.
+
+Only warning was:
+ Boost >= 1.44 not found. Using minimal internal version. This may cause
+ trouble if you plan on compiling/linking other software that uses Boost
+ against Gromacs.
+
+If ccmake fails, remove everything in build-cmake directory.
+
+Check file CMakeCache.txt and possible modify
+
+CMAKE_C_FLAGS:STRING=-dynamic
+CMAKE_CXX_FLAGS:STRING=-dynamic
+CMAKE_EXE_LINKER_FLAGS:STRING=-dynamic
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/5.0.4-intel-mpich6
+FFTWF_INCLUDE_DIR:PATH=/opt/fftw/3.3.0.4/interlagos/include
+FFTWF_LIBRARY:FILEPATH=/opt/fftw/3.3.0.4/interlagos/lib/libfftw3f.so
+
+cmake ..
+
+make
+
+make install
+
+check that installed where expected
+
+cp CMakeCache.txt /usr/local/usp/gromacs/CMakeCache.txt_5.0.4-intel-mpich6
+cp CMakeCache.txt /u/scheinin/InstallDocs/gromacs/CMakeCache.txt_5.0.4-intel-mpich6
+
+Copy these notes to
+/usr/local/usp/gromacs/INSTALL.5.0.4-intel-mpich6
+/u/scheinin/InstallDocs/gromacs/INSTALL.5.0.4-intel-mpich6
+
+Change permissions on CMakeCache.txt_5.0.4-intel-mpich6
+and INSTALL.5.0.4-intel-mpich6 so that others can read.
+
+  -------------
+Have a README file with the following.
+
+For gromacs-5.0.4, it was necessary to build a version of gromacs
+that loads shared libraries dynamically.  It may be necessary in the
+PBS batch script to load some modules as shown below.  The version
+5.0.4-intel-mpich6 uses the default modules as of Feb. 6, 2015.
+
+source /opt/modules/default/init/<your shell>
+module swap PrgEnv-pgi PrgEnv-intel
+module load fftw
+
+  -------------
+
+# Need to change permissions.
+
+topdir=/usr/local/usp/gromacs/5.0.4-intel-mpich6
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.9729LSTA $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.9729LSTA *
+
+above garnet Fri Feb  6, 2015
+ -------------------------------------------------------------
+below garnet Fri Feb  6, 2015
+
+http://www.gromacs.org/
+
+Two builds, 5.0.4-intel-mpich7 just has
+module swap PrgEnv-pgi PrgEnv-intel
+whereas, 5.0.4-intel-mpich7 uses
+source /p/cwfs/scheinin/pub/module_update/module_update_intel.sh
+This group is for 5.0.4-intel-mpich7.
+
+cd /usr/local/usp/gromacs/5.0.4-intel-mpich7/src/gromacs-5.0.4
+Did the following
+source /p/cwfs/scheinin/pub/module_update/module_update_intel.sh
+Perhaps could also do
+module unload cray-mpich/6.0.0
+module swap PrgEnv-pgi PrgEnv-intel
+module load fftw/3.3.4.0
+module swap intel intel/14.0.2.144
+module swap cray-libsci cray-libsci/13.0.0
+module swap xt-asyncpe/5.24 xt-asyncpe/5.28
+module load cray-mpich/7.0.2
+module swap cray-libsci cray-libsci/13.0.0
+module load cray-mpich-compat/v7
+
+export PATH=/usr/local/usp/cmake/2.8.12.2-intel/bin:$PATH
+
+mkdir build-cmake
+cd build-cmake
+# Need to use dynamic because of strcpy error.
+# See http://www.gromacs.org/Documentation/Installation_Instructions
+# SIMD support.
+# The choice of AVX_128_FMA is appropriate for AMD CPUs
+# but not for Intel CPUs.  However, setting a value for GMX_SIMD
+# results in a compiler error, so use None and count on Cray wrapper
+# making the right choice.
+# Do module show on the fftw version being used to set
+# FFTWF_LIBRARY and FFTWF_INCLUDE_DIR.
+ccmake ..  \
+    -DCMAKE_C_COMPILER=`which cc` \
+    -DCMAKE_CXX_COMPILER=`which CC` \
+    -DCMAKE_INSTALL_PREFIX=/usr/local/usp/gromacs/5.0.4-intel-mpich7 \
+    -DGMX_FFT_LIBRARY=fftw3 \
+    -DCMAKE_C_FLAGS="-dynamic" \
+    -DCMAKE_CXX_FLAGS="-dynamic" \
+    -DCMAKE_EXE_LINKER_FLAGS="-dynamic" \
+    -DGMX_SIMD=None \
+    -DFFTWF_LIBRARY="${FFTW_DIR}/libfftw3f.so" \
+    -DFFTWF_INCLUDE_DIR="$FFTW_INC" \
+    -DGMX_MPI=ON \
+    -DGMX_GPU=OFF
+c
+c
+g
+
+# Further comment, it is not clear whether the choice for GMX_SIMD
+# affects which lines in the code are used or just affects the
+# choice of compiler flags.  Since choice of AVX_128_FMA failed
+# because of compiler flag problems, use None.
+
+Only warning was:
+ Boost >= 1.44 not found. Using minimal internal version. This may cause
+ trouble if you plan on compiling/linking other software that uses Boost
+ against Gromacs.
+
+If ccmake fails, remove everything in build-cmake directory.
+
+Check file CMakeCache.txt and possible modify
+
+CMAKE_C_FLAGS:STRING=-dynamic
+CMAKE_CXX_FLAGS:STRING=-dynamic
+CMAKE_EXE_LINKER_FLAGS:STRING=-dynamic
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/5.0.4-intel-mpich7
+FFTWF_INCLUDE_DIR:PATH=/opt/fftw/3.3.0.4/interlagos/include
+FFTWF_LIBRARY:FILEPATH=/opt/fftw/3.3.0.4/interlagos/lib/libfftw3f.so
+
+cmake ..
+
+make
+
+make install
+
+check that installed where expected
+
+cp CMakeCache.txt /usr/local/usp/gromacs/CMakeCache.txt_5.0.4-intel-mpich7
+cp CMakeCache.txt /u/scheinin/InstallDocs/gromacs/CMakeCache.txt_5.0.4-intel-mpich7
+
+Copy these notes to
+/usr/local/usp/gromacs/INSTALL.5.0.4-intel-mpich7
+/u/scheinin/InstallDocs/gromacs/INSTALL.5.0.4-intel-mpich7
+
+Change permissions on CMakeCache.txt_5.0.4-intel-mpich7
+and INSTALL.5.0.4-intel-mpich7 so that others can read.
+
+  -------------
+
+Add to the README file with the following.
+
+For gromacs-5.0.4, it was necessary to build a version of gromacs
+that loads shared libraries dynamically.
+
+The version 5.0.4-intel-mpich7 uses modules that will be
+the default around the spring or summer of 2015.
+It may be necessary in the PBS batch script to load
+some modules as shown below.
+
+source /opt/modules/default/init/<your shell>
+module unload cray-mpich/6.0.0
+module swap PrgEnv-pgi PrgEnv-intel
+module load fftw/3.3.4.0
+module swap intel intel/14.0.2.144
+module swap cray-libsci cray-libsci/13.0.0
+module swap xt-asyncpe/5.24 xt-asyncpe/5.28
+module load cray-mpich/7.0.2
+module swap cray-libsci cray-libsci/13.0.0
+module load cray-mpich-compat/v7
+
+  -------------
+
+# Need to change permissions.
+
+topdir=/usr/local/usp/gromacs/5.0.4-intel-mpich7
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.9729LSTA $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.9729LSTA *
+
+above garnet Fri Feb  6, 2015
+ ----------------------------------------------------------
+below garnet Thu Feb  6 09:26:47 CST 2014
+
+http://www.gromacs.org/
+
+cd /usr/local/usp/gromacs/4.6.5/src/gromacs-4.6.5
+
+CMake Warning at CMakeLists.txt:316 (message):
+  All tested PGI compiler versions (up to 12.9.0) generate binaries which
+  produce incorrect results, or even fail to compile Gromacs.  Highly
+  recommended to use a different compiler.  If you choose to use PGI, make
+  sure to run the regressiontests.
+
+module swap PrgEnv-pgi/4.1.40 PrgEnv-intel
+(Actually loaded PrgEnv-intel/4.1.40)
+module load fftw/3.3.0.3
+
+export PATH=/usr/local/usp/PETtools/CE/pkgs/cmake-2.8.11.2/bin:$PATH
+
+export CMAKE_INSTALL_PREFIX=/usr/local/usp/gromacs/4.6.5
+
+mkdir build-cmake
+cd build-cmake
+ccmake ..
+Set installation location using ccmake
+
+modify file CMakeCache.txt
+
+CMAKE_C_FLAGS:STRING=-dynamic
+CMAKE_EXE_LINKER_FLAGS:STRING=-dynamic
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/4.6.5
+FFTWF_INCLUDE_DIR:PATH=/opt/fftw/3.3.0.3/interlagos/include
+FFTWF_LIBRARY:FILEPATH=/opt/fftw/3.3.0.3/interlagos/lib/libfftw3f.so
+
+cmake ..
+
+-- Run output: /usr/local/usp/gromacs/4.6.5/src/gromacs-4.6.5/build-cmake/CMakeFiles/CMakeTmp/cmTryCompileExec117713416: error while loading shared libraries: libalpslli.so.0: cannot open shared object file: No such file or directory
+Not a fatal error.
+
+check that
+CMAKE_INSTALL_PREFIX:PATH=/usr/local/usp/gromacs/4.6.5
+It was changed to src directory during cmake
+Would probably need to redo "cmake .." if wrong.
+
+make
+
+make install
+
+check that installed where expected
+
+# Need to change permissions.
+
+topdir=/usr/local/usp/gromacs/4.6.5
+
+cd $topdir
+chmod ugo+xr $topdir
+chown cots.97290STA $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+# In each src/ directory
+chmod -R o-rwx *
+cd $topdir
+chown -R cots.97290STA *
+
+above garnet Thu Feb  6 09:26:47 CST 2014
+
+Most recent installation of gromacs on sapphire with CNL
+is written after the older text describing installation
+on jade.
+
+ -------------------------------------------------
+Below, installation of gromacs on jade, an older version.
+
+module load fftw/3.1.1
+
+setenv CC cc
+setenv F77 f77
+setenv CFLAGS "-tp barcelona-64 -fastsse"
+setenv FFLAGS "-tp barcelona-64 -fastsse"
+setenv CPPFLAGS -I${FFTW_INC}
+setenv LDFLAGS -L${FFTW_DIR}
+setenv MPICC cc
+
+./configure --prefix=/usr/local/usp/gromacs/4.0.2
+make
+make install
+
+make distclean
+./configure --enable-double --program-suffix="_d" --prefix=/usr/local/usp/gromacs/4.0.2
+make 
+make install
+
+make distclean
+./configure --enable-mpi --disable-nice --program-suffix="_mpi" --prefix=/usr/local/usp/gromacs/4.0.2
+make
+make install
+
+make distclean
+./configure --enable-mpi --disable-nice --enable-double --program-suffix="_d_mpi" --prefix=/usr/local/usp/gromacs/4.0.2
+make
+make install
+
+Above, installation of gromacs on jade, an older version.
+ -------------------------------------------------
+ -------------------------------------------------
+Below, installation of gromacs on sapphire with CNL.
+
+# On May 27, 2009 on sapphire04
+
+# Got latest versions from
+# ftp.gromacs.org/pub/gromacs/
+
+# On jade
+# /usr/local/usp/gromacs/ has subdirectories
+#    3.3.2  4.0.2  INSTALL  bin  include  lib  share  src
+#  where 4.0.2 has subdirectories
+#    bin  include  lib  share  src
+# and 3.3.2 is empty.
+# This appears to be a mixed style, perhaps the first version of
+# gromacs was installed without making a distinction concerning
+# the version.
+
+# On sapphire,
+# using the directory hierarchy conventions that I've seen elsewhere
+# in /work/scheinin/gromacs I did the following
+
+ cd gromacs
+ mkdir 3.3.3 4.0.5
+ cd 3.3.3
+ mkdir  bin  include  lib  share
+ tar xzf ../gromacs-3.3.3.tar.gz
+ mv gromacs-3.3.3 src
+ cd ../4.0.5
+ mkdir  bin  include  lib  share
+ tar xzf ../gromacs-4.0.5.tar.gz
+ mv gromacs-4.0.5 src
+
+# DO NOT DO THE FOLLOWING
+# module load fftw/3.2.1
+
+# The more recent fftw packages compiled for the Cray have
+# both *.a and *.so libraries, whereas during the previous
+# building of gromacs on jade the fftw directory with the
+# libraries only had *.a and *.la.  Even on jade, fftw/3.1.1
+# and fftw/3.2.0 does not have *.so whereas fftw/3.2.1 does
+# have *.so
+
+# Since "module load fftw/3.2.1" is not done, FFTW_INC is not defined.
+# I used "module show fftw/3.2.1" to guide me in doing the following
+# definitions of environmental variables.
+
+# On the latest PGI compiler it should not be necessary
+# to specify "-tp barcelona-64"
+
+export CC=cc
+export F77=f77
+export CFLAGS="-fastsse"
+export FFLAGS="-fastsse"
+export CPPFLAGS="-I/opt/fftw/3.2.1/include -I/usr/include/libxml2"
+export LDFLAGS="-L/work/scheinin/gromacs/4.0.5/lib -L/usr/X11R6/lib64"
+export MPICC=cc
+export CXX=CC
+
+# Some more explanation is needed for the above declarations.
+# Gromacs compiles as a static executable by default, and yet,
+# there is an error in which it uses libtool and libtool decides
+# to link with the dynamic library and moreover decides to add --rpath
+# to the linking.  Aside from the error of explicitly adding
+# /opt/fftw/3.2.1/lib/libfftw3f.so
+# to the linking command line, "--rpath" is not the correct syntax
+# for PGI and the compiler returns an error.  (Curiously, when researching
+# the problem with Google, others had the same problem and in the past
+# the PGI compiler returned merely a warning when it saw "--rpath".)
+
+# My solution is to create a directory with only static libraries.
+
+cd /work/scheinin/gromacs/4.0.5/lib
+lll="libfftw3.a  libfftw3f.a  libfftw3f_threads.a  libfftw3_threads.a"
+for i in $lll ; do ln -s /opt/fftw/3.2.1/lib/$i $i; done
+
+# which explains LDFLAGS="-L/work/scheinin/gromacs/4.0.5/lib ..."
+# The use of LDFLAGS=" ... -L/usr/X11R6/lib64" deals with a common
+# error found in public domain software for which the configuration
+# file was created before 64-bit CPUs became commonplace.  The
+# configuration inserts -L/usr/X11R6/lib which is skipped by the
+# linker.
+# 
+# During configuration there was an error associated with xml,
+# which I tried to solve using  -I/usr/include/libxml2 but
+# the configuration error appeared nonetheless.
+# configure: WARNING: libxml/parser.h: present but cannot be compiled
+ 
+# Also, configure looks for g++ even though perhaps C++ is not used.
+# I've seen a lot of public domain software throw in configuration
+# modules that are not needed.  Just to be sure there was no
+# confusion, I added
+# export CXX=CC
+
+# The command ./configure --help
+# shows the option
+#  --with-gsl
+#     Link to the GNU scientific library, enables extra functions in analysis
+# I did not use this option because it was not used previously and
+# because GSL had not yet been compiled.
+
+# The previous INSTALL instructions have  --disable-nice but
+# the word "nice" does not appear anywhere in the configure script.
+
+# Just for the record, the compilation environment is the following
+# > module list
+# Currently Loaded Modulefiles:
+#   1) modules/3.1.6                10) pgi/8.0.5
+#   2) MySQL/5.0.45                 11) xt-libsci/10.3.4
+#   3) xt-service/2.1.56HD          12) xt-mpt/3.2.0
+#   4) xt-libc/2.1.56HD             13) xt-pe/2.1.56HD
+#   5) xt-os/2.1.56HD               14) xt-asyncpe/2.4
+#   6) xt-boot/2.1.56HD             15) PrgEnv-pgi/2.1.56HD
+#   7) xt-lustre-ss/2.1.56HD_1.6.5  16) java/jdk1.6.0_13
+#   8) xtpe-target-cnl              17) pbs/10.0.0.82981
+#   9) Base-opts/2.1.56HD           18) totalview-support/1.0.5
+
+export PREFIX=/work/scheinin/gromacs/4.0.5
+
+cd /work/scheinin/gromacs/4.0.5/src
+
+./configure --prefix=$PREFIX
+
+make
+make install
+
+# No testing because
+#  make tests
+# (if test -d "gmxtest"; then cd "gmxtest"; ./gmxtest.pl all; cd ..; \
+# else echo "No gmxtest directory found. Please download and unpack it here.";\
+# fi)
+# No gmxtest directory found. Please download and unpack it here.
+
+make distclean
+./configure --enable-double --program-suffix="_d" --prefix=$PREFIX
+make
+make install
+
+make distclean
+./configure --enable-mpi --program-suffix="_mpi" --prefix=$PREFIX
+make
+make install
+
+make distclean
+./configure --enable-mpi --enable-double --program-suffix="_d_mpi" --prefix=$PREFIX
+make
+make install
+
+Below for older version of gromacs.  To be more precise, the latest version of the version 3 series.
+
+export CC=cc
+export F77=f77
+export CFLAGS="-fastsse"
+export FFLAGS="-fastsse"
+export CPPFLAGS="-I/opt/fftw/3.2.1/include -I/usr/include/libxml2"
+export LDFLAGS="-L/work/scheinin/gromacs/3.3.3/lib -L/usr/X11R6/lib64"
+export MPICC=cc
+export CXX=CC
+
+cd /work/scheinin/gromacs/3.3.3/lib
+lll="libfftw3.a  libfftw3f.a  libfftw3f_threads.a  libfftw3_threads.a"
+for i in $lll ; do ln -s /opt/fftw/3.2.1/lib/$i $i; done
+
+export PREFIX=/work/scheinin/gromacs/3.3.3
+
+cd /work/scheinin/gromacs/3.3.3/src
+
+# There is an error associated with libtool, that it puts in
+# /usr/X11R6/lib64/libXm.so explicitly which causes an error
+# because the linking is static.
+# Gromacs-3.3.3 has a configure script that looks for motif whereas
+# gromacs-4.0.5 does not.  I tried using
+# --without-motif and hoping no user expects Motif.
+# Strangely, --without-motif did not prevent the compilation of grompp
+# from using -lXm and then libtool inserting /usr/X11R6/lib64/libXm.so
+# The linking also uses -lXmu and there is a libXmu.so so it is a
+# mystery as to why only -lXm is converted to libXm.so but not
+# other libraries.
+# I also tried doing "configure" on a compute node and then running
+# "make" on a compute node.  The problem still occured.
+# Also, --enable-all-static is listed when using
+# ./configure --help  ,
+# and indeed, the library /usr/X11R6/lib64/libXm.a is inserted
+# in the link command line (rather than /usr/X11R6/lib64/libXm.so)
+# when ./configure --enable-all-static is used
+# however, -all-static is then passed as a compiler option and that
+# results in
+# pgcc-Error-Unknown switch: -all-static
+# The solution, in the end, was to modify configure and libtool.
+# libtool is rebuilt by configure (and if I am not mistaken, is
+# used by configure) so it must be refreshed before and after
+# configure.  The modified files are one level above
+# the 3.3.3 directory.
+
+cp ../bstatic-configure configure
+cp ../bstatic-libtool libtool
+./configure --prefix=$PREFIX --enable-all-static
+cp ../bstatic-libtool libtool
+make
+make install
+
+make distclean
+cp ../bstatic-libtool libtool
+./configure --enable-double --program-suffix="_d" --prefix=$PREFIX --enable-all-static
+cp ../bstatic-libtool libtool
+make
+make install
+
+make distclean
+cp ../bstatic-libtool libtool
+./configure --enable-mpi --program-suffix="_mpi" --prefix=$PREFIX --enable-all-static
+cp ../bstatic-libtool libtool
+make
+make install
+
+make distclean
+cp ../bstatic-libtool libtool
+./configure --enable-mpi --enable-double --program-suffix="_d_mpi" --prefix=$PREFIX --enable-all-static
+cp ../bstatic-libtool libtool
+make
+make install
+
+Above, installation of gromacs on sapphire with CNL.
+ -------------------------------------------------
+

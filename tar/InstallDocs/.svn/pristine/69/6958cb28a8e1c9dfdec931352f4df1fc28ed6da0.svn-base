@@ -1,0 +1,682 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Counter Timeline</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Intel® Trace Analyzer
+     User's Reference Guide"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Charts"
+HREF="c876.html"><LINK
+REL="PREVIOUS"
+TITLE="Quantitative Timeline"
+HREF="x1099.html"><LINK
+REL="NEXT"
+TITLE="The Function Profile Chart"
+HREF="x1330.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Intel® Trace Analyzer
+     User's Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1099.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Charts</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1330.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="COUNTERTIM"
+>4.4. Counter Timeline</A
+></H1
+><P
+>The Counter Timeline shows the values of all counters that a
+given trace file provides. The Intel® Trace Collector records
+user-defined counters or counters provided by the operating
+system. Please refer to the Intel Trace Collector documentation to
+learn more about tracing counters.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.CNTR.SCOPES"
+></A
+><P
+><B
+>Figure 4-20. The settings dialog showing all counters available in the trace with their type and scope</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/cntr_vtcounterscopec_scopes.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.CNTR.SCOPES.ALLSINGLE"
+></A
+><P
+><B
+>Figure 4-21. Some counters with differing scopes, zoomed in</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/cntr_vtcounterscopec_allsingle.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The Counter Timeline as shown in <A
+HREF="x1212.html#FIG.CNTR.SCOPES.ALLSINGLE"
+>Figure 4-21</A
+> shows counters with the scopes
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Valid BEFORE point</I
+></SPAN
+>, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Valid AFTER
+point</I
+></SPAN
+>, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Valid AT point</I
+></SPAN
+> and
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Curve</I
+></SPAN
+>. The time interval is small enough so that
+no counter samples are merged over time (<A
+HREF="c3010.html#LOD"
+>Section 10.1</A
+>). The
+sample points are indicated by markers.</P
+><P
+>The sample points for counters with the attribute
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Curve</I
+></SPAN
+> are connected by line segments. Samples
+with the attribute <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Valid AT point</I
+></SPAN
+> are shown
+by markers. Samples of counters with other scopes are shown by short,
+unconnected horizontal line segments before or after the sample.</P
+><DIV
+CLASS="figure"
+><A
+NAME="FIG.CNTR.SCOPES.MERGED"
+></A
+><P
+><B
+>Figure 4-22. Some counters with differing scopes, zoomed out</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/cntr_vtcounterscopec_merged.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+>The Counter Timeline as shown in <A
+HREF="x1212.html#FIG.CNTR.SCOPES.MERGED"
+>Figure 4-22</A
+> shows the same counters as in <A
+HREF="x1212.html#FIG.CNTR.SCOPES.ALLSINGLE"
+>Figure 4-21</A
+> but zoomed out. Notice that there are
+no markers anymore because the values shown represent samples that
+were merged over time. To force that effect the View was made very
+narrow.</P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COUNTERTIMMH"
+>4.4.1. Mouse Hover</A
+></H2
+><P
+>When the mouse pointer hovers over the Counter Timeline, its
+exact position in time is shown in the View's status bar. If the mouse
+pointer is near a sample point then the respective value is
+shown.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COUNTERTIMSD"
+>4.4.2. Counter Timeline Settings</A
+></H2
+><P
+>The Settings dialog box in the Counter Timeline has three
+tabs - the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences</I
+></SPAN
+> tab, the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Counters</I
+></SPAN
+> tab and the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes</I
+></SPAN
+> tab.</P
+><DIV
+CLASS="figure"
+><A
+NAME="fig.countertim-setdlg"
+></A
+><P
+><B
+>Figure 4-23. Counter Timeline Settings Dialog box</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../graphics/countertim-setdlg.png"
+ALIGN="center"></P
+></DIV
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Preferences Tab</I
+></SPAN
+></P
+><P
+>Use the controls in this tab to adjust the display settings and
+the scaling of the Counter Timeline. The tab consists of the groups
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Display</I
+></SPAN
+> and <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Vertical
+Scaling</I
+></SPAN
+>.</P
+><P
+>The group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Display</I
+></SPAN
+> contains the following
+controls:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Time Scale:</I
+></SPAN
+> This displays a time
+	scale along the x-axis. </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Vertical Scale:</I
+></SPAN
+> This scale is on
+	the y-axis. By default, this option is enabled so that the
+	scale is shown.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Legend:</I
+></SPAN
+> This shows the legend in
+	the right margin of the timeline. This is also enabled by
+	default.
+	</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Adjust Graphics to Legend Height:</I
+></SPAN
+>
+	This forces the size of the diagram to be large enough to show
+	all legend items.
+	</P
+></LI
+><LI
+><P
+>The combo box showing either <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Single
+	Diagram</I
+></SPAN
+> or <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Many Diagrams</I
+></SPAN
+>
+	allows to have either a single diagram for all selected
+	counters and all selected target group children or to create a
+	separate diagram for each target group child.</P
+></LI
+></UL
+><P
+>Use the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Vertical Scaling</I
+></SPAN
+> group to switch
+between the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Automatic Scaling (per Diagram)</I
+></SPAN
+>, 
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Automatic Scaling (global)</I
+></SPAN
+> and the
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Manual Scaling</I
+></SPAN
+> of the y-axis. To explicitly
+specify the minimum and maximum scale values, use <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Manual
+Scaling</I
+></SPAN
+>. To visually compare two or more Charts in the same
+or distinct Views, specify the same bounds for both charts.
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Counters Tab</I
+></SPAN
+></P
+><P
+>This tab holds a list with seven items for each counter provided
+by the trace file. The top level entry for each counter shows the
+counter's <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Name</I
+></SPAN
+>, its <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Unit</I
+></SPAN
+>,
+its target <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Process Group</I
+></SPAN
+> and its
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Attributes</I
+></SPAN
+> (<A
+HREF="x1212.html#fig.countertim-setdlg"
+>Figure 4-23</A
+>). The name and the unit are arbitrary, free format strings defined
+in the trace file.</P
+><P
+>The column <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Process Group</I
+></SPAN
+> contains the
+counter's target group. A counter that has different values for each
+process will have the target group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>All_Processes</I
+></SPAN
+>,
+while a counter that has a distinct value for each SMP node will have
+the target group <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>All_Nodes</I
+></SPAN
+>.</P
+><P
+>The column <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Attributes</I
+></SPAN
+> can contain the
+following attributes:</P
+><P
+>Either <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Integer</I
+></SPAN
+> or
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Double</I
+></SPAN
+>, indicating the counter's type.</P
+><P
+>One of <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Valid BEFORE Point</I
+></SPAN
+>, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Valid
+AFTER Point</I
+></SPAN
+>, <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Valid AT Point</I
+></SPAN
+> or
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Curve</I
+></SPAN
+> indicating the counters
+scope. <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Curve</I
+></SPAN
+> indicates that it is meaningful to
+interpolate values between two given counter values.</P
+><P
+>The attribute <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Show Rate</I
+></SPAN
+>, indicating that it
+is preferable to display the derivation to time instead of the plain
+counter values.</P
+><P
+>Nested under the top level entry for a counter, there are six
+entries for the minimum, average and maximum values and for the
+minimum, average and maximum rates that allow to switch each on and
+off independently. If you just use the top level entries check box
+then either the average value or rate will be chosen depending on the
+counters attributes.
+</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Processes Tab</I
+></SPAN
+></P
+><P
+>This tab contains one top-level entry for each target group
+used in at least one of the counters and a nested entry for each target group's
+child.</P
+><P
+>Using the top-level entry for a target group you can switch the entire target group on or off, or go back to the last subset that you
+selected using the second level entries.</P
+><P
+>Using the second level entries you can switch on and off
+arbitrary children of the target group.</P
+><P
+>The settings for a target group in this tab are applied to all
+counters with the respective target group.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COUNTERTIMCM"
+>4.4.3. The Context Menu</A
+></H2
+><P
+>The context menu of the Counter Timeline provides the common
+entries as defined in <A
+HREF="x1974.html"
+>Section 4.8</A
+>.</P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="COUNTERTIMTF"
+>4.4.4. Filtering and Tagging</A
+></H2
+><P
+>The filter mechanism in the Intel Trace Analyzer does not cover
+counters. Therefore the Counter Timeline is independent of the View's
+filter settings.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1099.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1330.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Quantitative Timeline</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c876.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Function Profile Chart</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

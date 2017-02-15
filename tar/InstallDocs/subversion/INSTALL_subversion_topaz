@@ -1,0 +1,119 @@
+
+
+Apache.org is new home.
+http://subversion.apache.org/
+
+export PREFIX=/p/home/apps/unsupported/subversion/1.8.13-gcc43
+mkdir $PREFIX
+cd /p/home/scheinin/build/subversion/src
+Download of source is from a mirror.
+On June 3, 2015
+wget http://www.trieuvan.com/apache/subversion/subversion-1.8.13.tar.bz2
+
+# When machine first became available,
+# TMPDIR and WORKDIR were not defined.
+# In that case,
+export WORKDIR=/p/work1/scheinin
+export TMPDIR=$WORKDIR/tmp
+mkdir $TMPDIR
+
+export CC=gcc
+export CFLAGS="-fPIC -O"
+export LDFLAGS="-O"
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export FCFLAGS="-O"
+export CXX=g++
+export CXXFLAGS="-O"
+
+Build instructions in INSTALL file.
+
+get-deps.sh will put 'apr', 'apr-util', 'serf', 'zlib', and
+'sqlite-amalgamation' directories directly into your unpacked Subversion
+distribution.  With the exception of sqlite-amalgamation, they will
+still need to be configured, built and installed explicitly
+
+libapr and libapr-util (REQUIRED for client and server) built
+SQLite  (REQUIRED for client and server)  have sqlite3-devel
+libz  (REQUIRED for client and server)  have
+libserf  (OPTIONAL for client) built
+OpenSSL (OPTIONAL for client and server)
+Berkeley DB (OPTIONAL for client and server) have
+libsasl (OPTIONAL for client and server)
+Python, Perl, Java, Ruby  (OPTIONAL)
+libmagic   ignore if do not have
+      If the libmagic library is detected at compile time,
+      it will be used to determine mime-types of binary files
+      which are added to version control.
+
+./get-deps.sh
+If you require mod_dav_svn, the recommended version of httpd is:
+   http://archive.apache.org/dist/httpd/httpd-2.4.10.tar.bz2
+   Ignore, for server.
+If you require apr-iconv, its recommended version is:
+   http://archive.apache.org/dist/apr/apr-iconv-1.2.1.tar.bz2
+   Ignore, for non-English locale.
+
+cd /p/home/scheinin/build/subversion/src/apr
+# (Note, O/S distribution has /usr/lib64/libapr-1.so.0
+# /usr/lib64/libapr-1.so.0.3.3)
+./configure --prefix=$PREFIX
+make
+make test
+All tests passed.
+make install
+
+cd ../apr-util/
+# (Note, O/S distribution does not have libaprutil*)
+./configure --prefix=$PREFIX --with-apr=$PREFIX \
+  --with-berkeley-db=/usr/include/db4:/usr/lib64 \
+  --with-openssl=/usr/local/krb5/openssl
+make
+make test
+All tests passed.
+make install
+
+cd ../serf
+export SCONS=/p/home/scheinin/build/subversion/src/subversion-1.8.13/scons/scons.py
+$SCONS APR=$PREFIX APU=$PREFIX OPENSSL=/usr/local/krb5/openssl PREFIX=$PREFIX
+$SCONS check
+test/test_buckets.c: In function 'deflate_compress':
+test/test_buckets.c:1237: error: expected expression before '/' token
+$SCONS install
+scons: warning: Support for pre-2.7.0 Python version (2.6.9) is deprecated.
+    If this will cause hardship, contact dev@scons.tigris.org.
+
+cd /p/home/scheinin/build/subversion/src/subversion-1.8.13
+
+./configure --prefix=$PREFIX \
+ --with-apr=$PREFIX  --with-apr-util=$PREFIX \
+ --with-serf=$PREFIX --with-berkeley-db \
+ --with-openssl=/usr/local/krb5/openssl
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+
+Summary of test results:
+  1973 tests PASSED
+  58 tests SKIPPED
+  31 tests XFAILED (1 WORK-IN-PROGRESS)
+SUMMARY: All tests successful.
+
+make install
+
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+
+Test:
+cd $HOME/testsvn
+which svn
+/app/unsupported/local/bin/svn
+> ls -l /app/unsupported/local/bin/svn
+lrwxrwxrwx 1 cots staff 43 Jul  8 13:15 /app/unsupported/local/bin/svn -> /app/unsupported/subversion/default/bin/svn
+svn co https://core.svn.wordpress.org/trunk/

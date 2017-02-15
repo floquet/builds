@@ -1,0 +1,419 @@
+
+NCL NGARG need a more recent Cairo than is available
+as part of the Linux distribution on topaz.
+
+Source
+http://cairographics.org/releases/
+got cairo-1.14.2.tar.xz and pixman-0.32.6.tar.gz
+uncompress cairo-1.14.2.tar.xz using unxz.
+
+ --- Intel below. ---
+
+export PREFIX=/p/home/apps/unsupported/cairo/1.14.2-intel
+mkdir $PREFIX
+
+export CXX=icpc
+export CXXFLAGS="-O2"
+export CC=icc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=ifort
+export F77=ifort
+export F90=ifort
+
+export PKG_CONFIG_PATH=/usr/lib64/pkgconfig
+
+cd /p/home/scheinin/build/cairo-intel/src/pixman-0.32.6
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+
+cd /p/home/scheinin/build/cairo-intel/src/cairo-1.14.2
+
+# Need to put pixman first in order to avoid Linux distribution pixman.
+# The Linux distribution pixman is too old.
+export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig:/usr/lib64/pkgconfig
+# Just to make sure, w.r.t. pixman
+export pixman_CFLAGS="-I/p/home/apps/unsupported/cairo/1.14.2-intel/include -I/p/home/apps/unsupported/cairo/1.14.2-intel/include/pixman-1"
+export pixman_LIBS="-L/p/home/apps/unsupported/cairo/1.14.2-intel/lib -lpixman-1"
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+W.r.t. not using --enable-xlib-xcb
+Could not enable xcb because version is not sufficiently recent.
+W.r.t. not using --enable-qt=yes
+Did not enable Qt (no is default) because
+The Qt surface backend feature is still under active development and is
+included in this release only as a preview.
+W.r.t. not using --enable-xml=yes
+Did not enable XML (no is default) because
+The xml surface backend feature is still under active development and is
+included in this release only as a preview.
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% configure output below
+
+cairo (version 1.14.2 [release]) will be compiled with:
+
+The following surface backends:
+  Image:         yes (always builtin)
+  Recording:     yes (always builtin)
+  Observer:      yes (always builtin)
+  Mime:          yes (always builtin)
+  Tee:           no (disabled, use --enable-tee to enable)
+  XML:           no (disabled, use --enable-xml to enable)
+  Skia:          no (disabled, use --enable-skia to enable)
+  Xlib:          yes
+  Xlib Xrender:  yes
+  Qt:            no (disabled, use --enable-qt to enable)
+  Quartz:        no (requires CoreGraphics framework)
+  Quartz-image:  no (disabled, use --enable-quartz-image to enable)
+  XCB:           no (requires xcb >= 1.6 xcb-render >= 1.6 http://xcb.freedesktop.org)
+  Win32:         no (requires a Win32 platform)
+  OS2:           no (disabled, use --enable-os2 to enable)
+  CairoScript:   yes
+  PostScript:    yes
+  PDF:           yes
+  SVG:           yes
+  OpenGL:        no (disabled, use --enable-gl to enable)
+  OpenGL ES 2.0: no (disabled, use --enable-glesv2 to enable)
+  BeOS:          no (disabled, use --enable-beos to enable)
+  DirectFB:      no (disabled, use --enable-directfb to enable)
+  OpenVG:        no (disabled, use --enable-vg to enable)
+  DRM:           no (disabled, use --enable-drm to enable)
+  Cogl:          no (disabled, use --enable-cogl to enable)
+
+The following font backends:
+  User:          yes (always builtin)
+  FreeType:      yes
+  Fontconfig:    yes
+  Win32:         no (requires a Win32 platform)
+  Quartz:        no (requires CoreGraphics framework)
+
+The following functions:
+  PNG functions:   yes
+  GLX functions:   no (not required by any backend)
+  WGL functions:   no (not required by any backend)
+  EGL functions:   no (not required by any backend)
+  X11-xcb functions: no (disabled, use --enable-xlib-xcb to enable)
+  XCB-shm functions: no (requires --enable-xcb)
+
+The following features and utilities:
+  cairo-trace:                yes
+  cairo-script-interpreter:   yes
+
+And the following internal features:
+  pthread:       yes
+  gtk-doc:       no
+  gcov support:  no
+  symbol-lookup: no (requires bfd)
+  test surfaces: no (disabled, use --enable-test-surfaces to enable)
+  ps testing:    no (requires libspectre)
+  pdf testing:   no (requires poppler-glib >= 0.17.4)
+  svg testing:   no (requires librsvg-2.0 >= 2.35.0)
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% configure output above
+
+make 2>&1 | tee make.log
+# Must have logged-in as -Y because checking involves
+# writing to DISPLAY.  For this build (Intel case),
+# did not realize I needed to do that.
+make check 2>&1 | tee check.log
+
+One failure
+make[5]: Entering directory `/p/home/scheinin/build/cairo-intel/src/cairo-1.14.2/src'
+FAIL: check-def.sh
+
+make test 2>&1 | tee test.log
+
+make[6]: Entering directory `/p/home/scheinin/build/cairo-intel/src/cairo-1.14.2/test'
+Hung, after may minutes reached
+  100% CPU and 81.0% memory
+later memory went down.  Tests might be running
+but after 20 minutes, hit control-C.
+
+make install
+
+Fix permissions.
+
+ --- Intel above. ---
+ --- native GNU below. ---
+
+export PREFIX=/p/home/apps/unsupported/cairo/1.14.2-gcc43
+mkdir $PREFIX
+
+export CXX=g++
+export CXXFLAGS="-O2"
+export CC=gcc
+export CFLAGS="-O2"
+export CPPFLAGS=""
+export LIBS=""
+export LDFLAGS=""
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+
+export PKG_CONFIG_PATH=/usr/lib64/pkgconfig
+
+cd /p/home/scheinin/build/cairo-gcc43/src/pixman-0.32.6
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+
+cd /p/home/scheinin/build/cairo-gcc43/src/cairo-1.14.2
+
+# Need to put pixman first in order to avoid Linux distribution pixman.
+# The Linux distribution pixman is too old.
+export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig:/usr/lib64/pkgconfig
+# Just to make sure, w.r.t. pixman
+export pixman_CFLAGS="-I/p/home/apps/unsupported/cairo/1.14.2-gcc43/include -I/p/home/apps/unsupported/cairo/1.14.2-gcc43/include/pixman-1"
+export pixman_LIBS="-L/p/home/apps/unsupported/cairo/1.14.2-gcc43/lib -lpixman-1"
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+W.r.t. not using --enable-xlib-xcb
+Could not enable xcb because version is not sufficiently recent.
+W.r.t. not using --enable-qt=yes
+Did not enable Qt (no is default) because
+The Qt surface backend feature is still under active development and is
+included in this release only as a preview.
+W.r.t. not using --enable-xml=yes
+Did not enable XML (no is default) because
+The xml surface backend feature is still under active development and is
+included in this release only as a preview.
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% configure output below
+
+cairo (version 1.14.2 [release]) will be compiled with:
+
+The following surface backends:
+  Image:         yes (always builtin)
+  Recording:     yes (always builtin)
+  Observer:      yes (always builtin)
+  Mime:          yes (always builtin)
+  Tee:           no (disabled, use --enable-tee to enable)
+  XML:           no (disabled, use --enable-xml to enable)
+  Skia:          no (disabled, use --enable-skia to enable)
+  Xlib:          yes
+  Xlib Xrender:  yes
+  Qt:            no (disabled, use --enable-qt to enable)
+  Quartz:        no (requires CoreGraphics framework)
+  Quartz-image:  no (disabled, use --enable-quartz-image to enable)
+  XCB:           no (requires xcb >= 1.6 xcb-render >= 1.6 http://xcb.freedesktop.org)
+  Win32:         no (requires a Win32 platform)
+  OS2:           no (disabled, use --enable-os2 to enable)
+  CairoScript:   yes
+  PostScript:    yes
+  PDF:           yes
+  SVG:           yes
+  OpenGL:        no (disabled, use --enable-gl to enable)
+  OpenGL ES 2.0: no (disabled, use --enable-glesv2 to enable)
+  BeOS:          no (disabled, use --enable-beos to enable)
+  DirectFB:      no (disabled, use --enable-directfb to enable)
+  OpenVG:        no (disabled, use --enable-vg to enable)
+  DRM:           no (disabled, use --enable-drm to enable)
+  Cogl:          no (disabled, use --enable-cogl to enable)
+
+The following font backends:
+  User:          yes (always builtin)
+  FreeType:      yes
+  Fontconfig:    yes
+  Win32:         no (requires a Win32 platform)
+  Quartz:        no (requires CoreGraphics framework)
+
+The following functions:
+  PNG functions:   yes
+  GLX functions:   no (not required by any backend)
+  WGL functions:   no (not required by any backend)
+  EGL functions:   no (not required by any backend)
+  X11-xcb functions: no (disabled, use --enable-xlib-xcb to enable)
+  XCB-shm functions: no (requires --enable-xcb)
+
+The following features and utilities:
+  cairo-trace:                yes
+  cairo-script-interpreter:   yes
+
+And the following internal features:
+  pthread:       yes
+  gtk-doc:       no
+  gcov support:  no
+  symbol-lookup: no (requires bfd)
+  test surfaces: no (disabled, use --enable-test-surfaces to enable)
+  ps testing:    no (requires libspectre)
+  pdf testing:   no (requires poppler-glib >= 0.17.4)
+  svg testing:   no (requires librsvg-2.0 >= 2.35.0)
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% configure output above
+
+make 2>&1 | tee make.log
+
+# Must have logged-in as -Y because checking involves
+# writing to DISPLAY.
+make check 2>&1 | tee check.log
+Some of the tests failed.
+Testing ran for a long time, more than an hour.
+(It is not clear that perhaps some of the images needed the user
+to click on them in order to continue.)
+
+make install
+
+Fix permissions.
+
+ --- native GNU above. ---
+ --- new GNU below. ---
+
+export PREFIX=/p/home/apps/unsupported/cairo/1.14.2-gcc49
+mkdir $PREFIX
+
+# Need to add compilers to PATH.
+export PATH=/apps/unsupported/gcc/4.9.2/bin:$PATH
+
+# Need to add shared libraries to LD_LIBRARY_PATH.
+export LD_LIBRARY_PATH=/apps/unsupported/gcc/4.9.2/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpc/1.0.3/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/mpfr/3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/apps/unsupported/gmp/6.0.0a/lib:$LD_LIBRARY_PATH
+
+export CXX=/apps/unsupported/gcc/4.9.2/bin/g++
+export CXXFLAGS="-O2"
+export CC=/apps/unsupported/gcc/4.9.2/bin/gcc
+export CFLAGS="-O2"
+export FC=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F77=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export F90=/apps/unsupported/gcc/4.9.2/bin/gfortran
+export LIBS=""
+export LDFLAGS=""
+
+export PKG_CONFIG_PATH=/usr/lib64/pkgconfig
+
+cd /p/home/scheinin/build/cairo-gcc49/src/pixman-0.32.6
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+make 2>&1 | tee make.log
+make check 2>&1 | tee check.log
+make install
+
+cd /p/home/scheinin/build/cairo-gcc49/src/cairo-1.14.2
+
+# Need to put pixman first in order to avoid Linux distribution pixman.
+# The Linux distribution pixman is too old.
+export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig:/usr/lib64/pkgconfig
+# Just to make sure, w.r.t. pixman
+export pixman_CFLAGS="-I/p/home/apps/unsupported/cairo/1.14.2-gcc49/include -I/p/home/apps/unsupported/cairo/1.14.2-gcc49/include/pixman-1"
+export pixman_LIBS="-L/p/home/apps/unsupported/cairo/1.14.2-gcc49/lib -lpixman-1"
+
+./configure --prefix=$PREFIX \
+  --enable-shared  --enable-static
+
+W.r.t. not using --enable-xlib-xcb
+Could not enable xcb because version is not sufficiently recent.
+W.r.t. not using --enable-qt=yes
+Did not enable Qt (no is default) because
+The Qt surface backend feature is still under active development and is
+included in this release only as a preview.
+W.r.t. not using --enable-xml=yes
+Did not enable XML (no is default) because
+The xml surface backend feature is still under active development and is
+included in this release only as a preview.
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% configure output below
+
+cairo (version 1.14.2 [release]) will be compiled with:
+
+The following surface backends:
+  Image:         yes (always builtin)
+  Recording:     yes (always builtin)
+  Observer:      yes (always builtin)
+  Mime:          yes (always builtin)
+  Tee:           no (disabled, use --enable-tee to enable)
+  XML:           no (disabled, use --enable-xml to enable)
+  Skia:          no (disabled, use --enable-skia to enable)
+  Xlib:          yes
+  Xlib Xrender:  yes
+  Qt:            no (disabled, use --enable-qt to enable)
+  Quartz:        no (requires CoreGraphics framework)
+  Quartz-image:  no (disabled, use --enable-quartz-image to enable)
+  XCB:           no (requires xcb >= 1.6 xcb-render >= 1.6 http://xcb.freedesktop.org)
+  Win32:         no (requires a Win32 platform)
+  OS2:           no (disabled, use --enable-os2 to enable)
+  CairoScript:   yes
+  PostScript:    yes
+  PDF:           yes
+  SVG:           yes
+  OpenGL:        no (disabled, use --enable-gl to enable)
+  OpenGL ES 2.0: no (disabled, use --enable-glesv2 to enable)
+  BeOS:          no (disabled, use --enable-beos to enable)
+  DirectFB:      no (disabled, use --enable-directfb to enable)
+  OpenVG:        no (disabled, use --enable-vg to enable)
+  DRM:           no (disabled, use --enable-drm to enable)
+  Cogl:          no (disabled, use --enable-cogl to enable)
+
+The following font backends:
+  User:          yes (always builtin)
+  FreeType:      yes
+  Fontconfig:    yes
+  Win32:         no (requires a Win32 platform)
+  Quartz:        no (requires CoreGraphics framework)
+
+The following functions:
+  PNG functions:   yes
+  GLX functions:   no (not required by any backend)
+  WGL functions:   no (not required by any backend)
+  EGL functions:   no (not required by any backend)
+  X11-xcb functions: no (disabled, use --enable-xlib-xcb to enable)
+  XCB-shm functions: no (requires --enable-xcb)
+
+The following features and utilities:
+  cairo-trace:                yes
+  cairo-script-interpreter:   yes
+
+And the following internal features:
+  pthread:       yes
+  gtk-doc:       no
+  gcov support:  no
+  symbol-lookup: no (requires bfd)
+  test surfaces: no (disabled, use --enable-test-surfaces to enable)
+  ps testing:    no (requires libspectre)
+  pdf testing:   no (requires poppler-glib >= 0.17.4)
+  svg testing:   no (requires librsvg-2.0 >= 2.35.0)
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% configure output above
+
+make 2>&1 | tee make.log
+
+# Must have logged-in as -Y because checking involves
+# writing to DISPLAY.
+make check 2>&1 | tee check.log
+Some of the tests failed.
+Testing ran for a long time, more than an hour.
+(It is not clear that perhaps some of the images needed the user
+to click on them in order to continue.)
+
+make install
+
+Fix permissions.
+
+ --- new GNU above. ---
+
+For each PREFIX.
+topdir=$PREFIX
+cd $topdir
+chmod ugo+xr $topdir
+find . -perm /u=x -exec chmod ugo+x {} \;
+chmod -R ugo+r *
+# Use g+w so that other members of the staff can modify.
+chmod -R g+w,o-w *
+

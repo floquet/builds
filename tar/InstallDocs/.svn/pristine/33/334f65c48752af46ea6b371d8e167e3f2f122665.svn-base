@@ -1,0 +1,57 @@
+
+Build on a batch node reserved with PBS
+qsub -A ERDCS97290STA -q standard -l walltime=2:00:00 -l ccm=1 -l select=1:ncpus=32:mpiprocs=32 -I
+
+module swap PrgEnv-pgi PrgEnv-gnu
+
+export PREFIX=/lustre/work1/scheinin/MPICH/mpich-3.0.4
+
+export F90=""
+unset F90
+export FC=gfortran
+export F77=gfortran
+export CC=gcc
+export CXX=g++
+
+./configure --prefix=$PREFIX \
+ CC=gcc F77=gfortran FC=gfortran CXX=g++ \
+ --enable-f77  --enable-fc  --enable-cxx  --enable-romio \
+ MPICHLIB_CFLAGS=-O2 \
+ MPICHLIB_FFLAGS=-O2 \
+ MPICHLIB_CXXFLAGS=-O2 \
+ MPICHLIB_FCFLAGS=-O2 \
+ --with-pm=hydra --with-device=ch3:sock
+
+make 2>&1 | tee make.log
+make install 2>&1 | tee install.log
+
+# Another interactive qsub, but this time with select=2
+
+cat $PBS_NODEFILE
+
+ccmlogin
+
+module swap PrgEnv-pgi PrgEnv-gnu
+export PATH=/lustre/work1/scheinin/MPICH/mpich-3.0.4/bin:$PATH
+
+# In general a script should be used, but for this test case
+# generated the machinefile by hand based on what I saw
+# in $PBS_NODEFILE
+nid04988:32
+nid05003:32
+
+mpiexec -f machinefile -n 64 ./a.out
+
+ -----
+
+CALL MPI_ERRHANDLER_CREATE(errfunc,ERRHND,ierr)
+                           1
+Error: Interface mismatch in dummy procedure 'v0' at (1): INTENT mismatch in argument 'vv0'
+nid00357
+nid00447
+
+unique_nodes=`uniq $PBS_NODEFILE`
+/bin/rm -f machinefile
+for i in $unique_nodes ; do
+echo "${i}:32" >> machinefile
+done

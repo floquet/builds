@@ -1,0 +1,276 @@
+
+
+http://www.cse.scitech.ac.uk/ccg/software/DL_POLY/index.shtml
+
+There is version 2 and 3
+above page also has manuals in PDF.
+
+ 
+Done.
+
+David 
+
+-----Original Message-----
+From: Borchert, Christopher B ERDC-ITL-MS Contractor
+Sent: Tuesday, June 23, 2009 10:03 AM
+To: Scheinine, Alan ERDC-ITL-MS Contractor
+Cc: Dumas, David M ERDC-ITL-MS
+Subject: FW: Application for a copy of DLPOLY Software
+
+David, Please put Alan in dlpoly group. Thanks. 
+
+Alan,
+I have placed some files in your workdir on jade. These are slightly newer versions of DL_POLY. Below are the unencrypting notes.
+
+Thanks,
+Chris 
+
+-----Original Message-----
+From: W Smith [mailto:w.smith@dl.ac.uk]
+Sent: Monday, June 22, 2009 5:03 PM
+To: Borchert, Christopher B ERDC-ITL-MS Contractor
+Subject: Application for a copy of DLPOLY Software
+
+DL_POLY Software Download Instructions
+
+The DL_POLY software is available by FTP from Daresbury Laboratory. A special directory exists in the CCP5 Program Library, from which the software may be copied. For copyright reasons the software is ENCRYPTED and INVISIBLE to the external user, but you will be allowed priviledged access and decrypting facilities.  PLEASE DO NOT REVEAL THESE PROCEDURES TO THIRD PARTIES. Access to the software is reserved for licence holders only.
+
+You can obtain DL_POLY using a web browser in the following way:
+
+1. Connect your browser to the address:
+   ftp://ftp.dl.ac.uk/ccp5/DL_POLY/
+
+2. You should now be able to see the directory TRANSFERS
+
+3. Open the TRANSFERS  directory - this will appear empty, but don't worry!
+
+4. In the web browser address window append the name of the file you
+   want to download - you will need to get the following files:
+
+   dl_poly_2.20.tar.gE
+   dl_poly_3.09.tar.gE
+   decrypt.c
+
+   For example, to get the decrypt.c file you need to have this
+   text in the address window.
+
+   ftp://ftp.dl.ac.uk/ccp5/DL_POLY/TRANSFERS/decrypt.c
+
+5. The browser will then ask if you want to download the file. Select
+   yes. Store the file where you want to unpack it.
+
+6. The files with the suffix `.gE' are encrypted. To decrypt them
+   proceed as follows. Note that this procedure must be performed
+   on a UNIX platform.
+
+   a) Take a backup copy of the original file!!!!!!!!!!
+
+   b) Compile the decryption program with a C compiler.
+  
+   c) Run the decryption program, it will ask for the password
+      and the name of an encrypted file. The result will be a
+      UNIX tar file (some_name.tar.gz)
+
+   d) Your decryption password is: qno9f!hrt?sp
+
+   e) Uncompress the tar file:
+
+      gunzip some_name.tar.gz
+
+      this will create the file: some_name.tar
+
+   f) Unpack the tar file using tar with the -xvf flags. 
+
+      tar -xvf some_name.tar
+
+   g) You should now have access to the software.
+
+7. Please note that there is no internal check on the correctness
+   of the password and if you make a mistake you will probably
+   get as far as step e) before finding out something is
+   wrong. If this happens do not despair, experience shows that
+   just repeating the procedure more carefully usually yields
+   results. If you have delayed in transferring the files you may
+   find that the password no longer applies, in which case ask
+   for the new password.
+
+8. Please get in touch with me (w.smith@dl.ac.uk) if these
+   procedures are obstinately unsuccessful.
+
+
+W. Smith
+Name        : Mr Chris Borchert
+Department  : HPC Service Center
+Institution : U.S. Army Corps of Engineers Engineer Research and Development Center DSRC
+Address     : 3909 Halls Ferry Rd
+
+Town_City   : Vicksburg, MS
+Postcode    : 39180
+Country     : USA
+Email       : Christopher.B.Borchert@usace.army.mil
+Date        : 2009-06-22
+________________________________________________________________
+
+File /usr/local/usp/DL_POLY/INSTALL-2 :
+
+cp build/MakePAR srcmod/Makefile
+
+Add this to Makefile:
+
+cray:
+        $(MAKE) LD="ftn -o" \
+        LDFLAGS="-fast -Mscalarsse" \
+        FC="ftn -c" \
+        FFLAGS="-fast -Mscalarsse" \
+        EX=$(EX) BINROOT=$(BINROOT) $(TYPE)
+
+Also, changed CC from gcc to cc, though it is not used.
+
+make cray
+Copy files from directoy "execute" to wherever executables
+are to be kept.
+For example on jade (before installation of 2.20 and 3.09) :
+
+ls /usr/local/usp/DL_POLY/
+  2.18  3.08  INSTALL-2  INSTALL-3
+ls /usr/local/usp/DL_POLY/2.18
+execute  gui  manual  src
+ls /usr/local/usp/DL_POLY/3.08
+execute  manual  src
+
+so in the above example the source (originally named dl_poly_x.xx)
+had the directory name changed to source and the results of the
+build are put in subdirectory outside of src.
+
+Previous version of these instructions had -tp k8-64
+but the cray ftn makes the right choice.
+
+which javac
+/opt/java/jdk1.5.0_10/bin/javac
+On sapphire, 1 July 2009
+which javac
+/opt/java/jdk1.6.0_13/bin/javac
+
+There was a problem with javac on sapphire (version 2 of dl_poly)
+of not having enough space on the object heap.  The javac line in
+file "build" was changed to  javac -J-Xms64m -J-Xmx512m *.java and
+in addition the java compilation was done on an application
+ node (qsub -A erdcssta -q debug -l ncpus=0,walltime=1:00:00 -I).
+
+
+Run build in java directory
+Copy run,GUI.jar to gui directory
+
+File /usr/local/usp/DL_POLY/INSTALL-3 :
+
+cp build/Makefile_MPI source/Makefile
+
+Add this to Makefile:
+
+cray:
+        $(MAKE) LD="ftn -o" \
+        LDFLAGS="-fast -Mscalarsse" \
+        FC="ftn -c" \
+        FCFLAGS="-fast -Mscalarsse" \
+        EX=$(EX) BINROOT=$(BINROOT) $(TYPE)
+
+make cray
+Copy files from execute
+
+ -------------------
+
+Chris,
+   I compiled DLPOLY on sapphire and jade.  I did the work in /work/scheinin/DL_POLY/jade/dl_poly_2.20
+/work/scheinin/DL_POLY/jade/dl_poly_3.09
+/work/scheinin/DL_POLY/sapphire/dl_poly_2.20
+/work/scheinin/DL_POLY/sapphire/dl_poly_3.09
+
+In the directory /work/scheinin/DL_POLY, as well as the tutorial in the previous version, DL_POLY_Tutorial.tar.gz, I did a download of the latest user manuals, USRMAN2.pdf and USRMAN3.pdf.
+
+I did not move the executables or jar files to a higher level in the directory hierarchy, I simply confirmed that the compilation when OK and that the executable were generated.
+
+I made a few small changes.  I removed "-tp k8-64" because ftn adds what is appropriate.
+There was a problem with javac on sapphire (version 2 of dl_poly) of not having enough space on the object heap.  The javac line in file "build" was changed to  javac -J-Xms64m -J-Xmx512m *.java and in addition the java compilation was done on an application node (qsub -A erdcssta -q debug -l ncpus=0,walltime=1:00:00 -I).
+
+The compilation can be found in /work/scheinin/DL_POLY or /work/scheinin/DL_POLY.tar.bz2 on either sapphire or jade, because I combined the work on both machines and stored it on gold.
+
+Alan
+
+ =====================
+
+Copper
+
+http://www.ccp5.ac.uk/DL_POLY_CLASSIC/
+ 	
+
+ 
+
+ 
+The DL_POLY Classic Molecular Simulation Package
+
+W. Smith
+General Information
+
+DL_POLY Classic is a general purpose molecular dynamics simulation package developed at Daresbury Laboratory by W. Smith, T.R. Forester and I.T. Todorov. It is based on the package DL_POLY_2, which was originally developed by the former Computational Chemistry Group at Daresbury Laboratory under the auspices of the Engineering and Physical Sciences Research Council (EPSRC), for the EPSRC's Collaborative Computational Project for the Computer Simulation of Condensed Phases (CCP5).
+
+DL_POLY Classic can be executed as a serial or parallel application. The code achieves parallelisation using the Replicated Data strategy, which is suitable for homogeneous, distributed-memory, parallel computers. The code is useful for simulations of up to 30,000 atoms with good parallel performance on up to 100 processors, though in some circumstances it can exceed or fail to reach these limits.
+
+
+Example: DL_POLY simulation of DNA in water
+
+The copyright to the software is the property of the Science & Technology Facilities Council (STFC) and the code is made available under the BSD Licence, which permits open access to the source. No registration is required to obtain the software and no support of any kind is offered or implied. Advice on using all DL_POLY packages may be obtained from the DL_POLY Online Forum. A full description of DL_POLY Classic may be obtained from the DL_POLY Classic User Manual (PDF)
+
+
+
+Example: DL_POLY simulation of an alkali silicate glass
+
+Important DL_POLY Classic is distinct from the package known as DL_POLY, which is also available from Daresbury Laboratory as DL_POLY_4. The DL_POLY Classic licence does not apply to DL_POLY_4.
+Download Instructions
+
+The DL_POLY Classic source code is obtained from CCPForge as follows:
+
+    Access CCPForge with a browser.
+    Click on the menu item Projects at the top of the page.
+    Scroll down until you find the entry point for DL_POLY Classic and click to select it.
+    From the menu on the left hand side of the page select Releases.
+    Scroll down the new page until you see the entry dl_poly_classic1.x (where x is a number) in column 1.
+    Select the file dl_class_1.x.tar.gz from the entry in the fourth column of the same line.
+    Choose the option to save the file to your machine (put it somewhere you will find it afterwards!)
+    You now have a copy of the DL_POLY Classic software. 
+
+Notice that CCPForge also has all the data for the DL_POLY Classic test cases that you can download in the same manner. The files have names TESTnn.tar.gz, where nn is a two-digit number.
+
+cp build/MakePAR source
+cd source
+
+SHELL=/bin/bash
+CC = pgcc
+copper:
+        $(MAKE) LD="ftn -o" \
+        LDFLAGS="-Mipa=fast,inline" \
+        FC="ftn -c" \
+        FCFLAGS="-fastsse -O3 -Mipa=fast,inline" \
+        EX=$(EX) BINROOT=$(BINROOT) $(TYPE)
+
+See USRMAN.pdf
+Section 3.2
+
+make LD="ftn -o" \
+	LDFLAGS="-Mipa=fast,inline" \
+	FC="ftn -c" \
+	FCFLAGS="-fastsse -O3 -Mipa=fast,inline" \
+	EX=DLPOLY.X BINROOT=../execute par
+make[1]: Entering directory `/lustre/usr/local/u/scheinin/DL_POLY_CLASSIC/src/dl_class_1.9/source'
+/bin/sh: line 0: test: too many arguments
+ftn -c  parse_module.f
+ftn -c  setup_module.f
+ftn -c  error_module.f
+
+"make copper" succeeded
+still need to read 3.2 concerning Java GUI
+
+The user should search for the following keys in the code: [etc.]
+not practical.  Where to search?
+
+/bin/sh: line 0: test: too many arguments
+Makefile:	@if test $(FC) = "undefined";\

@@ -1,0 +1,106 @@
+
+module list
+ 13) pgi/9.0.4
+ 14) xt-libsci/10.4.0
+ 15) xt-mpt/3.5.0
+ 16) xt-pe/2.2.41A_PS05
+ 18) PrgEnv-pgi/2.2.41A_PS05
+ 21) xtpe-barcelona
+
+export CXX=CC
+export CC=cc
+export FC=ftn
+export F77=ftn
+export F90=ftn
+
+export TMPDIR=${WORKDIR}/tmp
+
+Below for ncarg-4.4.1
+cd /usr/local/usp/hdf4/4.2r4/src/HDF4.2r4
+ ./configure --prefix=/usr/local/usp/hdf4/4.2r4 \
+  --with-szlib=/usr/local/usp/szip/2.1-cnl
+Above for ncarg-4.4.1
+Below for ncarg-5.1.0 with NCL
+cd /usr/local/usp/hdf4/4.2r4--nonetcdf/src/HDF4.2r4
+ ./configure --prefix=/usr/local/usp/hdf4/4.2r4-nonetcdf \
+  --with-szlib=/usr/local/usp/szip/2.1-cnl \
+  --disable-netcdf
+Above for ncarg-5.1.0 with NCL
+
+# Cannot build Fortran shared library (intrinsic in the configure file,
+# independent of platform) so only static is built.
+
+For version with netcdf
+                       Configure Summary
+                       =================
+
+Compiling Options:
+------------------
+               Compilation Mode:  Default
+                     C Compiler:  cc
+                         CFLAGS:   -fPIC -O
+                       CPPFLAGS:  -I/usr/include/rpc  -I/usr/local/usp/szip/2.1-cnl/include -DBIG_LONGS -DSWAP 
+                        LDFLAGS:   -L/usr/local/usp/szip/2.1-cnl/lib
+               Shared Libraries:  no
+               Static Libraries:  yes
+
+Languages:
+----------
+                        Fortran:  Yes
+               Fortran Compiler:  ftn
+                         FFLAGS:   -fPIC 
+
+Features:
+---------
+               SZIP compression:  enabled with encoder
+
+HDF support for NetCDF-3 APIs:
+------------------------------
+                    HDF4-NetCDF:  Yes
+End of Configure Summary for version with netcdf
+
+For version without netcdf
+                       Configure Summary
+                       =================
+
+Compiling Options:
+------------------
+               Compilation Mode:  Default
+                     C Compiler:  cc
+                         CFLAGS:   -fPIC -O
+                       CPPFLAGS:  -I/usr/include/rpc  -I/usr/local/usp/szip/2.1-cnl/include -DBIG_LONGS -DSWAP 
+                        LDFLAGS:   -L/usr/local/usp/szip/2.1-cnl/lib
+               Shared Libraries:  no
+               Static Libraries:  yes
+
+Languages:
+----------
+                        Fortran:  Yes
+               Fortran Compiler:  ftn
+                         FFLAGS:   -fPIC 
+
+Features:
+---------
+               SZIP compression:  enabled with encoder
+
+HDF support for NetCDF-3 APIs:
+------------------------------
+                    HDF4-NetCDF:  No
+End of Configure Summary for version without netcdf
+
+make
+make check 2>&1 | tee check.log
+# Passed
+make install
+make clean
+
+# Also, very important, NCARG sometimes looks for files "hdf.h"
+# and sometimes <hdf/hdf.h> so need to put include files into
+# subdirectory hdf/ and need to have both levels in list
+# of include directories during compilation.
+
+cd /usr/local/usp/hdf4/4.2r4[-nonetcdf]
+mv include hdf
+mkdir include
+mv hdf include
+
