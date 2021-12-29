@@ -97,20 +97,20 @@ for c in ${lConfig[@]}; do
               spack config blame ${c} >> ${myFile}
 done
 
-export test_dir="${SPACK_ROOT}/topa"
-if [ -d "${test_dir}" ]; then
+export test_dir="topa"
+if [ -d "${SPACK_ROOT}/${test_dir}" ]; then
     export  dirTopa="${dirTarget}/${test_dir}"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
     new_step "copy ${test_dir} files"
-        echo "rsync -vauh ${test_dir} ${dirTopa}"
-              rsync -vauh ${test_dir} ${dirTopa}
+        echo "rsync -vauh ${SPACK_ROOT}/${test_dir} ${dirTopa}"
+              rsync -vauh ${SPACK_ROOT}/${test_dir} ${dirTopa}
 fi
 
-export test_dir="${SPACK_ROOT}/dantopa"
-if [ -d "${test_dir}" ]; then
+export test_dir="dantopa"
+if [ -d "${SPACK_ROOT}/${test_dir}" ]; then
     export  dirTopa="${dirTarget}/${test_dir}"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
     new_step "copy ${test_dir} files"
-        echo "rsync -vauh ${test_dir} ${dirTopa}"
-              rsync -vauh ${test_dir} ${dirTopa}
+        echo "rsync -vauh ${SPACK_ROOT}/${test_dir} ${dirTopa}"
+              rsync -vauh ${SPACK_ROOT}/${test_dir} ${dirTopa}
 fi
 
 # new_step "copy .spack *.yaml files"
