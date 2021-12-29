@@ -94,7 +94,7 @@ for c in ${lConfig[@]}; do
     myFile="${dirConfigurations}/spack-config-blame-${c}.txt"
     file_header "${my File}"
     sub_step "spack config blame ${c} >> ${myFile}"
-              spack config blame ${c}  > ${myFile}
+              spack config blame ${c} >> ${myFile}
 done
 
 export test_dir="${SPACK_ROOT}/topa"
