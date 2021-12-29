@@ -1,0 +1,44 @@
+AutotoolsPackage:   libelf
+
+Description:
+    libelf lets you read, modify or create ELF object files in an
+    architecture-independent way. The library takes care of size and endian
+    issues, e.g. you can process a file for SPARC processors on an Intel-
+    based system. Note: libelf is no longer maintained and packages that
+    depend on libelf should migrate to elfutils.
+
+Homepage: https://directory.fsf.org/wiki/Libelf
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    0.8.13    https://fossies.org/linux/misc/old/libelf-0.8.13.tar.gz
+
+Safe versions:  
+    0.8.13    https://fossies.org/linux/misc/old/libelf-0.8.13.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    None
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    gnuconfig
+
+Link Dependencies:
+    None
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    libelf provides elf@0
+

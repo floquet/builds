@@ -99,7 +99,7 @@ done
 
 export test_dir="${SPACK_ROOT}/topa"
 if [ -d "${test_dir}" ]; then
-    export  dirTopa="${test_dir}"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
+    export  dirTopa="${dirTarget}/${test_dir}"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
     new_step "copy ${test_dir} files"
         echo "rsync -vauh ${test_dir} ${dirTopa}"
               rsync -vauh ${test_dir} ${dirTopa}
@@ -107,7 +107,7 @@ fi
 
 export test_dir="${SPACK_ROOT}/dantopa"
 if [ -d "${test_dir}" ]; then
-    export  dirTopa="${test_dir}"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
+    export  dirTopa="${dirTarget}/${test_dir}"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
     new_step "copy ${test_dir} files"
         echo "rsync -vauh ${test_dir} ${dirTopa}"
               rsync -vauh ${test_dir} ${dirTopa}

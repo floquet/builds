@@ -37,3 +37,42 @@ modules:
     lmod:
       hierarchy:
       - mpi
+created by /Users/dantopa/ at Tue Dec 28 21:55:08 MST 2021
+
+${SPACK_ROOT} = /Volumes/spacktivity/spack
+
+uname -a:
+Darwin Xiuhcoatl.local 21.2.0 Darwin Kernel Version 21.2.0: Sun Nov 28 20:28:54 PST 2021; root:xnu-8019.61.5~1/RELEASE_X86_64 x86_64
+
+modules:
+  prefix_inspections:
+    lib:
+    - DYLD_FALLBACK_LIBRARY_PATH
+    lib64:
+    - DYLD_FALLBACK_LIBRARY_PATH
+    bin:
+    - PATH
+    man:
+    - MANPATH
+    share/man:
+    - MANPATH
+    share/aclocal:
+    - ACLOCAL_PATH
+    lib/pkgconfig:
+    - PKG_CONFIG_PATH
+    lib64/pkgconfig:
+    - PKG_CONFIG_PATH
+    share/pkgconfig:
+    - PKG_CONFIG_PATH
+    ? ''
+    : - CMAKE_PREFIX_PATH
+
+  # These are configurations for the module set named "default"
+  default:
+    enable:
+    - tcl
+
+    # Default configurations if lmod is enabled
+    lmod:
+      hierarchy:
+      - mpi

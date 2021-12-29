@@ -1,0 +1,5 @@
+Sat Dec 18 16:27:46 MST 2021
+spack info libelf > /Volumes/spacktivity/spack/topa/info/libelf.txt &
+spack install libelf gcc@11.2.0 > /libelf.txt &
+spack spec libelf % gcc@11.2.0 arch=darwin-monterey-skylake > /Volumes/spacktivity/spack/topa/spec/libelf-gcc@11.2.0-python@3.8.12-darwin-monterey-skylake.txt &
+spack spec -y libelf % gcc@11.2.0 arch=darwin-monterey-skylake > /Volumes/spacktivity/spack/topa/spec/libelf-gcc@11.2.0-python@3.8.12-darwin-monterey-skylake.yaml &

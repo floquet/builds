@@ -1,0 +1,958 @@
+spec:
+  _meta:
+    version: 2
+  nodes:
+  - name: gcc
+    version: 11.2.0
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      binutils: false
+      bootstrap: true
+      graphite: false
+      languages:
+      - c
+      - c++
+      - fortran
+      nvptx: false
+      patches:
+      - ecc5ac43951b34cbc5db15f585b4e704c42e2e487f9ed4c24fadef3f3857930b
+      piclibs: false
+      strip: false
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    patches:
+    - ecc5ac43951b34cbc5db15f585b4e704c42e2e487f9ed4c24fadef3f3857930b
+    dependencies:
+    - name: diffutils
+      build_hash: kvefdcfavs54mac3qvarf4fycv2evrp7
+      type:
+      - build
+    - name: gmp
+      build_hash: 5owsaovoaxqo2ncdhycsmnucw4atdkuv
+      type:
+      - build
+      - link
+    - name: libiconv
+      build_hash: gkah7yuccjmmlkgfmngz75syb66mpz4u
+      type:
+      - build
+      - link
+    - name: mpc
+      build_hash: viu6nizhlpipvr376cdc4j2djpe72z7x
+      type:
+      - build
+      - link
+    - name: mpfr
+      build_hash: rpyrputohsoephzqbiu4pt4e2x4tdnr3
+      type:
+      - build
+      - link
+    - name: zlib
+      build_hash: 5sglepztstj4y2twth25h4hqkjsbz7ze
+      type:
+      - build
+      - link
+    - name: zstd
+      build_hash: raahagf75z4kjvkwc35mw5xmqhk6u66m
+      type:
+      - build
+      - link
+    hash: bbrexdm7slomembl77qek2q5qhsgoyet
+    full_hash: wte36szilbz4nltcxpp2w6g5a4cxj7v5
+    build_hash: fwrqfly754n3k7z5xaw2sr5x2p2cknec
+  - name: diffutils
+    version: '3.8'
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    dependencies:
+    - name: libiconv
+      build_hash: gkah7yuccjmmlkgfmngz75syb66mpz4u
+      type:
+      - build
+      - link
+    hash: l4cenfhpfuxauccppunzjrct4u5n634g
+    full_hash: 2ckcx4s5eqoji775egz3r3ljiqysoufp
+    build_hash: kvefdcfavs54mac3qvarf4fycv2evrp7
+  - name: libiconv
+    version: '1.16'
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      libs:
+      - shared
+      - static
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    hash: gkah7yuccjmmlkgfmngz75syb66mpz4u
+    full_hash: 7fdm4vwi46fpzb6f36zfe7rxgbf4l5zc
+    build_hash: gkah7yuccjmmlkgfmngz75syb66mpz4u
+  - name: gmp
+    version: 6.2.1
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    dependencies:
+    - name: autoconf
+      build_hash: 5tbkmgrusijw5azdvxaimg66se644fi2
+      type:
+      - build
+    - name: automake
+      build_hash: k3t3cwnysu65jqool3p3uq5wkwubosh6
+      type:
+      - build
+    - name: libtool
+      build_hash: tfdgslwufpx4elmdurdps4bjtwzmspro
+      type:
+      - build
+    - name: m4
+      build_hash: bextgfz5zb66xw2bone5n7dt3gf6bbp4
+      type:
+      - build
+    hash: 5gltld4bx4u5uzuyswzh4osq2ze2soe3
+    full_hash: uexi32d3jln2ih4ryf4pkorxo5to5n7j
+    build_hash: 5owsaovoaxqo2ncdhycsmnucw4atdkuv
+  - name: autoconf
+    version: '2.69'
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      patches:
+      - 35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2
+      - 7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7
+      - a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    patches:
+    - 7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7
+    - 35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2
+    - a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
+    dependencies:
+    - name: m4
+      build_hash: bextgfz5zb66xw2bone5n7dt3gf6bbp4
+      type:
+      - build
+      - run
+    - name: perl
+      build_hash: 7u2vnpghuta2umjk7emuartiu5vgzs4u
+      type:
+      - build
+      - run
+    hash: 7kvkqp3ppjeofluhpvhlewb6znkwnyot
+    full_hash: bl5cskdhoxn4nrnf3oor7w7xldla64dx
+    build_hash: 5tbkmgrusijw5azdvxaimg66se644fi2
+  - name: m4
+    version: 1.4.19
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      patches:
+      - 9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573
+      - bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89
+      sigsegv: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    patches:
+    - bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89
+    - 9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573
+    dependencies:
+    - name: libsigsegv
+      build_hash: psfgdivee3d2u6tjedtlzzhqisyjfdej
+      type:
+      - build
+      - link
+    hash: xem3enz7uadc667wscs6g2hjw2ixn363
+    full_hash: 4jmfqm2e6a4vhzt7j7qac6vzbguayk25
+    build_hash: bextgfz5zb66xw2bone5n7dt3gf6bbp4
+  - name: libsigsegv
+    version: '2.13'
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    hash: psfgdivee3d2u6tjedtlzzhqisyjfdej
+    full_hash: d7wfsietmlp7aj5eymzzkhemnueht2sm
+    build_hash: psfgdivee3d2u6tjedtlzzhqisyjfdej
+  - name: perl
+    version: 5.34.0
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cpanm: true
+      shared: true
+      threads: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    external:
+      path: /opt/local
+      module:
+      extra_attributes: {}
+    hash: 7u2vnpghuta2umjk7emuartiu5vgzs4u
+    full_hash: u7cyame3eg5whme3l7jwafrj4oomx5j5
+    build_hash: 7u2vnpghuta2umjk7emuartiu5vgzs4u
+  - name: automake
+    version: 1.16.3
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    dependencies:
+    - name: autoconf
+      build_hash: 5tbkmgrusijw5azdvxaimg66se644fi2
+      type:
+      - build
+    - name: perl
+      build_hash: 7u2vnpghuta2umjk7emuartiu5vgzs4u
+      type:
+      - build
+      - run
+    hash: mf54uhyo5pkdimjgligzdxvhukrdxnix
+    full_hash: bdcgh4rojofjsms3r5zedqoc4pr3bixv
+    build_hash: k3t3cwnysu65jqool3p3uq5wkwubosh6
+  - name: libtool
+    version: 2.4.6
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    dependencies:
+    - name: m4
+      build_hash: bextgfz5zb66xw2bone5n7dt3gf6bbp4
+      type:
+      - build
+    hash: ng7mp33pk4ykpx77uoe2bpzciz5ohkrn
+    full_hash: xyqthuavska7zwufofpde6e2mzumpo6i
+    build_hash: tfdgslwufpx4elmdurdps4bjtwzmspro
+  - name: mpc
+    version: 1.1.0
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    dependencies:
+    - name: gmp
+      build_hash: 5owsaovoaxqo2ncdhycsmnucw4atdkuv
+      type:
+      - build
+      - link
+    - name: mpfr
+      build_hash: rpyrputohsoephzqbiu4pt4e2x4tdnr3
+      type:
+      - build
+      - link
+    hash: jz43fcl6ymwvjm4ttypxtdtslzlommeq
+    full_hash: tqmwrq5q2abxmr4dwwkqeyqt5d3sxm2l
+    build_hash: viu6nizhlpipvr376cdc4j2djpe72z7x
+  - name: mpfr
+    version: 4.1.0
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    dependencies:
+    - name: autoconf
+      build_hash: 5tbkmgrusijw5azdvxaimg66se644fi2
+      type:
+      - build
+    - name: autoconf-archive
+      build_hash: cxgsphdetf76zy5zwozdcwq3ratj27ms
+      type:
+      - build
+    - name: automake
+      build_hash: k3t3cwnysu65jqool3p3uq5wkwubosh6
+      type:
+      - build
+    - name: gmp
+      build_hash: 5owsaovoaxqo2ncdhycsmnucw4atdkuv
+      type:
+      - build
+      - link
+    - name: libtool
+      build_hash: tfdgslwufpx4elmdurdps4bjtwzmspro
+      type:
+      - build
+    - name: m4
+      build_hash: bextgfz5zb66xw2bone5n7dt3gf6bbp4
+      type:
+      - build
+    - name: texinfo
+      build_hash: 37kawfepoaulbped4wh3if5xsurcuk2n
+      type:
+      - build
+    hash: zb3a3syunchwd25ubv334t5k36jkhniz
+    full_hash: kys5lxtck2uwgxuv35ga2xhbc4ok7lx5
+    build_hash: rpyrputohsoephzqbiu4pt4e2x4tdnr3
+  - name: autoconf-archive
+    version: 2019.01.06
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    hash: cxgsphdetf76zy5zwozdcwq3ratj27ms
+    full_hash: ldr7t6onr7hyhkxzdvogwl25s3ejz5wx
+    build_hash: cxgsphdetf76zy5zwozdcwq3ratj27ms
+  - name: texinfo
+    version: '6.5'
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      patches:
+      - 12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a
+      - 1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    patches:
+    - 1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1
+    - 12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a
+    dependencies:
+    - name: perl
+      build_hash: 7u2vnpghuta2umjk7emuartiu5vgzs4u
+      type:
+      - build
+      - link
+    hash: yw46ltais4zy5w5a3qkj7wtxgg3rrzxp
+    full_hash: keltz6ff5ivuprzz7zdvuf7phiid66pa
+    build_hash: 37kawfepoaulbped4wh3if5xsurcuk2n
+  - name: zlib
+    version: 1.2.11
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      optimize: true
+      pic: true
+      shared: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    hash: 5sglepztstj4y2twth25h4hqkjsbz7ze
+    full_hash: rercju4ad2hlniguoadlh4lqajm3nozv
+    build_hash: 5sglepztstj4y2twth25h4hqkjsbz7ze
+  - name: zstd
+    version: 1.5.0
+    arch:
+      platform: darwin
+      platform_os: monterey
+      target:
+        name: skylake
+        vendor: GenuineIntel
+        features:
+        - adx
+        - aes
+        - avx
+        - avx2
+        - bmi1
+        - bmi2
+        - clflushopt
+        - f16c
+        - fma
+        - mmx
+        - movbe
+        - pclmulqdq
+        - popcnt
+        - rdrand
+        - rdseed
+        - sse
+        - sse2
+        - sse4_1
+        - sse4_2
+        - ssse3
+        - xsavec
+        - xsaveopt
+        generation: 0
+        parents:
+        - broadwell
+    compiler:
+      name: gcc
+      version: 11.2.0
+    namespace: builtin
+    parameters:
+      programs: false
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    hash: raahagf75z4kjvkwc35mw5xmqhk6u66m
+    full_hash: 4yeaiphjsa526owpsdjelciezmggyieu
+    build_hash: raahagf75z4kjvkwc35mw5xmqhk6u66m
