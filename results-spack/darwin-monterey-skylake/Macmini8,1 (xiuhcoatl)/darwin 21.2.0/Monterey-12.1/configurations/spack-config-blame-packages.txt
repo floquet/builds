@@ -72,3 +72,77 @@ Darwin Xiuhcoatl.local 21.2.0 Darwin Kernel Version 21.2.0: Sun Nov 28 20:28:54 
 /Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:50             externals:
 /Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:51             - spec: perl@5.34.0
 /Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:52               prefix: /opt/local
+created by /Users/dantopa/ at Tue Dec 28 22:11:34 MST 2021
+
+${SPACK_ROOT} = /Volumes/spacktivity/spack
+
+uname -a:
+Darwin Xiuhcoatl.local 21.2.0 Darwin Kernel Version 21.2.0: Sun Nov 28 20:28:54 PST 2021; root:xnu-8019.61.5~1/RELEASE_X86_64 x86_64
+
+---                                                                    packages:
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:17    all:
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:3              compiler: [apple-clang, clang, gcc, intel, pgi, xl, nag, fj, aocc]
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:23      providers:
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:9                elf: [libelf, elfutils]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:12               fuse: [macfuse, libfuse]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:39               unwind: [apple-libunwind, libunwind]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:40               uuid: [apple-libuuid, util-linux-uuid, libuuid]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:5                awk: [gawk]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:6                blas: [openblas, amdblis]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:7                D: [ldc]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:8                daal: [intel-daal]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:10               fftw-api: [fftw, amdfftw]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:11               flame: [libflame, amdlibflame]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:13               gl: [mesa+opengl, mesa18, opengl]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:14               glu: [mesa-glu, openglu]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:15               glx: [mesa+glx, mesa18+glx, opengl]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:16               golang: [gcc]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:17               iconv: [libiconv]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:18               ipp: [intel-ipp]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:19               java: [openjdk, jdk, ibm-java]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:20               jpeg: [libjpeg-turbo, libjpeg]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:21               lapack: [openblas, amdlibflame]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:22               lua-lang: [lua, lua-luajit]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:23               mariadb-client: [mariadb-c-client, mariadb]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:24               mkl: [intel-mkl]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:25               mpe: [mpe2]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:26               mpi: [openmpi, mpich]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:27               mysql-client: [mysql, mariadb-c-client]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:28               opencl: [pocl]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:29               onedal: [intel-oneapi-dal]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:30               osmesa: [mesa+osmesa, mesa18+osmesa]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:31               pbs: [openpbs, torque]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:32               pil: [py-pillow]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:33               pkgconfig: [pkgconf, pkg-config]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:34               rpc: [libtirpc]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:35               scalapack: [netlib-scalapack, amdscalapack]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:36               sycl: [hipsycl]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:37               szip: [libaec, libszip]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:38               tbb: [intel-tbb]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:41               xxd: [xxd-standalone, vim]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:42               yacc: [bison, byacc]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:43               ziglang: [zig]
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:44             permissions:
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:45               read: world
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:46               write: user
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:28    apple-libunwind:
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:29      buildable: False
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:30      externals:
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:30      
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:30      # Apple bundles libunwind version 35.3 with macOS 10.9 and later,
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:30      # although the version number used here isn't critical
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:33      - spec: apple-libunwind@35.3
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:34        prefix: /usr
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:35    apple-libuuid:
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:36      buildable: False
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:37      externals:
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:37      
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:37      # Apple bundles libuuid in libsystem_c version 1353.100.2,
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:37      # although the version number used here isn't critical
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:40      - spec: apple-libuuid@1353.100.2
+/Volumes/spacktivity/spack/etc/spack/defaults/darwin/packages.yaml:41        prefix: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:48           perl:
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:49             buildable: False
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:50             externals:
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:51             - spec: perl@5.34.0
+/Volumes/spacktivity/spack/etc/spack/defaults/packages.yaml:52               prefix: /opt/local

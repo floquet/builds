@@ -98,7 +98,7 @@ for c in ${lConfig[@]}; do
 done
 
 export read_dir="topa"
-if [ -d "${SPACK_ROOT}/${test_dir}" ]; then
+if [ -d "${SPACK_ROOT}/${read_dir}" ]; then
     export  write_dir="${dirTarget}/${read_dir}"; mkdir -p ${write_dir}; echo "\${write_dir} = ${write_dir}"
     new_step "copy ${read_dir} files"
         echo "rsync -vauh ${SPACK_ROOT}/${read_dir} ${dirTopa}"
