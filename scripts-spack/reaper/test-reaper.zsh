@@ -90,7 +90,7 @@ done
 
 new_step "Sweep ${#lConfig[@]} configuration properties with blame"
 export clicker=0
-for c in ${lConfig}; do
+for c in ${lConfig[@]}; do
     myFile="${dirConfigurations}/spack-config-blame-${c}.txt"
     file_header "${my File}"
     sub_step "spack config blame ${c} >> ${myFile}"
