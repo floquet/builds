@@ -22,13 +22,13 @@ new_step "Define directory structure"
     export  dirTarget="${repoTarget}/${arch}/${dir_config}"
 
     export           dirYamls="${dirTarget}/yamls"
-    export        dirDotSpack="${dirTarget}/dotspack"
+    #export        dirDotSpack="${dirTarget}/dotspack"
     export        dirInstalls="${dirTarget}/installs"
     export       dirCompilers="${dirTarget}/compilers"
     export  dirConfigurations="${dirTarget}/configurations"
 
     echo           "${dirYamls} = \${dirYamls}"
-    echo        "${dirDotSpack} = \${dirDotSpack}"
+    #echo        "${dirDotSpack} = \${dirDotSpack}"
     echo        "${dirInstalls} = \${dirInstalls}"
     echo       "${dirCompilers} = \${dirCompilers}"
     echo  "${dirConfigurations} = \${dirConfigurations}"
@@ -41,7 +41,7 @@ fi
 
 new_step "mkdir directory structure"
     mkdir -p ${dirYamls}
-    mkdir -p ${dirDotSpack}
+    #mkdir -p ${dirDotSpack}
     mkdir -p ${dirInstalls}
     mkdir -p ${dirCompilers}
     mkdir -p ${dirConfigurations}
