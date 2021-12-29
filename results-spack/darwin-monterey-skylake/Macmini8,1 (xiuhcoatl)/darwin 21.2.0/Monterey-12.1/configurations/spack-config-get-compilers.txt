@@ -118,3 +118,63 @@ compilers:
     modules: []
     environment: {}
     extra_rpaths: []
+created by /Users/dantopa/ at Tue Dec 28 22:13:37 MST 2021
+
+${SPACK_ROOT} = /Volumes/spacktivity/spack
+
+uname -a:
+Darwin Xiuhcoatl.local 21.2.0 Darwin Kernel Version 21.2.0: Sun Nov 28 20:28:54 PST 2021; root:xnu-8019.61.5~1/RELEASE_X86_64 x86_64
+
+compilers:
+- compiler:
+    spec: clang@13.0.0
+    paths:
+      cc: /opt/local/bin/clang-mp-13
+      cxx: /opt/local/bin/clang++-mp-13
+      f77: null
+      fc: null
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@11.2.0
+    paths:
+      cc: /opt/local/bin/gcc
+      cxx: /opt/local/bin/g++
+      f77: /opt/local/bin/gfortran
+      fc: /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: nag@6.2
+    paths:
+      cc: null
+      cxx: null
+      f77: /usr/local/bin/nagfor
+      fc: /usr/local/bin/nagfor
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: apple-clang@13.0.0
+    paths:
+      cc: /usr/bin/clang
+      cxx: /usr/bin/clang++
+      f77: /opt/local/bin/gfortran
+      fc: /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
