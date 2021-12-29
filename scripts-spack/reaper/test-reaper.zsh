@@ -79,6 +79,7 @@ for o in ${lOptions[@]}; do
 done
 
 new_step "Sweep ${#lConfig[@]} configuration properties with get"
+export clicker=0
 for c in ${lConfig[@]}; do
     #sub_step "working on get ${c}..."
     myFile="${dirConfigurations}/spack-config-get-${c}.txt"
@@ -88,33 +89,35 @@ for c in ${lConfig[@]}; do
 done
 
 new_step "Sweep ${#lConfig[@]} configuration properties with blame"
+export clicker=0
 for c in ${lConfig}; do
-    echo "working on blame ${c}..."
     myFile="${dirConfigurations}/spack-config-blame-${c}.txt"
     file_header "${myFile}"
-    echo "spack config blame ${c}" >> ${myFile}
-          spack config blame ${c}  >> ${myFile}
+    sub_step "spack config blame ${c} >> ${myFile}"
+              spack config blame ${c}  > ${myFile}
 done
 
-if [ -d "${SPACK_ROOT}/topa" ]; then
-    export  dirTopa="${dirTarget}/topa"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
-    new_step "copy topa files"
-        echo "rsync -vauh ${SPACK_ROOT}/topa ${dirTopa}"
-              rsync -vauh ${SPACK_ROOT}/topa ${dirTopa}
+export test_dir="${SPACK_ROOT}/topa"
+if [ -d "${test_dir}" ]; then
+    export  dirTopa="${test_dir}"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
+    new_step "copy ${test_dir} files"
+        echo "rsync -vauh ${test_dir} ${dirTopa}"
+              rsync -vauh ${test_dir} ${dirTopa}
 fi
 
-if [ -d "${SPACK_ROOT}/dantopa" ]; then
-    export  dirTopa="${dirTarget}/dantopa"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
-    new_step "copy dantopa files"
-        echo "rsync -vauh ${SPACK_ROOT}/topa ${dirTopa}"
-              rsync -vauh ${SPACK_ROOT}/topa ${dirTopa}
+export test_dir="${SPACK_ROOT}/dantopa"
+if [ -d "${test_dir}" ]; then
+    export  dirTopa="${test_dir}"; mkdir -p ${dirTopa}; echo "${dirTopa} = \${dirTopa}"
+    new_step "copy ${test_dir} files"
+        echo "rsync -vauh ${test_dir} ${dirTopa}"
+              rsync -vauh ${test_dir} ${dirTopa}
 fi
 
-new_step "copy .spack files"
-    echo "rsync -vauh ~/.spack ${dirDotSpack}"
-          rsync -vauh ~/.spack ${dirDotSpack}
+# new_step "copy .spack *.yaml files"
+#     echo "rsync -vauh ~/.spack ${dirDotSpack}"
+#           rsync -vauh ~/.spack ${dirDotSpack}
 
-new_step "copy yaml files"
+new_step "copy .spack *.yaml files"
 
     cd ~/.spack
     mkdir -p ${dirYamls}/.spack
