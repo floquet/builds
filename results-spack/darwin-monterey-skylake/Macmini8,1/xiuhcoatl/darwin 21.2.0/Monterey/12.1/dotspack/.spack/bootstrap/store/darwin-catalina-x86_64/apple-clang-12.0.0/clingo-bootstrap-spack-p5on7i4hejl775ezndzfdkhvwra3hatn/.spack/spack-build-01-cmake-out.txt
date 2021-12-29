@@ -1,0 +1,31 @@
+==> clingo-bootstrap: Executing phase: 'cmake'
+==> [2021-07-23-13:27:11.189189] '/Users/runner/hostedtoolcache/Python/3.8.11/x64/bin/python3.8' '-c' 'from distutils.sysconfig import get_python_inc; print(get_python_inc(plat_specific=False, prefix=None))'
+==> [2021-07-23-13:27:11.240248] 'cmake' '-G' 'Unix Makefiles' '-DCMAKE_INSTALL_PREFIX:STRING=/Users/runner/work/spack-bootstrap-mirrors/spack-bootstrap-mirrors/spack-src/opt/spack/darwin-catalina-x86_64/apple-clang-12.0.0/clingo-bootstrap-spack-p5on7i4hejl775ezndzfdkhvwra3hatn' '-DCMAKE_BUILD_TYPE:STRING=Release' '-DCMAKE_INTERPROCEDURAL_OPTIMIZATION:BOOL=OFF' '-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON' '-DCMAKE_FIND_FRAMEWORK:STRING=LAST' '-DCMAKE_FIND_APPBUNDLE:STRING=LAST' '-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=OFF' '-DCMAKE_INSTALL_RPATH:STRING=/Users/runner/work/spack-bootstrap-mirrors/spack-bootstrap-mirrors/spack-src/opt/spack/darwin-catalina-x86_64/apple-clang-12.0.0/clingo-bootstrap-spack-p5on7i4hejl775ezndzfdkhvwra3hatn/lib;/Users/runner/work/spack-bootstrap-mirrors/spack-bootstrap-mirrors/spack-src/opt/spack/darwin-catalina-x86_64/apple-clang-12.0.0/clingo-bootstrap-spack-p5on7i4hejl775ezndzfdkhvwra3hatn/lib64;/Users/runner/hostedtoolcache/Python/3.8.11/x64/lib' '-DCMAKE_PREFIX_PATH:STRING=/Users/runner/work/spack-bootstrap-mirrors/spack-bootstrap-mirrors/spack-src/opt/spack/darwin-catalina-x86_64/apple-clang-12.0.0/re2c-1.2.1-7eg6bjrpxpiackuur7ruknhsbjz2wikq;/Users/runner/hostedtoolcache/Python/3.8.11/x64;/usr/local/opt/bison' '-DCLINGO_REQUIRE_PYTHON=ON' '-DCLINGO_BUILD_WITH_PYTHON=ON' '-DPYCLINGO_USER_INSTALL=OFF' '-DPYCLINGO_USE_INSTALL_PREFIX=ON' '-DCLINGO_BUILD_WITH_LUA=OFF' '-DCLINGO_BUILD_PY_SHARED:STRING=OFF' '-DPython_EXECUTABLE:STRING=/Users/runner/hostedtoolcache/Python/3.8.11/x64/bin/python3.8' '-DPython_INCLUDE_DIR:STRING=/Users/runner/hostedtoolcache/Python/3.8.11/x64/include/python3.8' '-DCLINGO_BUILD_APPS:STRING=OFF' '/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/runner/spack-stage/spack-stage-clingo-bootstrap-spack-p5on7i4hejl775ezndzfdkhvwra3hatn/spack-src'
+-- The C compiler identification is AppleClang 12.0.0.12000032
+-- The CXX compiler identification is AppleClang 12.0.0.12000032
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Users/runner/work/spack-bootstrap-mirrors/spack-bootstrap-mirrors/spack-src/lib/spack/env/clang/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Users/runner/work/spack-bootstrap-mirrors/spack-bootstrap-mirrors/spack-src/lib/spack/env/clang/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Python: /Users/runner/hostedtoolcache/Python/3.8.11/x64/bin/python3.8 (found version "3.8.11") found components: Interpreter Development Development.Module Development.Embed 
+-- Found BISON: /usr/local/opt/bison/bin/bison (found suitable version "3.7.6", minimum required is "2.5") 
+-- Found RE2C: /Users/runner/work/spack-bootstrap-mirrors/spack-bootstrap-mirrors/spack-src/opt/spack/darwin-catalina-x86_64/apple-clang-12.0.0/re2c-1.2.1-7eg6bjrpxpiackuur7ruknhsbjz2wikq/bin/re2c (found suitable version "0.102.1", minimum required is "0.13") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Performing Test CLASP_HAS_WORKING_LIBATOMIC
+-- Performing Test CLASP_HAS_WORKING_LIBATOMIC - Success
+-- Potassco is not installed - using local copy
+Doxygen disabled for Spack build.
+Doxygen disabled for Spack build.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/runner/spack-stage/spack-stage-clingo-bootstrap-spack-p5on7i4hejl775ezndzfdkhvwra3hatn/spack-build-p5on7i4

@@ -15,6 +15,12 @@ function new_step(){
     echo "Step ${counter}: ${1}"
 }
 
+function sub_step(){
+    clicker=$((clicker+1))
+    echo ""
+    echo "  ${counter}.${clicker}: ${1}"
+}
+
 # file header
 function file_header(){
     echo "created by ${HOME}/${BASH_SOURCE[0]} at $(date)" >> ${1}

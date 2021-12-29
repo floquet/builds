@@ -5,7 +5,7 @@ printf '%s\n' "$(date) $(tput bold)${HOME}/${BASH_SOURCE[0]}$(tput sgr0)"
 # requires spack initiation:
 # source modern-reaper.zsh
 
-source ${repo_build}/scripts-spack/reaper/header-reaper.sh
+source ${repo_build}/scripts-spack/reaper/header-reaper.zsh
 
 new_step "Mark initial directory"
     export dirStart="$(pwd)"
@@ -14,10 +14,12 @@ new_step "Define directory structure"
 #    export repoTarget="${repos}/github/astra-spack-mirror"
 #    export  dirTarget="${repoTarget}/${HOST}/${USER}/$(basename ${SPACK_ROOT})"
     export  spack_tag=$(echo "${SPACK_ROOT}" | sed 's:/:-:g' | cut -c 2-)
+    export       arch=$(spack arch)
     export repoTarget="${repo_build}/results-spack/"
     #export  dirTarget="${dir_spack}/${platform}/${machine}/${moniker}/${drive}/${owner}/${spack_tag}/${dist}/${release}"
     # ${vrepos}/github/build/darwin-monterey-skylake/${machine}/${moniker}/${os}/${dist}/${release}
-    export  dirTarget="${repoTarget}/${spack_tag}/${dir_config}"
+    #export  dirTarget="${repoTarget}/${arch}/${spack_tag}/${dir_config}"
+    export  dirTarget="${repoTarget}/${arch}/${dir_config}"
 
     export           dirYamls="${dirTarget}/yamls"
     export        dirDotSpack="${dirTarget}/dotspack"
@@ -36,6 +38,7 @@ if [ ! -z "$1" ]
     echo "No argument supplied: only check directory structure"
     exit 1
 fi
+
 new_step "mkdir directory structure"
     mkdir -p ${dirYamls}
     mkdir -p ${dirDotSpack}
@@ -44,7 +47,7 @@ new_step "mkdir directory structure"
     mkdir -p ${dirConfigurations}
 
 new_step "Define configuration properties"
-    export lConfig="config compilers packages mirrors modules repos"
+    declare -a lConfig=("config" "compilers" "packages" "mirrors" "modules" "repos")
     echo "\${lConfig} = ${lConfig}"
 
 new_step "compilers"
@@ -64,9 +67,11 @@ new_step "installs"
     echo "spack find --long --deps --show-full-compiler" >> ${myFile}
           spack find --long --deps --show-full-compiler  >> ${myFile}
 
-export lOptions="bootstrap explicit implicit json missing namespace only-missing paths variants unknown very-long"
-for o in ${lOptions}; do
-    echo "spack find ${o}..."
+export lOptions=("bootstrap" "explicit" "implicit" "json" "missing" "namespace" "only-missing" "paths" "variants" "unknown" "very-long")
+export clicker=0
+new_step "documenting ${#lOptions[@]} options for spack find..."
+for o in ${lOptions[@]}; do
+    sub_step "spack find ${o}..."
     myFile="${dirInstalls}/spack-find-${o}.txt"
     file_header "${myFile}"
     echo "spack find --${o}" >> ${myFile}
@@ -74,7 +79,7 @@ for o in ${lOptions}; do
 done
 
 new_step "Sweep configuration properties: get"
-for c in ${lConfig}; do
+for c in ${lConfig[@]}; do
     echo "working on get ${c}..."
     myFile="${dirConfigurations}/spack-config-get-${c}.txt"
     file_header "${myFile}"
@@ -125,9 +130,9 @@ new_step "copy yaml files"
 
 new_step "Add and commit to spack logger"
     cd ${repoTarget}
-    git add -A .
-    git commit -m "${ymd} ${spack_tag}"
-    git clean -d -f -x
+    # git add -A .
+    # git commit -m "${ymd} ${spack_tag}"
+    # git clean -d -f -x
     echo "repo at \${repoTarget} = ${repoTarget}"
 
 new_step "return home: cd ${dirStart}"
