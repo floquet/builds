@@ -1,0 +1,23 @@
+Input spec
+--------------------------------
+gcc%gcc@11.2.0 arch=darwin-monterey-skylake
+
+Concretized
+--------------------------------
+gcc@11.2.0%gcc@11.2.0~binutils+bootstrap~graphite~nvptx~piclibs~strip languages=c,c++,fortran patches=ecc5ac43951b34cbc5db15f585b4e704c42e2e487f9ed4c24fadef3f3857930b arch=darwin-monterey-skylake
+    ^diffutils@3.8%gcc@11.2.0 arch=darwin-monterey-skylake
+        ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=darwin-monterey-skylake
+    ^gmp@6.2.1%gcc@11.2.0 arch=darwin-monterey-skylake
+        ^autoconf@2.69%gcc@11.2.0 patches=35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2,7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7,a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee arch=darwin-monterey-skylake
+            ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89 arch=darwin-monterey-skylake
+                ^libsigsegv@2.13%gcc@11.2.0 arch=darwin-monterey-skylake
+            ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=darwin-monterey-skylake
+        ^automake@1.16.3%gcc@11.2.0 arch=darwin-monterey-skylake
+        ^libtool@2.4.6%gcc@11.2.0 arch=darwin-monterey-skylake
+    ^mpc@1.1.0%gcc@11.2.0 arch=darwin-monterey-skylake
+        ^mpfr@4.1.0%gcc@11.2.0 arch=darwin-monterey-skylake
+            ^autoconf-archive@2019.01.06%gcc@11.2.0 arch=darwin-monterey-skylake
+            ^texinfo@6.5%gcc@11.2.0 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=darwin-monterey-skylake
+    ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=darwin-monterey-skylake
+    ^zstd@1.5.0%gcc@11.2.0~programs arch=darwin-monterey-skylake
+

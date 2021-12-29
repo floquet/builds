@@ -23,7 +23,7 @@ function sub_step(){
 
 # file header
 function file_header(){
-    echo "created by ${HOME}/${BASH_SOURCE[0]} at $(date)" >> ${1}
+    echo "created by ${HOME}/${(%):-%N} at $(date)" >> ${1}
     echo ""                               >> ${1}
     echo "\${SPACK_ROOT} = ${SPACK_ROOT}" >> ${1}
     echo ""                               >> ${1}
