@@ -1,0 +1,74 @@
+created by /Users/dantopa/ at Tue Dec 28 21:47:15 MST 2021
+
+${SPACK_ROOT} = /Volumes/spacktivity/spack
+
+uname -a:
+Darwin Xiuhcoatl.local 21.2.0 Darwin Kernel Version 21.2.0: Sun Nov 28 20:28:54 PST 2021; root:xnu-8019.61.5~1/RELEASE_X86_64 x86_64
+
+packages:
+  all:
+    compiler: [apple-clang, clang, gcc, intel, pgi, xl, nag, fj, aocc]
+    providers:
+      elf: [libelf, elfutils]
+      fuse: [macfuse, libfuse]
+      unwind: [apple-libunwind, libunwind]
+      uuid: [apple-libuuid, util-linux-uuid, libuuid]
+      awk: [gawk]
+      blas: [openblas, amdblis]
+      D: [ldc]
+      daal: [intel-daal]
+      fftw-api: [fftw, amdfftw]
+      flame: [libflame, amdlibflame]
+      gl: [mesa+opengl, mesa18, opengl]
+      glu: [mesa-glu, openglu]
+      glx: [mesa+glx, mesa18+glx, opengl]
+      golang: [gcc]
+      iconv: [libiconv]
+      ipp: [intel-ipp]
+      java: [openjdk, jdk, ibm-java]
+      jpeg: [libjpeg-turbo, libjpeg]
+      lapack: [openblas, amdlibflame]
+      lua-lang: [lua, lua-luajit]
+      mariadb-client: [mariadb-c-client, mariadb]
+      mkl: [intel-mkl]
+      mpe: [mpe2]
+      mpi: [openmpi, mpich]
+      mysql-client: [mysql, mariadb-c-client]
+      opencl: [pocl]
+      onedal: [intel-oneapi-dal]
+      osmesa: [mesa+osmesa, mesa18+osmesa]
+      pbs: [openpbs, torque]
+      pil: [py-pillow]
+      pkgconfig: [pkgconf, pkg-config]
+      rpc: [libtirpc]
+      scalapack: [netlib-scalapack, amdscalapack]
+      sycl: [hipsycl]
+      szip: [libaec, libszip]
+      tbb: [intel-tbb]
+      xxd: [xxd-standalone, vim]
+      yacc: [bison, byacc]
+      ziglang: [zig]
+    permissions:
+      read: world
+      write: user
+  apple-libunwind:
+    buildable: false
+    externals:
+    
+    # Apple bundles libunwind version 35.3 with macOS 10.9 and later,
+    # although the version number used here isn't critical
+    - spec: apple-libunwind@35.3
+      prefix: /usr
+  apple-libuuid:
+    buildable: false
+    externals:
+    
+    # Apple bundles libuuid in libsystem_c version 1353.100.2,
+    # although the version number used here isn't critical
+    - spec: apple-libuuid@1353.100.2
+      prefix: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+  perl:
+    buildable: false
+    externals:
+    - spec: perl@5.34.0
+      prefix: /opt/local
