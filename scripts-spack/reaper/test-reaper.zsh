@@ -71,23 +71,23 @@ new_step "sweeping ${#lOptions[@]} options for spack find..."
 export lOptions=("bootstrap" "explicit" "implicit" "json" "missing" "namespace" "only-missing" "paths" "variants" "unknown" "very-long")
 export clicker=0
 for o in ${lOptions[@]}; do
-    sub_step "spack find ${o}..."
+    #sub_step "spack find ${o}..."
     myFile="${dirInstalls}/spack-find-${o}.txt"
     file_header "${myFile}"
-    echo "spack find --${o}" >> ${myFile}
-          spack find --${o}  >> ${myFile}
+    sub_step "spack find --${o} >> ${myFile}"
+              spack find --${o} >> ${myFile}
 done
 
-new_step "Sweep configuration properties: get"
+new_step "Sweep ${#lConfig[@]} configuration properties with get"
 for c in ${lConfig[@]}; do
-    echo "working on get ${c}..."
+    #sub_step "working on get ${c}..."
     myFile="${dirConfigurations}/spack-config-get-${c}.txt"
     file_header "${myFile}"
-    echo "spack config get ${c}" >> ${myFile}
-          spack config get ${c}  >> ${myFile}
+    sub_step "spack config get ${c} >> ${myFile}"
+              spack config get ${c}  >> ${myFile}
 done
 
-new_step "Sweep configuration properties: blame"
+new_step "Sweep ${#lConfig[@]} configuration properties with blame"
 for c in ${lConfig}; do
     echo "working on blame ${c}..."
     myFile="${dirConfigurations}/spack-config-blame-${c}.txt"
