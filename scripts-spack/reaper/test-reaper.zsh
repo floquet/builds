@@ -67,9 +67,9 @@ new_step "installs"
     echo "spack find --long --deps --show-full-compiler" >> ${myFile}
           spack find --long --deps --show-full-compiler  >> ${myFile}
 
+new_step "sweeping ${#lOptions[@]} options for spack find..."
 export lOptions=("bootstrap" "explicit" "implicit" "json" "missing" "namespace" "only-missing" "paths" "variants" "unknown" "very-long")
 export clicker=0
-new_step "documenting ${#lOptions[@]} options for spack find..."
 for o in ${lOptions[@]}; do
     sub_step "spack find ${o}..."
     myFile="${dirInstalls}/spack-find-${o}.txt"
