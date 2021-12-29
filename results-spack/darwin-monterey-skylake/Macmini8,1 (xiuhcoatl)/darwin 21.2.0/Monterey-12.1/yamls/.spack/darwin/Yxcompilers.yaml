@@ -1,0 +1,66 @@
+compilers:
+- compiler:
+    spec: gcc@9.4.0
+    paths:
+      cc: /Volumes/spacktivity/spack/opt/spack/darwin-monterey-skylake/gcc-11.2.0/gcc-9.4.0-dua2t6mzauz5qy3kcvjny3q5lrhnvle6/bin/gcc
+      cxx: /Volumes/spacktivity/spack/opt/spack/darwin-monterey-skylake/gcc-11.2.0/gcc-9.4.0-dua2t6mzauz5qy3kcvjny3q5lrhnvle6/bin/g++
+      f77: /Volumes/spacktivity/spack/opt/spack/darwin-monterey-skylake/gcc-11.2.0/gcc-9.4.0-dua2t6mzauz5qy3kcvjny3q5lrhnvle6/bin/gfortran
+      fc: /Volumes/spacktivity/spack/opt/spack/darwin-monterey-skylake/gcc-11.2.0/gcc-9.4.0-dua2t6mzauz5qy3kcvjny3q5lrhnvle6/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: apple-clang@13.0.0
+    paths:
+      cc:  /usr/bin/clang
+      cxx: /usr/bin/clang++
+      f77: /opt/local/bin/gfortran
+      fc:  /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: clang@13.0.0
+    paths:
+      cc: /opt/local/bin/clang-mp-13
+      cxx: /opt/local/bin/clang++-mp-13
+      f77: null
+      fc: null
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@11.2.0
+    paths:
+      cc: /opt/local/bin/gcc
+      cxx: /opt/local/bin/g++
+      f77: /opt/local/bin/gfortran
+      fc: /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: nag@6.2
+    paths:
+      cc: null
+      cxx: null
+      f77: /usr/local/bin/nagfor
+      fc: /usr/local/bin/nagfor
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
