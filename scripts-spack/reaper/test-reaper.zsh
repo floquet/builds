@@ -1,5 +1,5 @@
 #!/bin/zsh
-printf '%s\n' "$(date) $(tput bold)${HOME}/${BASH_SOURCE[0]}$(tput sgr0)"
+printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 # Fri Dec  3 12:31:35 MST 2021
 
 # requires spack initiation:
@@ -92,8 +92,7 @@ new_step "Sweep ${#lConfig[@]} configuration properties with blame"
 export clicker=0
 for c in ${lConfig[@]}; do
     myFile="${dirConfigurations}/spack-config-blame-${c}.txt"
-    echo "\${myFile} = ${myFile}"
-    file_header "${my File}"
+    file_header "${myFile}"
     sub_step "spack config blame ${c} >> ${myFile}"
               spack config blame ${c} >> ${myFile}
 done

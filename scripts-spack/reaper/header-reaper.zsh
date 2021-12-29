@@ -1,5 +1,5 @@
 #!/bin/zsh
-printf '%s\n' "$(date) $(tput bold)${HOME}/${BASH_SOURCE[0]}$(tput sgr0)"
+printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 # Fri Dec  3 12:31:35 MST 2021
 
 # start the timer
