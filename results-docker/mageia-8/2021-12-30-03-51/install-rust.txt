@@ -1,0 +1,54 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+Waiting for process with pid 872 to finish.
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:07:58 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package rust.x86_64 1.56.1-1.mga8 will be installed
+---> Package rust-std-static.x86_64 1.56.1-1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package              Arch        Version             Repository           Size
+================================================================================
+Installing:
+ rust                 x86_64      1.56.1-1.mga8       updates-x86_64       26 M
+Installing dependencies:
+ rust-std-static      x86_64      1.56.1-1.mga8       updates-x86_64       28 M
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 53 M
+Installed size: 212 M
+Downloading Packages:
+(1/2): rust-1.56.1-1.mga8.x86_64.rpm            2.2 MB/s |  26 MB     00:11    
+(2/2): rust-std-static-1.56.1-1.mga8.x86_64.rpm 2.2 MB/s |  28 MB     00:12    
+--------------------------------------------------------------------------------
+Total                                           4.0 MB/s |  53 MB     00:13     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : rust-std-static-1.56.1-1.mga8.x86_64                   1/2 
+  Installing       : rust-1.56.1-1.mga8.x86_64                              2/2 
+  Running scriptlet: rust-1.56.1-1.mga8.x86_64                              2/2 
+  Verifying        : rust-1.56.1-1.mga8.x86_64                              1/2 
+  Verifying        : rust-std-static-1.56.1-1.mga8.x86_64                   2/2 
+Completion plugin: Generating completion cache...
+Installed: rust-1.56.1-1.mga8.x86_64
+Installed: rust-std-static-1.56.1-1.mga8.x86_64
+
+Installed:
+  rust-1.56.1-1.mga8.x86_64         rust-std-static-1.56.1-1.mga8.x86_64        
+
+Complete!

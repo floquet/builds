@@ -1,0 +1,28 @@
+Waiting for process with pid 941 to finish.
+Waiting for process with pid 943 to finish.
+Waiting for process with pid 944 to finish.
+Last metadata expiration check: 0:08:46 ago on Thu Dec 30 03:52:10 2021.
+Installed Packages
+Name         : valgrind
+Version      : 3.16.1
+Release      : 10.mga8
+Architecture : x86_64
+Size         : 28 M
+Source       : valgrind-3.16.1-10.mga8.src.rpm
+Repository   : @System
+From repo    : mageia-x86_64
+Summary      : Tool for finding memory management bugs in programs
+URL          : http://valgrind.org/
+License      : GPLv2+
+Description  : When a program is run under Valgrind's supervision, all reads and
+             : writes of memory are checked, and calls to malloc/new/free/delete are
+             : intercepted. As a result, Valgrind can detect problems such as:
+             : 
+             :     * Use of uninitialised memory
+             :     * Reading/writing memory after it has been free'd
+             :     * Reading/writing off the end of malloc'd blocks
+             :     * Reading/writing inappropriate areas on the stack
+             :     * Memory leaks -- where pointers to malloc'd blocks are lost forever
+             :     * Passing of uninitialised and/or unaddressible memory to system calls
+             :     * Mismatched use of malloc/new/new [] vs free/delete/delete []
+

@@ -1,0 +1,33 @@
+Waiting for process with pid 884 to finish.
+Waiting for process with pid 887 to finish.
+Waiting for process with pid 886 to finish.
+Waiting for process with pid 890 to finish.
+Waiting for process with pid 889 to finish.
+Last metadata expiration check: 0:08:23 ago on Thu Dec 30 03:52:10 2021.
+Installed Packages
+Name         : rsync
+Version      : 3.2.2
+Release      : 2.mga8
+Architecture : x86_64
+Size         : 1.3 M
+Source       : rsync-3.2.2-2.mga8.src.rpm
+Repository   : @System
+From repo    : mageia-x86_64
+Summary      : A program for synchronizing files over a network
+URL          : http://rsync.samba.org/
+License      : GPLv3+
+Description  : Rsync uses a quick and reliable algorithm to very quickly bring
+             : remote and host files into sync.  Rsync is fast because it just
+             : sends the differences in the files over the network (instead of
+             : sending the complete files). Rsync is often used as a very powerful
+             : mirroring process or just as a more capable replacement for the
+             : rcp command.  A technical report which describes the rsync algorithm
+             : is included in this package.
+             : 
+             : Install rsync if you need a powerful mirroring program.
+             : 
+             : This rpm has these patches applied from rsync tree:
+             :   - acl: allow to mirror acl
+             : 
+             : Rebuild the source rpm with `--without patches' if you don't  want these patches
+

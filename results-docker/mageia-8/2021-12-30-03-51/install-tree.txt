@@ -1,0 +1,47 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:08:32 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package tree.x86_64 1.8.0-2.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package      Architecture   Version                Repository             Size
+================================================================================
+Installing:
+ tree         x86_64         1.8.0-2.mga8           mageia-x86_64          60 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 60 k
+Installed size: 120 k
+Downloading Packages:
+determining the fastest mirror (1 hosts).. done.
+tree-1.8.0-2.mga8.x86_64.rpm                    210 kB/s |  60 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            45 kB/s |  60 kB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : tree-1.8.0-2.mga8.x86_64                               1/1 
+  Running scriptlet: tree-1.8.0-2.mga8.x86_64                               1/1 
+  Verifying        : tree-1.8.0-2.mga8.x86_64                               1/1 
+Completion plugin: Generating completion cache...
+Installed: tree-1.8.0-2.mga8.x86_64
+
+Installed:
+  tree-1.8.0-2.mga8.x86_64                                                      
+
+Complete!
