@@ -1,0 +1,607 @@
+yum install -v python-matplotlib -y
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.centos.iad1.serverforge.org
+ * extras: ewr.edge.kernel.org
+ * updates: ftpmirror.your.org
+pkgsack time: 0.009
+Obs Init time: 0.081
+Resolving Dependencies
+--> Running transaction check
+---> Package python-matplotlib.x86_64 0:1.2.0-16.el7 will be installed
+Checking deps for python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('stix-math-fonts', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('stix-fonts', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('pytz', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('python-dateutil', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('pyparsing', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('pygtk2', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('pycairo', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('numpy', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.1)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libpng15.so.15(PNG15_0)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('dvipng', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('dejavu-sans-fonts', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('/usr/bin/env', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libpython2.7.so.1.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libpangoft2-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libgtk-x11-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libgdk-x11-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+looking for ('libagg.so.2()(64bit)', None, (None, None, None)) as a requirement of python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+python-matplotlib-1.2.0-16.el7.x86_64 requires: stix-math-fonts
+--> Processing Dependency: stix-math-fonts for package: python-matplotlib-1.2.0-16.el7.x86_64
+Searching pkgSack for dep: stix-math-fonts
+Building updates object
+up:simple updates time: 0.006
+up:obs time: 0.002
+up:condense time: 0.000
+updates time: 0.105
+TSINFO: Marking stix-math-fonts-1.1.0-5.el7.noarch as install for python-matplotlib-1.2.0-16.el7.x86_64
+python-matplotlib-1.2.0-16.el7.x86_64 requires: stix-fonts
+--> Processing Dependency: stix-fonts for package: python-matplotlib-1.2.0-16.el7.x86_64
+Searching pkgSack for dep: stix-fonts
+TSINFO: Marking stix-fonts-1.1.0-5.el7.noarch as install for python-matplotlib-1.2.0-16.el7.x86_64
+python-matplotlib-1.2.0-16.el7.x86_64 requires: pytz
+--> Processing Dependency: pytz for package: python-matplotlib-1.2.0-16.el7.x86_64
+Searching pkgSack for dep: pytz
+TSINFO: Marking pytz-2016.10-2.el7.noarch as install for python-matplotlib-1.2.0-16.el7.x86_64
+python-matplotlib-1.2.0-16.el7.x86_64 requires: python-dateutil
+--> Processing Dependency: python-dateutil for package: python-matplotlib-1.2.0-16.el7.x86_64
+Searching pkgSack for dep: python-dateutil
+TSINFO: Marking python-dateutil-1.5-7.el7.noarch as install for python-matplotlib-1.2.0-16.el7.x86_64
+python-matplotlib-1.2.0-16.el7.x86_64 requires: pygtk2
+--> Processing Dependency: pygtk2 for package: python-matplotlib-1.2.0-16.el7.x86_64
+Searching pkgSack for dep: pygtk2
+TSINFO: Marking pygtk2-2.24.0-9.el7.x86_64 as install for python-matplotlib-1.2.0-16.el7.x86_64
+python-matplotlib-1.2.0-16.el7.x86_64 requires: numpy
+--> Processing Dependency: numpy for package: python-matplotlib-1.2.0-16.el7.x86_64
+Searching pkgSack for dep: numpy
+TSINFO: Marking 1:numpy-1.7.1-13.el7.x86_64 as install for python-matplotlib-1.2.0-16.el7.x86_64
+python-matplotlib-1.2.0-16.el7.x86_64 requires: dvipng
+--> Processing Dependency: dvipng for package: python-matplotlib-1.2.0-16.el7.x86_64
+Searching pkgSack for dep: dvipng
+TSINFO: Marking 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64 as install for python-matplotlib-1.2.0-16.el7.x86_64
+python-matplotlib-1.2.0-16.el7.x86_64 requires: libagg.so.2()(64bit)
+--> Processing Dependency: libagg.so.2()(64bit) for package: python-matplotlib-1.2.0-16.el7.x86_64
+Searching pkgSack for dep: libagg.so.2()(64bit)
+TSINFO: Marking agg-2.5-18.el7.x86_64 as install for python-matplotlib-1.2.0-16.el7.x86_64
+--> Running transaction check
+---> Package agg.x86_64 0:2.5-18.el7 will be installed
+Checking deps for agg.x86_64 0:2.5-18.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+looking for ('libSDL-1.2.so.0()(64bit)', None, (None, None, None)) as a requirement of agg.x86_64 0:2.5-18.el7 - u
+agg-2.5-18.el7.x86_64 requires: libSDL-1.2.so.0()(64bit)
+--> Processing Dependency: libSDL-1.2.so.0()(64bit) for package: agg-2.5-18.el7.x86_64
+Searching pkgSack for dep: libSDL-1.2.so.0()(64bit)
+TSINFO: Marking SDL-1.2.15-17.el7.x86_64 as install for agg-2.5-18.el7.x86_64
+---> Package numpy.x86_64 1:1.7.1-13.el7 will be installed
+Checking deps for numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('python-nose', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libtatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libpython2.7.so.1.0()(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('liblapack.so.3()(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of numpy.x86_64 1:1.7.1-13.el7 - u
+1:numpy-1.7.1-13.el7.x86_64 requires: python-nose
+--> Processing Dependency: python-nose for package: 1:numpy-1.7.1-13.el7.x86_64
+Searching pkgSack for dep: python-nose
+TSINFO: Marking python-nose-1.3.7-1.el7.noarch as install for 1:numpy-1.7.1-13.el7.x86_64
+1:numpy-1.7.1-13.el7.x86_64 requires: libtatlas.so.3()(64bit)
+--> Processing Dependency: libtatlas.so.3()(64bit) for package: 1:numpy-1.7.1-13.el7.x86_64
+Searching pkgSack for dep: libtatlas.so.3()(64bit)
+TSINFO: Marking atlas-3.10.1-12.el7.x86_64 as install for 1:numpy-1.7.1-13.el7.x86_64
+1:numpy-1.7.1-13.el7.x86_64 requires: liblapack.so.3()(64bit)
+--> Processing Dependency: liblapack.so.3()(64bit) for package: 1:numpy-1.7.1-13.el7.x86_64
+Searching pkgSack for dep: liblapack.so.3()(64bit)
+TSINFO: Marking lapack-3.4.2-8.el7.x86_64 as install for 1:numpy-1.7.1-13.el7.x86_64
+---> Package pygtk2.x86_64 0:2.24.0-9.el7 will be installed
+Checking deps for pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('pygobject2', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('pycairo', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('/usr/bin/python', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libpangoft2-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libgtk-x11-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libgdk-x11-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygtk2.x86_64 0:2.24.0-9.el7 - u
+pygtk2-2.24.0-9.el7.x86_64 requires: pygobject2
+--> Processing Dependency: pygobject2 for package: pygtk2-2.24.0-9.el7.x86_64
+Searching pkgSack for dep: pygobject2
+TSINFO: Marking pygobject2-2.28.6-11.el7.x86_64 as install for pygtk2-2.24.0-9.el7.x86_64
+---> Package python-dateutil.noarch 0:1.5-7.el7 will be installed
+Checking deps for python-dateutil.noarch 0:1.5-7.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-dateutil.noarch 0:1.5-7.el7 - u
+looking for ('tzdata', None, (None, None, None)) as a requirement of python-dateutil.noarch 0:1.5-7.el7 - u
+---> Package pytz.noarch 0:2016.10-2.el7 will be installed
+Checking deps for pytz.noarch 0:2016.10-2.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of pytz.noarch 0:2016.10-2.el7 - u
+looking for ('tzdata', None, (None, None, None)) as a requirement of pytz.noarch 0:2016.10-2.el7 - u
+looking for ('/usr/bin/env', None, (None, None, None)) as a requirement of pytz.noarch 0:2016.10-2.el7 - u
+---> Package stix-fonts.noarch 0:1.1.0-5.el7 will be installed
+Checking deps for stix-fonts.noarch 0:1.1.0-5.el7 - u
+looking for ('fontpackages-filesystem', None, (None, None, None)) as a requirement of stix-fonts.noarch 0:1.1.0-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of stix-fonts.noarch 0:1.1.0-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of stix-fonts.noarch 0:1.1.0-5.el7 - u
+---> Package stix-math-fonts.noarch 0:1.1.0-5.el7 will be installed
+Checking deps for stix-math-fonts.noarch 0:1.1.0-5.el7 - u
+looking for ('stix-fonts', 'EQ', ('0', '1.1.0', '5.el7')) as a requirement of stix-math-fonts.noarch 0:1.1.0-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of stix-math-fonts.noarch 0:1.1.0-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of stix-math-fonts.noarch 0:1.1.0-5.el7 - u
+---> Package texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 will be installed
+Checking deps for texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('texlive-kpathsea-lib', 'EQ', ('2', '2012', '45.20130427_r30134.el7')) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('texlive-base', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('tex-dvipng', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libt1.so.5()(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libkpathsea.so.6()(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libgd.so.2()(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64 requires: texlive-kpathsea-lib = 2:2012-45.20130427_r30134.el7
+--> Processing Dependency: texlive-kpathsea-lib = 2:2012-45.20130427_r30134.el7 for package: 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+Searching pkgSack for dep: texlive-kpathsea-lib
+TSINFO: Marking 2:texlive-kpathsea-lib-2012-45.20130427_r30134.el7.x86_64 as install for 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64 requires: texlive-base
+--> Processing Dependency: texlive-base for package: 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+Searching pkgSack for dep: texlive-base
+TSINFO: Marking 2:texlive-base-2012-45.20130427_r30134.el7.noarch as install for 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64 requires: tex-dvipng
+--> Processing Dependency: tex-dvipng for package: 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+Searching pkgSack for dep: tex-dvipng
+TSINFO: Marking 2:texlive-dvipng-svn26689.1.14-45.el7.noarch as install for 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64 requires: libt1.so.5()(64bit)
+--> Processing Dependency: libt1.so.5()(64bit) for package: 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+Searching pkgSack for dep: libt1.so.5()(64bit)
+TSINFO: Marking t1lib-5.1.2-14.el7.x86_64 as install for 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64 requires: libkpathsea.so.6()(64bit)
+--> Processing Dependency: libkpathsea.so.6()(64bit) for package: 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+Searching pkgSack for dep: libkpathsea.so.6()(64bit)
+2:texlive-kpathsea-lib-2012-45.20130427_r30134.el7.x86_64 already in ts, skipping this one
+2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64 requires: libgd.so.2()(64bit)
+--> Processing Dependency: libgd.so.2()(64bit) for package: 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+Searching pkgSack for dep: libgd.so.2()(64bit)
+TSINFO: Marking gd-2.0.35-27.el7_9.x86_64 as install for 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64
+--> Running transaction check
+---> Package SDL.x86_64 0:1.2.15-17.el7 will be installed
+Checking deps for SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of SDL.x86_64 0:1.2.15-17.el7 - u
+---> Package atlas.x86_64 0:3.10.1-12.el7 will be installed
+Checking deps for atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+---> Package gd.x86_64 0:2.0.35-27.el7_9 will be installed
+Checking deps for gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libpng15.so.15(PNG15_0)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libjpeg.so.62(LIBJPEG_6.2)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libXpm.so.4()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+---> Package lapack.x86_64 0:3.4.2-8.el7 will be installed
+Checking deps for lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libblas.so.3()(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+lapack-3.4.2-8.el7.x86_64 requires: libblas.so.3()(64bit)
+--> Processing Dependency: libblas.so.3()(64bit) for package: lapack-3.4.2-8.el7.x86_64
+Searching pkgSack for dep: libblas.so.3()(64bit)
+TSINFO: Marking blas-3.4.2-8.el7.x86_64 as install for lapack-3.4.2-8.el7.x86_64
+---> Package pygobject2.x86_64 0:2.28.6-11.el7 will be installed
+Checking deps for pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('/usr/bin/env', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('libgthread-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+looking for ('libffi.so.6()(64bit)', None, (None, None, None)) as a requirement of pygobject2.x86_64 0:2.28.6-11.el7 - u
+---> Package python-nose.noarch 0:1.3.7-1.el7 will be installed
+Checking deps for python-nose.noarch 0:1.3.7-1.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-nose.noarch 0:1.3.7-1.el7 - u
+looking for ('python-setuptools', None, (None, None, None)) as a requirement of python-nose.noarch 0:1.3.7-1.el7 - u
+looking for ('/usr/bin/python', None, (None, None, None)) as a requirement of python-nose.noarch 0:1.3.7-1.el7 - u
+python-nose-1.3.7-1.el7.noarch requires: python-setuptools
+--> Processing Dependency: python-setuptools for package: python-nose-1.3.7-1.el7.noarch
+Searching pkgSack for dep: python-setuptools
+TSINFO: Marking python-setuptools-0.9.8-7.el7.noarch as install for python-nose-1.3.7-1.el7.noarch
+---> Package t1lib.x86_64 0:5.1.2-14.el7 will be installed
+Checking deps for t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('findutils', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('coreutils', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of t1lib.x86_64 0:5.1.2-14.el7 - u
+---> Package texlive-base.noarch 2:2012-45.20130427_r30134.el7 will be installed
+Checking deps for texlive-base.noarch 2:2012-45.20130427_r30134.el7 - u
+looking for ('sed', None, (None, None, None)) as a requirement of texlive-base.noarch 2:2012-45.20130427_r30134.el7 - u
+looking for ('coreutils', None, (None, None, None)) as a requirement of texlive-base.noarch 2:2012-45.20130427_r30134.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texlive-base.noarch 2:2012-45.20130427_r30134.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texlive-base.noarch 2:2012-45.20130427_r30134.el7 - u
+---> Package texlive-dvipng.noarch 2:svn26689.1.14-45.el7 will be installed
+Checking deps for texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+looking for ('texlive-kpathsea-bin', None, (None, None, None)) as a requirement of texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+looking for ('texlive-dvipng-bin', None, (None, None, None)) as a requirement of texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+looking for ('texlive-base', None, (None, None, None)) as a requirement of texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+looking for ('tex-kpathsea', None, (None, None, None)) as a requirement of texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+2:texlive-dvipng-svn26689.1.14-45.el7.noarch requires: texlive-kpathsea-bin
+--> Processing Dependency: texlive-kpathsea-bin for package: 2:texlive-dvipng-svn26689.1.14-45.el7.noarch
+Searching pkgSack for dep: texlive-kpathsea-bin
+TSINFO: Marking 2:texlive-kpathsea-bin-svn27347.0-45.20130427_r30134.el7.x86_64 as install for 2:texlive-dvipng-svn26689.1.14-45.el7.noarch
+2:texlive-dvipng-svn26689.1.14-45.el7.noarch requires: tex-kpathsea
+--> Processing Dependency: tex-kpathsea for package: 2:texlive-dvipng-svn26689.1.14-45.el7.noarch
+Searching pkgSack for dep: tex-kpathsea
+TSINFO: Marking 2:texlive-kpathsea-svn28792.0-45.el7.noarch as install for 2:texlive-dvipng-svn26689.1.14-45.el7.noarch
+---> Package texlive-kpathsea-lib.x86_64 2:2012-45.20130427_r30134.el7 will be installed
+Checking deps for texlive-kpathsea-lib.x86_64 2:2012-45.20130427_r30134.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of texlive-kpathsea-lib.x86_64 2:2012-45.20130427_r30134.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of texlive-kpathsea-lib.x86_64 2:2012-45.20130427_r30134.el7 - u
+--> Running transaction check
+---> Package blas.x86_64 0:3.4.2-8.el7 will be installed
+Checking deps for blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+---> Package python-setuptools.noarch 0:0.9.8-7.el7 will be installed
+Checking deps for python-setuptools.noarch 0:0.9.8-7.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-setuptools.noarch 0:0.9.8-7.el7 - u
+looking for ('python-backports-ssl_match_hostname', None, (None, None, None)) as a requirement of python-setuptools.noarch 0:0.9.8-7.el7 - u
+looking for ('/usr/bin/python', None, (None, None, None)) as a requirement of python-setuptools.noarch 0:0.9.8-7.el7 - u
+python-setuptools-0.9.8-7.el7.noarch requires: python-backports-ssl_match_hostname
+--> Processing Dependency: python-backports-ssl_match_hostname for package: python-setuptools-0.9.8-7.el7.noarch
+Searching pkgSack for dep: python-backports-ssl_match_hostname
+TSINFO: Marking python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch as install for python-setuptools-0.9.8-7.el7.noarch
+---> Package texlive-kpathsea.noarch 2:svn28792.0-45.el7 will be installed
+Checking deps for texlive-kpathsea.noarch 2:svn28792.0-45.el7 - u
+looking for ('texlive-kpathsea-bin', None, (None, None, None)) as a requirement of texlive-kpathsea.noarch 2:svn28792.0-45.el7 - u
+looking for ('info', None, (None, None, None)) as a requirement of texlive-kpathsea.noarch 2:svn28792.0-45.el7 - u
+looking for ('coreutils', None, (None, None, None)) as a requirement of texlive-kpathsea.noarch 2:svn28792.0-45.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texlive-kpathsea.noarch 2:svn28792.0-45.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texlive-kpathsea.noarch 2:svn28792.0-45.el7 - u
+---> Package texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 will be installed
+Checking deps for texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 - u
+looking for ('texlive-kpathsea-lib', 'EQ', ('2', '2012', '45.20130427_r30134.el7')) as a requirement of texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 - u
+looking for ('tex-kpathsea', None, (None, None, None)) as a requirement of texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 - u
+looking for ('libc.so.6(GLIBC_2.7)(64bit)', None, (None, None, None)) as a requirement of texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 - u
+looking for ('libkpathsea.so.6()(64bit)', None, (None, None, None)) as a requirement of texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 - u
+--> Running transaction check
+---> Package python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 will be installed
+Checking deps for python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 - u
+looking for ('python-ipaddress', None, (None, None, None)) as a requirement of python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 - u
+looking for ('python-backports', None, (None, None, None)) as a requirement of python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 - u
+python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch requires: python-ipaddress
+--> Processing Dependency: python-ipaddress for package: python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch
+Searching pkgSack for dep: python-ipaddress
+TSINFO: Marking python-ipaddress-1.0.16-2.el7.noarch as install for python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch
+python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch requires: python-backports
+--> Processing Dependency: python-backports for package: python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch
+Searching pkgSack for dep: python-backports
+TSINFO: Marking python-backports-1.0-8.el7.x86_64 as install for python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch
+--> Running transaction check
+---> Package python-backports.x86_64 0:1.0-8.el7 will be installed
+Checking deps for python-backports.x86_64 0:1.0-8.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-backports.x86_64 0:1.0-8.el7 - u
+---> Package python-ipaddress.noarch 0:1.0.16-2.el7 will be installed
+Checking deps for python-ipaddress.noarch 0:1.0.16-2.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-ipaddress.noarch 0:1.0.16-2.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.412
+
+Dependencies Resolved
+
+================================================================================
+ Package               Arch   Version                             Repository
+                                                                           Size
+================================================================================
+Installing:
+ python-matplotlib     x86_64 1.2.0-16.el7                        base     26 M
+Installing for dependencies:
+ SDL                   x86_64 1.2.15-17.el7                       base    206 k
+ agg                   x86_64 2.5-18.el7                          base    145 k
+ atlas                 x86_64 3.10.1-12.el7                       base    4.5 M
+ blas                  x86_64 3.4.2-8.el7                         base    399 k
+ gd                    x86_64 2.0.35-27.el7_9                     updates 146 k
+ lapack                x86_64 3.4.2-8.el7                         base    5.4 M
+ numpy                 x86_64 1:1.7.1-13.el7                      base    2.8 M
+ pygobject2            x86_64 2.28.6-11.el7                       base    226 k
+ pygtk2                x86_64 2.24.0-9.el7                        base    914 k
+ python-backports      x86_64 1.0-8.el7                           base    5.8 k
+ python-backports-ssl_match_hostname
+                       noarch 3.5.0.1-1.el7                       base     13 k
+ python-dateutil       noarch 1.5-7.el7                           base     85 k
+ python-ipaddress      noarch 1.0.16-2.el7                        base     34 k
+ python-nose           noarch 1.3.7-1.el7                         base    276 k
+ python-setuptools     noarch 0.9.8-7.el7                         base    397 k
+ pytz                  noarch 2016.10-2.el7                       base     46 k
+ stix-fonts            noarch 1.1.0-5.el7                         base    1.3 M
+ stix-math-fonts       noarch 1.1.0-5.el7                         base    286 k
+ t1lib                 x86_64 5.1.2-14.el7                        base    166 k
+ texlive-base          noarch 2:2012-45.20130427_r30134.el7       base    326 k
+ texlive-dvipng        noarch 2:svn26689.1.14-45.el7              base     45 k
+ texlive-dvipng-bin    x86_64 2:svn26509.0-45.20130427_r30134.el7 base     64 k
+ texlive-kpathsea      noarch 2:svn28792.0-45.el7                 base    141 k
+ texlive-kpathsea-bin  x86_64 2:svn27347.0-45.20130427_r30134.el7 base     41 k
+ texlive-kpathsea-lib  x86_64 2:2012-45.20130427_r30134.el7       base     79 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+25 Dependent packages)
+
+Total download size: 44 M
+Installed size: 108 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              4.5 MB/s |  44 MB  00:09     
+Member: python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 - u
+Adding Package python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch in mode u
+Member: blas.x86_64 0:3.4.2-8.el7 - u
+Adding Package blas-3.4.2-8.el7.x86_64 in mode u
+Member: numpy.x86_64 1:1.7.1-13.el7 - u
+Adding Package 1:numpy-1.7.1-13.el7.x86_64 in mode u
+Member: stix-math-fonts.noarch 0:1.1.0-5.el7 - u
+Adding Package stix-math-fonts-1.1.0-5.el7.noarch in mode u
+Member: agg.x86_64 0:2.5-18.el7 - u
+Adding Package agg-2.5-18.el7.x86_64 in mode u
+Member: SDL.x86_64 0:1.2.15-17.el7 - u
+Adding Package SDL-1.2.15-17.el7.x86_64 in mode u
+Member: python-setuptools.noarch 0:0.9.8-7.el7 - u
+Adding Package python-setuptools-0.9.8-7.el7.noarch in mode u
+Member: python-nose.noarch 0:1.3.7-1.el7 - u
+Adding Package python-nose-1.3.7-1.el7.noarch in mode u
+Member: atlas.x86_64 0:3.10.1-12.el7 - u
+Adding Package atlas-3.10.1-12.el7.x86_64 in mode u
+Member: python-dateutil.noarch 0:1.5-7.el7 - u
+Adding Package python-dateutil-1.5-7.el7.noarch in mode u
+Member: python-matplotlib.x86_64 0:1.2.0-16.el7 - u
+Adding Package python-matplotlib-1.2.0-16.el7.x86_64 in mode u
+Member: stix-fonts.noarch 0:1.1.0-5.el7 - u
+Adding Package stix-fonts-1.1.0-5.el7.noarch in mode u
+Member: pytz.noarch 0:2016.10-2.el7 - u
+Adding Package pytz-2016.10-2.el7.noarch in mode u
+Member: pygtk2.x86_64 0:2.24.0-9.el7 - u
+Adding Package pygtk2-2.24.0-9.el7.x86_64 in mode u
+Member: lapack.x86_64 0:3.4.2-8.el7 - u
+Adding Package lapack-3.4.2-8.el7.x86_64 in mode u
+Member: texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7 - u
+Adding Package 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x86_64 in mode u
+Member: pygobject2.x86_64 0:2.28.6-11.el7 - u
+Adding Package pygobject2-2.28.6-11.el7.x86_64 in mode u
+Member: t1lib.x86_64 0:5.1.2-14.el7 - u
+Adding Package t1lib-5.1.2-14.el7.x86_64 in mode u
+Member: python-backports.x86_64 0:1.0-8.el7 - u
+Adding Package python-backports-1.0-8.el7.x86_64 in mode u
+Member: texlive-dvipng.noarch 2:svn26689.1.14-45.el7 - u
+Adding Package 2:texlive-dvipng-svn26689.1.14-45.el7.noarch in mode u
+Member: texlive-kpathsea-lib.x86_64 2:2012-45.20130427_r30134.el7 - u
+Adding Package 2:texlive-kpathsea-lib-2012-45.20130427_r30134.el7.x86_64 in mode u
+Member: texlive-base.noarch 2:2012-45.20130427_r30134.el7 - u
+Adding Package 2:texlive-base-2012-45.20130427_r30134.el7.noarch in mode u
+Member: gd.x86_64 0:2.0.35-27.el7_9 - u
+Adding Package gd-2.0.35-27.el7_9.x86_64 in mode u
+Member: python-ipaddress.noarch 0:1.0.16-2.el7 - u
+Adding Package python-ipaddress-1.0.16-2.el7.noarch in mode u
+Member: texlive-kpathsea.noarch 2:svn28792.0-45.el7 - u
+Adding Package 2:texlive-kpathsea-svn28792.0-45.el7.noarch in mode u
+Member: texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7 - u
+Adding Package 2:texlive-kpathsea-bin-svn27347.0-45.20130427_r30134.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.049
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.081
+Running transaction
+  Installing : 2:texlive-base-2012-45.20130427_r30134.el7.noarch           1/26 
+  Installing : 2:texlive-kpathsea-lib-2012-45.20130427_r30134.el7.x86_6    2/26 
+  Installing : 2:texlive-kpathsea-svn28792.0-45.el7.noarch                 3/26 
+  Installing : 2:texlive-kpathsea-bin-svn27347.0-45.20130427_r30134.el7    4/26 
+  Installing : stix-fonts-1.1.0-5.el7.noarch                               5/26 
+  Installing : stix-math-fonts-1.1.0-5.el7.noarch                          6/26 
+  Installing : python-ipaddress-1.0.16-2.el7.noarch                        7/26 
+  Installing : gd-2.0.35-27.el7_9.x86_64                                   8/26 
+  Installing : python-backports-1.0-8.el7.x86_64                           9/26 
+  Installing : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch   10/26 
+  Installing : python-setuptools-0.9.8-7.el7.noarch                       11/26 
+  Installing : python-nose-1.3.7-1.el7.noarch                             12/26 
+  Installing : t1lib-5.1.2-14.el7.x86_64                                  13/26 
+  Installing : 2:texlive-dvipng-svn26689.1.14-45.el7.noarch               14/26 
+  Installing : 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x   15/26 
+  Installing : pygobject2-2.28.6-11.el7.x86_64                            16/26 
+  Installing : pygtk2-2.24.0-9.el7.x86_64                                 17/26 
+  Installing : pytz-2016.10-2.el7.noarch                                  18/26 
+  Installing : python-dateutil-1.5-7.el7.noarch                           19/26 
+  Installing : atlas-3.10.1-12.el7.x86_64                                 20/26 
+  Installing : SDL-1.2.15-17.el7.x86_64                                   21/26 
+  Installing : agg-2.5-18.el7.x86_64                                      22/26 
+  Installing : blas-3.4.2-8.el7.x86_64                                    23/26 
+  Installing : lapack-3.4.2-8.el7.x86_64                                  24/26 
+  Installing : 1:numpy-1.7.1-13.el7.x86_64                                25/26 
+  Installing : python-matplotlib-1.2.0-16.el7.x86_64                      26/26 
+  Verifying  : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch    1/26 
+  Verifying  : blas-3.4.2-8.el7.x86_64                                     2/26 
+  Verifying  : 1:numpy-1.7.1-13.el7.x86_64                                 3/26 
+  Verifying  : stix-math-fonts-1.1.0-5.el7.noarch                          4/26 
+  Verifying  : agg-2.5-18.el7.x86_64                                       5/26 
+  Verifying  : SDL-1.2.15-17.el7.x86_64                                    6/26 
+  Verifying  : python-setuptools-0.9.8-7.el7.noarch                        7/26 
+  Verifying  : python-nose-1.3.7-1.el7.noarch                              8/26 
+  Verifying  : atlas-3.10.1-12.el7.x86_64                                  9/26 
+  Verifying  : python-dateutil-1.5-7.el7.noarch                           10/26 
+  Verifying  : python-matplotlib-1.2.0-16.el7.x86_64                      11/26 
+  Verifying  : stix-fonts-1.1.0-5.el7.noarch                              12/26 
+  Verifying  : pytz-2016.10-2.el7.noarch                                  13/26 
+  Verifying  : pygtk2-2.24.0-9.el7.x86_64                                 14/26 
+  Verifying  : lapack-3.4.2-8.el7.x86_64                                  15/26 
+  Verifying  : 2:texlive-dvipng-bin-svn26509.0-45.20130427_r30134.el7.x   16/26 
+  Verifying  : pygobject2-2.28.6-11.el7.x86_64                            17/26 
+  Verifying  : t1lib-5.1.2-14.el7.x86_64                                  18/26 
+  Verifying  : python-backports-1.0-8.el7.x86_64                          19/26 
+  Verifying  : 2:texlive-dvipng-svn26689.1.14-45.el7.noarch               20/26 
+  Verifying  : 2:texlive-kpathsea-lib-2012-45.20130427_r30134.el7.x86_6   21/26 
+  Verifying  : 2:texlive-base-2012-45.20130427_r30134.el7.noarch          22/26 
+  Verifying  : gd-2.0.35-27.el7_9.x86_64                                  23/26 
+  Verifying  : python-ipaddress-1.0.16-2.el7.noarch                       24/26 
+  Verifying  : 2:texlive-kpathsea-svn28792.0-45.el7.noarch                25/26 
+  Verifying  : 2:texlive-kpathsea-bin-svn27347.0-45.20130427_r30134.el7   26/26 
+VerifyTransaction time: 0.253
+Transaction time: 7.916
+
+Installed:
+  python-matplotlib.x86_64 0:1.2.0-16.el7                                       
+
+Dependency Installed:
+  SDL.x86_64 0:1.2.15-17.el7                                                    
+  agg.x86_64 0:2.5-18.el7                                                       
+  atlas.x86_64 0:3.10.1-12.el7                                                  
+  blas.x86_64 0:3.4.2-8.el7                                                     
+  gd.x86_64 0:2.0.35-27.el7_9                                                   
+  lapack.x86_64 0:3.4.2-8.el7                                                   
+  numpy.x86_64 1:1.7.1-13.el7                                                   
+  pygobject2.x86_64 0:2.28.6-11.el7                                             
+  pygtk2.x86_64 0:2.24.0-9.el7                                                  
+  python-backports.x86_64 0:1.0-8.el7                                           
+  python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7                    
+  python-dateutil.noarch 0:1.5-7.el7                                            
+  python-ipaddress.noarch 0:1.0.16-2.el7                                        
+  python-nose.noarch 0:1.3.7-1.el7                                              
+  python-setuptools.noarch 0:0.9.8-7.el7                                        
+  pytz.noarch 0:2016.10-2.el7                                                   
+  stix-fonts.noarch 0:1.1.0-5.el7                                               
+  stix-math-fonts.noarch 0:1.1.0-5.el7                                          
+  t1lib.x86_64 0:5.1.2-14.el7                                                   
+  texlive-base.noarch 2:2012-45.20130427_r30134.el7                             
+  texlive-dvipng.noarch 2:svn26689.1.14-45.el7                                  
+  texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7                 
+  texlive-kpathsea.noarch 2:svn28792.0-45.el7                                   
+  texlive-kpathsea-bin.x86_64 2:svn27347.0-45.20130427_r30134.el7               
+  texlive-kpathsea-lib.x86_64 2:2012-45.20130427_r30134.el7                     
+
+Complete!

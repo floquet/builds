@@ -1,0 +1,1431 @@
+yum install -v gedit -y
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.centos.iad1.serverforge.org
+ * extras: ewr.edge.kernel.org
+ * updates: ftpmirror.your.org
+pkgsack time: 0.012
+Obs Init time: 0.096
+Resolving Dependencies
+--> Running transaction check
+---> Package gedit.x86_64 2:3.28.1-3.el7 will be installed
+Checking deps for gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('gtksourceview3(x86-64)', 'GE', ('0', '3.22.0', None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('gtk3(x86-64)', 'GE', ('0', '3.22.0', None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('gspell(x86-64)', 'GE', ('0', '0.2.5', None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('glib2(x86-64)', 'GE', ('0', '2.44', None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('zenity', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.4.30)(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libpeas-loader-python(x86-64)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('gvfs', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('gsettings-desktop-schemas', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('/usr/bin/env', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libxml2.so.2()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libpeas-gtk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libpeas-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgtksourceview-3.0.so.1()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgtk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgspell-1.so.1()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgirepository-1.0.so.1()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libgdk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libenchant.so.1()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libcairo-gobject.so.2()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of gedit.x86_64 2:3.28.1-3.el7 - u
+2:gedit-3.28.1-3.el7.x86_64 requires: gtksourceview3(x86-64) >= 3.22.0
+--> Processing Dependency: gtksourceview3(x86-64) >= 3.22.0 for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: gtksourceview3(x86-64)
+Building updates object
+up:simple updates time: 0.003
+up:obs time: 0.002
+up:condense time: 0.000
+updates time: 0.092
+TSINFO: Marking gtksourceview3-3.24.8-2.el7.x86_64 as install for 2:gedit-3.28.1-3.el7.x86_64
+2:gedit-3.28.1-3.el7.x86_64 requires: gspell(x86-64) >= 0.2.5
+--> Processing Dependency: gspell(x86-64) >= 0.2.5 for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: gspell(x86-64)
+TSINFO: Marking gspell-1.6.1-1.el7.x86_64 as install for 2:gedit-3.28.1-3.el7.x86_64
+2:gedit-3.28.1-3.el7.x86_64 requires: zenity
+--> Processing Dependency: zenity for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: zenity
+TSINFO: Marking zenity-3.28.1-1.el7.x86_64 as install for 2:gedit-3.28.1-3.el7.x86_64
+2:gedit-3.28.1-3.el7.x86_64 requires: libpeas-loader-python(x86-64)
+--> Processing Dependency: libpeas-loader-python(x86-64) for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: libpeas-loader-python(x86-64)
+TSINFO: Marking libpeas-loader-python-1.22.0-1.el7.x86_64 as install for 2:gedit-3.28.1-3.el7.x86_64
+2:gedit-3.28.1-3.el7.x86_64 requires: gvfs
+--> Processing Dependency: gvfs for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: gvfs
+TSINFO: Marking gvfs-1.36.2-5.el7_9.x86_64 as install for 2:gedit-3.28.1-3.el7.x86_64
+2:gedit-3.28.1-3.el7.x86_64 requires: libpeas-gtk-1.0.so.0()(64bit)
+--> Processing Dependency: libpeas-gtk-1.0.so.0()(64bit) for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: libpeas-gtk-1.0.so.0()(64bit)
+TSINFO: Marking libpeas-gtk-1.22.0-1.el7.x86_64 as install for 2:gedit-3.28.1-3.el7.x86_64
+2:gedit-3.28.1-3.el7.x86_64 requires: libpeas-1.0.so.0()(64bit)
+--> Processing Dependency: libpeas-1.0.so.0()(64bit) for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: libpeas-1.0.so.0()(64bit)
+TSINFO: Marking libpeas-1.22.0-1.el7.x86_64 as install for 2:gedit-3.28.1-3.el7.x86_64
+2:gedit-3.28.1-3.el7.x86_64 requires: libgtksourceview-3.0.so.1()(64bit)
+--> Processing Dependency: libgtksourceview-3.0.so.1()(64bit) for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: libgtksourceview-3.0.so.1()(64bit)
+gtksourceview3-3.24.8-2.el7.x86_64 already in ts, skipping this one
+2:gedit-3.28.1-3.el7.x86_64 requires: libgspell-1.so.1()(64bit)
+--> Processing Dependency: libgspell-1.so.1()(64bit) for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: libgspell-1.so.1()(64bit)
+gspell-1.6.1-1.el7.x86_64 already in ts, skipping this one
+2:gedit-3.28.1-3.el7.x86_64 requires: libenchant.so.1()(64bit)
+--> Processing Dependency: libenchant.so.1()(64bit) for package: 2:gedit-3.28.1-3.el7.x86_64
+Searching pkgSack for dep: libenchant.so.1()(64bit)
+TSINFO: Marking 1:enchant-1.6.0-8.el7.x86_64 as install for 2:gedit-3.28.1-3.el7.x86_64
+--> Running transaction check
+---> Package enchant.x86_64 1:1.6.0-8.el7 will be installed
+Checking deps for enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libhunspell-1.3.so.0()(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of enchant.x86_64 1:1.6.0-8.el7 - u
+1:enchant-1.6.0-8.el7.x86_64 requires: libhunspell-1.3.so.0()(64bit)
+--> Processing Dependency: libhunspell-1.3.so.0()(64bit) for package: 1:enchant-1.6.0-8.el7.x86_64
+Searching pkgSack for dep: libhunspell-1.3.so.0()(64bit)
+TSINFO: Marking hunspell-1.3.2-16.el7.x86_64 as install for 1:enchant-1.6.0-8.el7.x86_64
+---> Package gspell.x86_64 0:1.6.1-1.el7 will be installed
+Checking deps for gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('gtk3(x86-64)', 'GE', ('0', '3.20', None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('glib2(x86-64)', 'GE', ('0', '2.44', None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('iso-codes', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libgtk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libgdk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libenchant.so.1()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libcairo-gobject.so.2()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gspell.x86_64 0:1.6.1-1.el7 - u
+gspell-1.6.1-1.el7.x86_64 requires: iso-codes
+--> Processing Dependency: iso-codes for package: gspell-1.6.1-1.el7.x86_64
+Searching pkgSack for dep: iso-codes
+TSINFO: Marking iso-codes-3.46-2.el7.noarch as install for gspell-1.6.1-1.el7.x86_64
+---> Package gtksourceview3.x86_64 0:3.24.8-2.el7 will be installed
+Checking deps for gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('gtk3(x86-64)', 'GE', ('0', '3.20', None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('glib2(x86-64)', 'GE', ('0', '2.48', None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.6)(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.0)(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.7)(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.0)(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.4.30)(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libxml2.so.2()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libgtk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libgdk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libcairo-gobject.so.2()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+---> Package gvfs.x86_64 0:1.36.2-5.el7_9 will be installed
+Checking deps for gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('gvfs-client(x86-64)', 'EQ', ('0', '1.36.2', '5.el7_9')) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('udisks2', 'GE', ('0', '1.97', None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('glib2(x86-64)', 'GE', ('0', '2.51.0', None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.0)(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libxml2.so.2(LIBXML2_2.4.30)(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libutil.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libcdio_paranoia.so.1(CDIO_PARANOIA_1)(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libcdio_cdda.so.1(CDIO_CDDA_1)(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libcdio.so.15(CDIO_15)(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('desktop-file-utils', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('desktop-file-utils', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libxml2.so.2()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libutil.so.1()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libudisks2.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libsystemd.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libsoup-2.4.so.1()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libsecret-1.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libpolkit-gobject-1.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libp11-kit.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgvfscommon.so()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgudev-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgcr-base-3.so.1()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgck-1.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libcdio_paranoia.so.1()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libcdio_cdda.so.1()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libcdio.so.15()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libcap.so.2()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libbluray.so.1()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libavahi-glib.so.1()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libavahi-common.so.3()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libavahi-client.so.3()(64bit)', None, (None, None, None)) as a requirement of gvfs.x86_64 0:1.36.2-5.el7_9 - u
+gvfs-1.36.2-5.el7_9.x86_64 requires: gvfs-client(x86-64) = 1.36.2-5.el7_9
+--> Processing Dependency: gvfs-client(x86-64) = 1.36.2-5.el7_9 for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: gvfs-client(x86-64)
+TSINFO: Marking gvfs-client-1.36.2-5.el7_9.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: udisks2 >= 1.97
+--> Processing Dependency: udisks2 >= 1.97 for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: udisks2
+TSINFO: Marking udisks2-2.8.4-1.el7.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: libcdio_paranoia.so.1(CDIO_PARANOIA_1)(64bit)
+--> Processing Dependency: libcdio_paranoia.so.1(CDIO_PARANOIA_1)(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libcdio_paranoia.so.1(CDIO_PARANOIA_1)(64bit)
+TSINFO: Marking libcdio-paranoia-10.2+0.90-11.el7.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: libcdio_cdda.so.1(CDIO_CDDA_1)(64bit)
+--> Processing Dependency: libcdio_cdda.so.1(CDIO_CDDA_1)(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Quick matched libcdio-paranoia-10.2+0.90-11.el7.x86_64 to require for libcdio_cdda.so.1(CDIO_CDDA_1)(64bit)
+gvfs-1.36.2-5.el7_9.x86_64 requires: libcdio.so.15(CDIO_15)(64bit)
+--> Processing Dependency: libcdio.so.15(CDIO_15)(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libcdio.so.15(CDIO_15)(64bit)
+TSINFO: Marking libcdio-0.92-3.el7.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: libudisks2.so.0()(64bit)
+--> Processing Dependency: libudisks2.so.0()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libudisks2.so.0()(64bit)
+TSINFO: Marking libudisks2-2.8.4-1.el7.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: libsecret-1.so.0()(64bit)
+--> Processing Dependency: libsecret-1.so.0()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libsecret-1.so.0()(64bit)
+TSINFO: Marking libsecret-0.18.6-1.el7.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: libgvfscommon.so()(64bit)
+--> Processing Dependency: libgvfscommon.so()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libgvfscommon.so()(64bit)
+Potential resolving package gvfs-client-1.36.2-4.el7.x86_64 has newer instance in ts.
+gvfs-client-1.36.2-5.el7_9.x86_64 already in ts, skipping this one
+gvfs-1.36.2-5.el7_9.x86_64 requires: libgudev-1.0.so.0()(64bit)
+--> Processing Dependency: libgudev-1.0.so.0()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libgudev-1.0.so.0()(64bit)
+TSINFO: Marking libgudev1-219-78.el7_9.3.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: libgcr-base-3.so.1()(64bit)
+--> Processing Dependency: libgcr-base-3.so.1()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libgcr-base-3.so.1()(64bit)
+TSINFO: Marking gcr-3.28.0-1.el7.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: libgck-1.so.0()(64bit)
+--> Processing Dependency: libgck-1.so.0()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Quick matched gcr-3.28.0-1.el7.x86_64 to require for libgck-1.so.0()(64bit)
+gvfs-1.36.2-5.el7_9.x86_64 requires: libcdio_paranoia.so.1()(64bit)
+--> Processing Dependency: libcdio_paranoia.so.1()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libcdio_paranoia.so.1()(64bit)
+libcdio-paranoia-10.2+0.90-11.el7.x86_64 already in ts, skipping this one
+gvfs-1.36.2-5.el7_9.x86_64 requires: libcdio_cdda.so.1()(64bit)
+--> Processing Dependency: libcdio_cdda.so.1()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Quick matched libcdio-paranoia-10.2+0.90-11.el7.x86_64 to require for libcdio_cdda.so.1()(64bit)
+gvfs-1.36.2-5.el7_9.x86_64 requires: libcdio.so.15()(64bit)
+--> Processing Dependency: libcdio.so.15()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libcdio.so.15()(64bit)
+libcdio-0.92-3.el7.x86_64 already in ts, skipping this one
+gvfs-1.36.2-5.el7_9.x86_64 requires: libbluray.so.1()(64bit)
+--> Processing Dependency: libbluray.so.1()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libbluray.so.1()(64bit)
+TSINFO: Marking libbluray-0.2.3-6.el7.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+gvfs-1.36.2-5.el7_9.x86_64 requires: libavahi-glib.so.1()(64bit)
+--> Processing Dependency: libavahi-glib.so.1()(64bit) for package: gvfs-1.36.2-5.el7_9.x86_64
+Searching pkgSack for dep: libavahi-glib.so.1()(64bit)
+TSINFO: Marking avahi-glib-0.6.31-20.el7.x86_64 as install for gvfs-1.36.2-5.el7_9.x86_64
+---> Package libpeas.x86_64 0:1.22.0-1.el7 will be installed
+Checking deps for libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgirepository-1.0.so.1()(64bit)', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas.x86_64 0:1.22.0-1.el7 - u
+---> Package libpeas-gtk.x86_64 0:1.22.0-1.el7 will be installed
+Checking deps for libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpeas(x86-64)', 'EQ', ('0', '1.22.0', '1.el7')) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpeas-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgtk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgirepository-1.0.so.1()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgdk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libcairo-gobject.so.2()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+---> Package libpeas-loader-python.x86_64 0:1.22.0-1.el7 will be installed
+Checking deps for libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpeas(x86-64)', 'EQ', ('0', '1.22.0', '1.el7')) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('python-gobject', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libutil.so.1()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpython2.7.so.1.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libpeas-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgirepository-1.0.so.1()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+libpeas-loader-python-1.22.0-1.el7.x86_64 requires: python-gobject
+--> Processing Dependency: python-gobject for package: libpeas-loader-python-1.22.0-1.el7.x86_64
+Searching pkgSack for dep: python-gobject
+TSINFO: Marking python-gobject-3.22.0-1.el7_4.1.x86_64 as install for libpeas-loader-python-1.22.0-1.el7.x86_64
+---> Package zenity.x86_64 0:3.28.1-1.el7 will be installed
+Checking deps for zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libnotify.so.4()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libgtk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libgdk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libcairo-gobject.so.2()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of zenity.x86_64 0:3.28.1-1.el7 - u
+zenity-3.28.1-1.el7.x86_64 requires: libnotify.so.4()(64bit)
+--> Processing Dependency: libnotify.so.4()(64bit) for package: zenity-3.28.1-1.el7.x86_64
+Searching pkgSack for dep: libnotify.so.4()(64bit)
+TSINFO: Marking libnotify-0.7.7-1.el7.x86_64 as install for zenity-3.28.1-1.el7.x86_64
+--> Running transaction check
+---> Package avahi-glib.x86_64 0:0.6.31-20.el7 will be installed
+Checking deps for avahi-glib.x86_64 0:0.6.31-20.el7 - u
+looking for ('avahi-libs', 'EQ', ('0', '0.6.31', '20.el7')) as a requirement of avahi-glib.x86_64 0:0.6.31-20.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of avahi-glib.x86_64 0:0.6.31-20.el7 - u
+looking for ('libc.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of avahi-glib.x86_64 0:0.6.31-20.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of avahi-glib.x86_64 0:0.6.31-20.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of avahi-glib.x86_64 0:0.6.31-20.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of avahi-glib.x86_64 0:0.6.31-20.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of avahi-glib.x86_64 0:0.6.31-20.el7 - u
+looking for ('libavahi-common.so.3()(64bit)', None, (None, None, None)) as a requirement of avahi-glib.x86_64 0:0.6.31-20.el7 - u
+---> Package gcr.x86_64 0:3.28.0-1.el7 will be installed
+Checking deps for gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgcrypt.so.11(GCRYPT_1.2)(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libp11-kit.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgtk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgthread-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgpg-error.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgdk-3.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libgcrypt.so.11()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libcairo-gobject.so.2()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gcr.x86_64 0:3.28.0-1.el7 - u
+---> Package gvfs-client.x86_64 0:1.36.2-5.el7_9 will be installed
+Checking deps for gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libutil.so.1()(64bit)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+---> Package hunspell.x86_64 0:1.3.2-16.el7 will be installed
+Checking deps for hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('hunspell-en-US', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libncursesw.so.5()(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of hunspell.x86_64 0:1.3.2-16.el7 - u
+hunspell-1.3.2-16.el7.x86_64 requires: hunspell-en-US
+--> Processing Dependency: hunspell-en-US for package: hunspell-1.3.2-16.el7.x86_64
+Searching pkgSack for dep: hunspell-en-US
+TSINFO: Marking hunspell-en-US-0.20121024-6.el7.noarch as install for hunspell-1.3.2-16.el7.x86_64
+---> Package iso-codes.noarch 0:3.46-2.el7 will be installed
+Checking deps for iso-codes.noarch 0:3.46-2.el7 - u
+looking for ('xml-common', None, (None, None, None)) as a requirement of iso-codes.noarch 0:3.46-2.el7 - u
+iso-codes-3.46-2.el7.noarch requires: xml-common
+--> Processing Dependency: xml-common for package: iso-codes-3.46-2.el7.noarch
+Searching pkgSack for dep: xml-common
+TSINFO: Marking xml-common-0.6.3-39.el7.noarch as install for iso-codes-3.46-2.el7.noarch
+---> Package libbluray.x86_64 0:0.2.3-6.el7 will be installed
+Checking deps for libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.0)(64bit)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.4.30)(64bit)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('libxml2.so.2()(64bit)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libbluray.x86_64 0:0.2.3-6.el7 - u
+---> Package libcdio.x86_64 0:0.92-3.el7 will be installed
+Checking deps for libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('libncurses.so.5()(64bit)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of libcdio.x86_64 0:0.92-3.el7 - u
+---> Package libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 will be installed
+Checking deps for libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+looking for ('libcdio.so.15(CDIO_15)(64bit)', None, (None, None, None)) as a requirement of libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+looking for ('libcdio.so.15()(64bit)', None, (None, None, None)) as a requirement of libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+---> Package libgudev1.x86_64 0:219-78.el7_9.3 will be installed
+Checking deps for libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('systemd-libs', 'EQ', ('0', '219', '78.el7_9.3')) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('glib2', 'GE', ('0', '2.42', None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libudev.so.1(LIBUDEV_183)(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libdw.so.1()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+looking for ('libcap.so.2()(64bit)', None, (None, None, None)) as a requirement of libgudev1.x86_64 0:219-78.el7_9.3 - u
+---> Package libnotify.x86_64 0:0.7.7-1.el7 will be installed
+Checking deps for libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('glib2(x86-64)', 'GE', ('0', '2.26.0', None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.7)(64bit)', None, (None, None, None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libnotify.x86_64 0:0.7.7-1.el7 - u
+---> Package libsecret.x86_64 0:0.18.6-1.el7 will be installed
+Checking deps for libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libgcrypt.so.11(GCRYPT_1.2)(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libgpg-error.so.0()(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libgcrypt.so.11()(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libsecret.x86_64 0:0.18.6-1.el7 - u
+---> Package libudisks2.x86_64 0:2.8.4-1.el7 will be installed
+Checking deps for libudisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libudisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libudisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libudisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libudisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libudisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libudisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libudisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libudisks2.x86_64 0:2.8.4-1.el7 - u
+---> Package python-gobject.x86_64 0:3.22.0-1.el7_4.1 will be installed
+Checking deps for python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('python-gobject-base(x86-64)', 'EQ', ('0', '3.22.0', '1.el7_4.1')) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('pycairo(x86-64)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('libgirepository-1.0.so.1()(64bit)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+looking for ('libcairo-gobject.so.2()(64bit)', None, (None, None, None)) as a requirement of python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+python-gobject-3.22.0-1.el7_4.1.x86_64 requires: pycairo(x86-64)
+--> Processing Dependency: pycairo(x86-64) for package: python-gobject-3.22.0-1.el7_4.1.x86_64
+Searching pkgSack for dep: pycairo(x86-64)
+TSINFO: Marking pycairo-1.8.10-8.el7.x86_64 as install for python-gobject-3.22.0-1.el7_4.1.x86_64
+---> Package udisks2.x86_64 0:2.8.4-1.el7 will be installed
+Checking deps for udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libudisks2(x86-64)', 'EQ', ('0', '2.8.4', '1.el7')) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('udev', 'GE', ('0', '208', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libblockdev-swap', 'GE', ('0', '2.13', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libblockdev-part', 'GE', ('0', '2.13', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libblockdev-mdraid', 'GE', ('0', '2.13', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libblockdev-loop', 'GE', ('0', '2.13', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libblockdev-fs', 'GE', ('0', '2.13', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libblockdev-crypto', 'GE', ('0', '2.13', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libblockdev', 'GE', ('0', '2.13', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libatasmart', 'GE', ('0', '0.17', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('dbus', 'GE', ('0', '1.4.0', None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('xfsprogs', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('util-linux', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('systemd', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('systemd', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libsystemd.so.0(LIBSYSTEMD_209)(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.7)(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libacl.so.1(ACL_1.0)(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('gdisk', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('eject', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('e2fsprogs', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('dosfstools', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libudisks2.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libsystemd.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libpolkit-gobject-1.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libpolkit-agent-1.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libgudev-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libblockdev.so.2()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libbd_utils.so.2()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libatasmart.so.4()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+looking for ('libacl.so.1()(64bit)', None, (None, None, None)) as a requirement of udisks2.x86_64 0:2.8.4-1.el7 - u
+udisks2-2.8.4-1.el7.x86_64 requires: libblockdev-swap >= 2.13
+--> Processing Dependency: libblockdev-swap >= 2.13 for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libblockdev-swap
+TSINFO: Marking libblockdev-swap-2.18-5.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libblockdev-part >= 2.13
+--> Processing Dependency: libblockdev-part >= 2.13 for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libblockdev-part
+TSINFO: Marking libblockdev-part-2.18-5.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libblockdev-mdraid >= 2.13
+--> Processing Dependency: libblockdev-mdraid >= 2.13 for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libblockdev-mdraid
+TSINFO: Marking libblockdev-mdraid-2.18-5.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libblockdev-loop >= 2.13
+--> Processing Dependency: libblockdev-loop >= 2.13 for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libblockdev-loop
+TSINFO: Marking libblockdev-loop-2.18-5.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libblockdev-fs >= 2.13
+--> Processing Dependency: libblockdev-fs >= 2.13 for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libblockdev-fs
+TSINFO: Marking libblockdev-fs-2.18-5.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libblockdev-crypto >= 2.13
+--> Processing Dependency: libblockdev-crypto >= 2.13 for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libblockdev-crypto
+TSINFO: Marking libblockdev-crypto-2.18-5.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libblockdev >= 2.13
+--> Processing Dependency: libblockdev >= 2.13 for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libblockdev
+TSINFO: Marking libblockdev-2.18-5.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libatasmart >= 0.17
+--> Processing Dependency: libatasmart >= 0.17 for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libatasmart
+TSINFO: Marking libatasmart-0.19-6.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: xfsprogs
+--> Processing Dependency: xfsprogs for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: xfsprogs
+TSINFO: Marking xfsprogs-4.5.0-22.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: gdisk
+--> Processing Dependency: gdisk for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: gdisk
+TSINFO: Marking gdisk-0.8.10-3.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: e2fsprogs
+--> Processing Dependency: e2fsprogs for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: e2fsprogs
+TSINFO: Marking e2fsprogs-1.42.9-19.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: dosfstools
+--> Processing Dependency: dosfstools for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: dosfstools
+TSINFO: Marking dosfstools-3.0.20-10.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libblockdev.so.2()(64bit)
+--> Processing Dependency: libblockdev.so.2()(64bit) for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libblockdev.so.2()(64bit)
+libblockdev-2.18-5.el7.x86_64 already in ts, skipping this one
+udisks2-2.8.4-1.el7.x86_64 requires: libbd_utils.so.2()(64bit)
+--> Processing Dependency: libbd_utils.so.2()(64bit) for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libbd_utils.so.2()(64bit)
+TSINFO: Marking libblockdev-utils-2.18-5.el7.x86_64 as install for udisks2-2.8.4-1.el7.x86_64
+udisks2-2.8.4-1.el7.x86_64 requires: libatasmart.so.4()(64bit)
+--> Processing Dependency: libatasmart.so.4()(64bit) for package: udisks2-2.8.4-1.el7.x86_64
+Searching pkgSack for dep: libatasmart.so.4()(64bit)
+libatasmart-0.19-6.el7.x86_64 already in ts, skipping this one
+--> Running transaction check
+---> Package dosfstools.x86_64 0:3.0.20-10.el7 will be installed
+Checking deps for dosfstools.x86_64 0:3.0.20-10.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of dosfstools.x86_64 0:3.0.20-10.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of dosfstools.x86_64 0:3.0.20-10.el7 - u
+---> Package e2fsprogs.x86_64 0:1.42.9-19.el7 will be installed
+Checking deps for e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libss', 'EQ', ('0', '1.42.9', '19.el7')) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libcom_err(x86-64)', 'EQ', ('0', '1.42.9', '19.el7')) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('e2fsprogs-libs(x86-64)', 'EQ', ('0', '1.42.9', '19.el7')) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libuuid.so.1(UUID_1.0)(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libblkid.so.1(BLKID_2.17)(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libblkid.so.1(BLKID_2.15)(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libblkid.so.1(BLKID_1.0)(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libss.so.2()(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libext2fs.so.2()(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libe2p.so.2()(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libcom_err.so.2()(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libblkid.so.1()(64bit)', None, (None, None, None)) as a requirement of e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+e2fsprogs-1.42.9-19.el7.x86_64 requires: libss = 1.42.9-19.el7
+--> Processing Dependency: libss = 1.42.9-19.el7 for package: e2fsprogs-1.42.9-19.el7.x86_64
+Searching pkgSack for dep: libss
+TSINFO: Marking libss-1.42.9-19.el7.x86_64 as install for e2fsprogs-1.42.9-19.el7.x86_64
+e2fsprogs-1.42.9-19.el7.x86_64 requires: e2fsprogs-libs(x86-64) = 1.42.9-19.el7
+--> Processing Dependency: e2fsprogs-libs(x86-64) = 1.42.9-19.el7 for package: e2fsprogs-1.42.9-19.el7.x86_64
+Searching pkgSack for dep: e2fsprogs-libs(x86-64)
+TSINFO: Marking e2fsprogs-libs-1.42.9-19.el7.x86_64 as install for e2fsprogs-1.42.9-19.el7.x86_64
+e2fsprogs-1.42.9-19.el7.x86_64 requires: libss.so.2()(64bit)
+--> Processing Dependency: libss.so.2()(64bit) for package: e2fsprogs-1.42.9-19.el7.x86_64
+Searching pkgSack for dep: libss.so.2()(64bit)
+libss-1.42.9-19.el7.x86_64 already in ts, skipping this one
+e2fsprogs-1.42.9-19.el7.x86_64 requires: libext2fs.so.2()(64bit)
+--> Processing Dependency: libext2fs.so.2()(64bit) for package: e2fsprogs-1.42.9-19.el7.x86_64
+Searching pkgSack for dep: libext2fs.so.2()(64bit)
+e2fsprogs-libs-1.42.9-19.el7.x86_64 already in ts, skipping this one
+e2fsprogs-1.42.9-19.el7.x86_64 requires: libe2p.so.2()(64bit)
+--> Processing Dependency: libe2p.so.2()(64bit) for package: e2fsprogs-1.42.9-19.el7.x86_64
+Quick matched e2fsprogs-libs-1.42.9-19.el7.x86_64 to require for libe2p.so.2()(64bit)
+---> Package gdisk.x86_64 0:0.8.10-3.el7 will be installed
+Checking deps for gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libuuid.so.1(UUID_1.0)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libpopt.so.0(LIBPOPT_0)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libpopt.so.0()(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libncursesw.so.5()(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of gdisk.x86_64 0:0.8.10-3.el7 - u
+---> Package hunspell-en-US.noarch 0:0.20121024-6.el7 will be installed
+Checking deps for hunspell-en-US.noarch 0:0.20121024-6.el7 - u
+looking for ('hunspell', None, (None, None, None)) as a requirement of hunspell-en-US.noarch 0:0.20121024-6.el7 - u
+---> Package libatasmart.x86_64 0:0.19-6.el7 will be installed
+Checking deps for libatasmart.x86_64 0:0.19-6.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libatasmart.x86_64 0:0.19-6.el7 - u
+looking for ('libudev.so.1(LIBUDEV_183)(64bit)', None, (None, None, None)) as a requirement of libatasmart.x86_64 0:0.19-6.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libatasmart.x86_64 0:0.19-6.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libatasmart.x86_64 0:0.19-6.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libatasmart.x86_64 0:0.19-6.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libatasmart.x86_64 0:0.19-6.el7 - u
+---> Package libblockdev.x86_64 0:2.18-5.el7 will be installed
+Checking deps for libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libblockdev-utils(x86-64)', 'EQ', ('0', '2.18', '5.el7')) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_utils.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev.x86_64 0:2.18-5.el7 - u
+---> Package libblockdev-crypto.x86_64 0:2.18-5.el7 will be installed
+Checking deps for libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libblockdev-utils(x86-64)', 'EQ', ('0', '2.18', '5.el7')) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libsmime3.so(NSS_3.4)(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libnss3.so(NSS_3.9.2)(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libnss3.so(NSS_3.2)(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libcryptsetup.so.12(CRYPTSETUP_2.0)(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.6)(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libvolume_key.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libssl3.so()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libsmime3.so()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libplds4.so()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libplc4.so()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libnssutil3.so()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libnss3.so()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libnspr4.so()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libcryptsetup.so.12()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_utils.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+libblockdev-crypto-2.18-5.el7.x86_64 requires: libvolume_key.so.1()(64bit)
+--> Processing Dependency: libvolume_key.so.1()(64bit) for package: libblockdev-crypto-2.18-5.el7.x86_64
+Searching pkgSack for dep: libvolume_key.so.1()(64bit)
+TSINFO: Marking volume_key-libs-0.3.9-9.el7.x86_64 as install for libblockdev-crypto-2.18-5.el7.x86_64
+---> Package libblockdev-fs.x86_64 0:2.18-5.el7 will be installed
+Checking deps for libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libblockdev-utils(x86-64)', 'EQ', ('0', '2.18', '5.el7')) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libparted-fs-resize.so.0(LIBPARTED_FS_RESIZE_0.0.0)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libmount.so.1(MOUNT_2.22)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libmount.so.1(MOUNT_2.21)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libmount.so.1(MOUNT_2.19)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.7)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libblkid.so.1(BLKID_2.21)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libblkid.so.1(BLKID_2.17)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libblkid.so.1(BLKID_2.15)(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('device-mapper-multipath', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libparted.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libparted-fs-resize.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libmount.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libblkid.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_utils.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_part_err.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-fs.x86_64 0:2.18-5.el7 - u
+libblockdev-fs-2.18-5.el7.x86_64 requires: libparted-fs-resize.so.0(LIBPARTED_FS_RESIZE_0.0.0)(64bit)
+--> Processing Dependency: libparted-fs-resize.so.0(LIBPARTED_FS_RESIZE_0.0.0)(64bit) for package: libblockdev-fs-2.18-5.el7.x86_64
+Searching pkgSack for dep: libparted-fs-resize.so.0(LIBPARTED_FS_RESIZE_0.0.0)(64bit)
+TSINFO: Marking parted-3.1-32.el7.x86_64 as install for libblockdev-fs-2.18-5.el7.x86_64
+libblockdev-fs-2.18-5.el7.x86_64 requires: device-mapper-multipath
+--> Processing Dependency: device-mapper-multipath for package: libblockdev-fs-2.18-5.el7.x86_64
+Searching pkgSack for dep: device-mapper-multipath
+TSINFO: Marking device-mapper-multipath-0.4.9-135.el7_9.x86_64 as install for libblockdev-fs-2.18-5.el7.x86_64
+libblockdev-fs-2.18-5.el7.x86_64 requires: libparted.so.2()(64bit)
+--> Processing Dependency: libparted.so.2()(64bit) for package: libblockdev-fs-2.18-5.el7.x86_64
+Searching pkgSack for dep: libparted.so.2()(64bit)
+parted-3.1-32.el7.x86_64 already in ts, skipping this one
+libblockdev-fs-2.18-5.el7.x86_64 requires: libparted-fs-resize.so.0()(64bit)
+--> Processing Dependency: libparted-fs-resize.so.0()(64bit) for package: libblockdev-fs-2.18-5.el7.x86_64
+Quick matched parted-3.1-32.el7.x86_64 to require for libparted-fs-resize.so.0()(64bit)
+---> Package libblockdev-loop.x86_64 0:2.18-5.el7 will be installed
+Checking deps for libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libblockdev-utils(x86-64)', 'EQ', ('0', '2.18', '5.el7')) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.7)(64bit)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_utils.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-loop.x86_64 0:2.18-5.el7 - u
+---> Package libblockdev-mdraid.x86_64 0:2.18-5.el7 will be installed
+Checking deps for libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libblockdev-utils(x86-64)', 'EQ', ('0', '2.18', '5.el7')) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('mdadm', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libbytesize.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_utils.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+libblockdev-mdraid-2.18-5.el7.x86_64 requires: mdadm
+--> Processing Dependency: mdadm for package: libblockdev-mdraid-2.18-5.el7.x86_64
+Searching pkgSack for dep: mdadm
+TSINFO: Marking mdadm-4.1-8.el7_9.x86_64 as install for libblockdev-mdraid-2.18-5.el7.x86_64
+libblockdev-mdraid-2.18-5.el7.x86_64 requires: libbytesize.so.1()(64bit)
+--> Processing Dependency: libbytesize.so.1()(64bit) for package: libblockdev-mdraid-2.18-5.el7.x86_64
+Searching pkgSack for dep: libbytesize.so.1()(64bit)
+TSINFO: Marking libbytesize-1.2-1.el7.x86_64 as install for libblockdev-mdraid-2.18-5.el7.x86_64
+---> Package libblockdev-part.x86_64 0:2.18-5.el7 will be installed
+Checking deps for libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libblockdev-utils(x86-64)', 'EQ', ('0', '2.18', '5.el7')) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('util-linux', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('gdisk', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('device-mapper-multipath', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libparted.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libparted-fs-resize.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_utils.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_part_err.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-part.x86_64 0:2.18-5.el7 - u
+---> Package libblockdev-swap.x86_64 0:2.18-5.el7 will be installed
+Checking deps for libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libblockdev-utils(x86-64)', 'EQ', ('0', '2.18', '5.el7')) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('util-linux', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+looking for ('libbd_utils.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-swap.x86_64 0:2.18-5.el7 - u
+---> Package libblockdev-utils.x86_64 0:2.18-5.el7 will be installed
+Checking deps for libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1(LIBUDEV_183)(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2(LIBKMOD_5)(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.6)(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libparted.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libparted-fs-resize.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of libblockdev-utils.x86_64 0:2.18-5.el7 - u
+---> Package pycairo.x86_64 0:1.8.10-8.el7 will be installed
+Checking deps for pycairo.x86_64 0:1.8.10-8.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of pycairo.x86_64 0:1.8.10-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of pycairo.x86_64 0:1.8.10-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of pycairo.x86_64 0:1.8.10-8.el7 - u
+looking for ('/usr/bin/env', None, (None, None, None)) as a requirement of pycairo.x86_64 0:1.8.10-8.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of pycairo.x86_64 0:1.8.10-8.el7 - u
+---> Package xfsprogs.x86_64 0:4.5.0-22.el7 will be installed
+Checking deps for xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libuuid.so.1(UUID_1.0)(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('librt.so.1(GLIBC_2.3.3)(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libblkid.so.1(BLKID_2.17)(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libblkid.so.1(BLKID_2.15)(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libreadline.so.6()(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+looking for ('libblkid.so.1()(64bit)', None, (None, None, None)) as a requirement of xfsprogs.x86_64 0:4.5.0-22.el7 - u
+---> Package xml-common.noarch 0:0.6.3-39.el7 will be installed
+Checking deps for xml-common.noarch 0:0.6.3-39.el7 - u
+looking for ('/usr/bin/xmlcatalog', None, (None, None, None)) as a requirement of xml-common.noarch 0:0.6.3-39.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of xml-common.noarch 0:0.6.3-39.el7 - u
+--> Running transaction check
+---> Package device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 will be installed
+Checking deps for device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('kpartx', 'EQ', ('0', '0.4.9', '135.el7_9')) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('device-mapper-multipath-libs', 'EQ', ('0', '0.4.9', '135.el7_9')) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('device-mapper', 'GE', ('7', '1.02.96', None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('systemd-units', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('systemd-units', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('systemd-sysv', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libudev.so.1(LIBUDEV_183)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libdevmapper.so.1.02(Base)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('initscripts', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('chkconfig', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libreadline.so.6()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libmultipath.so.0()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libmpathpersist.so.0()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libmpathcmd.so.0()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libdevmapper.so.1.02()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+device-mapper-multipath-0.4.9-135.el7_9.x86_64 requires: device-mapper-multipath-libs = 0.4.9-135.el7_9
+--> Processing Dependency: device-mapper-multipath-libs = 0.4.9-135.el7_9 for package: device-mapper-multipath-0.4.9-135.el7_9.x86_64
+Searching pkgSack for dep: device-mapper-multipath-libs
+TSINFO: Marking device-mapper-multipath-libs-0.4.9-135.el7_9.x86_64 as install for device-mapper-multipath-0.4.9-135.el7_9.x86_64
+device-mapper-multipath-0.4.9-135.el7_9.x86_64 requires: libmultipath.so.0()(64bit)
+--> Processing Dependency: libmultipath.so.0()(64bit) for package: device-mapper-multipath-0.4.9-135.el7_9.x86_64
+Quick matched device-mapper-multipath-libs-0.4.9-135.el7_9.x86_64 to require for libmultipath.so.0()(64bit)
+device-mapper-multipath-0.4.9-135.el7_9.x86_64 requires: libmpathpersist.so.0()(64bit)
+--> Processing Dependency: libmpathpersist.so.0()(64bit) for package: device-mapper-multipath-0.4.9-135.el7_9.x86_64
+Quick matched device-mapper-multipath-libs-0.4.9-135.el7_9.x86_64 to require for libmpathpersist.so.0()(64bit)
+device-mapper-multipath-0.4.9-135.el7_9.x86_64 requires: libmpathcmd.so.0()(64bit)
+--> Processing Dependency: libmpathcmd.so.0()(64bit) for package: device-mapper-multipath-0.4.9-135.el7_9.x86_64
+Quick matched device-mapper-multipath-libs-0.4.9-135.el7_9.x86_64 to require for libmpathcmd.so.0()(64bit)
+---> Package e2fsprogs-libs.x86_64 0:1.42.9-19.el7 will be installed
+Checking deps for e2fsprogs-libs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libcom_err(x86-64)', 'EQ', ('0', '1.42.9', '19.el7')) as a requirement of e2fsprogs-libs.x86_64 0:1.42.9-19.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of e2fsprogs-libs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of e2fsprogs-libs.x86_64 0:1.42.9-19.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of e2fsprogs-libs.x86_64 0:1.42.9-19.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of e2fsprogs-libs.x86_64 0:1.42.9-19.el7 - u
+looking for ('libcom_err.so.2()(64bit)', None, (None, None, None)) as a requirement of e2fsprogs-libs.x86_64 0:1.42.9-19.el7 - u
+---> Package libbytesize.x86_64 0:1.2-1.el7 will be installed
+Checking deps for libbytesize.x86_64 0:1.2-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libbytesize.x86_64 0:1.2-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libbytesize.x86_64 0:1.2-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libbytesize.x86_64 0:1.2-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libbytesize.x86_64 0:1.2-1.el7 - u
+looking for ('libpcre.so.1()(64bit)', None, (None, None, None)) as a requirement of libbytesize.x86_64 0:1.2-1.el7 - u
+looking for ('libmpfr.so.4()(64bit)', None, (None, None, None)) as a requirement of libbytesize.x86_64 0:1.2-1.el7 - u
+looking for ('libgmp.so.10()(64bit)', None, (None, None, None)) as a requirement of libbytesize.x86_64 0:1.2-1.el7 - u
+---> Package libss.x86_64 0:1.42.9-19.el7 will be installed
+Checking deps for libss.x86_64 0:1.42.9-19.el7 - u
+looking for ('libcom_err(x86-64)', 'EQ', ('0', '1.42.9', '19.el7')) as a requirement of libss.x86_64 0:1.42.9-19.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libss.x86_64 0:1.42.9-19.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libss.x86_64 0:1.42.9-19.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of libss.x86_64 0:1.42.9-19.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libss.x86_64 0:1.42.9-19.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libss.x86_64 0:1.42.9-19.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libss.x86_64 0:1.42.9-19.el7 - u
+looking for ('libcom_err.so.2()(64bit)', None, (None, None, None)) as a requirement of libss.x86_64 0:1.42.9-19.el7 - u
+---> Package mdadm.x86_64 0:4.1-8.el7_9 will be installed
+Checking deps for mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('systemd-units', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('systemd-units', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('libreport-filesystem', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('coreutils', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('coreutils', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('chkconfig', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of mdadm.x86_64 0:4.1-8.el7_9 - u
+mdadm-4.1-8.el7_9.x86_64 requires: libreport-filesystem
+--> Processing Dependency: libreport-filesystem for package: mdadm-4.1-8.el7_9.x86_64
+Searching pkgSack for dep: libreport-filesystem
+TSINFO: Marking libreport-filesystem-2.1.11-53.el7.centos.x86_64 as install for mdadm-4.1-8.el7_9.x86_64
+---> Package parted.x86_64 0:3.1-32.el7 will be installed
+Checking deps for parted.x86_64 0:3.1-32.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libuuid.so.1(UUID_1.0)(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libdevmapper.so.1.02(Base)(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libblkid.so.1(BLKID_2.17)(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libblkid.so.1(BLKID_2.15)(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libsepol.so.1()(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libselinux.so.1()(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libreadline.so.6()(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libdevmapper.so.1.02()(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+looking for ('libblkid.so.1()(64bit)', None, (None, None, None)) as a requirement of parted.x86_64 0:3.1-32.el7 - u
+---> Package volume_key-libs.x86_64 0:0.3.9-9.el7 will be installed
+Checking deps for volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libsmime3.so(NSS_3.2)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libnss3.so(NSS_3.3)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libnss3.so(NSS_3.2)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libgpgme.so.11(GPGME_1.1)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libgpgme.so.11(GPGME_1.0)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libcryptsetup.so.12(CRYPTSETUP_2.0)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libblkid.so.1(BLKID_1.0)(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('/usr/bin/gpg', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libssl3.so()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libsmime3.so()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libplds4.so()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libplc4.so()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libnssutil3.so()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libnss3.so()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libnspr4.so()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libgpgme.so.11()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libcryptsetup.so.12()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+looking for ('libblkid.so.1()(64bit)', None, (None, None, None)) as a requirement of volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+--> Running transaction check
+---> Package device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 will be installed
+Checking deps for device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libudev.so.1(LIBUDEV_183)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.3.3)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libdevmapper.so.1.02(DM_1_02_97)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libdevmapper.so.1.02(Base)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libaio.so.1(LIBAIO_0.4)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libaio.so.1(LIBAIO_0.1)(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libdevmapper.so.1.02()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+looking for ('libaio.so.1()(64bit)', None, (None, None, None)) as a requirement of device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+---> Package libreport-filesystem.x86_64 0:2.1.11-53.el7.centos will be installed
+Checking deps for libreport-filesystem.x86_64 0:2.1.11-53.el7.centos - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.448
+
+Dependencies Resolved
+
+================================================================================
+ Package                        Arch     Version                Repository
+                                                                           Size
+================================================================================
+Installing:
+ gedit                          x86_64   2:3.28.1-3.el7         base      2.5 M
+Installing for dependencies:
+ avahi-glib                     x86_64   0.6.31-20.el7          base       25 k
+ device-mapper-multipath        x86_64   0.4.9-135.el7_9        updates   148 k
+ device-mapper-multipath-libs   x86_64   0.4.9-135.el7_9        updates   268 k
+ dosfstools                     x86_64   3.0.20-10.el7          base      101 k
+ e2fsprogs                      x86_64   1.42.9-19.el7          base      701 k
+ e2fsprogs-libs                 x86_64   1.42.9-19.el7          base      168 k
+ enchant                        x86_64   1:1.6.0-8.el7          base       55 k
+ gcr                            x86_64   3.28.0-1.el7           base      677 k
+ gdisk                          x86_64   0.8.10-3.el7           base      190 k
+ gspell                         x86_64   1.6.1-1.el7            base       91 k
+ gtksourceview3                 x86_64   3.24.8-2.el7           base      585 k
+ gvfs                           x86_64   1.36.2-5.el7_9         updates   354 k
+ gvfs-client                    x86_64   1.36.2-5.el7_9         updates   799 k
+ hunspell                       x86_64   1.3.2-16.el7           base      223 k
+ hunspell-en-US                 noarch   0.20121024-6.el7       base      190 k
+ iso-codes                      noarch   3.46-2.el7             base      2.7 M
+ libatasmart                    x86_64   0.19-6.el7             base       43 k
+ libblockdev                    x86_64   2.18-5.el7             base      119 k
+ libblockdev-crypto             x86_64   2.18-5.el7             base       60 k
+ libblockdev-fs                 x86_64   2.18-5.el7             base       66 k
+ libblockdev-loop               x86_64   2.18-5.el7             base       51 k
+ libblockdev-mdraid             x86_64   2.18-5.el7             base       57 k
+ libblockdev-part               x86_64   2.18-5.el7             base       60 k
+ libblockdev-swap               x86_64   2.18-5.el7             base       52 k
+ libblockdev-utils              x86_64   2.18-5.el7             base       58 k
+ libbluray                      x86_64   0.2.3-6.el7            base      135 k
+ libbytesize                    x86_64   1.2-1.el7              base       52 k
+ libcdio                        x86_64   0.92-3.el7             base      236 k
+ libcdio-paranoia               x86_64   10.2+0.90-11.el7       base       70 k
+ libgudev1                      x86_64   219-78.el7_9.3         updates   109 k
+ libnotify                      x86_64   0.7.7-1.el7            base       39 k
+ libpeas                        x86_64   1.22.0-1.el7           base      113 k
+ libpeas-gtk                    x86_64   1.22.0-1.el7           base       29 k
+ libpeas-loader-python          x86_64   1.22.0-1.el7           base       20 k
+ libreport-filesystem           x86_64   2.1.11-53.el7.centos   base       41 k
+ libsecret                      x86_64   0.18.6-1.el7           base      153 k
+ libss                          x86_64   1.42.9-19.el7          base       47 k
+ libudisks2                     x86_64   2.8.4-1.el7            base      129 k
+ mdadm                          x86_64   4.1-8.el7_9            updates   440 k
+ parted                         x86_64   3.1-32.el7             base      609 k
+ pycairo                        x86_64   1.8.10-8.el7           base      157 k
+ python-gobject                 x86_64   3.22.0-1.el7_4.1       base       16 k
+ udisks2                        x86_64   2.8.4-1.el7            base      441 k
+ volume_key-libs                x86_64   0.3.9-9.el7            base      141 k
+ xfsprogs                       x86_64   4.5.0-22.el7           base      897 k
+ xml-common                     noarch   0.6.3-39.el7           base       26 k
+ zenity                         x86_64   3.28.1-1.el7           base      4.0 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+47 Dependent packages)
+
+Total download size: 18 M
+Installed size: 64 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              3.1 MB/s |  18 MB  00:05     
+Member: libpeas-loader-python.x86_64 0:1.22.0-1.el7 - u
+Adding Package libpeas-loader-python-1.22.0-1.el7.x86_64 in mode u
+Member: libcdio-paranoia.x86_64 0:10.2+0.90-11.el7 - u
+Adding Package libcdio-paranoia-10.2+0.90-11.el7.x86_64 in mode u
+Member: libblockdev-swap.x86_64 0:2.18-5.el7 - u
+Adding Package libblockdev-swap-2.18-5.el7.x86_64 in mode u
+Member: dosfstools.x86_64 0:3.0.20-10.el7 - u
+Adding Package dosfstools-3.0.20-10.el7.x86_64 in mode u
+Member: avahi-glib.x86_64 0:0.6.31-20.el7 - u
+Adding Package avahi-glib-0.6.31-20.el7.x86_64 in mode u
+Member: libnotify.x86_64 0:0.7.7-1.el7 - u
+Adding Package libnotify-0.7.7-1.el7.x86_64 in mode u
+Member: hunspell-en-US.noarch 0:0.20121024-6.el7 - u
+Adding Package hunspell-en-US-0.20121024-6.el7.noarch in mode u
+Member: libudisks2.x86_64 0:2.8.4-1.el7 - u
+Adding Package libudisks2-2.8.4-1.el7.x86_64 in mode u
+Member: enchant.x86_64 1:1.6.0-8.el7 - u
+Adding Package 1:enchant-1.6.0-8.el7.x86_64 in mode u
+Member: device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9 - u
+Adding Package device-mapper-multipath-libs-0.4.9-135.el7_9.x86_64 in mode u
+Member: libpeas-gtk.x86_64 0:1.22.0-1.el7 - u
+Adding Package libpeas-gtk-1.22.0-1.el7.x86_64 in mode u
+Member: zenity.x86_64 0:3.28.1-1.el7 - u
+Adding Package zenity-3.28.1-1.el7.x86_64 in mode u
+Member: libcdio.x86_64 0:0.92-3.el7 - u
+Adding Package libcdio-0.92-3.el7.x86_64 in mode u
+Member: pycairo.x86_64 0:1.8.10-8.el7 - u
+Adding Package pycairo-1.8.10-8.el7.x86_64 in mode u
+Member: libpeas.x86_64 0:1.22.0-1.el7 - u
+Adding Package libpeas-1.22.0-1.el7.x86_64 in mode u
+Member: libblockdev-part.x86_64 0:2.18-5.el7 - u
+Adding Package libblockdev-part-2.18-5.el7.x86_64 in mode u
+Member: libblockdev-loop.x86_64 0:2.18-5.el7 - u
+Adding Package libblockdev-loop-2.18-5.el7.x86_64 in mode u
+Member: libsecret.x86_64 0:0.18.6-1.el7 - u
+Adding Package libsecret-0.18.6-1.el7.x86_64 in mode u
+Member: xfsprogs.x86_64 0:4.5.0-22.el7 - u
+Adding Package xfsprogs-4.5.0-22.el7.x86_64 in mode u
+Member: gvfs.x86_64 0:1.36.2-5.el7_9 - u
+Adding Package gvfs-1.36.2-5.el7_9.x86_64 in mode u
+Member: udisks2.x86_64 0:2.8.4-1.el7 - u
+Adding Package udisks2-2.8.4-1.el7.x86_64 in mode u
+Member: libreport-filesystem.x86_64 0:2.1.11-53.el7.centos - u
+Adding Package libreport-filesystem-2.1.11-53.el7.centos.x86_64 in mode u
+Member: e2fsprogs.x86_64 0:1.42.9-19.el7 - u
+Adding Package e2fsprogs-1.42.9-19.el7.x86_64 in mode u
+Member: libatasmart.x86_64 0:0.19-6.el7 - u
+Adding Package libatasmart-0.19-6.el7.x86_64 in mode u
+Member: e2fsprogs-libs.x86_64 0:1.42.9-19.el7 - u
+Adding Package e2fsprogs-libs-1.42.9-19.el7.x86_64 in mode u
+Member: gtksourceview3.x86_64 0:3.24.8-2.el7 - u
+Adding Package gtksourceview3-3.24.8-2.el7.x86_64 in mode u
+Member: mdadm.x86_64 0:4.1-8.el7_9 - u
+Adding Package mdadm-4.1-8.el7_9.x86_64 in mode u
+Member: device-mapper-multipath.x86_64 0:0.4.9-135.el7_9 - u
+Adding Package device-mapper-multipath-0.4.9-135.el7_9.x86_64 in mode u
+Member: libblockdev.x86_64 0:2.18-5.el7 - u
+Adding Package libblockdev-2.18-5.el7.x86_64 in mode u
+Member: python-gobject.x86_64 0:3.22.0-1.el7_4.1 - u
+Adding Package python-gobject-3.22.0-1.el7_4.1.x86_64 in mode u
+Member: libgudev1.x86_64 0:219-78.el7_9.3 - u
+Adding Package libgudev1-219-78.el7_9.3.x86_64 in mode u
+Member: libbluray.x86_64 0:0.2.3-6.el7 - u
+Adding Package libbluray-0.2.3-6.el7.x86_64 in mode u
+Member: libbytesize.x86_64 0:1.2-1.el7 - u
+Adding Package libbytesize-1.2-1.el7.x86_64 in mode u
+Member: gvfs-client.x86_64 0:1.36.2-5.el7_9 - u
+Adding Package gvfs-client-1.36.2-5.el7_9.x86_64 in mode u
+Member: libss.x86_64 0:1.42.9-19.el7 - u
+Adding Package libss-1.42.9-19.el7.x86_64 in mode u
+Member: gedit.x86_64 2:3.28.1-3.el7 - u
+Adding Package 2:gedit-3.28.1-3.el7.x86_64 in mode u
+Member: xml-common.noarch 0:0.6.3-39.el7 - u
+Adding Package xml-common-0.6.3-39.el7.noarch in mode u
+Member: libblockdev-mdraid.x86_64 0:2.18-5.el7 - u
+Adding Package libblockdev-mdraid-2.18-5.el7.x86_64 in mode u
+Member: libblockdev-utils.x86_64 0:2.18-5.el7 - u
+Adding Package libblockdev-utils-2.18-5.el7.x86_64 in mode u
+Member: hunspell.x86_64 0:1.3.2-16.el7 - u
+Adding Package hunspell-1.3.2-16.el7.x86_64 in mode u
+Member: volume_key-libs.x86_64 0:0.3.9-9.el7 - u
+Adding Package volume_key-libs-0.3.9-9.el7.x86_64 in mode u
+Member: libblockdev-fs.x86_64 0:2.18-5.el7 - u
+Adding Package libblockdev-fs-2.18-5.el7.x86_64 in mode u
+Member: iso-codes.noarch 0:3.46-2.el7 - u
+Adding Package iso-codes-3.46-2.el7.noarch in mode u
+Member: gdisk.x86_64 0:0.8.10-3.el7 - u
+Adding Package gdisk-0.8.10-3.el7.x86_64 in mode u
+Member: parted.x86_64 0:3.1-32.el7 - u
+Adding Package parted-3.1-32.el7.x86_64 in mode u
+Member: gcr.x86_64 0:3.28.0-1.el7 - u
+Adding Package gcr-3.28.0-1.el7.x86_64 in mode u
+Member: libblockdev-crypto.x86_64 0:2.18-5.el7 - u
+Adding Package libblockdev-crypto-2.18-5.el7.x86_64 in mode u
+Member: gspell.x86_64 0:1.6.1-1.el7 - u
+Adding Package gspell-1.6.1-1.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.080
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.059
+Running transaction
+  Installing : parted-3.1-32.el7.x86_64                                    1/48 
+  Installing : libblockdev-utils-2.18-5.el7.x86_64                         2/48 
+  Installing : libpeas-1.22.0-1.el7.x86_64                                 3/48 
+  Installing : gdisk-0.8.10-3.el7.x86_64                                   4/48 
+  Installing : libgudev1-219-78.el7_9.3.x86_64                             5/48 
+  Installing : libcdio-0.92-3.el7.x86_64                                   6/48 
+  Installing : libudisks2-2.8.4-1.el7.x86_64                               7/48 
+  Installing : libcdio-paranoia-10.2+0.90-11.el7.x86_64                    8/48 
+  Installing : libpeas-gtk-1.22.0-1.el7.x86_64                             9/48 
+  Installing : libblockdev-swap-2.18-5.el7.x86_64                         10/48 
+  Installing : libblockdev-loop-2.18-5.el7.x86_64                         11/48 
+  Installing : libblockdev-2.18-5.el7.x86_64                              12/48 
+  Installing : hunspell-1.3.2-16.el7.x86_64                               13/48 
+  Installing : hunspell-en-US-0.20121024-6.el7.noarch                     14/48 
+  Installing : 1:enchant-1.6.0-8.el7.x86_64                               15/48 
+  Installing : gcr-3.28.0-1.el7.x86_64                                    16/48 
+  Installing : volume_key-libs-0.3.9-9.el7.x86_64                         17/48 
+  Installing : libblockdev-crypto-2.18-5.el7.x86_64                       18/48 
+  Installing : xml-common-0.6.3-39.el7.noarch                             19/48 
+  Installing : iso-codes-3.46-2.el7.noarch                                20/48 
+  Installing : gspell-1.6.1-1.el7.x86_64                                  21/48 
+  Installing : libss-1.42.9-19.el7.x86_64                                 22/48 
+  Installing : gvfs-client-1.36.2-5.el7_9.x86_64                          23/48 
+  Installing : libbytesize-1.2-1.el7.x86_64                               24/48 
+  Installing : libbluray-0.2.3-6.el7.x86_64                               25/48 
+  Installing : gtksourceview3-3.24.8-2.el7.x86_64                         26/48 
+  Installing : e2fsprogs-libs-1.42.9-19.el7.x86_64                        27/48 
+  Installing : e2fsprogs-1.42.9-19.el7.x86_64                             28/48 
+  Installing : libatasmart-0.19-6.el7.x86_64                              29/48 
+  Installing : libreport-filesystem-2.1.11-53.el7.centos.x86_64           30/48 
+  Installing : mdadm-4.1-8.el7_9.x86_64                                   31/48 
+  Installing : libblockdev-mdraid-2.18-5.el7.x86_64                       32/48 
+  Installing : xfsprogs-4.5.0-22.el7.x86_64                               33/48 
+  Installing : libsecret-0.18.6-1.el7.x86_64                              34/48 
+  Installing : pycairo-1.8.10-8.el7.x86_64                                35/48 
+  Installing : python-gobject-3.22.0-1.el7_4.1.x86_64                     36/48 
+  Installing : libpeas-loader-python-1.22.0-1.el7.x86_64                  37/48 
+  Installing : device-mapper-multipath-libs-0.4.9-135.el7_9.x86_64        38/48 
+  Installing : device-mapper-multipath-0.4.9-135.el7_9.x86_64             39/48 
+  Installing : libblockdev-part-2.18-5.el7.x86_64                         40/48 
+  Installing : libblockdev-fs-2.18-5.el7.x86_64                           41/48 
+  Installing : libnotify-0.7.7-1.el7.x86_64                               42/48 
+  Installing : zenity-3.28.1-1.el7.x86_64                                 43/48 
+  Installing : avahi-glib-0.6.31-20.el7.x86_64                            44/48 
+  Installing : dosfstools-3.0.20-10.el7.x86_64                            45/48 
+  Installing : udisks2-2.8.4-1.el7.x86_64                                 46/48 
+  Installing : gvfs-1.36.2-5.el7_9.x86_64                                 47/48 
+  Installing : 2:gedit-3.28.1-3.el7.x86_64                                48/48 
+  Verifying  : libpeas-loader-python-1.22.0-1.el7.x86_64                   1/48 
+  Verifying  : libcdio-paranoia-10.2+0.90-11.el7.x86_64                    2/48 
+  Verifying  : libblockdev-swap-2.18-5.el7.x86_64                          3/48 
+  Verifying  : dosfstools-3.0.20-10.el7.x86_64                             4/48 
+  Verifying  : avahi-glib-0.6.31-20.el7.x86_64                             5/48 
+  Verifying  : libnotify-0.7.7-1.el7.x86_64                                6/48 
+  Verifying  : hunspell-en-US-0.20121024-6.el7.noarch                      7/48 
+  Verifying  : libudisks2-2.8.4-1.el7.x86_64                               8/48 
+  Verifying  : 1:enchant-1.6.0-8.el7.x86_64                                9/48 
+  Verifying  : device-mapper-multipath-libs-0.4.9-135.el7_9.x86_64        10/48 
+  Verifying  : libpeas-gtk-1.22.0-1.el7.x86_64                            11/48 
+  Verifying  : zenity-3.28.1-1.el7.x86_64                                 12/48 
+  Verifying  : libcdio-0.92-3.el7.x86_64                                  13/48 
+  Verifying  : pycairo-1.8.10-8.el7.x86_64                                14/48 
+  Verifying  : libpeas-1.22.0-1.el7.x86_64                                15/48 
+  Verifying  : libblockdev-part-2.18-5.el7.x86_64                         16/48 
+  Verifying  : libblockdev-loop-2.18-5.el7.x86_64                         17/48 
+  Verifying  : libsecret-0.18.6-1.el7.x86_64                              18/48 
+  Verifying  : xfsprogs-4.5.0-22.el7.x86_64                               19/48 
+  Verifying  : gvfs-1.36.2-5.el7_9.x86_64                                 20/48 
+  Verifying  : udisks2-2.8.4-1.el7.x86_64                                 21/48 
+  Verifying  : libreport-filesystem-2.1.11-53.el7.centos.x86_64           22/48 
+  Verifying  : e2fsprogs-1.42.9-19.el7.x86_64                             23/48 
+  Verifying  : libatasmart-0.19-6.el7.x86_64                              24/48 
+  Verifying  : e2fsprogs-libs-1.42.9-19.el7.x86_64                        25/48 
+  Verifying  : gtksourceview3-3.24.8-2.el7.x86_64                         26/48 
+  Verifying  : mdadm-4.1-8.el7_9.x86_64                                   27/48 
+  Verifying  : device-mapper-multipath-0.4.9-135.el7_9.x86_64             28/48 
+  Verifying  : libblockdev-2.18-5.el7.x86_64                              29/48 
+  Verifying  : python-gobject-3.22.0-1.el7_4.1.x86_64                     30/48 
+  Verifying  : libgudev1-219-78.el7_9.3.x86_64                            31/48 
+  Verifying  : libbluray-0.2.3-6.el7.x86_64                               32/48 
+  Verifying  : libbytesize-1.2-1.el7.x86_64                               33/48 
+  Verifying  : gvfs-client-1.36.2-5.el7_9.x86_64                          34/48 
+  Verifying  : libss-1.42.9-19.el7.x86_64                                 35/48 
+  Verifying  : 2:gedit-3.28.1-3.el7.x86_64                                36/48 
+  Verifying  : xml-common-0.6.3-39.el7.noarch                             37/48 
+  Verifying  : libblockdev-mdraid-2.18-5.el7.x86_64                       38/48 
+  Verifying  : libblockdev-utils-2.18-5.el7.x86_64                        39/48 
+  Verifying  : hunspell-1.3.2-16.el7.x86_64                               40/48 
+  Verifying  : volume_key-libs-0.3.9-9.el7.x86_64                         41/48 
+  Verifying  : libblockdev-fs-2.18-5.el7.x86_64                           42/48 
+  Verifying  : iso-codes-3.46-2.el7.noarch                                43/48 
+  Verifying  : gdisk-0.8.10-3.el7.x86_64                                  44/48 
+  Verifying  : parted-3.1-32.el7.x86_64                                   45/48 
+  Verifying  : gcr-3.28.0-1.el7.x86_64                                    46/48 
+  Verifying  : libblockdev-crypto-2.18-5.el7.x86_64                       47/48 
+  Verifying  : gspell-1.6.1-1.el7.x86_64                                  48/48 
+VerifyTransaction time: 0.433
+Transaction time: 11.840
+
+Installed:
+  gedit.x86_64 2:3.28.1-3.el7                                                   
+
+Dependency Installed:
+  avahi-glib.x86_64 0:0.6.31-20.el7                                             
+  device-mapper-multipath.x86_64 0:0.4.9-135.el7_9                              
+  device-mapper-multipath-libs.x86_64 0:0.4.9-135.el7_9                         
+  dosfstools.x86_64 0:3.0.20-10.el7                                             
+  e2fsprogs.x86_64 0:1.42.9-19.el7                                              
+  e2fsprogs-libs.x86_64 0:1.42.9-19.el7                                         
+  enchant.x86_64 1:1.6.0-8.el7                                                  
+  gcr.x86_64 0:3.28.0-1.el7                                                     
+  gdisk.x86_64 0:0.8.10-3.el7                                                   
+  gspell.x86_64 0:1.6.1-1.el7                                                   
+  gtksourceview3.x86_64 0:3.24.8-2.el7                                          
+  gvfs.x86_64 0:1.36.2-5.el7_9                                                  
+  gvfs-client.x86_64 0:1.36.2-5.el7_9                                           
+  hunspell.x86_64 0:1.3.2-16.el7                                                
+  hunspell-en-US.noarch 0:0.20121024-6.el7                                      
+  iso-codes.noarch 0:3.46-2.el7                                                 
+  libatasmart.x86_64 0:0.19-6.el7                                               
+  libblockdev.x86_64 0:2.18-5.el7                                               
+  libblockdev-crypto.x86_64 0:2.18-5.el7                                        
+  libblockdev-fs.x86_64 0:2.18-5.el7                                            
+  libblockdev-loop.x86_64 0:2.18-5.el7                                          
+  libblockdev-mdraid.x86_64 0:2.18-5.el7                                        
+  libblockdev-part.x86_64 0:2.18-5.el7                                          
+  libblockdev-swap.x86_64 0:2.18-5.el7                                          
+  libblockdev-utils.x86_64 0:2.18-5.el7                                         
+  libbluray.x86_64 0:0.2.3-6.el7                                                
+  libbytesize.x86_64 0:1.2-1.el7                                                
+  libcdio.x86_64 0:0.92-3.el7                                                   
+  libcdio-paranoia.x86_64 0:10.2+0.90-11.el7                                    
+  libgudev1.x86_64 0:219-78.el7_9.3                                             
+  libnotify.x86_64 0:0.7.7-1.el7                                                
+  libpeas.x86_64 0:1.22.0-1.el7                                                 
+  libpeas-gtk.x86_64 0:1.22.0-1.el7                                             
+  libpeas-loader-python.x86_64 0:1.22.0-1.el7                                   
+  libreport-filesystem.x86_64 0:2.1.11-53.el7.centos                            
+  libsecret.x86_64 0:0.18.6-1.el7                                               
+  libss.x86_64 0:1.42.9-19.el7                                                  
+  libudisks2.x86_64 0:2.8.4-1.el7                                               
+  mdadm.x86_64 0:4.1-8.el7_9                                                    
+  parted.x86_64 0:3.1-32.el7                                                    
+  pycairo.x86_64 0:1.8.10-8.el7                                                 
+  python-gobject.x86_64 0:3.22.0-1.el7_4.1                                      
+  udisks2.x86_64 0:2.8.4-1.el7                                                  
+  volume_key-libs.x86_64 0:0.3.9-9.el7                                          
+  xfsprogs.x86_64 0:4.5.0-22.el7                                                
+  xml-common.noarch 0:0.6.3-39.el7                                              
+  zenity.x86_64 0:3.28.1-1.el7                                                  
+
+Complete!

@@ -13,10 +13,12 @@ printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
 new_step "Update, upgrade, install Development Tools"
 sub_step_counter=0
 sub_step "yum update -v -y | tee ${dirBuildResults}/update.txt 2>&1"
-          yum update -v -y | tee ${dirBuildResults}/update.txt 2>&1
+    echo "yum update -v -y" >    ${dirBuildResults}/update.txt 2>&1
+          yum update -v -y  >>   ${dirBuildResults}/update.txt 2>&1
 
 sub_step "yum upgrade -v -y | tee ${dirBuildResults}/upgrade.txt 2>&1"
-          yum upgrade -v -y | tee ${dirBuildResults}/upgrade.txt 2>&1
+    echo "yum upgrade -v -y" >    ${dirBuildResults}/upgrade.txt 2>&1
+          yum upgrade -v -y  >>   ${dirBuildResults}/upgrade.txt 2>&1
 
 # https://linuxize.com/post/how-to-install-gcc-on-centos-8/
 sub_step 'yum group install -v "Development Tools" -y | tee ${dirBuildResults}/dev-tools.txt 2>&1'

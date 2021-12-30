@@ -1,0 +1,93 @@
+yum deplist -v uuid
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.008
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.centos.iad1.serverforge.org
+ * extras: ewr.edge.kernel.org
+ * updates: ftpmirror.your.org
+pkgsack time: 0.012
+Searching pkgSack for dep: /sbin/ldconfig
+Searching pkgSack for dep: /sbin/ldconfig
+Searching pkgSack for dep: libc.so.6(GLIBC_2.4)
+Searching pkgSack for dep: libnsl.so.1
+Searching pkgSack for dep: rtld(GNU_HASH)
+Searching pkgSack for dep: /sbin/ldconfig
+Searching pkgSack for dep: /sbin/ldconfig
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libnsl.so.1()(64bit)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: uuid.i686 1.6.2-26.el7
+  dependency: /sbin/ldconfig
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+  dependency: libc.so.6(GLIBC_2.4)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libnsl.so.1
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+package: uuid.x86_64 1.6.2-26.el7
+  dependency: /sbin/ldconfig
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libnsl.so.1()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
