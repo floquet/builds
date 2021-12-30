@@ -19,7 +19,7 @@ source /repos/github/builds/scripts-spack/shared/common-header.sh
 #  #  #  ========================================== declarations begin
 
 # start timer
-export SECONDS=0
+export mageiaSECONDS=0
 # specify package manager (to construct refresh.sh)
 export refresh="dnf "
 # what you want to build
@@ -31,7 +31,7 @@ export repoBuilds="/repos/github/builds"
 # locate scripts and files for transfer
 export dirBuildScripts="${repoBuilds}/scripts-docker/"
 # post results
-export dirBuildResults="${repoBuilds}/results-docker/mageia-8/ymdt"
+export dirBuildResults="${repoBuilds}/results-docker/mageia-8/${ymdt}"
 # records time elapsed
 export timerFile=${dirBuildResults}/elapsed-time.txt
 
@@ -49,7 +49,10 @@ source ${dirBuildScripts}/kickstarts/installers/dnf-installs.sh ${lpackages} ${d
 echo 'source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}'
       source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
 
+new_step "Waiting for all threads to complete..."
+          wait
+
 new_step "Report elapsed time"
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf 'time to build system: %dh:%dm:%ds\n' $(($SECONDS/3600)) $(($SECONDS%3600/60)) $(($SECONDS%60)) | tee -a ${timerFile}
+    printf 'time to build system: %dh:%dm:%ds\n' $(($mageiaSECONDS/3600)) $(($mageiaSECONDS%3600/60)) $(($mageiaSECONDS%60)) | tee -a ${timerFile}
