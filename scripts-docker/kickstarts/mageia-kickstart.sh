@@ -40,6 +40,12 @@ export timerFile=${dirBuildResults}/elapsed-time.txt
 new_step "mkdir -p ${dirBuildResults}"
           mkdir -p ${dirBuildResults}
 
+#  #  #  ========================================== build packages
+
+source ${dirBuildScripts}/kickstarts/installers/dnf-installs.sh ${lpackages} ${dirBuildResults}
+
+#  #  #  ========================================== set up for spack
+
 echo 'source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}'
       source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
 
