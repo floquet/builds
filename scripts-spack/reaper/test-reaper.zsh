@@ -3,7 +3,7 @@ printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 # Fri Dec  3 12:31:35 MST 2021
 
 # requires spack initiation:
-# source modern-reaper.zsh
+# source test-reaper.zsh
 
 source ${repo_build}/scripts-spack/reaper/header-reaper.zsh
 
