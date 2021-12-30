@@ -1,69 +1,81 @@
 #! /bin/sh
-# printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
+printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
 
-# export dirDockerLocker="/repos/github/docker"
-# export mySpack="fedora-35-xiuhcoatl-spack"
-# source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack} dnf
+# source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
+#   1: name of spack directory (mageia-8-docker-spack)
+#   2: package manager type (yum, dnf, zypper)
+#   3: where to find scripts and files
 
-# counts steps in batch process
-export counter=0
-function new_step(){
-    counter=$((counter+1))
-    echo ""
-    echo "Step ${counter}: ${1}"
-}
+
+#  #  #  ========================================== declarations begin
+
+export generic_seconds=0
 
 export       ego="dantopa"  # latin: ego = I, me
 export  git_user="Daniel Topa"
 export git_email="dantopa@gmail.com"
 
-new_step "git config --global pull.rebase false"
+#  #  #  ========================================== declarations end
+
+
+#  #  #  ========================================== configure git
+
+new_step "Configure git"
+sub_step_counter=0
+
+sub_step "git config --global pull.rebase false"
           git config --global pull.rebase false
 
-new_step "git config --global user.name ${git_user}"
+sub_step "git config --global user.name ${git_user}"
           git config --global user.name ${git_user}
 
-new_step "git config --global user.email ${git_email}"
+sub_step "git config --global user.email ${git_email}"
           git config --global user.email ${git_email}
 
-new_step "git config --global pull.rebase false"
+sub_step "git config --global pull.rebase false"
           git config --global pull.rebase false
 
-new_step "git config --global push.default simple"
+sub_step "git config --global push.default simple"
           git config --global push.default simple
 
-new_step "git config --global color.ui true"
+sub_step "git config --global color.ui true"
           git config --global color.ui true
 
-new_step "git config --global rerere.enabled true"
+sub_step "git config --global rerere.enabled true"
           git config --global rerere.enabled true
 
-new_step "git config --global core.editor 'vim'"
+sub_step "git config --global core.editor 'vim'"
           git config --global core.editor 'vim'
 
-new_step "git config --global merge.tool 'meld'"
+sub_step "git config --global merge.tool 'meld'"
           git config --global merge.tool 'meld'
 
-#new_step 'git config --global merge.tool  vimdiff'
+#sub_step 'git config --global merge.tool  vimdiff'
 #          git config --global merge.tool  vimdiff
 
-new_step "mkdir -p /home/${ego}/scratch"
+#  #  #  ========================================== create subdirectories
+
+new_step "Create subdirectories"
+sub_step_counter=0
+sub_step "mkdir -p /home/${ego}/scratch"
           mkdir -p /home/${ego}/scratch
 
-new_step "mkdir -p /home/${ego}/repos/bitbucket"
+sub_step "mkdir -p /home/${ego}/repos/bitbucket"
           mkdir -p /home/${ego}/repos/bitbucket
 
-new_step "mkdir -p /home/${ego}/repos/github"
+sub_step "mkdir -p /home/${ego}/repos/github"
           mkdir -p /home/${ego}/repos/github
 
-new_step 'cp ${dirDockerLocker}/unified/bash-inits/.*.sh /home/${ego}/.'
-          cp ${dirDockerLocker}/unified/bash-inits/.*.sh /home/${ego}/.
+sub_step 'cp ${3}/bash-inits/.* /home/${ego}/.'
+          cp ${3}/bash-inits/.* /home/${ego}/.
+
+#  #  #  ========================================== write refresh file to update and upgrade
 
 new_step 'write refresh.sh'
 
 export refresh_file="/home/${ego}/refresh.sh"
 
-echo "#!/bin/bash"                        >  ${refresh_file}
+echo "#!/bin/sh"                          >  ${refresh_file}
 echo "# Created by generic-kickstart.sh " >> ${refresh_file}
 echo "# $(date) "                         >> ${refresh_file}
 echo ""                                   >> ${refresh_file}
@@ -77,52 +89,63 @@ echo "date"                               >> ${refresh_file}
 echo ""                                   >> ${refresh_file}
 echo "printf 'time to refresh distribution: %dh:%dm:%ds\n' $(($SECONDS/3600)) $(($SECONDS%3600/60)) $(($SECONDS%60))" >> ${refresh_file}
 
-new_step "mkdir -p /home/${ego}/spacktivity"
+#  #  #  ========================================== spack
+
+new_step "Install spack"
+sub_step_counter=0
+
+sub_step "mkdir -p /home/${ego}/spacktivity"
           mkdir -p /home/${ego}/spacktivity
 
-new_step "cd /home/${ego}/spacktivity"
+sub_step "cd /home/${ego}/spacktivity"
           cd /home/${ego}/spacktivity
 
-new_step "git clone https://github.com/spack/spack ${1}"
+sub_step "git clone https://github.com/spack/spack ${1}"
           git clone https://github.com/spack/spack ${1}
 
-new_step "cd ${1}"
+sub_step "cd ${1}"
           cd ${1}
 
-new_step "mkdir -p ${ego}/build-logs"
+sub_step "mkdir -p ${ego}/build-logs"
           mkdir -p ${ego}/build-logs
 
-new_step "mkdir -p ${ego}/specs"
+sub_step "mkdir -p ${ego}/specs"
           mkdir -p ${ego}/specs
 
-new_step "source share/spack/setup-env.sh"
+sub_step "source share/spack/setup-env.sh"
           source share/spack/setup-env.sh
 
-new_step "cp ${dirDockerLocker}/unified/bash-inits/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
-          cp ${dirDockerLocker}/unified/bash-inits/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
+sub_step "cp ${3}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
+          cp ${3}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
 
-new_step 'spack compilers'
+#  #  #  ========================================== post-mortem
+new_step "Probe build"
+sub_step_counter=0
+
+sub_step 'spack compilers'
           spack compilers
 
-# new_step 'spack mirror add external-drive file:///spacktivity/mirror'
+# sub_step 'spack mirror add external-drive file:///spacktivity/mirror'
 #           spack mirror add external-drive file:///spacktivity/mirror
-# new_step 'git config --global  pull.rebase false'
+# sub_step 'git config --global  pull.rebase false'
 #           git config --global  pull.rebase false
 
-new_step "gcc --version"
+sub_step "gcc --version"
           gcc --version
 
-new_step "lsb_release -a"
+sub_step "lsb_release -a"
           lsb_release -a
 
-new_step "cat /etc/*release"
+sub_step "cat /etc/*release"
           cat /etc/*release
 
-new_step 'echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""'
+sub_step 'echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""'
           echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""
 
-new_step 'cat /root/.ssh/id_ed25519.pub'
+sub_step 'cat /root/.ssh/id_ed25519.pub'
           cat /root/.ssh/id_ed25519.pub
 
-new_step "time used = ${SECONDS} s"
+#  #  #  ========================================== exit
+
+new_step "time used in generic-kickstart.sh = ${generic_seconds} s"
 date

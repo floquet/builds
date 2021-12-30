@@ -26,19 +26,24 @@ export refresh="dnf "
 declare -a lpackages="cmake dialog dos2unix doxygen emacs fftw fio flang gcc-c++ gcc-gfortran gdb gedit git go hdf5 htop krb5 intltool julia llvm lsb lshw lsof lua mesa meson modules nano ncurses netcdf ninja octave openblas opencoarrays openmpi paraview patchelf pbcopy petsc python3 qhull qt rust rsync ssh strumpack sudo tar tcl time tee tree unzip valgrind vim vtk vtop wget xerces-c zip"
 # name of spack directory on virtual machine
 export mySpack="mageia-8-docker-spack"
+# locate builds repo
+export repoBuilds="/repos/github/builds"
+# locate scripts and files for transfer
+export dirBuildScripts="${repoBuilds}/scripts-docker/"
 # post results
-export dirBuildResults="/repos/github/builds/results-docker/mageia-8/ymdt"
+export dirBuildResults="${repoBuilds}/results-docker/mageia-8/ymdt"
+# records time elapsed
+export timerFile=${dirBuildResults}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
 new_step "mkdir -p ${dirBuildResults}"
           mkdir -p ${dirBuildResults}
 
-echo 'source /repos/github/builds/scripts-docker/generics/generic-kickstart.sh ${mySpack} ${refresh}'
-      source /repos/github/builds/scripts-docker/generics/generic-kickstart.sh ${mySpack} ${refresh}
+echo 'source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}'
+      source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
 
 new_step "Report elapsed time"
-    export timerFile=${dirBuildResults}/elapsed-time.txt
-    date    > ${timerFile}
-    echo "" > ${timerFile}
+    date    >  ${timerFile}
+    echo "" >> ${timerFile}
     printf 'time to build system: %dh:%dm:%ds\n' $(($SECONDS/3600)) $(($SECONDS%3600/60)) $(($SECONDS%60)) | tee -a ${timerFile}
