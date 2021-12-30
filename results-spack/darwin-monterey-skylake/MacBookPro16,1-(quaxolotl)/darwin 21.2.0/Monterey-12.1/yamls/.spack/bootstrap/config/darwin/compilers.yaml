@@ -1,0 +1,27 @@
+compilers:
+- compiler:
+    spec: apple-clang@13.0.0
+    paths:
+      cc: /usr/bin/clang
+      cxx: /usr/bin/clang++
+      f77: /opt/local/bin/gfortran-mp-11
+      fc: /opt/local/bin/gfortran-mp-11
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: clang@9.0.1
+    paths:
+      cc: /opt/local/bin/clang-mp-9.0
+      cxx: /opt/local/bin/clang++-mp-9.0
+      f77: null
+      fc: null
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []

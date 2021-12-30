@@ -13,9 +13,16 @@ function new_step(){
     echo "Step ${step_counter}: ${1}"
 }
 
-# enumerate substeps
+# enumerate subsubsteps
 function sub_step(){
     sub_step_counter=$((sub_step_counter+1))
     echo ""
     echo "  ${step_counter}.${sub_step_counter}: ${1}"
+}
+
+# enumerate substeps
+function sub_sub_step(){
+    sub_sub_step_counter=$((sub_sub_step_counter+1))
+    echo ""
+    echo "  ${step_counter}.${sub_step_counter}.${sub_sub_step_counter}: ${1}"
 }

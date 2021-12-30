@@ -1,0 +1,1672 @@
+created by /Users/dantopa/file_header at Thu Dec 30 11:05:18 MST 2021
+
+${SPACK_ROOT} = /Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin
+
+uname -a:
+Darwin Quaxolotl.local 21.2.0 Darwin Kernel Version 21.2.0: Sun Nov 28 20:28:54 PST 2021; root:xnu-8019.61.5~1/RELEASE_X86_64 x86_64
+
+spack find --long --deps --show-full-compiler
+-- darwin-monterey-skylake / apple-clang@13.0.0 -----------------
+t6qlfdj apple-libuuid@1353.100.2%apple-clang@13.0.0
+
+lrxgpgr autoconf@2.69%apple-clang@13.0.0
+p256hvd     m4@1.4.19%apple-clang@13.0.0
+fcfn5jw         libsigsegv@2.13%apple-clang@13.0.0
+7ekz2gs     perl@5.34.0%apple-clang@13.0.0
+ipc5ol4         berkeley-db@18.1.40%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+nfnxoor autoconf-archive@2019.01.06%apple-clang@13.0.0
+
+25kq4sg automake@1.16.3%apple-clang@13.0.0
+7ekz2gs     perl@5.34.0%apple-clang@13.0.0
+ipc5ol4         berkeley-db@18.1.40%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+ipc5ol4 berkeley-db@18.1.40%apple-clang@13.0.0
+
+i3nhmbp bzip2@1.0.8%apple-clang@13.0.0
+
+kgnzl5v cmake@3.22.1%apple-clang@13.0.0
+otcm5wj     ncurses@6.2%apple-clang@13.0.0
+kd3pfj7     openssl@1.1.1l%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+rgdju4r curl@7.80.0%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+bvgc2nt diffutils@3.8%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+
+zylz5cr environment-modules@5.0.1%apple-clang@13.0.0
+7mgel2m     tcl@8.6.11%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+u24vwvk expat@2.4.1%apple-clang@13.0.0
+
+esv3o7s freetype@2.11.0%apple-clang@13.0.0
+i3nhmbp     bzip2@1.0.8%apple-clang@13.0.0
+hmy6ird     libpng@1.6.37%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+w5nkt32 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5     readline@8.1%apple-clang@13.0.0
+otcm5wj         ncurses@6.2%apple-clang@13.0.0
+
+igihndy gettext@0.21%apple-clang@13.0.0
+i3nhmbp     bzip2@1.0.8%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67         xz@5.2.5%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+otcm5wj     ncurses@6.2%apple-clang@13.0.0
+x6okudq     tar@1.34%apple-clang@13.0.0
+
+wjen4rv git@2.31.1%apple-clang@13.0.0
+rgdju4r     curl@7.80.0%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+u24vwvk     expat@2.4.1%apple-clang@13.0.0
+igihndy     gettext@0.21%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+yxhhora         libiconv@1.16%apple-clang@13.0.0
+v5rvmvv         libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67             xz@5.2.5%apple-clang@13.0.0
+otcm5wj         ncurses@6.2%apple-clang@13.0.0
+x6okudq         tar@1.34%apple-clang@13.0.0
+b6grys4     libidn2@2.3.0%apple-clang@13.0.0
+fiujju4         libunistring@0.9.10%apple-clang@13.0.0
+qm5yvih     openssh@8.7p1%apple-clang@13.0.0
+hl4l6dp         libedit@3.1-20210216%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+gcdbjkd     pcre2@10.36%apple-clang@13.0.0
+7ekz2gs     perl@5.34.0%apple-clang@13.0.0
+ipc5ol4         berkeley-db@18.1.40%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+
+s2rcxqe gmp@6.2.1%apple-clang@13.0.0
+
+hl4l6dp libedit@3.1-20210216%apple-clang@13.0.0
+otcm5wj     ncurses@6.2%apple-clang@13.0.0
+
+zqn2g3y libffi@3.3%apple-clang@13.0.0
+
+yxhhora libiconv@1.16%apple-clang@13.0.0
+
+b6grys4 libidn2@2.3.0%apple-clang@13.0.0
+fiujju4     libunistring@0.9.10%apple-clang@13.0.0
+yxhhora         libiconv@1.16%apple-clang@13.0.0
+
+tel3lh2 libjpeg-turbo@2.1.0%apple-clang@13.0.0
+
+hmy6ird libpng@1.6.37%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+fcfn5jw libsigsegv@2.13%apple-clang@13.0.0
+
+y7xnhwr libtool@2.4.6%apple-clang@13.0.0
+
+fiujju4 libunistring@0.9.10%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+
+v5rvmvv libxml2@2.9.12%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+xqqwp67     xz@5.2.5%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+3znwenb llvm-openmp@12.0.1%apple-clang@13.0.0
+
+p256hvd m4@1.4.19%apple-clang@13.0.0
+fcfn5jw     libsigsegv@2.13%apple-clang@13.0.0
+
+f66jq3k mpc@1.1.0%apple-clang@13.0.0
+s2rcxqe     gmp@6.2.1%apple-clang@13.0.0
+phf2caj     mpfr@4.1.0%apple-clang@13.0.0
+
+phf2caj mpfr@4.1.0%apple-clang@13.0.0
+s2rcxqe     gmp@6.2.1%apple-clang@13.0.0
+
+qj4ukgi nasm@2.15.05%apple-clang@13.0.0
+
+otcm5wj ncurses@6.2%apple-clang@13.0.0
+
+fjxgm5l openblas@0.3.18%apple-clang@13.0.0
+
+qm5yvih openssh@8.7p1%apple-clang@13.0.0
+hl4l6dp     libedit@3.1-20210216%apple-clang@13.0.0
+otcm5wj         ncurses@6.2%apple-clang@13.0.0
+kd3pfj7     openssl@1.1.1l%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+kd3pfj7 openssl@1.1.1l%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+gcdbjkd pcre2@10.36%apple-clang@13.0.0
+
+7ekz2gs perl@5.34.0%apple-clang@13.0.0
+ipc5ol4     berkeley-db@18.1.40%apple-clang@13.0.0
+i3nhmbp     bzip2@1.0.8%apple-clang@13.0.0
+w5nkt32     gdbm@1.19%apple-clang@13.0.0
+w5qjzr5         readline@8.1%apple-clang@13.0.0
+otcm5wj             ncurses@6.2%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+eliirpx pkgconf@1.8.0%apple-clang@13.0.0
+
+b6ydvss py-beniget@0.4.1%apple-clang@13.0.0
+kcdnlse     py-gast@0.5.3%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+4gbcg7q py-bottleneck@1.3.2%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l         openblas@0.3.18%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+
+szsj7ox py-certifi@2021.10.8%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+5h2oj6x py-cppy@1.1.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+qi2cxxn py-cycler@0.11.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+m2m5laf py-cython@0.29.24%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+tjbqbge py-fonttools@4.28.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+kcdnlse py-gast@0.5.3%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+oh4ok5u py-kiwisolver@1.3.2%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+zruy2ug py-matplotlib@3.5.1%apple-clang@13.0.0
+esv3o7s     freetype@2.11.0%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+hmy6ird         libpng@1.6.37%apple-clang@13.0.0
+7yfdtza             zlib@1.2.11%apple-clang@13.0.0
+qi2cxxn     py-cycler@0.11.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+tjbqbge     py-fonttools@4.28.1%apple-clang@13.0.0
+oh4ok5u     py-kiwisolver@1.3.2%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l         openblas@0.3.18%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+w6fydy4     py-packaging@21.3%apple-clang@13.0.0
+v42f2ee         py-pyparsing@3.0.6%apple-clang@13.0.0
+cvxjslz     py-pillow@8.4.0%apple-clang@13.0.0
+tel3lh2         libjpeg-turbo@2.1.0%apple-clang@13.0.0
+5v7q7nf     py-python-dateutil@2.8.2%apple-clang@13.0.0
+vjz3atj         py-six@1.16.0%apple-clang@13.0.0
+53ctxke     qhull@2020.2%apple-clang@13.0.0
+
+iv2hlue py-numexpr@2.7.3%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l         openblas@0.3.18%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+
+vllolkb py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l     openblas@0.3.18%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+w6fydy4 py-packaging@21.3%apple-clang@13.0.0
+v42f2ee     py-pyparsing@3.0.6%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+ft2prn6 py-pandas@1.3.5%apple-clang@13.0.0
+4gbcg7q     py-bottleneck@1.3.2%apple-clang@13.0.0
+vllolkb         py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l             openblas@0.3.18%apple-clang@13.0.0
+i47wjc2             py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc                 python@3.10.1%apple-clang@13.0.0
+t6qlfdj                     apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                     bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                     expat@2.4.1%apple-clang@13.0.0
+w5nkt32                     gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                         readline@8.1%apple-clang@13.0.0
+otcm5wj                             ncurses@6.2%apple-clang@13.0.0
+igihndy                     gettext@0.21%apple-clang@13.0.0
+yxhhora                         libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                         libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                             xz@5.2.5%apple-clang@13.0.0
+7yfdtza                             zlib@1.2.11%apple-clang@13.0.0
+x6okudq                         tar@1.34%apple-clang@13.0.0
+zqn2g3y                     libffi@3.3%apple-clang@13.0.0
+kd3pfj7                     openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                     sqlite@3.36.0%apple-clang@13.0.0
+iv2hlue     py-numexpr@2.7.3%apple-clang@13.0.0
+5v7q7nf     py-python-dateutil@2.8.2%apple-clang@13.0.0
+vjz3atj         py-six@1.16.0%apple-clang@13.0.0
+tr3vfsb     py-pytz@2021.1%apple-clang@13.0.0
+
+cvxjslz py-pillow@8.4.0%apple-clang@13.0.0
+tel3lh2     libjpeg-turbo@2.1.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+l2dqv4g py-pip@21.1.2%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+xh6mprl py-ply@3.11%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+55veq3v py-pybind11@2.7.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+v42f2ee py-pyparsing@3.0.6%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+i7adtym py-pytest-runner@5.3.1%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+5v7q7nf py-python-dateutil@2.8.2%apple-clang@13.0.0
+vjz3atj     py-six@1.16.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+kwgpz4g py-pythran@0.9.12%apple-clang@13.0.0
+3znwenb     llvm-openmp@12.0.1%apple-clang@13.0.0
+b6ydvss     py-beniget@0.4.1%apple-clang@13.0.0
+kcdnlse         py-gast@0.5.3%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l         openblas@0.3.18%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+xh6mprl     py-ply@3.11%apple-clang@13.0.0
+
+tr3vfsb py-pytz@2021.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+dikt7bb py-scipy@1.7.3%apple-clang@13.0.0
+fjxgm5l     openblas@0.3.18%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+55veq3v     py-pybind11@2.7.1%apple-clang@13.0.0
+kwgpz4g     py-pythran@0.9.12%apple-clang@13.0.0
+3znwenb         llvm-openmp@12.0.1%apple-clang@13.0.0
+b6ydvss         py-beniget@0.4.1%apple-clang@13.0.0
+kcdnlse             py-gast@0.5.3%apple-clang@13.0.0
+xh6mprl         py-ply@3.11%apple-clang@13.0.0
+
+zu34u7r py-seaborn@0.11.2%apple-clang@13.0.0
+zruy2ug     py-matplotlib@3.5.1%apple-clang@13.0.0
+esv3o7s         freetype@2.11.0%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+hmy6ird             libpng@1.6.37%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+qi2cxxn         py-cycler@0.11.0%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+tjbqbge         py-fonttools@4.28.1%apple-clang@13.0.0
+oh4ok5u         py-kiwisolver@1.3.2%apple-clang@13.0.0
+vllolkb         py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l             openblas@0.3.18%apple-clang@13.0.0
+i47wjc2             py-setuptools@57.4.0%apple-clang@13.0.0
+w6fydy4         py-packaging@21.3%apple-clang@13.0.0
+v42f2ee             py-pyparsing@3.0.6%apple-clang@13.0.0
+cvxjslz         py-pillow@8.4.0%apple-clang@13.0.0
+tel3lh2             libjpeg-turbo@2.1.0%apple-clang@13.0.0
+5v7q7nf         py-python-dateutil@2.8.2%apple-clang@13.0.0
+vjz3atj             py-six@1.16.0%apple-clang@13.0.0
+53ctxke         qhull@2020.2%apple-clang@13.0.0
+ft2prn6     py-pandas@1.3.5%apple-clang@13.0.0
+4gbcg7q         py-bottleneck@1.3.2%apple-clang@13.0.0
+iv2hlue         py-numexpr@2.7.3%apple-clang@13.0.0
+tr3vfsb         py-pytz@2021.1%apple-clang@13.0.0
+dikt7bb     py-scipy@1.7.3%apple-clang@13.0.0
+55veq3v         py-pybind11@2.7.1%apple-clang@13.0.0
+kwgpz4g         py-pythran@0.9.12%apple-clang@13.0.0
+3znwenb             llvm-openmp@12.0.1%apple-clang@13.0.0
+b6ydvss             py-beniget@0.4.1%apple-clang@13.0.0
+kcdnlse                 py-gast@0.5.3%apple-clang@13.0.0
+xh6mprl             py-ply@3.11%apple-clang@13.0.0
+
+i47wjc2 py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+24pc7gd py-setuptools-scm@6.3.2%apple-clang@13.0.0
+w6fydy4     py-packaging@21.3%apple-clang@13.0.0
+v42f2ee         py-pyparsing@3.0.6%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+irlw5ab     py-tomli@1.2.1%apple-clang@13.0.0
+
+xvdqh3n py-setuptools-scm-git-archive@1.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+vjz3atj py-six@1.16.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+irlw5ab py-tomli@1.2.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+3ax5vmc python@3.10.1%apple-clang@13.0.0
+t6qlfdj     apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp     bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk     expat@2.4.1%apple-clang@13.0.0
+w5nkt32     gdbm@1.19%apple-clang@13.0.0
+w5qjzr5         readline@8.1%apple-clang@13.0.0
+otcm5wj             ncurses@6.2%apple-clang@13.0.0
+igihndy     gettext@0.21%apple-clang@13.0.0
+yxhhora         libiconv@1.16%apple-clang@13.0.0
+v5rvmvv         libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67             xz@5.2.5%apple-clang@13.0.0
+7yfdtza             zlib@1.2.11%apple-clang@13.0.0
+x6okudq         tar@1.34%apple-clang@13.0.0
+zqn2g3y     libffi@3.3%apple-clang@13.0.0
+kd3pfj7     openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn     sqlite@3.36.0%apple-clang@13.0.0
+
+53ctxke qhull@2020.2%apple-clang@13.0.0
+
+w5qjzr5 readline@8.1%apple-clang@13.0.0
+otcm5wj     ncurses@6.2%apple-clang@13.0.0
+
+e4tckmn sqlite@3.36.0%apple-clang@13.0.0
+w5qjzr5     readline@8.1%apple-clang@13.0.0
+otcm5wj         ncurses@6.2%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+x6okudq tar@1.34%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+
+7mgel2m tcl@8.6.11%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+xkznjwg texinfo@6.5%apple-clang@13.0.0
+7ekz2gs     perl@5.34.0%apple-clang@13.0.0
+ipc5ol4         berkeley-db@18.1.40%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+xqqwp67 xz@5.2.5%apple-clang@13.0.0
+
+7yfdtza zlib@1.2.11%apple-clang@13.0.0
+
+kc376gi zstd@1.5.0%apple-clang@13.0.0
+
+created by /Users/dantopa/file_header at Thu Dec 30 11:08:21 MST 2021
+
+${SPACK_ROOT} = /Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin
+
+uname -a:
+Darwin Quaxolotl.local 21.2.0 Darwin Kernel Version 21.2.0: Sun Nov 28 20:28:54 PST 2021; root:xnu-8019.61.5~1/RELEASE_X86_64 x86_64
+
+spack find --long --deps --show-full-compiler
+-- darwin-monterey-skylake / apple-clang@13.0.0 -----------------
+t6qlfdj apple-libuuid@1353.100.2%apple-clang@13.0.0
+
+lrxgpgr autoconf@2.69%apple-clang@13.0.0
+p256hvd     m4@1.4.19%apple-clang@13.0.0
+fcfn5jw         libsigsegv@2.13%apple-clang@13.0.0
+7ekz2gs     perl@5.34.0%apple-clang@13.0.0
+ipc5ol4         berkeley-db@18.1.40%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+nfnxoor autoconf-archive@2019.01.06%apple-clang@13.0.0
+
+25kq4sg automake@1.16.3%apple-clang@13.0.0
+7ekz2gs     perl@5.34.0%apple-clang@13.0.0
+ipc5ol4         berkeley-db@18.1.40%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+ipc5ol4 berkeley-db@18.1.40%apple-clang@13.0.0
+
+i3nhmbp bzip2@1.0.8%apple-clang@13.0.0
+
+kgnzl5v cmake@3.22.1%apple-clang@13.0.0
+otcm5wj     ncurses@6.2%apple-clang@13.0.0
+kd3pfj7     openssl@1.1.1l%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+rgdju4r curl@7.80.0%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+bvgc2nt diffutils@3.8%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+
+zylz5cr environment-modules@5.0.1%apple-clang@13.0.0
+7mgel2m     tcl@8.6.11%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+u24vwvk expat@2.4.1%apple-clang@13.0.0
+
+esv3o7s freetype@2.11.0%apple-clang@13.0.0
+i3nhmbp     bzip2@1.0.8%apple-clang@13.0.0
+hmy6ird     libpng@1.6.37%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+w5nkt32 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5     readline@8.1%apple-clang@13.0.0
+otcm5wj         ncurses@6.2%apple-clang@13.0.0
+
+igihndy gettext@0.21%apple-clang@13.0.0
+i3nhmbp     bzip2@1.0.8%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67         xz@5.2.5%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+otcm5wj     ncurses@6.2%apple-clang@13.0.0
+x6okudq     tar@1.34%apple-clang@13.0.0
+
+wjen4rv git@2.31.1%apple-clang@13.0.0
+rgdju4r     curl@7.80.0%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+u24vwvk     expat@2.4.1%apple-clang@13.0.0
+igihndy     gettext@0.21%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+yxhhora         libiconv@1.16%apple-clang@13.0.0
+v5rvmvv         libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67             xz@5.2.5%apple-clang@13.0.0
+otcm5wj         ncurses@6.2%apple-clang@13.0.0
+x6okudq         tar@1.34%apple-clang@13.0.0
+b6grys4     libidn2@2.3.0%apple-clang@13.0.0
+fiujju4         libunistring@0.9.10%apple-clang@13.0.0
+qm5yvih     openssh@8.7p1%apple-clang@13.0.0
+hl4l6dp         libedit@3.1-20210216%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+gcdbjkd     pcre2@10.36%apple-clang@13.0.0
+7ekz2gs     perl@5.34.0%apple-clang@13.0.0
+ipc5ol4         berkeley-db@18.1.40%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+
+s2rcxqe gmp@6.2.1%apple-clang@13.0.0
+
+hl4l6dp libedit@3.1-20210216%apple-clang@13.0.0
+otcm5wj     ncurses@6.2%apple-clang@13.0.0
+
+zqn2g3y libffi@3.3%apple-clang@13.0.0
+
+yxhhora libiconv@1.16%apple-clang@13.0.0
+
+b6grys4 libidn2@2.3.0%apple-clang@13.0.0
+fiujju4     libunistring@0.9.10%apple-clang@13.0.0
+yxhhora         libiconv@1.16%apple-clang@13.0.0
+
+tel3lh2 libjpeg-turbo@2.1.0%apple-clang@13.0.0
+
+hmy6ird libpng@1.6.37%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+fcfn5jw libsigsegv@2.13%apple-clang@13.0.0
+
+y7xnhwr libtool@2.4.6%apple-clang@13.0.0
+
+fiujju4 libunistring@0.9.10%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+
+v5rvmvv libxml2@2.9.12%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+xqqwp67     xz@5.2.5%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+3znwenb llvm-openmp@12.0.1%apple-clang@13.0.0
+
+p256hvd m4@1.4.19%apple-clang@13.0.0
+fcfn5jw     libsigsegv@2.13%apple-clang@13.0.0
+
+f66jq3k mpc@1.1.0%apple-clang@13.0.0
+s2rcxqe     gmp@6.2.1%apple-clang@13.0.0
+phf2caj     mpfr@4.1.0%apple-clang@13.0.0
+
+phf2caj mpfr@4.1.0%apple-clang@13.0.0
+s2rcxqe     gmp@6.2.1%apple-clang@13.0.0
+
+qj4ukgi nasm@2.15.05%apple-clang@13.0.0
+
+otcm5wj ncurses@6.2%apple-clang@13.0.0
+
+fjxgm5l openblas@0.3.18%apple-clang@13.0.0
+
+qm5yvih openssh@8.7p1%apple-clang@13.0.0
+hl4l6dp     libedit@3.1-20210216%apple-clang@13.0.0
+otcm5wj         ncurses@6.2%apple-clang@13.0.0
+kd3pfj7     openssl@1.1.1l%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+kd3pfj7 openssl@1.1.1l%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+gcdbjkd pcre2@10.36%apple-clang@13.0.0
+
+7ekz2gs perl@5.34.0%apple-clang@13.0.0
+ipc5ol4     berkeley-db@18.1.40%apple-clang@13.0.0
+i3nhmbp     bzip2@1.0.8%apple-clang@13.0.0
+w5nkt32     gdbm@1.19%apple-clang@13.0.0
+w5qjzr5         readline@8.1%apple-clang@13.0.0
+otcm5wj             ncurses@6.2%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+eliirpx pkgconf@1.8.0%apple-clang@13.0.0
+
+b6ydvss py-beniget@0.4.1%apple-clang@13.0.0
+kcdnlse     py-gast@0.5.3%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+4gbcg7q py-bottleneck@1.3.2%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l         openblas@0.3.18%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+
+szsj7ox py-certifi@2021.10.8%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+5h2oj6x py-cppy@1.1.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+qi2cxxn py-cycler@0.11.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+m2m5laf py-cython@0.29.24%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+tjbqbge py-fonttools@4.28.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+kcdnlse py-gast@0.5.3%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+oh4ok5u py-kiwisolver@1.3.2%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+zruy2ug py-matplotlib@3.5.1%apple-clang@13.0.0
+esv3o7s     freetype@2.11.0%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+hmy6ird         libpng@1.6.37%apple-clang@13.0.0
+7yfdtza             zlib@1.2.11%apple-clang@13.0.0
+qi2cxxn     py-cycler@0.11.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+tjbqbge     py-fonttools@4.28.1%apple-clang@13.0.0
+oh4ok5u     py-kiwisolver@1.3.2%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l         openblas@0.3.18%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+w6fydy4     py-packaging@21.3%apple-clang@13.0.0
+v42f2ee         py-pyparsing@3.0.6%apple-clang@13.0.0
+cvxjslz     py-pillow@8.4.0%apple-clang@13.0.0
+tel3lh2         libjpeg-turbo@2.1.0%apple-clang@13.0.0
+5v7q7nf     py-python-dateutil@2.8.2%apple-clang@13.0.0
+vjz3atj         py-six@1.16.0%apple-clang@13.0.0
+53ctxke     qhull@2020.2%apple-clang@13.0.0
+
+iv2hlue py-numexpr@2.7.3%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l         openblas@0.3.18%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+
+vllolkb py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l     openblas@0.3.18%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+w6fydy4 py-packaging@21.3%apple-clang@13.0.0
+v42f2ee     py-pyparsing@3.0.6%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+ft2prn6 py-pandas@1.3.5%apple-clang@13.0.0
+4gbcg7q     py-bottleneck@1.3.2%apple-clang@13.0.0
+vllolkb         py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l             openblas@0.3.18%apple-clang@13.0.0
+i47wjc2             py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc                 python@3.10.1%apple-clang@13.0.0
+t6qlfdj                     apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                     bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                     expat@2.4.1%apple-clang@13.0.0
+w5nkt32                     gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                         readline@8.1%apple-clang@13.0.0
+otcm5wj                             ncurses@6.2%apple-clang@13.0.0
+igihndy                     gettext@0.21%apple-clang@13.0.0
+yxhhora                         libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                         libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                             xz@5.2.5%apple-clang@13.0.0
+7yfdtza                             zlib@1.2.11%apple-clang@13.0.0
+x6okudq                         tar@1.34%apple-clang@13.0.0
+zqn2g3y                     libffi@3.3%apple-clang@13.0.0
+kd3pfj7                     openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                     sqlite@3.36.0%apple-clang@13.0.0
+iv2hlue     py-numexpr@2.7.3%apple-clang@13.0.0
+5v7q7nf     py-python-dateutil@2.8.2%apple-clang@13.0.0
+vjz3atj         py-six@1.16.0%apple-clang@13.0.0
+tr3vfsb     py-pytz@2021.1%apple-clang@13.0.0
+
+cvxjslz py-pillow@8.4.0%apple-clang@13.0.0
+tel3lh2     libjpeg-turbo@2.1.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+l2dqv4g py-pip@21.1.2%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+xh6mprl py-ply@3.11%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+55veq3v py-pybind11@2.7.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+v42f2ee py-pyparsing@3.0.6%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+i7adtym py-pytest-runner@5.3.1%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+5v7q7nf py-python-dateutil@2.8.2%apple-clang@13.0.0
+vjz3atj     py-six@1.16.0%apple-clang@13.0.0
+3ax5vmc         python@3.10.1%apple-clang@13.0.0
+t6qlfdj             apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk             expat@2.4.1%apple-clang@13.0.0
+w5nkt32             gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                 readline@8.1%apple-clang@13.0.0
+otcm5wj                     ncurses@6.2%apple-clang@13.0.0
+igihndy             gettext@0.21%apple-clang@13.0.0
+yxhhora                 libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                 libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                     xz@5.2.5%apple-clang@13.0.0
+7yfdtza                     zlib@1.2.11%apple-clang@13.0.0
+x6okudq                 tar@1.34%apple-clang@13.0.0
+zqn2g3y             libffi@3.3%apple-clang@13.0.0
+kd3pfj7             openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn             sqlite@3.36.0%apple-clang@13.0.0
+
+kwgpz4g py-pythran@0.9.12%apple-clang@13.0.0
+3znwenb     llvm-openmp@12.0.1%apple-clang@13.0.0
+b6ydvss     py-beniget@0.4.1%apple-clang@13.0.0
+kcdnlse         py-gast@0.5.3%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l         openblas@0.3.18%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+xh6mprl     py-ply@3.11%apple-clang@13.0.0
+
+tr3vfsb py-pytz@2021.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+dikt7bb py-scipy@1.7.3%apple-clang@13.0.0
+fjxgm5l     openblas@0.3.18%apple-clang@13.0.0
+vllolkb     py-numpy@1.21.5%apple-clang@13.0.0
+i47wjc2         py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+55veq3v     py-pybind11@2.7.1%apple-clang@13.0.0
+kwgpz4g     py-pythran@0.9.12%apple-clang@13.0.0
+3znwenb         llvm-openmp@12.0.1%apple-clang@13.0.0
+b6ydvss         py-beniget@0.4.1%apple-clang@13.0.0
+kcdnlse             py-gast@0.5.3%apple-clang@13.0.0
+xh6mprl         py-ply@3.11%apple-clang@13.0.0
+
+zu34u7r py-seaborn@0.11.2%apple-clang@13.0.0
+zruy2ug     py-matplotlib@3.5.1%apple-clang@13.0.0
+esv3o7s         freetype@2.11.0%apple-clang@13.0.0
+i3nhmbp             bzip2@1.0.8%apple-clang@13.0.0
+hmy6ird             libpng@1.6.37%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+qi2cxxn         py-cycler@0.11.0%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+tjbqbge         py-fonttools@4.28.1%apple-clang@13.0.0
+oh4ok5u         py-kiwisolver@1.3.2%apple-clang@13.0.0
+vllolkb         py-numpy@1.21.5%apple-clang@13.0.0
+fjxgm5l             openblas@0.3.18%apple-clang@13.0.0
+i47wjc2             py-setuptools@57.4.0%apple-clang@13.0.0
+w6fydy4         py-packaging@21.3%apple-clang@13.0.0
+v42f2ee             py-pyparsing@3.0.6%apple-clang@13.0.0
+cvxjslz         py-pillow@8.4.0%apple-clang@13.0.0
+tel3lh2             libjpeg-turbo@2.1.0%apple-clang@13.0.0
+5v7q7nf         py-python-dateutil@2.8.2%apple-clang@13.0.0
+vjz3atj             py-six@1.16.0%apple-clang@13.0.0
+53ctxke         qhull@2020.2%apple-clang@13.0.0
+ft2prn6     py-pandas@1.3.5%apple-clang@13.0.0
+4gbcg7q         py-bottleneck@1.3.2%apple-clang@13.0.0
+iv2hlue         py-numexpr@2.7.3%apple-clang@13.0.0
+tr3vfsb         py-pytz@2021.1%apple-clang@13.0.0
+dikt7bb     py-scipy@1.7.3%apple-clang@13.0.0
+55veq3v         py-pybind11@2.7.1%apple-clang@13.0.0
+kwgpz4g         py-pythran@0.9.12%apple-clang@13.0.0
+3znwenb             llvm-openmp@12.0.1%apple-clang@13.0.0
+b6ydvss             py-beniget@0.4.1%apple-clang@13.0.0
+kcdnlse                 py-gast@0.5.3%apple-clang@13.0.0
+xh6mprl             py-ply@3.11%apple-clang@13.0.0
+
+i47wjc2 py-setuptools@57.4.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+24pc7gd py-setuptools-scm@6.3.2%apple-clang@13.0.0
+w6fydy4     py-packaging@21.3%apple-clang@13.0.0
+v42f2ee         py-pyparsing@3.0.6%apple-clang@13.0.0
+3ax5vmc             python@3.10.1%apple-clang@13.0.0
+t6qlfdj                 apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp                 bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk                 expat@2.4.1%apple-clang@13.0.0
+w5nkt32                 gdbm@1.19%apple-clang@13.0.0
+w5qjzr5                     readline@8.1%apple-clang@13.0.0
+otcm5wj                         ncurses@6.2%apple-clang@13.0.0
+igihndy                 gettext@0.21%apple-clang@13.0.0
+yxhhora                     libiconv@1.16%apple-clang@13.0.0
+v5rvmvv                     libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                         xz@5.2.5%apple-clang@13.0.0
+7yfdtza                         zlib@1.2.11%apple-clang@13.0.0
+x6okudq                     tar@1.34%apple-clang@13.0.0
+zqn2g3y                 libffi@3.3%apple-clang@13.0.0
+kd3pfj7                 openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn                 sqlite@3.36.0%apple-clang@13.0.0
+i47wjc2     py-setuptools@57.4.0%apple-clang@13.0.0
+irlw5ab     py-tomli@1.2.1%apple-clang@13.0.0
+
+xvdqh3n py-setuptools-scm-git-archive@1.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+vjz3atj py-six@1.16.0%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+irlw5ab py-tomli@1.2.1%apple-clang@13.0.0
+3ax5vmc     python@3.10.1%apple-clang@13.0.0
+t6qlfdj         apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk         expat@2.4.1%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+igihndy         gettext@0.21%apple-clang@13.0.0
+yxhhora             libiconv@1.16%apple-clang@13.0.0
+v5rvmvv             libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67                 xz@5.2.5%apple-clang@13.0.0
+7yfdtza                 zlib@1.2.11%apple-clang@13.0.0
+x6okudq             tar@1.34%apple-clang@13.0.0
+zqn2g3y         libffi@3.3%apple-clang@13.0.0
+kd3pfj7         openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn         sqlite@3.36.0%apple-clang@13.0.0
+
+3ax5vmc python@3.10.1%apple-clang@13.0.0
+t6qlfdj     apple-libuuid@1353.100.2%apple-clang@13.0.0
+i3nhmbp     bzip2@1.0.8%apple-clang@13.0.0
+u24vwvk     expat@2.4.1%apple-clang@13.0.0
+w5nkt32     gdbm@1.19%apple-clang@13.0.0
+w5qjzr5         readline@8.1%apple-clang@13.0.0
+otcm5wj             ncurses@6.2%apple-clang@13.0.0
+igihndy     gettext@0.21%apple-clang@13.0.0
+yxhhora         libiconv@1.16%apple-clang@13.0.0
+v5rvmvv         libxml2@2.9.12%apple-clang@13.0.0
+xqqwp67             xz@5.2.5%apple-clang@13.0.0
+7yfdtza             zlib@1.2.11%apple-clang@13.0.0
+x6okudq         tar@1.34%apple-clang@13.0.0
+zqn2g3y     libffi@3.3%apple-clang@13.0.0
+kd3pfj7     openssl@1.1.1l%apple-clang@13.0.0
+e4tckmn     sqlite@3.36.0%apple-clang@13.0.0
+
+53ctxke qhull@2020.2%apple-clang@13.0.0
+
+w5qjzr5 readline@8.1%apple-clang@13.0.0
+otcm5wj     ncurses@6.2%apple-clang@13.0.0
+
+e4tckmn sqlite@3.36.0%apple-clang@13.0.0
+w5qjzr5     readline@8.1%apple-clang@13.0.0
+otcm5wj         ncurses@6.2%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+x6okudq tar@1.34%apple-clang@13.0.0
+yxhhora     libiconv@1.16%apple-clang@13.0.0
+
+7mgel2m tcl@8.6.11%apple-clang@13.0.0
+7yfdtza     zlib@1.2.11%apple-clang@13.0.0
+
+xkznjwg texinfo@6.5%apple-clang@13.0.0
+7ekz2gs     perl@5.34.0%apple-clang@13.0.0
+ipc5ol4         berkeley-db@18.1.40%apple-clang@13.0.0
+i3nhmbp         bzip2@1.0.8%apple-clang@13.0.0
+w5nkt32         gdbm@1.19%apple-clang@13.0.0
+w5qjzr5             readline@8.1%apple-clang@13.0.0
+otcm5wj                 ncurses@6.2%apple-clang@13.0.0
+7yfdtza         zlib@1.2.11%apple-clang@13.0.0
+
+xqqwp67 xz@5.2.5%apple-clang@13.0.0
+
+7yfdtza zlib@1.2.11%apple-clang@13.0.0
+
+kc376gi zstd@1.5.0%apple-clang@13.0.0
+

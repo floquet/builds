@@ -109,8 +109,8 @@ export test_dir="dantopa"
 if [ -d "${SPACK_ROOT}/${test_dir}" ]; then
     export  dirTopa="${dirTarget}/${test_dir}"; mkdir -p ${dirTopa}; echo "\${dirTopa} = ${dirTopa}"
     new_step "copy ${test_dir} files"
-        echo "rsync -vauh ${SPACK_ROOT}/${test_dir} ${dirTopa}"
-              rsync -vauh ${SPACK_ROOT}/${test_dir} ${dirTopa}
+        echo "rsync -vauh ${SPACK_ROOT}/${test_dir}/. ${dirTopa}/."
+              rsync -vauh ${SPACK_ROOT}/${test_dir}/. ${dirTopa}/.
 fi
 
 # new_step "copy .spack *.yaml files"
