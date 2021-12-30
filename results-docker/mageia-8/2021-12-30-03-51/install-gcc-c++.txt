@@ -1,0 +1,51 @@
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:02:49 ago on Thu Dec 30 03:52:10 2021.
+--> Starting dependency resolution
+---> Package gcc-c++.x86_64 10.3.0-2.mga8 will be installed
+---> Package libgomp-devel.x86_64 10.3.0-2.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package            Arch        Version               Repository           Size
+================================================================================
+Installing:
+ gcc-c++            x86_64      10.3.0-2.mga8         updates-x86_64      9.5 M
+Installing dependencies:
+ libgomp-devel      x86_64      10.3.0-2.mga8         updates-x86_64      1.0 M
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 11 M
+Installed size: 35 M
+Downloading Packages:
+determining the fastest mirror (1 hosts).. done.
+(1/2): libgomp-devel-10.3.0-2.mga8.x86_64.rpm   1.1 MB/s | 1.0 MB     00:00    
+(2/2): gcc-c++-10.3.0-2.mga8.x86_64.rpm         1.6 MB/s | 9.5 MB     00:06    
+--------------------------------------------------------------------------------
+Total                                           1.5 MB/s |  11 MB     00:07     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libgomp-devel-10.3.0-2.mga8.x86_64                     1/2 
+  Installing       : gcc-c++-10.3.0-2.mga8.x86_64                           2/2 
+  Running scriptlet: gcc-c++-10.3.0-2.mga8.x86_64                           2/2 
+  Verifying        : gcc-c++-10.3.0-2.mga8.x86_64                           1/2 
+  Verifying        : libgomp-devel-10.3.0-2.mga8.x86_64                     2/2 
+Installed: gcc-c++-10.3.0-2.mga8.x86_64
+Installed: libgomp-devel-10.3.0-2.mga8.x86_64
+
+Installed:
+  gcc-c++-10.3.0-2.mga8.x86_64        libgomp-devel-10.3.0-2.mga8.x86_64       
+
+Complete!

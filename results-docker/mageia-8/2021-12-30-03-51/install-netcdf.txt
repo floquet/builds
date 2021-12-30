@@ -1,0 +1,54 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:06:18 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package lib64netcdf18.x86_64 4.7.4-3.1.mga8 will be installed
+---> Package netcdf.x86_64 4.7.4-3.1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package            Arch        Version               Repository           Size
+================================================================================
+Installing:
+ netcdf             x86_64      4.7.4-3.1.mga8        updates-x86_64      245 k
+Installing dependencies:
+ lib64netcdf18      x86_64      4.7.4-3.1.mga8        updates-x86_64      431 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 676 k
+Installed size: 1.8 M
+Downloading Packages:
+determining the fastest mirror (1 hosts).. done.
+(1/2): netcdf-4.7.4-3.1.mga8.x86_64.rpm         444 kB/s | 245 kB     00:00    
+(2/2): lib64netcdf18-4.7.4-3.1.mga8.x86_64.rpm  627 kB/s | 431 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           185 kB/s | 676 kB     00:03     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lib64netcdf18-4.7.4-3.1.mga8.x86_64                    1/2 
+  Installing       : netcdf-4.7.4-3.1.mga8.x86_64                           2/2 
+  Running scriptlet: netcdf-4.7.4-3.1.mga8.x86_64                           2/2 
+  Verifying        : lib64netcdf18-4.7.4-3.1.mga8.x86_64                    1/2 
+  Verifying        : netcdf-4.7.4-3.1.mga8.x86_64                           2/2 
+Completion plugin: Generating completion cache...
+Installed: lib64netcdf18-4.7.4-3.1.mga8.x86_64
+Installed: netcdf-4.7.4-3.1.mga8.x86_64
+
+Installed:
+  lib64netcdf18-4.7.4-3.1.mga8.x86_64        netcdf-4.7.4-3.1.mga8.x86_64       
+
+Complete!

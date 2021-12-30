@@ -1,0 +1,167 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:04:38 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package julia.x86_64 1.5.3-1.mga8 will be installed
+---> Package julia-common.noarch 1.5.3-1.mga8 will be installed
+---> Package lib64amd2.x86_64 4.4.6-4.mga8 will be installed
+---> Package lib64camd2.x86_64 4.4.6-4.mga8 will be installed
+---> Package lib64ccolamd2.x86_64 4.4.6-4.mga8 will be installed
+---> Package lib64cholmod3.x86_64 4.4.6-4.mga8 will be installed
+---> Package lib64colamd2.x86_64 4.4.6-4.mga8 will be installed
+---> Package lib64dSFMT2.x86_64 2.2.3-3.mga8 will be installed
+---> Package lib64http-parser2.x86_64 2.9.4-1.mga8 will be installed
+---> Package lib64spqr2.x86_64 4.4.6-4.mga8 will be installed
+---> Package lib64suitesparseconfig4.x86_64 4.4.6-4.mga8 will be installed
+---> Package lib64umfpack5.x86_64 4.4.6-4.mga8 will be installed
+---> Package lib64blas3.x86_64 3.9.0-3.1.mga8 will be installed
+---> Package lib64lapack3.x86_64 3.9.0-3.1.mga8 will be installed
+---> Package lib64mbedcrypto3.x86_64 2.16.11-1.mga8 will be installed
+---> Package lib64mbedtls12.x86_64 2.16.11-1.mga8 will be installed
+---> Package lib64mbedx509_0.x86_64 2.16.11-1.mga8 will be installed
+---> Package p7zip.x86_64 17.03-1.1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package                    Arch      Version           Repository         Size
+================================================================================
+Installing:
+ julia                      x86_64    1.5.3-1.mga8      mageia-x86_64      41 M
+Installing dependencies:
+ julia-common               noarch    1.5.3-1.mga8      mageia-x86_64     2.3 M
+ lib64amd2                  x86_64    4.4.6-4.mga8      mageia-x86_64      27 k
+ lib64blas3                 x86_64    3.9.0-3.1.mga8    updates-x86_64    316 k
+ lib64camd2                 x86_64    4.4.6-4.mga8      mageia-x86_64      29 k
+ lib64ccolamd2              x86_64    4.4.6-4.mga8      mageia-x86_64      30 k
+ lib64cholmod3              x86_64    4.4.6-4.mga8      mageia-x86_64     394 k
+ lib64colamd2               x86_64    4.4.6-4.mga8      mageia-x86_64      22 k
+ lib64dSFMT2                x86_64    2.2.3-3.mga8      mageia-x86_64      19 k
+ lib64http-parser2          x86_64    2.9.4-1.mga8      mageia-x86_64      31 k
+ lib64lapack3               x86_64    3.9.0-3.1.mga8    updates-x86_64    4.1 M
+ lib64mbedcrypto3           x86_64    2.16.11-1.mga8    updates-x86_64    168 k
+ lib64mbedtls12             x86_64    2.16.11-1.mga8    updates-x86_64     83 k
+ lib64mbedx509_0            x86_64    2.16.11-1.mga8    updates-x86_64     51 k
+ lib64spqr2                 x86_64    4.4.6-4.mga8      mageia-x86_64      83 k
+ lib64suitesparseconfig4    x86_64    4.4.6-4.mga8      mageia-x86_64      12 k
+ lib64umfpack5              x86_64    4.4.6-4.mga8      mageia-x86_64     290 k
+ p7zip                      x86_64    17.03-1.1.mga8    updates-x86_64    2.8 M
+
+Transaction Summary
+================================================================================
+Install  18 Packages
+
+Total download size: 52 M
+Installed size: 243 M
+Downloading Packages:
+determining the fastest mirror (1 hosts).. done.
+(1/18): lib64amd2-4.4.6-4.mga8.x86_64.rpm        88 kB/s |  27 kB     00:00    
+(2/18): lib64camd2-4.4.6-4.mga8.x86_64.rpm      265 kB/s |  29 kB     00:00    
+(3/18): lib64ccolamd2-4.4.6-4.mga8.x86_64.rpm   454 kB/s |  30 kB     00:00    
+(4/18): lib64cholmod3-4.4.6-4.mga8.x86_64.rpm   1.7 MB/s | 394 kB     00:00    
+(5/18): lib64colamd2-4.4.6-4.mga8.x86_64.rpm    312 kB/s |  22 kB     00:00    
+(6/18): lib64dSFMT2-2.2.3-3.mga8.x86_64.rpm     309 kB/s |  19 kB     00:00    
+(7/18): lib64http-parser2-2.9.4-1.mga8.x86_64.r 432 kB/s |  31 kB     00:00    
+(8/18): lib64spqr2-4.4.6-4.mga8.x86_64.rpm      1.2 MB/s |  83 kB     00:00    
+(9/18): lib64suitesparseconfig4-4.4.6-4.mga8.x8 174 kB/s |  12 kB     00:00    
+(10/18): lib64umfpack5-4.4.6-4.mga8.x86_64.rpm  1.6 MB/s | 290 kB     00:00    
+(11/18): lib64blas3-3.9.0-3.1.mga8.x86_64.rpm   1.6 MB/s | 316 kB     00:00    
+(12/18): julia-common-1.5.3-1.mga8.noarch.rpm   1.5 MB/s | 2.3 MB     00:01    
+(13/18): lib64mbedcrypto3-2.16.11-1.mga8.x86_64 1.4 MB/s | 168 kB     00:00    
+(14/18): lib64mbedtls12-2.16.11-1.mga8.x86_64.r 689 kB/s |  83 kB     00:00    
+(15/18): lib64mbedx509_0-2.16.11-1.mga8.x86_64. 802 kB/s |  51 kB     00:00    
+(16/18): p7zip-17.03-1.1.mga8.x86_64.rpm        1.9 MB/s | 2.8 MB     00:01    
+(17/18): lib64lapack3-3.9.0-3.1.mga8.x86_64.rpm 1.9 MB/s | 4.1 MB     00:02    
+(18/18): julia-1.5.3-1.mga8.x86_64.rpm          1.9 MB/s |  41 MB     00:21    
+--------------------------------------------------------------------------------
+Total                                           2.2 MB/s |  52 MB     00:24     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lib64suitesparseconfig4-4.4.6-4.mga8.x86_64           1/18 
+  Installing       : lib64blas3-3.9.0-3.1.mga8.x86_64                      2/18 
+  Installing       : lib64amd2-4.4.6-4.mga8.x86_64                         3/18 
+  Installing       : lib64mbedcrypto3-2.16.11-1.mga8.x86_64                4/18 
+  Installing       : lib64mbedx509_0-2.16.11-1.mga8.x86_64                 5/18 
+  Installing       : lib64lapack3-3.9.0-3.1.mga8.x86_64                    6/18 
+  Installing       : lib64camd2-4.4.6-4.mga8.x86_64                        7/18 
+  Installing       : lib64colamd2-4.4.6-4.mga8.x86_64                      8/18 
+  Installing       : lib64mbedtls12-2.16.11-1.mga8.x86_64                  9/18 
+  Installing       : lib64ccolamd2-4.4.6-4.mga8.x86_64                    10/18 
+  Installing       : lib64cholmod3-4.4.6-4.mga8.x86_64                    11/18 
+  Installing       : lib64spqr2-4.4.6-4.mga8.x86_64                       12/18 
+  Installing       : lib64umfpack5-4.4.6-4.mga8.x86_64                    13/18 
+  Installing       : p7zip-17.03-1.1.mga8.x86_64                          14/18 
+  Installing       : lib64http-parser2-2.9.4-1.mga8.x86_64                15/18 
+  Installing       : lib64dSFMT2-2.2.3-3.mga8.x86_64                      16/18 
+  Installing       : julia-common-1.5.3-1.mga8.noarch                     17/18 
+  Installing       : julia-1.5.3-1.mga8.x86_64                            18/18 
+  Running scriptlet: julia-1.5.3-1.mga8.x86_64                            18/18 
+  Verifying        : julia-1.5.3-1.mga8.x86_64                             1/18 
+  Verifying        : julia-common-1.5.3-1.mga8.noarch                      2/18 
+  Verifying        : lib64amd2-4.4.6-4.mga8.x86_64                         3/18 
+  Verifying        : lib64camd2-4.4.6-4.mga8.x86_64                        4/18 
+  Verifying        : lib64ccolamd2-4.4.6-4.mga8.x86_64                     5/18 
+  Verifying        : lib64cholmod3-4.4.6-4.mga8.x86_64                     6/18 
+  Verifying        : lib64colamd2-4.4.6-4.mga8.x86_64                      7/18 
+  Verifying        : lib64dSFMT2-2.2.3-3.mga8.x86_64                       8/18 
+  Verifying        : lib64http-parser2-2.9.4-1.mga8.x86_64                 9/18 
+  Verifying        : lib64spqr2-4.4.6-4.mga8.x86_64                       10/18 
+  Verifying        : lib64suitesparseconfig4-4.4.6-4.mga8.x86_64          11/18 
+  Verifying        : lib64umfpack5-4.4.6-4.mga8.x86_64                    12/18 
+  Verifying        : lib64blas3-3.9.0-3.1.mga8.x86_64                     13/18 
+  Verifying        : lib64lapack3-3.9.0-3.1.mga8.x86_64                   14/18 
+  Verifying        : lib64mbedcrypto3-2.16.11-1.mga8.x86_64               15/18 
+  Verifying        : lib64mbedtls12-2.16.11-1.mga8.x86_64                 16/18 
+  Verifying        : lib64mbedx509_0-2.16.11-1.mga8.x86_64                17/18 
+  Verifying        : p7zip-17.03-1.1.mga8.x86_64                          18/18 
+Completion plugin: Generating completion cache...
+Installed: julia-1.5.3-1.mga8.x86_64
+Installed: julia-common-1.5.3-1.mga8.noarch
+Installed: lib64amd2-4.4.6-4.mga8.x86_64
+Installed: lib64blas3-3.9.0-3.1.mga8.x86_64
+Installed: lib64camd2-4.4.6-4.mga8.x86_64
+Installed: lib64ccolamd2-4.4.6-4.mga8.x86_64
+Installed: lib64cholmod3-4.4.6-4.mga8.x86_64
+Installed: lib64colamd2-4.4.6-4.mga8.x86_64
+Installed: lib64dSFMT2-2.2.3-3.mga8.x86_64
+Installed: lib64http-parser2-2.9.4-1.mga8.x86_64
+Installed: lib64lapack3-3.9.0-3.1.mga8.x86_64
+Installed: lib64mbedcrypto3-2.16.11-1.mga8.x86_64
+Installed: lib64mbedtls12-2.16.11-1.mga8.x86_64
+Installed: lib64mbedx509_0-2.16.11-1.mga8.x86_64
+Installed: lib64spqr2-4.4.6-4.mga8.x86_64
+Installed: lib64suitesparseconfig4-4.4.6-4.mga8.x86_64
+Installed: lib64umfpack5-4.4.6-4.mga8.x86_64
+Installed: p7zip-17.03-1.1.mga8.x86_64
+
+Installed:
+  julia-1.5.3-1.mga8.x86_64                                                     
+  julia-common-1.5.3-1.mga8.noarch                                              
+  lib64amd2-4.4.6-4.mga8.x86_64                                                 
+  lib64blas3-3.9.0-3.1.mga8.x86_64                                              
+  lib64camd2-4.4.6-4.mga8.x86_64                                                
+  lib64ccolamd2-4.4.6-4.mga8.x86_64                                             
+  lib64cholmod3-4.4.6-4.mga8.x86_64                                             
+  lib64colamd2-4.4.6-4.mga8.x86_64                                              
+  lib64dSFMT2-2.2.3-3.mga8.x86_64                                               
+  lib64http-parser2-2.9.4-1.mga8.x86_64                                         
+  lib64lapack3-3.9.0-3.1.mga8.x86_64                                            
+  lib64mbedcrypto3-2.16.11-1.mga8.x86_64                                        
+  lib64mbedtls12-2.16.11-1.mga8.x86_64                                          
+  lib64mbedx509_0-2.16.11-1.mga8.x86_64                                         
+  lib64spqr2-4.4.6-4.mga8.x86_64                                                
+  lib64suitesparseconfig4-4.4.6-4.mga8.x86_64                                   
+  lib64umfpack5-4.4.6-4.mga8.x86_64                                             
+  p7zip-17.03-1.1.mga8.x86_64                                                   
+
+Complete!

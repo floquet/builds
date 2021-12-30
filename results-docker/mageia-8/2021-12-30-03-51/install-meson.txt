@@ -1,0 +1,54 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+Waiting for process with pid 711 to finish.
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:06:05 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package meson.noarch 0.56.0-1.mga8 will be installed
+---> Package ninja.x86_64 1.10.2-1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package       Architecture   Version               Repository             Size
+================================================================================
+Installing:
+ meson         noarch         0.56.0-1.mga8         mageia-x86_64         1.1 M
+Installing dependencies:
+ ninja         x86_64         1.10.2-1.mga8         mageia-x86_64         132 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 1.2 M
+Installed size: 6.2 M
+Downloading Packages:
+(1/2): ninja-1.10.2-1.mga8.x86_64.rpm           305 kB/s | 132 kB     00:00    
+(2/2): meson-0.56.0-1.mga8.noarch.rpm           924 kB/s | 1.1 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           641 kB/s | 1.2 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : ninja-1.10.2-1.mga8.x86_64                             1/2 
+  Installing       : meson-0.56.0-1.mga8.noarch                             2/2 
+  Running scriptlet: meson-0.56.0-1.mga8.noarch                             2/2 
+  Verifying        : meson-0.56.0-1.mga8.noarch                             1/2 
+  Verifying        : ninja-1.10.2-1.mga8.x86_64                             2/2 
+Completion plugin: Generating completion cache...
+Installed: meson-0.56.0-1.mga8.noarch
+Installed: ninja-1.10.2-1.mga8.x86_64
+
+Installed:
+  meson-0.56.0-1.mga8.noarch             ninja-1.10.2-1.mga8.x86_64            
+
+Complete!

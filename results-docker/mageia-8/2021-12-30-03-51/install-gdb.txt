@@ -1,0 +1,95 @@
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:03:00 ago on Thu Dec 30 03:52:10 2021.
+--> Starting dependency resolution
+---> Package dnf-plugins-core.noarch 4.0.19-1.mga8 will be installed
+---> Package gdb.x86_64 10.1-5.mga8 will be installed
+---> Package python3-dateutil.noarch 2.8.1-1.mga8 will be installed
+---> Package python3-dbus.x86_64 1.2.16-2.mga8 will be installed
+---> Package python3-distro.noarch 1.5.0-1.mga8 will be installed
+---> Package python3-dnf-plugins-core.noarch 4.0.19-1.mga8 will be installed
+---> Package yum-utils.noarch 4.0.19-1.mga8 will be installed
+---> Package python3-setuptools.noarch 56.2.0-1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package                     Arch      Version          Repository         Size
+================================================================================
+Installing:
+ gdb                         x86_64    10.1-5.mga8      mageia-x86_64     119 k
+Installing dependencies:
+ dnf-plugins-core            noarch    4.0.19-1.mga8    mageia-x86_64     138 k
+ python3-dateutil            noarch    2.8.1-1.mga8     mageia-x86_64     292 k
+ python3-dbus                x86_64    1.2.16-2.mga8    mageia-x86_64     144 k
+ python3-distro              noarch    1.5.0-1.mga8     mageia-x86_64      35 k
+ python3-dnf-plugins-core    noarch    4.0.19-1.mga8    mageia-x86_64      94 k
+ python3-setuptools          noarch    56.2.0-1.mga8    updates-x86_64    818 k
+Installing weak dependencies:
+ yum-utils                   noarch    4.0.19-1.mga8    mageia-x86_64      40 k
+
+Transaction Summary
+================================================================================
+Install  8 Packages
+
+Total download size: 1.6 M
+Installed size: 6.1 M
+Downloading Packages:
+determining the fastest mirror (2 hosts).. done.
+(1/8): gdb-10.1-5.mga8.x86_64.rpm               269 kB/s | 119 kB     00:00    
+(2/8): dnf-plugins-core-4.0.19-1.mga8.noarch.rp 307 kB/s | 138 kB     00:00    
+(3/8): python3-distro-1.5.0-1.mga8.noarch.rpm   457 kB/s |  35 kB     00:00    
+(4/8): python3-dateutil-2.8.1-1.mga8.noarch.rpm 546 kB/s | 292 kB     00:00    
+(5/8): python3-dbus-1.2.16-2.mga8.x86_64.rpm    1.2 MB/s | 144 kB     00:00    
+(6/8): yum-utils-4.0.19-1.mga8.noarch.rpm       627 kB/s |  40 kB     00:00    
+(7/8): python3-dnf-plugins-core-4.0.19-1.mga8.n 795 kB/s |  94 kB     00:00    
+(8/8): python3-setuptools-56.2.0-1.mga8.noarch. 1.6 MB/s | 818 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           444 kB/s | 1.6 MB     00:03     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : python3-setuptools-56.2.0-1.mga8.noarch                1/8 
+  Installing       : python3-distro-1.5.0-1.mga8.noarch                     2/8 
+  Installing       : python3-dbus-1.2.16-2.mga8.x86_64                      3/8 
+  Installing       : python3-dateutil-2.8.1-1.mga8.noarch                   4/8 
+  Installing       : python3-dnf-plugins-core-4.0.19-1.mga8.noarch          5/8 
+  Installing       : dnf-plugins-core-4.0.19-1.mga8.noarch                  6/8 
+  Installing       : yum-utils-4.0.19-1.mga8.noarch                         7/8 
+  Installing       : gdb-10.1-5.mga8.x86_64                                 8/8 
+  Running scriptlet: gdb-10.1-5.mga8.x86_64                                 8/8 
+  Verifying        : dnf-plugins-core-4.0.19-1.mga8.noarch                  1/8 
+  Verifying        : gdb-10.1-5.mga8.x86_64                                 2/8 
+  Verifying        : python3-dateutil-2.8.1-1.mga8.noarch                   3/8 
+  Verifying        : python3-dbus-1.2.16-2.mga8.x86_64                      4/8 
+  Verifying        : python3-distro-1.5.0-1.mga8.noarch                     5/8 
+  Verifying        : python3-dnf-plugins-core-4.0.19-1.mga8.noarch          6/8 
+  Verifying        : yum-utils-4.0.19-1.mga8.noarch                         7/8 
+  Verifying        : python3-setuptools-56.2.0-1.mga8.noarch                8/8 
+Installed: dnf-plugins-core-4.0.19-1.mga8.noarch
+Installed: gdb-10.1-5.mga8.x86_64
+Installed: python3-dateutil-2.8.1-1.mga8.noarch
+Installed: python3-dbus-1.2.16-2.mga8.x86_64
+Installed: python3-distro-1.5.0-1.mga8.noarch
+Installed: python3-dnf-plugins-core-4.0.19-1.mga8.noarch
+Installed: python3-setuptools-56.2.0-1.mga8.noarch
+Installed: yum-utils-4.0.19-1.mga8.noarch
+
+Installed:
+  dnf-plugins-core-4.0.19-1.mga8.noarch                                         
+  gdb-10.1-5.mga8.x86_64                                                        
+  python3-dateutil-2.8.1-1.mga8.noarch                                          
+  python3-dbus-1.2.16-2.mga8.x86_64                                             
+  python3-distro-1.5.0-1.mga8.noarch                                            
+  python3-dnf-plugins-core-4.0.19-1.mga8.noarch                                 
+  python3-setuptools-56.2.0-1.mga8.noarch                                       
+  yum-utils-4.0.19-1.mga8.noarch                                                
+
+Complete!

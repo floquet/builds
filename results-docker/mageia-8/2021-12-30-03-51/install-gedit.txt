@@ -1,0 +1,245 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:03:05 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package amtk.x86_64 5.2.0-1.mga8 will be installed
+---> Package gedit.x86_64 3.38.1-1.mga8 will be installed
+---> Package gspell-i18n.x86_64 1.8.4-1.mga8 will be installed
+---> Package gtksourceview.x86_64 4.8.0-1.mga8 will be installed
+---> Package lib64amtk5_0.x86_64 5.2.0-1.mga8 will be installed
+---> Package lib64atk-gir1.0.x86_64 2.36.0-1.mga8 will be installed
+---> Package lib64cairo-gir1.0.x86_64 1.66.1-1.mga8 will be installed
+---> Package lib64fontconfig-gir2.0.x86_64 1.66.1-1.mga8 will be installed
+---> Package lib64freetype-gir2.0.x86_64 1.66.1-1.mga8 will be installed
+---> Package lib64gdk_pixbuf-gir2.0.x86_64 2.42.2-1.mga8 will be installed
+---> Package lib64girepository-gir2.0.x86_64 1.66.1-1.mga8 will be installed
+---> Package lib64gspell1_2.x86_64 1.8.4-1.mga8 will be installed
+---> Package lib64gtk-gir3.0.x86_64 3.24.24-1.mga8 will be installed
+---> Package lib64gtksourceview-gir4.x86_64 4.8.0-1.mga8 will be installed
+---> Package lib64gtksourceview4_0.x86_64 4.8.0-1.mga8 will be installed
+---> Package lib64harfbuzz-gir0.0.x86_64 2.7.4-1.mga8 will be installed
+---> Package lib64peas-gir1.0.x86_64 1.28.0-1.mga8 will be installed
+---> Package lib64peas-gtk-gir1.0.x86_64 1.28.0-1.mga8 will be installed
+---> Package lib64peas-gtk1.0_0.x86_64 1.28.0-1.mga8 will be installed
+---> Package lib64peas1.0_0.x86_64 1.28.0-1.mga8 will be installed
+---> Package lib64peas1.0_0-loader-python3.x86_64 1.28.0-1.mga8 will be installed
+---> Package lib64tepl5_0.x86_64 5.0.1-2.mga8 will be installed
+---> Package lib64xft-gir2.0.x86_64 1.66.1-1.mga8 will be installed
+---> Package lib64xlib-gir2.0.x86_64 1.66.1-1.mga8 will be installed
+---> Package libpeas-data.x86_64 1.28.0-1.mga8 will be installed
+---> Package python3-cairo.x86_64 1.20.0-1.mga8 will be installed
+---> Package python3-gobject.x86_64 3.38.0-5.mga8 will be installed
+---> Package tepl.x86_64 5.0.1-2.mga8 will be installed
+---> Package lib64pango-gir1.0.x86_64 1.48.4-1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package                        Arch    Version           Repository       Size
+================================================================================
+Installing:
+ gedit                          x86_64  3.38.1-1.mga8     mageia-x86_64   2.4 M
+Installing dependencies:
+ amtk                           x86_64  5.2.0-1.mga8      mageia-x86_64    27 k
+ gspell-i18n                    x86_64  1.8.4-1.mga8      mageia-x86_64    42 k
+ gtksourceview                  x86_64  4.8.0-1.mga8      mageia-x86_64   644 k
+ lib64amtk5_0                   x86_64  5.2.0-1.mga8      mageia-x86_64    30 k
+ lib64atk-gir1.0                x86_64  2.36.0-1.mga8     mageia-x86_64    26 k
+ lib64cairo-gir1.0              x86_64  1.66.1-1.mga8     mageia-x86_64    13 k
+ lib64fontconfig-gir2.0         x86_64  1.66.1-1.mga8     mageia-x86_64   9.0 k
+ lib64freetype-gir2.0           x86_64  1.66.1-1.mga8     mageia-x86_64   9.0 k
+ lib64gdk_pixbuf-gir2.0         x86_64  2.42.2-1.mga8     mageia-x86_64    13 k
+ lib64girepository-gir2.0       x86_64  1.66.1-1.mga8     mageia-x86_64    16 k
+ lib64gspell1_2                 x86_64  1.8.4-1.mga8      mageia-x86_64    58 k
+ lib64gtk-gir3.0                x86_64  3.24.24-1.mga8    mageia-x86_64   230 k
+ lib64gtksourceview-gir4        x86_64  4.8.0-1.mga8      mageia-x86_64    24 k
+ lib64gtksourceview4_0          x86_64  4.8.0-1.mga8      mageia-x86_64   229 k
+ lib64harfbuzz-gir0.0           x86_64  2.7.4-1.mga8      mageia-x86_64    38 k
+ lib64pango-gir1.0              x86_64  1.48.4-1.mga8     updates-x86_64   34 k
+ lib64peas-gir1.0               x86_64  1.28.0-1.mga8     mageia-x86_64    11 k
+ lib64peas-gtk-gir1.0           x86_64  1.28.0-1.mga8     mageia-x86_64   9.6 k
+ lib64peas-gtk1.0_0             x86_64  1.28.0-1.mga8     mageia-x86_64    29 k
+ lib64peas1.0_0                 x86_64  1.28.0-1.mga8     mageia-x86_64    43 k
+ lib64tepl5_0                   x86_64  5.0.1-2.mga8      mageia-x86_64    80 k
+ lib64xft-gir2.0                x86_64  1.66.1-1.mga8     mageia-x86_64   9.0 k
+ lib64xlib-gir2.0               x86_64  1.66.1-1.mga8     mageia-x86_64   9.1 k
+ libpeas-data                   x86_64  1.28.0-1.mga8     mageia-x86_64    67 k
+ python3-cairo                  x86_64  1.20.0-1.mga8     mageia-x86_64    75 k
+ python3-gobject                x86_64  3.38.0-5.mga8     mageia-x86_64    74 k
+ tepl                           x86_64  5.0.1-2.mga8      mageia-x86_64    48 k
+Installing weak dependencies:
+ lib64peas1.0_0-loader-python3  x86_64  1.28.0-1.mga8     mageia-x86_64    21 k
+
+Transaction Summary
+================================================================================
+Install  29 Packages
+
+Total download size: 4.3 M
+Installed size: 21 M
+Downloading Packages:
+determining the fastest mirror (2 hosts).. done.
+(1/29): amtk-5.2.0-1.mga8.x86_64.rpm             82 kB/s |  27 kB     00:00    
+(2/29): gspell-i18n-1.8.4-1.mga8.x86_64.rpm     111 kB/s |  42 kB     00:00    
+(3/29): lib64amtk5_0-5.2.0-1.mga8.x86_64.rpm    273 kB/s |  30 kB     00:00    
+(4/29): lib64atk-gir1.0-2.36.0-1.mga8.x86_64.rp 357 kB/s |  26 kB     00:00    
+(5/29): lib64cairo-gir1.0-1.66.1-1.mga8.x86_64. 220 kB/s |  13 kB     00:00    
+(6/29): lib64fontconfig-gir2.0-1.66.1-1.mga8.x8 135 kB/s | 9.0 kB     00:00    
+(7/29): lib64freetype-gir2.0-1.66.1-1.mga8.x86_ 113 kB/s | 9.0 kB     00:00    
+(8/29): gtksourceview-4.8.0-1.mga8.x86_64.rpm   1.4 MB/s | 644 kB     00:00    
+(9/29): lib64gdk_pixbuf-gir2.0-2.42.2-1.mga8.x8 181 kB/s |  13 kB     00:00    
+(10/29): lib64girepository-gir2.0-1.66.1-1.mga8 261 kB/s |  16 kB     00:00    
+(11/29): lib64gspell1_2-1.8.4-1.mga8.x86_64.rpm 700 kB/s |  58 kB     00:00    
+(12/29): lib64gtksourceview-gir4-4.8.0-1.mga8.x 187 kB/s |  24 kB     00:00    
+(13/29): lib64gtk-gir3.0-3.24.24-1.mga8.x86_64. 935 kB/s | 230 kB     00:00    
+(14/29): lib64harfbuzz-gir0.0-2.7.4-1.mga8.x86_ 489 kB/s |  38 kB     00:00    
+(15/29): lib64gtksourceview4_0-4.8.0-1.mga8.x86 1.3 MB/s | 229 kB     00:00    
+(16/29): lib64peas-gir1.0-1.28.0-1.mga8.x86_64. 195 kB/s |  11 kB     00:00    
+(17/29): lib64peas-gtk-gir1.0-1.28.0-1.mga8.x86 152 kB/s | 9.6 kB     00:00    
+(18/29): lib64peas-gtk1.0_0-1.28.0-1.mga8.x86_6 413 kB/s |  29 kB     00:00    
+(19/29): lib64peas1.0_0-1.28.0-1.mga8.x86_64.rp 711 kB/s |  43 kB     00:00    
+(20/29): lib64peas1.0_0-loader-python3-1.28.0-1 274 kB/s |  21 kB     00:00    
+(21/29): lib64tepl5_0-5.0.1-2.mga8.x86_64.rpm   1.0 MB/s |  80 kB     00:00    
+(22/29): lib64xft-gir2.0-1.66.1-1.mga8.x86_64.r 138 kB/s | 9.0 kB     00:00    
+(23/29): lib64xlib-gir2.0-1.66.1-1.mga8.x86_64. 148 kB/s | 9.1 kB     00:00    
+(24/29): libpeas-data-1.28.0-1.mga8.x86_64.rpm  1.1 MB/s |  67 kB     00:00    
+(25/29): python3-cairo-1.20.0-1.mga8.x86_64.rpm 949 kB/s |  75 kB     00:00    
+(26/29): python3-gobject-3.38.0-5.mga8.x86_64.r 996 kB/s |  74 kB     00:00    
+(27/29): gedit-3.38.1-1.mga8.x86_64.rpm         1.5 MB/s | 2.4 MB     00:01    
+(28/29): tepl-5.0.1-2.mga8.x86_64.rpm           641 kB/s |  48 kB     00:00    
+(29/29): lib64pango-gir1.0-1.48.4-1.mga8.x86_64 412 kB/s |  34 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           1.0 MB/s | 4.3 MB     00:04     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lib64xlib-gir2.0-1.66.1-1.mga8.x86_64                 1/29 
+  Installing       : lib64cairo-gir1.0-1.66.1-1.mga8.x86_64                2/29 
+  Installing       : lib64harfbuzz-gir0.0-2.7.4-1.mga8.x86_64              3/29 
+  Installing       : lib64gdk_pixbuf-gir2.0-2.42.2-1.mga8.x86_64           4/29 
+  Installing       : lib64atk-gir1.0-2.36.0-1.mga8.x86_64                  5/29 
+  Installing       : libpeas-data-1.28.0-1.mga8.x86_64                     6/29 
+  Installing       : lib64peas1.0_0-loader-python3-1.28.0-1.mga8.x86_64    7/29 
+  Installing       : lib64peas1.0_0-1.28.0-1.mga8.x86_64                   8/29 
+  Installing       : lib64peas-gtk1.0_0-1.28.0-1.mga8.x86_64               9/29 
+  Installing       : lib64girepository-gir2.0-1.66.1-1.mga8.x86_64        10/29 
+  Installing       : lib64peas-gir1.0-1.28.0-1.mga8.x86_64                11/29 
+  Installing       : lib64xft-gir2.0-1.66.1-1.mga8.x86_64                 12/29 
+  Installing       : lib64gspell1_2-1.8.4-1.mga8.x86_64                   13/29 
+  Installing       : gspell-i18n-1.8.4-1.mga8.x86_64                      14/29 
+  Installing       : tepl-5.0.1-2.mga8.x86_64                             15/29 
+  Installing       : python3-cairo-1.20.0-1.mga8.x86_64                   16/29 
+  Installing       : lib64freetype-gir2.0-1.66.1-1.mga8.x86_64            17/29 
+  Installing       : lib64fontconfig-gir2.0-1.66.1-1.mga8.x86_64          18/29 
+  Installing       : lib64pango-gir1.0-1.48.4-1.mga8.x86_64               19/29 
+  Installing       : lib64gtk-gir3.0-3.24.24-1.mga8.x86_64                20/29 
+  Installing       : lib64peas-gtk-gir1.0-1.28.0-1.mga8.x86_64            21/29 
+  Installing       : python3-gobject-3.38.0-5.mga8.x86_64                 22/29 
+  Installing       : gtksourceview-4.8.0-1.mga8.x86_64                    23/29 
+  Installing       : lib64gtksourceview4_0-4.8.0-1.mga8.x86_64            24/29 
+  Installing       : lib64gtksourceview-gir4-4.8.0-1.mga8.x86_64          25/29 
+  Installing       : amtk-5.2.0-1.mga8.x86_64                             26/29 
+  Installing       : lib64amtk5_0-5.2.0-1.mga8.x86_64                     27/29 
+  Installing       : lib64tepl5_0-5.0.1-2.mga8.x86_64                     28/29 
+  Installing       : gedit-3.38.1-1.mga8.x86_64                           29/29 
+  Running scriptlet: gedit-3.38.1-1.mga8.x86_64                           29/29 
+  Verifying        : amtk-5.2.0-1.mga8.x86_64                              1/29 
+  Verifying        : gedit-3.38.1-1.mga8.x86_64                            2/29 
+  Verifying        : gspell-i18n-1.8.4-1.mga8.x86_64                       3/29 
+  Verifying        : gtksourceview-4.8.0-1.mga8.x86_64                     4/29 
+  Verifying        : lib64amtk5_0-5.2.0-1.mga8.x86_64                      5/29 
+  Verifying        : lib64atk-gir1.0-2.36.0-1.mga8.x86_64                  6/29 
+  Verifying        : lib64cairo-gir1.0-1.66.1-1.mga8.x86_64                7/29 
+  Verifying        : lib64fontconfig-gir2.0-1.66.1-1.mga8.x86_64           8/29 
+  Verifying        : lib64freetype-gir2.0-1.66.1-1.mga8.x86_64             9/29 
+  Verifying        : lib64gdk_pixbuf-gir2.0-2.42.2-1.mga8.x86_64          10/29 
+  Verifying        : lib64girepository-gir2.0-1.66.1-1.mga8.x86_64        11/29 
+  Verifying        : lib64gspell1_2-1.8.4-1.mga8.x86_64                   12/29 
+  Verifying        : lib64gtk-gir3.0-3.24.24-1.mga8.x86_64                13/29 
+  Verifying        : lib64gtksourceview-gir4-4.8.0-1.mga8.x86_64          14/29 
+  Verifying        : lib64gtksourceview4_0-4.8.0-1.mga8.x86_64            15/29 
+  Verifying        : lib64harfbuzz-gir0.0-2.7.4-1.mga8.x86_64             16/29 
+  Verifying        : lib64peas-gir1.0-1.28.0-1.mga8.x86_64                17/29 
+  Verifying        : lib64peas-gtk-gir1.0-1.28.0-1.mga8.x86_64            18/29 
+  Verifying        : lib64peas-gtk1.0_0-1.28.0-1.mga8.x86_64              19/29 
+  Verifying        : lib64peas1.0_0-1.28.0-1.mga8.x86_64                  20/29 
+  Verifying        : lib64peas1.0_0-loader-python3-1.28.0-1.mga8.x86_64   21/29 
+  Verifying        : lib64tepl5_0-5.0.1-2.mga8.x86_64                     22/29 
+  Verifying        : lib64xft-gir2.0-1.66.1-1.mga8.x86_64                 23/29 
+  Verifying        : lib64xlib-gir2.0-1.66.1-1.mga8.x86_64                24/29 
+  Verifying        : libpeas-data-1.28.0-1.mga8.x86_64                    25/29 
+  Verifying        : python3-cairo-1.20.0-1.mga8.x86_64                   26/29 
+  Verifying        : python3-gobject-3.38.0-5.mga8.x86_64                 27/29 
+  Verifying        : tepl-5.0.1-2.mga8.x86_64                             28/29 
+  Verifying        : lib64pango-gir1.0-1.48.4-1.mga8.x86_64               29/29 
+Completion plugin: Generating completion cache...
+Installed: amtk-5.2.0-1.mga8.x86_64
+Installed: gedit-3.38.1-1.mga8.x86_64
+Installed: gspell-i18n-1.8.4-1.mga8.x86_64
+Installed: gtksourceview-4.8.0-1.mga8.x86_64
+Installed: lib64amtk5_0-5.2.0-1.mga8.x86_64
+Installed: lib64atk-gir1.0-2.36.0-1.mga8.x86_64
+Installed: lib64cairo-gir1.0-1.66.1-1.mga8.x86_64
+Installed: lib64fontconfig-gir2.0-1.66.1-1.mga8.x86_64
+Installed: lib64freetype-gir2.0-1.66.1-1.mga8.x86_64
+Installed: lib64gdk_pixbuf-gir2.0-2.42.2-1.mga8.x86_64
+Installed: lib64girepository-gir2.0-1.66.1-1.mga8.x86_64
+Installed: lib64gspell1_2-1.8.4-1.mga8.x86_64
+Installed: lib64gtk-gir3.0-3.24.24-1.mga8.x86_64
+Installed: lib64gtksourceview-gir4-4.8.0-1.mga8.x86_64
+Installed: lib64gtksourceview4_0-4.8.0-1.mga8.x86_64
+Installed: lib64harfbuzz-gir0.0-2.7.4-1.mga8.x86_64
+Installed: lib64pango-gir1.0-1.48.4-1.mga8.x86_64
+Installed: lib64peas-gir1.0-1.28.0-1.mga8.x86_64
+Installed: lib64peas-gtk-gir1.0-1.28.0-1.mga8.x86_64
+Installed: lib64peas-gtk1.0_0-1.28.0-1.mga8.x86_64
+Installed: lib64peas1.0_0-1.28.0-1.mga8.x86_64
+Installed: lib64peas1.0_0-loader-python3-1.28.0-1.mga8.x86_64
+Installed: lib64tepl5_0-5.0.1-2.mga8.x86_64
+Installed: lib64xft-gir2.0-1.66.1-1.mga8.x86_64
+Installed: lib64xlib-gir2.0-1.66.1-1.mga8.x86_64
+Installed: libpeas-data-1.28.0-1.mga8.x86_64
+Installed: python3-cairo-1.20.0-1.mga8.x86_64
+Installed: python3-gobject-3.38.0-5.mga8.x86_64
+Installed: tepl-5.0.1-2.mga8.x86_64
+
+Installed:
+  amtk-5.2.0-1.mga8.x86_64                                                      
+  gedit-3.38.1-1.mga8.x86_64                                                    
+  gspell-i18n-1.8.4-1.mga8.x86_64                                               
+  gtksourceview-4.8.0-1.mga8.x86_64                                             
+  lib64amtk5_0-5.2.0-1.mga8.x86_64                                              
+  lib64atk-gir1.0-2.36.0-1.mga8.x86_64                                          
+  lib64cairo-gir1.0-1.66.1-1.mga8.x86_64                                        
+  lib64fontconfig-gir2.0-1.66.1-1.mga8.x86_64                                   
+  lib64freetype-gir2.0-1.66.1-1.mga8.x86_64                                     
+  lib64gdk_pixbuf-gir2.0-2.42.2-1.mga8.x86_64                                   
+  lib64girepository-gir2.0-1.66.1-1.mga8.x86_64                                 
+  lib64gspell1_2-1.8.4-1.mga8.x86_64                                            
+  lib64gtk-gir3.0-3.24.24-1.mga8.x86_64                                         
+  lib64gtksourceview-gir4-4.8.0-1.mga8.x86_64                                   
+  lib64gtksourceview4_0-4.8.0-1.mga8.x86_64                                     
+  lib64harfbuzz-gir0.0-2.7.4-1.mga8.x86_64                                      
+  lib64pango-gir1.0-1.48.4-1.mga8.x86_64                                        
+  lib64peas-gir1.0-1.28.0-1.mga8.x86_64                                         
+  lib64peas-gtk-gir1.0-1.28.0-1.mga8.x86_64                                     
+  lib64peas-gtk1.0_0-1.28.0-1.mga8.x86_64                                       
+  lib64peas1.0_0-1.28.0-1.mga8.x86_64                                           
+  lib64peas1.0_0-loader-python3-1.28.0-1.mga8.x86_64                            
+  lib64tepl5_0-5.0.1-2.mga8.x86_64                                              
+  lib64xft-gir2.0-1.66.1-1.mga8.x86_64                                          
+  lib64xlib-gir2.0-1.66.1-1.mga8.x86_64                                         
+  libpeas-data-1.28.0-1.mga8.x86_64                                             
+  python3-cairo-1.20.0-1.mga8.x86_64                                            
+  python3-gobject-3.38.0-5.mga8.x86_64                                          
+  tepl-5.0.1-2.mga8.x86_64                                                      
+
+Complete!

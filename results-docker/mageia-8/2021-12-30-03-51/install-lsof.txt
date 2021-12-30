@@ -1,0 +1,66 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:05:55 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package lib64selinux1.x86_64 3.2-0.rc1.4.mga8 will be installed
+---> Package lib64sepol2.x86_64 3.2-0.rc1.4.mga8 will be installed
+---> Package libselinux.x86_64 3.2-0.rc1.4.mga8 will be installed
+---> Package lsof.x86_64 4.94.0-1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package            Arch        Version                Repository          Size
+================================================================================
+Installing:
+ lsof               x86_64      4.94.0-1.mga8          mageia-x86_64      325 k
+Installing dependencies:
+ lib64selinux1      x86_64      3.2-0.rc1.4.mga8       mageia-x86_64       80 k
+ lib64sepol2        x86_64      3.2-0.rc1.4.mga8       mageia-x86_64      293 k
+ libselinux         x86_64      3.2-0.rc1.4.mga8       mageia-x86_64      8.6 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 706 k
+Installed size: 1.8 M
+Downloading Packages:
+(1/4): libselinux-3.2-0.rc1.4.mga8.x86_64.rpm    29 kB/s | 8.6 kB     00:00    
+(2/4): lib64selinux1-3.2-0.rc1.4.mga8.x86_64.rp 212 kB/s |  80 kB     00:00    
+(3/4): lib64sepol2-3.2-0.rc1.4.mga8.x86_64.rpm  483 kB/s | 293 kB     00:00    
+(4/4): lsof-4.94.0-1.mga8.x86_64.rpm            936 kB/s | 325 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           513 kB/s | 706 kB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lib64sepol2-3.2-0.rc1.4.mga8.x86_64                    1/4 
+  Installing       : libselinux-3.2-0.rc1.4.mga8.x86_64                     2/4 
+  Installing       : lib64selinux1-3.2-0.rc1.4.mga8.x86_64                  3/4 
+  Installing       : lsof-4.94.0-1.mga8.x86_64                              4/4 
+  Running scriptlet: lsof-4.94.0-1.mga8.x86_64                              4/4 
+  Verifying        : lib64selinux1-3.2-0.rc1.4.mga8.x86_64                  1/4 
+  Verifying        : lib64sepol2-3.2-0.rc1.4.mga8.x86_64                    2/4 
+  Verifying        : libselinux-3.2-0.rc1.4.mga8.x86_64                     3/4 
+  Verifying        : lsof-4.94.0-1.mga8.x86_64                              4/4 
+Completion plugin: Generating completion cache...
+Installed: lib64selinux1-3.2-0.rc1.4.mga8.x86_64
+Installed: lib64sepol2-3.2-0.rc1.4.mga8.x86_64
+Installed: libselinux-3.2-0.rc1.4.mga8.x86_64
+Installed: lsof-4.94.0-1.mga8.x86_64
+
+Installed:
+  lib64selinux1-3.2-0.rc1.4.mga8.x86_64   lib64sepol2-3.2-0.rc1.4.mga8.x86_64  
+  libselinux-3.2-0.rc1.4.mga8.x86_64      lsof-4.94.0-1.mga8.x86_64            
+
+Complete!

@@ -1,0 +1,343 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:03:12 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package bash-completion.noarch 2:2.11-1.mga8 will be installed
+---> Package cvs.x86_64 1.12.13-32.mga8 will be installed
+---> Package cvs-fast-export.x86_64 1.55-3.mga8 will be installed
+---> Package diffutils.x86_64 3.7-3.mga8 will be installed
+---> Package lib64apr-util1_0.x86_64 1.6.1-4.mga8 will be installed
+---> Package lib64serf2_2.x86_64 1.4.0-0.7.mga8 will be installed
+---> Package lib64tcl8.6.x86_64 1:8.6.10-2.mga8 will be installed
+---> Package lib64tk8.6.x86_64 1:8.6.10-2.mga8 will be installed
+---> Package lib64utf8proc2.x86_64 2.6.1-1.mga8 will be installed
+---> Package lib64xscrnsaver1.x86_64 1.2.3-4.mga8 will be installed
+---> Package perl-Authen-SASL.noarch 2.160.0-12.mga8 will be installed
+---> Package perl-Digest-HMAC.noarch 1.30.0-11.mga8 will be installed
+---> Package perl-Digest-SHA1.x86_64 2.130.0-28.mga8 will be installed
+---> Package perl-Error.noarch 1:0.170.290-3.mga8 will be installed
+---> Package perl-IO-Socket-SSL.noarch 2.68.0-1.mga8 will be installed
+---> Package perl-MIME-Base64.x86_64 3.160.0-1.mga8 will be installed
+---> Package perl-MailTools.noarch 2.210.0-3.mga8 will be installed
+---> Package perl-Mozilla-CA.noarch 20200520.0.0-1.mga8 will be installed
+---> Package perl-Net-SMTP-SSL.noarch 1.40.0-3.mga8 will be installed
+---> Package perl-Net-SSLeay.x86_64 1.880.0-4.mga8 will be installed
+---> Package perl-TimeDate.noarch 2.330.0-1.mga8 will be installed
+---> Package rsync.x86_64 3.2.2-2.mga8 will be installed
+---> Package tcl.x86_64 1:8.6.10-2.mga8 will be installed
+---> Package tk.x86_64 1:8.6.10-2.mga8 will be installed
+---> Package git.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package git-arch.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package git-core.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package git-core-oldies.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package git-cvs.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package git-email.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package git-prompt.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package git-svn.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package gitk.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package lib64apr1_0.x86_64 1:1.7.0-3.2.mga8 will be installed
+---> Package lib64svn0.x86_64 2:1.14.1-1.1.mga8 will be installed
+---> Package openssh.x86_64 8.4p1-2.2.mga8 will be installed
+---> Package openssh-clients.x86_64 8.4p1-2.2.mga8 will be installed
+---> Package openssl.x86_64 1.1.1l-1.mga8 will be installed
+---> Package perl-DBI.x86_64 1.643.0-4.1.mga8 will be installed
+---> Package perl-Git.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package perl-Git-SVN.x86_64 1:2.30.2-1.mga8 will be installed
+---> Package perl-SVN.x86_64 2:1.14.1-1.1.mga8 will be installed
+---> Package subversion.x86_64 2:1.14.1-1.1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package               Arch      Version                Repository         Size
+================================================================================
+Installing:
+ git                   x86_64    1:2.30.2-1.mga8        updates-x86_64    8.5 k
+Installing dependencies:
+ bash-completion       noarch    2:2.11-1.mga8          mageia-x86_64     243 k
+ diffutils             x86_64    3.7-3.mga8             mageia-x86_64     337 k
+ git-core              x86_64    1:2.30.2-1.mga8        updates-x86_64    7.8 M
+ git-email             x86_64    1:2.30.2-1.mga8        updates-x86_64     35 k
+ lib64apr-util1_0      x86_64    1.6.1-4.mga8           mageia-x86_64      99 k
+ lib64apr1_0           x86_64    1:1.7.0-3.2.mga8       updates-x86_64    123 k
+ lib64serf2_2          x86_64    1.4.0-0.7.mga8         mageia-x86_64     117 k
+ lib64svn0             x86_64    2:1.14.1-1.1.mga8      updates-x86_64    1.4 M
+ lib64tcl8.6           x86_64    1:8.6.10-2.mga8        mageia-x86_64     684 k
+ lib64tk8.6            x86_64    1:8.6.10-2.mga8        mageia-x86_64     564 k
+ lib64utf8proc2        x86_64    2.6.1-1.mga8           mageia-x86_64      83 k
+ lib64xscrnsaver1      x86_64    1.2.3-4.mga8           mageia-x86_64      12 k
+ openssh               x86_64    8.4p1-2.2.mga8         updates-x86_64    578 k
+ openssh-clients       x86_64    8.4p1-2.2.mga8         updates-x86_64    541 k
+ openssl               x86_64    1.1.1l-1.mga8          updates-x86_64    531 k
+ perl-DBI              x86_64    1.643.0-4.1.mga8       updates-x86_64    645 k
+ perl-Digest-HMAC      noarch    1.30.0-11.mga8         mageia-x86_64      14 k
+ perl-Digest-SHA1      x86_64    2.130.0-28.mga8        mageia-x86_64      31 k
+ perl-Error            noarch    1:0.170.290-3.mga8     mageia-x86_64      44 k
+ perl-Git              x86_64    1:2.30.2-1.mga8        updates-x86_64     38 k
+ perl-Git-SVN          x86_64    1:2.30.2-1.mga8        updates-x86_64     53 k
+ perl-IO-Socket-SSL    noarch    2.68.0-1.mga8          mageia-x86_64     206 k
+ perl-MailTools        noarch    2.210.0-3.mga8         mageia-x86_64      90 k
+ perl-Mozilla-CA       noarch    20200520.0.0-1.mga8    mageia-x86_64      13 k
+ perl-Net-SMTP-SSL     noarch    1.40.0-3.mga8          mageia-x86_64      12 k
+ perl-Net-SSLeay       x86_64    1.880.0-4.mga8         mageia-x86_64     323 k
+ perl-SVN              x86_64    2:1.14.1-1.1.mga8      updates-x86_64    1.0 M
+ perl-TimeDate         noarch    2.330.0-1.mga8         mageia-x86_64      46 k
+ rsync                 x86_64    3.2.2-2.mga8           mageia-x86_64     427 k
+ subversion            x86_64    2:1.14.1-1.1.mga8      updates-x86_64    766 k
+ tcl                   x86_64    1:8.6.10-2.mga8        mageia-x86_64     1.5 M
+ tk                    x86_64    1:8.6.10-2.mga8        mageia-x86_64     1.0 M
+Installing weak dependencies:
+ cvs                   x86_64    1.12.13-32.mga8        mageia-x86_64     1.4 M
+ cvs-fast-export       x86_64    1.55-3.mga8            mageia-x86_64      84 k
+ git-arch              x86_64    1:2.30.2-1.mga8        updates-x86_64     23 k
+ git-core-oldies       x86_64    1:2.30.2-1.mga8        updates-x86_64    8.2 k
+ git-cvs               x86_64    1:2.30.2-1.mga8        updates-x86_64     76 k
+ git-prompt            x86_64    1:2.30.2-1.mga8        updates-x86_64    8.9 k
+ git-svn               x86_64    1:2.30.2-1.mga8        updates-x86_64     44 k
+ gitk                  x86_64    1:2.30.2-1.mga8        updates-x86_64    148 k
+ perl-Authen-SASL      noarch    2.160.0-12.mga8        mageia-x86_64      46 k
+ perl-MIME-Base64      x86_64    3.160.0-1.mga8         mageia-x86_64      36 k
+
+Transaction Summary
+================================================================================
+Install  43 Packages
+
+Total download size: 21 M
+Installed size: 85 M
+Downloading Packages:
+determining the fastest mirror (2 hosts).. done.
+(1/43): cvs-fast-export-1.55-3.mga8.x86_64.rpm  227 kB/s |  84 kB     00:00    
+(2/43): bash-completion-2.11-1.mga8.noarch.rpm  507 kB/s | 243 kB     00:00    
+(3/43): lib64apr-util1_0-1.6.1-4.mga8.x86_64.rp 844 kB/s |  99 kB     00:00    
+(4/43): diffutils-3.7-3.mga8.x86_64.rpm         1.4 MB/s | 337 kB     00:00    
+(5/43): lib64serf2_2-1.4.0-0.7.mga8.x86_64.rpm  920 kB/s | 117 kB     00:00    
+(6/43): lib64tcl8.6-8.6.10-2.mga8.x86_64.rpm    1.6 MB/s | 684 kB     00:00    
+(7/43): lib64tk8.6-8.6.10-2.mga8.x86_64.rpm     1.6 MB/s | 564 kB     00:00    
+(8/43): cvs-1.12.13-32.mga8.x86_64.rpm          1.2 MB/s | 1.4 MB     00:01    
+(9/43): lib64utf8proc2-2.6.1-1.mga8.x86_64.rpm  779 kB/s |  83 kB     00:00    
+(10/43): lib64xscrnsaver1-1.2.3-4.mga8.x86_64.r 162 kB/s |  12 kB     00:00    
+(11/43): perl-Authen-SASL-2.160.0-12.mga8.noarc 722 kB/s |  46 kB     00:00    
+(12/43): perl-Digest-HMAC-1.30.0-11.mga8.noarch 210 kB/s |  14 kB     00:00    
+(13/43): perl-Digest-SHA1-2.130.0-28.mga8.x86_6 412 kB/s |  31 kB     00:00    
+(14/43): perl-Error-0.170.290-3.mga8.noarch.rpm 665 kB/s |  44 kB     00:00    
+(15/43): perl-MIME-Base64-3.160.0-1.mga8.x86_64 438 kB/s |  36 kB     00:00    
+(16/43): perl-Mozilla-CA-20200520.0.0-1.mga8.no 213 kB/s |  13 kB     00:00    
+(17/43): perl-IO-Socket-SSL-2.68.0-1.mga8.noarc 1.2 MB/s | 206 kB     00:00    
+(18/43): perl-MailTools-2.210.0-3.mga8.noarch.r 755 kB/s |  90 kB     00:00    
+(19/43): perl-Net-SMTP-SSL-1.40.0-3.mga8.noarch 176 kB/s |  12 kB     00:00    
+(20/43): perl-TimeDate-2.330.0-1.mga8.noarch.rp 668 kB/s |  46 kB     00:00    
+(21/43): perl-Net-SSLeay-1.880.0-4.mga8.x86_64. 1.4 MB/s | 323 kB     00:00    
+(22/43): rsync-3.2.2-2.mga8.x86_64.rpm          1.5 MB/s | 427 kB     00:00    
+(23/43): git-2.30.2-1.mga8.x86_64.rpm           118 kB/s | 8.5 kB     00:00    
+(24/43): git-arch-2.30.2-1.mga8.x86_64.rpm      264 kB/s |  23 kB     00:00    
+(25/43): tk-8.6.10-2.mga8.x86_64.rpm            1.6 MB/s | 1.0 MB     00:00    
+(26/43): git-core-oldies-2.30.2-1.mga8.x86_64.r 142 kB/s | 8.2 kB     00:00    
+(27/43): git-cvs-2.30.2-1.mga8.x86_64.rpm       1.0 MB/s |  76 kB     00:00    
+(28/43): tcl-8.6.10-2.mga8.x86_64.rpm           1.6 MB/s | 1.5 MB     00:00    
+(29/43): git-email-2.30.2-1.mga8.x86_64.rpm     444 kB/s |  35 kB     00:00    
+(30/43): git-prompt-2.30.2-1.mga8.x86_64.rpm    137 kB/s | 8.9 kB     00:00    
+(31/43): git-svn-2.30.2-1.mga8.x86_64.rpm       688 kB/s |  44 kB     00:00    
+(32/43): gitk-2.30.2-1.mga8.x86_64.rpm          1.1 MB/s | 148 kB     00:00    
+(33/43): lib64apr1_0-1.7.0-3.2.mga8.x86_64.rpm  993 kB/s | 123 kB     00:00    
+(34/43): openssh-8.4p1-2.2.mga8.x86_64.rpm      1.4 MB/s | 578 kB     00:00    
+(35/43): openssh-clients-8.4p1-2.2.mga8.x86_64. 1.5 MB/s | 541 kB     00:00    
+(36/43): lib64svn0-1.14.1-1.1.mga8.x86_64.rpm   1.7 MB/s | 1.4 MB     00:00    
+(37/43): openssl-1.1.1l-1.mga8.x86_64.rpm       1.5 MB/s | 531 kB     00:00    
+(38/43): perl-DBI-1.643.0-4.1.mga8.x86_64.rpm   1.6 MB/s | 645 kB     00:00    
+(39/43): perl-Git-2.30.2-1.mga8.x86_64.rpm      447 kB/s |  38 kB     00:00    
+(40/43): perl-Git-SVN-2.30.2-1.mga8.x86_64.rpm  792 kB/s |  53 kB     00:00    
+(41/43): subversion-1.14.1-1.1.mga8.x86_64.rpm  1.8 MB/s | 766 kB     00:00    
+(42/43): perl-SVN-1.14.1-1.1.mga8.x86_64.rpm    1.6 MB/s | 1.0 MB     00:00    
+(43/43): git-core-2.30.2-1.mga8.x86_64.rpm      2.6 MB/s | 7.8 MB     00:02    
+--------------------------------------------------------------------------------
+Total                                           3.1 MB/s |  21 MB     00:06     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lib64apr1_0-1:1.7.0-3.2.mga8.x86_64                   1/43 
+  Installing       : lib64apr-util1_0-1.6.1-4.mga8.x86_64                  2/43 
+  Installing       : perl-DBI-1.643.0-4.1.mga8.x86_64                      3/43 
+  Installing       : openssl-1.1.1l-1.mga8.x86_64                          4/43 
+  Installing       : perl-MIME-Base64-3.160.0-1.mga8.x86_64                5/43 
+  Installing       : perl-Error-1:0.170.290-3.mga8.noarch                  6/43 
+  Installing       : lib64tcl8.6-1:8.6.10-2.mga8.x86_64                    7/43 
+  Installing       : tcl-1:8.6.10-2.mga8.x86_64                            8/43 
+  Installing       : perl-Net-SSLeay-1.880.0-4.mga8.x86_64                 9/43 
+  Installing       : openssh-8.4p1-2.2.mga8.x86_64                        10/43 
+  Installing       : openssh-clients-8.4p1-2.2.mga8.x86_64                11/43 
+  Installing       : cvs-1.12.13-32.mga8.x86_64                           12/43 
+  Installing       : cvs-fast-export-1.55-3.mga8.x86_64                   13/43 
+  Installing       : rsync-3.2.2-2.mga8.x86_64                            14/43 
+  Installing       : lib64serf2_2-1.4.0-0.7.mga8.x86_64                   15/43 
+  Installing       : perl-TimeDate-2.330.0-1.mga8.noarch                  16/43 
+  Installing       : perl-Mozilla-CA-20200520.0.0-1.mga8.noarch           17/43 
+  Installing       : perl-IO-Socket-SSL-2.68.0-1.mga8.noarch              18/43 
+  Installing       : perl-Net-SMTP-SSL-1.40.0-3.mga8.noarch               19/43 
+  Installing       : perl-MailTools-2.210.0-3.mga8.noarch                 20/43 
+  Installing       : perl-Digest-SHA1-2.130.0-28.mga8.x86_64              21/43 
+  Installing       : perl-Digest-HMAC-1.30.0-11.mga8.noarch               22/43 
+  Installing       : perl-Authen-SASL-2.160.0-12.mga8.noarch              23/43 
+  Installing       : lib64xscrnsaver1-1.2.3-4.mga8.x86_64                 24/43 
+  Installing       : lib64tk8.6-1:8.6.10-2.mga8.x86_64                    25/43 
+  Installing       : tk-1:8.6.10-2.mga8.x86_64                            26/43 
+  Installing       : lib64utf8proc2-2.6.1-1.mga8.x86_64                   27/43 
+  Installing       : lib64svn0-2:1.14.1-1.1.mga8.x86_64                   28/43 
+  Installing       : subversion-2:1.14.1-1.1.mga8.x86_64                  29/43 
+  Installing       : perl-SVN-2:1.14.1-1.1.mga8.x86_64                    30/43 
+  Installing       : diffutils-3.7-3.mga8.x86_64                          31/43 
+  Installing       : bash-completion-2:2.11-1.mga8.noarch                 32/43 
+  Installing       : perl-Git-1:2.30.2-1.mga8.x86_64                      33/43 
+  Installing       : git-core-1:2.30.2-1.mga8.x86_64                      34/43 
+  Installing       : git-prompt-1:2.30.2-1.mga8.x86_64                    35/43 
+  Installing       : git-arch-1:2.30.2-1.mga8.x86_64                      36/43 
+  Installing       : git-core-oldies-1:2.30.2-1.mga8.x86_64               37/43 
+  Installing       : git-cvs-1:2.30.2-1.mga8.x86_64                       38/43 
+  Installing       : git-email-1:2.30.2-1.mga8.x86_64                     39/43 
+  Installing       : gitk-1:2.30.2-1.mga8.x86_64                          40/43 
+  Installing       : perl-Git-SVN-1:2.30.2-1.mga8.x86_64                  41/43 
+  Installing       : git-svn-1:2.30.2-1.mga8.x86_64                       42/43 
+  Installing       : git-1:2.30.2-1.mga8.x86_64                           43/43 
+  Running scriptlet: git-1:2.30.2-1.mga8.x86_64                           43/43 
+  Verifying        : bash-completion-2:2.11-1.mga8.noarch                  1/43 
+  Verifying        : cvs-1.12.13-32.mga8.x86_64                            2/43 
+  Verifying        : cvs-fast-export-1.55-3.mga8.x86_64                    3/43 
+  Verifying        : diffutils-3.7-3.mga8.x86_64                           4/43 
+  Verifying        : lib64apr-util1_0-1.6.1-4.mga8.x86_64                  5/43 
+  Verifying        : lib64serf2_2-1.4.0-0.7.mga8.x86_64                    6/43 
+  Verifying        : lib64tcl8.6-1:8.6.10-2.mga8.x86_64                    7/43 
+  Verifying        : lib64tk8.6-1:8.6.10-2.mga8.x86_64                     8/43 
+  Verifying        : lib64utf8proc2-2.6.1-1.mga8.x86_64                    9/43 
+  Verifying        : lib64xscrnsaver1-1.2.3-4.mga8.x86_64                 10/43 
+  Verifying        : perl-Authen-SASL-2.160.0-12.mga8.noarch              11/43 
+  Verifying        : perl-Digest-HMAC-1.30.0-11.mga8.noarch               12/43 
+  Verifying        : perl-Digest-SHA1-2.130.0-28.mga8.x86_64              13/43 
+  Verifying        : perl-Error-1:0.170.290-3.mga8.noarch                 14/43 
+  Verifying        : perl-IO-Socket-SSL-2.68.0-1.mga8.noarch              15/43 
+  Verifying        : perl-MIME-Base64-3.160.0-1.mga8.x86_64               16/43 
+  Verifying        : perl-MailTools-2.210.0-3.mga8.noarch                 17/43 
+  Verifying        : perl-Mozilla-CA-20200520.0.0-1.mga8.noarch           18/43 
+  Verifying        : perl-Net-SMTP-SSL-1.40.0-3.mga8.noarch               19/43 
+  Verifying        : perl-Net-SSLeay-1.880.0-4.mga8.x86_64                20/43 
+  Verifying        : perl-TimeDate-2.330.0-1.mga8.noarch                  21/43 
+  Verifying        : rsync-3.2.2-2.mga8.x86_64                            22/43 
+  Verifying        : tcl-1:8.6.10-2.mga8.x86_64                           23/43 
+  Verifying        : tk-1:8.6.10-2.mga8.x86_64                            24/43 
+  Verifying        : git-1:2.30.2-1.mga8.x86_64                           25/43 
+  Verifying        : git-arch-1:2.30.2-1.mga8.x86_64                      26/43 
+  Verifying        : git-core-1:2.30.2-1.mga8.x86_64                      27/43 
+  Verifying        : git-core-oldies-1:2.30.2-1.mga8.x86_64               28/43 
+  Verifying        : git-cvs-1:2.30.2-1.mga8.x86_64                       29/43 
+  Verifying        : git-email-1:2.30.2-1.mga8.x86_64                     30/43 
+  Verifying        : git-prompt-1:2.30.2-1.mga8.x86_64                    31/43 
+  Verifying        : git-svn-1:2.30.2-1.mga8.x86_64                       32/43 
+  Verifying        : gitk-1:2.30.2-1.mga8.x86_64                          33/43 
+  Verifying        : lib64apr1_0-1:1.7.0-3.2.mga8.x86_64                  34/43 
+  Verifying        : lib64svn0-2:1.14.1-1.1.mga8.x86_64                   35/43 
+  Verifying        : openssh-8.4p1-2.2.mga8.x86_64                        36/43 
+  Verifying        : openssh-clients-8.4p1-2.2.mga8.x86_64                37/43 
+  Verifying        : openssl-1.1.1l-1.mga8.x86_64                         38/43 
+  Verifying        : perl-DBI-1.643.0-4.1.mga8.x86_64                     39/43 
+  Verifying        : perl-Git-1:2.30.2-1.mga8.x86_64                      40/43 
+  Verifying        : perl-Git-SVN-1:2.30.2-1.mga8.x86_64                  41/43 
+  Verifying        : perl-SVN-2:1.14.1-1.1.mga8.x86_64                    42/43 
+  Verifying        : subversion-2:1.14.1-1.1.mga8.x86_64                  43/43 
+Completion plugin: Generating completion cache...
+Installed: bash-completion-2:2.11-1.mga8.noarch
+Installed: cvs-1.12.13-32.mga8.x86_64
+Installed: cvs-fast-export-1.55-3.mga8.x86_64
+Installed: diffutils-3.7-3.mga8.x86_64
+Installed: git-1:2.30.2-1.mga8.x86_64
+Installed: git-arch-1:2.30.2-1.mga8.x86_64
+Installed: git-core-1:2.30.2-1.mga8.x86_64
+Installed: git-core-oldies-1:2.30.2-1.mga8.x86_64
+Installed: git-cvs-1:2.30.2-1.mga8.x86_64
+Installed: git-email-1:2.30.2-1.mga8.x86_64
+Installed: git-prompt-1:2.30.2-1.mga8.x86_64
+Installed: git-svn-1:2.30.2-1.mga8.x86_64
+Installed: gitk-1:2.30.2-1.mga8.x86_64
+Installed: lib64apr-util1_0-1.6.1-4.mga8.x86_64
+Installed: lib64apr1_0-1:1.7.0-3.2.mga8.x86_64
+Installed: lib64serf2_2-1.4.0-0.7.mga8.x86_64
+Installed: lib64svn0-2:1.14.1-1.1.mga8.x86_64
+Installed: lib64tcl8.6-1:8.6.10-2.mga8.x86_64
+Installed: lib64tk8.6-1:8.6.10-2.mga8.x86_64
+Installed: lib64utf8proc2-2.6.1-1.mga8.x86_64
+Installed: lib64xscrnsaver1-1.2.3-4.mga8.x86_64
+Installed: openssh-8.4p1-2.2.mga8.x86_64
+Installed: openssh-clients-8.4p1-2.2.mga8.x86_64
+Installed: openssl-1.1.1l-1.mga8.x86_64
+Installed: perl-Authen-SASL-2.160.0-12.mga8.noarch
+Installed: perl-DBI-1.643.0-4.1.mga8.x86_64
+Installed: perl-Digest-HMAC-1.30.0-11.mga8.noarch
+Installed: perl-Digest-SHA1-2.130.0-28.mga8.x86_64
+Installed: perl-Error-1:0.170.290-3.mga8.noarch
+Installed: perl-Git-1:2.30.2-1.mga8.x86_64
+Installed: perl-Git-SVN-1:2.30.2-1.mga8.x86_64
+Installed: perl-IO-Socket-SSL-2.68.0-1.mga8.noarch
+Installed: perl-MIME-Base64-3.160.0-1.mga8.x86_64
+Installed: perl-MailTools-2.210.0-3.mga8.noarch
+Installed: perl-Mozilla-CA-20200520.0.0-1.mga8.noarch
+Installed: perl-Net-SMTP-SSL-1.40.0-3.mga8.noarch
+Installed: perl-Net-SSLeay-1.880.0-4.mga8.x86_64
+Installed: perl-SVN-2:1.14.1-1.1.mga8.x86_64
+Installed: perl-TimeDate-2.330.0-1.mga8.noarch
+Installed: rsync-3.2.2-2.mga8.x86_64
+Installed: subversion-2:1.14.1-1.1.mga8.x86_64
+Installed: tcl-1:8.6.10-2.mga8.x86_64
+Installed: tk-1:8.6.10-2.mga8.x86_64
+
+Installed:
+  bash-completion-2:2.11-1.mga8.noarch                                          
+  cvs-1.12.13-32.mga8.x86_64                                                    
+  cvs-fast-export-1.55-3.mga8.x86_64                                            
+  diffutils-3.7-3.mga8.x86_64                                                   
+  git-1:2.30.2-1.mga8.x86_64                                                    
+  git-arch-1:2.30.2-1.mga8.x86_64                                               
+  git-core-1:2.30.2-1.mga8.x86_64                                               
+  git-core-oldies-1:2.30.2-1.mga8.x86_64                                        
+  git-cvs-1:2.30.2-1.mga8.x86_64                                                
+  git-email-1:2.30.2-1.mga8.x86_64                                              
+  git-prompt-1:2.30.2-1.mga8.x86_64                                             
+  git-svn-1:2.30.2-1.mga8.x86_64                                                
+  gitk-1:2.30.2-1.mga8.x86_64                                                   
+  lib64apr-util1_0-1.6.1-4.mga8.x86_64                                          
+  lib64apr1_0-1:1.7.0-3.2.mga8.x86_64                                           
+  lib64serf2_2-1.4.0-0.7.mga8.x86_64                                            
+  lib64svn0-2:1.14.1-1.1.mga8.x86_64                                            
+  lib64tcl8.6-1:8.6.10-2.mga8.x86_64                                            
+  lib64tk8.6-1:8.6.10-2.mga8.x86_64                                             
+  lib64utf8proc2-2.6.1-1.mga8.x86_64                                            
+  lib64xscrnsaver1-1.2.3-4.mga8.x86_64                                          
+  openssh-8.4p1-2.2.mga8.x86_64                                                 
+  openssh-clients-8.4p1-2.2.mga8.x86_64                                         
+  openssl-1.1.1l-1.mga8.x86_64                                                  
+  perl-Authen-SASL-2.160.0-12.mga8.noarch                                       
+  perl-DBI-1.643.0-4.1.mga8.x86_64                                              
+  perl-Digest-HMAC-1.30.0-11.mga8.noarch                                        
+  perl-Digest-SHA1-2.130.0-28.mga8.x86_64                                       
+  perl-Error-1:0.170.290-3.mga8.noarch                                          
+  perl-Git-1:2.30.2-1.mga8.x86_64                                               
+  perl-Git-SVN-1:2.30.2-1.mga8.x86_64                                           
+  perl-IO-Socket-SSL-2.68.0-1.mga8.noarch                                       
+  perl-MIME-Base64-3.160.0-1.mga8.x86_64                                        
+  perl-MailTools-2.210.0-3.mga8.noarch                                          
+  perl-Mozilla-CA-20200520.0.0-1.mga8.noarch                                    
+  perl-Net-SMTP-SSL-1.40.0-3.mga8.noarch                                        
+  perl-Net-SSLeay-1.880.0-4.mga8.x86_64                                         
+  perl-SVN-2:1.14.1-1.1.mga8.x86_64                                             
+  perl-TimeDate-2.330.0-1.mga8.noarch                                           
+  rsync-3.2.2-2.mga8.x86_64                                                     
+  subversion-2:1.14.1-1.1.mga8.x86_64                                           
+  tcl-1:8.6.10-2.mga8.x86_64                                                    
+  tk-1:8.6.10-2.mga8.x86_64                                                     
+
+Complete!

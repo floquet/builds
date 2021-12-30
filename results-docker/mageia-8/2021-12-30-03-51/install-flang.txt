@@ -1,0 +1,132 @@
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:02:27 ago on Thu Dec 30 03:52:10 2021.
+--> Starting dependency resolution
+---> Package flang.x86_64 11.0.1-3.mga8 will be installed
+---> Package isl.x86_64 0.18-2.mga8 will be installed
+---> Package lib64flang11.0.x86_64 11.0.1-3.mga8 will be installed
+---> Package lib64isl15.x86_64 0.18-2.mga8 will be installed
+---> Package lib64mlir11.0.x86_64 11.0.1-3.1.mga8 will be installed
+---> Package lib64mpc3.x86_64 1.2.1-1.mga8 will be installed
+---> Package gcc.x86_64 10.3.0-2.mga8 will be installed
+---> Package gcc-cpp.x86_64 10.3.0-2.mga8 will be installed
+---> Package gcc-gfortran.x86_64 10.3.0-2.mga8 will be installed
+---> Package libgfortran5.x86_64 10.3.0-2.mga8 will be installed
+---> Package libquadmath-devel.x86_64 10.3.0-2.mga8 will be installed
+---> Package libstdc++-devel.x86_64 10.3.0-2.mga8 will be installed
+---> Package libstdc++-python-devel.x86_64 10.3.0-2.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package                   Arch      Version            Repository         Size
+================================================================================
+Installing:
+ flang                     x86_64    11.0.1-3.mga8      mageia-x86_64     204 k
+Installing dependencies:
+ gcc                       x86_64    10.3.0-2.mga8      updates-x86_64     23 M
+ gcc-cpp                   x86_64    10.3.0-2.mga8      updates-x86_64    8.7 M
+ gcc-gfortran              x86_64    10.3.0-2.mga8      updates-x86_64     15 M
+ isl                       x86_64    0.18-2.mga8        mageia-x86_64      14 k
+ lib64flang11.0            x86_64    11.0.1-3.mga8      mageia-x86_64     4.4 M
+ lib64isl15                x86_64    0.18-2.mga8        mageia-x86_64     616 k
+ lib64mlir11.0             x86_64    11.0.1-3.1.mga8    mageia-x86_64     3.6 M
+ lib64mpc3                 x86_64    1.2.1-1.mga8       mageia-x86_64      60 k
+ libgfortran5              x86_64    10.3.0-2.mga8      updates-x86_64    1.5 M
+ libquadmath-devel         x86_64    10.3.0-2.mga8      updates-x86_64    791 k
+ libstdc++-devel           x86_64    10.3.0-2.mga8      updates-x86_64    1.6 M
+Installing weak dependencies:
+ libstdc++-python-devel    x86_64    10.3.0-2.mga8      updates-x86_64     59 k
+
+Transaction Summary
+================================================================================
+Install  13 Packages
+
+Total download size: 59 M
+Installed size: 249 M
+Downloading Packages:
+determining the fastest mirror (1 hosts).. done.
+(1/13): isl-0.18-2.mga8.x86_64.rpm               45 kB/s |  14 kB     00:00    
+(2/13): flang-11.0.1-3.mga8.x86_64.rpm          427 kB/s | 204 kB     00:00    
+(3/13): lib64isl15-0.18-2.mga8.x86_64.rpm       1.4 MB/s | 616 kB     00:00    
+(4/13): lib64mpc3-1.2.1-1.mga8.x86_64.rpm       781 kB/s |  60 kB     00:00    
+(5/13): lib64flang11.0-11.0.1-3.mga8.x86_64.rpm 2.0 MB/s | 4.4 MB     00:02    
+(6/13): lib64mlir11.0-11.0.1-3.1.mga8.x86_64.rp 2.1 MB/s | 3.6 MB     00:01    
+(7/13): gcc-cpp-10.3.0-2.mga8.x86_64.rpm        2.2 MB/s | 8.7 MB     00:03    
+(8/13): libgfortran5-10.3.0-2.mga8.x86_64.rpm   1.3 MB/s | 1.5 MB     00:01    
+(9/13): libquadmath-devel-10.3.0-2.mga8.x86_64. 1.2 MB/s | 791 kB     00:00    
+(10/13): libstdc++-devel-10.3.0-2.mga8.x86_64.r 1.3 MB/s | 1.6 MB     00:01    
+(11/13): libstdc++-python-devel-10.3.0-2.mga8.x 306 kB/s |  59 kB     00:00    
+(12/13): gcc-gfortran-10.3.0-2.mga8.x86_64.rpm  1.8 MB/s |  15 MB     00:08    
+(13/13): gcc-10.3.0-2.mga8.x86_64.rpm           1.9 MB/s |  23 MB     00:12    
+--------------------------------------------------------------------------------
+Total                                           3.8 MB/s |  59 MB     00:15     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lib64mpc3-1.2.1-1.mga8.x86_64                         1/13 
+  Installing       : libstdc++-python-devel-10.3.0-2.mga8.x86_64           2/13 
+  Installing       : libstdc++-devel-10.3.0-2.mga8.x86_64                  3/13 
+  Installing       : lib64mlir11.0-11.0.1-3.1.mga8.x86_64                  4/13 
+  Installing       : lib64flang11.0-11.0.1-3.mga8.x86_64                   5/13 
+  Installing       : libquadmath-devel-10.3.0-2.mga8.x86_64                6/13 
+  Installing       : isl-0.18-2.mga8.x86_64                                7/13 
+  Installing       : lib64isl15-0.18-2.mga8.x86_64                         8/13 
+  Installing       : gcc-cpp-10.3.0-2.mga8.x86_64                          9/13 
+  Running scriptlet: gcc-cpp-10.3.0-2.mga8.x86_64                          9/13 
+  Installing       : gcc-10.3.0-2.mga8.x86_64                             10/13 
+  Running scriptlet: gcc-10.3.0-2.mga8.x86_64                             10/13 
+  Installing       : libgfortran5-10.3.0-2.mga8.x86_64                    11/13 
+  Installing       : gcc-gfortran-10.3.0-2.mga8.x86_64                    12/13 
+  Installing       : flang-11.0.1-3.mga8.x86_64                           13/13 
+  Running scriptlet: flang-11.0.1-3.mga8.x86_64                           13/13 
+  Verifying        : flang-11.0.1-3.mga8.x86_64                            1/13 
+  Verifying        : isl-0.18-2.mga8.x86_64                                2/13 
+  Verifying        : lib64flang11.0-11.0.1-3.mga8.x86_64                   3/13 
+  Verifying        : lib64isl15-0.18-2.mga8.x86_64                         4/13 
+  Verifying        : lib64mlir11.0-11.0.1-3.1.mga8.x86_64                  5/13 
+  Verifying        : lib64mpc3-1.2.1-1.mga8.x86_64                         6/13 
+  Verifying        : gcc-10.3.0-2.mga8.x86_64                              7/13 
+  Verifying        : gcc-cpp-10.3.0-2.mga8.x86_64                          8/13 
+  Verifying        : gcc-gfortran-10.3.0-2.mga8.x86_64                     9/13 
+  Verifying        : libgfortran5-10.3.0-2.mga8.x86_64                    10/13 
+  Verifying        : libquadmath-devel-10.3.0-2.mga8.x86_64               11/13 
+  Verifying        : libstdc++-devel-10.3.0-2.mga8.x86_64                 12/13 
+  Verifying        : libstdc++-python-devel-10.3.0-2.mga8.x86_64          13/13 
+Installed: flang-11.0.1-3.mga8.x86_64
+Installed: gcc-10.3.0-2.mga8.x86_64
+Installed: gcc-cpp-10.3.0-2.mga8.x86_64
+Installed: gcc-gfortran-10.3.0-2.mga8.x86_64
+Installed: isl-0.18-2.mga8.x86_64
+Installed: lib64flang11.0-11.0.1-3.mga8.x86_64
+Installed: lib64isl15-0.18-2.mga8.x86_64
+Installed: lib64mlir11.0-11.0.1-3.1.mga8.x86_64
+Installed: lib64mpc3-1.2.1-1.mga8.x86_64
+Installed: libgfortran5-10.3.0-2.mga8.x86_64
+Installed: libquadmath-devel-10.3.0-2.mga8.x86_64
+Installed: libstdc++-devel-10.3.0-2.mga8.x86_64
+Installed: libstdc++-python-devel-10.3.0-2.mga8.x86_64
+
+Installed:
+  flang-11.0.1-3.mga8.x86_64                                                    
+  gcc-10.3.0-2.mga8.x86_64                                                      
+  gcc-cpp-10.3.0-2.mga8.x86_64                                                  
+  gcc-gfortran-10.3.0-2.mga8.x86_64                                             
+  isl-0.18-2.mga8.x86_64                                                        
+  lib64flang11.0-11.0.1-3.mga8.x86_64                                           
+  lib64isl15-0.18-2.mga8.x86_64                                                 
+  lib64mlir11.0-11.0.1-3.1.mga8.x86_64                                          
+  lib64mpc3-1.2.1-1.mga8.x86_64                                                 
+  libgfortran5-10.3.0-2.mga8.x86_64                                             
+  libquadmath-devel-10.3.0-2.mga8.x86_64                                        
+  libstdc++-devel-10.3.0-2.mga8.x86_64                                          
+  libstdc++-python-devel-10.3.0-2.mga8.x86_64                                   
+
+Complete!

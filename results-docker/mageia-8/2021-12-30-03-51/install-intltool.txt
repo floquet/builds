@@ -1,0 +1,231 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+Waiting for process with pid 398 to finish.
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:04:31 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package gettext-devel.x86_64 0.21-8.mga8 will be installed
+---> Package intltool.noarch 0.51.0-6.mga8 will be installed
+---> Package lib64acl-devel.x86_64 2.2.53-2.mga8 will be installed
+---> Package lib64lzma-devel.x86_64 5.2.5-2.mga8 will be installed
+---> Package lib64ncurses-devel.x86_64 6.2-20201205.1.mga8 will be installed
+---> Package lib64unistring-devel.x86_64 0.9.10-4.mga8 will be installed
+---> Package patch.x86_64 2.7.6-6.mga8 will be installed
+---> Package perl-Data-Dump.noarch 1.230.0-5.mga8 will be installed
+---> Package perl-Encode-Locale.noarch 1.50.0-5.mga8 will be installed
+---> Package perl-File-Listing.noarch 6.140.0-1.mga8 will be installed
+---> Package perl-HTML-Parser.x86_64 3.750.0-1.mga8 will be installed
+---> Package perl-HTML-Tagset.noarch 3.200.0-11.mga8 will be installed
+---> Package perl-HTTP-Cookies.noarch 6.90.0-1.mga8 will be installed
+---> Package perl-HTTP-Daemon.noarch 6.120.0-1.mga8 will be installed
+---> Package perl-HTTP-Date.noarch 6.50.0-2.mga8 will be installed
+---> Package perl-HTTP-Message.noarch 6.260.0-1.mga8 will be installed
+---> Package perl-HTTP-Negotiate.noarch 6.10.0-9.mga8 will be installed
+---> Package perl-IO-HTML.noarch 1.4.0-1.mga8 will be installed
+---> Package perl-LWP-MediaTypes.noarch 6.40.0-2.mga8 will be installed
+---> Package perl-LWP-Protocol-https.noarch 6.100.0-1.mga8 will be installed
+---> Package perl-Net-HTTP.noarch 6.190.0-2.mga8 will be installed
+---> Package perl-Try-Tiny.noarch 0.300.0-3.mga8 will be installed
+---> Package perl-URI.noarch 5.50.0-1.mga8 will be installed
+---> Package perl-WWW-RobotRules.noarch 6.20.0-10.mga8 will be installed
+---> Package perl-XML-Parser.x86_64 2.460.0-3.mga8 will be installed
+---> Package perl-libwww-perl.noarch 6.520.0-1.mga8 will be installed
+---> Package lib64xml2-devel.x86_64 2.9.10-7.2.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package                  Arch    Version                 Repository       Size
+================================================================================
+Installing:
+ intltool                 noarch  0.51.0-6.mga8           mageia-x86_64    55 k
+Installing dependencies:
+ gettext-devel            x86_64  0.21-8.mga8             mageia-x86_64   1.2 M
+ lib64acl-devel           x86_64  2.2.53-2.mga8           mageia-x86_64   138 k
+ lib64lzma-devel          x86_64  5.2.5-2.mga8            mageia-x86_64   487 k
+ lib64ncurses-devel       x86_64  6.2-20201205.1.mga8     mageia-x86_64   873 k
+ lib64unistring-devel     x86_64  0.9.10-4.mga8           mageia-x86_64   145 k
+ lib64xml2-devel          x86_64  2.9.10-7.2.mga8         updates-x86_64  1.0 M
+ patch                    x86_64  2.7.6-6.mga8            mageia-x86_64   128 k
+ perl-Data-Dump           noarch  1.230.0-5.mga8          mageia-x86_64    31 k
+ perl-Encode-Locale       noarch  1.50.0-5.mga8           mageia-x86_64    20 k
+ perl-File-Listing        noarch  6.140.0-1.mga8          mageia-x86_64    27 k
+ perl-HTML-Parser         x86_64  3.750.0-1.mga8          mageia-x86_64   113 k
+ perl-HTML-Tagset         noarch  3.200.0-11.mga8         mageia-x86_64    18 k
+ perl-HTTP-Cookies        noarch  6.90.0-1.mga8           mageia-x86_64    42 k
+ perl-HTTP-Daemon         noarch  6.120.0-1.mga8          mageia-x86_64    43 k
+ perl-HTTP-Date           noarch  6.50.0-2.mga8           mageia-x86_64    30 k
+ perl-HTTP-Message        noarch  6.260.0-1.mga8          mageia-x86_64    92 k
+ perl-HTTP-Negotiate      noarch  6.10.0-9.mga8           mageia-x86_64    20 k
+ perl-IO-HTML             noarch  1.4.0-1.mga8            mageia-x86_64    30 k
+ perl-LWP-MediaTypes      noarch  6.40.0-2.mga8           mageia-x86_64    40 k
+ perl-LWP-Protocol-https  noarch  6.100.0-1.mga8          mageia-x86_64    29 k
+ perl-Net-HTTP            noarch  6.190.0-2.mga8          mageia-x86_64    43 k
+ perl-Try-Tiny            noarch  0.300.0-3.mga8          mageia-x86_64    37 k
+ perl-URI                 noarch  5.50.0-1.mga8           mageia-x86_64   102 k
+ perl-WWW-RobotRules      noarch  6.20.0-10.mga8          mageia-x86_64    19 k
+ perl-XML-Parser          x86_64  2.460.0-3.mga8          mageia-x86_64   226 k
+ perl-libwww-perl         noarch  6.520.0-1.mga8          mageia-x86_64   195 k
+
+Transaction Summary
+================================================================================
+Install  27 Packages
+
+Total download size: 5.1 M
+Installed size: 28 M
+Downloading Packages:
+determining the fastest mirror (2 hosts).. done.
+(1/27): intltool-0.51.0-6.mga8.noarch.rpm       143 kB/s |  55 kB     00:00    
+(2/27): lib64acl-devel-2.2.53-2.mga8.x86_64.rpm 309 kB/s | 138 kB     00:00    
+(3/27): lib64lzma-devel-5.2.5-2.mga8.x86_64.rpm 1.5 MB/s | 487 kB     00:00    
+(4/27): lib64unistring-devel-0.9.10-4.mga8.x86_ 1.1 MB/s | 145 kB     00:00    
+(5/27): lib64ncurses-devel-6.2-20201205.1.mga8. 1.9 MB/s | 873 kB     00:00    
+(6/27): gettext-devel-0.21-8.mga8.x86_64.rpm    1.3 MB/s | 1.2 MB     00:00    
+(7/27): patch-2.7.6-6.mga8.x86_64.rpm           1.1 MB/s | 128 kB     00:00    
+(8/27): perl-Data-Dump-1.230.0-5.mga8.noarch.rp 502 kB/s |  31 kB     00:00    
+(9/27): perl-Encode-Locale-1.50.0-5.mga8.noarch 312 kB/s |  20 kB     00:00    
+(10/27): perl-File-Listing-6.140.0-1.mga8.noarc 366 kB/s |  27 kB     00:00    
+(11/27): perl-HTML-Tagset-3.200.0-11.mga8.noarc 292 kB/s |  18 kB     00:00    
+(12/27): perl-HTML-Parser-3.750.0-1.mga8.x86_64 959 kB/s | 113 kB     00:00    
+(13/27): perl-HTTP-Cookies-6.90.0-1.mga8.noarch 688 kB/s |  42 kB     00:00    
+(14/27): perl-HTTP-Daemon-6.120.0-1.mga8.noarch 625 kB/s |  43 kB     00:00    
+(15/27): perl-HTTP-Date-6.50.0-2.mga8.noarch.rp 427 kB/s |  30 kB     00:00    
+(16/27): perl-HTTP-Message-6.260.0-1.mga8.noarc 1.3 MB/s |  92 kB     00:00    
+(17/27): perl-HTTP-Negotiate-6.10.0-9.mga8.noar 344 kB/s |  20 kB     00:00    
+(18/27): perl-IO-HTML-1.4.0-1.mga8.noarch.rpm   456 kB/s |  30 kB     00:00    
+(19/27): perl-LWP-MediaTypes-6.40.0-2.mga8.noar 620 kB/s |  40 kB     00:00    
+(20/27): perl-LWP-Protocol-https-6.100.0-1.mga8 528 kB/s |  29 kB     00:00    
+(21/27): perl-Net-HTTP-6.190.0-2.mga8.noarch.rp 622 kB/s |  43 kB     00:00    
+(22/27): perl-Try-Tiny-0.300.0-3.mga8.noarch.rp 500 kB/s |  37 kB     00:00    
+(23/27): perl-WWW-RobotRules-6.20.0-10.mga8.noa 342 kB/s |  19 kB     00:00    
+(24/27): perl-XML-Parser-2.460.0-3.mga8.x86_64. 1.2 MB/s | 226 kB     00:00    
+(25/27): perl-libwww-perl-6.520.0-1.mga8.noarch 1.3 MB/s | 195 kB     00:00    
+(26/27): perl-URI-5.50.0-1.mga8.noarch.rpm      331 kB/s | 102 kB     00:00    
+(27/27): lib64xml2-devel-2.9.10-7.2.mga8.x86_64 2.0 MB/s | 1.0 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                           1.2 MB/s | 5.1 MB     00:04     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : perl-URI-5.50.0-1.mga8.noarch                         1/27 
+  Installing       : perl-HTTP-Date-6.50.0-2.mga8.noarch                   2/27 
+  Installing       : perl-LWP-MediaTypes-6.40.0-2.mga8.noarch              3/27 
+  Installing       : perl-Net-HTTP-6.190.0-2.mga8.noarch                   4/27 
+  Installing       : perl-Encode-Locale-1.50.0-5.mga8.noarch               5/27 
+  Installing       : perl-File-Listing-6.140.0-1.mga8.noarch               6/27 
+  Installing       : perl-WWW-RobotRules-6.20.0-10.mga8.noarch             7/27 
+  Installing       : perl-Try-Tiny-0.300.0-3.mga8.noarch                   8/27 
+  Installing       : perl-IO-HTML-1.4.0-1.mga8.noarch                      9/27 
+  Installing       : perl-HTTP-Message-6.260.0-1.mga8.noarch              10/27 
+  Installing       : perl-HTTP-Cookies-6.90.0-1.mga8.noarch               11/27 
+  Installing       : perl-HTTP-Daemon-6.120.0-1.mga8.noarch               12/27 
+  Installing       : perl-HTTP-Negotiate-6.10.0-9.mga8.noarch             13/27 
+  Installing       : perl-HTML-Tagset-3.200.0-11.mga8.noarch              14/27 
+  Installing       : perl-HTML-Parser-3.750.0-1.mga8.x86_64               15/27 
+  Installing       : perl-Data-Dump-1.230.0-5.mga8.noarch                 16/27 
+  Installing       : perl-LWP-Protocol-https-6.100.0-1.mga8.noarch        17/27 
+  Installing       : perl-libwww-perl-6.520.0-1.mga8.noarch               18/27 
+  Installing       : perl-XML-Parser-2.460.0-3.mga8.x86_64                19/27 
+  Installing       : patch-2.7.6-6.mga8.x86_64                            20/27 
+  Installing       : lib64unistring-devel-0.9.10-4.mga8.x86_64            21/27 
+  Installing       : lib64ncurses-devel-6.2-20201205.1.mga8.x86_64        22/27 
+  Installing       : lib64lzma-devel-5.2.5-2.mga8.x86_64                  23/27 
+  Installing       : lib64xml2-devel-2.9.10-7.2.mga8.x86_64               24/27 
+  Installing       : lib64acl-devel-2.2.53-2.mga8.x86_64                  25/27 
+  Installing       : gettext-devel-0.21-8.mga8.x86_64                     26/27 
+  Installing       : intltool-0.51.0-6.mga8.noarch                        27/27 
+  Running scriptlet: intltool-0.51.0-6.mga8.noarch                        27/27 
+  Verifying        : gettext-devel-0.21-8.mga8.x86_64                      1/27 
+  Verifying        : intltool-0.51.0-6.mga8.noarch                         2/27 
+  Verifying        : lib64acl-devel-2.2.53-2.mga8.x86_64                   3/27 
+  Verifying        : lib64lzma-devel-5.2.5-2.mga8.x86_64                   4/27 
+  Verifying        : lib64ncurses-devel-6.2-20201205.1.mga8.x86_64         5/27 
+  Verifying        : lib64unistring-devel-0.9.10-4.mga8.x86_64             6/27 
+  Verifying        : patch-2.7.6-6.mga8.x86_64                             7/27 
+  Verifying        : perl-Data-Dump-1.230.0-5.mga8.noarch                  8/27 
+  Verifying        : perl-Encode-Locale-1.50.0-5.mga8.noarch               9/27 
+  Verifying        : perl-File-Listing-6.140.0-1.mga8.noarch              10/27 
+  Verifying        : perl-HTML-Parser-3.750.0-1.mga8.x86_64               11/27 
+  Verifying        : perl-HTML-Tagset-3.200.0-11.mga8.noarch              12/27 
+  Verifying        : perl-HTTP-Cookies-6.90.0-1.mga8.noarch               13/27 
+  Verifying        : perl-HTTP-Daemon-6.120.0-1.mga8.noarch               14/27 
+  Verifying        : perl-HTTP-Date-6.50.0-2.mga8.noarch                  15/27 
+  Verifying        : perl-HTTP-Message-6.260.0-1.mga8.noarch              16/27 
+  Verifying        : perl-HTTP-Negotiate-6.10.0-9.mga8.noarch             17/27 
+  Verifying        : perl-IO-HTML-1.4.0-1.mga8.noarch                     18/27 
+  Verifying        : perl-LWP-MediaTypes-6.40.0-2.mga8.noarch             19/27 
+  Verifying        : perl-LWP-Protocol-https-6.100.0-1.mga8.noarch        20/27 
+  Verifying        : perl-Net-HTTP-6.190.0-2.mga8.noarch                  21/27 
+  Verifying        : perl-Try-Tiny-0.300.0-3.mga8.noarch                  22/27 
+  Verifying        : perl-URI-5.50.0-1.mga8.noarch                        23/27 
+  Verifying        : perl-WWW-RobotRules-6.20.0-10.mga8.noarch            24/27 
+  Verifying        : perl-XML-Parser-2.460.0-3.mga8.x86_64                25/27 
+  Verifying        : perl-libwww-perl-6.520.0-1.mga8.noarch               26/27 
+  Verifying        : lib64xml2-devel-2.9.10-7.2.mga8.x86_64               27/27 
+Completion plugin: Generating completion cache...
+Installed: gettext-devel-0.21-8.mga8.x86_64
+Installed: intltool-0.51.0-6.mga8.noarch
+Installed: lib64acl-devel-2.2.53-2.mga8.x86_64
+Installed: lib64lzma-devel-5.2.5-2.mga8.x86_64
+Installed: lib64ncurses-devel-6.2-20201205.1.mga8.x86_64
+Installed: lib64unistring-devel-0.9.10-4.mga8.x86_64
+Installed: lib64xml2-devel-2.9.10-7.2.mga8.x86_64
+Installed: patch-2.7.6-6.mga8.x86_64
+Installed: perl-Data-Dump-1.230.0-5.mga8.noarch
+Installed: perl-Encode-Locale-1.50.0-5.mga8.noarch
+Installed: perl-File-Listing-6.140.0-1.mga8.noarch
+Installed: perl-HTML-Parser-3.750.0-1.mga8.x86_64
+Installed: perl-HTML-Tagset-3.200.0-11.mga8.noarch
+Installed: perl-HTTP-Cookies-6.90.0-1.mga8.noarch
+Installed: perl-HTTP-Daemon-6.120.0-1.mga8.noarch
+Installed: perl-HTTP-Date-6.50.0-2.mga8.noarch
+Installed: perl-HTTP-Message-6.260.0-1.mga8.noarch
+Installed: perl-HTTP-Negotiate-6.10.0-9.mga8.noarch
+Installed: perl-IO-HTML-1.4.0-1.mga8.noarch
+Installed: perl-LWP-MediaTypes-6.40.0-2.mga8.noarch
+Installed: perl-LWP-Protocol-https-6.100.0-1.mga8.noarch
+Installed: perl-Net-HTTP-6.190.0-2.mga8.noarch
+Installed: perl-Try-Tiny-0.300.0-3.mga8.noarch
+Installed: perl-URI-5.50.0-1.mga8.noarch
+Installed: perl-WWW-RobotRules-6.20.0-10.mga8.noarch
+Installed: perl-XML-Parser-2.460.0-3.mga8.x86_64
+Installed: perl-libwww-perl-6.520.0-1.mga8.noarch
+
+Installed:
+  gettext-devel-0.21-8.mga8.x86_64                                              
+  intltool-0.51.0-6.mga8.noarch                                                 
+  lib64acl-devel-2.2.53-2.mga8.x86_64                                           
+  lib64lzma-devel-5.2.5-2.mga8.x86_64                                           
+  lib64ncurses-devel-6.2-20201205.1.mga8.x86_64                                 
+  lib64unistring-devel-0.9.10-4.mga8.x86_64                                     
+  lib64xml2-devel-2.9.10-7.2.mga8.x86_64                                        
+  patch-2.7.6-6.mga8.x86_64                                                     
+  perl-Data-Dump-1.230.0-5.mga8.noarch                                          
+  perl-Encode-Locale-1.50.0-5.mga8.noarch                                       
+  perl-File-Listing-6.140.0-1.mga8.noarch                                       
+  perl-HTML-Parser-3.750.0-1.mga8.x86_64                                        
+  perl-HTML-Tagset-3.200.0-11.mga8.noarch                                       
+  perl-HTTP-Cookies-6.90.0-1.mga8.noarch                                        
+  perl-HTTP-Daemon-6.120.0-1.mga8.noarch                                        
+  perl-HTTP-Date-6.50.0-2.mga8.noarch                                           
+  perl-HTTP-Message-6.260.0-1.mga8.noarch                                       
+  perl-HTTP-Negotiate-6.10.0-9.mga8.noarch                                      
+  perl-IO-HTML-1.4.0-1.mga8.noarch                                              
+  perl-LWP-MediaTypes-6.40.0-2.mga8.noarch                                      
+  perl-LWP-Protocol-https-6.100.0-1.mga8.noarch                                 
+  perl-Net-HTTP-6.190.0-2.mga8.noarch                                           
+  perl-Try-Tiny-0.300.0-3.mga8.noarch                                           
+  perl-URI-5.50.0-1.mga8.noarch                                                 
+  perl-WWW-RobotRules-6.20.0-10.mga8.noarch                                     
+  perl-XML-Parser-2.460.0-3.mga8.x86_64                                         
+  perl-libwww-perl-6.520.0-1.mga8.noarch                                        
+
+Complete!

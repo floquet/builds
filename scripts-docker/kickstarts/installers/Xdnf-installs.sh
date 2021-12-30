@@ -42,7 +42,7 @@ new_step "mkdir -p ${dirBuildResults}"
 
 #  #  #  ========================================== build packages
 
-source ${dirBuildScripts}/kickstarts/installers/dnf-installs.sh ${lpackages} ${dirBuildResults}
+source ${dirBuildScripts}/kickstarts/installers/dnf-installs.sh 
 
 #  #  #  ========================================== set up for spack
 

@@ -1,0 +1,46 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+DNF version: 4.6.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Mageia 8; generic; Linux.x86_64)'
+repo: using cache for: mageia-x86_64
+mageia-x86_64: using metadata from Wed Feb 24 18:47:37 2021.
+repo: using cache for: updates-x86_64
+updates-x86_64: using metadata from Wed Dec 29 18:55:10 2021.
+Last metadata expiration check: 0:05:09 ago on Thu Dec 30 03:52:10 2021.
+Completion plugin: Generating completion cache...
+--> Starting dependency resolution
+---> Package llvm.x86_64 11.0.1-4.2.1.mga8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package     Architecture  Version                  Repository             Size
+================================================================================
+Installing:
+ llvm        x86_64        11.0.1-4.2.1.mga8        updates-x86_64         11 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 11 M
+Installed size: 35 M
+Downloading Packages:
+llvm-11.0.1-4.2.1.mga8.x86_64.rpm               1.8 MB/s |  11 MB     00:06    
+--------------------------------------------------------------------------------
+Total                                           1.6 MB/s |  11 MB     00:06     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : llvm-11.0.1-4.2.1.mga8.x86_64                          1/1 
+  Running scriptlet: llvm-11.0.1-4.2.1.mga8.x86_64                          1/1 
+  Verifying        : llvm-11.0.1-4.2.1.mga8.x86_64                          1/1 
+Completion plugin: Generating completion cache...
+Installed: llvm-11.0.1-4.2.1.mga8.x86_64
+
+Installed:
+  llvm-11.0.1-4.2.1.mga8.x86_64                                                 
+
+Complete!
