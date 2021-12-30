@@ -1,0 +1,27 @@
+Input spec
+--------------------------------
+mpc%gcc@10.3.0 arch=linux-mageia8-haswell
+
+Concretized
+--------------------------------
+mpc@1.1.0%gcc@10.3.0 arch=linux-mageia8-haswell
+    ^gmp@6.2.1%gcc@10.3.0 arch=linux-mageia8-haswell
+        ^autoconf@2.69%gcc@10.3.0 patches=35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2,7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7,a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee arch=linux-mageia8-haswell
+            ^m4@1.4.19%gcc@10.3.0+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89 arch=linux-mageia8-haswell
+                ^libsigsegv@2.13%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^perl@5.34.0%gcc@10.3.0+cpanm+shared+threads arch=linux-mageia8-haswell
+                ^berkeley-db@18.1.40%gcc@10.3.0+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-mageia8-haswell
+                ^bzip2@1.0.8%gcc@10.3.0~debug~pic+shared arch=linux-mageia8-haswell
+                    ^diffutils@3.8%gcc@10.3.0 arch=linux-mageia8-haswell
+                        ^libiconv@1.16%gcc@10.3.0 libs=shared,static arch=linux-mageia8-haswell
+                ^gdbm@1.19%gcc@10.3.0 arch=linux-mageia8-haswell
+                    ^readline@8.1%gcc@10.3.0 arch=linux-mageia8-haswell
+                        ^ncurses@6.2%gcc@10.3.0~symlinks+termlib abi=none arch=linux-mageia8-haswell
+                            ^pkgconf@1.8.0%gcc@10.3.0 arch=linux-mageia8-haswell
+                ^zlib@1.2.11%gcc@10.3.0+optimize+pic+shared arch=linux-mageia8-haswell
+        ^automake@1.16.3%gcc@10.3.0 arch=linux-mageia8-haswell
+        ^libtool@2.4.6%gcc@10.3.0 arch=linux-mageia8-haswell
+    ^mpfr@4.1.0%gcc@10.3.0 arch=linux-mageia8-haswell
+        ^autoconf-archive@2019.01.06%gcc@10.3.0 arch=linux-mageia8-haswell
+        ^texinfo@6.5%gcc@10.3.0 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-mageia8-haswell
+

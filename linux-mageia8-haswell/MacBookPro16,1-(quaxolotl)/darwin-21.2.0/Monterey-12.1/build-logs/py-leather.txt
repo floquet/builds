@@ -1,4 +1,4 @@
-spack install blitz % gcc@10.3.0 ^python@3.10.1 arch=linux-mageia8-haswell
+spack install py-leather % gcc@10.3.0 ^python@3.10.1 arch=linux-mageia8-haswell
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/libiconv-1.16-xa752n4td76yddhw2y7h76rahj4g4aep
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/libmd-1.0.3-luinjaxp24gdabxblb4ylyc2v3s2l5du
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/pkgconf-1.8.0-csyqf3dsjvzvebv4diqizf5w4c5c5dtm
@@ -6,8 +6,8 @@ spack install blitz % gcc@10.3.0 ^python@3.10.1 arch=linux-mageia8-haswell
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/zlib-1.2.11-ipk42m2jdiwu27quj4572fpoki4tl3mm
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/libffi-3.3-zzjnsyerdg77cjzbaf2cwbzylrok5qdf
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/berkeley-db-18.1.40-f6i5xzpfenvj2bqujp2eumnx3nv7whka
-[+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/tar-1.34-w24bksuetxmde777e35sfkx5lbx63sei
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/diffutils-3.8-ciggamq4nedyivg4r6ozow67ov23pslj
+[+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/tar-1.34-w24bksuetxmde777e35sfkx5lbx63sei
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/libbsd-0.11.3-e4e3uwskt3co627otkcaxpqlw3raycnd
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/util-linux-uuid-2.36.2-enuxur66ucjv4mncij57xry3t2kq6suz
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/ncurses-6.2-r7x6nxtoleoafehvkuhj6aekmsgufnn6
@@ -21,9 +21,14 @@ spack install blitz % gcc@10.3.0 ^python@3.10.1 arch=linux-mageia8-haswell
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/perl-5.34.0-feqgtqlcdxavrrsqjxvjrvvmr4tcj44w
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/openssl-1.1.1l-g4tq5ngd7yypkkvwhs4rkytloxt66vqc
 [+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/python-3.10.1-gyiqlc5rydwdfhdr65mwnj2vew2txjwx
-==> Installing blitz-1.0.2-65l4zecoybaiysmva3nijj2u7u3jtbyq
-==> No binary for blitz-1.0.2-65l4zecoybaiysmva3nijj2u7u3jtbyq found: installing from source
-==> Fetching file:///spacktivity/mirror/_source-cache/archive/50/500db9c3b2617e1f03d0e548977aec10d36811ba1c43bb5ef250c0e3853ae1c2.tar.gz
-==> No patches needed for blitz
-==> blitz: Executing phase: 'autoreconf'
-==> blitz: Executing phase: 'configure'
+[+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/py-setuptools-59.4.0-t7b7p3mqxlljmazlj4j5mevwlewfnp7h
+[+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/py-six-1.16.0-6hquin3gm2ftdbeikmmfs2vfie3bid3j
+==> Installing py-leather-0.3.3-gt2cs7nyjycq34x72kb6mm26q6zjgp5j
+==> No binary for py-leather-0.3.3-gt2cs7nyjycq34x72kb6mm26q6zjgp5j found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/07/076d1603b5281488285718ce1a5ce78cf1027fe1e76adf9c548caf83c519b988.tar.gz
+==> No patches needed for py-leather
+==> py-leather: Executing phase: 'build'
+==> py-leather: Executing phase: 'install'
+==> py-leather: Successfully installed py-leather-0.3.3-gt2cs7nyjycq34x72kb6mm26q6zjgp5j
+  Fetch: 0.01s.  Build: 0.49s.  Total: 0.51s.
+[+] /home/dantopa/spacktivity/mageia-8-docker-spack/opt/spack/linux-mageia8-haswell/gcc-10.3.0/py-leather-0.3.3-gt2cs7nyjycq34x72kb6mm26q6zjgp5j

@@ -1,0 +1,22 @@
+Input spec
+--------------------------------
+mpich%gcc@10.3.0 arch=linux-mageia8-haswell
+
+Concretized
+--------------------------------
+mpich@3.4.2%gcc@10.3.0~argobots+fortran+hwloc+hydra+libxml2+pci+romio~slurm~two_level_namespace~verbs+wrapperrpath device=ch4 netmod=ofi pmi=pmi arch=linux-mageia8-haswell
+    ^findutils@4.8.0%gcc@10.3.0 arch=linux-mageia8-haswell
+    ^hwloc@2.6.0%gcc@10.3.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-mageia8-haswell
+        ^libpciaccess@0.16%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^libtool@2.4.6%gcc@10.3.0 arch=linux-mageia8-haswell
+                ^m4@1.4.19%gcc@10.3.0+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89 arch=linux-mageia8-haswell
+                    ^libsigsegv@2.13%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^pkgconf@1.8.0%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^util-macros@1.19.3%gcc@10.3.0 arch=linux-mageia8-haswell
+        ^libxml2@2.9.12%gcc@10.3.0~python arch=linux-mageia8-haswell
+            ^libiconv@1.16%gcc@10.3.0 libs=shared,static arch=linux-mageia8-haswell
+            ^xz@5.2.5%gcc@10.3.0~pic libs=shared,static arch=linux-mageia8-haswell
+            ^zlib@1.2.11%gcc@10.3.0+optimize+pic+shared arch=linux-mageia8-haswell
+        ^ncurses@6.2%gcc@10.3.0~symlinks+termlib abi=none arch=linux-mageia8-haswell
+    ^libfabric@1.14.0%gcc@10.3.0~debug~kdreg fabrics=sockets,tcp,udp arch=linux-mageia8-haswell
+

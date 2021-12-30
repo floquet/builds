@@ -1,0 +1,10 @@
+Input spec
+--------------------------------
+environment-modules%gcc@10.3.0 arch=linux-mageia8-haswell
+
+Concretized
+--------------------------------
+environment-modules@5.0.1%gcc@10.3.0+X arch=linux-mageia8-haswell
+    ^tcl@8.6.11%gcc@10.3.0 arch=linux-mageia8-haswell
+        ^zlib@1.2.11%gcc@10.3.0+optimize+pic+shared arch=linux-mageia8-haswell
+

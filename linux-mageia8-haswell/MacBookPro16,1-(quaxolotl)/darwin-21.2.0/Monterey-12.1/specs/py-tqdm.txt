@@ -1,0 +1,37 @@
+Input spec
+--------------------------------
+py-tqdm%gcc@10.3.0
+    ^python@3.10.1 arch=linux-mageia8-haswell
+
+Concretized
+--------------------------------
+py-tqdm@4.62.3%gcc@10.3.0~notebook~telegram arch=linux-mageia8-haswell
+    ^py-setuptools@59.4.0%gcc@10.3.0 arch=linux-mageia8-haswell
+        ^python@3.10.1%gcc@10.3.0+bz2+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4 arch=linux-mageia8-haswell
+            ^bzip2@1.0.8%gcc@10.3.0~debug~pic+shared arch=linux-mageia8-haswell
+                ^diffutils@3.8%gcc@10.3.0 arch=linux-mageia8-haswell
+                    ^libiconv@1.16%gcc@10.3.0 libs=shared,static arch=linux-mageia8-haswell
+            ^expat@2.4.1%gcc@10.3.0+libbsd arch=linux-mageia8-haswell
+                ^libbsd@0.11.3%gcc@10.3.0 arch=linux-mageia8-haswell
+                    ^libmd@1.0.3%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^gdbm@1.19%gcc@10.3.0 arch=linux-mageia8-haswell
+                ^readline@8.1%gcc@10.3.0 arch=linux-mageia8-haswell
+                    ^ncurses@6.2%gcc@10.3.0~symlinks+termlib abi=none arch=linux-mageia8-haswell
+                        ^pkgconf@1.8.0%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^gettext@0.21%gcc@10.3.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-mageia8-haswell
+                ^libxml2@2.9.12%gcc@10.3.0~python arch=linux-mageia8-haswell
+                    ^xz@5.2.5%gcc@10.3.0~pic libs=shared,static arch=linux-mageia8-haswell
+                    ^zlib@1.2.11%gcc@10.3.0+optimize+pic+shared arch=linux-mageia8-haswell
+                ^tar@1.34%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^libffi@3.3%gcc@10.3.0 patches=26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0 arch=linux-mageia8-haswell
+            ^openssl@1.1.1l%gcc@10.3.0~docs certs=system arch=linux-mageia8-haswell
+                ^perl@5.34.0%gcc@10.3.0+cpanm+shared+threads arch=linux-mageia8-haswell
+                    ^berkeley-db@18.1.40%gcc@10.3.0+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-mageia8-haswell
+            ^sqlite@3.36.0%gcc@10.3.0+column_metadata+fts~functions~rtree arch=linux-mageia8-haswell
+            ^util-linux-uuid@2.36.2%gcc@10.3.0 arch=linux-mageia8-haswell
+    ^py-setuptools-scm@6.3.2%gcc@10.3.0+toml arch=linux-mageia8-haswell
+        ^py-packaging@21.3%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^py-pyparsing@3.0.6%gcc@10.3.0 arch=linux-mageia8-haswell
+        ^py-tomli@1.2.1%gcc@10.3.0 arch=linux-mageia8-haswell
+            ^py-pip@21.1.2%gcc@10.3.0 arch=linux-mageia8-haswell
+
