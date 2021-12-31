@@ -12,7 +12,7 @@ source ${repo_scripts_docker}/spack-build-out/master-header.sh
 
 #  #  ========================================================= declarations start
 
-export SECONDS=0
+export masterSECONDS=$SECONDS
 
 # https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash
 #export my_compiler="gcc@8.5.0-4.0.1"
@@ -30,13 +30,17 @@ export bspec="${SPACK_ROOT}/${USER}/specs"
 declare -a   lalpha=("seaborn" "astropy")
 # "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
 # ${p} % ${my_compiler} ^${my_python}
-declare -a   lbravo=("blitz" "gdb" "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor" "visit")
+declare -a   lbravo=("blitz" "gdb")
+# "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor" "visit")
 # ${p} % ${my_compiler} ^${my_python} ^${my_ompi}
-declare -a lcharlie=("paraview" "petsc" "strumpack" "tau" "trilinos" "vtk")
+declare -a lcharlie=("paraview" "petsc")
+# "strumpack" "tau" "trilinos" "vtk")
 # ${p} % ${my_compiler}
-declare -a   ldelta=("armadillo" "avizo" "eigen" "environment-modules" "gsl" "lua" "mpc" "mpich" "totalview" "xerces-c")
+declare -a   ldelta=("armadillo" "avizo")
+# "eigen" "environment-modules" "gsl" "lua" "mpc" "mpich" "totalview" "xerces-c")
 # ${p} % ${my_compiler} ^${my_ompi}
-declare -a    lecho=("fftw" "netcdf-c" "netcdf-cxx" "netcdf-fortran" "opencoarrays" "valgrind" "zoltan")
+declare -a    lecho=("fftw" "netcdf-c")
+# "netcdf-cxx" "netcdf-fortran" "opencoarrays" "valgrind" "zoltan")
 
 # compilers
 declare -a  lgcc=("11.2.0" "10.3.0" "9.4.0" "8.5.0")
@@ -49,56 +53,64 @@ new_step "\${myarch} = ${myarch}"
 
 new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
 echo "\${lalpha[@]} = ${lalpha[@]}"
-clicker=0
+export clicker=0
 for q in ${lalpha[@]}; do
-    export p="py-${q}"
-    export log_file="${blogs}/${p}.txt"
-    export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
+    export         p="py-${q}"
+    export  log_file="${blogs}/${p}.txt"
+    export  cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
     export spec_file="${bspec}/${p}.txt"
-        echo "\${1} = ${p}"
-        echo "\${2} = ${cmd_line}"
-        echo "\${3} = ${log_file}"
-        echo "\${4} = ${spec_file}"
+        # echo "\${1} = ${p}"
+        # echo "\${2} = ${cmd_line}"
+        # echo "\${3} = ${log_file}"
+        # echo "\${4} = ${spec_file}"
     spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
 done
 
 new_step "install pattern - myapp % ${my_compiler} ^${my_python} ${myarch}: ${#lbravo[@]} elements"
 echo "\${lbravo[@]} = ${lbravo[@]}"
-clicker=0
+export clicker=0
+    echo "\${clicker} = ${clicker}"
 for p in ${lbravo[@]}; do
-    export log_file="${blogs}/${p}.txt"
-    export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-    spacktion ${p} ${cmd_line} ${log_file} ${bspec}
-ddone
+    echo "inside loop"
+    export  log_file="${blogs}/${p}.txt"
+    export  cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+done
 
 new_step "install pattern - myapp % ${my_compiler} ^${my_python} ^${my_ompi}: ${#lcharlie[@]} elements"
-clicker=0
+export clicker=0
 for p in ${lcharlie[@]}; do
     export log_file="${blogs}/${p}.txt"
     export cmd_line=" % ${my_compiler} ^${my_python} ^${my_ompi} ${myarch} "
-    spacktion ${p} ${cmd_line} ${log_file} ${bspec}
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
 done
 
 new_step "install pattern - myapp % ${my_compiler} ${myarch}: ${#ldelta[@]} elements"
-clicker=0
+export clicker=0
 for p in ${ldelta[@]}; do
     export log_file="${blogs}/${p}.txt"
     export cmd_line=" % ${my_compiler} ${myarch} "
-    spacktion ${p} ${cmd_line} ${log_file} ${bspec}
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
 done
 
 new_step "install pattern - myapp % ${my_compiler} ^${my_ompi} ${myarch}: ${#lecho[@]} elements"
 for p in ${lecho[@]}; do
-    export log_file="${blogs}/${p}.txt"
-    export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
-    spacktion ${p} ${cmd_line} ${log_file} ${bspec}
+    export  log_file="${blogs}/${p}.txt"
+    export  cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
 done
 
 new_step "install gcc compilers: ${#lgcc[@]} versions"
 for g in ${lgcc[@]}; do
-    export log_file="${blogs}/gcc-${g}.txt"
-    export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
-    spacktion "gcc@${g}" ${cmd_line} ${log_file} ${bspec}
+    export  log_file="${blogs}/gcc-${g}.txt"
+    export  cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
+    export spec_file="${bspec}/${p}.txt"
+    spacktion "gcc@${g}" \${cmd_line} \${log_file} \${spec_file}
+    #spacktion "gcc@${g}" ${cmd_line} ${log_file} ${bspec}
 
     sub_step "spack compiler find $(spack location -i gcc@${g} % ${my_compiler})"
     echo     "spack compiler find $(spack location -i gcc@${g} % ${my_compiler})"
@@ -106,11 +118,12 @@ for g in ${lgcc[@]}; do
 done
 
 new_step "install llvm compilers: ${#lllvm[@]} versions"
-clicker=0
+export clicker=0
 for l in ${lllvm[@]}; do
     export log_file="${blogs}/gcc-${v}.txt"
     export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
-    spacktion "llvm@${l}" ${cmd_line} ${log_file} ${bspec}
+    spacktion "llvm@${l}" \${cmd_line} \${log_file} \${spec_file}
+    #spacktion "llvm@${l}" ${cmd_line} ${log_file} ${bspec}
 
     sub_step "spack compiler find $(spack location -i llvm@${l} % ${my_compiler})"
     echo     "spack compiler find $(spack location -i llvm@${l} % ${my_compiler})"
@@ -124,4 +137,5 @@ wait
 
 echo ""
 new_step "print wall time used"
-printf 'time for all builds: %dh:%dm:%ds\n' $(($SECONDS/3600)) $(($SECONDS%3600/60)) $(($SECONDS%60))
+export masterSECONDS=$((${SECONDS}-${masterSECONDS}))
+printf 'time for all builds: %dh:%dm:%ds\n' $(($masterSECONDS/3600)) $(($masterSECONDS%3600/60)) $(($masterSECONDS%60))
