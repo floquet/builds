@@ -20,27 +20,23 @@ function sub_step(){
 
 # spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
 function spacktion(){
-    # echo ""
-    # echo "#   #   #   inside spacktion"
-    eval package=$1
+    # string arguments with spacing require eval
+    eval    package=$1
     eval spack_args=$2
-    eval log_file=$3
-    eval spec_file=$4
-    # echo "\${1} = ${package}"
-    # echo "\${2} = ${spack_args}"
-    # echo "\${3} = ${log_file}"
-    # echo "\${4} = ${spec_file}"
+    eval   log_file=$3
+    eval  spec_file=$4
 if ! command -v ${1} &> /dev/null
 # 1. Build with package manager (yum, apt-get etc.), otherwise...
 # 2. Build with Spack
 then
+    echo ""
     echo "No system definition for ${package} in ${dist}-${release}."
     echo "Using Spack to build ${package}."
 
     sub_step "spack install ${package} ${spack_args}  > ${log_file}"
     echo     "spack install ${package} ${spack_args}" > ${log_file}
-              #spack install ${1} ${2}  | tee -a ${3} 2>&1
-              #spack spec    ${1} ${2}  >        "${4}/${1}.txt" &
+              #spack install ${package} ${spack_args}  | tee -a ${log_file} 2>&1
+              #spack spec    ${package} ${spack_args}  >        "${spec_file}/${package}.txt" &
 else
     echo "Application ${package} already installed."
     echo "command -v ${package}"
