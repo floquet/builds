@@ -6,7 +6,7 @@ printf '%s\n' "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
 # define: new_step
 # define: sub_step
 # define: spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
-source master-header.sh
+source ${repo_results_docker}/spack-build-out/master-header.sh
 
 #  #  ========================================================= declarations start
 

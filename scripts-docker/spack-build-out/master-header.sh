@@ -29,7 +29,7 @@ then
 
     sub_step "spack install ${1} ${2}  >        ${3}"
     echo     "spack install ${1} ${2}" >        ${3}
-              spack install ${1} ${2}  | tee -a ${3} 2>&1
-              spack spec    ${1} ${2}  >        "${4}/${1}.txt" &
+              #spack install ${1} ${2}  | tee -a ${3} 2>&1
+              #spack spec    ${1} ${2}  >        "${4}/${1}.txt" &
 fi
 }

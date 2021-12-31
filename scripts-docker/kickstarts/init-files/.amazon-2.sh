@@ -6,7 +6,7 @@ export      owner="native"
 export  drive_int="Macintosh HD"
 export  drive_ext="Seagate Expansion HDD Media-18TB"
 
-export       HOME="/Users/dantopa"
+export       HOME="/home/dantopa"
 
 # #  H A R D W A R E   D E T A I L S
 export serial_num="C07ZQ2VJJYW0"
@@ -14,15 +14,15 @@ export firmware_v="1715.60.5.0.0"
 export        MAC="f0:18:98:f2:dd:10"
 
 # # I D E N T I F Y   S O F T W A R E
-export      os="darwin 21.2.0"
-export    dist="Monterey"
-export release="12.1"
+export      os="linux"
+export    dist="amazonlinux"
+export release="2"
 #export      build="21C52"
 
 # #  R E P O S I T O R I E S
 export     repos="/repos"
-export bitbucket="${vrepos}/bitbucket"
-export    github="${vrepos}/github"
+export bitbucket="${repos}/bitbucket"
+export    github="${repos}/github"
 
 export  bash_scripts="${github}/gitlab-bash-scripts"
 export          core="${bash_scripts}/core-scripts"
