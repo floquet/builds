@@ -1,0 +1,120 @@
+yum install -v python-urllib3 -y
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.007
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.008
+Obs Init time: 0.166
+Resolving Dependencies
+--> Running transaction check
+---> Package python-urllib3.noarch 0:1.25.9-1.amzn2.0.2 will be installed
+Checking deps for python-urllib3.noarch 0:1.25.9-1.amzn2.0.2 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-urllib3.noarch 0:1.25.9-1.amzn2.0.2 - u
+looking for ('python-six', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.25.9-1.amzn2.0.2 - u
+looking for ('python-backports-ssl_match_hostname', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.25.9-1.amzn2.0.2 - u
+looking for ('ca-certificates', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.25.9-1.amzn2.0.2 - u
+python-urllib3-1.25.9-1.amzn2.0.2.noarch requires: python-six
+--> Processing Dependency: python-six for package: python-urllib3-1.25.9-1.amzn2.0.2.noarch
+Searching pkgSack for dep: python-six
+Building updates object
+up:simple updates time: 0.011
+up:obs time: 0.002
+up:condense time: 0.000
+updates time: 0.167
+TSINFO: Marking python-six-1.9.0-2.amzn2.noarch as install for python-urllib3-1.25.9-1.amzn2.0.2.noarch
+python-urllib3-1.25.9-1.amzn2.0.2.noarch requires: python-backports-ssl_match_hostname
+--> Processing Dependency: python-backports-ssl_match_hostname for package: python-urllib3-1.25.9-1.amzn2.0.2.noarch
+Searching pkgSack for dep: python-backports-ssl_match_hostname
+TSINFO: Marking python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch as install for python-urllib3-1.25.9-1.amzn2.0.2.noarch
+--> Running transaction check
+---> Package python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.amzn2 will be installed
+Checking deps for python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.amzn2 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.amzn2 - u
+looking for ('python-ipaddress', None, (None, None, None)) as a requirement of python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.amzn2 - u
+looking for ('python-backports', None, (None, None, None)) as a requirement of python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.amzn2 - u
+python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch requires: python-ipaddress
+--> Processing Dependency: python-ipaddress for package: python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch
+Searching pkgSack for dep: python-ipaddress
+TSINFO: Marking python-ipaddress-1.0.16-2.amzn2.noarch as install for python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch
+python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch requires: python-backports
+--> Processing Dependency: python-backports for package: python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch
+Searching pkgSack for dep: python-backports
+TSINFO: Marking python-backports-1.0-8.amzn2.0.2.x86_64 as install for python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch
+---> Package python-six.noarch 0:1.9.0-2.amzn2 will be installed
+Checking deps for python-six.noarch 0:1.9.0-2.amzn2 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-six.noarch 0:1.9.0-2.amzn2 - u
+--> Running transaction check
+---> Package python-backports.x86_64 0:1.0-8.amzn2.0.2 will be installed
+Checking deps for python-backports.x86_64 0:1.0-8.amzn2.0.2 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-backports.x86_64 0:1.0-8.amzn2.0.2 - u
+---> Package python-ipaddress.noarch 0:1.0.16-2.amzn2 will be installed
+Checking deps for python-ipaddress.noarch 0:1.0.16-2.amzn2 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-ipaddress.noarch 0:1.0.16-2.amzn2 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.330
+
+Dependencies Resolved
+
+================================================================================
+ Package                             Arch   Version            Repository  Size
+================================================================================
+Installing:
+ python-urllib3                      noarch 1.25.9-1.amzn2.0.2 amzn2-core 191 k
+Installing for dependencies:
+ python-backports                    x86_64 1.0-8.amzn2.0.2    amzn2-core 5.9 k
+ python-backports-ssl_match_hostname noarch 3.5.0.1-1.amzn2    amzn2-core  13 k
+ python-ipaddress                    noarch 1.0.16-2.amzn2     amzn2-core  34 k
+ python-six                          noarch 1.9.0-2.amzn2      amzn2-core  29 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 273 k
+Installed size: 1.1 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                               75 kB/s | 273 kB  00:03     
+Member: python-backports.x86_64 0:1.0-8.amzn2.0.2 - u
+Adding Package python-backports-1.0-8.amzn2.0.2.x86_64 in mode u
+Member: python-ipaddress.noarch 0:1.0.16-2.amzn2 - u
+Adding Package python-ipaddress-1.0.16-2.amzn2.noarch in mode u
+Member: python-six.noarch 0:1.9.0-2.amzn2 - u
+Adding Package python-six-1.9.0-2.amzn2.noarch in mode u
+Member: python-urllib3.noarch 0:1.25.9-1.amzn2.0.2 - u
+Adding Package python-urllib3-1.25.9-1.amzn2.0.2.noarch in mode u
+Member: python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.amzn2 - u
+Adding Package python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch in mode u
+Running transaction check
+Transaction check time: 0.001
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.021
+Running transaction
+  Installing : python-six-1.9.0-2.amzn2.noarch                              1/5 
+  Installing : python-ipaddress-1.0.16-2.amzn2.noarch                       2/5 
+  Installing : python-backports-1.0-8.amzn2.0.2.x86_64                      3/5 
+  Installing : python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch   4/5 
+  Installing : python-urllib3-1.25.9-1.amzn2.0.2.noarch                     5/5 
+  Verifying  : python-backports-1.0-8.amzn2.0.2.x86_64                      1/5 
+  Verifying  : python-ipaddress-1.0.16-2.amzn2.noarch                       2/5 
+  Verifying  : python-six-1.9.0-2.amzn2.noarch                              3/5 
+  Verifying  : python-urllib3-1.25.9-1.amzn2.0.2.noarch                     4/5 
+  Verifying  : python-backports-ssl_match_hostname-3.5.0.1-1.amzn2.noarch   5/5 
+VerifyTransaction time: 0.067
+Transaction time: 0.190
+
+Installed:
+  python-urllib3.noarch 0:1.25.9-1.amzn2.0.2                                    
+
+Dependency Installed:
+  python-backports.x86_64 0:1.0-8.amzn2.0.2                                     
+  python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.amzn2                  
+  python-ipaddress.noarch 0:1.0.16-2.amzn2                                      
+  python-six.noarch 0:1.9.0-2.amzn2                                             
+
+Complete!

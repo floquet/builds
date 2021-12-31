@@ -1,0 +1,45 @@
+yum info    -v python-debug
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.007
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.006
+Installed Packages
+Name        : python-debug
+Arch        : x86_64
+Version     : 2.7.18
+Release     : 1.amzn2.0.4
+Size        : 6.6 M
+Repo        : installed
+From repo   : amzn2-core
+Committer   : Nikhil Dikshit <nikhildi@amazon.com>
+Committime  : Tue Jun  1 12:00:00 2021
+Buildtime   : Thu Jun 10 00:39:55 2021
+Install time: Fri Dec 31 18:27:58 2021
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Debug version of the Python runtime
+URL         : http://www.python.org/
+License     : Python
+Description : python-debug provides a version of the Python runtime with
+            : numerous debugging features enabled, aimed at advanced Python
+            : users, such as developers of Python extension modules.
+            : 
+            : This version uses more memory and will be slower than the regular
+            : Python build, but is useful for tracking down reference-counting
+            : issues, and other bugs.
+            : 
+            : The bytecodes are unchanged, so that .pyc files are compatible
+            : between the two version of Python, but the debugging features mean
+            : that C/C++ extension modules are ABI-incompatible with those built
+            : for the standard runtime.
+            : 
+            : It shares installation directories with the standard Python
+            : runtime, so that .py and .pyc files can be shared.  All compiled
+            : extension modules gain a "_d" suffix ("foo_d.so" rather than
+            : "foo.so") so that each Python implementation can load its own
+            : extensions.
+

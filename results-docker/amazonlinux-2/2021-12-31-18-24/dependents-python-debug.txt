@@ -1,0 +1,908 @@
+yum deplist -v python-debug
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.009
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.006
+Searching pkgSack for dep: /bin/sh
+Searching pkgSack for dep: /usr/bin/pkg-config
+Searching pkgSack for dep: libTix.so()(64bit)
+Searching pkgSack for dep: libX11.so.6()(64bit)
+Searching pkgSack for dep: libbz2.so.1()(64bit)
+Searching pkgSack for dep: libc.so.6()(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.15)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.3)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.3.2)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.3.4)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.4)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.7)(64bit)
+Searching pkgSack for dep: libcrypt.so.1()(64bit)
+Searching pkgSack for dep: libcrypt.so.1(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libcrypto.so.10()(64bit)
+Searching pkgSack for dep: libcrypto.so.10(OPENSSL_1.0.1_EC)(64bit)
+Searching pkgSack for dep: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
+Searching pkgSack for dep: libcrypto.so.10(libcrypto.so.10)(64bit)
+Searching pkgSack for dep: libdb-5.3.so()(64bit)
+Searching pkgSack for dep: libdl.so.2()(64bit)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libexpat.so.1()(64bit)
+Searching pkgSack for dep: libffi.so.6()(64bit)
+Searching pkgSack for dep: libgdbm.so.4()(64bit)
+Searching pkgSack for dep: libgdbm_compat.so.4()(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libm.so.6(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libncursesw.so.6()(64bit)
+Searching pkgSack for dep: libnsl.so.1()(64bit)
+Searching pkgSack for dep: libnsl.so.1(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libpanelw.so.6()(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libpython2.7_d.so.1.0()(64bit)
+Searching pkgSack for dep: libreadline.so.6()(64bit)
+Searching pkgSack for dep: libsqlite3.so.0()(64bit)
+Searching pkgSack for dep: libssl.so.10()(64bit)
+Searching pkgSack for dep: libssl.so.10(libssl.so.10)(64bit)
+Searching pkgSack for dep: libtcl8.5.so()(64bit)
+Searching pkgSack for dep: libtinfo.so.6()(64bit)
+Searching pkgSack for dep: libtk8.5.so()(64bit)
+Searching pkgSack for dep: libutil.so.1()(64bit)
+Searching pkgSack for dep: libutil.so.1(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libz.so.1()(64bit)
+Searching pkgSack for dep: libz.so.1(ZLIB_1.2.0)(64bit)
+Searching pkgSack for dep: python(x86-64)
+Searching pkgSack for dep: python-devel(x86-64)
+Searching pkgSack for dep: python-libs(x86-64)
+Searching pkgSack for dep: python-test(x86-64)
+Searching pkgSack for dep: python-tools(x86-64)
+Searching pkgSack for dep: rtld(GNU_HASH)
+Searching pkgSack for dep: tkinter(x86-64)
+package: python-debug.x86_64 2.7.18-1.amzn2.0.4
+  dependency: /bin/sh
+   provider: bash.x86_64 4.2.46-34.amzn2
+   provider: bash.x86_64 4.2.46-33.amzn2
+   provider: bash.x86_64 4.2.46-30.amzn2
+   provider: bash.x86_64 4.2.46-29.amzn2
+  dependency: /usr/bin/pkg-config
+   provider: pkgconfig.x86_64 1:0.27.1-4.amzn2.0.2
+   provider: pkgconfig.i686 1:0.27.1-4.amzn2.0.2
+   provider: pkgconfig.x86_64 1:0.27.1-4.amzn2.0.1
+   provider: pkgconfig.i686 1:0.27.1-4.amzn2.0.1
+   provider: pkgconfig.x86_64 1:0.27.1-4.amzn2
+  dependency: libTix.so()(64bit)
+   provider: tix.x86_64 1:8.4.3-12.amzn2.0.2
+   provider: tix.x86_64 1:8.4.3-12.amzn2
+  dependency: libX11.so.6()(64bit)
+   provider: libX11.x86_64 1.6.7-3.amzn2.0.2
+   provider: libX11.x86_64 1.6.7-3.amzn2.0.1
+   provider: libX11.x86_64 1.6.7-3.amzn2
+   provider: libX11.x86_64 1.6.7-2.amzn2
+   provider: libX11.x86_64 1.6.5-2.amzn2.0.2
+   provider: libX11.x86_64 1.6.5-1.amzn2.0.2
+   provider: libX11.x86_64 1.6.5-1.amzn2
+  dependency: libbz2.so.1()(64bit)
+   provider: bzip2-libs.x86_64 1.0.6-13.amzn2.0.3
+   provider: bzip2-libs.x86_64 1.0.6-13.amzn2.0.2
+   provider: bzip2-libs.x86_64 1.0.6-13.amzn2.0.1
+   provider: bzip2-libs.x86_64 1.0.6-13.amzn2
+  dependency: libc.so.6()(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libc.so.6(GLIBC_2.15)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libc.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libc.so.6(GLIBC_2.3)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libc.so.6(GLIBC_2.3.2)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libc.so.6(GLIBC_2.3.4)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libc.so.6(GLIBC_2.4)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libc.so.6(GLIBC_2.7)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libcrypt.so.1()(64bit)
+   provider: libcrypt-nss.x86_64 2.26-56.amzn2
+   provider: libcrypt-nss.x86_64 2.26-55.amzn2
+   provider: libcrypt-nss.x86_64 2.26-54.amzn2
+   provider: libcrypt-nss.x86_64 2.26-53.amzn2
+   provider: libcrypt-nss.x86_64 2.26-48.amzn2
+   provider: libcrypt-nss.x86_64 2.26-47.amzn2
+   provider: libcrypt-nss.x86_64 2.26-45.amzn2
+   provider: libcrypt-nss.x86_64 2.26-44.amzn2
+   provider: libcrypt-nss.x86_64 2.26-43.amzn2
+   provider: libcrypt-nss.x86_64 2.26-42.amzn2
+   provider: libcrypt-nss.x86_64 2.26-41.amzn2
+   provider: libcrypt-nss.x86_64 2.26-39.amzn2
+   provider: libcrypt-nss.x86_64 2.26-38.amzn2
+   provider: libcrypt-nss.x86_64 2.26-37.amzn2
+   provider: libcrypt-nss.x86_64 2.26-36.amzn2
+   provider: libcrypt-nss.x86_64 2.26-35.amzn2
+   provider: libcrypt-nss.x86_64 2.26-34.amzn2
+   provider: libcrypt-nss.x86_64 2.26-32.amzn2.0.2
+   provider: libcrypt-nss.x86_64 2.26-32.amzn2.0.1
+   provider: libcrypt-nss.x86_64 2.26-30.amzn2.0.1
+   provider: libcrypt-nss.x86_64 2.26-28.amzn2.0.1
+   provider: libcrypt-nss.x86_64 2.26-27.amzn2.0.5
+   provider: libcrypt-nss.x86_64 2.26-27.amzn2.0.4
+   provider: libcrypt-nss.x86_64 2.25-10.amzn2.0.1
+   provider: libcrypt.x86_64 2.26-56.amzn2
+   provider: libcrypt.x86_64 2.26-55.amzn2
+   provider: libcrypt.x86_64 2.26-54.amzn2
+   provider: libcrypt.x86_64 2.26-53.amzn2
+   provider: libcrypt.x86_64 2.26-48.amzn2
+   provider: libcrypt.x86_64 2.26-47.amzn2
+   provider: libcrypt.x86_64 2.26-45.amzn2
+   provider: libcrypt.x86_64 2.26-44.amzn2
+   provider: libcrypt.x86_64 2.26-43.amzn2
+   provider: libcrypt.x86_64 2.26-42.amzn2
+   provider: libcrypt.x86_64 2.26-41.amzn2
+   provider: libcrypt.x86_64 2.26-39.amzn2
+   provider: libcrypt.x86_64 2.26-38.amzn2
+   provider: libcrypt.x86_64 2.26-37.amzn2
+   provider: libcrypt.x86_64 2.26-36.amzn2
+   provider: libcrypt.x86_64 2.26-35.amzn2
+   provider: libcrypt.x86_64 2.26-34.amzn2
+   provider: libcrypt.x86_64 2.26-32.amzn2.0.2
+   provider: libcrypt.x86_64 2.26-32.amzn2.0.1
+   provider: libcrypt.x86_64 2.26-30.amzn2.0.1
+   provider: libcrypt.x86_64 2.26-28.amzn2.0.1
+   provider: libcrypt.x86_64 2.26-27.amzn2.0.5
+   provider: libcrypt.x86_64 2.26-27.amzn2.0.4
+   provider: libcrypt.x86_64 2.25-10.amzn2.0.1
+  dependency: libcrypt.so.1(GLIBC_2.2.5)(64bit)
+   provider: libcrypt-nss.x86_64 2.26-56.amzn2
+   provider: libcrypt-nss.x86_64 2.26-55.amzn2
+   provider: libcrypt-nss.x86_64 2.26-54.amzn2
+   provider: libcrypt-nss.x86_64 2.26-53.amzn2
+   provider: libcrypt-nss.x86_64 2.26-48.amzn2
+   provider: libcrypt-nss.x86_64 2.26-47.amzn2
+   provider: libcrypt-nss.x86_64 2.26-45.amzn2
+   provider: libcrypt-nss.x86_64 2.26-44.amzn2
+   provider: libcrypt-nss.x86_64 2.26-43.amzn2
+   provider: libcrypt-nss.x86_64 2.26-42.amzn2
+   provider: libcrypt-nss.x86_64 2.26-41.amzn2
+   provider: libcrypt-nss.x86_64 2.26-39.amzn2
+   provider: libcrypt-nss.x86_64 2.26-38.amzn2
+   provider: libcrypt-nss.x86_64 2.26-37.amzn2
+   provider: libcrypt-nss.x86_64 2.26-36.amzn2
+   provider: libcrypt-nss.x86_64 2.26-35.amzn2
+   provider: libcrypt-nss.x86_64 2.26-34.amzn2
+   provider: libcrypt-nss.x86_64 2.26-32.amzn2.0.2
+   provider: libcrypt-nss.x86_64 2.26-32.amzn2.0.1
+   provider: libcrypt-nss.x86_64 2.26-30.amzn2.0.1
+   provider: libcrypt-nss.x86_64 2.26-28.amzn2.0.1
+   provider: libcrypt-nss.x86_64 2.26-27.amzn2.0.5
+   provider: libcrypt-nss.x86_64 2.26-27.amzn2.0.4
+   provider: libcrypt-nss.x86_64 2.25-10.amzn2.0.1
+   provider: libcrypt.x86_64 2.26-56.amzn2
+   provider: libcrypt.x86_64 2.26-55.amzn2
+   provider: libcrypt.x86_64 2.26-54.amzn2
+   provider: libcrypt.x86_64 2.26-53.amzn2
+   provider: libcrypt.x86_64 2.26-48.amzn2
+   provider: libcrypt.x86_64 2.26-47.amzn2
+   provider: libcrypt.x86_64 2.26-45.amzn2
+   provider: libcrypt.x86_64 2.26-44.amzn2
+   provider: libcrypt.x86_64 2.26-43.amzn2
+   provider: libcrypt.x86_64 2.26-42.amzn2
+   provider: libcrypt.x86_64 2.26-41.amzn2
+   provider: libcrypt.x86_64 2.26-39.amzn2
+   provider: libcrypt.x86_64 2.26-38.amzn2
+   provider: libcrypt.x86_64 2.26-37.amzn2
+   provider: libcrypt.x86_64 2.26-36.amzn2
+   provider: libcrypt.x86_64 2.26-35.amzn2
+   provider: libcrypt.x86_64 2.26-34.amzn2
+   provider: libcrypt.x86_64 2.26-32.amzn2.0.2
+   provider: libcrypt.x86_64 2.26-32.amzn2.0.1
+   provider: libcrypt.x86_64 2.26-30.amzn2.0.1
+   provider: libcrypt.x86_64 2.26-28.amzn2.0.1
+   provider: libcrypt.x86_64 2.26-27.amzn2.0.5
+   provider: libcrypt.x86_64 2.26-27.amzn2.0.4
+   provider: libcrypt.x86_64 2.25-10.amzn2.0.1
+  dependency: libcrypto.so.10()(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.10
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.8
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.7
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.6
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.4
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.1.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-8.amzn2.0.1
+  dependency: libcrypto.so.10(OPENSSL_1.0.1_EC)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.10
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.8
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.7
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.6
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.4
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.1.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-8.amzn2.0.1
+  dependency: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.10
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.8
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.7
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.6
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.4
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.1.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-8.amzn2.0.1
+  dependency: libcrypto.so.10(libcrypto.so.10)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.10
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.8
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.7
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.6
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.4
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.1.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-8.amzn2.0.1
+  dependency: libdb-5.3.so()(64bit)
+   provider: libdb.x86_64 5.3.21-24.amzn2.0.3
+   provider: libdb.x86_64 5.3.21-24.amzn2.0.2
+   provider: libdb.x86_64 5.3.21-21.amzn2.0.1
+   provider: libdb.x86_64 5.3.21-21.amzn2
+   provider: libdb.x86_64 5.3.21-20.amzn2
+  dependency: libdl.so.2()(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libdl.so.2(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libexpat.so.1()(64bit)
+   provider: expat.x86_64 2.1.0-12.amzn2
+   provider: expat.x86_64 2.1.0-10.amzn2.0.2
+   provider: expat.x86_64 2.1.0-10.amzn2.0.1
+   provider: expat.x86_64 2.1.0-10.amzn2
+  dependency: libffi.so.6()(64bit)
+   provider: libffi.x86_64 3.0.13-18.amzn2.0.2
+   provider: libffi.x86_64 3.0.13-18.amzn2.0.1
+   provider: libffi.x86_64 3.0.13-18.amzn2
+  dependency: libgdbm.so.4()(64bit)
+   provider: gdbm.x86_64 1:1.13-6.amzn2.0.2
+   provider: gdbm.x86_64 1:1.13-6.amzn2.0.1
+   provider: gdbm.x86_64 1:1.13-6.amzn2
+   provider: gdbm.x86_64 1.10-8.amzn2
+  dependency: libgdbm_compat.so.4()(64bit)
+   provider: gdbm.x86_64 1:1.13-6.amzn2.0.2
+   provider: gdbm.x86_64 1:1.13-6.amzn2.0.1
+   provider: gdbm.x86_64 1:1.13-6.amzn2
+   provider: gdbm.x86_64 1.10-8.amzn2
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libncursesw.so.6()(64bit)
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.3
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.2
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.1
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.0.1
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2
+  dependency: libnsl.so.1()(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libnsl.so.1(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libpanelw.so.6()(64bit)
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.3
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.2
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.1
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.0.1
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libpthread.so.0(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libpython2.7_d.so.1.0()(64bit)
+   provider: python-debug.x86_64 2.7.18-1.amzn2.0.4
+   provider: python-debug.x86_64 2.7.18-1.amzn2.0.3
+   provider: python-debug.x86_64 2.7.18-1.amzn2.0.2
+   provider: python-debug.x86_64 2.7.18-1.amzn2.0.1
+   provider: python-debug.x86_64 2.7.18-1.amzn2
+   provider: python-debug.x86_64 2.7.16-5.amzn2
+   provider: python-debug.x86_64 2.7.16-4.amzn2
+   provider: python-debug.x86_64 2.7.16-3.amzn2.0.1
+   provider: python-debug.x86_64 2.7.16-2.amzn2.0.1
+   provider: python-debug.x86_64 2.7.16-1.amzn2.0.1
+   provider: python-debug.x86_64 2.7.14-58.amzn2.0.4
+   provider: python-debug.x86_64 2.7.14-58.amzn2.0.3
+   provider: python-debug.x86_64 2.7.14-58.amzn2.0.2
+   provider: python-debug.x86_64 2.7.5-58.amzn2
+  dependency: libreadline.so.6()(64bit)
+   provider: readline.x86_64 6.2-10.amzn2.0.2
+   provider: readline.x86_64 6.2-10.amzn2.0.1
+   provider: readline.x86_64 6.2-10.amzn2
+  dependency: libsqlite3.so.0()(64bit)
+   provider: sqlite.x86_64 3.7.17-8.amzn2.1.1
+   provider: sqlite.x86_64 3.7.17-8.amzn2.0.2
+   provider: sqlite.x86_64 3.7.17-8.amzn2.0.1
+   provider: sqlite.x86_64 3.7.17-8.amzn2
+  dependency: libssl.so.10()(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.10
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.8
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.7
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.6
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.4
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.1.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-8.amzn2.0.1
+  dependency: libssl.so.10(libssl.so.10)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.10
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.8
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.7
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.6
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.4
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-19.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.1.1
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-16.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.3
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.2
+   provider: openssl-libs.x86_64 1:1.0.2k-12.amzn2.0.1
+   provider: openssl-libs.x86_64 1:1.0.2k-8.amzn2.0.1
+  dependency: libtcl8.5.so()(64bit)
+   provider: tcl.x86_64 1:8.5.13-8.amzn2.0.2
+   provider: tcl.x86_64 1:8.5.13-8.amzn2
+  dependency: libtinfo.so.6()(64bit)
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.3
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.2
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.1.1
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2.0.1
+   provider: ncurses-libs.x86_64 6.0-8.20170212.amzn2
+  dependency: libtk8.5.so()(64bit)
+   provider: tk.x86_64 1:8.5.13-6.amzn2.0.2
+   provider: tk.x86_64 1:8.5.13-6.amzn2
+  dependency: libutil.so.1()(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libutil.so.1(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: libz.so.1()(64bit)
+   provider: zlib.x86_64 1.2.7-18.amzn2
+   provider: zlib.x86_64 1.2.7-17.amzn2.0.2
+   provider: zlib.x86_64 1.2.7-17.amzn2.0.1
+   provider: zlib.x86_64 1.2.7-17.amzn2
+  dependency: libz.so.1(ZLIB_1.2.0)(64bit)
+   provider: zlib.x86_64 1.2.7-18.amzn2
+   provider: zlib.x86_64 1.2.7-17.amzn2.0.2
+   provider: zlib.x86_64 1.2.7-17.amzn2.0.1
+   provider: zlib.x86_64 1.2.7-17.amzn2
+  dependency: python(x86-64) = 2.7.18-1.amzn2.0.4
+   provider: python.x86_64 2.7.18-1.amzn2.0.4
+  dependency: python-devel(x86-64) = 2.7.18-1.amzn2.0.4
+   provider: python-devel.x86_64 2.7.18-1.amzn2.0.4
+  dependency: python-libs(x86-64) = 2.7.18-1.amzn2.0.4
+   provider: python-libs.x86_64 2.7.18-1.amzn2.0.4
+  dependency: python-test(x86-64) = 2.7.18-1.amzn2.0.4
+   provider: python-test.x86_64 2.7.18-1.amzn2.0.4
+  dependency: python-tools(x86-64) = 2.7.18-1.amzn2.0.4
+   provider: python-tools.x86_64 2.7.18-1.amzn2.0.4
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.26-56.amzn2
+   provider: glibc.i686 2.26-56.amzn2
+   provider: glibc.x86_64 2.26-55.amzn2
+   provider: glibc.i686 2.26-55.amzn2
+   provider: glibc.x86_64 2.26-54.amzn2
+   provider: glibc.i686 2.26-54.amzn2
+   provider: glibc.x86_64 2.26-53.amzn2
+   provider: glibc.i686 2.26-53.amzn2
+   provider: glibc.x86_64 2.26-48.amzn2
+   provider: glibc.i686 2.26-48.amzn2
+   provider: glibc.x86_64 2.26-47.amzn2
+   provider: glibc.i686 2.26-47.amzn2
+   provider: glibc.x86_64 2.26-45.amzn2
+   provider: glibc.i686 2.26-45.amzn2
+   provider: glibc.x86_64 2.26-44.amzn2
+   provider: glibc.i686 2.26-44.amzn2
+   provider: glibc.x86_64 2.26-43.amzn2
+   provider: glibc.i686 2.26-43.amzn2
+   provider: glibc.x86_64 2.26-42.amzn2
+   provider: glibc.i686 2.26-42.amzn2
+   provider: glibc.x86_64 2.26-41.amzn2
+   provider: glibc.i686 2.26-41.amzn2
+   provider: glibc.x86_64 2.26-39.amzn2
+   provider: glibc.i686 2.26-39.amzn2
+   provider: glibc.x86_64 2.26-38.amzn2
+   provider: glibc.i686 2.26-38.amzn2
+   provider: glibc.x86_64 2.26-37.amzn2
+   provider: glibc.i686 2.26-37.amzn2
+   provider: glibc.x86_64 2.26-36.amzn2
+   provider: glibc.i686 2.26-36.amzn2
+   provider: glibc.x86_64 2.26-35.amzn2
+   provider: glibc.i686 2.26-35.amzn2
+   provider: glibc.x86_64 2.26-34.amzn2
+   provider: glibc.i686 2.26-34.amzn2
+   provider: glibc.x86_64 2.26-32.amzn2.0.2
+   provider: glibc.i686 2.26-32.amzn2.0.2
+   provider: glibc.x86_64 2.26-32.amzn2.0.1
+   provider: glibc.i686 2.26-32.amzn2.0.1
+   provider: glibc.x86_64 2.26-30.amzn2.0.1
+   provider: glibc.i686 2.26-30.amzn2.0.1
+   provider: glibc.x86_64 2.26-28.amzn2.0.1
+   provider: glibc.i686 2.26-28.amzn2.0.1
+   provider: glibc.x86_64 2.26-27.amzn2.0.5
+   provider: glibc.i686 2.26-27.amzn2.0.5
+   provider: glibc.x86_64 2.26-27.amzn2.0.4
+   provider: glibc.x86_64 2.25-10.amzn2.0.1
+  dependency: tkinter(x86-64) = 2.7.18-1.amzn2.0.4
+   provider: tkinter.x86_64 2.7.18-1.amzn2.0.4
