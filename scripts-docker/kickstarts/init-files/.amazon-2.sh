@@ -6,7 +6,8 @@ export      owner="native"
 export  drive_int="Macintosh HD"
 export  drive_ext="Seagate Expansion HDD Media-18TB"
 
-export       HOME="/home/dantopa"
+export USER="dantopa"
+export HOME="/home/${USER}"
 
 # #  H A R D W A R E   D E T A I L S
 export serial_num="C07ZQ2VJJYW0"

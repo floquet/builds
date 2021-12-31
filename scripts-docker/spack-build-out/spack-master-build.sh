@@ -6,7 +6,9 @@ printf '%s\n' "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
 # define: new_step
 # define: sub_step
 # define: spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
-source ${repo_results_docker}/spack-build-out/master-header.sh
+source ${repo_scripts_docker}/spack-build-out/master-header.sh
+
+# spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
 
 #  #  ========================================================= declarations start
 
@@ -21,11 +23,12 @@ export     my_ompi="openmpi@4.1.2"
 # when using a spack-built compiler:
 # spack load gcc @ 11.2.1
 
-export blogs="${SPACK_ROOT}/dantopa/build-logs"
-export bspec="${SPACK_ROOT}/dantopa/specs"
+export blogs="${SPACK_ROOT}/${USER}/build-logs"
+export bspec="${SPACK_ROOT}/${USER}/specs"
 
 # py-${p} % ${my_compiler} ^${my_python}
-declare -a   lalpha=("seaborn" "astropy" "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
+declare -a   lalpha=("seaborn" "astropy")
+# "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
 # ${p} % ${my_compiler} ^${my_python}
 declare -a   lbravo=("blitz" "gdb" "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor" "visit")
 # ${p} % ${my_compiler} ^${my_python} ^${my_ompi}
@@ -44,16 +47,23 @@ declare -a lllvm=("13.0.0" "12.0.1" "11.1.0")
 export myarch="arch=$(spack arch)"
 new_step "\${myarch} = ${myarch}"
 
-new_step "install pattern: py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
+new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
+echo "\${lalpha[@]} = ${lalpha[@]}"
 clicker=0
 for q in ${lalpha[@]}; do
     export p="py-${q}"
     export log_file="${blogs}/${p}.txt"
     export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-    spacktion ${p} ${cmd_line} ${log_file} ${bspec}
+    export spec_file="${bspec}/${p}.txt"
+        echo "\${1} = ${p}"
+        echo "\${2} = ${cmd_line}"
+        echo "\${3} = ${log_file}"
+        echo "\${4} = ${spec_file}"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
 done
 
-new_step "install pattern: myapp % ${my_compiler} ^${my_python} ${myarch}: ${#lbravo[@]} elements"
+new_step "install pattern - myapp % ${my_compiler} ^${my_python} ${myarch}: ${#lbravo[@]} elements"
+echo "\${lbravo[@]} = ${lbravo[@]}"
 clicker=0
 for p in ${lbravo[@]}; do
     export log_file="${blogs}/${p}.txt"
@@ -61,7 +71,7 @@ for p in ${lbravo[@]}; do
     spacktion ${p} ${cmd_line} ${log_file} ${bspec}
 ddone
 
-new_step "install pattern: myapp % ${my_compiler} ^${my_python} ^${my_ompi}: ${#lcharlie[@]} elements"
+new_step "install pattern - myapp % ${my_compiler} ^${my_python} ^${my_ompi}: ${#lcharlie[@]} elements"
 clicker=0
 for p in ${lcharlie[@]}; do
     export log_file="${blogs}/${p}.txt"
@@ -69,7 +79,7 @@ for p in ${lcharlie[@]}; do
     spacktion ${p} ${cmd_line} ${log_file} ${bspec}
 done
 
-new_step "install pattern: myapp % ${my_compiler} ${myarch}: ${#ldelta[@]} elements"
+new_step "install pattern - myapp % ${my_compiler} ${myarch}: ${#ldelta[@]} elements"
 clicker=0
 for p in ${ldelta[@]}; do
     export log_file="${blogs}/${p}.txt"
@@ -77,7 +87,7 @@ for p in ${ldelta[@]}; do
     spacktion ${p} ${cmd_line} ${log_file} ${bspec}
 done
 
-new_step "install pattern: myapp % ${my_compiler} ^${my_ompi} ${myarch}: ${#lecho[@]} elements"
+new_step "install pattern - myapp % ${my_compiler} ^${my_ompi} ${myarch}: ${#lecho[@]} elements"
 for p in ${lecho[@]}; do
     export log_file="${blogs}/${p}.txt"
     export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
@@ -106,6 +116,7 @@ for l in ${lllvm[@]}; do
     echo     "spack compiler find $(spack location -i llvm@${l} % ${my_compiler})"
               spack compiler find $(spack location -i llvm@${l} % ${my_compiler}) &
 done
+# spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
 
 echo ""
 echo "waiting for threads to complete..."
