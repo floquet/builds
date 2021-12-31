@@ -1,5 +1,5 @@
 #! /bin/bash
-printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
+printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 export SECONDS=0
 export ymd=$(date +%Y-%m-%d-%H-%M) # timestamp results

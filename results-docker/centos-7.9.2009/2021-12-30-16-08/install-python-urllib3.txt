@@ -1,0 +1,83 @@
+yum install -v python-urllib3 -y
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.atlanticmetro.net
+ * extras: ewr.edge.kernel.org
+ * updates: ftpmirror.your.org
+pkgsack time: 0.009
+Obs Init time: 0.082
+Resolving Dependencies
+--> Running transaction check
+---> Package python-urllib3.noarch 0:1.10.2-7.el7 will be installed
+Checking deps for python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('python-six', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('python-ipaddress', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('python-backports-ssl_match_hostname', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('ca-certificates', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+python-urllib3-1.10.2-7.el7.noarch requires: python-six
+--> Processing Dependency: python-six for package: python-urllib3-1.10.2-7.el7.noarch
+Searching pkgSack for dep: python-six
+Building updates object
+up:simple updates time: 0.004
+up:obs time: 0.002
+up:condense time: 0.000
+updates time: 0.088
+TSINFO: Marking python-six-1.9.0-2.el7.noarch as install for python-urllib3-1.10.2-7.el7.noarch
+--> Running transaction check
+---> Package python-six.noarch 0:1.9.0-2.el7 will be installed
+Checking deps for python-six.noarch 0:1.9.0-2.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-six.noarch 0:1.9.0-2.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.264
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch           Version               Repository    Size
+================================================================================
+Installing:
+ python-urllib3         noarch         1.10.2-7.el7          base         103 k
+Installing for dependencies:
+ python-six             noarch         1.9.0-2.el7           base          29 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 131 k
+Installed size: 477 k
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              216 kB/s | 131 kB  00:00     
+Member: python-urllib3.noarch 0:1.10.2-7.el7 - u
+Adding Package python-urllib3-1.10.2-7.el7.noarch in mode u
+Member: python-six.noarch 0:1.9.0-2.el7 - u
+Adding Package python-six-1.9.0-2.el7.noarch in mode u
+Running transaction check
+Transaction check time: 0.003
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.033
+Running transaction
+  Installing : python-six-1.9.0-2.el7.noarch                                1/2 
+  Installing : python-urllib3-1.10.2-7.el7.noarch                           2/2 
+  Verifying  : python-urllib3-1.10.2-7.el7.noarch                           1/2 
+  Verifying  : python-six-1.9.0-2.el7.noarch                                2/2 
+VerifyTransaction time: 0.067
+Transaction time: 0.184
+
+Installed:
+  python-urllib3.noarch 0:1.10.2-7.el7                                          
+
+Dependency Installed:
+  python-six.noarch 0:1.9.0-2.el7                                               
+
+Complete!

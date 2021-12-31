@@ -41,7 +41,7 @@ declare -a lllvm=("13.0.0" "12.0.1" "11.1.0")
 
 #  #  ========================================================= declarations end
 
-        export myarch="arch=$(spack arch)"
+export myarch="arch=$(spack arch)"
 new_step "\${myarch} = ${myarch}"
 
 new_step "install pattern: py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"

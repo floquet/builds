@@ -1,0 +1,183 @@
+yum install -v python3 -y
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.atlanticmetro.net
+ * extras: ewr.edge.kernel.org
+ * updates: ftpmirror.your.org
+pkgsack time: 0.010
+Obs Init time: 0.095
+Resolving Dependencies
+--> Running transaction check
+---> Package python3.x86_64 0:3.6.8-18.el7 will be installed
+Checking deps for python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('python3-libs(x86-64)', 'EQ', ('0', '3.6.8', '18.el7')) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('python3-setuptools', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('python3-pip', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('libc.so.6(GLIBC_2.3.4)(64bit)', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('libutil.so.1()(64bit)', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('libpython3.6m.so.1.0()(64bit)', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of python3.x86_64 0:3.6.8-18.el7 - u
+python3-3.6.8-18.el7.x86_64 requires: python3-libs(x86-64) = 3.6.8-18.el7
+--> Processing Dependency: python3-libs(x86-64) = 3.6.8-18.el7 for package: python3-3.6.8-18.el7.x86_64
+Searching pkgSack for dep: python3-libs(x86-64)
+Building updates object
+up:simple updates time: 0.005
+up:obs time: 0.003
+up:condense time: 0.000
+updates time: 0.093
+TSINFO: Marking python3-libs-3.6.8-18.el7.x86_64 as install for python3-3.6.8-18.el7.x86_64
+python3-3.6.8-18.el7.x86_64 requires: python3-setuptools
+--> Processing Dependency: python3-setuptools for package: python3-3.6.8-18.el7.x86_64
+Searching pkgSack for dep: python3-setuptools
+TSINFO: Marking python3-setuptools-39.2.0-10.el7.noarch as install for python3-3.6.8-18.el7.x86_64
+python3-3.6.8-18.el7.x86_64 requires: python3-pip
+--> Processing Dependency: python3-pip for package: python3-3.6.8-18.el7.x86_64
+Searching pkgSack for dep: python3-pip
+TSINFO: Marking python3-pip-9.0.3-8.el7.noarch as install for python3-3.6.8-18.el7.x86_64
+python3-3.6.8-18.el7.x86_64 requires: libpython3.6m.so.1.0()(64bit)
+--> Processing Dependency: libpython3.6m.so.1.0()(64bit) for package: python3-3.6.8-18.el7.x86_64
+Searching pkgSack for dep: libpython3.6m.so.1.0()(64bit)
+Potential resolving package python3-libs-3.6.8-17.el7.x86_64 has newer instance in ts.
+python3-libs-3.6.8-18.el7.x86_64 already in ts, skipping this one
+--> Running transaction check
+---> Package python3-libs.x86_64 0:3.6.8-18.el7 will be installed
+Checking deps for python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '3.6', None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libz.so.1(ZLIB_1.2.0)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libutil.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libssl.so.10(libssl.so.10)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libnsl.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('liblzma.so.5(XZ_5.0)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libcrypto.so.10(libcrypto.so.10)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libcrypto.so.10(OPENSSL_1.0.2)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libcrypto.so.10(OPENSSL_1.0.1_EC)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libcrypt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libutil.so.1()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libtirpc.so.1()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libssl.so.10()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libsqlite3.so.0()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libreadline.so.6()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libpanelw.so.5()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libnsl.so.1()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libncursesw.so.5()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('liblzma.so.5()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libgdbm_compat.so.4()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libgdbm.so.4()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libffi.so.6()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libexpat.so.1()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libcrypto.so.10()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libcrypt.so.1()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+looking for ('libbz2.so.1()(64bit)', None, (None, None, None)) as a requirement of python3-libs.x86_64 0:3.6.8-18.el7 - u
+python3-libs-3.6.8-18.el7.x86_64 requires: libtirpc.so.1()(64bit)
+--> Processing Dependency: libtirpc.so.1()(64bit) for package: python3-libs-3.6.8-18.el7.x86_64
+Searching pkgSack for dep: libtirpc.so.1()(64bit)
+TSINFO: Marking libtirpc-0.2.4-0.16.el7.x86_64 as install for python3-libs-3.6.8-18.el7.x86_64
+---> Package python3-pip.noarch 0:9.0.3-8.el7 will be installed
+Checking deps for python3-pip.noarch 0:9.0.3-8.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '3.6', None)) as a requirement of python3-pip.noarch 0:9.0.3-8.el7 - u
+looking for ('python3-setuptools', None, (None, None, None)) as a requirement of python3-pip.noarch 0:9.0.3-8.el7 - u
+looking for ('/usr/bin/python3', None, (None, None, None)) as a requirement of python3-pip.noarch 0:9.0.3-8.el7 - u
+---> Package python3-setuptools.noarch 0:39.2.0-10.el7 will be installed
+Checking deps for python3-setuptools.noarch 0:39.2.0-10.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '3.6', None)) as a requirement of python3-setuptools.noarch 0:39.2.0-10.el7 - u
+looking for ('/usr/bin/python3', None, (None, None, None)) as a requirement of python3-setuptools.noarch 0:39.2.0-10.el7 - u
+--> Running transaction check
+---> Package libtirpc.x86_64 0:0.2.4-0.16.el7 will be installed
+Checking deps for libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libgssapi_krb5.so.2(gssapi_krb5_2_MIT)(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libc.so.6(GLIBC_2.16)(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libnsl.so.1()(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libkrb5.so.3()(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libk5crypto.so.3()(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libgssapi_krb5.so.2()(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+looking for ('libcom_err.so.2()(64bit)', None, (None, None, None)) as a requirement of libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.298
+
+Dependencies Resolved
+
+================================================================================
+ Package                  Arch         Version              Repository     Size
+================================================================================
+Installing:
+ python3                  x86_64       3.6.8-18.el7         updates        70 k
+Installing for dependencies:
+ libtirpc                 x86_64       0.2.4-0.16.el7       base           89 k
+ python3-libs             x86_64       3.6.8-18.el7         updates       6.9 M
+ python3-pip              noarch       9.0.3-8.el7          base          1.6 M
+ python3-setuptools       noarch       39.2.0-10.el7        base          629 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 9.3 M
+Installed size: 48 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              2.1 MB/s | 9.3 MB  00:04     
+Member: libtirpc.x86_64 0:0.2.4-0.16.el7 - u
+Adding Package libtirpc-0.2.4-0.16.el7.x86_64 in mode u
+Member: python3-setuptools.noarch 0:39.2.0-10.el7 - u
+Adding Package python3-setuptools-39.2.0-10.el7.noarch in mode u
+Member: python3-libs.x86_64 0:3.6.8-18.el7 - u
+Adding Package python3-libs-3.6.8-18.el7.x86_64 in mode u
+Member: python3.x86_64 0:3.6.8-18.el7 - u
+Adding Package python3-3.6.8-18.el7.x86_64 in mode u
+Member: python3-pip.noarch 0:9.0.3-8.el7 - u
+Adding Package python3-pip-9.0.3-8.el7.noarch in mode u
+Running transaction check
+Transaction check time: 0.032
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.048
+Running transaction
+  Installing : libtirpc-0.2.4-0.16.el7.x86_64                               1/5 
+  Installing : python3-setuptools-39.2.0-10.el7.noarch                      2/5 
+  Installing : python3-pip-9.0.3-8.el7.noarch                               3/5 
+  Installing : python3-3.6.8-18.el7.x86_64                                  4/5 
+  Installing : python3-libs-3.6.8-18.el7.x86_64                             5/5 
+  Verifying  : libtirpc-0.2.4-0.16.el7.x86_64                               1/5 
+  Verifying  : python3-setuptools-39.2.0-10.el7.noarch                      2/5 
+  Verifying  : python3-libs-3.6.8-18.el7.x86_64                             3/5 
+  Verifying  : python3-3.6.8-18.el7.x86_64                                  4/5 
+  Verifying  : python3-pip-9.0.3-8.el7.noarch                               5/5 
+VerifyTransaction time: 0.102
+Transaction time: 2.038
+
+Installed:
+  python3.x86_64 0:3.6.8-18.el7                                                 
+
+Dependency Installed:
+  libtirpc.x86_64 0:0.2.4-0.16.el7   python3-libs.x86_64 0:3.6.8-18.el7         
+  python3-pip.noarch 0:9.0.3-8.el7   python3-setuptools.noarch 0:39.2.0-10.el7  
+
+Complete!

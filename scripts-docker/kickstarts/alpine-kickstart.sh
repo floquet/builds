@@ -1,5 +1,5 @@
 #! /bin/sh
-printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
+printf '%s\n' "$(date) $(tput bold)${BASH_SOURCE[0]}$(tput bold)"
 
 # https://wiki.alpinelinux.org/wiki/Package_management
 # https://gist.github.com/sgreben/dfeaaf20eb635d31e1151cb14ea79048

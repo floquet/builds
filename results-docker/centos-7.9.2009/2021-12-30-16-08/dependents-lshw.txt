@@ -1,0 +1,60 @@
+yum deplist -v lshw
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.010
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.atlanticmetro.net
+ * extras: ewr.edge.kernel.org
+ * updates: ftpmirror.your.org
+pkgsack time: 0.015
+Searching pkgSack for dep: hwdata
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libgcc_s.so.1()(64bit)
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.0)(64bit)
+Searching pkgSack for dep: libsqlite3.so.0()(64bit)
+Searching pkgSack for dep: libstdc++.so.6()(64bit)
+Searching pkgSack for dep: libstdc++.so.6(CXXABI_1.3)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.11)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.9)(64bit)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: lshw.x86_64 B.02.18-17.el7
+  dependency: hwdata
+   provider: hwdata.x86_64 0.252-9.7.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libgcc_s.so.1()(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.0)(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libsqlite3.so.0()(64bit)
+   provider: sqlite.x86_64 3.7.17-8.el7_7.1
+  dependency: libstdc++.so.6()(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(CXXABI_1.3)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.11)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.9)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

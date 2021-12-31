@@ -1,0 +1,123 @@
+yum install -v llvm -y
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.atlanticmetro.net
+ * extras: ewr.edge.kernel.org
+ * updates: ftpmirror.your.org
+pkgsack time: 0.011
+Obs Init time: 0.097
+Resolving Dependencies
+--> Running transaction check
+---> Package llvm.x86_64 0:3.4.2-8.el7 will be installed
+Checking deps for llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('llvm-libs(x86-64)', 'EQ', ('0', '3.4.2', '8.el7')) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libffi.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+looking for ('libLLVM-3.4.so()(64bit)', None, (None, None, None)) as a requirement of llvm.x86_64 0:3.4.2-8.el7 - u
+llvm-3.4.2-8.el7.x86_64 requires: llvm-libs(x86-64) = 3.4.2-8.el7
+--> Processing Dependency: llvm-libs(x86-64) = 3.4.2-8.el7 for package: llvm-3.4.2-8.el7.x86_64
+Searching pkgSack for dep: llvm-libs(x86-64)
+Building updates object
+up:simple updates time: 0.004
+up:obs time: 0.002
+up:condense time: 0.000
+updates time: 0.091
+TSINFO: Marking llvm-libs-3.4.2-8.el7.x86_64 as install for llvm-3.4.2-8.el7.x86_64
+llvm-3.4.2-8.el7.x86_64 requires: libLLVM-3.4.so()(64bit)
+--> Processing Dependency: libLLVM-3.4.so()(64bit) for package: llvm-3.4.2-8.el7.x86_64
+Quick matched llvm-libs-3.4.2-8.el7.x86_64 to require for libLLVM-3.4.so()(64bit)
+--> Running transaction check
+---> Package llvm-libs.x86_64 0:3.4.2-8.el7 will be installed
+Checking deps for llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libz.so.1(ZLIB_1.2.0)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libffi.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of llvm-libs.x86_64 0:3.4.2-8.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.245
+
+Dependencies Resolved
+
+================================================================================
+ Package            Arch            Version               Repository       Size
+================================================================================
+Installing:
+ llvm               x86_64          3.4.2-8.el7           extras          1.3 M
+Installing for dependencies:
+ llvm-libs          x86_64          3.4.2-8.el7           extras          7.6 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 8.9 M
+Installed size: 30 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              2.4 MB/s | 8.9 MB  00:03     
+Member: llvm-libs.x86_64 0:3.4.2-8.el7 - u
+Adding Package llvm-libs-3.4.2-8.el7.x86_64 in mode u
+Member: llvm.x86_64 0:3.4.2-8.el7 - u
+Adding Package llvm-3.4.2-8.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.007
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.017
+Running transaction
+  Installing : llvm-libs-3.4.2-8.el7.x86_64                                 1/2 
+  Installing : llvm-3.4.2-8.el7.x86_64                                      2/2 
+  Verifying  : llvm-libs-3.4.2-8.el7.x86_64                                 1/2 
+  Verifying  : llvm-3.4.2-8.el7.x86_64                                      2/2 
+VerifyTransaction time: 0.063
+Transaction time: 1.361
+
+Installed:
+  llvm.x86_64 0:3.4.2-8.el7                                                     
+
+Dependency Installed:
+  llvm-libs.x86_64 0:3.4.2-8.el7                                                
+
+Complete!
