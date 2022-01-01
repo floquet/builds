@@ -19,6 +19,7 @@ export masterSECONDS=$SECONDS
 export my_compiler="${gcc_system_compiler}"
 export   my_python="python@3.10.1"
 export     my_ompi="openmpi@4.1.2"
+export     my_llvm="llvm@13.0.0"
 
 # when using a spack-built compiler:
 # spack load gcc @ 11.2.1
@@ -29,13 +30,17 @@ export bspec="${SPACK_ROOT}/${USER}/specs"
 # py-${p} % ${my_compiler} ^${my_python}
 declare -a   lalpha=("seaborn" "astropy" "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
 # ${p} % ${my_compiler} ^${my_python}
-declare -a   lbravo=("blitz" "gdb" "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor" "visit")
+declare -a   lbravo=("blitz" "gdb" "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor")
 # ${p} % ${my_compiler} ^${my_python} ^${my_ompi}
-declare -a lcharlie=("paraview" "petsc" "strumpack" "tau" "trilinos" "vtk")
+declare -a lcharlie=("tau" "trilinos" "vtk")
 # ${p} % ${my_compiler}
 declare -a   ldelta=("armadillo" "avizo" "eigen" "environment-modules" "gsl" "lua" "mpc" "mpich" "totalview" "xerces-c")
 # ${p} % ${my_compiler} ^${my_ompi}
 declare -a    lecho=("fftw" "netcdf-c" "netcdf-cxx" "netcdf-fortran" "opencoarrays" "valgrind" "zoltan")
+# ${p} % ${my_compiler} ^${my_python} ^${my_ompi} ^${my_llvm}
+declare -a  lfoxtrot=("paraview" "petsc" "visit")
+# ${p} % ${my_compiler} ^${my_ompi} ^${my_llvm}
+declare -a     lgulf=("strumpack")
 
 # compilers
 declare -a  lgcc=("11.2.0" "10.3.0" "9.4.0" "8.5.0")
@@ -49,7 +54,9 @@ new_step "\${myarch} = ${myarch}"
 #  #  ========================================================= compilers
 
 new_step "install gcc compilers: ${#lgcc[@]} versions"
-export  cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
+echo "\${lgcc[@]} = ${lgcc[@]}"
+export  clicker=0
+export cmd_line=" % ${my_compiler} ${myarch} "
 for g in ${lgcc[@]}; do
     export  log_file="${blogs}/gcc-${g}.txt"
     export spec_file="${bspec}/${p}.txt"
@@ -61,8 +68,9 @@ for g in ${lgcc[@]}; do
 done
 
 new_step "install llvm compilers: ${#lllvm[@]} versions"
+echo "\${lllvm[@]} = ${lllvm[@]}"
 export clicker=0
-export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
+export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
 for l in ${lllvm[@]}; do
     export  log_file="${blogs}/gcc-${v}.txt"
     export spec_file="${bspec}/${p}.txt"
@@ -133,7 +141,31 @@ for p in ${lecho[@]}; do
     spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
 done
 
-#  #  ========================================================= compilers
+#  #  ========================================================= myapp % ${my_compiler} ^${my_python} ^${my_ompi} ^${my_llvm}
+
+new_step "install pattern - myapp % ${my_compiler} ^${my_python} ^${my_ompi} ^${my_llvm}: ${#lfoxtrot[@]} elements"
+echo "\${lfoxtrot[@]} = ${lfoxtrot[@]}"
+export  clicker=0
+export cmd_line=" % ${my_compiler} ^${my_python} ^${my_ompi} ^${my_llvm} ${myarch} "
+for p in ${lcharlie[@]}; do
+    export  log_file="${blogs}/${p}.txt"
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+done
+
+#  #  ========================================================= myapp % ${my_compiler} ^${my_ompi} ^${my_llvm}
+
+new_step "install pattern - myapp % ${my_compiler} ^${my_ompi} ^${my_llvm}: ${#lfoxtrot[@]} elements"
+echo "\${lgulf[@]} = ${lgulf[@]}"
+export  clicker=0
+export cmd_line=" % ${my_compiler} ^${my_ompi} ^${my_llvm} ${myarch} "
+for p in ${lgulf[@]}; do
+    export  log_file="${blogs}/${p}.txt"
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+done
+
+#  #  ========================================================= fin
 
 echo ""
 echo "waiting for threads to complete..."
