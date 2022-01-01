@@ -27,20 +27,15 @@ export blogs="${SPACK_ROOT}/${USER}/build-logs"
 export bspec="${SPACK_ROOT}/${USER}/specs"
 
 # py-${p} % ${my_compiler} ^${my_python}
-declare -a   lalpha=("seaborn" "astropy")
-# "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
+declare -a   lalpha=("seaborn" "astropy" "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
 # ${p} % ${my_compiler} ^${my_python}
-declare -a   lbravo=("blitz" "gdb")
-# "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor" "visit")
+declare -a   lbravo=("blitz" "gdb" "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor" "visit")
 # ${p} % ${my_compiler} ^${my_python} ^${my_ompi}
-declare -a lcharlie=("paraview" "petsc")
-# "strumpack" "tau" "trilinos" "vtk")
+declare -a lcharlie=("paraview" "petsc" "strumpack" "tau" "trilinos" "vtk")
 # ${p} % ${my_compiler}
-declare -a   ldelta=("armadillo" "avizo")
-# "eigen" "environment-modules" "gsl" "lua" "mpc" "mpich" "totalview" "xerces-c")
+declare -a   ldelta=("armadillo" "avizo" "eigen" "environment-modules" "gsl" "lua" "mpc" "mpich" "totalview" "xerces-c")
 # ${p} % ${my_compiler} ^${my_ompi}
-declare -a    lecho=("fftw" "netcdf-c")
-# "netcdf-cxx" "netcdf-fortran" "opencoarrays" "valgrind" "zoltan")
+declare -a    lecho=("fftw" "netcdf-c" "netcdf-cxx" "netcdf-fortran" "opencoarrays" "valgrind" "zoltan")
 
 # compilers
 declare -a  lgcc=("11.2.0" "10.3.0" "9.4.0" "8.5.0")
@@ -51,62 +46,14 @@ declare -a lllvm=("13.0.0" "12.0.1" "11.1.0")
 export myarch="arch=$(spack arch)"
 new_step "\${myarch} = ${myarch}"
 
-new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
-echo "\${lalpha[@]} = ${lalpha[@]}"
-export clicker=0
-for q in ${lalpha[@]}; do
-    export         p="py-${q}"
-    export  log_file="${blogs}/${p}.txt"
-    export  cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
-
-new_step "install pattern - myapp % ${my_compiler} ^${my_python} ${myarch}: ${#lbravo[@]} elements"
-echo "\${lbravo[@]} = ${lbravo[@]}"
-export clicker=0
-for p in ${lbravo[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export  cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
-
-new_step "install pattern - myapp % ${my_compiler} ^${my_python} ^${my_ompi}: ${#lcharlie[@]} elements"
-echo "\${lcharlie[@]} = ${lcharlie[@]}"
-export clicker=0
-for p in ${lcharlie[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export  cmd_line=" % ${my_compiler} ^${my_python} ^${my_ompi} ${myarch} "
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
-
-new_step "install pattern - myapp % ${my_compiler} ${myarch}: ${#ldelta[@]} elements"
-echo "\${ldelta[@]} = ${ldelta[@]}"
-export clicker=0
-for p in ${ldelta[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export  cmd_line=" % ${my_compiler} ${myarch} "
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
-
-new_step "install pattern - myapp % ${my_compiler} ^${my_ompi} ${myarch}: ${#lecho[@]} elements"
-for p in ${lecho[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export  cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
+#  #  ========================================================= compilers
 
 new_step "install gcc compilers: ${#lgcc[@]} versions"
+export  cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
 for g in ${lgcc[@]}; do
     export  log_file="${blogs}/gcc-${g}.txt"
-    export  cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
     export spec_file="${bspec}/${p}.txt"
     spacktion "gcc@${g}" \${cmd_line} \${log_file} \${spec_file}
-    #spacktion "gcc@${g}" ${cmd_line} ${log_file} ${bspec}
 
     sub_step "spack compiler find $(spack location -i gcc@${g} % ${my_compiler})"
     echo     "spack compiler find $(spack location -i gcc@${g} % ${my_compiler})"
@@ -115,17 +62,78 @@ done
 
 new_step "install llvm compilers: ${#lllvm[@]} versions"
 export clicker=0
+export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
 for l in ${lllvm[@]}; do
-    export log_file="${blogs}/gcc-${v}.txt"
-    export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
+    export  log_file="${blogs}/gcc-${v}.txt"
+    export spec_file="${bspec}/${p}.txt"
     spacktion "llvm@${l}" \${cmd_line} \${log_file} \${spec_file}
-    #spacktion "llvm@${l}" ${cmd_line} ${log_file} ${bspec}
 
     sub_step "spack compiler find $(spack location -i llvm@${l} % ${my_compiler})"
     echo     "spack compiler find $(spack location -i llvm@${l} % ${my_compiler})"
               spack compiler find $(spack location -i llvm@${l} % ${my_compiler}) &
 done
-# spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
+
+#  #  ========================================================= py-myapp % ${my_compiler} ^${my_python}
+
+new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
+echo "\${lalpha[@]} = ${lalpha[@]}"
+export  clicker=0
+export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
+for q in ${lalpha[@]}; do
+    export         p="py-${q}"
+    export  log_file="${blogs}/${p}.txt"
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+done
+
+#  #  ========================================================= myapp % ${my_compiler} ^${my_python} ${myarch}
+
+new_step "install pattern - myapp % ${my_compiler} ^${my_python} ${myarch}: ${#lbravo[@]} elements"
+echo "\${lbravo[@]} = ${lbravo[@]}"
+export clicker=0
+export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
+for p in ${lbravo[@]}; do
+    export  log_file="${blogs}/${p}.txt"
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+done
+
+#  #  ========================================================= myapp % ${my_compiler} ^${my_python} ^${my_ompi}
+
+new_step "install pattern - myapp % ${my_compiler} ^${my_python} ^${my_ompi}: ${#lcharlie[@]} elements"
+echo "\${lcharlie[@]} = ${lcharlie[@]}"
+export  clicker=0
+export cmd_line=" % ${my_compiler} ^${my_python} ^${my_ompi} ${myarch} "
+for p in ${lcharlie[@]}; do
+    export  log_file="${blogs}/${p}.txt"
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+done
+
+#  #  ========================================================= myapp % ${my_compiler} ${myarch}
+
+new_step "install pattern - myapp % ${my_compiler} ${myarch}: ${#ldelta[@]} elements"
+echo "\${ldelta[@]} = ${ldelta[@]}"
+export  clicker=0
+export cmd_line=" % ${my_compiler} ${myarch} "
+for p in ${ldelta[@]}; do
+    export  log_file="${blogs}/${p}.txt"
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+done
+
+#  #  ========================================================= myapp % ${my_compiler} ^${my_ompi} ${myarch}
+
+new_step "install pattern - myapp % ${my_compiler} ^${my_ompi} ${myarch}: ${#lecho[@]} elements"
+export  clicker=0
+export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
+for p in ${lecho[@]}; do
+    export  log_file="${blogs}/${p}.txt"
+    export spec_file="${bspec}/${p}.txt"
+    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+done
+
+#  #  ========================================================= compilers
 
 echo ""
 echo "waiting for threads to complete..."

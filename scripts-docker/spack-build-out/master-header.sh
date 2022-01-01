@@ -37,8 +37,8 @@ then
 
     sub_step "spack install ${package} ${spack_args}  > ${log_file}"
     echo     "spack install ${package} ${spack_args}" > ${log_file}
-              spack install ${package} ${spack_args}  | tee -a ${log_file} 2>&1
-              spack spec    ${package} ${spack_args}  >       "${spec_file}/${package}.txt" &
+              spack install ${package} ${spack_args} 2>&1 | tee -a ${log_file}
+              spack spec    ${package} ${spack_args}  > ${spec_file} &
 else
     # find existing build
     echo "Application ${package} already installed."
