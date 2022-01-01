@@ -1,5 +1,5 @@
-#!/bin/sh
-printf '%s\n' "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
+#!/bin/zsh
+printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 
 # Mon Dec 27 21:28:59 UTC 2021
 

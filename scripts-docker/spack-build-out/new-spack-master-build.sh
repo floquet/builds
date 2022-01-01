@@ -43,8 +43,7 @@ declare -a  lfoxtrot=("paraview" "petsc" "visit")
 declare -a     lgulf=("strumpack")
 
 # compilers
-#declare -a  lgcc=("11.2.0" "10.3.0" "9.4.0" "8.5.0")
-declare -a  lgcc=("10.3.0" "9.4.0" "8.5.0")
+declare -a  lgcc=("11.2.0" "10.3.0" "9.4.0" "8.5.0")
 declare -a lllvm=("13.0.0" "12.0.1" "11.1.0")
 
 #  #  ========================================================= declarations end
@@ -86,14 +85,9 @@ done
 
 new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
 echo "\${lalpha[@]} = ${lalpha[@]}"
-export  clicker=0
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-for q in ${lalpha[@]}; do
-    export         p="py-${q}"
-    export  log_file="${blogs}/${p}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
+export list=${lalpha[@]}
+sweeper
 
 #  #  ========================================================= myapp % ${my_compiler} ^${my_python} ${myarch}
 
