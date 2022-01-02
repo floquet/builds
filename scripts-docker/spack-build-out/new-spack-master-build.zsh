@@ -53,7 +53,7 @@ new_step "\${myarch} = ${myarch}"
 new_step "install gcc compilers: ${#lgcc[@]} versions"
 echo "\${lgcc[@]} = ${lgcc[@]}"
 export cmd_line=" % ${my_compiler} ${myarch} "
-declare -a list=${lgcc[@]}
+export list=${lgcc[@]}
 sweeper
 
 new_step "install llvm compilers: ${#lllvm[@]} versions"
@@ -66,7 +66,7 @@ sweeper
 
 new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
 echo "\${lalpha[@]} = ${lalpha[@]}"
-declare -a list=$(echo "$lalpha" | sed 's/[^ ]* */py-&/g')
+export list=$(echo "$lalpha" | sed 's/[^ ]* */py-&/g')
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
 sweeper
 
