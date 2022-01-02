@@ -1,5 +1,5 @@
-#!/bin/sh
-printf '%s\n' "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
+#!/bin/zsh
+printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 
 # Mon Dec 27 21:28:59 UTC 2021
 
@@ -52,33 +52,15 @@ new_step "\${myarch} = ${myarch}"
 
 new_step "install gcc compilers: ${#lgcc[@]} versions"
 echo "\${lgcc[@]} = ${lgcc[@]}"
-export  clicker=0
 export cmd_line=" % ${my_compiler} ${myarch} "
-for g in ${lgcc[@]}; do
-    export  log_file="${blogs}/gcc-${g}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    export info_file="${binfo}/${p}.txt"
-    spacktion "gcc@${g}" \${cmd_line} \${log_file} \${spec_file}
-
-    sub_step "spack compiler find $(spack location -i gcc@${g} % ${my_compiler})"
-    echo     "spack compiler find $(spack location -i gcc@${g} % ${my_compiler})"
-              spack compiler find $(spack location -i gcc@${g} % ${my_compiler}) &
-done
+declare -a list=${lgcc[@]}
+sweeper
 
 new_step "install llvm compilers: ${#lllvm[@]} versions"
 echo "\${lllvm[@]} = ${lllvm[@]}"
-export clicker=0
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-for l in ${lllvm[@]}; do
-    export  log_file="${blogs}/llvm-${l}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    export info_file="${binfo}/${p}.txt"
-    spacktion "llvm@${l}" \${cmd_line} \${log_file} \${spec_file}
-
-    sub_step "spack compiler find $(spack location -i llvm@${l} % ${my_compiler})"
-    echo     "spack compiler find $(spack location -i llvm@${l} % ${my_compiler})"
-              spack compiler find $(spack location -i llvm@${l} % ${my_compiler}) &
-done
+declare -a list=${lllvm[@]}
+sweeper
 
 #  #  ========================================================= py-myapp % ${my_compiler} ^${my_python}
 
@@ -93,67 +75,48 @@ sweeper
 new_step "install pattern - myapp % ${my_compiler} ^${my_python} ${myarch}: ${#lbravo[@]} elements"
 echo "\${lbravo[@]} = ${lbravo[@]}"
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-export list=${lbeta[@]}
+declare -a list=${lbravo[@]}
 sweeper
 
 #  #  ========================================================= myapp % ${my_compiler} ^${my_python} ^${my_ompi}
 
 new_step "install pattern - myapp % ${my_compiler} ^${my_python} ^${my_ompi}: ${#lcharlie[@]} elements"
 echo "\${lcharlie[@]} = ${lcharlie[@]}"
-export  clicker=0
 export cmd_line=" % ${my_compiler} ^${my_python} ^${my_ompi} ${myarch} "
-for p in ${lcharlie[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
+declare -a list=${lcharlie[@]}
+sweeper
 
 #  #  ========================================================= myapp % ${my_compiler} ${myarch}
 
 new_step "install pattern - myapp % ${my_compiler} ${myarch}: ${#ldelta[@]} elements"
 echo "\${ldelta[@]} = ${ldelta[@]}"
-export  clicker=0
 export cmd_line=" % ${my_compiler} ${myarch} "
-for p in ${ldelta[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
+declare -a list=${ldelta[@]}
+sweeper
 
 #  #  ========================================================= myapp % ${my_compiler} ^${my_ompi} ${myarch}
 
 new_step "install pattern - myapp % ${my_compiler} ^${my_ompi} ${myarch}: ${#lecho[@]} elements"
-export  clicker=0
+echo "\${lecho[@]} = ${lecho[@]}"
 export cmd_line=" % ${my_compiler} ^${my_ompi} ${myarch} "
-for p in ${lecho[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
+declare -a list=${lecho[@]}
+sweeper
 
 #  #  ========================================================= myapp % ${my_compiler} ^${my_python} ^${my_ompi} ^${my_llvm}
 
 new_step "install pattern - myapp % ${my_compiler} ^${my_python} ^${my_ompi} ^${my_llvm}: ${#lfoxtrot[@]} elements"
 echo "\${lfoxtrot[@]} = ${lfoxtrot[@]}"
-export  clicker=0
 export cmd_line=" % ${my_compiler} ^${my_python} ^${my_ompi} ^${my_llvm} ${myarch} "
-for p in ${lcharlie[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
+declare -a list=${lfoxtrot[@]}
+sweeper
 
 #  #  ========================================================= myapp % ${my_compiler} ^${my_ompi} ^${my_llvm}
 
 new_step "install pattern - myapp % ${my_compiler} ^${my_ompi} ^${my_llvm}: ${#lfoxtrot[@]} elements"
 echo "\${lgulf[@]} = ${lgulf[@]}"
-export  clicker=0
 export cmd_line=" % ${my_compiler} ^${my_ompi} ^${my_llvm} ${myarch} "
-for p in ${lgulf[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
+declare -a list=${lgulf[@]}
+sweeper
 
 #  #  ========================================================= fin
 
