@@ -45,8 +45,9 @@ then
     echo "No system definition for ${package} in ${dist}-${release}."
     echo "Using Spack to build ${package}."
 
-    sub_step "spack install ${package} ${spack_args}  > ${log_file}"
-    echo     "spack install ${package} ${spack_args}" > ${log_file}
+    sub_step "spack install ${package} ${spack_args}  >  ${log_file}"
+    echo     "$(date +%Y-%m-%d\ %H:%M)"               >  ${log_file}
+    echo     "spack install ${package} ${spack_args}" >> ${log_file}
               spack install ${package} ${spack_args} 2>&1 | tee -a ${log_file}
               spack spec    ${package} ${spack_args}  > ${spec_file} &
               spack info    ${package}                > ${info_file} &

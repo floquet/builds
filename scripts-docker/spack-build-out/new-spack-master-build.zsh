@@ -82,7 +82,7 @@ done
 
 new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
 echo "\${lalpha[@]} = ${lalpha[@]}"
-export list=$(echo "$lalpha" | sed 's/[^ ]* */py-&/g')
+declare -a list=$(echo "$lalpha" | sed 's/[^ ]* */py-&/g')
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
 sweeper
 

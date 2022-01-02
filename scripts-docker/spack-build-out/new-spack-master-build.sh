@@ -3,6 +3,7 @@ printf '%s\n' "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Mon Dec 27 21:28:59 UTC 2021
 
+
 # define: new_step
 # define: sub_step
 # define: spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
@@ -82,7 +83,7 @@ done
 
 new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
 echo "\${lalpha[@]} = ${lalpha[@]}"
-export list=$(echo "$lalpha" | sed 's/[^ ]* */py-&/g')
+declare -a list=$(echo "$lalpha" | sed 's/[^ ]* */py-&/g')
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
 sweeper
 
