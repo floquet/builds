@@ -6,7 +6,7 @@ printf '%s\n' "$(tput bold)$(date) ${HOME}/${BASH_SOURCE[0]}$(tput sgr0)"
 # define: new_step
 # define: sub_step
 # define: spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
-source ${repo_scripts_docker}/spack-build-out/master-header.sh
+source ${repo_scripts_docker}/spack-build-out/beta/master-header.sh
 
 # spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
 

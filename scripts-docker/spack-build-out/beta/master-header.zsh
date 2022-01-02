@@ -4,12 +4,12 @@ printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 # Mon Dec 27 21:28:59 UTC 2021
 
 # keep records on spack builds
-export  blog="${SPACK_ROOT}/build-logs"
+export blogs="${SPACK_ROOT}/build-logs"
 export bspec="${SPACK_ROOT}/specs"
 export binfo="${SPACK_ROOT}/info"
 
 # should be created by generic-kickstart.sh
-mkdir -p ${blog}
+mkdir -p ${blogs}
 mkdir -p ${bspec}
 mkdir -p ${binfo}
 
@@ -36,27 +36,13 @@ function spacktion(){
     eval spack_args=$2
     eval   log_file=$3
     eval  spec_file=$4
-# 1. Build with package manager (yum, apt-get etc.), otherwise...
-# 2. Build with Spack
-if ! command -v ${1} &> /dev/null
-then
-    # build with spack
-    echo ""
-    echo "No system definition for ${package} in ${dist}-${release}."
-    echo "Using Spack to build ${package}."
 
     sub_step "spack install ${package} ${spack_args}  >  ${log_file}"
     echo     "$(date +%Y-%m-%d\ %H:%M)"               >  ${log_file}
     echo     "spack install ${package} ${spack_args}" >> ${log_file}
-              spack install ${package} ${spack_args} 2>&1 | tee -a ${log_file}
+              #spack install ${package} ${spack_args} 2>&1 | tee -a ${log_file}
               spack spec    ${package} ${spack_args}  > ${spec_file} &
               spack info    ${package}                > ${info_file} &
-else
-    # find existing build
-    echo "Application ${package} already installed."
-    echo "command -v ${package}"
-          command -v ${package}
-fi
 }
 
 function sweeper(){
