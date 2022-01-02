@@ -58,6 +58,7 @@ export cmd_line=" % ${my_compiler} ${myarch} "
 for g in ${lgcc[@]}; do
     export  log_file="${blogs}/gcc-${g}.txt"
     export spec_file="${bspec}/${p}.txt"
+    export info_file="${binfo}/${p}.txt"
     spacktion "gcc@${g}" \${cmd_line} \${log_file} \${spec_file}
 
     sub_step "spack compiler find $(spack location -i gcc@${g} % ${my_compiler})"
@@ -70,8 +71,9 @@ echo "\${lllvm[@]} = ${lllvm[@]}"
 export clicker=0
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
 for l in ${lllvm[@]}; do
-    export  log_file="${blogs}/gcc-${v}.txt"
+    export  log_file="${blogs}/gcc-${l}.txt"
     export spec_file="${bspec}/${p}.txt"
+    export info_file="${binfo}/${p}.txt"
     spacktion "llvm@${l}" \${cmd_line} \${log_file} \${spec_file}
 
     sub_step "spack compiler find $(spack location -i llvm@${l} % ${my_compiler})"
