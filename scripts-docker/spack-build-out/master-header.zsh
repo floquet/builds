@@ -4,14 +4,20 @@ printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 # Mon Dec 27 21:28:59 UTC 2021
 
 # keep records on spack builds
-export  blog="${SPACK_ROOT}/build-logs"
-export bspec="${SPACK_ROOT}/specs"
-export binfo="${SPACK_ROOT}/info"
+export blogs="${SPACK_ROOT}/${USER}/build-logs"
+export bspec="${SPACK_ROOT}/${USER}/specs"
+export binfo="${SPACK_ROOT}/${USER}/info"
 
 # should be created by generic-kickstart.sh
-mkdir -p ${blog}
-mkdir -p ${bspec}
-mkdir -p ${binfo}
+echo "mkdir -p ${blogs}"
+      mkdir -p ${blogs}
+
+echo "mkdir -p ${bspec}"
+      mkdir -p ${bspec}
+
+echo "mkdir -p ${binfo}"
+      mkdir -p ${binfo}
+
 
 # counts steps in batch process
 export counter=0
@@ -49,8 +55,8 @@ then
     echo     "$(date +%Y-%m-%d\ %H:%M)"               >  ${log_file}
     echo     "spack install ${package} ${spack_args}" >> ${log_file}
               spack install ${package} ${spack_args} 2>&1 | tee -a ${log_file}
-              spack spec    ${package} ${spack_args}  > ${spec_file} &
-              spack info    ${package}                > ${info_file} &
+              spack spec    ${package} ${spack_args}  2>&1 ${spec_file} &
+              spack info    ${package}                2>&1 ${info_file} &
 else
     # find existing build
     echo "Application ${package} already installed."
@@ -60,6 +66,7 @@ fi
 }
 
 function sweeper(){
+echo "${#list[@]} elements: ${list[@]}"
 export  clicker=0
 for p in ${list}; do
     export  log_file="${blogs}/${p}.txt"

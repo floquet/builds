@@ -6,7 +6,7 @@ printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 # define: new_step
 # define: sub_step
 # define: spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
-source ${repo_scripts_docker}/spack-build-out/master-header.zsh
+source ${repo_scripts_docker}/spack-build-out/beta/master-header.zsh
 
 # spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
 
@@ -63,10 +63,9 @@ new_step "\${myarch} = ${myarch}"
 
 #  #  ========================================================= myapp % ${my_compiler} ^${my_python} ${myarch}
 
-new_step "install pattern - myapp % ${my_compiler} ^${my_python} ${myarch}: ${#lbravo[@]} elements"
-echo "\${lbravo[@]} = ${lbravo[@]}"
+new_step "install pattern - myapp % ${my_compiler} ^${my_python} ${myarch}"
+declare -a   list=("blitz" "gdb" "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor")
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-export list=${lbravo[@]}
 sweeper
 
 #  #  ========================================================= fin

@@ -47,10 +47,11 @@ function spacktion(){
 
 function sweeper(){
 export  clicker=0
-for p in ${list}; do
+for p in ${list[@]}; do
+    echo "\${p} = ${p}"
     export  log_file="${blogs}/${p}.txt"
     export spec_file="${bspec}/${p}.txt"
     export info_file="${binfo}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
+    #spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
 done
 }
