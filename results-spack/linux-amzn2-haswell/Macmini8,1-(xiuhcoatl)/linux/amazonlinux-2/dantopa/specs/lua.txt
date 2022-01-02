@@ -1,0 +1,12 @@
+Input spec
+--------------------------------
+lua%gcc@7.3.1 arch=linux-amzn2-haswell
+
+Concretized
+--------------------------------
+lua@5.3.5%gcc@7.3.1~pcfile+shared arch=linux-amzn2-haswell
+    ^ncurses@6.2%gcc@7.3.1~symlinks+termlib abi=none arch=linux-amzn2-haswell
+        ^pkgconf@1.8.0%gcc@7.3.1 arch=linux-amzn2-haswell
+    ^readline@8.1%gcc@7.3.1 arch=linux-amzn2-haswell
+    ^unzip@6.0%gcc@7.3.1 arch=linux-amzn2-haswell
+

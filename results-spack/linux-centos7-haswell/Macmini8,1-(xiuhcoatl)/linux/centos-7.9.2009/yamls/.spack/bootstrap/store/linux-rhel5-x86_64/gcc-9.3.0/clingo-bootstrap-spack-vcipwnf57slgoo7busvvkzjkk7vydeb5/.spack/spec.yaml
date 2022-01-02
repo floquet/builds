@@ -1,0 +1,445 @@
+spec:
+- clingo-bootstrap:
+    version: spack
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      build_type: Release
+      docs: false
+      ipo: false
+      python: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: tqjlzmemb74j34syogelpufi4ejiill5n2wnnqusoadbecdiwyna====
+    dependencies:
+      bison:
+        hash: no5e56yhv6iuoszahrmuxsudlmdaldqs
+        type:
+        - build
+      cmake:
+        hash: gbdy5l3mga466zwuk3lspl4kadnmuy3j
+        type:
+        - build
+      python:
+        hash: w3iexeeanwuhaxe7jsnzbvwzgsucr7ar
+        type:
+        - build
+        - link
+        - run
+      re2c:
+        hash: hp35mncs6kzdxs2vaiiyrcluaxhyn24t
+        type:
+        - build
+    hash: vcipwnf57slgoo7busvvkzjkk7vydeb5
+    full_hash: gkq4w4tsph2hk4thfje4fz3v3phskgvb
+    build_hash: sigmbzthtwsldai3pthei7oxbbftvte6
+- bison:
+    version: 3.7.6
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: utaj4agby7ux2pkqb77siimuxipxpr4pirdpwewphtmdj7gpx4lq====
+    dependencies:
+      diffutils:
+        hash: ryajd7ixgxr2moie32lxdcn3yjxitmp3
+        type:
+        - build
+      m4:
+        hash: lmdbdvwjbuaimiqntah5ipqk77txnuhq
+        type:
+        - build
+        - run
+      perl:
+        hash: s3zuwl4bcdjiebbg2ab2f562ob622pdt
+        type:
+        - build
+    hash: wzq5kc5jnv66vfmqyhxpktdpdzaxipmk
+    full_hash: no5e56yhv6iuoszahrmuxsudlmdaldqs
+    build_hash: kp4goxht4v57tl2er4zsydtglpcljctn
+- diffutils:
+    version: '3.7'
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: qr3makpnpaqtgtq2jrivxcttliunazzahltg6ogsjbbuqzqhnvxq====
+    dependencies:
+      libiconv:
+        hash: k22bbakyc4uhmlsxx7wtuilkbgegskln
+        type:
+        - build
+        - link
+    hash: m7e63jwtevwam224volsc4fxtn6rzhby
+    full_hash: ryajd7ixgxr2moie32lxdcn3yjxitmp3
+    build_hash: m7e63jwtevwam224volsc4fxtn6rzhby
+- libiconv:
+    version: '1.16'
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: btkg7xn7dblignzlu4mkv57kxqoy2jaewghby6ukksp4jgvd4dxq====
+    hash: scpkgy6bmk3wcgfwzoiv7hw74drmnaoi
+    full_hash: k22bbakyc4uhmlsxx7wtuilkbgegskln
+    build_hash: scpkgy6bmk3wcgfwzoiv7hw74drmnaoi
+- m4:
+    version: 1.4.19
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      sigsegv: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: phee5kgfcmd4af3bgml3uv4jb6ec7ktfxwfcbov5hyeicbr6inja====
+    dependencies:
+      libsigsegv:
+        hash: 73txrqsx75jton4d5trm6ygtt3r2an6j
+        type:
+        - build
+        - link
+    hash: clnhd4taj7jsyir55u6cgmxzf5f7ivyl
+    full_hash: lmdbdvwjbuaimiqntah5ipqk77txnuhq
+    build_hash: clnhd4taj7jsyir55u6cgmxzf5f7ivyl
+- libsigsegv:
+    version: '2.13'
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: tevlppb6sgtqxa7uv2jguzfgdf6sfvow5x57hynijbeh7rvyd3ba====
+    hash: gcqb4eauihvzbolwroyytfqbejt57a4o
+    full_hash: 73txrqsx75jton4d5trm6ygtt3r2an6j
+    build_hash: gcqb4eauihvzbolwroyytfqbejt57a4o
+- perl:
+    version: 5.34.0
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cpanm: true
+      shared: true
+      threads: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: vrzqumybfbqnn4wncoiggl4mnt3t47mivsm5e2hi6vjj7yuub5za====
+    dependencies:
+      berkeley-db:
+        hash: quca4cafnmkefsyjc5qv7xak276bik3d
+        type:
+        - build
+        - link
+      gdbm:
+        hash: dy2nxupxtkwkqdvg544pktyoohi6tvvw
+        type:
+        - build
+        - link
+    hash: it3shtblcs7qnuqghhip763zlhwzjexl
+    full_hash: s3zuwl4bcdjiebbg2ab2f562ob622pdt
+    build_hash: db7eh52xiroil5b7kf7btigsnk6fi7ke
+- berkeley-db:
+    version: 18.1.40
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cxx: true
+      docs: false
+      patches:
+      - b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522
+      stl: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    patches:
+    - b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522
+    package_hash: xvah532upxmmv332zmvfgxo4j4lkroeonvwjswr56bi6ut7xoomq====
+    hash: wcxn2fh2pjogmfygjabjqnupfhct7422
+    full_hash: quca4cafnmkefsyjc5qv7xak276bik3d
+    build_hash: wcxn2fh2pjogmfygjabjqnupfhct7422
+- gdbm:
+    version: '1.19'
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: 56zn4zpkyt7u25tp6mekjkn2v64fbyhnn6ammhfwf5b6ihrnghhq====
+    dependencies:
+      readline:
+        hash: zki366taesb6dmuslh4dilisyhsmp6ap
+        type:
+        - build
+        - link
+    hash: twokobf3lubmpldusc4lzemfwdqf67wh
+    full_hash: dy2nxupxtkwkqdvg544pktyoohi6tvvw
+    build_hash: lixjfih2x4wp4q5peehqulijmwggyfmd
+- readline:
+    version: '8.1'
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: hefaic7tsd6jf2bxnuq3ez6wplocpq6dbggqxu2caxctt7swpkhq====
+    dependencies:
+      ncurses:
+        hash: j5knf2yusxw72zz5obewu7utqigpe2xi
+        type:
+        - build
+        - link
+    hash: t7qug6c7f46l6z2p3cjykwqmgf2sfest
+    full_hash: zki366taesb6dmuslh4dilisyhsmp6ap
+    build_hash: a2zp5unruabrdvod6ebg4xtek7ftbaby
+- ncurses:
+    version: '6.2'
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      abi: none
+      symlinks: false
+      termlib: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: kxb6wffubprtuq7qymnba76lgbnh7pwmuems5ffb5in6b3bntpqq====
+    dependencies:
+      pkgconf:
+        hash: 6wnmrkvsi2r55f5legho4o5wsp6zaus3
+        type:
+        - build
+    hash: nxptemchk4h6nard55znzicdozv4yask
+    full_hash: j5knf2yusxw72zz5obewu7utqigpe2xi
+    build_hash: uw2tnm3bgnvwhbk7knh2buczyzueqci5
+- pkgconf:
+    version: 1.7.4
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: qfn724ykl4qehjlvuqnlkko7y5iayxglkx7okhfa5r4ydhtezjiq====
+    hash: owwxfmrhm6c2jgvaoe52bf4ur6nw4by2
+    full_hash: 6wnmrkvsi2r55f5legho4o5wsp6zaus3
+    build_hash: owwxfmrhm6c2jgvaoe52bf4ur6nw4by2
+- cmake:
+    version: 3.18.4
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      build_type: Release
+      doc: false
+      ncurses: true
+      openssl: true
+      ownlibs: true
+      patches:
+      - bf695e3febb222da2ed94b3beea600650e4318975da90e4a71d6f31a6d5d8c3d
+      qt: false
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    external:
+      path: /home/spack/.local
+      module:
+      extra_attributes: {}
+    patches:
+    - bf695e3febb222da2ed94b3beea600650e4318975da90e4a71d6f31a6d5d8c3d
+    package_hash: obhuh4ttgskbarva465og7me55xts7pa32ghj6wmcxjugal6i2ya====
+    hash: ojcvvs4r5y7oa7v4kd6qqirzc272gxkk
+    full_hash: gbdy5l3mga466zwuk3lspl4kadnmuy3j
+    build_hash: ojcvvs4r5y7oa7v4kd6qqirzc272gxkk
+- python:
+    version: '3.6'
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      bz2: true
+      ctypes: true
+      dbm: true
+      debug: false
+      libxml2: true
+      lzma: true
+      nis: false
+      optimizations: false
+      pic: true
+      pyexpat: true
+      pythoncmd: true
+      readline: true
+      shared: true
+      sqlite3: true
+      ssl: true
+      tix: false
+      tkinter: false
+      ucs4: false
+      uuid: true
+      zlib: true
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    external:
+      path: /opt/python/cp36-cp36m
+      module:
+      extra_attributes: {}
+    package_hash: t7qgawvg7drqlbq54fhymyczwj2d6rve4edfrfmtromavdjzvnya====
+    hash: rqq6sr26hoegrk2pobss54hhhprmtlix
+    full_hash: w3iexeeanwuhaxe7jsnzbvwzgsucr7ar
+    build_hash: rqq6sr26hoegrk2pobss54hhhprmtlix
+- re2c:
+    version: 1.2.1
+    arch:
+      platform: linux
+      platform_os: rhel5
+      target: x86_64
+    compiler:
+      name: gcc
+      version: 9.3.0
+    namespace: builtin
+    parameters:
+      cflags: []
+      cppflags: []
+      cxxflags: []
+      fflags: []
+      ldflags: []
+      ldlibs: []
+    package_hash: pvtxreyb5zz62oil5aezcfaqmvnnkakujhvsj5exhlvqk2euppga====
+    hash: 7vzetxgvwn2w4budc2jzelokynaxi434
+    full_hash: hp35mncs6kzdxs2vaiiyrcluaxhyn24t
+    build_hash: 7vzetxgvwn2w4budc2jzelokynaxi434

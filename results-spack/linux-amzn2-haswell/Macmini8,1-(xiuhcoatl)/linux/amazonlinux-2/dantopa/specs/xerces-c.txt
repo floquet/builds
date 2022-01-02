@@ -1,0 +1,20 @@
+Input spec
+--------------------------------
+xerces-c%gcc@7.3.1 arch=linux-amzn2-haswell
+
+Concretized
+--------------------------------
+xerces-c@3.2.3%gcc@7.3.1 cxxstd=default netaccessor=curl transcoder=gnuiconv arch=linux-amzn2-haswell
+    ^curl@7.80.0%gcc@7.3.1~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=openssl arch=linux-amzn2-haswell
+        ^openssl@1.1.1l%gcc@7.3.1~docs certs=system arch=linux-amzn2-haswell
+            ^perl@5.34.0%gcc@7.3.1+cpanm+shared+threads arch=linux-amzn2-haswell
+                ^berkeley-db@18.1.40%gcc@7.3.1+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-amzn2-haswell
+                ^bzip2@1.0.8%gcc@7.3.1~debug~pic+shared arch=linux-amzn2-haswell
+                    ^diffutils@3.8%gcc@7.3.1 arch=linux-amzn2-haswell
+                        ^libiconv@1.16%gcc@7.3.1 libs=shared,static arch=linux-amzn2-haswell
+                ^gdbm@1.19%gcc@7.3.1 arch=linux-amzn2-haswell
+                    ^readline@8.1%gcc@7.3.1 arch=linux-amzn2-haswell
+                        ^ncurses@6.2%gcc@7.3.1~symlinks+termlib abi=none arch=linux-amzn2-haswell
+                            ^pkgconf@1.8.0%gcc@7.3.1 arch=linux-amzn2-haswell
+                ^zlib@1.2.11%gcc@7.3.1+optimize+pic+shared arch=linux-amzn2-haswell
+

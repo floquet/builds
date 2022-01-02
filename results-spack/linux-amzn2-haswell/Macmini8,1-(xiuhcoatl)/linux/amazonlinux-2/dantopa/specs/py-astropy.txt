@@ -1,0 +1,46 @@
+Input spec
+--------------------------------
+py-astropy%gcc@7.3.1
+    ^python@3.10.1 arch=linux-amzn2-haswell
+
+Concretized
+--------------------------------
+py-astropy@4.0.1.post1%gcc@7.3.1~extras arch=linux-amzn2-haswell
+    ^cfitsio@3.49%gcc@7.3.1+bzip2+shared arch=linux-amzn2-haswell
+        ^bzip2@1.0.8%gcc@7.3.1~debug~pic+shared arch=linux-amzn2-haswell
+            ^diffutils@3.8%gcc@7.3.1 arch=linux-amzn2-haswell
+                ^libiconv@1.16%gcc@7.3.1 libs=shared,static arch=linux-amzn2-haswell
+        ^curl@7.80.0%gcc@7.3.1~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=openssl arch=linux-amzn2-haswell
+            ^openssl@1.1.1l%gcc@7.3.1~docs certs=system arch=linux-amzn2-haswell
+                ^perl@5.34.0%gcc@7.3.1+cpanm+shared+threads arch=linux-amzn2-haswell
+                    ^berkeley-db@18.1.40%gcc@7.3.1+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-amzn2-haswell
+                    ^gdbm@1.19%gcc@7.3.1 arch=linux-amzn2-haswell
+                        ^readline@8.1%gcc@7.3.1 arch=linux-amzn2-haswell
+                            ^ncurses@6.2%gcc@7.3.1~symlinks+termlib abi=none arch=linux-amzn2-haswell
+                                ^pkgconf@1.8.0%gcc@7.3.1 arch=linux-amzn2-haswell
+                    ^zlib@1.2.11%gcc@7.3.1+optimize+pic+shared arch=linux-amzn2-haswell
+    ^erfa@1.7.0%gcc@7.3.1 arch=linux-amzn2-haswell
+    ^expat@2.4.1%gcc@7.3.1+libbsd arch=linux-amzn2-haswell
+        ^libbsd@0.11.3%gcc@7.3.1 arch=linux-amzn2-haswell
+            ^libmd@1.0.3%gcc@7.3.1 arch=linux-amzn2-haswell
+    ^py-cython@0.29.24%gcc@7.3.1 arch=linux-amzn2-haswell
+        ^py-setuptools@59.4.0%gcc@7.3.1 arch=linux-amzn2-haswell
+            ^python@3.10.1%gcc@7.3.1+bz2+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4 arch=linux-amzn2-haswell
+                ^gettext@0.21%gcc@7.3.1+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-amzn2-haswell
+                    ^libxml2@2.9.12%gcc@7.3.1~python arch=linux-amzn2-haswell
+                        ^xz@5.2.5%gcc@7.3.1~pic libs=shared,static arch=linux-amzn2-haswell
+                    ^tar@1.34%gcc@7.3.1 arch=linux-amzn2-haswell
+                ^libffi@3.3%gcc@7.3.1 patches=26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0 arch=linux-amzn2-haswell
+                ^sqlite@3.36.0%gcc@7.3.1+column_metadata+fts~functions~rtree arch=linux-amzn2-haswell
+                ^util-linux-uuid@2.36.2%gcc@7.3.1 arch=linux-amzn2-haswell
+    ^py-numpy@1.21.5%gcc@7.3.1+blas+lapack patches=873745d7b547857fcfec9cae90b09c133b42a4f0c23b6c2d84cf37e2dd816604 arch=linux-amzn2-haswell
+        ^openblas@0.3.10%gcc@7.3.1~bignuma~consistent_fpcsr~ilp64+locking+pic+shared patches=865703b4f405543bbd583413fdeff2226dfda908be33639276c06e5aa7ae2cae symbol_suffix=none threads=none arch=linux-amzn2-haswell
+    ^wcslib@7.3%gcc@7.3.1~cfitsio~x arch=linux-amzn2-haswell
+        ^flex@2.6.3%gcc@7.3.1+lex~nls arch=linux-amzn2-haswell
+            ^bison@3.8.2%gcc@7.3.1 arch=linux-amzn2-haswell
+                ^m4@1.4.19%gcc@7.3.1+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89 arch=linux-amzn2-haswell
+                    ^libsigsegv@2.13%gcc@7.3.1 arch=linux-amzn2-haswell
+            ^findutils@4.8.0%gcc@7.3.1 arch=linux-amzn2-haswell
+        ^gmake@4.3%gcc@7.3.1~guile+nls arch=linux-amzn2-haswell
+            ^texinfo@6.5%gcc@7.3.1 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-amzn2-haswell
+

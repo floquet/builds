@@ -1,0 +1,557 @@
+spack install gdl  % gcc@11.2.0 ^python@3.10.1 arch=linux-centos7-haswell 
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+==> Installing berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+==> No binary for berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/repos/builtin/packages/berkeley-db/drop-docs.patch
+==> Ran patch() for berkeley-db
+==> berkeley-db: Executing phase: 'autoreconf'
+==> berkeley-db: Executing phase: 'configure'
+==> berkeley-db: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 2:
+    'make' '-j11' 'V=1'
+
+2 errors found in build log:
+     521    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock.c
+     522    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verif
+            y_auto.c  -fPIC -DPIC -o .libs/log_verify_auto.o
+     523    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock.c  
+            -fPIC -DPIC -o .libs/lock.o
+     524    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_deadlock.c
+     525    during GIMPLE pass: vect
+     526    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c: In function '__lv_pack_txn_vrfy_info.isra':
+  >> 527    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c:501:1: internal compiler error: Segmentation fault
+     528      501 | __lv_pack_txn_vrfy_info(txninfop, key, data)
+     529          | ^~~~~~~~~~~~~~~~~~~~~~~
+     530    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_dea
+            dlock.c  -fPIC -DPIC -o .libs/lock_deadlock.o
+     531    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_failchk.c
+     532    0xb2e49f crash_signal
+     533    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+
+     ...
+
+     560    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     561    Please submit a full bug report,
+     562    with preprocessed source if appropriate.
+     563    Please include the complete backtrace with any bug report.
+     564    See <https://github.com/spack/spack/issues> for instructions.
+     565    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_fai
+            lchk.c  -fPIC -DPIC -o .libs/lock_failchk.o
+  >> 566    make: *** [log_verify_util.lo] Error 1
+     567    make: *** Waiting for unfinished jobs....
+     568    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_id.
+            c  -fPIC -DPIC -o .libs/lock_id.o
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-build-out.txt
+
+==> Warning: Skipping build of perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks since berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 failed
+==> Warning: Skipping build of perl-html-tagset-3.20-pziiozawlm2ii4cxpw4qfh2vzvf73x5k since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-html-parser-3.72-pts4z2fwcrkvwrzrlsl4wzalzaqiexmf since perl-html-tagset-3.20-pziiozawlm2ii4cxpw4qfh2vzvf73x5k failed
+==> Warning: Skipping build of perl-libwww-perl-6.33-px22ps2x57ogf6okuhndha2viagmihay since perl-html-parser-3.72-pts4z2fwcrkvwrzrlsl4wzalzaqiexmf failed
+==> Warning: Skipping build of perl-xml-parser-2.44-h4dh2aftceddjif2xhfs42jj2yaddjxu since perl-libwww-perl-6.33-px22ps2x57ogf6okuhndha2viagmihay failed
+==> Warning: Skipping build of intltool-0.51.0-wbm7qce6djb55msi3hpt4b742mrihhsg since perl-xml-parser-2.44-h4dh2aftceddjif2xhfs42jj2yaddjxu failed
+==> Warning: Skipping build of shared-mime-info-1.9-lgbtbfwwsh2dyjrsr6boysmapj7cwffx since intltool-0.51.0-wbm7qce6djb55msi3hpt4b742mrihhsg failed
+==> Warning: Skipping build of librsvg-2.51.0-wtjpnembdtc5mhyv6fup4hfk64uueyil since shared-mime-info-1.9-lgbtbfwwsh2dyjrsr6boysmapj7cwffx failed
+==> Warning: Skipping build of gtkplus-3.24.29-pqhhabenbpcpd4qgdsied5x6wlwnyjmc since librsvg-2.51.0-wtjpnembdtc5mhyv6fup4hfk64uueyil failed
+==> Warning: Skipping build of plplot-5.15.0-3mprhaxql6hoksb5w363lrnkhp4uivqs since gtkplus-3.24.29-pqhhabenbpcpd4qgdsied5x6wlwnyjmc failed
+==> Warning: Skipping build of gdl-0.9.9-q3dfridcrcrquaeg462p4eksujdg3t4c since plplot-5.15.0-3mprhaxql6hoksb5w363lrnkhp4uivqs failed
+==> Warning: Skipping build of gdk-pixbuf-2.42.6-56zbzlzb3dr7cw74bf3zvaudaukpgqk6 since shared-mime-info-1.9-lgbtbfwwsh2dyjrsr6boysmapj7cwffx failed
+==> Warning: Skipping build of perl-uri-1.72-v4vmb6rivup63gsf5fajhw7ga6z554y5 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-net-http-6.17-qp4oivjg6smzjfupnkdej2ddpnmvwyfx since perl-uri-1.72-v4vmb6rivup63gsf5fajhw7ga6z554y5 failed
+==> Warning: Skipping build of perl-www-robotrules-6.02-nxom2culx5izc76dyvm26i2h2q36kl5o since perl-uri-1.72-v4vmb6rivup63gsf5fajhw7ga6z554y5 failed
+==> Warning: Skipping build of perl-http-message-6.13-pncho76gsmlutimdh3pdotzklueneelm since perl-uri-1.72-v4vmb6rivup63gsf5fajhw7ga6z554y5 failed
+==> Warning: Skipping build of perl-http-daemon-6.01-v4tmtsdqo7qdyymm5xirqkk4bchtbx5o since perl-http-message-6.13-pncho76gsmlutimdh3pdotzklueneelm failed
+==> Warning: Skipping build of perl-http-cookies-6.04-trxtensveotmk7gv562ol67mct47gnoy since perl-http-message-6.13-pncho76gsmlutimdh3pdotzklueneelm failed
+==> Warning: Skipping build of perl-http-negotiate-6.01-2qajpasnd2yboa7aqfdhyr6v4p5zkiw4 since perl-http-message-6.13-pncho76gsmlutimdh3pdotzklueneelm failed
+==> Warning: Skipping build of perl-module-build-0.4224-gbar7zhruaardco2wd4eznbwbjf3fcpj since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-module-build-tiny-0.039-3ceaehsfugflhe4yyayw6qbjz6g4xasu since perl-module-build-0.4224-gbar7zhruaardco2wd4eznbwbjf3fcpj failed
+==> Warning: Skipping build of perl-try-tiny-0.28-s26tj6y4otsoszr7e2b3ax4auo67qu3a since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-extutils-config-0.008-n7rcsqgbjgh6twz7ted6n7k73sci2pto since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-extutils-installpaths-0.012-xwrgyi7lgqlcudq5q3ltw36bzt4nzn5d since perl-extutils-config-0.008-n7rcsqgbjgh6twz7ted6n7k73sci2pto failed
+==> Warning: Skipping build of autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of cairo-1.16.0-ndgh7ahhyweerp2d2ss5stbfez6fy6b7 since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of gobject-introspection-1.56.1-gd76reykfiebjfzuog6rs6tqhhh7rcrw since cairo-1.16.0-ndgh7ahhyweerp2d2ss5stbfez6fy6b7 failed
+==> Warning: Skipping build of at-spi2-core-2.40.1-v3amjlebzdtsharpwzv4dp7ujr5nb2k5 since gobject-introspection-1.56.1-gd76reykfiebjfzuog6rs6tqhhh7rcrw failed
+==> Warning: Skipping build of at-spi2-atk-2.38.0-uwfqw2zpzcum25qffi4zphqxzvduge5r since at-spi2-core-2.40.1-v3amjlebzdtsharpwzv4dp7ujr5nb2k5 failed
+==> Warning: Skipping build of atk-2.36.0-rejwtkghcubzr74cvspaqq34e2cjtbff since gobject-introspection-1.56.1-gd76reykfiebjfzuog6rs6tqhhh7rcrw failed
+==> Warning: Skipping build of pango-1.42.0-wdfqslxkwfnbybysbrq7kmfbxwnml7zg since gobject-introspection-1.56.1-gd76reykfiebjfzuog6rs6tqhhh7rcrw failed
+==> Warning: Skipping build of harfbuzz-2.9.1-enkcnyo4sxyqglvoa2ddoyrdml5jnp5x since cairo-1.16.0-ndgh7ahhyweerp2d2ss5stbfez6fy6b7 failed
+==> Warning: Skipping build of automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp since automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 failed
+==> Warning: Skipping build of font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky since automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 failed
+==> Warning: Skipping build of fontconfig-2.13.94-rpqsv4c4f5zdqyktd3behnl7btskk5pp since font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky failed
+==> Warning: Skipping build of libxft-2.3.2-p4ipkcskbwin2ssudgub2pac3myf4vhw since fontconfig-2.13.94-rpqsv4c4f5zdqyktd3behnl7btskk5pp failed
+==> Warning: Skipping build of numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo since automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 failed
+==> Warning: Skipping build of openmpi-4.1.2-vjdm7eiattzxdslsaryl4a7tjy6oazol since numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo failed
+==> Warning: Skipping build of fftw-3.3.10-vuqhmeqmdw47xblja6mmt4xv2bfyurwm since openmpi-4.1.2-vjdm7eiattzxdslsaryl4a7tjy6oazol failed
+==> Warning: Skipping build of hdf5-1.10.8-acqzu7nr3ednleseiql3bt4vzq22lhgr since openmpi-4.1.2-vjdm7eiattzxdslsaryl4a7tjy6oazol failed
+==> Warning: Skipping build of netcdf-c-4.8.1-yz4bgrzdoq3fysepk44nwucw7emjviyx since hdf5-1.10.8-acqzu7nr3ednleseiql3bt4vzq22lhgr failed
+==> Warning: Skipping build of perl-extutils-helpers-0.026-z6ymr67egna277mo3akhsmv2vxzosha6 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of llvm-12.0.1-4xtjwkbrej7kckrchdkl7devv4gyi3dv since perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp failed
+==> Warning: Skipping build of mesa-21.3.1-mkxc6lzmioxepqfqknyfg6dwdehaovbi since llvm-12.0.1-4xtjwkbrej7kckrchdkl7devv4gyi3dv failed
+==> Warning: Skipping build of libepoxy-1.4.3-tgzh2dsdrt22szutzcq5aaztj6j6s5qt since mesa-21.3.1-mkxc6lzmioxepqfqknyfg6dwdehaovbi failed
+==> Warning: Skipping build of perl-file-listing-6.04-q7vd2zae6lwi5kjyqgo4w5mfl6c3zhut since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-encode-locale-1.05-anxhy6pzev2yxjp4u6slfa6xfkqt5wrg since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of libxtst-1.2.2-s5culptdggmzf3ymjpedjigfmbhfq44d since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxxf86vm-1.1.4-jzehcsj2flrucrsxfayfbavqcpn4l3zl since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxrender-0.9.10-itsxilubfl6fntvah6nnwfzwglegkazj since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of xrandr-1.5.0-nownbxglkoigeo5lcoz3y6rwta5y5ggj since libxrender-0.9.10-itsxilubfl6fntvah6nnwfzwglegkazj failed
+==> Warning: Skipping build of libxrandr-1.5.0-wxegyuxn5pwcmo6iony5tia7fi2qnqti since libxrender-0.9.10-itsxilubfl6fntvah6nnwfzwglegkazj failed
+==> Warning: Skipping build of libxinerama-1.1.3-6xzojsuq2aqkhwoxriiodrwjezojedh7 since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of xkbcomp-1.4.4-thpnup5f3qfg6mpj365zez3wgmy7xa7v since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+==> Installing gsl-2.7-356frfznntm6ikwwurabu6t4goeyf6dl
+==> No binary for gsl-2.7-356frfznntm6ikwwurabu6t4goeyf6dl found: installing from source
+==> Warning: Skipping build of xkbdata-1.0.1-4lhk3p2w6by7feiyjmpobjjf463n7soz since xkbcomp-1.4.4-thpnup5f3qfg6mpj365zez3wgmy7xa7v failed
+==> Warning: Skipping build of libxkbcommon-0.8.2-jhsxjf5te2fxxvkw3kg4pgwxmfkk3lf3 since xkbdata-1.0.1-4lhk3p2w6by7feiyjmpobjjf463n7soz failed
+==> Warning: Skipping build of libxi-1.7.6-ih4pg7xqufujprnpudggjvnqw36pyi4c since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxfixes-5.0.2-fshxhnscs3u54iergxb65xqjhizihr4a since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxt-1.1.5-5a7h2zqoufnkvpvjymnluwc7ceohtop3 since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxkbfile-1.0.9-msqhassew2zvolf43tojv2eojgjgnjfp since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxext-1.3.3-euqzyoncxeh7gc7ljjmmzyn4jo4hbw2d since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of perl-lwp-mediatypes-6.02-xqdjqhhnp62u4qtbkapplx4torglic3w since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of krb5-1.19.2-y7xh7ilqlxizwmhntem2a3ifeu6kwmqw since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of libtirpc-1.2.6-yej2j6hidxqmg7u2xcpag64rwqft5yrg since krb5-1.19.2-y7xh7ilqlxizwmhntem2a3ifeu6kwmqw failed
+==> Warning: Skipping build of libevent-2.1.12-5iqnzv7uvubse4pxx5qsu7v5xkj2wora since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of openssh-8.7p1-nzarxl2v63x7f5iljbrxrmoqyji3fxvy since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of libgit2-1.1.1-ajv3fjseaebuohgg2jzm7eltmildw4zy since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of rust-1.51.0-oh3e4rt7ckpny6woyvsjlaxyeptl6ms3 since libgit2-1.1.1-ajv3fjseaebuohgg2jzm7eltmildw4zy failed
+==> Warning: Skipping build of cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of qhull-2020.2-3mr7gzplj4frcy4j6cao34yzi222bb54 since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of eigen-3.4.0-pg27fq2lr6d4iqvqqucgvbrsbouzwy7q since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of libssh2-1.10.0-uyqsfijo7w52pibzfsgliuqzu4bs55ip since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of pslib-0.4.5-shbnopzwtu7tiavenls2a2xwrtkqlprd since libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb failed
+==> Warning: Skipping build of libgeotiff-1.4.3-nzd4npx2g6ipv5betslxh2me3jvnvgwb since libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb failed
+==> Warning: Skipping build of python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of py-markupsafe-2.0.1-fwemh5fagdcbxvuo4yho36iy3z2dzfzl since python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil failed
+==> Warning: Skipping build of py-mako-1.1.5-yet3fduns3un7gzh5qqimfumbyo6tbii since py-markupsafe-2.0.1-fwemh5fagdcbxvuo4yho36iy3z2dzfzl failed
+==> Warning: Skipping build of meson-0.60.0-b5cc27mpo4ts7423sdadac4t5qnn7rzm since python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil failed
+==> Warning: Skipping build of glib-2.70.2-j2avmltejnxfo7zzn37egzub6vznysfi since meson-0.60.0-b5cc27mpo4ts7423sdadac4t5qnn7rzm failed
+==> Warning: Skipping build of dbus-1.12.8-oeofsoa25s5dlgwszh7qy2v7m7cbdj6k since glib-2.70.2-j2avmltejnxfo7zzn37egzub6vznysfi failed
+==> Warning: Skipping build of libcroco-0.6.13-3wllkaqq634jseubzq37m5klbxe7augd since glib-2.70.2-j2avmltejnxfo7zzn37egzub6vznysfi failed
+==> Warning: Skipping build of py-setuptools-59.4.0-h3srlmxotfq4kdwgmmzb57u4hu2i2fr7 since python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil failed
+==> Warning: Skipping build of icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz since python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil failed
+==> Warning: Skipping build of ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui since python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil failed
+==> Warning: Skipping build of bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of flex-2.6.3-la4kstvils5q3ulwzowkeuhluovem352 since bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w failed
+==> Warning: Skipping build of texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of gmake-4.3-ht3utwpixpqahj7eprd3tnbrqhmrpuds since texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql failed
+==> Warning: Skipping build of perl-test-needs-0.002005-w4lh5sthuowjdhkxbwznu2qyn5uhrapa since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-http-date-6.02-za7c3kw65f25lkej36gtsr65asutqmr2 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-io-html-1.001-orem4dyb6zjfxxj7j6zy3louwjrn52gd since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/ef/efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b.tar.gz
+==> No patches needed for gsl
+==> gsl: Executing phase: 'autoreconf'
+==> gsl: Executing phase: 'configure'
+==> gsl: Executing phase: 'build'
+==> gsl: Executing phase: 'install'
+==> gsl: Successfully installed gsl-2.7-356frfznntm6ikwwurabu6t4goeyf6dl
+  Fetch: 0.32s.  Build: 5m 13.28s.  Total: 5m 13.60s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gsl-2.7-356frfznntm6ikwwurabu6t4goeyf6dl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/nasm-2.15.05-hwiieuz5zeo42xrefebhlsflbazi2kv6
+==> Installing libtiff-4.3.0-lugs3mqaglsghxuajczpzfwipu5kyjyd
+==> No binary for libtiff-4.3.0-lugs3mqaglsghxuajczpzfwipu5kyjyd found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/0e/0e46e5acb087ce7d1ac53cf4f56a09b221537fc86dfc5daaad1c2e89e1b37ac8.tar.gz
+==> Ran patch() for libtiff
+==> libtiff: Executing phase: 'autoreconf'
+==> libtiff: Executing phase: 'configure'
+==> libtiff: Executing phase: 'build'
+==> libtiff: Executing phase: 'install'
+==> libtiff: Successfully installed libtiff-4.3.0-lugs3mqaglsghxuajczpzfwipu5kyjyd
+  Fetch: 0.35s.  Build: 1m 7.52s.  Total: 1m 7.87s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtiff-4.3.0-lugs3mqaglsghxuajczpzfwipu5kyjyd
+==> Installing proj-5.2.0-5gpotrf6yboxru5mrwbpkwzuhasujsgr
+==> No binary for proj-5.2.0-5gpotrf6yboxru5mrwbpkwzuhasujsgr found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/ef/ef919499ffbc62a4aae2659a55e2b25ff09cccbbe230656ba71c6224056c7e60.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/3f/3ff6618a0acc9f0b9b4f6a62e7ff0f7bf538fb4f74de47ad04da1317408fcc15.tar.gz
+==> No patches needed for proj
+==> proj: Executing phase: 'autoreconf'
+==> proj: Executing phase: 'configure'
+==> proj: Executing phase: 'build'
+==> proj: Executing phase: 'install'
+==> proj: Successfully installed proj-5.2.0-5gpotrf6yboxru5mrwbpkwzuhasujsgr
+  Fetch: 0.63s.  Build: 2m 21.45s.  Total: 2m 22.08s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/proj-5.2.0-5gpotrf6yboxru5mrwbpkwzuhasujsgr
+==> Installing libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r
+==> No binary for libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/50/50d5686b79019ccea08bcbd7b02fe5a40634abcfd4146b6e75c6420cc170e9d9.tar.gz
+==> No patches needed for libpthread-stubs
+==> libpthread-stubs: Executing phase: 'autoreconf'
+==> libpthread-stubs: Executing phase: 'configure'
+==> libpthread-stubs: Executing phase: 'build'
+==> libpthread-stubs: Executing phase: 'install'
+==> libpthread-stubs: Successfully installed libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r
+  Fetch: 0.07s.  Build: 7.31s.  Total: 7.38s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libmd-1.0.3-vfy2r6eyszp3ipuofve6obivkgu757t4
+==> Installing xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks
+==> No binary for xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/f0/f04add9a972ac334ea11d9d7eb4fc7f8883835da3e4859c9afa971efdf57fcc3.tar.xz
+==> No patches needed for xcb-proto
+==> xcb-proto: Executing phase: 'autoreconf'
+==> xcb-proto: Executing phase: 'configure'
+==> xcb-proto: Executing phase: 'build'
+==> xcb-proto: Executing phase: 'install'
+==> xcb-proto: Successfully installed xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks
+  Fetch: 0.04s.  Build: 3.17s.  Total: 3.21s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libffi-3.3-edeo4guhvfzlskl252zffpcnyx7rgqm7
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn
+==> Installing gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas
+==> No binary for gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/58/588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2.tar.gz
+==> No patches needed for gperf
+==> gperf: Executing phase: 'autoreconf'
+==> gperf: Executing phase: 'configure'
+==> gperf: Executing phase: 'build'
+==> gperf: Executing phase: 'install'
+==> gperf: Successfully installed gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas
+  Fetch: 0.06s.  Build: 14.75s.  Total: 14.81s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/findutils-4.8.0-fzrovitzlmyofji3uxfipscvzyln6tev
+==> Installing libunwind-1.5.0-azrdddot55e4nathdlqghorji7rgvgdl
+==> No binary for libunwind-1.5.0-azrdddot55e4nathdlqghorji7rgvgdl found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/90/90337653d92d4a13de590781371c604f9031cdb50520366aa1e3a91e1efb1017.tar.gz
+==> No patches needed for libunwind
+==> libunwind: Executing phase: 'autoreconf'
+==> libunwind: Executing phase: 'configure'
+==> libunwind: Executing phase: 'build'
+==> libunwind: Executing phase: 'install'
+==> libunwind: Successfully installed libunwind-1.5.0-azrdddot55e4nathdlqghorji7rgvgdl
+  Fetch: 0.16s.  Build: 56.73s.  Total: 56.90s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libunwind-1.5.0-azrdddot55e4nathdlqghorji7rgvgdl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-linux-uuid-2.36.2-hn32lcqoeonboow75gfxkumyosbllw4i
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tar-1.34-42gugaaxphtcd4s4frkes2gjjinpxpud
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpng-1.6.37-thsagwquvptbm2itk6vugrt6vtunphef
+==> Installing tcl-8.6.11-f3hdghqxkrrgkcc3vau2qo54z44fwjl5
+==> No binary for tcl-8.6.11-f3hdghqxkrrgkcc3vau2qo54z44fwjl5 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/8c/8c0486668586672c5693d7d95817cb05a18c5ecca2f40e2836b9578064088258.tar.gz
+==> No patches needed for tcl
+==> tcl: Executing phase: 'autoreconf'
+==> tcl: Executing phase: 'configure'
+==> tcl: Executing phase: 'build'
+==> tcl: Executing phase: 'install'
+==> tcl: Successfully installed tcl-8.6.11-f3hdghqxkrrgkcc3vau2qo54z44fwjl5
+  Fetch: 0.32s.  Build: 5m 37.40s.  Total: 5m 37.72s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tcl-8.6.11-f3hdghqxkrrgkcc3vau2qo54z44fwjl5
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+==> Installing kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr
+==> No binary for kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/82/828cb275b91268b1a3ea950d5c0c5eb076c678fdf005d517411f89cc8c3bb416.tar.gz
+==> No patches needed for kbproto
+==> kbproto: Executing phase: 'autoreconf'
+==> kbproto: Executing phase: 'configure'
+==> kbproto: Executing phase: 'build'
+==> kbproto: Executing phase: 'install'
+==> kbproto: Successfully installed kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr
+  Fetch: 0.08s.  Build: 13.40s.  Total: 13.48s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr
+==> Installing fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+==> No binary for fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/72/72c44e63044b2b66f6fa112921621ecc20c71193982de4f198d9a29cda385c5e.tar.gz
+==> No patches needed for fontsproto
+==> fontsproto: Executing phase: 'autoreconf'
+==> fontsproto: Executing phase: 'configure'
+==> fontsproto: Executing phase: 'build'
+==> fontsproto: Executing phase: 'install'
+==> fontsproto: Successfully installed fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+  Fetch: 0.07s.  Build: 13.41s.  Total: 13.48s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+==> Installing xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az
+==> No binary for xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/6d/6d755eaae27b45c5cc75529a12855fed5de5969b367ed05003944cf901ed43c7.tar.gz
+==> No patches needed for xproto
+==> xproto: Executing phase: 'autoreconf'
+==> xproto: Executing phase: 'configure'
+==> xproto: Executing phase: 'build'
+==> xproto: Executing phase: 'install'
+==> xproto: Successfully installed xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az
+  Fetch: 0.09s.  Build: 15.85s.  Total: 15.94s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az
+==> Installing glproto-1.4.17-l5gjksqk2pu3kw5okp3gowybbudq5ha3
+==> No binary for glproto-1.4.17-l5gjksqk2pu3kw5okp3gowybbudq5ha3 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/9d/9d8130fec2b98bd032db7730fa092dd9dec39f3de34f4bb03ceb43b9903dbc96.tar.gz
+==> No patches needed for glproto
+==> glproto: Executing phase: 'autoreconf'
+==> glproto: Executing phase: 'configure'
+==> glproto: Executing phase: 'build'
+==> glproto: Executing phase: 'install'
+==> glproto: Successfully installed glproto-1.4.17-l5gjksqk2pu3kw5okp3gowybbudq5ha3
+  Fetch: 0.06s.  Build: 13.24s.  Total: 13.30s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/glproto-1.4.17-l5gjksqk2pu3kw5okp3gowybbudq5ha3
+==> Installing randrproto-1.5.0-ifv7sfr26mv44i6cdw4zpqa45ljosyrw
+==> No binary for randrproto-1.5.0-ifv7sfr26mv44i6cdw4zpqa45ljosyrw found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/8f/8f8a716d6daa6ba05df97d513960d35a39e040600bf04b313633f11679006fab.tar.gz
+==> No patches needed for randrproto
+==> randrproto: Executing phase: 'autoreconf'
+==> randrproto: Executing phase: 'configure'
+==> randrproto: Executing phase: 'build'
+==> randrproto: Executing phase: 'install'
+==> randrproto: Successfully installed randrproto-1.5.0-ifv7sfr26mv44i6cdw4zpqa45ljosyrw
+  Fetch: 0.05s.  Build: 12.12s.  Total: 12.17s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/randrproto-1.5.0-ifv7sfr26mv44i6cdw4zpqa45ljosyrw
+==> Installing recordproto-1.14.2-d7rofv7nxxqzkuclc36sbkrfuj66wynm
+==> No binary for recordproto-1.14.2-d7rofv7nxxqzkuclc36sbkrfuj66wynm found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/48/485f792570dd7afe49144227f325bf2827bc7d87aae6a8ab6c1de2b06b1c68c5.tar.gz
+==> No patches needed for recordproto
+==> recordproto: Executing phase: 'autoreconf'
+==> recordproto: Executing phase: 'configure'
+==> recordproto: Executing phase: 'build'
+==> recordproto: Executing phase: 'install'
+==> recordproto: Successfully installed recordproto-1.14.2-d7rofv7nxxqzkuclc36sbkrfuj66wynm
+  Fetch: 0.04s.  Build: 14.59s.  Total: 14.63s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/recordproto-1.14.2-d7rofv7nxxqzkuclc36sbkrfuj66wynm
+==> Installing xf86vidmodeproto-2.3.1-e7oievwmvo32hp3hsyudjt3hjsgjvlb6
+==> No binary for xf86vidmodeproto-2.3.1-e7oievwmvo32hp3hsyudjt3hjsgjvlb6 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/c3/c3512b11cefa7558576551f8582c6e7071c8a24d78176059d94b84b48b262979.tar.gz
+==> No patches needed for xf86vidmodeproto
+==> xf86vidmodeproto: Executing phase: 'autoreconf'
+==> xf86vidmodeproto: Executing phase: 'configure'
+==> xf86vidmodeproto: Executing phase: 'build'
+==> xf86vidmodeproto: Executing phase: 'install'
+==> xf86vidmodeproto: Successfully installed xf86vidmodeproto-2.3.1-e7oievwmvo32hp3hsyudjt3hjsgjvlb6
+  Fetch: 0.05s.  Build: 7.11s.  Total: 7.16s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xf86vidmodeproto-2.3.1-e7oievwmvo32hp3hsyudjt3hjsgjvlb6
+==> Installing fixesproto-5.0-otwvdxgnc4gokhuldvu646xzbguk46th
+==> No binary for fixesproto-5.0-otwvdxgnc4gokhuldvu646xzbguk46th found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/67/67865a0e3cdc7dec1fd676f0927f7011ad4036c18eb320a2b41dbd56282f33b8.tar.gz
+==> No patches needed for fixesproto
+==> fixesproto: Executing phase: 'autoreconf'
+==> fixesproto: Executing phase: 'configure'
+==> fixesproto: Executing phase: 'build'
+==> fixesproto: Executing phase: 'install'
+==> fixesproto: Successfully installed fixesproto-5.0-otwvdxgnc4gokhuldvu646xzbguk46th
+  Fetch: 0.05s.  Build: 7.52s.  Total: 7.57s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fixesproto-5.0-otwvdxgnc4gokhuldvu646xzbguk46th
+==> Installing xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx
+==> No binary for xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/1b/1b1bcdf91221e78c6c33738667a57bd9aaa63d5953174ad8ed9929296741c9f5.tar.gz
+==> No patches needed for xextproto
+==> xextproto: Executing phase: 'autoreconf'
+==> xextproto: Executing phase: 'configure'
+==> xextproto: Executing phase: 'build'
+==> xextproto: Executing phase: 'install'
+==> xextproto: Successfully installed xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx
+  Fetch: 0.09s.  Build: 14.13s.  Total: 14.22s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx
+==> Installing renderproto-0.11.1-pnfln2onasxlzl3adirp3skfw4hfyc4r
+==> No binary for renderproto-0.11.1-pnfln2onasxlzl3adirp3skfw4hfyc4r found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/a0/a0a4be3cad9381ae28279ba5582e679491fc2bec9aab8a65993108bf8dbce5fe.tar.gz
+==> No patches needed for renderproto
+==> renderproto: Executing phase: 'autoreconf'
+==> renderproto: Executing phase: 'configure'
+==> renderproto: Executing phase: 'build'
+==> renderproto: Executing phase: 'install'
+==> renderproto: Successfully installed renderproto-0.11.1-pnfln2onasxlzl3adirp3skfw4hfyc4r
+  Fetch: 0.06s.  Build: 6.63s.  Total: 6.69s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/renderproto-0.11.1-pnfln2onasxlzl3adirp3skfw4hfyc4r
+==> Installing xineramaproto-1.2.1-5iqooqhaidqm4toqncy2e4lkytozgla2
+==> No binary for xineramaproto-1.2.1-5iqooqhaidqm4toqncy2e4lkytozgla2 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d9/d99e121edf7b310008d7371ac5dbe3aa2810996d476b754dc78477cc26e5e7c1.tar.gz
+==> No patches needed for xineramaproto
+==> xineramaproto: Executing phase: 'autoreconf'
+==> xineramaproto: Executing phase: 'configure'
+==> xineramaproto: Executing phase: 'build'
+==> xineramaproto: Executing phase: 'install'
+==> xineramaproto: Successfully installed xineramaproto-1.2.1-5iqooqhaidqm4toqncy2e4lkytozgla2
+  Fetch: 0.08s.  Build: 6.58s.  Total: 6.66s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xineramaproto-1.2.1-5iqooqhaidqm4toqncy2e4lkytozgla2
+==> Installing xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze
+==> No binary for xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/b7/b7a577c1b6c75030145e53b4793db9c88f9359ac49e7d771d4385d21b3e5945d.tar.gz
+==> No patches needed for xtrans
+==> xtrans: Executing phase: 'autoreconf'
+==> xtrans: Executing phase: 'configure'
+==> xtrans: Executing phase: 'build'
+==> xtrans: Executing phase: 'install'
+==> xtrans: Successfully installed xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze
+  Fetch: 0.05s.  Build: 13.39s.  Total: 13.44s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze
+==> Installing inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv
+==> No binary for inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/10/10eaadd531f38f7c92ab59ef0708ca195caf3164a75c4ed99f0c04f2913f6ef3.tar.gz
+==> No patches needed for inputproto
+==> inputproto: Executing phase: 'autoreconf'
+==> inputproto: Executing phase: 'configure'
+==> inputproto: Executing phase: 'build'
+==> inputproto: Executing phase: 'install'
+==> inputproto: Successfully installed inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv
+  Fetch: 0.06s.  Build: 12.75s.  Total: 12.81s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libbsd-0.11.3-msxl2whnsw6gyeke3r5sirnij2pcrtbb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/swig-4.0.2-opkn2e4pcfz46xml2oiqtuc4cgs5w5tp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+==> Installing pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+==> No binary for pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/6d/6d200dec3740d9ec4ec8d1180e25779c00bc749f94278c8b9021f5534db223fc.tar.gz
+==> No patches needed for pixman
+==> pixman: Executing phase: 'autoreconf'
+==> pixman: Executing phase: 'configure'
+==> pixman: Executing phase: 'build'
+==> pixman: Executing phase: 'install'
+==> pixman: Successfully installed pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+  Fetch: 0.07s.  Build: 1m 37.60s.  Total: 1m 37.67s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+==> Installing libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k
+==> No binary for libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/c3/c343b4ef66d66a6b3e0e27aa46b37ad5cab0f11a5c565eafb4a1c7590bc71d7b.tar.gz
+==> No patches needed for libxau
+==> libxau: Executing phase: 'autoreconf'
+==> libxau: Executing phase: 'configure'
+==> libxau: Executing phase: 'build'
+==> libxau: Executing phase: 'install'
+==> libxau: Successfully installed libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k
+  Fetch: 0.09s.  Build: 20.64s.  Total: 20.73s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k
+==> Installing libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+==> No binary for libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/6f/6fba26760ca8d5045f2b52ddf641c12cedc19ee30939c6478162b7db8b6220fb.tar.gz
+==> No patches needed for libfontenc
+==> libfontenc: Executing phase: 'autoreconf'
+==> libfontenc: Executing phase: 'configure'
+==> libfontenc: Executing phase: 'build'
+==> libfontenc: Executing phase: 'install'
+==> libfontenc: Successfully installed libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+  Fetch: 0.06s.  Build: 22.03s.  Total: 22.09s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+==> Installing libice-1.0.9-gb3fer3hhzx5icukotjdypouiiofryee
+==> No binary for libice-1.0.9-gb3fer3hhzx5icukotjdypouiiofryee found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/78/7812a824a66dd654c830d21982749b3b563d9c2dfe0b88b203cefc14a891edc0.tar.gz
+==> No patches needed for libice
+==> libice: Executing phase: 'autoreconf'
+==> libice: Executing phase: 'configure'
+==> libice: Executing phase: 'build'
+==> libice: Executing phase: 'install'
+==> libice: Successfully installed libice-1.0.9-gb3fer3hhzx5icukotjdypouiiofryee
+  Fetch: 0.07s.  Build: 28.34s.  Total: 28.41s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libice-1.0.9-gb3fer3hhzx5icukotjdypouiiofryee
+==> Installing docbook-xml-4.4-vtbyupmn4l3sjck3r3pzncocasowqniq
+==> No binary for docbook-xml-4.4-vtbyupmn4l3sjck3r3pzncocasowqniq found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/02/02f159eb88c4254d95e831c51c144b1863b216d909b5ff45743a1ce6f5273090.zip
+==> No patches needed for docbook-xml
+==> docbook-xml: Executing phase: 'install'
+==> docbook-xml: Successfully installed docbook-xml-4.4-vtbyupmn4l3sjck3r3pzncocasowqniq
+  Fetch: 0.05s.  Build: 2.93s.  Total: 2.98s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/docbook-xml-4.4-vtbyupmn4l3sjck3r3pzncocasowqniq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/expat-2.4.1-wh3v3vspvbdidb4rvq4t5nhnup74rhd6
+==> Installing libxdmcp-1.1.2-gsoo2snw4p4p2tz6ril4hplzkxsigw6e
+==> No binary for libxdmcp-1.1.2-gsoo2snw4p4p2tz6ril4hplzkxsigw6e found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/6f/6f7c7e491a23035a26284d247779174dedc67e34e93cc3548b648ffdb6fc57c0.tar.gz
+==> No patches needed for libxdmcp
+==> libxdmcp: Executing phase: 'autoreconf'
+==> libxdmcp: Executing phase: 'configure'
+==> libxdmcp: Executing phase: 'build'
+==> libxdmcp: Executing phase: 'install'
+==> libxdmcp: Successfully installed libxdmcp-1.1.2-gsoo2snw4p4p2tz6ril4hplzkxsigw6e
+  Fetch: 0.07s.  Build: 22.65s.  Total: 22.72s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxdmcp-1.1.2-gsoo2snw4p4p2tz6ril4hplzkxsigw6e
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/sqlite-3.36.0-npgi3bzyyz35ucxjq4e2bnxabjmys2w6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gettext-0.21-iazp3ms7hesjiw7tfdtcx4ribsunvms4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/freetype-2.11.0-7jbzkx4ezzljk2zovg2rbqhrsi3rfsrx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+==> Installing libsm-1.2.3-gxmuct24kwj74y2sspvf3opb6oodf5ja
+==> No binary for libsm-1.2.3-gxmuct24kwj74y2sspvf3opb6oodf5ja found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/1e/1e92408417cb6c6c477a8a6104291001a40b3bb56a4a60608fdd9cd2c5a0f320.tar.gz
+==> No patches needed for libsm
+==> libsm: Executing phase: 'autoreconf'
+==> libsm: Executing phase: 'configure'
+==> libsm: Executing phase: 'build'
+==> libsm: Executing phase: 'install'
+==> libsm: Successfully installed libsm-1.2.3-gxmuct24kwj74y2sspvf3opb6oodf5ja
+  Fetch: 0.05s.  Build: 23.49s.  Total: 23.54s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsm-1.2.3-gxmuct24kwj74y2sspvf3opb6oodf5ja
+==> Installing docbook-xsl-1.79.2-yypsifecqeqla4zbvnuighlztx5nnxni
+==> No binary for docbook-xsl-1.79.2-yypsifecqeqla4zbvnuighlztx5nnxni found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/31/316524ea444e53208a2fb90eeb676af755da96e1417835ba5f5eb719c81fa371.tar.bz2
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/repos/builtin/packages/docbook-xsl/docbook-xsl-1.79.2-stack_fix-1.patch
+==> docbook-xsl: Executing phase: 'install'
+==> docbook-xsl: Successfully installed docbook-xsl-1.79.2-yypsifecqeqla4zbvnuighlztx5nnxni
+  Fetch: 0.35s.  Build: 11.45s.  Total: 11.80s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/docbook-xsl-1.79.2-yypsifecqeqla4zbvnuighlztx5nnxni
+==> Installing libxcb-1.14-iyouxepm3mldpb4c5w2eal77qe3ekcji
+==> No binary for libxcb-1.14-iyouxepm3mldpb4c5w2eal77qe3ekcji found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/a5/a55ed6db98d43469801262d81dc2572ed124edc3db31059d4e9916eb9f844c34.tar.xz
+==> Ran patch() for libxcb
+==> libxcb: Executing phase: 'autoreconf'
+==> libxcb: Executing phase: 'configure'
+==> libxcb: Executing phase: 'build'
+==> libxcb: Executing phase: 'install'
+==> libxcb: Successfully installed libxcb-1.14-iyouxepm3mldpb4c5w2eal77qe3ekcji
+  Fetch: 0.11s.  Build: 1m 19.62s.  Total: 1m 19.73s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxcb-1.14-iyouxepm3mldpb4c5w2eal77qe3ekcji
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/binutils-2.37-t72eam5r2o6udeh35trjkhziu2jrvozx
+==> Installing libxfont-1.5.2-ea6eebtbwnnsalmh72kolmgtipasqxyg
+==> No binary for libxfont-1.5.2-ea6eebtbwnnsalmh72kolmgtipasqxyg found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/a7/a7350c75171d03d06ae0d623e42240356d6d3e1ac7dfe606639bf20f0d653c93.tar.gz
+==> No patches needed for libxfont
+==> libxfont: Executing phase: 'autoreconf'
+==> libxfont: Executing phase: 'configure'
+==> libxfont: Executing phase: 'build'
+==> libxfont: Executing phase: 'install'
+==> libxfont: Successfully installed libxfont-1.5.2-ea6eebtbwnnsalmh72kolmgtipasqxyg
+  Fetch: 0.08s.  Build: 1m 9.00s.  Total: 1m 9.08s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxfont-1.5.2-ea6eebtbwnnsalmh72kolmgtipasqxyg
+==> Installing mkfontscale-1.1.2-t7fnuqahtx77vkj6cddi2xj65xgnyobh
+==> No binary for mkfontscale-1.1.2-t7fnuqahtx77vkj6cddi2xj65xgnyobh found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/8b/8bba59e60fbc4cb082092cf6b67e810b47b4fe64fbc77dbea1d7e7d55312b2e4.tar.gz
+==> No patches needed for mkfontscale
+==> mkfontscale: Executing phase: 'autoreconf'
+==> mkfontscale: Executing phase: 'configure'
+==> mkfontscale: Executing phase: 'build'
+==> mkfontscale: Executing phase: 'install'
+==> mkfontscale: Successfully installed mkfontscale-1.1.2-t7fnuqahtx77vkj6cddi2xj65xgnyobh
+  Fetch: 0.06s.  Build: 16.76s.  Total: 16.82s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontscale-1.1.2-t7fnuqahtx77vkj6cddi2xj65xgnyobh
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.6.0-w6fdwy467abfqp6qplcjirbi2b4ljpsu
+==> Installing bdftopcf-1.0.5-yltyfyj5w5c47igjbbbsduo4hh7eiwlh
+==> No binary for bdftopcf-1.0.5-yltyfyj5w5c47igjbbbsduo4hh7eiwlh found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/78/78a5ec945de1d33e6812167b1383554fda36e38576849e74a9039dc7364ff2c3.tar.gz
+==> No patches needed for bdftopcf
+==> bdftopcf: Executing phase: 'autoreconf'
+==> bdftopcf: Executing phase: 'configure'
+==> bdftopcf: Executing phase: 'build'
+==> bdftopcf: Executing phase: 'install'
+==> bdftopcf: Successfully installed bdftopcf-1.0.5-yltyfyj5w5c47igjbbbsduo4hh7eiwlh
+  Fetch: 0.06s.  Build: 16.00s.  Total: 16.05s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bdftopcf-1.0.5-yltyfyj5w5c47igjbbbsduo4hh7eiwlh
+==> Installing mkfontdir-1.0.7-rujojrc72y4ynoyssayhabqr3drhjcbr
+==> No binary for mkfontdir-1.0.7-rujojrc72y4ynoyssayhabqr3drhjcbr found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/bc/bccc5fb7af1b614eabe4a22766758c87bfc36d66191d08c19d2fa97674b7b5b7.tar.gz
+==> No patches needed for mkfontdir
+==> mkfontdir: Executing phase: 'autoreconf'
+==> mkfontdir: Executing phase: 'configure'
+==> mkfontdir: Executing phase: 'build'
+==> mkfontdir: Executing phase: 'install'
+==> mkfontdir: Successfully installed mkfontdir-1.0.7-rujojrc72y4ynoyssayhabqr3drhjcbr
+  Fetch: 0.04s.  Build: 16.42s.  Total: 16.46s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontdir-1.0.7-rujojrc72y4ynoyssayhabqr3drhjcbr
+==> Error: gdl-0.9.9-q3dfridcrcrquaeg462p4eksujdg3t4c: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).

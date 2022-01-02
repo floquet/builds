@@ -1,0 +1,82 @@
+spack install gcc@8.5.0  % gcc@11.2.0 arch=linux-centos7-haswell 
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+==> Installing berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+==> No binary for berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/repos/builtin/packages/berkeley-db/drop-docs.patch
+==> Ran patch() for berkeley-db
+==> berkeley-db: Executing phase: 'autoreconf'
+==> berkeley-db: Executing phase: 'configure'
+==> berkeley-db: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 2:
+    'make' '-j11' 'V=1'
+
+2 errors found in build log:
+     525    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_failchk.c
+     526    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_dea
+            dlock.c  -fPIC -DPIC -o .libs/lock_deadlock.o
+     527    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_fai
+            lchk.c  -fPIC -DPIC -o .libs/lock_failchk.o
+     528    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_id.c
+     529    during GIMPLE pass: vect
+     530    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c: In function '__lv_pack_txn_vrfy_info.isra':
+  >> 531    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c:501:1: internal compiler error: Segmentation fault
+     532      501 | __lv_pack_txn_vrfy_info(txninfop, key, data)
+     533          | ^~~~~~~~~~~~~~~~~~~~~~~
+     534    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_list.c
+     535    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_method.c
+     536    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_id.
+            c  -fPIC -DPIC -o .libs/lock_id.o
+     537    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_lis
+            t.c  -fPIC -DPIC -o .libs/lock_list.o
+
+     ...
+
+     566    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     567    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_region.c
+     568    Please submit a full bug report,
+     569    with preprocessed source if appropriate.
+     570    Please include the complete backtrace with any bug report.
+     571    See <https://github.com/spack/spack/issues> for instructions.
+  >> 572    make: *** [log_verify_util.lo] Error 1
+     573    make: *** Waiting for unfinished jobs....
+     574    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_reg
+            ion.c  -fPIC -DPIC -o .libs/lock_region.o
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-build-out.txt
+
+==> Warning: Skipping build of perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks since berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 failed
+==> Warning: Skipping build of autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of mpfr-3.1.6-zj6pqezi5thf7nao4f6dlrawbkysk22r since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of mpc-1.1.0-htxio5mal7pp7sgdu52yz474gdaepued since mpfr-3.1.6-zj6pqezi5thf7nao4f6dlrawbkysk22r failed
+==> Warning: Skipping build of gcc-8.5.0-eid3bb7rqzjmqeglrdlw4qk7chiuxj4x since mpc-1.1.0-htxio5mal7pp7sgdu52yz474gdaepued failed
+==> Warning: Skipping build of automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl since automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 failed
+==> Error: gcc-8.5.0-eid3bb7rqzjmqeglrdlw4qk7chiuxj4x: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3

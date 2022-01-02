@@ -1,0 +1,22 @@
+Input spec
+--------------------------------
+mpich%gcc@11.2.0 arch=linux-centos7-haswell
+
+Concretized
+--------------------------------
+mpich@3.4.2%gcc@11.2.0~argobots+fortran+hwloc+hydra+libxml2+pci+romio~slurm~two_level_namespace~verbs+wrapperrpath device=ch4 netmod=ofi pmi=pmi arch=linux-centos7-haswell
+    ^findutils@4.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+    ^hwloc@2.6.0%gcc@11.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-centos7-haswell
+        ^libpciaccess@0.16%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libtool@2.4.6%gcc@11.2.0 arch=linux-centos7-haswell
+                ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89 arch=linux-centos7-haswell
+                    ^libsigsegv@2.13%gcc@11.2.0 arch=linux-centos7-haswell
+            ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+            ^util-macros@1.19.3%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+            ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+            ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+            ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+        ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+    ^libfabric@1.14.0%gcc@11.2.0~debug~kdreg fabrics=sockets,tcp,udp arch=linux-centos7-haswell
+

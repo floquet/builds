@@ -1,0 +1,105 @@
+spack install py-bokeh  % gcc@11.2.0 ^python@3.10.1 arch=linux-centos7-haswell 
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libmd-1.0.3-vfy2r6eyszp3ipuofve6obivkgu757t4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libffi-3.3-edeo4guhvfzlskl252zffpcnyx7rgqm7
+==> Installing berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+==> No binary for berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/repos/builtin/packages/berkeley-db/drop-docs.patch
+==> Ran patch() for berkeley-db
+==> berkeley-db: Executing phase: 'autoreconf'
+==> berkeley-db: Executing phase: 'configure'
+==> berkeley-db: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 2:
+    'make' '-j11' 'V=1'
+
+2 errors found in build log:
+     524    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_dea
+            dlock.c  -fPIC -DPIC -o .libs/lock_deadlock.o
+     525    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock.c  
+            -fPIC -DPIC -o .libs/lock.o
+     526    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_failchk.c
+     527    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_fai
+            lchk.c  -fPIC -DPIC -o .libs/lock_failchk.o
+     528    during GIMPLE pass: vect
+     529    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c: In function '__lv_pack_txn_vrfy_info.isra':
+  >> 530    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c:501:1: internal compiler error: Segmentation fault
+     531      501 | __lv_pack_txn_vrfy_info(txninfop, key, data)
+     532          | ^~~~~~~~~~~~~~~~~~~~~~~
+     533    0xb2e49f crash_signal
+     534    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     535    0xe803c3 ix86_expand_vec_perm_vpermt2
+     536    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+
+     ...
+
+     561    0xd7cd01 vectorize_loops()
+     562    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     563    Please submit a full bug report,
+     564    with preprocessed source if appropriate.
+     565    Please include the complete backtrace with any bug report.
+     566    See <https://github.com/spack/spack/issues> for instructions.
+  >> 567    make: *** [log_verify_util.lo] Error 1
+     568    make: *** Waiting for unfinished jobs....
+     569    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_lis
+            t.c  -fPIC -DPIC -o .libs/lock_list.o
+     570    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_id.
+            c  -fPIC -DPIC -o .libs/lock_id.o
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-build-out.txt
+
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/nasm-2.15.05-hwiieuz5zeo42xrefebhlsflbazi2kv6
+==> Installing libyaml-0.2.5-t7ti2quuqndnwsj4ahk4cgby2dlewe5t
+==> No binary for libyaml-0.2.5-t7ti2quuqndnwsj4ahk4cgby2dlewe5t found: installing from source
+==> Warning: Skipping build of perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks since berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 failed
+==> Warning: Skipping build of openblas-0.3.18-zh6aegbqx7qd4baffyjpppqe3nd6gzyl since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of py-numpy-1.21.5-zgj72w4pu6nz545wkuwlfkmirktmrem3 since openblas-0.3.18-zh6aegbqx7qd4baffyjpppqe3nd6gzyl failed
+==> Warning: Skipping build of py-bokeh-2.4.1-6g5h5thx32kfs6snwkkahswj3uurqlq3 since py-numpy-1.21.5-zgj72w4pu6nz545wkuwlfkmirktmrem3 failed
+==> Warning: Skipping build of openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of py-pillow-8.4.0-6kwywkfqkj7fl3vxfyoaatvf6orj3t2n since libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb failed
+==> Warning: Skipping build of python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of py-typing-extensions-3.10.0.2-she76xl5nom7ofpm4vbdwofpmu4g2rih since python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil failed
+==> Warning: Skipping build of py-pyyaml-6.0-pf7bvlwwamrd4cbs6xsflgj6iwhrh7bj since python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil failed
+==> Warning: Skipping build of py-setuptools-59.4.0-h3srlmxotfq4kdwgmmzb57u4hu2i2fr7 since python-3.10.1-64oysz7q5j3yhv5mfjbwfandh72cckil failed
+==> Warning: Skipping build of py-cython-0.29.24-cuubofmecyi2s6pdrblixmtcvnws3xl5 since py-setuptools-59.4.0-h3srlmxotfq4kdwgmmzb57u4hu2i2fr7 failed
+==> Warning: Skipping build of py-jinja2-3.0.3-2txnymjcpk44ej2uo7orzuypewzptqdg since py-setuptools-59.4.0-h3srlmxotfq4kdwgmmzb57u4hu2i2fr7 failed
+==> Warning: Skipping build of py-packaging-21.3-lquzelkogicqmixxut7z26ai7tatmnd3 since py-setuptools-59.4.0-h3srlmxotfq4kdwgmmzb57u4hu2i2fr7 failed
+==> Warning: Skipping build of py-tornado-6.1-nyqpgzq5q75s4bg6w3l3yjrzlnxu7ix2 since py-setuptools-59.4.0-h3srlmxotfq4kdwgmmzb57u4hu2i2fr7 failed
+==> Warning: Skipping build of py-markupsafe-2.0.1-fwemh5fagdcbxvuo4yho36iy3z2dzfzl since py-setuptools-59.4.0-h3srlmxotfq4kdwgmmzb57u4hu2i2fr7 failed
+==> Warning: Skipping build of py-pyparsing-3.0.6-4sfttnc37mzv7rdtebqp22b6hcgyq2zt since py-setuptools-59.4.0-h3srlmxotfq4kdwgmmzb57u4hu2i2fr7 failed
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/c6/c642ae9b75fee120b2d96c712538bd2cf283228d2337df2cf2988e3c02678ef4.tar.gz
+==> No patches needed for libyaml
+==> libyaml: Executing phase: 'autoreconf'
+==> libyaml: Executing phase: 'configure'
+==> libyaml: Executing phase: 'build'
+==> libyaml: Executing phase: 'install'
+==> libyaml: Successfully installed libyaml-0.2.5-t7ti2quuqndnwsj4ahk4cgby2dlewe5t
+  Fetch: 0.12s.  Build: 24.01s.  Total: 24.14s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libyaml-0.2.5-t7ti2quuqndnwsj4ahk4cgby2dlewe5t
+==> Error: py-bokeh-2.4.1-6g5h5thx32kfs6snwkkahswj3uurqlq3: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tar-1.34-42gugaaxphtcd4s4frkes2gjjinpxpud
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libbsd-0.11.3-msxl2whnsw6gyeke3r5sirnij2pcrtbb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-linux-uuid-2.36.2-hn32lcqoeonboow75gfxkumyosbllw4i
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/expat-2.4.1-wh3v3vspvbdidb4rvq4t5nhnup74rhd6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gettext-0.21-iazp3ms7hesjiw7tfdtcx4ribsunvms4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/sqlite-3.36.0-npgi3bzyyz35ucxjq4e2bnxabjmys2w6

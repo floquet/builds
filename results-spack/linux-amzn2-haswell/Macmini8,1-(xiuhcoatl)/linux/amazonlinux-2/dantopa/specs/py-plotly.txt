@@ -1,0 +1,39 @@
+Input spec
+--------------------------------
+py-plotly%gcc@7.3.1
+    ^python@3.10.1 arch=linux-amzn2-haswell
+
+Concretized
+--------------------------------
+py-plotly@5.2.2%gcc@7.3.1 arch=linux-amzn2-haswell
+    ^py-setuptools@59.4.0%gcc@7.3.1 arch=linux-amzn2-haswell
+        ^python@3.10.1%gcc@7.3.1+bz2+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4 arch=linux-amzn2-haswell
+            ^bzip2@1.0.8%gcc@7.3.1~debug~pic+shared arch=linux-amzn2-haswell
+                ^diffutils@3.8%gcc@7.3.1 arch=linux-amzn2-haswell
+                    ^libiconv@1.16%gcc@7.3.1 libs=shared,static arch=linux-amzn2-haswell
+            ^expat@2.4.1%gcc@7.3.1+libbsd arch=linux-amzn2-haswell
+                ^libbsd@0.11.3%gcc@7.3.1 arch=linux-amzn2-haswell
+                    ^libmd@1.0.3%gcc@7.3.1 arch=linux-amzn2-haswell
+            ^gdbm@1.19%gcc@7.3.1 arch=linux-amzn2-haswell
+                ^readline@8.1%gcc@7.3.1 arch=linux-amzn2-haswell
+                    ^ncurses@6.2%gcc@7.3.1~symlinks+termlib abi=none arch=linux-amzn2-haswell
+                        ^pkgconf@1.8.0%gcc@7.3.1 arch=linux-amzn2-haswell
+            ^gettext@0.21%gcc@7.3.1+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-amzn2-haswell
+                ^libxml2@2.9.12%gcc@7.3.1~python arch=linux-amzn2-haswell
+                    ^xz@5.2.5%gcc@7.3.1~pic libs=shared,static arch=linux-amzn2-haswell
+                    ^zlib@1.2.11%gcc@7.3.1+optimize+pic+shared arch=linux-amzn2-haswell
+                ^tar@1.34%gcc@7.3.1 arch=linux-amzn2-haswell
+            ^libffi@3.3%gcc@7.3.1 patches=26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0 arch=linux-amzn2-haswell
+            ^openssl@1.1.1l%gcc@7.3.1~docs certs=system arch=linux-amzn2-haswell
+                ^perl@5.34.0%gcc@7.3.1+cpanm+shared+threads arch=linux-amzn2-haswell
+                    ^berkeley-db@18.1.40%gcc@7.3.1+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-amzn2-haswell
+            ^sqlite@3.36.0%gcc@7.3.1+column_metadata+fts~functions~rtree arch=linux-amzn2-haswell
+            ^util-linux-uuid@2.36.2%gcc@7.3.1 arch=linux-amzn2-haswell
+    ^py-six@1.16.0%gcc@7.3.1 arch=linux-amzn2-haswell
+    ^py-tenacity@6.3.1%gcc@7.3.1 arch=linux-amzn2-haswell
+        ^py-setuptools-scm@6.3.2%gcc@7.3.1+toml arch=linux-amzn2-haswell
+            ^py-packaging@21.3%gcc@7.3.1 arch=linux-amzn2-haswell
+                ^py-pyparsing@3.0.6%gcc@7.3.1 arch=linux-amzn2-haswell
+            ^py-tomli@1.2.1%gcc@7.3.1 arch=linux-amzn2-haswell
+                ^py-pip@21.1.2%gcc@7.3.1 arch=linux-amzn2-haswell
+

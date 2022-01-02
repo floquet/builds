@@ -24,9 +24,6 @@ export     my_llvm="llvm@13.0.0"
 # when using a spack-built compiler:
 # spack load gcc @ 11.2.1
 
-export blogs="${SPACK_ROOT}/${USER}/build-logs"
-export bspec="${SPACK_ROOT}/${USER}/specs"
-
 # py-${p} % ${my_compiler} ^${my_python}
 declare -a   lalpha=("seaborn" "astropy" "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
 # ${p} % ${my_compiler} ^${my_python}

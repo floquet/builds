@@ -1,0 +1,422 @@
+spack install gcc@10.3.0  % gcc@11.2.0 arch=linux-centos7-haswell 
+==> Installing libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+==> No binary for libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/e6/e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04.tar.gz
+==> No patches needed for libiconv
+==> libiconv: Executing phase: 'autoreconf'
+==> libiconv: Executing phase: 'configure'
+==> libiconv: Executing phase: 'build'
+==> libiconv: Executing phase: 'install'
+==> libiconv: Successfully installed libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+  Fetch: 0.02s.  Build: 25.54s.  Total: 25.56s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+==> Installing libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+==> No binary for libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/be/be78ee4176b05f7c75ff03298d84874db90f4b6c9d5503f0da1226b3a3c48119.tar.gz
+==> No patches needed for libsigsegv
+==> libsigsegv: Executing phase: 'autoreconf'
+==> libsigsegv: Executing phase: 'configure'
+==> libsigsegv: Executing phase: 'build'
+==> libsigsegv: Executing phase: 'install'
+==> libsigsegv: Successfully installed libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+  Fetch: 0.00s.  Build: 6.54s.  Total: 6.54s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+==> Installing berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+==> No binary for berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/repos/builtin/packages/berkeley-db/drop-docs.patch
+==> Ran patch() for berkeley-db
+==> berkeley-db: Executing phase: 'autoreconf'
+==> berkeley-db: Executing phase: 'configure'
+==> berkeley-db: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 2:
+    'make' '-j11' 'V=1'
+
+2 errors found in build log:
+     526    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_dea
+            dlock.c  -fPIC -DPIC -o .libs/lock_deadlock.o
+     527    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_id.c
+     528    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_fai
+            lchk.c  -fPIC -DPIC -o .libs/lock_failchk.o
+     529    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_id.
+            c  -fPIC -DPIC -o .libs/lock_id.o
+     530    during GIMPLE pass: vect
+     531    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c: In function '__lv_pack_txn_vrfy_info.isra':
+  >> 532    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c:501:1: internal compiler error: Segmentation fault
+     533      501 | __lv_pack_txn_vrfy_info(txninfop, key, data)
+     534          | ^~~~~~~~~~~~~~~~~~~~~~~
+     535    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_list.c
+     536    0xb2e49f crash_signal
+     537    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     538    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_method.c
+
+     ...
+
+     566    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_region.c
+     567    Please submit a full bug report,
+     568    with preprocessed source if appropriate.
+     569    Please include the complete backtrace with any bug report.
+     570    See <https://github.com/spack/spack/issues> for instructions.
+     571    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_met
+            hod.c  -fPIC -DPIC -o .libs/lock_method.o
+  >> 572    make: *** [log_verify_util.lo] Error 1
+     573    make: *** Waiting for unfinished jobs....
+     574    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_reg
+            ion.c  -fPIC -DPIC -o .libs/lock_region.o
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-build-out.txt
+
+==> Installing pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+==> No binary for pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom found: installing from source
+==> Warning: Skipping build of perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks since berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 failed
+==> Warning: Skipping build of automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl since automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 failed
+==> Warning: Skipping build of mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp since gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl failed
+==> Warning: Skipping build of gcc-10.3.0-jfkiyobffxf3m6pcpj7rfezp42mm4uqq since mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp failed
+==> Warning: Skipping build of mpc-1.1.0-6ekxzv6v2ihldig7jgusdhvsundcarzq since mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp failed
+==> Warning: Skipping build of texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/ef/ef9c7e61822b7cb8356e6e9e1dca58d9556f3200d78acab35e4347e9d4c2bbaf.tar.xz
+==> No patches needed for pkgconf
+==> pkgconf: Executing phase: 'autoreconf'
+==> pkgconf: Executing phase: 'configure'
+==> pkgconf: Executing phase: 'build'
+==> pkgconf: Executing phase: 'install'
+==> pkgconf: Successfully installed pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+  Fetch: 0.01s.  Build: 9.63s.  Total: 9.64s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+==> Installing zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+==> No binary for zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/c3/c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1.tar.gz
+==> No patches needed for zlib
+==> zlib: Executing phase: 'install'
+==> zlib: Successfully installed zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+  Fetch: 0.01s.  Build: 3.90s.  Total: 3.91s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+==> Installing autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+==> No binary for autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/17/17195c833098da79de5778ee90948f4c5d90ed1a0cf8391b4ab348e2ec511e3f.tar.xz
+==> No patches needed for autoconf-archive
+==> autoconf-archive: Executing phase: 'autoreconf'
+==> autoconf-archive: Executing phase: 'configure'
+==> autoconf-archive: Executing phase: 'build'
+==> autoconf-archive: Executing phase: 'install'
+==> autoconf-archive: Successfully installed autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+  Fetch: 0.01s.  Build: 2.59s.  Total: 2.59s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+==> Installing zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu
+==> No binary for zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/0d/0d9ade222c64e912d6957b11c923e214e2e010a18f39bec102f572e693ba2867.tar.gz
+==> No patches needed for zstd
+==> zstd: Executing phase: 'edit'
+==> zstd: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 2:
+    'make' '-j11' 'VERBOSE=1' 'PREFIX=/home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu' '-C' 'lib'
+
+18 errors found in build log:
+     62     CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_literals.o
+     63     /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_literals.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_literal
+            s.d -o obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_literals.o compress/zstd_compress_literals.c
+     64     CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_sequences.o
+     65     /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_sequences.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_sequen
+            ces.d -o obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_sequences.o compress/zstd_compress_sequences.c
+     66     during RTL pass: expand
+     67     compress/fse_compress.c: In function 'FSE_buildCTable_raw':
+  >> 68     compress/fse_compress.c:521:21: internal compiler error: Segmentation fault
+     69       521 |         tableU16[s] = (U16)(tableSize + s);
+     70           |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+     71     CC obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_compress_superblock.o
+     72     /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5   -c -MT obj/conf_9e2d2f269243aa
+            dc2788ce4f2b47efea/static/zstd_compress_superblock.o -MMD -MP -MF obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_compress_superblock.d -o obj/conf_9e2d2f269243aadc2788ce4f2b4
+            7efea/static/zstd_compress_superblock.o compress/zstd_compress_superblock.c
+     73     0xb2e49f crash_signal
+     74     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+
+     ...
+
+     77     0x807f2a gen_reg_rtx(machine_mode)
+     78     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/emit-rtl.c:1166
+     79     0x81a056 force_reg(machine_mode, rtx_def*)
+     80     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/explow.c:686
+     81     during GIMPLE pass: vect
+     82     compress/huf_compress.c: In function 'HUF_estimateCompressedSize':
+  >> 83     compress/huf_compress.c:544:8: internal compiler error: Segmentation fault
+     84       544 | size_t HUF_estimateCompressedSize(const HUF_CElt* CTable, const unsigned* count, unsigned maxSymbolValue)
+     85           |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+     86     0xe807ca expand_vec_perm_even_odd_pack
+     87     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:19070
+     88     0xea6593 ix86_expand_vec_extract_even_odd(rtx_def*, rtx_def*, rtx_def*, unsigned int)
+     89     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:20052
+
+     ...
+
+     116    0xd7cd01 vectorize_loops()
+     117    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     118    Please submit a full bug report,
+     119    with preprocessed source if appropriate.
+     120    Please include the complete backtrace with any bug report.
+     121    See <https://github.com/spack/spack/issues> for instructions.
+  >> 122    make[1]: *** [obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/huf_compress.o] Error 1
+     123    make[1]: *** Waiting for unfinished jobs....
+     124    CC obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_double_fast.o
+     125    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5   -c -MT obj/conf_9e2d2f269243aa
+            dc2788ce4f2b47efea/static/zstd_double_fast.o -MMD -MP -MF obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_double_fast.d -o obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zst
+            d_double_fast.o compress/zstd_double_fast.c
+     126    CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_superblock.o
+     127    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_superblock.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_super
+            block.d -o obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_superblock.o compress/zstd_compress_superblock.c
+     128    during RTL pass: expand
+     129    compress/fse_compress.c: In function 'FSE_buildCTable_raw':
+  >> 130    compress/fse_compress.c:521:21: internal compiler error: Segmentation fault
+     131      521 |         tableU16[s] = (U16)(tableSize + s);
+     132          |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+     133    0x1218e01 gen_vec_pack_trunc_v8si(rtx_def*, rtx_def*, rtx_def*)
+     134    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/sse.md:13829
+     135    0xa31883 expand_binop_directly
+     136    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/optabs.c:1409
+
+     ...
+
+     169    0xb2196c get_mode_alignment(machine_mode)
+     170    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/stor-layout.c:567
+     171    0x807f2a gen_reg_rtx(machine_mode)
+     172    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/emit-rtl.c:1166
+     173    0x81a056 force_reg(machine_mode, rtx_def*)
+     174    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/explow.c:686
+  >> 175    make[1]: *** [obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/fse_compress.o] Error 1
+     176    CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_fast.o
+     177    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_fast.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_fast.d -o obj/conf_98bafab2ca
+            dcb2dfa4cae01ec2f68bc3/dynamic/zstd_fast.o compress/zstd_fast.c
+     178    0xe807ca expand_vec_perm_even_odd_pack
+     179    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:19070
+     180    0xea6593 ix86_expand_vec_extract_even_odd(rtx_def*, rtx_def*, rtx_def*, unsigned int)
+     181    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:20052
+
+     ...
+
+     184    0xa31883 expand_binop_directly
+     185    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/optabs.c:1409
+     186    0xa2fb20 expand_binop(machine_mode, optab_tag, rtx_def*, rtx_def*, rtx_def*, int, optab_methods)
+     187    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/optabs.c:1496
+     188    during GIMPLE pass: vect
+     189    compress/zstd_compress_superblock.c: In function 'ZSTD_estimateSubBlockSize_symbolType.constprop':
+  >> 190    compress/zstd_compress_superblock.c:324:15: internal compiler error: Segmentation fault
+     191      324 | static size_t ZSTD_estimateSubBlockSize_symbolType(symbolEncodingType_e type,
+     192          |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     193    0x833b19 expand_expr_real_2(separate_ops*, rtx_def*, machine_mode, expand_modifier)
+     194    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/expr.c:10009
+     195    0x83a7a9 expand_expr_real_1(tree_node*, rtx_def*, machine_mode, expand_modifier, rtx_def**, bool)
+     196    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/expr.c:10212
+
+     ...
+
+     215    Please submit a full bug report,
+     216    with preprocessed source if appropriate.
+     217    Please include the complete backtrace with any bug report.
+     218    See <https://github.com/spack/spack/issues> for instructions.
+     219    CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_lazy.o
+     220    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_lazy.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_lazy.d -o obj/conf_98bafab2ca
+            dcb2dfa4cae01ec2f68bc3/dynamic/zstd_lazy.o compress/zstd_lazy.c
+  >> 221    make[1]: *** [obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/fse_compress.o] Error 1
+     222    make[1]: *** Waiting for unfinished jobs....
+     223    during GIMPLE pass: vect
+     224    compress/huf_compress.c: In function 'HUF_estimateCompressedSize':
+  >> 225    compress/huf_compress.c:544:8: internal compiler error: Segmentation fault
+     226      544 | size_t HUF_estimateCompressedSize(const HUF_CElt* CTable, const unsigned* count, unsigned maxSymbolValue)
+     227          |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+     228    0xb2e49f crash_signal
+     229    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     230    0xe803c3 ix86_expand_vec_perm_vpermt2
+     231    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+
+     ...
+
+     256    Please submit a full bug report,
+     257    with preprocessed source if appropriate.
+     258    Please include the complete backtrace with any bug report.
+     259    See <https://github.com/spack/spack/issues> for instructions.
+     260    0xb2e49f crash_signal
+     261    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+  >> 262    make[1]: *** [obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_compress_superblock.o] Error 1
+     263    0xe803c3 ix86_expand_vec_perm_vpermt2
+     264    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+     265    0xe83e01 expand_vec_perm_1
+     266    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:17727
+     267    0xe85328 ix86_expand_vec_perm_const_1
+     268    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:19704
+
+     ...
+
+     289    Please submit a full bug report,
+     290    with preprocessed source if appropriate.
+     291    Please include the complete backtrace with any bug report.
+     292    See <https://github.com/spack/spack/issues> for instructions.
+     293    during GIMPLE pass: vect
+     294    compress/zstd_compress_superblock.c: In function 'ZSTD_estimateSubBlockSize_symbolType.constprop':
+  >> 295    compress/zstd_compress_superblock.c:324:15: internal compiler error: Segmentation fault
+     296      324 | static size_t ZSTD_estimateSubBlockSize_symbolType(symbolEncodingType_e type,
+     297          |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  >> 298    make[1]: *** [obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/huf_compress.o] Error 1
+     299    0xb2e49f crash_signal
+     300    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     301    0xe803c3 ix86_expand_vec_perm_vpermt2
+     302    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+     303    0xe83e01 expand_vec_perm_1
+     304    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:17727
+
+     ...
+
+     325    0xd7cd01 vectorize_loops()
+     326    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     327    Please submit a full bug report,
+     328    with preprocessed source if appropriate.
+     329    Please include the complete backtrace with any bug report.
+     330    See <https://github.com/spack/spack/issues> for instructions.
+  >> 331    make[1]: *** [obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_superblock.o] Error 1
+     332    during GIMPLE pass: vect
+     333    compress/zstd_compress.c: In function 'ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize':
+  >> 334    compress/zstd_compress.c:3322:15: internal compiler error: Segmentation fault
+     335     3322 | static size_t ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize(seqStore_t* seqStore, const ZSTD_CCtx* zc) {
+     336          |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     337    during GIMPLE pass: vect
+     338    compress/zstd_compress.c: In function 'ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize':
+  >> 339    compress/zstd_compress.c:3322:15: internal compiler error: Segmentation fault
+     340     3322 | static size_t ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize(seqStore_t* seqStore, const ZSTD_CCtx* zc) {
+     341          |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     342    0xb2e49f crash_signal
+     343    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     344    0xe803c3 ix86_expand_vec_perm_vpermt2
+     345    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+
+     ...
+
+     378    0xe83e01 expand_vec_perm_1
+     379    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:17727
+     380    0xe85328 ix86_expand_vec_perm_const_1
+     381    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:19704
+     382    0xea6275 ix86_vectorize_vec_perm_const(machine_mode, rtx_def*, rtx_def*, rtx_def*, vec_perm_indices const&)
+     383    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:19979
+  >> 384    make[1]: *** [obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress.o] Error 1
+     385    0xd3d48d have_whole_vector_shift
+     386    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vect-loop.c:4447
+     387    0xd4ad9d have_whole_vector_shift
+     388    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vect-loop.c:4433
+     389    0xd4ad9d vect_model_reduction_cost
+     390    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vect-loop.c:4594
+
+     ...
+
+     401    0xd7cd01 vectorize_loops()
+     402    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     403    Please submit a full bug report,
+     404    with preprocessed source if appropriate.
+     405    Please include the complete backtrace with any bug report.
+     406    See <https://github.com/spack/spack/issues> for instructions.
+  >> 407    make[1]: *** [obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_compress.o] Error 1
+  >> 408    make: *** [libzstd.a] Error 2
+     409    make: *** Waiting for unfinished jobs....
+  >> 410    make: *** [libzstd.so.1.5.0] Error 2
+     411    make: Leaving directory `/tmp/dantopa/spack-stage/spack-stage-zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu/spack-src/lib'
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu/spack-build-out.txt
+
+==> Installing diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+==> No binary for diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/a6/a6bdd7d1b31266d11c4f4de6c1b748d4607ab0231af5188fc2533d0ae2438fec.tar.xz
+==> No patches needed for diffutils
+==> diffutils: Executing phase: 'autoreconf'
+==> diffutils: Executing phase: 'configure'
+==> diffutils: Executing phase: 'build'
+==> diffutils: Executing phase: 'install'
+==> diffutils: Successfully installed diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+  Fetch: 0.01s.  Build: 46.78s.  Total: 46.79s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+==> Installing m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+==> No binary for m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/3b/3be4a26d825ffdfda52a56fc43246456989a3630093cced3fbddf4771ee58a70.tar.gz
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/bf/bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/9d/9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573
+==> Applied patch http://git.savannah.gnu.org/cgit/m4.git/patch/?id=a1354086
+==> Applied patch http://git.savannah.gnu.org/cgit/m4.git/patch/?id=cd7f4d15
+==> Ran patch() for m4
+==> m4: Executing phase: 'autoreconf'
+==> m4: Executing phase: 'configure'
+==> m4: Executing phase: 'build'
+==> m4: Executing phase: 'install'
+==> m4: Successfully installed m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+  Fetch: 0.03s.  Build: 1m 4.17s.  Total: 1m 4.19s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+==> Installing ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+==> No binary for ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/30/30306e0c76e0f9f1f0de987cf1c82a5c21e1ce6568b9227f7da5b71cbea86c9d.tar.gz
+==> No patches needed for ncurses
+==> ncurses: Executing phase: 'autoreconf'
+==> ncurses: Executing phase: 'configure'
+==> ncurses: Executing phase: 'build'
+==> ncurses: Executing phase: 'install'
+==> ncurses: Successfully installed ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+  Fetch: 0.01s.  Build: 1m 33.99s.  Total: 1m 34.01s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+==> Installing bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+==> No binary for bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+==> Ran patch() for bzip2
+==> bzip2: Executing phase: 'install'
+==> bzip2: Successfully installed bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+  Fetch: 0.01s.  Build: 2.60s.  Total: 2.61s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+==> Installing libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+==> No binary for libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/e3/e3bd4d5d3d025a36c21dd6af7ea818a2afcd4dfc1ea5a17b39d7854bcd0c06e3.tar.gz
+==> Ran patch() for libtool
+==> libtool: Executing phase: 'autoreconf'
+==> libtool: Executing phase: 'configure'
+==> libtool: Executing phase: 'build'
+==> libtool: Executing phase: 'install'
+==> libtool: Successfully installed libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+  Fetch: 0.01s.  Build: 9.58s.  Total: 9.59s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+==> Installing readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+==> No binary for readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/f8/f8ceb4ee131e3232226a17f51b164afc46cd0b9e6cef344be87c65962cb82b02.tar.gz
+==> Ran patch() for readline
+==> readline: Executing phase: 'autoreconf'
+==> readline: Executing phase: 'configure'
+==> readline: Executing phase: 'build'
+==> readline: Executing phase: 'install'
+==> readline: Successfully installed readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+  Fetch: 0.01s.  Build: 16.30s.  Total: 16.31s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+==> Installing gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+==> No binary for gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/37/37ed12214122b972e18a0d94995039e57748191939ef74115b1d41d8811364bc.tar.gz
+==> No patches needed for gdbm
+==> gdbm: Executing phase: 'autoreconf'
+==> gdbm: Executing phase: 'configure'
+==> gdbm: Executing phase: 'build'
+==> gdbm: Executing phase: 'install'
+==> gdbm: Successfully installed gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+  Fetch: 0.01s.  Build: 14.13s.  Total: 14.14s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+==> Error: gcc-10.3.0-jfkiyobffxf3m6pcpj7rfezp42mm4uqq: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).

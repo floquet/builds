@@ -1,0 +1,444 @@
+spack install strumpack  % gcc@11.2.0 ^openmpi@4.1.2 ^llvm@13.0.0 arch=linux-centos7-haswell 
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+==> Installing berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+==> No binary for berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/repos/builtin/packages/berkeley-db/drop-docs.patch
+==> Ran patch() for berkeley-db
+==> berkeley-db: Executing phase: 'autoreconf'
+==> berkeley-db: Executing phase: 'configure'
+==> berkeley-db: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 2:
+    'make' '-j11' 'V=1'
+
+2 errors found in build log:
+     524    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_deadlock.c
+     525    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_failchk.c
+     526    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_dea
+            dlock.c  -fPIC -DPIC -o .libs/lock_deadlock.o
+     527    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_id.c
+     528    during GIMPLE pass: vect
+     529    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c: In function '__lv_pack_txn_vrfy_info.isra':
+  >> 530    /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/log/log_verify_util.c:501:1: internal compiler error: Segmentation fault
+     531      501 | __lv_pack_txn_vrfy_info(txninfop, key, data)
+     532          | ^~~~~~~~~~~~~~~~~~~~~~~
+     533    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_fai
+            lchk.c  -fPIC -DPIC -o .libs/lock_failchk.o
+     534    ./libtool --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4
+            ngxgazcr3i3bt2fzzvcecgx4/spack-src/src  -D_GNU_SOURCE -D_REENTRANT -O3  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/
+            lock_list.c
+     535    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_id.
+            c  -fPIC -DPIC -o .libs/lock_id.o
+     536    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_lis
+            t.c  -fPIC -DPIC -o .libs/lock_list.o
+
+     ...
+
+     564    0xd7cd01 vectorize_loops()
+     565    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     566    Please submit a full bug report,
+     567    with preprocessed source if appropriate.
+     568    Please include the complete backtrace with any bug report.
+     569    See <https://github.com/spack/spack/issues> for instructions.
+  >> 570    make: *** [log_verify_util.lo] Error 1
+     571    make: *** Waiting for unfinished jobs....
+     572    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -c -I. -I/tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgaz
+            cr3i3bt2fzzvcecgx4/spack-src/src -D_GNU_SOURCE -D_REENTRANT -O3 /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-src/src/lock/lock_met
+            hod.c  -fPIC -DPIC -o .libs/lock_method.o
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4/spack-build-out.txt
+
+==> Warning: Skipping build of perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks since berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4 failed
+==> Warning: Skipping build of autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of libpaper-1.1.28-wujwqqpcac643uhtbvxliejj63kytd64 since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of texlive-20210325-b3bzxcyyc5qf35c7mfxrc3onwetelhma since libpaper-1.1.28-wujwqqpcac643uhtbvxliejj63kytd64 failed
+==> Warning: Skipping build of pandoc-2.14.0.3-b5pwcrsp7lomuh5hf2atezpltghctk2t since texlive-20210325-b3bzxcyyc5qf35c7mfxrc3onwetelhma failed
+==> Warning: Skipping build of pmix-3.2.1-jgw2e7fquf6tm5q5lxvq5ixk24qdf7xq since pandoc-2.14.0.3-b5pwcrsp7lomuh5hf2atezpltghctk2t failed
+==> Warning: Skipping build of openmpi-4.1.2-vrffxr7y46m746cg7orrnkucmmju3qj5 since pmix-3.2.1-jgw2e7fquf6tm5q5lxvq5ixk24qdf7xq failed
+==> Warning: Skipping build of parmetis-4.0.3-rtuqjhrtn4lyxbahb5k4zgkiaf7l7fk7 since openmpi-4.1.2-vrffxr7y46m746cg7orrnkucmmju3qj5 failed
+==> Warning: Skipping build of strumpack-6.1.0-xfsnueh2yuoqtubhwdwfno2wffn7t2ao since parmetis-4.0.3-rtuqjhrtn4lyxbahb5k4zgkiaf7l7fk7 failed
+==> Warning: Skipping build of slate-2021.05.02-2slr6ixv2q7zhlnvvmxnwt4l4yvhmr2b since openmpi-4.1.2-vrffxr7y46m746cg7orrnkucmmju3qj5 failed
+==> Warning: Skipping build of arpack-ng-3.8.0-hmsnd4uz3xd3arxjickqn4m6chc4syqy since openmpi-4.1.2-vrffxr7y46m746cg7orrnkucmmju3qj5 failed
+==> Warning: Skipping build of butterflypack-2.0.0-zowua6lq6nxwjrromm7tunnlsmn5pp3b since arpack-ng-3.8.0-hmsnd4uz3xd3arxjickqn4m6chc4syqy failed
+==> Warning: Skipping build of netlib-scalapack-2.1.0-vz47jzg6pfyzshpi624bb5ujirrsbnx6 since openmpi-4.1.2-vrffxr7y46m746cg7orrnkucmmju3qj5 failed
+==> Warning: Skipping build of libgd-2.2.4-imha3rdliqd53slyvjtjpdbpsdzefqta since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of cairo-1.16.0-2evda4n65bjyjlu42llw4l4wsnl6gozx since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of pango-1.42.0-5h4fe3up6thuox2qtjkf3lpqz63f3fqj since cairo-1.16.0-2evda4n65bjyjlu42llw4l4wsnl6gozx failed
+==> Warning: Skipping build of librsvg-2.51.0-ckgcjvwoym235du6n7dpkhhbubafjay2 since pango-1.42.0-5h4fe3up6thuox2qtjkf3lpqz63f3fqj failed
+==> Warning: Skipping build of gtkplus-3.24.29-vvjgxw5cevgkv4xdhetmv5poa26dk74s since librsvg-2.51.0-ckgcjvwoym235du6n7dpkhhbubafjay2 failed
+==> Warning: Skipping build of ghostscript-9.54.0-oyvehdtrwmhxf5lxamaqa6ebas2suukd since gtkplus-3.24.29-vvjgxw5cevgkv4xdhetmv5poa26dk74s failed
+==> Warning: Skipping build of harfbuzz-2.9.1-afoqxthtvcjpojlma7zgbwn4cepqigc5 since cairo-1.16.0-2evda4n65bjyjlu42llw4l4wsnl6gozx failed
+==> Warning: Skipping build of qt-5.15.2-5smzulxgmmg744ttuydzi6toiutzoeod since harfbuzz-2.9.1-afoqxthtvcjpojlma7zgbwn4cepqigc5 failed
+==> Warning: Skipping build of poppler-0.79.0-vvka3g7lg6x5hu4dgiuncocdwo2gzz5v since qt-5.15.2-5smzulxgmmg744ttuydzi6toiutzoeod failed
+==> Warning: Skipping build of gobject-introspection-1.56.1-wrjsyqjyuixxvqlx2oo2fnmme3dfmbij since cairo-1.16.0-2evda4n65bjyjlu42llw4l4wsnl6gozx failed
+==> Warning: Skipping build of atk-2.36.0-lvxas3zldvlhqc57e4c3fw3d3nh6mfqh since gobject-introspection-1.56.1-wrjsyqjyuixxvqlx2oo2fnmme3dfmbij failed
+==> Warning: Skipping build of at-spi2-atk-2.38.0-4ge4iwvd2xaucrolvnvkyca5jokruumn since atk-2.36.0-lvxas3zldvlhqc57e4c3fw3d3nh6mfqh failed
+==> Warning: Skipping build of gdk-pixbuf-2.42.6-h32lojmzfg6kg4qe2y5nnopddicx25bw since gobject-introspection-1.56.1-wrjsyqjyuixxvqlx2oo2fnmme3dfmbij failed
+==> Warning: Skipping build of at-spi2-core-2.40.1-ui4fgwlqzhvlzcbk2r4ulsdklma4dhmq since gobject-introspection-1.56.1-wrjsyqjyuixxvqlx2oo2fnmme3dfmbij failed
+==> Warning: Skipping build of numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of fontconfig-2.13.94-rpqsv4c4f5zdqyktd3behnl7btskk5pp since font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky failed
+==> Warning: Skipping build of libxft-2.3.2-p4ipkcskbwin2ssudgub2pac3myf4vhw since fontconfig-2.13.94-rpqsv4c4f5zdqyktd3behnl7btskk5pp failed
+==> Warning: Skipping build of mesa18-18.3.6-7bk7tks3keuz7f6kn5tjt4uog7mapu33 since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of libepoxy-1.4.3-r2cddhitq5xwa6m3oaqpocb4pidh3gx6 since mesa18-18.3.6-7bk7tks3keuz7f6kn5tjt4uog7mapu33 failed
+==> Warning: Skipping build of fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of automake-1.16.3-plszkirben6s2esxec3f3cuieroc3q72 since autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx failed
+==> Warning: Skipping build of perl-module-build-tiny-0.039-3ceaehsfugflhe4yyayw6qbjz6g4xasu since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-http-daemon-6.01-v4tmtsdqo7qdyymm5xirqkk4bchtbx5o since perl-module-build-tiny-0.039-3ceaehsfugflhe4yyayw6qbjz6g4xasu failed
+==> Warning: Skipping build of perl-libwww-perl-6.33-px22ps2x57ogf6okuhndha2viagmihay since perl-http-daemon-6.01-v4tmtsdqo7qdyymm5xirqkk4bchtbx5o failed
+==> Warning: Skipping build of perl-xml-parser-2.44-h4dh2aftceddjif2xhfs42jj2yaddjxu since perl-libwww-perl-6.33-px22ps2x57ogf6okuhndha2viagmihay failed
+==> Warning: Skipping build of intltool-0.51.0-wbm7qce6djb55msi3hpt4b742mrihhsg since perl-xml-parser-2.44-h4dh2aftceddjif2xhfs42jj2yaddjxu failed
+==> Warning: Skipping build of shared-mime-info-1.9-cpl7ov4xtq3mr3itxe2bo5ppj5d5fbw6 since intltool-0.51.0-wbm7qce6djb55msi3hpt4b742mrihhsg failed
+==> Warning: Skipping build of perl-html-parser-3.72-pts4z2fwcrkvwrzrlsl4wzalzaqiexmf since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-extutils-installpaths-0.012-xwrgyi7lgqlcudq5q3ltw36bzt4nzn5d since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of llvm-13.0.0-t42kwefue7mc4p4eg55dbzcs2i7cjzh6 since perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp failed
+==> Warning: Skipping build of perl-lwp-mediatypes-6.02-xqdjqhhnp62u4qtbkapplx4torglic3w since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-http-message-6.13-pncho76gsmlutimdh3pdotzklueneelm since perl-lwp-mediatypes-6.02-xqdjqhhnp62u4qtbkapplx4torglic3w failed
+==> Warning: Skipping build of perl-http-negotiate-6.01-2qajpasnd2yboa7aqfdhyr6v4p5zkiw4 since perl-http-message-6.13-pncho76gsmlutimdh3pdotzklueneelm failed
+==> Warning: Skipping build of perl-http-cookies-6.04-trxtensveotmk7gv562ol67mct47gnoy since perl-http-message-6.13-pncho76gsmlutimdh3pdotzklueneelm failed
+==> Warning: Skipping build of perl-www-robotrules-6.02-nxom2culx5izc76dyvm26i2h2q36kl5o since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-extutils-helpers-0.026-z6ymr67egna277mo3akhsmv2vxzosha6 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-http-date-6.02-za7c3kw65f25lkej36gtsr65asutqmr2 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-file-listing-6.04-q7vd2zae6lwi5kjyqgo4w5mfl6c3zhut since perl-http-date-6.02-za7c3kw65f25lkej36gtsr65asutqmr2 failed
+==> Warning: Skipping build of openblas-0.3.18-jp7hjhnadk75lpn4n5cqcumjoijeceix since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of blaspp-2021.04.01-erhho3l6bqpsssf7jbsmyefrglwkrydp since openblas-0.3.18-jp7hjhnadk75lpn4n5cqcumjoijeceix failed
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libmd-1.0.3-vfy2r6eyszp3ipuofve6obivkgu757t4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libffi-3.3-edeo4guhvfzlskl252zffpcnyx7rgqm7
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/findutils-4.8.0-fzrovitzlmyofji3uxfipscvzyln6tev
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/nasm-2.15.05-hwiieuz5zeo42xrefebhlsflbazi2kv6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtiff-4.3.0-lugs3mqaglsghxuajczpzfwipu5kyjyd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre2-10.36-q3frin4mldxto5lyztoogbyn7vonxvig
+==> Installing zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu
+==> No binary for zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu found: installing from source
+==> Warning: Skipping build of lapackpp-2021.04.00-rphma2rbngwvases7p4hnuoaw7vw7hur since blaspp-2021.04.01-erhho3l6bqpsssf7jbsmyefrglwkrydp failed
+==> Warning: Skipping build of perl-html-tagset-3.20-pziiozawlm2ii4cxpw4qfh2vzvf73x5k since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of gmake-4.3-ht3utwpixpqahj7eprd3tnbrqhmrpuds since texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql failed
+==> Warning: Skipping build of rust-1.51.0-oh3e4rt7ckpny6woyvsjlaxyeptl6ms3 since gmake-4.3-ht3utwpixpqahj7eprd3tnbrqhmrpuds failed
+==> Warning: Skipping build of libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of libxext-1.3.3-euqzyoncxeh7gc7ljjmmzyn4jo4hbw2d since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxmu-1.1.2-iw3y7khrokoaepyfgmbbx452tm3wszjr since libxext-1.3.3-euqzyoncxeh7gc7ljjmmzyn4jo4hbw2d failed
+==> Warning: Skipping build of libxaw-1.0.13-j3p25qojsmmpru4fbtgu7gyffsdytzs2 since libxmu-1.1.2-iw3y7khrokoaepyfgmbbx452tm3wszjr failed
+==> Warning: Skipping build of libxi-1.7.6-ih4pg7xqufujprnpudggjvnqw36pyi4c since libxext-1.3.3-euqzyoncxeh7gc7ljjmmzyn4jo4hbw2d failed
+==> Warning: Skipping build of libxtst-1.2.2-s5culptdggmzf3ymjpedjigfmbhfq44d since libxi-1.7.6-ih4pg7xqufujprnpudggjvnqw36pyi4c failed
+==> Warning: Skipping build of libxrandr-1.5.0-wxegyuxn5pwcmo6iony5tia7fi2qnqti since libxext-1.3.3-euqzyoncxeh7gc7ljjmmzyn4jo4hbw2d failed
+==> Warning: Skipping build of xrandr-1.5.0-nownbxglkoigeo5lcoz3y6rwta5y5ggj since libxrandr-1.5.0-wxegyuxn5pwcmo6iony5tia7fi2qnqti failed
+==> Warning: Skipping build of xkbcomp-1.4.4-thpnup5f3qfg6mpj365zez3wgmy7xa7v since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of xkbdata-1.0.1-4lhk3p2w6by7feiyjmpobjjf463n7soz since xkbcomp-1.4.4-thpnup5f3qfg6mpj365zez3wgmy7xa7v failed
+==> Warning: Skipping build of libxkbcommon-0.8.2-jhsxjf5te2fxxvkw3kg4pgwxmfkk3lf3 since xkbdata-1.0.1-4lhk3p2w6by7feiyjmpobjjf463n7soz failed
+==> Warning: Skipping build of libxkbfile-1.0.9-msqhassew2zvolf43tojv2eojgjgnjfp since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxpm-3.5.12-3regytighexdnrniwzqwtgyiaiwo3kos since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxfixes-5.0.2-fshxhnscs3u54iergxb65xqjhizihr4a since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxrender-0.9.10-itsxilubfl6fntvah6nnwfzwglegkazj since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of libxt-1.1.5-5a7h2zqoufnkvpvjymnluwc7ceohtop3 since libx11-1.7.0-6wslatby73xl3vvlelxq6isyx3tfq6dl failed
+==> Warning: Skipping build of perl-module-build-0.4224-gbar7zhruaardco2wd4eznbwbjf3fcpj since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-encode-locale-1.05-anxhy6pzev2yxjp4u6slfa6xfkqt5wrg since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of glib-2.70.2-66vvts3zimi3dnu5bn2ukw5rtiztmkyk since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of dbus-1.12.8-rtszvk5y5zxxslgn7hv266bwn2mb6cxr since glib-2.70.2-66vvts3zimi3dnu5bn2ukw5rtiztmkyk failed
+==> Warning: Skipping build of libcroco-0.6.13-dmpxcs4micgrappmqrlqzcoe3dvhlz7a since glib-2.70.2-66vvts3zimi3dnu5bn2ukw5rtiztmkyk failed
+==> Warning: Skipping build of perl-try-tiny-0.28-s26tj6y4otsoszr7e2b3ax4auo67qu3a since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-net-http-6.17-qp4oivjg6smzjfupnkdej2ddpnmvwyfx since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of flex-2.6.3-la4kstvils5q3ulwzowkeuhluovem352 since bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w failed
+==> Warning: Skipping build of krb5-1.19.2-y7xh7ilqlxizwmhntem2a3ifeu6kwmqw since bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w failed
+==> Warning: Skipping build of perl-test-needs-0.002005-w4lh5sthuowjdhkxbwznu2qyn5uhrapa since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of perl-uri-1.72-v4vmb6rivup63gsf5fajhw7ga6z554y5 since perl-test-needs-0.002005-w4lh5sthuowjdhkxbwznu2qyn5uhrapa failed
+==> Warning: Skipping build of perl-io-html-1.001-orem4dyb6zjfxxj7j6zy3louwjrn52gd since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Warning: Skipping build of libgit2-1.1.1-ajv3fjseaebuohgg2jzm7eltmildw4zy since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of double-conversion-3.1.5-zk6dvzh7bt7isedr3gfmz4uloyev3q5v since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of libmng-2.0.3-ldg72v4uxpuq33n6m3atlrjmy3763vr3 since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of zfp-0.5.5-mcj22b4ptpl4j53pb5plyye4rlyd5be4 since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of poppler-data-0.4.9-rzgpc4c4vjrlqcrsdsphgx6koddhaeyz since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of graphite2-1.3.13-4pkauqsktu2lgh3f6yhb6wts5a6l6ugu since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of libssh2-1.10.0-uyqsfijo7w52pibzfsgliuqzu4bs55ip since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of lcms-2.9-irfstnwwj2fb6it2xov4tm4d6vjwexnn since libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb failed
+==> Warning: Skipping build of metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2 since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of zziplib-0.13.72-zjymhzbxycwdgo5rewuqws5ukhp52544 since cmake-3.22.1-f67k6vrig27n2psgzf3cmlom4nfnwbxu failed
+==> Warning: Skipping build of openssh-8.7p1-nzarxl2v63x7f5iljbrxrmoqyji3fxvy since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of libevent-2.1.8-mytqoajgafht73dueup6kflb7phtnltl since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of python-3.9.9-njbqciqxv2vj64gn2trfiozu7pf2d7od since openssl-1.1.1l-j6rd4ooszjxqq7qjx6ufu5uz3srduoo2 failed
+==> Warning: Skipping build of py-markupsafe-2.0.1-h7352qvexzlaor5j2qoepfbm2byavhzz since python-3.9.9-njbqciqxv2vj64gn2trfiozu7pf2d7od failed
+==> Warning: Skipping build of py-mako-1.1.5-jwparbarn3s7pohk7rm4vtyzmd3il2j4 since py-markupsafe-2.0.1-h7352qvexzlaor5j2qoepfbm2byavhzz failed
+==> Warning: Skipping build of ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui since python-3.9.9-njbqciqxv2vj64gn2trfiozu7pf2d7od failed
+==> Warning: Skipping build of meson-0.60.0-huu3mfgye3o5biipflzdlb7tk23znpg6 since ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui failed
+==> Warning: Skipping build of icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz since python-3.9.9-njbqciqxv2vj64gn2trfiozu7pf2d7od failed
+==> Warning: Skipping build of py-setuptools-59.4.0-2wtixg6fkixilgd22hy3gizdb4a3a7em since python-3.9.9-njbqciqxv2vj64gn2trfiozu7pf2d7od failed
+==> Warning: Skipping build of perl-extutils-config-0.008-n7rcsqgbjgh6twz7ted6n7k73sci2pto since perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks failed
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/var/spack/cache/_source-cache/archive/0d/0d9ade222c64e912d6957b11c923e214e2e010a18f39bec102f572e693ba2867.tar.gz
+==> No patches needed for zstd
+==> zstd: Executing phase: 'edit'
+==> zstd: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 2:
+    'make' '-j11' 'VERBOSE=1' 'PREFIX=/home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu' '-C' 'lib'
+
+18 errors found in build log:
+     56     CC obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_compress_superblock.o
+     57     /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5   -c -MT obj/conf_9e2d2f269243aa
+            dc2788ce4f2b47efea/static/zstd_compress_superblock.o -MMD -MP -MF obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_compress_superblock.d -o obj/conf_9e2d2f269243aadc2788ce4f2b4
+            7efea/static/zstd_compress_superblock.o compress/zstd_compress_superblock.c
+     58     CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/hist.o
+     59     /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/hist.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/hist.d -o obj/conf_98bafab2cadcb2dfa4ca
+            e01ec2f68bc3/dynamic/hist.o compress/hist.c
+     60     during RTL pass: expand
+     61     compress/fse_compress.c: In function 'FSE_buildCTable_raw':
+  >> 62     compress/fse_compress.c:521:21: internal compiler error: Segmentation fault
+     63       521 |         tableU16[s] = (U16)(tableSize + s);
+     64           |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+     65     CC obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_double_fast.o
+     66     /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5   -c -MT obj/conf_9e2d2f269243aa
+            dc2788ce4f2b47efea/static/zstd_double_fast.o -MMD -MP -MF obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_double_fast.d -o obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zst
+            d_double_fast.o compress/zstd_double_fast.c
+     67     CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/huf_compress.o
+     68     /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/huf_compress.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/huf_compress.d -o obj/conf_98ba
+            fab2cadcb2dfa4cae01ec2f68bc3/dynamic/huf_compress.o compress/huf_compress.c
+
+     ...
+
+     79     0xe807ca expand_vec_perm_even_odd_pack
+     80     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:19070
+     81     0xea6593 ix86_expand_vec_extract_even_odd(rtx_def*, rtx_def*, rtx_def*, unsigned int)
+     82     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:20052
+     83     during GIMPLE pass: vect
+     84     compress/huf_compress.c: In function 'HUF_estimateCompressedSize':
+  >> 85     compress/huf_compress.c:544:8: internal compiler error: Segmentation fault
+     86       544 | size_t HUF_estimateCompressedSize(const HUF_CElt* CTable, const unsigned* count, unsigned maxSymbolValue)
+     87           |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+     88     0xb2e49f crash_signal
+     89     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     90     0xe803c3 ix86_expand_vec_perm_vpermt2
+     91     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+
+     ...
+
+     140    0x845d07 expand_expr_real(tree_node*, rtx_def*, machine_mode, expand_modifier, rtx_def**, bool)
+     141    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/expr.c:8519
+     142    0x845d07 expand_expr
+     143    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/expr.h:282
+     144    0x845d07 expand_assignment(tree_node*, tree_node*, bool)
+     145    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/expr.c:5171
+  >> 146    make[1]: *** [obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/huf_compress.o] Error 1
+     147    make[1]: *** Waiting for unfinished jobs....
+     148    CC obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_fast.o
+     149    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5   -c -MT obj/conf_9e2d2f269243aa
+            dc2788ce4f2b47efea/static/zstd_fast.o -MMD -MP -MF obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_fast.d -o obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_fast.o compr
+            ess/zstd_fast.c
+     150    CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_literals.o
+     151    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_literals.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_literal
+            s.d -o obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_literals.o compress/zstd_compress_literals.c
+     152    0x736fea expand_gimple_stmt_1
+
+     ...
+
+     154    Please submit a full bug report,
+     155    with preprocessed source if appropriate.
+     156    Please include the complete backtrace with any bug report.
+     157    See <https://github.com/spack/spack/issues> for instructions.
+     158    during GIMPLE pass: vect
+     159    compress/zstd_compress_superblock.c: In function 'ZSTD_estimateSubBlockSize_symbolType.constprop':
+  >> 160    compress/zstd_compress_superblock.c:324:15: internal compiler error: Segmentation fault
+     161      324 | static size_t ZSTD_estimateSubBlockSize_symbolType(symbolEncodingType_e type,
+     162          |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     163    CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_sequences.o
+     164    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_sequences.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_sequen
+            ces.d -o obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_sequences.o compress/zstd_compress_sequences.c
+  >> 165    make[1]: *** [obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/fse_compress.o] Error 1
+     166    CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_superblock.o
+     167    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_superblock.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_super
+            block.d -o obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_superblock.o compress/zstd_compress_superblock.c
+     168    0xb2e49f crash_signal
+     169    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     170    0xe803c3 ix86_expand_vec_perm_vpermt2
+     171    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+
+     ...
+
+     196    0xd7cd01 vectorize_loops()
+     197    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     198    Please submit a full bug report,
+     199    with preprocessed source if appropriate.
+     200    Please include the complete backtrace with any bug report.
+     201    See <https://github.com/spack/spack/issues> for instructions.
+  >> 202    make[1]: *** [obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_compress_superblock.o] Error 1
+     203    CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_fast.o
+     204    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_fast.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_fast.d -o obj/conf_98bafab2ca
+            dcb2dfa4cae01ec2f68bc3/dynamic/zstd_fast.o compress/zstd_fast.c
+     205    during RTL pass: expand
+     206    compress/fse_compress.c: In function 'FSE_buildCTable_raw':
+  >> 207    compress/fse_compress.c:521:21: internal compiler error: Segmentation fault
+     208      521 |         tableU16[s] = (U16)(tableSize + s);
+     209          |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+     210    0xb2e49f crash_signal
+     211    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     212    0xb2196c get_mode_alignment(machine_mode)
+     213    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/stor-layout.c:567
+
+     ...
+
+     250    Please submit a full bug report,
+     251    with preprocessed source if appropriate.
+     252    Please include the complete backtrace with any bug report.
+     253    See <https://github.com/spack/spack/issues> for instructions.
+     254    CC obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_lazy.o
+     255    /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/lib/spack/env/gcc/gcc -O3   -fPIC -fvisibility=hidden -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -DZSTD
+            _MULTITHREAD   -c -MT obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_lazy.o -MMD -MP -MF obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_lazy.d -o obj/conf_98bafab2ca
+            dcb2dfa4cae01ec2f68bc3/dynamic/zstd_lazy.o compress/zstd_lazy.c
+  >> 256    make[1]: *** [obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/fse_compress.o] Error 1
+     257    make[1]: *** Waiting for unfinished jobs....
+     258    during GIMPLE pass: vect
+     259    compress/huf_compress.c: In function 'HUF_estimateCompressedSize':
+  >> 260    compress/huf_compress.c:544:8: internal compiler error: Segmentation fault
+     261      544 | size_t HUF_estimateCompressedSize(const HUF_CElt* CTable, const unsigned* count, unsigned maxSymbolValue)
+     262          |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+     263    during GIMPLE pass: vect
+     264    compress/zstd_compress_superblock.c: In function 'ZSTD_estimateSubBlockSize_symbolType.constprop':
+  >> 265    compress/zstd_compress_superblock.c:324:15: internal compiler error: Segmentation fault
+     266      324 | static size_t ZSTD_estimateSubBlockSize_symbolType(symbolEncodingType_e type,
+     267          |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     268    0xb2e49f crash_signal
+     269    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     270    0xb2e49f crash_signal
+     271    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+
+     ...
+
+     326    Please include the complete backtrace with any bug report.
+     327    See <https://github.com/spack/spack/issues> for instructions.
+     328    Please submit a full bug report,
+     329    with preprocessed source if appropriate.
+     330    Please include the complete backtrace with any bug report.
+     331    See <https://github.com/spack/spack/issues> for instructions.
+  >> 332    make[1]: *** [obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress_superblock.o] Error 1
+  >> 333    make[1]: *** [obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/huf_compress.o] Error 1
+     334    during GIMPLE pass: vect
+     335    compress/zstd_compress.c: In function 'ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize':
+  >> 336    compress/zstd_compress.c:3322:15: internal compiler error: Segmentation fault
+     337     3322 | static size_t ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize(seqStore_t* seqStore, const ZSTD_CCtx* zc) {
+     338          |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     339    0xb2e49f crash_signal
+     340    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     341    0xe803c3 ix86_expand_vec_perm_vpermt2
+     342    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+
+     ...
+
+     365    0xd7cd01 vectorize_loops()
+     366    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     367    Please submit a full bug report,
+     368    with preprocessed source if appropriate.
+     369    Please include the complete backtrace with any bug report.
+     370    See <https://github.com/spack/spack/issues> for instructions.
+  >> 371    make[1]: *** [obj/conf_9e2d2f269243aadc2788ce4f2b47efea/static/zstd_compress.o] Error 1
+     372    during GIMPLE pass: vect
+     373    compress/zstd_compress.c: In function 'ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize':
+  >> 374    compress/zstd_compress.c:3322:15: internal compiler error: Segmentation fault
+     375     3322 | static size_t ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize(seqStore_t* seqStore, const ZSTD_CCtx* zc) {
+     376          |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     377    0xb2e49f crash_signal
+     378    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/toplev.c:327
+     379    0xe803c3 ix86_expand_vec_perm_vpermt2
+     380    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/config/i386/i386-expand.c:4514
+
+     ...
+
+     403    0xd7cd01 vectorize_loops()
+     404    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-yqde46ks5t2vg2szmjvadwjv6uwmmytl/spack-src/gcc/tree-vectorizer.c:1243
+     405    Please submit a full bug report,
+     406    with preprocessed source if appropriate.
+     407    Please include the complete backtrace with any bug report.
+     408    See <https://github.com/spack/spack/issues> for instructions.
+  >> 409    make[1]: *** [obj/conf_98bafab2cadcb2dfa4cae01ec2f68bc3/dynamic/zstd_compress.o] Error 1
+  >> 410    make: *** [libzstd.a] Error 2
+     411    make: *** Waiting for unfinished jobs....
+  >> 412    make: *** [libzstd.so.1.5.0] Error 2
+     413    make: Leaving directory `/tmp/dantopa/spack-stage/spack-stage-zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu/spack-src/lib'
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-zstd-1.5.0-j5z3lgn2ptskiafim6g6wh5u4qbjpsgu/spack-build-out.txt
+
+==> Error: strumpack-6.1.0-xfsnueh2yuoqtubhwdwfno2wffn7t2ao: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/coreutils-8.32-t5zmeh5u4emz37csc2hczunnthhramof
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-linux-uuid-2.36.2-hn32lcqoeonboow75gfxkumyosbllw4i
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tar-1.34-42gugaaxphtcd4s4frkes2gjjinpxpud
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpng-1.6.37-thsagwquvptbm2itk6vugrt6vtunphef
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/randrproto-1.5.0-ifv7sfr26mv44i6cdw4zpqa45ljosyrw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/renderproto-0.11.1-pnfln2onasxlzl3adirp3skfw4hfyc4r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/glproto-1.4.17-l5gjksqk2pu3kw5okp3gowybbudq5ha3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fixesproto-5.0-otwvdxgnc4gokhuldvu646xzbguk46th
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/recordproto-1.14.2-d7rofv7nxxqzkuclc36sbkrfuj66wynm
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libbsd-0.11.3-msxl2whnsw6gyeke3r5sirnij2pcrtbb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/swig-4.0.2-opkn2e4pcfz46xml2oiqtuc4cgs5w5tp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libice-1.0.9-gb3fer3hhzx5icukotjdypouiiofryee
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/docbook-xml-4.4-vtbyupmn4l3sjck3r3pzncocasowqniq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxdmcp-1.1.2-gsoo2snw4p4p2tz6ril4hplzkxsigw6e
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/expat-2.4.1-wh3v3vspvbdidb4rvq4t5nhnup74rhd6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/sqlite-3.36.0-npgi3bzyyz35ucxjq4e2bnxabjmys2w6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/freetype-2.11.0-7jbzkx4ezzljk2zovg2rbqhrsi3rfsrx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gettext-0.21-iazp3ms7hesjiw7tfdtcx4ribsunvms4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsm-1.2.3-gxmuct24kwj74y2sspvf3opb6oodf5ja
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/docbook-xsl-1.79.2-yypsifecqeqla4zbvnuighlztx5nnxni
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxcb-1.14-iyouxepm3mldpb4c5w2eal77qe3ekcji
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/teckit-2.5.9-dok76lgyvuphkwihuj2xc7y53fdlajqw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontscale-1.1.2-t7fnuqahtx77vkj6cddi2xj65xgnyobh
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxfont-1.5.2-ea6eebtbwnnsalmh72kolmgtipasqxyg
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/binutils-2.37-t72eam5r2o6udeh35trjkhziu2jrvozx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.6.0-w6fdwy467abfqp6qplcjirbi2b4ljpsu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-util-renderutil-0.3.9-xzdq3mdb6fkfz3vu3tyymmq32htsyzka
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-util-wm-0.4.1-j474mpggxymvs74ojqiu2racr4p6m5et
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-util-keysyms-0.4.0-dbxnfejetnrjnbilm43mwp6sah5a74yj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-util-0.4.0-ooj4ipuursm25jcx77p4wcxi7345hmyv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontdir-1.0.7-rujojrc72y4ynoyssayhabqr3drhjcbr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bdftopcf-1.0.5-yltyfyj5w5c47igjbbbsduo4hh7eiwlh
+[+] /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-util-image-0.4.0-cfhqa2szghiwf3ibs4oktfyc3mbq2x6m
