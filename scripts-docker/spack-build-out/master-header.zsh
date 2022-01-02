@@ -3,6 +3,16 @@ printf '%s\n' "$(date) $(tput bold)${HOME}/${(%):-%N}$(tput sgr0)"
 
 # Mon Dec 27 21:28:59 UTC 2021
 
+# keep records on spack builds
+export  blog="${SPACK_ROOT}/build-logs"
+export bspec="${SPACK_ROOT}/specs"
+export binfo="${SPACK_ROOT}/info"
+
+# should be created by generic-kickstart.sh
+mkdir -p ${blog}
+mkdir -p ${bspec}
+mkdir -p ${binfo}
+
 # counts steps in batch process
 export counter=0
 function new_step(){
@@ -48,14 +58,6 @@ else
           command -v ${package}
 fi
 }
-
-export blogs="${SPACK_ROOT}/${USER}/build-logs"
-export bspec="${SPACK_ROOT}/${USER}/specs"
-export binfo="${SPACK_ROOT}/${USER}/info"
-
-mkdir -p ${SPACK_ROOT}/${USER}/build-logs
-mkdir -p ${SPACK_ROOT}/${USER}/specs
-mkdir -p ${SPACK_ROOT}/${USER}/specs
 
 function sweeper(){
 export  clicker=0

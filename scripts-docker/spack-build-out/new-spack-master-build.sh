@@ -6,7 +6,7 @@ printf '%s\n' "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
 # define: new_step
 # define: sub_step
 # define: spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
-source ${repo_scripts_docker}/spack-build-out/master-header.sh
+source ${repo_scripts_docker}/spack-build-out/master-header.zsh
 
 # spacktion ${p} ${cmd_arguments} ${log_file} ${bspec}
 
@@ -23,9 +23,6 @@ export     my_llvm="llvm@13.0.0"
 
 # when using a spack-built compiler:
 # spack load gcc @ 11.2.1
-
-export blogs="${SPACK_ROOT}/${USER}/build-logs"
-export bspec="${SPACK_ROOT}/${USER}/specs"
 
 # py-${p} % ${my_compiler} ^${my_python}
 declare -a   lalpha=("seaborn" "astropy" "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
@@ -85,21 +82,17 @@ done
 
 new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
 echo "\${lalpha[@]} = ${lalpha[@]}"
+export list=$(echo "$lalpha" | sed 's/[^ ]* */py-&/g')
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-export list=${lalpha[@]}
 sweeper
 
 #  #  ========================================================= myapp % ${my_compiler} ^${my_python} ${myarch}
 
 new_step "install pattern - myapp % ${my_compiler} ^${my_python} ${myarch}: ${#lbravo[@]} elements"
 echo "\${lbravo[@]} = ${lbravo[@]}"
-export clicker=0
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
-for p in ${lbravo[@]}; do
-    export  log_file="${blogs}/${p}.txt"
-    export spec_file="${bspec}/${p}.txt"
-    spacktion \${p} \${cmd_line} \${log_file} \${spec_file}
-done
+export list=${lbeta[@]}
+sweeper
 
 #  #  ========================================================= myapp % ${my_compiler} ^${my_python} ^${my_ompi}
 
