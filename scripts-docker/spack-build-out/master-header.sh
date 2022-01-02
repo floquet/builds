@@ -18,8 +18,8 @@ export counter=0
 function new_step(){
     counter=$((counter+1))
     echo ""
-    echo date
-    echo "Step ${counter}: ${1}"
+    echo ""
+    echo "$(date +%Y-%m-%d\ %H:%M): Step ${counter}: ${1}"
 }
 
 export clicker=0
