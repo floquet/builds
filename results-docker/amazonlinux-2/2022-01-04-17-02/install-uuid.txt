@@ -1,0 +1,60 @@
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.006
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.005
+Obs Init time: 0.130
+Resolving Dependencies
+--> Running transaction check
+---> Package uuid.x86_64 0:1.6.2-26.amzn2.0.1 will be installed
+Checking deps for uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('libc.so.6(GLIBC_2.3.4)(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('libc.so.6(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('libc.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('libossp-uuid.so.16()(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('libnsl.so.1()(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+looking for ('libc.so.6()(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.147
+
+Dependencies Resolved
+
+================================================================================
+ Package     Arch          Version                      Repository         Size
+================================================================================
+Installing:
+ uuid        x86_64        1.6.2-26.amzn2.0.1           amzn2-core         56 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 56 k
+Installed size: 116 k
+Downloading packages:
+Member: uuid.x86_64 0:1.6.2-26.amzn2.0.1 - u
+Adding Package uuid-1.6.2-26.amzn2.0.1.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.003
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.022
+Running transaction
+  Installing : uuid-1.6.2-26.amzn2.0.1.x86_64                               1/1 
+  Verifying  : uuid-1.6.2-26.amzn2.0.1.x86_64                               1/1 
+VerifyTransaction time: 0.056
+Transaction time: 0.149
+
+Installed:
+  uuid.x86_64 0:1.6.2-26.amzn2.0.1                                              
+
+Complete!

@@ -1,0 +1,47 @@
+yum deplist -v python-virtualenv
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.006
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.004
+Searching pkgSack for dep: python(abi)
+Searching pkgSack for dep: python-setuptools
+Searching pkgSack for dep: python2-devel
+package: python-virtualenv.noarch 15.1.0-4.amzn2
+  dependency: python(abi) = 2.7
+   provider: python.x86_64 2.7.18-1.amzn2.0.4
+   provider: python.x86_64 2.7.18-1.amzn2.0.3
+   provider: python.x86_64 2.7.18-1.amzn2.0.2
+   provider: python.x86_64 2.7.18-1.amzn2.0.1
+   provider: python.x86_64 2.7.18-1.amzn2
+   provider: python.x86_64 2.7.16-5.amzn2
+   provider: python.x86_64 2.7.16-4.amzn2
+   provider: python.x86_64 2.7.16-3.amzn2.0.1
+   provider: python.x86_64 2.7.16-2.amzn2.0.1
+   provider: python.x86_64 2.7.16-1.amzn2.0.1
+   provider: python.x86_64 2.7.14-58.amzn2.0.4
+   provider: python.x86_64 2.7.14-58.amzn2.0.3
+   provider: python.x86_64 2.7.14-58.amzn2.0.2
+   provider: python.x86_64 2.7.5-58.amzn2
+  dependency: python-setuptools
+   provider: python2-setuptools.noarch 41.2.0-4.amzn2.0.2
+   provider: python2-setuptools.noarch 38.4.0-3.amzn2.0.6
+   provider: python2-setuptools.noarch 36.2.0-2.amzn2.0.3
+  dependency: python2-devel
+   provider: python-devel.x86_64 2.7.18-1.amzn2.0.4
+   provider: python-devel.x86_64 2.7.18-1.amzn2.0.3
+   provider: python-devel.x86_64 2.7.18-1.amzn2.0.2
+   provider: python-devel.x86_64 2.7.18-1.amzn2.0.1
+   provider: python-devel.x86_64 2.7.18-1.amzn2
+   provider: python-devel.x86_64 2.7.16-5.amzn2
+   provider: python-devel.x86_64 2.7.16-4.amzn2
+   provider: python-devel.x86_64 2.7.16-3.amzn2.0.1
+   provider: python-devel.x86_64 2.7.16-2.amzn2.0.1
+   provider: python-devel.x86_64 2.7.16-1.amzn2.0.1
+   provider: python-devel.x86_64 2.7.14-58.amzn2.0.4
+   provider: python-devel.x86_64 2.7.14-58.amzn2.0.3
+   provider: python-devel.x86_64 2.7.14-58.amzn2.0.2
+   provider: python-devel.x86_64 2.7.5-58.amzn2
