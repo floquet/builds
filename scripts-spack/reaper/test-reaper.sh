@@ -6,7 +6,9 @@ printf '%s\n' "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
 # requires spack initiation:
 # source test-reaper.zsh
 
-source ${repo_build}/scripts-spack/reaper/header-reaper.zsh
+source ${repo_build}/scripts-spack/reaper/header-reaper.sh
+
+export reapSECONDS=${SECONDS}
 
 new_step "Mark initial directory"
     export dirStart="$(pwd)"
@@ -122,13 +124,13 @@ new_step "copy .spack *.yaml files"
 
     cd ~/.spack
     mkdir -p ${dirYamls}/.spack
-    echo "find . -name '*.yaml' | cpio -pdm  ${dirYamls}/.spack"
-          find . -name '*.yaml' | cpio -pdm  ${dirYamls}/.spack
+    echo "find . -name '*.yaml' | cpio -pdm  ${dirYamls}/.spack > ${repoTarget}/yaml-sweep-dot-spack.txt"
+          find . -name '*.yaml' | cpio -pdm  ${dirYamls}/.spack > ${repoTarget}/yaml-sweep-dot-spack.txt
 
     cd ${SPACK_ROOT}
     # https://unix.stackexchange.com/questions/83593/copy-specific-file-type-keeping-the-folder-structure
-    echo "find . -name '*.yaml' | cpio -pdm  ${dirYamls}"
-          find . -name '*.yaml' | cpio -pdm  ${dirYamls}
+    echo "find . -name '*.yaml' | cpio -pdm  ${dirYamls} > ${repoTarget}/yaml-sweep-spack-root.txt"
+          find . -name '*.yaml' | cpio -pdm  ${dirYamls} > ${repoTarget}/yaml-sweep-spack-root.txt
     # echo 'rsync -zarv --prune-empty-dirs --include "*/" --include="*compilers.yaml" --include="*config.yaml" --include="*mirrors.yaml" --include="*modules.yaml" --include="*packages.yaml" --include="*repos.yaml" --exclude="*" "${SPACK_ROOT}/." "${gdirTarget}/yamls"'
     #       rsync -zarv --prune-empty-dirs --include "*/" --include="*compilers.yaml" --include="*config.yaml" --include="*mirrors.yaml" --include="*modules.yaml" --include="*packages.yaml" --include="*repos.yaml" --exclude="*" "${SPACK_ROOT}/." "${gdirTarget}/yamls"
 
@@ -143,6 +145,7 @@ new_step "return home: cd ${dirStart}"
                        cd ${dirStart}
 
 new_step "print wall time used"
-    printf 'time for all builds: %dh:%dm:%ds\n' $(($SECONDS/3600)) $(($SECONDS%3600/60)) $(($SECONDS%60))
+    export reapSECONDS=$((${SECONDS}-${reapSECONDS}))
+    printf 'time for all builds: %dh:%dm:%ds\n' $(($reapSECONDS/3600)) $(($reapSECONDS%3600/60)) $(($reapSECONDS%60))
 
 new_step "script completed at $(date)"
