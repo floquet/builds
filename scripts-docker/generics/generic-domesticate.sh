@@ -4,7 +4,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # source ${dirDockerLocker}/unified/generics/generic-domesticate.sh
 
 export SECONDS=0
-export ymd=$(date +%Y-%m-%d-%H-%M) # timestamp results
+export ymd=$(date +%Y-%m-%d\ %H:%M) # timestamp results
 
 # counts steps in batch process
 export counter=0

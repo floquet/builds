@@ -1,0 +1,200 @@
+CMakePackage:   trilinos
+
+Description:
+    The Trilinos Project is an effort to develop algorithms and enabling
+    technologies within an object-oriented software framework for the
+    solution of large-scale, complex multi-physics engineering and
+    scientific problems. A unique design feature of Trilinos is its focus on
+    packages.
+
+Homepage: https://trilinos.org/
+
+Maintainers: @keitat @sethrj @kuberry
+
+Externally Detectable: 
+    False
+
+Tags: 
+    e4s
+
+Preferred version:  
+    13.0.1     [git] https://github.com/trilinos/Trilinos.git at commit 4796b92fb0644ba8c531dd9953e7a4878b05c62d
+
+Safe versions:  
+    develop    [git] https://github.com/trilinos/Trilinos.git on branch develop
+    master     [git] https://github.com/trilinos/Trilinos.git on branch master
+    13.2.0     [git] https://github.com/trilinos/Trilinos.git at commit 4a5f7906a6420ee2f9450367e9cc95b28c00d744
+    13.0.1     [git] https://github.com/trilinos/Trilinos.git at commit 4796b92fb0644ba8c531dd9953e7a4878b05c62d
+    13.0.0     [git] https://github.com/trilinos/Trilinos.git at commit 9fec35276d846a667bc668ff4cbdfd8be0dfea08
+    12.18.1    [git] https://github.com/trilinos/Trilinos.git at commit 55a75997332636a28afc9db1aee4ae46fe8d93e7
+    12.14.1    https://github.com/trilinos/Trilinos/archive/trilinos-release-12-14-1.tar.gz
+    12.12.1    https://github.com/trilinos/Trilinos/archive/trilinos-release-12-12-1.tar.gz
+    12.10.1    https://github.com/trilinos/Trilinos/archive/trilinos-release-12-10-1.tar.gz
+    12.8.1     https://github.com/trilinos/Trilinos/archive/trilinos-release-12-8-1.tar.gz
+    12.6.4     https://github.com/trilinos/Trilinos/archive/trilinos-release-12-6-4.tar.gz
+    12.6.3     https://github.com/trilinos/Trilinos/archive/trilinos-release-12-6-3.tar.gz
+    12.6.2     https://github.com/trilinos/Trilinos/archive/trilinos-release-12-6-2.tar.gz
+    12.6.1     https://github.com/trilinos/Trilinos/archive/trilinos-release-12-6-1.tar.gz
+    12.4.2     https://github.com/trilinos/Trilinos/archive/trilinos-release-12-4-2.tar.gz
+    12.2.1     https://github.com/trilinos/Trilinos/archive/trilinos-release-12-2-1.tar.gz
+    12.0.1     https://github.com/trilinos/Trilinos/archive/trilinos-release-12-0-1.tar.gz
+    11.14.3    https://github.com/trilinos/Trilinos/archive/trilinos-release-11-14-3.tar.gz
+    11.14.2    https://github.com/trilinos/Trilinos/archive/trilinos-release-11-14-2.tar.gz
+    11.14.1    https://github.com/trilinos/Trilinos/archive/trilinos-release-11-14-1.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                    When       Allowed values          Description
+    ==============================    =======    ====================    ===================================================
+
+    adios2 [off]                      --         on, off                 Enable ADIOS2
+    amesos [on]                       --         on, off                 Compile with Amesos
+    amesos2 [on]                      --         on, off                 Compile with Amesos2
+    anasazi [on]                      --         on, off                 Compile with Anasazi
+    aztec [on]                        --         on, off                 Compile with Aztec
+    basker [off]                      --         on, off                 Compile with the Basker solver in Amesos2
+    belos [on]                        --         on, off                 Compile with Belos
+    boost [off]                       --         on, off                 Compile with Boost
+    build_type [RelWithDebInfo]       --         Debug, Release,         CMake build type
+                                                 RelWithDebInfo,         
+                                                 MinSizeRel              
+    chaco [off]                       --         on, off                 Compile with Chaco from SEACAS
+    complex [off]                     --         on, off                 Enable complex numbers in Trilinos
+    cuda [off]                        --         on, off                 Build with CUDA
+    cuda_arch [none]                  +cuda      none, 80, 86, 70,       CUDA architecture
+                                                 62, 35, 75, 30, 37,     
+                                                 12, 10, 21, 32, 61,     
+                                                 52, 53, 60, 20, 72,     
+                                                 11, 13, 50              
+    cuda_rdc [off]                    --         on, off                 turn on RDC for CUDA build
+    cxxstd [14]                       --         11, 14, 17              
+    debug [off]                       --         on, off                 Enable runtime safety and debug checks
+    dtk [off]                         --         on, off                 Enable DataTransferKit (deprecated)
+    epetra [on]                       --         on, off                 Compile with Epetra
+    epetraext [on]                    --         on, off                 Compile with EpetraExt
+    epetraextbtf [off]                --         on, off                 Compile with BTF in EpetraExt
+    epetraextexperimental [off]       --         on, off                 Compile with experimental in EpetraExt
+    epetraextgraphreorderings         --         on, off                 Compile with graph reorderings in EpetraExt
+    [off]                                                                
+    exodus [off]                      --         on, off                 Compile with Exodus from SEACAS
+    explicit_template_instantiatio    --         on, off                 Enable explicit template instantiation (ETI)
+    n [on]                                                               
+    float [off]                       --         on, off                 Enable single precision (float) numbers in Trilinos
+    fortran [on]                      --         on, off                 Compile with Fortran support
+    gotype [long_long]                --         int, long,              global ordinal type for Tpetra
+                                                 long_long, all          
+    gtest [off]                       --         on, off                 Build vendored Googletest
+    hdf5 [off]                        --         on, off                 Compile with HDF5
+    hypre [off]                       --         on, off                 Compile with Hypre preconditioner
+    ifpack [on]                       --         on, off                 Compile with Ifpack
+    ifpack2 [on]                      --         on, off                 Compile with Ifpack2
+    intrepid [off]                    --         on, off                 Enable Intrepid
+    intrepid2 [off]                   --         on, off                 Enable Intrepid2
+    ipo [off]                         --         on, off                 CMake interprocedural optimization
+    isorropia [off]                   --         on, off                 Compile with Isorropia
+    kokkos [on]                       --         on, off                 Compile with Kokkos
+    mesquite [off]                    --         on, off                 Enable Mesquite (deprecated)
+    minitensor [off]                  --         on, off                 Compile with MiniTensor
+    ml [on]                           --         on, off                 Compile with ML
+    mpi [on]                          --         on, off                 Compile with MPI parallelism
+    muelu [on]                        --         on, off                 Compile with Muelu
+    mumps [off]                       --         on, off                 Compile with support for MUMPS solvers
+    nox [off]                         --         on, off                 Compile with NOX
+    openmp [off]                      --         on, off                 Enable OpenMP
+    phalanx [off]                     --         on, off                 Compile with Phalanx
+    piro [off]                        --         on, off                 Compile with Piro
+    python [off]                      --         on, off                 Build PyTrilinos wrappers
+    rol [off]                         --         on, off                 Compile with ROL
+    rythmos [off]                     --         on, off                 Compile with Rythmos
+    sacado [on]                       --         on, off                 Compile with Sacado
+    scorec [off]                      --         on, off                 Enable SCOREC
+    shards [off]                      --         on, off                 Compile with Shards
+    shared [on]                       --         on, off                 Enables the build of shared libraries
+    shylu [off]                       --         on, off                 Compile with ShyLU
+    stk [off]                         --         on, off                 Compile with STK
+    stokhos [off]                     --         on, off                 Compile with Stokhos
+    stratimikos [off]                 --         on, off                 Compile with Stratimikos
+    strumpack [off]                   --         on, off                 Compile with STRUMPACK solvers
+    suite-sparse [off]                --         on, off                 Compile with SuiteSparse solvers
+    superlu [off]                     --         on, off                 Compile with SuperLU solvers
+    superlu-dist [off]                --         on, off                 Compile with SuperluDist solvers
+    teko [off]                        --         on, off                 Compile with Teko
+    tempus [off]                      --         on, off                 Compile with Tempus
+    tpetra [on]                       --         on, off                 Compile with Tpetra
+    trilinoscouplings [off]           --         on, off                 Compile with TrilinosCouplings
+    wrapper [off]                     --         on, off                 Use nvcc-wrapper for CUDA build
+    x11 [off]                         --         on, off                 Compile with X11 when +exodus
+    zoltan [off]                      --         on, off                 Compile with Zoltan
+    zoltan2 [off]                     --         on, off                 Compile with Zoltan2
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    adios2
+    blas
+    boost
+    cgns
+    cmake
+    cuda
+    hdf5
+    hwloc
+    hypre
+    kokkos-nvcc-wrapper
+    lapack
+    libx11
+    matio
+    metis
+    mpi
+    mumps
+    netcdf-c
+    parallel-netcdf
+    parmetis
+    py-mpi4py
+    py-numpy
+    python
+    scalapack
+    strumpack
+    suite-sparse
+    superlu
+    superlu-dist
+    swig
+    zlib
+
+Link Dependencies:
+    adios2
+    blas
+    boost
+    cgns
+    cuda
+    hdf5
+    hwloc
+    hypre
+    kokkos-nvcc-wrapper
+    lapack
+    libx11
+    matio
+    metis
+    mpi
+    mumps
+    netcdf-c
+    parallel-netcdf
+    parmetis
+    python
+    scalapack
+    strumpack
+    suite-sparse
+    superlu
+    superlu-dist
+    swig
+    zlib
+
+Run Dependencies:
+    py-mpi4py
+    py-numpy
+
+Virtual Packages: 
+    None
+

@@ -1,0 +1,26 @@
+apt info python3
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: python3
+Version: 3.9.7-4
+Priority: important
+Section: python
+Source: python3-defaults
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Matthias Klose <doko@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 92.2 kB
+Provides: python3-profiler
+Pre-Depends: python3-minimal (= 3.9.7-4)
+Depends: python3.9 (>= 3.9.7-0~), libpython3-stdlib (= 3.9.7-4)
+Suggests: python3-doc (>= 3.9.7-4), python3-tk (>= 3.9.7-0~), python3-venv (>= 3.9.7-4)
+Replaces: python3-minimal (<< 3.1.2-2)
+Homepage: https://www.python.org/
+Task: minimal, server-minimal
+Download-Size: 22.8 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+Description: interactive high-level object-oriented language (default python3 version)
+

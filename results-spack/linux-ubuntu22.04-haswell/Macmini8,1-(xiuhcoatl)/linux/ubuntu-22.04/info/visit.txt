@@ -1,0 +1,98 @@
+CMakePackage:   visit
+
+Description:
+    VisIt is an Open Source, interactive, scalable, visualization, animation
+    and analysis tool. See comments in VisIt's package.py for tips about
+    building VisIt with spack. Building VisIt with Spack is still
+    experimental and many standard features are likely disabled
+    LINUX-------------------------------------------------------------------
+    spack install visit ^python+shared ^glib@2.56.3 ^py-setuptools@44.1.0
+    LINUX-W/O-OPENGL--------------------------------------------------------
+    spack install visit ^python+shared ^glib@2.56.3 ^py-setuptools@44.1.0 \
+    ^mesa+opengl
+    MACOS-------------------------------------------------------------------
+    spack install visit ^python+shared ^glib@2.56.3 ^py-setuptools@44.1.0 \
+    ^qt~framework
+
+Homepage: https://wci.llnl.gov/simulation/computer-codes/visit/
+
+Maintainers: @cyrush
+
+Externally Detectable: 
+    True (version, variants)
+
+Tags: 
+    radiuss
+
+Preferred version:  
+    3.2.1      https://github.com/visit-dav/visit/releases/download/v3.2.1/visit3.2.1.tar.gz
+
+Safe versions:  
+    develop    [git] https://github.com/visit-dav/visit.git on branch develop
+    3.2.1      https://github.com/visit-dav/visit/releases/download/v3.2.1/visit3.2.1.tar.gz
+    3.1.1      https://github.com/visit-dav/visit/releases/download/v3.1.1/visit3.1.1.tar.gz
+    3.0.1      https://github.com/visit-dav/visit/releases/download/v3.0.1/visit3.0.1.tar.gz
+    2.13.3     https://github.com/visit-dav/visit/releases/download/v2.13.3/visit2.13.3.tar.gz
+    2.13.0     https://github.com/visit-dav/visit/releases/download/v2.13.0/visit2.13.0.tar.gz
+    2.12.3     https://github.com/visit-dav/visit/releases/download/v2.12.3/visit2.12.3.tar.gz
+    2.12.2     https://github.com/visit-dav/visit/releases/download/v2.12.2/visit2.12.2.tar.gz
+    2.10.3     https://github.com/visit-dav/visit/releases/download/v2.10.3/visit2.10.3.tar.gz
+    2.10.2     https://github.com/visit-dav/visit/releases/download/v2.10.2/visit2.10.2.tar.gz
+    2.10.1     https://github.com/visit-dav/visit/releases/download/v2.10.1/visit2.10.1.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ==================================
+
+    adios2 [off]                   --      on, off                 Enable ADIOS2 file format
+    build_type [RelWithDebInfo]    --      Debug, Release,         CMake build type
+                                           RelWithDebInfo,         
+                                           MinSizeRel              
+    gui [on]                       --      on, off                 Enable VisIt's GUI
+    hdf5 [on]                      --      on, off                 Enable HDF5 file format
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+    mpi [off]                      --      on, off                 Enable parallel engine
+    python [on]                    --      on, off                 Enable Python support
+    silo [on]                      --      on, off                 Enable Silo file format
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    adios2
+    cmake
+    glu
+    hdf5
+    llvm
+    mesa
+    mesa-glu
+    mpi
+    python
+    qt
+    qwt
+    silo
+    vtk
+
+Link Dependencies:
+    adios2
+    glu
+    hdf5
+    llvm
+    mesa
+    mesa-glu
+    mpi
+    python
+    qt
+    qwt
+    silo
+    vtk
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

@@ -1,0 +1,120 @@
+CMakePackage:   strumpack
+
+Description:
+    STRUMPACK -- STRUctured Matrix PACKage - provides linear solvers for
+    sparse matrices and for dense rank-structured matrices, i.e., matrices
+    that exhibit some kind of low-rank property. It provides a distributed
+    memory fully algebraic sparse solver and preconditioner. The
+    preconditioner is mostly aimed at large sparse linear systems which
+    result from the discretization of a partial differential equation, but
+    is not limited to any particular type of problem. STRUMPACK also
+    provides preconditioned GMRES and BiCGStab iterative solvers.
+
+Homepage: http://portal.nersc.gov/project/sparse/strumpack
+
+Maintainers: @pghysels
+
+Externally Detectable: 
+    False
+
+Tags: 
+    e4s
+
+Preferred version:  
+    6.1.0     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v6.1.0.tar.gz
+
+Safe versions:  
+    master    [git] https://github.com/pghysels/STRUMPACK.git on branch master
+    6.1.0     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v6.1.0.tar.gz
+    6.0.0     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v6.0.0.tar.gz
+    5.1.1     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v5.1.1.tar.gz
+    5.0.0     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v5.0.0.tar.gz
+    4.0.0     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v4.0.0.tar.gz
+    3.3.0     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v3.3.0.tar.gz
+    3.2.0     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v3.2.0.tar.gz
+    3.1.1     https://github.com/pghysels/STRUMPACK/archive/refs/tags/v3.1.1.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When       Allowed values          Description
+    ===========================    =======    ====================    ==================================================
+
+    amdgpu_target [none]           +rocm      none, gfx900,           AMD GPU architecture
+                                              gfx908, gfx701,         
+                                              gfx802, gfx1012,        
+                                              gfx801, gfx1010,        
+                                              gfx803, gfx90a,         
+                                              gfx1011, gfx906         
+    build_type [RelWithDebInfo]    --         Debug, Release,         CMake build type
+                                              RelWithDebInfo,         
+                                              MinSizeRel              
+    butterflypack [on]             --         on, off                 Enable use of ButterflyPACK
+    c_interface [on]               --         on, off                 Enable C interface
+    count_flops [off]              --         on, off                 Build with flop counters
+    cuda [off]                     --         on, off                 Build with CUDA
+    cuda_arch [none]               +cuda      none, 35, 53, 86,       CUDA architecture
+                                              11, 60, 61, 80, 37,     
+                                              20, 12, 75, 62, 70,     
+                                              21, 10, 13, 52, 50,     
+                                              72, 30, 32              
+    ipo [off]                      --         on, off                 CMake interprocedural optimization
+    mpi [on]                       --         on, off                 Use MPI
+    openmp [on]                    --         on, off                 Enable thread parallellism via tasking with OpenMP
+    parmetis [on]                  --         on, off                 Enable use of ParMetis
+    rocm [off]                     --         on, off                 Enable ROCm support
+    scotch [off]                   --         on, off                 Enable use of Scotch
+    shared [on]                    --         on, off                 Build shared libraries
+    slate [on]                     --         on, off                 Build with SLATE support
+    task_timers [off]              --         on, off                 Build with timers for internal routines
+    zfp [on]                       --         on, off                 Build with support for compression using ZFP
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    blas
+    butterflypack
+    cmake
+    cuda
+    hip
+    hipblas
+    hsa-rocr-dev
+    lapack
+    llvm-amdgpu
+    metis
+    mpi
+    openblas
+    parmetis
+    rocsolver
+    scalapack
+    scotch
+    slate
+    zfp
+
+Link Dependencies:
+    blas
+    butterflypack
+    cuda
+    hip
+    hipblas
+    hsa-rocr-dev
+    lapack
+    llvm-amdgpu
+    metis
+    mpi
+    openblas
+    parmetis
+    rocsolver
+    scalapack
+    scotch
+    slate
+    zfp
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

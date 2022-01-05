@@ -1,0 +1,59 @@
+PythonPackage:   py-netcdf4
+
+Description:
+    Python interface to the netCDF Library.
+
+Homepage: https://github.com/Unidata/netcdf4-python
+
+Maintainers: @skosukhin
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    1.5.3      https://files.pythonhosted.org/packages/source/n/netCDF4/netCDF4-1.5.3.tar.gz
+
+Safe versions:  
+    1.5.3      https://files.pythonhosted.org/packages/source/n/netCDF4/netCDF4-1.5.3.tar.gz
+    1.4.2      https://files.pythonhosted.org/packages/source/n/netCDF4/netCDF4-1.4.2.tar.gz
+    1.2.7      https://files.pythonhosted.org/packages/source/n/netCDF4/netCDF4-1.2.7.tar.gz
+    1.2.3.1    https://files.pythonhosted.org/packages/source/n/netCDF4/netCDF4-1.2.3.1.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    ===================
+
+    mpi [on]          --      on, off           Parallel IO support
+
+Installation Phases:
+    install
+
+Build Dependencies:
+    hdf5
+    netcdf-c
+    py-cftime
+    py-cython
+    py-mpi4py
+    py-numpy
+    py-setuptools
+    python
+
+Link Dependencies:
+    hdf5
+    netcdf-c
+
+Run Dependencies:
+    py-cftime
+    py-mpi4py
+    py-numpy
+    python
+
+Virtual Packages: 
+    None
+

@@ -1,0 +1,33 @@
+Input spec
+--------------------------------
+py-leather%gcc@11.2.0-13ubuntu1
+    ^python@3.10.1 arch=linux-ubuntu22.04-haswell
+
+Concretized
+--------------------------------
+py-leather@0.3.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^py-setuptools@59.4.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^python@3.10.1%gcc@11.2.0-13ubuntu1+bz2+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4 arch=linux-ubuntu22.04-haswell
+            ^bzip2@1.0.8%gcc@11.2.0-13ubuntu1~debug~pic+shared arch=linux-ubuntu22.04-haswell
+                ^diffutils@3.8%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^libiconv@1.16%gcc@11.2.0-13ubuntu1 libs=shared,static arch=linux-ubuntu22.04-haswell
+            ^expat@2.4.1%gcc@11.2.0-13ubuntu1+libbsd arch=linux-ubuntu22.04-haswell
+                ^libbsd@0.11.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^libmd@1.0.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^gdbm@1.19%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^readline@8.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^ncurses@6.2%gcc@11.2.0-13ubuntu1~symlinks+termlib abi=none arch=linux-ubuntu22.04-haswell
+                        ^pkgconf@1.8.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^gettext@0.21%gcc@11.2.0-13ubuntu1+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-ubuntu22.04-haswell
+                ^libxml2@2.9.12%gcc@11.2.0-13ubuntu1~python arch=linux-ubuntu22.04-haswell
+                    ^xz@5.2.5%gcc@11.2.0-13ubuntu1~pic libs=shared,static arch=linux-ubuntu22.04-haswell
+                    ^zlib@1.2.11%gcc@11.2.0-13ubuntu1+optimize+pic+shared arch=linux-ubuntu22.04-haswell
+                ^tar@1.34%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^libffi@3.3%gcc@11.2.0-13ubuntu1 patches=26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0 arch=linux-ubuntu22.04-haswell
+            ^openssl@1.1.1l%gcc@11.2.0-13ubuntu1~docs certs=system arch=linux-ubuntu22.04-haswell
+                ^perl@5.34.0%gcc@11.2.0-13ubuntu1+cpanm+shared+threads arch=linux-ubuntu22.04-haswell
+                    ^berkeley-db@18.1.40%gcc@11.2.0-13ubuntu1+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-ubuntu22.04-haswell
+            ^sqlite@3.36.0%gcc@11.2.0-13ubuntu1+column_metadata+fts~functions~rtree arch=linux-ubuntu22.04-haswell
+            ^util-linux-uuid@2.36.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^py-six@1.16.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+

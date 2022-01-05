@@ -1,0 +1,80 @@
+CMakePackage:   vapor
+
+Description:
+    VAPOR is the Visualization and Analysis Platform for Ocean, Atmosphere,
+    and Solar Researchers. VAPOR provides an interactive 3D visualization
+    environment that can also produce animations and still frame images.
+
+Homepage: https://www.vapor.ucar.edu/
+
+Maintainers: @RemiLacroix-IDRIS
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    3.5.0    https://github.com/NCAR/VAPOR/archive/3.5.0.tar.gz
+
+Safe versions:  
+    3.5.0    https://github.com/NCAR/VAPOR/archive/3.5.0.tar.gz
+    3.3.0    https://github.com/NCAR/VAPOR/archive/3.3.0.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ==================================
+
+    build_type [RelWithDebInfo]    --      Debug, Release,         CMake build type
+                                           RelWithDebInfo,         
+                                           MinSizeRel              
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    assimp
+    cmake
+    freetype
+    gl
+    glew
+    glm
+    hdf5
+    jpeg
+    libgeotiff
+    libtiff
+    netcdf-c
+    proj
+    py-numpy
+    python
+    qt
+    udunits
+
+Link Dependencies:
+    assimp
+    freetype
+    gl
+    glew
+    glm
+    hdf5
+    jpeg
+    libgeotiff
+    libtiff
+    netcdf-c
+    proj
+    py-numpy
+    python
+    qt
+    udunits
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

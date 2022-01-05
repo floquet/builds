@@ -1,0 +1,98 @@
+CMakePackage:   gdl
+
+Description:
+    A free and open-source IDL/PV-WAVE compiler. GNU Data Language (GDL) is
+    a free/libre/open source incremental compiler compatible with IDL and to
+    some extent with PV-WAVE.
+
+Homepage: https://github.com/gnudatalanguage/gdl
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    0.9.9    https://github.com/gnudatalanguage/gdl/archive/v0.9.9.tar.gz
+
+Safe versions:  
+    0.9.9    https://github.com/gnudatalanguage/gdl/archive/v0.9.9.tar.gz
+    0.9.8    https://github.com/gnudatalanguage/gdl/archive/v0.9.8.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ==================================
+
+    build_type [RelWithDebInfo]    --      Debug, Release,         CMake build type
+                                           RelWithDebInfo,         
+                                           MinSizeRel              
+    embed_python [off]             --      on, off                 Ability to embed Python within GDL
+    graphicsmagick [off]           --      on, off                 Enable GraphicsMagick
+    hdf4 [off]                     --      on, off                 Enable HDF4
+    hdf5 [on]                      --      on, off                 Enable HDF5
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+    openmp [on]                    --      on, off                 Enable OpenMP
+    proj [on]                      --      on, off                 Enable LIBPROJ4
+    python [off]                   --      on, off                 Build the GDL Python module
+    wx [off]                       --      on, off                 Enable WxWidgets
+    x11 [off]                      --      on, off                 Enable X11
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    cmake
+    eigen
+    fftw
+    graphicsmagick
+    gsl
+    hdf
+    hdf5
+    jpeg
+    libice
+    libsm
+    libx11
+    libxinerama
+    libxxf86vm
+    netcdf-c
+    plplot
+    proj
+    pslib
+    py-numpy
+    python
+    readline
+    wxwidgets
+
+Link Dependencies:
+    eigen
+    fftw
+    graphicsmagick
+    gsl
+    hdf
+    hdf5
+    jpeg
+    libgeotiff
+    libice
+    libsm
+    libtirpc
+    libx11
+    libxinerama
+    libxxf86vm
+    netcdf-c
+    plplot
+    proj
+    pslib
+    readline
+    wxwidgets
+
+Run Dependencies:
+    py-numpy
+    python
+
+Virtual Packages: 
+    None
+

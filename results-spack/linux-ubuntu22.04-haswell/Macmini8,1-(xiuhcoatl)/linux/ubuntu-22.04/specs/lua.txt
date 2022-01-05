@@ -1,0 +1,12 @@
+Input spec
+--------------------------------
+lua%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+
+Concretized
+--------------------------------
+lua@5.3.5%gcc@11.2.0-13ubuntu1~pcfile+shared arch=linux-ubuntu22.04-haswell
+    ^ncurses@6.2%gcc@11.2.0-13ubuntu1~symlinks+termlib abi=none arch=linux-ubuntu22.04-haswell
+        ^pkgconf@1.8.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^readline@8.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^unzip@6.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+

@@ -1,0 +1,60 @@
+PythonPackage:   py-beautifulsoup4
+
+Description:
+    Beautiful Soup is a Python library for pulling data out of HTML and XML
+    files. It works with your favorite parser to provide idiomatic ways of
+    navigating, searching, and modifying the parse tree.
+
+Homepage: https://www.crummy.com/software/BeautifulSoup
+
+Maintainers: @adamjstewart
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    4.10.0    https://files.pythonhosted.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.10.0.tar.gz
+
+Safe versions:  
+    4.10.0    https://files.pythonhosted.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.10.0.tar.gz
+    4.9.3     https://files.pythonhosted.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.9.3.tar.gz
+    4.8.0     https://files.pythonhosted.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.8.0.tar.gz
+    4.5.3     https://files.pythonhosted.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.5.3.tar.gz
+    4.5.1     https://files.pythonhosted.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.5.1.tar.gz
+    4.4.1     https://files.pythonhosted.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.4.1.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    ======================
+
+    html5lib [off]    --      on, off           Enable html5lib parser
+    lxml [off]        --      on, off           Enable lxml parser
+
+Installation Phases:
+    build    install
+
+Build Dependencies:
+    py-html5lib
+    py-lxml
+    py-setuptools
+    py-soupsieve
+    python
+
+Link Dependencies:
+    None
+
+Run Dependencies:
+    py-html5lib
+    py-lxml
+    py-soupsieve
+    python
+
+Virtual Packages: 
+    None
+

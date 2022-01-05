@@ -1,0 +1,68 @@
+PythonPackage:   py-urllib3
+
+Description:
+    HTTP library with thread-safe connection pooling, file post, and more.
+
+Homepage: https://urllib3.readthedocs.io/
+
+Maintainers: @adamjstewart
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    1.26.6    https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.26.6.tar.gz
+
+Safe versions:  
+    1.26.6    https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.26.6.tar.gz
+    1.25.9    https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.25.9.tar.gz
+    1.25.6    https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.25.6.tar.gz
+    1.25.3    https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.25.3.tar.gz
+    1.24.3    https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.24.3.tar.gz
+    1.21.1    https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.21.1.tar.gz
+    1.20      https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.20.tar.gz
+    1.14      https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.14.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    ============================
+
+    brotli [off]      --      on, off           Add Brotli support
+    secure [off]      --      on, off           Add SSL/TLS support
+    socks [off]       --      on, off           SOCKS and HTTP proxy support
+
+Installation Phases:
+    build    install
+
+Build Dependencies:
+    py-brotlipy
+    py-certifi
+    py-cryptography
+    py-idna
+    py-ipaddress
+    py-pyopenssl
+    py-pysocks
+    py-setuptools
+    python
+
+Link Dependencies:
+    py-brotlipy
+    py-certifi
+    py-cryptography
+    py-idna
+    py-ipaddress
+    py-pyopenssl
+    py-pysocks
+
+Run Dependencies:
+    python
+
+Virtual Packages: 
+    None
+

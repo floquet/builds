@@ -1,0 +1,49 @@
+Package:   totalview
+
+Description:
+    Totalview parallel debugger. Source must be made available to Spack
+    externally, either by having the tarballs in the current working
+    directory or having the tarballs in a Spack mirror. The documentation
+    tarball will be used as the primary source and the architecture
+    appropriate tarball will be downloaded as a resource.
+
+Homepage: https://www.roguewave.com/products-services/totalview
+
+Maintainers: @nicholas-sly
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    2019.2.18    file:///home/dantopa/spacktivity/ubuntu-22.04-SpWx-docker-spack/dantopa/totalview.2019.2.18-doc.tar
+
+Safe versions:  
+    2019.2.18    file:///home/dantopa/spacktivity/ubuntu-22.04-SpWx-docker-spack/dantopa/totalview.2019.2.18-doc.tar
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]      When    Allowed values    Description
+    ================    ====    ==============    ===================
+
+    memoryscape [on]    --      on, off           Install memoryscape
+
+Installation Phases:
+    install
+
+Build Dependencies:
+    None
+
+Link Dependencies:
+    None
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

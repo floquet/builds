@@ -1,0 +1,171 @@
+Input spec
+--------------------------------
+gdl%gcc@11.2.0-13ubuntu1
+    ^python@3.10.1 arch=linux-ubuntu22.04-haswell
+
+Concretized
+--------------------------------
+gdl@0.9.9%gcc@11.2.0-13ubuntu1~embed_python~graphicsmagick~hdf4+hdf5~ipo+openmp+proj~python~wx~x11 build_type=RelWithDebInfo arch=linux-ubuntu22.04-haswell
+    ^cmake@3.22.1%gcc@11.2.0-13ubuntu1~doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-ubuntu22.04-haswell
+        ^ncurses@6.2%gcc@11.2.0-13ubuntu1~symlinks+termlib abi=none arch=linux-ubuntu22.04-haswell
+            ^pkgconf@1.8.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^openssl@1.1.1l%gcc@11.2.0-13ubuntu1~docs certs=system arch=linux-ubuntu22.04-haswell
+            ^perl@5.34.0%gcc@11.2.0-13ubuntu1+cpanm+shared+threads arch=linux-ubuntu22.04-haswell
+                ^berkeley-db@18.1.40%gcc@11.2.0-13ubuntu1+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-ubuntu22.04-haswell
+                ^bzip2@1.0.8%gcc@11.2.0-13ubuntu1~debug~pic+shared arch=linux-ubuntu22.04-haswell
+                    ^diffutils@3.8%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^libiconv@1.16%gcc@11.2.0-13ubuntu1 libs=shared,static arch=linux-ubuntu22.04-haswell
+                ^gdbm@1.19%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^readline@8.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^zlib@1.2.11%gcc@11.2.0-13ubuntu1+optimize+pic+shared arch=linux-ubuntu22.04-haswell
+    ^eigen@3.4.0%gcc@11.2.0-13ubuntu1~ipo build_type=RelWithDebInfo arch=linux-ubuntu22.04-haswell
+    ^fftw@3.3.10%gcc@11.2.0-13ubuntu1+mpi~openmp~pfft_patches precision=double,float arch=linux-ubuntu22.04-haswell
+        ^openmpi@4.1.2%gcc@11.2.0-13ubuntu1~atomics~cuda~cxx~cxx_exceptions+gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-ubuntu22.04-haswell
+            ^hwloc@2.6.0%gcc@11.2.0-13ubuntu1~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-ubuntu22.04-haswell
+                ^libpciaccess@0.16%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^libtool@2.4.6%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^m4@1.4.19%gcc@11.2.0-13ubuntu1+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89 arch=linux-ubuntu22.04-haswell
+                            ^libsigsegv@2.13%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^util-macros@1.19.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^libxml2@2.9.12%gcc@11.2.0-13ubuntu1~python arch=linux-ubuntu22.04-haswell
+                    ^xz@5.2.5%gcc@11.2.0-13ubuntu1~pic libs=shared,static arch=linux-ubuntu22.04-haswell
+            ^libevent@2.1.12%gcc@11.2.0-13ubuntu1+openssl arch=linux-ubuntu22.04-haswell
+            ^numactl@2.0.14%gcc@11.2.0-13ubuntu1 patches=4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94,62fc8a8bf7665a60e8f4c93ebbd535647cebf74198f7afafec4c085a8825c006,ff37630df599cfabf0740518b91ec8daaf18e8f288b19adaae5364dc1f6b2296 arch=linux-ubuntu22.04-haswell
+                ^autoconf@2.69%gcc@11.2.0-13ubuntu1 patches=35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2,7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7,a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee arch=linux-ubuntu22.04-haswell
+                ^automake@1.16.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^openssh@8.7p1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^libedit@3.1-20210216%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^gsl@2.7%gcc@11.2.0-13ubuntu1~external-cblas arch=linux-ubuntu22.04-haswell
+    ^hdf5@1.10.8%gcc@11.2.0-13ubuntu1~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo arch=linux-ubuntu22.04-haswell
+    ^libgeotiff@1.4.3%gcc@11.2.0-13ubuntu1+jpeg+proj+zlib arch=linux-ubuntu22.04-haswell
+        ^libjpeg-turbo@2.1.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^nasm@2.15.05%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^libtiff@4.3.0%gcc@11.2.0-13ubuntu1~jbig~jpeg~jpeg12~lerc~libdeflate~lzma~old-jpeg~pixarlog~webp~zlib~zstd patches=94d64e3ccfcb80cd4f1854e722aa06d3997dbfe0b6a034a11ec56213af4d5103 arch=linux-ubuntu22.04-haswell
+        ^proj@5.2.0%gcc@11.2.0-13ubuntu1+curl+tiff arch=linux-ubuntu22.04-haswell
+    ^libice@1.0.9%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^xproto@7.0.31%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^xtrans@1.3.5%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^libsm@1.2.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^util-linux-uuid@2.36.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^libtirpc@1.2.6%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^krb5@1.19.2%gcc@11.2.0-13ubuntu1+shared arch=linux-ubuntu22.04-haswell
+            ^bison@3.8.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^libxinerama@1.1.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^libx11@1.7.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^inputproto@2.3.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^kbproto@1.0.7%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^libxcb@1.14%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^libpthread-stubs@0.4%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^libxau@1.0.8%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^libxdmcp@1.1.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^libbsd@0.11.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^libmd@1.0.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^xcb-proto@1.14.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^xextproto@7.3.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^libxext@1.3.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^xineramaproto@1.2.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^libxxf86vm@1.1.4%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^xf86vidmodeproto@2.3.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^netcdf-c@4.8.1%gcc@11.2.0-13ubuntu1~dap~fsync~hdf4~jna+mpi~parallel-netcdf+pic+shared arch=linux-ubuntu22.04-haswell
+    ^plplot@5.15.0%gcc@11.2.0-13ubuntu1~ipo~java~lua~pango~python~qt+tcl~wx~wxold build_type=RelWithDebInfo arch=linux-ubuntu22.04-haswell
+        ^freetype@2.11.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^libpng@1.6.37%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^gtkplus@3.24.29%gcc@11.2.0-13ubuntu1~cups~strip buildtype=debugoptimized default_library=shared arch=linux-ubuntu22.04-haswell
+            ^at-spi2-atk@2.38.0%gcc@11.2.0-13ubuntu1~strip buildtype=debugoptimized default_library=shared arch=linux-ubuntu22.04-haswell
+                ^at-spi2-core@2.40.1%gcc@11.2.0-13ubuntu1~strip buildtype=debugoptimized default_library=shared arch=linux-ubuntu22.04-haswell
+                    ^dbus@1.12.8%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^docbook-xml@4.4%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^docbook-xsl@1.79.2%gcc@11.2.0-13ubuntu1 patches=a92c39715c54949ba9369add1809527b8f155b7e2a2b2e30cb4b39ee715f2e30 arch=linux-ubuntu22.04-haswell
+                        ^expat@2.4.1%gcc@11.2.0-13ubuntu1+libbsd arch=linux-ubuntu22.04-haswell
+                        ^glib@2.70.2%gcc@11.2.0-13ubuntu1~libmount patches=8547954e50d0a720fa9794b84c31569df6a7419319b95ac9de0ed861d8969ffd tracing=none arch=linux-ubuntu22.04-haswell
+                            ^gettext@0.21%gcc@11.2.0-13ubuntu1+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-ubuntu22.04-haswell
+                                ^tar@1.34%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                            ^libffi@3.3%gcc@11.2.0-13ubuntu1 patches=26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0 arch=linux-ubuntu22.04-haswell
+                            ^meson@0.60.0%gcc@11.2.0-13ubuntu1 patches=aa6c50d5a2aeb1a487d16f6712be4357fefb923aae37ab830699b07338388287 arch=linux-ubuntu22.04-haswell
+                                ^ninja@1.10.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                    ^python@3.10.1%gcc@11.2.0-13ubuntu1+bz2+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4 arch=linux-ubuntu22.04-haswell
+                                        ^sqlite@3.36.0%gcc@11.2.0-13ubuntu1+column_metadata+fts~functions~rtree arch=linux-ubuntu22.04-haswell
+                                ^py-setuptools@59.4.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                            ^pcre@8.44%gcc@11.2.0-13ubuntu1~jit+multibyte+utf arch=linux-ubuntu22.04-haswell
+                    ^fixesproto@5.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^gobject-introspection@1.56.1%gcc@11.2.0-13ubuntu1 patches=6f90bb267efa043ed70b900b4b8e2faf9e8133afae311893b01060356ea81bba,7700828b638c85255c87fcc317ea7e9572ff443f65c86648796528885e5b4cea arch=linux-ubuntu22.04-haswell
+                        ^cairo@1.16.0%gcc@11.2.0-13ubuntu1+X+fc+ft+gobject+pdf~png~svg patches=7c4da77767fe9feb03f8051def0832f0c67f99162913275cfa127a88df19cf51 arch=linux-ubuntu22.04-haswell
+                            ^fontconfig@2.13.94%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^font-util@1.3.2%gcc@11.2.0-13ubuntu1 fonts=encodings,font-adobe-100dpi,font-adobe-75dpi,font-adobe-utopia-100dpi,font-adobe-utopia-75dpi,font-adobe-utopia-type1,font-alias,font-arabic-misc,font-bh-100dpi,font-bh-75dpi,font-bh-lucidatypewriter-100dpi,font-bh-lucidatypewriter-75dpi,font-bh-type1,font-bitstream-100dpi,font-bitstream-75dpi,font-bitstream-speedo,font-bitstream-type1,font-cronyx-cyrillic,font-cursor-misc,font-daewoo-misc,font-dec-misc,font-ibm-type1,font-isas-misc,font-jis-misc,font-micro-misc,font-misc-cyrillic,font-misc-ethiopic,font-misc-meltho,font-misc-misc,font-mutt-misc,font-schumacher-misc,font-screen-cyrillic,font-sun-misc,font-winitzki-cyrillic,font-xfree86-type1 arch=linux-ubuntu22.04-haswell
+                                    ^bdftopcf@1.0.5%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^fontsproto@2.1.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^libxfont@1.5.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                            ^libfontenc@1.1.3%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                    ^mkfontdir@1.0.7%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^mkfontscale@1.1.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^gperf@3.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                            ^libxrender@0.9.10%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^renderproto@0.11.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                            ^pixman@0.40.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^flex@2.6.3%gcc@11.2.0-13ubuntu1+lex~nls arch=linux-ubuntu22.04-haswell
+                            ^findutils@4.8.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^libxi@1.7.6%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^libxfixes@5.0.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^libxtst@1.2.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^recordproto@1.14.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^atk@2.36.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^fribidi@1.0.5%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^gdk-pixbuf@2.42.6%gcc@11.2.0-13ubuntu1~man~tiff~x11 arch=linux-ubuntu22.04-haswell
+                ^shared-mime-info@1.9%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^intltool@0.51.0%gcc@11.2.0-13ubuntu1 patches=ca9d6562f29f06c64150f50369a24402b7aa01a3a0dc73dce55106f3224330a1 arch=linux-ubuntu22.04-haswell
+                        ^perl-xml-parser@2.44%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                            ^perl-libwww-perl@6.33%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^perl-encode-locale@1.05%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^perl-file-listing@6.04%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                    ^perl-http-date@6.02%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^perl-html-parser@3.72%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                    ^perl-html-tagset@3.20%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^perl-http-cookies@6.04%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                    ^perl-http-message@6.13%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^perl-io-html@1.001%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^perl-lwp-mediatypes@6.02%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^perl-try-tiny@0.28%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^perl-uri@1.72%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                            ^perl-test-needs@0.002005%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^perl-http-daemon@6.01%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                    ^perl-module-build-tiny@0.039%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^perl-extutils-config@0.008%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^perl-extutils-helpers@0.026%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^perl-extutils-installpaths@0.012%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                        ^perl-module-build@0.4224%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^perl-http-negotiate@6.01%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^perl-net-http@6.17%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                                ^perl-www-robotrules@6.02%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^libepoxy@1.4.3%gcc@11.2.0-13ubuntu1+glx arch=linux-ubuntu22.04-haswell
+                ^mesa@21.3.1%gcc@11.2.0-13ubuntu1+glx+llvm+opengl~opengles+osmesa~strip buildtype=debugoptimized default_library=shared swr=auto arch=linux-ubuntu22.04-haswell
+                    ^glproto@1.4.17%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^libunwind@1.5.0%gcc@11.2.0-13ubuntu1~block_signals~conservative_checks~cxx_exceptions~debug~debug_frame+docs~pic+tests+weak_backtrace~xz~zlib components=none libs=shared,static arch=linux-ubuntu22.04-haswell
+                    ^libxt@1.1.5%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^llvm@12.0.1%gcc@11.2.0-13ubuntu1~all_targets+clang~code_signing+compiler-rt~cuda~flang+gold+internal_unwind~ipo+libcxx~link_llvm_dylib+lld+lldb~llvm_dylib~mlir+omp_as_runtime~omp_debug~omp_tsan+polly~python~shared_libs~split_dwarf~z3 build_type=Release version_suffix=none arch=linux-ubuntu22.04-haswell
+                        ^binutils@2.37%gcc@11.2.0-13ubuntu1~gas+gold~headers~interwork+ld~libiberty~lto+nls+plugins libs=shared,static arch=linux-ubuntu22.04-haswell
+                        ^perl-data-dumper@2.173%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^swig@4.0.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^py-mako@1.1.5%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^py-markupsafe@2.0.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^xrandr@1.5.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^libxrandr@1.5.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                            ^randrproto@1.5.0%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+            ^librsvg@2.51.0%gcc@11.2.0-13ubuntu1~doc arch=linux-ubuntu22.04-haswell
+                ^libcroco@0.6.13%gcc@11.2.0-13ubuntu1~doc arch=linux-ubuntu22.04-haswell
+                ^pango@1.42.0%gcc@11.2.0-13ubuntu1+X arch=linux-ubuntu22.04-haswell
+                    ^harfbuzz@2.9.1%gcc@11.2.0-13ubuntu1~graphite2 arch=linux-ubuntu22.04-haswell
+                        ^icu4c@67.1%gcc@11.2.0-13ubuntu1 cxxstd=11 arch=linux-ubuntu22.04-haswell
+                    ^libxft@2.3.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^rust@1.51.0%gcc@11.2.0-13ubuntu1+analysis+clippy~rls+rustfmt+src extra_targets=none arch=linux-ubuntu22.04-haswell
+                    ^gmake@4.3%gcc@11.2.0-13ubuntu1~guile+nls arch=linux-ubuntu22.04-haswell
+                        ^texinfo@6.5%gcc@11.2.0-13ubuntu1 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-ubuntu22.04-haswell
+                    ^libgit2@1.1.1%gcc@11.2.0-13ubuntu1~curl~ipo+ssh build_type=RelWithDebInfo https=system arch=linux-ubuntu22.04-haswell
+                        ^libssh2@1.10.0%gcc@11.2.0-13ubuntu1~ipo+shared build_type=RelWithDebInfo crypto=openssl arch=linux-ubuntu22.04-haswell
+            ^libxkbcommon@0.8.2%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                ^xkbdata@1.0.1%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                    ^xkbcomp@1.4.4%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+                        ^libxkbfile@1.0.9%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^qhull@2020.2%gcc@11.2.0-13ubuntu1~ipo build_type=RelWithDebInfo arch=linux-ubuntu22.04-haswell
+        ^tcl@8.6.11%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+    ^pslib@0.4.5%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+

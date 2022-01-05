@@ -1,0 +1,268 @@
+Package:   petsc
+
+Description:
+    PETSc is a suite of data structures and routines for the scalable
+    (parallel) solution of scientific applications modeled by partial
+    differential equations.
+
+Homepage: https://www.mcs.anl.gov/petsc/index.html
+
+Maintainers: @balay @barrysmith @jedbrown
+
+Externally Detectable: 
+    False
+
+Tags: 
+    e4s
+
+Preferred version:  
+    3.16.2    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.16.2.tar.gz
+
+Safe versions:  
+    main      [git] https://gitlab.com/petsc/petsc.git on branch main
+    3.16.2    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.16.2.tar.gz
+    3.16.1    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.16.1.tar.gz
+    3.16.0    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.16.0.tar.gz
+    3.15.5    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.15.5.tar.gz
+    3.15.4    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.15.4.tar.gz
+    3.15.3    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.15.3.tar.gz
+    3.15.2    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.15.2.tar.gz
+    3.15.1    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.15.1.tar.gz
+    3.15.0    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.15.0.tar.gz
+    3.14.6    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.14.6.tar.gz
+    3.14.5    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.14.5.tar.gz
+    3.14.4    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.14.4.tar.gz
+    3.14.3    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.14.3.tar.gz
+    3.14.2    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.14.2.tar.gz
+    3.14.1    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.14.1.tar.gz
+    3.14.0    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.14.0.tar.gz
+    3.13.6    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.13.6.tar.gz
+    3.13.5    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.13.5.tar.gz
+    3.13.4    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.13.4.tar.gz
+    3.13.3    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.13.3.tar.gz
+    3.13.2    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.13.2.tar.gz
+    3.13.1    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.13.1.tar.gz
+    3.13.0    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.13.0.tar.gz
+    3.12.5    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.12.5.tar.gz
+    3.12.4    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.12.4.tar.gz
+    3.12.3    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.12.3.tar.gz
+    3.12.2    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.12.2.tar.gz
+    3.12.1    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.12.1.tar.gz
+    3.12.0    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.12.0.tar.gz
+    3.11.4    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.11.4.tar.gz
+    3.11.3    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.11.3.tar.gz
+    3.11.2    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.11.2.tar.gz
+    3.11.1    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.11.1.tar.gz
+    3.11.0    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.11.0.tar.gz
+    3.10.5    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.10.5.tar.gz
+    3.10.4    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.10.4.tar.gz
+    3.10.3    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.10.3.tar.gz
+    3.10.2    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.10.2.tar.gz
+    3.10.1    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.10.1.tar.gz
+    3.10.0    http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.10.0.tar.gz
+    3.9.4     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.9.4.tar.gz
+    3.9.3     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.9.3.tar.gz
+    3.9.2     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.9.2.tar.gz
+    3.9.1     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.9.1.tar.gz
+    3.9.0     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.9.0.tar.gz
+    3.8.4     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.8.4.tar.gz
+    3.8.3     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.8.3.tar.gz
+    3.8.2     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.8.2.tar.gz
+    3.8.1     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.8.1.tar.gz
+    3.8.0     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.8.0.tar.gz
+    3.7.7     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.7.7.tar.gz
+    3.7.6     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.7.6.tar.gz
+    3.7.5     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.7.5.tar.gz
+    3.7.4     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.7.4.tar.gz
+    3.7.2     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.7.2.tar.gz
+    3.6.4     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.6.4.tar.gz
+    3.6.3     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.6.3.tar.gz
+    3.5.3     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.5.3.tar.gz
+    3.5.2     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.5.2.tar.gz
+    3.5.1     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.5.1.tar.gz
+    3.4.4     http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.4.4.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]          When       Allowed values          Description
+    ====================    =======    ====================    ====================================================
+
+    X [off]                 --         on, off                 Activate X support
+    amdgpu_target [none]    +rocm      none, gfx801,           AMD GPU architecture
+                                       gfx1010, gfx803,        
+                                       gfx701, gfx908,         
+                                       gfx1011, gfx906,        
+                                       gfx802, gfx900,         
+                                       gfx1012, gfx90a         
+    batch [off]             --         on, off                 Enable when mpiexec is not available to run binaries
+    cgns [off]              --         on, off                 Activates support for CGNS (only parallel)
+    clanguage [C]           --         C, C++                  Specify C (recommended) or C++ to compile PETSc
+    complex [off]           --         on, off                 Build with complex numbers
+    cuda [off]              --         on, off                 Build with CUDA
+    cuda_arch [none]        +cuda      none, 35, 52, 70,       CUDA architecture
+                                       61, 20, 50, 12, 32,     
+                                       72, 10, 37, 30, 11,     
+                                       86, 75, 13, 53, 21,     
+                                       80, 62, 60              
+    debug [off]             --         on, off                 Compile in debug mode
+    double [on]             --         on, off                 Switches between single and double precision
+    exodusii [off]          --         on, off                 Activates support for ExodusII (only parallel)
+    fftw [off]              --         on, off                 Activates support for FFTW (only parallel)
+    giflib [off]            --         on, off                 Activates support for GIF
+    hdf5 [on]               --         on, off                 Activates support for HDF5 (only parallel)
+    hpddm [off]             --         on, off                 Activates support for HPDDM (only parallel)
+    hwloc [off]             --         on, off                 Activates support for hwloc
+    hypre [on]              --         on, off                 Activates support for Hypre (only parallel)
+    int64 [off]             --         on, off                 Compile with 64bit indices
+    jpeg [off]              --         on, off                 Activates support for JPEG
+    knl [off]               --         on, off                 Build for KNL
+    kokkos [off]            --         on, off                 Activates support for kokkos and kokkos-kernels
+    libpng [off]            --         on, off                 Activates support for PNG
+    libyaml [off]           --         on, off                 Activates support for YAML
+    memkind [off]           --         on, off                 Activates support for Memkind
+    metis [on]              --         on, off                 Activates support for metis and parmetis
+    mkl-pardiso [off]       --         on, off                 Activates support for MKL Pardiso
+    mmg [off]               --         on, off                 Activates support for MMG
+    moab [off]              --         on, off                 Acivates support for MOAB (only parallel)
+    mpfr [off]              --         on, off                 Activates support for MPFR
+    mpi [on]                --         on, off                 Activates MPI support
+    mumps [off]             --         on, off                 Activates support for MUMPS (only parallel)
+    openmp [off]            --         on, off                 Activates support for openmp
+    p4est [off]             --         on, off                 Activates support for P4Est (only parallel)
+    parmmg [off]            --         on, off                 Activates support for ParMMG (only parallel)
+    ptscotch [off]          --         on, off                 Activates support for PTScotch (only parallel)
+    random123 [off]         --         on, off                 Activates support for Random123
+    rocm [off]              --         on, off                 Enable ROCm support
+    saws [off]              --         on, off                 Activates support for Saws
+    scalapack [off]         --         on, off                 Activates support for Scalapack
+    shared [on]             --         on, off                 Enables the build of shared libraries
+    strumpack [off]         --         on, off                 Activates support for Strumpack
+    suite-sparse [off]      --         on, off                 Activates support for SuiteSparse
+    superlu-dist [on]       --         on, off                 Activates support for SuperluDist (only parallel)
+    tetgen [off]            --         on, off                 Activates support for Tetgen
+    trilinos [off]          --         on, off                 Activates support for Trilinos (only parallel)
+    valgrind [off]          --         on, off                 Enable Valgrind Client Request mechanism
+
+Installation Phases:
+    install
+
+Build Dependencies:
+    blas
+    cgns
+    cuda
+    diffutils
+    exodusii
+    fftw
+    giflib
+    gmp
+    hdf5
+    hip
+    hipblas
+    hipsparse
+    hsa-rocr-dev
+    hwloc
+    hypre
+    jpeg
+    kokkos
+    kokkos-kernels
+    lapack
+    libpng
+    libx11
+    libyaml
+    llvm-amdgpu
+    memkind
+    metis
+    mkl
+    mmg
+    moab
+    mpfr
+    mpi
+    mumps
+    netcdf-c
+    p4est
+    parallel-netcdf
+    parmetis
+    parmmg
+    python
+    random123
+    rocblas
+    rocprim
+    rocrand
+    rocsolver
+    rocsparse
+    rocthrust
+    saws
+    scalapack
+    scotch
+    sowing
+    strumpack
+    suite-sparse
+    superlu-dist
+    tetgen
+    trilinos
+    valgrind
+    zlib
+
+Link Dependencies:
+    blas
+    cgns
+    cuda
+    exodusii
+    fftw
+    giflib
+    gmp
+    hdf5
+    hip
+    hipblas
+    hipsparse
+    hsa-rocr-dev
+    hwloc
+    hypre
+    jpeg
+    kokkos
+    kokkos-kernels
+    lapack
+    libpng
+    libx11
+    libyaml
+    llvm-amdgpu
+    memkind
+    metis
+    mkl
+    mmg
+    moab
+    mpfr
+    mpi
+    mumps
+    netcdf-c
+    p4est
+    parallel-netcdf
+    parmetis
+    parmmg
+    random123
+    rocblas
+    rocprim
+    rocrand
+    rocsolver
+    rocsparse
+    rocthrust
+    saws
+    scalapack
+    scotch
+    sowing
+    strumpack
+    suite-sparse
+    superlu-dist
+    tetgen
+    trilinos
+    valgrind
+    zlib
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

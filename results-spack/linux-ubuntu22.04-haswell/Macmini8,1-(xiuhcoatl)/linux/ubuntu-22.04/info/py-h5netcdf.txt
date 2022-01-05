@@ -1,0 +1,47 @@
+PythonPackage:   py-h5netcdf
+
+Description:
+    A Python interface for the netCDF4 file-format that reads and writes
+    local or remote HDF5 files directly via h5py or h5pyd, without relying
+    on the Unidata netCDF library.
+
+Homepage: https://github.com/h5netcdf/h5netcdf
+
+Maintainers: @adamjstewart
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    0.10.0    https://files.pythonhosted.org/packages/source/h/h5netcdf/h5netcdf-0.10.0.tar.gz
+
+Safe versions:  
+    0.10.0    https://files.pythonhosted.org/packages/source/h/h5netcdf/h5netcdf-0.10.0.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    None
+
+Installation Phases:
+    build    install
+
+Build Dependencies:
+    py-h5py
+    py-setuptools
+    python
+
+Link Dependencies:
+    None
+
+Run Dependencies:
+    py-h5py
+    python
+
+Virtual Packages: 
+    None
+

@@ -1,0 +1,10 @@
+Input spec
+--------------------------------
+environment-modules%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+
+Concretized
+--------------------------------
+environment-modules@5.0.1%gcc@11.2.0-13ubuntu1+X arch=linux-ubuntu22.04-haswell
+    ^tcl@8.6.11%gcc@11.2.0-13ubuntu1 arch=linux-ubuntu22.04-haswell
+        ^zlib@1.2.11%gcc@11.2.0-13ubuntu1+optimize+pic+shared arch=linux-ubuntu22.04-haswell
+

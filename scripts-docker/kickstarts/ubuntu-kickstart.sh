@@ -1,5 +1,8 @@
 #! /bin/bash
-printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
+printf '%s\n' "$(date) $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
+
+# define functions new_step, sub_step
+source /repos/github/builds/scripts-spack/shared/common-header.sh
 
 # /home/${ego}/.vimrc
 # docker pull ubuntu:22.04
@@ -17,81 +20,39 @@ printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
 # -v /Volumes/spacktivity:/spacktivity  \
 # ubuntu:22.04
 
-export SECONDS=0
-export ymd=$(date +%Y-%m-%d-%H-%M) # timestamp results
-
-# counts steps in batch process
-export counter=0
-function new_step(){
-    counter=$((counter+1))
-    echo ""
-    echo "Step ${counter}: ${1}"
-}
-
-new_step "apt-get update -y"
-          apt-get update -y
-new_step "apt-get upgrade -y"
-          apt-get upgrade -y
-new_step "apt-utils -y"
-          apt-utils -y
-
+# start timer
+export ubuntuSECONDS=${SECONDS}
+# specify package manager (to construct refresh.sh)
 export refresh="apt-get "
-# region: 2, timezone: 47
+# what you want to build
+declare -a lpackages=("cmake" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "fio" "flang" "gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "go" "hdf5" "htop" "krb5" "intltool" "julia" "llvm" "lsb" "lshw" "lsof" "lua" "mesa" "meson" "mpich" "mvapich" "nano" "ncurses" "netcdf" "ninja" "octave" "openblas" "opencoarrays" "openmpi" "openspeedshop" "paraview" "patchelf" "pbcopy" "petsc" "python3" "python-debug" "python-matplotlib" "python-urllib3" "python-virtualenv" "qhull" "qt" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion" "sudo" "tar" "tcl" "time" "tee" "tree" "unzip" "uuid" "valgrind" "vim" "vtk" "vtop" "wget" "xerces-c" "zip")
+# name of spack directory on virtual machine
+export mySpack="ubuntu-22.04-SpWx-docker-spack"
+# locate builds repo
+export repoBuilds="/repos/github/builds"
+# locate scripts and files for transfer
+export dirBuildScripts="${repoBuilds}/scripts-docker/"
+# post results
+export dirBuildResults="${repoBuilds}/results-docker/amazonlinux-2/${ymdt}"
+# records time elapsed
+export timerFile=${dirBuildResults}/elapsed-time.txt
 
-# https://askubuntu.com/questions/74412/how-to-make-sure-that-gcc-binutils-make-and-the-kernel-source-are-installed
-export tpls_apt="build-essential apt-utils linux-headers-$(uname -r) apt-rdepends aptitude bashtop cpio dialog gdb gedit gfortran git git-lfs glances htop intltool iputils-ping fio lsb lsof lshw python pip nano nmon rsync ssh sudo time tree vim vtop wget zip"
-export  mySpack="ubuntu-22.04-docker-spack"
+#  #  #  ========================================== declarations end
 
-for t in ${tpls_apt}; do
-    new_step "apt-get install ${t} -y"
-              apt-get install ${t} -y
-done
+new_step "mkdir -p ${dirBuildResults}"
+          mkdir -p ${dirBuildResults}
 
-export dirDockerLocker="/repos/github/docker"
-# export dirDockerLocker="/Chaac/repos/github/docker"
+#  #  #  ========================================== build packages
 
-echo 'source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack} ${refresh}'
-      source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack} ${refresh}
+source ${dirBuildScripts}/kickstarts/installers/apt-get-installs.sh ${lpackages} ${dirBuildResults}
 
-# tzdata settings: 2, 47
+#  #  #  ========================================== set up for spack
 
-# to probe package dependencies
-# apt-cache rdepends packagename
+echo 'source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}'
+      source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
 
-# root@f5ffbb3d73a3:ubuntu-22.04-docker-spack $ spack install py-seaborn ^python@3.9.9
-# ==> Bootstrapping clingo from pre-built binaries
-# ==> buildcache spec(s) matching /hmnv6gk5wha64k6r3s7hid35mzvhkuot
-#
-# ==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.1/build_cache/linux-rhel5-x86_64/gcc-9.3.0/clingo-bootstrap-spack/linux-rhel5-x86_64-gcc-9.3.0-clingo-bootstrap-spack-hmnv6gk5wha64k6r3s7hid35mzvhkuot.spack
-# ==> Installing buildcache for spec clingo-bootstrap@spack%gcc@9.3.0~docs~ipo+python build_type=Release arch=linux-rhel5-x86_64
-# ==> Bootstrapping patchelf from pre-built binaries
-
-# ??   ??   ??   ??   ??   ??   ??   ??
-# compelled to disable Clingo bootstrap
-# root@1a92a8246f50:topa $ apt-get install python
-# Reading package lists... Done
-# Building dependency tree... Done
-# Reading state information... Done
-# Package python is not available, but is referred to by another package.
-# This may mean that the package is missing, has been obsoleted, or
-# is only available from another source
-# However the following packages replace it:
-#   python2-minimal python2 dh-python 2to3 python-is-python3
-#
-# E: Package 'python' has no installation candidate
-# root@1a92a8246f50:topa $ apt-get install python-is-python3
-
-# root@1a92a8246f50:topa $ apt-get install pip
-# root@1a92a8246f50:topa $ pip install clingo
-# Installing collected packages: pycparser, cffi, clingo
-# Successfully installed cffi-1.15.0 clingo-5.5.1 pycparser-2.21
-# root@1a92a8246f50:topa $ spack install chapel
-# ==> chapel: Successfully installed chapel-1.24.1-sj6zmna3kb4chtnex3hbbqwpy4ldmugb
-
-
-# Step 21: spack compilers
-# ==> Available compilers
-# -- gcc ubuntu22.04-x86_64 ---------------------------------------
-# gcc@11.2.0
-#
-# Step 22: spack mirror add external_drive file:///repos/spacktivity/mirror
+new_step "Report elapsed time"
+    export ubuntuSECONDS=$((${SECONDS}-${ubuntuSECONDS}))
+    date    >  ${timerFile}
+    echo "" >> ${timerFile}
+    printf 'time to build system: %dh:%dm:%ds\n' $(($ubuntuSECONDS/3600)) $(($ubuntuSECONDS%3600/60)) $(($ubuntuSECONDS%60)) | tee -a ${timerFile}

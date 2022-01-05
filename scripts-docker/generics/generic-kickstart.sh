@@ -112,6 +112,9 @@ sub_step "mkdir -p ${ego}/build-logs"
 sub_step "mkdir -p ${ego}/specs"
           mkdir -p ${ego}/specs
 
+sub_step "mkdir -p ${ego}/info"
+          mkdir -p ${ego}/info
+
 sub_step "source share/spack/setup-env.sh"
           source share/spack/setup-env.sh
 
