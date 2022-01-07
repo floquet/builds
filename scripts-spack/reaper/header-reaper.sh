@@ -27,6 +27,9 @@ function file_header{
     echo ""                               >> ${1}
     echo "\${SPACK_ROOT} = ${SPACK_ROOT}" >> ${1}
     echo ""                               >> ${1}
+    echo "spack arch"                     >> ${1}
+    echo  spack arch                      >> ${1}
+    echo ""                               >> ${1}
     echo "uname -a:"                      >> ${1}
     uname -a                              >> ${1}
     echo ""                               >> ${1}
