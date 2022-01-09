@@ -33,7 +33,7 @@ export     extras=".platform-specific.sh"
 export  bash_file=".${dist}-${release}.sh"
 
 # # S P A C K
-export      spacktivity="${repos}/spacktivity"
+export      spacktivity="/spacktivity"
 export big_spack_mirror="${spacktivity}/mirror"
 export      local_spack="${HOME}/spacktivity/amazonlinux-2-SpWx-docker-spack"
 

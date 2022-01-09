@@ -26,8 +26,8 @@ new_step 'git config --global user.email  dantopa@gmail.com'
           git config --global user.email  dantopa@gmail.com
 new_step 'git config --global pull.rebase false'
           git config --global pull.rebase false
-new_step 'git config --global merge.tool  vimdiff'
-          git config --global merge.tool  vimdiff
+#new_step 'git config --global merge.tool  vimdiff'
+#          git config --global merge.tool  vimdiff
 
 new_step "cd ${HOME}"
           cd ${HOME}

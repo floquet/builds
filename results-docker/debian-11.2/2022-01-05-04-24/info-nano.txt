@@ -1,0 +1,22 @@
+apt info nano
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: nano
+Version: 5.4-2
+Priority: important
+Section: editors
+Maintainer: Jordi Mallach <jordi@debian.org>
+Installed-Size: 2591 kB
+Depends: libc6 (>= 2.27), libncursesw6 (>= 6), libtinfo6 (>= 6)
+Suggests: hunspell
+Conflicts: pico
+Breaks: nano-tiny (<< 2.8.6-2)
+Replaces: nano-tiny (<< 2.8.6-2), pico
+Homepage: https://www.nano-editor.org/
+Tag: implemented-in::c, interface::text-mode, role::program, scope::utility,
+ suite::gnu, uitoolkit::ncurses, use::editing, works-with::text
+Download-Size: 657 kB
+APT-Sources: http://deb.debian.org/debian bullseye/main amd64 Packages
+Description: small, friendly text editor inspired by Pico
+

@@ -1,0 +1,46 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  ed mksh rng-tools-debian udev
+The following NEW packages will be installed:
+  ed mksh rng-tools rng-tools-debian udev
+0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2210 kB of archives.
+After this operation, 11.0 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bullseye/main amd64 mksh amd64 59c-9+b2 [624 kB]
+Get:2 http://deb.debian.org/debian bullseye/main amd64 udev amd64 247.3-6 [1464 kB]
+Get:3 http://deb.debian.org/debian bullseye/main amd64 rng-tools-debian amd64 2.3 [48.3 kB]
+Get:4 http://deb.debian.org/debian bullseye/main amd64 rng-tools all 5migrate1 [13.8 kB]
+Get:5 http://deb.debian.org/debian bullseye/main amd64 ed amd64 1.17-1 [60.7 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 2210 kB in 2s (1110 kB/s)
+Selecting previously unselected package mksh.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 70015 files and directories currently installed.)
+Preparing to unpack .../mksh_59c-9+b2_amd64.deb ...
+Unpacking mksh (59c-9+b2) ...
+Selecting previously unselected package udev.
+Preparing to unpack .../udev_247.3-6_amd64.deb ...
+Unpacking udev (247.3-6) ...
+Selecting previously unselected package rng-tools-debian.
+Preparing to unpack .../rng-tools-debian_2.3_amd64.deb ...
+Unpacking rng-tools-debian (2.3) ...
+Setting up mksh (59c-9+b2) ...
+update-alternatives: using /bin/mksh to provide /bin/ksh (ksh) in auto mode
+Selecting previously unselected package rng-tools.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 70183 files and directories currently installed.)
+Preparing to unpack .../rng-tools_5migrate1_all.deb ...
+Unpacking rng-tools (5migrate1) ...
+Selecting previously unselected package ed.
+Preparing to unpack .../archives/ed_1.17-1_amd64.deb ...
+Unpacking ed (1.17-1) ...
+Setting up ed (1.17-1) ...
+Setting up udev (247.3-6) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up rng-tools-debian (2.3) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up rng-tools (5migrate1) ...
+Processing triggers for man-db (2.9.4-2) ...
+Processing triggers for install-info (6.7.0.dfsg.2-6) ...

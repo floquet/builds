@@ -1,0 +1,25 @@
+apt info valgrind
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: valgrind
+Version: 1:3.16.1-1
+Priority: optional
+Section: devel
+Maintainer: Alessandro Ghedini <ghedo@debian.org>
+Installed-Size: 82.3 MB
+Depends: libc6 (>= 2.14), libc6-dbg
+Recommends: valgrind-dbg, gdb
+Suggests: valgrind-mpi, kcachegrind, alleyoop, valkyrie (>> 1.3.0)
+Breaks: valgrind-dev
+Replaces: valgrind-dev
+Homepage: http://www.valgrind.org/
+Tag: devel::lang:c, devel::lang:c++, devel::library, devel::profiler,
+ devel::testing-qa, implemented-in::c, interface::commandline,
+ role::devel-lib, role::program, scope::utility,
+ works-with::software:running
+Download-Size: 15.1 MB
+APT-Manual-Installed: yes
+APT-Sources: http://deb.debian.org/debian bullseye/main amd64 Packages
+Description: instrumentation framework for building dynamic analysis tools
+

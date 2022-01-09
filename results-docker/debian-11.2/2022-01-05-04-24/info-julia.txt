@@ -1,0 +1,21 @@
+apt info julia
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: julia
+Version: 1.5.3+dfsg-3
+Priority: optional
+Section: science
+Maintainer: Debian Julia Team <pkg-julia-devel@lists.alioth.debian.org>
+Installed-Size: 6296 kB
+Depends: julia-common (= 1.5.3+dfsg-3), libjulia1 (= 1.5.3+dfsg-3), libc6 (>= 2.4), libcurl3-gnutls (>= 7.16.2), libdsfmt-19937-1 (>= 2.2.3), libgcc-s1 (>= 3.0), libgfortran5 (>= 8), libgit2-1.1 (>= 1.1.0), libgmp10, libllvm9 (>= 1:9~svn298832-1~), libmbedcrypto3 (>= 2.13), libmbedtls12 (>= 2.13), libmbedx509-0 (>= 2.0), libmpfr6 (>= 3.1.3), libopenlibm3 (>= 0.4.1+dfsg-4~), libpcre2-8-0 (>= 10.22), libquadmath0 (>= 4.6), libssh2-1 (>= 1.0), libunwind8, libutf8proc2 (>= 2.1.1)
+Recommends: git, openssl
+Suggests: ess (>= 12.09-1~), julia-doc, vim-julia
+Breaks: julia-common (<< 0.5.0~)
+Replaces: julia-common (<< 0.5.0~)
+Homepage: https://julialang.org
+Download-Size: 1277 kB
+APT-Manual-Installed: yes
+APT-Sources: http://deb.debian.org/debian bullseye/main amd64 Packages
+Description: high-performance programming language for technical computing
+

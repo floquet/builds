@@ -1,0 +1,22 @@
+apt info ssh
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: ssh
+Version: 1:8.4p1-5
+Priority: optional
+Section: net
+Source: openssh
+Maintainer: Debian OpenSSH Maintainers <debian-ssh@lists.debian.org>
+Installed-Size: 268 kB
+Pre-Depends: dpkg (>= 1.17.5)
+Depends: openssh-client (>= 1:8.4p1-5), openssh-server (>= 1:8.4p1-5)
+Homepage: http://www.openssh.com/
+Tag: interface::shell, network::client, network::server, protocol::ip,
+ protocol::ipv6, protocol::ssh, role::dummy, role::metapackage,
+ role::program, scope::utility, security::cryptography, use::login
+Download-Size: 251 kB
+APT-Manual-Installed: yes
+APT-Sources: http://deb.debian.org/debian bullseye/main amd64 Packages
+Description: secure shell client and server (metapackage)
+

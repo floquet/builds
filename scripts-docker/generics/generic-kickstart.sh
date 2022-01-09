@@ -44,11 +44,11 @@ sub_step "git config --global color.ui true"
 sub_step "git config --global rerere.enabled true"
           git config --global rerere.enabled true
 
-sub_step "git config --global core.editor 'vim'"
-          git config --global core.editor 'vim'
-
 sub_step "git config --global merge.tool 'meld'"
           git config --global merge.tool 'meld'
+
+sub_step "git config --global core.editor 'vim'"
+          git config --global core.editor 'vim'
 
 #sub_step 'git config --global merge.tool  vimdiff'
 #          git config --global merge.tool  vimdiff

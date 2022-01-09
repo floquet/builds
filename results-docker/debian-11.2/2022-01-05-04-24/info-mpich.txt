@@ -1,0 +1,19 @@
+apt info mpich
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: mpich
+Version: 3.4.1-4
+Priority: optional
+Section: devel
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Installed-Size: 883 kB
+Depends: hwloc-nox | hwloc, libmpich12 (= 3.4.1-4), libc6 (>= 2.17), libslurm36 (>= 1.3.8)
+Recommends: libmpich-dev (= 3.4.1-4)
+Suggests: mpich-doc (= 3.4.1-4)
+Homepage: https://www.mpich.org/
+Download-Size: 219 kB
+APT-Manual-Installed: yes
+APT-Sources: http://deb.debian.org/debian bullseye/main amd64 Packages
+Description: Implementation of the MPI Message Passing Interface standard
+

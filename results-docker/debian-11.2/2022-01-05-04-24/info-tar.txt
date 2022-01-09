@@ -1,0 +1,26 @@
+apt info tar
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: tar
+Version: 1.34+dfsg-1
+Priority: required
+Essential: yes
+Section: utils
+Maintainer: Janos Lenart <ocsi@debian.org>
+Installed-Size: 3228 kB
+Pre-Depends: libacl1 (>= 2.2.23), libc6 (>= 2.28), libselinux1 (>= 3.1~)
+Suggests: bzip2, ncompress, xz-utils, tar-scripts, tar-doc
+Conflicts: cpio (<= 2.4.2-38)
+Breaks: dpkg-dev (<< 1.14.26)
+Replaces: cpio (<< 2.4.2-39)
+Homepage: https://www.gnu.org/software/tar/
+Tag: admin::backup, admin::file-distribution, devel::packaging,
+ implemented-in::c, interface::commandline, role::program,
+ scope::utility, suite::gnu, use::storing, works-with-format::tar,
+ works-with::archive, works-with::file
+Download-Size: 847 kB
+APT-Manual-Installed: yes
+APT-Sources: http://deb.debian.org/debian bullseye/main amd64 Packages
+Description: GNU version of the tar archiving utility
+

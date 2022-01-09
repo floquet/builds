@@ -1,0 +1,26 @@
+apt info gdb
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: gdb
+Version: 10.1-1.7
+Priority: optional
+Section: devel
+Maintainer: Héctor Orón Martínez <zumbi@debian.org>
+Installed-Size: 10.0 MB
+Depends: libbabeltrace1 (>= 1.5.4), libc6 (>= 2.29), libdebuginfod1 (>= 0.180), libexpat1 (>= 2.0.1), libgcc-s1 (>= 3.4), libipt2 (>= 2.0), liblzma5 (>= 5.1.1alpha+20110809), libmpfr6 (>= 3.1.3), libncursesw6 (>= 6), libpython3.9 (>= 3.9.0~b4), libreadline8 (>= 8), libsource-highlight4v5 (>= 3.1.9), libstdc++6 (>= 7), libtinfo6 (>= 6), libxxhash0 (>= 0.6.5), zlib1g (>= 1:1.2.0)
+Recommends: libc-dbg
+Suggests: gdb-doc, gdbserver
+Conflicts: gdb
+Replaces: gdb
+Homepage: https://www.gnu.org/s/gdb/
+Tag: devel::debugger, devel::lang:c, devel::lang:c++, devel::lang:fortran,
+ devel::lang:java, devel::library, implemented-in::c,
+ implemented-in::java, interface::commandline, interface::text-mode,
+ role::devel-lib, role::program, scope::utility, suite::gnu,
+ uitoolkit::ncurses, works-with::software:running
+Download-Size: 3395 kB
+APT-Manual-Installed: yes
+APT-Sources: http://deb.debian.org/debian bullseye/main amd64 Packages
+Description: GNU Debugger
+
