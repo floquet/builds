@@ -21,12 +21,14 @@ function sub_step(){
     echo ""
     echo "  ${counter}.${clicker}: ${1}"
 }
-
 # file header
-function file_header(){
-    echo "created by ${HOME}/${(%):-%N} at $(date)" >> ${1}
+function file_header{
+    echo "created by ${HOME}/${BASH_SOURCE[0]} at $(date)" >> ${1}
     echo ""                               >> ${1}
     echo "\${SPACK_ROOT} = ${SPACK_ROOT}" >> ${1}
+    echo ""                               >> ${1}
+    echo "spack arch"                     >> ${1}
+    echo  spack arch                      >> ${1}
     echo ""                               >> ${1}
     echo "uname -a:"                      >> ${1}
     uname -a                              >> ${1}
