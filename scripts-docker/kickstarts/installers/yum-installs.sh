@@ -27,6 +27,11 @@ sub_step "yum upgrade -v -y  2>&1 | tee ${dirBuildResults}/upgrade.txt"
 sub_step 'yum group install -v "Development Tools" -y 2>&1 | tee ${dirBuildResults}/dev-tools.txt'
           yum group install -v "Development Tools" -y 2>&1 | tee ${dirBuildResults}/dev-tools.txt
 
+# https://linuxhint.com/how_to_install_htop_in_centos08/
+sub_step "yum install epel-release -v -y  2>&1 | tee ${dirBuildResults}/epel-release.txt"
+    echo "yum install epel-release -v -y" >          ${dirBuildResults}/epel-release.txt 2>&1
+          yum install epel-release -v -y  >>         ${dirBuildResults}/epel-release.txt 2>&1
+
 new_step "Try to build ${#lpackages[@]} packages: ${lpackages[@]}"
 sub_step_counter=0
 for t in ${lpackages[@]}; do
