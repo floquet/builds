@@ -75,7 +75,7 @@ new_step 'write refresh.sh'
 
 export refresh_file="/home/${ego}/refresh.sh"
 
-echo "#!/bin/sh"                          >  ${refresh_file}
+echo "#!/bin/bash"                        >  ${refresh_file}
 echo "# Created by generic-kickstart.sh " >> ${refresh_file}
 echo "# $(date) "                         >> ${refresh_file}
 echo ""                                   >> ${refresh_file}
