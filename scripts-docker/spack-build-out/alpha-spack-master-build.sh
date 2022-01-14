@@ -20,6 +20,7 @@ export my_compiler="${gcc_system_compiler}"
 export   my_python="python@3.10.1"
 export     my_ompi="openmpi@4.1.2"
 export     my_llvm="llvm@13.0.0"
+export   my_sqlite="sqlite@3.37.1"
 
 # when using a spack-built compiler:
 # spack load gcc @ 11.2.1
@@ -44,7 +45,7 @@ sweeper
 #  #  ========================================================= py-myapp % ${my_compiler} ^${my_python}
 
 new_step "install pattern - py-myapp % ${my_compiler} ^${my_python}: ${#lalpha[@]} elements"
-declare -a list=("py-seaborn" "astropy" "py-beautifulsoup4" "py-tqdm" "py-urllib3" "py-gnuplot" "py-plotly" "py-bokeh" "py-geoplot" "py-leather" "py-h5netcdf" "py-netcdf4" "py-virtualenv")
+declare -a list=("py-seaborn" "py-  astropy" "py-beautifulsoup4" "py-tqdm" "py-urllib3" "py-gnuplot" "py-plotly" "py-bokeh" "py-geoplot" "py-leather" "py-h5netcdf" "py-netcdf4" "py-virtualenv")
 export cmd_line=" % ${my_compiler} ^${my_python} ${myarch} "
 sweeper
 
