@@ -1,0 +1,98 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.jaleco.com
+ * epel: mirrors.mit.edu
+ * extras: mirror.siena.edu
+ * updates: mirror.datto.com
+pkgsack time: 0.554
+Obs Init time: 0.163
+Resolving Dependencies
+--> Running transaction check
+---> Package environment-modules.x86_64 0:3.2.10-10.el7 will be installed
+Checking deps for environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('procps', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('/usr/bin/python', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('libtcl8.5.so()(64bit)', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of environment-modules.x86_64 0:3.2.10-10.el7 - u
+environment-modules-3.2.10-10.el7.x86_64 requires: libtcl8.5.so()(64bit)
+--> Processing Dependency: libtcl8.5.so()(64bit) for package: environment-modules-3.2.10-10.el7.x86_64
+Searching pkgSack for dep: libtcl8.5.so()(64bit)
+Building updates object
+up:simple updates time: 0.003
+up:obs time: 0.003
+up:condense time: 0.000
+updates time: 0.164
+TSINFO: Marking 1:tcl-8.5.13-8.el7.x86_64 as install for environment-modules-3.2.10-10.el7.x86_64
+--> Running transaction check
+---> Package tcl.x86_64 1:8.5.13-8.el7 will be installed
+Checking deps for tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of tcl.x86_64 1:8.5.13-8.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.343
+
+Dependencies Resolved
+
+================================================================================
+ Package                   Arch         Version                Repository  Size
+================================================================================
+Installing:
+ environment-modules       x86_64       3.2.10-10.el7          base       107 k
+Installing for dependencies:
+ tcl                       x86_64       1:8.5.13-8.el7         base       1.9 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 2.0 M
+Installed size: 4.6 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              248 kB/s | 2.0 MB  00:08     
+Member: tcl.x86_64 1:8.5.13-8.el7 - u
+Adding Package 1:tcl-8.5.13-8.el7.x86_64 in mode u
+Member: environment-modules.x86_64 0:3.2.10-10.el7 - u
+Adding Package environment-modules-3.2.10-10.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.030
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.040
+Running transaction
+  Installing : 1:tcl-8.5.13-8.el7.x86_64                                    1/2 
+  Installing : environment-modules-3.2.10-10.el7.x86_64                     2/2 
+  Verifying  : 1:tcl-8.5.13-8.el7.x86_64                                    1/2 
+  Verifying  : environment-modules-3.2.10-10.el7.x86_64                     2/2 
+VerifyTransaction time: 0.076
+Transaction time: 0.739
+
+Installed:
+  environment-modules.x86_64 0:3.2.10-10.el7                                    
+
+Dependency Installed:
+  tcl.x86_64 1:8.5.13-8.el7                                                     
+
+Complete!

@@ -18,14 +18,16 @@ export masterSECONDS=$SECONDS
 #export my_compiler="gcc@8.5.0-4.0.1"
 export my_compiler="${gcc_system_compiler}"
 export   my_python="python@3.10.1"
+export    my_setup="py-setuptools@59.4.0"
 export     my_ompi="openmpi@4.1.2"
 export     my_llvm="llvm@13.0.0"
+export   my_sqlite="sqlite@3.37.1"
 
 # when using a spack-built compiler:
 # spack load gcc @ 11.2.1
 
 # py-${p} % ${my_compiler} ^${my_python}
-declare -a   lalpha=("seaborn" "astropy" "beautifulsoup4" "tqdm" "urllib3" "gnuplot" "plotly" "bokeh" "geoplot" "leather" "h5netcdf" "netcdf4" "virtualenv")
+declare -a   lalpha=("seaborn" "astropy" "beautifulsoup4" "tqdm" "urllib3" "bokeh" "geoplot" "gnuplot" "leather" "h5netcdf" "netcdf4" "plotly" "virtualenv")
 # ${p} % ${my_compiler} ^${my_python}
 declare -a   lbravo=("blitz" "gdb" "gdl" "julia" "mpich" "openspeedshop" "rust" "vapor")
 # ${p} % ${my_compiler} ^${my_python} ^${my_ompi}
