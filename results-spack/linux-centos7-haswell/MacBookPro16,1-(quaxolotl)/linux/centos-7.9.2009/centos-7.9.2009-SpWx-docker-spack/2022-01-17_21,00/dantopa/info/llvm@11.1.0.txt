@@ -1,0 +1,154 @@
+CMakePackage:   llvm
+
+Description:
+    The LLVM Project is a collection of modular and reusable compiler and
+    toolchain technologies. Despite its name, LLVM has little to do with
+    traditional virtual machines, though it does provide helpful libraries
+    that can be used to build them. The name "LLVM" itself is not an
+    acronym; it is the full name of the project.
+
+Homepage: https://llvm.org/
+
+Maintainers: @trws @haampie
+
+Externally Detectable: 
+    True (version, variants)
+
+Tags: 
+    e4s
+
+Preferred version:  
+    13.0.0    https://github.com/llvm/llvm-project/archive/llvmorg-13.0.0.tar.gz
+
+Safe versions:  
+    main      [git] https://github.com/llvm/llvm-project on branch main
+    13.0.0    https://github.com/llvm/llvm-project/archive/llvmorg-13.0.0.tar.gz
+    12.0.1    https://github.com/llvm/llvm-project/archive/llvmorg-12.0.1.tar.gz
+    12.0.0    https://github.com/llvm/llvm-project/archive/llvmorg-12.0.0.tar.gz
+    11.1.0    https://github.com/llvm/llvm-project/archive/llvmorg-11.1.0.tar.gz
+    11.0.1    https://github.com/llvm/llvm-project/archive/llvmorg-11.0.1.tar.gz
+    11.0.0    https://github.com/llvm/llvm-project/archive/llvmorg-11.0.0.tar.gz
+    10.0.1    https://github.com/llvm/llvm-project/archive/llvmorg-10.0.1.tar.gz
+    10.0.0    https://github.com/llvm/llvm-project/archive/llvmorg-10.0.0.tar.gz
+    9.0.1     https://github.com/llvm/llvm-project/archive/llvmorg-9.0.1.tar.gz
+    9.0.0     https://github.com/llvm/llvm-project/archive/llvmorg-9.0.0.tar.gz
+    8.0.1     https://github.com/llvm/llvm-project/archive/llvmorg-8.0.1.tar.gz
+    8.0.0     https://github.com/llvm/llvm-project/archive/llvmorg-8.0.0.tar.gz
+    7.1.0     https://github.com/llvm/llvm-project/archive/llvmorg-7.1.0.tar.gz
+    7.0.1     https://github.com/llvm/llvm-project/archive/llvmorg-7.0.1.tar.gz
+    6.0.1     https://github.com/llvm/llvm-project/archive/llvmorg-6.0.1.tar.gz
+    6.0.0     https://github.com/llvm/llvm-project/archive/llvmorg-6.0.0.tar.gz
+    5.0.2     https://github.com/llvm/llvm-project/archive/llvmorg-5.0.2.tar.gz
+    5.0.1     https://github.com/llvm/llvm-project/archive/llvmorg-5.0.1.tar.gz
+    5.0.0     https://github.com/llvm/llvm-project/archive/llvmorg-5.0.0.tar.gz
+
+Deprecated versions:  
+    4.0.1     https://github.com/llvm/llvm-project/archive/llvmorg-4.0.1.tar.gz
+    4.0.0     https://github.com/llvm/llvm-project/archive/llvmorg-4.0.0.tar.gz
+    3.9.1     https://github.com/llvm/llvm-project/archive/llvmorg-3.9.1.tar.gz
+    3.9.0     https://github.com/llvm/llvm-project/archive/llvmorg-3.9.0.tar.gz
+    3.8.1     https://github.com/llvm/llvm-project/archive/llvmorg-3.8.1.tar.gz
+    3.8.0     https://github.com/llvm/llvm-project/archive/llvmorg-3.8.0.tar.gz
+    3.7.1     https://github.com/llvm/llvm-project/archive/llvmorg-3.7.1.tar.gz
+    3.7.0     https://github.com/llvm/llvm-project/archive/llvmorg-3.7.0.tar.gz
+    3.6.2     https://github.com/llvm/llvm-project/archive/llvmorg-3.6.2.tar.gz
+    3.5.1     https://github.com/llvm/llvm-project/archive/llvmorg-3.5.1.tar.gz
+
+Variants:
+    Name [Default]           When       Allowed values          Description
+    =====================    =======    ====================    =======================================================================================================================
+
+    build_type [Release]     [, ]       Debug, Release,         CMake build type
+                                        RelWithDebInfo,         
+                                        MinSizeRel              
+    clang [on]               --         on, off                 Build the LLVM C/C++/Objective-C compiler frontend
+    code_signing [off]       --         on, off                 Enable code-signing on macOS
+    compiler-rt [on]         --         on, off                 Build LLVM compiler runtime, including sanitizers
+    cuda [off]               --         on, off                 Build with CUDA
+    cuda_arch [none]         +cuda      none, 37, 60, 32,       CUDA architecture
+                                        30, 35, 11, 75, 21,     
+                                        70, 61, 72, 13, 50,     
+                                        20, 53, 62, 10, 80,     
+                                        86, 12, 52              
+    flang [off]              --         on, off                 Build the LLVM Fortran compiler frontend (experimental - parser only, needs GCC)
+    gold [on]                --         on, off                 Add support for LTO with the gold linker plugin
+    internal_unwind [on]     --         on, off                 Build the libcxxabi libunwind
+    ipo [off]                --         on, off                 CMake interprocedural optimization
+    libcxx [on]              --         on, off                 Build the LLVM C++ standard library
+    link_llvm_dylib [off]    --         on, off                 Link LLVM tools against the LLVM shared library
+    lld [on]                 --         on, off                 Build the LLVM linker
+    lldb [on]                --         on, off                 Build the LLVM debugger
+    llvm_dylib [off]         --         on, off                 Build LLVM shared library, containing all components in a single shared library
+    mlir [off]               --         on, off                 Build with MLIR support
+    omp_as_runtime [on]      --         on, off                 Build OpenMP runtime via ENABLE_RUNTIME by just-built Clang
+    omp_debug [off]          --         on, off                 Include debugging code in OpenMP runtime libraries
+    omp_tsan [off]           --         on, off                 Build with OpenMP capable thread sanitizer
+    polly [on]               --         on, off                 Build the LLVM polyhedral optimization plugin, only builds for 3.7.0+
+    python [off]             --         on, off                 Install python bindings
+    shared_libs [off]        --         on, off                 Build all components as shared libraries, faster, less memory to build, less stable
+    split_dwarf [off]        --         on, off                 Build with split dwarf information
+    targets [none]           --         all, none, aarch64,     What targets to build. Spack's target family is always added (e.g. X86 is automatically enabled when targeting znver2).
+                                        amdgpu, arm, avr,       
+                                        bpf, cppbackend,        
+                                        hexagon, lanai,         
+                                        mips, msp430, nvptx,    
+                                        powerpc, riscv,         
+                                        sparc, systemz,         
+                                        webassembly, x86,       
+                                        xcore                   
+    version_suffix [none]    --                                 Add a symbol suffix
+    z3 [off]                 --         on, off                 Use Z3 for the clang static analyzer
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    binutils
+    cmake
+    cuda
+    gmp
+    hwloc
+    isl
+    libedit
+    libelf
+    libffi
+    ncurses
+    ninja
+    perl-data-dumper
+    pkgconfig
+    py-six
+    python
+    swig
+    z3
+
+Link Dependencies:
+    binutils
+    cuda
+    gmp
+    hwloc
+    isl
+    libedit
+    libelf
+    libffi
+    ncurses
+    py-six
+    python
+    swig
+    z3
+
+Run Dependencies:
+    python
+
+Virtual Packages: 
+    llvm@13.0.0:13 provides libllvm@13
+    llvm@12.0.0:12 provides libllvm@12
+    llvm@11.0.0:11 provides libllvm@11
+    llvm@10.0.0:10 provides libllvm@10
+    llvm@9.0.0:9 provides libllvm@9
+    llvm@8.0.0:8 provides libllvm@8
+    llvm@7.0.0:7 provides libllvm@7
+    llvm@6.0.0:6 provides libllvm@6
+    llvm@5.0.0:5 provides libllvm@5
+    llvm@4.0.0:4 provides libllvm@4
+    llvm@3.0.0:3 provides libllvm@3
+

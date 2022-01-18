@@ -1,0 +1,46 @@
+AutotoolsPackage:   mpc
+
+Description:
+    Gnu Mpc is a C library for the arithmetic of complex numbers with
+    arbitrarily high precision and correct rounding of the result.
+
+Homepage: http://www.multiprecision.org
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    1.1.0    https://ftpmirror.gnu.org/mpc/mpc-1.1.0.tar.gz
+
+Safe versions:  
+    1.1.0    https://ftpmirror.gnu.org/mpc/mpc-1.1.0.tar.gz
+    1.0.3    https://ftpmirror.gnu.org/mpc/mpc-1.0.3.tar.gz
+    1.0.2    https://ftpmirror.gnu.org/mpc/mpc-1.0.2.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    None
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    gmp
+    gnuconfig
+    mpfr
+
+Link Dependencies:
+    gmp
+    mpfr
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

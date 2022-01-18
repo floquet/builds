@@ -1,0 +1,82 @@
+yum info    -v python3-debug
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.010
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: ewr.edge.kernel.org
+ * epel: mirror.dst.ca
+ * extras: mirror.es.its.nyu.edu
+ * updates: mirror.vtti.vt.edu
+pkgsack time: 0.742
+Installed Packages
+Name        : python3-debug
+Arch        : x86_64
+Version     : 3.6.8
+Release     : 18.el7
+Size        : 10 M
+Repo        : installed
+From repo   : updates
+Committer   : Charalampos Stratakis <cstratak@redhat.com>
+Committime  : Fri Jul 31 06:00:00 2020
+Buildtime   : Mon Nov 16 10:41:58 2020
+Install time: Sun Jan 16 13:03:02 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Debug version of the Python runtime
+URL         : https://www.python.org/
+License     : Python
+Description : python3-debug provides a version of the Python runtime with
+            : numerous debugging features enabled, aimed at advanced Python
+            : users such as developers of Python extension modules.
+            : 
+            : This version uses more memory and will be slower than the regular
+            : Python build, but is useful for tracking down reference-counting
+            : issues and other bugs.
+            : 
+            : The bytecode format is unchanged, so that .pyc files are
+            : compatible between this and the standard version of Python, but
+            : the debugging features mean that C/C++ extension modules are
+            : ABI-incompatible and must be built for each version separately.
+            : 
+            : The debug build shares installation directories with the standard
+            : Python runtime, so that .py and .pyc files can be shared.
+            : Compiled extension modules use a special ABI flag ("d") in the
+            : filename, so extensions for both versions can co-exist in the same
+            : directory.
+
+Available Packages
+Name        : python3-debug
+Arch        : i686
+Version     : 3.6.8
+Release     : 18.el7
+Size        : 2.4 M
+Repo        : updates/7/x86_64
+Committer   : Charalampos Stratakis <cstratak@redhat.com>
+Committime  : Fri Jul 31 06:00:00 2020
+Buildtime   : Mon Nov 16 11:40:43 2020
+Summary     : Debug version of the Python runtime
+URL         : https://www.python.org/
+License     : Python
+Description : python3-debug provides a version of the Python runtime with
+            : numerous debugging features enabled, aimed at advanced Python
+            : users such as developers of Python extension modules.
+            : 
+            : This version uses more memory and will be slower than the regular
+            : Python build, but is useful for tracking down reference-counting
+            : issues and other bugs.
+            : 
+            : The bytecode format is unchanged, so that .pyc files are
+            : compatible between this and the standard version of Python, but
+            : the debugging features mean that C/C++ extension modules are
+            : ABI-incompatible and must be built for each version separately.
+            : 
+            : The debug build shares installation directories with the standard
+            : Python runtime, so that .py and .pyc files can be shared.
+            : Compiled extension modules use a special ABI flag ("d") in the
+            : filename, so extensions for both versions can co-exist in the same
+            : directory.
+

@@ -1,0 +1,63 @@
+AutotoolsPackage:   zoltan
+
+Description:
+    The Zoltan library is a toolkit of parallel combinatorial algorithms for
+    parallel, unstructured, and/or adaptive scientific applications.
+    Zoltan's largest component is a suite of dynamic load-balancing and
+    partitioning algorithms that increase applications' parallel performance
+    by reducing idle time. Zoltan also has graph coloring and graph ordering
+    algorithms, which are useful in task schedulers and parallel
+    preconditioners.
+
+Homepage: http://www.cs.sandia.gov/zoltan
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    3.83    https://github.com/sandialabs/Zoltan/archive/v3.83.tar.gz
+
+Safe versions:  
+    3.83    https://github.com/sandialabs/Zoltan/archive/v3.83.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    =======================================
+
+    debug [off]       --      on, off           Builds a debug version of the library.
+    fortran [on]      --      on, off           Enable Fortran support.
+    int64 [off]       --      on, off           Enable 64bit indices.
+    mpi [on]          --      on, off           Enable MPI support.
+    parmetis [off]    --      on, off           Enable ParMETIS support.
+    shared [on]       --      on, off           Builds a shared version of the library.
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    autoconf
+    automake
+    gnuconfig
+    m4
+    metis
+    mpi
+    parmetis
+    perl
+
+Link Dependencies:
+    metis
+    mpi
+    parmetis
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

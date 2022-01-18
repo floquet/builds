@@ -1,0 +1,94 @@
+CMakePackage:   openspeedshop
+
+Description:
+    OpenSpeedShop is a community effort led by Trenza, Inc. It builds on top
+    of a broad list of community infrastructures, most notably Dyninst and
+    MRNet from UW, libmonitor from Rice, and PAPI from UTK. OpenSpeedShop is
+    an open source multi platform Linux performance tool which is targeted
+    to support performance analysis of applications running on both single
+    node and large scale IA64, IA32, EM64T, AMD64, PPC, ARM, Power8, Intel
+    Phi, Blue Gene and Cray platforms. OpenSpeedShop development is hosted
+    by Trenza Inc.. The infrastructure and base components of OpenSpeedShop
+    are released as open source code primarily under LGPL.
+
+Homepage: http://www.openspeedshop.org
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    2.4.2.1    [git] https://github.com/OpenSpeedShop/openspeedshop.git on branch 2.4.2.1
+
+Safe versions:  
+    None
+
+Deprecated versions:  
+    develop    [git] https://github.com/OpenSpeedShop/openspeedshop.git on branch master
+    2.4.2.1    [git] https://github.com/OpenSpeedShop/openspeedshop.git on branch 2.4.2.1
+    2.4.2      [git] https://github.com/OpenSpeedShop/openspeedshop.git on branch 2.4.2
+    2.4.1      [git] https://github.com/OpenSpeedShop/openspeedshop.git on branch 2.4.1
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ===============================================================================================
+
+    build_type [RelWithDebInfo]    [, ]    Debug, Release,         The build type to build
+                                           RelWithDebInfo          
+    crayfe [off]                   --      on, off                 build only the FE tool using the runtime_dir                          to point to target build.
+    cuda [off]                     --      on, off                 build with cuda packages included.
+    gui [none]                     --      none, qt3, qt4          Build or not build a GUI of choice
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+    mpich2 [off]                   --      on, off                 Build mpi collector for mpich2                         MPI when variant is enabled.
+    mpt [off]                      --      on, off                 Build mpi collector for SGI                          MPT MPI when variant is enabled.
+    mvapich2 [off]                 --      on, off                 Build mpi collector for mvapich2                         MPI when variant is enabled.
+    openmpi [off]                  --      on, off                 Build mpi collector for openmpi                          MPI when variant is enabled.
+    runtime [off]                  --      on, off                 build only the runtime libraries and collectors.
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    binutils
+    bison
+    boost
+    cbtf
+    cbtf-argonavis
+    cbtf-krell
+    cmake
+    dyninst
+    flex
+    libdwarf
+    libtool
+    libxml2
+    mrnet
+    python
+    qt
+    sqlite
+
+Link Dependencies:
+    binutils
+    boost
+    cbtf
+    cbtf-argonavis
+    cbtf-krell
+    dyninst
+    elfutils
+    libdwarf
+    libxml2
+    mrnet
+    qt
+    sqlite
+
+Run Dependencies:
+    cbtf
+    cbtf-argonavis
+    cbtf-krell
+    mrnet
+    python
+
+Virtual Packages: 
+    None
+

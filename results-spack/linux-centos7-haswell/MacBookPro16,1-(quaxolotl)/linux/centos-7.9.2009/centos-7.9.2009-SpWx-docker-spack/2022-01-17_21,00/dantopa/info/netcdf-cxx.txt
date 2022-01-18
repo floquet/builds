@@ -1,0 +1,47 @@
+AutotoolsPackage:   netcdf-cxx
+
+Description:
+    Deprecated C++ compatibility bindings for NetCDF. These do NOT read or
+    write NetCDF-4 files, and are no longer maintained by Unidata.
+    Developers should migrate to current NetCDF C++ bindings, in Spack
+    package netcdf-cxx4.
+
+Homepage: https://www.unidata.ucar.edu/software/netcdf
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    4.2    https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-cxx-4.2.tar.gz
+
+Safe versions:  
+    4.2    https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-cxx-4.2.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    ============================
+
+    netcdf4 [on]      --      on, off           Compile with netCDF4 support
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    gnuconfig
+    netcdf-c
+
+Link Dependencies:
+    netcdf-c
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

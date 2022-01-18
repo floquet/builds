@@ -1,0 +1,95 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.008
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: ewr.edge.kernel.org
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.es.its.nyu.edu
+ * updates: mirror.vtti.vt.edu
+pkgsack time: 1.750
+Checking for virtual provide or file-provide for python3-urllib3
+Obs Init time: 0.278
+Resolving Dependencies
+--> Running transaction check
+---> Package python36-urllib3.noarch 0:1.25.6-2.el7 will be installed
+Checking deps for python36-urllib3.noarch 0:1.25.6-2.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '3.6', None)) as a requirement of python36-urllib3.noarch 0:1.25.6-2.el7 - u
+looking for ('python36-six', 'GE', ('0', '1.12.0', None)) as a requirement of python36-urllib3.noarch 0:1.25.6-2.el7 - u
+looking for ('ca-certificates', None, (None, None, None)) as a requirement of python36-urllib3.noarch 0:1.25.6-2.el7 - u
+looking for ('python36-pysocks', None, (None, None, None)) as a requirement of python36-urllib3.noarch 0:1.25.6-2.el7 - u
+python36-urllib3-1.25.6-2.el7.noarch requires: python36-six >= 1.12.0
+--> Processing Dependency: python36-six >= 1.12.0 for package: python36-urllib3-1.25.6-2.el7.noarch
+Searching pkgSack for dep: python36-six
+Building updates object
+up:simple updates time: 0.006
+up:obs time: 0.003
+up:condense time: 0.000
+updates time: 0.202
+TSINFO: Marking python36-six-1.14.0-3.el7.noarch as install for python36-urllib3-1.25.6-2.el7.noarch
+python36-urllib3-1.25.6-2.el7.noarch requires: python36-pysocks
+--> Processing Dependency: python36-pysocks for package: python36-urllib3-1.25.6-2.el7.noarch
+Searching pkgSack for dep: python36-pysocks
+TSINFO: Marking python36-pysocks-1.6.8-7.el7.noarch as install for python36-urllib3-1.25.6-2.el7.noarch
+--> Running transaction check
+---> Package python36-pysocks.noarch 0:1.6.8-7.el7 will be installed
+Checking deps for python36-pysocks.noarch 0:1.6.8-7.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '3.6', None)) as a requirement of python36-pysocks.noarch 0:1.6.8-7.el7 - u
+---> Package python36-six.noarch 0:1.14.0-3.el7 will be installed
+Checking deps for python36-six.noarch 0:1.14.0-3.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '3.6', None)) as a requirement of python36-six.noarch 0:1.14.0-3.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.457
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch          Version                Repository   Size
+================================================================================
+Installing:
+ python36-urllib3        noarch        1.25.6-2.el7           epel        178 k
+Installing for dependencies:
+ python36-pysocks        noarch        1.6.8-7.el7            epel         30 k
+ python36-six            noarch        1.14.0-3.el7           epel         34 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+2 Dependent packages)
+
+Total download size: 243 k
+Installed size: 1.1 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                               91 kB/s | 243 kB  00:02     
+Member: python36-six.noarch 0:1.14.0-3.el7 - u
+Adding Package python36-six-1.14.0-3.el7.noarch in mode u
+Member: python36-urllib3.noarch 0:1.25.6-2.el7 - u
+Adding Package python36-urllib3-1.25.6-2.el7.noarch in mode u
+Member: python36-pysocks.noarch 0:1.6.8-7.el7 - u
+Adding Package python36-pysocks-1.6.8-7.el7.noarch in mode u
+Running transaction check
+Transaction check time: 0.005
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.022
+Running transaction
+  Installing : python36-pysocks-1.6.8-7.el7.noarch                          1/3 
+  Installing : python36-six-1.14.0-3.el7.noarch                             2/3 
+  Installing : python36-urllib3-1.25.6-2.el7.noarch                         3/3 
+  Verifying  : python36-six-1.14.0-3.el7.noarch                             1/3 
+  Verifying  : python36-urllib3-1.25.6-2.el7.noarch                         2/3 
+  Verifying  : python36-pysocks-1.6.8-7.el7.noarch                          3/3 
+VerifyTransaction time: 0.119
+Transaction time: 0.329
+
+Installed:
+  python36-urllib3.noarch 0:1.25.6-2.el7                                        
+
+Dependency Installed:
+  python36-pysocks.noarch 0:1.6.8-7.el7    python36-six.noarch 0:1.14.0-3.el7   
+
+Complete!

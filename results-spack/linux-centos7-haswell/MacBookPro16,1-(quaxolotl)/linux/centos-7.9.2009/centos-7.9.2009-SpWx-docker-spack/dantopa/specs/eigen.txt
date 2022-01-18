@@ -1,0 +1,20 @@
+Input spec
+--------------------------------
+eigen%gcc@11.2.0 arch=linux-centos7-haswell
+
+Concretized
+--------------------------------
+eigen@3.4.0%gcc@11.2.0~ipo build_type=RelWithDebInfo arch=linux-centos7-haswell
+    ^cmake@3.22.1%gcc@11.2.0~doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-centos7-haswell
+        ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+            ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^openssl@1.1.1m%gcc@11.2.0~docs certs=system arch=linux-centos7-haswell
+            ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+                ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-centos7-haswell
+                ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+                    ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+                ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+                ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+

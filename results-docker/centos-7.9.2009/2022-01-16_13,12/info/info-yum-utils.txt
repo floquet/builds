@@ -1,0 +1,11 @@
+yum info    -v yum-utils
+Traceback (most recent call last):
+  File "/usr/bin/yum", line 4, in <module>
+    import yum
+  File "/usr/lib/python2.7/site-packages/yum/__init__.py", line 44, in <module>
+    import logging
+  File "/usr/lib64/python2.7/logging/__init__.py", line 1094, in <module>
+    class Logger(Filterer):
+  File "/usr/lib64/python2.7/logging/__init__.py", line 1342, in Logger
+    def isEnabledFor(self, level):
+KeyboardInterrupt

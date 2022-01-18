@@ -1,0 +1,107 @@
+AutotoolsPackage:   mpich
+
+Description:
+    MPICH is a high performance and widely portable implementation of the
+    Message Passing Interface (MPI) standard.
+
+Homepage: https://www.mpich.org
+
+Maintainers: @raffenet @yfguo
+
+Externally Detectable: 
+    True (version, variants)
+
+Tags: 
+    e4s
+
+Preferred version:  
+    3.4.2      https://www.mpich.org/static/downloads/3.4.2/mpich-3.4.2.tar.gz
+
+Safe versions:  
+    develop    [git] https://github.com/pmodels/mpich.git
+    3.4.2      https://www.mpich.org/static/downloads/3.4.2/mpich-3.4.2.tar.gz
+    3.4.1      https://www.mpich.org/static/downloads/3.4.1/mpich-3.4.1.tar.gz
+    3.4        https://www.mpich.org/static/downloads/3.4/mpich-3.4.tar.gz
+    3.3.2      https://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz
+    3.3.1      https://www.mpich.org/static/downloads/3.3.1/mpich-3.3.1.tar.gz
+    3.3        https://www.mpich.org/static/downloads/3.3/mpich-3.3.tar.gz
+    3.2.1      https://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz
+    3.2        https://www.mpich.org/static/downloads/3.2/mpich-3.2.tar.gz
+    3.1.4      https://www.mpich.org/static/downloads/3.1.4/mpich-3.1.4.tar.gz
+    3.1.3      https://www.mpich.org/static/downloads/3.1.3/mpich-3.1.3.tar.gz
+    3.1.2      https://www.mpich.org/static/downloads/3.1.2/mpich-3.1.2.tar.gz
+    3.1.1      https://www.mpich.org/static/downloads/3.1.1/mpich-3.1.1.tar.gz
+    3.1        https://www.mpich.org/static/downloads/3.1/mpich-3.1.tar.gz
+    3.0.4      https://www.mpich.org/static/downloads/3.0.4/mpich-3.0.4.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]               When    Allowed values          Description
+    =========================    ====    ====================    ==================================================================================================================================
+
+    argobots [off]               --      on, off                 Enable Argobots support
+    device [ch4]                 --      ch3, ch4                Abstract Device Interface (ADI)
+                                                                 implementation. The ch4 device is in experimental state for versions
+                                                                 before 3.4.
+    fortran [on]                 --      on, off                 Enable Fortran support
+    hwloc [on]                   --      on, off                 Use external hwloc package
+    hydra [on]                   --      on, off                 Build the hydra process manager
+    libxml2 [on]                 --      on, off                 Use libxml2 for XML support instead of the custom minimalistic implementation
+    netmod [ofi]                 --      tcp, mxm, ofi, ucx      Network module. Only single netmod builds are
+                                                                 supported. For ch3 device configurations, this presumes the
+                                                                 ch3:nemesis communication channel. ch3:sock is not supported by this
+                                                                 spack package at this time.
+    pci [on]                     --      on, off                 Support analyzing devices on PCI bus
+    pmi [pmi]                    --      off, pmi, pmi2, pmix    PMI interface.
+    romio [on]                   --      on, off                 Enable ROMIO MPI I/O implementation
+    slurm [off]                  --      on, off                 Enable SLURM support
+    two_level_namespace [off]    --      on, off                 Build shared libraries and programs
+                                                                 built with the mpicc/mpifort/etc. compiler wrappers
+                                                                 with '-Wl,-commons,use_dylibs' and without
+                                                                 '-Wl,-flat_namespace'.
+    verbs [off]                  --      on, off                 Build support for OpenFabrics verbs.
+    wrapperrpath [on]            --      on, off                 Enable wrapper rpath
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    argobots
+    autoconf
+    automake
+    findutils
+    gnuconfig
+    hwloc
+    libfabric
+    libpciaccess
+    libtool
+    libxml2
+    m4
+    pkgconfig
+    pmix
+    python
+    slurm
+    ucx
+
+Link Dependencies:
+    argobots
+    hwloc
+    libfabric
+    libpciaccess
+    libxml2
+    pmix
+    slurm
+    ucx
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    mpich provides mpi@:3.1
+    mpich@:3.1 provides mpi@:3.0
+    mpich@:1.2 provides mpi@:2.2
+    mpich@:1.1 provides mpi@:2.1
+    mpich@:1.0 provides mpi@:2.0
+
