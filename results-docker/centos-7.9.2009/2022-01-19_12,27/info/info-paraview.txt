@@ -1,0 +1,59 @@
+yum info    -v paraview
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.008
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.maine.edu
+ * epel: epel.mirror.constant.com
+ * extras: mirror.math.princeton.edu
+ * updates: mirror.teklinks.com
+pkgsack time: 4.181
+Installed Packages
+Name        : paraview
+Arch        : x86_64
+Version     : 4.4.0
+Release     : 2.el7
+Size        : 126 M
+Repo        : installed
+From repo   : epel
+Committer   : Orion Poplawski <orion@cora.nwra.com>
+Committime  : Thu Oct 29 06:00:00 2015
+Buildtime   : Thu Dec 10 17:16:37 2015
+Install time: Wed Jan 19 12:45:34 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Parallel visualization application
+URL         : http://www.paraview.org/
+License     : BSD
+Description : ParaView is an application designed with the need to visualize
+            : large data sets in mind. The goals of the ParaView project include
+            : the following:
+            : 
+            :     * Develop an open-source, multi-platform visualization
+            :       application.
+            :     * Support distributed computation models to process large data
+            :       sets.
+            :     * Create an open, flexible, and intuitive user interface.
+            :     * Develop an extensible architecture based on open standards.
+            : 
+            : ParaView runs on distributed and shared memory parallel as well as
+            : single processor systems and has been successfully tested on
+            : Windows, Linux and various Unix workstations and clusters. Under
+            : the hood, ParaView uses the Visualization Toolkit as the data
+            : processing and rendering engine and has a user interface written
+            : using a unique blend of Tcl/Tk and C++.
+            : 
+            : NOTE: The version in this package has NOT been compiled with MPI
+            : support.
+            : 
+            : Install the paraview-openmpi package to get a version compiled
+            : with openmpi.
+            : 
+            : 
+            : Install the paraview-mpich package to get a version compiled with
+            : mpich.
+

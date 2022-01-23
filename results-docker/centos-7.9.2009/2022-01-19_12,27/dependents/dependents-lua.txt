@@ -1,0 +1,135 @@
+yum deplist -v lua
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.010
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.maine.edu
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.math.princeton.edu
+ * updates: mirror.teklinks.com
+pkgsack time: 0.726
+Searching pkgSack for dep: libc.so.6(GLIBC_2.11)
+Searching pkgSack for dep: libdl.so.2
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.0)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.1)
+Searching pkgSack for dep: libm.so.6
+Searching pkgSack for dep: libm.so.6(GLIBC_2.0)
+Searching pkgSack for dep: libncurses.so.5
+Searching pkgSack for dep: libreadline.so.6
+Searching pkgSack for dep: libtinfo.so.5
+Searching pkgSack for dep: rtld(GNU_HASH)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libdl.so.2()(64bit)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libm.so.6(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libncurses.so.5()(64bit)
+Searching pkgSack for dep: libreadline.so.6()(64bit)
+Searching pkgSack for dep: libtinfo.so.5()(64bit)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: lua.i686 5.1.4-15.el7
+  dependency: libc.so.6(GLIBC_2.11)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libdl.so.2
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.0)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.1)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libm.so.6
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.0)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libncurses.so.5
+   provider: ncurses-libs.i686 5.9-14.20130511.el7_4
+  dependency: libreadline.so.6
+   provider: readline.i686 6.2-11.el7
+  dependency: libtinfo.so.5
+   provider: ncurses-libs.i686 5.9-14.20130511.el7_4
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+package: lua.x86_64 5.1.4-15.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdl.so.2()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libncurses.so.5()(64bit)
+   provider: ncurses-libs.x86_64 5.9-14.20130511.el7_4
+  dependency: libreadline.so.6()(64bit)
+   provider: readline.x86_64 6.2-11.el7
+  dependency: libtinfo.so.5()(64bit)
+   provider: ncurses-libs.x86_64 5.9-14.20130511.el7_4
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

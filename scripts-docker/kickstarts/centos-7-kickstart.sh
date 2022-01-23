@@ -21,9 +21,9 @@ source /repos/github/builds/scripts-spack/shared/common-header.sh
 # start timer
 export centosSECONDS=${SECONDS}
 # specify package manager (to construct refresh.sh)
-export refresh="yum "
+export refresh="yum"
 # name of spack directory on virtual machine
-export mySpack="centos-7.9.2009-SpWx-docker-spack"
+export mySpack="centos-7.9.2009-topa-docker-spack"
 # locate builds repo
 export repoBuilds="/repos/github/builds"
 # locate scripts and files for transfer
