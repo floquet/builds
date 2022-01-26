@@ -1,0 +1,68 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: linux-mirrors.fnal.gov
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.clarkson.edu
+ * updates: mirror.math.princeton.edu
+pkgsack time: 0.532
+Obs Init time: 0.143
+Resolving Dependencies
+--> Running transaction check
+---> Package ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 will be installed
+Checking deps for ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('ncurses-libs(x86-64)', 'EQ', ('0', '5.9', '14.20130511.el7_4')) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libtic.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libpanelw.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libpanel.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libncurses++w.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libncurses++.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libmenuw.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libmenu.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libformw.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libform.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.219
+
+Dependencies Resolved
+
+================================================================================
+ Package             Arch         Version                      Repository  Size
+================================================================================
+Installing:
+ ncurses-devel       x86_64       5.9-14.20130511.el7_4        base       712 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 712 k
+Installed size: 2.1 M
+Downloading packages:
+Member: ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+Adding Package ncurses-devel-5.9-14.20130511.el7_4.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.026
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.049
+Running transaction
+  Installing : ncurses-devel-5.9-14.20130511.el7_4.x86_64                   1/1 
+  Verifying  : ncurses-devel-5.9-14.20130511.el7_4.x86_64                   1/1 
+VerifyTransaction time: 0.072
+Transaction time: 0.367
+
+Installed:
+  ncurses-devel.x86_64 0:5.9-14.20130511.el7_4                                  
+
+Complete!

@@ -1,0 +1,61 @@
+yum info    -v netcdf
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.008
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: linux-mirrors.fnal.gov
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.clarkson.edu
+ * updates: mirror.math.princeton.edu
+pkgsack time: 0.550
+Installed Packages
+Name        : netcdf
+Arch        : x86_64
+Version     : 4.3.3.1
+Release     : 5.el7
+Size        : 2.2 M
+Repo        : installed
+From repo   : epel
+Committer   : Orion Poplawski <orion@cora.nwra.com>
+Committime  : Thu Dec 10 05:00:00 2015
+Buildtime   : Thu Dec 10 09:59:36 2015
+Install time: Tue Jan 25 18:44:32 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Libraries for the Unidata network Common Data Form
+URL         : http://www.unidata.ucar.edu/software/netcdf/
+License     : NetCDF
+Description : NetCDF (network Common Data Form) is an interface for
+            : array-oriented data access and a freely-distributed collection of
+            : software libraries for C, Fortran, C++, and perl that provides an
+            : implementation of the interface.  The NetCDF library also defines
+            : a machine-independent format for representing scientific data.
+            : Together, the interface, library, and format support the creation,
+            : access, and sharing of scientific data. The NetCDF software was
+            : developed at the Unidata Program Center in Boulder, Colorado.
+            : 
+            : NetCDF data is:
+            : 
+            :    o Self-Describing: A NetCDF file includes information about the
+            :      data it contains.
+            : 
+            :    o Network-transparent:  A NetCDF file is represented in a form
+            :      that can be accessed by computers with different ways of
+            :      storing integers, characters, and floating-point numbers.
+            : 
+            :    o Direct-access:  A small subset of a large dataset may be
+            :      accessed efficiently, without first reading through all the
+            :      preceding data.
+            : 
+            :    o Appendable:  Data can be appended to a NetCDF dataset along
+            :      one dimension without copying the dataset or redefining its
+            :      structure. The structure of a NetCDF dataset can be changed,
+            :      though this sometimes causes the dataset to be copied.
+            : 
+            :    o Sharable:  One writer and multiple readers may simultaneously
+            :      access the same NetCDF file.
+
