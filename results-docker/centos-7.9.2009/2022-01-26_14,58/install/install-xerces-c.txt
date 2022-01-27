@@ -1,0 +1,68 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.009
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * epel: dfw.mirror.rackspace.com
+ * extras: mirror.mia11.us.leaseweb.net
+ * updates: mirror.arizona.edu
+pkgsack time: 0.320
+Obs Init time: 0.180
+Resolving Dependencies
+--> Running transaction check
+---> Package xerces-c.x86_64 0:3.1.1-10.el7_7 will be installed
+Checking deps for xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libnsl.so.1()(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.388
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch            Version                  Repository     Size
+================================================================================
+Installing:
+ xerces-c          x86_64          3.1.1-10.el7_7           base          879 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 879 k
+Installed size: 3.7 M
+Downloading packages:
+Member: xerces-c.x86_64 0:3.1.1-10.el7_7 - u
+Adding Package xerces-c-3.1.1-10.el7_7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.010
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.011
+Running transaction
+  Installing : xerces-c-3.1.1-10.el7_7.x86_64                               1/1 
+  Verifying  : xerces-c-3.1.1-10.el7_7.x86_64                               1/1 
+VerifyTransaction time: 0.105
+Transaction time: 0.508
+
+Installed:
+  xerces-c.x86_64 0:3.1.1-10.el7_7                                              
+
+Complete!

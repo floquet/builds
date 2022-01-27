@@ -1,0 +1,68 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * epel: dfw.mirror.rackspace.com
+ * extras: mirror.mia11.us.leaseweb.net
+ * updates: mirror.arizona.edu
+pkgsack time: 0.317
+Obs Init time: 0.216
+Resolving Dependencies
+--> Running transaction check
+---> Package valgrind.x86_64 1:3.15.0-11.el7 will be installed
+Checking deps for valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('perl(warnings)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('perl(strict)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('perl(File::Basename)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libdl.so.2(GLIBC_2.3.3)(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('/usr/bin/perl', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of valgrind.x86_64 1:3.15.0-11.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.268
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch            Version                  Repository     Size
+================================================================================
+Installing:
+ valgrind          x86_64          1:3.15.0-11.el7          base           12 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 12 M
+Installed size: 32 M
+Downloading packages:
+Member: valgrind.x86_64 1:3.15.0-11.el7 - u
+Adding Package 1:valgrind-3.15.0-11.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.032
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.041
+Running transaction
+  Installing : 1:valgrind-3.15.0-11.el7.x86_64                              1/1 
+  Verifying  : 1:valgrind-3.15.0-11.el7.x86_64                              1/1 
+VerifyTransaction time: 0.089
+Transaction time: 1.306
+
+Installed:
+  valgrind.x86_64 1:3.15.0-11.el7                                               
+
+Complete!
