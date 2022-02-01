@@ -1,0 +1,43 @@
+created by /home/dantopa//repos/gitlab/truth-magnetosphere/scripts/spack/reaper/header-reaper.sh at Mon Jan 31 21:28:51 MST 2022
+
+${SPACK_ROOT} = /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack
+
+spack arch linux-centos7-haswell
+
+uname -a:
+Linux ab72aa5020f7 5.10.76-linuxkit #1 SMP Mon Nov 8 10:21:19 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+---                                                                                                      modules:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/linux/modules.yaml:17    prefix_inspections:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/linux/modules.yaml:18      lib:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/linux/modules.yaml:19      - LD_LIBRARY_PATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/linux/modules.yaml:20      lib64:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/linux/modules.yaml:21      - LD_LIBRARY_PATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:19            bin:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:20            - PATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:21            man:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:22            - MANPATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:23            share/man:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:24            - MANPATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:25            share/aclocal:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:26            - ACLOCAL_PATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:27            lib/pkgconfig:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:28            - PKG_CONFIG_PATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:29            lib64/pkgconfig:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:30            - PKG_CONFIG_PATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:31            share/pkgconfig:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:32            - PKG_CONFIG_PATH
+                                                                                                             ? ''
+                                                                                                             : - CMAKE_PREFIX_PATH
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:34          # These are configurations for the module set named "default"
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:37          default:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:46            enable:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:46            - tcl
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:49            tcl:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:50              all:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:51                autoload: none
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:54            lmod:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:55              all:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:56                autoload: direct
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:57              hierarchy:
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/etc/spack/defaults/modules.yaml:58              - mpi
