@@ -1,0 +1,157 @@
+created by /home/dantopa//repos/gitlab/truth-magnetosphere/scripts/spack/reaper/header-reaper.sh at Wed Feb  2 18:34:22 MST 2022
+
+${SPACK_ROOT} = /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack
+
+spack arch linux-centos7-haswell
+
+uname -a:
+Linux 79866d073d67 5.10.76-linuxkit #1 SMP Mon Nov 8 10:21:19 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+-- linux-centos7-haswell / gcc@4.8.5 ----------------------------
+autoconf@2.69 patches=35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2,7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7,a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
+autoconf-archive@2019.01.06
+automake@1.16.5
+berkeley-db@18.1.40+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522
+bzip2@1.0.8~debug~pic+shared
+diffutils@3.8
+gcc@11.2.0~binutils+bootstrap~graphite~nvptx~piclibs~strip languages=c,c++,fortran
+gdbm@1.19
+gmp@6.2.1
+libiconv@1.16 libs=shared,static
+libsigsegv@2.13
+libtool@2.4.6
+m4@1.4.19+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89
+mpc@1.2.1
+mpfr@4.1.0
+ncurses@6.2~symlinks+termlib abi=none
+perl@5.34.0+cpanm+shared+threads
+pkgconf@1.8.0
+readline@8.1
+texinfo@6.5 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1
+zlib@1.2.11+optimize+pic+shared
+zstd@1.5.0~programs
+
+-- linux-centos7-haswell / gcc@11.2.0 ---------------------------
+autoconf@2.69 patches=35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2,7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7,a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
+automake@1.16.5
+bdftopcf@1.0.5
+berkeley-db@18.1.40+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522
+bzip2@1.0.8~debug~pic+shared
+cmake@3.22.2~doc+ncurses+openssl+ownlibs~qt build_type=Release
+curl@7.80.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=openssl
+diffutils@3.8
+expat@2.4.3+libbsd
+expat@2.4.4+libbsd
+font-util@1.3.2 fonts=encodings,font-adobe-100dpi,font-adobe-75dpi,font-adobe-utopia-100dpi,font-adobe-utopia-75dpi,font-adobe-utopia-type1,font-alias,font-arabic-misc,font-bh-100dpi,font-bh-75dpi,font-bh-lucidatypewriter-100dpi,font-bh-lucidatypewriter-75dpi,font-bh-type1,font-bitstream-100dpi,font-bitstream-75dpi,font-bitstream-speedo,font-bitstream-type1,font-cronyx-cyrillic,font-cursor-misc,font-daewoo-misc,font-dec-misc,font-ibm-type1,font-isas-misc,font-jis-misc,font-micro-misc,font-misc-cyrillic,font-misc-ethiopic,font-misc-meltho,font-misc-misc,font-mutt-misc,font-schumacher-misc,font-screen-cyrillic,font-sun-misc,font-winitzki-cyrillic,font-xfree86-type1
+fontconfig@2.13.94
+fontsproto@2.1.3
+freetype@2.11.0
+gdbm@1.19
+gettext@0.21+bzip2+curses+git~libunistring+libxml2+tar+xz
+git@2.31.1+man+nls+perl~svn+tcltk
+git-lfs@2.11.0
+go@1.17.3
+go-bootstrap@1.4-bootstrap-20171003
+gperf@3.1
+inputproto@2.3.2
+kbproto@1.0.7
+libbsd@0.11.3
+libedit@3.1-20210216
+libffi@3.3 patches=26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0
+libfontenc@1.1.3
+libiconv@1.16 libs=shared,static
+libidn2@2.3.0
+libjpeg-turbo@2.1.0
+libmd@1.0.3
+libpng@1.6.37
+libpthread-stubs@0.4
+libsigsegv@2.13
+libtool@2.4.6
+libunistring@0.9.10
+libx11@1.7.0
+libxau@1.0.8
+libxcb@1.14
+libxdmcp@1.1.2
+libxext@1.3.3
+libxfont@1.5.2
+libxft@2.3.2
+libxml2@2.9.12~python
+libxrender@0.9.10
+libxscrnsaver@1.2.2
+m4@1.4.19+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89
+mkfontdir@1.0.7
+mkfontscale@1.1.2
+nasm@2.15.05
+ncurses@6.2~symlinks+termlib abi=none
+openblas@0.3.19~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none
+openssh@8.8p1
+openssl@1.1.1m~docs certs=system
+pcre2@10.36~jit+multibyte
+perl@5.34.0+cpanm+shared+threads
+pkgconf@1.8.0
+py-backports-entry-points-selectable@1.1.0
+py-beautifulsoup4@4.10.0~html5lib~lxml
+py-beniget@0.4.1
+py-bottleneck@1.3.2
+py-certifi@2021.10.8
+py-cppy@1.1.0
+py-cycler@0.11.0
+py-cython@0.29.24
+py-debugpy@1.5.1
+py-distlib@0.3.3
+py-filelock@3.4.0
+py-fonttools@4.28.1
+py-gast@0.5.3
+py-importlib-metadata@2.0.0
+py-kiwisolver@1.3.2
+py-matplotlib@3.5.1~animation~fonts+image~latex~movies backend=agg
+py-numexpr@2.7.3
+py-numpy@1.22.1+blas+lapack patches=873745d7b547857fcfec9cae90b09c133b42a4f0c23b6c2d84cf37e2dd816604
+py-packaging@21.3
+py-pandas@1.4.0
+py-pillow@9.0.0~freetype~imagequant+jpeg~jpeg2000~lcms~tiff~webp~webpmux~xcb+zlib
+py-pip@21.3.1
+py-pip@21.3.1
+py-platformdirs@2.4.0
+py-ply@3.11
+py-pybind11@2.7.1~ipo build_type=RelWithDebInfo
+py-pyparsing@3.0.6
+py-pytest-runner@5.3.1
+py-python-dateutil@2.8.2
+py-pythran@0.9.12 patches=b427dcaaa74ed4dfa39c58819e446e86055b65648826a101c08634d3c0be1f95
+py-pytz@2021.3
+py-scipy@1.7.3
+py-seaborn@0.11.2
+py-setuptools@57.4.0
+py-setuptools@59.4.0
+py-setuptools@59.4.0
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm-git-archive@1.1
+py-six@1.16.0
+py-soupsieve@2.2.1
+py-tomli@1.2.2
+py-tqdm@4.62.3~notebook~telegram
+py-urllib3@1.26.6~brotli~secure~socks
+py-virtualenv@20.10.0
+py-wheel@0.37.0
+py-wheel@0.37.0
+py-zipp@3.6.0
+python@3.10.1+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4
+python@3.10.1+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4
+qhull@2020.2~ipo build_type=RelWithDebInfo
+readline@8.1
+renderproto@0.11.1
+scrnsaverproto@1.2.2
+sqlite@3.37.1+column_metadata+dynamic_extensions+fts~functions+rtree
+tar@1.34
+tcl@8.6.11
+tk@8.6.11+xft+xss
+util-linux-uuid@2.36.2
+util-macros@1.19.3
+xcb-proto@1.14.1
+xextproto@7.3.0
+xproto@7.0.31
+xtrans@1.3.5
+xz@5.2.5~pic libs=shared,static
+zlib@1.2.11+optimize+pic+shared
