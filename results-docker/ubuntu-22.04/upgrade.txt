@@ -1,69 +1,0 @@
-apt-get upgrade  -y
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Calculating upgrade...
-The following packages will be upgraded:
-  apt gcc-11-base libapt-pkg6.0 libgcc-s1 libgssapi-krb5-2 libk5crypto3
-  libkrb5-3 libkrb5support0 libseccomp2 libstdc++6 libunistring2
-11 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 4232 kB of archives.
-After this operation, 244 kB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 gcc-11-base amd64 11.2.0-16ubuntu1 [20.9 kB]
-Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgcc-s1 amd64 11.2.0-16ubuntu1 [45.6 kB]
-Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 libstdc++6 amd64 11.2.0-16ubuntu1 [653 kB]
-Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 libapt-pkg6.0 amd64 2.3.15 [906 kB]
-Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 libseccomp2 amd64 2.5.2-2ubuntu3 [48.4 kB]
-Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 apt amd64 2.3.15 [1385 kB]
-Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 libk5crypto3 amd64 1.19.2-1 [86.4 kB]
-Get:8 http://archive.ubuntu.com/ubuntu jammy/main amd64 libkrb5support0 amd64 1.19.2-1 [32.4 kB]
-Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 libkrb5-3 amd64 1.19.2-1 [357 kB]
-Get:10 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgssapi-krb5-2 amd64 1.19.2-1 [144 kB]
-Get:11 http://archive.ubuntu.com/ubuntu jammy/main amd64 libunistring2 amd64 1.0-1 [554 kB]
-debconf: delaying package configuration, since apt-utils is not installed
-Fetched 4232 kB in 2s (1925 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../gcc-11-base_11.2.0-16ubuntu1_amd64.deb ...
-Unpacking gcc-11-base:amd64 (11.2.0-16ubuntu1) over (11.2.0-14ubuntu1) ...
-Setting up gcc-11-base:amd64 (11.2.0-16ubuntu1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libgcc-s1_11.2.0-16ubuntu1_amd64.deb ...
-Unpacking libgcc-s1:amd64 (11.2.0-16ubuntu1) over (11.2.0-14ubuntu1) ...
-Setting up libgcc-s1:amd64 (11.2.0-16ubuntu1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libstdc++6_11.2.0-16ubuntu1_amd64.deb ...
-Unpacking libstdc++6:amd64 (11.2.0-16ubuntu1) over (11.2.0-14ubuntu1) ...
-Setting up libstdc++6:amd64 (11.2.0-16ubuntu1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libapt-pkg6.0_2.3.15_amd64.deb ...
-Unpacking libapt-pkg6.0:amd64 (2.3.15) over (2.3.14) ...
-Setting up libapt-pkg6.0:amd64 (2.3.15) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libseccomp2_2.5.2-2ubuntu3_amd64.deb ...
-Unpacking libseccomp2:amd64 (2.5.2-2ubuntu3) over (2.5.2-2ubuntu2) ...
-Setting up libseccomp2:amd64 (2.5.2-2ubuntu3) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../archives/apt_2.3.15_amd64.deb ...
-Unpacking apt (2.3.15) over (2.3.14) ...
-Setting up apt (2.3.15) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libk5crypto3_1.19.2-1_amd64.deb ...
-Unpacking libk5crypto3:amd64 (1.19.2-1) over (1.19.2-0ubuntu1) ...
-Setting up libk5crypto3:amd64 (1.19.2-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libkrb5support0_1.19.2-1_amd64.deb ...
-Unpacking libkrb5support0:amd64 (1.19.2-1) over (1.19.2-0ubuntu1) ...
-Setting up libkrb5support0:amd64 (1.19.2-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libkrb5-3_1.19.2-1_amd64.deb ...
-Unpacking libkrb5-3:amd64 (1.19.2-1) over (1.19.2-0ubuntu1) ...
-Setting up libkrb5-3:amd64 (1.19.2-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libgssapi-krb5-2_1.19.2-1_amd64.deb ...
-Unpacking libgssapi-krb5-2:amd64 (1.19.2-1) over (1.19.2-0ubuntu1) ...
-Setting up libgssapi-krb5-2:amd64 (1.19.2-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4405 files and directories currently installed.)
-Preparing to unpack .../libunistring2_1.0-1_amd64.deb ...
-Unpacking libunistring2:amd64 (1.0-1) over (0.9.10-6) ...
-Setting up libunistring2:amd64 (1.0-1) ...
-Processing triggers for libc-bin (2.34-0ubuntu3) ...
