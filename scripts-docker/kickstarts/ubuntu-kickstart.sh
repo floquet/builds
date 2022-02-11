@@ -39,7 +39,6 @@ export dirResultsDocker="${dirBuilds}/results-docker"
 source ${dirBuilds}/scripts-spack/shared/common-header.sh
 
 export dirResultsDockerLocal="${dirResultsDocker}/${dist}-${release}/${ymdtf}"
-
 export timerFile=${dirBuildResults}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
