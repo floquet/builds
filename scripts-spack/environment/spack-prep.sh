@@ -3,10 +3,13 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Fri Feb 11 13:27:56 MST 2022
 
+# run as user dantopa
+# $ source /repos/github/builds/scripts-spack/environment/spack-prep.sh
+
 #  #  #  ========================================== declarations begin
 
 # start timer
-export prepSECONDS=${SECONDS}
+export prepTime=${SECONDS}
 
 # # layout of repositories
 export github="/repos/github"
@@ -21,15 +24,42 @@ export dirResultsDocker="${dirBuilds}/results-spack"
 export  git_user="Daniel Topa"
 export git_email="dantopa@gmail.com"
 
-# git configuration
+# spacktivity configuration
 export dist="ubuntu"
 export release="22.04"
+export pmanager="apt"
 export ldirSpack="${dist}-${release}-docker-spack"
 export dirSpacktivity="${HOME}/spacktivity"
+
+# docker ssh key names
+export nameSSHdocker="ehecoatl-internal-docker-${dist}-${release}-ed25519"
 
 #  #  #  ========================================== declarations end
 
 source ${dirScriptsSpack}/shared/common-header.sh
+
+#  #  #  ========================================== general directory structure
+
+new_step "Create general directory structure"
+sub_step_counter=0
+
+  sub_step "cd ${HOME}"
+            cd ${HOME}
+
+  sub_step "mkdir -p ${HOME}/.info"
+            mkdir -p ${HOME}/.info
+
+  sub_step "mkdir -p ${HOME}/scratch"
+            mkdir -p ${HOME}/scratch
+
+  sub_step "mkdir -p ${HOME}/repos/bitbucket"
+            mkdir -p ${HOME}/repos/bitbucket
+
+  sub_step "mkdir -p ${HOME}/repos/github"
+            mkdir -p ${HOME}/repos/github
+
+  sub_step "mkdir -p ${HOME}/repos/gitlab"
+            mkdir -p ${HOME}/repos/gitlab
 
 #  #  #  ========================================== configure git
 
@@ -63,28 +93,19 @@ sub_step_counter=0
     sub_step "git config --global core.editor 'vim'"
               git config --global core.editor 'vim'
 
-#  #  #  ========================================== general directory structure
-
-new_step "Create general directory structure"
-sub_step_counter=0
-
-  sub_step "cd ${HOME}"
-            cd ${HOME}
-  sub_step "mkdir -p ${HOME}/repos/bitbucket"
-            mkdir -p ${HOME}/repos/bitbucket
-  sub_step "mkdir -p ${HOME}/repos/github"
-            mkdir -p ${HOME}/repos/github
-
 #  #  #  ========================================== configure git
 
 new_step "Environment variables"
 sub_step_counter=0
   sub_step "export repos=${HOME}/repos/"
             export repos=${HOME}/repos/
+
   sub_step "export bitbucket=${repos}/bitbucket"
             export bitbucket=${repos}/bitbucket
+
   sub_step "export    github=${repos}/github"
             export    github=${repos}/github
+
   sub_step "export    github=${repos}/gitlab"
             export    github=${repos}/gitlab
 
@@ -127,14 +148,30 @@ sub_step_counter=0
     sub_step "cp ${dirScriptsSpack}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
               cp ${dirScriptsSpack}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
 
-    sub_step "cp ${dirScriptsSpack}/transport/.platform-specific.sh ${USER}/."
-              cp ${dirScriptsSpack}/transport/.platform-specific.sh ${USER}/.
+    sub_step "cp ${dirScriptsSpack}/transport/.platform-specific.sh  ${USER}/."
+              cp ${dirScriptsSpack}/transport/.platform-specific.sh  ${USER}/.
 
-    sub_step "cp ${dirScriptsSpack}/transport/.vimrc                ${USER}/."
-              cp ${dirScriptsSpack}/transport/.vimrc                ${USER}.
+    sub_step "cp ${dirScriptsSpack}/transport/.vimrc                 ${USER}/."
+              cp ${dirScriptsSpack}/transport/.vimrc                 ${USER}.
+
+    sub_step "cp ${dirScriptsSpack}/transport/refresh-${pmanager}.sh ${USER}/."
+              cp ${dirScriptsSpack}/transport/refresh-${pmanager}.sh ${USER}.
 
     sub_step "cp ${dirScriptsSpack}/transport/.${dist}-${release}.sh ${USER}/."
               cp ${dirScriptsSpack}/transport/.${dist}-${release}.sh ${USER}/.
+
+#  #  #  ========================================== ssh key
+
+new_step "ssh key"
+sub_step_counter=0
+
+sub_step 'echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""'
+          echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""
+
+sub_step "\${nameSSHdocker} = ${nameSSHdocker}"
+
+sub_step "echo 'cat ${HOME}/.ssh/id_ed25519.pub'"
+
 
 #  #  #  ========================================== probe environment
 
@@ -159,4 +196,4 @@ new_step "print elapsed time used"
     export prepTime=$((${SECONDS}-${prepTime}))
     printf 'time to run script: %dh:%dm:%ds\n' $((${prepTime}/3600)) $((${prepTime}%3600/60)) $((${prepTime}%60))
 
-new_step printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0) finished at $(date)"
+printf "%s\n" "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) finished at $(date)"
