@@ -26,6 +26,10 @@ printf "%s\n" "$(date) ${BASH_SOURCE[0]}"
 # start timer
 export ubuntuSECONDS=${SECONDS}
 
+# describe this build
+export dist="ubuntu"
+export release="22.04"
+
 # # layout of repositories
 export github="/repos/github"
 export dirBuilds="${github}/builds"
@@ -35,10 +39,6 @@ export dirResultsDocker="${dirBuilds}/results-docker"
 source ${dirBuilds}/scripts-spack/shared/common-header.sh
 
 export dirResultsDockerLocal="${dirResultsDocker}/${dist}-${release}/${ymdtf}"
-
-# describe this build
-export dist="ubuntu"
-export release="22.04"
 
 export timerFile=${dirBuildResults}/elapsed-time.txt
 
