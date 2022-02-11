@@ -54,3 +54,27 @@ new_step "source ${dirScriptsDocker}/kickstarts/installers/apt-get-installs.sh"
 #           source ${dirUnified}/generics/generic-kickstart.sh ${mySpack} ${dirUnified}/transport
 
 new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
+
+# passwd root
+# Changing password for user root.
+# New password: 8, !A
+
+#  adduser dantopa
+#  usermod -aG wheel dantopa
+
+# # passwd dantopa
+# Changing password for user dantopa.
+# New password: 8, !A
+
+#  adduser dantopa
+#   name
+#   room number
+#   phone, office
+#   phone, desk
+#   other
+#
+# sudo addgroup admin
+#
+# sudo addgroup wheel
+#
+# usermod -aG wheel dantopa

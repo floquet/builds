@@ -84,15 +84,4 @@ new_step "print elapsed time used"
     printf 'time for all builds: %dh:%dm:%ds\n' $((${aptTime}/3600)) $((${aptTime}%3600/60)) $((${aptTime}%60))
 
 
-# passwd root
-# Changing password for user root.
-# New password: 8, !A
-
-#  adduser dantopa
-#  usermod -aG wheel dantopa
-
-# # passwd dantopa
-# Changing password for user dantopa.
-# New password: 8, !A
-
 new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"

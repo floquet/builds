@@ -40,8 +40,8 @@ new_step "export bitbucket=${HOME}/repos/bitbucket"
           export bitbucket=${HOME}/repos/bitbucket
 new_step "export    github=${HOME}/repos/github"
           export    github=${HOME}/repos/github
-new_step "export    docker=${github}/docker"
-          export    docker=${github}/docker
+new_step "export    github=${HOME}/repos/gitlab"
+          export    github=${HOME}/repos/gitlab
 
 new_step "cd ${bitbucket}"
           cd ${bitbucket}
