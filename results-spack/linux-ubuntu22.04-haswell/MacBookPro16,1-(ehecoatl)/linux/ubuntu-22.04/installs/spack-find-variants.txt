@@ -1,0 +1,251 @@
+-- linux-ubuntu22.04-haswell / gcc@11.2.0-16ubuntu1 -------------
+arpack-ng@3.8.0+mpi+shared
+at-spi2-atk@2.38.0~strip buildtype=debugoptimized default_library=shared
+at-spi2-core@2.40.1~strip buildtype=debugoptimized default_library=shared
+atk@2.36.0
+autoconf@2.69 patches=35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2,7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7,a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
+autoconf-archive@2019.01.06
+automake@1.16.5
+bdftopcf@1.0.5
+berkeley-db@18.1.40+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522
+binutils@2.33.1~gas~gold+headers~interwork~ld+libiberty~lto+nls+plugins libs=shared,static
+binutils@2.37~gas+gold~headers~interwork+ld~libiberty~lto+nls+plugins libs=shared,static
+bison@3.8.2
+blaspp@2021.04.01~cuda~ipo+openmp~rocm+shared build_type=RelWithDebInfo
+boost@1.78.0+atomic+chrono~clanglibcpp~container~context~coroutine+date_time~debug+exception~fiber+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout+wave cxxstd=98 visibility=hidden
+butterflypack@2.1.0~ipo+shared build_type=RelWithDebInfo
+bzip2@1.0.8~debug~pic+shared
+cairo@1.16.0+X+fc+ft+gobject+pdf~png~svg patches=7c4da77767fe9feb03f8051def0832f0c67f99162913275cfa127a88df19cf51
+cfitsio@3.49+bzip2+shared
+cmake@3.22.2~doc+ncurses+openssl+ownlibs~qt build_type=Release
+coreutils@8.32~gprefix
+curl@7.80.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=openssl
+dbus@1.12.8
+diffutils@3.8
+docbook-xml@4.4
+docbook-xsl@1.79.2 patches=a92c39715c54949ba9369add1809527b8f155b7e2a2b2e30cb4b39ee715f2e30
+doxygen@1.9.3~graphviz~ipo~mscgen build_type=RelWithDebInfo
+eigen@3.4.0~ipo build_type=RelWithDebInfo
+elfutils@0.186~bzip2~debuginfod+nls~xz
+erfa@1.7.0
+expat@2.4.4+libbsd
+fftw@3.3.10+mpi~openmp~pfft_patches precision=double,float
+findutils@4.8.0 patches=440b9543365b4692a2e6e0b5674809659846658d34d1dfc542c4397c8d668b92
+fixesproto@5.0
+flex@2.6.3+lex~nls
+font-util@1.3.2 fonts=encodings,font-adobe-100dpi,font-adobe-75dpi,font-adobe-utopia-100dpi,font-adobe-utopia-75dpi,font-adobe-utopia-type1,font-alias,font-arabic-misc,font-bh-100dpi,font-bh-75dpi,font-bh-lucidatypewriter-100dpi,font-bh-lucidatypewriter-75dpi,font-bh-type1,font-bitstream-100dpi,font-bitstream-75dpi,font-bitstream-speedo,font-bitstream-type1,font-cronyx-cyrillic,font-cursor-misc,font-daewoo-misc,font-dec-misc,font-ibm-type1,font-isas-misc,font-jis-misc,font-micro-misc,font-misc-cyrillic,font-misc-ethiopic,font-misc-meltho,font-misc-misc,font-mutt-misc,font-schumacher-misc,font-screen-cyrillic,font-sun-misc,font-winitzki-cyrillic,font-xfree86-type1
+fontconfig@2.13.94
+fontsproto@2.1.3
+freetype@2.11.1
+fribidi@1.0.5
+gawk@5.1.1
+gdb@11.1~gold~ld~lto+python~quad~source-highlight~tui+xz patches=7590c95c3a621b731cf80f26fc480e9d2584770b8e2f689a22f6d23316fba899
+gdbm@1.19
+gdk-pixbuf@2.42.6~man~tiff~x11
+gettext@0.21+bzip2+curses+git~libunistring+libxml2+tar+xz
+glib@2.70.2~libmount patches=8547954e50d0a720fa9794b84c31569df6a7419319b95ac9de0ed861d8969ffd tracing=none
+glproto@1.4.17
+gmake@4.3~guile+nls
+gmp@6.2.1
+gobject-introspection@1.56.1 patches=6f90bb267efa043ed70b900b4b8e2faf9e8133afae311893b01060356ea81bba,7700828b638c85255c87fcc317ea7e9572ff443f65c86648796528885e5b4cea
+gperf@3.1
+graphite2@1.3.13~ipo build_type=RelWithDebInfo patches=39e58d629b090bee4a319bfc581e59c4f4b0453f8b13ec77693a52be8d13a90d
+gsl@2.7~external-cblas
+harfbuzz@2.9.1+graphite2
+hdf5@1.12.1~cxx~fortran~hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo
+hdf5@1.12.1~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo
+hwloc@2.7.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared
+hwloc@2.7.0~cairo~cuda~gl~libudev+libxml2+netloc~nvml~opencl+pci~rocm+shared
+hypre@2.24.0~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist~unified-memory
+icu4c@67.1 cxxstd=11
+inputproto@2.3.2
+intltool@0.51.0 patches=ca9d6562f29f06c64150f50369a24402b7aa01a3a0dc73dce55106f3224330a1
+json-c@0.15~ipo build_type=RelWithDebInfo
+kbproto@1.0.7
+krb5@1.19.2+shared
+lapackpp@2021.04.00~ipo+shared build_type=RelWithDebInfo
+lcms@2.9
+libbsd@0.11.3
+libcroco@0.6.13~doc
+libdwarf@20180129
+libedit@3.1-20210216
+libevent@2.1.12+openssl
+libffi@3.3 patches=26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0
+libfontenc@1.1.3
+libgcrypt@1.9.4
+libgd@2.2.4
+libgit2@1.1.1~curl~ipo+mmap+ssh build_type=RelWithDebInfo https=system
+libgpg-error@1.43
+libice@1.0.9
+libiconv@1.16 libs=shared,static
+libjpeg-turbo@2.1.0
+libmd@1.0.3
+libpaper@1.1.28
+libpciaccess@0.16
+libpng@1.6.37
+libpthread-stubs@0.4
+librsvg@2.51.0~doc
+libsigsegv@2.13
+libsm@1.2.3
+libssh2@1.10.0~ipo+shared build_type=RelWithDebInfo crypto=openssl
+libtiff@4.3.0~jbig~jpeg~jpeg12~lerc~libdeflate~lzma~old-jpeg~pixarlog~webp~zlib~zstd patches=94d64e3ccfcb80cd4f1854e722aa06d3997dbfe0b6a034a11ec56213af4d5103
+libtool@2.4.6
+libunwind@1.5.0~block_signals~conservative_checks~cxx_exceptions~debug~debug_frame+docs~pic+tests+weak_backtrace~xz~zlib components=none libs=shared,static
+libx11@1.7.0
+libxau@1.0.8
+libxaw@1.0.13
+libxcb@1.14
+libxdmcp@1.1.2
+libxext@1.3.3
+libxfixes@5.0.2
+libxfont@1.5.2
+libxft@2.3.2
+libxi@1.7.6
+libxkbcommon@0.8.2
+libxkbfile@1.0.9
+libxml2@2.9.12~python
+libxmu@1.1.2
+libxpm@3.5.12
+libxrandr@1.5.0
+libxrender@0.9.10
+libxt@1.1.5
+libxtst@1.2.2
+lz4@1.9.3 libs=shared,static
+m4@1.4.19+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89
+meson@0.61.2 patches=aa6c50d5a2aeb1a487d16f6712be4357fefb923aae37ab830699b07338388287
+metis@5.1.0~gdb~int64~real64+shared build_type=Release patches=4991da938c1d3a1d3dea78e49bbebecba00273f98df2a656e38b83d55b281da1,b1225da886605ea558db7ac08dd8054742ea5afe5ed61ad4d0fe7a495b1270d2
+mkfontdir@1.0.7
+mkfontscale@1.1.2
+mpfr@4.1.0
+mumps@5.4.0~blr_mt+complex+double+float~int64+metis+mpi~openmp+parmetis~ptscotch~scotch+shared patches=1946864d2106f7414aaa4dbd4dbc068b7804af7c1588381e814b268a56140a52
+munge@0.5.14 localstatedir=PREFIX/var
+nasm@2.15.05
+ncurses@6.2~symlinks+termlib abi=none
+netcdf-c@4.8.1~dap~fsync~hdf4~jna+mpi~parallel-netcdf+pic+shared
+netcdf-cxx4@4.3.1+doxygen+pic+shared+static
+netcdf-fortran@4.5.3~doc+pic+shared
+netlib-scalapack@2.1.0~ipo~pic+shared build_type=Release patches=1c9ce5fee1451a08c2de3cc87f446aeda0b818ebbce4ad0d980ddf2f2a0b2dc4,f2baedde688ffe4c20943c334f580eb298e04d6f35c86b90a1f4e8cb7ae344a2
+netlib-scalapack@2.1.0~ipo~pic+shared build_type=Release patches=1c9ce5fee1451a08c2de3cc87f446aeda0b818ebbce4ad0d980ddf2f2a0b2dc4,f2baedde688ffe4c20943c334f580eb298e04d6f35c86b90a1f4e8cb7ae344a2
+ninja@1.10.2
+numactl@2.0.14 patches=4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94,62fc8a8bf7665a60e8f4c93ebbd535647cebf74198f7afafec4c085a8825c006,ff37630df599cfabf0740518b91ec8daaf18e8f288b19adaae5364dc1f6b2296
+openblas@0.3.19~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none
+openblas@0.3.19~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=openmp
+openmpi@4.1.2~atomics~cuda~cxx~cxx_exceptions+gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none
+openmpi@4.1.2~atomics~cuda~cxx~cxx_exceptions+gpfs+internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=slurm
+openssh@8.8p1
+openssl@1.1.1m~docs certs=system
+otf2@2.3
+pango@1.42.0+X
+papi@6.0.0.1~cuda+example~infiniband~lmsensors~nvml~powercap~rapl~rocm~rocm_smi~sde+shared~static_tools
+parallel-netcdf@1.12.2~burstbuffer+cxx+fortran+pic+shared
+parmetis@4.0.3~gdb~int64~ipo+shared build_type=RelWithDebInfo patches=4f892531eb0a807eb1b82e683a416d3e35154a455274cf9b162fb02054d11a5b,50ed2081bc939269689789942067c58b3e522c269269a430d5d34c00edbc5870,704b84f7c7444d4372cb59cca6e1209df4ef3b033bc4ee3cf50f369bce972a9d
+pcre@8.44~jit+multibyte+utf
+pdt@3.25.1~pic
+perl@5.34.0+cpanm+shared+threads
+perl-data-dumper@2.173
+perl-encode-locale@1.05
+perl-extutils-config@0.008
+perl-extutils-helpers@0.026
+perl-extutils-installpaths@0.012
+perl-file-listing@6.04
+perl-html-parser@3.72
+perl-html-tagset@3.20
+perl-http-cookies@6.04
+perl-http-daemon@6.01
+perl-http-date@6.02
+perl-http-message@6.13
+perl-http-negotiate@6.01
+perl-io-html@1.001
+perl-libwww-perl@6.33
+perl-lwp-mediatypes@6.02
+perl-module-build@0.4224
+perl-module-build-tiny@0.039
+perl-net-http@6.17
+perl-test-needs@0.002005
+perl-try-tiny@0.28
+perl-uri@1.72
+perl-www-robotrules@6.02
+perl-xml-parser@2.44
+petsc@3.16.4~X~batch~cgns~complex~cuda~debug+double~exodusii+fftw~giflib+hdf5~hpddm~hwloc+hypre~int64~jpeg~knl~kokkos~libpng~libyaml~memkind+metis~mkl-pardiso~mmg~moab+mpfr+mpi+mumps~openmp~p4est~parmmg~ptscotch~random123~rocm~saws+scalapack+shared+strumpack+suite-sparse+superlu-dist~tetgen~trilinos~valgrind clanguage=C
+pixman@0.40.0
+pkgconf@1.8.0
+poppler@0.79.0~boost~cms~cpp~glib~gobject~iconv~ipo~jpeg~libcurl~openjpeg~png~qt~tiff~zlib build_type=RelWithDebInfo
+poppler-data@0.4.9~ipo build_type=RelWithDebInfo
+py-astropy@4.0.1.post1~extras
+py-beautifulsoup4@4.10.0~html5lib~lxml
+py-beniget@0.4.1
+py-bottleneck@1.3.2
+py-certifi@2021.10.8
+py-cppy@1.1.0
+py-cycler@0.11.0
+py-cython@0.29.24
+py-fonttools@4.28.1
+py-gast@0.5.3
+py-h5py@3.6.0+mpi
+py-kiwisolver@1.3.2
+py-mako@1.1.5
+py-markupsafe@2.0.1
+py-matplotlib@3.5.1~animation~fonts+image~latex~movies backend=agg
+py-mpi4py@3.1.2
+py-numexpr@2.7.3
+py-numpy@1.22.2+blas+lapack patches=873745d7b547857fcfec9cae90b09c133b42a4f0c23b6c2d84cf37e2dd816604
+py-packaging@21.3
+py-pandas@1.4.1
+py-pillow@9.0.0~freetype~imagequant+jpeg~jpeg2000~lcms~tiff~webp~webpmux~xcb+zlib
+py-pip@21.3.1
+py-pkgconfig@1.5.5
+py-ply@3.11
+py-poetry-core@1.0.7
+py-pybind11@2.8.1~ipo build_type=RelWithDebInfo
+py-pyparsing@3.0.6
+py-python-dateutil@2.8.2
+py-pythran@0.10.0
+py-pytz@2021.3
+py-scipy@1.8.0
+py-seaborn@0.11.2
+py-setuptools@59.4.0
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm-git-archive@1.1
+py-six@1.16.0
+py-soupsieve@2.2.1
+py-tomli@1.2.2
+py-tqdm@4.62.3~notebook~telegram
+py-urllib3@1.26.6~brotli~secure~socks
+py-wheel@0.37.0
+python@3.9.10+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,4c2457325f2b608b1b6a2c63087df8c26e07db3e3d493caf36a56f0ecf6fb768,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4
+python@3.10.2+bz2+ctypes+dbm+debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87,7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22,f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4
+qhull@2020.2~ipo build_type=RelWithDebInfo
+randrproto@1.5.0
+readline@8.1
+recordproto@1.14.2
+renderproto@0.11.1
+rust@1.51.0+analysis+clippy~rls+rustfmt+src extra_targets=none
+shared-mime-info@1.9
+slate@2021.05.02~cuda~ipo+mpi+openmp~rocm+shared build_type=RelWithDebInfo
+slurm@21-08-1-1~gtk~hdf5~hwloc~mariadb~pmix+readline~restd sysconfdir=PREFIX/etc
+sqlite@3.37.1+column_metadata+dynamic_extensions+fts~functions+rtree
+strumpack@6.3.0+butterflypack+c_interface~count_flops~cuda~ipo+mpi+openmp+parmetis~rocm~scotch+shared+slate~task_timers+zfp build_type=RelWithDebInfo
+suite-sparse@5.10.1~cuda~graphblas~openmp+pic~tbb
+superlu-dist@7.2.0~cuda~int64~ipo~openmp~rocm+shared build_type=RelWithDebInfo patches=8da9e21f724e8f11a5782960cc0322e12f724bf93cead7df517901a788ea3d61
+swig@4.0.2
+tar@1.34
+tau@2.31~adios2+binutils~comm~craycnl~cuda+elf+fortran~gasnet+io~level_zero+libdwarf+libunwind~likwid~mpi~ompt~opari~opencl~openmp+otf2+papi+pdt~phase~ppc64le~profileparam+pthreads~python~rocm~rocprofiler~roctracer~scorep~shmem~sqlite~x86_64
+teckit@2.5.9
+texinfo@6.5 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1
+util-linux-uuid@2.36.2
+util-macros@1.19.3
+wcslib@7.3~cfitsio~x
+xcb-proto@1.14.1
+xerces-c@3.2.3 cxxstd=default netaccessor=curl transcoder=gnuiconv
+xextproto@7.3.0
+xkbcomp@1.4.4
+xkbdata@1.0.1
+xproto@7.0.31
+xrandr@1.5.0
+xtrans@1.3.5
+xz@5.2.5~pic libs=shared,static
+zfp@0.5.5~aligned~c~cuda~fasthash~fortran~ipo~openmp~profile~python+shared~strided~twoway bsws=64 build_type=RelWithDebInfo
+zlib@1.2.11+optimize+pic+shared
+zoltan@3.83~debug+fortran~int64+mpi~parmetis+shared
+zziplib@0.13.72

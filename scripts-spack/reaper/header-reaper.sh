@@ -1,15 +1,16 @@
-#!/bin/sh
-printf '%s\n' "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
+#! /usr/bin/env bash
+printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Fri Dec  3 12:31:35 MST 2021
 
 # start the timer
 export SECONDS=0
 # timestamp results
-export ymd=$(date +%Y-%m-%d\ %H:%M)
+export ymd=$(date +%Y-%m-%d-%H,%M)
 
 # counts steps in batch process
 export counter=0
+export clicker=0
 function new_step(){
     counter=$((counter+1))
     echo ""

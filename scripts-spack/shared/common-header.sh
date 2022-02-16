@@ -7,6 +7,10 @@ printf "%s\n" "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
 export  ymdt=$(date +%Y-%m-%d\ %H:%M) # timestamp results
 export ymdtf=$(date +%Y-%m-%d~%H,%M,%d) # timestamp for filename
 
+export step_counter=0
+export sub_step_counter=0
+export sub_sub_step_counter=0
+
 # enumerate steps
 function new_step(){
     step_counter=$((step_counter+1))
