@@ -6,7 +6,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # requires spack initiation:
 # source test-reaper.zsh
 
-source ${repo_build}/scripts-spack/reaper/header-reaper.sh
+source ${truth}/scripts/spack/reaper/header-reaper.sh
 
 export reapSECONDS=${SECONDS}
 
@@ -16,13 +16,13 @@ new_step "Mark initial directory"
 new_step "Define directory structure"
 #    export repoTarget="${repos}/github/astra-spack-mirror"
 #    export  dirTarget="${repoTarget}/${HOST}/${USER}/$(basename ${SPACK_ROOT})"
-    export  spack_tag=$(echo "${SPACK_ROOT}" | sed 's:/:-:g' | cut -c 2-)
+    export  spack_tag=$(basename $(pwd))
     export       arch=$(spack arch)
     export repoTarget="${repo_build}/results-spack/"
     #export  dirTarget="${dir_spack}/${platform}/${machine}/${moniker}/${drive}/${owner}/${spack_tag}/${dist}/${release}"
     # ${vrepos}/github/build/darwin-monterey-skylake/${machine}/${moniker}/${os}/${dist}/${release}
     #export  dirTarget="${repoTarget}/${arch}/${spack_tag}/${dir_config}"
-    export  dirTarget="${repoTarget}/${arch}/${dir_config}"
+    export  dirTarget="${repoTarget}/${arch}/${dir_config}/${spack_tag}/${ymdt}"
 
     export           dirYamls="${dirTarget}/yamls"
     #export        dirDotSpack="${dirTarget}/dotspack"
@@ -41,6 +41,8 @@ if [ ! -z "$1" ]
     echo "No argument supplied: only check directory structure"
     exit 1
 fi
+
+pause
 
 new_step "mkdir directory structure"
     mkdir -p ${dirYamls}
