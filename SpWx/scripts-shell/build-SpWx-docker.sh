@@ -3,7 +3,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Feb 16 10:26:35 MST 2022
 
-# source /repos/github/builds/SpWx/scripts-shell/build-SpWx.sh
+# source /repos/github/builds/SpWx/scripts-shell/build-SpWx-docker.sh
 
 # git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
 
@@ -11,17 +11,25 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 #  local_spack: set in bash init (centos-7.9.2009-dantopa-docker-spack/)
 source ${repo_build}/scripts-spack/shared/common-header.sh
 
-export SpWxSeconds=SECONDS
+export SpWxSeconds=${SECONDS}
 
 # https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx
 #   Readme.md
 #   Maintainer
-
-new_step "Navigate to SpWx repo"
+new_step "Point to SpWx vrepos"
 sub_step_counter=0
 
-    sub_step "cd /repos/gitlab/SpWx"
-              cd /repos/gitlab/SpWx
+    sub_step 'export SpWx="/vrepos/gitlab/SpWx"'
+              export SpWx="/vrepos/gitlab/SpWx"
+
+    sub_step "cd ${SpWx}"
+              cd ${SpWx}
+
+new_step "Navigate to SpWx repo, source directory"
+sub_step_counter=0
+
+    sub_step "cd ${SpWx}/source"
+              cd ${SpWx}/source
 
     sub_step "git checkout magfield_update"
               git checkout magfield_update
@@ -52,6 +60,9 @@ sub_step_counter=0
 new_step "Build"
 sub_step_counter=0
 
+    sub_step "cd ${SpWx}"
+              cd ${SpWx}
+
     sub_step "mkdir build; cd build"
               mkdir build; cd build
 
@@ -59,7 +70,7 @@ sub_step_counter=0
               cmake ../source -DCMAKE_INSTALL_PREFIX=../
 
 new_step "make"
-sub_step_counter
+sub_step_counter=0
 
     sub_step "make"
               make

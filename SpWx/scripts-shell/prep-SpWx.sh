@@ -7,7 +7,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 source ${repo_build}/scripts-spack/shared/common-header.sh
 
-export prepSeconds=SECONDS
+export prepSeconds=${SECONDS}
 
 # https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx
 #   Readme.md
@@ -15,8 +15,11 @@ export prepSeconds=SECONDS
 new_step "Clone"
 sub_step_counter=0
 
-    sub_step "export dirSpWx=${scratch}/SpWx"
-              export dirSpWx=${scratch}/SpWx
+#    sub_step "export dirSpWx=${scratch}/SpWx"
+#              export dirSpWx=${scratch}/SpWx
+
+    sub_step "export dirSpWx=${vrepos}/gitlab/SpWx"
+              export dirSpWx=${vrepos}/gitlab/SpWx
 
     sub_step "mkdir -p ${dirSpWx}"
               mkdir -p ${dirSpWx}
@@ -24,11 +27,11 @@ sub_step_counter=0
     sub_step "cd ${dirSpWx}"
               cd ${dirSpWx}
 
-    sub_step "git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git"
-              git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git
+    # sub_step "git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git"
+    #           git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git
 
     sub_step "git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source"
               git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
 
 export prepSeconds=$((${SECONDS}-${prepSeconds}))
-printf 'time to clone SpWx and source: %dh:%dm:%ds\n' $((${prepSeconds}/3600)) $((${prepSeconds}%3600/60)) $((${prepSeconds}%60)) 
+printf 'time to clone SpWx and source: %dh:%dm:%ds\n' $((${prepSeconds}/3600)) $((${prepSeconds}%3600/60)) $((${prepSeconds}%60))
