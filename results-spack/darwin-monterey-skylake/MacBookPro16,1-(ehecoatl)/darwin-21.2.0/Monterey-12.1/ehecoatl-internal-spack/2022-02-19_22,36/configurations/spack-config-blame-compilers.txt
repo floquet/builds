@@ -1,0 +1,49 @@
+created by /Users/dtopa///Users/dtopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Sat Feb 19 22:36:54 MST 2022
+
+${SPACK_ROOT} = /Users/dtopa/spacktivity/ehecoatl-internal-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin ehecoatl.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+---                                                                           compilers:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:2   - compiler:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:3       spec: apple-clang@13.0.0
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:4       paths:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:5         cc: /usr/bin/clang
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:6         cxx: /usr/bin/clang++
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:7         f77: /opt/local/bin/gfortran-mp-11
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:8         fc: /opt/local/bin/gfortran-mp-11
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:9       flags: {}
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:10      operating_system: monterey
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:11      target: x86_64
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:12      modules: []
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:13      environment: {}
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:14      extra_rpaths: []
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:15  - compiler:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:16      spec: clang@13.0.0
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:17      paths:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:18        cc: /opt/local/bin/clang-mp-13
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:19        cxx: /opt/local/bin/clang++-mp-13
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:20        f77: /opt/local/bin/gfortran-mp-11
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:21        fc: /opt/local/bin/gfortran-mp-11
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:22      flags: {}
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:23      operating_system: monterey
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:24      target: x86_64
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:25      modules: []
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:26      environment: {}
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:27      extra_rpaths: []
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:28  - compiler:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:29      spec: gcc@11.2.0
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:30      paths:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:31        cc: /Users/dtopa/spacktivity/ehecoatl-internal-spack/opt/spack/darwin-monterey-skylake/apple-clang-13.0.0/gcc-11.2.0-epwb7td3iujlrtpm6zdlqtgsb2duixsv/bin/gcc
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:32        cxx: /Users/dtopa/spacktivity/ehecoatl-internal-spack/opt/spack/darwin-monterey-skylake/apple-clang-13.0.0/gcc-11.2.0-epwb7td3iujlrtpm6zdlqtgsb2duixsv/bin/g++
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:33        f77: /Users/dtopa/spacktivity/ehecoatl-internal-spack/opt/spack/darwin-monterey-skylake/apple-clang-13.0.0/gcc-11.2.0-epwb7td3iujlrtpm6zdlqtgsb2duixsv/bin/gfortran
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:34        fc: /Users/dtopa/spacktivity/ehecoatl-internal-spack/opt/spack/darwin-monterey-skylake/apple-clang-13.0.0/gcc-11.2.0-epwb7td3iujlrtpm6zdlqtgsb2duixsv/bin/gfortran
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:35      flags: {}
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:36      operating_system: monterey
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:37      target: x86_64
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:38      modules: []
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:39      environment: {}
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/compilers.yaml:40      extra_rpaths: []

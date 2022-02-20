@@ -1,0 +1,70 @@
+created by /Users/dtopa///Users/dtopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Sat Feb 19 22:36:54 MST 2022
+
+${SPACK_ROOT} = /Users/dtopa/spacktivity/ehecoatl-internal-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin ehecoatl.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+---                                                                                  config:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:19     install_tree:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:20       root: $spack/opt/spack
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:21       projections:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:22         all: ${ARCHITECTURE}/${COMPILERNAME}-${COMPILERVER}/${PACKAGE}-${VERSION}-${HASH}
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:33     template_dirs:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:33     - $spack/share/spack/templates
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # Temporary locations Spack can try to use for builds.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     #
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # Recommended options are given below.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     #
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # Builds can be faster in temporary directories on some (e.g., HPC) systems.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # Specifying `$tempdir` will ensure use of the default temporary directory
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # (i.e., ``$TMP` or ``$TMPDIR``).
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     #
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # Another option that prevents conflicts and potential permission issues is
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # to specify `$user_cache_path/stage`, which ensures each user builds in their
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # home directory.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     #
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # A more traditional path uses the value of `$spack/var/spack/stage`, which
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # builds directly inside Spack's instance without staging them in a
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # temporary space.  Problems with specifying a path inside a Spack instance
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # are that it precludes its use as a system package and its ability to be
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # pip installable.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     #
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # In any case, if the username is not already in the path, Spack will append
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # the value of `$user` in an attempt to avoid potential conflicts between
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # users in shared temporary spaces.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     #
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # The build stage can be purged with `spack clean --stage` and
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # `spack clean -a`, so it is important that the specified directory uniquely
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:34     # identifies Spack staging to avoid accidentally wiping out non-Spack work.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:61     build_stage:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:62     - $tempdir/$user/spack-stage
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:63     - $user_cache_path/stage
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:63     # - $spack/var/spack/stage
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:63     # Directory in which to run tests and store test results.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:63     # Tests will be stored in directories named by date/time and package
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:63     # name/hash.
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:69     test_stage: $user_cache_path/test
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:73     source_cache: $spack/var/spack/cache
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:78     misc_cache: $user_cache_path/cache
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:84     connect_timeout: 10
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:89     verify_ssl: True
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:97     suppress_gpg_warnings: False
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:103    install_missing_compilers: False
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:108    checksum: True
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:113    deprecated: False
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:118    dirty: False
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:126    build_language: C
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:135    locks: True
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:140    url_fetch_method: urllib
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:153    ccache: False
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:169    concretizer: clingo
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:176    db_lock_timeout: 3
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:184    package_lock_timeout: null
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:190    shared_linking: rpath
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:195    allow_sgid: True
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/config.yaml:200    terminal_title: False
+_builtin                                                                               debug: False
+_builtin                                                                               build_jobs: 12

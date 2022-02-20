@@ -1,0 +1,90 @@
+Sat Feb 19 22:21:08 MST 2022
+
+Could NOT find HDF5 (missing: HDF5_LIBRARIES
+
+$ source /repos/github/builds/SpWx/scripts-shell/build-SpWx-docker.sh
+Sat Feb 19 22:18:16 MST 2022, /repos/github/builds/SpWx/scripts-shell/build-SpWx-docker.sh
+Sat Feb 19 22:18:16 MST 2022, /repos/github/builds/scripts-spack/shared/common-header.sh
+
+Step 1: Point to SpWx vrepos
+
+  1.1: export SpWx="/vrepos/gitlab/SpWx"
+
+  1.2: cd /vrepos/gitlab/SpWx
+
+Step 2: Navigate to SpWx repo, source directory
+
+  2.1: cd /vrepos/gitlab/SpWx/source
+
+  2.2: git checkout magfield_update
+M	ModelDatabases/cammiceDB.h5
+M	ModelDatabases/colmanVlf660DB.h5
+M	ModelDatabases/fastPhi_net.mat
+M	ModelDatabases/fast_hmin_net.mat
+M	ModelDatabases/galacticCosmicRayDB.h5
+M	ModelDatabases/igrfDB.h5
+M	ModelDatabases/iri2007DB.h5
+M	ModelDatabases/lightning_climatology.h5
+M	ModelDatabases/meteorDB.h5
+M	ModelDatabases/nehDB.h5
+M	ModelDatabases/radiationBeltDB.h5
+M	ModelDatabases/saaDB.h5
+M	ModelDatabases/sd2DB.h5
+M	ModelDatabases/sepDB.h5
+M	ModelDatabases/sepXapsosDB.h5
+M	ModelDatabases/xmitVlfDB.h5
+Already on 'magfield_update'
+
+  2.3: git branch
+* magfield_update
+  master
+
+Step 3: Use cmake from Spack
+
+  3.1: cmake --version
+cmake version 2.8.12.2
+
+  3.2: source /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/share/spack/setup-env.sh
+
+  3.3: spack load cmake
+
+  3.4: cmake --version
+cmake version 3.22.2
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+  3.5: spack load boost
+
+Step 4: Build
+
+  4.1: cd /vrepos/gitlab/SpWx
+
+  4.2: mkdir build; cd build
+mkdir: cannot create directory ‘build’: File exists
+
+  4.3: cmake ../source -DCMAKE_INSTALL_PREFIX=../
+CMake Error at /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
+  Could NOT find HDF5 (missing: HDF5_LIBRARIES HDF5_INCLUDE_DIRS C CXX)
+  (found version "")
+Call Stack (most recent call first):
+  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:594 (_FPHSA_FAILURE_MESSAGE)
+  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i/share/cmake-3.22/Modules/FindHDF5.cmake:1009 (find_package_handle_standard_args)
+  CMakeLists.txt:154 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/vrepos/gitlab/SpWx/build/CMakeFiles/CMakeOutput.log".
+
+Step 5: make
+
+  5.1: make
+make: *** No targets specified and no makefile found.  Stop.
+
+  5.2: make test
+make: *** No rule to make target `test'.  Stop.
+
+  5.3: make install
+make: *** No rule to make target `install'.  Stop.
+
+Step 6: tree  -L 3
+time to build SpWx: 0h:0m:56s

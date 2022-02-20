@@ -1,0 +1,72 @@
+created by /Users/dtopa///Users/dtopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Sat Feb 19 22:36:55 MST 2022
+
+${SPACK_ROOT} = /Users/dtopa/spacktivity/ehecoatl-internal-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin ehecoatl.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+---                                                                                          packages:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:17    all:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:18             compiler: [apple-clang, clang, gcc, intel, pgi, xl, nag, fj, aocc]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:23      providers:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:24               elf: [libelf, elfutils]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:27               fuse: [macfuse, libfuse]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:55               unwind: [apple-libunwind, libunwind]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:56               uuid: [apple-libuuid, util-linux-uuid, libuuid]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:20               awk: [gawk]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:21               blas: [openblas, amdblis]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:22               D: [ldc]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:23               daal: [intel-daal]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:25               fftw-api: [fftw, amdfftw]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:26               flame: [libflame, amdlibflame]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:28               gl: [mesa+opengl, mesa18, opengl]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:29               glu: [mesa-glu, openglu]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:30               glx: [mesa+glx, mesa18+glx, opengl]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:31               golang: [gcc]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:32               iconv: [libiconv]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:33               ipp: [intel-ipp]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:34               java: [openjdk, jdk, ibm-java]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:35               jpeg: [libjpeg-turbo, libjpeg]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:36               lapack: [openblas, amdlibflame]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:37               libllvm: [llvm, llvm-amdgpu]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:38               lua-lang: [lua, lua-luajit]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:39               mariadb-client: [mariadb-c-client, mariadb]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:40               mkl: [intel-mkl]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:41               mpe: [mpe2]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:42               mpi: [openmpi, mpich]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:43               mysql-client: [mysql, mariadb-c-client]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:44               opencl: [pocl]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:45               onedal: [intel-oneapi-dal]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:46               osmesa: [mesa+osmesa, mesa18+osmesa]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:47               pbs: [openpbs, torque]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:48               pil: [py-pillow]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:49               pkgconfig: [pkgconf, pkg-config]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:50               rpc: [libtirpc]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:51               scalapack: [netlib-scalapack, amdscalapack]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:52               sycl: [hipsycl]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:53               szip: [libaec, libszip]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:54               tbb: [intel-tbb]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:57               xxd: [xxd-standalone, vim]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:58               yacc: [bison, byacc]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:59               ziglang: [zig]
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:60             permissions:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:61               read: world
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/packages.yaml:62               write: user
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:28    apple-libunwind:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:29      buildable: False
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:30      externals:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:30      
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:30      # Apple bundles libunwind version 35.3 with macOS 10.9 and later,
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:30      # although the version number used here isn't critical
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:33      - spec: apple-libunwind@35.3
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:34        prefix: /usr
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:35    apple-libuuid:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:36      buildable: False
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:37      externals:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:37      
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:37      # Apple bundles libuuid in libsystem_c version 1353.100.2,
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:37      # although the version number used here isn't critical
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:40      - spec: apple-libuuid@1353.100.2
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/packages.yaml:41        prefix: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
