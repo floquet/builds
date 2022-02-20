@@ -6,7 +6,9 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # requires spack initiation:
 # source test-reaper.zsh
 
-source ${truth}/scripts/spack/reaper/header-reaper.sh
+# source ${repo_build}/scripts-spack/reaper/test-reaper.sh
+
+source ${repo_build}/scripts-spack/reaper/header-reaper.sh
 
 export reapSECONDS=${SECONDS}
 
