@@ -3,6 +3,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Feb 16 10:26:35 MST 2022
 
+#  activate spack first
 # source /repos/github/builds/SpWx/scripts-shell/build-SpWx-docker.sh
 
 # git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
