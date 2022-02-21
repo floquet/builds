@@ -1,17 +1,16 @@
-#! /bin/sh
-printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
+#! /usr/bin/env bash
+printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
 #   1: name of spack directory (mageia-8-docker-spack)
-#   2: package manager type (yum, dnf, zypper)
-#   3: where to find scripts and files
+#   2: where to find scripts and files (e.g. dirBuildScripts="${repo_build}/scripts-docker/")
 
 
 #  #  #  ========================================== declarations begin
 
 export generic_seconds=0
 
-export       ego="dantopa"  # latin: ego = I, me
+export       ego="${USER}"  # latin: ego = I, me
 export  git_user="Daniel Topa"
 export git_email="dantopa@gmail.com"
 
@@ -66,28 +65,8 @@ sub_step "mkdir -p /home/${ego}/repos/bitbucket"
 sub_step "mkdir -p /home/${ego}/repos/github"
           mkdir -p /home/${ego}/repos/github
 
-sub_step 'cp ${3}/bash-inits/.* /home/${ego}/.'
-          cp ${3}/bash-inits/.* /home/${ego}/.
-
-#  #  #  ========================================== write refresh file to update and upgrade
-
-new_step 'write refresh.sh'
-
-export refresh_file="/home/${ego}/refresh.sh"
-
-echo "#!/bin/bash"                        >  ${refresh_file}
-echo "# Created by generic-kickstart.sh " >> ${refresh_file}
-echo "# $(date) "                         >> ${refresh_file}
-echo ""                                   >> ${refresh_file}
-echo "export SECONDS=0"                   >> ${refresh_file}
-echo ""                                   >> ${refresh_file}
-echo "date"                               >> ${refresh_file}
-echo "${2} update  -y"                    >> ${refresh_file}
-echo "${2} upgrade -y"                    >> ${refresh_file}
-echo ""                                   >> ${refresh_file}
-echo "date"                               >> ${refresh_file}
-echo ""                                   >> ${refresh_file}
-echo "printf 'time to refresh distribution: %dh:%dm:%ds\n' $(($SECONDS/3600)) $(($SECONDS%3600/60)) $(($SECONDS%60))" >> ${refresh_file}
+sub_step 'cp ${2}/bash-inits/.* /home/${ego}/.'
+          cp ${2}/bash-inits/.* /home/${ego}/.
 
 #  #  #  ========================================== spack
 
@@ -115,38 +94,65 @@ sub_step "mkdir -p ${ego}/specs"
 sub_step "mkdir -p ${ego}/info"
           mkdir -p ${ego}/info
 
+sub_step "mkdir -p ${ego}/shell-scripts"
+          mkdir -p ${ego}/shell-scripts
+
 sub_step "source share/spack/setup-env.sh"
           source share/spack/setup-env.sh
 
-sub_step "cp ${3}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
-          cp ${3}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
+sub_step "cp ${2}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
+          cp ${2}/transport/mirrors.yaml ${SPACK_ROOT}/${ego}/shell-scripts/.
+
+sub_step "cp ${2}/transport/set-environment.sh ${SPACK_ROOT}/etc/spack/."
+          cp ${2}/transport/set-environment.sh ${SPACK_ROOT}/etc/spack/.
 
 #  #  #  ========================================== post-mortem
+
+new_step "Build compiler"
+sub_step_counter=0
+    sub_step 'spack compiler find'
+              spack compiler find
+
+    sub_step "spack install gcc@11.2.0"
+              spack install gcc@11.2.0 | tee ${SPACK_ROOT}/build-logs/gcc@11.2.0.txt 2>&1
+
+              spack info gcc                    | tee ${SPACK_ROOT}info/gcc.txt         &
+              spack spec gcc@11.2.0 % gcc@4.8.5 | tee ${SPACK_ROOT}specs/gcc@11.2.0.txt &
+
+    sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
+              spack compiler find $(spack location -i gcc@11.2.0)
+
+    sub_step "spack load gcc@11.2.0"
+              spack load gcc@11.2.0
+
 new_step "Probe build"
 sub_step_counter=0
 
-sub_step 'spack compilers'
-          spack compilers
+    sub_step 'spack compilers'
+              spack compilers
 
 # sub_step 'spack mirror add external-drive file:///spacktivity/mirror'
 #           spack mirror add external-drive file:///spacktivity/mirror
 # sub_step 'git config --global  pull.rebase false'
 #           git config --global  pull.rebase false
 
-sub_step "gcc --version"
-          gcc --version
+    sub_step "gcc --version"
+              gcc --version
 
-sub_step "lsb_release -a"
-          lsb_release -a
+    sub_step "lsb_release -a"
+              lsb_release -a
 
-sub_step "cat /etc/*release"
-          cat /etc/*release
+    sub_step "cat /etc/*release"
+              cat /etc/*release
 
-sub_step 'echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""'
-          echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""
+    sub_step "cat /proc/version"
+              cat /proc/version
 
-sub_step 'cat /root/.ssh/id_ed25519.pub'
-          cat /root/.ssh/id_ed25519.pub
+    sub_step 'echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""'
+              echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""
+
+    sub_step 'cat /root/.ssh/id_ed25519.pub'
+              cat /root/.ssh/id_ed25519.pub
 
 #  #  #  ========================================== exit
 

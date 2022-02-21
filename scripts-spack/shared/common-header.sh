@@ -11,6 +11,12 @@ export step_counter=0
 export sub_step_counter=0
 export sub_sub_step_counter=0
 
+function pause(){
+    echo ""
+    echo "press RETURN to continue; ctrl+c to stop"
+    read -p "$*"
+}
+
 # enumerate steps
 function new_step(){
     step_counter=$((step_counter+1))
