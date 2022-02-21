@@ -1,0 +1,71 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hostduplex.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.eggycrew.com
+ * updates: mirror.keystealth.org
+pkgsack time: 0.338
+Obs Init time: 0.179
+Resolving Dependencies
+--> Running transaction check
+---> Package git-lfs.x86_64 0:2.10.0-1.el7 will be installed
+Checking deps for git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('git-core', 'GE', ('0', '1.8.2', None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.175
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch             Version                Repository      Size
+================================================================================
+Installing:
+ git-lfs           x86_64           2.10.0-1.el7           epel           4.2 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 4.2 M
+Installed size: 16 M
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/epel/packages/git-lfs-2.10.0-1.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+Public key for git-lfs-2.10.0-1.el7.x86_64.rpm is not installed
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-11.noarch (@extras)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Member: git-lfs.x86_64 0:2.10.0-1.el7 - u
+Adding Package git-lfs-2.10.0-1.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.024
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.020
+Running transaction
+  Installing : git-lfs-2.10.0-1.el7.x86_64                                  1/1 
+Git LFS initialized.
+  Verifying  : git-lfs-2.10.0-1.el7.x86_64                                  1/1 
+VerifyTransaction time: 0.064
+Transaction time: 0.786
+
+Installed:
+  git-lfs.x86_64 0:2.10.0-1.el7                                                 
+
+Complete!

@@ -1,0 +1,55 @@
+yum install epel-release -v -y
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hostduplex.com
+ * extras: repos.eggycrew.com
+ * updates: mirror.keystealth.org
+pkgsack time: 0.009
+Obs Init time: 0.124
+Resolving Dependencies
+--> Running transaction check
+---> Package epel-release.noarch 0:7-11 will be installed
+Checking deps for epel-release.noarch 0:7-11 - u
+looking for ('redhat-release', 'GE', ('0', '7', None)) as a requirement of epel-release.noarch 0:7-11 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.111
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch             Version         Repository        Size
+================================================================================
+Installing:
+ epel-release           noarch           7-11            extras            15 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 15 k
+Installed size: 24 k
+Downloading packages:
+Member: epel-release.noarch 0:7-11 - u
+Adding Package epel-release-7-11.noarch in mode u
+Running transaction check
+Transaction check time: 0.001
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.001
+Running transaction
+  Installing : epel-release-7-11.noarch                                     1/1 
+  Verifying  : epel-release-7-11.noarch                                     1/1 
+VerifyTransaction time: 0.045
+Transaction time: 0.074
+
+Installed:
+  epel-release.noarch 0:7-11                                                    
+
+Complete!

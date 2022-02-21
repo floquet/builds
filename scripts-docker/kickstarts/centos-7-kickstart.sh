@@ -3,6 +3,15 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Dec 29 19:05:24 MST 2021
 
+# xiuhcoatlDockerTime centos:${centos_version}
+
+# source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+#       scripts-docker/bash-inits/paths.sh
+# vi quick-paths.sh
+# source quick-paths.sh
+
+source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+
 # source ${repo_scripts_docker}/kickstarts/centos-7-kickstart.sh
 # source /Volumes/repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh
 # ${repo_build} declared in bash init (e.g. /Volumes/repos/github/builds)
@@ -10,6 +19,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 export dist="centos"
 export release="7.9.2009"
 export tag="${dist}-${release}"
+export USER="dantopa"
 
 # defined in bash init
 #    repo_build (e.g. /Volumes/repos/github/builds)
@@ -36,30 +46,39 @@ export mySpack="${tag}-${USER}-docker-spack"
 # export repoBuilds="/repos/github/builds"
 # locate scripts and files for transfer
 # post results
-export dump_Results="${repo_results_docker}/${tag}/${ymdt}"
+export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
 # records time elapsed
 export timerFile=${repo_results_docker}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
-echo "mkdir -p ${dump_Results}"
-      mkdir -p ${dump_Results}
+echo "mkdir -p ${dump_Results}/yum-results"
+      mkdir -p ${dump_Results}/yum-results
 
 #  #  #  ========================================== build packages
 
 source ${repo_scripts_docker}/kickstarts/installers/yum-installs.sh
 
+# ${local_Results} set in yum-installs.sh
+echo ""; echo "Copy results to ${dump_Results}"
+    cp -a ${local_Results} ${dump_Results}/yum-results/.
+
 #  #  #  ========================================== set up for spack
 
 echo ""; echo "Set up user account"
-    echo "adduser dantopa"
-    echo "usermod -aG wheel dantopa"
-    echo "passwd dantopa"
+          adduser dantopa
+    echo "completed: adduser dantopa"
 
-echo ""; echo "Run ${repo_scripts_docker}/generics/breve-generic-kickstart.sh"
-    echo "source ${repo_scripts_docker}/generics/breve-generic-kickstart.sh \${mySpack} \${repo_scripts_docker}"
+          usermod -aG wheel dantopa
+    echo "completed: usermod -aG wheel dantopa"
+
+    echo "pending: passwd dantopa"
+
+echo ""; echo "su - dantopa"
     echo "export mySpack=${mySpack}"
-    echo "export repo_scripts_docker=${repo_scripts_docker}"
+    echo "bring in scripts-docker/bash-inits/paths.sh"
+    echo "source ${repo_scripts_docker}/generics/breve-generic-kickstart.sh"
+    echo "source \${repo_scripts_docker}/generics/breve-generic-kickstart.sh"
 
 echo ""; echo "Report elapsed time"
     export centosSECONDS=$((${SECONDS}-${centosSECONDS}))

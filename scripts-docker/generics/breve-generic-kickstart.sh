@@ -1,10 +1,9 @@
 #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
+# source ${dirBuildScripts}/generics/generic-kickstart.sh
 #   1: name of spack directory (mageia-8-docker-spack)
-#   2: package manager type (yum, dnf, zypper)
-#   3: where to find scripts and files
+#   2: where to find scripts and files
 
 # defined in bash init
 #    repo_scripts_docker (e.g. /Volumes/repos/github/builds/scripts-spack)
@@ -23,6 +22,7 @@ export git_email="dantopa@gmail.com"
 
 #  #  #  ========================================== declarations end
 
+pause
 
 #  #  #  ========================================== configure git
 
@@ -89,11 +89,11 @@ sub_step_counter=0
     sub_step "cd /home/${ego}/spacktivity"
               cd /home/${ego}/spacktivity
 
-    sub_step "git clone https://github.com/spack/spack ${1}"
-              git clone https://github.com/spack/spack ${1}
+    sub_step "git clone https://github.com/spack/spack ${mySpack}"
+              git clone https://github.com/spack/spack ${mySpack}
 
-    sub_step "cd ${1}"
-              cd ${1}
+    sub_step "cd ${mySpack}"
+              cd ${mySpack}
 
     sub_step "mkdir -p ${ego}/build-logs"
               mkdir -p ${ego}/build-logs
@@ -121,8 +121,8 @@ sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/.vimrc                /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.vimrc                /home/${ego}/.
 
-    sub_step "cp ${repo_scripts_docker}/transport/.centos-7.9.2009.sh   /home/${ego}/."
-              cp ${repo_scripts_docker}/transport/.centos-7.9.2009.sh   /home/${ego}/.
+    sub_step "cp ${repo_scripts_docker}/transport/.xcentos-7.9.2009.sh  /home/${ego}/."
+              cp ${repo_scripts_docker}/transport/.xcentos-7.9.2009.sh  /home/${ego}/.
 # Step 14: Bring in files from GitLab
 #
 #   14.1: cp -y/transport/mirrors.yaml /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/etc/spack/.
@@ -136,7 +136,7 @@ sub_step_counter=0
               spack install gcc@11.2.0          | tee ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
 
               spack info gcc                    | tee ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
-              spack spec gcc@11.2.0 % gcc@4.8.5 | tee ${SPACK_ROOT}/${USER}specs/gcc@11.2.0.txt  2>&1 &
+              spack spec gcc@11.2.0 % gcc@4.8.5 | tee ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
 
     sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
               spack compiler find $(spack location -i gcc@11.2.0)

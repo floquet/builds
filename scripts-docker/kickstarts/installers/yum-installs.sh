@@ -4,8 +4,21 @@ printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
 # Wed Dec 29 19:05:24 MST 2021
 
 # globals from centos-7 kickstart
-export local_Results="yum_results"
-mkdir -p ${local_Results}
+new_step "Create directory structure"
+
+    export local_Results="yum_results"
+    sub_step "\${local_Results} = ${local_Results}"
+
+    sub_step "mkdir -p ${local_Results}/info"
+              mkdir -p ${local_Results}/info
+
+    sub_step "mkdir -p ${local_Results}/install"
+              mkdir -p ${local_Results}/install
+
+    sub_step "mkdir -p ${local_Results}/dependents"
+              mkdir -p ${local_Results}/dependents
+
+pause
 
 # https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf
 
@@ -41,17 +54,17 @@ sub_step_counter=0
 for t in ${lpackages[@]}; do
     sub_step_counter=$((sub_step_counter+1))
     sub_sub_step_counter=0
-    sub_sub_step "yum install -v ${t} -y  2>&1 | tee -a ${local_Results}/install-${t}.txt"
-            echo "yum install -v ${t} -y" 2>&1          ${local_Results}/install-${t}.txt
-                  yum install -v ${t} -y  2>&1 | tee -a ${local_Results}/install-${t}.txt
+    sub_sub_step "yum install -v ${t} -y  2>&1 | tee -a ${local_Results}/install/${t}.txt"
+            echo "yum install -v ${t} -y" 2>&1          ${local_Results}/install/${t}.txt
+                  yum install -v ${t} -y  2>&1 | tee -a ${local_Results}/install/${t}.txt
 
-    sub_sub_step "yum info    -v ${t}  >           ${local_Results}/info-${t}.txt       2>&1"
-            echo "yum info    -v ${t}" >           ${local_Results}/info-${t}.txt       2>&1
-                  yum info    -v ${t} -y  >>       ${local_Results}/info-${t}.txt       2>&1
+    sub_sub_step "yum info    -v ${t}  >           ${local_Results}/info/${t}.txt       2>&1"
+            echo "yum info    -v ${t}" >           ${local_Results}/info/${t}.txt       2>&1
+                  yum info    -v ${t} -y  >>       ${local_Results}/info/${t}.txt       2>&1
 
-    sub_sub_step "yum deplist -v ${t}  >           ${local_Results}/dependents-${t}.txt 2>&1"
-            echo "yum deplist -v ${t}" >           ${local_Results}/dependents-${t}.txt 2>&1
-                  yum deplist -v ${t}     >>       ${local_Results}/dependents-${t}.txt 2>&1
+    sub_sub_step "yum deplist -v ${t}  >           ${local_Results}/dependents/${t}.txt 2>&1"
+            echo "yum deplist -v ${t}" >           ${local_Results}/dependents/${t}.txt 2>&1
+                  yum deplist -v ${t}     >>       ${local_Results}/dependents/${t}.txt 2>&1
 done
 
 new_step "Prepare summary reports"
@@ -65,3 +78,6 @@ sub_step "yum list installed > ${local_Results}/list-installed.txt"
 
 sub_step "yum list kernel    > ${local_Results}/list-kernel.txt"
           yum list kernel    > ${local_Results}/list-kernel.txt
+
+new_step "Grab refresh script"
+    cp ${repo_scripts_spack}/transport/refresh*.sh ${local_Results}/.

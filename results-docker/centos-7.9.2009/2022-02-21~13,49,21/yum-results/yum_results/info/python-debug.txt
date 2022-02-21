@@ -1,0 +1,50 @@
+yum info    -v python-debug
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hostduplex.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.eggycrew.com
+ * updates: mirror.keystealth.org
+pkgsack time: 0.333
+Installed Packages
+Name        : python-debug
+Arch        : x86_64
+Version     : 2.7.5
+Release     : 90.el7
+Size        : 6.6 M
+Repo        : installed
+From repo   : updates
+Committer   : Charalampos Stratakis <cstratak@redhat.com>
+Committime  : Fri Jul 31 06:00:00 2020
+Buildtime   : Mon Nov 16 15:47:32 2020
+Install time: Mon Feb 21 13:56:41 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Debug version of the Python runtime
+URL         : http://www.python.org/
+License     : Python
+Description : python-debug provides a version of the Python runtime with
+            : numerous debugging features enabled, aimed at advanced Python
+            : users, such as developers of Python extension modules.
+            : 
+            : This version uses more memory and will be slower than the regular
+            : Python build, but is useful for tracking down reference-counting
+            : issues, and other bugs.
+            : 
+            : The bytecodes are unchanged, so that .pyc files are compatible
+            : between the two version of Python, but the debugging features mean
+            : that C/C++ extension modules are ABI-incompatible with those built
+            : for the standard runtime.
+            : 
+            : It shares installation directories with the standard Python
+            : runtime, so that .py and .pyc files can be shared.  All compiled
+            : extension modules gain a "_d" suffix ("foo_d.so" rather than
+            : "foo.so") so that each Python implementation can load its own
+            : extensions.
+
