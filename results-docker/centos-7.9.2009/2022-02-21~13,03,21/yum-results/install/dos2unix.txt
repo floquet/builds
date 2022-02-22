@@ -1,0 +1,56 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.dal10.us.leaseweb.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirrors.sonic.net
+ * updates: mirror.keystealth.org
+pkgsack time: 0.300
+Obs Init time: 0.187
+Resolving Dependencies
+--> Running transaction check
+---> Package dos2unix.x86_64 0:6.0.3-7.el7 will be installed
+Checking deps for dos2unix.x86_64 0:6.0.3-7.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of dos2unix.x86_64 0:6.0.3-7.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of dos2unix.x86_64 0:6.0.3-7.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.124
+
+Dependencies Resolved
+
+================================================================================
+ Package            Arch             Version               Repository      Size
+================================================================================
+Installing:
+ dos2unix           x86_64           6.0.3-7.el7           base            74 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 74 k
+Installed size: 190 k
+Downloading packages:
+Member: dos2unix.x86_64 0:6.0.3-7.el7 - u
+Adding Package dos2unix-6.0.3-7.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.003
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.002
+Running transaction
+  Installing : dos2unix-6.0.3-7.el7.x86_64                                  1/1 
+  Verifying  : dos2unix-6.0.3-7.el7.x86_64                                  1/1 
+VerifyTransaction time: 0.061
+Transaction time: 0.132
+
+Installed:
+  dos2unix.x86_64 0:6.0.3-7.el7                                                 
+
+Complete!

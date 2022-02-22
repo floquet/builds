@@ -3,8 +3,28 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Dec 29 19:05:24 MST 2021
 
+# xiuhcoatlDockerTime centos:${centos_version}
+
+# source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+#       scripts-docker/bash-inits/paths.sh
+# vi quick-paths.sh
+# source quick-paths.sh
+
+source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+
+# source ${repo_scripts_docker}/kickstarts/centos-7-kickstart.sh
+# source /Volumes/repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh
+# ${repo_build} declared in bash init (e.g. /Volumes/repos/github/builds)
+
+export dist="centos"
+export release="7.9.2009"
+export tag="${dist}-${release}"
+export USER="dantopa"
+
+# defined in bash init
+#    repo_build (e.g. /Volumes/repos/github/builds)
 # define functions new_step, sub_step
-source /repos/github/builds/scripts-spack/shared/common-header.sh
+source ${repo_scripts_spack}/shared/common-header.sh
 
 # dantopa:~ % docker pull centos:7.9.2009
 # 7.9.2009: Pulling from library/centos
@@ -20,34 +40,47 @@ source /repos/github/builds/scripts-spack/shared/common-header.sh
 
 # start timer
 export centosSECONDS=${SECONDS}
-# specify package manager (to construct refresh.sh)
-export refresh="yum"
 # name of spack directory on virtual machine
-export mySpack="centos-7.9.2009-topa-docker-spack"
+export mySpack="${tag}-${USER}-docker-spack"
 # locate builds repo
-export repoBuilds="/repos/github/builds"
+# export repoBuilds="/repos/github/builds"
 # locate scripts and files for transfer
-export dirBuildScripts="${repoBuilds}/scripts-docker/"
 # post results
-export dirBuildResults="${repoBuilds}/results-docker/centos-7.9.2009/${ymdt}"
+export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
 # records time elapsed
-export timerFile=${dirBuildResults}/elapsed-time.txt
+export timerFile=${repo_results_docker}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
-new_step "mkdir -p ${dirBuildResults}"
-          mkdir -p ${dirBuildResults}
+echo "mkdir -p ${dump_Results}/yum-results"
+      mkdir -p ${dump_Results}/yum-results
 
 #  #  #  ========================================== build packages
 
-source ${dirBuildScripts}/kickstarts/installers/yum-installs.sh ${lpackages} ${dirBuildResults}
+source ${repo_scripts_docker}/kickstarts/installers/yum-installs.sh
+
+# ${local_Results} set in yum-installs.sh
+echo ""; echo "Copy results to ${dump_Results}"
+    cp -a ${local_Results} ${dump_Results}/yum-results/.
 
 #  #  #  ========================================== set up for spack
 
-echo 'source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}'
-      source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
+echo ""; echo "Set up user account"
+          adduser dantopa
+    echo "completed: adduser dantopa"
 
-new_step "Report elapsed time"
+          usermod -aG wheel dantopa
+    echo "completed: usermod -aG wheel dantopa"
+
+    echo "pending: passwd dantopa"
+
+echo ""; echo "su - dantopa"
+    echo "export mySpack=${mySpack}"
+    echo "bring in scripts-docker/bash-inits/paths.sh"
+    echo "source ${repo_scripts_docker}/generics/breve-generic-kickstart.sh"
+    echo "source \${repo_scripts_docker}/generics/breve-generic-kickstart.sh"
+
+echo ""; echo "Report elapsed time"
     export centosSECONDS=$((${SECONDS}-${centosSECONDS}))
     date    >  ${timerFile}
     echo "" >> ${timerFile}

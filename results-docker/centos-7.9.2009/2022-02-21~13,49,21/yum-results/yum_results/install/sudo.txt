@@ -1,0 +1,72 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hostduplex.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.eggycrew.com
+ * updates: mirror.keystealth.org
+pkgsack time: 0.322
+Obs Init time: 0.198
+Resolving Dependencies
+--> Running transaction check
+---> Package sudo.x86_64 0:1.8.23-10.el7_9.2 will be installed
+Checking deps for sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libutil.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libpam.so.0(LIBPAM_1.0)(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libgcrypt.so.11(GCRYPT_1.2)(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('/usr/bin/vi', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('/etc/pam.d/system-auth', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libutil.so.1()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libselinux.so.1()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libpam.so.0()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libldap-2.4.so.2()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('liblber-2.4.so.2()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libgcrypt.so.11()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+looking for ('libaudit.so.1()(64bit)', None, (None, None, None)) as a requirement of sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.257
+
+Dependencies Resolved
+
+================================================================================
+ Package      Arch           Version                      Repository       Size
+================================================================================
+Installing:
+ sudo         x86_64         1.8.23-10.el7_9.2            updates         843 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 843 k
+Installed size: 3.1 M
+Downloading packages:
+Member: sudo.x86_64 0:1.8.23-10.el7_9.2 - u
+Adding Package sudo-1.8.23-10.el7_9.2.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.031
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.033
+Running transaction
+  Installing : sudo-1.8.23-10.el7_9.2.x86_64                                1/1 
+  Verifying  : sudo-1.8.23-10.el7_9.2.x86_64                                1/1 
+VerifyTransaction time: 0.085
+Transaction time: 0.454
+
+Installed:
+  sudo.x86_64 0:1.8.23-10.el7_9.2                                               
+
+Complete!

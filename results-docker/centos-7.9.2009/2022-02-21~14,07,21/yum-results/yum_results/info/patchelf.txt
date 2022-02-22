@@ -1,0 +1,36 @@
+yum info    -v patchelf
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: nyc.mirrors.clouvider.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirrors.xtom.com
+ * updates: or-mirror.iwebfusion.net
+pkgsack time: 0.288
+Installed Packages
+Name        : patchelf
+Arch        : x86_64
+Version     : 0.12
+Release     : 1.el7
+Size        : 200 k
+Repo        : installed
+From repo   : epel
+Committer   : Jeremy Sanders <jeremy@jeremysanders.net>
+Committime  : Thu Aug 27 06:00:00 2020
+Buildtime   : Thu Aug 27 09:51:02 2020
+Install time: Mon Feb 21 14:16:35 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : A utility for patching ELF binaries
+URL         : http://nixos.org/patchelf.html
+License     : GPLv3+
+Description : PatchELF is a simple utility for modifying an existing ELF
+            : executable or library.  It can change the dynamic loader ("ELF
+            : interpreter") of an executable and change the RPATH of an
+            : executable or library.
+

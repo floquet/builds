@@ -1,0 +1,72 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hostduplex.com
+ * epel: mirror.dal.nexril.net
+ * extras: repos.eggycrew.com
+ * updates: mirror.keystealth.org
+pkgsack time: 0.335
+Obs Init time: 0.186
+Resolving Dependencies
+--> Running transaction check
+---> Package wget.x86_64 0:1.14-18.el7_6.1 will be installed
+Checking deps for wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libuuid.so.1(UUID_1.0)(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libssl.so.10(libssl.so.10)(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libidn.so.11(LIBIDN_1.0)(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libcrypto.so.10(libcrypto.so.10)(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libssl.so.10()(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libpcre.so.1()(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libidn.so.11()(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+looking for ('libcrypto.so.10()(64bit)', None, (None, None, None)) as a requirement of wget.x86_64 0:1.14-18.el7_6.1 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.294
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch             Version                   Repository      Size
+================================================================================
+Installing:
+ wget           x86_64           1.14-18.el7_6.1           base           547 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 547 k
+Installed size: 2.0 M
+Downloading packages:
+Member: wget.x86_64 0:1.14-18.el7_6.1 - u
+Adding Package wget-1.14-18.el7_6.1.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.025
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.029
+Running transaction
+  Installing : wget-1.14-18.el7_6.1.x86_64                                  1/1 
+install-info: No such file or directory for /usr/share/info/wget.info.gz
+  Verifying  : wget-1.14-18.el7_6.1.x86_64                                  1/1 
+VerifyTransaction time: 0.085
+Transaction time: 0.412
+
+Installed:
+  wget.x86_64 0:1.14-18.el7_6.1                                                 
+
+Complete!
