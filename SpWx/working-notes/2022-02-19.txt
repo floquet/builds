@@ -88,3 +88,28 @@ make: *** No rule to make target `install'.  Stop.
 
 Step 6: tree  -L 3
 time to build SpWx: 0h:0m:56s
+
+
+
+$ spack load hdf5/5nxtcgk
+Step 4: Build
+
+  4.1: cd /vrepos/gitlab/SpWx
+
+  4.2: mkdir build; cd build
+mkdir: cannot create directory ‘build’: File exists
+
+  4.3: cmake ../source -DCMAKE_INSTALL_PREFIX=../
+CMake Warning at /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i/share/cmake-3.22/Modules/FindHDF5.cmake:747 (message):
+  HDF5 found for language C is not parallel but previously found language is
+  parallel.
+Call Stack (most recent call first):
+  CMakeLists.txt:154 (find_package)
+
+
+CMake Error at /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
+  Could NOT find HDF5 (missing: HDF5_INCLUDE_DIRS) (found version "1.12.1")
+Call Stack (most recent call first):
+  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:594 (_FPHSA_FAILURE_MESSAGE)
+  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i/share/cmake-3.22/Modules/FindHDF5.cmake:1009 (find_package_handle_standard_args)
+  CMakeLists.txt:154 (find_package)
