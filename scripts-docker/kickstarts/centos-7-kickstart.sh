@@ -4,6 +4,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # Wed Dec 29 19:05:24 MST 2021
 
 # xiuhcoatlDockerTime centos:${centos_version}
+# source /repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh
 
 # source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 #       scripts-docker/bash-inits/paths.sh
@@ -11,6 +12,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # source quick-paths.sh
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+source ${repo_scripts_docker}/bash-inits/paths.sh
 
 # source ${repo_scripts_docker}/kickstarts/centos-7-kickstart.sh
 # source /Volumes/repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh

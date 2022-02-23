@@ -5,6 +5,10 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 #   1: name of spack directory (mageia-8-docker-spack)
 #   2: where to find scripts and files
 
+# source /repos/github/builds/scripts-docker/generics/breve-generic-quickstart.sh
+
+source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+
 # defined in bash init
 #    repo_scripts_docker (e.g. /Volumes/repos/github/builds/scripts-spack)
 # define functions new_step, sub_step, sub_sub_step
@@ -129,20 +133,20 @@ sub_step_counter=0
 # cp: invalid option -- 'y'
 # Try 'cp --help' for more information.
 
-new_step "Build compilers"
-sub_step_counter=0
-
-    sub_step "spack install gcc@11.2.0"
-              spack install gcc@11.2.0          | tee ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
-
-              spack info gcc                    | tee ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
-              spack spec gcc@11.2.0 % gcc@4.8.5 | tee ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
-
-    sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
-              spack compiler find $(spack location -i gcc@11.2.0)
-
-    sub_step "spack load gcc@11.2.0"
-              spack load gcc@11.2.0
+# new_step "Build compilers"
+# sub_step_counter=0
+#
+#     sub_step "spack install gcc@11.2.0"
+#               spack install gcc@11.2.0          | tee ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
+#
+#               spack info gcc                    | tee ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
+#               spack spec gcc@11.2.0 % gcc@4.8.5 | tee ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
+#
+#     sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
+#               spack compiler find $(spack location -i gcc@11.2.0)
+#
+#     sub_step "spack load gcc@11.2.0"
+#               spack load gcc@11.2.0
 
     # sub_step "spack install llvm@13.0.0 ^python@3.10.1"
     #           spack install llvm@13.0.0 ^python@3.10.1 > build-logs/llvm@13.0.0.txt
