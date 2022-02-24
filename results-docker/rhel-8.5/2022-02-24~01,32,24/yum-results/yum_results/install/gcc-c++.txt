@@ -1,0 +1,127 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:01:46 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package libxcrypt-devel.x86_64 4.1.1-6.el8 will be installed
+---> Package binutils.x86_64 2.30-108.el8_5.1 will be installed
+---> Package glibc-headers.x86_64 2.28-164.el8 will be installed
+---> Package kernel-headers.x86_64 4.18.0-348.12.2.el8_5 will be installed
+---> Package glibc-devel.x86_64 2.28-164.el8 will be installed
+---> Package isl.x86_64 0.16.1-6.el8 will be installed
+---> Package libmpc.x86_64 1.1.0-9.1.el8 will be installed
+---> Package cpp.x86_64 8.5.0-4.el8_5 will be installed
+---> Package gcc-c++.x86_64 8.5.0-4.el8_5 will be installed
+---> Package gcc.x86_64 8.5.0-4.el8_5 will be installed
+---> Package libstdc++-devel.x86_64 8.5.0-4.el8_5 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package            Arch      Version                  Repository          Size
+================================================================================
+Installing:
+ gcc-c++            x86_64    8.5.0-4.el8_5            ubi-8-appstream     12 M
+Installing dependencies:
+ binutils           x86_64    2.30-108.el8_5.1         ubi-8-baseos       5.8 M
+ cpp                x86_64    8.5.0-4.el8_5            ubi-8-appstream     10 M
+ gcc                x86_64    8.5.0-4.el8_5            ubi-8-appstream     23 M
+ glibc-devel        x86_64    2.28-164.el8             ubi-8-baseos       1.0 M
+ glibc-headers      x86_64    2.28-164.el8             ubi-8-baseos       480 k
+ isl                x86_64    0.16.1-6.el8             ubi-8-appstream    841 k
+ kernel-headers     x86_64    4.18.0-348.12.2.el8_5    ubi-8-baseos       8.3 M
+ libmpc             x86_64    1.1.0-9.1.el8            ubi-8-appstream     61 k
+ libstdc++-devel    x86_64    8.5.0-4.el8_5            ubi-8-appstream    2.0 M
+ libxcrypt-devel    x86_64    4.1.1-6.el8              ubi-8-baseos        25 k
+
+Transaction Summary
+================================================================================
+Install  11 Packages
+
+Total download size: 65 M
+Installed size: 164 M
+Downloading Packages:
+(1/11): libxcrypt-devel-4.1.1-6.el8.x86_64.rpm   38 kB/s |  25 kB     00:00    
+(2/11): glibc-headers-2.28-164.el8.x86_64.rpm   574 kB/s | 480 kB     00:00    
+(3/11): glibc-devel-2.28-164.el8.x86_64.rpm     3.4 MB/s | 1.0 MB     00:00    
+(4/11): isl-0.16.1-6.el8.x86_64.rpm             3.0 MB/s | 841 kB     00:00    
+(5/11): binutils-2.30-108.el8_5.1.x86_64.rpm    3.7 MB/s | 5.8 MB     00:01    
+(6/11): libmpc-1.1.0-9.1.el8.x86_64.rpm         407 kB/s |  61 kB     00:00    
+(7/11): kernel-headers-4.18.0-348.12.2.el8_5.x8 6.2 MB/s | 8.3 MB     00:01    
+(8/11): cpp-8.5.0-4.el8_5.x86_64.rpm             10 MB/s |  10 MB     00:01    
+(9/11): gcc-c++-8.5.0-4.el8_5.x86_64.rpm        9.4 MB/s |  12 MB     00:01    
+(10/11): libstdc++-devel-8.5.0-4.el8_5.x86_64.r 5.9 MB/s | 2.0 MB     00:00    
+(11/11): gcc-8.5.0-4.el8_5.x86_64.rpm            13 MB/s |  23 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                            17 MB/s |  65 MB     00:03     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libmpc-1.1.0-9.1.el8.x86_64                           1/11 
+  Installing       : cpp-8.5.0-4.el8_5.x86_64                              2/11 
+  Running scriptlet: cpp-8.5.0-4.el8_5.x86_64                              2/11 
+  Installing       : libstdc++-devel-8.5.0-4.el8_5.x86_64                  3/11 
+  Installing       : isl-0.16.1-6.el8.x86_64                               4/11 
+  Running scriptlet: isl-0.16.1-6.el8.x86_64                               4/11 
+  Installing       : kernel-headers-4.18.0-348.12.2.el8_5.x86_64           5/11 
+  Running scriptlet: glibc-headers-2.28-164.el8.x86_64                     6/11 
+  Installing       : glibc-headers-2.28-164.el8.x86_64                     6/11 
+  Installing       : glibc-devel-2.28-164.el8.x86_64                       7/11 
+  Running scriptlet: glibc-devel-2.28-164.el8.x86_64                       7/11 
+  Installing       : libxcrypt-devel-4.1.1-6.el8.x86_64                    8/11 
+  Installing       : binutils-2.30-108.el8_5.1.x86_64                      9/11 
+  Running scriptlet: binutils-2.30-108.el8_5.1.x86_64                      9/11 
+  Installing       : gcc-8.5.0-4.el8_5.x86_64                             10/11 
+  Running scriptlet: gcc-8.5.0-4.el8_5.x86_64                             10/11 
+  Installing       : gcc-c++-8.5.0-4.el8_5.x86_64                         11/11 
+  Running scriptlet: gcc-c++-8.5.0-4.el8_5.x86_64                         11/11 
+  Verifying        : libxcrypt-devel-4.1.1-6.el8.x86_64                    1/11 
+  Verifying        : binutils-2.30-108.el8_5.1.x86_64                      2/11 
+  Verifying        : glibc-headers-2.28-164.el8.x86_64                     3/11 
+  Verifying        : kernel-headers-4.18.0-348.12.2.el8_5.x86_64           4/11 
+  Verifying        : glibc-devel-2.28-164.el8.x86_64                       5/11 
+  Verifying        : isl-0.16.1-6.el8.x86_64                               6/11 
+  Verifying        : libmpc-1.1.0-9.1.el8.x86_64                           7/11 
+  Verifying        : cpp-8.5.0-4.el8_5.x86_64                              8/11 
+  Verifying        : gcc-c++-8.5.0-4.el8_5.x86_64                          9/11 
+  Verifying        : gcc-8.5.0-4.el8_5.x86_64                             10/11 
+  Verifying        : libstdc++-devel-8.5.0-4.el8_5.x86_64                 11/11 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: binutils-2.30-108.el8_5.1.x86_64
+Installed: cpp-8.5.0-4.el8_5.x86_64
+Installed: gcc-8.5.0-4.el8_5.x86_64
+Installed: gcc-c++-8.5.0-4.el8_5.x86_64
+Installed: glibc-devel-2.28-164.el8.x86_64
+Installed: glibc-headers-2.28-164.el8.x86_64
+Installed: isl-0.16.1-6.el8.x86_64
+Installed: kernel-headers-4.18.0-348.12.2.el8_5.x86_64
+Installed: libmpc-1.1.0-9.1.el8.x86_64
+Installed: libstdc++-devel-8.5.0-4.el8_5.x86_64
+Installed: libxcrypt-devel-4.1.1-6.el8.x86_64
+
+Installed:
+  binutils-2.30-108.el8_5.1.x86_64                                              
+  cpp-8.5.0-4.el8_5.x86_64                                                      
+  gcc-8.5.0-4.el8_5.x86_64                                                      
+  gcc-c++-8.5.0-4.el8_5.x86_64                                                  
+  glibc-devel-2.28-164.el8.x86_64                                               
+  glibc-headers-2.28-164.el8.x86_64                                             
+  isl-0.16.1-6.el8.x86_64                                                       
+  kernel-headers-4.18.0-348.12.2.el8_5.x86_64                                   
+  libmpc-1.1.0-9.1.el8.x86_64                                                   
+  libstdc++-devel-8.5.0-4.el8_5.x86_64                                          
+  libxcrypt-devel-4.1.1-6.el8.x86_64                                            
+
+Complete!

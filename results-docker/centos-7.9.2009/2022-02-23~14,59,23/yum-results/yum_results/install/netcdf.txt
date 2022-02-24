@@ -1,0 +1,66 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.011
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: ftp.osuosl.org
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: ftp.osuosl.org
+ * updates: mirror.arizona.edu
+pkgsack time: 1.214
+Obs Init time: 0.240
+Resolving Dependencies
+--> Running transaction check
+---> Package netcdf.x86_64 0:4.3.3.1-5.el7 will be installed
+Checking deps for netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('hdf5(x86-64)', 'EQ', ('0', '1.8.12', None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libjpeg.so.62(LIBJPEG_6.2)(64bit)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libcurl.so.4()(64bit)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of netcdf.x86_64 0:4.3.3.1-5.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.296
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch             Version                 Repository      Size
+================================================================================
+Installing:
+ netcdf           x86_64           4.3.3.1-5.el7           epel           693 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 693 k
+Installed size: 2.2 M
+Downloading packages:
+Member: netcdf.x86_64 0:4.3.3.1-5.el7 - u
+Adding Package netcdf-4.3.3.1-5.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.010
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.006
+Running transaction
+  Installing : netcdf-4.3.3.1-5.el7.x86_64                                  1/1 
+  Verifying  : netcdf-4.3.3.1-5.el7.x86_64                                  1/1 
+VerifyTransaction time: 0.104
+Transaction time: 0.525
+
+Installed:
+  netcdf.x86_64 0:4.3.3.1-5.el7                                                 
+
+Complete!

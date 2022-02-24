@@ -1,0 +1,37 @@
+yum info    -v wget
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:06:57 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+Installed Packages
+Name         : wget
+Version      : 1.19.5
+Release      : 10.el8
+Architecture : x86_64
+Size         : 2.8 M
+Source       : wget-1.19.5-10.el8.src.rpm
+Repository   : @System
+From repo    : ubi-8-appstream
+Packager     : Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>
+Buildtime    : Fri Apr  3 11:04:27 2020
+Install time : Thu Feb 24 01:39:22 2022
+Installed by : System <unset>
+Summary      : A utility for retrieving files using the HTTP or FTP protocols
+URL          : http://www.gnu.org/software/wget/
+License      : GPLv3+
+Description  : GNU Wget is a file retrieval utility which can use either the HTTP or
+             : FTP protocols. Wget features include the ability to work in the
+             : background while you are logged out, recursive retrieval of
+             : directories, file name wildcard matching, remote file timestamp
+             : storage and comparison, use of Rest with FTP servers and Range with
+             : HTTP servers to retrieve files over slow or unstable connections,
+             : support for Proxy servers, and configurability.
+

@@ -6,6 +6,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # xiuhcoatlDockerTime centos:${centos_version}
 # source /repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh
 
+# docker pull centos:7.9.2009 ; ehecoatlDockerTime centos:7.9.2009
+#
 # source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 #       scripts-docker/bash-inits/paths.sh
 # vi quick-paths.sh

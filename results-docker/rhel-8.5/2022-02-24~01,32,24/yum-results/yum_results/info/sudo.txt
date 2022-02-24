@@ -1,0 +1,39 @@
+yum info    -v sudo
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:06:10 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+Installed Packages
+Name         : sudo
+Version      : 1.8.29
+Release      : 7.el8_4.1
+Architecture : x86_64
+Size         : 3.4 M
+Source       : sudo-1.8.29-7.el8_4.1.src.rpm
+Repository   : @System
+From repo    : ubi-8-baseos
+Packager     : Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>
+Buildtime    : Tue Oct 19 14:21:35 2021
+Install time : Thu Feb 24 01:38:35 2022
+Installed by : System <unset>
+Summary      : Allows restricted root access for specified users
+URL          : https://www.sudo.ws/
+License      : ISC
+Description  : Sudo (superuser do) allows a system administrator to give certain
+             : users (or groups of users) the ability to run some (or all) commands
+             : as root while logging all commands and arguments. Sudo operates on a
+             : per-command basis.  It is not a replacement for the shell.  Features
+             : include: the ability to restrict what commands a user may run on a
+             : per-host basis, copious logging of each command (providing a clear
+             : audit trail of who did what), a configurable timeout of the sudo
+             : command, and the ability to use the same configuration file (sudoers)
+             : on many different machines.
+

@@ -1,0 +1,92 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:01:21 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package libgomp.x86_64 8.5.0-4.el8_5 will be installed
+---> Package libquadmath.x86_64 8.5.0-4.el8_5 will be installed
+---> Package fftw-libs-quad.x86_64 3.3.5-11.el8 will be installed
+---> Package fftw.x86_64 3.3.5-11.el8 will be installed
+---> Package fftw-libs-long.x86_64 3.3.5-11.el8 will be installed
+---> Package fftw-libs-double.x86_64 3.3.5-11.el8 will be installed
+---> Package fftw-libs-single.x86_64 3.3.5-11.el8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package              Arch       Version              Repository           Size
+================================================================================
+Installing:
+ fftw                 x86_64     3.3.5-11.el8         ubi-8-appstream      57 k
+Installing dependencies:
+ fftw-libs-double     x86_64     3.3.5-11.el8         ubi-8-appstream     992 k
+ fftw-libs-long       x86_64     3.3.5-11.el8         ubi-8-appstream     541 k
+ fftw-libs-quad       x86_64     3.3.5-11.el8         ubi-8-appstream     811 k
+ fftw-libs-single     x86_64     3.3.5-11.el8         ubi-8-appstream     1.0 M
+ libgomp              x86_64     8.5.0-4.el8_5        ubi-8-baseos        206 k
+ libquadmath          x86_64     8.5.0-4.el8_5        ubi-8-baseos        170 k
+
+Transaction Summary
+================================================================================
+Install  7 Packages
+
+Total download size: 3.7 M
+Installed size: 11 M
+Downloading Packages:
+(1/7): libgomp-8.5.0-4.el8_5.x86_64.rpm         571 kB/s | 206 kB     00:00    
+(2/7): libquadmath-8.5.0-4.el8_5.x86_64.rpm     465 kB/s | 170 kB     00:00    
+(3/7): fftw-3.3.5-11.el8.x86_64.rpm             174 kB/s |  57 kB     00:00    
+(4/7): fftw-libs-quad-3.3.5-11.el8.x86_64.rpm   1.1 MB/s | 811 kB     00:00    
+(5/7): fftw-libs-long-3.3.5-11.el8.x86_64.rpm   1.1 MB/s | 541 kB     00:00    
+(6/7): fftw-libs-double-3.3.5-11.el8.x86_64.rpm 2.2 MB/s | 992 kB     00:00    
+(7/7): fftw-libs-single-3.3.5-11.el8.x86_64.rpm 2.3 MB/s | 1.0 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                           3.1 MB/s | 3.7 MB     00:01     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libgomp-8.5.0-4.el8_5.x86_64                           1/7 
+  Running scriptlet: libgomp-8.5.0-4.el8_5.x86_64                           1/7 
+  Installing       : libquadmath-8.5.0-4.el8_5.x86_64                       2/7 
+  Running scriptlet: libquadmath-8.5.0-4.el8_5.x86_64                       2/7 
+  Installing       : fftw-libs-quad-3.3.5-11.el8.x86_64                     3/7 
+  Installing       : fftw-libs-long-3.3.5-11.el8.x86_64                     4/7 
+  Installing       : fftw-libs-double-3.3.5-11.el8.x86_64                   5/7 
+  Installing       : fftw-libs-single-3.3.5-11.el8.x86_64                   6/7 
+  Installing       : fftw-3.3.5-11.el8.x86_64                               7/7 
+  Running scriptlet: fftw-3.3.5-11.el8.x86_64                               7/7 
+  Verifying        : libgomp-8.5.0-4.el8_5.x86_64                           1/7 
+  Verifying        : libquadmath-8.5.0-4.el8_5.x86_64                       2/7 
+  Verifying        : fftw-libs-quad-3.3.5-11.el8.x86_64                     3/7 
+  Verifying        : fftw-3.3.5-11.el8.x86_64                               4/7 
+  Verifying        : fftw-libs-long-3.3.5-11.el8.x86_64                     5/7 
+  Verifying        : fftw-libs-double-3.3.5-11.el8.x86_64                   6/7 
+  Verifying        : fftw-libs-single-3.3.5-11.el8.x86_64                   7/7 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: fftw-3.3.5-11.el8.x86_64
+Installed: fftw-libs-double-3.3.5-11.el8.x86_64
+Installed: fftw-libs-long-3.3.5-11.el8.x86_64
+Installed: fftw-libs-quad-3.3.5-11.el8.x86_64
+Installed: fftw-libs-single-3.3.5-11.el8.x86_64
+Installed: libgomp-8.5.0-4.el8_5.x86_64
+Installed: libquadmath-8.5.0-4.el8_5.x86_64
+
+Installed:
+  fftw-3.3.5-11.el8.x86_64               fftw-libs-double-3.3.5-11.el8.x86_64  
+  fftw-libs-long-3.3.5-11.el8.x86_64     fftw-libs-quad-3.3.5-11.el8.x86_64    
+  fftw-libs-single-3.3.5-11.el8.x86_64   libgomp-8.5.0-4.el8_5.x86_64          
+  libquadmath-8.5.0-4.el8_5.x86_64      
+
+Complete!

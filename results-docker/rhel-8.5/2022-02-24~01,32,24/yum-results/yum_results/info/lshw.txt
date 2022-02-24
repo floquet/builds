@@ -1,0 +1,37 @@
+yum info    -v lshw
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:03:42 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+Installed Packages
+Name         : lshw
+Version      : B.02.19.2
+Release      : 6.el8
+Architecture : x86_64
+Size         : 989 k
+Source       : lshw-B.02.19.2-6.el8.src.rpm
+Repository   : @System
+From repo    : ubi-8-baseos
+Packager     : Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>
+Buildtime    : Wed Jun  9 02:44:17 2021
+Install time : Thu Feb 24 01:36:07 2022
+Installed by : System <unset>
+Summary      : Hardware lister
+URL          : http://ezix.org/project/wiki/HardwareLiSter
+License      : GPLv2
+Description  : lshw is a small tool to provide detailed informaton on the hardware
+             : configuration of the machine. It can report exact memory
+             : configuration, firmware version, mainboard configuration, CPU version
+             : and speed, cache configuration, bus speed, etc. on DMI-capable x86
+             : systems and on some PowerPC machines (PowerMac G4 is known to work).
+             : 
+             : Information can be output in plain text, XML or HTML.
+

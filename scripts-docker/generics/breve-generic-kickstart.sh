@@ -1,11 +1,7 @@
 #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# source ${dirBuildScripts}/generics/generic-kickstart.sh
-#   1: name of spack directory (mageia-8-docker-spack)
-#   2: where to find scripts and files
-
-# source /repos/github/builds/scripts-docker/generics/breve-generic-quickstart.sh
+# source /repos/github/builds/scripts-docker/generics/breve-generic-kickstart.sh
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 
@@ -13,6 +9,8 @@ source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 #    repo_scripts_docker (e.g. /Volumes/repos/github/builds/scripts-spack)
 # define functions new_step, sub_step, sub_sub_step
 source ${repo_scripts_spack}/shared/common-header.sh
+
+export mySPack="${dist}-${release}-${USER}-docker-spack"
 
 
 #  #  #  ========================================== declarations begin
@@ -125,13 +123,8 @@ sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/.vimrc                /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.vimrc                /home/${ego}/.
 
-    sub_step "cp ${repo_scripts_docker}/transport/.xcentos-7.9.2009.sh  /home/${ego}/."
-              cp ${repo_scripts_docker}/transport/.xcentos-7.9.2009.sh  /home/${ego}/.
-# Step 14: Bring in files from GitLab
-#
-#   14.1: cp -y/transport/mirrors.yaml /home/dantopa/spacktivity/centos-7.9.2009-SpWx-docker-spack/etc/spack/.
-# cp: invalid option -- 'y'
-# Try 'cp --help' for more information.
+    sub_step "cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/."
+              cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/.
 
 # new_step "Build compilers"
 # sub_step_counter=0
@@ -148,15 +141,6 @@ sub_step_counter=0
 #     sub_step "spack load gcc@11.2.0"
 #               spack load gcc@11.2.0
 
-    # sub_step "spack install llvm@13.0.0 ^python@3.10.1"
-    #           spack install llvm@13.0.0 ^python@3.10.1 > build-logs/llvm@13.0.0.txt
-    #
-    #           spack info llvm                          > info/llvm.txt         &
-    #           spack spec llvm@13.0.0 % gcc@11.2.0      > specs/llvm@13.0.0.txt &
-    #
-    # sub_step "spack compiler find $(spack location -i llvm@13.0.0)"
-    #           spack compiler find $(spack location -i llvm@13.0.0)
-    #
 #  #  #  ========================================== post-mortem
 
 new_step "Probe build"

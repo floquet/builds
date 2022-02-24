@@ -1,0 +1,57 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:00:08 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package yum-utils.noarch 4.0.21-4.el8_5 will be installed
+---> Package dnf-plugins-core.noarch 4.0.21-4.el8_5 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package               Arch        Version              Repository         Size
+================================================================================
+Installing:
+ yum-utils             noarch      4.0.21-4.el8_5       ubi-8-baseos       73 k
+Installing dependencies:
+ dnf-plugins-core      noarch      4.0.21-4.el8_5       ubi-8-baseos       70 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 143 k
+Installed size: 42 k
+Downloading Packages:
+(1/2): dnf-plugins-core-4.0.21-4.el8_5.noarch.r  85 kB/s |  70 kB     00:00    
+(2/2): yum-utils-4.0.21-4.el8_5.noarch.rpm       65 kB/s |  73 kB     00:01    
+--------------------------------------------------------------------------------
+Total                                           126 kB/s | 143 kB     00:01     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : dnf-plugins-core-4.0.21-4.el8_5.noarch                 1/2 
+  Installing       : yum-utils-4.0.21-4.el8_5.noarch                        2/2 
+  Running scriptlet: yum-utils-4.0.21-4.el8_5.noarch                        2/2 
+  Verifying        : yum-utils-4.0.21-4.el8_5.noarch                        1/2 
+  Verifying        : dnf-plugins-core-4.0.21-4.el8_5.noarch                 2/2 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: dnf-plugins-core-4.0.21-4.el8_5.noarch
+Installed: yum-utils-4.0.21-4.el8_5.noarch
+
+Installed:
+  dnf-plugins-core-4.0.21-4.el8_5.noarch     yum-utils-4.0.21-4.el8_5.noarch    
+
+Complete!

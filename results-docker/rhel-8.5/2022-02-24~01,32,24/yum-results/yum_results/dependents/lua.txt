@@ -1,0 +1,40 @@
+yum deplist -v lua
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:03:50 ago on Thu Feb 24 01:32:26 2022.
+package: lua-5.3.4-12.el8.x86_64
+  dependency: libc.so.6()(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.11)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.3)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.3.4)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.4)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libdl.so.2()(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: liblua-5.3.so()(64bit)
+   provider: lua-libs-5.3.4-12.el8.x86_64
+  dependency: libm.so.6()(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libncurses.so.6()(64bit)
+   provider: ncurses-libs-6.1-9.20180224.el8.x86_64
+  dependency: libreadline.so.7()(64bit)
+   provider: readline-7.0-10.el8.x86_64
+  dependency: libtinfo.so.6()(64bit)
+   provider: ncurses-libs-6.1-9.20180224.el8.x86_64
+  dependency: lua-libs = 5.3.4-12.el8
+   provider: lua-libs-5.3.4-12.el8.i686
+   provider: lua-libs-5.3.4-12.el8.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.28-164.el8.i686
+   provider: glibc-2.28-164.el8.x86_64

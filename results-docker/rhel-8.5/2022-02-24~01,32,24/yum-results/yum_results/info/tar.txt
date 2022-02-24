@@ -1,0 +1,39 @@
+yum info    -v tar
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:06:13 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+Installed Packages
+Name         : tar
+Epoch        : 2
+Version      : 1.30
+Release      : 5.el8
+Architecture : x86_64
+Size         : 2.7 M
+Source       : tar-1.30-5.el8.src.rpm
+Repository   : @System
+Packager     : Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>
+Buildtime    : Fri Jun 19 10:19:57 2020
+Install time : Wed Nov  3 13:50:54 2021
+Summary      : A GNU file archiving program
+URL          : http://www.gnu.org/software/tar/
+License      : GPLv3+
+Description  : The GNU tar program saves many files together in one archive and can
+             : restore individual files (or all of the files) from that archive. Tar
+             : can also be used to add supplemental files to an archive and to update
+             : or list files in the archive. Tar includes multivolume support,
+             : automatic archive compression/decompression, the ability to perform
+             : remote archives, and the ability to perform incremental and full
+             : backups.
+             : 
+             : If you want to use tar for remote backups, you also need to install
+             : the rmt package on the remote box.
+

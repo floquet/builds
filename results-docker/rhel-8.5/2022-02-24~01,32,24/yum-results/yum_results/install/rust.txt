@@ -1,0 +1,60 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:05:44 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package rust.x86_64 1.54.0-3.module+el8.5.0+13074+d655d86c will be installed
+---> Package rust-std-static.x86_64 1.54.0-3.module+el8.5.0+13074+d655d86c will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+========================================================================================
+ Package           Arch    Version                                Repository        Size
+========================================================================================
+Installing:
+ rust              x86_64  1.54.0-3.module+el8.5.0+13074+d655d86c ubi-8-appstream   25 M
+Installing dependencies:
+ rust-std-static   x86_64  1.54.0-3.module+el8.5.0+13074+d655d86c ubi-8-appstream   22 M
+Enabling module streams:
+ rust-toolset              rhel8                                                        
+
+Transaction Summary
+========================================================================================
+Install  2 Packages
+
+Total download size: 47 M
+Installed size: 173 M
+Downloading Packages:
+(1/2): rust-std-static-1.54.0-3.module+el8.5.0+  14 MB/s |  22 MB     00:01    
+(2/2): rust-1.54.0-3.module+el8.5.0+13074+d655d  14 MB/s |  25 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                            26 MB/s |  47 MB     00:01     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : rust-std-static-1.54.0-3.module+el8.5.0+13074+d655d8   1/2 
+  Installing       : rust-1.54.0-3.module+el8.5.0+13074+d655d86c.x86_64     2/2 
+  Running scriptlet: rust-1.54.0-3.module+el8.5.0+13074+d655d86c.x86_64     2/2 
+  Verifying        : rust-1.54.0-3.module+el8.5.0+13074+d655d86c.x86_64     1/2 
+  Verifying        : rust-std-static-1.54.0-3.module+el8.5.0+13074+d655d8   2/2 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: rust-1.54.0-3.module+el8.5.0+13074+d655d86c.x86_64
+Installed: rust-std-static-1.54.0-3.module+el8.5.0+13074+d655d86c.x86_64
+
+Installed:
+  rust-1.54.0-3.module+el8.5.0+13074+d655d86c.x86_64                            
+  rust-std-static-1.54.0-3.module+el8.5.0+13074+d655d86c.x86_64                 
+
+Complete!

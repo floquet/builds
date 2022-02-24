@@ -1,0 +1,33 @@
+yum info    -v gcc-c++
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:02:04 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+Installed Packages
+Name         : gcc-c++
+Version      : 8.5.0
+Release      : 4.el8_5
+Architecture : x86_64
+Size         : 31 M
+Source       : gcc-8.5.0-4.el8_5.src.rpm
+Repository   : @System
+From repo    : ubi-8-appstream
+Packager     : Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>
+Buildtime    : Fri Oct 29 23:52:36 2021
+Install time : Thu Feb 24 01:34:29 2022
+Installed by : System <unset>
+Summary      : C++ support for GCC
+URL          : http://gcc.gnu.org
+License      : GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
+Description  : This package adds C++ support to the GNU Compiler Collection.
+             : It includes support for most of the current C++ specification,
+             : including templates and exception handling.
+

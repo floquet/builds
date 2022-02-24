@@ -1,0 +1,32 @@
+yum info    -v lsof
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:03:46 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+Installed Packages
+Name         : lsof
+Version      : 4.93.2
+Release      : 1.el8
+Architecture : x86_64
+Size         : 623 k
+Source       : lsof-4.93.2-1.el8.src.rpm
+Repository   : @System
+From repo    : ubi-8-baseos
+Packager     : Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>
+Buildtime    : Mon Apr 20 11:28:31 2020
+Install time : Thu Feb 24 01:36:10 2022
+Installed by : System <unset>
+Summary      : A utility which lists open files on a Linux/UNIX system
+URL          : https://github.com/lsof-org/lsof
+License      : zlib and Sendmail and LGPLv2+
+Description  : Lsof stands for LiSt Open Files, and it does just that: it lists information
+             : about files that are open by the processes running on a UNIX system.
+
