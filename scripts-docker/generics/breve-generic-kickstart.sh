@@ -17,7 +17,7 @@ export mySpack="${dist}-${release}-${USER}-docker-spack"
 
 export generic_seconds=${SECONDS}
 
-export      USER="dantopa"
+#export      USER="dantopa"
 export       ego="${USER}"  # latin: ego = I, me
 export  git_user="Daniel Topa"
 export git_email="dantopa@gmail.com"

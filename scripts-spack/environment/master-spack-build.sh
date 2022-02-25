@@ -1,14 +1,14 @@
 #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# source ${repo_scripts_spack}/environment/master-spack.sh
+# source /repos/github/builds/scripts-spack/environment/master-spack-build.sh 
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
-source ${repo_build}/scripts-spack/shared/common-header.sh
+source ${repo_scripts_spack}/shared/common-header.sh
 
 export master=${SECONDS}
 
-new_item "Set environment variables: path"
+new_step "Set environment variables: path"
     export    dirInfo="${SPACK_ROOT}/${USER}/info"
     export   dirSpecs="${SPACK_ROOT}/${USER}/specs"
     export dirScripts="${SPACK_ROOT}/${USER}/shell-scripts"
@@ -18,7 +18,7 @@ new_item "Set environment variables: path"
     sub_step "\${dirScripts} = ${dirScripts}"
     sub_step "\${dirSpecs}   = ${dirSpecs}"
 
-new_item "Set environment variables: version"
+new_step "Set environment variables: version"
     export myCompiler=" % gcc@11.2.0"
     export     myLLVM="^llvm@13.0.0"
     export  myOpenMPI="^openmpi@4.1.2"
@@ -29,7 +29,7 @@ new_item "Set environment variables: version"
     sub_step "\${myOpenMPI}  = ${myOpenMPI}"
     sub_step "\${myPython}   = ${myPython}"
 
-new_item "Create directory structure"
+new_step "Create directory structure"
     sub_step "mkdir -p ${dirInstall}/build-logs"
               mkdir -p ${dirInstall}/build-logs
     sub_step "mkdir -p ${dirInfo}/info"
@@ -41,10 +41,10 @@ new_item "Create directory structure"
 
 pause
   
-new_item "python builds"
+new_step "python builds"
     source ${repo_build}/scripts-spack/environment/slave-python-build.sh
 
-new_item "spack build out"
+new_step "spack build out"
     source ${repo_build}/scripts-spack/environment/slave-spack-build.sh
 
 new_step "print wall time used"
