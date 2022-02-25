@@ -1,0 +1,109 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.umd.edu
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.arizona.edu
+ * updates: mirror.math.princeton.edu
+pkgsack time: 0.422
+Checking for virtual provide or file-provide for mpich
+Obs Init time: 0.205
+Resolving Dependencies
+--> Running transaction check
+---> Package mpich-3.0.x86_64 0:3.0.4-10.el7 will be installed
+Checking deps for mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('librt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libgcc_s.so.1(GCC_4.0.0)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('environment-modules', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('/usr/bin/perl', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libnsl.so.1()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libhwloc.so.5()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+mpich-3.0-3.0.4-10.el7.x86_64 requires: libhwloc.so.5()(64bit)
+--> Processing Dependency: libhwloc.so.5()(64bit) for package: mpich-3.0-3.0.4-10.el7.x86_64
+Searching pkgSack for dep: libhwloc.so.5()(64bit)
+Building updates object
+up:simple updates time: 0.008
+up:obs time: 0.005
+up:condense time: 0.000
+updates time: 0.219
+TSINFO: Marking hwloc-libs-1.11.8-4.el7.x86_64 as install for mpich-3.0-3.0.4-10.el7.x86_64
+--> Running transaction check
+---> Package hwloc-libs.x86_64 0:1.11.8-4.el7 will be installed
+Checking deps for hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('libnuma.so.1(libnuma_1.2)(64bit)', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('libnuma.so.1(libnuma_1.1)(64bit)', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('libnuma.so.1()(64bit)', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+looking for ('libltdl.so.7()(64bit)', None, (None, None, None)) as a requirement of hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.438
+
+Dependencies Resolved
+
+================================================================================
+ Package             Arch            Version                Repository     Size
+================================================================================
+Installing:
+ mpich-3.0           x86_64          3.0.4-10.el7           base          1.0 M
+Installing for dependencies:
+ hwloc-libs          x86_64          1.11.8-4.el7           base          1.6 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 2.6 M
+Installed size: 5.4 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              3.0 MB/s | 2.6 MB  00:00     
+Member: mpich-3.0.x86_64 0:3.0.4-10.el7 - u
+Adding Package mpich-3.0-3.0.4-10.el7.x86_64 in mode u
+Member: hwloc-libs.x86_64 0:1.11.8-4.el7 - u
+Adding Package hwloc-libs-1.11.8-4.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.033
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.039
+Running transaction
+  Installing : hwloc-libs-1.11.8-4.el7.x86_64                               1/2 
+  Installing : mpich-3.0-3.0.4-10.el7.x86_64                                2/2 
+  Verifying  : mpich-3.0-3.0.4-10.el7.x86_64                                1/2 
+  Verifying  : hwloc-libs-1.11.8-4.el7.x86_64                               2/2 
+VerifyTransaction time: 0.077
+Transaction time: 0.624
+
+Installed:
+  mpich-3.0.x86_64 0:3.0.4-10.el7                                               
+
+Dependency Installed:
+  hwloc-libs.x86_64 0:1.11.8-4.el7                                              
+
+Complete!

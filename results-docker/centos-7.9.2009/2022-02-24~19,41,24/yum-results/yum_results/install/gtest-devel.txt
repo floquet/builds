@@ -1,0 +1,102 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hostduplex.com
+ * epel: mirrors.vcea.wsu.edu
+ * extras: mirror.sfo12.us.leaseweb.net
+ * updates: mirror.math.princeton.edu
+pkgsack time: 0.220
+Obs Init time: 0.185
+Resolving Dependencies
+--> Running transaction check
+---> Package gtest-devel.x86_64 0:1.6.0-2.el7 will be installed
+Checking deps for gtest-devel.x86_64 0:1.6.0-2.el7 - u
+looking for ('gtest', 'EQ', ('0', '1.6.0', '2.el7')) as a requirement of gtest-devel.x86_64 0:1.6.0-2.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gtest-devel.x86_64 0:1.6.0-2.el7 - u
+looking for ('automake', None, (None, None, None)) as a requirement of gtest-devel.x86_64 0:1.6.0-2.el7 - u
+looking for ('libgtest.so.0()(64bit)', None, (None, None, None)) as a requirement of gtest-devel.x86_64 0:1.6.0-2.el7 - u
+looking for ('libgtest_main.so.0()(64bit)', None, (None, None, None)) as a requirement of gtest-devel.x86_64 0:1.6.0-2.el7 - u
+gtest-devel-1.6.0-2.el7.x86_64 requires: gtest = 1.6.0-2.el7
+--> Processing Dependency: gtest = 1.6.0-2.el7 for package: gtest-devel-1.6.0-2.el7.x86_64
+Searching pkgSack for dep: gtest
+Building updates object
+up:simple updates time: 0.006
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.216
+TSINFO: Marking gtest-1.6.0-2.el7.x86_64 as install for gtest-devel-1.6.0-2.el7.x86_64
+gtest-devel-1.6.0-2.el7.x86_64 requires: libgtest.so.0()(64bit)
+--> Processing Dependency: libgtest.so.0()(64bit) for package: gtest-devel-1.6.0-2.el7.x86_64
+Quick matched gtest-1.6.0-2.el7.x86_64 to require for libgtest.so.0()(64bit)
+gtest-devel-1.6.0-2.el7.x86_64 requires: libgtest_main.so.0()(64bit)
+--> Processing Dependency: libgtest_main.so.0()(64bit) for package: gtest-devel-1.6.0-2.el7.x86_64
+Quick matched gtest-1.6.0-2.el7.x86_64 to require for libgtest_main.so.0()(64bit)
+--> Running transaction check
+---> Package gtest.x86_64 0:1.6.0-2.el7 will be installed
+Checking deps for gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of gtest.x86_64 0:1.6.0-2.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.450
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch            Version               Repository     Size
+================================================================================
+Installing:
+ gtest-devel          x86_64          1.6.0-2.el7           epel          126 k
+Installing for dependencies:
+ gtest                x86_64          1.6.0-2.el7           epel          108 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 234 k
+Installed size: 1.2 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              297 kB/s | 234 kB  00:00     
+Member: gtest-devel.x86_64 0:1.6.0-2.el7 - u
+Adding Package gtest-devel-1.6.0-2.el7.x86_64 in mode u
+Member: gtest.x86_64 0:1.6.0-2.el7 - u
+Adding Package gtest-1.6.0-2.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.037
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.044
+Running transaction
+  Installing : gtest-1.6.0-2.el7.x86_64                                     1/2 
+  Installing : gtest-devel-1.6.0-2.el7.x86_64                               2/2 
+  Verifying  : gtest-devel-1.6.0-2.el7.x86_64                               1/2 
+  Verifying  : gtest-1.6.0-2.el7.x86_64                                     2/2 
+VerifyTransaction time: 0.100
+Transaction time: 0.504
+
+Installed:
+  gtest-devel.x86_64 0:1.6.0-2.el7                                              
+
+Dependency Installed:
+  gtest.x86_64 0:1.6.0-2.el7                                                    
+
+Complete!

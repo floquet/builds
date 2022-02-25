@@ -7,11 +7,6 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # source /repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh
 
 # docker pull centos:7.9.2009 ; ehecoatlDockerTime centos:7.9.2009
-#
-# source /repos/github/builds/scripts-docker/bash-inits/paths.sh
-#       scripts-docker/bash-inits/paths.sh
-# vi quick-paths.sh
-# source quick-paths.sh
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_docker}/bash-inits/paths.sh
@@ -30,7 +25,7 @@ export USER="dantopa"
 # define functions new_step, sub_step
 source ${repo_scripts_spack}/shared/common-header.sh
 
-# dantopa:~ % docker pull centos:7.9.2009
+# dantopa:~ % docker pull centos:centos7.9.2009
 # 7.9.2009: Pulling from library/centos
 # Digest: sha256:9d4bcbbb213dfd745b58be38b13b996ebb5ac315fe75711bd618426a630e0987
 # Status: Image is up to date for centos:7.9.2009
@@ -80,12 +75,10 @@ echo ""; echo "Set up user account"
 
 echo ""; echo "su - dantopa"
     echo "export mySpack=${mySpack}"
-    echo "bring in scripts-docker/bash-inits/paths.sh"
-    echo "source ${repo_scripts_docker}/generics/breve-generic-kickstart.sh"
-    echo "source \${repo_scripts_docker}/generics/breve-generic-kickstart.sh"
+    echo 'export dist="centos" ; export release="7.9.2009" ; export tag="${dist}-${release}"'
 
 echo ""; echo "Report elapsed time"
     export centosSECONDS=$((${SECONDS}-${centosSECONDS}))
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf 'time to build system: %dh:%dm:%ds\n' $(($centosSECONDS/3600)) $(($centosSECONDS%3600/60)) $(($centosSECONDS%60)) | tee -a ${timerFile}
+    printf 'time to build system: %dh:%dm:%ds\n' $((${centosSECONDS}/3600)) $((${centosSECONDS}%3600/60)) $((${centosSECONDS}%60)) | tee -a ${timerFile}

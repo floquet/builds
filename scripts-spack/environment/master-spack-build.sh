@@ -40,7 +40,7 @@ new_item "Create directory structure"
               mkdir -p ${dirSpecs}/specs
 
 pause
-
+  
 new_item "python builds"
     source ${repo_build}/scripts-spack/environment/slave-python-build.sh
 

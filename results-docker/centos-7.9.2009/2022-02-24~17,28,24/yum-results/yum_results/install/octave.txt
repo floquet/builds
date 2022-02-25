@@ -1,0 +1,965 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.umd.edu
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.arizona.edu
+ * updates: mirror.math.princeton.edu
+pkgsack time: 0.365
+Obs Init time: 0.227
+Resolving Dependencies
+--> Running transaction check
+---> Package octave.x86_64 6:3.8.2-20.el7 will be installed
+Checking deps for octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('hdf5', 'EQ', ('0', '1.8.12', None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('epstool', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('gnuplot', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('gnuplot-common', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('info', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('info', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('info', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('java-headless', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('less', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libgcc_s.so.1(GCC_4.0.0)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.1)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.10)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.5)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.6)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libutil.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libz.so.1(ZLIB_1.2.0.2)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('texinfo', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libGL.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libGLU.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libGraphicsMagick++-Q16.so.12()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libGraphicsMagick-Q16.so.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libQtCore.so.4()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libQtGui.so.4()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libQtNetwork.so.4()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libamd.so.2()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libarpack.so.2()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libcamd.so.2()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libccolamd.so.2()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libcholmod.so.2()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libcolamd.so.2()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libcurl.so.4()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libcxsparse.so.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libfftw3.so.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libfftw3_threads.so.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libfftw3f.so.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libfftw3f_threads.so.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libfltk.so.1.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libfltk_gl.so.1.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libgl2ps.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libglpk.so.36()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libhdf5.so.8()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libncurses.so.5()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libpcre.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libqhull.so.5()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libqrupdate.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libqscintilla2.so.11()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libreadline.so.6()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libtatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libumfpack.so.5()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libutil.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of octave.x86_64 6:3.8.2-20.el7 - u
+6:octave-3.8.2-20.el7.x86_64 requires: epstool
+--> Processing Dependency: epstool for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: epstool
+Building updates object
+up:simple updates time: 0.008
+up:obs time: 0.005
+up:condense time: 0.000
+updates time: 0.243
+TSINFO: Marking epstool-3.08-4.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: gnuplot
+--> Processing Dependency: gnuplot for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: gnuplot
+TSINFO: Marking gnuplot-4.6.2-3.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: gnuplot-common
+--> Processing Dependency: gnuplot-common for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: gnuplot-common
+TSINFO: Marking gnuplot-common-4.6.2-3.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: java-headless
+--> Processing Dependency: java-headless for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: java-headless
+TSINFO: Marking 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: texinfo
+--> Processing Dependency: texinfo for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: texinfo
+TSINFO: Marking texinfo-5.1-5.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libGraphicsMagick++-Q16.so.12()(64bit)
+--> Processing Dependency: libGraphicsMagick++-Q16.so.12()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libGraphicsMagick++-Q16.so.12()(64bit)
+TSINFO: Marking GraphicsMagick-c++-1.3.36-1.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libGraphicsMagick-Q16.so.3()(64bit)
+--> Processing Dependency: libGraphicsMagick-Q16.so.3()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libGraphicsMagick-Q16.so.3()(64bit)
+TSINFO: Marking GraphicsMagick-1.3.36-1.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libamd.so.2()(64bit)
+--> Processing Dependency: libamd.so.2()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libamd.so.2()(64bit)
+TSINFO: Marking suitesparse-4.0.2-10.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libarpack.so.2()(64bit)
+--> Processing Dependency: libarpack.so.2()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libarpack.so.2()(64bit)
+TSINFO: Marking arpack-3.1.3-2.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libcamd.so.2()(64bit)
+--> Processing Dependency: libcamd.so.2()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libcamd.so.2()(64bit)
+suitesparse-4.0.2-10.el7.x86_64 already in ts, skipping this one
+6:octave-3.8.2-20.el7.x86_64 requires: libccolamd.so.2()(64bit)
+--> Processing Dependency: libccolamd.so.2()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Quick matched suitesparse-4.0.2-10.el7.x86_64 to require for libccolamd.so.2()(64bit)
+6:octave-3.8.2-20.el7.x86_64 requires: libcholmod.so.2()(64bit)
+--> Processing Dependency: libcholmod.so.2()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Quick matched suitesparse-4.0.2-10.el7.x86_64 to require for libcholmod.so.2()(64bit)
+6:octave-3.8.2-20.el7.x86_64 requires: libcolamd.so.2()(64bit)
+--> Processing Dependency: libcolamd.so.2()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Quick matched suitesparse-4.0.2-10.el7.x86_64 to require for libcolamd.so.2()(64bit)
+6:octave-3.8.2-20.el7.x86_64 requires: libcxsparse.so.3()(64bit)
+--> Processing Dependency: libcxsparse.so.3()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Quick matched suitesparse-4.0.2-10.el7.x86_64 to require for libcxsparse.so.3()(64bit)
+6:octave-3.8.2-20.el7.x86_64 requires: libfltk.so.1.3()(64bit)
+--> Processing Dependency: libfltk.so.1.3()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libfltk.so.1.3()(64bit)
+TSINFO: Marking fltk-1.3.4-2.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libfltk_gl.so.1.3()(64bit)
+--> Processing Dependency: libfltk_gl.so.1.3()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Quick matched fltk-1.3.4-2.el7.x86_64 to require for libfltk_gl.so.1.3()(64bit)
+6:octave-3.8.2-20.el7.x86_64 requires: libgl2ps.so.1()(64bit)
+--> Processing Dependency: libgl2ps.so.1()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libgl2ps.so.1()(64bit)
+TSINFO: Marking gl2ps-1.3.8-2.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libglpk.so.36()(64bit)
+--> Processing Dependency: libglpk.so.36()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libglpk.so.36()(64bit)
+TSINFO: Marking glpk-4.52.1-2.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libqhull.so.5()(64bit)
+--> Processing Dependency: libqhull.so.5()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libqhull.so.5()(64bit)
+TSINFO: Marking qhull-2003.1-20.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libqrupdate.so.1()(64bit)
+--> Processing Dependency: libqrupdate.so.1()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libqrupdate.so.1()(64bit)
+TSINFO: Marking qrupdate-1.1.2-3.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libqscintilla2.so.11()(64bit)
+--> Processing Dependency: libqscintilla2.so.11()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libqscintilla2.so.11()(64bit)
+TSINFO: Marking qscintilla-2.8-1.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libtatlas.so.3()(64bit)
+--> Processing Dependency: libtatlas.so.3()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libtatlas.so.3()(64bit)
+TSINFO: Marking atlas-3.10.1-12.el7.x86_64 as install for 6:octave-3.8.2-20.el7.x86_64
+6:octave-3.8.2-20.el7.x86_64 requires: libumfpack.so.5()(64bit)
+--> Processing Dependency: libumfpack.so.5()(64bit) for package: 6:octave-3.8.2-20.el7.x86_64
+Searching pkgSack for dep: libumfpack.so.5()(64bit)
+suitesparse-4.0.2-10.el7.x86_64 already in ts, skipping this one
+--> Running transaction check
+---> Package GraphicsMagick.x86_64 0:1.3.36-1.el7 will be installed
+Checking deps for GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libgomp.so.1(GOMP_1.0)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libgomp.so.1(OMP_1.0)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libjpeg.so.62(LIBJPEG_6.2)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libpng15.so.15(PNG15_0)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libtiff.so.5(LIBTIFF_4.0)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.4.30)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('urw-base35-fonts-legacy', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libICE.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libSM.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libXext.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libbz2.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libgomp.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libjasper.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libjbig.so.2.0()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('liblcms2.so.2()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libltdl.so.7()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('liblzma.so.5()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libtiff.so.5()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libwebp.so.4()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libwebpmux.so.0()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libwmflite-0.2.so.7()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libxml2.so.2()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+GraphicsMagick-1.3.36-1.el7.x86_64 requires: urw-base35-fonts-legacy
+--> Processing Dependency: urw-base35-fonts-legacy for package: GraphicsMagick-1.3.36-1.el7.x86_64
+Searching pkgSack for dep: urw-base35-fonts-legacy
+TSINFO: Marking urw-base35-fonts-legacy-20170801-10.el7.noarch as install for GraphicsMagick-1.3.36-1.el7.x86_64
+GraphicsMagick-1.3.36-1.el7.x86_64 requires: libwebp.so.4()(64bit)
+--> Processing Dependency: libwebp.so.4()(64bit) for package: GraphicsMagick-1.3.36-1.el7.x86_64
+Searching pkgSack for dep: libwebp.so.4()(64bit)
+TSINFO: Marking libwebp-0.3.0-10.el7_9.x86_64 as install for GraphicsMagick-1.3.36-1.el7.x86_64
+GraphicsMagick-1.3.36-1.el7.x86_64 requires: libwebpmux.so.0()(64bit)
+--> Processing Dependency: libwebpmux.so.0()(64bit) for package: GraphicsMagick-1.3.36-1.el7.x86_64
+Quick matched libwebp-0.3.0-10.el7_9.x86_64 to require for libwebpmux.so.0()(64bit)
+---> Package GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 will be installed
+Checking deps for GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('GraphicsMagick(x86-64)', 'EQ', ('0', '1.3.36', '1.el7')) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libGraphicsMagick-Q16.so.3()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libICE.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libSM.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libXext.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libbz2.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libgomp.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('liblcms2.so.2()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libltdl.so.7()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('liblzma.so.5()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+---> Package arpack.x86_64 0:3.1.3-2.el7 will be installed
+Checking deps for arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libtatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+---> Package atlas.x86_64 0:3.10.1-12.el7 will be installed
+Checking deps for atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+---> Package epstool.x86_64 0:3.08-4.el7 will be installed
+Checking deps for epstool.x86_64 0:3.08-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of epstool.x86_64 0:3.08-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of epstool.x86_64 0:3.08-4.el7 - u
+---> Package fltk.x86_64 0:1.3.4-2.el7 will be installed
+Checking deps for fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libpng15.so.15(PNG15_0)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libjpeg.so.62(LIBJPEG_6.2)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libXrender.so.1()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libXinerama.so.1()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libXft.so.2()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libXfixes.so.3()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libXext.so.6()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libXcursor.so.1()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libGLU.so.1()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+looking for ('libGL.so.1()(64bit)', None, (None, None, None)) as a requirement of fltk.x86_64 0:1.3.4-2.el7 - u
+---> Package gl2ps.x86_64 0:1.3.8-2.el7 will be installed
+Checking deps for gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('libpng15.so.15(PNG15_0)(64bit)', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('libGL.so.1()(64bit)', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('libXext.so.6()(64bit)', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of gl2ps.x86_64 0:1.3.8-2.el7 - u
+---> Package glpk.x86_64 0:4.52.1-2.el7 will be installed
+Checking deps for glpk.x86_64 0:4.52.1-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of glpk.x86_64 0:4.52.1-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of glpk.x86_64 0:4.52.1-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of glpk.x86_64 0:4.52.1-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of glpk.x86_64 0:4.52.1-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of glpk.x86_64 0:4.52.1-2.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of glpk.x86_64 0:4.52.1-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of glpk.x86_64 0:4.52.1-2.el7 - u
+---> Package gnuplot.x86_64 0:4.6.2-3.el7 will be installed
+Checking deps for gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('gnuplot-common', 'EQ', ('0', '4.6.2', '3.el7')) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('dejavu-sans-fonts', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('/usr/sbin/alternatives', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('/usr/sbin/alternatives', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libncurses.so.5()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('liblua-5.1.so()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libgd.so.2()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libedit.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libXpm.so.4()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of gnuplot.x86_64 0:4.6.2-3.el7 - u
+gnuplot-4.6.2-3.el7.x86_64 requires: libgd.so.2()(64bit)
+--> Processing Dependency: libgd.so.2()(64bit) for package: gnuplot-4.6.2-3.el7.x86_64
+Searching pkgSack for dep: libgd.so.2()(64bit)
+TSINFO: Marking gd-2.0.35-27.el7_9.x86_64 as install for gnuplot-4.6.2-3.el7.x86_64
+---> Package gnuplot-common.x86_64 0:4.6.2-3.el7 will be installed
+Checking deps for gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 will be installed
+Checking deps for java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('tzdata-java', 'GE', ('0', '2021e', None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('copy-jdk-configs', 'GE', ('0', '3.3', None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('chkconfig', 'GE', ('0', '1.7', None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('chkconfig', 'GE', ('0', '1.7', None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('pcsc-lite-libs(x86-64)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('lksctp-tools(x86-64)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libthread_db.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.3.3)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libjpeg.so.62(LIBJPEG_6.2)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('jpackage-utils', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('cups-libs(x86-64)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('ca-certificates', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('/usr/sbin/alternatives', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('/usr/sbin/alternatives', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libthread_db.so.1()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64 requires: tzdata-java >= 2021e
+--> Processing Dependency: tzdata-java >= 2021e for package: 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+Searching pkgSack for dep: tzdata-java
+TSINFO: Marking tzdata-java-2021e-1.el7.noarch as install for 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64 requires: copy-jdk-configs >= 3.3
+--> Processing Dependency: copy-jdk-configs >= 3.3 for package: 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+Searching pkgSack for dep: copy-jdk-configs
+TSINFO: Marking copy-jdk-configs-3.3-10.el7_5.noarch as install for 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64 requires: pcsc-lite-libs(x86-64)
+--> Processing Dependency: pcsc-lite-libs(x86-64) for package: 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+Searching pkgSack for dep: pcsc-lite-libs(x86-64)
+TSINFO: Marking pcsc-lite-libs-1.8.8-8.el7.x86_64 as install for 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64 requires: lksctp-tools(x86-64)
+--> Processing Dependency: lksctp-tools(x86-64) for package: 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+Searching pkgSack for dep: lksctp-tools(x86-64)
+TSINFO: Marking lksctp-tools-1.0.17-2.el7.x86_64 as install for 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64 requires: jpackage-utils
+--> Processing Dependency: jpackage-utils for package: 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+Searching pkgSack for dep: jpackage-utils
+TSINFO: Marking javapackages-tools-3.4.1-11.el7.noarch as install for 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64
+---> Package qhull.x86_64 0:2003.1-20.el7 will be installed
+Checking deps for qhull.x86_64 0:2003.1-20.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of qhull.x86_64 0:2003.1-20.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of qhull.x86_64 0:2003.1-20.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of qhull.x86_64 0:2003.1-20.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of qhull.x86_64 0:2003.1-20.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of qhull.x86_64 0:2003.1-20.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of qhull.x86_64 0:2003.1-20.el7 - u
+---> Package qrupdate.x86_64 0:1.1.2-3.el7 will be installed
+Checking deps for qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('libblas.so.3()(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('liblapack.so.3()(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of qrupdate.x86_64 0:1.1.2-3.el7 - u
+---> Package qscintilla.x86_64 0:2.8-1.el7 will be installed
+Checking deps for qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libQtCore.so.4()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libQtDesigner.so.4()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libQtGui.so.4()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libQtScript.so.4()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libQtXml.so.4()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of qscintilla.x86_64 0:2.8-1.el7 - u
+---> Package suitesparse.x86_64 0:4.0.2-10.el7 will be installed
+Checking deps for suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libgcc_s.so.1(GCC_4.0.0)(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libtbbmalloc.so.2()(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libtbb.so.2()(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libsatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of suitesparse.x86_64 0:4.0.2-10.el7 - u
+suitesparse-4.0.2-10.el7.x86_64 requires: libtbbmalloc.so.2()(64bit)
+--> Processing Dependency: libtbbmalloc.so.2()(64bit) for package: suitesparse-4.0.2-10.el7.x86_64
+Searching pkgSack for dep: libtbbmalloc.so.2()(64bit)
+TSINFO: Marking tbb-4.1-9.20130314.el7.x86_64 as install for suitesparse-4.0.2-10.el7.x86_64
+suitesparse-4.0.2-10.el7.x86_64 requires: libtbb.so.2()(64bit)
+--> Processing Dependency: libtbb.so.2()(64bit) for package: suitesparse-4.0.2-10.el7.x86_64
+Quick matched tbb-4.1-9.20130314.el7.x86_64 to require for libtbb.so.2()(64bit)
+---> Package texinfo.x86_64 0:5.1-5.el7 will be installed
+Checking deps for texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl', 'GE', ('1', '5.0', None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl', 'GE', ('1', '5', None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl', 'GE', ('0', '5.7.3', None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl', 'GE', ('0', '5.007_003', None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl', 'GE', ('0', '5.006', None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl', 'GE', ('0', '5.00405', None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(vars)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(strict)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(base)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Unicode::Normalize)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Text::Unidecode)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Pod::Simple::PullParser)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(MIME::Base64)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Locale::Messages)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Getopt::Long)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(File::Spec)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(File::Copy)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(File::Basename)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Exporter)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Encode)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Data::Dumper)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Cwd)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Config)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('perl(Carp)', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('/usr/bin/perl', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of texinfo.x86_64 0:5.1-5.el7 - u
+texinfo-5.1-5.el7.x86_64 requires: perl(Locale::Messages)
+--> Processing Dependency: perl(Locale::Messages) for package: texinfo-5.1-5.el7.x86_64
+Searching pkgSack for dep: perl(Locale::Messages)
+TSINFO: Marking perl-libintl-1.20-12.el7.x86_64 as install for texinfo-5.1-5.el7.x86_64
+--> Running transaction check
+---> Package copy-jdk-configs.noarch 0:3.3-10.el7_5 will be installed
+Checking deps for copy-jdk-configs.noarch 0:3.3-10.el7_5 - u
+looking for ('lua', None, (None, None, None)) as a requirement of copy-jdk-configs.noarch 0:3.3-10.el7_5 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of copy-jdk-configs.noarch 0:3.3-10.el7_5 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of copy-jdk-configs.noarch 0:3.3-10.el7_5 - u
+---> Package gd.x86_64 0:2.0.35-27.el7_9 will be installed
+Checking deps for gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libpng15.so.15(PNG15_0)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libjpeg.so.62(LIBJPEG_6.2)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libXpm.so.4()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+---> Package javapackages-tools.noarch 0:3.4.1-11.el7 will be installed
+Checking deps for javapackages-tools.noarch 0:3.4.1-11.el7 - u
+looking for ('python-javapackages', 'EQ', ('0', '3.4.1', '11.el7')) as a requirement of javapackages-tools.noarch 0:3.4.1-11.el7 - u
+looking for ('python', None, (None, None, None)) as a requirement of javapackages-tools.noarch 0:3.4.1-11.el7 - u
+looking for ('lua', None, (None, None, None)) as a requirement of javapackages-tools.noarch 0:3.4.1-11.el7 - u
+looking for ('libxslt', None, (None, None, None)) as a requirement of javapackages-tools.noarch 0:3.4.1-11.el7 - u
+looking for ('coreutils', None, (None, None, None)) as a requirement of javapackages-tools.noarch 0:3.4.1-11.el7 - u
+javapackages-tools-3.4.1-11.el7.noarch requires: python-javapackages = 3.4.1-11.el7
+--> Processing Dependency: python-javapackages = 3.4.1-11.el7 for package: javapackages-tools-3.4.1-11.el7.noarch
+Searching pkgSack for dep: python-javapackages
+TSINFO: Marking python-javapackages-3.4.1-11.el7.noarch as install for javapackages-tools-3.4.1-11.el7.noarch
+javapackages-tools-3.4.1-11.el7.noarch requires: libxslt
+--> Processing Dependency: libxslt for package: javapackages-tools-3.4.1-11.el7.noarch
+Searching pkgSack for dep: libxslt
+TSINFO: Marking libxslt-1.1.28-6.el7.x86_64 as install for javapackages-tools-3.4.1-11.el7.noarch
+---> Package libwebp.x86_64 0:0.3.0-10.el7_9 will be installed
+Checking deps for libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libwebp.x86_64 0:0.3.0-10.el7_9 - u
+---> Package lksctp-tools.x86_64 0:1.0.17-2.el7 will be installed
+Checking deps for lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.16)(64bit)', None, (None, None, None)) as a requirement of lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+---> Package pcsc-lite-libs.x86_64 0:1.8.8-8.el7 will be installed
+Checking deps for pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+---> Package perl-libintl.x86_64 0:1.20-12.el7 will be installed
+Checking deps for perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl', 'GE', ('0', '5.004', None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(vars)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(strict)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(locale)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(integer)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(constant)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(bytes)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(base)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(IO::Handle)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(File::Spec)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(Exporter)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(Encode)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(DynaLoader)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(Cwd)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('perl(:MODULE_COMPAT_5.16.3)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+looking for ('libc.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of perl-libintl.x86_64 0:1.20-12.el7 - u
+---> Package tbb.x86_64 0:4.1-9.20130314.el7 will be installed
+Checking deps for tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of tbb.x86_64 0:4.1-9.20130314.el7 - u
+---> Package tzdata-java.noarch 0:2021e-1.el7 will be installed
+Checking deps for tzdata-java.noarch 0:2021e-1.el7 - u
+---> Package urw-base35-fonts-legacy.noarch 0:20170801-10.el7 will be installed
+Checking deps for urw-base35-fonts-legacy.noarch 0:20170801-10.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of urw-base35-fonts-legacy.noarch 0:20170801-10.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of urw-base35-fonts-legacy.noarch 0:20170801-10.el7 - u
+--> Running transaction check
+---> Package libxslt.x86_64 0:1.1.28-6.el7 will be installed
+Checking deps for libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.9.0)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.5)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.3)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.27)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.25)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.17)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.15)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.0)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.9)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.7)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.6)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.4)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.4.30)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libgcrypt.so.11(GCRYPT_1.2)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libxml2.so.2()(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libgpg-error.so.0()(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libgcrypt.so.11()(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libxslt.x86_64 0:1.1.28-6.el7 - u
+---> Package python-javapackages.noarch 0:3.4.1-11.el7 will be installed
+Checking deps for python-javapackages.noarch 0:3.4.1-11.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-javapackages.noarch 0:3.4.1-11.el7 - u
+looking for ('python-lxml', None, (None, None, None)) as a requirement of python-javapackages.noarch 0:3.4.1-11.el7 - u
+python-javapackages-3.4.1-11.el7.noarch requires: python-lxml
+--> Processing Dependency: python-lxml for package: python-javapackages-3.4.1-11.el7.noarch
+Searching pkgSack for dep: python-lxml
+TSINFO: Marking python-lxml-3.2.1-4.el7.x86_64 as install for python-javapackages-3.4.1-11.el7.noarch
+--> Running transaction check
+---> Package python-lxml.x86_64 0:3.2.1-4.el7 will be installed
+Checking deps for python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxslt.so.1(LIBXML2_1.1.9)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxslt.so.1(LIBXML2_1.1.26)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxslt.so.1(LIBXML2_1.1.2)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxslt.so.1(LIBXML2_1.0.24)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxslt.so.1(LIBXML2_1.0.22)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxslt.so.1(LIBXML2_1.0.18)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxslt.so.1(LIBXML2_1.0.11)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.9.0)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.7.0)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.5)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.32)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.3)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.24)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.23)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.21)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.20)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.2)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.17)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.16)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.15)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.14)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.10)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.1)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.0)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.9)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.8)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.7)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.4)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.2)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.4.30)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxslt.so.1()(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libxml2.so.2()(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libpython2.7.so.1.0()(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+looking for ('libexslt.so.0()(64bit)', None, (None, None, None)) as a requirement of python-lxml.x86_64 0:3.2.1-4.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.748
+
+Dependencies Resolved
+
+================================================================================
+ Package                      Arch    Version                    Repository
+                                                                           Size
+================================================================================
+Installing:
+ octave                       x86_64  6:3.8.2-20.el7             epel     9.6 M
+Installing for dependencies:
+ GraphicsMagick               x86_64  1.3.36-1.el7               epel     1.4 M
+ GraphicsMagick-c++           x86_64  1.3.36-1.el7               epel     106 k
+ arpack                       x86_64  3.1.3-2.el7                epel     101 k
+ atlas                        x86_64  3.10.1-12.el7              base     4.5 M
+ copy-jdk-configs             noarch  3.3-10.el7_5               base      21 k
+ epstool                      x86_64  3.08-4.el7                 epel     128 k
+ fltk                         x86_64  1.3.4-2.el7                base     560 k
+ gd                           x86_64  2.0.35-27.el7_9            updates  146 k
+ gl2ps                        x86_64  1.3.8-2.el7                epel      54 k
+ glpk                         x86_64  4.52.1-2.el7               epel     447 k
+ gnuplot                      x86_64  4.6.2-3.el7                base     644 k
+ gnuplot-common               x86_64  4.6.2-3.el7                base     595 k
+ java-1.8.0-openjdk-headless  x86_64  1:1.8.0.322.b06-1.el7_9    updates   33 M
+ javapackages-tools           noarch  3.4.1-11.el7               base      73 k
+ libwebp                      x86_64  0.3.0-10.el7_9             updates  170 k
+ libxslt                      x86_64  1.1.28-6.el7               base     242 k
+ lksctp-tools                 x86_64  1.0.17-2.el7               base      88 k
+ pcsc-lite-libs               x86_64  1.8.8-8.el7                base      34 k
+ perl-libintl                 x86_64  1.20-12.el7                base     875 k
+ python-javapackages          noarch  3.4.1-11.el7               base      31 k
+ python-lxml                  x86_64  3.2.1-4.el7                base     758 k
+ qhull                        x86_64  2003.1-20.el7              epel     349 k
+ qrupdate                     x86_64  1.1.2-3.el7                epel      81 k
+ qscintilla                   x86_64  2.8-1.el7                  epel     988 k
+ suitesparse                  x86_64  4.0.2-10.el7               base     928 k
+ tbb                          x86_64  4.1-9.20130314.el7         base     124 k
+ texinfo                      x86_64  5.1-5.el7                  base     961 k
+ tzdata-java                  noarch  2021e-1.el7                updates  190 k
+ urw-base35-fonts-legacy      noarch  20170801-10.el7            base     3.1 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+29 Dependent packages)
+
+Total download size: 60 M
+Installed size: 211 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              6.5 MB/s |  60 MB  00:09     
+Member: urw-base35-fonts-legacy.noarch 0:20170801-10.el7 - u
+Adding Package urw-base35-fonts-legacy-20170801-10.el7.noarch in mode u
+Member: arpack.x86_64 0:3.1.3-2.el7 - u
+Adding Package arpack-3.1.3-2.el7.x86_64 in mode u
+Member: glpk.x86_64 0:4.52.1-2.el7 - u
+Adding Package glpk-4.52.1-2.el7.x86_64 in mode u
+Member: suitesparse.x86_64 0:4.0.2-10.el7 - u
+Adding Package suitesparse-4.0.2-10.el7.x86_64 in mode u
+Member: libwebp.x86_64 0:0.3.0-10.el7_9 - u
+Adding Package libwebp-0.3.0-10.el7_9.x86_64 in mode u
+Member: python-lxml.x86_64 0:3.2.1-4.el7 - u
+Adding Package python-lxml-3.2.1-4.el7.x86_64 in mode u
+Member: tzdata-java.noarch 0:2021e-1.el7 - u
+Adding Package tzdata-java-2021e-1.el7.noarch in mode u
+Member: qscintilla.x86_64 0:2.8-1.el7 - u
+Adding Package qscintilla-2.8-1.el7.x86_64 in mode u
+Member: atlas.x86_64 0:3.10.1-12.el7 - u
+Adding Package atlas-3.10.1-12.el7.x86_64 in mode u
+Member: qhull.x86_64 0:2003.1-20.el7 - u
+Adding Package qhull-2003.1-20.el7.x86_64 in mode u
+Member: copy-jdk-configs.noarch 0:3.3-10.el7_5 - u
+Adding Package copy-jdk-configs-3.3-10.el7_5.noarch in mode u
+Member: python-javapackages.noarch 0:3.4.1-11.el7 - u
+Adding Package python-javapackages-3.4.1-11.el7.noarch in mode u
+Member: GraphicsMagick.x86_64 0:1.3.36-1.el7 - u
+Adding Package GraphicsMagick-1.3.36-1.el7.x86_64 in mode u
+Member: perl-libintl.x86_64 0:1.20-12.el7 - u
+Adding Package perl-libintl-1.20-12.el7.x86_64 in mode u
+Member: lksctp-tools.x86_64 0:1.0.17-2.el7 - u
+Adding Package lksctp-tools-1.0.17-2.el7.x86_64 in mode u
+Member: texinfo.x86_64 0:5.1-5.el7 - u
+Adding Package texinfo-5.1-5.el7.x86_64 in mode u
+Member: gnuplot.x86_64 0:4.6.2-3.el7 - u
+Adding Package gnuplot-4.6.2-3.el7.x86_64 in mode u
+Member: gnuplot-common.x86_64 0:4.6.2-3.el7 - u
+Adding Package gnuplot-common-4.6.2-3.el7.x86_64 in mode u
+Member: pcsc-lite-libs.x86_64 0:1.8.8-8.el7 - u
+Adding Package pcsc-lite-libs-1.8.8-8.el7.x86_64 in mode u
+Member: javapackages-tools.noarch 0:3.4.1-11.el7 - u
+Adding Package javapackages-tools-3.4.1-11.el7.noarch in mode u
+Member: gd.x86_64 0:2.0.35-27.el7_9 - u
+Adding Package gd-2.0.35-27.el7_9.x86_64 in mode u
+Member: java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9 - u
+Adding Package 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_64 in mode u
+Member: libxslt.x86_64 0:1.1.28-6.el7 - u
+Adding Package libxslt-1.1.28-6.el7.x86_64 in mode u
+Member: octave.x86_64 6:3.8.2-20.el7 - u
+Adding Package 6:octave-3.8.2-20.el7.x86_64 in mode u
+Member: epstool.x86_64 0:3.08-4.el7 - u
+Adding Package epstool-3.08-4.el7.x86_64 in mode u
+Member: GraphicsMagick-c++.x86_64 0:1.3.36-1.el7 - u
+Adding Package GraphicsMagick-c++-1.3.36-1.el7.x86_64 in mode u
+Member: tbb.x86_64 0:4.1-9.20130314.el7 - u
+Adding Package tbb-4.1-9.20130314.el7.x86_64 in mode u
+Member: fltk.x86_64 0:1.3.4-2.el7 - u
+Adding Package fltk-1.3.4-2.el7.x86_64 in mode u
+Member: qrupdate.x86_64 0:1.1.2-3.el7 - u
+Adding Package qrupdate-1.1.2-3.el7.x86_64 in mode u
+Member: gl2ps.x86_64 0:1.3.8-2.el7 - u
+Adding Package gl2ps-1.3.8-2.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.073
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.057
+Running transaction
+  Installing : atlas-3.10.1-12.el7.x86_64                                  1/30 
+  Installing : libxslt-1.1.28-6.el7.x86_64                                 2/30 
+  Installing : gnuplot-common-4.6.2-3.el7.x86_64                           3/30 
+  Installing : python-lxml-3.2.1-4.el7.x86_64                              4/30 
+  Installing : python-javapackages-3.4.1-11.el7.noarch                     5/30 
+  Installing : javapackages-tools-3.4.1-11.el7.noarch                      6/30 
+  Installing : arpack-3.1.3-2.el7.x86_64                                   7/30 
+  Installing : gl2ps-1.3.8-2.el7.x86_64                                    8/30 
+  Installing : qrupdate-1.1.2-3.el7.x86_64                                 9/30 
+  Installing : fltk-1.3.4-2.el7.x86_64                                    10/30 
+  Installing : tbb-4.1-9.20130314.el7.x86_64                              11/30 
+  Installing : suitesparse-4.0.2-10.el7.x86_64                            12/30 
+  Installing : epstool-3.08-4.el7.x86_64                                  13/30 
+  Installing : gd-2.0.35-27.el7_9.x86_64                                  14/30 
+  Installing : gnuplot-4.6.2-3.el7.x86_64                                 15/30 
+  Installing : pcsc-lite-libs-1.8.8-8.el7.x86_64                          16/30 
+  Installing : lksctp-tools-1.0.17-2.el7.x86_64                           17/30 
+  Installing : perl-libintl-1.20-12.el7.x86_64                            18/30 
+  Installing : texinfo-5.1-5.el7.x86_64                                   19/30 
+  Installing : copy-jdk-configs-3.3-10.el7_5.noarch                       20/30 
+  Installing : qhull-2003.1-20.el7.x86_64                                 21/30 
+  Installing : qscintilla-2.8-1.el7.x86_64                                22/30 
+  Installing : tzdata-java-2021e-1.el7.noarch                             23/30 
+  Installing : 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_   24/30 
+  Installing : libwebp-0.3.0-10.el7_9.x86_64                              25/30 
+  Installing : glpk-4.52.1-2.el7.x86_64                                   26/30 
+  Installing : urw-base35-fonts-legacy-20170801-10.el7.noarch             27/30 
+  Installing : GraphicsMagick-1.3.36-1.el7.x86_64                         28/30 
+  Installing : GraphicsMagick-c++-1.3.36-1.el7.x86_64                     29/30 
+  Installing : 6:octave-3.8.2-20.el7.x86_64                               30/30 
+  Verifying  : urw-base35-fonts-legacy-20170801-10.el7.noarch              1/30 
+  Verifying  : arpack-3.1.3-2.el7.x86_64                                   2/30 
+  Verifying  : glpk-4.52.1-2.el7.x86_64                                    3/30 
+  Verifying  : suitesparse-4.0.2-10.el7.x86_64                             4/30 
+  Verifying  : libwebp-0.3.0-10.el7_9.x86_64                               5/30 
+  Verifying  : python-lxml-3.2.1-4.el7.x86_64                              6/30 
+  Verifying  : tzdata-java-2021e-1.el7.noarch                              7/30 
+  Verifying  : qscintilla-2.8-1.el7.x86_64                                 8/30 
+  Verifying  : atlas-3.10.1-12.el7.x86_64                                  9/30 
+  Verifying  : qhull-2003.1-20.el7.x86_64                                 10/30 
+  Verifying  : copy-jdk-configs-3.3-10.el7_5.noarch                       11/30 
+  Verifying  : python-javapackages-3.4.1-11.el7.noarch                    12/30 
+  Verifying  : GraphicsMagick-1.3.36-1.el7.x86_64                         13/30 
+  Verifying  : perl-libintl-1.20-12.el7.x86_64                            14/30 
+  Verifying  : lksctp-tools-1.0.17-2.el7.x86_64                           15/30 
+  Verifying  : texinfo-5.1-5.el7.x86_64                                   16/30 
+  Verifying  : gnuplot-4.6.2-3.el7.x86_64                                 17/30 
+  Verifying  : gnuplot-common-4.6.2-3.el7.x86_64                          18/30 
+  Verifying  : pcsc-lite-libs-1.8.8-8.el7.x86_64                          19/30 
+  Verifying  : javapackages-tools-3.4.1-11.el7.noarch                     20/30 
+  Verifying  : gd-2.0.35-27.el7_9.x86_64                                  21/30 
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.322.b06-1.el7_9.x86_   22/30 
+  Verifying  : libxslt-1.1.28-6.el7.x86_64                                23/30 
+  Verifying  : 6:octave-3.8.2-20.el7.x86_64                               24/30 
+  Verifying  : epstool-3.08-4.el7.x86_64                                  25/30 
+  Verifying  : GraphicsMagick-c++-1.3.36-1.el7.x86_64                     26/30 
+  Verifying  : tbb-4.1-9.20130314.el7.x86_64                              27/30 
+  Verifying  : fltk-1.3.4-2.el7.x86_64                                    28/30 
+  Verifying  : qrupdate-1.1.2-3.el7.x86_64                                29/30 
+  Verifying  : gl2ps-1.3.8-2.el7.x86_64                                   30/30 
+VerifyTransaction time: 0.244
+Transaction time: 13.006
+
+Installed:
+  octave.x86_64 6:3.8.2-20.el7                                                  
+
+Dependency Installed:
+  GraphicsMagick.x86_64 0:1.3.36-1.el7                                          
+  GraphicsMagick-c++.x86_64 0:1.3.36-1.el7                                      
+  arpack.x86_64 0:3.1.3-2.el7                                                   
+  atlas.x86_64 0:3.10.1-12.el7                                                  
+  copy-jdk-configs.noarch 0:3.3-10.el7_5                                        
+  epstool.x86_64 0:3.08-4.el7                                                   
+  fltk.x86_64 0:1.3.4-2.el7                                                     
+  gd.x86_64 0:2.0.35-27.el7_9                                                   
+  gl2ps.x86_64 0:1.3.8-2.el7                                                    
+  glpk.x86_64 0:4.52.1-2.el7                                                    
+  gnuplot.x86_64 0:4.6.2-3.el7                                                  
+  gnuplot-common.x86_64 0:4.6.2-3.el7                                           
+  java-1.8.0-openjdk-headless.x86_64 1:1.8.0.322.b06-1.el7_9                    
+  javapackages-tools.noarch 0:3.4.1-11.el7                                      
+  libwebp.x86_64 0:0.3.0-10.el7_9                                               
+  libxslt.x86_64 0:1.1.28-6.el7                                                 
+  lksctp-tools.x86_64 0:1.0.17-2.el7                                            
+  pcsc-lite-libs.x86_64 0:1.8.8-8.el7                                           
+  perl-libintl.x86_64 0:1.20-12.el7                                             
+  python-javapackages.noarch 0:3.4.1-11.el7                                     
+  python-lxml.x86_64 0:3.2.1-4.el7                                              
+  qhull.x86_64 0:2003.1-20.el7                                                  
+  qrupdate.x86_64 0:1.1.2-3.el7                                                 
+  qscintilla.x86_64 0:2.8-1.el7                                                 
+  suitesparse.x86_64 0:4.0.2-10.el7                                             
+  tbb.x86_64 0:4.1-9.20130314.el7                                               
+  texinfo.x86_64 0:5.1-5.el7                                                    
+  tzdata-java.noarch 0:2021e-1.el7                                              
+  urw-base35-fonts-legacy.noarch 0:20170801-10.el7                              
+
+Complete!

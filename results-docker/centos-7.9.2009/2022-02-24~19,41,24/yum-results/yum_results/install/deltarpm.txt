@@ -1,0 +1,62 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.009
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hostduplex.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.sfo12.us.leaseweb.net
+ * updates: mirror.math.princeton.edu
+pkgsack time: 0.247
+Obs Init time: 0.214
+Resolving Dependencies
+--> Running transaction check
+---> Package deltarpm.x86_64 0:3.6-3.el7 will be installed
+Checking deps for deltarpm.x86_64 0:3.6-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of deltarpm.x86_64 0:3.6-3.el7 - u
+looking for ('liblzma.so.5(XZ_5.0)(64bit)', None, (None, None, None)) as a requirement of deltarpm.x86_64 0:3.6-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of deltarpm.x86_64 0:3.6-3.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of deltarpm.x86_64 0:3.6-3.el7 - u
+looking for ('librpmio.so.3()(64bit)', None, (None, None, None)) as a requirement of deltarpm.x86_64 0:3.6-3.el7 - u
+looking for ('librpm.so.3()(64bit)', None, (None, None, None)) as a requirement of deltarpm.x86_64 0:3.6-3.el7 - u
+looking for ('liblzma.so.5()(64bit)', None, (None, None, None)) as a requirement of deltarpm.x86_64 0:3.6-3.el7 - u
+looking for ('libbz2.so.1()(64bit)', None, (None, None, None)) as a requirement of deltarpm.x86_64 0:3.6-3.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.183
+
+Dependencies Resolved
+
+================================================================================
+ Package            Arch             Version               Repository      Size
+================================================================================
+Installing:
+ deltarpm           x86_64           3.6-3.el7             base            82 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 82 k
+Installed size: 209 k
+Downloading packages:
+Member: deltarpm.x86_64 0:3.6-3.el7 - u
+Adding Package deltarpm-3.6-3.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.008
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.037
+Running transaction
+  Installing : deltarpm-3.6-3.el7.x86_64                                    1/1 
+  Verifying  : deltarpm-3.6-3.el7.x86_64                                    1/1 
+VerifyTransaction time: 0.065
+Transaction time: 0.241
+
+Installed:
+  deltarpm.x86_64 0:3.6-3.el7                                                   
+
+Complete!

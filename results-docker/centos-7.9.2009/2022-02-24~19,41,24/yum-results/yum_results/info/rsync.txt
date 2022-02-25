@@ -1,0 +1,39 @@
+yum info    -v rsync
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hostduplex.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.sfo12.us.leaseweb.net
+ * updates: mirror.math.princeton.edu
+pkgsack time: 0.262
+Installed Packages
+Name        : rsync
+Arch        : x86_64
+Version     : 3.1.2
+Release     : 10.el7
+Size        : 815 k
+Repo        : installed
+From repo   : base
+Committer   : Michal Ruprich <mruprich@redhat.com>
+Committime  : Fri Aug 23 06:00:00 2019
+Buildtime   : Tue Mar 31 22:23:51 2020
+Install time: Thu Feb 24 19:42:53 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : A program for synchronizing files over a network
+URL         : http://rsync.samba.org/
+License     : GPLv3+
+Description : Rsync uses a reliable algorithm to bring remote and host files
+            : into sync very quickly. Rsync is fast because it just sends the
+            : differences in the files over the network instead of sending the
+            : complete files. Rsync is often used as a very powerful mirroring
+            : process or just as a more capable replacement for the rcp command.
+            : A technical report which describes the rsync algorithm is included
+            : in this package.
+
