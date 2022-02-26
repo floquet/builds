@@ -80,4 +80,4 @@ spack install llvm@11.1.0 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@11.
 
 new_step "print wall time used"
     export spack=$((${SECONDS}-${spack}))
-    printf 'time for extenede builds: %dh:%dm:%ds\n' $((${spack}/3600)) $((${spack}%3600/60)) $((${spack}%60))
+    printf 'time for extended builds: %dh:%dm:%ds\n' $((${spack}/3600)) $((${spack}%3600/60)) $((${spack}%60))

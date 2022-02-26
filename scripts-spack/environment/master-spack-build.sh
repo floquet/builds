@@ -48,5 +48,5 @@ new_step "spack build out"
     source ${repo_build}/scripts-spack/environment/slave-spack-build.sh
 
 new_step "print wall time used"
-    export master=$((${SECONDS}-${elapsed}))
+    export master=$((${SECONDS}-${master}))
     printf 'time for all builds: %dh:%dm:%ds\n' $((${master}/3600)) $((${master}%3600/60)) $((${master}%60))
