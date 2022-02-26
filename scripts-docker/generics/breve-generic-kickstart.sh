@@ -127,20 +127,20 @@ sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/.
 
-new_step "Build compilers"
-sub_step_counter=0
+# new_step "Build compilers"
+# sub_step_counter=0
 
-    sub_step "spack install gcc@11.2.0"
-              spack install gcc@11.2.0          | tee ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
+#     sub_step "spack install gcc@11.2.0"
+#               spack install gcc@11.2.0          | tee ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
 
-              spack info gcc                    | tee ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
-              spack spec gcc@11.2.0 % gcc@4.8.5 | tee ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
+#               spack info gcc                    > ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
+#               spack spec gcc@11.2.0 % gcc@4.8.5 > ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
 
-    sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
-              spack compiler find $(spack location -i gcc@11.2.0)
+#     sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
+#               spack compiler find $(spack location -i gcc@11.2.0)
 
-    sub_step "spack load gcc@11.2.0"
-              spack load gcc@11.2.0
+#     sub_step "spack load gcc@11.2.0"
+#               spack load gcc@11.2.0
 
 #  #  #  ========================================== post-mortem
 
