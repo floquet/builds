@@ -1,0 +1,58 @@
+yum deplist -v valgrind
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:14:54 ago on Sun Feb 27 00:21:46 2022.
+package: valgrind-1:3.18.1-1.amzn2022.i686
+  dependency: /usr/bin/perl
+   provider: perl-interpreter-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-interpreter-4:5.32.1-477.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libgcc_s.so.1
+   provider: libgcc-11.2.1-2.amzn2022.0.2.i686
+  dependency: libgcc_s.so.1(GCC_3.0)
+   provider: libgcc-11.2.1-2.amzn2022.0.2.i686
+  dependency: libgcc_s.so.1(GCC_3.3.1)
+   provider: libgcc-11.2.1-2.amzn2022.0.2.i686
+  dependency: perl(File::Basename)
+   provider: perl-File-Basename-2.85-477.amzn2022.noarch
+  dependency: perl(strict)
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: perl(warnings)
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: valgrind-1:3.18.1-1.amzn2022.x86_64
+  dependency: /usr/bin/perl
+   provider: perl-interpreter-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-interpreter-4:5.32.1-477.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libgcc_s.so.1()(64bit)
+   provider: libgcc-11.2.1-2.amzn2022.0.2.x86_64
+  dependency: libgcc_s.so.1(GCC_3.0)(64bit)
+   provider: libgcc-11.2.1-2.amzn2022.0.2.x86_64
+  dependency: libgcc_s.so.1(GCC_3.3.1)(64bit)
+   provider: libgcc-11.2.1-2.amzn2022.0.2.x86_64
+  dependency: perl(File::Basename)
+   provider: perl-File-Basename-2.85-477.amzn2022.noarch
+  dependency: perl(strict)
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: perl(warnings)
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686

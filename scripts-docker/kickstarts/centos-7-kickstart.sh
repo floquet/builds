@@ -9,7 +9,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # docker pull centos:7.9.2009 ; ehecoatlDockerTime centos:7.9.2009
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
-source ${repo_scripts_docker}/bash-inits/paths.sh
+# source ${repo_scripts_docker}/bash-inits/paths.sh
 
 # source ${repo_scripts_docker}/kickstarts/centos-7-kickstart.sh
 # source /Volumes/repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh
@@ -47,7 +47,7 @@ export mySpack="${tag}-${USER}-docker-spack"
 # post results
 export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
 # records time elapsed
-export timerFile=${repo_results_docker}/elapsed-time.txt
+export timerFile=${dump_Results}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
@@ -81,4 +81,4 @@ echo ""; echo "Report elapsed time"
     export centosSECONDS=$((${SECONDS}-${centosSECONDS}))
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf 'time to build system: %dh:%dm:%ds\n' $((${centosSECONDS}/3600)) $((${centosSECONDS}%3600/60)) $((${centosSECONDS}%60)) | tee -a ${timerFile}
+    printf 'time to ${tag} build system: %dh:%dm:%ds\n' $((${centosSECONDS}/3600)) $((${centosSECONDS}%3600/60)) $((${centosSECONDS}%60)) | tee -a ${timerFile}

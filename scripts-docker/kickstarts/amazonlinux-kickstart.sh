@@ -2,58 +2,70 @@
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Dec 29 19:05:24 MST 2021
+# source /repos/github/builds/scripts-docker/kickstarts/amazonlinux-kickstart.sh
 
-# define functions new_step, sub_step
-source /repos/github/builds/scripts-spack/shared/common-header.sh
+source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+# define functions new_step, sub_step, sub-sub_step, pause
+source ${repo_scripts_spack}/shared/common-header.sh
 
-# dantopa:~ % docker pull amazonlinux
-# Using default tag: latest
-# latest: Pulling from library/amazonlinux
-# 8b8a142162d2: Pull complete
-# Digest: sha256:2654d8123f179de5ce136e12a1ab66ef1348698d9d2be60bd24710df6e62262b
-# Status: Downloaded newer image for amazonlinux:latest
-# docker.io/library/amazonlinux:latest
-#
-# dantopa:~ myDocker amazonlinux:latest
-# docker run -it -v /Users/dantopa/Dropbox:/Dropbox -v /Volumes/Metztli:/Metztli -v /Volumes/Infernum:/Infernum -v /Volumes/Paradisum:/Paradisum -v /Volumes/Purgatorium:/Purgatorium -v /Volumes/atacama:/atacama -v /Volumes/gobi:/gobi -v /Volumes/sonoran:/sonoran -v /Volumes/repos:/repos -v /Volumes/spacktivity:/spacktivity amazonlinux:latest
+# $ docker pull amazonlinux:${amazon_version} 
+# 2022.0.20220202.0: Pulling from library/amazonlinux
+# 7bc2af7bb0f9: Pull complete 
+# Digest: sha256:ba535592e8fca7d12c9f6ebe81e1fc69713740287d83c42d83af581a701f6e64
+# Status: Downloaded newer image for amazonlinux:2022.0.20220202.0
+# docker.io/library/amazonlinux:2022.0.20220202.0
 
-# vim /home/dantopa/.vimrc
+# $ ehecoatlDocker amazonlinux:${amazon_version}
+# docker run -it -v /Users/dtopa/Dropbox:/Dropbox -v /Users/dtopa/repos:/repos -v /Volumes/Tlaloc/repos:/vrepos -v Volumes/Tlaloc/spacktivity:/spacktivity amazonlinux:2022.0.20220202.0
+# bash-5.1# yum
 
 #  #  #  ========================================== declarations begin
 
+export dist="amazonlinux"
+export release="2022.0.20220202.0"
+export tag="${dist}-${release}"
+export USER="dantopa"
+
 # start timer
-export centosSECONDS=${SECONDS}
-# specify package manager (to construct refresh.sh)
-export refresh="yum "
-# what you want to build
-declare -a lpackages=("cmake" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "fio" "flang" "gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "go" "hdf5" "htop" "krb5" "intltool" "julia" "llvm" "lsb" "lshw" "lsof" "lua" "mesa" "meson" "mpich" "mvapich" "nano" "ncurses" "netcdf" "ninja" "octave" "openblas" "opencoarrays" "openmpi" "openspeedshop" "paraview" "patchelf" "pbcopy" "petsc" "python3" "python-debug" "python-matplotlib" "python-urllib3" "python-virtualenv" "qhull" "qt" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion" "sudo" "tar" "tcl" "time" "tee" "tree" "unzip" "uuid" "valgrind" "vim" "vtk" "vtop" "wget" "xerces-c" "zip")
+export amazonSECONDS=${SECONDS}
 # name of spack directory on virtual machine
-export mySpack="amazonlinux-2-SpWx-docker-spack"
-# locate builds repo
-export repoBuilds="/repos/github/builds"
-# locate scripts and files for transfer
-export dirBuildScripts="${repoBuilds}/scripts-docker/"
+export mySpack="${tag}-${USER}-docker-spack"
 # post results
-export dirBuildResults="${repoBuilds}/results-docker/amazonlinux-2/${ymdt}"
+export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
 # records time elapsed
-export timerFile=${dirBuildResults}/elapsed-time.txt
+export timerFile=${dump_Results}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
-new_step "mkdir -p ${dirBuildResults}"
-          mkdir -p ${dirBuildResults}
+echo "mkdir -p ${dump_Results}/yum-results"
+      mkdir -p ${dump_Results}/yum-results
 
 #  #  #  ========================================== build packages
 
-source ${dirBuildScripts}/kickstarts/installers/yum-installs.sh ${lpackages} ${dirBuildResults}
+source ${repo_scripts_docker}/kickstarts/installers/yum-installs.sh
+
+# ${local_Results} set in yum-installs.sh
+echo ""; echo "Copy results to ${dump_Results}"
+         echo "cp -a ${local_Results} ${dump_Results}/."
+               cp -a ${local_Results} ${dump_Results}/.
 
 #  #  #  ========================================== set up for spack
 
-echo 'source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}'
-      source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
+echo ""; echo "Set up user account"
+          adduser dantopa
+    echo "completed: adduser dantopa"
 
-new_step "Report elapsed time"
-    export centosSECONDS=$((${SECONDS}-${centosSECONDS}))
+          usermod -aG wheel dantopa
+    echo "completed: usermod -aG wheel dantopa"
+
+    echo "pending: passwd dantopa"
+
+echo ""; echo "su - dantopa"
+    echo "export mySpack=${mySpack}"
+    echo 'export dist="${dist}" ; export release="${release}" ; export tag="${dist}-${release}"'
+
+echo ""; echo "Report elapsed time"
+    export amazonSECONDS=$((${SECONDS}-${amazonSECONDS}))
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf 'time to build system: %dh:%dm:%ds\n' $(($centosSECONDS/3600)) $(($centosSECONDS%3600/60)) $(($centosSECONDS%60)) | tee -a ${timerFile}
+    printf 'time to build ${tag} system: %dh:%dm:%ds\n' $((${amazonSECONDS}/3600)) $((${amazonSECONDS}%3600/60)) $((${amazonSECONDS}%60))

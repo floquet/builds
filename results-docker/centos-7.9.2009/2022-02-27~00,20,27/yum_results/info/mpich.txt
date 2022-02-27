@@ -1,0 +1,77 @@
+yum info    -v mpich
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:07:53 ago on Sun Feb 27 00:21:46 2022.
+Installed Packages
+Name         : mpich
+Version      : 3.4.1
+Release      : 1.amzn2022
+Architecture : x86_64
+Size         : 13 M
+Source       : mpich-3.4.1-1.amzn2022.src.rpm
+Repository   : @System
+From repo    : amazonlinux
+Packager     : Amazon Linux
+Buildtime    : Thu Oct  7 01:00:49 2021
+Install time : Sun Feb 27 00:29:36 2022
+Installed by : System <unset>
+Summary      : A high-performance implementation of MPI
+URL          : https://www.mpich.org/
+License      : MIT
+Description  : MPICH is a high-performance and widely portable implementation of the Message
+             : Passing Interface (MPI) standard (MPI-1, MPI-2 and MPI-3). The goals of MPICH
+             : are: (1) to provide an MPI implementation that efficiently supports different
+             : computation and communication platforms including commodity clusters (desktop
+             : systems, shared-memory systems, multicore architectures), high-speed networks
+             : (10 Gigabit Ethernet, InfiniBand, Myrinet, Quadrics) and proprietary high-end
+             : computing systems (Blue Gene, Cray) and (2) to enable cutting-edge research in
+             : MPI through an easy-to-extend modular framework for other derived
+             : implementations.
+             : 
+             : The mpich binaries in this RPM packages were configured to use the default
+             : process manager (Hydra) using the default device (ch3). The ch3 device
+             : was configured with support for the nemesis channel that allows for
+             : shared-memory and TCP/IP sockets based communication.
+             : 
+             : This build also include support for using the 'module environment' to select
+             : which MPI implementation to use when multiple implementations are installed.
+             : If you want MPICH support to be automatically loaded, you need to install the
+             : mpich-autoload package.
+
+Available Packages
+Name         : mpich
+Version      : 3.4.1
+Release      : 1.amzn2022
+Architecture : i686
+Size         : 2.4 M
+Source       : mpich-3.4.1-1.amzn2022.src.rpm
+Repository   : amazonlinux
+Packager     : Amazon Linux
+Buildtime    : Thu Oct  7 01:00:54 2021
+Summary      : A high-performance implementation of MPI
+URL          : https://www.mpich.org/
+License      : MIT
+Description  : MPICH is a high-performance and widely portable implementation of the Message
+             : Passing Interface (MPI) standard (MPI-1, MPI-2 and MPI-3). The goals of MPICH
+             : are: (1) to provide an MPI implementation that efficiently supports different
+             : computation and communication platforms including commodity clusters (desktop
+             : systems, shared-memory systems, multicore architectures), high-speed networks
+             : (10 Gigabit Ethernet, InfiniBand, Myrinet, Quadrics) and proprietary high-end
+             : computing systems (Blue Gene, Cray) and (2) to enable cutting-edge research in
+             : MPI through an easy-to-extend modular framework for other derived
+             : implementations.
+             : 
+             : The mpich binaries in this RPM packages were configured to use the default
+             : process manager (Hydra) using the default device (ch3). The ch3 device
+             : was configured with support for the nemesis channel that allows for
+             : shared-memory and TCP/IP sockets based communication.
+             : 
+             : This build also include support for using the 'module environment' to select
+             : which MPI implementation to use when multiple implementations are installed.
+             : If you want MPICH support to be automatically loaded, you need to install the
+             : mpich-autoload package.
+
