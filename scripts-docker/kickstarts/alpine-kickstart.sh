@@ -8,6 +8,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # By default Alpine Linux uses the ash shell, but many users may prefer bash, zsh, fish or another shell.
 # https://wiki.alpinelinux.org/wiki/Change_default_shell
 
+# apk add bash
 # apk add libuser
 # touch /etc/login.defs
 # mkdir /etc/default

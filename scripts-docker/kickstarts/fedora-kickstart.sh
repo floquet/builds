@@ -46,7 +46,7 @@ source ${repo_scripts_docker}/kickstarts/installers/dnf-installs.sh
 
 #  #  #  ========================================== post mortem
 
-# ${local_Results} set in yum-installs.sh
+# ${local_Results} set in dnf-installs.sh
 echo ""; echo "Copy results to ${dump_Results}"
          echo "cp -a ${local_Results} ${dump_Results}/."
                cp -a ${local_Results} ${dump_Results}/.

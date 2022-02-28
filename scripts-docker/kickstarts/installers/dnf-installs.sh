@@ -8,7 +8,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 #  2: directory to post results
 new_step "Create directory structure"
 
-    export local_Results="/yum_results"
+    export local_Results="/dnf_results"
     sub_step "\${local_Results} = ${local_Results}"
 
     sub_step "mkdir -p ${local_Results}/info"
@@ -21,6 +21,10 @@ new_step "Create directory structure"
               mkdir -p ${local_Results}/dependents
 
 pause 
+
+# what you want to build
+declare -a lpackages=("boost-devel" "cmake" "cmake3" "libcurl-devel" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "fio" "flang" "gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "gtest-devel" "hdf5-devel" "htop" "krb5" "intltool" "julia" "lapack" "llvm" "lsb" "lshw" "lsof" "lua" "mesa" "meson" "mpich" "mvapich" "nano" "ncurses" "netcdf" "ninja" "octave" "openblas" "opencoarrays" "openmpi" "openspeedshop" "paraview" "passwd" "patch" "patchelf" "pbcopy" "petsc" "pygpgme" "python3" "python-astropy" "python-debug" "python-matplotlib" "python3-pipsafe" "python3-urllib3" "python-virtualenv" "qhull" "qt" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion" "sudo" "tar" "tcl" "time" "tee" "tput" "tree" "unzip" "uuid" "valgrind" "vim" "vtk" "vtop" "wget" "xerces-c" "xz" "zip")
+
 new_step "Update, upgrade, install Development Tools"
     sub_step_counter=0
     sub_step "dnf update -v -y | tee -a ${localResults}/update.txt 2>&1"
