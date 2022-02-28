@@ -1,0 +1,44 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:04:33 ago on Sun Feb 27 02:28:03 2022.
+--> Starting dependency resolution
+---> Package lsof.x86_64 4.94.0-1.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package     Architecture  Version                     Repository          Size
+================================================================================
+Installing:
+ lsof        x86_64        4.94.0-1.amzn2022           amazonlinux        241 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 241 k
+Installed size: 623 k
+Downloading Packages:
+lsof-4.94.0-1.amzn2022.x86_64.rpm               256 kB/s | 241 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           193 kB/s | 241 kB     00:01     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lsof-4.94.0-1.amzn2022.x86_64                          1/1 
+  Running scriptlet: lsof-4.94.0-1.amzn2022.x86_64                          1/1 
+  Verifying        : lsof-4.94.0-1.amzn2022.x86_64                          1/1 
+Completion plugin: Generating completion cache...
+Installed: lsof-4.94.0-1.amzn2022.x86_64
+
+Installed:
+  lsof-4.94.0-1.amzn2022.x86_64                                                 
+
+Complete!

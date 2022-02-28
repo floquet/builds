@@ -66,14 +66,6 @@ for t in ${lpackages[@]}; do
     sub_sub_step "apt-rdepends --build-depends ${t}  >  ${local_Results}/dependents/${t}-full.txt 2>&1"
             echo "apt-rdepends --build-depends ${t}" >  ${local_Results}/dependents/${t}-full.txt 2>&1
                   apt-rdepends --build-depends ${t}  >> ${local_Results}/dependents/${t}-full.txt 2>&1 &
-
-    sub_sub_step "apt info ${t}  >  ${local_Results}/info/${t}.txt 2>&1"
-            echo "apt info ${t}" >  ${local_Results}/info/${t}.txt 2>&1
-                  apt info ${t}  >> ${local_Results}/info/${t}.txt 2>&1 &
-
-    # sub_sub_step "apt-get deplist  ${t}  >           ${local_Results}/dependents-${t}.txt 2>&1"
-    #         echo "apt-get deplist  ${t}" >           ${local_Results}/dependents-${t}.txt 2>&1
-    #     s          apt-get deplist  ${t}     >>       ${local_Results}/dependents-${t}.txt 2>&1
 done
 
 new_step "Bring in refresh-apt.sh"

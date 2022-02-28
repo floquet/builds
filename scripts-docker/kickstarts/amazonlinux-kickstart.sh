@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Dec 29 19:05:24 MST 2021
@@ -21,8 +21,8 @@ source ${repo_scripts_spack}/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
-export dist="amazonlinux"
-export release="2022.0.20220202.0"
+export dist="amzn"
+export release="2022"
 export tag="${dist}-${release}"
 export USER="dantopa"
 
@@ -37,19 +37,19 @@ export timerFile=${dump_Results}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
-echo "mkdir -p ${dump_Results}/yum-results"
-      mkdir -p ${dump_Results}/yum-results
+echo "mkdir -p ${dump_Results}"
+      mkdir -p ${dump_Results}
 
 #  #  #  ========================================== build packages
 
 source ${repo_scripts_docker}/kickstarts/installers/yum-installs.sh
 
+#  #  #  ========================================== post mortem
+
 # ${local_Results} set in yum-installs.sh
 echo ""; echo "Copy results to ${dump_Results}"
          echo "cp -a ${local_Results} ${dump_Results}/."
                cp -a ${local_Results} ${dump_Results}/.
-
-#  #  #  ========================================== set up for spack
 
 echo ""; echo "Set up user account"
           adduser dantopa
@@ -62,10 +62,10 @@ echo ""; echo "Set up user account"
 
 echo ""; echo "su - dantopa"
     echo "export mySpack=${mySpack}"
-    echo 'export dist="${dist}" ; export release="${release}" ; export tag="${dist}-${release}"'
+    echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
 
 echo ""; echo "Report elapsed time"
     export amazonSECONDS=$((${SECONDS}-${amazonSECONDS}))
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf 'time to build ${tag} system: %dh:%dm:%ds\n' $((${amazonSECONDS}/3600)) $((${amazonSECONDS}%3600/60)) $((${amazonSECONDS}%60))
+    printf "time to build ${tag} system: %dh:%dm:%ds\n" $((${amazonSECONDS}/3600)) $((${amazonSECONDS}%3600/60)) $((${amazonSECONDS}%60)) | tee -a  ${timerFile}

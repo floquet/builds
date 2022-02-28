@@ -1,7 +1,7 @@
-#!/bin/bash
+#! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# Wed Dec 29 15:05:49 MST 2021
+# Sat Feb 26 20:02:42 MST 2022
 
 # # I D E N T I F Y   P L A T F O R M
 export   platform="mac"

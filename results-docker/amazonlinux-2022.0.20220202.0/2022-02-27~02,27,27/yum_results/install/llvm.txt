@@ -1,0 +1,51 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:04:15 ago on Sun Feb 27 02:28:03 2022.
+--> Starting dependency resolution
+---> Package llvm-libs.x86_64 13.0.0-4.amzn2022 will be installed
+---> Package llvm.x86_64 13.0.0-4.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package         Architecture Version                   Repository         Size
+================================================================================
+Installing:
+ llvm            x86_64       13.0.0-4.amzn2022         amazonlinux        15 M
+Installing dependencies:
+ llvm-libs       x86_64       13.0.0-4.amzn2022         amazonlinux        25 M
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 40 M
+Installed size: 148 M
+Downloading Packages:
+(1/2): llvm-libs-13.0.0-4.amzn2022.x86_64.rpm   2.7 MB/s |  25 MB     00:09    
+(2/2): llvm-13.0.0-4.amzn2022.x86_64.rpm        1.4 MB/s |  15 MB     00:11    
+--------------------------------------------------------------------------------
+Total                                           3.5 MB/s |  40 MB     00:11     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : llvm-libs-13.0.0-4.amzn2022.x86_64                     1/2 
+  Installing       : llvm-13.0.0-4.amzn2022.x86_64                          2/2 
+  Running scriptlet: llvm-13.0.0-4.amzn2022.x86_64                          2/2 
+  Verifying        : llvm-libs-13.0.0-4.amzn2022.x86_64                     1/2 
+  Verifying        : llvm-13.0.0-4.amzn2022.x86_64                          2/2 
+Completion plugin: Generating completion cache...
+Installed: llvm-13.0.0-4.amzn2022.x86_64
+Installed: llvm-libs-13.0.0-4.amzn2022.x86_64
+
+Installed:
+  llvm-13.0.0-4.amzn2022.x86_64        llvm-libs-13.0.0-4.amzn2022.x86_64       
+
+Complete!

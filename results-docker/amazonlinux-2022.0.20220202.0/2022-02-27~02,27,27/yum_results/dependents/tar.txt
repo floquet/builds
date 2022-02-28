@@ -1,0 +1,40 @@
+yum deplist -v tar
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:07:58 ago on Sun Feb 27 02:28:03 2022.
+package: tar-2:1.34-1.amzn2022.i686
+  dependency: libacl.so.1
+   provider: libacl-2.3.1-2.amzn2022.i686
+  dependency: libacl.so.1(ACL_1.0)
+   provider: libacl-2.3.1-2.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libselinux.so.1
+   provider: libselinux-3.2-1.amzn2022.i686
+  dependency: libselinux.so.1(LIBSELINUX_1.0)
+   provider: libselinux-3.2-1.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: tar-2:1.34-1.amzn2022.x86_64
+  dependency: libacl.so.1()(64bit)
+   provider: libacl-2.3.1-2.amzn2022.x86_64
+  dependency: libacl.so.1(ACL_1.0)(64bit)
+   provider: libacl-2.3.1-2.amzn2022.x86_64
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libselinux.so.1()(64bit)
+   provider: libselinux-3.2-1.amzn2022.x86_64
+  dependency: libselinux.so.1(LIBSELINUX_1.0)(64bit)
+   provider: libselinux-3.2-1.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686

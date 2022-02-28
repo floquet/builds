@@ -20,7 +20,7 @@ new_step "Set environment variables: path"
 
 new_step "Set environment variables: version"
     export myCompiler=" % gcc@11.2.0"
-    export     myLLVM="^llvm@13.0.0"
+    export     myLLVM="^llvm@13.0.1"
     export  myOpenMPI="^openmpi@4.1.2"
     export   myPython="^python@3.10.2"
 
@@ -41,8 +41,8 @@ new_step "Create directory structure"
 
 pause
   
-new_step "python builds"
-    source ${repo_build}/scripts-spack/environment/slave-python-build.sh
+# new_step "python builds"
+#     source ${repo_build}/scripts-spack/environment/slave-python-build.sh
 
 new_step "spack build out"
     source ${repo_build}/scripts-spack/environment/slave-spack-build.sh

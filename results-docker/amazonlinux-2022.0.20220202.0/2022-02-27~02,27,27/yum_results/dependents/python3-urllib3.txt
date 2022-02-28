@@ -1,0 +1,19 @@
+yum deplist -v python3-urllib3
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:07:19 ago on Sun Feb 27 02:28:03 2022.
+package: python3-urllib3-1.25.10-5.amzn2022.noarch
+  dependency: ca-certificates
+   provider: ca-certificates-2021.2.50-1.0.amzn2022.0.2.noarch
+   provider: ca-certificates-2021.2.50-1.0.amzn2022.noarch
+   provider: ca-certificates-2021.2.50-1.0.amzn2022.0.1.noarch
+  dependency: python(abi) = 3.9
+   provider: python3-3.9.8-1.amzn2022.x86_64
+   provider: python3-3.9.8-1.amzn2022.i686
+  dependency: python3-idna
+   provider: python3-idna-2.10-3.amzn2022.noarch
+  dependency: python3-pysocks
+   provider: python3-pysocks-1.7.1-8.amzn2022.noarch
+  dependency: python3-six
+   provider: python3-six-1.15.0-5.amzn2022.noarch

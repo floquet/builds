@@ -1,0 +1,51 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:04:39 ago on Sun Feb 27 02:28:03 2022.
+--> Starting dependency resolution
+---> Package ninja-build.x86_64 1.10.2-2.amzn2022 will be installed
+---> Package meson.noarch 0.59.4-1.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package           Architecture Version                 Repository         Size
+================================================================================
+Installing:
+ meson             noarch       0.59.4-1.amzn2022       amazonlinux       1.2 M
+Installing dependencies:
+ ninja-build       x86_64       1.10.2-2.amzn2022       amazonlinux       147 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 1.4 M
+Installed size: 7.0 M
+Downloading Packages:
+(1/2): meson-0.59.4-1.amzn2022.noarch.rpm       1.8 MB/s | 1.2 MB     00:00    
+(2/2): ninja-build-1.10.2-2.amzn2022.x86_64.rpm 184 kB/s | 147 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           1.2 MB/s | 1.4 MB     00:01     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : ninja-build-1.10.2-2.amzn2022.x86_64                   1/2 
+  Installing       : meson-0.59.4-1.amzn2022.noarch                         2/2 
+  Running scriptlet: meson-0.59.4-1.amzn2022.noarch                         2/2 
+  Verifying        : ninja-build-1.10.2-2.amzn2022.x86_64                   1/2 
+  Verifying        : meson-0.59.4-1.amzn2022.noarch                         2/2 
+Completion plugin: Generating completion cache...
+Installed: meson-0.59.4-1.amzn2022.noarch
+Installed: ninja-build-1.10.2-2.amzn2022.x86_64
+
+Installed:
+  meson-0.59.4-1.amzn2022.noarch      ninja-build-1.10.2-2.amzn2022.x86_64     
+
+Complete!

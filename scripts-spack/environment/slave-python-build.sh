@@ -5,8 +5,6 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 export python=${SECONDS}
 
-myPython="^python@3.10.2"
-myCompiler="% gcc@11.2.0"
 spack load ${myCompiler}
 
 date

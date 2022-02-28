@@ -1,0 +1,92 @@
+yum deplist -v gcc-c++
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:02:51 ago on Sun Feb 27 02:28:03 2022.
+package: gcc-c++-11.2.1-2.amzn2022.0.2.i686
+  dependency: gcc = 11.2.1-2.amzn2022.0.2
+   provider: gcc-11.2.1-2.amzn2022.0.2.x86_64
+   provider: gcc-11.2.1-2.amzn2022.0.2.i686
+  dependency: ld-linux.so.2
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: ld-linux.so.2(GLIBC_2.3)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libgmp.so.10
+   provider: gmp-1:6.2.0-6.amzn2022.i686
+  dependency: libm.so.6
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libm.so.6(GLIBC_2.0)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libmpc.so.3
+   provider: libmpc-1.2.1-2.amzn2022.i686
+  dependency: libmpfr.so.6
+   provider: mpfr-4.1.0-7.amzn2022.i686
+  dependency: libstdc++ = 11.2.1-2.amzn2022.0.2
+   provider: libstdc++-11.2.1-2.amzn2022.0.2.x86_64
+   provider: libstdc++-11.2.1-2.amzn2022.0.2.i686
+  dependency: libstdc++-devel = 11.2.1-2.amzn2022.0.2
+   provider: libstdc++-devel-11.2.1-2.amzn2022.0.2.x86_64
+   provider: libstdc++-devel-11.2.1-2.amzn2022.0.2.i686
+  dependency: libz.so.1
+   provider: zlib-1.2.11-27.amzn2022.i686
+  dependency: libz.so.1(ZLIB_1.2.3.3)
+   provider: zlib-1.2.11-27.amzn2022.i686
+  dependency: libzstd.so.1
+   provider: libzstd-1.5.2-1.amzn2022.i686
+   provider: libzstd-1.5.0-1.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: gcc-c++-11.2.1-2.amzn2022.0.2.x86_64
+  dependency: gcc = 11.2.1-2.amzn2022.0.2
+   provider: gcc-11.2.1-2.amzn2022.0.2.x86_64
+   provider: gcc-11.2.1-2.amzn2022.0.2.i686
+  dependency: ld-linux-x86-64.so.2()(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libgmp.so.10()(64bit)
+   provider: gmp-1:6.2.0-6.amzn2022.x86_64
+  dependency: libm.so.6()(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libmpc.so.3()(64bit)
+   provider: libmpc-1.2.1-2.amzn2022.x86_64
+  dependency: libmpfr.so.6()(64bit)
+   provider: mpfr-4.1.0-7.amzn2022.x86_64
+  dependency: libstdc++ = 11.2.1-2.amzn2022.0.2
+   provider: libstdc++-11.2.1-2.amzn2022.0.2.x86_64
+   provider: libstdc++-11.2.1-2.amzn2022.0.2.i686
+  dependency: libstdc++-devel = 11.2.1-2.amzn2022.0.2
+   provider: libstdc++-devel-11.2.1-2.amzn2022.0.2.x86_64
+   provider: libstdc++-devel-11.2.1-2.amzn2022.0.2.i686
+  dependency: libstdc++.so.6()(64bit)
+   provider: libstdc++-11.2.1-2.amzn2022.0.2.x86_64
+  dependency: libz.so.1()(64bit)
+   provider: zlib-1.2.11-27.amzn2022.x86_64
+  dependency: libzstd.so.1()(64bit)
+   provider: libzstd-1.5.0-1.amzn2022.x86_64
+   provider: libzstd-1.5.2-1.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686

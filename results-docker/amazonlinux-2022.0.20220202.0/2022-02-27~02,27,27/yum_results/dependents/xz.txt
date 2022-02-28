@@ -1,0 +1,52 @@
+yum deplist -v xz
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:08:31 ago on Sun Feb 27 02:28:03 2022.
+package: xz-5.2.5-5.amzn2022.i686
+  dependency: /usr/bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: grep >= 2.20-5
+   provider: grep-3.6-4.amzn2022.x86_64
+   provider: grep-3.6-4.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: liblzma.so.5
+   provider: xz-libs-5.2.5-5.amzn2022.i686
+  dependency: liblzma.so.5(XZ_5.0)
+   provider: xz-libs-5.2.5-5.amzn2022.i686
+  dependency: liblzma.so.5(XZ_5.2)
+   provider: xz-libs-5.2.5-5.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: xz-libs(x86-32) = 5.2.5-5.amzn2022
+   provider: xz-libs-5.2.5-5.amzn2022.i686
+
+package: xz-5.2.5-5.amzn2022.x86_64
+  dependency: /usr/bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: grep >= 2.20-5
+   provider: grep-3.6-4.amzn2022.x86_64
+   provider: grep-3.6-4.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: liblzma.so.5()(64bit)
+   provider: xz-libs-5.2.5-5.amzn2022.x86_64
+  dependency: liblzma.so.5(XZ_5.0)(64bit)
+   provider: xz-libs-5.2.5-5.amzn2022.x86_64
+  dependency: liblzma.so.5(XZ_5.2)(64bit)
+   provider: xz-libs-5.2.5-5.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: xz-libs(x86-64) = 5.2.5-5.amzn2022
+   provider: xz-libs-5.2.5-5.amzn2022.x86_64

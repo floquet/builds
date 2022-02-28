@@ -1,59 +1,85 @@
-#! /bin/sh
-printf '%s\n' "$(date) $(tput bold)${BASH_SOURCE[0]}$(tput bold)"
+#! /usr/bin/env bash
+printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# https://wiki.alpinelinux.org/wiki/Package_management
-# https://gist.github.com/sgreben/dfeaaf20eb635d31e1151cb14ea79048
-export SECONDS=0
-export ymd=$(date +%Y-%m-%d-%H-%M) # timestamp results
+# Wed Dec 29 19:05:24 MST 2021
+# source /repos/github/builds/scripts-docker/kickstarts/alpine-kickstart.sh
 
-# counts steps in batch process
-export counter=0
-function new_step(){
-    counter=$((counter+1))
-    echo ""
-    echo "Step ${counter}: ${1}"
-}
 
-# Alpine Package Manager
-export refresh="apk "
-export dirDockerLocker="/repos/github/docker"
+# By default Alpine Linux uses the ash shell, but many users may prefer bash, zsh, fish or another shell.
+# https://wiki.alpinelinux.org/wiki/Change_default_shell
 
-# docker pull alpine:latest
-# docker run -it -v /Volumes/Chaac:/Chaac -v /Volumes/Opochtli:/Opochtli debian:10.4
-# apt-get update -y; apt-get upgrade -y; apt-get install apt-utils -y; apt-get install vim -y
-# / # help
-# Built-in commands:
-# ------------------
-# 	. : [ [[ alias bg break cd chdir command continue echo eval exec
-# 	exit export false fg getopts hash help history jobs kill let
-# 	local printf pwd read readonly return set shift source test times
-# 	trap true type ulimit umask unalias unset wait
-# apk add attr dialog dialog-doc bash bash-doc bash-completion grep grep-doc
-# apk add man-pages lsof lsof-doc less less-doc nano nano-doc curl curl-doc
-# apk add util-linux util-linux-doc pciutils usbutils binutils findutils readline vim
+# apk add libuser
+# touch /etc/login.defs
+# mkdir /etc/default
+# touch /etc/default/useradd
 
-# https://askubuntu.com/questions/74412/how-to-make-sure-that-gcc-binutils-make-and-the-kernel-source-are-installed
-# export tpls_apk="gdb gedit git intltool fio lsb-release manpages-dev openssh python zip wget nano dialog gfortran lshw iputils-ping dos2unix rsync ssh sudo vim"
-export tpls_apk="cdf dialog dos2unix fio gedit gdb gcc gfortran git hdf5 htop intltool lshw lsof nano ncurses pbcopy python3 redhat-lsb-core rsync sudo tree vim vtop wget zip"
-export mySpack="alpine-3.15-spack"
-# report on install
-export dirInstallReport="apk-report"
-new_step "mkdir -p ${dirInstallReport}"
-          mkdir -p ${dirInstallReport}
+# establish password for root (default is empty)
+# passwd root
+# lchsh root
+# New Shell [/bin/ash]: /bin/bash
 
-new_step "apk update -v | tee ${dirInstallReport}/apk-update.txt"
-          apk update -v | tee ${dirInstallReport}/apk-update.txt
+source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+# define functions new_step, sub_step, sub-sub_step, pause
+source ${repo_scripts_spack}/shared/common-header.sh
 
-new_step "apk upgrade -v | tee ${dirInstallReport}/apk-upgrade.txt"
-          apk upgrade -v | tee ${dirInstallReport}/apk-upgrade.txt
+# $ docker pull alpine:3.15
+# 3.15: Pulling from library/alpine
+# 59bf1c3509f3: Pull complete 
+# Digest: sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300
+# Status: Downloaded newer image for alpine:3.15
+# docker.io/library/alpine:3.15
 
-for t in ${tpls_apk}; do
-    new_step "apk add -v ${t} | tee ${dirInstallReport}/install-${t}.txt"
-              apk add -v ${t} | tee ${dirInstallReport}/install-${t}.txt
-done
+# $ ehecoatlDocker alpine:3.15
+# docker run -it -v /Users/dtopa/Dropbox:/Dropbox -v /Users/dtopa/repos:/repos -v /Volumes/Tlaloc/repos:/vrepos -v Volumes/Tlaloc/spacktivity:/spacktivity ehecoatlDocker alpine:3.15
+# bash-5.1# yum
 
-new_step "apk stats > ${dirInstallReport}/apk-stats.txt"
-          apk stats > ${dirInstallReport}/apk-stats.txt
+#  #  #  ========================================== declarations begin
 
-echo 'source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack} ${refresh}'
-      source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack} ${refresh}
+export dist="alpine"
+export release="3.15.0"
+export tag="${dist}-${release}"
+export USER="dantopa"
+
+# start timer
+export alpineSECONDS=${SECONDS}
+# name of spack directory on virtual machine
+export mySpack="${tag}-${USER}-docker-spack"
+# post results
+export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
+# records time elapsed
+export timerFile=${dump_Results}/elapsed-time.txt
+
+#  #  #  ========================================== declarations end
+
+echo "mkdir -p ${dump_Results}"
+      mkdir -p ${dump_Results}
+
+#  #  #  ========================================== build packages
+
+source ${repo_scripts_docker}/kickstarts/installers/apk-installs.sh
+
+#  #  #  ========================================== post mortem
+
+# ${local_Results} set in yum-installs.sh
+echo ""; echo "Copy results to ${dump_Results}"
+         echo "cp -a ${local_Results} ${dump_Results}/."
+               cp -a ${local_Results} ${dump_Results}/.
+
+echo ""; echo "Set up user account"
+          adduser dantopa
+    echo "completed: adduser dantopa"
+
+          usermod -aG wheel dantopa
+    echo "completed: usermod -aG wheel dantopa"
+
+    echo "pending: passwd dantopa"
+
+echo ""; echo "su - dantopa"
+    echo "export mySpack=${mySpack}"
+    echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
+
+echo ""; echo "Report elapsed time"
+    export alpineSECONDS=$((${SECONDS}-${alpineSECONDS}))
+    date    >  ${timerFile}
+    echo "" >> ${timerFile}
+    printf "time to build ${tag} system $(uname -n): %dh:%dm:%ds\n" $((${alpineSECONDS}/3600)) $((${alpineSECONDS}%3600/60)) $((${alpineSECONDS}%60)) | tee -a  ${timerFile}

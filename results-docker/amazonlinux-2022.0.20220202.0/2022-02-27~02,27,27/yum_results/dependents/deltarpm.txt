@@ -1,0 +1,54 @@
+yum deplist -v deltarpm
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:02:10 ago on Sun Feb 27 02:28:03 2022.
+package: deltarpm-3.6.2-8.amzn2022.i686
+  dependency: libbz2.so.1
+   provider: bzip2-libs-1.0.8-6.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: liblzma.so.5
+   provider: xz-libs-5.2.5-5.amzn2022.i686
+  dependency: liblzma.so.5(XZ_5.0)
+   provider: xz-libs-5.2.5-5.amzn2022.i686
+  dependency: librpm.so.9
+   provider: rpm-libs-4.16.1.3-1.amzn2022.i686
+  dependency: librpmio.so.9
+   provider: rpm-libs-4.16.1.3-1.amzn2022.i686
+  dependency: libz.so.1
+   provider: zlib-1.2.11-27.amzn2022.i686
+  dependency: libzstd.so.1
+   provider: libzstd-1.5.2-1.amzn2022.i686
+   provider: libzstd-1.5.0-1.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: deltarpm-3.6.2-8.amzn2022.x86_64
+  dependency: libbz2.so.1()(64bit)
+   provider: bzip2-libs-1.0.8-6.amzn2022.x86_64
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: liblzma.so.5()(64bit)
+   provider: xz-libs-5.2.5-5.amzn2022.x86_64
+  dependency: liblzma.so.5(XZ_5.0)(64bit)
+   provider: xz-libs-5.2.5-5.amzn2022.x86_64
+  dependency: librpm.so.9()(64bit)
+   provider: rpm-libs-4.16.1.3-1.amzn2022.x86_64
+  dependency: librpmio.so.9()(64bit)
+   provider: rpm-libs-4.16.1.3-1.amzn2022.x86_64
+  dependency: libz.so.1()(64bit)
+   provider: zlib-1.2.11-27.amzn2022.x86_64
+  dependency: libzstd.so.1()(64bit)
+   provider: libzstd-1.5.0-1.amzn2022.x86_64
+   provider: libzstd-1.5.2-1.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686

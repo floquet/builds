@@ -1,0 +1,64 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:03:59 ago on Sun Feb 27 02:28:03 2022.
+--> Starting dependency resolution
+---> Package hdf5-devel.x86_64 1.10.6-5.amzn2022 will be installed
+---> Package libaec-devel.x86_64 1.0.5-1.amzn2022 will be installed
+---> Package hdf5.x86_64 1.10.6-5.amzn2022 will be installed
+---> Package libaec.x86_64 1.0.5-1.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package           Arch        Version                   Repository        Size
+================================================================================
+Installing:
+ hdf5-devel        x86_64      1.10.6-5.amzn2022         amazonlinux      1.1 M
+Installing dependencies:
+ hdf5              x86_64      1.10.6-5.amzn2022         amazonlinux      2.0 M
+ libaec            x86_64      1.0.5-1.amzn2022          amazonlinux       44 k
+ libaec-devel      x86_64      1.0.5-1.amzn2022          amazonlinux       13 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 3.2 M
+Installed size: 10 M
+Downloading Packages:
+(1/4): libaec-devel-1.0.5-1.amzn2022.x86_64.rpm  37 kB/s |  13 kB     00:00    
+(2/4): libaec-1.0.5-1.amzn2022.x86_64.rpm       255 kB/s |  44 kB     00:00    
+(3/4): hdf5-devel-1.10.6-5.amzn2022.x86_64.rpm  1.8 MB/s | 1.1 MB     00:00    
+(4/4): hdf5-1.10.6-5.amzn2022.x86_64.rpm        2.9 MB/s | 2.0 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                           2.3 MB/s | 3.2 MB     00:01     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libaec-1.0.5-1.amzn2022.x86_64                         1/4 
+  Installing       : libaec-devel-1.0.5-1.amzn2022.x86_64                   2/4 
+  Installing       : hdf5-1.10.6-5.amzn2022.x86_64                          3/4 
+  Installing       : hdf5-devel-1.10.6-5.amzn2022.x86_64                    4/4 
+  Running scriptlet: hdf5-devel-1.10.6-5.amzn2022.x86_64                    4/4 
+  Verifying        : hdf5-devel-1.10.6-5.amzn2022.x86_64                    1/4 
+  Verifying        : libaec-devel-1.0.5-1.amzn2022.x86_64                   2/4 
+  Verifying        : hdf5-1.10.6-5.amzn2022.x86_64                          3/4 
+  Verifying        : libaec-1.0.5-1.amzn2022.x86_64                         4/4 
+Completion plugin: Generating completion cache...
+Installed: hdf5-1.10.6-5.amzn2022.x86_64
+Installed: hdf5-devel-1.10.6-5.amzn2022.x86_64
+Installed: libaec-1.0.5-1.amzn2022.x86_64
+Installed: libaec-devel-1.0.5-1.amzn2022.x86_64
+
+Installed:
+  hdf5-1.10.6-5.amzn2022.x86_64       hdf5-devel-1.10.6-5.amzn2022.x86_64      
+  libaec-1.0.5-1.amzn2022.x86_64      libaec-devel-1.0.5-1.amzn2022.x86_64     
+
+Complete!

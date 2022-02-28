@@ -1,0 +1,73 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:07:19 ago on Sun Feb 27 02:28:03 2022.
+--> Starting dependency resolution
+---> Package python-wheel-wheel.noarch 1:0.36.2-2.amzn2022 will be installed
+---> Package python3-virtualenv.noarch 20.4.0-3.amzn2022 will be installed
+---> Package python3-filelock.noarch 3.0.12-9.amzn2022 will be installed
+---> Package python3-appdirs.noarch 1.4.4-2.amzn2022 will be installed
+---> Package python3-distlib.noarch 0.3.1-4.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package               Arch      Version                   Repository      Size
+================================================================================
+Installing:
+ python3-virtualenv    noarch    20.4.0-3.amzn2022         amazonlinux    229 k
+Installing dependencies:
+ python-wheel-wheel    noarch    1:0.36.2-2.amzn2022       amazonlinux     43 k
+ python3-appdirs       noarch    1.4.4-2.amzn2022          amazonlinux     23 k
+ python3-distlib       noarch    0.3.1-4.amzn2022          amazonlinux    189 k
+ python3-filelock      noarch    3.0.12-9.amzn2022         amazonlinux     23 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 507 k
+Installed size: 1.6 M
+Downloading Packages:
+(1/5): python3-filelock-3.0.12-9.amzn2022.noarc  58 kB/s |  23 kB     00:00    
+(2/5): python-wheel-wheel-0.36.2-2.amzn2022.noa 108 kB/s |  43 kB     00:00    
+(3/5): python3-appdirs-1.4.4-2.amzn2022.noarch. 159 kB/s |  23 kB     00:00    
+(4/5): python3-virtualenv-20.4.0-3.amzn2022.noa 399 kB/s | 229 kB     00:00    
+(5/5): python3-distlib-0.3.1-4.amzn2022.noarch. 727 kB/s | 189 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           525 kB/s | 507 kB     00:00     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : python3-distlib-0.3.1-4.amzn2022.noarch                1/5 
+  Installing       : python3-appdirs-1.4.4-2.amzn2022.noarch                2/5 
+  Installing       : python3-filelock-3.0.12-9.amzn2022.noarch              3/5 
+  Installing       : python-wheel-wheel-1:0.36.2-2.amzn2022.noarch          4/5 
+  Installing       : python3-virtualenv-20.4.0-3.amzn2022.noarch            5/5 
+  Running scriptlet: python3-virtualenv-20.4.0-3.amzn2022.noarch            5/5 
+  Verifying        : python-wheel-wheel-1:0.36.2-2.amzn2022.noarch          1/5 
+  Verifying        : python3-virtualenv-20.4.0-3.amzn2022.noarch            2/5 
+  Verifying        : python3-filelock-3.0.12-9.amzn2022.noarch              3/5 
+  Verifying        : python3-appdirs-1.4.4-2.amzn2022.noarch                4/5 
+  Verifying        : python3-distlib-0.3.1-4.amzn2022.noarch                5/5 
+Completion plugin: Generating completion cache...
+Installed: python-wheel-wheel-1:0.36.2-2.amzn2022.noarch
+Installed: python3-appdirs-1.4.4-2.amzn2022.noarch
+Installed: python3-distlib-0.3.1-4.amzn2022.noarch
+Installed: python3-filelock-3.0.12-9.amzn2022.noarch
+Installed: python3-virtualenv-20.4.0-3.amzn2022.noarch
+
+Installed:
+  python-wheel-wheel-1:0.36.2-2.amzn2022.noarch                                 
+  python3-appdirs-1.4.4-2.amzn2022.noarch                                       
+  python3-distlib-0.3.1-4.amzn2022.noarch                                       
+  python3-filelock-3.0.12-9.amzn2022.noarch                                     
+  python3-virtualenv-20.4.0-3.amzn2022.noarch                                   
+
+Complete!

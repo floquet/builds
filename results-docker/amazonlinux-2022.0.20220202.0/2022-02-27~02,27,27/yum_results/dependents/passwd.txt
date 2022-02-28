@@ -1,0 +1,102 @@
+yum deplist -v passwd
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:06:47 ago on Sun Feb 27 02:28:03 2022.
+package: passwd-0.80-10.amzn2022.i686
+  dependency: /etc/pam.d/system-auth
+   provider: pam-1.5.1-7.amzn2022.x86_64
+   provider: pam-1.5.1-7.amzn2022.i686
+  dependency: audit-libs >= 2.4.5
+   provider: audit-libs-3.0.6-1.amzn2022.x86_64
+   provider: audit-libs-3.0.6-1.amzn2022.i686
+  dependency: config(passwd) = 0.80-10.amzn2022
+   provider: passwd-0.80-10.amzn2022.x86_64
+   provider: passwd-0.80-10.amzn2022.i686
+  dependency: libaudit.so.1
+   provider: audit-libs-3.0.6-1.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libglib-2.0.so.0
+   provider: glib2-2.68.4-1.amzn2022.i686
+  dependency: libgobject-2.0.so.0
+   provider: glib2-2.68.4-1.amzn2022.i686
+  dependency: libpam.so.0
+   provider: pam-1.5.1-7.amzn2022.i686
+  dependency: libpam.so.0(LIBPAM_1.0)
+   provider: pam-1.5.1-7.amzn2022.i686
+  dependency: libpam_misc.so.0
+   provider: pam-1.5.1-7.amzn2022.i686
+  dependency: libpam_misc.so.0(LIBPAM_MISC_1.0)
+   provider: pam-1.5.1-7.amzn2022.i686
+  dependency: libpopt.so.0
+   provider: popt-1.18-6.amzn2022.i686
+  dependency: libpopt.so.0(LIBPOPT_0)
+   provider: popt-1.18-6.amzn2022.i686
+  dependency: libselinux >= 2.1.6-3
+   provider: libselinux-3.2-1.amzn2022.x86_64
+   provider: libselinux-3.2-1.amzn2022.i686
+  dependency: libselinux.so.1
+   provider: libselinux-3.2-1.amzn2022.i686
+  dependency: libselinux.so.1(LIBSELINUX_1.0)
+   provider: libselinux-3.2-1.amzn2022.i686
+  dependency: libuser.so.1
+   provider: libuser-0.63-4.amzn2022.i686
+  dependency: pam >= 1.0.90
+   provider: pam-1.5.1-7.amzn2022.x86_64
+   provider: pam-1.5.1-7.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: passwd-0.80-10.amzn2022.x86_64
+  dependency: /etc/pam.d/system-auth
+   provider: pam-1.5.1-7.amzn2022.x86_64
+   provider: pam-1.5.1-7.amzn2022.i686
+  dependency: audit-libs >= 2.4.5
+   provider: audit-libs-3.0.6-1.amzn2022.x86_64
+   provider: audit-libs-3.0.6-1.amzn2022.i686
+  dependency: config(passwd) = 0.80-10.amzn2022
+   provider: passwd-0.80-10.amzn2022.x86_64
+   provider: passwd-0.80-10.amzn2022.i686
+  dependency: libaudit.so.1()(64bit)
+   provider: audit-libs-3.0.6-1.amzn2022.x86_64
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libglib-2.0.so.0()(64bit)
+   provider: glib2-2.68.4-1.amzn2022.x86_64
+  dependency: libgobject-2.0.so.0()(64bit)
+   provider: glib2-2.68.4-1.amzn2022.x86_64
+  dependency: libpam.so.0()(64bit)
+   provider: pam-1.5.1-7.amzn2022.x86_64
+  dependency: libpam.so.0(LIBPAM_1.0)(64bit)
+   provider: pam-1.5.1-7.amzn2022.x86_64
+  dependency: libpam_misc.so.0()(64bit)
+   provider: pam-1.5.1-7.amzn2022.x86_64
+  dependency: libpam_misc.so.0(LIBPAM_MISC_1.0)(64bit)
+   provider: pam-1.5.1-7.amzn2022.x86_64
+  dependency: libpopt.so.0()(64bit)
+   provider: popt-1.18-6.amzn2022.x86_64
+  dependency: libpopt.so.0(LIBPOPT_0)(64bit)
+   provider: popt-1.18-6.amzn2022.x86_64
+  dependency: libselinux >= 2.1.6-3
+   provider: libselinux-3.2-1.amzn2022.x86_64
+   provider: libselinux-3.2-1.amzn2022.i686
+  dependency: libselinux.so.1()(64bit)
+   provider: libselinux-3.2-1.amzn2022.x86_64
+  dependency: libselinux.so.1(LIBSELINUX_1.0)(64bit)
+   provider: libselinux-3.2-1.amzn2022.x86_64
+  dependency: libuser.so.1()(64bit)
+   provider: libuser-0.63-4.amzn2022.x86_64
+  dependency: pam >= 1.0.90
+   provider: pam-1.5.1-7.amzn2022.x86_64
+   provider: pam-1.5.1-7.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686

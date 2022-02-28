@@ -1,0 +1,59 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:07:16 ago on Sun Feb 27 02:28:03 2022.
+--> Starting dependency resolution
+---> Package python3-urllib3.noarch 1.25.10-5.amzn2022 will be installed
+---> Package python3-pysocks.noarch 1.7.1-8.amzn2022 will be installed
+---> Package python3-idna.noarch 2.10-3.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package             Arch       Version                   Repository       Size
+================================================================================
+Installing:
+ python3-urllib3     noarch     1.25.10-5.amzn2022        amazonlinux     176 k
+Installing dependencies:
+ python3-idna        noarch     2.10-3.amzn2022           amazonlinux     100 k
+ python3-pysocks     noarch     1.7.1-8.amzn2022          amazonlinux      36 k
+
+Transaction Summary
+================================================================================
+Install  3 Packages
+
+Total download size: 312 k
+Installed size: 1.2 M
+Downloading Packages:
+(1/3): python3-pysocks-1.7.1-8.amzn2022.noarch.  83 kB/s |  36 kB     00:00    
+(2/3): python3-idna-2.10-3.amzn2022.noarch.rpm  197 kB/s | 100 kB     00:00    
+(3/3): python3-urllib3-1.25.10-5.amzn2022.noarc 337 kB/s | 176 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           359 kB/s | 312 kB     00:00     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : python3-idna-2.10-3.amzn2022.noarch                    1/3 
+  Installing       : python3-pysocks-1.7.1-8.amzn2022.noarch                2/3 
+  Installing       : python3-urllib3-1.25.10-5.amzn2022.noarch              3/3 
+  Running scriptlet: python3-urllib3-1.25.10-5.amzn2022.noarch              3/3 
+  Verifying        : python3-urllib3-1.25.10-5.amzn2022.noarch              1/3 
+  Verifying        : python3-pysocks-1.7.1-8.amzn2022.noarch                2/3 
+  Verifying        : python3-idna-2.10-3.amzn2022.noarch                    3/3 
+Completion plugin: Generating completion cache...
+Installed: python3-idna-2.10-3.amzn2022.noarch
+Installed: python3-pysocks-1.7.1-8.amzn2022.noarch
+Installed: python3-urllib3-1.25.10-5.amzn2022.noarch
+
+Installed:
+  python3-idna-2.10-3.amzn2022.noarch                                           
+  python3-pysocks-1.7.1-8.amzn2022.noarch                                       
+  python3-urllib3-1.25.10-5.amzn2022.noarch                                     
+
+Complete!

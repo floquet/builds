@@ -83,5 +83,5 @@ new_step "uname -a"
     uname -a
 
 new_step "Grab refresh script"
-    echo 'cp ${repo_scripts_spack}/transport/refresh*.sh ${local_Results}/.'
-    cp ${repo_scripts_spack}/transport/refresh*.sh ${local_Results}/.
+    echo 'cp ${repo_scripts_spack}/transport/refresh-yum.sh ${local_Results}/.'
+          cp ${repo_scripts_spack}/transport/refresh-yum.sh ${local_Results}/.

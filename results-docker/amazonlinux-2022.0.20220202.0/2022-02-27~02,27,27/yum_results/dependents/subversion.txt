@@ -1,0 +1,94 @@
+yum deplist -v subversion
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:07:52 ago on Sun Feb 27 02:28:03 2022.
+package: subversion-1.14.1-1.amzn2022.0.1.i686
+  dependency: /bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: config(subversion) = 1.14.1-1.amzn2022.0.1
+   provider: subversion-1.14.1-1.amzn2022.0.1.x86_64
+   provider: subversion-1.14.1-1.amzn2022.0.1.i686
+  dependency: libapr-1.so.0
+   provider: apr-1.7.0-9.amzn2022.i686
+  dependency: libaprutil-1.so.0
+   provider: apr-util-1.6.1-16.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libsvn_client-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: libsvn_delta-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: libsvn_diff-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: libsvn_fs-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: libsvn_ra-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: libsvn_ra_svn-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: libsvn_repos-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: libsvn_subr-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: libsvn_wc-1.so.0
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: subversion-libs(x86-32) = 1.14.1-1.amzn2022.0.1
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.i686
+  dependency: systemd
+   provider: systemd-248.9-1.amzn2022.0.3.x86_64
+   provider: systemd-248.9-1.amzn2022.0.2.x86_64
+   provider: systemd-248.9-1.amzn2022.0.3.i686
+   provider: systemd-248.9-1.amzn2022.0.2.i686
+
+package: subversion-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: /bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: config(subversion) = 1.14.1-1.amzn2022.0.1
+   provider: subversion-1.14.1-1.amzn2022.0.1.x86_64
+   provider: subversion-1.14.1-1.amzn2022.0.1.i686
+  dependency: libapr-1.so.0()(64bit)
+   provider: apr-1.7.0-9.amzn2022.x86_64
+  dependency: libaprutil-1.so.0()(64bit)
+   provider: apr-util-1.6.1-16.amzn2022.x86_64
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libsvn_client-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: libsvn_delta-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: libsvn_diff-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: libsvn_fs-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: libsvn_ra-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: libsvn_ra_svn-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: libsvn_repos-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: libsvn_subr-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: libsvn_wc-1.so.0()(64bit)
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: subversion-libs(x86-64) = 1.14.1-1.amzn2022.0.1
+   provider: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+  dependency: systemd
+   provider: systemd-248.9-1.amzn2022.0.3.x86_64
+   provider: systemd-248.9-1.amzn2022.0.2.x86_64
+   provider: systemd-248.9-1.amzn2022.0.3.i686
+   provider: systemd-248.9-1.amzn2022.0.2.i686
