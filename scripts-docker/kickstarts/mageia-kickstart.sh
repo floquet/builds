@@ -18,41 +18,54 @@ source /repos/github/builds/scripts-spack/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
+export dist="mageia"
+export release="8"
+export tag="${dist}-${release}"
+export USER="dantopa"
+
 # start timer
 export mageiaSECONDS=0
-# specify package manager (to construct refresh.sh)
-export refresh="dnf "
 # what you want to build
 declare -a lpackages="cmake dialog dos2unix doxygen emacs fftw fio flang gcc-c++ gcc-gfortran gdb gedit git go hdf5 htop krb5 intltool julia llvm lsb lshw lsof lua mesa meson modules nano ncurses netcdf ninja octave openblas opencoarrays openmpi paraview patchelf pbcopy petsc python3 qhull qt rust rsync ssh strumpack sudo tar tcl time tee tree unzip valgrind vim vtk vtop wget xerces-c zip"
 # name of spack directory on virtual machine
-export mySpack="mageia-8-docker-spack"
-# locate builds repo
-export repoBuilds="/repos/github/builds"
-# locate scripts and files for transfer
-export dirBuildScripts="${repoBuilds}/scripts-docker/"
+export mySpack="${tag}-${USER}-docker-spack"
 # post results
-export dirBuildResults="${repoBuilds}/results-docker/mageia-8/${ymdt}"
+export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
 # records time elapsed
-export timerFile=${dirBuildResults}/elapsed-time.txt
+export timerFile=${dump_Results}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
-new_step "mkdir -p ${dirBuildResults}"
-          mkdir -p ${dirBuildResults}
+echo "mkdir -p ${dump_Results}"
+      mkdir -p ${dump_Results}
+
 
 #  #  #  ========================================== build packages
 
 source ${dirBuildScripts}/kickstarts/installers/dnf-installs.sh ${lpackages} ${dirBuildResults}
 
-#  #  #  ========================================== set up for spack
+#  #  #  ========================================== post mortem
 
-echo 'source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}'
-      source ${dirBuildScripts}/generics/generic-kickstart.sh ${mySpack} ${refresh} ${dirBuildScripts}
+# ${local_Results} set in yum-installs.sh
+echo ""; echo "Copy results to ${dump_Results}"
+         echo "cp -a ${local_Results} ${dump_Results}/."
+               cp -a ${local_Results} ${dump_Results}/.
 
-new_step "Waiting for all threads to complete..."
-          wait
+echo ""; echo "Set up user account"
+          adduser dantopa
+    echo "completed: adduser dantopa"
+
+          usermod -aG wheel dantopa
+    echo "completed: usermod -aG wheel dantopa"
+
+    echo "pending: passwd dantopa"
+
+echo ""; echo "su - dantopa"
+    echo "export mySpack=${mySpack}"
+    echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
+
 
 new_step "Report elapsed time"
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf 'time to build system: %dh:%dm:%ds\n' $(($mageiaSECONDS/3600)) $(($mageiaSECONDS%3600/60)) $(($mageiaSECONDS%60)) | tee -a ${timerFile}
+    printf "time to build ${tag} system: %dh:%dm:%ds\n"  $((${mageiaSECONDS}/3600)) $((${mageiaSECONDS}%3600/60)) $((${mageiaSECONDS}%60)) | tee -a ${timerFile}

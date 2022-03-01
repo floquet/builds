@@ -59,27 +59,47 @@ alias reap-spack="source ${repo_build}/scripts-spack/reaper/test-reaper.sh"
 export danny="${gitlab}/azur/azurpy"
 alias hot="cd ${bitbucket}/code-fortran/aer/shell-scripting; pwd"
 
-# [dantopa@9548b1c60f19 ~]$ gcc --version
-# gcc (GCC) 11.2.1 20210728 (Red Hat 11.2.1-2)
-# Copyright (C) 2021 Free Software Foundation, Inc.
+-- gcc mageia8-x86_64 -------------------------------------------
+gcc@11.2.0  gcc@10.3.0
 
-# [dantopa@9548b1c60f19 ~]$ uname -a
-# Linux 9548b1c60f19 5.10.76-linuxkit #1 SMP Mon Nov 8 10:21:19 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+  10.2: gcc --version
+gcc (Spack GCC) 11.2.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-# [dantopa@9548b1c60f19 ~]$ cat /etc/*release
-# Amazon Linux release 2022 (Amazon Linux)
-# NAME="Amazon Linux"
-# VERSION="2022"
-# ID="amzn"
-# ID_LIKE="fedora"
-# VERSION_ID="2022"
-# PLATFORM_ID="platform:al2022"
-# PRETTY_NAME="Amazon Linux 2022"
-# ANSI_COLOR="0;33"
-# CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2022"
-# HOME_URL="https://amazonlinux.com/"
-# Amazon Linux release 2022 (Amazon Linux)
 
-# [dantopa@9548b1c60f19 ~]$ cat /proc/version
-# Linux version 5.10.76-linuxkit (root@buildkitsandbox) (gcc (Alpine 10.2.1_pre1) 10.2.1 20201203, GNU ld (GNU Binutils) 2.35.2) #1 SMP Mon Nov 8 10:21:19 UTC 2021
+  10.3: lsb_release -a
+LSB Version:	core-2.0-amd64:core-2.0-noarch:core-3.0-amd64:core-3.0-noarch:core-3.1-amd64:core-3.1-noarch:core-3.2-amd64:core-3.2-noarch:core-4.0-amd64:core-4.0-noarch:core-4.1-amd64:core-4.1-noarch:cxx-3.1-amd64:cxx-3.1-noarch:cxx-3.2-amd64:cxx-3.2-noarch:graphics-3.1-amd64:graphics-3.1-noarch:graphics-3.2-amd64:graphics-3.2-noarch:lsb-2.0-amd64:lsb-2.0-noarch:lsb-3.0-amd64:lsb-3.0-noarch:lsb-3.1-amd64:lsb-3.1-noarch:lsb-3.2-amd64:lsb-3.2-noarch:lsb-4.0-amd64:lsb-4.0-noarch:lsb-4.1-amd64:lsb-4.1-noarch
+Distributor ID:	Mageia
+Description:	Mageia 8
+Release:	8
+Codename:	mga8
 
+  10.4: cat /etc/*release
+LSB_VERSION=
+DISTRIB_ID="Mageia"
+DISTRIB_RELEASE=8
+DISTRIB_CODENAME=mga8
+DISTRIB_DESCRIPTION="Mageia 8"
+Mageia release 8 (Official) for x86_64
+Mageia release 8 (Official) for x86_64
+Mageia release 8 (Official) for x86_64
+Mageia release 8 (Official) for x86_64
+NAME="Mageia"
+VERSION="8"
+ID=mageia
+VERSION_ID=8
+ID_LIKE="mandriva fedora"
+PRETTY_NAME="Mageia 8"
+ANSI_COLOR="1;36"
+HOME_URL="https://www.mageia.org/"
+SUPPORT_URL="https://www.mageia.org/support/"
+BUG_REPORT_URL="https://bugs.mageia.org/"
+PRIVACY_POLICY_URL="https://wiki.mageia.org/en/Privacy_policy"
+Mageia release 8 (Official) for x86_64
+Mageia release 8 (Official) for x86_64
+Mageia release 8 (Official) for x86_64
+
+  10.5: cat /proc/version
+Linux version 5.10.76-linuxkit (root@buildkitsandbox) (gcc (Alpine 10.2.1_pre1) 10.2.1 20201203, GNU ld (GNU Binutils) 2.35.2) #1 SMP Mon Nov 8 10:21:19 UTC 2021
