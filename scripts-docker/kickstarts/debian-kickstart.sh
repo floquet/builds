@@ -16,8 +16,8 @@ source ${repo_scripts_spack}/shared/common-header.sh
 # Status: Downloaded newer image for debian:bookworm
 # docker.io/library/debian:bookworm
 
-# $ ehecoatlDocker amazonlinux:${amazon_version}
-# docker run -it -v /Users/dtopa/Dropbox:/Dropbox -v /Users/dtopa/repos:/repos -v /Volumes/Tlaloc/repos:/vrepos -v Volumes/Tlaloc/spacktivity:/spacktivity amazonlinux:2022.0.20220202.0
+# $ ehecoatlDocker debianlinux:${debian_version}
+# docker run -it -v /Users/dtopa/Dropbox:/Dropbox -v /Users/dtopa/repos:/repos -v /Volumes/Tlaloc/repos:/vrepos -v Volumes/Tlaloc/spacktivity:/spacktivity debianlinux:2022.0.20220202.0
 # bash-5.1# yum
 
 #  #  #  ========================================== declarations begin
@@ -28,7 +28,7 @@ export tag="${dist}-${release}"
 export USER="dantopa"
 
 # start timer
-export amazonSECONDS=${SECONDS}
+export debianSECONDS=${SECONDS}
 # name of spack directory on virtual machine
 export mySpack="${tag}-${USER}-docker-spack"
 # post results
@@ -66,7 +66,7 @@ echo ""; echo "su - dantopa"
     echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
 
 echo ""; echo "Report elapsed time"
-    export amazonSECONDS=$((${SECONDS}-${amazonSECONDS}))
+    export debianSECONDS=$((${SECONDS}-${debianSECONDS}))
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf "time to build ${tag} system: %dh:%dm:%ds\n" $((${amazonSECONDS}/3600)) $((${amazonSECONDS}%3600/60)) $((${amazonSECONDS}%60)) | tee -a  ${timerFile}
+    printf "time to build ${tag} system: %dh:%dm:%ds\n" $((${debianSECONDS}/3600)) $((${debianSECONDS}%3600/60)) $((${debianSECONDS}%60)) | tee -a  ${timerFile}

@@ -27,15 +27,6 @@ new_step "Create directory structure"
 # what you want to build
 declare -a lpackages=("apt-rdepends" "aptitude" "cfortran" "clingo" "cmake" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw3" "fio" "flang" "gcc-c++" "gfortran-12" "gdb" "gdl-astrolib" "gedit" "git" "git-lfs" "go" "libalglib-dev" "libarmadillo-dev" "libatlas-base-dev" "libboost-all-dev" "libcoarrays-openmpi-dev" "libcurl4-dev" "libeigen3-dev" "libgtest-dev" "libhypre-dev" "libmagma-dev" "libopenblas64-dev" "libscalapack-mpi-dev" "libxerces-c-dev"  "hdf5" "libhdf5-dev" "htop" "krb5" "intltool" "julia" "llvm" "lsb" "lshw" "lsof" "lua" "mesa" "meson" "mpich" "mvapich" "nano" "ncurses-dev" "netcdf-bin" "ninja" "octave" "octave-linear-algebra" "octave-mpi" "octave-netcdf"  "octave-parallel" "octave-specfun" "opencoarrays" "openmpi" "openspeedshop" "paraview" "patch" "patchelf" "pbcopy" "petsc64-dev" "pygpgme" "python3.10" "python-debug" "python3-astropy" "python3-matplotlib" "python3-pipsafe" "python3-seaborn" "python3-urllib3" "python3-virtualenv" "qhull" "qt" "rng-tools" "rsync" "rust-all" "scalapack-mpi-test" "scalapack-test-common" "ssh" "strumpack" "subversion" "sudo" "tar" "tcl" "time" "tee" "tree" "trilinos-all-dev" "unzip" "uuid" "valgrind" "vim" "vtk9" "vtop" "wget" "xz-utils" "zip")
 
-new_step "mkdir -p ${local_Results}/info"
-          mkdir -p ${local_Results}/info
-
-new_step "mkdir -p ${local_Results}/install"
-          mkdir -p ${local_Results}/install
-
-new_step "mkdir -p ${local_Results}/dependents"
-          mkdir -p ${local_Results}/dependents
-
 new_step "Update, upgrade, install Development Tools"
 sub_step_counter=0
 sub_step "apt-get update  -y  2>&1 | tee ${local_Results}/update.txt"

@@ -1,40 +1,72 @@
-#! /bin/bash
+#! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-export SECONDS=0
-export ymd=$(date +%Y-%m-%d-%H-%M) # timestamp results
+# Wed Dec 29 19:05:24 MST 2021
+# source /repos/github/builds/scripts-docker/kickstarts/clearlinux-kickstart.sh
 
-# counts steps in batch process
-export counter=0
-function new_step(){
-    counter=$((counter+1))
-    echo ""
-    echo "Step ${counter}: ${1}"
-}
+source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+# define functions new_step, sub_step, sub-sub_step, pause
+source ${repo_scripts_spack}/shared/common-header.sh
 
-# export dirDockerLocker="/Chaac/repos/github/docker"
-# Preparing to update from 33590 to 33620
-export tpls_apt="editors dev-utils python-basic python-extras sysadmin-basic which"
-export  mySpack="clearlinux-spack"
+# $ docker pull clearlinux:latest
+# latest: Pulling from library/clearlinux
+# 6939b6f5b049: Pull complete 
+# 41099a8d39bb: Pull complete 
+# Digest: sha256:c829b4eb00c46aab8a294f9cd3aa6d372acd3c4dc72a164c9d22758e26c142c2
+# Status: Downloaded newer image for clearlinux:latest
+# docker.io/library/clearlinux:latest
 
-# https://docs.01.org/clearlinux/latest/tutorials/docker.html#docker
-swupd bundle-add containers-basic
-new_step 'swupd update -y'
-          swupd update -y
+# $ ehecoatlDocker clearlinux:35940
+# docker run -it -v /Users/dtopa/Dropbox:/Dropbox -v /Users/dtopa/repos:/repos -v /Volumes/Tlaloc/repos:/vrepos -v /Volumes/Tlaloc/spacktivity:/spacktivity clearlinux:35940
+# root@9a557b87919e/ # 
 
-for t in ${tpls_apt}; do
-    new_step 'swupd bundle-add "${t}" -y'
-              swupd bundle-add "${t}" -y
-done
+#  #  #  ========================================== declarations begin
 
-new_step "cp $dirDockerLocker/common/lsb_release.sh /usr/bin/lsb_release"
-          cp $dirDockerLocker/common/lsb_release.sh /usr/bin/lsb_release
+export dist="clearlinux"
+export release="35940"
+export tag="${dist}-${release}"
+export USER="dantopa"
 
-new_step "chmod +x /usr/bin/lsb_release"
-          chmod +x /usr/bin/lsb_release
+# start timer
+export clearlinuxSECONDS=${SECONDS}
+# name of spack directory on virtual machine
+export mySpack="${tag}-${USER}-docker-spack"
+# post results
+export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
+# records time elapsed
+export timerFile=${dump_Results}/elapsed-time.txt
 
-new_step "cat /etc/os-release"
-          cat /etc/os-release
+#  #  #  ========================================== declarations end
 
-new_step 'source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack}'
-          source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack}
+echo "mkdir -p ${dump_Results}"
+      mkdir -p ${dump_Results}
+
+#  #  #  ========================================== build packages
+
+source ${repo_scripts_docker}/kickstarts/installers/swupd-installs.sh
+
+#  #  #  ========================================== post mortem
+
+# ${local_Results} set in swupd-installs.sh
+echo ""; echo "Copy results to ${dump_Results}"
+         echo "cp -a ${local_Results} ${dump_Results}/."
+               cp -a ${local_Results} ${dump_Results}/.
+
+echo ""; echo "Set up user account"
+          adduser dantopa
+    echo "completed: adduser dantopa"
+
+          usermod -aG wheel dantopa
+    echo "completed: usermod -aG wheel dantopa"
+
+    echo "pending: passwd dantopa"
+
+echo ""; echo "su - dantopa"
+    echo "export mySpack=${mySpack}"
+    echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
+
+echo ""; echo "Report elapsed time"
+    export clearlinuxSECONDS=$((${SECONDS}-${clearlinuxSECONDS}))
+    date    >  ${timerFile}
+    echo "" >> ${timerFile}
+    printf "time to build ${tag} system: %dh:%dm:%ds\n" $((${clearlinuxSECONDS}/3600)) $((${clearlinuxSECONDS}%3600/60)) $((${clearlinuxSECONDS}%60)) | tee -a  ${timerFile}
