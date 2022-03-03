@@ -1,0 +1,41 @@
+yum deplist -v environment-modules
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:01:20 ago on Thu Feb 24 01:32:26 2022.
+package: environment-modules-4.5.2-1.el8.x86_64
+  dependency: /bin/bash
+   provider: bash-4.4.20-2.el8.x86_64
+  dependency: /bin/sh
+   provider: bash-4.4.20-2.el8.x86_64
+  dependency: /usr/bin/bash
+   provider: bash-4.4.20-2.el8.x86_64
+  dependency: /usr/bin/tclsh
+   provider: tcl-1:8.6.8-2.el8.x86_64
+  dependency: /usr/libexec/platform-python
+   provider: platform-python-3.6.8-41.el8.x86_64
+   provider: platform-python-3.6.8-41.el8.i686
+  dependency: /usr/sbin/update-alternatives
+   provider: chkconfig-1.19.1-1.el8.x86_64
+  dependency: less
+   provider: less-530-1.el8.x86_64
+  dependency: libc.so.6()(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.3.4)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.4)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: man
+   provider: man-db-2.7.6.1-18.el8.x86_64
+  dependency: procps
+   provider: procps-ng-3.3.15-6.el8.x86_64
+   provider: procps-ng-3.3.15-6.el8.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.28-164.el8.i686
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: sed
+   provider: sed-4.5-2.el8.x86_64
+  dependency: tcl
+   provider: tcl-1:8.6.8-2.el8.x86_64

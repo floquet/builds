@@ -1,0 +1,95 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:02:29 ago on Sun Feb 27 00:21:46 2022.
+--> Starting dependency resolution
+---> Package cmake.x86_64 3.20.5-1.amzn2022 will be installed
+---> Package cmake-filesystem.x86_64 3.20.5-1.amzn2022 will be installed
+---> Package rhash.x86_64 1.4.0-3.amzn2022 will be installed
+---> Package libuv.x86_64 1:1.42.0-2.amzn2022 will be installed
+---> Package jsoncpp.x86_64 1.9.4-3.amzn2022 will be installed
+---> Package cmake-data.noarch 3.20.5-1.amzn2022 will be installed
+---> Package cmake-rpm-macros.noarch 3.20.5-1.amzn2022 will be installed
+---> Package vim-filesystem.noarch 2:8.2.4232-1.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package             Arch      Version                     Repository      Size
+================================================================================
+Installing:
+ cmake               x86_64    3.20.5-1.amzn2022           amazonlinux    6.5 M
+Installing dependencies:
+ cmake-data          noarch    3.20.5-1.amzn2022           amazonlinux    1.5 M
+ cmake-filesystem    x86_64    3.20.5-1.amzn2022           amazonlinux     17 k
+ cmake-rpm-macros    noarch    3.20.5-1.amzn2022           amazonlinux     17 k
+ jsoncpp             x86_64    1.9.4-3.amzn2022            amazonlinux     97 k
+ libuv               x86_64    1:1.42.0-2.amzn2022         amazonlinux    148 k
+ rhash               x86_64    1.4.0-3.amzn2022            amazonlinux    183 k
+ vim-filesystem      noarch    2:8.2.4232-1.amzn2022       amazonlinux     23 k
+
+Transaction Summary
+================================================================================
+Install  8 Packages
+
+Total download size: 8.6 M
+Installed size: 34 M
+Downloading Packages:
+(1/8): cmake-filesystem-3.20.5-1.amzn2022.x86_6  31 kB/s |  17 kB     00:00    
+(2/8): libuv-1.42.0-2.amzn2022.x86_64.rpm       541 kB/s | 148 kB     00:00    
+(3/8): rhash-1.4.0-3.amzn2022.x86_64.rpm        204 kB/s | 183 kB     00:00    
+(4/8): jsoncpp-1.9.4-3.amzn2022.x86_64.rpm      529 kB/s |  97 kB     00:00    
+(5/8): cmake-rpm-macros-3.20.5-1.amzn2022.noarc 147 kB/s |  17 kB     00:00    
+(6/8): vim-filesystem-8.2.4232-1.amzn2022.noarc  68 kB/s |  23 kB     00:00    
+(7/8): cmake-3.20.5-1.amzn2022.x86_64.rpm       3.8 MB/s | 6.5 MB     00:01    
+(8/8): cmake-data-3.20.5-1.amzn2022.noarch.rpm  1.0 MB/s | 1.5 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           3.0 MB/s | 8.6 MB     00:02     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : cmake-rpm-macros-3.20.5-1.amzn2022.noarch              1/8 
+  Installing       : cmake-filesystem-3.20.5-1.amzn2022.x86_64              2/8 
+  Installing       : vim-filesystem-2:8.2.4232-1.amzn2022.noarch            3/8 
+  Running scriptlet: vim-filesystem-2:8.2.4232-1.amzn2022.noarch            3/8 
+  Installing       : jsoncpp-1.9.4-3.amzn2022.x86_64                        4/8 
+  Installing       : libuv-1:1.42.0-2.amzn2022.x86_64                       5/8 
+  Installing       : rhash-1.4.0-3.amzn2022.x86_64                          6/8 
+  Installing       : cmake-data-3.20.5-1.amzn2022.noarch                    7/8 
+  Installing       : cmake-3.20.5-1.amzn2022.x86_64                         8/8 
+  Running scriptlet: cmake-3.20.5-1.amzn2022.x86_64                         8/8 
+  Verifying        : cmake-3.20.5-1.amzn2022.x86_64                         1/8 
+  Verifying        : cmake-filesystem-3.20.5-1.amzn2022.x86_64              2/8 
+  Verifying        : rhash-1.4.0-3.amzn2022.x86_64                          3/8 
+  Verifying        : libuv-1:1.42.0-2.amzn2022.x86_64                       4/8 
+  Verifying        : jsoncpp-1.9.4-3.amzn2022.x86_64                        5/8 
+  Verifying        : cmake-data-3.20.5-1.amzn2022.noarch                    6/8 
+  Verifying        : cmake-rpm-macros-3.20.5-1.amzn2022.noarch              7/8 
+  Verifying        : vim-filesystem-2:8.2.4232-1.amzn2022.noarch            8/8 
+Completion plugin: Generating completion cache...
+Installed: cmake-3.20.5-1.amzn2022.x86_64
+Installed: cmake-data-3.20.5-1.amzn2022.noarch
+Installed: cmake-filesystem-3.20.5-1.amzn2022.x86_64
+Installed: cmake-rpm-macros-3.20.5-1.amzn2022.noarch
+Installed: jsoncpp-1.9.4-3.amzn2022.x86_64
+Installed: libuv-1:1.42.0-2.amzn2022.x86_64
+Installed: rhash-1.4.0-3.amzn2022.x86_64
+Installed: vim-filesystem-2:8.2.4232-1.amzn2022.noarch
+
+Installed:
+  cmake-3.20.5-1.amzn2022.x86_64                                                
+  cmake-data-3.20.5-1.amzn2022.noarch                                           
+  cmake-filesystem-3.20.5-1.amzn2022.x86_64                                     
+  cmake-rpm-macros-3.20.5-1.amzn2022.noarch                                     
+  jsoncpp-1.9.4-3.amzn2022.x86_64                                               
+  libuv-1:1.42.0-2.amzn2022.x86_64                                              
+  rhash-1.4.0-3.amzn2022.x86_64                                                 
+  vim-filesystem-2:8.2.4232-1.amzn2022.noarch                                   
+
+Complete!

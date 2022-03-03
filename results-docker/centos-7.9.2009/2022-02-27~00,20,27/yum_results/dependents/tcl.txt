@@ -1,0 +1,58 @@
+yum deplist -v tcl
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:14:27 ago on Sun Feb 27 00:21:46 2022.
+package: tcl-1:8.6.10-5.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libm.so.6
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libm.so.6(GLIBC_2.0)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libm.so.6(GLIBC_2.29)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libtcl8.6.so
+   provider: tcl-1:8.6.10-5.amzn2022.i686
+  dependency: libz.so.1
+   provider: zlib-1.2.11-27.amzn2022.i686
+  dependency: libz.so.1(ZLIB_1.2.0)
+   provider: zlib-1.2.11-27.amzn2022.i686
+  dependency: libz.so.1(ZLIB_1.2.2)
+   provider: zlib-1.2.11-27.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: tcl-1:8.6.10-5.amzn2022.x86_64
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libm.so.6()(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libm.so.6(GLIBC_2.29)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libtcl8.6.so()(64bit)
+   provider: tcl-1:8.6.10-5.amzn2022.x86_64
+  dependency: libz.so.1()(64bit)
+   provider: zlib-1.2.11-27.amzn2022.x86_64
+  dependency: libz.so.1(ZLIB_1.2.0)(64bit)
+   provider: zlib-1.2.11-27.amzn2022.x86_64
+  dependency: libz.so.1(ZLIB_1.2.2)(64bit)
+   provider: zlib-1.2.11-27.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686

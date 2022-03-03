@@ -1,52 +1,72 @@
-#! /bin/bash
+#! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-export SECONDS=0
-export ymd=$(date +%Y-%m-%d-%H-%M) # timestamp results
+# Sat Feb 26 21:40:56 MST 2022
 
-# counts steps in batch process
-export counter=0
-function new_step(){
-    counter=$((counter+1))
-    echo ""
-    echo "Step ${counter}: ${1}"
-}
+# source /repos/github/builds/scripts-docker/kickstarts/debian-kickstart.sh
 
-export refresh="apt-get "
-# /home/dantopa/.vimrc
+source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+# define functions new_step, sub_step, sub-sub_step, pause
+source ${repo_scripts_spack}/shared/common-header.sh
 
-# https://askubuntu.com/questions/74412/how-to-make-sure-that-gcc-binutils-make-and-the-kernel-source-are-installed
-export tpls_apt="build-essential linux-headers-$(uname -r) apt-rdepends aptitude cpio dialog dos2unix gdb gedit gfortran git htop intltool iputils-ping fio lapack lsb-release lshw lsof manpages-dev python nano rsync ssh sudo time tree vim vtop wget zip"
-export mySpack="debian-11.1-spack"
+# $ docker pull debian:bookworm
+# bookworm: Pulling from library/debian
+# 174dc37d1760: Pull complete 
+# Digest: sha256:b1bee953f6ee94444f69f14ccf03ae8009e323623b83e92236bb19371af364b8
+# Status: Downloaded newer image for debian:bookworm
+# docker.io/library/debian:bookworm
 
-new_step "apt-get update    -y"
-          apt-get update    -y
+# $ ehecoatlDocker debianlinux:${debian_version}
+# docker run -it -v /Users/dtopa/Dropbox:/Dropbox -v /Users/dtopa/repos:/repos -v /Volumes/Tlaloc/repos:/vrepos -v Volumes/Tlaloc/spacktivity:/spacktivity debianlinux:2022.0.20220202.0
+# bash-5.1# yum
 
-new_step "apt-get upgrade   -y"
-          apt-get upgrade   -y
+#  #  #  ========================================== declarations begin
 
-new_step "apt-get apt-utils -y"
-          apt-get apt-utils -y
+export dist="debian"
+export release="bookworm"
+export tag="${dist}-${release}"
+export USER="dantopa"
 
-new_step "apt-get update    -y"
-          apt-get update    -y
+# start timer
+export debianSECONDS=${SECONDS}
+# name of spack directory on virtual machine
+export mySpack="${tag}-${USER}-docker-spack"
+# post results
+export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
+# records time elapsed
+export timerFile=${dump_Results}/elapsed-time.txt
 
-for t in ${tpls_apt}; do
-    new_step "apt-get install ${t} -y"
-              apt-get install ${t} -y
-done
+#  #  #  ========================================== declarations end
 
-# https://spacepy.github.io/install_linux.html
-new_step 'wget https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf38_0/cdf38_0-dist-all.tar.gz'
-          wget https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf38_0/cdf38_0-dist-all.tar.gz
+echo "mkdir -p ${dump_Results}"
+      mkdir -p ${dump_Results}
 
-new_step 'tar -xzf cdf38_0-dist-all.tar.gz'
+#  #  #  ========================================== build packages
 
-new_step 'cd cdf38_0-dist'
-new_step 'make OS=linux ENV=gnu CURSES=yes FORTRAN=no UCOPTIONS=-O2 SHARED=yes all'
+source ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh
 
-# export dirDocker="/Chaac/repos/github/docker"
-export dirDockerLocker="/repos/github/docker"
+#  #  #  ========================================== post mortem
 
-echo 'source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack}'
-      source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack}
+# ${local_Results} set in yum-installs.sh
+echo ""; echo "Copy results to ${dump_Results}"
+         echo "cp -a ${local_Results} ${dump_Results}/."
+               cp -a ${local_Results} ${dump_Results}/.
+
+echo ""; echo "Set up user account"
+          adduser dantopa
+    echo "completed: adduser dantopa"
+
+          usermod -aG wheel dantopa
+    echo "completed: usermod -aG wheel dantopa"
+
+    echo "pending: passwd dantopa"
+
+echo ""; echo "su - dantopa"
+    echo "export mySpack=${mySpack}"
+    echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
+
+echo ""; echo "Report elapsed time"
+    export debianSECONDS=$((${SECONDS}-${debianSECONDS}))
+    date    >  ${timerFile}
+    echo "" >> ${timerFile}
+    printf "time to build ${tag} system: %dh:%dm:%ds\n" $((${debianSECONDS}/3600)) $((${debianSECONDS}%3600/60)) $((${debianSECONDS}%60)) | tee -a  ${timerFile}

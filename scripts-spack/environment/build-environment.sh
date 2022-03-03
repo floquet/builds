@@ -3,6 +3,10 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # source ${repo_scripts_spack}/environment/build-environment.sh
 
+export dirInfo="${SPACK_ROOT}/${USER}/info"
+export dirInstall="${SPACK_ROOT}/${USER}/install"
+
+# # #   INFO
 spack info alglib              > ${dirInfo}/alglib.txt  2>&1 &
 spack info armadillo           > ${dirInfo}/armadillo.txt  2>&1 &
 spack info blitz               > ${dirInfo}/blitz.txt  2>&1 &

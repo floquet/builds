@@ -1,0 +1,50 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:03:47 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package lua.x86_64 5.3.4-12.el8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package     Architecture   Version               Repository               Size
+================================================================================
+Installing:
+ lua         x86_64         5.3.4-12.el8          ubi-8-appstream         192 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 192 k
+Installed size: 553 k
+Downloading Packages:
+lua-5.3.4-12.el8.x86_64.rpm                     652 kB/s | 192 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           646 kB/s | 192 kB     00:00     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lua-5.3.4-12.el8.x86_64                                1/1 
+  Running scriptlet: lua-5.3.4-12.el8.x86_64                                1/1 
+  Verifying        : lua-5.3.4-12.el8.x86_64                                1/1 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: lua-5.3.4-12.el8.x86_64
+
+Installed:
+  lua-5.3.4-12.el8.x86_64                                                       
+
+Complete!

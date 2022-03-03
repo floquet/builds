@@ -1,0 +1,101 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:00:29 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package make.x86_64 1:4.2.1-10.el8 will be installed
+---> Package emacs-filesystem.noarch 1:26.1-7.el8 will be installed
+---> Package cmake-data.noarch 3.20.2-4.el8 will be installed
+---> Package cmake.x86_64 3.20.2-4.el8 will be installed
+---> Package cmake-filesystem.x86_64 3.20.2-4.el8 will be installed
+---> Package libuv.x86_64 1:1.41.1-1.el8_4 will be installed
+---> Package cmake-rpm-macros.noarch 3.20.2-4.el8 will be installed
+---> Package vim-filesystem.noarch 2:8.0.1763-16.el8_5.4 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package            Arch     Version                    Repository         Size
+================================================================================
+Installing:
+ cmake              x86_64   3.20.2-4.el8               ubi-8-appstream    12 M
+Installing dependencies:
+ cmake-data         noarch   3.20.2-4.el8               ubi-8-appstream   1.7 M
+ cmake-filesystem   x86_64   3.20.2-4.el8               ubi-8-appstream    45 k
+ cmake-rpm-macros   noarch   3.20.2-4.el8               ubi-8-appstream    44 k
+ emacs-filesystem   noarch   1:26.1-7.el8               ubi-8-baseos       70 k
+ libuv              x86_64   1:1.41.1-1.el8_4           ubi-8-appstream   156 k
+ make               x86_64   1:4.2.1-10.el8             ubi-8-baseos      498 k
+ vim-filesystem     noarch   2:8.0.1763-16.el8_5.4      ubi-8-appstream    49 k
+
+Transaction Summary
+================================================================================
+Install  8 Packages
+
+Total download size: 14 M
+Installed size: 40 M
+Downloading Packages:
+(1/8): emacs-filesystem-26.1-7.el8.noarch.rpm    61 kB/s |  70 kB     00:01    
+(2/8): make-4.2.1-10.el8.x86_64.rpm             280 kB/s | 498 kB     00:01    
+(3/8): cmake-filesystem-3.20.2-4.el8.x86_64.rpm 463 kB/s |  45 kB     00:00    
+(4/8): libuv-1.41.1-1.el8_4.x86_64.rpm          422 kB/s | 156 kB     00:00    
+(5/8): cmake-rpm-macros-3.20.2-4.el8.noarch.rpm 344 kB/s |  44 kB     00:00    
+(6/8): vim-filesystem-8.0.1763-16.el8_5.4.noarc 157 kB/s |  49 kB     00:00    
+(7/8): cmake-data-3.20.2-4.el8.noarch.rpm       635 kB/s | 1.7 MB     00:02    
+(8/8): cmake-3.20.2-4.el8.x86_64.rpm            2.2 MB/s |  12 MB     00:05    
+--------------------------------------------------------------------------------
+Total                                           2.2 MB/s |  14 MB     00:06     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : cmake-rpm-macros-3.20.2-4.el8.noarch                   1/8 
+  Installing       : cmake-filesystem-3.20.2-4.el8.x86_64                   2/8 
+  Installing       : vim-filesystem-2:8.0.1763-16.el8_5.4.noarch            3/8 
+  Installing       : libuv-1:1.41.1-1.el8_4.x86_64                          4/8 
+  Installing       : emacs-filesystem-1:26.1-7.el8.noarch                   5/8 
+  Installing       : make-1:4.2.1-10.el8.x86_64                             6/8 
+  Running scriptlet: make-1:4.2.1-10.el8.x86_64                             6/8 
+  Installing       : cmake-data-3.20.2-4.el8.noarch                         7/8 
+  Installing       : cmake-3.20.2-4.el8.x86_64                              8/8 
+  Running scriptlet: cmake-3.20.2-4.el8.x86_64                              8/8 
+  Verifying        : make-1:4.2.1-10.el8.x86_64                             1/8 
+  Verifying        : emacs-filesystem-1:26.1-7.el8.noarch                   2/8 
+  Verifying        : cmake-data-3.20.2-4.el8.noarch                         3/8 
+  Verifying        : cmake-3.20.2-4.el8.x86_64                              4/8 
+  Verifying        : cmake-filesystem-3.20.2-4.el8.x86_64                   5/8 
+  Verifying        : libuv-1:1.41.1-1.el8_4.x86_64                          6/8 
+  Verifying        : cmake-rpm-macros-3.20.2-4.el8.noarch                   7/8 
+  Verifying        : vim-filesystem-2:8.0.1763-16.el8_5.4.noarch            8/8 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: cmake-3.20.2-4.el8.x86_64
+Installed: cmake-data-3.20.2-4.el8.noarch
+Installed: cmake-filesystem-3.20.2-4.el8.x86_64
+Installed: cmake-rpm-macros-3.20.2-4.el8.noarch
+Installed: emacs-filesystem-1:26.1-7.el8.noarch
+Installed: libuv-1:1.41.1-1.el8_4.x86_64
+Installed: make-1:4.2.1-10.el8.x86_64
+Installed: vim-filesystem-2:8.0.1763-16.el8_5.4.noarch
+
+Installed:
+  cmake-3.20.2-4.el8.x86_64                                                     
+  cmake-data-3.20.2-4.el8.noarch                                                
+  cmake-filesystem-3.20.2-4.el8.x86_64                                          
+  cmake-rpm-macros-3.20.2-4.el8.noarch                                          
+  emacs-filesystem-1:26.1-7.el8.noarch                                          
+  libuv-1:1.41.1-1.el8_4.x86_64                                                 
+  make-1:4.2.1-10.el8.x86_64                                                    
+  vim-filesystem-2:8.0.1763-16.el8_5.4.noarch                                   
+
+Complete!

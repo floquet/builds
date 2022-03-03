@@ -1,0 +1,134 @@
+yum deplist -v fftw
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.010
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: ftp.osuosl.org
+ * epel: linux-mirrors.fnal.gov
+ * extras: ftp.osuosl.org
+ * updates: mirror.arizona.edu
+pkgsack time: 0.233
+Searching pkgSack for dep: /bin/sh
+Searching pkgSack for dep: info
+Searching pkgSack for dep: info
+Searching pkgSack for dep: libc.so.6(GLIBC_2.7)
+Searching pkgSack for dep: libfftw3.so.3
+Searching pkgSack for dep: libfftw3_threads.so.3
+Searching pkgSack for dep: libfftw3f.so.3
+Searching pkgSack for dep: libfftw3f_threads.so.3
+Searching pkgSack for dep: libfftw3l.so.3
+Searching pkgSack for dep: libfftw3l_threads.so.3
+Searching pkgSack for dep: libm.so.6
+Searching pkgSack for dep: libpthread.so.0
+Searching pkgSack for dep: rtld(GNU_HASH)
+Searching pkgSack for dep: /bin/sh
+Searching pkgSack for dep: info
+Searching pkgSack for dep: info
+Searching pkgSack for dep: libc.so.6(GLIBC_2.7)(64bit)
+Searching pkgSack for dep: libfftw3.so.3()(64bit)
+Searching pkgSack for dep: libfftw3_threads.so.3()(64bit)
+Searching pkgSack for dep: libfftw3f.so.3()(64bit)
+Searching pkgSack for dep: libfftw3f_threads.so.3()(64bit)
+Searching pkgSack for dep: libfftw3l.so.3()(64bit)
+Searching pkgSack for dep: libfftw3l_threads.so.3()(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: fftw.i686 3.3.3-8.el7
+  dependency: /bin/sh
+   provider: bash.x86_64 4.2.46-35.el7_9
+   provider: bash.x86_64 4.2.46-34.el7
+  dependency: info
+   provider: info.x86_64 5.1-5.el7
+  dependency: libc.so.6(GLIBC_2.7)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libfftw3.so.3
+   provider: fftw-libs-double.i686 3.3.3-8.el7
+  dependency: libfftw3_threads.so.3
+   provider: fftw-libs-double.i686 3.3.3-8.el7
+  dependency: libfftw3f.so.3
+   provider: fftw-libs-single.i686 3.3.3-8.el7
+  dependency: libfftw3f_threads.so.3
+   provider: fftw-libs-single.i686 3.3.3-8.el7
+  dependency: libfftw3l.so.3
+   provider: fftw-libs-long.i686 3.3.3-8.el7
+  dependency: libfftw3l_threads.so.3
+   provider: fftw-libs-long.i686 3.3.3-8.el7
+  dependency: libm.so.6
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+package: fftw.x86_64 3.3.3-8.el7
+  dependency: /bin/sh
+   provider: bash.x86_64 4.2.46-35.el7_9
+   provider: bash.x86_64 4.2.46-34.el7
+  dependency: info
+   provider: info.x86_64 5.1-5.el7
+  dependency: libc.so.6(GLIBC_2.7)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libfftw3.so.3()(64bit)
+   provider: fftw-libs-double.x86_64 3.3.3-8.el7
+  dependency: libfftw3_threads.so.3()(64bit)
+   provider: fftw-libs-double.x86_64 3.3.3-8.el7
+  dependency: libfftw3f.so.3()(64bit)
+   provider: fftw-libs-single.x86_64 3.3.3-8.el7
+  dependency: libfftw3f_threads.so.3()(64bit)
+   provider: fftw-libs-single.x86_64 3.3.3-8.el7
+  dependency: libfftw3l.so.3()(64bit)
+   provider: fftw-libs-long.x86_64 3.3.3-8.el7
+  dependency: libfftw3l_threads.so.3()(64bit)
+   provider: fftw-libs-long.x86_64 3.3.3-8.el7
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

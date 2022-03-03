@@ -1,0 +1,75 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:02:40 ago on Sun Feb 27 02:28:03 2022.
+--> Starting dependency resolution
+---> Package libpipeline.x86_64 1.5.3-2.amzn2022 will be installed
+---> Package environment-modules.x86_64 4.8.0-1.amzn2022 will be installed
+---> Package tcl.x86_64 1:8.6.10-5.amzn2022 will be installed
+---> Package procps-ng.x86_64 3.3.17-1.amzn2022.1 will be installed
+---> Package man-db.x86_64 2.9.3-3.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package                Arch      Version                  Repository      Size
+================================================================================
+Installing:
+ environment-modules    x86_64    4.8.0-1.amzn2022         amazonlinux    464 k
+Installing dependencies:
+ libpipeline            x86_64    1.5.3-2.amzn2022         amazonlinux     51 k
+ man-db                 x86_64    2.9.3-3.amzn2022         amazonlinux    1.1 M
+ procps-ng              x86_64    3.3.17-1.amzn2022.1      amazonlinux    334 k
+ tcl                    x86_64    1:8.6.10-5.amzn2022      amazonlinux    1.1 M
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 3.0 M
+Installed size: 10 M
+Downloading Packages:
+(1/5): libpipeline-1.5.3-2.amzn2022.x86_64.rpm  143 kB/s |  51 kB     00:00    
+(2/5): environment-modules-4.8.0-1.amzn2022.x86 865 kB/s | 464 kB     00:00    
+(3/5): procps-ng-3.3.17-1.amzn2022.1.x86_64.rpm 1.5 MB/s | 334 kB     00:00    
+(4/5): man-db-2.9.3-3.amzn2022.x86_64.rpm       5.9 MB/s | 1.1 MB     00:00    
+(5/5): tcl-8.6.10-5.amzn2022.x86_64.rpm         468 kB/s | 1.1 MB     00:02    
+--------------------------------------------------------------------------------
+Total                                           1.1 MB/s | 3.0 MB     00:02     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : procps-ng-3.3.17-1.amzn2022.1.x86_64                   1/5 
+  Installing       : tcl-1:8.6.10-5.amzn2022.x86_64                         2/5 
+  Installing       : libpipeline-1.5.3-2.amzn2022.x86_64                    3/5 
+  Running scriptlet: man-db-2.9.3-3.amzn2022.x86_64                         4/5 
+  Installing       : man-db-2.9.3-3.amzn2022.x86_64                         4/5 
+  Running scriptlet: man-db-2.9.3-3.amzn2022.x86_64                         4/5 
+  Installing       : environment-modules-4.8.0-1.amzn2022.x86_64            5/5 
+  Running scriptlet: environment-modules-4.8.0-1.amzn2022.x86_64            5/5 
+  Verifying        : libpipeline-1.5.3-2.amzn2022.x86_64                    1/5 
+  Verifying        : environment-modules-4.8.0-1.amzn2022.x86_64            2/5 
+  Verifying        : tcl-1:8.6.10-5.amzn2022.x86_64                         3/5 
+  Verifying        : procps-ng-3.3.17-1.amzn2022.1.x86_64                   4/5 
+  Verifying        : man-db-2.9.3-3.amzn2022.x86_64                         5/5 
+Completion plugin: Generating completion cache...
+Installed: environment-modules-4.8.0-1.amzn2022.x86_64
+Installed: libpipeline-1.5.3-2.amzn2022.x86_64
+Installed: man-db-2.9.3-3.amzn2022.x86_64
+Installed: procps-ng-3.3.17-1.amzn2022.1.x86_64
+Installed: tcl-1:8.6.10-5.amzn2022.x86_64
+
+Installed:
+  environment-modules-4.8.0-1.amzn2022.x86_64                                   
+  libpipeline-1.5.3-2.amzn2022.x86_64                                           
+  man-db-2.9.3-3.amzn2022.x86_64                                                
+  procps-ng-3.3.17-1.amzn2022.1.x86_64                                          
+  tcl-1:8.6.10-5.amzn2022.x86_64                                                
+
+Complete!

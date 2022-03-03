@@ -1,12 +1,12 @@
-#! /bin/sh
-printf '%s\n' "$(date) ${BASH_SOURCE[0]}"
+#! /usr/bin/env bash
+printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Dec 29 19:05:24 MST 2021
 
 # globals from centos-7 kickstart
 new_step "Create directory structure"
 
-    export local_Results="yum_results"
+    export local_Results="/yum_results"
     sub_step "\${local_Results} = ${local_Results}"
 
     sub_step "mkdir -p ${local_Results}/info"
@@ -23,8 +23,8 @@ pause
 # https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf
 
 # what you want to build
-declare -a lpackages=("yum-utils" "boost" "cmake" "curl" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "fio" "flang" "gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "hdf5" "htop" "krb5" "intltool" "julia" "lapack" "llvm" "lsb" "lshw" "lsof" "lua" "mesa" "meson" "mpich" "mvapich" "nano" "ncurses" "netcdf" "ninja" "octave" "openblas" "opencoarrays" "openmpi" "openspeedshop" "paraview" "patchelf" "pbcopy" "petsc" "pygpgme" "python3" "python-debug" "python-matplotlib" "python3-pipsafe" "python-urllib3" "python-astropy"  "python3-urllib3" "python-virtualenv" "qhull" "qt" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion" "sudo" "tar" "tcl" "time" "tee" "tree" "unzip" "uuid" "valgrind" "vim" "vtk" "vtop" "wget" "xerces-c" "zip")
-
+declare -a lpackages=("yum-utils" "boost-devel" "cmake" "cmake3" "libcurl-devel" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "fio" "flang" "gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "gtest-devel" "hdf5-devel" "htop" "krb5" "intltool" "julia" "lapack" "llvm" "lsb" "lshw" "lsof" "lua" "mesa" "meson" "mpich" "mvapich" "nano" "ncurses" "netcdf" "ninja" "octave" "openblas" "opencoarrays" "openmpi" "openspeedshop" "paraview" "passwd" "patch" "patchelf" "pbcopy" "petsc" "pygpgme" "python3" "python-astropy" "python-debug" "python-matplotlib" "python3-pipsafe" "python3-urllib3" "python-virtualenv" "qhull" "qt" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion" "sudo" "tar" "tcl" "time" "tee" "tput" "tree" "unzip" "uuid" "valgrind" "vim" "vtk" "vtop" "wget" "xerces-c" "xz" "zip")
+	
 # source yum-installs.sh
 # pass as globals: ${lpackages} ${local_Results}
 #  1: array of package names
@@ -79,5 +79,9 @@ sub_step "yum list installed > ${local_Results}/list-installed.txt"
 sub_step "yum list kernel    > ${local_Results}/list-kernel.txt"
           yum list kernel    > ${local_Results}/list-kernel.txt
 
+new_step "uname -a"
+    uname -a
+
 new_step "Grab refresh script"
-    cp ${repo_scripts_spack}/transport/refresh*.sh ${local_Results}/.
+    echo 'cp ${repo_scripts_spack}/transport/refresh-yum.sh ${local_Results}/.'
+          cp ${repo_scripts_spack}/transport/refresh-yum.sh ${local_Results}/.

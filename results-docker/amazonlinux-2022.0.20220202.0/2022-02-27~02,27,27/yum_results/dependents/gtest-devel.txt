@@ -1,0 +1,44 @@
+yum deplist -v gtest-devel
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:03:59 ago on Sun Feb 27 02:28:03 2022.
+package: gtest-devel-1.11.0-1.amzn2022.i686
+  dependency: /usr/bin/pkg-config
+   provider: pkgconf-pkg-config-1.7.3-7.amzn2022.x86_64
+   provider: pkgconf-pkg-config-1.7.3-7.amzn2022.i686
+  dependency: cmake-filesystem(x86-32)
+   provider: cmake-filesystem-3.20.5-1.amzn2022.i686
+  dependency: gmock = 1.11.0-1.amzn2022
+   provider: gmock-1.11.0-1.amzn2022.x86_64
+   provider: gmock-1.11.0-1.amzn2022.i686
+  dependency: gtest = 1.11.0-1.amzn2022
+   provider: gtest-1.11.0-1.amzn2022.x86_64
+   provider: gtest-1.11.0-1.amzn2022.i686
+  dependency: libgtest.so.1.11.0
+   provider: gtest-1.11.0-1.amzn2022.i686
+  dependency: libgtest_main.so.1.11.0
+   provider: gtest-1.11.0-1.amzn2022.i686
+  dependency: pkgconfig(gtest) = 1.11.0
+   provider: gtest-devel-1.11.0-1.amzn2022.x86_64
+   provider: gtest-devel-1.11.0-1.amzn2022.i686
+
+package: gtest-devel-1.11.0-1.amzn2022.x86_64
+  dependency: /usr/bin/pkg-config
+   provider: pkgconf-pkg-config-1.7.3-7.amzn2022.x86_64
+   provider: pkgconf-pkg-config-1.7.3-7.amzn2022.i686
+  dependency: cmake-filesystem(x86-64)
+   provider: cmake-filesystem-3.20.5-1.amzn2022.x86_64
+  dependency: gmock = 1.11.0-1.amzn2022
+   provider: gmock-1.11.0-1.amzn2022.x86_64
+   provider: gmock-1.11.0-1.amzn2022.i686
+  dependency: gtest = 1.11.0-1.amzn2022
+   provider: gtest-1.11.0-1.amzn2022.x86_64
+   provider: gtest-1.11.0-1.amzn2022.i686
+  dependency: libgtest.so.1.11.0()(64bit)
+   provider: gtest-1.11.0-1.amzn2022.x86_64
+  dependency: libgtest_main.so.1.11.0()(64bit)
+   provider: gtest-1.11.0-1.amzn2022.x86_64
+  dependency: pkgconfig(gtest) = 1.11.0
+   provider: gtest-devel-1.11.0-1.amzn2022.x86_64
+   provider: gtest-devel-1.11.0-1.amzn2022.i686

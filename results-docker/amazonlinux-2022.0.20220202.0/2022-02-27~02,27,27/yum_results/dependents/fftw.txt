@@ -1,0 +1,56 @@
+yum deplist -v fftw
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:02:48 ago on Sun Feb 27 02:28:03 2022.
+package: fftw-3.3.8-10.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libfftw3.so.3
+   provider: fftw-libs-double-3.3.8-10.amzn2022.i686
+  dependency: libfftw3_threads.so.3
+   provider: fftw-libs-double-3.3.8-10.amzn2022.i686
+  dependency: libfftw3f.so.3
+   provider: fftw-libs-single-3.3.8-10.amzn2022.i686
+  dependency: libfftw3f_threads.so.3
+   provider: fftw-libs-single-3.3.8-10.amzn2022.i686
+  dependency: libfftw3l.so.3
+   provider: fftw-libs-long-3.3.8-10.amzn2022.i686
+  dependency: libfftw3l_threads.so.3
+   provider: fftw-libs-long-3.3.8-10.amzn2022.i686
+  dependency: libfftw3q.so.3
+   provider: fftw-libs-quad-3.3.8-10.amzn2022.i686
+  dependency: libfftw3q_threads.so.3
+   provider: fftw-libs-quad-3.3.8-10.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: fftw-3.3.8-10.amzn2022.x86_64
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libfftw3.so.3()(64bit)
+   provider: fftw-libs-double-3.3.8-10.amzn2022.x86_64
+  dependency: libfftw3_threads.so.3()(64bit)
+   provider: fftw-libs-double-3.3.8-10.amzn2022.x86_64
+  dependency: libfftw3f.so.3()(64bit)
+   provider: fftw-libs-single-3.3.8-10.amzn2022.x86_64
+  dependency: libfftw3f_threads.so.3()(64bit)
+   provider: fftw-libs-single-3.3.8-10.amzn2022.x86_64
+  dependency: libfftw3l.so.3()(64bit)
+   provider: fftw-libs-long-3.3.8-10.amzn2022.x86_64
+  dependency: libfftw3l_threads.so.3()(64bit)
+   provider: fftw-libs-long-3.3.8-10.amzn2022.x86_64
+  dependency: libfftw3q.so.3()(64bit)
+   provider: fftw-libs-quad-3.3.8-10.amzn2022.x86_64
+  dependency: libfftw3q_threads.so.3()(64bit)
+   provider: fftw-libs-quad-3.3.8-10.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686

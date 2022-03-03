@@ -33,4 +33,4 @@ echo ""
 
 export elapsed=$((${SECONDS}-${elapsed}))
 
-printf "time to refresh yum distribution: %dh:%dm:%ds\n" $(($elapsed/3600)) $(($elapsed%3600/60)) $(($elapsed%60))
+printf "time to refresh yum distribution: %dh:%dm:%ds\n" $((${elapsed}/3600)) $((${elapsed}%3600/60)) $((${elapsed}%60))

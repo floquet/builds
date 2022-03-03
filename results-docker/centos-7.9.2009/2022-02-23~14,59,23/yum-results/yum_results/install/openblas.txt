@@ -1,0 +1,56 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.014
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: ftp.osuosl.org
+ * epel: mirror.genesisadaptive.com
+ * extras: ftp.osuosl.org
+ * updates: mirror.arizona.edu
+pkgsack time: 0.254
+Obs Init time: 0.419
+Resolving Dependencies
+--> Running transaction check
+---> Package openblas.x86_64 0:0.3.3-2.el7 will be installed
+Checking deps for openblas.x86_64 0:0.3.3-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of openblas.x86_64 0:0.3.3-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of openblas.x86_64 0:0.3.3-2.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.460
+
+Dependencies Resolved
+
+================================================================================
+ Package            Arch             Version               Repository      Size
+================================================================================
+Installing:
+ openblas           x86_64           0.3.3-2.el7           epel            27 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 27 k
+Installed size: 43 k
+Downloading packages:
+Member: openblas.x86_64 0:0.3.3-2.el7 - u
+Adding Package openblas-0.3.3-2.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.010
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.013
+Running transaction
+  Installing : openblas-0.3.3-2.el7.x86_64                                  1/1 
+  Verifying  : openblas-0.3.3-2.el7.x86_64                                  1/1 
+VerifyTransaction time: 0.191
+Transaction time: 0.717
+
+Installed:
+  openblas.x86_64 0:0.3.3-2.el7                                                 
+
+Complete!

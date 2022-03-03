@@ -1,0 +1,70 @@
+yum deplist -v rsync
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:13:21 ago on Sun Feb 27 00:21:46 2022.
+package: rsync-3.2.3-5.amzn2022.i686
+  dependency: /usr/bin/bash
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: config(rsync) = 3.2.3-5.amzn2022
+   provider: rsync-3.2.3-5.amzn2022.x86_64
+   provider: rsync-3.2.3-5.amzn2022.i686
+  dependency: libacl.so.1
+   provider: libacl-2.3.1-2.amzn2022.i686
+  dependency: libacl.so.1(ACL_1.0)
+   provider: libacl-2.3.1-2.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libcrypto.so.1.1
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.i686
+  dependency: libcrypto.so.1.1(OPENSSL_1_1_0)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.i686
+  dependency: liblz4.so.1
+   provider: lz4-libs-1.9.3-2.amzn2022.i686
+  dependency: libpopt.so.0
+   provider: popt-1.18-6.amzn2022.i686
+  dependency: libpopt.so.0(LIBPOPT_0)
+   provider: popt-1.18-6.amzn2022.i686
+  dependency: libzstd.so.1
+   provider: libzstd-1.5.2-1.amzn2022.i686
+   provider: libzstd-1.5.0-1.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: rsync-3.2.3-5.amzn2022.x86_64
+  dependency: /usr/bin/bash
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: config(rsync) = 3.2.3-5.amzn2022
+   provider: rsync-3.2.3-5.amzn2022.x86_64
+   provider: rsync-3.2.3-5.amzn2022.i686
+  dependency: libacl.so.1()(64bit)
+   provider: libacl-2.3.1-2.amzn2022.x86_64
+  dependency: libacl.so.1(ACL_1.0)(64bit)
+   provider: libacl-2.3.1-2.amzn2022.x86_64
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libcrypto.so.1.1()(64bit)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.x86_64
+  dependency: libcrypto.so.1.1(OPENSSL_1_1_0)(64bit)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.x86_64
+  dependency: liblz4.so.1()(64bit)
+   provider: lz4-libs-1.9.3-2.amzn2022.x86_64
+  dependency: libpopt.so.0()(64bit)
+   provider: popt-1.18-6.amzn2022.x86_64
+  dependency: libpopt.so.0(LIBPOPT_0)(64bit)
+   provider: popt-1.18-6.amzn2022.x86_64
+  dependency: libzstd.so.1()(64bit)
+   provider: libzstd-1.5.0-1.amzn2022.x86_64
+   provider: libzstd-1.5.2-1.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686

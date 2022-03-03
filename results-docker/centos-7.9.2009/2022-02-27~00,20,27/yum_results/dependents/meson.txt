@@ -1,0 +1,17 @@
+yum deplist -v meson
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:07:41 ago on Sun Feb 27 00:21:46 2022.
+package: meson-0.59.4-1.amzn2022.noarch
+  dependency: /usr/bin/python3
+   provider: python3-3.9.8-1.amzn2022.x86_64
+   provider: python3-3.9.8-1.amzn2022.i686
+  dependency: ninja-build
+   provider: ninja-build-1.10.2-2.amzn2022.x86_64
+   provider: ninja-build-1.10.2-2.amzn2022.i686
+  dependency: python(abi) = 3.9
+   provider: python3-3.9.8-1.amzn2022.x86_64
+   provider: python3-3.9.8-1.amzn2022.i686
+  dependency: python3.9dist(setuptools)
+   provider: python3-setuptools-53.0.0-2.amzn2022.noarch

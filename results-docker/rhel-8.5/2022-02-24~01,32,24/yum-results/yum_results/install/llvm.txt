@@ -1,0 +1,61 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:03:25 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package llvm.x86_64 12.0.1-2.module+el8.5.0+12488+254d2a07 will be installed
+---> Package llvm-libs.x86_64 12.0.1-2.module+el8.5.0+12488+254d2a07 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package   Arch   Version                                 Repository       Size
+================================================================================
+Installing:
+ llvm      x86_64 12.0.1-2.module+el8.5.0+12488+254d2a07  ubi-8-appstream  16 M
+Installing dependencies:
+ llvm-libs x86_64 12.0.1-2.module+el8.5.0+12488+254d2a07  ubi-8-appstream  23 M
+Enabling module streams:
+ llvm-toolset
+                  rhel8                                                        
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 39 M
+Installed size: 133 M
+Downloading Packages:
+(1/2): llvm-12.0.1-2.module+el8.5.0+12488+254d2 9.3 MB/s |  16 MB     00:01    
+(2/2): llvm-libs-12.0.1-2.module+el8.5.0+12488+  12 MB/s |  23 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                            20 MB/s |  39 MB     00:01     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : llvm-libs-12.0.1-2.module+el8.5.0+12488+254d2a07.x86   1/2 
+  Installing       : llvm-12.0.1-2.module+el8.5.0+12488+254d2a07.x86_64     2/2 
+  Running scriptlet: llvm-12.0.1-2.module+el8.5.0+12488+254d2a07.x86_64     2/2 
+  Verifying        : llvm-12.0.1-2.module+el8.5.0+12488+254d2a07.x86_64     1/2 
+  Verifying        : llvm-libs-12.0.1-2.module+el8.5.0+12488+254d2a07.x86   2/2 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: llvm-12.0.1-2.module+el8.5.0+12488+254d2a07.x86_64
+Installed: llvm-libs-12.0.1-2.module+el8.5.0+12488+254d2a07.x86_64
+
+Installed:
+  llvm-12.0.1-2.module+el8.5.0+12488+254d2a07.x86_64                            
+  llvm-libs-12.0.1-2.module+el8.5.0+12488+254d2a07.x86_64                       
+
+Complete!

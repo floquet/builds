@@ -1,0 +1,24 @@
+yum deplist -v boost-devel
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:02:28 ago on Sun Feb 27 00:21:46 2022.
+package: boost-devel-1.75.0-4.amzn2022.i686
+  dependency: boost(x86-32) = 1.75.0-4.amzn2022
+   provider: boost-1.75.0-4.amzn2022.i686
+  dependency: boost-numpy3(x86-32) = 1.75.0-4.amzn2022
+   provider: boost-numpy3-1.75.0-4.amzn2022.i686
+  dependency: libicu-devel(x86-32)
+   provider: libicu-devel-67.1-7.amzn2022.i686
+  dependency: libquadmath-devel(x86-32)
+   provider: libquadmath-devel-11.2.1-2.amzn2022.0.2.i686
+
+package: boost-devel-1.75.0-4.amzn2022.x86_64
+  dependency: boost(x86-64) = 1.75.0-4.amzn2022
+   provider: boost-1.75.0-4.amzn2022.x86_64
+  dependency: boost-numpy3(x86-64) = 1.75.0-4.amzn2022
+   provider: boost-numpy3-1.75.0-4.amzn2022.x86_64
+  dependency: libicu-devel(x86-64)
+   provider: libicu-devel-67.1-7.amzn2022.x86_64
+  dependency: libquadmath-devel(x86-64)
+   provider: libquadmath-devel-11.2.1-2.amzn2022.0.2.x86_64

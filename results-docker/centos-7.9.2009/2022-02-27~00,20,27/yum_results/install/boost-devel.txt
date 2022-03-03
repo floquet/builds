@@ -1,0 +1,269 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:01:44 ago on Sun Feb 27 00:21:46 2022.
+--> Starting dependency resolution
+---> Package boost-atomic.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-iostreams.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-wave.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package flexiblas-netlib.x86_64 3.0.4-3.amzn2022 will be installed
+---> Package openblas-openmp.x86_64 0.3.18-1.amzn2022 will be installed
+---> Package boost-python3.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-timer.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-type_erasure.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-chrono.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-log.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-graph.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package flexiblas-openblas-openmp.x86_64 3.0.4-3.amzn2022 will be installed
+---> Package boost-test.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-math.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-fiber.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package flexiblas.x86_64 3.0.4-3.amzn2022 will be installed
+---> Package boost-locale.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-coroutine.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-serialization.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-devel.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-numpy3.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package python3-numpy.x86_64 1:1.21.1-1.amzn2022 will be installed
+---> Package boost-stacktrace.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-date-time.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package libicu-devel.x86_64 67.1-7.amzn2022 will be installed
+---> Package boost-random.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-context.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-program-options.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-container.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-contract.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package boost-nowide.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package openblas.x86_64 0.3.18-1.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package                     Arch     Version               Repository     Size
+================================================================================
+Installing:
+ boost-devel                 x86_64   1.75.0-4.amzn2022     amazonlinux    11 M
+Installing dependencies:
+ boost                       x86_64   1.75.0-4.amzn2022     amazonlinux    14 k
+ boost-atomic                x86_64   1.75.0-4.amzn2022     amazonlinux    19 k
+ boost-chrono                x86_64   1.75.0-4.amzn2022     amazonlinux    27 k
+ boost-container             x86_64   1.75.0-4.amzn2022     amazonlinux    39 k
+ boost-context               x86_64   1.75.0-4.amzn2022     amazonlinux    18 k
+ boost-contract              x86_64   1.75.0-4.amzn2022     amazonlinux    48 k
+ boost-coroutine             x86_64   1.75.0-4.amzn2022     amazonlinux    35 k
+ boost-date-time             x86_64   1.75.0-4.amzn2022     amazonlinux    15 k
+ boost-fiber                 x86_64   1.75.0-4.amzn2022     amazonlinux    42 k
+ boost-graph                 x86_64   1.75.0-4.amzn2022     amazonlinux   105 k
+ boost-iostreams             x86_64   1.75.0-4.amzn2022     amazonlinux    40 k
+ boost-locale                x86_64   1.75.0-4.amzn2022     amazonlinux   222 k
+ boost-log                   x86_64   1.75.0-4.amzn2022     amazonlinux   420 k
+ boost-math                  x86_64   1.75.0-4.amzn2022     amazonlinux   210 k
+ boost-nowide                x86_64   1.75.0-4.amzn2022     amazonlinux    18 k
+ boost-numpy3                x86_64   1.75.0-4.amzn2022     amazonlinux    29 k
+ boost-program-options       x86_64   1.75.0-4.amzn2022     amazonlinux   111 k
+ boost-python3               x86_64   1.75.0-4.amzn2022     amazonlinux    98 k
+ boost-random                x86_64   1.75.0-4.amzn2022     amazonlinux    26 k
+ boost-serialization         x86_64   1.75.0-4.amzn2022     amazonlinux   134 k
+ boost-stacktrace            x86_64   1.75.0-4.amzn2022     amazonlinux    30 k
+ boost-test                  x86_64   1.75.0-4.amzn2022     amazonlinux   240 k
+ boost-timer                 x86_64   1.75.0-4.amzn2022     amazonlinux    26 k
+ boost-type_erasure          x86_64   1.75.0-4.amzn2022     amazonlinux    33 k
+ boost-wave                  x86_64   1.75.0-4.amzn2022     amazonlinux   217 k
+ flexiblas                   x86_64   3.0.4-3.amzn2022      amazonlinux    32 k
+ flexiblas-netlib            x86_64   3.0.4-3.amzn2022      amazonlinux   3.4 M
+ flexiblas-openblas-openmp   x86_64   3.0.4-3.amzn2022      amazonlinux    18 k
+ libicu-devel                x86_64   67.1-7.amzn2022       amazonlinux   831 k
+ openblas                    x86_64   0.3.18-1.amzn2022     amazonlinux    35 k
+ openblas-openmp             x86_64   0.3.18-1.amzn2022     amazonlinux   5.6 M
+ python3-numpy               x86_64   1:1.21.1-1.amzn2022   amazonlinux   5.2 M
+
+Transaction Summary
+================================================================================
+Install  33 Packages
+
+Total download size: 28 M
+Installed size: 226 M
+Downloading Packages:
+(1/33): boost-atomic-1.75.0-4.amzn2022.x86_64.r  29 kB/s |  19 kB     00:00    
+(2/33): boost-iostreams-1.75.0-4.amzn2022.x86_6  54 kB/s |  40 kB     00:00    
+(3/33): boost-wave-1.75.0-4.amzn2022.x86_64.rpm 256 kB/s | 217 kB     00:00    
+(4/33): boost-python3-1.75.0-4.amzn2022.x86_64. 431 kB/s |  98 kB     00:00    
+(5/33): boost-timer-1.75.0-4.amzn2022.x86_64.rp 215 kB/s |  26 kB     00:00    
+(6/33): boost-type_erasure-1.75.0-4.amzn2022.x8 209 kB/s |  33 kB     00:00    
+(7/33): boost-chrono-1.75.0-4.amzn2022.x86_64.r 266 kB/s |  27 kB     00:00    
+(8/33): boost-1.75.0-4.amzn2022.x86_64.rpm       54 kB/s |  14 kB     00:00    
+(9/33): boost-log-1.75.0-4.amzn2022.x86_64.rpm  1.7 MB/s | 420 kB     00:00    
+(10/33): boost-graph-1.75.0-4.amzn2022.x86_64.r 678 kB/s | 105 kB     00:00    
+(11/33): flexiblas-openblas-openmp-3.0.4-3.amzn 130 kB/s |  18 kB     00:00    
+(12/33): flexiblas-netlib-3.0.4-3.amzn2022.x86_ 2.1 MB/s | 3.4 MB     00:01    
+(13/33): boost-test-1.75.0-4.amzn2022.x86_64.rp 1.5 MB/s | 240 kB     00:00    
+(14/33): boost-math-1.75.0-4.amzn2022.x86_64.rp 1.4 MB/s | 210 kB     00:00    
+(15/33): openblas-openmp-0.3.18-1.amzn2022.x86_ 3.2 MB/s | 5.6 MB     00:01    
+(16/33): boost-fiber-1.75.0-4.amzn2022.x86_64.r 127 kB/s |  42 kB     00:00    
+(17/33): flexiblas-3.0.4-3.amzn2022.x86_64.rpm  101 kB/s |  32 kB     00:00    
+(18/33): boost-locale-1.75.0-4.amzn2022.x86_64. 754 kB/s | 222 kB     00:00    
+(19/33): boost-coroutine-1.75.0-4.amzn2022.x86_ 329 kB/s |  35 kB     00:00    
+(20/33): boost-serialization-1.75.0-4.amzn2022. 889 kB/s | 134 kB     00:00    
+(21/33): boost-numpy3-1.75.0-4.amzn2022.x86_64. 296 kB/s |  29 kB     00:00    
+(22/33): boost-stacktrace-1.75.0-4.amzn2022.x86 170 kB/s |  30 kB     00:00    
+(23/33): boost-date-time-1.75.0-4.amzn2022.x86_ 137 kB/s |  15 kB     00:00    
+(24/33): libicu-devel-67.1-7.amzn2022.x86_64.rp 1.0 MB/s | 831 kB     00:00    
+(25/33): boost-random-1.75.0-4.amzn2022.x86_64. 155 kB/s |  26 kB     00:00    
+(26/33): boost-context-1.75.0-4.amzn2022.x86_64 131 kB/s |  18 kB     00:00    
+(27/33): boost-program-options-1.75.0-4.amzn202 557 kB/s | 111 kB     00:00    
+(28/33): boost-container-1.75.0-4.amzn2022.x86_ 123 kB/s |  39 kB     00:00    
+(29/33): boost-contract-1.75.0-4.amzn2022.x86_6 484 kB/s |  48 kB     00:00    
+(30/33): boost-nowide-1.75.0-4.amzn2022.x86_64. 149 kB/s |  18 kB     00:00    
+(31/33): python3-numpy-1.21.1-1.amzn2022.x86_64 2.3 MB/s | 5.2 MB     00:02    
+(32/33): openblas-0.3.18-1.amzn2022.x86_64.rpm  215 kB/s |  35 kB     00:00    
+(33/33): boost-devel-1.75.0-4.amzn2022.x86_64.r 1.3 MB/s |  11 MB     00:08    
+--------------------------------------------------------------------------------
+Total                                           2.5 MB/s |  28 MB     00:11     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : boost-chrono-1.75.0-4.amzn2022.x86_64                 1/33 
+  Installing       : boost-context-1.75.0-4.amzn2022.x86_64                2/33 
+  Installing       : boost-date-time-1.75.0-4.amzn2022.x86_64              3/33 
+  Installing       : flexiblas-3.0.4-3.amzn2022.x86_64                     4/33 
+  Installing       : boost-python3-1.75.0-4.amzn2022.x86_64                5/33 
+  Installing       : boost-atomic-1.75.0-4.amzn2022.x86_64                 6/33 
+  Installing       : boost-log-1.75.0-4.amzn2022.x86_64                    7/33 
+  Installing       : boost-wave-1.75.0-4.amzn2022.x86_64                   8/33 
+  Installing       : boost-fiber-1.75.0-4.amzn2022.x86_64                  9/33 
+  Installing       : boost-coroutine-1.75.0-4.amzn2022.x86_64             10/33 
+  Installing       : boost-timer-1.75.0-4.amzn2022.x86_64                 11/33 
+  Installing       : boost-type_erasure-1.75.0-4.amzn2022.x86_64          12/33 
+  Installing       : boost-locale-1.75.0-4.amzn2022.x86_64                13/33 
+  Installing       : openblas-0.3.18-1.amzn2022.x86_64                    14/33 
+  Installing       : openblas-openmp-0.3.18-1.amzn2022.x86_64             15/33 
+  Installing       : flexiblas-openblas-openmp-3.0.4-3.amzn2022.x86_64    16/33 
+  Installing       : flexiblas-netlib-3.0.4-3.amzn2022.x86_64             17/33 
+  Installing       : python3-numpy-1:1.21.1-1.amzn2022.x86_64             18/33 
+  Installing       : boost-numpy3-1.75.0-4.amzn2022.x86_64                19/33 
+  Installing       : boost-nowide-1.75.0-4.amzn2022.x86_64                20/33 
+  Installing       : boost-contract-1.75.0-4.amzn2022.x86_64              21/33 
+  Installing       : boost-container-1.75.0-4.amzn2022.x86_64             22/33 
+  Installing       : boost-program-options-1.75.0-4.amzn2022.x86_64       23/33 
+  Installing       : boost-random-1.75.0-4.amzn2022.x86_64                24/33 
+  Installing       : libicu-devel-67.1-7.amzn2022.x86_64                  25/33 
+  Installing       : boost-stacktrace-1.75.0-4.amzn2022.x86_64            26/33 
+  Installing       : boost-serialization-1.75.0-4.amzn2022.x86_64         27/33 
+  Installing       : boost-math-1.75.0-4.amzn2022.x86_64                  28/33 
+  Installing       : boost-test-1.75.0-4.amzn2022.x86_64                  29/33 
+  Installing       : boost-graph-1.75.0-4.amzn2022.x86_64                 30/33 
+  Installing       : boost-iostreams-1.75.0-4.amzn2022.x86_64             31/33 
+  Installing       : boost-1.75.0-4.amzn2022.x86_64                       32/33 
+  Installing       : boost-devel-1.75.0-4.amzn2022.x86_64                 33/33 
+  Running scriptlet: boost-devel-1.75.0-4.amzn2022.x86_64                 33/33 
+  Verifying        : boost-atomic-1.75.0-4.amzn2022.x86_64                 1/33 
+  Verifying        : boost-iostreams-1.75.0-4.amzn2022.x86_64              2/33 
+  Verifying        : boost-wave-1.75.0-4.amzn2022.x86_64                   3/33 
+  Verifying        : flexiblas-netlib-3.0.4-3.amzn2022.x86_64              4/33 
+  Verifying        : openblas-openmp-0.3.18-1.amzn2022.x86_64              5/33 
+  Verifying        : boost-python3-1.75.0-4.amzn2022.x86_64                6/33 
+  Verifying        : boost-timer-1.75.0-4.amzn2022.x86_64                  7/33 
+  Verifying        : boost-type_erasure-1.75.0-4.amzn2022.x86_64           8/33 
+  Verifying        : boost-chrono-1.75.0-4.amzn2022.x86_64                 9/33 
+  Verifying        : boost-1.75.0-4.amzn2022.x86_64                       10/33 
+  Verifying        : boost-log-1.75.0-4.amzn2022.x86_64                   11/33 
+  Verifying        : boost-graph-1.75.0-4.amzn2022.x86_64                 12/33 
+  Verifying        : flexiblas-openblas-openmp-3.0.4-3.amzn2022.x86_64    13/33 
+  Verifying        : boost-test-1.75.0-4.amzn2022.x86_64                  14/33 
+  Verifying        : boost-math-1.75.0-4.amzn2022.x86_64                  15/33 
+  Verifying        : boost-fiber-1.75.0-4.amzn2022.x86_64                 16/33 
+  Verifying        : flexiblas-3.0.4-3.amzn2022.x86_64                    17/33 
+  Verifying        : boost-locale-1.75.0-4.amzn2022.x86_64                18/33 
+  Verifying        : boost-coroutine-1.75.0-4.amzn2022.x86_64             19/33 
+  Verifying        : boost-serialization-1.75.0-4.amzn2022.x86_64         20/33 
+  Verifying        : boost-devel-1.75.0-4.amzn2022.x86_64                 21/33 
+  Verifying        : boost-numpy3-1.75.0-4.amzn2022.x86_64                22/33 
+  Verifying        : python3-numpy-1:1.21.1-1.amzn2022.x86_64             23/33 
+  Verifying        : boost-stacktrace-1.75.0-4.amzn2022.x86_64            24/33 
+  Verifying        : boost-date-time-1.75.0-4.amzn2022.x86_64             25/33 
+  Verifying        : libicu-devel-67.1-7.amzn2022.x86_64                  26/33 
+  Verifying        : boost-random-1.75.0-4.amzn2022.x86_64                27/33 
+  Verifying        : boost-context-1.75.0-4.amzn2022.x86_64               28/33 
+  Verifying        : boost-program-options-1.75.0-4.amzn2022.x86_64       29/33 
+  Verifying        : boost-container-1.75.0-4.amzn2022.x86_64             30/33 
+  Verifying        : boost-contract-1.75.0-4.amzn2022.x86_64              31/33 
+  Verifying        : boost-nowide-1.75.0-4.amzn2022.x86_64                32/33 
+  Verifying        : openblas-0.3.18-1.amzn2022.x86_64                    33/33 
+Completion plugin: Generating completion cache...
+Installed: boost-1.75.0-4.amzn2022.x86_64
+Installed: boost-atomic-1.75.0-4.amzn2022.x86_64
+Installed: boost-chrono-1.75.0-4.amzn2022.x86_64
+Installed: boost-container-1.75.0-4.amzn2022.x86_64
+Installed: boost-context-1.75.0-4.amzn2022.x86_64
+Installed: boost-contract-1.75.0-4.amzn2022.x86_64
+Installed: boost-coroutine-1.75.0-4.amzn2022.x86_64
+Installed: boost-date-time-1.75.0-4.amzn2022.x86_64
+Installed: boost-devel-1.75.0-4.amzn2022.x86_64
+Installed: boost-fiber-1.75.0-4.amzn2022.x86_64
+Installed: boost-graph-1.75.0-4.amzn2022.x86_64
+Installed: boost-iostreams-1.75.0-4.amzn2022.x86_64
+Installed: boost-locale-1.75.0-4.amzn2022.x86_64
+Installed: boost-log-1.75.0-4.amzn2022.x86_64
+Installed: boost-math-1.75.0-4.amzn2022.x86_64
+Installed: boost-nowide-1.75.0-4.amzn2022.x86_64
+Installed: boost-numpy3-1.75.0-4.amzn2022.x86_64
+Installed: boost-program-options-1.75.0-4.amzn2022.x86_64
+Installed: boost-python3-1.75.0-4.amzn2022.x86_64
+Installed: boost-random-1.75.0-4.amzn2022.x86_64
+Installed: boost-serialization-1.75.0-4.amzn2022.x86_64
+Installed: boost-stacktrace-1.75.0-4.amzn2022.x86_64
+Installed: boost-test-1.75.0-4.amzn2022.x86_64
+Installed: boost-timer-1.75.0-4.amzn2022.x86_64
+Installed: boost-type_erasure-1.75.0-4.amzn2022.x86_64
+Installed: boost-wave-1.75.0-4.amzn2022.x86_64
+Installed: flexiblas-3.0.4-3.amzn2022.x86_64
+Installed: flexiblas-netlib-3.0.4-3.amzn2022.x86_64
+Installed: flexiblas-openblas-openmp-3.0.4-3.amzn2022.x86_64
+Installed: libicu-devel-67.1-7.amzn2022.x86_64
+Installed: openblas-0.3.18-1.amzn2022.x86_64
+Installed: openblas-openmp-0.3.18-1.amzn2022.x86_64
+Installed: python3-numpy-1:1.21.1-1.amzn2022.x86_64
+
+Installed:
+  boost-1.75.0-4.amzn2022.x86_64                                                
+  boost-atomic-1.75.0-4.amzn2022.x86_64                                         
+  boost-chrono-1.75.0-4.amzn2022.x86_64                                         
+  boost-container-1.75.0-4.amzn2022.x86_64                                      
+  boost-context-1.75.0-4.amzn2022.x86_64                                        
+  boost-contract-1.75.0-4.amzn2022.x86_64                                       
+  boost-coroutine-1.75.0-4.amzn2022.x86_64                                      
+  boost-date-time-1.75.0-4.amzn2022.x86_64                                      
+  boost-devel-1.75.0-4.amzn2022.x86_64                                          
+  boost-fiber-1.75.0-4.amzn2022.x86_64                                          
+  boost-graph-1.75.0-4.amzn2022.x86_64                                          
+  boost-iostreams-1.75.0-4.amzn2022.x86_64                                      
+  boost-locale-1.75.0-4.amzn2022.x86_64                                         
+  boost-log-1.75.0-4.amzn2022.x86_64                                            
+  boost-math-1.75.0-4.amzn2022.x86_64                                           
+  boost-nowide-1.75.0-4.amzn2022.x86_64                                         
+  boost-numpy3-1.75.0-4.amzn2022.x86_64                                         
+  boost-program-options-1.75.0-4.amzn2022.x86_64                                
+  boost-python3-1.75.0-4.amzn2022.x86_64                                        
+  boost-random-1.75.0-4.amzn2022.x86_64                                         
+  boost-serialization-1.75.0-4.amzn2022.x86_64                                  
+  boost-stacktrace-1.75.0-4.amzn2022.x86_64                                     
+  boost-test-1.75.0-4.amzn2022.x86_64                                           
+  boost-timer-1.75.0-4.amzn2022.x86_64                                          
+  boost-type_erasure-1.75.0-4.amzn2022.x86_64                                   
+  boost-wave-1.75.0-4.amzn2022.x86_64                                           
+  flexiblas-3.0.4-3.amzn2022.x86_64                                             
+  flexiblas-netlib-3.0.4-3.amzn2022.x86_64                                      
+  flexiblas-openblas-openmp-3.0.4-3.amzn2022.x86_64                             
+  libicu-devel-67.1-7.amzn2022.x86_64                                           
+  openblas-0.3.18-1.amzn2022.x86_64                                             
+  openblas-openmp-0.3.18-1.amzn2022.x86_64                                      
+  python3-numpy-1:1.21.1-1.amzn2022.x86_64                                      
+
+Complete!

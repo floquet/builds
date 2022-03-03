@@ -1,0 +1,146 @@
+yum deplist -v rng-tools
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:07:34 ago on Sun Feb 27 02:28:03 2022.
+package: rng-tools-6.14-1.git.56626083.amzn2022.0.1.i686
+  dependency: /bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: config(rng-tools) = 6.14-1.git.56626083.amzn2022.0.1
+   provider: rng-tools-6.14-1.git.56626083.amzn2022.0.1.x86_64
+   provider: rng-tools-6.14-1.git.56626083.amzn2022.0.1.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libcrypto.so.1.1
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.i686
+  dependency: libcrypto.so.1.1(OPENSSL_1_1_0)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.i686
+  dependency: libcurl.so.4
+   provider: libcurl-7.79.1-1.amzn2022.i686
+   provider: libcurl-minimal-7.79.1-1.amzn2022.i686
+  dependency: libjansson.so.4
+   provider: jansson-2.13.1-2.amzn2022.i686
+  dependency: libjitterentropy.so.2
+  dependency: libp11.so.3
+   provider: openssl-pkcs11-0.4.11-2.amzn2022.i686
+  dependency: libp11.so.3(LIBP11_3)
+   provider: openssl-pkcs11-0.4.11-2.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: systemd
+   provider: systemd-248.9-1.amzn2022.0.3.x86_64
+   provider: systemd-248.9-1.amzn2022.0.2.x86_64
+   provider: systemd-248.9-1.amzn2022.0.3.i686
+   provider: systemd-248.9-1.amzn2022.0.2.i686
+
+package: rng-tools-6.14-1.git.56626083.amzn2022.0.1.x86_64
+  dependency: /bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: config(rng-tools) = 6.14-1.git.56626083.amzn2022.0.1
+   provider: rng-tools-6.14-1.git.56626083.amzn2022.0.1.x86_64
+   provider: rng-tools-6.14-1.git.56626083.amzn2022.0.1.i686
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libcrypto.so.1.1()(64bit)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.x86_64
+  dependency: libcrypto.so.1.1(OPENSSL_1_1_0)(64bit)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.x86_64
+  dependency: libcurl.so.4()(64bit)
+   provider: libcurl-7.79.1-1.amzn2022.x86_64
+   provider: libcurl-minimal-7.79.1-1.amzn2022.x86_64
+  dependency: libjansson.so.4()(64bit)
+   provider: jansson-2.13.1-2.amzn2022.x86_64
+  dependency: libjitterentropy.so.2()(64bit)
+  dependency: libp11.so.3()(64bit)
+   provider: openssl-pkcs11-0.4.11-2.amzn2022.x86_64
+  dependency: libp11.so.3(LIBP11_3)(64bit)
+   provider: openssl-pkcs11-0.4.11-2.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: systemd
+   provider: systemd-248.9-1.amzn2022.0.3.x86_64
+   provider: systemd-248.9-1.amzn2022.0.2.x86_64
+   provider: systemd-248.9-1.amzn2022.0.3.i686
+   provider: systemd-248.9-1.amzn2022.0.2.i686
+
+package: rng-tools-6.14-1.git.56626083.amzn2022.0.2.i686
+  dependency: /bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: config(rng-tools) = 6.14-1.git.56626083.amzn2022.0.2
+   provider: rng-tools-6.14-1.git.56626083.amzn2022.0.2.x86_64
+   provider: rng-tools-6.14-1.git.56626083.amzn2022.0.2.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libcrypto.so.1.1
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.i686
+  dependency: libcrypto.so.1.1(OPENSSL_1_1_0)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.i686
+  dependency: libcurl.so.4
+   provider: libcurl-7.79.1-1.amzn2022.i686
+   provider: libcurl-minimal-7.79.1-1.amzn2022.i686
+  dependency: libjansson.so.4
+   provider: jansson-2.13.1-2.amzn2022.i686
+  dependency: libjitterentropy.so.3
+   provider: jitterentropy-3.3.0-1.amzn2022.i686
+  dependency: libp11.so.3
+   provider: openssl-pkcs11-0.4.11-2.amzn2022.i686
+  dependency: libp11.so.3(LIBP11_3)
+   provider: openssl-pkcs11-0.4.11-2.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: systemd
+   provider: systemd-248.9-1.amzn2022.0.3.x86_64
+   provider: systemd-248.9-1.amzn2022.0.2.x86_64
+   provider: systemd-248.9-1.amzn2022.0.3.i686
+   provider: systemd-248.9-1.amzn2022.0.2.i686
+
+package: rng-tools-6.14-1.git.56626083.amzn2022.0.2.x86_64
+  dependency: /bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: config(rng-tools) = 6.14-1.git.56626083.amzn2022.0.2
+   provider: rng-tools-6.14-1.git.56626083.amzn2022.0.2.x86_64
+   provider: rng-tools-6.14-1.git.56626083.amzn2022.0.2.i686
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libcrypto.so.1.1()(64bit)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.x86_64
+  dependency: libcrypto.so.1.1(OPENSSL_1_1_0)(64bit)
+   provider: openssl-libs-1:1.1.1l-2.amzn2022.x86_64
+  dependency: libcurl.so.4()(64bit)
+   provider: libcurl-7.79.1-1.amzn2022.x86_64
+   provider: libcurl-minimal-7.79.1-1.amzn2022.x86_64
+  dependency: libjansson.so.4()(64bit)
+   provider: jansson-2.13.1-2.amzn2022.x86_64
+  dependency: libjitterentropy.so.3()(64bit)
+   provider: jitterentropy-3.3.0-1.amzn2022.x86_64
+  dependency: libp11.so.3()(64bit)
+   provider: openssl-pkcs11-0.4.11-2.amzn2022.x86_64
+  dependency: libp11.so.3(LIBP11_3)(64bit)
+   provider: openssl-pkcs11-0.4.11-2.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: systemd
+   provider: systemd-248.9-1.amzn2022.0.3.x86_64
+   provider: systemd-248.9-1.amzn2022.0.2.x86_64
+   provider: systemd-248.9-1.amzn2022.0.3.i686
+   provider: systemd-248.9-1.amzn2022.0.2.i686

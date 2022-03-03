@@ -1,0 +1,36 @@
+yum deplist -v hdf5-devel
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:06:04 ago on Sun Feb 27 00:21:46 2022.
+package: hdf5-devel-1.10.6-5.amzn2022.i686
+  dependency: /usr/bin/bash
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: /usr/bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: gcc-gfortran(x86-32)
+   provider: gcc-gfortran-11.2.1-2.amzn2022.0.2.i686
+  dependency: hdf5(x86-32) = 1.10.6-5.amzn2022
+   provider: hdf5-1.10.6-5.amzn2022.i686
+  dependency: libaec-devel(x86-32)
+   provider: libaec-devel-1.0.5-1.amzn2022.i686
+  dependency: zlib-devel(x86-32)
+   provider: zlib-devel-1.2.11-27.amzn2022.i686
+
+package: hdf5-devel-1.10.6-5.amzn2022.x86_64
+  dependency: /usr/bin/bash
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: /usr/bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: gcc-gfortran(x86-64)
+   provider: gcc-gfortran-11.2.1-2.amzn2022.0.2.x86_64
+  dependency: hdf5(x86-64) = 1.10.6-5.amzn2022
+   provider: hdf5-1.10.6-5.amzn2022.x86_64
+  dependency: libaec-devel(x86-64)
+   provider: libaec-devel-1.0.5-1.amzn2022.x86_64
+  dependency: zlib-devel(x86-64)
+   provider: zlib-devel-1.2.11-27.amzn2022.x86_64

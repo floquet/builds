@@ -1,0 +1,15 @@
+yum deplist -v yum-utils
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:00:16 ago on Thu Feb 24 01:32:26 2022.
+package: yum-utils-4.0.21-4.el8_5.noarch
+  dependency: /usr/libexec/platform-python
+   provider: platform-python-3.6.8-41.el8.x86_64
+   provider: platform-python-3.6.8-41.el8.i686
+  dependency: dnf >= 4.2.22
+   provider: dnf-4.7.0-4.el8.noarch
+  dependency: dnf-plugins-core = 4.0.21-4.el8_5
+   provider: dnf-plugins-core-4.0.21-4.el8_5.noarch
+  dependency: python3-dnf >= 4.2.22
+   provider: python3-dnf-4.7.0-4.el8.noarch

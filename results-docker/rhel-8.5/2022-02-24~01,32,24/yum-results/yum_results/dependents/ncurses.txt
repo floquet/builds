@@ -1,0 +1,27 @@
+yum deplist -v ncurses
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:04:06 ago on Thu Feb 24 01:32:26 2022.
+package: ncurses-6.1-9.20180224.el8.x86_64
+  dependency: libc.so.6()(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.3)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.3.4)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libc.so.6(GLIBC_2.4)(64bit)
+   provider: glibc-2.28-164.el8.x86_64
+  dependency: libtic.so.6()(64bit)
+   provider: ncurses-libs-6.1-9.20180224.el8.x86_64
+  dependency: libtinfo.so.6()(64bit)
+   provider: ncurses-libs-6.1-9.20180224.el8.x86_64
+  dependency: ncurses-libs(x86-64) = 6.1-9.20180224.el8
+   provider: ncurses-libs-6.1-9.20180224.el8.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.28-164.el8.i686
+   provider: glibc-2.28-164.el8.x86_64

@@ -1,0 +1,2211 @@
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:00:21 ago on Sun Feb 27 02:28:03 2022.
+Adding packages from group 'development': {<libcomps.Package object 'gcc-c++' at 0x7fe8afef7890>, <libcomps.Package object 'bison' at 0x7fe8afef7850>, <libcomps.Package object 'patchutils' at 0x7fe8afef7af0>, <libcomps.Package object 'binutils' at 0x7fe8afef7810>, <libcomps.Package object 'subversion' at 0x7fe8afef7b30>, <libcomps.Package object 'indent' at 0x7fe8afef7ab0>, <libcomps.Package object 'make' at 0x7fe8afef78f0>, <libcomps.Package object 'ctags' at 0x7fe8afef7a10>, <libcomps.Package object 'libtool' at 0x7fe8afef78d0>, <libcomps.Package object 'byacc' at 0x7fe8afef79b0>, <libcomps.Package object 'diffstat' at 0x7fe8afef7a30>, <libcomps.Package object 'system-rpm-config' at 0x7fe8afef7990>, <libcomps.Package object 'gettext' at 0x7fe8afef78b0>, <libcomps.Package object 'rpm-sign' at 0x7fe8afef7970>, <libcomps.Package object 'flex' at 0x7fe8afef7870>, <libcomps.Package object 'systemtap' at 0x7fe8afef7b70>, <libcomps.Package object 'rpm-build' at 0x7fe8afef7950>, <libcomps.Package object 'rcs' at 0x7fe8afef7b10>, <libcomps.Package object 'gcc-gfortran' at 0x7fe8afef7a70>, <libcomps.Package object 'patch' at 0x7fe8afef7910>, <libcomps.Package object 'automake' at 0x7fe8afef77f0>, <libcomps.Package object 'gcc' at 0x7fe8afef7710>, <libcomps.Package object 'autoconf' at 0x7fe8afef77d0>, <libcomps.Package object 'intltool' at 0x7fe8afef7ad0>, <libcomps.Package object 'pkgconfig' at 0x7fe8afef7930>, <libcomps.Package object 'doxygen' at 0x7fe8afef7a50>, <libcomps.Package object 'elfutils' at 0x7fe8afef79d0>, <libcomps.Package object 'cscope' at 0x7fe8afef79f0>, <libcomps.Package object 'swig' at 0x7fe8afef7b50>, <libcomps.Package object 'git' at 0x7fe8afef7a90>}
+--> Starting dependency resolution
+---> Package libSM.x86_64 1.2.3-8.amzn2022 will be installed
+---> Package git.x86_64 2.31.1-3.amzn2022 will be installed
+---> Package libargon2.x86_64 20171227-6.amzn2022 will be installed
+---> Package libutempter.x86_64 1.2.1-4.amzn2022 will be installed
+---> Package libXt.x86_64 1.2.0-4.amzn2022 will be installed
+---> Package atk.x86_64 2.36.0-3.amzn2022 will be installed
+---> Package jansson.x86_64 2.13.1-2.amzn2022 will be installed
+---> Package elfutils-debuginfod-client.x86_64 0.185-2.amzn2022.0.1 will be installed
+---> Package gettext.x86_64 0.21-4.amzn2022 will be installed
+---> Package libpkgconf.x86_64 1.7.3-7.amzn2022 will be installed
+---> Package libcbor.x86_64 0.7.0-3.amzn2022 will be installed
+---> Package dyninst.x86_64 10.2.1-6.amzn2022 will be installed
+---> Package subversion-libs.x86_64 1.14.1-1.amzn2022.0.1 will be installed
+---> Package libstdc++-devel.x86_64 11.2.1-2.amzn2022.0.2 will be installed
+---> Package glibc-devel.x86_64 2.34-8.amzn2022 will be installed
+---> Package perl-POSIX.x86_64 1.94-477.amzn2022 will be installed
+---> Package libpng.x86_64 2:1.6.37-10.amzn2022 will be installed
+---> Package perl-Data-Dumper.x86_64 2.174-460.amzn2022 will be installed
+---> Package cpio.x86_64 2.13-10.amzn2022 will be installed
+---> Package byacc.x86_64 2.0.20210109-2.amzn2022 will be installed
+---> Package libquadmath-devel.x86_64 11.2.1-2.amzn2022.0.2 will be installed
+---> Package dbus-broker.x86_64 29-2.amzn2022 will be installed
+---> Package nspr.x86_64 4.32.0-2.amzn2022.0.1 will be installed
+---> Package perl-TermReadKey.x86_64 2.38-9.amzn2022 will be installed
+---> Package systemtap.x86_64 4.5-1.amzn2022 will be installed
+---> Package libXau.x86_64 1.0.9-6.amzn2022 will be installed
+---> Package nss-softokn-freebl.x86_64 3.71.0-2.amzn2022.0.1 will be installed
+---> Package nss-softokn.x86_64 3.71.0-2.amzn2022.0.1 will be installed
+---> Package efivar-libs.x86_64 37-15.amzn2022 will be installed
+---> Package swig.x86_64 4.0.2-6.amzn2022 will be installed
+---> Package perl-threads.x86_64 1:2.25-458.amzn2022.0.1 will be installed
+---> Package libXmu.x86_64 1.1.3-6.amzn2022 will be installed
+---> Package elfutils-devel.x86_64 0.185-2.amzn2022.0.1 will be installed
+---> Package libeconf.x86_64 0.4.0-1.amzn2022 will be installed
+---> Package ctags.x86_64 5.9-1.20210725.0.amzn2022 will be installed
+---> Package gtk2.x86_64 2.24.33-4.amzn2022 will be installed
+---> Package subversion.x86_64 1.14.1-1.amzn2022.0.1 will be installed
+---> Package less.x86_64 590-2.amzn2022 will be installed
+---> Package libthai.x86_64 0.1.28-6.amzn2022 will be installed
+---> Package gettext-libs.x86_64 0.21-4.amzn2022 will be installed
+---> Package groff-base.x86_64 1.22.4-7.amzn2022 will be installed
+---> Package libimagequant.x86_64 2.14.1-1.amzn2022 will be installed
+---> Package libaom.x86_64 3.1.1-1.amzn2022.0.1 will be installed
+---> Package cairo.x86_64 1.17.4-3.amzn2022 will be installed
+---> Package fontconfig.x86_64 2.13.94-2.amzn2022 will be installed
+---> Package m4.x86_64 1.4.19-2.amzn2022 will be installed
+---> Package gdk-pixbuf2.x86_64 2.42.6-1.amzn2022 will be installed
+---> Package libavif.x86_64 0.9.0-2.amzn2022.0.1 will be installed
+---> Package libXrandr.x86_64 1.5.2-6.amzn2022 will be installed
+---> Package make.x86_64 1:4.3-5.amzn2022 will be installed
+---> Package perl-interpreter.x86_64 4:5.32.1-477.amzn2022 will be installed
+---> Package libpwquality.x86_64 1.4.4-6.amzn2022 will be installed
+---> Package binutils-gold.x86_64 2.35.2-8.amzn2022 will be installed
+---> Package perl-Socket.x86_64 4:2.032-1.amzn2022 will be installed
+---> Package perl-XML-Parser.x86_64 2.46-7.amzn2022 will be installed
+---> Package dwz.x86_64 0.14-1.amzn2022 will be installed
+---> Package jbig2dec-libs.x86_64 0.19-4.amzn2022 will be installed
+---> Package nss-sysinit.x86_64 3.71.0-2.amzn2022.0.1 will be installed
+---> Package findutils.x86_64 1:4.8.0-2.amzn2022 will be installed
+---> Package perl-PathTools.x86_64 3.78-459.amzn2022 will be installed
+---> Package gc.x86_64 8.0.4-5.amzn2022 will be installed
+---> Package boost-thread.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package perl-Storable.x86_64 1:3.21-458.amzn2022 will be installed
+---> Package pam.x86_64 1.5.1-7.amzn2022 will be installed
+---> Package boost-system.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package libbabeltrace.x86_64 1.5.8-6.amzn2022 will be installed
+---> Package perl-DynaLoader.x86_64 1.47-477.amzn2022 will be installed
+---> Package git-core.x86_64 2.31.1-3.amzn2022 will be installed
+---> Package librsvg2.x86_64 2.50.7-1.amzn2022 will be installed
+---> Package libfontenc.x86_64 1.1.3-15.amzn2022 will be installed
+---> Package pixman.x86_64 0.40.0-3.amzn2022 will be installed
+---> Package perl-mro.x86_64 1.23-477.amzn2022 will be installed
+---> Package clang-libs.x86_64 12.0.1-1.amzn2022 will be installed
+---> Package mkfontscale.x86_64 1.2.1-2.amzn2022 will be installed
+---> Package openjpeg2.x86_64 2.4.0-3.amzn2022 will be installed
+---> Package libXpm.x86_64 3.5.13-5.amzn2022 will be installed
+---> Package avahi-libs.x86_64 0.8-14.amzn2022.0.1 will be installed
+---> Package cracklib.x86_64 2.9.6-27.amzn2022 will be installed
+---> Package libdatrie.x86_64 0.2.13-1.amzn2022 will be installed
+---> Package systemd.x86_64 248.9-1.amzn2022.0.3 will be installed
+---> Package zstd.x86_64 1.5.2-1.amzn2022 will be installed
+---> Package libXdamage.x86_64 1.1.5-5.amzn2022 will be installed
+---> Package xapian-core-libs.x86_64 1.4.18-1.amzn2022 will be installed
+---> Package xxhash-libs.x86_64 0.8.0-3.amzn2022 will be installed
+---> Package graphviz.x86_64 2.44.0-18.amzn2022.0.1 will be installed
+---> Package binutils.x86_64 2.35.2-8.amzn2022 will be installed
+---> Package llvm12-libs.x86_64 12.0.1-2.amzn2022 will be installed
+---> Package cpp.x86_64 11.2.1-2.amzn2022.0.2 will be installed
+---> Package perl-Scalar-List-Utils.x86_64 4:1.56-459.amzn2022 will be installed
+---> Package libfido2.x86_64 1.6.0-2.amzn2022 will be installed
+---> Package libipt.x86_64 2.0.4-2.amzn2022 will be installed
+---> Package libtextstyle.x86_64 0.21-4.amzn2022 will be installed
+---> Package libXcomposite.x86_64 0.4.5-5.amzn2022 will be installed
+---> Package perl-Fcntl.x86_64 1.13-477.amzn2022 will be installed
+---> Package libevent.x86_64 2.1.12-3.amzn2022 will be installed
+---> Package annobin.x86_64 9.79-3.amzn2022 will be installed
+---> Package libxcb.x86_64 1.13.1-7.amzn2022 will be installed
+---> Package zip.x86_64 3.0-28.amzn2022 will be installed
+---> Package gcc.x86_64 11.2.1-2.amzn2022.0.2 will be installed
+---> Package glibc-gconv-extra.x86_64 2.34-8.amzn2022 will be installed
+---> Package rpm-sign.x86_64 4.16.1.3-1.amzn2022 will be installed
+---> Package perl-B.x86_64 1.80-477.amzn2022 will be installed
+---> Package boost-regex.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package libedit.x86_64 3.1-38.20210714cvs.amzn2022 will be installed
+---> Package diffstat.x86_64 1.64-4.amzn2022 will be installed
+---> Package patchutils.x86_64 0.4.2-5.amzn2022 will be installed
+---> Package libnl3.x86_64 3.5.0-6.amzn2022 will be installed
+---> Package pkgconf-pkg-config.x86_64 1.7.3-7.amzn2022 will be installed
+---> Package clang-resource-filesystem.x86_64 12.0.1-1.amzn2022 will be installed
+---> Package perl-lib.x86_64 0.65-477.amzn2022 will be installed
+---> Package ed.x86_64 1.14.2-10.amzn2022 will be installed
+---> Package gtk-update-icon-cache.x86_64 3.24.30-4.amzn2022 will be installed
+---> Package libwebp.x86_64 1.2.1-1.amzn2022 will be installed
+---> Package dbus-libs.x86_64 1:1.12.20-3.amzn2022 will be installed
+---> Package perl-MIME-Base64.x86_64 3.16-2.amzn2022 will be installed
+---> Package mokutil.x86_64 2:0.4.0-4.amzn2022 will be installed
+---> Package libtool-ltdl.x86_64 2.4.6-40.amzn2022 will be installed
+---> Package harfbuzz.x86_64 2.7.4-3.amzn2022 will be installed
+---> Package device-mapper-libs.x86_64 1.02.175-1.amzn2022.0.1 will be installed
+---> Package ncurses.x86_64 6.2-4.20200222.amzn2022 will be installed
+---> Package libtool.x86_64 2.4.6-40.amzn2022 will be installed
+---> Package guile22.x86_64 2.2.7-2.amzn2022 will be installed
+---> Package libXext.x86_64 1.3.4-6.amzn2022 will be installed
+---> Package doxygen.x86_64 1:1.9.1-10.amzn2022 will be installed
+---> Package svt-av1-libs.x86_64 0.8.7-2.amzn2022.0.1 will be installed
+---> Package openssh-clients.x86_64 8.6p1-5.amzn2022 will be installed
+---> Package nss.x86_64 3.71.0-2.amzn2022.0.1 will be installed
+---> Package libzstd-devel.x86_64 1.5.2-1.amzn2022 will be installed
+---> Package rav1e-libs.x86_64 0.5.0-21.amzn2022 will be installed
+---> Package nss-util.x86_64 3.71.0-2.amzn2022.0.1 will be installed
+---> Package systemd-pam.x86_64 248.9-1.amzn2022.0.3 will be installed
+---> Package libvmaf.x86_64 2.1.1-1.amzn2022 will be installed
+---> Package libseccomp.x86_64 2.5.3-1.amzn2022 will be installed
+---> Package perl-Errno.x86_64 1.30-477.amzn2022 will be installed
+---> Package libXi.x86_64 1.7.10-6.amzn2022 will be installed
+---> Package util-linux.x86_64 2.36.2-1.amzn2022 will be installed
+---> Package perl-libs.x86_64 4:5.32.1-477.amzn2022 will be installed
+---> Package libdav1d.x86_64 0.9.1-1.amzn2022.0.1 will be installed
+---> Package libfdisk.x86_64 2.36.2-1.amzn2022 will be installed
+---> Package cairo-gobject.x86_64 1.17.4-3.amzn2022 will be installed
+---> Package perl-Encode.x86_64 4:3.15-462.amzn2022 will be installed
+---> Package gcc-gfortran.x86_64 11.2.1-2.amzn2022.0.2 will be installed
+---> Package libXaw.x86_64 1.0.13-17.amzn2022 will be installed
+---> Package apr.x86_64 1.7.0-9.amzn2022 will be installed
+---> Package libgs.x86_64 9.55.0-1.amzn2022 will be installed
+---> Package diffutils.x86_64 3.8-1.amzn2022 will be installed
+---> Package libmpc.x86_64 1.2.1-2.amzn2022 will be installed
+---> Package indent.x86_64 2.2.12-7.amzn2022 will be installed
+---> Package unzip.x86_64 6.0-50.amzn2022 will be installed
+---> Package acl.x86_64 2.3.1-2.amzn2022 will be installed
+---> Package iptables-legacy-libs.x86_64 1.8.7-8.amzn2022 will be installed
+---> Package libXfixes.x86_64 6.0.0-1.amzn2022 will be installed
+---> Package libXinerama.x86_64 1.1.4-8.amzn2022 will be installed
+---> Package cryptsetup-libs.x86_64 2.3.6-1.amzn2022 will be installed
+---> Package flex.x86_64 2.6.4-7.amzn2022 will be installed
+---> Package libijs.x86_64 0.35-13.amzn2022 will be installed
+---> Package gzip.x86_64 1.10-4.amzn2022 will be installed
+---> Package patch.x86_64 2.7.6-14.amzn2022 will be installed
+---> Package pkgconf.x86_64 1.7.3-7.amzn2022 will be installed
+---> Package kernel-headers.x86_64 5.10.75-82.359.amzn2022 will be installed
+---> Package gdb-headless.x86_64 11.1-5.amzn2022 will be installed
+---> Package zlib-devel.x86_64 1.2.11-27.amzn2022 will be installed
+---> Package libpcap.x86_64 14:1.10.1-1.amzn2022 will be installed
+---> Package source-highlight.x86_64 3.1.9-9.amzn2022 will be installed
+---> Package kmod-libs.x86_64 29-2.amzn2022 will be installed
+---> Package bzip2.x86_64 1.0.8-6.amzn2022 will be installed
+---> Package elfutils.x86_64 0.185-2.amzn2022.0.1 will be installed
+---> Package device-mapper.x86_64 1.02.175-1.amzn2022.0.1 will be installed
+---> Package fribidi.x86_64 1.0.10-4.amzn2022 will be installed
+---> Package bison.x86_64 3.7.4-2.amzn2022 will be installed
+---> Package gdk-pixbuf2-modules.x86_64 2.42.6-1.amzn2022 will be installed
+---> Package file.x86_64 5.39-7.amzn2022 will be installed
+---> Package tar.x86_64 2:1.34-1.amzn2022 will be installed
+---> Package libXcursor.x86_64 1.2.0-5.amzn2022 will be installed
+---> Package perl-threads-shared.x86_64 1.61-458.amzn2022 will be installed
+---> Package info.x86_64 6.7-10.amzn2022 will be installed
+---> Package xz-devel.x86_64 5.2.5-5.amzn2022 will be installed
+---> Package libICE.x86_64 1.0.10-6.amzn2022 will be installed
+---> Package libquadmath.x86_64 11.2.1-2.amzn2022.0.2 will be installed
+---> Package libjpeg-turbo.x86_64 2.0.90-3.amzn2022 will be installed
+---> Package libgfortran.x86_64 11.2.1-2.amzn2022.0.2 will be installed
+---> Package libserf.x86_64 1.3.9-18.amzn2022 will be installed
+---> Package xz.x86_64 5.2.5-5.amzn2022 will be installed
+---> Package libX11.x86_64 1.7.2-3.amzn2022 will be installed
+---> Package libibverbs.x86_64 37.0-1.amzn2022 will be installed
+---> Package libxcrypt-devel.x86_64 4.4.26-4.amzn2022 will be installed
+---> Package dbus.x86_64 1:1.12.20-3.amzn2022 will be installed
+---> Package graphite2.x86_64 1.3.14-7.amzn2022 will be installed
+---> Package systemtap-devel.x86_64 4.5-1.amzn2022 will be installed
+---> Package libtiff.x86_64 4.2.0-1.amzn2022 will be installed
+---> Package freetype.x86_64 2.10.4-3.amzn2022 will be installed
+---> Package libicu.x86_64 67.1-7.amzn2022 will be installed
+---> Package rpm-build.x86_64 4.16.1.3-1.amzn2022 will be installed
+---> Package apr-util.x86_64 1.6.1-16.amzn2022 will be installed
+---> Package tbb.x86_64 2020.3-7.amzn2022 will be installed
+---> Package perl-IO.x86_64 1.43-477.amzn2022 will be installed
+---> Package gettext-devel.x86_64 0.21-4.amzn2022 will be installed
+---> Package cups-libs.x86_64 1:2.3.3op2-10.amzn2022 will be installed
+---> Package libpaper.x86_64 1.1.28-2.amzn2022 will be installed
+---> Package shared-mime-info.x86_64 2.1-2.amzn2022 will be installed
+---> Package cscope.x86_64 15.9-10.amzn2022 will be installed
+---> Package systemtap-runtime.x86_64 4.5-1.amzn2022 will be installed
+---> Package systemtap-client.x86_64 4.5-1.amzn2022 will be installed
+---> Package utf8proc.x86_64 2.6.1-2.amzn2022 will be installed
+---> Package libraqm.x86_64 0.7.2-1.amzn2022 will be installed
+---> Package libXrender.x86_64 0.9.10-14.amzn2022 will be installed
+---> Package elfutils-libelf-devel.x86_64 0.185-2.amzn2022.0.1 will be installed
+---> Package lcms2.x86_64 2.12-1.amzn2022 will be installed
+---> Package gcc-c++.x86_64 11.2.1-2.amzn2022.0.2 will be installed
+---> Package jbigkit-libs.x86_64 2.1-21.amzn2022 will be installed
+---> Package gd.x86_64 2.3.2-2.amzn2022 will be installed
+---> Package pango.x86_64 1.48.10-1.amzn2022 will be installed
+---> Package boost-filesystem.x86_64 1.75.0-4.amzn2022 will be installed
+---> Package libXft.x86_64 2.3.3-6.amzn2022 will be installed
+---> Package openssh.x86_64 8.6p1-5.amzn2022 will be installed
+---> Package adobe-mappings-pdf.noarch 20180407-8.amzn2022 will be installed
+---> Package adobe-mappings-cmap-deprecated.noarch 20190730-1.amzn2022 will be installed
+---> Package gnat-srpm-macros.noarch 4-13.amzn2022 will be installed
+---> Package perl-File-Basename.noarch 2.85-477.amzn2022 will be installed
+---> Package crypto-policies-scripts.noarch 20210213-1.git5c710c0.amzn2022 will be installed
+---> Package openblas-srpm-macros.noarch 2-9.amzn2022 will be installed
+---> Package perl-Text-Tabs+Wrap.noarch 2021.0726-1.amzn2022 will be installed
+---> Package perl-File-Find.noarch 1.37-477.amzn2022 will be installed
+---> Package hicolor-icon-theme.noarch 0.17-10.amzn2022 will be installed
+---> Package urw-base35-standard-symbols-ps-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package perl-File-Path.noarch 2.18-2.amzn2022 will be installed
+---> Package perl-Class-Struct.noarch 0.66-477.amzn2022 will be installed
+---> Package automake.noarch 1.16.2-4.amzn2022 will be installed
+---> Package perl-Error.noarch 1:0.17029-5.amzn2022 will be installed
+---> Package perl-SelectSaver.noarch 1.02-477.amzn2022 will be installed
+---> Package rust-srpm-macros.noarch 18-1.amzn2022 will be installed
+---> Package fonts-filesystem.noarch 1:2.0.5-5.amzn2022 will be installed
+---> Package urw-base35-gothic-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package perl-podlators.noarch 1:4.14-458.amzn2022 will be installed
+---> Package urw-base35-c059-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package perl-Pod-Simple.noarch 1:3.42-2.amzn2022 will be installed
+---> Package efi-srpm-macros.noarch 5-4.amzn2022.0.3 will be installed
+---> Package perl-HTTP-Tiny.noarch 0.078-1.amzn2022 will be installed
+---> Package amazon-rpm-config.noarch 182-2.amzn2022 will be installed
+---> Package intltool.noarch 0.51.0-18.amzn2022 will be installed
+---> Package glibc-headers-x86.noarch 2.34-8.amzn2022 will be installed
+---> Package systemd-rpm-macros.noarch 248.9-1.amzn2022.0.3 will be installed
+---> Package urw-base35-nimbus-roman-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package fpc-srpm-macros.noarch 1.3-3.amzn2022 will be installed
+---> Package perl-File-Temp.noarch 1:0.231.100-2.amzn2022 will be installed
+---> Package perl-parent.noarch 1:0.238-458.amzn2022 will be installed
+---> Package perl-constant.noarch 1.33-459.amzn2022 will be installed
+---> Package gettext-common-devel.noarch 0.21-4.amzn2022 will be installed
+---> Package urw-base35-z003-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package git-core-doc.noarch 2.31.1-3.amzn2022 will be installed
+---> Package perl-subs.noarch 1.03-477.amzn2022 will be installed
+---> Package urw-base35-d050000l-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package qt5-srpm-macros.noarch 5.15.2-2.amzn2022 will be installed
+---> Package perl-Carp.noarch 1.50-458.amzn2022 will be installed
+---> Package google-droid-sans-fonts.noarch 20200215-9.amzn2022 will be installed
+---> Package urw-base35-fonts-common.noarch 20200910-6.amzn2022 will be installed
+---> Package perl-File-Copy.noarch 2.34-477.amzn2022 will be installed
+---> Package libX11-common.noarch 1.7.2-3.amzn2022 will be installed
+---> Package xemacs-filesystem.noarch 21.5.34-39.20200331hge2ac728aa576.amzn2022 will be installed
+---> Package lua-srpm-macros.noarch 1-4.amzn2022 will be installed
+---> Package perl-Getopt-Std.noarch 1.12-477.amzn2022 will be installed
+---> Package perl-File-stat.noarch 1.09-477.amzn2022 will be installed
+---> Package perl-Symbol.noarch 1.08-477.amzn2022 will be installed
+---> Package perl-Pod-Usage.noarch 4:2.01-2.amzn2022 will be installed
+---> Package perl-overload.noarch 1.31-477.amzn2022 will be installed
+---> Package dejavu-sans-fonts.noarch 2.37-16.amzn2022 will be installed
+---> Package pkgconf-m4.noarch 1.7.3-7.amzn2022 will be installed
+---> Package fonts-srpm-macros.noarch 1:2.0.5-5.amzn2022 will be installed
+---> Package urw-base35-nimbus-mono-ps-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package xml-common.noarch 0.6.3-56.amzn2022 will be installed
+---> Package perl-if.noarch 0.60.800-477.amzn2022 will be installed
+---> Package xorg-x11-fonts-ISO8859-1-100dpi.noarch 7.5-31.amzn2022 will be installed
+---> Package ocaml-srpm-macros.noarch 6-4.amzn2022 will be installed
+---> Package urw-base35-bookman-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package perl-Pod-Perldoc.noarch 3.28.01-459.amzn2022 will be installed
+---> Package python-srpm-macros.noarch 3.9-41.amzn2022 will be installed
+---> Package perl-IPC-Open3.noarch 1.21-477.amzn2022 will be installed
+---> Package perl-Text-ParseWords.noarch 3.30-458.amzn2022 will be installed
+---> Package perl-srpm-macros.noarch 1-39.amzn2022 will be installed
+---> Package nim-srpm-macros.noarch 3-4.amzn2022 will be installed
+---> Package urw-base35-nimbus-sans-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package adobe-mappings-cmap.noarch 20190730-1.amzn2022 will be installed
+---> Package perl-Getopt-Long.noarch 1:2.52-2.amzn2022 will be installed
+---> Package perl-Exporter.noarch 5.74-459.amzn2022 will be installed
+---> Package perl-Term-ANSIColor.noarch 5.01-459.amzn2022 will be installed
+---> Package autoconf.noarch 2.69-36.amzn2022 will be installed
+---> Package urw-base35-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package perl-Time-Local.noarch 2:1.300-5.amzn2022 will be installed
+---> Package dbus-common.noarch 1:1.12.20-3.amzn2022 will be installed
+---> Package perl-File-Compare.noarch 1.100.600-477.amzn2022 will be installed
+---> Package urw-base35-p052-fonts.noarch 20200910-6.amzn2022 will be installed
+---> Package emacs-filesystem.noarch 1:27.2-5.amzn2022 will be installed
+---> Package langpacks-core-font-en.noarch 3.0-14.amzn2022 will be installed
+---> Package perl-Term-Cap.noarch 1.17-458.amzn2022 will be installed
+---> Package perl-overloading.noarch 0.02-477.amzn2022 will be installed
+---> Package kernel-srpm-macros.noarch 1.0-4.amzn2022 will be installed
+---> Package go-srpm-macros.noarch 3.0.10-1.amzn2022 will be installed
+---> Package ghc-srpm-macros.noarch 1.5.0-4.amzn2022 will be installed
+---> Package perl-vars.noarch 1.05-477.amzn2022 will be installed
+---> Package perl-Thread-Queue.noarch 3.14-458.amzn2022 will be installed
+---> Package perl-Pod-Escapes.noarch 1:1.07-458.amzn2022 will be installed
+---> Package perl-Git.noarch 2.31.1-3.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+=============================================================================================================
+ Package                                Arch    Version                                    Repository    Size
+=============================================================================================================
+Installing group/module packages:
+ autoconf                               noarch  2.69-36.amzn2022                           amazonlinux  668 k
+ automake                               noarch  1.16.2-4.amzn2022                          amazonlinux  665 k
+ binutils                               x86_64  2.35.2-8.amzn2022                          amazonlinux  5.6 M
+ bison                                  x86_64  3.7.4-2.amzn2022                           amazonlinux  930 k
+ byacc                                  x86_64  2.0.20210109-2.amzn2022                    amazonlinux   92 k
+ cscope                                 x86_64  15.9-10.amzn2022                           amazonlinux  295 k
+ ctags                                  x86_64  5.9-1.20210725.0.amzn2022                  amazonlinux  769 k
+ diffstat                               x86_64  1.64-4.amzn2022                            amazonlinux   44 k
+ doxygen                                x86_64  1:1.9.1-10.amzn2022                        amazonlinux  4.8 M
+ elfutils                               x86_64  0.185-2.amzn2022.0.1                       amazonlinux  537 k
+ flex                                   x86_64  2.6.4-7.amzn2022                           amazonlinux  315 k
+ gcc                                    x86_64  11.2.1-2.amzn2022.0.2                      amazonlinux   32 M
+ gcc-c++                                x86_64  11.2.1-2.amzn2022.0.2                      amazonlinux   12 M
+ gcc-gfortran                           x86_64  11.2.1-2.amzn2022.0.2                      amazonlinux   11 M
+ gettext                                x86_64  0.21-4.amzn2022                            amazonlinux  1.1 M
+ git                                    x86_64  2.31.1-3.amzn2022                          amazonlinux  123 k
+ indent                                 x86_64  2.2.12-7.amzn2022                          amazonlinux  182 k
+ intltool                               noarch  0.51.0-18.amzn2022                         amazonlinux   57 k
+ libtool                                x86_64  2.4.6-40.amzn2022                          amazonlinux  580 k
+ make                                   x86_64  1:4.3-5.amzn2022                           amazonlinux  541 k
+ patch                                  x86_64  2.7.6-14.amzn2022                          amazonlinux  132 k
+ patchutils                             x86_64  0.4.2-5.amzn2022                           amazonlinux  101 k
+ rpm-build                              x86_64  4.16.1.3-1.amzn2022                        amazonlinux  100 k
+ rpm-sign                               x86_64  4.16.1.3-1.amzn2022                        amazonlinux   26 k
+ subversion                             x86_64  1.14.1-1.amzn2022.0.1                      amazonlinux  1.0 M
+ swig                                   x86_64  4.0.2-6.amzn2022                           amazonlinux  1.4 M
+ systemtap                              x86_64  4.5-1.amzn2022                             amazonlinux  8.5 k
+Installing dependencies:
+ acl                                    x86_64  2.3.1-2.amzn2022                           amazonlinux   73 k
+ adobe-mappings-cmap                    noarch  20190730-1.amzn2022                        amazonlinux  2.1 M
+ adobe-mappings-cmap-deprecated         noarch  20190730-1.amzn2022                        amazonlinux  116 k
+ adobe-mappings-pdf                     noarch  20180407-8.amzn2022                        amazonlinux  670 k
+ amazon-rpm-config                      noarch  182-2.amzn2022                             amazonlinux   65 k
+ annobin                                x86_64  9.79-3.amzn2022                            amazonlinux  135 k
+ apr                                    x86_64  1.7.0-9.amzn2022                           amazonlinux  121 k
+ apr-util                               x86_64  1.6.1-16.amzn2022                          amazonlinux   98 k
+ atk                                    x86_64  2.36.0-3.amzn2022                          amazonlinux  275 k
+ avahi-libs                             x86_64  0.8-14.amzn2022.0.1                        amazonlinux   69 k
+ binutils-gold                          x86_64  2.35.2-8.amzn2022                          amazonlinux  722 k
+ boost-filesystem                       x86_64  1.75.0-4.amzn2022                          amazonlinux   60 k
+ boost-regex                            x86_64  1.75.0-4.amzn2022                          amazonlinux  290 k
+ boost-system                           x86_64  1.75.0-4.amzn2022                          amazonlinux   15 k
+ boost-thread                           x86_64  1.75.0-4.amzn2022                          amazonlinux   59 k
+ bzip2                                  x86_64  1.0.8-6.amzn2022                           amazonlinux   54 k
+ cairo                                  x86_64  1.17.4-3.amzn2022                          amazonlinux  680 k
+ cairo-gobject                          x86_64  1.17.4-3.amzn2022                          amazonlinux   20 k
+ clang-libs                             x86_64  12.0.1-1.amzn2022                          amazonlinux   21 M
+ clang-resource-filesystem              x86_64  12.0.1-1.amzn2022                          amazonlinux   14 k
+ cpio                                   x86_64  2.13-10.amzn2022                           amazonlinux  275 k
+ cpp                                    x86_64  11.2.1-2.amzn2022.0.2                      amazonlinux   10 M
+ cracklib                               x86_64  2.9.6-27.amzn2022                          amazonlinux   84 k
+ crypto-policies-scripts                noarch  20210213-1.git5c710c0.amzn2022             amazonlinux   67 k
+ cryptsetup-libs                        x86_64  2.3.6-1.amzn2022                           amazonlinux  488 k
+ cups-libs                              x86_64  1:2.3.3op2-10.amzn2022                     amazonlinux  270 k
+ dbus                                   x86_64  1:1.12.20-3.amzn2022                       amazonlinux  9.3 k
+ dbus-broker                            x86_64  29-2.amzn2022                              amazonlinux  175 k
+ dbus-common                            noarch  1:1.12.20-3.amzn2022                       amazonlinux   16 k
+ dbus-libs                              x86_64  1:1.12.20-3.amzn2022                       amazonlinux  159 k
+ dejavu-sans-fonts                      noarch  2.37-16.amzn2022                           amazonlinux  1.3 M
+ device-mapper                          x86_64  1.02.175-1.amzn2022.0.1                    amazonlinux  145 k
+ device-mapper-libs                     x86_64  1.02.175-1.amzn2022.0.1                    amazonlinux  186 k
+ diffutils                              x86_64  3.8-1.amzn2022                             amazonlinux  406 k
+ dwz                                    x86_64  0.14-1.amzn2022                            amazonlinux  130 k
+ dyninst                                x86_64  10.2.1-6.amzn2022                          amazonlinux  3.4 M
+ ed                                     x86_64  1.14.2-10.amzn2022                         amazonlinux   76 k
+ efi-srpm-macros                        noarch  5-4.amzn2022.0.3                           amazonlinux   23 k
+ efivar-libs                            x86_64  37-15.amzn2022                             amazonlinux  112 k
+ elfutils-debuginfod-client             x86_64  0.185-2.amzn2022.0.1                       amazonlinux   36 k
+ elfutils-devel                         x86_64  0.185-2.amzn2022.0.1                       amazonlinux   55 k
+ elfutils-libelf-devel                  x86_64  0.185-2.amzn2022.0.1                       amazonlinux   28 k
+ emacs-filesystem                       noarch  1:27.2-5.amzn2022                          amazonlinux  9.7 k
+ file                                   x86_64  5.39-7.amzn2022                            amazonlinux   51 k
+ findutils                              x86_64  1:4.8.0-2.amzn2022                         amazonlinux  545 k
+ fontconfig                             x86_64  2.13.94-2.amzn2022                         amazonlinux  275 k
+ fonts-filesystem                       noarch  1:2.0.5-5.amzn2022                         amazonlinux   10 k
+ fonts-srpm-macros                      noarch  1:2.0.5-5.amzn2022                         amazonlinux   28 k
+ fpc-srpm-macros                        noarch  1.3-3.amzn2022                             amazonlinux  8.9 k
+ freetype                               x86_64  2.10.4-3.amzn2022                          amazonlinux  409 k
+ fribidi                                x86_64  1.0.10-4.amzn2022                          amazonlinux   88 k
+ gc                                     x86_64  8.0.4-5.amzn2022                           amazonlinux  107 k
+ gd                                     x86_64  2.3.2-2.amzn2022                           amazonlinux  145 k
+ gdb-headless                           x86_64  11.1-5.amzn2022                            amazonlinux  4.4 M
+ gdk-pixbuf2                            x86_64  2.42.6-1.amzn2022                          amazonlinux  472 k
+ gdk-pixbuf2-modules                    x86_64  2.42.6-1.amzn2022                          amazonlinux   87 k
+ gettext-common-devel                   noarch  0.21-4.amzn2022                            amazonlinux  408 k
+ gettext-devel                          x86_64  0.21-4.amzn2022                            amazonlinux  203 k
+ gettext-libs                           x86_64  0.21-4.amzn2022                            amazonlinux  316 k
+ ghc-srpm-macros                        noarch  1.5.0-4.amzn2022                           amazonlinux  9.0 k
+ git-core                               x86_64  2.31.1-3.amzn2022                          amazonlinux  3.6 M
+ git-core-doc                           noarch  2.31.1-3.amzn2022                          amazonlinux  2.3 M
+ glibc-devel                            x86_64  2.34-8.amzn2022                            amazonlinux  148 k
+ glibc-gconv-extra                      x86_64  2.34-8.amzn2022                            amazonlinux  1.7 M
+ glibc-headers-x86                      noarch  2.34-8.amzn2022                            amazonlinux  545 k
+ gnat-srpm-macros                       noarch  4-13.amzn2022                              amazonlinux  9.6 k
+ go-srpm-macros                         noarch  3.0.10-1.amzn2022                          amazonlinux   27 k
+ google-droid-sans-fonts                noarch  20200215-9.amzn2022                        amazonlinux  2.7 M
+ graphite2                              x86_64  1.3.14-7.amzn2022                          amazonlinux   99 k
+ graphviz                               x86_64  2.44.0-18.amzn2022.0.1                     amazonlinux  3.2 M
+ groff-base                             x86_64  1.22.4-7.amzn2022                          amazonlinux  1.1 M
+ gtk-update-icon-cache                  x86_64  3.24.30-4.amzn2022                         amazonlinux   36 k
+ gtk2                                   x86_64  2.24.33-4.amzn2022                         amazonlinux  3.6 M
+ guile22                                x86_64  2.2.7-2.amzn2022                           amazonlinux  6.5 M
+ gzip                                   x86_64  1.10-4.amzn2022                            amazonlinux  154 k
+ harfbuzz                               x86_64  2.7.4-3.amzn2022                           amazonlinux  644 k
+ hicolor-icon-theme                     noarch  0.17-10.amzn2022                           amazonlinux   46 k
+ info                                   x86_64  6.7-10.amzn2022                            amazonlinux  232 k
+ iptables-legacy-libs                   x86_64  1.8.7-8.amzn2022                           amazonlinux   41 k
+ jansson                                x86_64  2.13.1-2.amzn2022                          amazonlinux   46 k
+ jbig2dec-libs                          x86_64  0.19-4.amzn2022                            amazonlinux   76 k
+ jbigkit-libs                           x86_64  2.1-21.amzn2022                            amazonlinux   55 k
+ kernel-headers                         x86_64  5.10.75-82.359.amzn2022                    amazonlinux  1.2 M
+ kernel-srpm-macros                     noarch  1.0-4.amzn2022                             amazonlinux  8.5 k
+ kmod-libs                              x86_64  29-2.amzn2022                              amazonlinux   65 k
+ langpacks-core-font-en                 noarch  3.0-14.amzn2022                            amazonlinux   11 k
+ lcms2                                  x86_64  2.12-1.amzn2022                            amazonlinux  179 k
+ less                                   x86_64  590-2.amzn2022                             amazonlinux  162 k
+ libICE                                 x86_64  1.0.10-6.amzn2022                          amazonlinux   73 k
+ libSM                                  x86_64  1.2.3-8.amzn2022                           amazonlinux   44 k
+ libX11                                 x86_64  1.7.2-3.amzn2022                           amazonlinux  657 k
+ libX11-common                          noarch  1.7.2-3.amzn2022                           amazonlinux  153 k
+ libXau                                 x86_64  1.0.9-6.amzn2022                           amazonlinux   32 k
+ libXaw                                 x86_64  1.0.13-17.amzn2022                         amazonlinux  204 k
+ libXcomposite                          x86_64  0.4.5-5.amzn2022                           amazonlinux   25 k
+ libXcursor                             x86_64  1.2.0-5.amzn2022                           amazonlinux   31 k
+ libXdamage                             x86_64  1.1.5-5.amzn2022                           amazonlinux   23 k
+ libXext                                x86_64  1.3.4-6.amzn2022                           amazonlinux   42 k
+ libXfixes                              x86_64  6.0.0-1.amzn2022                           amazonlinux   20 k
+ libXft                                 x86_64  2.3.3-6.amzn2022                           amazonlinux   66 k
+ libXi                                  x86_64  1.7.10-6.amzn2022                          amazonlinux   41 k
+ libXinerama                            x86_64  1.1.4-8.amzn2022                           amazonlinux   15 k
+ libXmu                                 x86_64  1.1.3-6.amzn2022                           amazonlinux   78 k
+ libXpm                                 x86_64  3.5.13-5.amzn2022                          amazonlinux   63 k
+ libXrandr                              x86_64  1.5.2-6.amzn2022                           amazonlinux   29 k
+ libXrender                             x86_64  0.9.10-14.amzn2022                         amazonlinux   29 k
+ libXt                                  x86_64  1.2.0-4.amzn2022                           amazonlinux  186 k
+ libaom                                 x86_64  3.1.1-1.amzn2022.0.1                       amazonlinux  1.7 M
+ libargon2                              x86_64  20171227-6.amzn2022                        amazonlinux   30 k
+ libavif                                x86_64  0.9.0-2.amzn2022.0.1                       amazonlinux   66 k
+ libbabeltrace                          x86_64  1.5.8-6.amzn2022                           amazonlinux  191 k
+ libcbor                                x86_64  0.7.0-3.amzn2022                           amazonlinux   58 k
+ libdatrie                              x86_64  0.2.13-1.amzn2022                          amazonlinux   33 k
+ libdav1d                               x86_64  0.9.1-1.amzn2022.0.1                       amazonlinux  511 k
+ libeconf                               x86_64  0.4.0-1.amzn2022                           amazonlinux   28 k
+ libedit                                x86_64  3.1-38.20210714cvs.amzn2022                amazonlinux  108 k
+ libevent                               x86_64  2.1.12-3.amzn2022                          amazonlinux  270 k
+ libfdisk                               x86_64  2.36.2-1.amzn2022                          amazonlinux  159 k
+ libfido2                               x86_64  1.6.0-2.amzn2022                           amazonlinux   73 k
+ libfontenc                             x86_64  1.1.3-15.amzn2022                          amazonlinux   32 k
+ libgfortran                            x86_64  11.2.1-2.amzn2022.0.2                      amazonlinux  831 k
+ libgs                                  x86_64  9.55.0-1.amzn2022                          amazonlinux  3.6 M
+ libibverbs                             x86_64  37.0-1.amzn2022                            amazonlinux  398 k
+ libicu                                 x86_64  67.1-7.amzn2022                            amazonlinux  9.6 M
+ libijs                                 x86_64  0.35-13.amzn2022                           amazonlinux   31 k
+ libimagequant                          x86_64  2.14.1-1.amzn2022                          amazonlinux   64 k
+ libipt                                 x86_64  2.0.4-2.amzn2022                           amazonlinux   57 k
+ libjpeg-turbo                          x86_64  2.0.90-3.amzn2022                          amazonlinux  188 k
+ libmpc                                 x86_64  1.2.1-2.amzn2022                           amazonlinux   64 k
+ libnl3                                 x86_64  3.5.0-6.amzn2022                           amazonlinux  339 k
+ libpaper                               x86_64  1.1.28-2.amzn2022                          amazonlinux   42 k
+ libpcap                                x86_64  14:1.10.1-1.amzn2022                       amazonlinux  173 k
+ libpkgconf                             x86_64  1.7.3-7.amzn2022                           amazonlinux   37 k
+ libpng                                 x86_64  2:1.6.37-10.amzn2022                       amazonlinux  129 k
+ libpwquality                           x86_64  1.4.4-6.amzn2022                           amazonlinux  106 k
+ libquadmath                            x86_64  11.2.1-2.amzn2022.0.2                      amazonlinux  210 k
+ libquadmath-devel                      x86_64  11.2.1-2.amzn2022.0.2                      amazonlinux   52 k
+ libraqm                                x86_64  0.7.2-1.amzn2022                           amazonlinux   20 k
+ librsvg2                               x86_64  2.50.7-1.amzn2022                          amazonlinux  3.4 M
+ libseccomp                             x86_64  2.5.3-1.amzn2022                           amazonlinux   72 k
+ libserf                                x86_64  1.3.9-18.amzn2022                          amazonlinux   62 k
+ libstdc++-devel                        x86_64  11.2.1-2.amzn2022.0.2                      amazonlinux  2.2 M
+ libtextstyle                           x86_64  0.21-4.amzn2022                            amazonlinux   93 k
+ libthai                                x86_64  0.1.28-6.amzn2022                          amazonlinux  214 k
+ libtiff                                x86_64  4.2.0-1.amzn2022                           amazonlinux  209 k
+ libtool-ltdl                           x86_64  2.4.6-40.amzn2022                          amazonlinux   38 k
+ libutempter                            x86_64  1.2.1-4.amzn2022                           amazonlinux   27 k
+ libvmaf                                x86_64  2.1.1-1.amzn2022                           amazonlinux  182 k
+ libwebp                                x86_64  1.2.1-1.amzn2022                           amazonlinux  346 k
+ libxcb                                 x86_64  1.13.1-7.amzn2022                          amazonlinux  235 k
+ libxcrypt-devel                        x86_64  4.4.26-4.amzn2022                          amazonlinux   31 k
+ libzstd-devel                          x86_64  1.5.2-1.amzn2022                           amazonlinux   48 k
+ llvm12-libs                            x86_64  12.0.1-2.amzn2022                          amazonlinux   24 M
+ lua-srpm-macros                        noarch  1-4.amzn2022                               amazonlinux  9.5 k
+ m4                                     x86_64  1.4.19-2.amzn2022                          amazonlinux  300 k
+ mkfontscale                            x86_64  1.2.1-2.amzn2022                           amazonlinux   33 k
+ mokutil                                x86_64  2:0.4.0-4.amzn2022                         amazonlinux   46 k
+ ncurses                                x86_64  6.2-4.20200222.amzn2022                    amazonlinux  397 k
+ nim-srpm-macros                        noarch  3-4.amzn2022                               amazonlinux  9.7 k
+ nspr                                   x86_64  4.32.0-2.amzn2022.0.1                      amazonlinux  140 k
+ nss                                    x86_64  3.71.0-2.amzn2022.0.1                      amazonlinux  700 k
+ nss-softokn                            x86_64  3.71.0-2.amzn2022.0.1                      amazonlinux  383 k
+ nss-softokn-freebl                     x86_64  3.71.0-2.amzn2022.0.1                      amazonlinux  329 k
+ nss-sysinit                            x86_64  3.71.0-2.amzn2022.0.1                      amazonlinux   21 k
+ nss-util                               x86_64  3.71.0-2.amzn2022.0.1                      amazonlinux   90 k
+ ocaml-srpm-macros                      noarch  6-4.amzn2022                               amazonlinux  9.1 k
+ openblas-srpm-macros                   noarch  2-9.amzn2022                               amazonlinux  8.6 k
+ openjpeg2                              x86_64  2.4.0-3.amzn2022                           amazonlinux  173 k
+ openssh                                x86_64  8.6p1-5.amzn2022                           amazonlinux  450 k
+ openssh-clients                        x86_64  8.6p1-5.amzn2022                           amazonlinux  695 k
+ pam                                    x86_64  1.5.1-7.amzn2022                           amazonlinux  545 k
+ pango                                  x86_64  1.48.10-1.amzn2022                         amazonlinux  302 k
+ perl-B                                 x86_64  1.80-477.amzn2022                          amazonlinux  192 k
+ perl-Carp                              noarch  1.50-458.amzn2022                          amazonlinux   30 k
+ perl-Class-Struct                      noarch  0.66-477.amzn2022                          amazonlinux   34 k
+ perl-Data-Dumper                       x86_64  2.174-460.amzn2022                         amazonlinux   58 k
+ perl-DynaLoader                        x86_64  1.47-477.amzn2022                          amazonlinux   38 k
+ perl-Encode                            x86_64  4:3.15-462.amzn2022                        amazonlinux  1.7 M
+ perl-Errno                             x86_64  1.30-477.amzn2022                          amazonlinux   26 k
+ perl-Error                             noarch  1:0.17029-5.amzn2022                       amazonlinux   43 k
+ perl-Exporter                          noarch  5.74-459.amzn2022                          amazonlinux   33 k
+ perl-Fcntl                             x86_64  1.13-477.amzn2022                          amazonlinux   32 k
+ perl-File-Basename                     noarch  2.85-477.amzn2022                          amazonlinux   29 k
+ perl-File-Compare                      noarch  1.100.600-477.amzn2022                     amazonlinux   25 k
+ perl-File-Copy                         noarch  2.34-477.amzn2022                          amazonlinux   32 k
+ perl-File-Find                         noarch  1.37-477.amzn2022                          amazonlinux   37 k
+ perl-File-Path                         noarch  2.18-2.amzn2022                            amazonlinux   37 k
+ perl-File-Temp                         noarch  1:0.231.100-2.amzn2022                     amazonlinux   62 k
+ perl-File-stat                         noarch  1.09-477.amzn2022                          amazonlinux   29 k
+ perl-Getopt-Long                       noarch  1:2.52-2.amzn2022                          amazonlinux   62 k
+ perl-Getopt-Std                        noarch  1.12-477.amzn2022                          amazonlinux   27 k
+ perl-Git                               noarch  2.31.1-3.amzn2022                          amazonlinux   45 k
+ perl-HTTP-Tiny                         noarch  0.078-1.amzn2022                           amazonlinux   56 k
+ perl-IO                                x86_64  1.43-477.amzn2022                          amazonlinux   99 k
+ perl-IPC-Open3                         noarch  1.21-477.amzn2022                          amazonlinux   34 k
+ perl-MIME-Base64                       x86_64  3.16-2.amzn2022                            amazonlinux   32 k
+ perl-POSIX                             x86_64  1.94-477.amzn2022                          amazonlinux  110 k
+ perl-PathTools                         x86_64  3.78-459.amzn2022                          amazonlinux   87 k
+ perl-Pod-Escapes                       noarch  1:1.07-458.amzn2022                        amazonlinux   21 k
+ perl-Pod-Perldoc                       noarch  3.28.01-459.amzn2022                       amazonlinux   86 k
+ perl-Pod-Simple                        noarch  1:3.42-2.amzn2022                          amazonlinux  217 k
+ perl-Pod-Usage                         noarch  4:2.01-2.amzn2022                          amazonlinux   42 k
+ perl-Scalar-List-Utils                 x86_64  4:1.56-459.amzn2022                        amazonlinux   73 k
+ perl-SelectSaver                       noarch  1.02-477.amzn2022                          amazonlinux   23 k
+ perl-Socket                            x86_64  4:2.032-1.amzn2022                         amazonlinux   56 k
+ perl-Storable                          x86_64  1:3.21-458.amzn2022                        amazonlinux   98 k
+ perl-Symbol                            noarch  1.08-477.amzn2022                          amazonlinux   26 k
+ perl-Term-ANSIColor                    noarch  5.01-459.amzn2022                          amazonlinux   50 k
+ perl-Term-Cap                          noarch  1.17-458.amzn2022                          amazonlinux   23 k
+ perl-TermReadKey                       x86_64  2.38-9.amzn2022                            amazonlinux   37 k
+ perl-Text-ParseWords                   noarch  3.30-458.amzn2022                          amazonlinux   17 k
+ perl-Text-Tabs+Wrap                    noarch  2021.0726-1.amzn2022                       amazonlinux   23 k
+ perl-Thread-Queue                      noarch  3.14-458.amzn2022                          amazonlinux   23 k
+ perl-Time-Local                        noarch  2:1.300-5.amzn2022                         amazonlinux   35 k
+ perl-XML-Parser                        x86_64  2.46-7.amzn2022                            amazonlinux  234 k
+ perl-constant                          noarch  1.33-459.amzn2022                          amazonlinux   24 k
+ perl-if                                noarch  0.60.800-477.amzn2022                      amazonlinux   25 k
+ perl-interpreter                       x86_64  4:5.32.1-477.amzn2022                      amazonlinux   83 k
+ perl-lib                               x86_64  0.65-477.amzn2022                          amazonlinux   26 k
+ perl-libs                              x86_64  4:5.32.1-477.amzn2022                      amazonlinux  2.1 M
+ perl-mro                               x86_64  1.23-477.amzn2022                          amazonlinux   40 k
+ perl-overload                          noarch  1.31-477.amzn2022                          amazonlinux   57 k
+ perl-overloading                       noarch  0.02-477.amzn2022                          amazonlinux   24 k
+ perl-parent                            noarch  1:0.238-458.amzn2022                       amazonlinux   16 k
+ perl-podlators                         noarch  1:4.14-458.amzn2022                        amazonlinux  114 k
+ perl-srpm-macros                       noarch  1-39.amzn2022                              amazonlinux  9.7 k
+ perl-subs                              noarch  1.03-477.amzn2022                          amazonlinux   23 k
+ perl-threads                           x86_64  1:2.25-458.amzn2022.0.1                    amazonlinux   59 k
+ perl-threads-shared                    x86_64  1.61-458.amzn2022                          amazonlinux   45 k
+ perl-vars                              noarch  1.05-477.amzn2022                          amazonlinux   24 k
+ pixman                                 x86_64  0.40.0-3.amzn2022                          amazonlinux  298 k
+ pkgconf                                x86_64  1.7.3-7.amzn2022                           amazonlinux   42 k
+ pkgconf-m4                             noarch  1.7.3-7.amzn2022                           amazonlinux   16 k
+ pkgconf-pkg-config                     x86_64  1.7.3-7.amzn2022                           amazonlinux   11 k
+ python-srpm-macros                     noarch  3.9-41.amzn2022                            amazonlinux   22 k
+ qt5-srpm-macros                        noarch  5.15.2-2.amzn2022                          amazonlinux  9.7 k
+ rav1e-libs                             x86_64  0.5.0-21.amzn2022                          amazonlinux  876 k
+ rust-srpm-macros                       noarch  18-1.amzn2022                              amazonlinux   10 k
+ shared-mime-info                       x86_64  2.1-2.amzn2022                             amazonlinux  376 k
+ source-highlight                       x86_64  3.1.9-9.amzn2022                           amazonlinux  620 k
+ subversion-libs                        x86_64  1.14.1-1.amzn2022.0.1                      amazonlinux  1.5 M
+ svt-av1-libs                           x86_64  0.8.7-2.amzn2022.0.1                       amazonlinux  1.6 M
+ systemd                                x86_64  248.9-1.amzn2022.0.3                       amazonlinux  4.4 M
+ systemd-pam                            x86_64  248.9-1.amzn2022.0.3                       amazonlinux  320 k
+ systemd-rpm-macros                     noarch  248.9-1.amzn2022.0.3                       amazonlinux   29 k
+ systemtap-client                       x86_64  4.5-1.amzn2022                             amazonlinux  3.6 M
+ systemtap-devel                        x86_64  4.5-1.amzn2022                             amazonlinux  2.1 M
+ systemtap-runtime                      x86_64  4.5-1.amzn2022                             amazonlinux  419 k
+ tar                                    x86_64  2:1.34-1.amzn2022                          amazonlinux  893 k
+ tbb                                    x86_64  2020.3-7.amzn2022                          amazonlinux  172 k
+ unzip                                  x86_64  6.0-50.amzn2022                            amazonlinux  182 k
+ urw-base35-bookman-fonts               noarch  20200910-6.amzn2022                        amazonlinux  847 k
+ urw-base35-c059-fonts                  noarch  20200910-6.amzn2022                        amazonlinux  875 k
+ urw-base35-d050000l-fonts              noarch  20200910-6.amzn2022                        amazonlinux   77 k
+ urw-base35-fonts                       noarch  20200910-6.amzn2022                        amazonlinux   11 k
+ urw-base35-fonts-common                noarch  20200910-6.amzn2022                        amazonlinux   22 k
+ urw-base35-gothic-fonts                noarch  20200910-6.amzn2022                        amazonlinux  644 k
+ urw-base35-nimbus-mono-ps-fonts        noarch  20200910-6.amzn2022                        amazonlinux  796 k
+ urw-base35-nimbus-roman-fonts          noarch  20200910-6.amzn2022                        amazonlinux  857 k
+ urw-base35-nimbus-sans-fonts           noarch  20200910-6.amzn2022                        amazonlinux  1.3 M
+ urw-base35-p052-fonts                  noarch  20200910-6.amzn2022                        amazonlinux  974 k
+ urw-base35-standard-symbols-ps-fonts   noarch  20200910-6.amzn2022                        amazonlinux   43 k
+ urw-base35-z003-fonts                  noarch  20200910-6.amzn2022                        amazonlinux  277 k
+ utf8proc                               x86_64  2.6.1-2.amzn2022                           amazonlinux   85 k
+ util-linux                             x86_64  2.36.2-1.amzn2022                          amazonlinux  2.6 M
+ xapian-core-libs                       x86_64  1.4.18-1.amzn2022                          amazonlinux  755 k
+ xemacs-filesystem                      noarch  21.5.34-39.20200331hge2ac728aa576.amzn2022 amazonlinux   11 k
+ xml-common                             noarch  0.6.3-56.amzn2022                          amazonlinux   32 k
+ xorg-x11-fonts-ISO8859-1-100dpi        noarch  7.5-31.amzn2022                            amazonlinux  1.0 M
+ xxhash-libs                            x86_64  0.8.0-3.amzn2022                           amazonlinux   41 k
+ xz                                     x86_64  5.2.5-5.amzn2022                           amazonlinux  217 k
+ xz-devel                               x86_64  5.2.5-5.amzn2022                           amazonlinux   54 k
+ zip                                    x86_64  3.0-28.amzn2022                            amazonlinux  260 k
+ zlib-devel                             x86_64  1.2.11-27.amzn2022                         amazonlinux   45 k
+ zstd                                   x86_64  1.5.2-1.amzn2022                           amazonlinux  446 k
+Installing Groups:
+ Development Tools                                                                                           
+
+Transaction Summary
+=============================================================================================================
+Install  302 Packages
+
+Total download size: 247 M
+Installed size: 867 M
+Downloading Packages:
+(1/302): libargon2-20171227-6.amzn2022.x86_64.r  75 kB/s |  30 kB     00:00    
+(2/302): libSM-1.2.3-8.amzn2022.x86_64.rpm      105 kB/s |  44 kB     00:00    
+(3/302): git-2.31.1-3.amzn2022.x86_64.rpm       256 kB/s | 123 kB     00:00    
+(4/302): libutempter-1.2.1-4.amzn2022.x86_64.rp 289 kB/s |  27 kB     00:00    
+(5/302): libXt-1.2.0-4.amzn2022.x86_64.rpm      987 kB/s | 186 kB     00:00    
+(6/302): jansson-2.13.1-2.amzn2022.x86_64.rpm   312 kB/s |  46 kB     00:00    
+(7/302): atk-2.36.0-3.amzn2022.x86_64.rpm       1.5 MB/s | 275 kB     00:00    
+(8/302): elfutils-debuginfod-client-0.185-2.amz 492 kB/s |  36 kB     00:00    
+(9/302): libpkgconf-1.7.3-7.amzn2022.x86_64.rpm 443 kB/s |  37 kB     00:00    
+(10/302): libcbor-0.7.0-3.amzn2022.x86_64.rpm   720 kB/s |  58 kB     00:00    
+(11/302): gettext-0.21-4.amzn2022.x86_64.rpm    2.9 MB/s | 1.1 MB     00:00    
+(12/302): subversion-libs-1.14.1-1.amzn2022.0.1 4.4 MB/s | 1.5 MB     00:00    
+(13/302): glibc-devel-2.34-8.amzn2022.x86_64.rp 1.2 MB/s | 148 kB     00:00    
+(14/302): dyninst-10.2.1-6.amzn2022.x86_64.rpm  5.7 MB/s | 3.4 MB     00:00    
+(15/302): perl-POSIX-1.94-477.amzn2022.x86_64.r 890 kB/s | 110 kB     00:00    
+(16/302): libstdc++-devel-11.2.1-2.amzn2022.0.2 6.7 MB/s | 2.2 MB     00:00    
+(17/302): perl-Data-Dumper-2.174-460.amzn2022.x 571 kB/s |  58 kB     00:00    
+(18/302): libpng-1.6.37-10.amzn2022.x86_64.rpm  966 kB/s | 129 kB     00:00    
+(19/302): cpio-2.13-10.amzn2022.x86_64.rpm      1.9 MB/s | 275 kB     00:00    
+(20/302): byacc-2.0.20210109-2.amzn2022.x86_64. 764 kB/s |  92 kB     00:00    
+(21/302): libquadmath-devel-11.2.1-2.amzn2022.0 437 kB/s |  52 kB     00:00    
+(22/302): dbus-broker-29-2.amzn2022.x86_64.rpm  1.1 MB/s | 175 kB     00:00    
+(23/302): perl-TermReadKey-2.38-9.amzn2022.x86_ 447 kB/s |  37 kB     00:00    
+(24/302): nspr-4.32.0-2.amzn2022.0.1.x86_64.rpm 1.0 MB/s | 140 kB     00:00    
+(25/302): libXau-1.0.9-6.amzn2022.x86_64.rpm    363 kB/s |  32 kB     00:00    
+(26/302): systemtap-4.5-1.amzn2022.x86_64.rpm    75 kB/s | 8.5 kB     00:00    
+(27/302): nss-softokn-freebl-3.71.0-2.amzn2022. 2.1 MB/s | 329 kB     00:00    
+(28/302): efivar-libs-37-15.amzn2022.x86_64.rpm 997 kB/s | 112 kB     00:00    
+(29/302): nss-softokn-3.71.0-2.amzn2022.0.1.x86 2.9 MB/s | 383 kB     00:00    
+(30/302): perl-threads-2.25-458.amzn2022.0.1.x8 539 kB/s |  59 kB     00:00    
+(31/302): libXmu-1.1.3-6.amzn2022.x86_64.rpm    541 kB/s |  78 kB     00:00    
+(32/302): swig-4.0.2-6.amzn2022.x86_64.rpm      6.2 MB/s | 1.4 MB     00:00    
+(33/302): elfutils-devel-0.185-2.amzn2022.0.1.x 475 kB/s |  55 kB     00:00    
+(34/302): libeconf-0.4.0-1.amzn2022.x86_64.rpm  233 kB/s |  28 kB     00:00    
+(35/302): subversion-1.14.1-1.amzn2022.0.1.x86_ 3.9 MB/s | 1.0 MB     00:00    
+(36/302): less-590-2.amzn2022.x86_64.rpm        1.4 MB/s | 162 kB     00:00    
+(37/302): ctags-5.9-1.20210725.0.amzn2022.x86_6 1.7 MB/s | 769 kB     00:00    
+(38/302): gtk2-2.24.33-4.amzn2022.x86_64.rpm    7.2 MB/s | 3.6 MB     00:00    
+(39/302): libthai-0.1.28-6.amzn2022.x86_64.rpm  1.3 MB/s | 214 kB     00:00    
+(40/302): gettext-libs-0.21-4.amzn2022.x86_64.r 1.6 MB/s | 316 kB     00:00    
+(41/302): libimagequant-2.14.1-1.amzn2022.x86_6 722 kB/s |  64 kB     00:00    
+(42/302): groff-base-1.22.4-7.amzn2022.x86_64.r 4.9 MB/s | 1.1 MB     00:00    
+(43/302): fontconfig-2.13.94-2.amzn2022.x86_64. 1.9 MB/s | 275 kB     00:00    
+(44/302): cairo-1.17.4-3.amzn2022.x86_64.rpm    3.7 MB/s | 680 kB     00:00    
+(45/302): m4-1.4.19-2.amzn2022.x86_64.rpm       1.9 MB/s | 300 kB     00:00    
+(46/302): gdk-pixbuf2-2.42.6-1.amzn2022.x86_64. 2.8 MB/s | 472 kB     00:00    
+(47/302): libaom-3.1.1-1.amzn2022.0.1.x86_64.rp 3.8 MB/s | 1.7 MB     00:00    
+(48/302): libavif-0.9.0-2.amzn2022.0.1.x86_64.r 723 kB/s |  66 kB     00:00    
+(49/302): libXrandr-1.5.2-6.amzn2022.x86_64.rpm 206 kB/s |  29 kB     00:00    
+(50/302): perl-interpreter-5.32.1-477.amzn2022. 612 kB/s |  83 kB     00:00    
+(51/302): make-4.3-5.amzn2022.x86_64.rpm        2.7 MB/s | 541 kB     00:00    
+(52/302): libpwquality-1.4.4-6.amzn2022.x86_64. 850 kB/s | 106 kB     00:00    
+(53/302): perl-Socket-2.032-1.amzn2022.x86_64.r 694 kB/s |  56 kB     00:00    
+(54/302): binutils-gold-2.35.2-8.amzn2022.x86_6 3.3 MB/s | 722 kB     00:00    
+(55/302): perl-XML-Parser-2.46-7.amzn2022.x86_6 1.4 MB/s | 234 kB     00:00    
+(56/302): dwz-0.14-1.amzn2022.x86_64.rpm        893 kB/s | 130 kB     00:00    
+(57/302): nss-sysinit-3.71.0-2.amzn2022.0.1.x86 213 kB/s |  21 kB     00:00    
+(58/302): jbig2dec-libs-0.19-4.amzn2022.x86_64. 642 kB/s |  76 kB     00:00    
+(59/302): perl-PathTools-3.78-459.amzn2022.x86_ 666 kB/s |  87 kB     00:00    
+(60/302): gc-8.0.4-5.amzn2022.x86_64.rpm        796 kB/s | 107 kB     00:00    
+(61/302): findutils-4.8.0-2.amzn2022.x86_64.rpm 2.5 MB/s | 545 kB     00:00    
+(62/302): boost-thread-1.75.0-4.amzn2022.x86_64 587 kB/s |  59 kB     00:00    
+(63/302): perl-Storable-3.21-458.amzn2022.x86_6 712 kB/s |  98 kB     00:00    
+(64/302): boost-system-1.75.0-4.amzn2022.x86_64 171 kB/s |  15 kB     00:00    
+(65/302): pam-1.5.1-7.amzn2022.x86_64.rpm       2.9 MB/s | 545 kB     00:00    
+(66/302): libbabeltrace-1.5.8-6.amzn2022.x86_64 1.3 MB/s | 191 kB     00:00    
+(67/302): perl-DynaLoader-1.47-477.amzn2022.x86 321 kB/s |  38 kB     00:00    
+(68/302): libfontenc-1.1.3-15.amzn2022.x86_64.r 340 kB/s |  32 kB     00:00    
+(69/302): pixman-0.40.0-3.amzn2022.x86_64.rpm   1.8 MB/s | 298 kB     00:00    
+(70/302): librsvg2-2.50.7-1.amzn2022.x86_64.rpm 9.2 MB/s | 3.4 MB     00:00    
+(71/302): perl-mro-1.23-477.amzn2022.x86_64.rpm 372 kB/s |  40 kB     00:00    
+(72/302): git-core-2.31.1-3.amzn2022.x86_64.rpm 6.3 MB/s | 3.6 MB     00:00    
+(73/302): mkfontscale-1.2.1-2.amzn2022.x86_64.r 259 kB/s |  33 kB     00:00    
+(74/302): openjpeg2-2.4.0-3.amzn2022.x86_64.rpm 1.4 MB/s | 173 kB     00:00    
+(75/302): libXpm-3.5.13-5.amzn2022.x86_64.rpm   494 kB/s |  63 kB     00:00    
+(76/302): avahi-libs-0.8-14.amzn2022.0.1.x86_64 698 kB/s |  69 kB     00:00    
+(77/302): cracklib-2.9.6-27.amzn2022.x86_64.rpm 646 kB/s |  84 kB     00:00    
+(78/302): libdatrie-0.2.13-1.amzn2022.x86_64.rp 407 kB/s |  33 kB     00:00    
+(79/302): zstd-1.5.2-1.amzn2022.x86_64.rpm      2.9 MB/s | 446 kB     00:00    
+(80/302): libXdamage-1.1.5-5.amzn2022.x86_64.rp 245 kB/s |  23 kB     00:00    
+(81/302): xapian-core-libs-1.4.18-1.amzn2022.x8 3.8 MB/s | 755 kB     00:00    
+(82/302): xxhash-libs-0.8.0-3.amzn2022.x86_64.r 425 kB/s |  41 kB     00:00    
+(83/302): systemd-248.9-1.amzn2022.0.3.x86_64.r 6.2 MB/s | 4.4 MB     00:00    
+(84/302): binutils-2.35.2-8.amzn2022.x86_64.rpm 6.9 MB/s | 5.6 MB     00:00    
+(85/302): graphviz-2.44.0-18.amzn2022.0.1.x86_6 3.0 MB/s | 3.2 MB     00:01    
+(86/302): llvm12-libs-12.0.1-2.amzn2022.x86_64. 7.5 MB/s |  24 MB     00:03    
+(87/302): perl-Scalar-List-Utils-1.56-459.amzn2 407 kB/s |  73 kB     00:00    
+(88/302): libfido2-1.6.0-2.amzn2022.x86_64.rpm  667 kB/s |  73 kB     00:00    
+(89/302): libipt-2.0.4-2.amzn2022.x86_64.rpm    558 kB/s |  57 kB     00:00    
+(90/302): libtextstyle-0.21-4.amzn2022.x86_64.r 727 kB/s |  93 kB     00:00    
+(91/302): libXcomposite-0.4.5-5.amzn2022.x86_64 242 kB/s |  25 kB     00:00    
+(92/302): perl-Fcntl-1.13-477.amzn2022.x86_64.r 305 kB/s |  32 kB     00:00    
+(93/302): libevent-2.1.12-3.amzn2022.x86_64.rpm 1.2 MB/s | 270 kB     00:00    
+(94/302): annobin-9.79-3.amzn2022.x86_64.rpm    1.1 MB/s | 135 kB     00:00    
+(95/302): libxcb-1.13.1-7.amzn2022.x86_64.rpm   1.2 MB/s | 235 kB     00:00    
+(96/302): zip-3.0-28.amzn2022.x86_64.rpm        1.3 MB/s | 260 kB     00:00    
+(97/302): cpp-11.2.1-2.amzn2022.0.2.x86_64.rpm  1.5 MB/s |  10 MB     00:06    
+(98/302): clang-libs-12.0.1-1.amzn2022.x86_64.r 2.1 MB/s |  21 MB     00:09    
+(99/302): rpm-sign-4.16.1.3-1.amzn2022.x86_64.r 298 kB/s |  26 kB     00:00    
+(100/302): glibc-gconv-extra-2.34-8.amzn2022.x8 1.5 MB/s | 1.7 MB     00:01    
+(101/302): perl-B-1.80-477.amzn2022.x86_64.rpm  758 kB/s | 192 kB     00:00    
+(102/302): boost-regex-1.75.0-4.amzn2022.x86_64 1.1 MB/s | 290 kB     00:00    
+(103/302): diffstat-1.64-4.amzn2022.x86_64.rpm  513 kB/s |  44 kB     00:00    
+(104/302): libedit-3.1-38.20210714cvs.amzn2022. 592 kB/s | 108 kB     00:00    
+(105/302): patchutils-0.4.2-5.amzn2022.x86_64.r 959 kB/s | 101 kB     00:00    
+(106/302): pkgconf-pkg-config-1.7.3-7.amzn2022. 116 kB/s |  11 kB     00:00    
+(107/302): clang-resource-filesystem-12.0.1-1.a 158 kB/s |  14 kB     00:00    
+(108/302): perl-lib-0.65-477.amzn2022.x86_64.rp 280 kB/s |  26 kB     00:00    
+(109/302): libnl3-3.5.0-6.amzn2022.x86_64.rpm   904 kB/s | 339 kB     00:00    
+(110/302): ed-1.14.2-10.amzn2022.x86_64.rpm     613 kB/s |  76 kB     00:00    
+(111/302): gtk-update-icon-cache-3.24.30-4.amzn 386 kB/s |  36 kB     00:00    
+(112/302): dbus-libs-1.12.20-3.amzn2022.x86_64. 609 kB/s | 159 kB     00:00    
+(113/302): libwebp-1.2.1-1.amzn2022.x86_64.rpm  1.0 MB/s | 346 kB     00:00    
+(114/302): perl-MIME-Base64-3.16-2.amzn2022.x86 348 kB/s |  32 kB     00:00    
+(115/302): mokutil-0.4.0-4.amzn2022.x86_64.rpm  482 kB/s |  46 kB     00:00    
+(116/302): libtool-ltdl-2.4.6-40.amzn2022.x86_6 340 kB/s |  38 kB     00:00    
+(117/302): device-mapper-libs-1.02.175-1.amzn20 828 kB/s | 186 kB     00:00    
+(118/302): harfbuzz-2.7.4-3.amzn2022.x86_64.rpm 1.2 MB/s | 644 kB     00:00    
+(119/302): ncurses-6.2-4.20200222.amzn2022.x86_ 1.1 MB/s | 397 kB     00:00    
+(120/302): libtool-2.4.6-40.amzn2022.x86_64.rpm 1.3 MB/s | 580 kB     00:00    
+(121/302): libXext-1.3.4-6.amzn2022.x86_64.rpm  402 kB/s |  42 kB     00:00    
+(122/302): gcc-11.2.1-2.amzn2022.0.2.x86_64.rpm 4.1 MB/s |  32 MB     00:07    
+(123/302): svt-av1-libs-0.8.7-2.amzn2022.0.1.x8 3.6 MB/s | 1.6 MB     00:00    
+(124/302): openssh-clients-8.6p1-5.amzn2022.x86 2.6 MB/s | 695 kB     00:00    
+(125/302): doxygen-1.9.1-10.amzn2022.x86_64.rpm 1.6 MB/s | 4.8 MB     00:03    
+(126/302): nss-3.71.0-2.amzn2022.0.1.x86_64.rpm 2.8 MB/s | 700 kB     00:00    
+(127/302): libzstd-devel-1.5.2-1.amzn2022.x86_6 458 kB/s |  48 kB     00:00    
+(128/302): nss-util-3.71.0-2.amzn2022.0.1.x86_6 518 kB/s |  90 kB     00:00    
+(129/302): rav1e-libs-0.5.0-21.amzn2022.x86_64. 3.3 MB/s | 876 kB     00:00    
+(130/302): libvmaf-2.1.1-1.amzn2022.x86_64.rpm  1.3 MB/s | 182 kB     00:00    
+(131/302): libseccomp-2.5.3-1.amzn2022.x86_64.r 550 kB/s |  72 kB     00:00    
+(132/302): perl-Errno-1.30-477.amzn2022.x86_64. 278 kB/s |  26 kB     00:00    
+(133/302): systemd-pam-248.9-1.amzn2022.0.3.x86 735 kB/s | 320 kB     00:00    
+(134/302): libXi-1.7.10-6.amzn2022.x86_64.rpm   441 kB/s |  41 kB     00:00    
+(135/302): perl-libs-5.32.1-477.amzn2022.x86_64 3.1 MB/s | 2.1 MB     00:00    
+(136/302): libdav1d-0.9.1-1.amzn2022.0.1.x86_64 2.0 MB/s | 511 kB     00:00    
+(137/302): libfdisk-2.36.2-1.amzn2022.x86_64.rp 1.2 MB/s | 159 kB     00:00    
+(138/302): cairo-gobject-1.17.4-3.amzn2022.x86_ 226 kB/s |  20 kB     00:00    
+(139/302): perl-Encode-3.15-462.amzn2022.x86_64 3.5 MB/s | 1.7 MB     00:00    
+(140/302): guile22-2.2.7-2.amzn2022.x86_64.rpm  1.1 MB/s | 6.5 MB     00:06    
+(141/302): libXaw-1.0.13-17.amzn2022.x86_64.rpm 655 kB/s | 204 kB     00:00    
+(142/302): util-linux-2.36.2-1.amzn2022.x86_64. 1.1 MB/s | 2.6 MB     00:02    
+(143/302): apr-1.7.0-9.amzn2022.x86_64.rpm      503 kB/s | 121 kB     00:00    
+(144/302): diffutils-3.8-1.amzn2022.x86_64.rpm  840 kB/s | 406 kB     00:00    
+(145/302): libmpc-1.2.1-2.amzn2022.x86_64.rpm   434 kB/s |  64 kB     00:00    
+(146/302): indent-2.2.12-7.amzn2022.x86_64.rpm  604 kB/s | 182 kB     00:00    
+(147/302): unzip-6.0-50.amzn2022.x86_64.rpm     627 kB/s | 182 kB     00:00    
+(148/302): acl-2.3.1-2.amzn2022.x86_64.rpm      418 kB/s |  73 kB     00:00    
+(149/302): iptables-legacy-libs-1.8.7-8.amzn202 455 kB/s |  41 kB     00:00    
+(150/302): libXfixes-6.0.0-1.amzn2022.x86_64.rp 199 kB/s |  20 kB     00:00    
+(151/302): libXinerama-1.1.4-8.amzn2022.x86_64. 158 kB/s |  15 kB     00:00    
+(152/302): gcc-gfortran-11.2.1-2.amzn2022.0.2.x 4.4 MB/s |  11 MB     00:02    
+(153/302): flex-2.6.4-7.amzn2022.x86_64.rpm     1.8 MB/s | 315 kB     00:00    
+(154/302): libijs-0.35-13.amzn2022.x86_64.rpm   235 kB/s |  31 kB     00:00    
+(155/302): libgs-9.55.0-1.amzn2022.x86_64.rpm   1.5 MB/s | 3.6 MB     00:02    
+(156/302): gzip-1.10-4.amzn2022.x86_64.rpm      1.3 MB/s | 154 kB     00:00    
+(157/302): cryptsetup-libs-2.3.6-1.amzn2022.x86 741 kB/s | 488 kB     00:00    
+(158/302): patch-2.7.6-14.amzn2022.x86_64.rpm   772 kB/s | 132 kB     00:00    
+(159/302): pkgconf-1.7.3-7.amzn2022.x86_64.rpm  456 kB/s |  42 kB     00:00    
+(160/302): zlib-devel-1.2.11-27.amzn2022.x86_64 532 kB/s |  45 kB     00:00    
+(161/302): libpcap-1.10.1-1.amzn2022.x86_64.rpm 1.2 MB/s | 173 kB     00:00    
+(162/302): source-highlight-3.1.9-9.amzn2022.x8 2.3 MB/s | 620 kB     00:00    
+(163/302): kmod-libs-29-2.amzn2022.x86_64.rpm   651 kB/s |  65 kB     00:00    
+(164/302): bzip2-1.0.8-6.amzn2022.x86_64.rpm    444 kB/s |  54 kB     00:00    
+(165/302): elfutils-0.185-2.amzn2022.0.1.x86_64 2.5 MB/s | 537 kB     00:00    
+(166/302): device-mapper-1.02.175-1.amzn2022.0. 1.2 MB/s | 145 kB     00:00    
+(167/302): fribidi-1.0.10-4.amzn2022.x86_64.rpm 662 kB/s |  88 kB     00:00    
+(168/302): kernel-headers-5.10.75-82.359.amzn20 954 kB/s | 1.2 MB     00:01    
+(169/302): gdk-pixbuf2-modules-2.42.6-1.amzn202 506 kB/s |  87 kB     00:00    
+(170/302): bison-3.7.4-2.amzn2022.x86_64.rpm    2.8 MB/s | 930 kB     00:00    
+(171/302): file-5.39-7.amzn2022.x86_64.rpm      520 kB/s |  51 kB     00:00    
+(172/302): libXcursor-1.2.0-5.amzn2022.x86_64.r 328 kB/s |  31 kB     00:00    
+(173/302): perl-threads-shared-1.61-458.amzn202 492 kB/s |  45 kB     00:00    
+(174/302): tar-1.34-1.amzn2022.x86_64.rpm       3.5 MB/s | 893 kB     00:00    
+(175/302): xz-devel-5.2.5-5.amzn2022.x86_64.rpm 570 kB/s |  54 kB     00:00    
+(176/302): libICE-1.0.10-6.amzn2022.x86_64.rpm  605 kB/s |  73 kB     00:00    
+(177/302): info-6.7-10.amzn2022.x86_64.rpm      766 kB/s | 232 kB     00:00    
+(178/302): libquadmath-11.2.1-2.amzn2022.0.2.x8 1.5 MB/s | 210 kB     00:00    
+(179/302): libjpeg-turbo-2.0.90-3.amzn2022.x86_ 776 kB/s | 188 kB     00:00    
+(180/302): libgfortran-11.2.1-2.amzn2022.0.2.x8 3.3 MB/s | 831 kB     00:00    
+(181/302): libserf-1.3.9-18.amzn2022.x86_64.rpm 626 kB/s |  62 kB     00:00    
+(182/302): xz-5.2.5-5.amzn2022.x86_64.rpm       1.1 MB/s | 217 kB     00:00    
+(183/302): gdb-headless-11.1-5.amzn2022.x86_64. 1.6 MB/s | 4.4 MB     00:02    
+(184/302): libibverbs-37.0-1.amzn2022.x86_64.rp 2.1 MB/s | 398 kB     00:00    
+(185/302): libxcrypt-devel-4.4.26-4.amzn2022.x8 327 kB/s |  31 kB     00:00    
+(186/302): dbus-1.12.20-3.amzn2022.x86_64.rpm   101 kB/s | 9.3 kB     00:00    
+(187/302): graphite2-1.3.14-7.amzn2022.x86_64.r 806 kB/s |  99 kB     00:00    
+(188/302): libX11-1.7.2-3.amzn2022.x86_64.rpm   1.0 MB/s | 657 kB     00:00    
+(189/302): libtiff-4.2.0-1.amzn2022.x86_64.rpm  1.2 MB/s | 209 kB     00:00    
+(190/302): freetype-2.10.4-3.amzn2022.x86_64.rp 1.1 MB/s | 409 kB     00:00    
+(191/302): systemtap-devel-4.5-1.amzn2022.x86_6 3.7 MB/s | 2.1 MB     00:00    
+(192/302): apr-util-1.6.1-16.amzn2022.x86_64.rp 826 kB/s |  98 kB     00:00    
+(193/302): rpm-build-4.16.1.3-1.amzn2022.x86_64 476 kB/s | 100 kB     00:00    
+(194/302): tbb-2020.3-7.amzn2022.x86_64.rpm     1.2 MB/s | 172 kB     00:00    
+(195/302): perl-IO-1.43-477.amzn2022.x86_64.rpm 549 kB/s |  99 kB     00:00    
+(196/302): gettext-devel-0.21-4.amzn2022.x86_64 1.4 MB/s | 203 kB     00:00    
+(197/302): libpaper-1.1.28-2.amzn2022.x86_64.rp 469 kB/s |  42 kB     00:00    
+(198/302): shared-mime-info-2.1-2.amzn2022.x86_ 2.0 MB/s | 376 kB     00:00    
+(199/302): cups-libs-2.3.3op2-10.amzn2022.x86_6 817 kB/s | 270 kB     00:00    
+(200/302): cscope-15.9-10.amzn2022.x86_64.rpm   2.1 MB/s | 295 kB     00:00    
+(201/302): systemtap-runtime-4.5-1.amzn2022.x86 1.0 MB/s | 419 kB     00:00    
+(202/302): utf8proc-2.6.1-2.amzn2022.x86_64.rpm 712 kB/s |  85 kB     00:00    
+(203/302): libraqm-0.7.2-1.amzn2022.x86_64.rpm  181 kB/s |  20 kB     00:00    
+(204/302): libXrender-0.9.10-14.amzn2022.x86_64 335 kB/s |  29 kB     00:00    
+(205/302): elfutils-libelf-devel-0.185-2.amzn20 258 kB/s |  28 kB     00:00    
+(206/302): systemtap-client-4.5-1.amzn2022.x86_ 4.1 MB/s | 3.6 MB     00:00    
+(207/302): lcms2-2.12-1.amzn2022.x86_64.rpm     918 kB/s | 179 kB     00:00    
+(208/302): jbigkit-libs-2.1-21.amzn2022.x86_64. 624 kB/s |  55 kB     00:00    
+(209/302): gd-2.3.2-2.amzn2022.x86_64.rpm       796 kB/s | 145 kB     00:00    
+(210/302): pango-1.48.10-1.amzn2022.x86_64.rpm  939 kB/s | 302 kB     00:00    
+(211/302): boost-filesystem-1.75.0-4.amzn2022.x 489 kB/s |  60 kB     00:00    
+(212/302): libXft-2.3.3-6.amzn2022.x86_64.rpm   677 kB/s |  66 kB     00:00    
+(213/302): openssh-8.6p1-5.amzn2022.x86_64.rpm  1.1 MB/s | 450 kB     00:00    
+(214/302): adobe-mappings-pdf-20180407-8.amzn20 1.3 MB/s | 670 kB     00:00    
+(215/302): adobe-mappings-cmap-deprecated-20190 618 kB/s | 116 kB     00:00    
+(216/302): gnat-srpm-macros-4-13.amzn2022.noarc  95 kB/s | 9.6 kB     00:00    
+(217/302): perl-File-Basename-2.85-477.amzn2022 292 kB/s |  29 kB     00:00    
+(218/302): crypto-policies-scripts-20210213-1.g 744 kB/s |  67 kB     00:00    
+(219/302): openblas-srpm-macros-2-9.amzn2022.no  96 kB/s | 8.6 kB     00:00    
+(220/302): perl-Text-Tabs+Wrap-2021.0726-1.amzn 266 kB/s |  23 kB     00:00    
+(221/302): libicu-67.1-7.amzn2022.x86_64.rpm    2.1 MB/s | 9.6 MB     00:04    
+(222/302): gcc-c++-11.2.1-2.amzn2022.0.2.x86_64 4.7 MB/s |  12 MB     00:02    
+(223/302): perl-File-Find-1.37-477.amzn2022.noa 220 kB/s |  37 kB     00:00    
+(224/302): hicolor-icon-theme-0.17-10.amzn2022. 360 kB/s |  46 kB     00:00    
+(225/302): urw-base35-standard-symbols-ps-fonts 511 kB/s |  43 kB     00:00    
+(226/302): perl-Class-Struct-0.66-477.amzn2022. 379 kB/s |  34 kB     00:00    
+(227/302): perl-File-Path-2.18-2.amzn2022.noarc 367 kB/s |  37 kB     00:00    
+(228/302): perl-Error-0.17029-5.amzn2022.noarch 474 kB/s |  43 kB     00:00    
+(229/302): perl-SelectSaver-1.02-477.amzn2022.n 258 kB/s |  23 kB     00:00    
+(230/302): fonts-filesystem-2.0.5-5.amzn2022.no 106 kB/s |  10 kB     00:00    
+(231/302): rust-srpm-macros-18-1.amzn2022.noarc  96 kB/s |  10 kB     00:00    
+(232/302): automake-1.16.2-4.amzn2022.noarch.rp 2.6 MB/s | 665 kB     00:00    
+(233/302): perl-podlators-4.14-458.amzn2022.noa 868 kB/s | 114 kB     00:00    
+(234/302): urw-base35-c059-fonts-20200910-6.amz 3.5 MB/s | 875 kB     00:00    
+(235/302): perl-Pod-Simple-3.42-2.amzn2022.noar 1.3 MB/s | 217 kB     00:00    
+(236/302): efi-srpm-macros-5-4.amzn2022.0.3.noa 229 kB/s |  23 kB     00:00    
+(237/302): perl-HTTP-Tiny-0.078-1.amzn2022.noar 626 kB/s |  56 kB     00:00    
+(238/302): urw-base35-gothic-fonts-20200910-6.a 1.5 MB/s | 644 kB     00:00    
+(239/302): amazon-rpm-config-182-2.amzn2022.noa 674 kB/s |  65 kB     00:00    
+(240/302): intltool-0.51.0-18.amzn2022.noarch.r 513 kB/s |  57 kB     00:00    
+(241/302): systemd-rpm-macros-248.9-1.amzn2022. 252 kB/s |  29 kB     00:00    
+(242/302): fpc-srpm-macros-1.3-3.amzn2022.noarc  85 kB/s | 8.9 kB     00:00    
+(243/302): glibc-headers-x86-2.34-8.amzn2022.no 1.5 MB/s | 545 kB     00:00    
+(244/302): perl-File-Temp-0.231.100-2.amzn2022. 683 kB/s |  62 kB     00:00    
+(245/302): perl-parent-0.238-458.amzn2022.noarc 195 kB/s |  16 kB     00:00    
+(246/302): perl-constant-1.33-459.amzn2022.noar 299 kB/s |  24 kB     00:00    
+(247/302): urw-base35-nimbus-roman-fonts-202009 2.0 MB/s | 857 kB     00:00    
+(248/302): urw-base35-z003-fonts-20200910-6.amz 2.0 MB/s | 277 kB     00:00    
+(249/302): perl-subs-1.03-477.amzn2022.noarch.r 317 kB/s |  23 kB     00:00    
+(250/302): gettext-common-devel-0.21-4.amzn2022 1.1 MB/s | 408 kB     00:00    
+(251/302): qt5-srpm-macros-5.15.2-2.amzn2022.no  84 kB/s | 9.7 kB     00:00    
+(252/302): perl-Carp-1.50-458.amzn2022.noarch.r 335 kB/s |  30 kB     00:00    
+(253/302): urw-base35-d050000l-fonts-20200910-6 165 kB/s |  77 kB     00:00    
+(254/302): urw-base35-fonts-common-20200910-6.a 251 kB/s |  22 kB     00:00    
+(255/302): perl-File-Copy-2.34-477.amzn2022.noa 340 kB/s |  32 kB     00:00    
+(256/302): git-core-doc-2.31.1-3.amzn2022.noarc 2.5 MB/s | 2.3 MB     00:00    
+(257/302): libX11-common-1.7.2-3.amzn2022.noarc 809 kB/s | 153 kB     00:00    
+(258/302): xemacs-filesystem-21.5.34-39.2020033 105 kB/s |  11 kB     00:00    
+(259/302): lua-srpm-macros-1-4.amzn2022.noarch.  74 kB/s | 9.5 kB     00:00    
+(260/302): perl-Getopt-Std-1.12-477.amzn2022.no 244 kB/s |  27 kB     00:00    
+(261/302): perl-Symbol-1.08-477.amzn2022.noarch 274 kB/s |  26 kB     00:00    
+(262/302): perl-File-stat-1.09-477.amzn2022.noa 191 kB/s |  29 kB     00:00    
+(263/302): perl-Pod-Usage-2.01-2.amzn2022.noarc 589 kB/s |  42 kB     00:00    
+(264/302): perl-overload-1.31-477.amzn2022.noar 648 kB/s |  57 kB     00:00    
+(265/302): pkgconf-m4-1.7.3-7.amzn2022.noarch.r 199 kB/s |  16 kB     00:00    
+(266/302): fonts-srpm-macros-2.0.5-5.amzn2022.n 339 kB/s |  28 kB     00:00    
+(267/302): dejavu-sans-fonts-2.37-16.amzn2022.n 3.9 MB/s | 1.3 MB     00:00    
+(268/302): xml-common-0.6.3-56.amzn2022.noarch. 265 kB/s |  32 kB     00:00    
+(269/302): perl-if-0.60.800-477.amzn2022.noarch 363 kB/s |  25 kB     00:00    
+(270/302): urw-base35-nimbus-mono-ps-fonts-2020 2.1 MB/s | 796 kB     00:00    
+(271/302): ocaml-srpm-macros-6-4.amzn2022.noarc 107 kB/s | 9.1 kB     00:00    
+(272/302): xorg-x11-fonts-ISO8859-1-100dpi-7.5- 6.6 MB/s | 1.0 MB     00:00    
+(273/302): google-droid-sans-fonts-20200215-9.a 1.8 MB/s | 2.7 MB     00:01    
+(274/302): perl-Pod-Perldoc-3.28.01-459.amzn202 674 kB/s |  86 kB     00:00    
+(275/302): python-srpm-macros-3.9-41.amzn2022.n 200 kB/s |  22 kB     00:00    
+(276/302): perl-IPC-Open3-1.21-477.amzn2022.noa 351 kB/s |  34 kB     00:00    
+(277/302): perl-Text-ParseWords-3.30-458.amzn20 174 kB/s |  17 kB     00:00    
+(278/302): perl-srpm-macros-1-39.amzn2022.noarc  87 kB/s | 9.7 kB     00:00    
+(279/302): urw-base35-bookman-fonts-20200910-6. 2.3 MB/s | 847 kB     00:00    
+(280/302): nim-srpm-macros-3-4.amzn2022.noarch.  83 kB/s | 9.7 kB     00:00    
+(281/302): perl-Getopt-Long-2.52-2.amzn2022.noa 686 kB/s |  62 kB     00:00    
+(282/302): urw-base35-nimbus-sans-fonts-2020091 6.0 MB/s | 1.3 MB     00:00    
+(283/302): perl-Exporter-5.74-459.amzn2022.noar 401 kB/s |  33 kB     00:00    
+(284/302): perl-Term-ANSIColor-5.01-459.amzn202 643 kB/s |  50 kB     00:00    
+(285/302): urw-base35-fonts-20200910-6.amzn2022 135 kB/s |  11 kB     00:00    
+(286/302): perl-Time-Local-1.300-5.amzn2022.noa 319 kB/s |  35 kB     00:00    
+(287/302): dbus-common-1.12.20-3.amzn2022.noarc 150 kB/s |  16 kB     00:00    
+(288/302): autoconf-2.69-36.amzn2022.noarch.rpm 1.7 MB/s | 668 kB     00:00    
+(289/302): perl-File-Compare-1.100.600-477.amzn 262 kB/s |  25 kB     00:00    
+(290/302): urw-base35-p052-fonts-20200910-6.amz 5.6 MB/s | 974 kB     00:00    
+(291/302): adobe-mappings-cmap-20190730-1.amzn2 2.7 MB/s | 2.1 MB     00:00    
+(292/302): emacs-filesystem-27.2-5.amzn2022.noa  97 kB/s | 9.7 kB     00:00    
+(293/302): langpacks-core-font-en-3.0-14.amzn20 136 kB/s |  11 kB     00:00    
+(294/302): perl-Term-Cap-1.17-458.amzn2022.noar 292 kB/s |  23 kB     00:00    
+(295/302): perl-overloading-0.02-477.amzn2022.n 270 kB/s |  24 kB     00:00    
+(296/302): go-srpm-macros-3.0.10-1.amzn2022.noa 256 kB/s |  27 kB     00:00    
+(297/302): ghc-srpm-macros-1.5.0-4.amzn2022.noa  91 kB/s | 9.0 kB     00:00    
+(298/302): kernel-srpm-macros-1.0-4.amzn2022.no  59 kB/s | 8.5 kB     00:00    
+(299/302): perl-vars-1.05-477.amzn2022.noarch.r 287 kB/s |  24 kB     00:00    
+(300/302): perl-Pod-Escapes-1.07-458.amzn2022.n 250 kB/s |  21 kB     00:00    
+(301/302): perl-Thread-Queue-3.14-458.amzn2022. 204 kB/s |  23 kB     00:00    
+(302/302): perl-Git-2.31.1-3.amzn2022.noarch.rp 390 kB/s |  45 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           6.5 MB/s | 247 MB     00:38     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Amazon Linux 2022 repository                    1.7 MB/s | 1.8 kB     00:00    
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+RPMDB altered outside of YUM.
+  Preparing        :                                                        1/1 
+  Installing       : nspr-4.32.0-2.amzn2022.0.1.x86_64                    1/302 
+  Installing       : libpng-2:1.6.37-10.amzn2022.x86_64                   2/302 
+  Installing       : elfutils-debuginfod-client-0.185-2.amzn2022.0.1.     3/302 
+  Installing       : nss-util-3.71.0-2.amzn2022.0.1.x86_64                4/302 
+  Installing       : fonts-filesystem-1:2.0.5-5.amzn2022.noarch           5/302 
+  Installing       : urw-base35-fonts-common-20200910-6.amzn2022.noar     6/302 
+  Installing       : libjpeg-turbo-2.0.90-3.amzn2022.x86_64               7/302 
+  Installing       : libmpc-1.2.1-2.amzn2022.x86_64                       8/302 
+  Installing       : apr-1.7.0-9.amzn2022.x86_64                          9/302 
+  Installing       : apr-util-1.6.1-16.amzn2022.x86_64                   10/302 
+  Installing       : binutils-gold-2.35.2-8.amzn2022.x86_64              11/302 
+  Installing       : binutils-2.35.2-8.amzn2022.x86_64                   12/302 
+  Running scriptlet: binutils-2.35.2-8.amzn2022.x86_64                   12/302 
+  Installing       : libquadmath-11.2.1-2.amzn2022.0.2.x86_64            13/302 
+  Installing       : unzip-6.0-50.amzn2022.x86_64                        14/302 
+  Installing       : diffutils-3.8-1.amzn2022.x86_64                     15/302 
+  Installing       : libwebp-1.2.1-1.amzn2022.x86_64                     16/302 
+  Installing       : boost-system-1.75.0-4.amzn2022.x86_64               17/302 
+  Installing       : findutils-1:4.8.0-2.amzn2022.x86_64                 18/302 
+  Installing       : m4-1.4.19-2.amzn2022.x86_64                         19/302 
+  Installing       : zip-3.0-28.amzn2022.x86_64                          20/302 
+  Installing       : dejavu-sans-fonts-2.37-16.amzn2022.noarch           21/302 
+  Installing       : emacs-filesystem-1:27.2-5.amzn2022.noarch           22/302 
+  Installing       : adobe-mappings-cmap-20190730-1.amzn2022.noarch      23/302 
+  Installing       : xz-5.2.5-5.amzn2022.x86_64                          24/302 
+  Installing       : libICE-1.0.10-6.amzn2022.x86_64                     25/302 
+  Installing       : tar-2:1.34-1.amzn2022.x86_64                        26/302 
+  Installing       : file-5.39-7.amzn2022.x86_64                         27/302 
+  Installing       : fribidi-1.0.10-4.amzn2022.x86_64                    28/302 
+  Installing       : gzip-1.10-4.amzn2022.x86_64                         29/302 
+  Installing       : libfdisk-2.36.2-1.amzn2022.x86_64                   30/302 
+  Installing       : libseccomp-2.5.3-1.amzn2022.x86_64                  31/302 
+  Installing       : libtool-ltdl-2.4.6-40.amzn2022.x86_64               32/302 
+  Installing       : libedit-3.1-38.20210714cvs.amzn2022.x86_64          33/302 
+  Installing       : llvm12-libs-12.0.1-2.amzn2022.x86_64                34/302 
+  Installing       : libtextstyle-0.21-4.amzn2022.x86_64                 35/302 
+  Installing       : gettext-libs-0.21-4.amzn2022.x86_64                 36/302 
+  Installing       : pixman-0.40.0-3.amzn2022.x86_64                     37/302 
+  Installing       : atk-2.36.0-3.amzn2022.x86_64                        38/302 
+  Installing       : gettext-0.21-4.amzn2022.x86_64                      39/302 
+  Installing       : cracklib-2.9.6-27.amzn2022.x86_64                   40/302 
+  Installing       : libSM-1.2.3-8.amzn2022.x86_64                       41/302 
+  Installing       : adobe-mappings-cmap-deprecated-20190730-1.amzn20    42/302 
+  Installing       : langpacks-core-font-en-3.0-14.amzn2022.noarch       43/302 
+  Installing       : boost-thread-1.75.0-4.amzn2022.x86_64               44/302 
+  Installing       : boost-filesystem-1.75.0-4.amzn2022.x86_64           45/302 
+  Installing       : libgfortran-11.2.1-2.amzn2022.0.2.x86_64            46/302 
+  Installing       : libserf-1.3.9-18.amzn2022.x86_64                    47/302 
+  Installing       : cpp-11.2.1-2.amzn2022.0.2.x86_64                    48/302 
+  Installing       : google-droid-sans-fonts-20200215-9.amzn2022.noar    49/302 
+  Installing       : nss-softokn-freebl-3.71.0-2.amzn2022.0.1.x86_64     50/302 
+  Installing       : nss-softokn-3.71.0-2.amzn2022.0.1.x86_64            51/302 
+  Installing       : elfutils-0.185-2.amzn2022.0.1.x86_64                52/302 
+  Installing       : ghc-srpm-macros-1.5.0-4.amzn2022.noarch             53/302 
+  Installing       : kernel-srpm-macros-1.0-4.amzn2022.noarch            54/302 
+  Installing       : nim-srpm-macros-3-4.amzn2022.noarch                 55/302 
+  Installing       : perl-srpm-macros-1-39.amzn2022.noarch               56/302 
+  Installing       : ocaml-srpm-macros-6-4.amzn2022.noarch               57/302 
+  Running scriptlet: xml-common-0.6.3-56.amzn2022.noarch                 58/302 
+  Installing       : xml-common-0.6.3-56.amzn2022.noarch                 58/302 
+  Installing       : pkgconf-m4-1.7.3-7.amzn2022.noarch                  59/302 
+  Installing       : lua-srpm-macros-1-4.amzn2022.noarch                 60/302 
+  Installing       : xemacs-filesystem-21.5.34-39.20200331hge2ac728aa    61/302 
+  Installing       : libX11-common-1.7.2-3.amzn2022.noarch               62/302 
+  Installing       : qt5-srpm-macros-5.15.2-2.amzn2022.noarch            63/302 
+  Installing       : gettext-common-devel-0.21-4.amzn2022.noarch         64/302 
+  Installing       : gettext-devel-0.21-4.amzn2022.x86_64                65/302 
+  Installing       : fpc-srpm-macros-1.3-3.amzn2022.noarch               66/302 
+  Installing       : systemd-rpm-macros-248.9-1.amzn2022.0.3.noarch      67/302 
+  Installing       : glibc-headers-x86-2.34-8.amzn2022.noarch            68/302 
+  Installing       : efi-srpm-macros-5-4.amzn2022.0.3.noarch             69/302 
+  Installing       : rust-srpm-macros-18-1.amzn2022.noarch               70/302 
+  Installing       : hicolor-icon-theme-0.17-10.amzn2022.noarch          71/302 
+  Installing       : openblas-srpm-macros-2-9.amzn2022.noarch            72/302 
+  Installing       : crypto-policies-scripts-20210213-1.git5c710c0.am    73/302 
+  Installing       : nss-sysinit-3.71.0-2.amzn2022.0.1.x86_64            74/302 
+  Installing       : nss-3.71.0-2.amzn2022.0.1.x86_64                    75/302 
+  Running scriptlet: nss-3.71.0-2.amzn2022.0.1.x86_64                    75/302 
+  Installing       : gnat-srpm-macros-4-13.amzn2022.noarch               76/302 
+  Installing       : adobe-mappings-pdf-20180407-8.amzn2022.noarch       77/302 
+  Installing       : jbigkit-libs-2.1-21.amzn2022.x86_64                 78/302 
+  Installing       : libtiff-4.2.0-1.amzn2022.x86_64                     79/302 
+  Installing       : lcms2-2.12-1.amzn2022.x86_64                        80/302 
+  Installing       : utf8proc-2.6.1-2.amzn2022.x86_64                    81/302 
+  Installing       : subversion-libs-1.14.1-1.amzn2022.0.1.x86_64        82/302 
+  Installing       : shared-mime-info-2.1-2.amzn2022.x86_64              83/302 
+  Running scriptlet: shared-mime-info-2.1-2.amzn2022.x86_64              83/302 
+  Installing       : gdk-pixbuf2-2.42.6-1.amzn2022.x86_64                84/302 
+  Installing       : gtk-update-icon-cache-3.24.30-4.amzn2022.x86_64     85/302 
+  Installing       : gdk-pixbuf2-modules-2.42.6-1.amzn2022.x86_64        86/302 
+  Installing       : libpaper-1.1.28-2.amzn2022.x86_64                   87/302 
+  Installing       : tbb-2020.3-7.amzn2022.x86_64                        88/302 
+  Installing       : dyninst-10.2.1-6.amzn2022.x86_64                    89/302 
+  Running scriptlet: dyninst-10.2.1-6.amzn2022.x86_64                    89/302 
+  Running scriptlet: systemtap-runtime-4.5-1.amzn2022.x86_64             90/302 
+  Installing       : systemtap-runtime-4.5-1.amzn2022.x86_64             90/302 
+  Installing       : libicu-67.1-7.amzn2022.x86_64                       91/302 
+  Installing       : boost-regex-1.75.0-4.amzn2022.x86_64                92/302 
+  Installing       : graphite2-1.3.14-7.amzn2022.x86_64                  93/302 
+  Installing       : harfbuzz-2.7.4-3.amzn2022.x86_64                    94/302 
+  Installing       : freetype-2.10.4-3.amzn2022.x86_64                   95/302 
+  Installing       : fontconfig-2.13.94-2.amzn2022.x86_64                96/302 
+  Running scriptlet: fontconfig-2.13.94-2.amzn2022.x86_64                96/302 
+  Installing       : urw-base35-standard-symbols-ps-fonts-20200910-6.    97/302 
+  Running scriptlet: urw-base35-standard-symbols-ps-fonts-20200910-6.    97/302 
+  Installing       : urw-base35-gothic-fonts-20200910-6.amzn2022.noar    98/302 
+  Running scriptlet: urw-base35-gothic-fonts-20200910-6.amzn2022.noar    98/302 
+  Installing       : urw-base35-c059-fonts-20200910-6.amzn2022.noarch    99/302 
+  Running scriptlet: urw-base35-c059-fonts-20200910-6.amzn2022.noarch    99/302 
+  Installing       : urw-base35-nimbus-roman-fonts-20200910-6.amzn202   100/302 
+  Running scriptlet: urw-base35-nimbus-roman-fonts-20200910-6.amzn202   100/302 
+  Installing       : urw-base35-z003-fonts-20200910-6.amzn2022.noarch   101/302 
+  Running scriptlet: urw-base35-z003-fonts-20200910-6.amzn2022.noarch   101/302 
+  Installing       : urw-base35-d050000l-fonts-20200910-6.amzn2022.no   102/302 
+  Running scriptlet: urw-base35-d050000l-fonts-20200910-6.amzn2022.no   102/302 
+  Installing       : urw-base35-nimbus-mono-ps-fonts-20200910-6.amzn2   103/302 
+  Running scriptlet: urw-base35-nimbus-mono-ps-fonts-20200910-6.amzn2   103/302 
+  Installing       : urw-base35-bookman-fonts-20200910-6.amzn2022.noa   104/302 
+  Running scriptlet: urw-base35-bookman-fonts-20200910-6.amzn2022.noa   104/302 
+  Installing       : urw-base35-nimbus-sans-fonts-20200910-6.amzn2022   105/302 
+  Running scriptlet: urw-base35-nimbus-sans-fonts-20200910-6.amzn2022   105/302 
+  Installing       : urw-base35-p052-fonts-20200910-6.amzn2022.noarch   106/302 
+  Running scriptlet: urw-base35-p052-fonts-20200910-6.amzn2022.noarch   106/302 
+  Installing       : urw-base35-fonts-20200910-6.amzn2022.noarch        107/302 
+  Installing       : libraqm-0.7.2-1.amzn2022.x86_64                    108/302 
+  Installing       : info-6.7-10.amzn2022.x86_64                        109/302 
+  Installing       : ed-1.14.2-10.amzn2022.x86_64                       110/302 
+  Installing       : patch-2.7.6-14.amzn2022.x86_64                     111/302 
+  Installing       : bzip2-1.0.8-6.amzn2022.x86_64                      112/302 
+  Installing       : kmod-libs-29-2.amzn2022.x86_64                     113/302 
+  Installing       : kernel-headers-5.10.75-82.359.amzn2022.x86_64      114/302 
+  Installing       : libijs-0.35-13.amzn2022.x86_64                     115/302 
+  Installing       : acl-2.3.1-2.amzn2022.x86_64                        116/302 
+  Installing       : libdav1d-0.9.1-1.amzn2022.0.1.x86_64               117/302 
+  Installing       : libvmaf-2.1.1-1.amzn2022.x86_64                    118/302 
+  Installing       : libaom-3.1.1-1.amzn2022.0.1.x86_64                 119/302 
+  Installing       : rav1e-libs-0.5.0-21.amzn2022.x86_64                120/302 
+  Installing       : svt-av1-libs-0.8.7-2.amzn2022.0.1.x86_64           121/302 
+  Installing       : libavif-0.9.0-2.amzn2022.0.1.x86_64                122/302 
+  Installing       : ncurses-6.2-4.20200222.amzn2022.x86_64             123/302 
+  Installing       : dbus-libs-1:1.12.20-3.amzn2022.x86_64              124/302 
+  Installing       : clang-resource-filesystem-12.0.1-1.amzn2022.x86_   125/302 
+  Installing       : clang-libs-12.0.1-1.amzn2022.x86_64                126/302 
+  Installing       : libnl3-3.5.0-6.amzn2022.x86_64                     127/302 
+  Installing       : libibverbs-37.0-1.amzn2022.x86_64                  128/302 
+  Installing       : libpcap-14:1.10.1-1.amzn2022.x86_64                129/302 
+  Installing       : iptables-legacy-libs-1.8.7-8.amzn2022.x86_64       130/302 
+  Installing       : libevent-2.1.12-3.amzn2022.x86_64                  131/302 
+  Installing       : avahi-libs-0.8-14.amzn2022.0.1.x86_64              132/302 
+  Installing       : cups-libs-1:2.3.3op2-10.amzn2022.x86_64            133/302 
+  Installing       : libipt-2.0.4-2.amzn2022.x86_64                     134/302 
+  Installing       : xxhash-libs-0.8.0-3.amzn2022.x86_64                135/302 
+  Installing       : xapian-core-libs-1.4.18-1.amzn2022.x86_64          136/302 
+  Installing       : zstd-1.5.2-1.amzn2022.x86_64                       137/302 
+  Installing       : libdatrie-0.2.13-1.amzn2022.x86_64                 138/302 
+  Installing       : libthai-0.1.28-6.amzn2022.x86_64                   139/302 
+  Installing       : openjpeg2-2.4.0-3.amzn2022.x86_64                  140/302 
+  Installing       : libfontenc-1.1.3-15.amzn2022.x86_64                141/302 
+  Installing       : mkfontscale-1.2.1-2.amzn2022.x86_64                142/302 
+  Installing       : xorg-x11-fonts-ISO8859-1-100dpi-7.5-31.amzn2022.   143/302 
+  Running scriptlet: xorg-x11-fonts-ISO8859-1-100dpi-7.5-31.amzn2022.   143/302 
+  Installing       : libbabeltrace-1.5.8-6.amzn2022.x86_64              144/302 
+  Installing       : gc-8.0.4-5.amzn2022.x86_64                         145/302 
+  Installing       : guile22-2.2.7-2.amzn2022.x86_64                    146/302 
+  Installing       : make-1:4.3-5.amzn2022.x86_64                       147/302 
+  Installing       : jbig2dec-libs-0.19-4.amzn2022.x86_64               148/302 
+  Installing       : libgs-9.55.0-1.amzn2022.x86_64                     149/302 
+  Installing       : dwz-0.14-1.amzn2022.x86_64                         150/302 
+  Installing       : libimagequant-2.14.1-1.amzn2022.x86_64             151/302 
+  Running scriptlet: groff-base-1.22.4-7.amzn2022.x86_64                152/302 
+  Installing       : groff-base-1.22.4-7.amzn2022.x86_64                152/302 
+  Running scriptlet: groff-base-1.22.4-7.amzn2022.x86_64                152/302 
+  Installing       : perl-Text-Tabs+Wrap-2021.0726-1.amzn2022.noarch    153/302 
+  Installing       : perl-if-0.60.800-477.amzn2022.noarch               154/302 
+  Installing       : perl-Time-Local-2:1.300-5.amzn2022.noarch          155/302 
+  Installing       : perl-File-Path-2.18-2.amzn2022.noarch              156/302 
+  Installing       : perl-Pod-Escapes-1:1.07-458.amzn2022.noarch        157/302 
+  Installing       : perl-subs-1.03-477.amzn2022.noarch                 158/302 
+  Installing       : perl-Class-Struct-0.66-477.amzn2022.noarch         159/302 
+  Installing       : perl-Term-ANSIColor-5.01-459.amzn2022.noarch       160/302 
+  Installing       : perl-HTTP-Tiny-0.078-1.amzn2022.noarch             161/302 
+  Installing       : perl-File-Temp-1:0.231.100-2.amzn2022.noarch       162/302 
+  Installing       : perl-Term-Cap-1.17-458.amzn2022.noarch             163/302 
+  Installing       : perl-Pod-Simple-1:3.42-2.amzn2022.noarch           164/302 
+  Installing       : perl-IPC-Open3-1.21-477.amzn2022.noarch            165/302 
+  Installing       : perl-POSIX-1.94-477.amzn2022.x86_64                166/302 
+  Installing       : perl-Socket-4:2.032-1.amzn2022.x86_64              167/302 
+  Installing       : perl-SelectSaver-1.02-477.amzn2022.noarch          168/302 
+  Installing       : perl-Symbol-1.08-477.amzn2022.noarch               169/302 
+  Installing       : perl-File-stat-1.09-477.amzn2022.noarch            170/302 
+  Installing       : perl-podlators-1:4.14-458.amzn2022.noarch          171/302 
+  Installing       : perl-Pod-Perldoc-3.28.01-459.amzn2022.noarch       172/302 
+  Installing       : perl-mro-1.23-477.amzn2022.x86_64                  173/302 
+  Installing       : perl-Fcntl-1.13-477.amzn2022.x86_64                174/302 
+  Installing       : perl-Text-ParseWords-3.30-458.amzn2022.noarch      175/302 
+  Installing       : perl-IO-1.43-477.amzn2022.x86_64                   176/302 
+  Installing       : perl-overloading-0.02-477.amzn2022.noarch          177/302 
+  Installing       : perl-Pod-Usage-4:2.01-2.amzn2022.noarch            178/302 
+  Installing       : perl-parent-1:0.238-458.amzn2022.noarch            179/302 
+  Installing       : perl-MIME-Base64-3.16-2.amzn2022.x86_64            180/302 
+  Installing       : perl-Scalar-List-Utils-4:1.56-459.amzn2022.x86_6   181/302 
+  Installing       : perl-Errno-1.30-477.amzn2022.x86_64                182/302 
+  Installing       : perl-File-Basename-2.85-477.amzn2022.noarch        183/302 
+  Installing       : perl-constant-1.33-459.amzn2022.noarch             184/302 
+  Installing       : perl-Getopt-Std-1.12-477.amzn2022.noarch           185/302 
+  Installing       : perl-Storable-1:3.21-458.amzn2022.x86_64           186/302 
+  Installing       : perl-overload-1.31-477.amzn2022.noarch             187/302 
+  Installing       : perl-vars-1.05-477.amzn2022.noarch                 188/302 
+  Installing       : perl-Getopt-Long-1:2.52-2.amzn2022.noarch          189/302 
+  Installing       : perl-DynaLoader-1.47-477.amzn2022.x86_64           190/302 
+  Installing       : perl-PathTools-3.78-459.amzn2022.x86_64            191/302 
+  Installing       : perl-Carp-1.50-458.amzn2022.noarch                 192/302 
+  Installing       : perl-Exporter-5.74-459.amzn2022.noarch             193/302 
+  Installing       : perl-Encode-4:3.15-462.amzn2022.x86_64             194/302 
+  Installing       : perl-libs-4:5.32.1-477.amzn2022.x86_64             195/302 
+  Installing       : perl-interpreter-4:5.32.1-477.amzn2022.x86_64      196/302 
+  Installing       : perl-File-Find-1.37-477.amzn2022.noarch            197/302 
+  Installing       : perl-File-Copy-2.34-477.amzn2022.noarch            198/302 
+  Installing       : perl-Data-Dumper-2.174-460.amzn2022.x86_64         199/302 
+  Installing       : perl-B-1.80-477.amzn2022.x86_64                    200/302 
+  Installing       : perl-threads-1:2.25-458.amzn2022.0.1.x86_64        201/302 
+  Installing       : perl-File-Compare-1.100.600-477.amzn2022.noarch    202/302 
+  Installing       : autoconf-2.69-36.amzn2022.noarch                   203/302 
+  Installing       : perl-threads-shared-1.61-458.amzn2022.x86_64       204/302 
+  Installing       : perl-Thread-Queue-3.14-458.amzn2022.noarch         205/302 
+  Installing       : automake-1.16.2-4.amzn2022.noarch                  206/302 
+  Installing       : perl-TermReadKey-2.38-9.amzn2022.x86_64            207/302 
+  Installing       : perl-XML-Parser-2.46-7.amzn2022.x86_64             208/302 
+  Installing       : perl-lib-0.65-477.amzn2022.x86_64                  209/302 
+  Installing       : perl-Error-1:0.17029-5.amzn2022.noarch             210/302 
+  Installing       : less-590-2.amzn2022.x86_64                         211/302 
+  Installing       : libeconf-0.4.0-1.amzn2022.x86_64                   212/302 
+  Installing       : libpwquality-1.4.4-6.amzn2022.x86_64               213/302 
+  Installing       : pam-1.5.1-7.amzn2022.x86_64                        214/302 
+  Installing       : efivar-libs-37-15.amzn2022.x86_64                  215/302 
+  Installing       : mokutil-2:0.4.0-4.amzn2022.x86_64                  216/302 
+  Installing       : libXau-1.0.9-6.amzn2022.x86_64                     217/302 
+  Installing       : libxcb-1.13.1-7.amzn2022.x86_64                    218/302 
+  Installing       : libX11-1.7.2-3.amzn2022.x86_64                     219/302 
+  Installing       : libXext-1.3.4-6.amzn2022.x86_64                    220/302 
+  Installing       : libXrender-0.9.10-14.amzn2022.x86_64               221/302 
+  Installing       : cairo-1.17.4-3.amzn2022.x86_64                     222/302 
+  Installing       : libXt-1.2.0-4.amzn2022.x86_64                      223/302 
+  Installing       : libXfixes-6.0.0-1.amzn2022.x86_64                  224/302 
+  Installing       : libXmu-1.1.3-6.amzn2022.x86_64                     225/302 
+  Installing       : libXpm-3.5.13-5.amzn2022.x86_64                    226/302 
+  Installing       : libXaw-1.0.13-17.amzn2022.x86_64                   227/302 
+  Installing       : gd-2.3.2-2.amzn2022.x86_64                         228/302 
+  Installing       : libXdamage-1.1.5-5.amzn2022.x86_64                 229/302 
+  Installing       : libXcursor-1.2.0-5.amzn2022.x86_64                 230/302 
+  Installing       : cairo-gobject-1.17.4-3.amzn2022.x86_64             231/302 
+  Installing       : libXrandr-1.5.2-6.amzn2022.x86_64                  232/302 
+  Installing       : libXft-2.3.3-6.amzn2022.x86_64                     233/302 
+  Installing       : pango-1.48.10-1.amzn2022.x86_64                    234/302 
+  Installing       : librsvg2-2.50.7-1.amzn2022.x86_64                  235/302 
+  Installing       : libXi-1.7.10-6.amzn2022.x86_64                     236/302 
+  Installing       : libXinerama-1.1.4-8.amzn2022.x86_64                237/302 
+  Installing       : libXcomposite-0.4.5-5.amzn2022.x86_64              238/302 
+  Installing       : gtk2-2.24.33-4.amzn2022.x86_64                     239/302 
+  Installing       : graphviz-2.44.0-18.amzn2022.0.1.x86_64             240/302 
+  Running scriptlet: graphviz-2.44.0-18.amzn2022.0.1.x86_64             240/302 
+  Installing       : cpio-2.13-10.amzn2022.x86_64                       241/302 
+  Installing       : libstdc++-devel-11.2.1-2.amzn2022.0.2.x86_64       242/302 
+  Installing       : libcbor-0.7.0-3.amzn2022.x86_64                    243/302 
+  Installing       : libfido2-1.6.0-2.amzn2022.x86_64                   244/302 
+  Installing       : libpkgconf-1.7.3-7.amzn2022.x86_64                 245/302 
+  Installing       : pkgconf-1.7.3-7.amzn2022.x86_64                    246/302 
+  Installing       : pkgconf-pkg-config-1.7.3-7.amzn2022.x86_64         247/302 
+  Installing       : zlib-devel-1.2.11-27.amzn2022.x86_64               248/302 
+  Installing       : elfutils-libelf-devel-0.185-2.amzn2022.0.1.x86_6   249/302 
+  Installing       : libzstd-devel-1.5.2-1.amzn2022.x86_64              250/302 
+  Installing       : xz-devel-5.2.5-5.amzn2022.x86_64                   251/302 
+  Installing       : elfutils-devel-0.185-2.amzn2022.0.1.x86_64         252/302 
+  Installing       : glibc-devel-2.34-8.amzn2022.x86_64                 253/302 
+  Installing       : libxcrypt-devel-4.4.26-4.amzn2022.x86_64           254/302 
+  Installing       : gcc-11.2.1-2.amzn2022.0.2.x86_64                   255/302 
+  Installing       : libquadmath-devel-11.2.1-2.amzn2022.0.2.x86_64     256/302 
+  Installing       : annobin-9.79-3.amzn2022.x86_64                     257/302 
+  Installing       : fonts-srpm-macros-1:2.0.5-5.amzn2022.noarch        258/302 
+  Installing       : python-srpm-macros-3.9-41.amzn2022.noarch          259/302 
+  Installing       : go-srpm-macros-3.0.10-1.amzn2022.noarch            260/302 
+  Installing       : amazon-rpm-config-182-2.amzn2022.noarch            261/302 
+  Installing       : systemtap-devel-4.5-1.amzn2022.x86_64              262/302 
+  Installing       : jansson-2.13.1-2.amzn2022.x86_64                   263/302 
+  Installing       : ctags-5.9-1.20210725.0.amzn2022.x86_64             264/302 
+  Installing       : source-highlight-3.1.9-9.amzn2022.x86_64           265/302 
+  Installing       : gdb-headless-11.1-5.amzn2022.x86_64                266/302 
+  Running scriptlet: libutempter-1.2.1-4.amzn2022.x86_64                267/302 
+  Installing       : libutempter-1.2.1-4.amzn2022.x86_64                267/302 
+  Installing       : util-linux-2.36.2-1.amzn2022.x86_64                268/302 
+warning: /etc/adjtime created as /etc/adjtime.rpmnew
+
+  Running scriptlet: util-linux-2.36.2-1.amzn2022.x86_64                268/302 
+  Running scriptlet: openssh-8.6p1-5.amzn2022.x86_64                    269/302 
+  Installing       : openssh-8.6p1-5.amzn2022.x86_64                    269/302 
+  Installing       : openssh-clients-8.6p1-5.amzn2022.x86_64            270/302 
+  Running scriptlet: openssh-clients-8.6p1-5.amzn2022.x86_64            270/302 
+  Installing       : git-core-2.31.1-3.amzn2022.x86_64                  271/302 
+  Installing       : git-core-doc-2.31.1-3.amzn2022.noarch              272/302 
+  Installing       : perl-Git-2.31.1-3.amzn2022.noarch                  273/302 
+  Installing       : git-2.31.1-3.amzn2022.x86_64                       274/302 
+  Installing       : systemtap-client-4.5-1.amzn2022.x86_64             275/302 
+  Installing       : libargon2-20171227-6.amzn2022.x86_64               276/302 
+  Installing       : device-mapper-1.02.175-1.amzn2022.0.1.x86_64       277/302 
+  Installing       : device-mapper-libs-1.02.175-1.amzn2022.0.1.x86_6   278/302 
+  Installing       : cryptsetup-libs-2.3.6-1.amzn2022.x86_64            279/302 
+  Installing       : systemd-pam-248.9-1.amzn2022.0.3.x86_64            280/302 
+  Installing       : dbus-1:1.12.20-3.amzn2022.x86_64                   281/302 
+  Running scriptlet: systemd-248.9-1.amzn2022.0.3.x86_64                282/302 
+  Installing       : systemd-248.9-1.amzn2022.0.3.x86_64                282/302 
+  Running scriptlet: systemd-248.9-1.amzn2022.0.3.x86_64                282/302 
+  Installing       : dbus-common-1:1.12.20-3.amzn2022.noarch            283/302 
+  Running scriptlet: dbus-common-1:1.12.20-3.amzn2022.noarch            283/302 
+Created symlink /etc/systemd/system/sockets.target.wants/dbus.socket → /usr/lib/systemd/system/dbus.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/dbus.socket → /usr/lib/systemd/user/dbus.socket.
+
+  Running scriptlet: dbus-broker-29-2.amzn2022.x86_64                   284/302 
+  Installing       : dbus-broker-29-2.amzn2022.x86_64                   284/302 
+  Running scriptlet: dbus-broker-29-2.amzn2022.x86_64                   284/302 
+Created symlink /etc/systemd/system/dbus.service → /usr/lib/systemd/system/dbus-broker.service.
+Created symlink /etc/systemd/user/dbus.service → /usr/lib/systemd/user/dbus-broker.service.
+
+  Installing       : subversion-1.14.1-1.amzn2022.0.1.x86_64            285/302 
+  Running scriptlet: subversion-1.14.1-1.amzn2022.0.1.x86_64            285/302 
+  Installing       : systemtap-4.5-1.amzn2022.x86_64                    286/302 
+  Running scriptlet: systemtap-4.5-1.amzn2022.x86_64                    286/302 
+  Installing       : rpm-build-4.16.1.3-1.amzn2022.x86_64               287/302 
+  Installing       : gcc-gfortran-11.2.1-2.amzn2022.0.2.x86_64          288/302 
+  Installing       : libtool-2.4.6-40.amzn2022.x86_64                   289/302 
+  Installing       : gcc-c++-11.2.1-2.amzn2022.0.2.x86_64               290/302 
+  Installing       : doxygen-1:1.9.1-10.amzn2022.x86_64                 291/302 
+  Installing       : intltool-0.51.0-18.amzn2022.noarch                 292/302 
+  Installing       : patchutils-0.4.2-5.amzn2022.x86_64                 293/302 
+  Installing       : cscope-15.9-10.amzn2022.x86_64                     294/302 
+  Installing       : flex-2.6.4-7.amzn2022.x86_64                       295/302 
+  Installing       : bison-3.7.4-2.amzn2022.x86_64                      296/302 
+  Installing       : indent-2.2.12-7.amzn2022.x86_64                    297/302 
+  Installing       : diffstat-1.64-4.amzn2022.x86_64                    298/302 
+  Installing       : rpm-sign-4.16.1.3-1.amzn2022.x86_64                299/302 
+  Installing       : glibc-gconv-extra-2.34-8.amzn2022.x86_64           300/302 
+  Running scriptlet: glibc-gconv-extra-2.34-8.amzn2022.x86_64           300/302 
+  Installing       : swig-4.0.2-6.amzn2022.x86_64                       301/302 
+  Installing       : byacc-2.0.20210109-2.amzn2022.x86_64               302/302 
+  Running scriptlet: crypto-policies-scripts-20210213-1.git5c710c0.am   302/302 
+  Running scriptlet: nss-3.71.0-2.amzn2022.0.1.x86_64                   302/302 
+  Running scriptlet: fontconfig-2.13.94-2.amzn2022.x86_64               302/302 
+  Running scriptlet: urw-base35-standard-symbols-ps-fonts-20200910-6.   302/302 
+  Running scriptlet: urw-base35-gothic-fonts-20200910-6.amzn2022.noar   302/302 
+  Running scriptlet: urw-base35-c059-fonts-20200910-6.amzn2022.noarch   302/302 
+  Running scriptlet: urw-base35-nimbus-roman-fonts-20200910-6.amzn202   302/302 
+  Running scriptlet: urw-base35-z003-fonts-20200910-6.amzn2022.noarch   302/302 
+  Running scriptlet: urw-base35-d050000l-fonts-20200910-6.amzn2022.no   302/302 
+  Running scriptlet: urw-base35-nimbus-mono-ps-fonts-20200910-6.amzn2   302/302 
+  Running scriptlet: urw-base35-bookman-fonts-20200910-6.amzn2022.noa   302/302 
+  Running scriptlet: urw-base35-nimbus-sans-fonts-20200910-6.amzn2022   302/302 
+  Running scriptlet: urw-base35-p052-fonts-20200910-6.amzn2022.noarch   302/302 
+  Running scriptlet: pam-1.5.1-7.amzn2022.x86_64                        302/302 
+  Running scriptlet: byacc-2.0.20210109-2.amzn2022.x86_64               302/302 
+  Verifying        : libSM-1.2.3-8.amzn2022.x86_64                        1/302 
+  Verifying        : git-2.31.1-3.amzn2022.x86_64                         2/302 
+  Verifying        : libargon2-20171227-6.amzn2022.x86_64                 3/302 
+  Verifying        : libutempter-1.2.1-4.amzn2022.x86_64                  4/302 
+  Verifying        : libXt-1.2.0-4.amzn2022.x86_64                        5/302 
+  Verifying        : atk-2.36.0-3.amzn2022.x86_64                         6/302 
+  Verifying        : jansson-2.13.1-2.amzn2022.x86_64                     7/302 
+  Verifying        : elfutils-debuginfod-client-0.185-2.amzn2022.0.1.     8/302 
+  Verifying        : gettext-0.21-4.amzn2022.x86_64                       9/302 
+  Verifying        : libpkgconf-1.7.3-7.amzn2022.x86_64                  10/302 
+  Verifying        : libcbor-0.7.0-3.amzn2022.x86_64                     11/302 
+  Verifying        : dyninst-10.2.1-6.amzn2022.x86_64                    12/302 
+  Verifying        : subversion-libs-1.14.1-1.amzn2022.0.1.x86_64        13/302 
+  Verifying        : libstdc++-devel-11.2.1-2.amzn2022.0.2.x86_64        14/302 
+  Verifying        : glibc-devel-2.34-8.amzn2022.x86_64                  15/302 
+  Verifying        : perl-POSIX-1.94-477.amzn2022.x86_64                 16/302 
+  Verifying        : libpng-2:1.6.37-10.amzn2022.x86_64                  17/302 
+  Verifying        : perl-Data-Dumper-2.174-460.amzn2022.x86_64          18/302 
+  Verifying        : cpio-2.13-10.amzn2022.x86_64                        19/302 
+  Verifying        : byacc-2.0.20210109-2.amzn2022.x86_64                20/302 
+  Verifying        : libquadmath-devel-11.2.1-2.amzn2022.0.2.x86_64      21/302 
+  Verifying        : dbus-broker-29-2.amzn2022.x86_64                    22/302 
+  Verifying        : nspr-4.32.0-2.amzn2022.0.1.x86_64                   23/302 
+  Verifying        : perl-TermReadKey-2.38-9.amzn2022.x86_64             24/302 
+  Verifying        : systemtap-4.5-1.amzn2022.x86_64                     25/302 
+  Verifying        : libXau-1.0.9-6.amzn2022.x86_64                      26/302 
+  Verifying        : nss-softokn-freebl-3.71.0-2.amzn2022.0.1.x86_64     27/302 
+  Verifying        : nss-softokn-3.71.0-2.amzn2022.0.1.x86_64            28/302 
+  Verifying        : efivar-libs-37-15.amzn2022.x86_64                   29/302 
+  Verifying        : swig-4.0.2-6.amzn2022.x86_64                        30/302 
+  Verifying        : perl-threads-1:2.25-458.amzn2022.0.1.x86_64         31/302 
+  Verifying        : libXmu-1.1.3-6.amzn2022.x86_64                      32/302 
+  Verifying        : elfutils-devel-0.185-2.amzn2022.0.1.x86_64          33/302 
+  Verifying        : libeconf-0.4.0-1.amzn2022.x86_64                    34/302 
+  Verifying        : ctags-5.9-1.20210725.0.amzn2022.x86_64              35/302 
+  Verifying        : gtk2-2.24.33-4.amzn2022.x86_64                      36/302 
+  Verifying        : subversion-1.14.1-1.amzn2022.0.1.x86_64             37/302 
+  Verifying        : less-590-2.amzn2022.x86_64                          38/302 
+  Verifying        : libthai-0.1.28-6.amzn2022.x86_64                    39/302 
+  Verifying        : gettext-libs-0.21-4.amzn2022.x86_64                 40/302 
+  Verifying        : groff-base-1.22.4-7.amzn2022.x86_64                 41/302 
+  Verifying        : libimagequant-2.14.1-1.amzn2022.x86_64              42/302 
+  Verifying        : libaom-3.1.1-1.amzn2022.0.1.x86_64                  43/302 
+  Verifying        : cairo-1.17.4-3.amzn2022.x86_64                      44/302 
+  Verifying        : fontconfig-2.13.94-2.amzn2022.x86_64                45/302 
+  Verifying        : m4-1.4.19-2.amzn2022.x86_64                         46/302 
+  Verifying        : gdk-pixbuf2-2.42.6-1.amzn2022.x86_64                47/302 
+  Verifying        : libavif-0.9.0-2.amzn2022.0.1.x86_64                 48/302 
+  Verifying        : libXrandr-1.5.2-6.amzn2022.x86_64                   49/302 
+  Verifying        : make-1:4.3-5.amzn2022.x86_64                        50/302 
+  Verifying        : perl-interpreter-4:5.32.1-477.amzn2022.x86_64       51/302 
+  Verifying        : libpwquality-1.4.4-6.amzn2022.x86_64                52/302 
+  Verifying        : binutils-gold-2.35.2-8.amzn2022.x86_64              53/302 
+  Verifying        : perl-Socket-4:2.032-1.amzn2022.x86_64               54/302 
+  Verifying        : perl-XML-Parser-2.46-7.amzn2022.x86_64              55/302 
+  Verifying        : dwz-0.14-1.amzn2022.x86_64                          56/302 
+  Verifying        : jbig2dec-libs-0.19-4.amzn2022.x86_64                57/302 
+  Verifying        : nss-sysinit-3.71.0-2.amzn2022.0.1.x86_64            58/302 
+  Verifying        : findutils-1:4.8.0-2.amzn2022.x86_64                 59/302 
+  Verifying        : perl-PathTools-3.78-459.amzn2022.x86_64             60/302 
+  Verifying        : gc-8.0.4-5.amzn2022.x86_64                          61/302 
+  Verifying        : boost-thread-1.75.0-4.amzn2022.x86_64               62/302 
+  Verifying        : perl-Storable-1:3.21-458.amzn2022.x86_64            63/302 
+  Verifying        : pam-1.5.1-7.amzn2022.x86_64                         64/302 
+  Verifying        : boost-system-1.75.0-4.amzn2022.x86_64               65/302 
+  Verifying        : libbabeltrace-1.5.8-6.amzn2022.x86_64               66/302 
+  Verifying        : perl-DynaLoader-1.47-477.amzn2022.x86_64            67/302 
+  Verifying        : git-core-2.31.1-3.amzn2022.x86_64                   68/302 
+  Verifying        : librsvg2-2.50.7-1.amzn2022.x86_64                   69/302 
+  Verifying        : libfontenc-1.1.3-15.amzn2022.x86_64                 70/302 
+  Verifying        : pixman-0.40.0-3.amzn2022.x86_64                     71/302 
+  Verifying        : perl-mro-1.23-477.amzn2022.x86_64                   72/302 
+  Verifying        : clang-libs-12.0.1-1.amzn2022.x86_64                 73/302 
+  Verifying        : mkfontscale-1.2.1-2.amzn2022.x86_64                 74/302 
+  Verifying        : openjpeg2-2.4.0-3.amzn2022.x86_64                   75/302 
+  Verifying        : libXpm-3.5.13-5.amzn2022.x86_64                     76/302 
+  Verifying        : avahi-libs-0.8-14.amzn2022.0.1.x86_64               77/302 
+  Verifying        : cracklib-2.9.6-27.amzn2022.x86_64                   78/302 
+  Verifying        : libdatrie-0.2.13-1.amzn2022.x86_64                  79/302 
+  Verifying        : systemd-248.9-1.amzn2022.0.3.x86_64                 80/302 
+  Verifying        : zstd-1.5.2-1.amzn2022.x86_64                        81/302 
+  Verifying        : libXdamage-1.1.5-5.amzn2022.x86_64                  82/302 
+  Verifying        : xapian-core-libs-1.4.18-1.amzn2022.x86_64           83/302 
+  Verifying        : xxhash-libs-0.8.0-3.amzn2022.x86_64                 84/302 
+  Verifying        : graphviz-2.44.0-18.amzn2022.0.1.x86_64              85/302 
+  Verifying        : binutils-2.35.2-8.amzn2022.x86_64                   86/302 
+  Verifying        : llvm12-libs-12.0.1-2.amzn2022.x86_64                87/302 
+  Verifying        : cpp-11.2.1-2.amzn2022.0.2.x86_64                    88/302 
+  Verifying        : perl-Scalar-List-Utils-4:1.56-459.amzn2022.x86_6    89/302 
+  Verifying        : libfido2-1.6.0-2.amzn2022.x86_64                    90/302 
+  Verifying        : libipt-2.0.4-2.amzn2022.x86_64                      91/302 
+  Verifying        : libtextstyle-0.21-4.amzn2022.x86_64                 92/302 
+  Verifying        : libXcomposite-0.4.5-5.amzn2022.x86_64               93/302 
+  Verifying        : perl-Fcntl-1.13-477.amzn2022.x86_64                 94/302 
+  Verifying        : libevent-2.1.12-3.amzn2022.x86_64                   95/302 
+  Verifying        : annobin-9.79-3.amzn2022.x86_64                      96/302 
+  Verifying        : libxcb-1.13.1-7.amzn2022.x86_64                     97/302 
+  Verifying        : zip-3.0-28.amzn2022.x86_64                          98/302 
+  Verifying        : gcc-11.2.1-2.amzn2022.0.2.x86_64                    99/302 
+  Verifying        : glibc-gconv-extra-2.34-8.amzn2022.x86_64           100/302 
+  Verifying        : rpm-sign-4.16.1.3-1.amzn2022.x86_64                101/302 
+  Verifying        : perl-B-1.80-477.amzn2022.x86_64                    102/302 
+  Verifying        : boost-regex-1.75.0-4.amzn2022.x86_64               103/302 
+  Verifying        : libedit-3.1-38.20210714cvs.amzn2022.x86_64         104/302 
+  Verifying        : diffstat-1.64-4.amzn2022.x86_64                    105/302 
+  Verifying        : patchutils-0.4.2-5.amzn2022.x86_64                 106/302 
+  Verifying        : libnl3-3.5.0-6.amzn2022.x86_64                     107/302 
+  Verifying        : pkgconf-pkg-config-1.7.3-7.amzn2022.x86_64         108/302 
+  Verifying        : clang-resource-filesystem-12.0.1-1.amzn2022.x86_   109/302 
+  Verifying        : perl-lib-0.65-477.amzn2022.x86_64                  110/302 
+  Verifying        : ed-1.14.2-10.amzn2022.x86_64                       111/302 
+  Verifying        : gtk-update-icon-cache-3.24.30-4.amzn2022.x86_64    112/302 
+  Verifying        : libwebp-1.2.1-1.amzn2022.x86_64                    113/302 
+  Verifying        : dbus-libs-1:1.12.20-3.amzn2022.x86_64              114/302 
+  Verifying        : perl-MIME-Base64-3.16-2.amzn2022.x86_64            115/302 
+  Verifying        : mokutil-2:0.4.0-4.amzn2022.x86_64                  116/302 
+  Verifying        : libtool-ltdl-2.4.6-40.amzn2022.x86_64              117/302 
+  Verifying        : harfbuzz-2.7.4-3.amzn2022.x86_64                   118/302 
+  Verifying        : device-mapper-libs-1.02.175-1.amzn2022.0.1.x86_6   119/302 
+  Verifying        : ncurses-6.2-4.20200222.amzn2022.x86_64             120/302 
+  Verifying        : libtool-2.4.6-40.amzn2022.x86_64                   121/302 
+  Verifying        : guile22-2.2.7-2.amzn2022.x86_64                    122/302 
+  Verifying        : libXext-1.3.4-6.amzn2022.x86_64                    123/302 
+  Verifying        : doxygen-1:1.9.1-10.amzn2022.x86_64                 124/302 
+  Verifying        : svt-av1-libs-0.8.7-2.amzn2022.0.1.x86_64           125/302 
+  Verifying        : openssh-clients-8.6p1-5.amzn2022.x86_64            126/302 
+  Verifying        : nss-3.71.0-2.amzn2022.0.1.x86_64                   127/302 
+  Verifying        : libzstd-devel-1.5.2-1.amzn2022.x86_64              128/302 
+  Verifying        : rav1e-libs-0.5.0-21.amzn2022.x86_64                129/302 
+  Verifying        : nss-util-3.71.0-2.amzn2022.0.1.x86_64              130/302 
+  Verifying        : systemd-pam-248.9-1.amzn2022.0.3.x86_64            131/302 
+  Verifying        : libvmaf-2.1.1-1.amzn2022.x86_64                    132/302 
+  Verifying        : libseccomp-2.5.3-1.amzn2022.x86_64                 133/302 
+  Verifying        : perl-Errno-1.30-477.amzn2022.x86_64                134/302 
+  Verifying        : libXi-1.7.10-6.amzn2022.x86_64                     135/302 
+  Verifying        : util-linux-2.36.2-1.amzn2022.x86_64                136/302 
+  Verifying        : perl-libs-4:5.32.1-477.amzn2022.x86_64             137/302 
+  Verifying        : libdav1d-0.9.1-1.amzn2022.0.1.x86_64               138/302 
+  Verifying        : libfdisk-2.36.2-1.amzn2022.x86_64                  139/302 
+  Verifying        : cairo-gobject-1.17.4-3.amzn2022.x86_64             140/302 
+  Verifying        : perl-Encode-4:3.15-462.amzn2022.x86_64             141/302 
+  Verifying        : gcc-gfortran-11.2.1-2.amzn2022.0.2.x86_64          142/302 
+  Verifying        : libXaw-1.0.13-17.amzn2022.x86_64                   143/302 
+  Verifying        : apr-1.7.0-9.amzn2022.x86_64                        144/302 
+  Verifying        : libgs-9.55.0-1.amzn2022.x86_64                     145/302 
+  Verifying        : diffutils-3.8-1.amzn2022.x86_64                    146/302 
+  Verifying        : libmpc-1.2.1-2.amzn2022.x86_64                     147/302 
+  Verifying        : indent-2.2.12-7.amzn2022.x86_64                    148/302 
+  Verifying        : unzip-6.0-50.amzn2022.x86_64                       149/302 
+  Verifying        : acl-2.3.1-2.amzn2022.x86_64                        150/302 
+  Verifying        : iptables-legacy-libs-1.8.7-8.amzn2022.x86_64       151/302 
+  Verifying        : libXfixes-6.0.0-1.amzn2022.x86_64                  152/302 
+  Verifying        : libXinerama-1.1.4-8.amzn2022.x86_64                153/302 
+  Verifying        : cryptsetup-libs-2.3.6-1.amzn2022.x86_64            154/302 
+  Verifying        : flex-2.6.4-7.amzn2022.x86_64                       155/302 
+  Verifying        : libijs-0.35-13.amzn2022.x86_64                     156/302 
+  Verifying        : gzip-1.10-4.amzn2022.x86_64                        157/302 
+  Verifying        : patch-2.7.6-14.amzn2022.x86_64                     158/302 
+  Verifying        : pkgconf-1.7.3-7.amzn2022.x86_64                    159/302 
+  Verifying        : kernel-headers-5.10.75-82.359.amzn2022.x86_64      160/302 
+  Verifying        : gdb-headless-11.1-5.amzn2022.x86_64                161/302 
+  Verifying        : zlib-devel-1.2.11-27.amzn2022.x86_64               162/302 
+  Verifying        : libpcap-14:1.10.1-1.amzn2022.x86_64                163/302 
+  Verifying        : source-highlight-3.1.9-9.amzn2022.x86_64           164/302 
+  Verifying        : kmod-libs-29-2.amzn2022.x86_64                     165/302 
+  Verifying        : bzip2-1.0.8-6.amzn2022.x86_64                      166/302 
+  Verifying        : elfutils-0.185-2.amzn2022.0.1.x86_64               167/302 
+  Verifying        : device-mapper-1.02.175-1.amzn2022.0.1.x86_64       168/302 
+  Verifying        : fribidi-1.0.10-4.amzn2022.x86_64                   169/302 
+  Verifying        : bison-3.7.4-2.amzn2022.x86_64                      170/302 
+  Verifying        : gdk-pixbuf2-modules-2.42.6-1.amzn2022.x86_64       171/302 
+  Verifying        : file-5.39-7.amzn2022.x86_64                        172/302 
+  Verifying        : tar-2:1.34-1.amzn2022.x86_64                       173/302 
+  Verifying        : libXcursor-1.2.0-5.amzn2022.x86_64                 174/302 
+  Verifying        : perl-threads-shared-1.61-458.amzn2022.x86_64       175/302 
+  Verifying        : info-6.7-10.amzn2022.x86_64                        176/302 
+  Verifying        : xz-devel-5.2.5-5.amzn2022.x86_64                   177/302 
+  Verifying        : libICE-1.0.10-6.amzn2022.x86_64                    178/302 
+  Verifying        : libquadmath-11.2.1-2.amzn2022.0.2.x86_64           179/302 
+  Verifying        : libjpeg-turbo-2.0.90-3.amzn2022.x86_64             180/302 
+  Verifying        : libgfortran-11.2.1-2.amzn2022.0.2.x86_64           181/302 
+  Verifying        : libserf-1.3.9-18.amzn2022.x86_64                   182/302 
+  Verifying        : xz-5.2.5-5.amzn2022.x86_64                         183/302 
+  Verifying        : libX11-1.7.2-3.amzn2022.x86_64                     184/302 
+  Verifying        : libibverbs-37.0-1.amzn2022.x86_64                  185/302 
+  Verifying        : libxcrypt-devel-4.4.26-4.amzn2022.x86_64           186/302 
+  Verifying        : dbus-1:1.12.20-3.amzn2022.x86_64                   187/302 
+  Verifying        : graphite2-1.3.14-7.amzn2022.x86_64                 188/302 
+  Verifying        : systemtap-devel-4.5-1.amzn2022.x86_64              189/302 
+  Verifying        : libtiff-4.2.0-1.amzn2022.x86_64                    190/302 
+  Verifying        : freetype-2.10.4-3.amzn2022.x86_64                  191/302 
+  Verifying        : libicu-67.1-7.amzn2022.x86_64                      192/302 
+  Verifying        : rpm-build-4.16.1.3-1.amzn2022.x86_64               193/302 
+  Verifying        : apr-util-1.6.1-16.amzn2022.x86_64                  194/302 
+  Verifying        : tbb-2020.3-7.amzn2022.x86_64                       195/302 
+  Verifying        : perl-IO-1.43-477.amzn2022.x86_64                   196/302 
+  Verifying        : gettext-devel-0.21-4.amzn2022.x86_64               197/302 
+  Verifying        : cups-libs-1:2.3.3op2-10.amzn2022.x86_64            198/302 
+  Verifying        : libpaper-1.1.28-2.amzn2022.x86_64                  199/302 
+  Verifying        : shared-mime-info-2.1-2.amzn2022.x86_64             200/302 
+  Verifying        : cscope-15.9-10.amzn2022.x86_64                     201/302 
+  Verifying        : systemtap-runtime-4.5-1.amzn2022.x86_64            202/302 
+  Verifying        : systemtap-client-4.5-1.amzn2022.x86_64             203/302 
+  Verifying        : utf8proc-2.6.1-2.amzn2022.x86_64                   204/302 
+  Verifying        : libraqm-0.7.2-1.amzn2022.x86_64                    205/302 
+  Verifying        : libXrender-0.9.10-14.amzn2022.x86_64               206/302 
+  Verifying        : elfutils-libelf-devel-0.185-2.amzn2022.0.1.x86_6   207/302 
+  Verifying        : lcms2-2.12-1.amzn2022.x86_64                       208/302 
+  Verifying        : gcc-c++-11.2.1-2.amzn2022.0.2.x86_64               209/302 
+  Verifying        : jbigkit-libs-2.1-21.amzn2022.x86_64                210/302 
+  Verifying        : gd-2.3.2-2.amzn2022.x86_64                         211/302 
+  Verifying        : pango-1.48.10-1.amzn2022.x86_64                    212/302 
+  Verifying        : boost-filesystem-1.75.0-4.amzn2022.x86_64          213/302 
+  Verifying        : libXft-2.3.3-6.amzn2022.x86_64                     214/302 
+  Verifying        : openssh-8.6p1-5.amzn2022.x86_64                    215/302 
+  Verifying        : adobe-mappings-pdf-20180407-8.amzn2022.noarch      216/302 
+  Verifying        : adobe-mappings-cmap-deprecated-20190730-1.amzn20   217/302 
+  Verifying        : gnat-srpm-macros-4-13.amzn2022.noarch              218/302 
+  Verifying        : perl-File-Basename-2.85-477.amzn2022.noarch        219/302 
+  Verifying        : crypto-policies-scripts-20210213-1.git5c710c0.am   220/302 
+  Verifying        : openblas-srpm-macros-2-9.amzn2022.noarch           221/302 
+  Verifying        : perl-Text-Tabs+Wrap-2021.0726-1.amzn2022.noarch    222/302 
+  Verifying        : perl-File-Find-1.37-477.amzn2022.noarch            223/302 
+  Verifying        : hicolor-icon-theme-0.17-10.amzn2022.noarch         224/302 
+  Verifying        : urw-base35-standard-symbols-ps-fonts-20200910-6.   225/302 
+  Verifying        : perl-File-Path-2.18-2.amzn2022.noarch              226/302 
+  Verifying        : perl-Class-Struct-0.66-477.amzn2022.noarch         227/302 
+  Verifying        : automake-1.16.2-4.amzn2022.noarch                  228/302 
+  Verifying        : perl-Error-1:0.17029-5.amzn2022.noarch             229/302 
+  Verifying        : perl-SelectSaver-1.02-477.amzn2022.noarch          230/302 
+  Verifying        : rust-srpm-macros-18-1.amzn2022.noarch              231/302 
+  Verifying        : fonts-filesystem-1:2.0.5-5.amzn2022.noarch         232/302 
+  Verifying        : urw-base35-gothic-fonts-20200910-6.amzn2022.noar   233/302 
+  Verifying        : perl-podlators-1:4.14-458.amzn2022.noarch          234/302 
+  Verifying        : urw-base35-c059-fonts-20200910-6.amzn2022.noarch   235/302 
+  Verifying        : perl-Pod-Simple-1:3.42-2.amzn2022.noarch           236/302 
+  Verifying        : efi-srpm-macros-5-4.amzn2022.0.3.noarch            237/302 
+  Verifying        : perl-HTTP-Tiny-0.078-1.amzn2022.noarch             238/302 
+  Verifying        : amazon-rpm-config-182-2.amzn2022.noarch            239/302 
+  Verifying        : intltool-0.51.0-18.amzn2022.noarch                 240/302 
+  Verifying        : glibc-headers-x86-2.34-8.amzn2022.noarch           241/302 
+  Verifying        : systemd-rpm-macros-248.9-1.amzn2022.0.3.noarch     242/302 
+  Verifying        : urw-base35-nimbus-roman-fonts-20200910-6.amzn202   243/302 
+  Verifying        : fpc-srpm-macros-1.3-3.amzn2022.noarch              244/302 
+  Verifying        : perl-File-Temp-1:0.231.100-2.amzn2022.noarch       245/302 
+  Verifying        : perl-parent-1:0.238-458.amzn2022.noarch            246/302 
+  Verifying        : perl-constant-1.33-459.amzn2022.noarch             247/302 
+  Verifying        : gettext-common-devel-0.21-4.amzn2022.noarch        248/302 
+  Verifying        : urw-base35-z003-fonts-20200910-6.amzn2022.noarch   249/302 
+  Verifying        : git-core-doc-2.31.1-3.amzn2022.noarch              250/302 
+  Verifying        : perl-subs-1.03-477.amzn2022.noarch                 251/302 
+  Verifying        : urw-base35-d050000l-fonts-20200910-6.amzn2022.no   252/302 
+  Verifying        : qt5-srpm-macros-5.15.2-2.amzn2022.noarch           253/302 
+  Verifying        : perl-Carp-1.50-458.amzn2022.noarch                 254/302 
+  Verifying        : google-droid-sans-fonts-20200215-9.amzn2022.noar   255/302 
+  Verifying        : urw-base35-fonts-common-20200910-6.amzn2022.noar   256/302 
+  Verifying        : perl-File-Copy-2.34-477.amzn2022.noarch            257/302 
+  Verifying        : libX11-common-1.7.2-3.amzn2022.noarch              258/302 
+  Verifying        : xemacs-filesystem-21.5.34-39.20200331hge2ac728aa   259/302 
+  Verifying        : lua-srpm-macros-1-4.amzn2022.noarch                260/302 
+  Verifying        : perl-Getopt-Std-1.12-477.amzn2022.noarch           261/302 
+  Verifying        : perl-File-stat-1.09-477.amzn2022.noarch            262/302 
+  Verifying        : perl-Symbol-1.08-477.amzn2022.noarch               263/302 
+  Verifying        : perl-Pod-Usage-4:2.01-2.amzn2022.noarch            264/302 
+  Verifying        : perl-overload-1.31-477.amzn2022.noarch             265/302 
+  Verifying        : dejavu-sans-fonts-2.37-16.amzn2022.noarch          266/302 
+  Verifying        : pkgconf-m4-1.7.3-7.amzn2022.noarch                 267/302 
+  Verifying        : fonts-srpm-macros-1:2.0.5-5.amzn2022.noarch        268/302 
+  Verifying        : urw-base35-nimbus-mono-ps-fonts-20200910-6.amzn2   269/302 
+  Verifying        : xml-common-0.6.3-56.amzn2022.noarch                270/302 
+  Verifying        : perl-if-0.60.800-477.amzn2022.noarch               271/302 
+  Verifying        : xorg-x11-fonts-ISO8859-1-100dpi-7.5-31.amzn2022.   272/302 
+  Verifying        : ocaml-srpm-macros-6-4.amzn2022.noarch              273/302 
+  Verifying        : urw-base35-bookman-fonts-20200910-6.amzn2022.noa   274/302 
+  Verifying        : perl-Pod-Perldoc-3.28.01-459.amzn2022.noarch       275/302 
+  Verifying        : python-srpm-macros-3.9-41.amzn2022.noarch          276/302 
+  Verifying        : perl-IPC-Open3-1.21-477.amzn2022.noarch            277/302 
+  Verifying        : perl-Text-ParseWords-3.30-458.amzn2022.noarch      278/302 
+  Verifying        : perl-srpm-macros-1-39.amzn2022.noarch              279/302 
+  Verifying        : nim-srpm-macros-3-4.amzn2022.noarch                280/302 
+  Verifying        : urw-base35-nimbus-sans-fonts-20200910-6.amzn2022   281/302 
+  Verifying        : adobe-mappings-cmap-20190730-1.amzn2022.noarch     282/302 
+  Verifying        : perl-Getopt-Long-1:2.52-2.amzn2022.noarch          283/302 
+  Verifying        : perl-Exporter-5.74-459.amzn2022.noarch             284/302 
+  Verifying        : perl-Term-ANSIColor-5.01-459.amzn2022.noarch       285/302 
+  Verifying        : autoconf-2.69-36.amzn2022.noarch                   286/302 
+  Verifying        : urw-base35-fonts-20200910-6.amzn2022.noarch        287/302 
+  Verifying        : perl-Time-Local-2:1.300-5.amzn2022.noarch          288/302 
+  Verifying        : dbus-common-1:1.12.20-3.amzn2022.noarch            289/302 
+  Verifying        : perl-File-Compare-1.100.600-477.amzn2022.noarch    290/302 
+  Verifying        : urw-base35-p052-fonts-20200910-6.amzn2022.noarch   291/302 
+  Verifying        : emacs-filesystem-1:27.2-5.amzn2022.noarch          292/302 
+  Verifying        : langpacks-core-font-en-3.0-14.amzn2022.noarch      293/302 
+  Verifying        : perl-Term-Cap-1.17-458.amzn2022.noarch             294/302 
+  Verifying        : perl-overloading-0.02-477.amzn2022.noarch          295/302 
+  Verifying        : kernel-srpm-macros-1.0-4.amzn2022.noarch           296/302 
+  Verifying        : go-srpm-macros-3.0.10-1.amzn2022.noarch            297/302 
+  Verifying        : ghc-srpm-macros-1.5.0-4.amzn2022.noarch            298/302 
+  Verifying        : perl-vars-1.05-477.amzn2022.noarch                 299/302 
+  Verifying        : perl-Thread-Queue-3.14-458.amzn2022.noarch         300/302 
+  Verifying        : perl-Pod-Escapes-1:1.07-458.amzn2022.noarch        301/302 
+  Verifying        : perl-Git-2.31.1-3.amzn2022.noarch                  302/302 
+Installed: acl-2.3.1-2.amzn2022.x86_64
+Installed: adobe-mappings-cmap-20190730-1.amzn2022.noarch
+Installed: adobe-mappings-cmap-deprecated-20190730-1.amzn2022.noarch
+Installed: adobe-mappings-pdf-20180407-8.amzn2022.noarch
+Installed: amazon-rpm-config-182-2.amzn2022.noarch
+Installed: annobin-9.79-3.amzn2022.x86_64
+Installed: apr-1.7.0-9.amzn2022.x86_64
+Installed: apr-util-1.6.1-16.amzn2022.x86_64
+Installed: atk-2.36.0-3.amzn2022.x86_64
+Installed: autoconf-2.69-36.amzn2022.noarch
+Installed: automake-1.16.2-4.amzn2022.noarch
+Installed: avahi-libs-0.8-14.amzn2022.0.1.x86_64
+Installed: binutils-2.35.2-8.amzn2022.x86_64
+Installed: binutils-gold-2.35.2-8.amzn2022.x86_64
+Installed: bison-3.7.4-2.amzn2022.x86_64
+Installed: boost-filesystem-1.75.0-4.amzn2022.x86_64
+Installed: boost-regex-1.75.0-4.amzn2022.x86_64
+Installed: boost-system-1.75.0-4.amzn2022.x86_64
+Installed: boost-thread-1.75.0-4.amzn2022.x86_64
+Installed: byacc-2.0.20210109-2.amzn2022.x86_64
+Installed: bzip2-1.0.8-6.amzn2022.x86_64
+Installed: cairo-1.17.4-3.amzn2022.x86_64
+Installed: cairo-gobject-1.17.4-3.amzn2022.x86_64
+Installed: clang-libs-12.0.1-1.amzn2022.x86_64
+Installed: clang-resource-filesystem-12.0.1-1.amzn2022.x86_64
+Installed: cpio-2.13-10.amzn2022.x86_64
+Installed: cpp-11.2.1-2.amzn2022.0.2.x86_64
+Installed: cracklib-2.9.6-27.amzn2022.x86_64
+Installed: crypto-policies-scripts-20210213-1.git5c710c0.amzn2022.noarch
+Installed: cryptsetup-libs-2.3.6-1.amzn2022.x86_64
+Installed: cscope-15.9-10.amzn2022.x86_64
+Installed: ctags-5.9-1.20210725.0.amzn2022.x86_64
+Installed: cups-libs-1:2.3.3op2-10.amzn2022.x86_64
+Installed: dbus-1:1.12.20-3.amzn2022.x86_64
+Installed: dbus-broker-29-2.amzn2022.x86_64
+Installed: dbus-common-1:1.12.20-3.amzn2022.noarch
+Installed: dbus-libs-1:1.12.20-3.amzn2022.x86_64
+Installed: dejavu-sans-fonts-2.37-16.amzn2022.noarch
+Installed: device-mapper-1.02.175-1.amzn2022.0.1.x86_64
+Installed: device-mapper-libs-1.02.175-1.amzn2022.0.1.x86_64
+Installed: diffstat-1.64-4.amzn2022.x86_64
+Installed: diffutils-3.8-1.amzn2022.x86_64
+Installed: doxygen-1:1.9.1-10.amzn2022.x86_64
+Installed: dwz-0.14-1.amzn2022.x86_64
+Installed: dyninst-10.2.1-6.amzn2022.x86_64
+Installed: ed-1.14.2-10.amzn2022.x86_64
+Installed: efi-srpm-macros-5-4.amzn2022.0.3.noarch
+Installed: efivar-libs-37-15.amzn2022.x86_64
+Installed: elfutils-0.185-2.amzn2022.0.1.x86_64
+Installed: elfutils-debuginfod-client-0.185-2.amzn2022.0.1.x86_64
+Installed: elfutils-devel-0.185-2.amzn2022.0.1.x86_64
+Installed: elfutils-libelf-devel-0.185-2.amzn2022.0.1.x86_64
+Installed: emacs-filesystem-1:27.2-5.amzn2022.noarch
+Installed: file-5.39-7.amzn2022.x86_64
+Installed: findutils-1:4.8.0-2.amzn2022.x86_64
+Installed: flex-2.6.4-7.amzn2022.x86_64
+Installed: fontconfig-2.13.94-2.amzn2022.x86_64
+Installed: fonts-filesystem-1:2.0.5-5.amzn2022.noarch
+Installed: fonts-srpm-macros-1:2.0.5-5.amzn2022.noarch
+Installed: fpc-srpm-macros-1.3-3.amzn2022.noarch
+Installed: freetype-2.10.4-3.amzn2022.x86_64
+Installed: fribidi-1.0.10-4.amzn2022.x86_64
+Installed: gc-8.0.4-5.amzn2022.x86_64
+Installed: gcc-11.2.1-2.amzn2022.0.2.x86_64
+Installed: gcc-c++-11.2.1-2.amzn2022.0.2.x86_64
+Installed: gcc-gfortran-11.2.1-2.amzn2022.0.2.x86_64
+Installed: gd-2.3.2-2.amzn2022.x86_64
+Installed: gdb-headless-11.1-5.amzn2022.x86_64
+Installed: gdk-pixbuf2-2.42.6-1.amzn2022.x86_64
+Installed: gdk-pixbuf2-modules-2.42.6-1.amzn2022.x86_64
+Installed: gettext-0.21-4.amzn2022.x86_64
+Installed: gettext-common-devel-0.21-4.amzn2022.noarch
+Installed: gettext-devel-0.21-4.amzn2022.x86_64
+Installed: gettext-libs-0.21-4.amzn2022.x86_64
+Installed: ghc-srpm-macros-1.5.0-4.amzn2022.noarch
+Installed: git-2.31.1-3.amzn2022.x86_64
+Installed: git-core-2.31.1-3.amzn2022.x86_64
+Installed: git-core-doc-2.31.1-3.amzn2022.noarch
+Installed: glibc-devel-2.34-8.amzn2022.x86_64
+Installed: glibc-gconv-extra-2.34-8.amzn2022.x86_64
+Installed: glibc-headers-x86-2.34-8.amzn2022.noarch
+Installed: gnat-srpm-macros-4-13.amzn2022.noarch
+Installed: go-srpm-macros-3.0.10-1.amzn2022.noarch
+Installed: google-droid-sans-fonts-20200215-9.amzn2022.noarch
+Installed: graphite2-1.3.14-7.amzn2022.x86_64
+Installed: graphviz-2.44.0-18.amzn2022.0.1.x86_64
+Installed: groff-base-1.22.4-7.amzn2022.x86_64
+Installed: gtk-update-icon-cache-3.24.30-4.amzn2022.x86_64
+Installed: gtk2-2.24.33-4.amzn2022.x86_64
+Installed: guile22-2.2.7-2.amzn2022.x86_64
+Installed: gzip-1.10-4.amzn2022.x86_64
+Installed: harfbuzz-2.7.4-3.amzn2022.x86_64
+Installed: hicolor-icon-theme-0.17-10.amzn2022.noarch
+Installed: indent-2.2.12-7.amzn2022.x86_64
+Installed: info-6.7-10.amzn2022.x86_64
+Installed: intltool-0.51.0-18.amzn2022.noarch
+Installed: iptables-legacy-libs-1.8.7-8.amzn2022.x86_64
+Installed: jansson-2.13.1-2.amzn2022.x86_64
+Installed: jbig2dec-libs-0.19-4.amzn2022.x86_64
+Installed: jbigkit-libs-2.1-21.amzn2022.x86_64
+Installed: kernel-headers-5.10.75-82.359.amzn2022.x86_64
+Installed: kernel-srpm-macros-1.0-4.amzn2022.noarch
+Installed: kmod-libs-29-2.amzn2022.x86_64
+Installed: langpacks-core-font-en-3.0-14.amzn2022.noarch
+Installed: lcms2-2.12-1.amzn2022.x86_64
+Installed: less-590-2.amzn2022.x86_64
+Installed: libICE-1.0.10-6.amzn2022.x86_64
+Installed: libSM-1.2.3-8.amzn2022.x86_64
+Installed: libX11-1.7.2-3.amzn2022.x86_64
+Installed: libX11-common-1.7.2-3.amzn2022.noarch
+Installed: libXau-1.0.9-6.amzn2022.x86_64
+Installed: libXaw-1.0.13-17.amzn2022.x86_64
+Installed: libXcomposite-0.4.5-5.amzn2022.x86_64
+Installed: libXcursor-1.2.0-5.amzn2022.x86_64
+Installed: libXdamage-1.1.5-5.amzn2022.x86_64
+Installed: libXext-1.3.4-6.amzn2022.x86_64
+Installed: libXfixes-6.0.0-1.amzn2022.x86_64
+Installed: libXft-2.3.3-6.amzn2022.x86_64
+Installed: libXi-1.7.10-6.amzn2022.x86_64
+Installed: libXinerama-1.1.4-8.amzn2022.x86_64
+Installed: libXmu-1.1.3-6.amzn2022.x86_64
+Installed: libXpm-3.5.13-5.amzn2022.x86_64
+Installed: libXrandr-1.5.2-6.amzn2022.x86_64
+Installed: libXrender-0.9.10-14.amzn2022.x86_64
+Installed: libXt-1.2.0-4.amzn2022.x86_64
+Installed: libaom-3.1.1-1.amzn2022.0.1.x86_64
+Installed: libargon2-20171227-6.amzn2022.x86_64
+Installed: libavif-0.9.0-2.amzn2022.0.1.x86_64
+Installed: libbabeltrace-1.5.8-6.amzn2022.x86_64
+Installed: libcbor-0.7.0-3.amzn2022.x86_64
+Installed: libdatrie-0.2.13-1.amzn2022.x86_64
+Installed: libdav1d-0.9.1-1.amzn2022.0.1.x86_64
+Installed: libeconf-0.4.0-1.amzn2022.x86_64
+Installed: libedit-3.1-38.20210714cvs.amzn2022.x86_64
+Installed: libevent-2.1.12-3.amzn2022.x86_64
+Installed: libfdisk-2.36.2-1.amzn2022.x86_64
+Installed: libfido2-1.6.0-2.amzn2022.x86_64
+Installed: libfontenc-1.1.3-15.amzn2022.x86_64
+Installed: libgfortran-11.2.1-2.amzn2022.0.2.x86_64
+Installed: libgs-9.55.0-1.amzn2022.x86_64
+Installed: libibverbs-37.0-1.amzn2022.x86_64
+Installed: libicu-67.1-7.amzn2022.x86_64
+Installed: libijs-0.35-13.amzn2022.x86_64
+Installed: libimagequant-2.14.1-1.amzn2022.x86_64
+Installed: libipt-2.0.4-2.amzn2022.x86_64
+Installed: libjpeg-turbo-2.0.90-3.amzn2022.x86_64
+Installed: libmpc-1.2.1-2.amzn2022.x86_64
+Installed: libnl3-3.5.0-6.amzn2022.x86_64
+Installed: libpaper-1.1.28-2.amzn2022.x86_64
+Installed: libpcap-14:1.10.1-1.amzn2022.x86_64
+Installed: libpkgconf-1.7.3-7.amzn2022.x86_64
+Installed: libpng-2:1.6.37-10.amzn2022.x86_64
+Installed: libpwquality-1.4.4-6.amzn2022.x86_64
+Installed: libquadmath-11.2.1-2.amzn2022.0.2.x86_64
+Installed: libquadmath-devel-11.2.1-2.amzn2022.0.2.x86_64
+Installed: libraqm-0.7.2-1.amzn2022.x86_64
+Installed: librsvg2-2.50.7-1.amzn2022.x86_64
+Installed: libseccomp-2.5.3-1.amzn2022.x86_64
+Installed: libserf-1.3.9-18.amzn2022.x86_64
+Installed: libstdc++-devel-11.2.1-2.amzn2022.0.2.x86_64
+Installed: libtextstyle-0.21-4.amzn2022.x86_64
+Installed: libthai-0.1.28-6.amzn2022.x86_64
+Installed: libtiff-4.2.0-1.amzn2022.x86_64
+Installed: libtool-2.4.6-40.amzn2022.x86_64
+Installed: libtool-ltdl-2.4.6-40.amzn2022.x86_64
+Installed: libutempter-1.2.1-4.amzn2022.x86_64
+Installed: libvmaf-2.1.1-1.amzn2022.x86_64
+Installed: libwebp-1.2.1-1.amzn2022.x86_64
+Installed: libxcb-1.13.1-7.amzn2022.x86_64
+Installed: libxcrypt-devel-4.4.26-4.amzn2022.x86_64
+Installed: libzstd-devel-1.5.2-1.amzn2022.x86_64
+Installed: llvm12-libs-12.0.1-2.amzn2022.x86_64
+Installed: lua-srpm-macros-1-4.amzn2022.noarch
+Installed: m4-1.4.19-2.amzn2022.x86_64
+Installed: make-1:4.3-5.amzn2022.x86_64
+Installed: mkfontscale-1.2.1-2.amzn2022.x86_64
+Installed: mokutil-2:0.4.0-4.amzn2022.x86_64
+Installed: ncurses-6.2-4.20200222.amzn2022.x86_64
+Installed: nim-srpm-macros-3-4.amzn2022.noarch
+Installed: nspr-4.32.0-2.amzn2022.0.1.x86_64
+Installed: nss-3.71.0-2.amzn2022.0.1.x86_64
+Installed: nss-softokn-3.71.0-2.amzn2022.0.1.x86_64
+Installed: nss-softokn-freebl-3.71.0-2.amzn2022.0.1.x86_64
+Installed: nss-sysinit-3.71.0-2.amzn2022.0.1.x86_64
+Installed: nss-util-3.71.0-2.amzn2022.0.1.x86_64
+Installed: ocaml-srpm-macros-6-4.amzn2022.noarch
+Installed: openblas-srpm-macros-2-9.amzn2022.noarch
+Installed: openjpeg2-2.4.0-3.amzn2022.x86_64
+Installed: openssh-8.6p1-5.amzn2022.x86_64
+Installed: openssh-clients-8.6p1-5.amzn2022.x86_64
+Installed: pam-1.5.1-7.amzn2022.x86_64
+Installed: pango-1.48.10-1.amzn2022.x86_64
+Installed: patch-2.7.6-14.amzn2022.x86_64
+Installed: patchutils-0.4.2-5.amzn2022.x86_64
+Installed: perl-B-1.80-477.amzn2022.x86_64
+Installed: perl-Carp-1.50-458.amzn2022.noarch
+Installed: perl-Class-Struct-0.66-477.amzn2022.noarch
+Installed: perl-Data-Dumper-2.174-460.amzn2022.x86_64
+Installed: perl-DynaLoader-1.47-477.amzn2022.x86_64
+Installed: perl-Encode-4:3.15-462.amzn2022.x86_64
+Installed: perl-Errno-1.30-477.amzn2022.x86_64
+Installed: perl-Error-1:0.17029-5.amzn2022.noarch
+Installed: perl-Exporter-5.74-459.amzn2022.noarch
+Installed: perl-Fcntl-1.13-477.amzn2022.x86_64
+Installed: perl-File-Basename-2.85-477.amzn2022.noarch
+Installed: perl-File-Compare-1.100.600-477.amzn2022.noarch
+Installed: perl-File-Copy-2.34-477.amzn2022.noarch
+Installed: perl-File-Find-1.37-477.amzn2022.noarch
+Installed: perl-File-Path-2.18-2.amzn2022.noarch
+Installed: perl-File-Temp-1:0.231.100-2.amzn2022.noarch
+Installed: perl-File-stat-1.09-477.amzn2022.noarch
+Installed: perl-Getopt-Long-1:2.52-2.amzn2022.noarch
+Installed: perl-Getopt-Std-1.12-477.amzn2022.noarch
+Installed: perl-Git-2.31.1-3.amzn2022.noarch
+Installed: perl-HTTP-Tiny-0.078-1.amzn2022.noarch
+Installed: perl-IO-1.43-477.amzn2022.x86_64
+Installed: perl-IPC-Open3-1.21-477.amzn2022.noarch
+Installed: perl-MIME-Base64-3.16-2.amzn2022.x86_64
+Installed: perl-POSIX-1.94-477.amzn2022.x86_64
+Installed: perl-PathTools-3.78-459.amzn2022.x86_64
+Installed: perl-Pod-Escapes-1:1.07-458.amzn2022.noarch
+Installed: perl-Pod-Perldoc-3.28.01-459.amzn2022.noarch
+Installed: perl-Pod-Simple-1:3.42-2.amzn2022.noarch
+Installed: perl-Pod-Usage-4:2.01-2.amzn2022.noarch
+Installed: perl-Scalar-List-Utils-4:1.56-459.amzn2022.x86_64
+Installed: perl-SelectSaver-1.02-477.amzn2022.noarch
+Installed: perl-Socket-4:2.032-1.amzn2022.x86_64
+Installed: perl-Storable-1:3.21-458.amzn2022.x86_64
+Installed: perl-Symbol-1.08-477.amzn2022.noarch
+Installed: perl-Term-ANSIColor-5.01-459.amzn2022.noarch
+Installed: perl-Term-Cap-1.17-458.amzn2022.noarch
+Installed: perl-TermReadKey-2.38-9.amzn2022.x86_64
+Installed: perl-Text-ParseWords-3.30-458.amzn2022.noarch
+Installed: perl-Text-Tabs+Wrap-2021.0726-1.amzn2022.noarch
+Installed: perl-Thread-Queue-3.14-458.amzn2022.noarch
+Installed: perl-Time-Local-2:1.300-5.amzn2022.noarch
+Installed: perl-XML-Parser-2.46-7.amzn2022.x86_64
+Installed: perl-constant-1.33-459.amzn2022.noarch
+Installed: perl-if-0.60.800-477.amzn2022.noarch
+Installed: perl-interpreter-4:5.32.1-477.amzn2022.x86_64
+Installed: perl-lib-0.65-477.amzn2022.x86_64
+Installed: perl-libs-4:5.32.1-477.amzn2022.x86_64
+Installed: perl-mro-1.23-477.amzn2022.x86_64
+Installed: perl-overload-1.31-477.amzn2022.noarch
+Installed: perl-overloading-0.02-477.amzn2022.noarch
+Installed: perl-parent-1:0.238-458.amzn2022.noarch
+Installed: perl-podlators-1:4.14-458.amzn2022.noarch
+Installed: perl-srpm-macros-1-39.amzn2022.noarch
+Installed: perl-subs-1.03-477.amzn2022.noarch
+Installed: perl-threads-1:2.25-458.amzn2022.0.1.x86_64
+Installed: perl-threads-shared-1.61-458.amzn2022.x86_64
+Installed: perl-vars-1.05-477.amzn2022.noarch
+Installed: pixman-0.40.0-3.amzn2022.x86_64
+Installed: pkgconf-1.7.3-7.amzn2022.x86_64
+Installed: pkgconf-m4-1.7.3-7.amzn2022.noarch
+Installed: pkgconf-pkg-config-1.7.3-7.amzn2022.x86_64
+Installed: python-srpm-macros-3.9-41.amzn2022.noarch
+Installed: qt5-srpm-macros-5.15.2-2.amzn2022.noarch
+Installed: rav1e-libs-0.5.0-21.amzn2022.x86_64
+Installed: rpm-build-4.16.1.3-1.amzn2022.x86_64
+Installed: rpm-sign-4.16.1.3-1.amzn2022.x86_64
+Installed: rust-srpm-macros-18-1.amzn2022.noarch
+Installed: shared-mime-info-2.1-2.amzn2022.x86_64
+Installed: source-highlight-3.1.9-9.amzn2022.x86_64
+Installed: subversion-1.14.1-1.amzn2022.0.1.x86_64
+Installed: subversion-libs-1.14.1-1.amzn2022.0.1.x86_64
+Installed: svt-av1-libs-0.8.7-2.amzn2022.0.1.x86_64
+Installed: swig-4.0.2-6.amzn2022.x86_64
+Installed: systemd-248.9-1.amzn2022.0.3.x86_64
+Installed: systemd-pam-248.9-1.amzn2022.0.3.x86_64
+Installed: systemd-rpm-macros-248.9-1.amzn2022.0.3.noarch
+Installed: systemtap-4.5-1.amzn2022.x86_64
+Installed: systemtap-client-4.5-1.amzn2022.x86_64
+Installed: systemtap-devel-4.5-1.amzn2022.x86_64
+Installed: systemtap-runtime-4.5-1.amzn2022.x86_64
+Installed: tar-2:1.34-1.amzn2022.x86_64
+Installed: tbb-2020.3-7.amzn2022.x86_64
+Installed: unzip-6.0-50.amzn2022.x86_64
+Installed: urw-base35-bookman-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-c059-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-d050000l-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-fonts-common-20200910-6.amzn2022.noarch
+Installed: urw-base35-gothic-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-nimbus-mono-ps-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-nimbus-roman-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-nimbus-sans-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-p052-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-standard-symbols-ps-fonts-20200910-6.amzn2022.noarch
+Installed: urw-base35-z003-fonts-20200910-6.amzn2022.noarch
+Installed: utf8proc-2.6.1-2.amzn2022.x86_64
+Installed: util-linux-2.36.2-1.amzn2022.x86_64
+Installed: xapian-core-libs-1.4.18-1.amzn2022.x86_64
+Installed: xemacs-filesystem-21.5.34-39.20200331hge2ac728aa576.amzn2022.noarch
+Installed: xml-common-0.6.3-56.amzn2022.noarch
+Installed: xorg-x11-fonts-ISO8859-1-100dpi-7.5-31.amzn2022.noarch
+Installed: xxhash-libs-0.8.0-3.amzn2022.x86_64
+Installed: xz-5.2.5-5.amzn2022.x86_64
+Installed: xz-devel-5.2.5-5.amzn2022.x86_64
+Installed: zip-3.0-28.amzn2022.x86_64
+Installed: zlib-devel-1.2.11-27.amzn2022.x86_64
+Installed: zstd-1.5.2-1.amzn2022.x86_64
+
+Installed:
+  acl-2.3.1-2.amzn2022.x86_64                                                   
+  adobe-mappings-cmap-20190730-1.amzn2022.noarch                                
+  adobe-mappings-cmap-deprecated-20190730-1.amzn2022.noarch                     
+  adobe-mappings-pdf-20180407-8.amzn2022.noarch                                 
+  amazon-rpm-config-182-2.amzn2022.noarch                                       
+  annobin-9.79-3.amzn2022.x86_64                                                
+  apr-1.7.0-9.amzn2022.x86_64                                                   
+  apr-util-1.6.1-16.amzn2022.x86_64                                             
+  atk-2.36.0-3.amzn2022.x86_64                                                  
+  autoconf-2.69-36.amzn2022.noarch                                              
+  automake-1.16.2-4.amzn2022.noarch                                             
+  avahi-libs-0.8-14.amzn2022.0.1.x86_64                                         
+  binutils-2.35.2-8.amzn2022.x86_64                                             
+  binutils-gold-2.35.2-8.amzn2022.x86_64                                        
+  bison-3.7.4-2.amzn2022.x86_64                                                 
+  boost-filesystem-1.75.0-4.amzn2022.x86_64                                     
+  boost-regex-1.75.0-4.amzn2022.x86_64                                          
+  boost-system-1.75.0-4.amzn2022.x86_64                                         
+  boost-thread-1.75.0-4.amzn2022.x86_64                                         
+  byacc-2.0.20210109-2.amzn2022.x86_64                                          
+  bzip2-1.0.8-6.amzn2022.x86_64                                                 
+  cairo-1.17.4-3.amzn2022.x86_64                                                
+  cairo-gobject-1.17.4-3.amzn2022.x86_64                                        
+  clang-libs-12.0.1-1.amzn2022.x86_64                                           
+  clang-resource-filesystem-12.0.1-1.amzn2022.x86_64                            
+  cpio-2.13-10.amzn2022.x86_64                                                  
+  cpp-11.2.1-2.amzn2022.0.2.x86_64                                              
+  cracklib-2.9.6-27.amzn2022.x86_64                                             
+  crypto-policies-scripts-20210213-1.git5c710c0.amzn2022.noarch                 
+  cryptsetup-libs-2.3.6-1.amzn2022.x86_64                                       
+  cscope-15.9-10.amzn2022.x86_64                                                
+  ctags-5.9-1.20210725.0.amzn2022.x86_64                                        
+  cups-libs-1:2.3.3op2-10.amzn2022.x86_64                                       
+  dbus-1:1.12.20-3.amzn2022.x86_64                                              
+  dbus-broker-29-2.amzn2022.x86_64                                              
+  dbus-common-1:1.12.20-3.amzn2022.noarch                                       
+  dbus-libs-1:1.12.20-3.amzn2022.x86_64                                         
+  dejavu-sans-fonts-2.37-16.amzn2022.noarch                                     
+  device-mapper-1.02.175-1.amzn2022.0.1.x86_64                                  
+  device-mapper-libs-1.02.175-1.amzn2022.0.1.x86_64                             
+  diffstat-1.64-4.amzn2022.x86_64                                               
+  diffutils-3.8-1.amzn2022.x86_64                                               
+  doxygen-1:1.9.1-10.amzn2022.x86_64                                            
+  dwz-0.14-1.amzn2022.x86_64                                                    
+  dyninst-10.2.1-6.amzn2022.x86_64                                              
+  ed-1.14.2-10.amzn2022.x86_64                                                  
+  efi-srpm-macros-5-4.amzn2022.0.3.noarch                                       
+  efivar-libs-37-15.amzn2022.x86_64                                             
+  elfutils-0.185-2.amzn2022.0.1.x86_64                                          
+  elfutils-debuginfod-client-0.185-2.amzn2022.0.1.x86_64                        
+  elfutils-devel-0.185-2.amzn2022.0.1.x86_64                                    
+  elfutils-libelf-devel-0.185-2.amzn2022.0.1.x86_64                             
+  emacs-filesystem-1:27.2-5.amzn2022.noarch                                     
+  file-5.39-7.amzn2022.x86_64                                                   
+  findutils-1:4.8.0-2.amzn2022.x86_64                                           
+  flex-2.6.4-7.amzn2022.x86_64                                                  
+  fontconfig-2.13.94-2.amzn2022.x86_64                                          
+  fonts-filesystem-1:2.0.5-5.amzn2022.noarch                                    
+  fonts-srpm-macros-1:2.0.5-5.amzn2022.noarch                                   
+  fpc-srpm-macros-1.3-3.amzn2022.noarch                                         
+  freetype-2.10.4-3.amzn2022.x86_64                                             
+  fribidi-1.0.10-4.amzn2022.x86_64                                              
+  gc-8.0.4-5.amzn2022.x86_64                                                    
+  gcc-11.2.1-2.amzn2022.0.2.x86_64                                              
+  gcc-c++-11.2.1-2.amzn2022.0.2.x86_64                                          
+  gcc-gfortran-11.2.1-2.amzn2022.0.2.x86_64                                     
+  gd-2.3.2-2.amzn2022.x86_64                                                    
+  gdb-headless-11.1-5.amzn2022.x86_64                                           
+  gdk-pixbuf2-2.42.6-1.amzn2022.x86_64                                          
+  gdk-pixbuf2-modules-2.42.6-1.amzn2022.x86_64                                  
+  gettext-0.21-4.amzn2022.x86_64                                                
+  gettext-common-devel-0.21-4.amzn2022.noarch                                   
+  gettext-devel-0.21-4.amzn2022.x86_64                                          
+  gettext-libs-0.21-4.amzn2022.x86_64                                           
+  ghc-srpm-macros-1.5.0-4.amzn2022.noarch                                       
+  git-2.31.1-3.amzn2022.x86_64                                                  
+  git-core-2.31.1-3.amzn2022.x86_64                                             
+  git-core-doc-2.31.1-3.amzn2022.noarch                                         
+  glibc-devel-2.34-8.amzn2022.x86_64                                            
+  glibc-gconv-extra-2.34-8.amzn2022.x86_64                                      
+  glibc-headers-x86-2.34-8.amzn2022.noarch                                      
+  gnat-srpm-macros-4-13.amzn2022.noarch                                         
+  go-srpm-macros-3.0.10-1.amzn2022.noarch                                       
+  google-droid-sans-fonts-20200215-9.amzn2022.noarch                            
+  graphite2-1.3.14-7.amzn2022.x86_64                                            
+  graphviz-2.44.0-18.amzn2022.0.1.x86_64                                        
+  groff-base-1.22.4-7.amzn2022.x86_64                                           
+  gtk-update-icon-cache-3.24.30-4.amzn2022.x86_64                               
+  gtk2-2.24.33-4.amzn2022.x86_64                                                
+  guile22-2.2.7-2.amzn2022.x86_64                                               
+  gzip-1.10-4.amzn2022.x86_64                                                   
+  harfbuzz-2.7.4-3.amzn2022.x86_64                                              
+  hicolor-icon-theme-0.17-10.amzn2022.noarch                                    
+  indent-2.2.12-7.amzn2022.x86_64                                               
+  info-6.7-10.amzn2022.x86_64                                                   
+  intltool-0.51.0-18.amzn2022.noarch                                            
+  iptables-legacy-libs-1.8.7-8.amzn2022.x86_64                                  
+  jansson-2.13.1-2.amzn2022.x86_64                                              
+  jbig2dec-libs-0.19-4.amzn2022.x86_64                                          
+  jbigkit-libs-2.1-21.amzn2022.x86_64                                           
+  kernel-headers-5.10.75-82.359.amzn2022.x86_64                                 
+  kernel-srpm-macros-1.0-4.amzn2022.noarch                                      
+  kmod-libs-29-2.amzn2022.x86_64                                                
+  langpacks-core-font-en-3.0-14.amzn2022.noarch                                 
+  lcms2-2.12-1.amzn2022.x86_64                                                  
+  less-590-2.amzn2022.x86_64                                                    
+  libICE-1.0.10-6.amzn2022.x86_64                                               
+  libSM-1.2.3-8.amzn2022.x86_64                                                 
+  libX11-1.7.2-3.amzn2022.x86_64                                                
+  libX11-common-1.7.2-3.amzn2022.noarch                                         
+  libXau-1.0.9-6.amzn2022.x86_64                                                
+  libXaw-1.0.13-17.amzn2022.x86_64                                              
+  libXcomposite-0.4.5-5.amzn2022.x86_64                                         
+  libXcursor-1.2.0-5.amzn2022.x86_64                                            
+  libXdamage-1.1.5-5.amzn2022.x86_64                                            
+  libXext-1.3.4-6.amzn2022.x86_64                                               
+  libXfixes-6.0.0-1.amzn2022.x86_64                                             
+  libXft-2.3.3-6.amzn2022.x86_64                                                
+  libXi-1.7.10-6.amzn2022.x86_64                                                
+  libXinerama-1.1.4-8.amzn2022.x86_64                                           
+  libXmu-1.1.3-6.amzn2022.x86_64                                                
+  libXpm-3.5.13-5.amzn2022.x86_64                                               
+  libXrandr-1.5.2-6.amzn2022.x86_64                                             
+  libXrender-0.9.10-14.amzn2022.x86_64                                          
+  libXt-1.2.0-4.amzn2022.x86_64                                                 
+  libaom-3.1.1-1.amzn2022.0.1.x86_64                                            
+  libargon2-20171227-6.amzn2022.x86_64                                          
+  libavif-0.9.0-2.amzn2022.0.1.x86_64                                           
+  libbabeltrace-1.5.8-6.amzn2022.x86_64                                         
+  libcbor-0.7.0-3.amzn2022.x86_64                                               
+  libdatrie-0.2.13-1.amzn2022.x86_64                                            
+  libdav1d-0.9.1-1.amzn2022.0.1.x86_64                                          
+  libeconf-0.4.0-1.amzn2022.x86_64                                              
+  libedit-3.1-38.20210714cvs.amzn2022.x86_64                                    
+  libevent-2.1.12-3.amzn2022.x86_64                                             
+  libfdisk-2.36.2-1.amzn2022.x86_64                                             
+  libfido2-1.6.0-2.amzn2022.x86_64                                              
+  libfontenc-1.1.3-15.amzn2022.x86_64                                           
+  libgfortran-11.2.1-2.amzn2022.0.2.x86_64                                      
+  libgs-9.55.0-1.amzn2022.x86_64                                                
+  libibverbs-37.0-1.amzn2022.x86_64                                             
+  libicu-67.1-7.amzn2022.x86_64                                                 
+  libijs-0.35-13.amzn2022.x86_64                                                
+  libimagequant-2.14.1-1.amzn2022.x86_64                                        
+  libipt-2.0.4-2.amzn2022.x86_64                                                
+  libjpeg-turbo-2.0.90-3.amzn2022.x86_64                                        
+  libmpc-1.2.1-2.amzn2022.x86_64                                                
+  libnl3-3.5.0-6.amzn2022.x86_64                                                
+  libpaper-1.1.28-2.amzn2022.x86_64                                             
+  libpcap-14:1.10.1-1.amzn2022.x86_64                                           
+  libpkgconf-1.7.3-7.amzn2022.x86_64                                            
+  libpng-2:1.6.37-10.amzn2022.x86_64                                            
+  libpwquality-1.4.4-6.amzn2022.x86_64                                          
+  libquadmath-11.2.1-2.amzn2022.0.2.x86_64                                      
+  libquadmath-devel-11.2.1-2.amzn2022.0.2.x86_64                                
+  libraqm-0.7.2-1.amzn2022.x86_64                                               
+  librsvg2-2.50.7-1.amzn2022.x86_64                                             
+  libseccomp-2.5.3-1.amzn2022.x86_64                                            
+  libserf-1.3.9-18.amzn2022.x86_64                                              
+  libstdc++-devel-11.2.1-2.amzn2022.0.2.x86_64                                  
+  libtextstyle-0.21-4.amzn2022.x86_64                                           
+  libthai-0.1.28-6.amzn2022.x86_64                                              
+  libtiff-4.2.0-1.amzn2022.x86_64                                               
+  libtool-2.4.6-40.amzn2022.x86_64                                              
+  libtool-ltdl-2.4.6-40.amzn2022.x86_64                                         
+  libutempter-1.2.1-4.amzn2022.x86_64                                           
+  libvmaf-2.1.1-1.amzn2022.x86_64                                               
+  libwebp-1.2.1-1.amzn2022.x86_64                                               
+  libxcb-1.13.1-7.amzn2022.x86_64                                               
+  libxcrypt-devel-4.4.26-4.amzn2022.x86_64                                      
+  libzstd-devel-1.5.2-1.amzn2022.x86_64                                         
+  llvm12-libs-12.0.1-2.amzn2022.x86_64                                          
+  lua-srpm-macros-1-4.amzn2022.noarch                                           
+  m4-1.4.19-2.amzn2022.x86_64                                                   
+  make-1:4.3-5.amzn2022.x86_64                                                  
+  mkfontscale-1.2.1-2.amzn2022.x86_64                                           
+  mokutil-2:0.4.0-4.amzn2022.x86_64                                             
+  ncurses-6.2-4.20200222.amzn2022.x86_64                                        
+  nim-srpm-macros-3-4.amzn2022.noarch                                           
+  nspr-4.32.0-2.amzn2022.0.1.x86_64                                             
+  nss-3.71.0-2.amzn2022.0.1.x86_64                                              
+  nss-softokn-3.71.0-2.amzn2022.0.1.x86_64                                      
+  nss-softokn-freebl-3.71.0-2.amzn2022.0.1.x86_64                               
+  nss-sysinit-3.71.0-2.amzn2022.0.1.x86_64                                      
+  nss-util-3.71.0-2.amzn2022.0.1.x86_64                                         
+  ocaml-srpm-macros-6-4.amzn2022.noarch                                         
+  openblas-srpm-macros-2-9.amzn2022.noarch                                      
+  openjpeg2-2.4.0-3.amzn2022.x86_64                                             
+  openssh-8.6p1-5.amzn2022.x86_64                                               
+  openssh-clients-8.6p1-5.amzn2022.x86_64                                       
+  pam-1.5.1-7.amzn2022.x86_64                                                   
+  pango-1.48.10-1.amzn2022.x86_64                                               
+  patch-2.7.6-14.amzn2022.x86_64                                                
+  patchutils-0.4.2-5.amzn2022.x86_64                                            
+  perl-B-1.80-477.amzn2022.x86_64                                               
+  perl-Carp-1.50-458.amzn2022.noarch                                            
+  perl-Class-Struct-0.66-477.amzn2022.noarch                                    
+  perl-Data-Dumper-2.174-460.amzn2022.x86_64                                    
+  perl-DynaLoader-1.47-477.amzn2022.x86_64                                      
+  perl-Encode-4:3.15-462.amzn2022.x86_64                                        
+  perl-Errno-1.30-477.amzn2022.x86_64                                           
+  perl-Error-1:0.17029-5.amzn2022.noarch                                        
+  perl-Exporter-5.74-459.amzn2022.noarch                                        
+  perl-Fcntl-1.13-477.amzn2022.x86_64                                           
+  perl-File-Basename-2.85-477.amzn2022.noarch                                   
+  perl-File-Compare-1.100.600-477.amzn2022.noarch                               
+  perl-File-Copy-2.34-477.amzn2022.noarch                                       
+  perl-File-Find-1.37-477.amzn2022.noarch                                       
+  perl-File-Path-2.18-2.amzn2022.noarch                                         
+  perl-File-Temp-1:0.231.100-2.amzn2022.noarch                                  
+  perl-File-stat-1.09-477.amzn2022.noarch                                       
+  perl-Getopt-Long-1:2.52-2.amzn2022.noarch                                     
+  perl-Getopt-Std-1.12-477.amzn2022.noarch                                      
+  perl-Git-2.31.1-3.amzn2022.noarch                                             
+  perl-HTTP-Tiny-0.078-1.amzn2022.noarch                                        
+  perl-IO-1.43-477.amzn2022.x86_64                                              
+  perl-IPC-Open3-1.21-477.amzn2022.noarch                                       
+  perl-MIME-Base64-3.16-2.amzn2022.x86_64                                       
+  perl-POSIX-1.94-477.amzn2022.x86_64                                           
+  perl-PathTools-3.78-459.amzn2022.x86_64                                       
+  perl-Pod-Escapes-1:1.07-458.amzn2022.noarch                                   
+  perl-Pod-Perldoc-3.28.01-459.amzn2022.noarch                                  
+  perl-Pod-Simple-1:3.42-2.amzn2022.noarch                                      
+  perl-Pod-Usage-4:2.01-2.amzn2022.noarch                                       
+  perl-Scalar-List-Utils-4:1.56-459.amzn2022.x86_64                             
+  perl-SelectSaver-1.02-477.amzn2022.noarch                                     
+  perl-Socket-4:2.032-1.amzn2022.x86_64                                         
+  perl-Storable-1:3.21-458.amzn2022.x86_64                                      
+  perl-Symbol-1.08-477.amzn2022.noarch                                          
+  perl-Term-ANSIColor-5.01-459.amzn2022.noarch                                  
+  perl-Term-Cap-1.17-458.amzn2022.noarch                                        
+  perl-TermReadKey-2.38-9.amzn2022.x86_64                                       
+  perl-Text-ParseWords-3.30-458.amzn2022.noarch                                 
+  perl-Text-Tabs+Wrap-2021.0726-1.amzn2022.noarch                               
+  perl-Thread-Queue-3.14-458.amzn2022.noarch                                    
+  perl-Time-Local-2:1.300-5.amzn2022.noarch                                     
+  perl-XML-Parser-2.46-7.amzn2022.x86_64                                        
+  perl-constant-1.33-459.amzn2022.noarch                                        
+  perl-if-0.60.800-477.amzn2022.noarch                                          
+  perl-interpreter-4:5.32.1-477.amzn2022.x86_64                                 
+  perl-lib-0.65-477.amzn2022.x86_64                                             
+  perl-libs-4:5.32.1-477.amzn2022.x86_64                                        
+  perl-mro-1.23-477.amzn2022.x86_64                                             
+  perl-overload-1.31-477.amzn2022.noarch                                        
+  perl-overloading-0.02-477.amzn2022.noarch                                     
+  perl-parent-1:0.238-458.amzn2022.noarch                                       
+  perl-podlators-1:4.14-458.amzn2022.noarch                                     
+  perl-srpm-macros-1-39.amzn2022.noarch                                         
+  perl-subs-1.03-477.amzn2022.noarch                                            
+  perl-threads-1:2.25-458.amzn2022.0.1.x86_64                                   
+  perl-threads-shared-1.61-458.amzn2022.x86_64                                  
+  perl-vars-1.05-477.amzn2022.noarch                                            
+  pixman-0.40.0-3.amzn2022.x86_64                                               
+  pkgconf-1.7.3-7.amzn2022.x86_64                                               
+  pkgconf-m4-1.7.3-7.amzn2022.noarch                                            
+  pkgconf-pkg-config-1.7.3-7.amzn2022.x86_64                                    
+  python-srpm-macros-3.9-41.amzn2022.noarch                                     
+  qt5-srpm-macros-5.15.2-2.amzn2022.noarch                                      
+  rav1e-libs-0.5.0-21.amzn2022.x86_64                                           
+  rpm-build-4.16.1.3-1.amzn2022.x86_64                                          
+  rpm-sign-4.16.1.3-1.amzn2022.x86_64                                           
+  rust-srpm-macros-18-1.amzn2022.noarch                                         
+  shared-mime-info-2.1-2.amzn2022.x86_64                                        
+  source-highlight-3.1.9-9.amzn2022.x86_64                                      
+  subversion-1.14.1-1.amzn2022.0.1.x86_64                                       
+  subversion-libs-1.14.1-1.amzn2022.0.1.x86_64                                  
+  svt-av1-libs-0.8.7-2.amzn2022.0.1.x86_64                                      
+  swig-4.0.2-6.amzn2022.x86_64                                                  
+  systemd-248.9-1.amzn2022.0.3.x86_64                                           
+  systemd-pam-248.9-1.amzn2022.0.3.x86_64                                       
+  systemd-rpm-macros-248.9-1.amzn2022.0.3.noarch                                
+  systemtap-4.5-1.amzn2022.x86_64                                               
+  systemtap-client-4.5-1.amzn2022.x86_64                                        
+  systemtap-devel-4.5-1.amzn2022.x86_64                                         
+  systemtap-runtime-4.5-1.amzn2022.x86_64                                       
+  tar-2:1.34-1.amzn2022.x86_64                                                  
+  tbb-2020.3-7.amzn2022.x86_64                                                  
+  unzip-6.0-50.amzn2022.x86_64                                                  
+  urw-base35-bookman-fonts-20200910-6.amzn2022.noarch                           
+  urw-base35-c059-fonts-20200910-6.amzn2022.noarch                              
+  urw-base35-d050000l-fonts-20200910-6.amzn2022.noarch                          
+  urw-base35-fonts-20200910-6.amzn2022.noarch                                   
+  urw-base35-fonts-common-20200910-6.amzn2022.noarch                            
+  urw-base35-gothic-fonts-20200910-6.amzn2022.noarch                            
+  urw-base35-nimbus-mono-ps-fonts-20200910-6.amzn2022.noarch                    
+  urw-base35-nimbus-roman-fonts-20200910-6.amzn2022.noarch                      
+  urw-base35-nimbus-sans-fonts-20200910-6.amzn2022.noarch                       
+  urw-base35-p052-fonts-20200910-6.amzn2022.noarch                              
+  urw-base35-standard-symbols-ps-fonts-20200910-6.amzn2022.noarch               
+  urw-base35-z003-fonts-20200910-6.amzn2022.noarch                              
+  utf8proc-2.6.1-2.amzn2022.x86_64                                              
+  util-linux-2.36.2-1.amzn2022.x86_64                                           
+  xapian-core-libs-1.4.18-1.amzn2022.x86_64                                     
+  xemacs-filesystem-21.5.34-39.20200331hge2ac728aa576.amzn2022.noarch           
+  xml-common-0.6.3-56.amzn2022.noarch                                           
+  xorg-x11-fonts-ISO8859-1-100dpi-7.5-31.amzn2022.noarch                        
+  xxhash-libs-0.8.0-3.amzn2022.x86_64                                           
+  xz-5.2.5-5.amzn2022.x86_64                                                    
+  xz-devel-5.2.5-5.amzn2022.x86_64                                              
+  zip-3.0-28.amzn2022.x86_64                                                    
+  zlib-devel-1.2.11-27.amzn2022.x86_64                                          
+  zstd-1.5.2-1.amzn2022.x86_64                                                  
+
+Complete!

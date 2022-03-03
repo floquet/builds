@@ -1,0 +1,26 @@
+yum deplist -v libcurl-devel
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:00:54 ago on Thu Feb 24 01:32:26 2022.
+package: libcurl-devel-7.61.1-22.el8.i686
+  dependency: /bin/sh
+   provider: bash-4.4.20-2.el8.x86_64
+  dependency: /usr/bin/pkg-config
+   provider: pkgconf-pkg-config-1.4.2-1.el8.i686
+   provider: pkgconf-pkg-config-1.4.2-1.el8.x86_64
+  dependency: libcurl(x86-32) = 7.61.1-22.el8
+   provider: libcurl-7.61.1-22.el8.i686
+  dependency: libcurl.so.4
+   provider: libcurl-7.61.1-22.el8.i686
+
+package: libcurl-devel-7.61.1-22.el8.x86_64
+  dependency: /bin/sh
+   provider: bash-4.4.20-2.el8.x86_64
+  dependency: /usr/bin/pkg-config
+   provider: pkgconf-pkg-config-1.4.2-1.el8.i686
+   provider: pkgconf-pkg-config-1.4.2-1.el8.x86_64
+  dependency: libcurl(x86-64) = 7.61.1-22.el8
+   provider: libcurl-7.61.1-22.el8.x86_64
+  dependency: libcurl.so.4()(64bit)
+   provider: libcurl-7.61.1-22.el8.x86_64

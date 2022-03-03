@@ -1,0 +1,32 @@
+yum deplist -v libcurl-devel
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:02:49 ago on Sun Feb 27 00:21:46 2022.
+package: libcurl-devel-7.79.1-1.amzn2022.i686
+  dependency: /usr/bin/pkg-config
+   provider: pkgconf-pkg-config-1.7.3-7.amzn2022.x86_64
+   provider: pkgconf-pkg-config-1.7.3-7.amzn2022.i686
+  dependency: /usr/bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: libcurl(x86-32) = 7.79.1-1.amzn2022
+   provider: libcurl-7.79.1-1.amzn2022.i686
+   provider: libcurl-minimal-7.79.1-1.amzn2022.i686
+  dependency: libcurl.so.4
+   provider: libcurl-7.79.1-1.amzn2022.i686
+   provider: libcurl-minimal-7.79.1-1.amzn2022.i686
+
+package: libcurl-devel-7.79.1-1.amzn2022.x86_64
+  dependency: /usr/bin/pkg-config
+   provider: pkgconf-pkg-config-1.7.3-7.amzn2022.x86_64
+   provider: pkgconf-pkg-config-1.7.3-7.amzn2022.i686
+  dependency: /usr/bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: libcurl(x86-64) = 7.79.1-1.amzn2022
+   provider: libcurl-7.79.1-1.amzn2022.x86_64
+   provider: libcurl-minimal-7.79.1-1.amzn2022.x86_64
+  dependency: libcurl.so.4()(64bit)
+   provider: libcurl-7.79.1-1.amzn2022.x86_64
+   provider: libcurl-minimal-7.79.1-1.amzn2022.x86_64

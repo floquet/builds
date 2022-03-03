@@ -1,0 +1,161 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Amazon Linux 2022; generic; Linux.x86_64)'
+repo: using cache for: amazonlinux
+amazonlinux: using metadata from Wed Feb  2 17:37:26 2022.
+Last metadata expiration check: 0:11:34 ago on Sun Feb 27 00:21:46 2022.
+--> Starting dependency resolution
+---> Package opensm-libs.x86_64 3.3.23-6.amzn2022 will be installed
+---> Package infinipath-psm.x86_64 3.3-26_g604758e_open.6.amzn2022.3 will be installed
+---> Package kmod.x86_64 29-2.amzn2022 will be installed
+---> Package libibumad.x86_64 37.0-1.amzn2022 will be installed
+---> Package libfabric.x86_64 1.12.1-1.amzn2022 will be installed
+---> Package libpsm2.x86_64 11.2.86-8.amzn2022 will be installed
+---> Package numactl-libs.x86_64 2.0.14-3.amzn2022 will be installed
+---> Package kbd.x86_64 2.4.0-2.amzn2022 will be installed
+---> Package openmpi.x86_64 4.1.0-5.amzn2022 will be installed
+---> Package orangefs.x86_64 2.9.8-2.amzn2022 will be installed
+---> Package ucx.x86_64 1.10.1-1.amzn2022.0.1 will be installed
+---> Package tcsh.x86_64 6.22.03-2.amzn2022 will be installed
+---> Package systemd-udev.x86_64 248.9-1.amzn2022.0.3 will be installed
+---> Package pmix.x86_64 3.2.3-1.amzn2022 will be installed
+---> Package munge-libs.x86_64 0.5.14-4.amzn2022 will be installed
+---> Package librdmacm.x86_64 37.0-1.amzn2022 will be installed
+---> Package kbd-misc.noarch 2.4.0-2.amzn2022 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package         Arch    Version                             Repository    Size
+================================================================================
+Installing:
+ openmpi         x86_64  4.1.0-5.amzn2022                    amazonlinux  2.8 M
+Installing dependencies:
+ infinipath-psm  x86_64  3.3-26_g604758e_open.6.amzn2022.3   amazonlinux  202 k
+ kbd             x86_64  2.4.0-2.amzn2022                    amazonlinux  391 k
+ kbd-misc        noarch  2.4.0-2.amzn2022                    amazonlinux  1.5 M
+ kmod            x86_64  29-2.amzn2022                       amazonlinux  115 k
+ libfabric       x86_64  1.12.1-1.amzn2022                   amazonlinux  887 k
+ libibumad       x86_64  37.0-1.amzn2022                     amazonlinux   29 k
+ libpsm2         x86_64  11.2.86-8.amzn2022                  amazonlinux  209 k
+ librdmacm       x86_64  37.0-1.amzn2022                     amazonlinux   74 k
+ munge-libs      x86_64  0.5.14-4.amzn2022                   amazonlinux   23 k
+ numactl-libs    x86_64  2.0.14-3.amzn2022                   amazonlinux   31 k
+ opensm-libs     x86_64  3.3.23-6.amzn2022                   amazonlinux   77 k
+ orangefs        x86_64  2.9.8-2.amzn2022                    amazonlinux  1.8 M
+ pmix            x86_64  3.2.3-1.amzn2022                    amazonlinux  526 k
+ systemd-udev    x86_64  248.9-1.amzn2022.0.3                amazonlinux  1.5 M
+ tcsh            x86_64  6.22.03-2.amzn2022                  amazonlinux  468 k
+ ucx             x86_64  1.10.1-1.amzn2022.0.1               amazonlinux  578 k
+
+Transaction Summary
+================================================================================
+Install  17 Packages
+
+Total download size: 11 M
+Installed size: 34 M
+Downloading Packages:
+(1/17): opensm-libs-3.3.23-6.amzn2022.x86_64.rp 103 kB/s |  77 kB     00:00    
+(2/17): kmod-29-2.amzn2022.x86_64.rpm           143 kB/s | 115 kB     00:00    
+(3/17): infinipath-psm-3.3-26_g604758e_open.6.a 239 kB/s | 202 kB     00:00    
+(4/17): libibumad-37.0-1.amzn2022.x86_64.rpm    117 kB/s |  29 kB     00:00    
+(5/17): numactl-libs-2.0.14-3.amzn2022.x86_64.r 295 kB/s |  31 kB     00:00    
+(6/17): libpsm2-11.2.86-8.amzn2022.x86_64.rpm   676 kB/s | 209 kB     00:00    
+(7/17): libfabric-1.12.1-1.amzn2022.x86_64.rpm  2.1 MB/s | 887 kB     00:00    
+(8/17): kbd-2.4.0-2.amzn2022.x86_64.rpm         1.4 MB/s | 391 kB     00:00    
+(9/17): ucx-1.10.1-1.amzn2022.0.1.x86_64.rpm    1.3 MB/s | 578 kB     00:00    
+(10/17): orangefs-2.9.8-2.amzn2022.x86_64.rpm   2.6 MB/s | 1.8 MB     00:00    
+(11/17): openmpi-4.1.0-5.amzn2022.x86_64.rpm    3.2 MB/s | 2.8 MB     00:00    
+(12/17): tcsh-6.22.03-2.amzn2022.x86_64.rpm     1.8 MB/s | 468 kB     00:00    
+(13/17): munge-libs-0.5.14-4.amzn2022.x86_64.rp 192 kB/s |  23 kB     00:00    
+(14/17): librdmacm-37.0-1.amzn2022.x86_64.rpm   452 kB/s |  74 kB     00:00    
+(15/17): pmix-3.2.3-1.amzn2022.x86_64.rpm       1.3 MB/s | 526 kB     00:00    
+(16/17): systemd-udev-248.9-1.amzn2022.0.3.x86_ 1.9 MB/s | 1.5 MB     00:00    
+(17/17): kbd-misc-2.4.0-2.amzn2022.noarch.rpm   3.1 MB/s | 1.5 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                           3.1 MB/s |  11 MB     00:03     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : numactl-libs-2.0.14-3.amzn2022.x86_64                 1/17 
+  Installing       : librdmacm-37.0-1.amzn2022.x86_64                      2/17 
+  Installing       : libpsm2-11.2.86-8.amzn2022.x86_64                     3/17 
+  Installing       : ucx-1.10.1-1.amzn2022.0.1.x86_64                      4/17 
+  Running scriptlet: ucx-1.10.1-1.amzn2022.0.1.x86_64                      4/17 
+  Installing       : kbd-misc-2.4.0-2.amzn2022.noarch                      5/17 
+  Installing       : kbd-2.4.0-2.amzn2022.x86_64                           6/17 
+  Installing       : munge-libs-0.5.14-4.amzn2022.x86_64                   7/17 
+  Installing       : pmix-3.2.3-1.amzn2022.x86_64                          8/17 
+  Installing       : tcsh-6.22.03-2.amzn2022.x86_64                        9/17 
+  Running scriptlet: tcsh-6.22.03-2.amzn2022.x86_64                        9/17 
+  Installing       : orangefs-2.9.8-2.amzn2022.x86_64                     10/17 
+  Installing       : libibumad-37.0-1.amzn2022.x86_64                     11/17 
+  Installing       : opensm-libs-3.3.23-6.amzn2022.x86_64                 12/17 
+  Installing       : kmod-29-2.amzn2022.x86_64                            13/17 
+  Running scriptlet: systemd-udev-248.9-1.amzn2022.0.3.x86_64             14/17 
+  Installing       : systemd-udev-248.9-1.amzn2022.0.3.x86_64             14/17 
+  Running scriptlet: systemd-udev-248.9-1.amzn2022.0.3.x86_64             14/17 
+  Installing       : infinipath-psm-3.3-26_g604758e_open.6.amzn2022.3.x   15/17 
+  Installing       : libfabric-1.12.1-1.amzn2022.x86_64                   16/17 
+  Installing       : openmpi-4.1.0-5.amzn2022.x86_64                      17/17 
+  Running scriptlet: openmpi-4.1.0-5.amzn2022.x86_64                      17/17 
+  Verifying        : opensm-libs-3.3.23-6.amzn2022.x86_64                  1/17 
+  Verifying        : infinipath-psm-3.3-26_g604758e_open.6.amzn2022.3.x    2/17 
+  Verifying        : kmod-29-2.amzn2022.x86_64                             3/17 
+  Verifying        : libibumad-37.0-1.amzn2022.x86_64                      4/17 
+  Verifying        : libfabric-1.12.1-1.amzn2022.x86_64                    5/17 
+  Verifying        : libpsm2-11.2.86-8.amzn2022.x86_64                     6/17 
+  Verifying        : numactl-libs-2.0.14-3.amzn2022.x86_64                 7/17 
+  Verifying        : kbd-2.4.0-2.amzn2022.x86_64                           8/17 
+  Verifying        : openmpi-4.1.0-5.amzn2022.x86_64                       9/17 
+  Verifying        : orangefs-2.9.8-2.amzn2022.x86_64                     10/17 
+  Verifying        : ucx-1.10.1-1.amzn2022.0.1.x86_64                     11/17 
+  Verifying        : tcsh-6.22.03-2.amzn2022.x86_64                       12/17 
+  Verifying        : systemd-udev-248.9-1.amzn2022.0.3.x86_64             13/17 
+  Verifying        : pmix-3.2.3-1.amzn2022.x86_64                         14/17 
+  Verifying        : munge-libs-0.5.14-4.amzn2022.x86_64                  15/17 
+  Verifying        : librdmacm-37.0-1.amzn2022.x86_64                     16/17 
+  Verifying        : kbd-misc-2.4.0-2.amzn2022.noarch                     17/17 
+Completion plugin: Generating completion cache...
+Installed: infinipath-psm-3.3-26_g604758e_open.6.amzn2022.3.x86_64
+Installed: kbd-2.4.0-2.amzn2022.x86_64
+Installed: kbd-misc-2.4.0-2.amzn2022.noarch
+Installed: kmod-29-2.amzn2022.x86_64
+Installed: libfabric-1.12.1-1.amzn2022.x86_64
+Installed: libibumad-37.0-1.amzn2022.x86_64
+Installed: libpsm2-11.2.86-8.amzn2022.x86_64
+Installed: librdmacm-37.0-1.amzn2022.x86_64
+Installed: munge-libs-0.5.14-4.amzn2022.x86_64
+Installed: numactl-libs-2.0.14-3.amzn2022.x86_64
+Installed: openmpi-4.1.0-5.amzn2022.x86_64
+Installed: opensm-libs-3.3.23-6.amzn2022.x86_64
+Installed: orangefs-2.9.8-2.amzn2022.x86_64
+Installed: pmix-3.2.3-1.amzn2022.x86_64
+Installed: systemd-udev-248.9-1.amzn2022.0.3.x86_64
+Installed: tcsh-6.22.03-2.amzn2022.x86_64
+Installed: ucx-1.10.1-1.amzn2022.0.1.x86_64
+
+Installed:
+  infinipath-psm-3.3-26_g604758e_open.6.amzn2022.3.x86_64                       
+  kbd-2.4.0-2.amzn2022.x86_64                                                   
+  kbd-misc-2.4.0-2.amzn2022.noarch                                              
+  kmod-29-2.amzn2022.x86_64                                                     
+  libfabric-1.12.1-1.amzn2022.x86_64                                            
+  libibumad-37.0-1.amzn2022.x86_64                                              
+  libpsm2-11.2.86-8.amzn2022.x86_64                                             
+  librdmacm-37.0-1.amzn2022.x86_64                                              
+  munge-libs-0.5.14-4.amzn2022.x86_64                                           
+  numactl-libs-2.0.14-3.amzn2022.x86_64                                         
+  openmpi-4.1.0-5.amzn2022.x86_64                                               
+  opensm-libs-3.3.23-6.amzn2022.x86_64                                          
+  orangefs-2.9.8-2.amzn2022.x86_64                                              
+  pmix-3.2.3-1.amzn2022.x86_64                                                  
+  systemd-udev-248.9-1.amzn2022.0.3.x86_64                                      
+  tcsh-6.22.03-2.amzn2022.x86_64                                                
+  ucx-1.10.1-1.amzn2022.0.1.x86_64                                              
+
+Complete!

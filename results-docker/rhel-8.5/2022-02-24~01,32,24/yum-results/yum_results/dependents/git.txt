@@ -1,0 +1,48 @@
+yum deplist -v git
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:02:37 ago on Thu Feb 24 01:32:26 2022.
+package: git-2.27.0-1.el8.x86_64
+  dependency: /bin/sh
+   provider: bash-4.4.20-2.el8.x86_64
+  dependency: /usr/bin/perl
+   provider: perl-interpreter-4:5.26.3-420.el8.x86_64
+  dependency: /usr/libexec/platform-python
+   provider: platform-python-3.6.8-41.el8.x86_64
+   provider: platform-python-3.6.8-41.el8.i686
+  dependency: emacs-filesystem >= 26.1
+   provider: emacs-filesystem-1:26.1-7.el8.noarch
+  dependency: git-core = 2.27.0-1.el8
+   provider: git-core-2.27.0-1.el8.x86_64
+  dependency: git-core-doc = 2.27.0-1.el8
+   provider: git-core-doc-2.27.0-1.el8.noarch
+  dependency: perl(:VERSION) >= 5.8.0
+   provider: perl-libs-4:5.26.3-420.el8.x86_64
+   provider: perl-libs-4:5.26.3-420.el8.i686
+  dependency: perl(File::Basename)
+   provider: perl-interpreter-4:5.26.3-420.el8.x86_64
+  dependency: perl(File::Find)
+   provider: perl-interpreter-4:5.26.3-420.el8.x86_64
+  dependency: perl(File::Spec)
+   provider: perl-PathTools-3.74-1.el8.x86_64
+  dependency: perl(Getopt::Long)
+   provider: perl-Getopt-Long-1:2.50-4.el8.noarch
+  dependency: perl(Git)
+   provider: perl-Git-2.27.0-1.el8.noarch
+  dependency: perl(Git::I18N)
+   provider: perl-Git-2.27.0-1.el8.noarch
+  dependency: perl(IPC::Open2)
+   provider: perl-interpreter-4:5.26.3-420.el8.x86_64
+  dependency: perl(Term::ReadKey)
+   provider: perl-TermReadKey-2.37-7.el8.x86_64
+  dependency: perl(lib)
+   provider: perl-interpreter-4:5.26.3-420.el8.x86_64
+  dependency: perl(strict)
+   provider: perl-libs-4:5.26.3-420.el8.x86_64
+   provider: perl-libs-4:5.26.3-420.el8.i686
+  dependency: perl(warnings)
+   provider: perl-libs-4:5.26.3-420.el8.x86_64
+   provider: perl-libs-4:5.26.3-420.el8.i686
+  dependency: perl-Git = 2.27.0-1.el8
+   provider: perl-Git-2.27.0-1.el8.noarch

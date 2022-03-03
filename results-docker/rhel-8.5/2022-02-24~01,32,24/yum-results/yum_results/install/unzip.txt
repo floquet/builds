@@ -1,0 +1,50 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:06:28 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package unzip.x86_64 6.0-45.el8_4 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package       Architecture   Version                Repository            Size
+================================================================================
+Installing:
+ unzip         x86_64         6.0-45.el8_4           ubi-8-baseos         195 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 195 k
+Installed size: 414 k
+Downloading Packages:
+unzip-6.0-45.el8_4.x86_64.rpm                   575 kB/s | 195 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           567 kB/s | 195 kB     00:00     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : unzip-6.0-45.el8_4.x86_64                              1/1 
+  Running scriptlet: unzip-6.0-45.el8_4.x86_64                              1/1 
+  Verifying        : unzip-6.0-45.el8_4.x86_64                              1/1 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: unzip-6.0-45.el8_4.x86_64
+
+Installed:
+  unzip-6.0-45.el8_4.x86_64                                                     
+
+Complete!

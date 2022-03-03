@@ -1,0 +1,321 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.009
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.netdepot.com
+ * epel: mirror.prgmr.com
+ * extras: la.mirrors.clouvider.net
+ * updates: mirror.dal.nexril.net
+pkgsack time: 0.191
+Obs Init time: 0.218
+Resolving Dependencies
+--> Running transaction check
+---> Package python-astropy.x86_64 0:1.1.1-1.el7 will be installed
+Checking deps for python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('/usr/bin/xmllint', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('PyYAML', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('h5py', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('numpy', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('pytest', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('python-configobj', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('python-ply', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('python-six', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('scipy', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libcfitsio.so.2()(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('liberfa.so.1()(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libexpat.so.1()(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libpython2.7.so.1.0()(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+looking for ('libwcs.so.4()(64bit)', None, (None, None, None)) as a requirement of python-astropy.x86_64 0:1.1.1-1.el7 - u
+python-astropy-1.1.1-1.el7.x86_64 requires: PyYAML
+--> Processing Dependency: PyYAML for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: PyYAML
+Building updates object
+up:simple updates time: 0.010
+up:obs time: 0.005
+up:condense time: 0.000
+updates time: 0.237
+TSINFO: Marking PyYAML-3.10-11.el7.x86_64 as install for python-astropy-1.1.1-1.el7.x86_64
+python-astropy-1.1.1-1.el7.x86_64 requires: h5py
+--> Processing Dependency: h5py for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: h5py
+TSINFO: Marking h5py-2.3.1-1.el7.x86_64 as install for python-astropy-1.1.1-1.el7.x86_64
+python-astropy-1.1.1-1.el7.x86_64 requires: pytest
+--> Processing Dependency: pytest for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: pytest
+TSINFO: Marking pytest-2.7.0-2.el7.noarch as install for python-astropy-1.1.1-1.el7.x86_64
+python-astropy-1.1.1-1.el7.x86_64 requires: python-configobj
+--> Processing Dependency: python-configobj for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: python-configobj
+TSINFO: Marking python-configobj-4.7.2-7.el7.noarch as install for python-astropy-1.1.1-1.el7.x86_64
+python-astropy-1.1.1-1.el7.x86_64 requires: python-ply
+--> Processing Dependency: python-ply for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: python-ply
+TSINFO: Marking python-ply-3.4-11.el7.noarch as install for python-astropy-1.1.1-1.el7.x86_64
+python-astropy-1.1.1-1.el7.x86_64 requires: scipy
+--> Processing Dependency: scipy for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: scipy
+TSINFO: Marking scipy-0.12.1-6.el7.x86_64 as install for python-astropy-1.1.1-1.el7.x86_64
+python-astropy-1.1.1-1.el7.x86_64 requires: libcfitsio.so.2()(64bit)
+--> Processing Dependency: libcfitsio.so.2()(64bit) for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: libcfitsio.so.2()(64bit)
+TSINFO: Marking cfitsio-3.370-10.el7.x86_64 as install for python-astropy-1.1.1-1.el7.x86_64
+python-astropy-1.1.1-1.el7.x86_64 requires: liberfa.so.1()(64bit)
+--> Processing Dependency: liberfa.so.1()(64bit) for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: liberfa.so.1()(64bit)
+TSINFO: Marking erfa-2.0.0-1.el7.x86_64 as install for python-astropy-1.1.1-1.el7.x86_64
+python-astropy-1.1.1-1.el7.x86_64 requires: libwcs.so.4()(64bit)
+--> Processing Dependency: libwcs.so.4()(64bit) for package: python-astropy-1.1.1-1.el7.x86_64
+Searching pkgSack for dep: libwcs.so.4()(64bit)
+TSINFO: Marking wcslib-4.25.1-1.el7.1.x86_64 as install for python-astropy-1.1.1-1.el7.x86_64
+--> Running transaction check
+---> Package PyYAML.x86_64 0:3.10-11.el7 will be installed
+Checking deps for PyYAML.x86_64 0:3.10-11.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of PyYAML.x86_64 0:3.10-11.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of PyYAML.x86_64 0:3.10-11.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of PyYAML.x86_64 0:3.10-11.el7 - u
+looking for ('libyaml-0.so.2()(64bit)', None, (None, None, None)) as a requirement of PyYAML.x86_64 0:3.10-11.el7 - u
+looking for ('libpython2.7.so.1.0()(64bit)', None, (None, None, None)) as a requirement of PyYAML.x86_64 0:3.10-11.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of PyYAML.x86_64 0:3.10-11.el7 - u
+PyYAML-3.10-11.el7.x86_64 requires: libyaml-0.so.2()(64bit)
+--> Processing Dependency: libyaml-0.so.2()(64bit) for package: PyYAML-3.10-11.el7.x86_64
+Searching pkgSack for dep: libyaml-0.so.2()(64bit)
+TSINFO: Marking libyaml-0.1.4-11.el7_0.x86_64 as install for PyYAML-3.10-11.el7.x86_64
+---> Package cfitsio.x86_64 0:3.370-10.el7 will be installed
+Checking deps for cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of cfitsio.x86_64 0:3.370-10.el7 - u
+---> Package erfa.x86_64 0:2.0.0-1.el7 will be installed
+Checking deps for erfa.x86_64 0:2.0.0-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of erfa.x86_64 0:2.0.0-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of erfa.x86_64 0:2.0.0-1.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of erfa.x86_64 0:2.0.0-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of erfa.x86_64 0:2.0.0-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of erfa.x86_64 0:2.0.0-1.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of erfa.x86_64 0:2.0.0-1.el7 - u
+---> Package h5py.x86_64 0:2.3.1-1.el7 will be installed
+Checking deps for h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('hdf5', 'EQ', ('0', '1.8.12', None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('numpy', 'GE', ('0', '1.0.3', None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('libgomp.so.1()(64bit)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('libhdf5_hl.so.8()(64bit)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('libhdf5.so.8()(64bit)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('liblzf.so.1()(64bit)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+looking for ('libpython2.7.so.1.0()(64bit)', None, (None, None, None)) as a requirement of h5py.x86_64 0:2.3.1-1.el7 - u
+h5py-2.3.1-1.el7.x86_64 requires: liblzf.so.1()(64bit)
+--> Processing Dependency: liblzf.so.1()(64bit) for package: h5py-2.3.1-1.el7.x86_64
+Searching pkgSack for dep: liblzf.so.1()(64bit)
+TSINFO: Marking liblzf-3.6-7.el7.x86_64 as install for h5py-2.3.1-1.el7.x86_64
+---> Package pytest.noarch 0:2.7.0-2.el7 will be installed
+Checking deps for pytest.noarch 0:2.7.0-2.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of pytest.noarch 0:2.7.0-2.el7 - u
+looking for ('python-py', 'GE', ('0', '1.4.25', None)) as a requirement of pytest.noarch 0:2.7.0-2.el7 - u
+looking for ('python-setuptools', None, (None, None, None)) as a requirement of pytest.noarch 0:2.7.0-2.el7 - u
+looking for ('/usr/bin/python', None, (None, None, None)) as a requirement of pytest.noarch 0:2.7.0-2.el7 - u
+pytest-2.7.0-2.el7.noarch requires: python-py >= 1.4.25
+--> Processing Dependency: python-py >= 1.4.25 for package: pytest-2.7.0-2.el7.noarch
+Searching pkgSack for dep: python-py
+TSINFO: Marking python-py-1.4.32-1.el7.noarch as install for pytest-2.7.0-2.el7.noarch
+---> Package python-configobj.noarch 0:4.7.2-7.el7 will be installed
+Checking deps for python-configobj.noarch 0:4.7.2-7.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-configobj.noarch 0:4.7.2-7.el7 - u
+---> Package python-ply.noarch 0:3.4-11.el7 will be installed
+Checking deps for python-ply.noarch 0:3.4-11.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-ply.noarch 0:3.4-11.el7 - u
+---> Package scipy.x86_64 0:0.12.1-6.el7 will be installed
+Checking deps for scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('python-six', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('python', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('numpy', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libgcc_s.so.1(GCC_4.0.0)(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('f2py', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libumfpack.so.5()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libtatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libpython2.7.so.1.0()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('liblapack.so.3()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+looking for ('libamd.so.2()(64bit)', None, (None, None, None)) as a requirement of scipy.x86_64 0:0.12.1-6.el7 - u
+scipy-0.12.1-6.el7.x86_64 requires: f2py
+--> Processing Dependency: f2py for package: scipy-0.12.1-6.el7.x86_64
+Searching pkgSack for dep: f2py
+TSINFO: Marking 1:numpy-f2py-1.7.1-13.el7.x86_64 as install for scipy-0.12.1-6.el7.x86_64
+---> Package wcslib.x86_64 0:4.25.1-1.el7.1 will be installed
+Checking deps for wcslib.x86_64 0:4.25.1-1.el7.1 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of wcslib.x86_64 0:4.25.1-1.el7.1 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of wcslib.x86_64 0:4.25.1-1.el7.1 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of wcslib.x86_64 0:4.25.1-1.el7.1 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of wcslib.x86_64 0:4.25.1-1.el7.1 - u
+looking for ('libc.so.6(GLIBC_2.11)(64bit)', None, (None, None, None)) as a requirement of wcslib.x86_64 0:4.25.1-1.el7.1 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of wcslib.x86_64 0:4.25.1-1.el7.1 - u
+--> Running transaction check
+---> Package liblzf.x86_64 0:3.6-7.el7 will be installed
+Checking deps for liblzf.x86_64 0:3.6-7.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of liblzf.x86_64 0:3.6-7.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of liblzf.x86_64 0:3.6-7.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of liblzf.x86_64 0:3.6-7.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of liblzf.x86_64 0:3.6-7.el7 - u
+---> Package libyaml.x86_64 0:0.1.4-11.el7_0 will be installed
+Checking deps for libyaml.x86_64 0:0.1.4-11.el7_0 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libyaml.x86_64 0:0.1.4-11.el7_0 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libyaml.x86_64 0:0.1.4-11.el7_0 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libyaml.x86_64 0:0.1.4-11.el7_0 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libyaml.x86_64 0:0.1.4-11.el7_0 - u
+---> Package numpy-f2py.x86_64 1:1.7.1-13.el7 will be installed
+Checking deps for numpy-f2py.x86_64 1:1.7.1-13.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of numpy-f2py.x86_64 1:1.7.1-13.el7 - u
+looking for ('numpy', 'EQ', ('1', '1.7.1', '13.el7')) as a requirement of numpy-f2py.x86_64 1:1.7.1-13.el7 - u
+looking for ('python-devel', None, (None, None, None)) as a requirement of numpy-f2py.x86_64 1:1.7.1-13.el7 - u
+looking for ('/usr/bin/python', None, (None, None, None)) as a requirement of numpy-f2py.x86_64 1:1.7.1-13.el7 - u
+---> Package python-py.noarch 0:1.4.32-1.el7 will be installed
+Checking deps for python-py.noarch 0:1.4.32-1.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-py.noarch 0:1.4.32-1.el7 - u
+looking for ('python-setuptools', None, (None, None, None)) as a requirement of python-py.noarch 0:1.4.32-1.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.626
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch          Version                Repository   Size
+================================================================================
+Installing:
+ python-astropy          x86_64        1.1.1-1.el7            epel        6.3 M
+Installing for dependencies:
+ PyYAML                  x86_64        3.10-11.el7            base        153 k
+ cfitsio                 x86_64        3.370-10.el7           epel        528 k
+ erfa                    x86_64        2.0.0-1.el7            epel        138 k
+ h5py                    x86_64        2.3.1-1.el7            epel        567 k
+ liblzf                  x86_64        3.6-7.el7              epel         22 k
+ libyaml                 x86_64        0.1.4-11.el7_0         base         55 k
+ numpy-f2py              x86_64        1:1.7.1-13.el7         base        206 k
+ pytest                  noarch        2.7.0-2.el7            base        757 k
+ python-configobj        noarch        4.7.2-7.el7            base        117 k
+ python-ply              noarch        3.4-11.el7             base        123 k
+ python-py               noarch        1.4.32-1.el7           base        341 k
+ scipy                   x86_64        0.12.1-6.el7           base        9.3 M
+ wcslib                  x86_64        4.25.1-1.el7.1         epel        189 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+13 Dependent packages)
+
+Total download size: 19 M
+Installed size: 81 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              8.0 MB/s |  19 MB  00:02     
+Member: libyaml.x86_64 0:0.1.4-11.el7_0 - u
+Adding Package libyaml-0.1.4-11.el7_0.x86_64 in mode u
+Member: python-ply.noarch 0:3.4-11.el7 - u
+Adding Package python-ply-3.4-11.el7.noarch in mode u
+Member: numpy-f2py.x86_64 1:1.7.1-13.el7 - u
+Adding Package 1:numpy-f2py-1.7.1-13.el7.x86_64 in mode u
+Member: scipy.x86_64 0:0.12.1-6.el7 - u
+Adding Package scipy-0.12.1-6.el7.x86_64 in mode u
+Member: python-configobj.noarch 0:4.7.2-7.el7 - u
+Adding Package python-configobj-4.7.2-7.el7.noarch in mode u
+Member: python-py.noarch 0:1.4.32-1.el7 - u
+Adding Package python-py-1.4.32-1.el7.noarch in mode u
+Member: cfitsio.x86_64 0:3.370-10.el7 - u
+Adding Package cfitsio-3.370-10.el7.x86_64 in mode u
+Member: h5py.x86_64 0:2.3.1-1.el7 - u
+Adding Package h5py-2.3.1-1.el7.x86_64 in mode u
+Member: python-astropy.x86_64 0:1.1.1-1.el7 - u
+Adding Package python-astropy-1.1.1-1.el7.x86_64 in mode u
+Member: pytest.noarch 0:2.7.0-2.el7 - u
+Adding Package pytest-2.7.0-2.el7.noarch in mode u
+Member: PyYAML.x86_64 0:3.10-11.el7 - u
+Adding Package PyYAML-3.10-11.el7.x86_64 in mode u
+Member: wcslib.x86_64 0:4.25.1-1.el7.1 - u
+Adding Package wcslib-4.25.1-1.el7.1.x86_64 in mode u
+Member: liblzf.x86_64 0:3.6-7.el7 - u
+Adding Package liblzf-3.6-7.el7.x86_64 in mode u
+Member: erfa.x86_64 0:2.0.0-1.el7 - u
+Adding Package erfa-2.0.0-1.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.033
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.188
+Running transaction
+  Installing : erfa-2.0.0-1.el7.x86_64                                     1/14 
+  Installing : liblzf-3.6-7.el7.x86_64                                     2/14 
+  Installing : h5py-2.3.1-1.el7.x86_64                                     3/14 
+  Installing : wcslib-4.25.1-1.el7.1.x86_64                                4/14 
+  Installing : cfitsio-3.370-10.el7.x86_64                                 5/14 
+  Installing : python-py-1.4.32-1.el7.noarch                               6/14 
+  Installing : pytest-2.7.0-2.el7.noarch                                   7/14 
+  Installing : python-configobj-4.7.2-7.el7.noarch                         8/14 
+  Installing : 1:numpy-f2py-1.7.1-13.el7.x86_64                            9/14 
+  Installing : scipy-0.12.1-6.el7.x86_64                                  10/14 
+  Installing : python-ply-3.4-11.el7.noarch                               11/14 
+  Installing : libyaml-0.1.4-11.el7_0.x86_64                              12/14 
+  Installing : PyYAML-3.10-11.el7.x86_64                                  13/14 
+  Installing : python-astropy-1.1.1-1.el7.x86_64                          14/14 
+  Verifying  : libyaml-0.1.4-11.el7_0.x86_64                               1/14 
+  Verifying  : python-ply-3.4-11.el7.noarch                                2/14 
+  Verifying  : 1:numpy-f2py-1.7.1-13.el7.x86_64                            3/14 
+  Verifying  : scipy-0.12.1-6.el7.x86_64                                   4/14 
+  Verifying  : python-configobj-4.7.2-7.el7.noarch                         5/14 
+  Verifying  : python-py-1.4.32-1.el7.noarch                               6/14 
+  Verifying  : cfitsio-3.370-10.el7.x86_64                                 7/14 
+  Verifying  : h5py-2.3.1-1.el7.x86_64                                     8/14 
+  Verifying  : python-astropy-1.1.1-1.el7.x86_64                           9/14 
+  Verifying  : pytest-2.7.0-2.el7.noarch                                  10/14 
+  Verifying  : PyYAML-3.10-11.el7.x86_64                                  11/14 
+  Verifying  : wcslib-4.25.1-1.el7.1.x86_64                               12/14 
+  Verifying  : liblzf-3.6-7.el7.x86_64                                    13/14 
+  Verifying  : erfa-2.0.0-1.el7.x86_64                                    14/14 
+VerifyTransaction time: 0.263
+Transaction time: 6.695
+
+Installed:
+  python-astropy.x86_64 0:1.1.1-1.el7                                           
+
+Dependency Installed:
+  PyYAML.x86_64 0:3.10-11.el7               cfitsio.x86_64 0:3.370-10.el7      
+  erfa.x86_64 0:2.0.0-1.el7                 h5py.x86_64 0:2.3.1-1.el7          
+  liblzf.x86_64 0:3.6-7.el7                 libyaml.x86_64 0:0.1.4-11.el7_0    
+  numpy-f2py.x86_64 1:1.7.1-13.el7          pytest.noarch 0:2.7.0-2.el7        
+  python-configobj.noarch 0:4.7.2-7.el7     python-ply.noarch 0:3.4-11.el7     
+  python-py.noarch 0:1.4.32-1.el7           scipy.x86_64 0:0.12.1-6.el7        
+  wcslib.x86_64 0:4.25.1-1.el7.1           
+
+Complete!

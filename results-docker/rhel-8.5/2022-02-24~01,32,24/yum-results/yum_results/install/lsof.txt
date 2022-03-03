@@ -1,0 +1,50 @@
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, product-id, repoclosure, repodiff, repograph, repomanage, reposync, uploadprofile
+YUM version: 4.7.0
+cachedir: /var/cache/dnf
+User-Agent: constructed: 'libdnf (Red Hat Enterprise Linux 8.5; generic; Linux.x86_64)'
+repo: using cache for: ubi-8-baseos
+ubi-8-baseos: using metadata from Wed Feb 23 15:53:32 2022.
+repo: using cache for: ubi-8-appstream
+ubi-8-appstream: using metadata from Wed Feb 16 11:58:22 2022.
+repo: using cache for: ubi-8-codeready-builder
+ubi-8-codeready-builder: using metadata from Tue Feb  8 09:14:41 2022.
+Last metadata expiration check: 0:03:43 ago on Thu Feb 24 01:32:26 2022.
+Excludes in dnf.conf: filesystem-*
+--> Starting dependency resolution
+---> Package lsof.x86_64 4.93.2-1.el8 will be installed
+--> Finished dependency resolution
+Dependencies resolved.
+================================================================================
+ Package      Architecture   Version                 Repository            Size
+================================================================================
+Installing:
+ lsof         x86_64         4.93.2-1.el8            ubi-8-baseos         253 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 253 k
+Installed size: 623 k
+Downloading Packages:
+lsof-4.93.2-1.el8.x86_64.rpm                    322 kB/s | 253 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           321 kB/s | 253 kB     00:00     
+Using rpmkeys executable at /usr/bin/rpmkeys to verify signatures
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : lsof-4.93.2-1.el8.x86_64                               1/1 
+  Running scriptlet: lsof-4.93.2-1.el8.x86_64                               1/1 
+  Verifying        : lsof-4.93.2-1.el8.x86_64                               1/1 
+Completion plugin: Generating completion cache...
+Installed products updated.
+Installed: lsof-4.93.2-1.el8.x86_64
+
+Installed:
+  lsof-4.93.2-1.el8.x86_64                                                      
+
+Complete!

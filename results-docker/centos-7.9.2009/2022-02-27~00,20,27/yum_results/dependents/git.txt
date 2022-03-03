@@ -1,0 +1,100 @@
+yum deplist -v git
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:05:02 ago on Sun Feb 27 00:21:46 2022.
+package: git-2.31.1-3.amzn2022.i686
+  dependency: /usr/bin/perl
+   provider: perl-interpreter-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-interpreter-4:5.32.1-477.amzn2022.i686
+  dependency: /usr/bin/python3
+   provider: python3-3.9.8-1.amzn2022.x86_64
+   provider: python3-3.9.8-1.amzn2022.i686
+  dependency: /usr/bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: git-core = 2.31.1-3.amzn2022
+   provider: git-core-2.31.1-3.amzn2022.x86_64
+   provider: git-core-2.31.1-3.amzn2022.i686
+  dependency: git-core-doc = 2.31.1-3.amzn2022
+   provider: git-core-doc-2.31.1-3.amzn2022.noarch
+  dependency: perl(:VERSION) >= 5.8.0
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: perl(File::Basename)
+   provider: perl-File-Basename-2.85-477.amzn2022.noarch
+  dependency: perl(File::Find)
+   provider: perl-File-Find-1.37-477.amzn2022.noarch
+  dependency: perl(File::Spec)
+   provider: perl-PathTools-3.78-459.amzn2022.x86_64
+   provider: perl-PathTools-3.78-459.amzn2022.i686
+  dependency: perl(Getopt::Long)
+   provider: perl-Getopt-Long-1:2.52-2.amzn2022.noarch
+  dependency: perl(Git)
+   provider: perl-Git-2.31.1-3.amzn2022.noarch
+  dependency: perl(Git::I18N)
+   provider: perl-Git-2.31.1-3.amzn2022.noarch
+  dependency: perl(IPC::Open2)
+   provider: perl-IPC-Open3-1.21-477.amzn2022.noarch
+  dependency: perl(Term::ReadKey)
+   provider: perl-TermReadKey-2.38-9.amzn2022.x86_64
+   provider: perl-TermReadKey-2.38-9.amzn2022.i686
+  dependency: perl(lib)
+   provider: perl-lib-0.65-477.amzn2022.x86_64
+   provider: perl-lib-0.65-477.amzn2022.i686
+  dependency: perl(strict)
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: perl(warnings)
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: perl-Git = 2.31.1-3.amzn2022
+   provider: perl-Git-2.31.1-3.amzn2022.noarch
+
+package: git-2.31.1-3.amzn2022.x86_64
+  dependency: /usr/bin/perl
+   provider: perl-interpreter-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-interpreter-4:5.32.1-477.amzn2022.i686
+  dependency: /usr/bin/python3
+   provider: python3-3.9.8-1.amzn2022.x86_64
+   provider: python3-3.9.8-1.amzn2022.i686
+  dependency: /usr/bin/sh
+   provider: bash-5.1.8-2.amzn2022.x86_64
+   provider: bash-5.1.8-2.amzn2022.i686
+  dependency: git-core = 2.31.1-3.amzn2022
+   provider: git-core-2.31.1-3.amzn2022.x86_64
+   provider: git-core-2.31.1-3.amzn2022.i686
+  dependency: git-core-doc = 2.31.1-3.amzn2022
+   provider: git-core-doc-2.31.1-3.amzn2022.noarch
+  dependency: perl(:VERSION) >= 5.8.0
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: perl(File::Basename)
+   provider: perl-File-Basename-2.85-477.amzn2022.noarch
+  dependency: perl(File::Find)
+   provider: perl-File-Find-1.37-477.amzn2022.noarch
+  dependency: perl(File::Spec)
+   provider: perl-PathTools-3.78-459.amzn2022.x86_64
+   provider: perl-PathTools-3.78-459.amzn2022.i686
+  dependency: perl(Getopt::Long)
+   provider: perl-Getopt-Long-1:2.52-2.amzn2022.noarch
+  dependency: perl(Git)
+   provider: perl-Git-2.31.1-3.amzn2022.noarch
+  dependency: perl(Git::I18N)
+   provider: perl-Git-2.31.1-3.amzn2022.noarch
+  dependency: perl(IPC::Open2)
+   provider: perl-IPC-Open3-1.21-477.amzn2022.noarch
+  dependency: perl(Term::ReadKey)
+   provider: perl-TermReadKey-2.38-9.amzn2022.x86_64
+   provider: perl-TermReadKey-2.38-9.amzn2022.i686
+  dependency: perl(lib)
+   provider: perl-lib-0.65-477.amzn2022.x86_64
+   provider: perl-lib-0.65-477.amzn2022.i686
+  dependency: perl(strict)
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: perl(warnings)
+   provider: perl-libs-4:5.32.1-477.amzn2022.x86_64
+   provider: perl-libs-4:5.32.1-477.amzn2022.i686
+  dependency: perl-Git = 2.31.1-3.amzn2022
+   provider: perl-Git-2.31.1-3.amzn2022.noarch

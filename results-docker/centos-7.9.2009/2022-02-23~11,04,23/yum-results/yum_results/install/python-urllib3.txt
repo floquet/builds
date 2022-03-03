@@ -1,0 +1,59 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: centos.mirror.constant.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: centos.mirror.ndchost.com
+ * updates: mirror.metrocast.net
+pkgsack time: 0.254
+Obs Init time: 0.229
+Resolving Dependencies
+--> Running transaction check
+---> Package python-urllib3.noarch 0:1.10.2-7.el7 will be installed
+Checking deps for python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('python-six', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('python-ipaddress', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('python-backports-ssl_match_hostname', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+looking for ('ca-certificates', None, (None, None, None)) as a requirement of python-urllib3.noarch 0:1.10.2-7.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.279
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch           Version               Repository    Size
+================================================================================
+Installing:
+ python-urllib3         noarch         1.10.2-7.el7          base         103 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 103 k
+Installed size: 380 k
+Downloading packages:
+Member: python-urllib3.noarch 0:1.10.2-7.el7 - u
+Adding Package python-urllib3-1.10.2-7.el7.noarch in mode u
+Running transaction check
+Transaction check time: 0.005
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.012
+Running transaction
+  Installing : python-urllib3-1.10.2-7.el7.noarch                           1/1 
+  Verifying  : python-urllib3-1.10.2-7.el7.noarch                           1/1 
+VerifyTransaction time: 0.096
+Transaction time: 0.192
+
+Installed:
+  python-urllib3.noarch 0:1.10.2-7.el7                                          
+
+Complete!

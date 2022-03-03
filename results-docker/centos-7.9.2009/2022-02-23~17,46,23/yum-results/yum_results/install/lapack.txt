@@ -1,0 +1,96 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.010
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.netdepot.com
+ * epel: mirror.arizona.edu
+ * extras: la.mirrors.clouvider.net
+ * updates: mirror.dal.nexril.net
+pkgsack time: 0.234
+Obs Init time: 0.234
+Resolving Dependencies
+--> Running transaction check
+---> Package lapack.x86_64 0:3.4.2-8.el7 will be installed
+Checking deps for lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+looking for ('libblas.so.3()(64bit)', None, (None, None, None)) as a requirement of lapack.x86_64 0:3.4.2-8.el7 - u
+lapack-3.4.2-8.el7.x86_64 requires: libblas.so.3()(64bit)
+--> Processing Dependency: libblas.so.3()(64bit) for package: lapack-3.4.2-8.el7.x86_64
+Searching pkgSack for dep: libblas.so.3()(64bit)
+Building updates object
+up:simple updates time: 0.008
+up:obs time: 0.005
+up:condense time: 0.000
+updates time: 0.268
+TSINFO: Marking blas-3.4.2-8.el7.x86_64 as install for lapack-3.4.2-8.el7.x86_64
+--> Running transaction check
+---> Package blas.x86_64 0:3.4.2-8.el7 will be installed
+Checking deps for blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of blas.x86_64 0:3.4.2-8.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.529
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch             Version                 Repository      Size
+================================================================================
+Installing:
+ lapack           x86_64           3.4.2-8.el7             base           5.4 M
+Installing for dependencies:
+ blas             x86_64           3.4.2-8.el7             base           399 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 5.8 M
+Installed size: 11 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              7.0 MB/s | 5.8 MB  00:00     
+Member: lapack.x86_64 0:3.4.2-8.el7 - u
+Adding Package lapack-3.4.2-8.el7.x86_64 in mode u
+Member: blas.x86_64 0:3.4.2-8.el7 - u
+Adding Package blas-3.4.2-8.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.008
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.126
+Running transaction
+  Installing : blas-3.4.2-8.el7.x86_64                                      1/2 
+  Installing : lapack-3.4.2-8.el7.x86_64                                    2/2 
+  Verifying  : lapack-3.4.2-8.el7.x86_64                                    1/2 
+  Verifying  : blas-3.4.2-8.el7.x86_64                                      2/2 
+VerifyTransaction time: 0.111
+Transaction time: 1.867
+
+Installed:
+  lapack.x86_64 0:3.4.2-8.el7                                                   
+
+Dependency Installed:
+  blas.x86_64 0:3.4.2-8.el7                                                     
+
+Complete!

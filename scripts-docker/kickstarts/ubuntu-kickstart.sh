@@ -1,14 +1,15 @@
-#! /bin/bash
-printf "%s\n" "$(date) ${BASH_SOURCE[0]}"
+#! /usr/bin/env bash
+printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Fri Feb 11 10:12:24 MST 2022
+
+# $ source /repos/github/builds/scripts-docker/kickstarts/ubuntu-kickstart.sh
 
 # https://askubuntu.com/questions/990823/apt-gives-unstable-cli-interface-warning
 #  apt is for the terminal and gives beautiful output while apt-get and apt-cache
 #  are for scripts and give stable, parsable output.
 
-# $ docker pull ubuntu:22.04
-# $ ehecoatlDocker ubuntu:22.04
+# $ docker pull ubuntu:22.04 ; ehecoatlDocker ubuntu:22.04
 
 # docker run -it  -v /Users/dtopa/Dropbox:/Dropbox -v /Volumes/Tlaloc/repos:/repos -v /Volumes/Tlaloc/spacktivity:/spacktivity ubuntu:22.04
 # docker run -it
@@ -17,41 +18,57 @@ printf "%s\n" "$(date) ${BASH_SOURCE[0]}"
 # -v /Volumes/Tlaloc/spacktivity:/spacktivity
 # ubuntu:22.04
 
-# $ source /repos/github/builds/scripts-docker/kickstarts/ubuntu-kickstart.sh
-
 # vim /home/${USER}/.vimrc
+
+source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+source ${repo_scripts_spack}/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
 # start timer
 export ubuntuSECONDS=${SECONDS}
 
-# describe this build
 export dist="ubuntu"
 export release="22.04"
+export tag="${dist}-${release}"
+export USER="dantopa"
 
-# # layout of repositories
-export github="/repos/github"
-export dirBuilds="${github}/builds"
-export dirScriptsDocker="${dirBuilds}/scripts-docker"
-export dirResultsDocker="${dirBuilds}/results-docker"
-
-source ${dirBuilds}/scripts-spack/shared/common-header.sh
-
-export dirResultsDockerLocal="${dirResultsDocker}/${dist}-${release}/${ymdtf}"
-export timerFile=${dirBuildResults}/elapsed-time.txt
+export dirResultsDockerLocal="${repo_results_docker}/${dist}-${release}/${ymdtf}"
+export timerFile=${dirResultsDockerLocal}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
+echo "\${timerFile}=${timerFile}"
+echo "about to call ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh"
+
+pause 
+
 # source ${dirBuildScripts}/kickstarts/installers/yum-installs.sh
 #  global: ${dirBuildResults}
-new_step "source ${dirScriptsDocker}/kickstarts/installers/apt-get-installs.sh"
-          source ${dirScriptsDocker}/kickstarts/installers/apt-get-installs.sh
+echo ""; echo "source ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh"
+               source ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh
 # tzdata settings: 2, 47
 
-# create account for dantopa
-# new_step "source ${dirUnified}/generics/generic-kickstart.sh ${mySpack} ${dirUnified}/transport"
-#           source ${dirUnified}/generics/generic-kickstart.sh ${mySpack} ${dirUnified}/transport
+#  #  #  ========================================== set up user dantopa
+
+echo ""; echo "Set up user account"
+         echo "adduser dantopa"
+         	   adduser dantopa
+
+         echo "usermod -aG wheel dantopa"
+               usermod -aG wheel dantopa
+
+    	 echo "pending: passwd dantopa"
+
+echo ""; echo "su - dantopa"
+    echo "export mySpack=${mySpack}"
+    echo 'export dist="${dist}" ; export release="${dist}" ; export tag="${dist}-${release}"'
+
+echo ""; echo "Report elapsed time"
+    export ubuntuSECONDS=$((${SECONDS}-${ubuntuSECONDS}))
+    date    >  ${timerFile}
+    echo "" >> ${timerFile}
+    printf 'time to build system: %dh:%dm:%ds\n' $((${ubuntuSECONDS}/3600)) $((${ubuntuSECONDS}%3600/60)) $((${ubuntuSECONDS}%60)) | tee -a ${timerFile}
 
 new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
 

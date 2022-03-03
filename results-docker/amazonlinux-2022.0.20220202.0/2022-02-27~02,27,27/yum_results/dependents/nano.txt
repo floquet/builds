@@ -1,0 +1,42 @@
+yum deplist -v nano
+Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, groups-manager, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync
+YUM version: 4.9.0
+cachedir: /var/cache/dnf
+Last metadata expiration check: 0:04:52 ago on Sun Feb 27 02:28:03 2022.
+package: nano-5.8-3.amzn2022.i686
+  dependency: config(nano) = 5.8-3.amzn2022
+   provider: nano-5.8-3.amzn2022.x86_64
+   provider: nano-5.8-3.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+  dependency: libmagic.so.1
+   provider: file-libs-5.39-7.amzn2022.i686
+  dependency: libncursesw.so.6
+   provider: ncurses-libs-6.2-4.20200222.amzn2022.i686
+  dependency: libtinfo.so.6
+   provider: ncurses-libs-6.2-4.20200222.amzn2022.i686
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
+
+package: nano-5.8-3.amzn2022.x86_64
+  dependency: config(nano) = 5.8-3.amzn2022
+   provider: nano-5.8-3.amzn2022.x86_64
+   provider: nano-5.8-3.amzn2022.i686
+  dependency: libc.so.6(GLIBC_2.34)(64bit)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+  dependency: libmagic.so.1()(64bit)
+   provider: file-libs-5.39-7.amzn2022.x86_64
+  dependency: libncursesw.so.6()(64bit)
+   provider: ncurses-libs-6.2-4.20200222.amzn2022.x86_64
+  dependency: libtinfo.so.6()(64bit)
+   provider: ncurses-libs-6.2-4.20200222.amzn2022.x86_64
+  dependency: rtld(GNU_HASH)
+   provider: glibc-2.34-7.amzn2022.x86_64
+   provider: glibc-2.34-8.amzn2022.x86_64
+   provider: glibc-2.34-7.amzn2022.i686
+   provider: glibc-2.34-8.amzn2022.i686
