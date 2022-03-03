@@ -3,6 +3,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Dec 29 18:20:31 MST 2021
 
+# source ${repo_scripts_spack}/shared/common-header.sh
+
 # timestamp results
 export  ymdt=$(date +%Y-%m-%d\ %H:%M) # timestamp results
 export ymdtf=$(date +%Y-%m-%d~%H,%M,%d) # timestamp for filename

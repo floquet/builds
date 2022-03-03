@@ -135,8 +135,8 @@ sub_step_counter=0
     sub_step "spack install gcc@11.2.0"
               spack install gcc@11.2.0          | tee ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
 
-              spack info gcc                    | tee ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
-              spack spec gcc@11.2.0 % gcc@4.8.5 | tee ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
+              spack info gcc                    > ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
+              spack spec gcc@11.2.0 % gcc@4.8.5 > ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
 
     sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
               spack compiler find $(spack location -i gcc@11.2.0)
@@ -185,7 +185,6 @@ sub_step_counter=0
               echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""
 
     sub_step 'echo "to view public key: cat /home/${ego}/.ssh/id_ed25519.pub"'
-              echo "to view public key: cat /home/${ego}/.ssh/id_ed25519.pub"
 
 #  #  #  ========================================== exit
 
