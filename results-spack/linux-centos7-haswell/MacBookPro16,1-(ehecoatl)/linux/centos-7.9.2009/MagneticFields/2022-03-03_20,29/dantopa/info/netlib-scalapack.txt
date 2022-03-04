@@ -1,0 +1,57 @@
+CMakePackage:   netlib-scalapack
+
+Description:
+    ScaLAPACK is a library of high-performance linear algebra routines for
+    parallel distributed memory machines
+
+Homepage: https://www.netlib.org/scalapack/
+
+Externally Detectable: 
+    False
+
+Tags: 
+    e4s
+
+Preferred version:  
+    2.1.0    https://www.netlib.org/scalapack/scalapack-2.1.0.tgz
+
+Safe versions:  
+    2.1.0    https://www.netlib.org/scalapack/scalapack-2.1.0.tgz
+    2.0.2    https://www.netlib.org/scalapack/scalapack-2.0.2.tgz
+    2.0.1    https://www.netlib.org/scalapack/scalapack-2.0.1.tgz
+    2.0.0    https://www.netlib.org/scalapack/scalapack-2.0.0.tgz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]          When    Allowed values          Description
+    ====================    ====    ====================    ==================================
+
+    build_type [Release]    [, ]    Debug, Release,         CMake build type
+                                    RelWithDebInfo,         
+                                    MinSizeRel              
+    ipo [off]               --      on, off                 CMake interprocedural optimization
+    pic [off]               --      on, off                 Build position independent code
+    shared [on]             --      on, off                 Build the shared library version
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    blas
+    cmake
+    lapack
+    mpi
+
+Link Dependencies:
+    blas
+    lapack
+    mpi
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    netlib-scalapack provides scalapack
+

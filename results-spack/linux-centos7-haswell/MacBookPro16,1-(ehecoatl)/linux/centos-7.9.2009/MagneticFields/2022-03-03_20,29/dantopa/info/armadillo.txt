@@ -1,0 +1,61 @@
+CMakePackage:   armadillo
+
+Description:
+    Armadillo is a high quality linear algebra library (matrix maths) for
+    the C++ language, aiming towards a good balance between speed and ease
+    of use.
+
+Homepage: http://arma.sourceforge.net/
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    10.5.0     http://sourceforge.net/projects/arma/files/armadillo-10.5.0.tar.xz
+
+Safe versions:  
+    10.5.0     http://sourceforge.net/projects/arma/files/armadillo-10.5.0.tar.xz
+    9.800.3    http://sourceforge.net/projects/arma/files/armadillo-9.800.3.tar.xz
+    8.100.1    http://sourceforge.net/projects/arma/files/armadillo-8.100.1.tar.xz
+    7.950.1    http://sourceforge.net/projects/arma/files/armadillo-7.950.1.tar.xz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ==================================
+
+    build_type [RelWithDebInfo]    --      Debug, Release,         CMake build type
+                                           RelWithDebInfo,         
+                                           MinSizeRel              
+    hdf5 [off]                     --      on, off                 Include HDF5 support
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    arpack-ng
+    blas
+    cmake
+    hdf5
+    lapack
+    superlu
+
+Link Dependencies:
+    arpack-ng
+    blas
+    hdf5
+    lapack
+    superlu
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

@@ -1,0 +1,68 @@
+AutotoolsPackage:   parallel-netcdf
+
+Description:
+    PnetCDF (Parallel netCDF) is a high-performance parallel I/O library for
+    accessing files in format compatibility with Unidata's NetCDF,
+    specifically the formats of CDF-1, 2, and 5.
+
+Homepage: https://parallel-netcdf.github.io/
+
+Maintainers: @skosukhin
+
+Externally Detectable: 
+    False
+
+Tags: 
+    e4s
+
+Preferred version:  
+    1.12.2    https://parallel-netcdf.github.io/Release/pnetcdf-1.12.2.tar.gz
+
+Safe versions:  
+    master    [git] https://github.com/Parallel-NetCDF/PnetCDF on branch master
+    1.12.2    https://parallel-netcdf.github.io/Release/pnetcdf-1.12.2.tar.gz
+    1.12.1    https://parallel-netcdf.github.io/Release/pnetcdf-1.12.1.tar.gz
+    1.11.2    https://parallel-netcdf.github.io/Release/pnetcdf-1.11.2.tar.gz
+    1.11.1    https://parallel-netcdf.github.io/Release/pnetcdf-1.11.1.tar.gz
+    1.11.0    https://parallel-netcdf.github.io/Release/pnetcdf-1.11.0.tar.gz
+    1.10.0    https://parallel-netcdf.github.io/Release/parallel-netcdf-1.10.0.tar.gz
+    1.9.0     https://parallel-netcdf.github.io/Release/parallel-netcdf-1.9.0.tar.gz
+    1.8.1     https://parallel-netcdf.github.io/Release/parallel-netcdf-1.8.1.tar.gz
+    1.8.0     https://parallel-netcdf.github.io/Release/parallel-netcdf-1.8.0.tar.gz
+    1.7.0     https://parallel-netcdf.github.io/Release/parallel-netcdf-1.7.0.tar.gz
+    1.6.1     https://parallel-netcdf.github.io/Release/parallel-netcdf-1.6.1.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]       When    Allowed values    Description
+    =================    ====    ==============    ===================================================
+
+    burstbuffer [off]    --      on, off           Enable burst buffer feature
+    cxx [on]             --      on, off           Build the C++ Interface
+    fortran [on]         --      on, off           Build the Fortran Interface
+    pic [on]             --      on, off           Produce position-independent code (for shared libs)
+    shared [on]          --      on, off           Enable shared library
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    autoconf
+    automake
+    gnuconfig
+    libtool
+    m4
+    mpi
+    perl
+
+Link Dependencies:
+    mpi
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

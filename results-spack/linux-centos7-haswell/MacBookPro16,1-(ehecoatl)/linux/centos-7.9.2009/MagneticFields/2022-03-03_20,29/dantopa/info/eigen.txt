@@ -1,0 +1,64 @@
+CMakePackage:   eigen
+
+Description:
+    Eigen is a C++ template library for linear algebra matrices, vectors,
+    numerical solvers, and related algorithms.
+
+Homepage: https://eigen.tuxfamily.org/
+
+Maintainers: @HaoZeke
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    3.4.0     https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz
+
+Safe versions:  
+    3.4.0     https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz
+    3.3.9     https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.tar.gz
+    3.3.8     https://gitlab.com/libeigen/eigen/-/archive/3.3.8/eigen-3.3.8.tar.gz
+    3.3.7     https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.tar.gz
+    3.3.6     https://gitlab.com/libeigen/eigen/-/archive/3.3.6/eigen-3.3.6.tar.gz
+    3.3.5     https://gitlab.com/libeigen/eigen/-/archive/3.3.5/eigen-3.3.5.tar.gz
+    3.3.4     https://gitlab.com/libeigen/eigen/-/archive/3.3.4/eigen-3.3.4.tar.gz
+    3.3.3     https://gitlab.com/libeigen/eigen/-/archive/3.3.3/eigen-3.3.3.tar.gz
+    3.3.2     https://gitlab.com/libeigen/eigen/-/archive/3.3.2/eigen-3.3.2.tar.gz
+    3.3.1     https://gitlab.com/libeigen/eigen/-/archive/3.3.1/eigen-3.3.1.tar.gz
+    3.3.0     https://gitlab.com/libeigen/eigen/-/archive/3.3.0/eigen-3.3.0.tar.gz
+    3.2.10    https://gitlab.com/libeigen/eigen/-/archive/3.2.10/eigen-3.2.10.tar.gz
+    3.2.9     https://gitlab.com/libeigen/eigen/-/archive/3.2.9/eigen-3.2.9.tar.gz
+    3.2.8     https://gitlab.com/libeigen/eigen/-/archive/3.2.8/eigen-3.2.8.tar.gz
+    3.2.7     https://gitlab.com/libeigen/eigen/-/archive/3.2.7/eigen-3.2.7.tar.gz
+    3.2.6     https://gitlab.com/libeigen/eigen/-/archive/3.2.6/eigen-3.2.6.tar.gz
+    3.2.5     https://gitlab.com/libeigen/eigen/-/archive/3.2.5/eigen-3.2.5.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ==================================
+
+    build_type [RelWithDebInfo]    [, ]    Debug, Release,         The build type to build
+                                           RelWithDebInfo          
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    cmake
+
+Link Dependencies:
+    None
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

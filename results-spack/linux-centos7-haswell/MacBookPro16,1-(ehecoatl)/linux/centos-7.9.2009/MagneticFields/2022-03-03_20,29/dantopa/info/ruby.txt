@@ -1,0 +1,69 @@
+AutotoolsPackage:   ruby
+
+Description:
+    A dynamic, open source programming language with a focus on simplicity
+    and productivity.
+
+Homepage: https://www.ruby-lang.org/
+
+Maintainers: @Kerilk
+
+Externally Detectable: 
+    True (version, variants)
+
+Tags: 
+    None
+
+Preferred version:  
+    3.1.0    https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.0.tar.gz
+
+Safe versions:  
+    3.1.0    https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.0.tar.gz
+    3.0.2    https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.2.tar.gz
+    3.0.1    https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.1.tar.gz
+    3.0.0    https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.0.tar.gz
+    2.7.2    https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.2.tar.gz
+    2.7.1    https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.gz
+    2.6.2    https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.2.tar.gz
+    2.5.3    https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.3.tar.gz
+    2.2.0    https://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.0.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    =======================
+
+    openssl [on]      --      on, off           Enable OpenSSL support
+    readline [off]    --      on, off           Enable Readline support
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    gnuconfig
+    libffi
+    libx11
+    openssl
+    pkgconfig
+    readline
+    tcl
+    tk
+    zlib
+
+Link Dependencies:
+    libffi
+    libx11
+    openssl
+    readline
+    tcl
+    tk
+    zlib
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

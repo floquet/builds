@@ -1,0 +1,48 @@
+Input spec
+--------------------------------
+py-astropy%gcc@11.2.0
+    ^python@3.10.2
+
+Concretized
+--------------------------------
+py-astropy@4.0.1.post1%gcc@11.2.0~extras arch=linux-centos7-haswell
+    ^cfitsio@3.49%gcc@11.2.0+bzip2+shared arch=linux-centos7-haswell
+        ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+            ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+        ^curl@7.81.0%gcc@11.2.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=openssl arch=linux-centos7-haswell
+            ^openssl@1.1.1m%gcc@11.2.0~docs certs=system arch=linux-centos7-haswell
+                ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+                    ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-haswell
+                    ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+                                ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+    ^erfa@1.7.0%gcc@11.2.0 arch=linux-centos7-haswell
+    ^expat@2.4.6%gcc@11.2.0+libbsd arch=linux-centos7-haswell
+        ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-haswell
+    ^py-cython@0.29.24%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-pip@21.3.1%gcc@11.2.0 arch=linux-centos7-haswell
+            ^python@3.10.2%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060 arch=linux-centos7-haswell
+                ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell
+                    ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+                        ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+                    ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libffi@3.4.2%gcc@11.2.0 arch=linux-centos7-haswell
+                ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-centos7-haswell
+                ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-setuptools@59.4.0%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-wheel@0.37.0%gcc@11.2.0 arch=linux-centos7-haswell
+    ^py-numpy@1.22.2%gcc@11.2.0+blas+lapack patches=873745d arch=linux-centos7-haswell
+        ^openblas@0.3.19%gcc@11.2.0~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-centos7-haswell
+    ^wcslib@7.3%gcc@11.2.0~cfitsio~x arch=linux-centos7-haswell
+        ^flex@2.6.3%gcc@11.2.0+lex~nls arch=linux-centos7-haswell
+            ^bison@3.8.2%gcc@11.2.0 arch=linux-centos7-haswell
+                ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-centos7-haswell
+                    ^libsigsegv@2.13%gcc@11.2.0 arch=linux-centos7-haswell
+            ^findutils@4.8.0%gcc@11.2.0 patches=440b954 arch=linux-centos7-haswell
+        ^gmake@4.3%gcc@11.2.0~guile+nls arch=linux-centos7-haswell
+            ^texinfo@6.5%gcc@11.2.0 patches=12f6edb,1732115 arch=linux-centos7-haswell
+

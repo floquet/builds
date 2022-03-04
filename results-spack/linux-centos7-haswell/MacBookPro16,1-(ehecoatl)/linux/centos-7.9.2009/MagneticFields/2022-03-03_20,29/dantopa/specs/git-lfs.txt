@@ -1,0 +1,76 @@
+Input spec
+--------------------------------
+git-lfs%gcc@11.2.0
+    ^python@3.10.2
+
+Concretized
+--------------------------------
+git-lfs@2.11.0%gcc@11.2.0 arch=linux-centos7-haswell
+    ^git@2.35.1%gcc@11.2.0+man+nls+perl~svn+tcltk arch=linux-centos7-haswell
+        ^autoconf@2.69%gcc@11.2.0 patches=35c4492,7793209,a49dd5b arch=linux-centos7-haswell
+            ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-centos7-haswell
+                ^libsigsegv@2.13%gcc@11.2.0 arch=linux-centos7-haswell
+            ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+                ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-haswell
+                ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+                    ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+                ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+                            ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+                ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+        ^automake@1.16.5%gcc@11.2.0 arch=linux-centos7-haswell
+        ^curl@7.81.0%gcc@11.2.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=openssl arch=linux-centos7-haswell
+            ^openssl@1.1.1m%gcc@11.2.0~docs certs=system arch=linux-centos7-haswell
+        ^expat@2.4.6%gcc@11.2.0+libbsd arch=linux-centos7-haswell
+            ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-haswell
+        ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell
+            ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+                ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+            ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libidn2@2.3.0%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libunistring@0.9.10%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libtool@2.4.6%gcc@11.2.0 arch=linux-centos7-haswell
+        ^openssh@8.8p1%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libedit@3.1-20210216%gcc@11.2.0 arch=linux-centos7-haswell
+        ^pcre2@10.39%gcc@11.2.0~jit+multibyte arch=linux-centos7-haswell
+        ^tk@8.6.11%gcc@11.2.0+xft+xss arch=linux-centos7-haswell
+            ^libx11@1.7.0%gcc@11.2.0 arch=linux-centos7-haswell
+                ^inputproto@2.3.2%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^util-macros@1.19.3%gcc@11.2.0 arch=linux-centos7-haswell
+                ^kbproto@1.0.7%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libxcb@1.14%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libpthread-stubs@0.4%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libxau@1.0.8%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^xproto@7.0.31%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libxdmcp@1.1.2%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^xcb-proto@1.14.1%gcc@11.2.0 arch=linux-centos7-haswell
+                ^xextproto@7.3.0%gcc@11.2.0 arch=linux-centos7-haswell
+                ^xtrans@1.3.5%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libxft@2.3.2%gcc@11.2.0 arch=linux-centos7-haswell
+                ^fontconfig@2.13.94%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^font-util@1.3.2%gcc@11.2.0 fonts=encodings,font-adobe-100dpi,font-adobe-75dpi,font-adobe-utopia-100dpi,font-adobe-utopia-75dpi,font-adobe-utopia-type1,font-alias,font-arabic-misc,font-bh-100dpi,font-bh-75dpi,font-bh-lucidatypewriter-100dpi,font-bh-lucidatypewriter-75dpi,font-bh-type1,font-bitstream-100dpi,font-bitstream-75dpi,font-bitstream-speedo,font-bitstream-type1,font-cronyx-cyrillic,font-cursor-misc,font-daewoo-misc,font-dec-misc,font-ibm-type1,font-isas-misc,font-jis-misc,font-micro-misc,font-misc-cyrillic,font-misc-ethiopic,font-misc-meltho,font-misc-misc,font-mutt-misc,font-schumacher-misc,font-screen-cyrillic,font-sun-misc,font-winitzki-cyrillic,font-xfree86-type1 arch=linux-centos7-haswell
+                        ^bdftopcf@1.0.5%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^fontsproto@2.1.3%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^libxfont@1.5.2%gcc@11.2.0 arch=linux-centos7-haswell
+                                ^freetype@2.11.1%gcc@11.2.0 arch=linux-centos7-haswell
+                                    ^libpng@1.6.37%gcc@11.2.0 arch=linux-centos7-haswell
+                                ^libfontenc@1.1.3%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^mkfontdir@1.0.7%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^mkfontscale@1.1.2%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^gperf@3.1%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^python@3.10.2%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060 arch=linux-centos7-haswell
+                        ^libffi@3.4.2%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-centos7-haswell
+                        ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libxrender@0.9.10%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^renderproto@0.11.1%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libxscrnsaver@1.2.2%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libxext@1.3.3%gcc@11.2.0 arch=linux-centos7-haswell
+                ^scrnsaverproto@1.2.2%gcc@11.2.0 arch=linux-centos7-haswell
+            ^tcl@8.6.11%gcc@11.2.0 arch=linux-centos7-haswell
+    ^go@1.17.3%gcc@11.2.0 arch=linux-centos7-haswell
+        ^go-bootstrap@1.4-bootstrap-20171003%gcc@11.2.0 arch=linux-centos7-haswell
+
