@@ -1,0 +1,54 @@
+CMakePackage:   h5cpp
+
+Description:
+    Easy to use HDF5 C++ templates for Serial and Parallel HDF5
+
+Homepage: http://h5cpp.org
+
+Maintainers: @eschnett
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    1.10.4-6    https://github.com/steven-varga/h5cpp/archive/v1.10.4-6.tar.gz
+
+Safe versions:  
+    master      [git] https://github.com/steven-varga/h5cpp.git on branch master
+    1.10.4-6    https://github.com/steven-varga/h5cpp/archive/v1.10.4-6.tar.gz
+    1.10.4-5    https://github.com/steven-varga/h5cpp/archive/v1.10.4-5.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ==================================
+
+    build_type [RelWithDebInfo]    --      Debug, Release,         CMake build type
+                                           RelWithDebInfo,         
+                                           MinSizeRel              
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+    mpi [on]                       --      on, off                 Include MPI support
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    cmake
+    hdf5
+    mpi
+
+Link Dependencies:
+    hdf5
+    mpi
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

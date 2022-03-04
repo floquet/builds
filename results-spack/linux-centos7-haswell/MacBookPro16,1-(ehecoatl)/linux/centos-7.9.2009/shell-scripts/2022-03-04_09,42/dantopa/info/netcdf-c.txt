@@ -1,0 +1,86 @@
+AutotoolsPackage:   netcdf-c
+
+Description:
+    NetCDF (network Common Data Form) is a set of software libraries and
+    machine-independent data formats that support the creation, access, and
+    sharing of array-oriented scientific data. This is the C distribution.
+
+Homepage: https://www.unidata.ucar.edu/software/netcdf
+
+Maintainers: @skosukhin @WardF
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    4.8.1      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.8.1.tar.gz
+
+Safe versions:  
+    master     [git] https://github.com/Unidata/netcdf-c.git on branch master
+    4.8.1      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.8.1.tar.gz
+    4.8.0      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.8.0.tar.gz
+    4.7.4      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.4.tar.gz
+    4.7.3      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.3.tar.gz
+    4.7.2      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.2.tar.gz
+    4.7.1      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.1.tar.gz
+    4.7.0      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.0.tar.gz
+    4.6.3      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.6.3.tar.gz
+    4.6.2      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.6.2.tar.gz
+    4.6.1      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.6.1.tar.gz
+    4.6.0      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.6.0.tar.gz
+    4.5.0      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.5.0.tar.gz
+    4.4.1.1    https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.4.1.1.tar.gz
+    4.4.1      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.4.1.tar.gz
+    4.4.0      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.4.0.tar.gz
+    4.3.3.1    https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.3.3.1.tar.gz
+    4.3.3      https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.3.3.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]           When    Allowed values    Description
+    =====================    ====    ==============    ===================================================
+
+    dap [off]                --      on, off           Enable DAP support
+    fsync [off]              --      on, off           Enable fsync support
+    hdf4 [off]               --      on, off           Enable HDF4 support
+    jna [off]                --      on, off           Enable JNA support
+    mpi [on]                 --      on, off           Enable parallel I/O for netcdf-4
+    parallel-netcdf [off]    --      on, off           Enable parallel I/O for classic files
+    pic [on]                 --      on, off           Produce position-independent code (for shared libs)
+    shared [on]              --      on, off           Enable shared library
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    autoconf
+    automake
+    curl
+    gnuconfig
+    hdf
+    hdf5
+    libtool
+    m4
+    mpi
+    parallel-netcdf
+    zlib
+
+Link Dependencies:
+    curl
+    hdf
+    hdf5
+    mpi
+    parallel-netcdf
+    zlib
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

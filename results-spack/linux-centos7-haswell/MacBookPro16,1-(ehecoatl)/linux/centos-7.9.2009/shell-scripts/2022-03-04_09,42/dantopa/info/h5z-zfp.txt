@@ -1,0 +1,48 @@
+MakefilePackage:   h5z-zfp
+
+Description:
+    A highly flexible floating point and integer compression plugin for the
+    HDF5 library using ZFP compression.
+
+Homepage: https://h5z-zfp.readthedocs.io/en/latest
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    0.8.0      [git] https://github.com/LLNL/H5Z-ZFP.git at commit af165c4
+
+Safe versions:  
+    develop    [git] https://github.com/LLNL/H5Z-ZFP.git on branch master
+    0.8.0      [git] https://github.com/LLNL/H5Z-ZFP.git at commit af165c4
+    0.7.0      [git] https://github.com/LLNL/H5Z-ZFP.git at commit 58ac811
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    ======================
+
+    fortran [on]      --      on, off           Enable Fortran support
+
+Installation Phases:
+    edit    build    install
+
+Build Dependencies:
+    hdf5
+    zfp
+
+Link Dependencies:
+    hdf5
+    zfp
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

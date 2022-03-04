@@ -1,0 +1,43 @@
+AutotoolsPackage:   h5part
+
+Description:
+    Portable High Performance Parallel Data Interface to HDF5
+
+Homepage: https://dav.lbl.gov/archive/Research/AcceleratorSAPP/
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    1.6.6    https://codeforge.lbl.gov/frs/download.php/latestfile/18/H5Part-1.6.6.tar.gz
+
+Safe versions:  
+    1.6.6    https://codeforge.lbl.gov/frs/download.php/latestfile/18/H5Part-1.6.6.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    None
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    gnuconfig
+    hdf5
+    mpi
+
+Link Dependencies:
+    hdf5
+    mpi
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+
