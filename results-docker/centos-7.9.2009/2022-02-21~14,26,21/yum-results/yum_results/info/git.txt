@@ -1,0 +1,39 @@
+yum info    -v git
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: repos.hou.layerhost.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: la.mirrors.clouvider.net
+ * updates: mirrors.raystedman.org
+pkgsack time: 0.348
+Installed Packages
+Name        : git
+Arch        : x86_64
+Version     : 1.8.3.1
+Release     : 23.el7_8
+Size        : 22 M
+Repo        : installed
+From repo   : base
+Committer   : V?t Ondruch <vondruch@redhat.com>
+Committime  : Mon May 25 06:00:00 2020
+Buildtime   : Thu May 28 14:37:56 2020
+Install time: Mon Feb 21 14:27:59 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Fast Version Control System
+URL         : http://git-scm.com/
+License     : GPLv2
+Description : Git is a fast, scalable, distributed revision control system with
+            : an unusually rich command set that provides both high-level
+            : operations and full access to internals.
+            : 
+            : The git rpm installs the core tools with minimal dependencies.  To
+            : install all git packages, including tools for integrating with
+            : other SCMs, install the git-all meta-package.
+

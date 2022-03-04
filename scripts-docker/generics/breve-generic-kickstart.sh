@@ -174,7 +174,6 @@ sub_step_counter=0
               echo -e "\n\n\n" | ssh-keygen -o -a 100 -t ed25519 -N ""
 
     sub_step 'echo "to view public key: cat /home/${ego}/.ssh/id_ed25519.pub"'
-              echo "to view public key: cat /home/${ego}/.ssh/id_ed25519.pub"
 
 #  #  #  ========================================== exit
 
