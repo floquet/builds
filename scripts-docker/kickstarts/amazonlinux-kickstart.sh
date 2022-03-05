@@ -8,9 +8,9 @@ source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 # define functions new_step, sub_step, sub-sub_step, pause
 source ${repo_scripts_spack}/shared/common-header.sh
 
-# $ docker pull amazonlinux:${amazon_version} 
+# $ docker pull amazonlinux:${amazon_version}
 # 2022.0.20220202.0: Pulling from library/amazonlinux
-# 7bc2af7bb0f9: Pull complete 
+# 7bc2af7bb0f9: Pull complete
 # Digest: sha256:ba535592e8fca7d12c9f6ebe81e1fc69713740287d83c42d83af581a701f6e64
 # Status: Downloaded newer image for amazonlinux:2022.0.20220202.0
 # docker.io/library/amazonlinux:2022.0.20220202.0
@@ -18,6 +18,8 @@ source ${repo_scripts_spack}/shared/common-header.sh
 # $ ehecoatlDocker amazonlinux:${amazon_version}
 # docker run -it -v /Users/dtopa/Dropbox:/Dropbox -v /Users/dtopa/repos:/repos -v /Volumes/Tlaloc/repos:/vrepos -v Volumes/Tlaloc/spacktivity:/spacktivity amazonlinux:2022.0.20220202.0
 # bash-5.1# yum
+
+# docker pull amazonlinux:latest; ehecoatlDocker amazonlinux:latest
 
 #  #  #  ========================================== declarations begin
 

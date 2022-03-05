@@ -1,0 +1,33 @@
+yum info    -v fio
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.022
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.021
+Installed Packages
+Name        : fio
+Arch        : x86_64
+Version     : 2.14
+Release     : 1.amzn2.0.2
+Size        : 1.6 M
+Repo        : installed
+From repo   : amzn2-core
+Committer   : Eric Sandeen <sandeen@redhat.com>
+Committime  : Wed Oct  5 12:00:00 2016
+Buildtime   : Thu Aug  2 07:40:38 2018
+Install time: Fri Mar  4 19:47:50 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Multithreaded IO generation tool
+URL         : http://git.kernel.dk/?p=fio.git;a=summary
+License     : GPLv2
+Description : fio is an I/O tool that will spawn a number of threads or
+            : processes doing a particular type of io action as specified by the
+            : user.  fio takes a number of global parameters, each inherited by
+            : the thread unless otherwise parameters given to them overriding
+            : that setting is given. The typical use of fio is to write a job
+            : file matching the io load one wants to simulate.
+

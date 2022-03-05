@@ -1,0 +1,120 @@
+#! /usr/bin/env bash
+printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
+
+# source ${repo_scripts_spack}/environment/builders/master-builder.sh
+
+export master=${SECONDS}
+
+source ${repo_scripts_spack}/shared/common-header.sh
+
+function spack_00(){
+    sub_step_counter=$((sub_step_counter+1))
+    echo "  ${step_counter}.${sub_step_counter}: spack install ${1} ${myCompiler}"
+    spack spec ${1} ${myCompiler} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
+    spack info ${1}               > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
+    file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
+    echo "$(date): spack install ${1} ${myCompiler}"       > ${file}
+                   spack install ${1} ${myCompiler} | tee -a ${file} 2>&1
+  }
+
+function spack_01(){
+    sub_step_counter=$((sub_step_counter+1))
+    echo "  ${step_counter}.${sub_step_counter}: spack install ${1} ${myCompiler} ${myPython}"
+    spack spec ${1}${2} ${myCompiler} ${myPython} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
+    spack info ${1}                               > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
+    file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython}"       > ${file}
+                   spack install ${1}${2} ${myCompiler} ${myPython} | tee -a ${file} 2>&1
+  }
+
+function spack_02(){
+    sub_step_counter=$((sub_step_counter+1))
+    echo "  ${step_counter}.${sub_step_counter}: spack install ${1} ${myCompiler} ${myPython} ${myOpenMPI}"
+    spack spec ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
+    spack info ${1}                                            > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
+    file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI}"       > ${file}
+                   spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI} | tee -a ${file} 2>&1
+  }
+
+function spack_03(){
+    sub_step_counter=$((sub_step_counter+1))
+    echo "  ${step_counter}.${sub_step_counter}: spack install ${1} ${myCompiler} ${myOpenMPI}"
+    spack spec ${1}${2} ${myCompiler} ${myOpenMPI} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
+    spack info ${1}                                > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
+    file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myOpenMPI}"       > ${file}
+                   spack install ${1}${2} ${myCompiler} ${myOpenMPI} | tee -a ${file} 2>&1
+  }
+
+function spack_04(){
+    sub_step_counter=$((sub_step_counter+1))
+    echo "  ${step_counter}.${sub_step_counter}: spack install ${1} ${myCompiler} ${myLLVM}"
+    spack spec ${1}${2} ${myCompiler} ${myLLVM} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
+    spack info ${1}                             > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
+    file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myLLVM}"       > ${file}
+                   spack install ${1}${2} ${myCompiler} ${myLLVM} | tee -a ${file} 2>&1
+  }
+
+function spack_05(){
+    sub_step_counter=$((sub_step_counter+1))
+    echo "  ${step_counter}.${sub_step_counter}: spack install ${1} ${myCompiler} ${myPython} ${myLLVM}"
+    spack spec ${1}${2} ${myCompiler} ${myPython} ${myLLVM} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
+    spack info ${1}                                         > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
+    file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM}"       > ${file}
+                   spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM} | tee -a ${file} 2>&1
+  }
+
+new_step "Set environment variables"
+  source ${SPACK_ROOT}/${USER}/shell-scripts/set-environment.sh
+
+pause
+
+new_step "spack load gcc@11.2.0/i2xm6il"
+          spack load gcc@11.2.0/i2xm6il
+
+new_step "application ${myCompiler}"
+    sub_step_counter=0
+    spack_00 "chapel"
+    spack_00 "environment-modules"
+    spack_00 "gsl"
+    spack_00 "xcalc"
+    spack_00 "xerces-c"
+
+new_step "application ${myCompiler} ${myPython}"
+    sub_step_counter=0
+    spack_01 "doxygen"
+    spack_01 "gdb"
+    spack_01 "py-astropy" "+extras"
+    spack_01 "py-seaborn"
+    spack_01 "py-tqdm"
+    spack_01 "py-urllib3"
+
+new_step "application ${myCompiler} ${myPython} ${myOpenMPI}"
+    sub_step_counter=0
+    spack_02 "petsc" "+fftw +mpfr +mumps +scalapack +strumpack +suite-sparse +superlu-dist"
+    spack_02 "tau"
+
+new_step "application ${myCompiler} ${myOpenMPI}"
+    sub_step_counter=0
+    spack_03 "charmpp"
+    spack_03 "netcdf-fortran"
+    spack_03 "netcdf-cxx4"
+    spack_03 "opencoarrays"
+    spack_03 "parallel-netcdf"
+    spack_03 "valgrind"
+
+new_step "application ${myCompiler} ${myLLVM}"
+    sub_step_counter=0
+    spack_04 "julia"
+
+new_step "application ${myCompiler} ${myPython} ${myLLVM}"
+    sub_step_counter=0
+    spack_05 "octave" "+arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib"
+
+
+new_step "print wall time used"
+  export master=$((${SECONDS}-${master}))
+  printf 'time for all builds: %dh:%dm:%ds\n' $((${master}/3600)) $((${master}%3600/60)) $((${master}%60))

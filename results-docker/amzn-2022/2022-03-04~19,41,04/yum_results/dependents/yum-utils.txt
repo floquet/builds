@@ -1,0 +1,61 @@
+yum deplist -v yum-utils
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.041
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.040
+Searching pkgSack for dep: /usr/bin/python
+Searching pkgSack for dep: libxml2-python
+Searching pkgSack for dep: python(abi)
+Searching pkgSack for dep: python-kitchen
+Searching pkgSack for dep: yum
+package: yum-utils.noarch 1.1.31-46.amzn2.0.1
+  dependency: /usr/bin/python
+   provider: python.x86_64 2.7.18-1.amzn2.0.4
+   provider: python.x86_64 2.7.18-1.amzn2.0.3
+   provider: python.x86_64 2.7.18-1.amzn2.0.2
+   provider: python.x86_64 2.7.18-1.amzn2.0.1
+   provider: python.x86_64 2.7.18-1.amzn2
+   provider: python.x86_64 2.7.16-5.amzn2
+   provider: python.x86_64 2.7.16-4.amzn2
+   provider: python.x86_64 2.7.16-3.amzn2.0.1
+   provider: python.x86_64 2.7.16-2.amzn2.0.1
+   provider: python.x86_64 2.7.16-1.amzn2.0.1
+   provider: python.x86_64 2.7.14-58.amzn2.0.4
+   provider: python.x86_64 2.7.14-58.amzn2.0.3
+   provider: python.x86_64 2.7.14-58.amzn2.0.2
+   provider: python.x86_64 2.7.5-58.amzn2
+  dependency: libxml2-python
+   provider: libxml2-python.x86_64 2.9.1-6.amzn2.5.4
+   provider: libxml2-python.x86_64 2.9.1-6.amzn2.5.3
+   provider: libxml2-python.x86_64 2.9.1-6.amzn2.5.1
+   provider: libxml2-python.x86_64 2.9.1-6.amzn2.4.1
+   provider: libxml2-python.x86_64 2.9.1-6.amzn2.3.3
+   provider: libxml2-python.x86_64 2.9.1-6.amzn2.3.2
+   provider: libxml2-python.x86_64 2.9.1-6.amzn2.3
+  dependency: python(abi) = 2.7
+   provider: python.x86_64 2.7.18-1.amzn2.0.4
+   provider: python.x86_64 2.7.18-1.amzn2.0.3
+   provider: python.x86_64 2.7.18-1.amzn2.0.2
+   provider: python.x86_64 2.7.18-1.amzn2.0.1
+   provider: python.x86_64 2.7.18-1.amzn2
+   provider: python.x86_64 2.7.16-5.amzn2
+   provider: python.x86_64 2.7.16-4.amzn2
+   provider: python.x86_64 2.7.16-3.amzn2.0.1
+   provider: python.x86_64 2.7.16-2.amzn2.0.1
+   provider: python.x86_64 2.7.16-1.amzn2.0.1
+   provider: python.x86_64 2.7.14-58.amzn2.0.4
+   provider: python.x86_64 2.7.14-58.amzn2.0.3
+   provider: python.x86_64 2.7.14-58.amzn2.0.2
+   provider: python.x86_64 2.7.5-58.amzn2
+  dependency: python-kitchen
+   provider: python-kitchen.noarch 1.1.1-5.amzn2
+  dependency: yum >= 3.4.3-143
+   provider: yum.noarch 3.4.3-158.amzn2.0.5
+   provider: yum.noarch 3.4.3-158.amzn2.0.4
+   provider: yum.noarch 3.4.3-158.amzn2.0.3
+   provider: yum.noarch 3.4.3-158.amzn2.0.2
+   provider: yum.noarch 3.4.3-154.amzn2.0.1

@@ -1,0 +1,61 @@
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.025
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.023
+Obs Init time: 0.641
+Resolving Dependencies
+--> Running transaction check
+---> Package htop.x86_64 0:2.0.2-1.amzn2.0.2 will be installed
+Checking deps for htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libc.so.6(GLIBC_2.3.4)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libc.so.6(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libc.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libtinfo.so.6()(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libncursesw.so.6()(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+looking for ('libc.so.6()(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.642
+
+Dependencies Resolved
+
+================================================================================
+ Package      Arch           Version                   Repository          Size
+================================================================================
+Installing:
+ htop         x86_64         2.0.2-1.amzn2.0.2         amzn2-core          98 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 98 k
+Installed size: 207 k
+Downloading packages:
+Member: htop.x86_64 0:2.0.2-1.amzn2.0.2 - u
+Adding Package htop-2.0.2-1.amzn2.0.2.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.027
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.109
+Running transaction
+  Installing : htop-2.0.2-1.amzn2.0.2.x86_64                                1/1 
+  Verifying  : htop-2.0.2-1.amzn2.0.2.x86_64                                1/1 
+VerifyTransaction time: 0.204
+Transaction time: 0.527
+
+Installed:
+  htop.x86_64 0:2.0.2-1.amzn2.0.2                                               
+
+Complete!

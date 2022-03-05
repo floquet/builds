@@ -1,7 +1,9 @@
 #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-export myCompiler=" % gcc@11.2.0"
+# export myCompiler=" % gcc@11.2.0"
+# export myCompiler=" % gcc@12.0.1"
+export myCompiler=" % gcc@7.3.1"
 export myLLVM=" ^llvm@13.0.1"
 export myOpenMPI=" ^openmpi@4.1.2"
 export myPython=" ^python@3.10.2"
@@ -13,4 +15,5 @@ echo "\${myOpenMPI}   = ${myOpenMPI}"
 echo "\${myPython}    = ${myPython}"
 echo "\${mySpackLogs} = ${mySpackLogs}"
 
-spack load gcc@11.2.0/i2xm6il
+#echo "spack load gcc@11.2.0/i2xm6il"
+#      spack load gcc@11.2.0/i2xm6il

@@ -1,0 +1,64 @@
+yum deplist -v python3-urllib3
+Loading "ovl" plugin
+Loading "priorities" plugin
+Config time: 0.020
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.016
+Searching pkgSack for dep: ca-certificates
+Searching pkgSack for dep: python(abi)
+Searching pkgSack for dep: python3-pysocks
+Searching pkgSack for dep: python3-six
+package: python3-urllib3.noarch 1.25.6-2.amzn2.0.2
+  dependency: ca-certificates
+   provider: ca-certificates.noarch 2021.2.50-72.amzn2.0.3
+   provider: ca-certificates.noarch 2021.2.50-72.amzn2.0.2
+   provider: ca-certificates.noarch 2021.2.50-72.amzn2.0.1
+   provider: ca-certificates.noarch 2020.2.41-70.0.amzn2.0.1
+   provider: ca-certificates.noarch 2019.2.32-76.amzn2.0.3
+   provider: ca-certificates.noarch 2019.2.32-76.amzn2.0.2
+   provider: ca-certificates.noarch 2019.2.32-76.amzn2.0.1
+   provider: ca-certificates.noarch 2018.2.22-70.0.amzn2.0.1
+   provider: ca-certificates.noarch 2018.2.22-70.0.amzn2
+   provider: ca-certificates.noarch 2017.2.14-71.amzn2
+  dependency: python(abi) = 3.7
+   provider: python3.x86_64 3.7.10-1.amzn2.0.1
+   provider: python3.i686 3.7.10-1.amzn2.0.1
+   provider: python3.x86_64 3.7.9-1.amzn2.0.3
+   provider: python3.i686 3.7.9-1.amzn2.0.3
+   provider: python3.x86_64 3.7.9-1.amzn2.0.2
+   provider: python3.i686 3.7.9-1.amzn2.0.2
+   provider: python3.x86_64 3.7.9-1.amzn2.0.1
+   provider: python3.i686 3.7.9-1.amzn2.0.1
+   provider: python3.x86_64 3.7.8-1.amzn2.0.1
+   provider: python3.i686 3.7.8-1.amzn2.0.1
+   provider: python3.x86_64 3.7.6-1.amzn2.0.1
+   provider: python3.i686 3.7.6-1.amzn2.0.1
+   provider: python3.x86_64 3.7.4-1.amzn2.0.4
+   provider: python3.i686 3.7.4-1.amzn2.0.4
+   provider: python3.x86_64 3.7.4-1.amzn2.0.3
+   provider: python3.i686 3.7.4-1.amzn2.0.3
+   provider: python3.x86_64 3.7.4-1.amzn2.0.2
+   provider: python3.i686 3.7.4-1.amzn2.0.2
+   provider: python3.x86_64 3.7.4-1.amzn2.0.1
+   provider: python3.i686 3.7.4-1.amzn2.0.1
+   provider: python3.x86_64 3.7.3-1.amzn2.0.2
+   provider: python3.i686 3.7.3-1.amzn2.0.2
+   provider: python3.x86_64 3.7.3-1.amzn2.0.1
+   provider: python3.i686 3.7.3-1.amzn2.0.1
+   provider: python3.x86_64 3.7.2-4.amzn2.0.1
+   provider: python3.i686 3.7.2-4.amzn2.0.1
+   provider: python3.x86_64 3.7.1-9.amzn2.0.1
+   provider: python3.i686 3.7.1-9.amzn2.0.1
+   provider: python3.x86_64 3.7.0-0.20.rc1.amzn2.0.2
+   provider: python3.i686 3.7.0-0.20.rc1.amzn2.0.2
+   provider: python3.x86_64 3.7.0-0.20.rc1.amzn2.0.1
+   provider: python3.i686 3.7.0-0.20.rc1.amzn2.0.1
+   provider: python3.x86_64 3.7.0-0.16.b3.amzn2.0.1
+   provider: python3.x86_64 3.7.0-0.12.b2.amzn2.0.2
+  dependency: python3-pysocks
+   provider: python3-pysocks.noarch 1.7.1-7.amzn2.0.2
+  dependency: python3-six >= 1.12.0
+   provider: python3-six.noarch 1.14.0-2.amzn2.0.3
