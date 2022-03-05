@@ -13,7 +13,7 @@ function spack_00(){
     spack spec ${1} ${myCompiler} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}               > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1} ${myCompiler}"       > ${file}
+    echo "$(date): spack install ${1} ${myCompiler}"      >> ${file}
                    spack install ${1} ${myCompiler} | tee -a ${file} 2>&1
   }
 
@@ -23,7 +23,7 @@ function spack_01(){
     spack spec ${1}${2} ${myCompiler} ${myPython} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                               > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython}"       > ${file}
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython}"      >> ${file}
                    spack install ${1}${2} ${myCompiler} ${myPython} | tee -a ${file} 2>&1
   }
 
@@ -33,7 +33,7 @@ function spack_02(){
     spack spec ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                                            > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI}"       > ${file}
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI}"      >> ${file}
                    spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI} | tee -a ${file} 2>&1
   }
 
@@ -43,7 +43,7 @@ function spack_03(){
     spack spec ${1}${2} ${myCompiler} ${myOpenMPI} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                                > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myOpenMPI}"       > ${file}
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myOpenMPI}"      >> ${file}
                    spack install ${1}${2} ${myCompiler} ${myOpenMPI} | tee -a ${file} 2>&1
   }
 
@@ -53,7 +53,7 @@ function spack_04(){
     spack spec ${1}${2} ${myCompiler} ${myLLVM} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                             > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myLLVM}"       > ${file}
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myLLVM}"      >> ${file}
                    spack install ${1}${2} ${myCompiler} ${myLLVM} | tee -a ${file} 2>&1
   }
 
@@ -63,7 +63,7 @@ function spack_05(){
     spack spec ${1}${2} ${myCompiler} ${myPython} ${myLLVM} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                                         > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM}"       > ${file}
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM}"      >> ${file}
                    spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM} | tee -a ${file} 2>&1
   }
 
@@ -91,6 +91,7 @@ new_step "application ${myCompiler} ${myPython}"
     spack_01 "py-seaborn"
     spack_01 "py-tqdm"
     spack_01 "py-urllib3"
+    spack_01 "rust"
 
 new_step "application ${myCompiler} ${myPython} ${myOpenMPI}"
     sub_step_counter=0
@@ -113,6 +114,40 @@ new_step "application ${myCompiler} ${myLLVM}"
 new_step "application ${myCompiler} ${myPython} ${myLLVM}"
     sub_step_counter=0
     spack_05 "octave" "+arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib"
+
+new_step "gcc compilers"
+    sub_step_counter=0
+    spack_00 "gcc@11.2.0"
+    spack_00 "gcc@10.3.0"
+    spack_00 "gcc@9.4.0"
+    spack_00 "gcc@8.5.0"
+
+new_step "add gcc compilers"
+    sub_step_counter=0
+    sub_step "spack compiler find $(location -i gcc@11.2.0)"
+              spack compiler find $(location -i gcc@11.2.0)
+    sub_step "spack compiler find $(location -i gcc@10.3.0)"
+              spack compiler find $(location -i gcc@10.3.0)
+    sub_step "spack compiler find $(location -i gcc@9.4.0)"
+              spack compiler find $(location -i gcc@9.4.0)
+    sub_step "spack compiler find $(location -i gcc@8.5.0)"
+              spack compiler find $(location -i gcc@8.5.0)
+
+
+new_step "llvm compilers"
+    sub_step_counter=0
+    spack_01 "llvm@13.0.1"
+    spack_01 "llvm@12.0.1"
+    spack_01 "llvm@11.1.0"
+
+new_step "add gcc compilers"
+    sub_step_counter=0
+    sub_step "spack compiler find $(location -i llvm@13.0.1)"
+              spack compiler find $(location -i llvm@13.0.1)
+    sub_step "spack compiler find $(location -i llvm@12.0.1)"
+              spack compiler find $(location -i llvm@12.0.1)
+    sub_step "spack compiler find $(location -i llvm@11.1.0)"
+              spack compiler find $(location -i llvm@11.1.0)
 
 
 new_step "print wall time used"
