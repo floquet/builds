@@ -49,6 +49,10 @@ echo ""; echo "source ${repo_scripts_docker}/kickstarts/installers/apt-get-insta
                source ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh
 # tzdata settings: 2, 47
 
+echo ""; echo "cp ${repo_scripts_spack}/transport/refresh-dnf.sh ${dump_Results}/."
+               cp ${repo_scripts_spack}/transport/refresh-dnf.sh ${dump_Results}/.
+
+
 #  #  #  ========================================== set up user dantopa
 
 echo ""; echo "Set up user account"

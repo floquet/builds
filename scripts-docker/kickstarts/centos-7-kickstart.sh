@@ -61,6 +61,9 @@ source ${repo_scripts_docker}/kickstarts/installers/yum-installs.sh
 # ${local_Results} set in yum-installs.sh
 echo ""; echo "Copy results to ${dump_Results}"
     cp -a ${local_Results} ${dump_Results}/.
+    
+echo ""; echo "cp ${repo_scripts_spack}/transport/refresh-yum.sh ${dump_Results}/."
+               cp ${repo_scripts_spack}/transport/refresh-yum.sh ${dump_Results}/.
 
 #  #  #  ========================================== set up for spack
 

@@ -33,9 +33,9 @@ new_step "Update, upgrade, install Development Tools"
     sub_step "dnf upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1"
               dnf upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1
 
-    # https://linuxize.com/post/how-to-install-gcc-on-centos-8/
-    sub_step 'dnf group install -v "Development Tools" -y | tee ${localResults}/dev-tools.txt 2>&1'
-              dnf group install -v "Development Tools" -y | tee ${localResults}/dev-tools.txt 2>&1
+#     # https://linuxize.com/post/how-to-install-gcc-on-centos-8/
+#     sub_step 'dnf group install -v "Development Tools" -y | tee ${localResults}/dev-tools.txt 2>&1'
+#               dnf group install -v "Development Tools" -y | tee ${localResults}/dev-tools.txt 2>&1
 
 new_step "Try to build ${#lpackages[@]} packages"
     sub_step_counter=0

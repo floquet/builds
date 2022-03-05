@@ -1,0 +1,190 @@
+yum deplist -v python-matplotlib
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.dal10.us.leaseweb.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.cogentco.com
+ * updates: mirror.cogentco.com
+pkgsack time: 1.542
+Searching pkgSack for dep: /usr/bin/env
+Searching pkgSack for dep: dejavu-sans-fonts
+Searching pkgSack for dep: dvipng
+Searching pkgSack for dep: libagg.so.2()(64bit)
+Searching pkgSack for dep: libatk-1.0.so.0()(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libcairo.so.2()(64bit)
+Searching pkgSack for dep: libfontconfig.so.1()(64bit)
+Searching pkgSack for dep: libfreetype.so.6()(64bit)
+Searching pkgSack for dep: libgcc_s.so.1()(64bit)
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.0)(64bit)
+Searching pkgSack for dep: libgdk-x11-2.0.so.0()(64bit)
+Searching pkgSack for dep: libgdk_pixbuf-2.0.so.0()(64bit)
+Searching pkgSack for dep: libgio-2.0.so.0()(64bit)
+Searching pkgSack for dep: libglib-2.0.so.0()(64bit)
+Searching pkgSack for dep: libgobject-2.0.so.0()(64bit)
+Searching pkgSack for dep: libgtk-x11-2.0.so.0()(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libm.so.6(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libpango-1.0.so.0()(64bit)
+Searching pkgSack for dep: libpangocairo-1.0.so.0()(64bit)
+Searching pkgSack for dep: libpangoft2-1.0.so.0()(64bit)
+Searching pkgSack for dep: libpng15.so.15()(64bit)
+Searching pkgSack for dep: libpng15.so.15(PNG15_0)(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libpython2.7.so.1.0()(64bit)
+Searching pkgSack for dep: libstdc++.so.6()(64bit)
+Searching pkgSack for dep: libstdc++.so.6(CXXABI_1.3)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(CXXABI_1.3.1)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.11)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.15)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.9)(64bit)
+Searching pkgSack for dep: libz.so.1()(64bit)
+Searching pkgSack for dep: numpy
+Searching pkgSack for dep: pycairo
+Searching pkgSack for dep: pygtk2
+Searching pkgSack for dep: pyparsing
+Searching pkgSack for dep: python(abi)
+Searching pkgSack for dep: python-dateutil
+Searching pkgSack for dep: pytz
+Searching pkgSack for dep: rtld(GNU_HASH)
+Searching pkgSack for dep: stix-fonts
+Searching pkgSack for dep: stix-math-fonts
+package: python-matplotlib.x86_64 1.2.0-16.el7
+  dependency: /usr/bin/env
+   provider: coreutils.x86_64 8.22-24.el7_9.2
+   provider: coreutils.x86_64 8.22-24.el7
+  dependency: dejavu-sans-fonts
+   provider: dejavu-sans-fonts.noarch 2.33-6.el7
+  dependency: dvipng
+   provider: texlive-dvipng-bin.x86_64 2:svn26509.0-45.20130427_r30134.el7
+  dependency: libagg.so.2()(64bit)
+   provider: agg.x86_64 2.5-18.el7
+  dependency: libatk-1.0.so.0()(64bit)
+   provider: atk.x86_64 2.28.1-2.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libcairo.so.2()(64bit)
+   provider: cairo.x86_64 1.15.12-4.el7
+  dependency: libfontconfig.so.1()(64bit)
+   provider: fontconfig.x86_64 2.13.0-4.3.el7
+  dependency: libfreetype.so.6()(64bit)
+   provider: freetype.x86_64 2.8-14.el7_9.1
+   provider: freetype.x86_64 2.8-14.el7
+  dependency: libgcc_s.so.1()(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.0)(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libgdk-x11-2.0.so.0()(64bit)
+   provider: gtk2.x86_64 2.24.31-1.el7
+  dependency: libgdk_pixbuf-2.0.so.0()(64bit)
+   provider: gdk-pixbuf2.x86_64 2.36.12-3.el7
+  dependency: libgio-2.0.so.0()(64bit)
+   provider: glib2.x86_64 2.56.1-9.el7_9
+   provider: glib2.x86_64 2.56.1-8.el7
+   provider: glib2.x86_64 2.56.1-7.el7
+  dependency: libglib-2.0.so.0()(64bit)
+   provider: glib2.x86_64 2.56.1-9.el7_9
+   provider: glib2.x86_64 2.56.1-8.el7
+   provider: glib2.x86_64 2.56.1-7.el7
+  dependency: libgobject-2.0.so.0()(64bit)
+   provider: glib2.x86_64 2.56.1-9.el7_9
+   provider: glib2.x86_64 2.56.1-8.el7
+   provider: glib2.x86_64 2.56.1-7.el7
+  dependency: libgtk-x11-2.0.so.0()(64bit)
+   provider: gtk2.x86_64 2.24.31-1.el7
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpango-1.0.so.0()(64bit)
+   provider: pango.x86_64 1.42.4-4.el7_7
+  dependency: libpangocairo-1.0.so.0()(64bit)
+   provider: pango.x86_64 1.42.4-4.el7_7
+  dependency: libpangoft2-1.0.so.0()(64bit)
+   provider: pango.x86_64 1.42.4-4.el7_7
+  dependency: libpng15.so.15()(64bit)
+   provider: libpng.x86_64 2:1.5.13-8.el7
+  dependency: libpng15.so.15(PNG15_0)(64bit)
+   provider: libpng.x86_64 2:1.5.13-8.el7
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpython2.7.so.1.0()(64bit)
+   provider: python-libs.x86_64 2.7.5-90.el7
+   provider: python-libs.x86_64 2.7.5-89.el7
+  dependency: libstdc++.so.6()(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(CXXABI_1.3)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(CXXABI_1.3.1)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.11)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.15)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.9)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libz.so.1()(64bit)
+   provider: zlib.x86_64 1.2.7-19.el7_9
+   provider: zlib.x86_64 1.2.7-18.el7
+  dependency: numpy
+   provider: numpy.x86_64 1:1.7.1-13.el7
+  dependency: pycairo
+   provider: pycairo.x86_64 1.8.10-8.el7
+  dependency: pygtk2
+   provider: pygtk2.x86_64 2.24.0-9.el7
+  dependency: pyparsing
+   provider: pyparsing.noarch 1.5.6-9.el7
+  dependency: python(abi) = 2.7
+   provider: python.x86_64 2.7.5-90.el7
+   provider: python.x86_64 2.7.5-89.el7
+  dependency: python-dateutil
+   provider: python-dateutil.noarch 1.5-7.el7
+  dependency: pytz
+   provider: pytz.noarch 2016.10-2.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+  dependency: stix-fonts
+   provider: stix-fonts.noarch 1.1.0-5.el7
+  dependency: stix-math-fonts
+   provider: stix-math-fonts.noarch 1.1.0-5.el7

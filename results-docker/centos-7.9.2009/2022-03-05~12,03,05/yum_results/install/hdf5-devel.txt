@@ -1,0 +1,180 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.008
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.datto.com
+ * epel: mirror.cogentco.com
+ * extras: mirror.cogentco.com
+ * updates: mirror.cogentco.com
+pkgsack time: 4.284
+Obs Init time: 0.185
+Resolving Dependencies
+--> Running transaction check
+---> Package hdf5-devel.x86_64 0:1.8.12-13.el7 will be installed
+Checking deps for hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('hdf5', 'EQ', ('0', '1.8.12', '13.el7')) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('libaec-devel(x86-64)', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('zlib-devel(x86-64)', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('libhdf5.so.8()(64bit)', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('libhdf5_cpp.so.8()(64bit)', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('libhdf5_fortran.so.8()(64bit)', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('libhdf5_hl.so.8()(64bit)', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('libhdf5_hl_cpp.so.8()(64bit)', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+looking for ('libhdf5hl_fortran.so.8()(64bit)', None, (None, None, None)) as a requirement of hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+hdf5-devel-1.8.12-13.el7.x86_64 requires: hdf5 = 1.8.12-13.el7
+--> Processing Dependency: hdf5 = 1.8.12-13.el7 for package: hdf5-devel-1.8.12-13.el7.x86_64
+Searching pkgSack for dep: hdf5
+Building updates object
+up:simple updates time: 0.003
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.211
+TSINFO: Marking hdf5-1.8.12-13.el7.x86_64 as install for hdf5-devel-1.8.12-13.el7.x86_64
+hdf5-devel-1.8.12-13.el7.x86_64 requires: libaec-devel(x86-64)
+--> Processing Dependency: libaec-devel(x86-64) for package: hdf5-devel-1.8.12-13.el7.x86_64
+Searching pkgSack for dep: libaec-devel(x86-64)
+TSINFO: Marking libaec-devel-1.0.4-1.el7.x86_64 as install for hdf5-devel-1.8.12-13.el7.x86_64
+hdf5-devel-1.8.12-13.el7.x86_64 requires: zlib-devel(x86-64)
+--> Processing Dependency: zlib-devel(x86-64) for package: hdf5-devel-1.8.12-13.el7.x86_64
+Searching pkgSack for dep: zlib-devel(x86-64)
+TSINFO: Marking zlib-devel-1.2.7-19.el7_9.x86_64 as install for hdf5-devel-1.8.12-13.el7.x86_64
+hdf5-devel-1.8.12-13.el7.x86_64 requires: libhdf5.so.8()(64bit)
+--> Processing Dependency: libhdf5.so.8()(64bit) for package: hdf5-devel-1.8.12-13.el7.x86_64
+Searching pkgSack for dep: libhdf5.so.8()(64bit)
+hdf5-1.8.12-13.el7.x86_64 already in ts, skipping this one
+hdf5-devel-1.8.12-13.el7.x86_64 requires: libhdf5_cpp.so.8()(64bit)
+--> Processing Dependency: libhdf5_cpp.so.8()(64bit) for package: hdf5-devel-1.8.12-13.el7.x86_64
+Quick matched hdf5-1.8.12-13.el7.x86_64 to require for libhdf5_cpp.so.8()(64bit)
+hdf5-devel-1.8.12-13.el7.x86_64 requires: libhdf5_fortran.so.8()(64bit)
+--> Processing Dependency: libhdf5_fortran.so.8()(64bit) for package: hdf5-devel-1.8.12-13.el7.x86_64
+Quick matched hdf5-1.8.12-13.el7.x86_64 to require for libhdf5_fortran.so.8()(64bit)
+hdf5-devel-1.8.12-13.el7.x86_64 requires: libhdf5_hl.so.8()(64bit)
+--> Processing Dependency: libhdf5_hl.so.8()(64bit) for package: hdf5-devel-1.8.12-13.el7.x86_64
+Quick matched hdf5-1.8.12-13.el7.x86_64 to require for libhdf5_hl.so.8()(64bit)
+hdf5-devel-1.8.12-13.el7.x86_64 requires: libhdf5_hl_cpp.so.8()(64bit)
+--> Processing Dependency: libhdf5_hl_cpp.so.8()(64bit) for package: hdf5-devel-1.8.12-13.el7.x86_64
+Quick matched hdf5-1.8.12-13.el7.x86_64 to require for libhdf5_hl_cpp.so.8()(64bit)
+hdf5-devel-1.8.12-13.el7.x86_64 requires: libhdf5hl_fortran.so.8()(64bit)
+--> Processing Dependency: libhdf5hl_fortran.so.8()(64bit) for package: hdf5-devel-1.8.12-13.el7.x86_64
+Quick matched hdf5-1.8.12-13.el7.x86_64 to require for libhdf5hl_fortran.so.8()(64bit)
+--> Running transaction check
+---> Package hdf5.x86_64 0:1.8.12-13.el7 will be installed
+Checking deps for hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.1)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libsz.so.2()(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of hdf5.x86_64 0:1.8.12-13.el7 - u
+hdf5-1.8.12-13.el7.x86_64 requires: libsz.so.2()(64bit)
+--> Processing Dependency: libsz.so.2()(64bit) for package: hdf5-1.8.12-13.el7.x86_64
+Searching pkgSack for dep: libsz.so.2()(64bit)
+TSINFO: Marking libaec-1.0.4-1.el7.x86_64 as install for hdf5-1.8.12-13.el7.x86_64
+---> Package libaec-devel.x86_64 0:1.0.4-1.el7 will be installed
+Checking deps for libaec-devel.x86_64 0:1.0.4-1.el7 - u
+looking for ('libaec(x86-64)', 'EQ', ('0', '1.0.4', '1.el7')) as a requirement of libaec-devel.x86_64 0:1.0.4-1.el7 - u
+looking for ('libaec.so.0()(64bit)', None, (None, None, None)) as a requirement of libaec-devel.x86_64 0:1.0.4-1.el7 - u
+looking for ('libsz.so.2()(64bit)', None, (None, None, None)) as a requirement of libaec-devel.x86_64 0:1.0.4-1.el7 - u
+---> Package zlib-devel.x86_64 0:1.2.7-19.el7_9 will be installed
+Checking deps for zlib-devel.x86_64 0:1.2.7-19.el7_9 - u
+looking for ('zlib', 'EQ', ('0', '1.2.7', '19.el7_9')) as a requirement of zlib-devel.x86_64 0:1.2.7-19.el7_9 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of zlib-devel.x86_64 0:1.2.7-19.el7_9 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of zlib-devel.x86_64 0:1.2.7-19.el7_9 - u
+--> Running transaction check
+---> Package libaec.x86_64 0:1.0.4-1.el7 will be installed
+Checking deps for libaec.x86_64 0:1.0.4-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libaec.x86_64 0:1.0.4-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libaec.x86_64 0:1.0.4-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libaec.x86_64 0:1.0.4-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libaec.x86_64 0:1.0.4-1.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.414
+
+Dependencies Resolved
+
+================================================================================
+ Package             Arch          Version                 Repository      Size
+================================================================================
+Installing:
+ hdf5-devel          x86_64        1.8.12-13.el7           epel           643 k
+Installing for dependencies:
+ hdf5                x86_64        1.8.12-13.el7           epel           1.6 M
+ libaec              x86_64        1.0.4-1.el7             epel            34 k
+ libaec-devel        x86_64        1.0.4-1.el7             epel           7.8 k
+ zlib-devel          x86_64        1.2.7-19.el7_9          updates         50 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 2.3 M
+Installed size: 22 M
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/epel/packages/hdf5-1.8.12-13.el7.x86_64.rpm: Header V4 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+Public key for hdf5-1.8.12-13.el7.x86_64.rpm is not installed
+--------------------------------------------------------------------------------
+Total                                              1.2 MB/s | 2.3 MB  00:01     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-11.noarch (@extras)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Member: libaec-devel.x86_64 0:1.0.4-1.el7 - u
+Adding Package libaec-devel-1.0.4-1.el7.x86_64 in mode u
+Member: hdf5-devel.x86_64 0:1.8.12-13.el7 - u
+Adding Package hdf5-devel-1.8.12-13.el7.x86_64 in mode u
+Member: hdf5.x86_64 0:1.8.12-13.el7 - u
+Adding Package hdf5-1.8.12-13.el7.x86_64 in mode u
+Member: zlib-devel.x86_64 0:1.2.7-19.el7_9 - u
+Adding Package zlib-devel-1.2.7-19.el7_9.x86_64 in mode u
+Member: libaec.x86_64 0:1.0.4-1.el7 - u
+Adding Package libaec-1.0.4-1.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.032
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.023
+Running transaction
+  Installing : libaec-1.0.4-1.el7.x86_64                                    1/5 
+  Installing : libaec-devel-1.0.4-1.el7.x86_64                              2/5 
+  Installing : hdf5-1.8.12-13.el7.x86_64                                    3/5 
+  Installing : zlib-devel-1.2.7-19.el7_9.x86_64                             4/5 
+  Installing : hdf5-devel-1.8.12-13.el7.x86_64                              5/5 
+  Verifying  : libaec-devel-1.0.4-1.el7.x86_64                              1/5 
+  Verifying  : hdf5-devel-1.8.12-13.el7.x86_64                              2/5 
+  Verifying  : hdf5-1.8.12-13.el7.x86_64                                    3/5 
+  Verifying  : zlib-devel-1.2.7-19.el7_9.x86_64                             4/5 
+  Verifying  : libaec-1.0.4-1.el7.x86_64                                    5/5 
+VerifyTransaction time: 0.073
+Transaction time: 1.144
+
+Installed:
+  hdf5-devel.x86_64 0:1.8.12-13.el7                                             
+
+Dependency Installed:
+  hdf5.x86_64 0:1.8.12-13.el7            libaec.x86_64 0:1.0.4-1.el7            
+  libaec-devel.x86_64 0:1.0.4-1.el7      zlib-devel.x86_64 0:1.2.7-19.el7_9     
+
+Complete!
