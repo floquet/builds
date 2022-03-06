@@ -19,7 +19,7 @@ function arXiver(){
     echo "docker save ${1}:${2} > ${vault}/${1}-${2}.tar.gz"
           docker save ${1}:${2} > ${vault}/${1}-${2}.tar.gz 2>&1 | tee -a ${timerfile}
     localSECONDS=$((${SECONDS}-${localSECONDS}))
-    printf 'time to archive ${1}:${2}: %dh:%dm:%ds\n' $((${totalSECONDS}/3600)) $((${totalSECONDS}%3600/60)) $((${totalSECONDS}%60)) | tee -a ${timerfile}
+    printf 'time to archive ${1}:${2}: %dh:%dm:%ds\n' $((${localSECONDS}/3600)) $((${localSECONDS}%3600/60)) $((${localSECONDS}%60)) | tee -a ${timerFile}
     }
 
 export tag="${centos_version}"
@@ -84,6 +84,7 @@ new_step "\${image}:\${tag} = ${image}:${tag}"
     arXiver ${image} ${tag}
 
 
+new_step "Report total time needed"
 export totalSECONDS=$((${SECONDS}-${totalSECONDS}))
     printf 'time archive all images: %dh:%dm:%ds\n' $((${totalSECONDS}/3600)) $((${totalSECONDS}%3600/60)) $((${totalSECONDS}%60)) | tee -a ${timerFile}
     

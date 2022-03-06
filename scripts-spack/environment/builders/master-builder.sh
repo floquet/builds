@@ -72,21 +72,24 @@ new_step "Set environment variables"
 
 pause
 
-new_step "spack load gcc@11.2.0/i2xm6il"
-          spack load gcc@11.2.0/i2xm6il
+# new_step "spack load gcc@11.2.0/i2xm6il"
+#           spack load gcc@11.2.0/i2xm6il
 
 new_step "application ${myCompiler}"
     sub_step_counter=0
     spack_00 "chapel"
     spack_00 "environment-modules"
     spack_00 "gsl"
+    spack_00 "julia@1.7.2"
     spack_00 "xcalc"
     spack_00 "xerces-c"
 
 new_step "application ${myCompiler} ${myPython}"
     sub_step_counter=0
+    spack_01 "blitz"
     spack_01 "doxygen"
     spack_01 "gdb"
+    spack_01 "gdl" "+python"
     spack_01 "py-astropy" "+extras"
     spack_01 "py-seaborn"
     spack_01 "py-tqdm"
@@ -101,15 +104,22 @@ new_step "application ${myCompiler} ${myPython} ${myOpenMPI}"
 new_step "application ${myCompiler} ${myOpenMPI}"
     sub_step_counter=0
     spack_03 "charmpp"
+    spack_03 "h5bench"
+    spack_03 "h5cpp"
+    spack_03 "h5hut"
+    spack_03 "h5part"
+    spack_03 "hypre"
     spack_03 "netcdf-fortran"
     spack_03 "netcdf-cxx4"
     spack_03 "opencoarrays"
     spack_03 "parallel-netcdf"
+    spack_03 "sprng" "+fortran"
     spack_03 "valgrind"
+    spack_03 "zoltan"
 
-new_step "application ${myCompiler} ${myLLVM}"
-    sub_step_counter=0
-    spack_04 "julia"
+# new_step "application ${myCompiler} ${myLLVM}"
+#     sub_step_counter=0
+#     spack_04 "julia"
 
 new_step "application ${myCompiler} ${myPython} ${myLLVM}"
     sub_step_counter=0

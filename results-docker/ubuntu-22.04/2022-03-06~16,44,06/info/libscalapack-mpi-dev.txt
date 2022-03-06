@@ -1,0 +1,24 @@
+apt info libscalapack-mpi-dev
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: libscalapack-mpi-dev
+Version: 2.1.0-4
+Priority: extra
+Section: universe/libdevel
+Source: scalapack
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 16.4 kB
+Provides: libblacs-mpi-dev
+Depends: libscalapack-openmpi-dev, mpi-default-dev
+Suggests: scalapack-doc
+Replaces: libblacs-mpi-dev
+Homepage: http://www.netlib.org/scalapack/
+Download-Size: 2500 B
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+Description: Scalable Linear Algebra Package - Dev files for MPI
+

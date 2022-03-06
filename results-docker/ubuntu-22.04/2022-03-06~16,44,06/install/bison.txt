@@ -1,0 +1,35 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libsigsegv2 m4
+Suggested packages:
+  bison-doc m4-doc
+The following NEW packages will be installed:
+  bison libsigsegv2 m4
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 961 kB of archives.
+After this operation, 2922 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libsigsegv2 amd64 2.13-1ubuntu2 [14.6 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 m4 amd64 1.4.18-5ubuntu1 [199 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 bison amd64 2:3.8.2+dfsg-1 [748 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78, <> line 3.)
+debconf: falling back to frontend: Readline
+Fetched 961 kB in 1s (727 kB/s)
+Selecting previously unselected package libsigsegv2:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6962 files and directories currently installed.)
+Preparing to unpack .../libsigsegv2_2.13-1ubuntu2_amd64.deb ...
+Unpacking libsigsegv2:amd64 (2.13-1ubuntu2) ...
+Selecting previously unselected package m4.
+Preparing to unpack .../m4_1.4.18-5ubuntu1_amd64.deb ...
+Unpacking m4 (1.4.18-5ubuntu1) ...
+Selecting previously unselected package bison.
+Preparing to unpack .../bison_2%3a3.8.2+dfsg-1_amd64.deb ...
+Unpacking bison (2:3.8.2+dfsg-1) ...
+Setting up libsigsegv2:amd64 (2.13-1ubuntu2) ...
+Setting up m4 (1.4.18-5ubuntu1) ...
+Setting up bison (2:3.8.2+dfsg-1) ...
+update-alternatives: using /usr/bin/bison.yacc to provide /usr/bin/yacc (yacc) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/yacc.1.gz because associated file /usr/share/man/man1/bison.yacc.1.gz (of link group yacc) doesn't exist
+Processing triggers for libc-bin (2.35-0ubuntu1) ...

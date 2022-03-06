@@ -127,8 +127,8 @@ sub_step_counter=0
 #    sub_step "cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/."
 #              cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/.
 
-    sub_step "cp ${repo_scripts_docker}/transport/.${tag}.sh                 /home/${ego}/."
-              cp ${repo_scripts_docker}/transport/.${tag}.sh                 /home/${ego}/.
+    sub_step "cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/."
+              cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/.
 
 # new_step "Build compilers"
 # sub_step_counter=0

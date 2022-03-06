@@ -1,0 +1,59 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: sjc.edge.kernel.org
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.forethought.net
+ * updates: mirror.dal.nexril.net
+pkgsack time: 0.165
+Obs Init time: 0.186
+Resolving Dependencies
+--> Running transaction check
+---> Package libcurl-devel.x86_64 0:7.29.0-59.el7_9.1 will be installed
+Checking deps for libcurl-devel.x86_64 0:7.29.0-59.el7_9.1 - u
+looking for ('libcurl', 'EQ', ('0', '7.29.0', '59.el7_9.1')) as a requirement of libcurl-devel.x86_64 0:7.29.0-59.el7_9.1 - u
+looking for ('/usr/share/aclocal', None, (None, None, None)) as a requirement of libcurl-devel.x86_64 0:7.29.0-59.el7_9.1 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of libcurl-devel.x86_64 0:7.29.0-59.el7_9.1 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of libcurl-devel.x86_64 0:7.29.0-59.el7_9.1 - u
+looking for ('libcurl.so.4()(64bit)', None, (None, None, None)) as a requirement of libcurl-devel.x86_64 0:7.29.0-59.el7_9.1 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 3.128
+
+Dependencies Resolved
+
+================================================================================
+ Package             Arch         Version                   Repository     Size
+================================================================================
+Installing:
+ libcurl-devel       x86_64       7.29.0-59.el7_9.1         updates       303 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 303 k
+Installed size: 624 k
+Downloading packages:
+Member: libcurl-devel.x86_64 0:7.29.0-59.el7_9.1 - u
+Adding Package libcurl-devel-7.29.0-59.el7_9.1.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.034
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.002
+Running transaction
+  Installing : libcurl-devel-7.29.0-59.el7_9.1.x86_64                       1/1 
+  Verifying  : libcurl-devel-7.29.0-59.el7_9.1.x86_64                       1/1 
+VerifyTransaction time: 0.059
+Transaction time: 0.121
+
+Installed:
+  libcurl-devel.x86_64 0:7.29.0-59.el7_9.1                                      
+
+Complete!
