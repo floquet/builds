@@ -23,10 +23,9 @@ source ${repo_scripts_spack}/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
-export dist="amzn"
-export release="2022"
-export tag="${dist}-${release}"
+export dist="amzn" ; export release="2022" ; export tag="${dist}-${release}"
 export USER="dantopa"
+installer="yum"
 
 # start timer
 export amazonSECONDS=${SECONDS}
@@ -44,7 +43,10 @@ echo "mkdir -p ${dump_Results}"
 
 #  #  #  ========================================== build packages
 
-source ${repo_scripts_docker}/kickstarts/installers/yum-installs.sh
+source ${repo_scripts_docker}/kickstarts/installers/${installer}-installs.sh
+
+echo ""; echo "cp ${repo_scripts_spack}/transport/refresh-${installer}.sh    ${dump_Results}/."
+               cp ${repo_scripts_spack}/transport/refresh-${installer}.sh    ${dump_Results}/.
 
 #  #  #  ========================================== post mortem
 
@@ -65,6 +67,8 @@ echo ""; echo "Set up user account"
 echo ""; echo "su - dantopa"
     echo "export mySpack=${mySpack}"
     echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
+
+echo ""; echo 'export dist="${dist}" ; export release="${dist}" ; export tag="${dist}-${release}"'
 
 echo ""; echo "Report elapsed time"
     export amazonSECONDS=$((${SECONDS}-${amazonSECONDS}))

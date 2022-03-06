@@ -48,7 +48,7 @@ export big_spack_mirror="${mySpack}/mirror"
 export      local_spack="${HOME}/spacktivity/${dist}-${release}-docker-spack"
 
 # #  C O M P I L E R S
-export gcc_system_compiler="gcc@11.2.0-16ubuntu1"
+export gcc_system_compiler="gcc@11.2.0-18ubuntu1"
 
 # **  **  **  **  **  **  **  **
 
@@ -56,23 +56,26 @@ source "${core}/master.sh"
 
 # **  **  **  **  **  **  **  **
 
-# source "${HOME}/${extras}"
+ source "${HOME}/${extras}"
 
-#   7.1: lsb_release -a
+#   5.2: gcc --version
+# gcc (Ubuntu 11.2.0-18ubuntu1) 11.2.0
+# Copyright (C) 2021 Free Software Foundation, Inc.
+
+#   5.3: uname -a
+# Linux b6f2e8d26032 5.10.76-linuxkit #1 SMP Mon Nov 8 10:21:19 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+#   5.4: cat /proc/version
+# Linux version 5.10.76-linuxkit (root@buildkitsandbox) (gcc (Alpine 10.2.1_pre1) 10.2.1 20201203, GNU ld (GNU Binutils) 2.35.2) #1 SMP Mon Nov 8 10:21:19 UTC 2021
+
+#   5.5: lsb_release -a
 # LSB Version:	core-11.1.0ubuntu3-noarch:printing-11.1.0ubuntu3-noarch:security-11.1.0ubuntu3-noarch
 # Distributor ID:	Ubuntu
 # Description:	Ubuntu Jammy Jellyfish (development branch)
 # Release:	22.04
 # Codename:	jammy
-#
-#   7.2: gcc --version
-# gcc (Ubuntu 11.2.0-16ubuntu1) 11.2.0
-# Copyright (C) 2021 Free Software Foundation, Inc.
-# This is free software; see the source for copying conditions.  There is NO
-# warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-#
-#
-#   7.3: cat /etc/*release
+
+#   5.6: cat /etc/*release
 # DISTRIB_ID=Ubuntu
 # DISTRIB_RELEASE=22.04
 # DISTRIB_CODENAME=jammy
@@ -89,6 +92,3 @@ source "${core}/master.sh"
 # BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 # PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
 # UBUNTU_CODENAME=jammy
-#
-#   7.4: cat /proc/version
-# Linux version 5.10.76-linuxkit (root@buildkitsandbox) (gcc (Alpine 10.2.1_pre1) 10.2.1 20201203, GNU ld (GNU Binutils) 2.35.2) #1 SMP Mon Nov 8 10:21:19 UTC 2021

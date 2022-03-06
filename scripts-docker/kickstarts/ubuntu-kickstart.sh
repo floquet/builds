@@ -43,8 +43,6 @@ echo "about to call ${repo_scripts_docker}/kickstarts/installers/apt-get-install
 
 pause 
 
-# source ${dirBuildScripts}/kickstarts/installers/yum-installs.sh
-#  global: ${dirBuildResults}
 echo ""; echo "source ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh"
                source ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh
 # tzdata settings: 2, 47
@@ -99,3 +97,11 @@ new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
 # sudo addgroup wheel
 #
 # usermod -aG wheel dantopa
+
+# ubuntu disaster
+# ~/.spack/bootstrap/config/packages.yaml
+# change gcc@12.0.1 cxx compiler from null to /usr/bin/g++
+
+# ==> Installing berkeley-db-18.1.40-bf42xis6fcmsnfqehvzpo2x75ptvwegx
+#   >> 138    checking whether the C++ compiler supports templates for STL... configure: error: no
+
