@@ -9,17 +9,17 @@ export timerFile=${vault}/${ymdtf}/tar-times.txt
     date    >  ${timerFile}
     echo "" >> ${timerFile}
 
-source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+# source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_spack}/shared/common-header.sh
 
-# docker load spwx-02-amzn:2022 > spwx-02-amzn-2022.
+# docker image save spwx-02-amzn:2022 > spwx-02-amzn-2022.
 function arXiver(){
     localSECONDS=${SECONDS}
     echo ""
-    echo "docker load ${1}:${2} > ${vault}/${1}-${2}.tar.gz"
-          docker load ${1}:${2} > ${vault}/${1}-${2}.tar.gz 2>&1 | tee -a ${timerfile}
+    echo "docker save ${1}:${2} > ${vault}/${1}-${2}.tar.gz"
+          docker save ${1}:${2} > ${vault}/${1}-${2}.tar.gz 2>&1 | tee -a ${timerfile}
     localSECONDS=$((${SECONDS}-${localSECONDS}))
-    printf 'time archive ${1}:${2}: %dh:%dm:%ds\n' $((${totalSECONDS}/3600)) $((${totalSECONDS}%3600/60)) $((${totalSECONDS}%60)) | tee -a ${timerfile}
+    printf 'time to archive ${1}:${2}: %dh:%dm:%ds\n' $((${totalSECONDS}/3600)) $((${totalSECONDS}%3600/60)) $((${totalSECONDS}%60)) | tee -a ${timerfile}
     }
 
 export tag="${centos_version}"
@@ -86,3 +86,5 @@ new_step "\${image}:\${tag} = ${image}:${tag}"
 
 export totalSECONDS=$((${SECONDS}-${totalSECONDS}))
     printf 'time archive all images: %dh:%dm:%ds\n' $((${totalSECONDS}/3600)) $((${totalSECONDS}%3600/60)) $((${totalSECONDS}%60)) | tee -a ${timerFile}
+    
+# docker load < /Volumes/Tlaloc/docker-land/spwx-02-amzn-2022.tar 

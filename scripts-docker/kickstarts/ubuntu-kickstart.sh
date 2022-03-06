@@ -6,7 +6,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # $ source /repos/github/builds/scripts-docker/kickstarts/ubuntu-kickstart.sh
 
 # https://askubuntu.com/questions/990823/apt-gives-unstable-cli-interface-warning
-#  apt is for the terminal and gives beautiful output while apt-get and apt-cache
+#  apt is for the terminal and gives beautiful output while ${installer} and apt-cache
 #  are for scripts and give stable, parsable output.
 
 # $ docker pull ubuntu:22.04 ; ehecoatlDocker ubuntu:22.04
@@ -28,41 +28,42 @@ source ${repo_scripts_spack}/shared/common-header.sh
 # start timer
 export ubuntuSECONDS=${SECONDS}
 
-export dist="ubuntu"
-export release="22.04"
-export tag="${dist}-${release}"
+export dist="ubuntu" ; export release="22.04" ; export tag="${dist}-${release}"
 export USER="dantopa"
+export installer="me"
 
-export dirResultsDockerLocal="${repo_results_docker}/${dist}-${release}/${ymdtf}"
-export timerFile=${dirResultsDockerLocal}/elapsed-time.txt
+export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
+# records time elapsed
+export timerFile=${dump_Results}/elapsed-time.txt
 
 #  #  #  ========================================== declarations end
 
 echo "\${timerFile}=${timerFile}"
-echo "about to call ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh"
+echo "about to call ${repo_scripts_docker}/kickstarts/installers/${installer}-installs.sh"
 
 pause 
 
-echo ""; echo "source ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh"
-               source ${repo_scripts_docker}/kickstarts/installers/apt-get-installs.sh
+#  #  #  ========================================== build packages
+
+source ${repo_scripts_docker}/kickstarts/installers/${installer}-installs.sh
+
+#  #  #  ========================================== set up for spack
+
 # tzdata settings: 2, 47
 
-echo ""; echo "cp ${repo_scripts_spack}/transport/refresh-dnf.sh ${dump_Results}/."
-               cp ${repo_scripts_spack}/transport/refresh-dnf.sh ${dump_Results}/.
 
-
-#  #  #  ========================================== set up user dantopa
+#  #  #  ========================================== set up user ${USER}
 
 echo ""; echo "Set up user account"
-         echo "adduser dantopa"
-         	   adduser dantopa
+         echo "adduser ${USER}"
+               adduser ${USER}
 
-         echo "usermod -aG wheel dantopa"
-               usermod -aG wheel dantopa
+         echo "usermod -aG wheel ${USER}"
+               usermod -aG wheel ${USER}
 
-    	 echo "pending: passwd dantopa"
+         echo "pending: passwd ${USER}"
 
-echo ""; echo "su - dantopa"
+echo ""; echo "su - ${USER}"
     echo "export mySpack=${mySpack}"
     echo 'export dist="${dist}" ; export release="${dist}" ; export tag="${dist}-${release}"'
 
@@ -70,7 +71,7 @@ echo ""; echo "Report elapsed time"
     export ubuntuSECONDS=$((${SECONDS}-${ubuntuSECONDS}))
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf 'time to build system: %dh:%dm:%ds\n' $((${ubuntuSECONDS}/3600)) $((${ubuntuSECONDS}%3600/60)) $((${ubuntuSECONDS}%60)) | tee -a ${timerFile}
+    printf 'time to build ubuntu system: %dh:%dm:%ds\n' $((${ubuntuSECONDS}/3600)) $((${ubuntuSECONDS}%3600/60)) $((${ubuntuSECONDS}%60)) | tee -a ${timerFile}
 
 new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
 
@@ -78,14 +79,14 @@ new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
 # Changing password for user root.
 # New password: 8, !A
 
-#  adduser dantopa
-#  usermod -aG wheel dantopa
+#  adduser ${USER}
+#  usermod -aG wheel ${USER}
 
-# # passwd dantopa
-# Changing password for user dantopa.
+# # passwd ${USER}
+# Changing password for user ${USER}.
 # New password: 8, !A
 
-#  adduser dantopa
+#  adduser ${USER}
 #   name
 #   room number
 #   phone, office
@@ -96,7 +97,7 @@ new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
 #
 # sudo addgroup wheel
 #
-# usermod -aG wheel dantopa
+# usermod -aG wheel ${USER}
 
 # ubuntu disaster
 # ~/.spack/bootstrap/config/packages.yaml

@@ -3,6 +3,9 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Dec 29 19:05:24 MST 2021
 
+# start timer
+export centosSECONDS=${SECONDS}
+
 # xiuhcoatlDockerTime centos:${centos_version}
 # source /repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh
 
@@ -36,8 +39,6 @@ source ${repo_scripts_spack}/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
-# start timer
-export centosSECONDS=${SECONDS}
 # name of spack directory on virtual machine
 export mySpack="${tag}-${USER}-docker-spack"
 # locate builds repo
