@@ -15,10 +15,9 @@ source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 # source /Volumes/repos/github/builds/scripts-docker/kickstarts/centos-7-kickstart.sh
 # ${repo_build} declared in bash init (e.g. /Volumes/repos/github/builds)
 
-export dist="centos"
-export release="7.9.2009"
-export tag="${dist}-${release}"
+export dist="centos" ; export release="7.9.2009" ; export tag="${dist}-${release}"
 export USER="dantopa"
+export installer="yum"
 
 # defined in bash init
 #    repo_build (e.g. /Volumes/repos/github/builds)
@@ -56,14 +55,7 @@ echo "mkdir -p ${dump_Results}/yum-results"
 
 #  #  #  ========================================== build packages
 
-source ${repo_scripts_docker}/kickstarts/installers/yum-installs.sh
-
-# ${local_Results} set in yum-installs.sh
-echo ""; echo "Copy results to ${dump_Results}"
-    cp -a ${local_Results} ${dump_Results}/.
-    
-echo ""; echo "cp ${repo_scripts_spack}/transport/refresh-yum.sh ${dump_Results}/."
-               cp ${repo_scripts_spack}/transport/refresh-yum.sh ${dump_Results}/.
+source ${repo_scripts_docker}/kickstarts/installers/${installer}-installs.sh
 
 #  #  #  ========================================== set up for spack
 

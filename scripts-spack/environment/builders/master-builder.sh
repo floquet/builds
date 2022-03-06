@@ -13,8 +13,8 @@ function spack_00(){
     spack spec ${1} ${myCompiler} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}               > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1} ${myCompiler}"      >> ${file}
-                   spack install ${1} ${myCompiler} | tee -a ${file} 2>&1
+    echo "$(date): spack install ${1} ${myCompiler} 2>&1"      >> ${file}
+                   spack install ${1} ${myCompiler} 2>&1 | tee -a ${file}
   }
 
 function spack_01(){
@@ -23,8 +23,8 @@ function spack_01(){
     spack spec ${1}${2} ${myCompiler} ${myPython} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                               > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython}"      >> ${file}
-                   spack install ${1}${2} ${myCompiler} ${myPython} | tee -a ${file} 2>&1
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} 2>&1"      >> ${file}
+                   spack install ${1}${2} ${myCompiler} ${myPython} 2>&1 | tee -a ${file}
   }
 
 function spack_02(){
@@ -33,8 +33,8 @@ function spack_02(){
     spack spec ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                                            > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI}"      >> ${file}
-                   spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI} | tee -a ${file} 2>&1
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI} 2>&1"      >> ${file}
+                   spack install ${1}${2} ${myCompiler} ${myPython} ${myOpenMPI} 2>&1 | tee -a ${file}
   }
 
 function spack_03(){
@@ -43,8 +43,8 @@ function spack_03(){
     spack spec ${1}${2} ${myCompiler} ${myOpenMPI} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                                > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myOpenMPI}"      >> ${file}
-                   spack install ${1}${2} ${myCompiler} ${myOpenMPI} | tee -a ${file} 2>&1
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myOpenMPI} 2>&1"      >> ${file}
+                   spack install ${1}${2} ${myCompiler} ${myOpenMPI} 2>&1 | tee -a ${file}
   }
 
 function spack_04(){
@@ -53,8 +53,8 @@ function spack_04(){
     spack spec ${1}${2} ${myCompiler} ${myLLVM} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                             > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myLLVM}"      >> ${file}
-                   spack install ${1}${2} ${myCompiler} ${myLLVM} | tee -a ${file} 2>&1
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myLLVM} 2>&1"      >> ${file}
+                   spack install ${1}${2} ${myCompiler} ${myLLVM} 2>&1 | tee -a ${file}
   }
 
 function spack_05(){
@@ -63,8 +63,8 @@ function spack_05(){
     spack spec ${1}${2} ${myCompiler} ${myPython} ${myLLVM} > "${SPACK_ROOT}/${USER}/specs/${1}.txt" &
     spack info ${1}                                         > "${SPACK_ROOT}/${USER}/info/${1}.txt"  &
     file="${SPACK_ROOT}/${USER}/build-logs/${1}.txt"
-    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM}"      >> ${file}
-                   spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM} | tee -a ${file} 2>&1
+    echo "$(date): spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM} 2>&1"      >> ${file}
+                   spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM} 2>&1 | tee -a ${file}
   }
 
 new_step "Set environment variables"

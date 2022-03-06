@@ -56,15 +56,15 @@ echo ""; echo "Copy results to ${dump_Results}"
                cp -a ${local_Results} ${dump_Results}/.
 
 echo ""; echo "Set up user account"
-          adduser dantopa
-    echo "completed: adduser dantopa"
+          adduser ${USER}
+    echo "completed: adduser ${USER}"
 
-          usermod -aG wheel dantopa
-    echo "completed: usermod -aG wheel dantopa"
+          usermod -aG wheel ${USER}
+    echo "completed: usermod -aG wheel ${USER}"
 
-    echo "pending: passwd dantopa"
+    echo "pending: passwd ${USER}"
 
-echo ""; echo "su - dantopa"
+echo ""; echo "su - ${USER}"
     echo "export mySpack=${mySpack}"
     echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
 
