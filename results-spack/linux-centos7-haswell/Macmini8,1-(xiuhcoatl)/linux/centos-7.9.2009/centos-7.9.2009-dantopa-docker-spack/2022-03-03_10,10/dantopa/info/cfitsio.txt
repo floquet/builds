@@ -1,0 +1,56 @@
+AutotoolsPackage:   cfitsio
+
+Description:
+    CFITSIO is a library of C and Fortran subroutines for reading and
+    writing data files in FITS (Flexible Image Transport System) data
+    format.
+
+Homepage: https://heasarc.gsfc.nasa.gov/fitsio/
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    4.0.0    https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.0.0.tar.gz
+
+Safe versions:  
+    4.0.0    https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.0.0.tar.gz
+    3.49     https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-3.49.tar.gz
+    3.48     https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-3.48.tar.gz
+    3.47     https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-3.47.tar.gz
+    3.45     http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio3450.tar.gz
+    3.42     http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio3420.tar.gz
+    3.41     http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio3410.tar.gz
+    3.37     http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio3370.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    ======================
+
+    bzip2 [on]        --      on, off           Enable bzip2 support
+    shared [on]       --      on, off           Build shared libraries
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    bzip2
+    curl
+    gnuconfig
+
+Link Dependencies:
+    bzip2
+    curl
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

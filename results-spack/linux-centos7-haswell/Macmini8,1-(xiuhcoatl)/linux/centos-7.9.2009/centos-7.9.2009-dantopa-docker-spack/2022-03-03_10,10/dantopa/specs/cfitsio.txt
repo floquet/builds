@@ -1,0 +1,60 @@
+Input spec
+--------------------------------
+cfitsio%gcc@11.2.0
+    ^python@3.10.2
+
+Concretized
+--------------------------------
+cfitsio@4.0.0%gcc@11.2.0+bzip2+shared arch=linux-centos7-haswell
+    ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+        ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+    ^curl@7.81.0%gcc@11.2.0~gssapi~ldap~libidn2~librtmp~libssh+libssh2~nghttp2 tls=openssl arch=linux-centos7-haswell
+        ^libssh2@1.10.0%gcc@11.2.0~ipo+shared build_type=RelWithDebInfo crypto=openssl arch=linux-centos7-haswell
+            ^cmake@3.22.2%gcc@11.2.0+doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-centos7-haswell
+                ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+                    ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+                ^openssl@1.1.1m%gcc@11.2.0~docs certs=system arch=linux-centos7-haswell
+                    ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+                        ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-haswell
+                        ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+                ^py-sphinx@4.4.0%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-alabaster@0.7.12%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^py-pip@21.3.1%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^python@3.10.2%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060 arch=linux-centos7-haswell
+                                ^expat@2.4.6%gcc@11.2.0+libbsd arch=linux-centos7-haswell
+                                    ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-haswell
+                                        ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-haswell
+                                ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell
+                                    ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+                                        ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+                                    ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell
+                                ^libffi@3.4.2%gcc@11.2.0 arch=linux-centos7-haswell
+                                ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-centos7-haswell
+                                ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^py-setuptools@59.4.0%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^py-wheel@0.37.0%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-babel@2.9.1%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^py-pytz@2021.3%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-docutils@0.17.1%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-imagesize@1.3.0%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-jinja2@3.0.3%gcc@11.2.0~i18n arch=linux-centos7-haswell
+                        ^py-markupsafe@2.0.1%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-packaging@21.3%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^py-pyparsing@3.0.6%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-pygments@2.10.0%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-requests@2.26.0%gcc@11.2.0~socks arch=linux-centos7-haswell
+                        ^py-certifi@2021.10.8%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^py-charset-normalizer@2.0.12%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^py-idna@3.3%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^py-urllib3@1.26.6%gcc@11.2.0~brotli~secure~socks arch=linux-centos7-haswell
+                    ^py-snowballstemmer@2.0.0%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-sphinxcontrib-applehelp@1.0.1%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-sphinxcontrib-devhelp@1.0.1%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-sphinxcontrib-htmlhelp@2.0.0%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-sphinxcontrib-jsmath@1.0.1%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-sphinxcontrib-qthelp@1.0.2%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^py-sphinxcontrib-serializinghtml@1.1.5%gcc@11.2.0 arch=linux-centos7-haswell
+
