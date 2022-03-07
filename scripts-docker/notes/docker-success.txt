@@ -1,0 +1,28 @@
+export vault="${volume_ext}/docker-land"
+ 
+dtopa@swe45.local:~ $  docker push dantopa/base-centos:${centos_version} 
+The push refers to repository [docker.io/dantopa/base-centos]
+1a165fa5453d: Pushed 
+7f40bed7df4a: Pushed 
+174f56854903: Mounted from library/centos 
+7.9.2009: digest: sha256:e33554a7978d394807cf2cd93e7efedeec85f303783f31d4d21e40a725ad52dc size: 956
+
+$ docker save dantopa/base-ubuntu:${ubuntu_version} > ${vault}/base-ubuntu:${ubuntu_version}.gz
+
+
+
+dtopa@swe45.local:~ $  docker push dantopa/base-centos:${centos_version} 
+The push refers to repository [docker.io/dantopa/base-centos]
+1a165fa5453d: Pushed 
+7f40bed7df4a: Pushed 
+174f56854903: Mounted from library/centos 
+7.9.2009: digest: sha256:e33554a7978d394807cf2cd93e7efedeec85f303783f31d4d21e40a725ad52dc size: 956
+
+$ docker save dantopa/base-centos:${centos_version} > ${vault}/base-centos:${centos_version}.gz
+
+
+docker push dantopa/science-centos:${centos_version} 
+
+export vault="${volume_ext}/docker-land/tarballs" 
+docker save dantopa/science-centos:${centos_version} > ${vault}/science-centos:${centos_version}.gz
+

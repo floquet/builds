@@ -1,0 +1,58 @@
+AutotoolsPackage:   xerces-c
+
+Description:
+    Xerces-C++ is a validating XML parser written in a portable subset of
+    C++. Xerces-C++ makes it easy to give your application the ability to
+    read and write XML data. A shared library is provided for parsing,
+    generating, manipulating, and validating XML documents using the DOM,
+    SAX, and SAX2 APIs.
+
+Homepage: https://xerces.apache.org/xerces-c
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    3.2.3    https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.bz2
+
+Safe versions:  
+    3.2.3    https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.bz2
+    3.2.2    https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.2.tar.bz2
+    3.2.1    https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.1.tar.bz2
+    3.1.4    https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.1.4.tar.bz2
+    3.1.3    https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.1.3.tar.bz2
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]           When    Allowed values          Description
+    =====================    ====    ====================    ==============================================
+
+    cxxstd [default]         --      default, 98, 11, 14,    Use the specified C++ standard when building
+                                     17                      
+    netaccessor [curl]       --      curl, none              Net Accessor (used to access network resources
+    transcoder [gnuiconv]    --      gnuiconv, iconv,        Use the specified transcoder
+                                     icu, macos, windows     
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    curl
+    gnuconfig
+
+Link Dependencies:
+    curl
+    iconv
+    icu4c
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

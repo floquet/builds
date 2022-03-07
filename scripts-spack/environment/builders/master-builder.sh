@@ -77,6 +77,7 @@ pause
 
 new_step "application ${myCompiler}"
     sub_step_counter=0
+    spack_00 "alglib"
     spack_00 "chapel"
     spack_00 "environment-modules"
     spack_00 "gsl"
@@ -90,6 +91,7 @@ new_step "application ${myCompiler} ${myPython}"
     spack_01 "doxygen"
     spack_01 "gdb"
     spack_01 "gdl" "+python"
+    spack_01 "mpich"
     spack_01 "py-astropy" "+extras"
     spack_01 "py-seaborn"
     spack_01 "py-tqdm"

@@ -1,0 +1,94 @@
+Package:   charmpp
+
+Description:
+    Charm++ is a parallel programming framework in C++ supported by an
+    adaptive runtime system, which enhances user productivity and allows
+    programs to run portably from small multicore computers (your laptop) to
+    the largest supercomputers.
+
+Homepage: https://charmplusplus.org
+
+Maintainers: @matthiasdiener
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    7.0.0     https://charm.cs.illinois.edu/distrib/charm-7.0.0.tar.gz
+
+Safe versions:  
+    main      [git] https://github.com/UIUC-PPL/charm.git on branch main
+    7.0.0     https://charm.cs.illinois.edu/distrib/charm-7.0.0.tar.gz
+    6.10.2    https://charm.cs.illinois.edu/distrib/charm-6.10.2.tar.gz
+    6.10.1    https://charm.cs.illinois.edu/distrib/charm-6.10.1.tar.gz
+    6.10.0    https://charm.cs.illinois.edu/distrib/charm-6.10.0.tar.gz
+    6.9.0     https://charm.cs.illinois.edu/distrib/charm-6.9.0.tar.gz
+    6.8.2     https://charm.cs.illinois.edu/distrib/charm-6.8.2.tar.gz
+    6.8.1     https://charm.cs.illinois.edu/distrib/charm-6.8.1.tar.gz
+    6.8.0     https://charm.cs.illinois.edu/distrib/charm-6.8.0.tar.gz
+    6.7.1     https://charm.cs.illinois.edu/distrib/charm-6.7.1.tar.gz
+    6.7.0     https://charm.cs.illinois.edu/distrib/charm-6.7.0.tar.gz
+    6.6.1     https://charm.cs.illinois.edu/distrib/charm-6.6.1.tar.gz
+    6.6.0     https://charm.cs.illinois.edu/distrib/charm-6.6.0.tar.gz
+    6.5.1     https://charm.cs.illinois.edu/distrib/charm-6.5.1.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]         When    Allowed values          Description
+    ===================    ====    ====================    ==============================================
+
+    backend [netlrts]      --      mpi, multicore,         Set the backend to use
+                                   netlrts, verbs, gni,    
+                                   ucx, ofi, pami,         
+                                   pamilrts                
+    build-target [LIBS]    --      charm++, AMPI, LIBS,    Specify the target to build
+                                   ChaNGa                  
+    cuda [off]             --      on, off                 Enable CUDA toolkit
+    omp [off]              --      on, off                 Support for the integrated LLVM OpenMP runtime
+    papi [off]             --      on, off                 Enable PAPI integration
+    pmi [none]             --      none, simplepmi,        The ucx/ofi/gni backends need PMI to run!
+                                   slurmpmi, slurmpmi2,    
+                                   pmix                    
+    production [on]        --      on, off                 Build charm++ with all optimizations
+    pthreads [off]         --      on, off                 Compile with pthreads Converse threads
+    shared [on]            --      on, off                 Enable shared link support
+    smp [on]               --      on, off                 Enable SMP parallelism
+    syncft [off]           --      on, off                 Compile with Charm++ fault tolerance support
+    tcp [off]              --      on, off                 Use TCP as transport mechanism (requires +net)
+    tracing [off]          --      on, off                 Enable tracing modules
+
+Installation Phases:
+    install
+
+Build Dependencies:
+    autoconf
+    automake
+    cmake
+    cuda
+    mpi
+    openmpi
+    papi
+    slurm
+    ucx
+
+Link Dependencies:
+    autoconf
+    automake
+    cuda
+    mpi
+    openmpi
+    papi
+    slurm
+    ucx
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

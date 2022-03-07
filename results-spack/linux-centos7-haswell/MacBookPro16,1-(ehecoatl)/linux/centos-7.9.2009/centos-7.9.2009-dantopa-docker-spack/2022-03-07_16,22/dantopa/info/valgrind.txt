@@ -1,0 +1,67 @@
+AutotoolsPackage:   valgrind
+
+Description:
+    An instrumentation framework for building dynamic analysis. There are
+    Valgrind tools that can automatically detect many memory management and
+    threading bugs, and profile your programs in detail. You can also use
+    Valgrind to build new tools. Valgrind is Open Source / Free Software,
+    and is freely available under the GNU General Public License, version 2.
+
+Homepage: https://valgrind.org/
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    3.18.1     https://sourceware.org/pub/valgrind/valgrind-3.18.1.tar.bz2
+
+Safe versions:  
+    develop    [git] git://sourceware.org/git/valgrind.git on branch master
+    3.18.1     https://sourceware.org/pub/valgrind/valgrind-3.18.1.tar.bz2
+    3.18.0     https://sourceware.org/pub/valgrind/valgrind-3.18.0.tar.bz2
+    3.17.0     https://sourceware.org/pub/valgrind/valgrind-3.17.0.tar.bz2
+    3.16.1     https://sourceware.org/pub/valgrind/valgrind-3.16.1.tar.bz2
+    3.15.0     https://sourceware.org/pub/valgrind/valgrind-3.15.0.tar.bz2
+    3.14.0     https://sourceware.org/pub/valgrind/valgrind-3.14.0.tar.bz2
+    3.13.0     https://sourceware.org/pub/valgrind/valgrind-3.13.0.tar.bz2
+    3.12.0     https://sourceware.org/pub/valgrind/valgrind-3.12.0.tar.bz2
+    3.11.0     https://sourceware.org/pub/valgrind/valgrind-3.11.0.tar.bz2
+    3.10.1     https://sourceware.org/pub/valgrind/valgrind-3.10.1.tar.bz2
+    3.10.0     https://sourceware.org/pub/valgrind/valgrind-3.10.0.tar.bz2
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    ===========================================
+
+    boost [on]        --      on, off           Activates boost support for valgrind
+    mpi [on]          --      on, off           Activates MPI support for valgrind
+    only64bit [on]    --      on, off           Sets --enable-only64bit option for valgrind
+    ubsan [off]       --      on, off           Activates ubsan support for valgrind
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    autoconf
+    automake
+    boost
+    gnuconfig
+    libtool
+    mpi
+
+Link Dependencies:
+    boost
+    mpi
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

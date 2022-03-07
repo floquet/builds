@@ -1,0 +1,67 @@
+Input spec
+--------------------------------
+petsc%gcc@11.2.0+fftw+mpfr+mumps+scalapack+strumpack+suite-sparse+superlu-dist
+    ^openmpi@4.1.2
+    ^python@3.10.2
+
+Concretized
+--------------------------------
+petsc@3.16.4%gcc@11.2.0~X~batch~cgns~complex~cuda~debug+double~exodusii+fftw~giflib+hdf5~hpddm~hwloc+hypre~int64~jpeg~knl~kokkos~libpng~libyaml~memkind+metis~mkl-pardiso~mmg~moab+mpfr+mpi+mumps~openmp~p4est~parmmg~ptscotch~random123~rocm~saws+scalapack+shared+strumpack+suite-sparse+superlu-dist~tetgen~trilinos~valgrind clanguage=C arch=linux-centos7-haswell
+    ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+    ^fftw@3.3.10%gcc@11.2.0+mpi~openmp~pfft_patches precision=double,float arch=linux-centos7-haswell
+        ^openmpi@4.1.2%gcc@11.2.0~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-centos7-haswell
+            ^hwloc@2.7.0%gcc@11.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-centos7-haswell
+                ^libpciaccess@0.16%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libtool@2.4.6%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-centos7-haswell
+                            ^libsigsegv@2.13%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^util-macros@1.19.3%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+                    ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+                    ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+                ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+            ^libevent@2.1.12%gcc@11.2.0+openssl arch=linux-centos7-haswell
+                ^openssl@1.1.1m%gcc@11.2.0~docs certs=system arch=linux-centos7-haswell
+                    ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+                        ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-haswell
+                        ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+                        ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+            ^numactl@2.0.14%gcc@11.2.0 patches=4e1d78c,62fc8a8,ff37630 arch=linux-centos7-haswell
+                ^autoconf@2.69%gcc@11.2.0 patches=35c4492,7793209,a49dd5b arch=linux-centos7-haswell
+                ^automake@1.16.5%gcc@11.2.0 arch=linux-centos7-haswell
+            ^openssh@8.8p1%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libedit@3.1-20210216%gcc@11.2.0 arch=linux-centos7-haswell
+    ^gmp@6.2.1%gcc@11.2.0 arch=linux-centos7-haswell
+    ^hdf5@1.12.1%gcc@11.2.0~cxx~fortran~hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo patches=ee351eb arch=linux-centos7-haswell
+        ^cmake@3.22.2%gcc@11.2.0~doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-centos7-haswell
+    ^hypre@2.24.0%gcc@11.2.0~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist~unified-memory arch=linux-centos7-haswell
+        ^openblas@0.3.19%gcc@11.2.0~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=openmp arch=linux-centos7-haswell
+    ^metis@5.1.0%gcc@11.2.0~gdb~int64~real64+shared build_type=Release patches=4991da9,b1225da arch=linux-centos7-haswell
+    ^mpfr@4.1.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^autoconf-archive@2019.01.06%gcc@11.2.0 arch=linux-centos7-haswell
+        ^texinfo@6.5%gcc@11.2.0 patches=12f6edb,1732115 arch=linux-centos7-haswell
+    ^mumps@5.4.1%gcc@11.2.0~blr_mt+complex+double+float~int64+metis+mpi~openmp+parmetis~ptscotch~scotch+shared patches=1946864 arch=linux-centos7-haswell
+        ^netlib-scalapack@2.1.0%gcc@11.2.0~ipo~pic+shared build_type=Release patches=1c9ce5f,f2baedd arch=linux-centos7-haswell
+        ^parmetis@4.0.3%gcc@11.2.0~gdb~int64~ipo+shared build_type=RelWithDebInfo patches=4f89253,50ed208,704b84f arch=linux-centos7-haswell
+    ^python@3.10.2%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060 arch=linux-centos7-haswell
+        ^expat@2.4.6%gcc@11.2.0+libbsd arch=linux-centos7-haswell
+            ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-haswell
+        ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell
+            ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libffi@3.4.2%gcc@11.2.0 arch=linux-centos7-haswell
+        ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-centos7-haswell
+        ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-haswell
+    ^strumpack@6.3.0%gcc@11.2.0+butterflypack+c_interface~count_flops~cuda~ipo+mpi+openmp+parmetis~rocm~scotch+shared+slate~task_timers+zfp build_type=RelWithDebInfo arch=linux-centos7-haswell
+        ^butterflypack@2.1.0%gcc@11.2.0~ipo+shared build_type=RelWithDebInfo arch=linux-centos7-haswell
+            ^arpack-ng@3.8.0%gcc@11.2.0+mpi+shared arch=linux-centos7-haswell
+        ^slate@2021.05.02%gcc@11.2.0~cuda~ipo+mpi+openmp~rocm+shared build_type=RelWithDebInfo arch=linux-centos7-haswell
+            ^blaspp@2021.04.01%gcc@11.2.0~cuda~ipo+openmp~rocm+shared build_type=RelWithDebInfo arch=linux-centos7-haswell
+            ^lapackpp@2021.04.00%gcc@11.2.0~ipo+shared build_type=RelWithDebInfo arch=linux-centos7-haswell
+        ^zfp@0.5.5%gcc@11.2.0~aligned~c~cuda~fasthash~fortran~ipo~openmp~profile~python+shared~strided~twoway bsws=64 build_type=RelWithDebInfo arch=linux-centos7-haswell
+    ^suite-sparse@5.10.1%gcc@11.2.0~cuda~graphblas~openmp+pic~tbb arch=linux-centos7-haswell
+    ^superlu-dist@7.2.0%gcc@11.2.0~cuda~int64~ipo~openmp~rocm+shared build_type=RelWithDebInfo patches=8da9e21 arch=linux-centos7-haswell
+

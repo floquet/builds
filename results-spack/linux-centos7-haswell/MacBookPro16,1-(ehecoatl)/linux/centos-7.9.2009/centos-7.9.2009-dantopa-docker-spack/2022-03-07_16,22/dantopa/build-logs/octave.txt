@@ -1,0 +1,480 @@
+Sun Mar  6 21:14:58 MST 2022: spack install octave+arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib  % gcc@11.2.0  ^python@3.10.2  ^llvm@13.0.1 2>&1
+==> Error: No compilers with spec gcc@11.2.0 found
+Run 'spack compiler find' to add compilers or 'spack compilers' to see which compilers are already recognized by spack.
+Mon Mar  7 04:11:32 MST 2022: spack install octave+arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib  % gcc@11.2.0  ^python@3.10.2  ^llvm@13.0.1 2>&1
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libmd-1.0.4-x7n2botdibifovsui5a5bglx7ownfogo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libffi-3.4.2-hycvjbapil5nw22o7ralxameejdxlglq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.45-qc4gbfgpskse6lhgickvlig64d6pg3a2
+==> Installing libcerf-1.3-5sblwpzx5o3b5aysxrmxiqadawwq63ce
+==> No binary for libcerf-1.3-5sblwpzx5o3b5aysxrmxiqadawwq63ce found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d7/d7059e923d3f370c89fb4d19ed4f827d381bc3f0e36da5595a04aeaaf3e6a859.tgz
+==> No patches needed for libcerf
+==> libcerf: Executing phase: 'autoreconf'
+==> libcerf: Executing phase: 'configure'
+==> libcerf: Executing phase: 'build'
+==> libcerf: Executing phase: 'install'
+==> libcerf: Successfully installed libcerf-1.3-5sblwpzx5o3b5aysxrmxiqadawwq63ce
+  Fetch: 0.02s.  Build: 3.93s.  Total: 3.95s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libcerf-1.3-5sblwpzx5o3b5aysxrmxiqadawwq63ce
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/nasm-2.15.05-hwiieuz5zeo42xrefebhlsflbazi2kv6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/findutils-4.8.0-tcll6uemcoytohdxzt5bltzau2lzkagr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-linux-uuid-2.37.4-3sflnfpxkpllpqys45t4a5m7sxbkwcmw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tar-1.34-42gugaaxphtcd4s4frkes2gjjinpxpud
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpng-1.6.37-thsagwquvptbm2itk6vugrt6vtunphef
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx
+==> Installing fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+==> No binary for fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/72/72c44e63044b2b66f6fa112921621ecc20c71193982de4f198d9a29cda385c5e.tar.gz
+==> No patches needed for fontsproto
+==> fontsproto: Executing phase: 'autoreconf'
+==> fontsproto: Executing phase: 'configure'
+==> fontsproto: Executing phase: 'build'
+==> fontsproto: Executing phase: 'install'
+==> fontsproto: Successfully installed fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+  Fetch: 0.04s.  Build: 3.95s.  Total: 3.99s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libbsd-0.11.5-sz7gvwic6c2lscx7ymwszcwo2cejpqtc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/swig-4.0.2-yrpu2zceunrxkfgqrxwkikcpqbqhifrq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+==> Installing pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+==> No binary for pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/6d/6d200dec3740d9ec4ec8d1180e25779c00bc749f94278c8b9021f5534db223fc.tar.gz
+==> No patches needed for pixman
+==> pixman: Executing phase: 'autoreconf'
+==> pixman: Executing phase: 'configure'
+==> pixman: Executing phase: 'build'
+==> pixman: Executing phase: 'install'
+==> pixman: Successfully installed pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+  Fetch: 0.05s.  Build: 27.78s.  Total: 27.83s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+==> Installing libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+==> No binary for libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/6f/6fba26760ca8d5045f2b52ddf641c12cedc19ee30939c6478162b7db8b6220fb.tar.gz
+==> No patches needed for libfontenc
+==> libfontenc: Executing phase: 'autoreconf'
+==> libfontenc: Executing phase: 'configure'
+==> libfontenc: Executing phase: 'build'
+==> libfontenc: Executing phase: 'install'
+==> libfontenc: Successfully installed libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+  Fetch: 0.05s.  Build: 6.60s.  Total: 6.66s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxdmcp-1.1.2-e2hn3iu57qcr66fyikqom6ftj63b57or
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/expat-2.4.6-gmle5qt73gsk4msnhhufq7oj2rwyawdn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/sqlite-3.37.2-xmk5ifdtr7qkyh7v6ml6trb7267po2qd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/freetype-2.11.1-7zeguxq5xlf72odor4g2jcv4nxsbozos
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gettext-0.21-iazp3ms7hesjiw7tfdtcx4ribsunvms4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxcb-1.14-ugycpkdmoww6gmusne7jerg3ttggfveb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks
+==> Installing mkfontscale-1.1.2-psrn7lq5ihvia6lqdkpol3q6d4nrwqzh
+==> No binary for mkfontscale-1.1.2-psrn7lq5ihvia6lqdkpol3q6d4nrwqzh found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/8b/8bba59e60fbc4cb082092cf6b67e810b47b4fe64fbc77dbea1d7e7d55312b2e4.tar.gz
+==> No patches needed for mkfontscale
+==> mkfontscale: Executing phase: 'autoreconf'
+==> mkfontscale: Executing phase: 'configure'
+==> mkfontscale: Executing phase: 'build'
+==> mkfontscale: Executing phase: 'install'
+==> mkfontscale: Successfully installed mkfontscale-1.1.2-psrn7lq5ihvia6lqdkpol3q6d4nrwqzh
+  Fetch: 0.05s.  Build: 5.66s.  Total: 5.72s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontscale-1.1.2-psrn7lq5ihvia6lqdkpol3q6d4nrwqzh
+==> Installing libxfont-1.5.2-7tj3vevju4fjsibaxtylohmlc43vfyw4
+==> No binary for libxfont-1.5.2-7tj3vevju4fjsibaxtylohmlc43vfyw4 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/a7/a7350c75171d03d06ae0d623e42240356d6d3e1ac7dfe606639bf20f0d653c93.tar.gz
+==> No patches needed for libxfont
+==> libxfont: Executing phase: 'autoreconf'
+==> libxfont: Executing phase: 'configure'
+==> libxfont: Executing phase: 'build'
+==> libxfont: Executing phase: 'install'
+==> libxfont: Successfully installed libxfont-1.5.2-7tj3vevju4fjsibaxtylohmlc43vfyw4
+  Fetch: 0.06s.  Build: 20.63s.  Total: 20.70s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxfont-1.5.2-7tj3vevju4fjsibaxtylohmlc43vfyw4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/binutils-2.38-dqzllz4llytxqfyczxy6xp2grxsq3nl2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libx11-1.7.0-noczgj3vivrq3b2gt7xrpiqf6kdnbdhy
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openblas-0.3.19-wx7ahklcd4cppoeq274bf6nqvcagwfn4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssl-1.1.1m-a4skws4v7drekydnfxih33twvozl5tog
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp
+==> Installing mkfontdir-1.0.7-pultiezevhhp7jxwc2y3xi2dbpktngfd
+==> No binary for mkfontdir-1.0.7-pultiezevhhp7jxwc2y3xi2dbpktngfd found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/bc/bccc5fb7af1b614eabe4a22766758c87bfc36d66191d08c19d2fa97674b7b5b7.tar.gz
+==> No patches needed for mkfontdir
+==> mkfontdir: Executing phase: 'autoreconf'
+==> mkfontdir: Executing phase: 'configure'
+==> mkfontdir: Executing phase: 'build'
+==> mkfontdir: Executing phase: 'install'
+==> mkfontdir: Successfully installed mkfontdir-1.0.7-pultiezevhhp7jxwc2y3xi2dbpktngfd
+  Fetch: 0.02s.  Build: 5.20s.  Total: 5.22s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontdir-1.0.7-pultiezevhhp7jxwc2y3xi2dbpktngfd
+==> Installing bdftopcf-1.0.5-xugck4c5nbmpzgnmykihlygbll7rdbm2
+==> No binary for bdftopcf-1.0.5-xugck4c5nbmpzgnmykihlygbll7rdbm2 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/78/78a5ec945de1d33e6812167b1383554fda36e38576849e74a9039dc7364ff2c3.tar.gz
+==> No patches needed for bdftopcf
+==> bdftopcf: Executing phase: 'autoreconf'
+==> bdftopcf: Executing phase: 'configure'
+==> bdftopcf: Executing phase: 'build'
+==> bdftopcf: Executing phase: 'install'
+==> bdftopcf: Successfully installed bdftopcf-1.0.5-xugck4c5nbmpzgnmykihlygbll7rdbm2
+  Fetch: 0.02s.  Build: 5.53s.  Total: 5.55s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bdftopcf-1.0.5-xugck4c5nbmpzgnmykihlygbll7rdbm2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxpm-3.5.12-jtiydoveepqmanq4q4ffr7l33rdjutsz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/flex-2.6.3-la4kstvils5q3ulwzowkeuhluovem352
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/python-3.10.2-bpszue2eihpgncbpf5xestpbs4erufjc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssh-8.8p1-h4xgzygdne7e57mhp3a47wbc7qddbbc4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-hg357zrummq67xjvrwg77ltihljejxj2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/automake-1.16.5-tvigpop6qwdjvi43ouc2hfdnq7euomzi
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/qhull-2020.2-3mr7gzplj4frcy4j6cao34yzi222bb54
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb
+==> Installing icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz
+==> No binary for icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/94/94a80cd6f251a53bd2a997f6f1b5ac6653fe791dfab66e1eb0227740fb86d5dc.tgz
+==> No patches needed for icu4c
+==> icu4c: Executing phase: 'autoreconf'
+==> icu4c: Executing phase: 'configure'
+==> icu4c: Executing phase: 'build'
+==> icu4c: Executing phase: 'install'
+==> icu4c: Successfully installed icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz
+  Fetch: 0.23s.  Build: 1m 11.57s.  Total: 1m 11.79s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-pip-21.3.1-6pzkwggsowxggyt5p22act72rhenagja
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo
+==> Installing libtiff-4.3.0-c2a7kih5p4j366zqfuqihb6opkzogh7l
+==> No binary for libtiff-4.3.0-c2a7kih5p4j366zqfuqihb6opkzogh7l found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/0e/0e46e5acb087ce7d1ac53cf4f56a09b221537fc86dfc5daaad1c2e89e1b37ac8.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/libtiff/no-include-root.patch
+==> Ran patch() for libtiff
+==> libtiff: Executing phase: 'autoreconf'
+==> libtiff: Executing phase: 'configure'
+==> libtiff: Executing phase: 'build'
+==> libtiff: Executing phase: 'install'
+==> libtiff: Successfully installed libtiff-4.3.0-c2a7kih5p4j366zqfuqihb6opkzogh7l
+  Fetch: 0.06s.  Build: 25.08s.  Total: 25.14s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtiff-4.3.0-c2a7kih5p4j366zqfuqihb6opkzogh7l
+==> Installing font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky
+==> No binary for font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/f1/f115a3735604de1e852a4bf669be0269d8ce8f21f8e0e74ec5934b31dadc1e76.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/55/55861d9cf456bd717a3d30a3193402c02174ed3c0dcee828798165fe307ee324.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/63/63087cb61d17bfc9cd6f4f9359f63a3b1dd83300a31a42fd93dca084724c6afb.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/72/720b6a513894bfc09a163951ec3dd8311201e08ee40e8891547b6c129ffb5fce.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d5/d5602f1d749ccd31d3bc1bb6f0c5d77400de0e5e3ac5abebd2a867aa2a4081a4.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/c4/c4923342f6068c83fd4f5dbcf60d671c28461300db7e2aee930c8634b1e4b74a.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/57/57c2db8824865117287d57d47f2c8cf4b2842d036c7475534b5054be69690c73.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/54/549c6ba59979da25e85c218a26e5c527c3c24ebab2c76509c1ebc34d94fae227.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/81/817703372f080d6508cf109011b17f3572ff31047559fe82d93b487ca4e4e2d9.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/45/4509703e9e581061309cf4823bffd4a93f10f48fe192a1d8be1f183fd6ab9711.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/49/493965263070a5ee2a301dfdb2e87c1ca3c00c7882bfb3dd99368565ba558ff5.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/46/46142c876e176036c61c0c24c0a689079704d5ca5b510d48c025861ee2dbf829.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/fc/fcecbfc475dfe5826d137f8edc623ba27d58d32f069165c248a013b3c566bb59.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/97/97ee77a9d8ca3e7caf0c78c386eb0b96e8a825ca3642ec035cfb83f5f2cf1475.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/61/61eb1fcfec89f7435cb92cd68712fbe4ba412ca562b1f5feec1f6daa1b8544f6.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/30/3022b6b124f4cc6aade961f8d1306f67ff42e3b7922fb2244847f287344aefea.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/a0/a0b146139363dd0a704c7265ff9cd9150d4ae7c0d248091a9a42093e1618c427.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/21/21166546b0490aa3ec73215fa4ea28d91c6027b56178800ba51426bd3d840cc3.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/ea/eaddfc6d9b32bf38c9dc87c354be3b646a385bc8d9de6e536269f6e1ca50644e.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/97/97d9c1e706938838e4134d74f0836ae9d9ca6705ecb405c9a0ac8fdcbd9c2159.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/79/79dfde93d356e41c298c2c1b9c638ec1a144f438d5146d0df6219afb1c2b8818.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d3/d3b93f7f73a526919bf73a38e10ef4643cd541403a682a8068d54bbcdd9c7e27.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/02/02b3839ae79ba6a7750525bb3b0c281305664b95bf63b4a0baa230a277b4f928.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/c4/c43ae370932eb8a4789a5b1f9801da15228b0d4c803251785c38d82aef024a4b.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/33/3399b7586c18be509cdaeceeebf754b861faa1d8799dda1aae01aeb2a7a30f01.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d6/d64b9bfa5fa8dedf084f1695997cc32149485d2a195c810f62a1991ab5cd5519.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/dc/dc3b8d5890480943e735e0375f0e0d8333094fcb6d6845ba321b2e39db78d148.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/9e/9e82783758e8c67a9aadaf1a7222d13418a87455e4ce0a9974fb1df0278bdf74.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/0a/0a8c77c1540dc376fb2bb5a02bd33ee5f3563fbac9fc07c7947cac462c4bb48a.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/ae/aeea5f130480a3f05149bde13d240e668d8fb4b32c02b18914fcccd1182abe72.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/50/503e70ee66af34f6ec4426c0f4ae708e9d30dafdcd58f671a87c7bf56b1952a3.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/25/254be39c09da1c4e77d2a75a2969330ee2db395120a428671c50aef3ab745fc0.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d9/d9e86a8805b0fb78222409169d839a8531a1f5c7284ee117ff2a0af2e5016c3f.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/e8/e8c3417d89183b1fc383fb3e0f3948c0d01fabcb9edace8b7ec85eab8cdc18c4.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/38/38301bbdb6374494f30c0b44acc7052ed8fc2289e917e648ca566fc591f0a9e0.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/5e/5e05a642182ec6a77bd7cacb913d3c86b364429329a5f223b69792d418f90ae9.tar.gz
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-encodings-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/encodings/encodings-1.0.4
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-alias-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-alias/font-alias-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bh-75dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bh-75dpi/font-bh-75dpi-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bh-type1-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bh-type1/font-bh-type1-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-dec-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-dec-misc/font-dec-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-jis-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-jis-misc/font-jis-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-sun-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-sun-misc/font-sun-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bh-100dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bh-100dpi/font-bh-100dpi-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-ibm-type1-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-ibm-type1/font-ibm-type1-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-isas-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-isas-misc/font-isas-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-misc-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-misc-misc/font-misc-misc-1.1.2
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-mutt-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-mutt-misc/font-mutt-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-micro-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-micro-misc/font-micro-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-adobe-75dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-adobe-75dpi/font-adobe-75dpi-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-arabic-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-arabic-misc/font-arabic-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-cursor-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-cursor-misc/font-cursor-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-daewoo-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-daewoo-misc/font-daewoo-misc-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-misc-meltho-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-misc-meltho/font-misc-meltho-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-adobe-100dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-adobe-100dpi/font-adobe-100dpi-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-misc-cyrillic-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-misc-cyrillic/font-misc-cyrillic-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-misc-ethiopic-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-misc-ethiopic/font-misc-ethiopic-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-xfree86-type1-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-xfree86-type1/font-xfree86-type1-1.0.4
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bitstream-75dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bitstream-75dpi/font-bitstream-75dpi-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bitstream-type1-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bitstream-type1/font-bitstream-type1-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-cronyx-cyrillic-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-cronyx-cyrillic/font-cronyx-cyrillic-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-schumacher-misc-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-schumacher-misc/font-schumacher-misc-1.1.2
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-screen-cyrillic-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-screen-cyrillic/font-screen-cyrillic-1.0.4
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bitstream-100dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bitstream-100dpi/font-bitstream-100dpi-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bitstream-speedo-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bitstream-speedo/font-bitstream-speedo-1.0.2
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-winitzki-cyrillic-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-winitzki-cyrillic/font-winitzki-cyrillic-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-adobe-utopia-75dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-adobe-utopia-75dpi/font-adobe-utopia-75dpi-1.0.4
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-adobe-utopia-type1-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-adobe-utopia-type1/font-adobe-utopia-type1-1.0.4
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-adobe-utopia-100dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-adobe-utopia-100dpi/font-adobe-utopia-100dpi-1.0.4
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bh-lucidatypewriter-75dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bh-lucidatypewriter-75dpi/font-bh-lucidatypewriter-75dpi-1.0.3
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-font-bh-lucidatypewriter-100dpi-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky/spack-src/font-bh-lucidatypewriter-100dpi/font-bh-lucidatypewriter-100dpi-1.0.3
+==> No patches needed for font-util
+==> font-util: Executing phase: 'autoreconf'
+==> font-util: Executing phase: 'configure'
+==> font-util: Executing phase: 'build'
+==> font-util: Executing phase: 'install'
+==> font-util: Successfully installed font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky
+  Fetch: 1.15s.  Build: 5m 11.19s.  Total: 5m 12.34s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky
+==> Installing fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp
+==> No binary for fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/6a/6a64f2a687f5c4f203a46fa659f43dd43d1f8b845df8d723107e8a7e6158e4ce.tar.bz2
+==> No patches needed for fribidi
+==> fribidi: Executing phase: 'autoreconf'
+==> fribidi: Executing phase: 'configure'
+==> fribidi: Executing phase: 'build'
+==> fribidi: Executing phase: 'install'
+==> fribidi: Successfully installed fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp
+  Fetch: 0.08s.  Build: 6.44s.  Total: 6.52s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl
+==> Installing llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q
+==> No binary for llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/09/09c50d558bd975c41157364421820228df66632802a4a6a7c9c17f86a7340802.tar.gz
+==> No patches needed for llvm
+==> llvm: Executing phase: 'cmake'
+==> llvm: Executing phase: 'build'
+==> llvm: Executing phase: 'install'
+==> llvm: Successfully installed llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q
+  Fetch: 1.25s.  Build: 1h 24m 27.19s.  Total: 1h 24m 28.44s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-wheel-0.37.0-fbgwkibn2scinf425lho25vn5o3nvroy
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openmpi-4.1.2-25r75c3ibz5up5ymhmqqluv3xzahsqwo
+==> Installing fontconfig-2.13.94-es6n6yfjomryjozmxp5xbzhckflaos4r
+==> No binary for fontconfig-2.13.94-es6n6yfjomryjozmxp5xbzhckflaos4r found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/24/246d1640a7e54fba697b28e4445f4d9eb63dda1b511d19986249368ee7191882.tar.gz
+==> Ran patch() for fontconfig
+==> fontconfig: Executing phase: 'autoreconf'
+==> fontconfig: Executing phase: 'configure'
+==> fontconfig: Executing phase: 'build'
+==> fontconfig: Executing phase: 'install'
+==> fontconfig: Successfully installed fontconfig-2.13.94-es6n6yfjomryjozmxp5xbzhckflaos4r
+  Fetch: 0.06s.  Build: 26.91s.  Total: 26.97s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontconfig-2.13.94-es6n6yfjomryjozmxp5xbzhckflaos4r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-setuptools-59.4.0-p7jgkti2wfdhbg5j3pdony7xo2t33ffx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hdf5-1.12.1-nkek6pdbzkq4rxxxwgzn6qtkcz5y7yan
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fftw-3.3.10-sgbxbpeoh2ygupa27yci4lnnh75etdqe
+==> Installing arpack-ng-3.8.0-o4dp3rtl7rcilliwpklxbkpy4keu5r76
+==> No binary for arpack-ng-3.8.0-o4dp3rtl7rcilliwpklxbkpy4keu5r76 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/ad/ada5aeb3878874383307239c9235b716a8a170c6d096a6625bfd529844df003d.tar.gz
+==> No patches needed for arpack-ng
+==> arpack-ng: Executing phase: 'install'
+==> arpack-ng: Successfully installed arpack-ng-3.8.0-o4dp3rtl7rcilliwpklxbkpy4keu5r76
+  Fetch: 0.01s.  Build: 18.95s.  Total: 18.96s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/arpack-ng-3.8.0-o4dp3rtl7rcilliwpklxbkpy4keu5r76
+==> Installing libgd-2.2.4-rzihei2evumgdpcdmqnsyhq7cqnov4sm
+==> No binary for libgd-2.2.4-rzihei2evumgdpcdmqnsyhq7cqnov4sm found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/48/487a650aa614217ed08ab1bd1aa5d282f9d379cfd95c756aed0b43406381be65.tar.gz
+==> Ran patch() for libgd
+==> libgd: Executing phase: 'autoreconf'
+==> libgd: Executing phase: 'configure'
+==> libgd: Executing phase: 'build'
+==> libgd: Executing phase: 'install'
+==> libgd: Successfully installed libgd-2.2.4-rzihei2evumgdpcdmqnsyhq7cqnov4sm
+  Fetch: 0.09s.  Build: 14.77s.  Total: 14.86s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libgd-2.2.4-rzihei2evumgdpcdmqnsyhq7cqnov4sm
+==> Installing suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu
+==> No binary for suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/ac/acb4d1045f48a237e70294b950153e48dce5b5f9ca8190e86c2b8c54ce00a7ee.tar.gz
+==> No patches needed for suite-sparse
+==> suite-sparse: Executing phase: 'install'
+==> suite-sparse: Successfully installed suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu
+  Fetch: 0.16s.  Build: 39.14s.  Total: 39.30s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu
+==> Installing meson-0.61.2-p4svecqet433g2okbkz2apr6zquf6gqa
+==> No binary for meson-0.61.2-p4svecqet433g2okbkz2apr6zquf6gqa found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/33/33cd555314a94d52acfbb3f6f44d4e61c4ad0bfec7acf4301be7e40bb969b3a8.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/meson/rpath-0.58.patch
+==> meson: Executing phase: 'install'
+==> meson: Successfully installed meson-0.61.2-p4svecqet433g2okbkz2apr6zquf6gqa
+  Fetch: 0.08s.  Build: 2.95s.  Total: 3.02s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/meson-0.61.2-p4svecqet433g2okbkz2apr6zquf6gqa
+==> Installing glib-2.70.4-qbinfzi54idezzvkyf7uo6wzyo4r22bj
+==> No binary for glib-2.70.4-qbinfzi54idezzvkyf7uo6wzyo4r22bj found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/ab/ab3d176f3115dcc4e5d02db795984e04e4f4b48d836252e23e8c468e9d423c33.tar.xz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/glib/meson-gettext-2.70.patch
+==> Ran patch() for glib
+==> glib: Executing phase: 'install'
+==> glib: Successfully installed glib-2.70.4-qbinfzi54idezzvkyf7uo6wzyo4r22bj
+  Fetch: 0.09s.  Build: 1m 15.30s.  Total: 1m 15.39s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/glib-2.70.4-qbinfzi54idezzvkyf7uo6wzyo4r22bj
+==> Installing cairo-1.16.0-q3u4djfwzli6lecgvb2jlb25wxw547h4
+==> No binary for cairo-1.16.0-q3u4djfwzli6lecgvb2jlb25wxw547h4 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/5e/5e7b29b3f113ef870d1e3ecf8adf21f923396401604bda16d44be45e66052331.tar.xz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/cairo/fontconfig.patch
+==> cairo: Executing phase: 'autoreconf'
+==> cairo: Executing phase: 'configure'
+==> cairo: Executing phase: 'build'
+==> cairo: Executing phase: 'install'
+==> cairo: Successfully installed cairo-1.16.0-q3u4djfwzli6lecgvb2jlb25wxw547h4
+  Fetch: 0.38s.  Build: 1m 42.70s.  Total: 1m 43.08s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cairo-1.16.0-q3u4djfwzli6lecgvb2jlb25wxw547h4
+==> Installing gobject-introspection-1.56.1-ud57gxygk2m44gavyeuoa6xkccw4nask
+==> No binary for gobject-introspection-1.56.1-ud57gxygk2m44gavyeuoa6xkccw4nask found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/5b/5b2875ccff99ff7baab63a34b67f8c920def240e178ff50add809e267d9ea24b.tar.xz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/77/7700828b638c85255c87fcc317ea7e9572ff443f65c86648796528885e5b4cea
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/gobject-introspection/sbang.patch
+==> Applied patch https://gitlab.gnome.org/GNOME/gobject-introspection/-/commit/1f9284228092b2a7200e8a78bc0ea6702231c6db.patch
+==> gobject-introspection: Executing phase: 'install'
+==> gobject-introspection: Successfully installed gobject-introspection-1.56.1-ud57gxygk2m44gavyeuoa6xkccw4nask
+  Fetch: 0.06s.  Build: 36.78s.  Total: 36.84s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gobject-introspection-1.56.1-ud57gxygk2m44gavyeuoa6xkccw4nask
+==> Installing harfbuzz-2.9.1-hglumh4mxmbzh5rfmjtpzkyjy6sxfjz6
+==> No binary for harfbuzz-2.9.1-hglumh4mxmbzh5rfmjtpzkyjy6sxfjz6 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/0e/0edcc980f526a338452180e701d6aba6323aef457b6686976a7d17ccbddc51cf.tar.xz
+==> Ran patch() for harfbuzz
+==> harfbuzz: Executing phase: 'autoreconf'
+==> harfbuzz: Executing phase: 'configure'
+==> harfbuzz: Executing phase: 'build'
+==> harfbuzz: Executing phase: 'install'
+==> harfbuzz: Successfully installed harfbuzz-2.9.1-hglumh4mxmbzh5rfmjtpzkyjy6sxfjz6
+  Fetch: 0.15s.  Build: 47.09s.  Total: 47.23s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/harfbuzz-2.9.1-hglumh4mxmbzh5rfmjtpzkyjy6sxfjz6
+==> Installing pango-1.42.0-we6eky4ugnqzgtbkhw2jajf7sy2z2o6h
+==> No binary for pango-1.42.0-we6eky4ugnqzgtbkhw2jajf7sy2z2o6h found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/99/9924d88a3dcedff753f0763814a1605307c5c9c931413b8b47ea7267d1b19446.tar.xz
+==> No patches needed for pango
+==> pango: Executing phase: 'autoreconf'
+==> pango: Executing phase: 'configure'
+==> pango: Executing phase: 'build'
+==> pango: Executing phase: 'install'
+==> pango: Successfully installed pango-1.42.0-we6eky4ugnqzgtbkhw2jajf7sy2z2o6h
+  Fetch: 0.06s.  Build: 32.52s.  Total: 32.58s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pango-1.42.0-we6eky4ugnqzgtbkhw2jajf7sy2z2o6h
+==> Installing gnuplot-5.4.2-x4vskfttml3zfjsf6mz4njqjlkfuve5z
+==> No binary for gnuplot-5.4.2-x4vskfttml3zfjsf6mz4njqjlkfuve5z found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/e5/e57c75e1318133951d32a83bcdc4aff17fed28722c4e71f2305cfc2ae1cae7ba.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/gnuplot/term_include.patch
+==> gnuplot: Executing phase: 'autoreconf'
+==> gnuplot: Executing phase: 'configure'
+==> gnuplot: Executing phase: 'build'
+==> gnuplot: Executing phase: 'install'
+==> gnuplot: Successfully installed gnuplot-5.4.2-x4vskfttml3zfjsf6mz4njqjlkfuve5z
+  Fetch: 0.10s.  Build: 1m 3.81s.  Total: 1m 3.92s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gnuplot-5.4.2-x4vskfttml3zfjsf6mz4njqjlkfuve5z
+==> Installing octave-6.4.0-szi4wxs6wi5lntren6wkgubtqkgyozuy
+==> No binary for octave-6.4.0-szi4wxs6wi5lntren6wkgubtqkgyozuy found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/b4/b48f33d4fceaf394cfbea73a8c850000936d83a41739a24f7568b5b0a7b39acd.tar.gz
+==> Ran patch() for octave
+==> octave: Executing phase: 'autoreconf'
+==> octave: Executing phase: 'configure'
+==> octave: Executing phase: 'build'
+==> octave: Executing phase: 'install'
+==> octave: Successfully installed octave-6.4.0-szi4wxs6wi5lntren6wkgubtqkgyozuy
+  Fetch: 0.33s.  Build: 17m 27.01s.  Total: 17m 27.33s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/octave-6.4.0-szi4wxs6wi5lntren6wkgubtqkgyozuy

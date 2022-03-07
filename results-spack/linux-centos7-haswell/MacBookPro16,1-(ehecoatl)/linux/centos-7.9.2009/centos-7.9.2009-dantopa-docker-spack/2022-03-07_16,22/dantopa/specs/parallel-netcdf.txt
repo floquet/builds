@@ -1,0 +1,35 @@
+Input spec
+--------------------------------
+parallel-netcdf%gcc@11.2.0
+    ^openmpi@4.1.2
+
+Concretized
+--------------------------------
+parallel-netcdf@1.12.2%gcc@11.2.0~burstbuffer+cxx+fortran+pic+shared arch=linux-centos7-haswell
+    ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-centos7-haswell
+        ^libsigsegv@2.13%gcc@11.2.0 arch=linux-centos7-haswell
+    ^openmpi@4.1.2%gcc@11.2.0~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-centos7-haswell
+        ^hwloc@2.7.0%gcc@11.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-centos7-haswell
+            ^libpciaccess@0.16%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libtool@2.4.6%gcc@11.2.0 arch=linux-centos7-haswell
+                ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+                ^util-macros@1.19.3%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+                ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+                ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+                ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+            ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+        ^libevent@2.1.12%gcc@11.2.0+openssl arch=linux-centos7-haswell
+            ^openssl@1.1.1m%gcc@11.2.0~docs certs=system arch=linux-centos7-haswell
+                ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+                    ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-haswell
+                    ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+                        ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+        ^numactl@2.0.14%gcc@11.2.0 patches=4e1d78c,62fc8a8,ff37630 arch=linux-centos7-haswell
+            ^autoconf@2.69%gcc@11.2.0 patches=35c4492,7793209,a49dd5b arch=linux-centos7-haswell
+            ^automake@1.16.5%gcc@11.2.0 arch=linux-centos7-haswell
+        ^openssh@8.8p1%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libedit@3.1-20210216%gcc@11.2.0 arch=linux-centos7-haswell
+

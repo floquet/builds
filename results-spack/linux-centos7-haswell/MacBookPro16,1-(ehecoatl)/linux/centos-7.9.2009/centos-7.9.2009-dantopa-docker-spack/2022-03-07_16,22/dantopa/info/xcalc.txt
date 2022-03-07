@@ -1,0 +1,50 @@
+AutotoolsPackage:   xcalc
+
+Description:
+    xcalc is a scientific calculator X11 client that can emulate a TI-30 or
+    an HP-10C.
+
+Homepage: https://cgit.freedesktop.org/xorg/app/xcalc
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    1.0.6    https://www.x.org/archive/individual/app/xcalc-1.0.6.tar.gz
+
+Safe versions:  
+    1.0.6    https://www.x.org/archive/individual/app/xcalc-1.0.6.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    None
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    gnuconfig
+    libx11
+    libxaw
+    libxt
+    pkgconfig
+    util-macros
+    xproto
+
+Link Dependencies:
+    libx11
+    libxaw
+    libxt
+    xproto
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

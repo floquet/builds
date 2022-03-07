@@ -1,0 +1,388 @@
+Sun Mar  6 21:13:36 MST 2022: spack install julia@1.7.2  % gcc@11.2.0 2>&1
+==> Error: No compilers with spec gcc@11.2.0 found
+Run 'spack compiler find' to add compilers or 'spack compilers' to see which compilers are already recognized by spack.
+Sun Mar  6 21:47:58 MST 2022: spack install julia@1.7.2  % gcc@11.2.0 2>&1
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+==> Installing mbedtls-2.24.0-srqkkacfqatu3p3mdljlots2xosq32ys
+==> No binary for mbedtls-2.24.0-srqkkacfqatu3p3mdljlots2xosq32ys found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/b5/b5a779b5f36d5fc4cba55faa410685f89128702423ad07b36c5665441a06a5f3.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/mbedtls/fix-dt-needed-shared-libs.patch
+==> mbedtls: Executing phase: 'edit'
+==> mbedtls: Executing phase: 'build'
+==> mbedtls: Executing phase: 'install'
+==> mbedtls: Successfully installed mbedtls-2.24.0-srqkkacfqatu3p3mdljlots2xosq32ys
+  Fetch: 0.08s.  Build: 5.70s.  Total: 5.78s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mbedtls-2.24.0-srqkkacfqatu3p3mdljlots2xosq32ys
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+==> Installing dsfmt-2.2.5-ubw6qpqs6to5pfufc5yh5eluxec4rvnk
+==> No binary for dsfmt-2.2.5-ubw6qpqs6to5pfufc5yh5eluxec4rvnk found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/b7/b7bc498cd140b4808963b1ff9f33b42a491870f54775c1060ecad0e02bcaffb4.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/dsfmt/targets.patch
+==> dsfmt: Executing phase: 'edit'
+==> dsfmt: Executing phase: 'build'
+==> dsfmt: Executing phase: 'install'
+==> dsfmt: Successfully installed dsfmt-2.2.5-ubw6qpqs6to5pfufc5yh5eluxec4rvnk
+  Fetch: 0.11s.  Build: 0.60s.  Total: 0.71s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/dsfmt-2.2.5-ubw6qpqs6to5pfufc5yh5eluxec4rvnk
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+==> Installing libblastrampoline-3.1.0-ihkbqmwvr5zvt65qrpwse7cni3w2yspu
+==> No binary for libblastrampoline-3.1.0-ihkbqmwvr5zvt65qrpwse7cni3w2yspu found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/f6/f6136cc2b5d090ceca67cffa55b4c8af4bcee874333d49297c867abdb0749b5f.tar.gz
+==> No patches needed for libblastrampoline
+==> libblastrampoline: Executing phase: 'edit'
+==> libblastrampoline: Executing phase: 'build'
+==> libblastrampoline: Executing phase: 'install'
+==> libblastrampoline: Successfully installed libblastrampoline-3.1.0-ihkbqmwvr5zvt65qrpwse7cni3w2yspu
+  Fetch: 0.02s.  Build: 0.91s.  Total: 0.94s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libblastrampoline-3.1.0-ihkbqmwvr5zvt65qrpwse7cni3w2yspu
+==> Installing libunwind-1.5.0-azrdddot55e4nathdlqghorji7rgvgdl
+==> No binary for libunwind-1.5.0-azrdddot55e4nathdlqghorji7rgvgdl found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/90/90337653d92d4a13de590781371c604f9031cdb50520366aa1e3a91e1efb1017.tar.gz
+==> No patches needed for libunwind
+==> libunwind: Executing phase: 'autoreconf'
+==> libunwind: Executing phase: 'configure'
+==> libunwind: Executing phase: 'build'
+==> libunwind: Executing phase: 'install'
+==> libunwind: Successfully installed libunwind-1.5.0-azrdddot55e4nathdlqghorji7rgvgdl
+  Fetch: 0.03s.  Build: 16.31s.  Total: 16.35s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libunwind-1.5.0-azrdddot55e4nathdlqghorji7rgvgdl
+==> Installing libwhich-1.1.0-c27vkiajv2ocqrt7zy4fdnkii55zbm53
+==> No binary for libwhich-1.1.0-c27vkiajv2ocqrt7zy4fdnkii55zbm53 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/f1/f1c30bf7396859ad437a5db74e9e328fb4b4e1379457121e28a3524b1e3a0b3f.tar.gz
+==> No patches needed for libwhich
+==> libwhich: Executing phase: 'install'
+==> libwhich: Successfully installed libwhich-1.1.0-c27vkiajv2ocqrt7zy4fdnkii55zbm53
+  Fetch: 0.02s.  Build: 0.24s.  Total: 0.26s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libwhich-1.1.0-c27vkiajv2ocqrt7zy4fdnkii55zbm53
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libmd-1.0.4-x7n2botdibifovsui5a5bglx7ownfogo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libffi-3.4.2-hycvjbapil5nw22o7ralxameejdxlglq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.45-qc4gbfgpskse6lhgickvlig64d6pg3a2
+==> Installing autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+==> No binary for autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/17/17195c833098da79de5778ee90948f4c5d90ed1a0cf8391b4ab348e2ec511e3f.tar.xz
+==> No patches needed for autoconf-archive
+==> autoconf-archive: Executing phase: 'autoreconf'
+==> autoconf-archive: Executing phase: 'configure'
+==> autoconf-archive: Executing phase: 'build'
+==> autoconf-archive: Executing phase: 'install'
+==> autoconf-archive: Successfully installed autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+  Fetch: 0.04s.  Build: 1.92s.  Total: 1.95s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+==> Installing openlibm-0.7.5-kzqf6oosicdghws5nngovyxisxmoppso
+==> No binary for openlibm-0.7.5-kzqf6oosicdghws5nngovyxisxmoppso found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/be/be983b9e1e40e696e8bbb7eb8f6376d3ca0ae675ae6d82936540385b0eeec15b.tar.gz
+==> No patches needed for openlibm
+==> openlibm: Executing phase: 'edit'
+==> openlibm: Executing phase: 'build'
+==> openlibm: Executing phase: 'install'
+==> openlibm: Successfully installed openlibm-0.7.5-kzqf6oosicdghws5nngovyxisxmoppso
+  Fetch: 0.04s.  Build: 2.84s.  Total: 2.87s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openlibm-0.7.5-kzqf6oosicdghws5nngovyxisxmoppso
+==> Installing p7zip-16.02-m7aqykxfmop3btiuexgu7c3v3hdoyxmh
+==> No binary for p7zip-16.02-m7aqykxfmop3btiuexgu7c3v3hdoyxmh found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/5e/5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f.tar.bz2
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/p7zip/gcc10.patch
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/p7zip/gcc11.patch
+==> p7zip: Executing phase: 'edit'
+==> p7zip: Executing phase: 'build'
+==> p7zip: Executing phase: 'install'
+==> p7zip: Successfully installed p7zip-16.02-m7aqykxfmop3btiuexgu7c3v3hdoyxmh
+  Fetch: 0.10s.  Build: 46.54s.  Total: 46.64s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/p7zip-16.02-m7aqykxfmop3btiuexgu7c3v3hdoyxmh
+==> Installing patchelf-0.14.1-73aa2uo2tzbjxiqedjwjmnsmpdncbvqd
+==> No binary for patchelf-0.14.1-73aa2uo2tzbjxiqedjwjmnsmpdncbvqd found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/7a/7a1506caf6873a2b60e7bebc35e1671fa232ee075642b074106b0d0636417466.tar.gz
+==> No patches needed for patchelf
+==> patchelf: Executing phase: 'autoreconf'
+==> patchelf: Executing phase: 'configure'
+==> patchelf: Executing phase: 'build'
+==> patchelf: Executing phase: 'install'
+==> patchelf: Successfully installed patchelf-0.14.1-73aa2uo2tzbjxiqedjwjmnsmpdncbvqd
+  Fetch: 0.05s.  Build: 8.98s.  Total: 9.02s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/patchelf-0.14.1-73aa2uo2tzbjxiqedjwjmnsmpdncbvqd
+==> Installing pcre2-10.39-rvjtts4qi4254lrmozqzer5lfcmnhsnl
+==> No binary for pcre2-10.39-rvjtts4qi4254lrmozqzer5lfcmnhsnl found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/0f/0f03caf57f81d9ff362ac28cd389c055ec2bf0678d277349a1a4bee00ad6d440.tar.bz2
+==> No patches needed for pcre2
+==> pcre2: Executing phase: 'autoreconf'
+==> pcre2: Executing phase: 'configure'
+==> pcre2: Executing phase: 'build'
+==> pcre2: Executing phase: 'install'
+==> pcre2: Successfully installed pcre2-10.39-rvjtts4qi4254lrmozqzer5lfcmnhsnl
+  Fetch: 0.06s.  Build: 27.36s.  Total: 27.42s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre2-10.39-rvjtts4qi4254lrmozqzer5lfcmnhsnl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-linux-uuid-2.37.4-3sflnfpxkpllpqys45t4a5m7sxbkwcmw
+==> Installing nghttp2-1.44.0-zuyqj4c5zrcylseekvg5tttmj3niv5n7
+==> No binary for nghttp2-1.44.0-zuyqj4c5zrcylseekvg5tttmj3niv5n7 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/3e/3e4824d02ae27eca931e0bb9788df00a26e5fd8eb672cf52cbb89c1463ba16e9.tar.gz
+==> No patches needed for nghttp2
+==> nghttp2: Executing phase: 'autoreconf'
+==> nghttp2: Executing phase: 'configure'
+==> nghttp2: Executing phase: 'build'
+==> nghttp2: Executing phase: 'install'
+==> nghttp2: Successfully installed nghttp2-1.44.0-zuyqj4c5zrcylseekvg5tttmj3niv5n7
+  Fetch: 0.09s.  Build: 15.93s.  Total: 16.02s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/nghttp2-1.44.0-zuyqj4c5zrcylseekvg5tttmj3niv5n7
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tar-1.34-42gugaaxphtcd4s4frkes2gjjinpxpud
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libbsd-0.11.5-sz7gvwic6c2lscx7ymwszcwo2cejpqtc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/swig-4.0.2-yrpu2zceunrxkfgqrxwkikcpqbqhifrq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/expat-2.4.6-gmle5qt73gsk4msnhhufq7oj2rwyawdn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/sqlite-3.37.2-xmk5ifdtr7qkyh7v6ml6trb7267po2qd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gettext-0.21-iazp3ms7hesjiw7tfdtcx4ribsunvms4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+==> Installing perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks
+==> No binary for perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/55/551efc818b968b05216024fb0b727ef2ad4c100f8cb6b43fab615fa78ae5be9a.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
+==> Moving resource stage
+	source: /tmp/dantopa/spack-stage/resource-cpanm-gjqexzvtancvcccezyukxfiwbcuvzfks/spack-src/
+	destination: /tmp/dantopa/spack-stage/spack-stage-perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks/spack-src/cpanm/cpanm
+==> Ran patch() for perl
+==> perl: Executing phase: 'configure'
+==> perl: Executing phase: 'build'
+==> perl: Executing phase: 'install'
+==> perl: Successfully installed perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks
+  Fetch: 0.22s.  Build: 2m 47.14s.  Total: 2m 47.36s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/binutils-2.38-dqzllz4llytxqfyczxy6xp2grxsq3nl2
+==> Installing hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+==> No binary for hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d9/d9b23e9b0d17247e8b50254810427ca8a9857dc868e2e3a049f958d7c66af374.tar.gz
+==> No patches needed for hwloc
+==> hwloc: Executing phase: 'autoreconf'
+==> hwloc: Executing phase: 'configure'
+==> hwloc: Executing phase: 'build'
+==> hwloc: Executing phase: 'install'
+==> hwloc: Successfully installed hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+  Fetch: 0.09s.  Build: 24.35s.  Total: 24.45s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+==> Installing openssl-1.1.1m-a4skws4v7drekydnfxih33twvozl5tog
+==> No binary for openssl-1.1.1m-a4skws4v7drekydnfxih33twvozl5tog found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/f8/f89199be8b23ca45fc7cb9f1d8d3ee67312318286ad030f5316aca6462db6c96.tar.gz
+==> Ran patch() for openssl
+==> openssl: Executing phase: 'install'
+==> openssl: Successfully installed openssl-1.1.1m-a4skws4v7drekydnfxih33twvozl5tog
+  Fetch: 0.10s.  Build: 40.94s.  Total: 41.04s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssl-1.1.1m-a4skws4v7drekydnfxih33twvozl5tog
+==> Installing openblas-0.3.19-ugliezviygnjizsnoer5jeapefz7ikmx
+==> No binary for openblas-0.3.19-ugliezviygnjizsnoer5jeapefz7ikmx found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/94/947f51bfe50c2a0749304fbe373e00e7637600b0a47b78a51382aeb30ca08562.tar.gz
+==> No patches needed for openblas
+==> openblas: Executing phase: 'edit'
+==> openblas: Executing phase: 'build'
+==> openblas: Executing phase: 'install'
+==> openblas: Successfully installed openblas-0.3.19-ugliezviygnjizsnoer5jeapefz7ikmx
+  Fetch: 0.13s.  Build: 3m 0.66s.  Total: 3m 0.79s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openblas-0.3.19-ugliezviygnjizsnoer5jeapefz7ikmx
+==> Installing autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx
+==> No binary for autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/95/954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/77/7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/35/35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/a4/a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
+==> Applied patch http://mirrors.mit.edu/gentoo-portage/sys-devel/autoconf/files/autoconf-2.69-fix-libtool-test.patch
+==> Applied patch http://mirrors.mit.edu/gentoo-portage/sys-devel/autoconf/files/autoconf-2.69-perl-5.26.patch
+==> Applied patch http://mirrors.mit.edu/gentoo-portage/sys-devel/autoconf/files/autoconf-2.69-perl-5.26-2.patch
+==> Ran patch() for autoconf
+==> autoconf: Executing phase: 'autoreconf'
+==> autoconf: Executing phase: 'configure'
+==> autoconf: Executing phase: 'build'
+==> autoconf: Executing phase: 'install'
+==> autoconf: Successfully installed autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx
+  Fetch: 0.07s.  Build: 3.53s.  Total: 3.60s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx
+==> Installing texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql
+==> No binary for texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d3/d34272e4042c46186ddcd66bd5d980c0ca14ff734444686ccf8131f6ec8b1427.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/texinfo/fix_unescaped_braces.patch
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/texinfo/update_locale_handling.patch
+==> texinfo: Executing phase: 'autoreconf'
+==> texinfo: Executing phase: 'configure'
+==> texinfo: Executing phase: 'build'
+==> texinfo: Executing phase: 'install'
+==> texinfo: Successfully installed texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql
+  Fetch: 0.11s.  Build: 1m 0.11s.  Total: 1m 0.22s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql
+==> Installing perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp
+==> No binary for perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/69/697608b39330988e519131be667ff47168aaaaf99f06bd2095d5b46ad05d76fa.tar.gz
+==> No patches needed for perl-data-dumper
+==> perl-data-dumper: Executing phase: 'configure'
+==> perl-data-dumper: Executing phase: 'build'
+==> perl-data-dumper: Executing phase: 'install'
+==> perl-data-dumper: Successfully installed perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp
+  Fetch: 0.08s.  Build: 1.52s.  Total: 1.59s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp
+==> Installing python-3.9.10-qd7n5zqub5kyrvl5qjgc352zewxf2or5
+==> No binary for python-3.9.10-qd7n5zqub5kyrvl5qjgc352zewxf2or5 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/1a/1aa9c0702edbae8f6a2c95f70a49da8420aaa76b7889d3419c186bfc8c0e571e.tgz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/python/python-3.7.4+-distutils-C++.patch
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/python/python-3.7.4+-distutils-C++-testsuite.patch
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/python/tkinter-3.8.patch
+==> Ran patch() for python
+==> python: Executing phase: 'autoreconf'
+==> python: Executing phase: 'configure'
+==> python: Executing phase: 'build'
+==> python: Executing phase: 'install'
+==> python: Successfully installed python-3.9.10-qd7n5zqub5kyrvl5qjgc352zewxf2or5
+  Fetch: 0.26s.  Build: 2m 27.92s.  Total: 2m 28.18s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/python-3.9.10-qd7n5zqub5kyrvl5qjgc352zewxf2or5
+==> Installing cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i
+==> No binary for cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/3c/3c1c478b9650b107d452c5bd545c72e2fad4e37c09b89a1984b9a2f46df6aced.tar.gz
+==> No patches needed for cmake
+==> cmake: Executing phase: 'bootstrap'
+==> cmake: Executing phase: 'build'
+==> cmake: Executing phase: 'install'
+==> cmake: Successfully installed cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i
+  Fetch: 0.11s.  Build: 5m 30.29s.  Total: 5m 30.40s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-tfcl2jtctliszlnovgjfdcldsvgsvb7i
+==> Installing automake-1.16.5-tvigpop6qwdjvi43ouc2hfdnq7euomzi
+==> No binary for automake-1.16.5-tvigpop6qwdjvi43ouc2hfdnq7euomzi found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/07/07bd24ad08a64bc17250ce09ec56e921d6343903943e99ccf63bbf0705e34605.tar.gz
+==> Ran patch() for automake
+==> automake: Executing phase: 'autoreconf'
+==> automake: Executing phase: 'configure'
+==> automake: Executing phase: 'build'
+==> automake: Executing phase: 'install'
+==> automake: Successfully installed automake-1.16.5-tvigpop6qwdjvi43ouc2hfdnq7euomzi
+  Fetch: 0.06s.  Build: 3.54s.  Total: 3.60s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/automake-1.16.5-tvigpop6qwdjvi43ouc2hfdnq7euomzi
+==> Installing ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui
+==> No binary for ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/ce/ce35865411f0490368a8fc383f29071de6690cbadc27704734978221f25e2bed.tar.gz
+==> No patches needed for ninja
+==> ninja: Executing phase: 'configure'
+==> ninja: Executing phase: 'install'
+==> ninja: Successfully installed ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui
+  Fetch: 0.05s.  Build: 27.42s.  Total: 27.48s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui
+==> Installing metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2
+==> No binary for metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/76/76faebe03f6c963127dbb73c13eab58c9a3faeae48779f049066a21c087c5db2.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/metis/install_gklib_defs_rename.patch
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/metis/gklib_nomisleadingindentation_warning.patch
+==> Ran patch() for metis
+==> metis: Executing phase: 'install'
+==> metis: Successfully installed metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2
+  Fetch: 0.11s.  Build: 4.77s.  Total: 4.87s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2
+==> Installing utf8proc-2.6.1-a4qlbcrtwkblisgde4j2q35va75pehmb
+==> No binary for utf8proc-2.6.1-a4qlbcrtwkblisgde4j2q35va75pehmb found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/4c/4c06a9dc4017e8a2438ef80ee371d45868bda2237a98b26554de7a95406b283b.tar.gz
+==> No patches needed for utf8proc
+==> utf8proc: Executing phase: 'cmake'
+==> utf8proc: Executing phase: 'build'
+==> utf8proc: Executing phase: 'install'
+==> utf8proc: Successfully installed utf8proc-2.6.1-a4qlbcrtwkblisgde4j2q35va75pehmb
+  Fetch: 0.02s.  Build: 1.15s.  Total: 1.17s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/utf8proc-2.6.1-a4qlbcrtwkblisgde4j2q35va75pehmb
+==> Installing libssh2-1.10.0-72ew3iripemoyacpxaiunbnfrnjat5bu
+==> No binary for libssh2-1.10.0-72ew3iripemoyacpxaiunbnfrnjat5bu found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/2d/2d64e90f3ded394b91d3a2e774ca203a4179f69aebee03003e5a6fa621e41d51.tar.gz
+==> No patches needed for libssh2
+==> libssh2: Executing phase: 'cmake'
+==> libssh2: Executing phase: 'build'
+==> libssh2: Executing phase: 'install'
+==> libssh2: Successfully installed libssh2-1.10.0-72ew3iripemoyacpxaiunbnfrnjat5bu
+  Fetch: 0.08s.  Build: 5.97s.  Total: 6.06s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libssh2-1.10.0-72ew3iripemoyacpxaiunbnfrnjat5bu
+==> Installing gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl
+==> No binary for gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/ea/eae9326beb4158c386e39a356818031bd28f3124cf915f8c5b1dc4c7a36b4d7c.tar.bz2
+==> No patches needed for gmp
+==> gmp: Executing phase: 'autoreconf'
+==> gmp: Executing phase: 'configure'
+==> gmp: Executing phase: 'build'
+==> gmp: Executing phase: 'install'
+==> gmp: Successfully installed gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl
+  Fetch: 0.05s.  Build: 58.75s.  Total: 58.80s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl
+==> Installing libuv-1.42.0-4hrpiwmjw77tflhjj7vdcsuncwgrfjgo
+==> No binary for libuv-1.42.0-4hrpiwmjw77tflhjj7vdcsuncwgrfjgo found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/37/371e5419708f6aaeb8656671f89400b92a9bba6443369af1bb70bcd6e4b3c764.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/d9/d9252fbe67ac8f15e15653f0f6b00dffa07ae1a42f013d4329d17d8b492b7cdb
+==> Applied patch https://raw.githubusercontent.com/spack/patches/89b6d14eb1f3c3d458a06f1e06f7dda3ab67bd38/julia/libuv-1.42.0.patch
+==> libuv: Executing phase: 'autoreconf'
+==> libuv: Executing phase: 'configure'
+==> libuv: Executing phase: 'build'
+==> libuv: Executing phase: 'install'
+==> libuv: Successfully installed libuv-1.42.0-4hrpiwmjw77tflhjj7vdcsuncwgrfjgo
+  Fetch: 0.08s.  Build: 14.74s.  Total: 14.82s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libuv-1.42.0-4hrpiwmjw77tflhjj7vdcsuncwgrfjgo
+==> Installing llvm-12.0.1-xph4sgi3n2ngl55w4as6ddn2h4hwzh2a
+==> No binary for llvm-12.0.1-xph4sgi3n2ngl55w4as6ddn2h4hwzh2a found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/66/66b64aa301244975a4aea489f402f205cde2f53dd722dad9e7b77a0459b4c8df.tar.gz
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/10/10cb42f80c2eaad3e9c87cb818b6676f1be26737bdf972c77392d71707386aa4
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/julia/llvm7-symver-jlprefix.patch
+==> Applied patch https://github.com/JuliaLang/llvm-project/compare/fed41342a82f5a3a9201819a82bf7a48313e296b...980d2f60a8524c5546397db9e8bbb7d6ea56c1b7.patch
+==> llvm: Executing phase: 'cmake'
+==> llvm: Executing phase: 'build'
+==> llvm: Executing phase: 'install'
+==> llvm: Successfully installed llvm-12.0.1-xph4sgi3n2ngl55w4as6ddn2h4hwzh2a
+  Fetch: 1.16s.  Build: 1h 23m 9.80s.  Total: 1h 23m 10.95s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/llvm-12.0.1-xph4sgi3n2ngl55w4as6ddn2h4hwzh2a
+==> Installing libgit2-1.1.1-bciw7tbrpuoqxhj2deusfq5dc5abbpgw
+==> No binary for libgit2-1.1.1-bciw7tbrpuoqxhj2deusfq5dc5abbpgw found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/13/13a525373f64c711a00a058514d890d1512080265f98e0935ab279393f21a620.tar.gz
+==> No patches needed for libgit2
+==> libgit2: Executing phase: 'cmake'
+==> libgit2: Executing phase: 'build'
+==> libgit2: Executing phase: 'install'
+==> libgit2: Successfully installed libgit2-1.1.1-bciw7tbrpuoqxhj2deusfq5dc5abbpgw
+  Fetch: 0.08s.  Build: 17.94s.  Total: 18.03s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libgit2-1.1.1-bciw7tbrpuoqxhj2deusfq5dc5abbpgw
+==> Installing curl-7.78.0-eegep5feichly5h3vtmzlgucc4zuwqiq
+==> No binary for curl-7.78.0-eegep5feichly5h3vtmzlgucc4zuwqiq found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/98/98530b317dc95ccb324bbe4f834f07bb642fbc393b794ddf3434f246a71ea44a.tar.bz2
+==> No patches needed for curl
+==> curl: Executing phase: 'autoreconf'
+==> curl: Executing phase: 'configure'
+==> curl: Executing phase: 'build'
+==> curl: Executing phase: 'install'
+==> curl: Successfully installed curl-7.78.0-eegep5feichly5h3vtmzlgucc4zuwqiq
+  Fetch: 0.09s.  Build: 1m 6.22s.  Total: 1m 6.31s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/curl-7.78.0-eegep5feichly5h3vtmzlgucc4zuwqiq
+==> Installing mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp
+==> No binary for mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/fe/feced2d430dd5a97805fa289fed3fc8ff2b094c02d05287fd6133e7f1f0ec926.tar.bz2
+==> No patches needed for mpfr
+==> mpfr: Executing phase: 'autoreconf'
+==> mpfr: Executing phase: 'configure'
+==> mpfr: Executing phase: 'build'
+==> mpfr: Executing phase: 'install'
+==> mpfr: Successfully installed mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp
+  Fetch: 0.05s.  Build: 49.06s.  Total: 49.11s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp
+==> Installing suite-sparse-5.10.1-bdhegnc7nw4znlzrgv2eezn644eda74h
+==> No binary for suite-sparse-5.10.1-bdhegnc7nw4znlzrgv2eezn644eda74h found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/ac/acb4d1045f48a237e70294b950153e48dce5b5f9ca8190e86c2b8c54ce00a7ee.tar.gz
+==> No patches needed for suite-sparse
+==> suite-sparse: Executing phase: 'install'
+==> suite-sparse: Successfully installed suite-sparse-5.10.1-bdhegnc7nw4znlzrgv2eezn644eda74h
+  Fetch: 0.54s.  Build: 40.75s.  Total: 41.28s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/suite-sparse-5.10.1-bdhegnc7nw4znlzrgv2eezn644eda74h
+==> Installing julia-1.7.2-v7ftqsxuuapbfjj7zkg7dtsnlfeheusf
+==> No binary for julia-1.7.2-v7ftqsxuuapbfjj7zkg7dtsnlfeheusf found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/08/0847943dd65001f3322b00c7dc4e12f56e70e98c6b798ccbd4f02d27ce161fef.tar.gz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/julia/use-add-rpath.patch
+==> Ran patch() for julia
+==> julia: Executing phase: 'edit'
+==> julia: Executing phase: 'build'
+==> julia: Executing phase: 'install'
+==> julia: Successfully installed julia-1.7.2-v7ftqsxuuapbfjj7zkg7dtsnlfeheusf
+  Fetch: 0.10s.  Build: 10m 39.65s.  Total: 10m 39.75s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/julia-1.7.2-v7ftqsxuuapbfjj7zkg7dtsnlfeheusf

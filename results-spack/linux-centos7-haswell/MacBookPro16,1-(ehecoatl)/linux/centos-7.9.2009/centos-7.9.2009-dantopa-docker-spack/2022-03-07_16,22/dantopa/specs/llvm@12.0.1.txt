@@ -1,0 +1,44 @@
+Input spec
+--------------------------------
+llvm@12.0.1%gcc@11.2.0
+    ^python@3.10.2
+
+Concretized
+--------------------------------
+llvm@12.0.1%gcc@11.2.0+clang~code_signing+compiler-rt~cuda~flang+gold+internal_unwind~ipo+libcxx~link_llvm_dylib+lld+lldb~llvm_dylib~mlir+omp_as_runtime~omp_debug~omp_tsan+polly~python~shared_libs~split_dwarf~z3 build_type=Release targets=none version_suffix=none arch=linux-centos7-haswell
+    ^binutils@2.38%gcc@11.2.0~gas+gold~headers~interwork+ld~libiberty~lto+nls+plugins libs=shared,static arch=linux-centos7-haswell
+        ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+        ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell
+            ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+            ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+                ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+                ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+                ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+            ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+            ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell
+    ^cmake@3.22.2%gcc@11.2.0~doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-centos7-haswell
+        ^openssl@1.1.1m%gcc@11.2.0~docs certs=system arch=linux-centos7-haswell
+            ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+                ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-haswell
+                ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+    ^hwloc@2.7.0%gcc@11.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-centos7-haswell
+        ^libpciaccess@0.16%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libtool@2.4.6%gcc@11.2.0 arch=linux-centos7-haswell
+                ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-centos7-haswell
+                    ^libsigsegv@2.13%gcc@11.2.0 arch=linux-centos7-haswell
+            ^util-macros@1.19.3%gcc@11.2.0 arch=linux-centos7-haswell
+    ^libedit@3.1-20210216%gcc@11.2.0 arch=linux-centos7-haswell
+    ^ninja@1.10.2%gcc@11.2.0 arch=linux-centos7-haswell
+        ^python@3.10.2%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060 arch=linux-centos7-haswell
+            ^expat@2.4.6%gcc@11.2.0+libbsd arch=linux-centos7-haswell
+                ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libffi@3.4.2%gcc@11.2.0 arch=linux-centos7-haswell
+            ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-centos7-haswell
+            ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-haswell
+    ^perl-data-dumper@2.173%gcc@11.2.0 arch=linux-centos7-haswell
+    ^swig@4.0.2%gcc@11.2.0 arch=linux-centos7-haswell
+        ^pcre@8.45%gcc@11.2.0~jit+multibyte+utf arch=linux-centos7-haswell
+

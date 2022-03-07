@@ -1,0 +1,69 @@
+CMakePackage:   doxygen
+
+Description:
+    Doxygen is the de facto standard tool for generating documentation from
+    annotated C++ sources, but it also supports other popular programming
+    languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba,
+    Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL, Tcl, and to some
+    extent D..
+
+Homepage: https://github.com/doxygen/doxygen/
+
+Externally Detectable: 
+    True (version, variants)
+
+Tags: 
+    None
+
+Preferred version:  
+    1.9.3     [git] https://github.com/doxygen/doxygen.git at commit 6518ff3d24ad187b7072bee854d69e285cd366ea
+
+Safe versions:  
+    1.9.3     [git] https://github.com/doxygen/doxygen.git at commit 6518ff3d24ad187b7072bee854d69e285cd366ea
+    1.9.2     [git] https://github.com/doxygen/doxygen.git at commit caa4e3de211fbbef2c3adf58a6bd4c86d0eb7cb8
+    1.9.1     [git] https://github.com/doxygen/doxygen.git at commit ef9b20ac7f8a8621fcfc299f8bd0b80422390f4b
+    1.9.0     [git] https://github.com/doxygen/doxygen.git at commit 71777ff3973331bd9453870593a762e184ba9f78
+    1.8.20    [git] https://github.com/doxygen/doxygen.git at commit f246dd2f1c58eea39ea3f50c108019e4d4137bd5
+    1.8.18    [git] https://github.com/doxygen/doxygen.git at commit a1b07ad0e92e4526c9ba1711d39f06b58c2a7459
+    1.8.17    [git] https://github.com/doxygen/doxygen.git at commit b5fa3cd1c6e6240e20d3b80a70e3f04040b32021
+    1.8.16    [git] https://github.com/doxygen/doxygen.git at commit cfd73d5c4d1a66c620a3b7c08b72a3f3c3f94255
+    1.8.15    [git] https://github.com/doxygen/doxygen.git at commit dc89ac01407c24142698c1374610f2cee1fbf200
+    1.8.14    [git] https://github.com/doxygen/doxygen.git at commit 2f4139de014bf03898320a45fe52c92872c1e0f4
+    1.8.12    [git] https://github.com/doxygen/doxygen.git at commit 4951df8d0d0acf843b4147136f945504b96536e7
+    1.8.11    [git] https://github.com/doxygen/doxygen.git at commit a6d4f4df45febe588c38de37641513fd576b998f
+    1.8.10    [git] https://github.com/doxygen/doxygen.git at commit fdae7519a2e29f94e65c0e718513343f07302ddb
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ===============================================
+
+    build_type [RelWithDebInfo]    --      Debug, Release,         CMake build type
+                                           RelWithDebInfo,         
+                                           MinSizeRel              
+    graphviz [off]                 --      on, off                 Build with dot command support from Graphviz.
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+    mscgen [off]                   --      on, off                 Build with support for code graphs from mscgen.
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    bison
+    cmake
+    flex
+    iconv
+    python
+
+Link Dependencies:
+    iconv
+
+Run Dependencies:
+    graphviz
+    mscgen
+
+Virtual Packages: 
+    None
+

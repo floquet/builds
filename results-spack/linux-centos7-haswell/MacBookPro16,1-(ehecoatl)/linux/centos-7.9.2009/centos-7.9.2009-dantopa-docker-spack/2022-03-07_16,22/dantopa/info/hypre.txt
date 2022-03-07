@@ -1,0 +1,95 @@
+AutotoolsPackage:   hypre
+
+Description:
+    Hypre is a library of high performance preconditioners that features
+    parallel multigrid methods for both structured and unstructured grid
+    problems.
+
+Homepage: https://computing.llnl.gov/project/linear_solvers/software.php
+
+Maintainers: @ulrikeyang @osborn9 @balay
+
+Externally Detectable: 
+    False
+
+Tags: 
+    e4s
+    radiuss
+
+Preferred version:  
+    2.24.0     https://github.com/hypre-space/hypre/archive/v2.24.0.tar.gz
+
+Safe versions:  
+    develop    [git] https://github.com/hypre-space/hypre.git on branch master
+    2.24.0     https://github.com/hypre-space/hypre/archive/v2.24.0.tar.gz
+    2.23.0     https://github.com/hypre-space/hypre/archive/v2.23.0.tar.gz
+    2.22.1     https://github.com/hypre-space/hypre/archive/v2.22.1.tar.gz
+    2.22.0     https://github.com/hypre-space/hypre/archive/v2.22.0.tar.gz
+    2.21.0     https://github.com/hypre-space/hypre/archive/v2.21.0.tar.gz
+    2.20.0     https://github.com/hypre-space/hypre/archive/v2.20.0.tar.gz
+    2.19.0     https://github.com/hypre-space/hypre/archive/v2.19.0.tar.gz
+    2.18.2     https://github.com/hypre-space/hypre/archive/v2.18.2.tar.gz
+    2.18.1     https://github.com/hypre-space/hypre/archive/v2.18.1.tar.gz
+    2.18.0     https://github.com/hypre-space/hypre/archive/v2.18.0.tar.gz
+    2.17.0     https://github.com/hypre-space/hypre/archive/v2.17.0.tar.gz
+    2.16.0     https://github.com/hypre-space/hypre/archive/v2.16.0.tar.gz
+    2.15.1     https://github.com/hypre-space/hypre/archive/v2.15.1.tar.gz
+    2.15.0     https://github.com/hypre-space/hypre/archive/v2.15.0.tar.gz
+    2.14.0     https://github.com/hypre-space/hypre/archive/v2.14.0.tar.gz
+    2.13.0     https://github.com/hypre-space/hypre/archive/v2.13.0.tar.gz
+    2.12.1     https://github.com/hypre-space/hypre/archive/v2.12.1.tar.gz
+    2.11.2     http://computing.llnl.gov/project/linear_solvers/download/hypre-2.11.2.tar.gz
+    2.11.1     http://computing.llnl.gov/project/linear_solvers/download/hypre-2.11.1.tar.gz
+    2.10.1     http://computing.llnl.gov/project/linear_solvers/download/hypre-2.10.1.tar.gz
+    2.10.0b    http://computing.llnl.gov/project/linear_solvers/download/hypre-2.10.0b.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]            When       Allowed values          Description
+    ======================    =======    ====================    ==============================================
+
+    complex [off]             --         on, off                 Use complex values
+    cuda [off]                --         on, off                 Build with CUDA
+    cuda_arch [none]          +cuda      none, 61, 32, 12,       CUDA architecture
+                                         72, 13, 62, 60, 37,     
+                                         50, 20, 52, 21, 53,     
+                                         35, 11, 70, 75, 86,     
+                                         30, 10, 80              
+    debug [off]               --         on, off                 Build debug instead of optimized version
+    fortran [on]              --         on, off                 Enables fortran bindings
+    gptune [off]              --         on, off                 Add the GPTune hookup code
+    int64 [off]               --         on, off                 Use 64bit integers
+    internal-superlu [off]    --         on, off                 Use internal SuperLU routines
+    mixedint [off]            --         on, off                 Use 64bit integers while reducing memory use
+    mpi [on]                  --         on, off                 Enable MPI support
+    openmp [off]              --         on, off                 Enable OpenMP support
+    shared [on]               --         on, off                 Build shared library (disables static library)
+    superlu-dist [off]        --         on, off                 Activates support for SuperLU_Dist library
+    unified-memory [off]      --         on, off                 Use unified memory
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    blas
+    cuda
+    gnuconfig
+    lapack
+    mpi
+    superlu-dist
+
+Link Dependencies:
+    blas
+    cuda
+    lapack
+    mpi
+    superlu-dist
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

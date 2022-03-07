@@ -1,0 +1,10 @@
+Input spec
+--------------------------------
+environment-modules%gcc@11.2.0
+
+Concretized
+--------------------------------
+environment-modules@5.0.1%gcc@11.2.0+X arch=linux-centos7-haswell
+    ^tcl@8.6.11%gcc@11.2.0 arch=linux-centos7-haswell
+        ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+

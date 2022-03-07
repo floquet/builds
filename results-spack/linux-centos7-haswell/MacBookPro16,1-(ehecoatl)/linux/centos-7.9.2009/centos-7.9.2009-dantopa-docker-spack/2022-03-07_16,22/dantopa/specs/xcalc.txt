@@ -1,0 +1,44 @@
+Input spec
+--------------------------------
+xcalc%gcc@11.2.0
+
+Concretized
+--------------------------------
+xcalc@1.0.6%gcc@11.2.0 arch=linux-centos7-haswell
+    ^libx11@1.7.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^inputproto@2.3.2%gcc@11.2.0 arch=linux-centos7-haswell
+            ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+            ^util-macros@1.19.3%gcc@11.2.0 arch=linux-centos7-haswell
+        ^kbproto@1.0.7%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libxcb@1.14%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libpthread-stubs@0.4%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libxau@1.0.8%gcc@11.2.0 arch=linux-centos7-haswell
+                ^xproto@7.0.31%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libxdmcp@1.1.2%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-haswell
+            ^xcb-proto@1.14.1%gcc@11.2.0 arch=linux-centos7-haswell
+        ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+            ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-haswell
+            ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+                ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+            ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell
+                ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+            ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+        ^xextproto@7.3.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^xtrans@1.3.5%gcc@11.2.0 arch=linux-centos7-haswell
+    ^libxaw@1.0.13%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libxext@1.3.3%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libxmu@1.1.2%gcc@11.2.0 arch=linux-centos7-haswell
+            ^libxt@1.1.5%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libice@1.0.9%gcc@11.2.0 arch=linux-centos7-haswell
+                ^libsm@1.2.3%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-haswell
+        ^libxpm@3.5.12%gcc@11.2.0 arch=linux-centos7-haswell
+            ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell
+                ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+                    ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+                ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell
+
