@@ -1,0 +1,24 @@
+apt info libxerces-c-dev
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: libxerces-c-dev
+Version: 3.2.3+debian-3build1
+Priority: optional
+Section: universe/libdevel
+Source: xerces-c
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: William Blough <bblough@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 17.6 MB
+Provides: libxerces-c3-dev
+Depends: libc6-dev | libc-dev, libicu-dev, libxerces-c3.2 (= 3.2.3+debian-3build1)
+Suggests: libxerces-c-doc
+Conflicts: libxerces-c2-dev, libxerces25-dev, libxerces26-dev, libxerces27-dev, libxerces28-dev
+Homepage: https://xerces.apache.org/xerces-c/
+Download-Size: 1820 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+Description: validating XML parser library for C++ (development files)
+

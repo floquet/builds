@@ -17,8 +17,8 @@ source ${repo_scripts_spack}/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
-export dist="centos" ; export release="7.9.2009" ; export installer="yum"
-# export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
+# export dist="centos" ; export release="7.9.2009" ; export installer="yum"
+export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
 
 export USER="dantopa"
 export tag="${dist}-${release}"
@@ -48,17 +48,17 @@ echo ""; echo "Set up user account"
          echo "adduser ${USER}"
                adduser ${USER}
 
-         echo "adduser ${USER} sudo"
-               adduser ${USER} sudo
-
          echo "usermod -aG wheel ${USER}"
                usermod -aG wheel ${USER}
+
+         echo "adduser ${USER} sudo"
+               adduser ${USER} sudo
 
          echo "pending: passwd ${USER}"
 
 echo ""; echo "su - ${USER}"
-    echo "export mySpack=${mySpack}"
-    echo 'export dist="${dist}" ; export release="${dist}" ; export tag="${dist}-${release}"'
+    echo "export mySpack=\"${mySpack}\""
+    echo "export dist=\"${dist}\" ; export release=\"${release}\" ; export tag=\"${dist}-${release}\""
 
 echo ""; echo "Report elapsed time"
     export ubuntuSECONDS=$((${SECONDS}-${ubuntuSECONDS}))

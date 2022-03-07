@@ -1,0 +1,21 @@
+apt info apt-rdepends
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: apt-rdepends
+Version: 1.3.0-9
+Priority: optional
+Section: universe/utils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian QA Group <packages@qa.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 41.0 kB
+Depends: libapt-pkg-perl, perl:any
+Suggests: springgraph | graphviz
+Homepage: http://www.sfllaw.ca/programs/
+Download-Size: 14.5 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+Description: recursively lists package dependencies
+

@@ -1,0 +1,24 @@
+apt info valgrind
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: valgrind
+Version: 1:3.18.1-1ubuntu2
+Priority: optional
+Section: devel
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 79.3 MB
+Depends: libc6 (>= 2.34), libc6-i386 (>= 2.34), libc6-dbg
+Recommends: gdb
+Suggests: valgrind-dbg, valgrind-mpi, kcachegrind, alleyoop, valkyrie (>> 1.3.0)
+Breaks: valgrind-dev
+Replaces: valgrind-dev
+Homepage: http://www.valgrind.org/
+Download-Size: 14.1 MB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+Description: instrumentation framework for building dynamic analysis tools
+
