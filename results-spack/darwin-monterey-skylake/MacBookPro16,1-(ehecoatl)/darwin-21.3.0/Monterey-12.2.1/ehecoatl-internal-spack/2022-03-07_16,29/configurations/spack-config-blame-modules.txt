@@ -1,0 +1,43 @@
+created by /Users/dtopa//Users/dtopa/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Mon Mar  7 16:30:29 MST 2022
+
+${SPACK_ROOT} = /Users/dtopa/spacktivity/ehecoatl-internal-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin swe45.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+---                                                                                         modules:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/modules.yaml:17    prefix_inspections:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/modules.yaml:18      lib:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/modules.yaml:19      - DYLD_FALLBACK_LIBRARY_PATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/modules.yaml:20      lib64:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/darwin/modules.yaml:21      - DYLD_FALLBACK_LIBRARY_PATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:19             bin:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:20             - PATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:21             man:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:22             - MANPATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:23             share/man:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:24             - MANPATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:25             share/aclocal:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:26             - ACLOCAL_PATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:27             lib/pkgconfig:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:28             - PKG_CONFIG_PATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:29             lib64/pkgconfig:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:30             - PKG_CONFIG_PATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:31             share/pkgconfig:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:32             - PKG_CONFIG_PATH
+                                                                                                ? ''
+                                                                                                : - CMAKE_PREFIX_PATH
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:34           # These are configurations for the module set named "default"
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:37           default:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:46             enable:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:46             - tcl
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:49             tcl:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:50               all:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:51                 autoload: none
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:54             lmod:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:55               all:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:56                 autoload: direct
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:57               hierarchy:
+/Users/dtopa/spacktivity/ehecoatl-internal-spack/etc/spack/defaults/modules.yaml:58               - mpi

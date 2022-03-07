@@ -1,0 +1,45 @@
+created by /Users/dtopa//Users/dtopa/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Mon Mar  7 16:30:24 MST 2022
+
+${SPACK_ROOT} = /Users/dtopa/spacktivity/ehecoatl-internal-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin swe45.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+modules:
+  prefix_inspections:
+    lib:
+    - DYLD_FALLBACK_LIBRARY_PATH
+    lib64:
+    - DYLD_FALLBACK_LIBRARY_PATH
+    bin:
+    - PATH
+    man:
+    - MANPATH
+    share/man:
+    - MANPATH
+    share/aclocal:
+    - ACLOCAL_PATH
+    lib/pkgconfig:
+    - PKG_CONFIG_PATH
+    lib64/pkgconfig:
+    - PKG_CONFIG_PATH
+    share/pkgconfig:
+    - PKG_CONFIG_PATH
+    ? ''
+    : - CMAKE_PREFIX_PATH
+
+  # These are configurations for the module set named "default"
+  default:
+    enable:
+    - tcl
+
+    tcl:
+      all:
+        autoload: none
+    lmod:
+      all:
+        autoload: direct
+      hierarchy:
+      - mpi

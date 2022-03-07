@@ -1,0 +1,462 @@
+created by /Users/dtopa//Users/dtopa/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Mon Mar  7 16:30:17 MST 2022
+
+${SPACK_ROOT} = /Users/dtopa/spacktivity/ehecoatl-internal-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin swe45.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+-- darwin-monterey-skylake / apple-clang@13.0.0 -----------------
+alglib@3.11.0
+apple-libuuid@1353.100.2
+autoconf@2.69 patches=35c4492,7793209,a49dd5b
+autoconf-archive@2019.01.06
+automake@1.16.5
+bdftopcf@1.0.5
+bdftopcf@1.0.5
+berkeley-db@18.1.40+cxx~docs+stl patches=b231fcc
+binutils@2.33.1~gas~gold+headers~interwork~ld+libiberty~lto+nls+plugins libs=shared,static
+bison@3.8.2
+bzip2@1.0.8~debug~pic+shared
+cfitsio@3.49+bzip2+shared
+chapel@1.24.1
+cmake@3.22.2~doc+ncurses+openssl+ownlibs~qt build_type=Release
+coreutils@8.32~gprefix
+curl@7.80.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=secure_transport
+dbus@1.12.8
+diffutils@3.8
+docbook-xml@4.4
+docbook-xsl@1.79.2 patches=a92c397
+doxygen@1.9.3~graphviz~ipo~mscgen build_type=RelWithDebInfo
+expat@2.4.4~libbsd
+expat@2.4.5~libbsd
+findutils@4.8.0 patches=440b954
+fixesproto@5.0
+flex@2.6.3+lex~nls
+fontsproto@2.1.3
+freetype@2.11.0
+freetype@2.11.1
+fribidi@1.0.5
+gcc@11.2.0~binutils+bootstrap~graphite~nvptx~piclibs~strip languages=c,c++,fortran patches=c060517,ecc5ac4
+gdb@11.1~gold~ld~lto+python~quad~source-highlight~tui+xz patches=7590c95
+gdbm@1.19
+gdbm@1.19
+gettext@0.21+bzip2+curses+git~libunistring+libxml2+tar+xz
+git@2.31.1+man+nls+perl~svn~tcltk
+glib@2.70.4~libmount patches=8547954 tracing=none
+gmake@4.3~guile+nls
+gmp@6.2.1
+gperf@3.1
+graphite2@1.3.13~ipo build_type=RelWithDebInfo patches=39e58d6
+hdf5@1.12.1~cxx~fortran~hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo
+hdf5@1.12.1~cxx~fortran~hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo
+hwloc@2.7.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl~pci~rocm+shared
+icu4c@67.1 cxxstd=11
+inputproto@2.3.2
+intltool@0.51.0 patches=ca9d656
+kbproto@1.0.7
+krb5@1.19.2+shared
+lcms@2.9
+libcroco@0.6.13~doc
+libedit@3.1-20210216
+libevent@2.1.12+openssl
+libfabric@1.14.0~debug~kdreg fabrics=sockets,tcp,udp
+libffi@3.3 patches=26f26c6
+libffi@3.4.2
+libfontenc@1.1.3
+libgit2@1.1.1~curl~ipo+mmap+ssh build_type=RelWithDebInfo https=system
+libice@1.0.9
+libiconv@1.16 libs=shared,static
+libidn2@2.3.0
+libjpeg-turbo@2.1.0
+libpaper@1.1.28
+libpng@1.6.37
+libpthread-stubs@0.4
+libsigsegv@2.13
+libsm@1.2.3
+libssh2@1.10.0~ipo+shared build_type=RelWithDebInfo crypto=openssl
+libtiff@4.3.0~jbig~jpeg~jpeg12~lerc~libdeflate~lzma~old-jpeg~pixarlog~webp~zlib~zstd patches=94d64e3
+libtool@2.4.6
+libunistring@0.9.10
+libx11@1.7.0
+libxau@1.0.8
+libxaw@1.0.13
+libxcb@1.14
+libxdmcp@1.1.2
+libxext@1.3.3
+libxfixes@5.0.2
+libxfont@1.5.2
+libxfont@1.5.2
+libxi@1.7.6
+libxkbcommon@0.8.2
+libxkbfile@1.0.9
+libxml2@2.9.12~python
+libxmu@1.1.2
+libxpm@3.5.12
+libxrandr@1.5.0
+libxrender@0.9.10
+libxscrnsaver@1.2.2
+libxt@1.1.5
+libxtst@1.2.2
+libyaml@0.2.5
+llvm@13.0.0+clang~code_signing+compiler-rt~cuda~flang~gold+internal_unwind~ipo+libcxx~link_llvm_dylib+lld+lldb~llvm_dylib~mlir+omp_as_runtime~omp_debug~omp_tsan+polly~python~shared_libs~split_dwarf~z3 build_type=Release patches=c2c23fd targets=none version_suffix=none
+llvm@13.0.0+clang~code_signing+compiler-rt~cuda~flang~gold+internal_unwind~ipo+libcxx~link_llvm_dylib+lld+lldb~llvm_dylib~mlir+omp_as_runtime~omp_debug~omp_tsan+polly~python~shared_libs~split_dwarf~z3 build_type=Release patches=c2c23fd targets=none version_suffix=none
+llvm-openmp@12.0.1~ipo~multicompat build_type=RelWithDebInfo
+m4@1.4.19+sigsegv patches=9dc5fbd,bfdffa7
+mesa18@18.3.6~glx~llvm~opengles+osmesa patches=55a5611 swr=none
+meson@0.61.2 patches=aa6c50d
+metis@5.1.0~gdb~int64~real64+shared build_type=Release patches=4991da9
+mkfontdir@1.0.7
+mkfontdir@1.0.7
+mkfontscale@1.1.2
+mkfontscale@1.1.2
+mpc@1.2.1
+mpfr@4.1.0
+mpich@3.4.2~argobots+fortran+hwloc+hydra+libxml2~pci+romio~slurm~two_level_namespace~verbs+wrapperrpath device=ch4 netmod=ofi pmi=pmi
+msgpack-c@3.1.1~ipo build_type=RelWithDebInfo
+nasm@2.15.05
+ncurses@6.2~symlinks+termlib abi=none
+ninja@1.10.2
+octave@6.4.0~arpack+bz2~curl~fftw~fltk~fontconfig~freetype~gl2ps~glpk~gnuplot~hdf5~jdk~llvm~magick~opengl~qhull~qrupdate~qscintilla~qt+readline~suitesparse~zlib
+openblas@0.3.19~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none
+opencoarrays@2.7.1~ipo build_type=RelWithDebInfo
+openmpi@4.1.2~atomics~cuda~cxx~cxx_exceptions+gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none
+openssh@8.8p1
+openssl@1.1.1m~docs certs=system
+otf2@2.3
+parmetis@4.0.3~gdb~int64~ipo+shared build_type=RelWithDebInfo patches=4f89253,50ed208,704b84f
+pcre@8.44~jit+multibyte+utf
+pcre@8.45~jit+multibyte+utf
+pcre2@10.36~jit+multibyte
+perl@5.34.0+cpanm+shared+threads
+perl-data-dumper@2.173
+perl-encode-locale@1.05
+perl-extutils-config@0.008
+perl-extutils-helpers@0.026
+perl-extutils-installpaths@0.012
+perl-file-listing@6.04
+perl-file-which@1.22
+perl-html-parser@3.72
+perl-html-tagset@3.20
+perl-http-cookies@6.04
+perl-http-daemon@6.01
+perl-http-date@6.02
+perl-http-message@6.13
+perl-http-negotiate@6.01
+perl-io-html@1.001
+perl-libwww-perl@6.33
+perl-lwp-mediatypes@6.02
+perl-module-build@0.4224
+perl-module-build-tiny@0.039
+perl-net-http@6.17
+perl-test-needs@0.002005
+perl-try-tiny@0.28
+perl-uri@1.72
+perl-www-robotrules@6.02
+perl-xml-parser@2.44
+pixman@0.40.0
+pkgconf@1.8.0
+poppler-data@0.4.9~ipo build_type=RelWithDebInfo
+py-backports-entry-points-selectable@1.1.0
+py-backports-entry-points-selectable@1.1.0
+py-beniget@0.4.1
+py-beniget@0.4.1
+py-bottleneck@1.3.2
+py-bottleneck@1.3.2
+py-certifi@2021.10.8
+py-certifi@2021.10.8
+py-cppy@1.1.0
+py-cppy@1.1.0
+py-cycler@0.11.0
+py-cycler@0.11.0
+py-cython@0.29.24
+py-cython@0.29.24
+py-cython@0.29.24
+py-cython@0.29.24
+py-distlib@0.3.3
+py-distlib@0.3.3
+py-filelock@3.4.0
+py-filelock@3.4.0
+py-fonttools@4.28.1
+py-fonttools@4.28.1
+py-gast@0.5.3
+py-gast@0.5.3
+py-importlib-metadata@2.0.0
+py-importlib-metadata@2.0.0
+py-kiwisolver@1.3.2
+py-kiwisolver@1.3.2
+py-mako@1.1.5
+py-mako@1.1.5
+py-markupsafe@2.0.1
+py-markupsafe@2.0.1
+py-matplotlib@3.5.1~animation~fonts+image~latex~movies backend=macosx
+py-matplotlib@3.5.1~animation~fonts+image~latex~movies backend=macosx
+py-matplotlib@3.5.1~animation~fonts+image~latex~movies backend=macosx
+py-msgpack@1.0.2
+py-numexpr@2.7.3
+py-numexpr@2.7.3
+py-numpy@1.22.1+blas+lapack patches=873745d
+py-numpy@1.22.1+blas+lapack patches=873745d
+py-numpy@1.22.1+blas+lapack patches=873745d
+py-packaging@21.3
+py-packaging@21.3
+py-pandas@1.4.0
+py-pandas@1.4.0
+py-pandas@1.4.1
+py-pillow@9.0.0~freetype~imagequant+jpeg~jpeg2000~lcms~tiff~webp~webpmux~xcb+zlib
+py-pillow@9.0.0~freetype~imagequant+jpeg~jpeg2000~lcms~tiff~webp~webpmux~xcb+zlib
+py-pip@21.3.1
+py-pip@21.3.1
+py-pip@21.3.1
+py-pip@21.3.1
+py-platformdirs@2.4.0
+py-platformdirs@2.4.0
+py-ply@3.11
+py-ply@3.11
+py-pybind11@2.7.1~ipo build_type=RelWithDebInfo
+py-pybind11@2.7.1~ipo build_type=RelWithDebInfo
+py-pyparsing@3.0.6
+py-pyparsing@3.0.6
+py-pytest-runner@5.3.1
+py-pytest-runner@5.3.1
+py-python-dateutil@2.8.2
+py-python-dateutil@2.8.2
+py-pythran@0.9.12 patches=b427dca
+py-pythran@0.9.12 patches=b427dca
+py-pytz@2021.3
+py-pytz@2021.3
+py-pyyaml@6.0+libyaml
+py-scipy@1.7.3
+py-scipy@1.7.3
+py-setuptools@57.4.0
+py-setuptools@57.4.0
+py-setuptools@59.4.0
+py-setuptools@59.4.0
+py-setuptools@59.4.0
+py-setuptools@59.4.0
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm-git-archive@1.1
+py-setuptools-scm-git-archive@1.1
+py-six@1.16.0
+py-six@1.16.0
+py-soupsieve@2.2.1
+py-soupsieve@2.2.1
+py-tomli@1.2.2
+py-tomli@1.2.2
+py-virtualenv@16.7.6
+py-wheel@0.37.0
+py-wheel@0.37.0
+py-wheel@0.37.0
+py-wheel@0.37.0
+py-zipp@3.6.0
+py-zipp@3.6.0
+python@3.8.12+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060
+python@3.9.10+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060
+python@3.9.10+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060
+python@3.9.10+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060
+python@3.9.10+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060
+python@3.10.1+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+python@3.10.2+bz2+ctypes+dbm+debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+qhull@2020.2~ipo build_type=RelWithDebInfo
+randrproto@1.5.0
+readline@8.1
+readline@8.1
+recordproto@1.14.2
+renderproto@0.11.1
+rocm-cmake@4.3.1~ipo+ldconfig build_type=Release
+roctracer-dev-api@4.3.1
+scrnsaverproto@1.2.2
+sed@4.2.2
+shared-mime-info@1.9
+sqlite@3.37.1+column_metadata+dynamic_extensions+fts~functions+rtree
+sqlite@3.37.1+column_metadata+dynamic_extensions+fts~functions+rtree
+sqlite@3.37.2+column_metadata+dynamic_extensions+fts~functions+rtree
+sqlite@3.37.2+column_metadata+dynamic_extensions+fts~functions+rtree
+swig@4.0.2
+swig@4.0.2
+tar@1.34
+tcl@8.6.11
+texinfo@6.5 patches=12f6edb,1732115
+util-macros@1.19.3
+wcslib@7.3~cfitsio~x
+xcb-proto@1.14.1
+xerces-c@3.2.3 cxxstd=default netaccessor=curl transcoder=macos
+xextproto@7.3.0
+xkbcomp@1.4.4
+xkbdata@1.0.1
+xproto@7.0.31
+xrandr@1.5.0
+xtrans@1.3.5
+xxd-standalone@8.2.1201
+xz@5.2.5~pic libs=shared,static
+z3@4.8.14~gmp~ipo~python build_type=RelWithDebInfo
+zfp@0.5.5~aligned~c~cuda~fasthash~fortran~ipo~openmp~profile~python+shared~strided~twoway bsws=64 build_type=RelWithDebInfo
+zlib@1.2.11+optimize+pic+shared
+zstd@1.5.0~programs
+zziplib@0.13.72
+
+-- darwin-monterey-skylake / clang@13.0.0 -----------------------
+apple-libuuid@1353.100.2
+autoconf@2.69 patches=35c4492,7793209,a49dd5b
+autoconf-archive@2019.01.06
+automake@1.16.5
+berkeley-db@18.1.40+cxx~docs+stl patches=b231fcc
+bison@3.8.2
+bzip2@1.0.8~debug~pic+shared
+cfitsio@3.49+bzip2+shared
+cmake@3.22.2~doc+ncurses+openssl+ownlibs~qt build_type=Release
+curl@7.80.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=secure_transport
+diffutils@3.8
+erfa@1.7.0
+expat@2.4.4~libbsd
+findutils@4.8.0 patches=440b954
+flex@2.6.3+lex~nls
+freetype@2.11.1
+gdbm@1.19
+gettext@0.21+bzip2+curses+git~libunistring+libxml2+tar+xz
+gmake@4.3~guile+nls
+gmp@6.2.1
+hdf5@1.12.1~cxx~fortran~hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo
+hwloc@2.7.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl~pci~rocm+shared
+libedit@3.1-20210216
+libevent@2.1.12+openssl
+libffi@3.3 patches=26f26c6
+libffi@3.4.2
+libiconv@1.16 libs=shared,static
+libjpeg-turbo@2.1.0
+libpng@1.6.37
+libsigsegv@2.13
+libtool@2.4.6
+libxml2@2.9.12~python
+m4@1.4.19+sigsegv patches=9dc5fbd,bfdffa7
+metis@5.1.0~gdb~int64~real64+shared build_type=Release patches=4991da9
+mpfr@4.1.0
+nasm@2.15.05
+ncurses@6.2~symlinks+termlib abi=none
+openblas@0.3.19~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none
+openmpi@4.1.2~atomics~cuda~cxx~cxx_exceptions+gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none
+openssh@8.8p1
+openssl@1.1.1m~docs certs=system
+otf2@2.3
+parmetis@4.0.3~gdb~int64~ipo+shared build_type=RelWithDebInfo patches=4f89253,50ed208,704b84f
+pdt@3.25.1~pic
+perl@5.34.0+cpanm+shared+threads
+pkgconf@1.8.0
+py-astropy@4.0.1.post1~extras
+py-beniget@0.4.1
+py-bottleneck@1.3.2
+py-certifi@2021.10.8
+py-cppy@1.1.0
+py-cycler@0.11.0
+py-cython@0.29.24
+py-fonttools@4.28.1
+py-gast@0.5.3
+py-kiwisolver@1.3.2
+py-matplotlib@3.5.1~animation~fonts+image~latex~movies backend=macosx
+py-numexpr@2.7.3
+py-numpy@1.22.2+blas+lapack patches=873745d
+py-packaging@21.3
+py-pandas@1.4.1
+py-pillow@9.0.0~freetype~imagequant+jpeg~jpeg2000~lcms~tiff~webp~webpmux~xcb+zlib
+py-pip@21.3.1
+py-ply@3.11
+py-pybind11@2.8.1~ipo build_type=RelWithDebInfo
+py-pyparsing@3.0.6
+py-python-dateutil@2.8.2
+py-pythran@0.10.0
+py-pytz@2021.3
+py-seaborn@0.11.2
+py-setuptools@59.4.0
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm-git-archive@1.1
+py-six@1.16.0
+py-tomli@1.2.2
+py-wheel@0.37.0
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+qhull@2020.2~ipo build_type=RelWithDebInfo
+readline@8.1
+sqlite@3.37.1+column_metadata+dynamic_extensions+fts~functions+rtree
+tar@1.34
+texinfo@6.5 patches=12f6edb,1732115
+wcslib@7.3~cfitsio~x
+xz@5.2.5~pic libs=shared,static
+zfp@0.5.5~aligned~c~cuda~fasthash~fortran~ipo~openmp~profile~python+shared~strided~twoway bsws=64 build_type=RelWithDebInfo
+zlib@1.2.11+optimize+pic+shared
+
+-- darwin-monterey-skylake / gcc@11.2.0 -------------------------
+arpack-ng@3.8.0+mpi+shared
+autoconf@2.69 patches=35c4492,7793209,a49dd5b
+autoconf@2.69 patches=35c4492,7793209,a49dd5b
+autoconf-archive@2019.01.06
+automake@1.16.5
+automake@1.16.5
+berkeley-db@18.1.40+cxx~docs+stl patches=b231fcc
+blaspp@2021.04.01~cuda~ipo+openmp~rocm+shared build_type=RelWithDebInfo
+butterflypack@2.1.0~ipo+shared build_type=RelWithDebInfo
+bzip2@1.0.8~debug~pic+shared
+diffutils@3.8
+erfa@1.7.0
+gdbm@1.19
+gettext@0.21+bzip2+curses+git~libunistring+libxml2+tar+xz
+gmp@6.2.1
+gsl@2.7~external-cblas
+hwloc@2.7.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl~pci~rocm+shared
+hypre@2.23.0~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~shared~superlu-dist~unified-memory
+hypre@2.24.0~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~shared~superlu-dist~unified-memory
+hypre@2.24.0~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~shared~superlu-dist~unified-memory
+lapackpp@2021.04.00~ipo+shared build_type=RelWithDebInfo
+libedit@3.1-20210216
+libevent@2.1.12+openssl
+libiconv@1.16 libs=shared,static
+libsigsegv@2.13
+libtool@2.4.6
+libxml2@2.9.12~python
+m4@1.4.19+sigsegv patches=9dc5fbd,bfdffa7
+metis@4.0.3~gdb~int64~real64+shared build_type=Release
+metis@5.1.0~gdb~int64~real64+shared build_type=Release patches=4991da9,b1225da
+mpfr@4.1.0
+mumps@5.4.0~blr_mt+complex+double+float~int64+metis+mpi~openmp+parmetis~ptscotch~scotch+shared patches=1946864
+ncurses@6.2~symlinks+termlib abi=none
+netlib-scalapack@2.1.0~ipo~pic+shared build_type=Release patches=1c9ce5f,f2baedd
+openblas@0.3.19~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none
+openblas@0.3.19~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=openmp
+openmpi@4.1.2~atomics~cuda~cxx~cxx_exceptions+gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none
+openmpi@4.1.2~atomics~cuda~cxx~cxx_exceptions+gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none
+openssh@8.8p1
+openssl@1.1.1m~docs certs=system
+parmetis@4.0.3~gdb~int64~ipo+shared build_type=RelWithDebInfo patches=4f89253,50ed208,704b84f
+pcre@8.44~jit+multibyte+utf
+perl@5.34.0+cpanm+shared+threads
+perl@5.34.0+cpanm+shared+threads
+perl@5.34.0+cpanm+shared+threads
+pkgconf@1.8.0
+py-astropy@4.0.1.post1~extras
+py-beautifulsoup4@4.10.0~html5lib~lxml
+py-pip@21.3.1
+py-seaborn@0.11.2
+py-tqdm@4.62.3~notebook~telegram
+py-tqdm@4.62.3~notebook~telegram
+py-urllib3@1.26.6~brotli~secure~socks
+py-virtualenv@20.10.0
+readline@8.1
+sed@4.2.2
+slate@2021.05.02~cuda~ipo+mpi+openmp~rocm+shared build_type=RelWithDebInfo
+strumpack@6.3.0+butterflypack+c_interface~count_flops~cuda~ipo+mpi+openmp+parmetis~rocm~scotch+shared+slate~task_timers+zfp build_type=RelWithDebInfo
+superlu-dist@7.2.0~cuda~int64~ipo~openmp~rocm+shared build_type=RelWithDebInfo patches=8da9e21
+tar@1.34
+texinfo@6.5 patches=12f6edb,1732115
+texinfo@6.5 patches=12f6edb,1732115
+texinfo@6.5 patches=12f6edb,1732115
+xz@5.2.5~pic libs=shared,static
+zlib@1.2.11+optimize+pic+shared

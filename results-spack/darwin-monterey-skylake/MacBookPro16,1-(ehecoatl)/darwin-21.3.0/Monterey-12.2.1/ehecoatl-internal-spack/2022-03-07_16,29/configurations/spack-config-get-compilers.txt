@@ -1,0 +1,75 @@
+created by /Users/dtopa//Users/dtopa/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Mon Mar  7 16:30:22 MST 2022
+
+${SPACK_ROOT} = /Users/dtopa/spacktivity/ehecoatl-internal-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin swe45.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+compilers:
+- compiler:
+    spec: clang@13.0.1
+    paths:
+      cc: /opt/local/bin/clang-mp-13
+      cxx: /opt/local/bin/clang++-mp-13
+      f77: /opt/local/bin/gfortran
+      fc: /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@11.2.0
+    paths:
+      cc: /opt/local/bin/gcc
+      cxx: /opt/local/bin/g++
+      f77: /opt/local/bin/gfortran
+      fc: /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: apple-clang@13.0.0
+    paths:
+      cc: /usr/bin/clang
+      cxx: /usr/bin/clang++
+      f77: /opt/local/bin/gfortran-mp-11
+      fc: /opt/local/bin/gfortran-mp-11
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: clang@13.0.0
+    paths:
+      cc: /opt/local/bin/clang-mp-13
+      cxx: /opt/local/bin/clang++-mp-13
+      f77: /opt/local/bin/gfortran-mp-11
+      fc: /opt/local/bin/gfortran-mp-11
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@11.2.0
+    paths:
+      cc: /Users/dtopa/spacktivity/ehecoatl-internal-spack/opt/spack/darwin-monterey-skylake/apple-clang-13.0.0/gcc-11.2.0-epwb7td3iujlrtpm6zdlqtgsb2duixsv/bin/gcc
+      cxx: /Users/dtopa/spacktivity/ehecoatl-internal-spack/opt/spack/darwin-monterey-skylake/apple-clang-13.0.0/gcc-11.2.0-epwb7td3iujlrtpm6zdlqtgsb2duixsv/bin/g++
+      f77: /Users/dtopa/spacktivity/ehecoatl-internal-spack/opt/spack/darwin-monterey-skylake/apple-clang-13.0.0/gcc-11.2.0-epwb7td3iujlrtpm6zdlqtgsb2duixsv/bin/gfortran
+      fc: /Users/dtopa/spacktivity/ehecoatl-internal-spack/opt/spack/darwin-monterey-skylake/apple-clang-13.0.0/gcc-11.2.0-epwb7td3iujlrtpm6zdlqtgsb2duixsv/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []

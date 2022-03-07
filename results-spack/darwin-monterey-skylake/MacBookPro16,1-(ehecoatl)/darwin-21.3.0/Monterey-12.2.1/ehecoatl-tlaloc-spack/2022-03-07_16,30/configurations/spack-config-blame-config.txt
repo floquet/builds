@@ -1,0 +1,70 @@
+created by /Users/dtopa//Users/dtopa/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Mon Mar  7 16:31:28 MST 2022
+
+${SPACK_ROOT} = /Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin swe45.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+---                                                                                   config:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:19     install_tree:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:20       root: $spack/opt/spack
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:21       projections:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:22         all: ${ARCHITECTURE}/${COMPILERNAME}-${COMPILERVER}/${PACKAGE}-${VERSION}-${HASH}
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:33     template_dirs:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:33     - $spack/share/spack/templates
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # Temporary locations Spack can try to use for builds.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     #
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # Recommended options are given below.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     #
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # Builds can be faster in temporary directories on some (e.g., HPC) systems.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # Specifying `$tempdir` will ensure use of the default temporary directory
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # (i.e., ``$TMP` or ``$TMPDIR``).
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     #
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # Another option that prevents conflicts and potential permission issues is
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # to specify `$user_cache_path/stage`, which ensures each user builds in their
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # home directory.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     #
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # A more traditional path uses the value of `$spack/var/spack/stage`, which
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # builds directly inside Spack's instance without staging them in a
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # temporary space.  Problems with specifying a path inside a Spack instance
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # are that it precludes its use as a system package and its ability to be
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # pip installable.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     #
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # In any case, if the username is not already in the path, Spack will append
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # the value of `$user` in an attempt to avoid potential conflicts between
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # users in shared temporary spaces.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     #
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # The build stage can be purged with `spack clean --stage` and
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # `spack clean -a`, so it is important that the specified directory uniquely
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:34     # identifies Spack staging to avoid accidentally wiping out non-Spack work.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:61     build_stage:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:62     - $tempdir/$user/spack-stage
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:63     - $user_cache_path/stage
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:63     # - $spack/var/spack/stage
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:63     # Directory in which to run tests and store test results.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:63     # Tests will be stored in directories named by date/time and package
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:63     # name/hash.
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:69     test_stage: $user_cache_path/test
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:73     source_cache: $spack/var/spack/cache
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:78     misc_cache: $user_cache_path/cache
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:84     connect_timeout: 10
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:89     verify_ssl: True
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:97     suppress_gpg_warnings: False
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:103    install_missing_compilers: False
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:108    checksum: True
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:113    deprecated: False
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:118    dirty: False
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:126    build_language: C
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:135    locks: True
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:140    url_fetch_method: urllib
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:153    ccache: False
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:169    concretizer: clingo
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:176    db_lock_timeout: 3
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:184    package_lock_timeout: null
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:190    shared_linking: rpath
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:195    allow_sgid: True
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/config.yaml:200    terminal_title: False
+_builtin                                                                                debug: False
+_builtin                                                                                build_jobs: 12

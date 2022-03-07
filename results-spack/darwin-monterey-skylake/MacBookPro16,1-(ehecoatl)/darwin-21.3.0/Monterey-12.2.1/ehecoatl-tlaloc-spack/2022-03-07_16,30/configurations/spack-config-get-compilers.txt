@@ -1,0 +1,49 @@
+created by /Users/dtopa//Users/dtopa/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Mon Mar  7 16:31:23 MST 2022
+
+${SPACK_ROOT} = /Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin swe45.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+compilers:
+- compiler:
+    spec: clang@13.0.1
+    paths:
+      cc: /opt/local/bin/clang-mp-13
+      cxx: /opt/local/bin/clang++-mp-13
+      f77: /opt/local/bin/gfortran
+      fc: /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@11.2.0
+    paths:
+      cc: /opt/local/bin/gcc
+      cxx: /opt/local/bin/g++
+      f77: /opt/local/bin/gfortran
+      fc: /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: apple-clang@13.0.0
+    paths:
+      cc: /usr/bin/clang
+      cxx: /usr/bin/clang++
+      f77: /opt/local/bin/gfortran
+      fc: /opt/local/bin/gfortran
+    flags: {}
+    operating_system: monterey
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []

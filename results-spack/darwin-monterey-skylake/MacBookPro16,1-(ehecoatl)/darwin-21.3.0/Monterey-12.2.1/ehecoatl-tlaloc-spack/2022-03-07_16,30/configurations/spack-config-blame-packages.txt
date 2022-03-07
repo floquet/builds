@@ -1,0 +1,72 @@
+created by /Users/dtopa//Users/dtopa/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Mon Mar  7 16:31:31 MST 2022
+
+${SPACK_ROOT} = /Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin swe45.local 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64 x86_64
+
+---                                                                                           packages:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:17    all:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:18             compiler: [apple-clang, clang, gcc, intel, pgi, xl, nag, fj, aocc]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:23      providers:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:24               elf: [libelf, elfutils]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:27               fuse: [macfuse, libfuse]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:55               unwind: [apple-libunwind, libunwind]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:56               uuid: [apple-libuuid, util-linux-uuid, libuuid]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:20               awk: [gawk]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:21               blas: [openblas, amdblis]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:22               D: [ldc]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:23               daal: [intel-daal]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:25               fftw-api: [fftw, amdfftw]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:26               flame: [libflame, amdlibflame]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:28               gl: [mesa+opengl, mesa18, opengl]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:29               glu: [mesa-glu, openglu]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:30               glx: [mesa+glx, mesa18+glx, opengl]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:31               golang: [gcc]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:32               iconv: [libiconv]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:33               ipp: [intel-ipp]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:34               java: [openjdk, jdk, ibm-java]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:35               jpeg: [libjpeg-turbo, libjpeg]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:36               lapack: [openblas, amdlibflame]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:37               libllvm: [llvm, llvm-amdgpu]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:38               lua-lang: [lua, lua-luajit]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:39               mariadb-client: [mariadb-c-client, mariadb]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:40               mkl: [intel-mkl]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:41               mpe: [mpe2]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:42               mpi: [openmpi, mpich]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:43               mysql-client: [mysql, mariadb-c-client]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:44               opencl: [pocl]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:45               onedal: [intel-oneapi-dal]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:46               osmesa: [mesa+osmesa, mesa18+osmesa]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:47               pbs: [openpbs, torque]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:48               pil: [py-pillow]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:49               pkgconfig: [pkgconf, pkg-config]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:50               rpc: [libtirpc]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:51               scalapack: [netlib-scalapack, amdscalapack]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:52               sycl: [hipsycl]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:53               szip: [libaec, libszip]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:54               tbb: [intel-tbb]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:57               xxd: [xxd-standalone, vim]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:58               yacc: [bison, byacc]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:59               ziglang: [zig]
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:60             permissions:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:61               read: world
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/packages.yaml:62               write: user
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:28    apple-libunwind:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:29      buildable: False
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:30      externals:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:30      
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:30      # Apple bundles libunwind version 35.3 with macOS 10.9 and later,
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:30      # although the version number used here isn't critical
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:33      - spec: apple-libunwind@35.3
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:34        prefix: /usr
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:35    apple-libuuid:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:36      buildable: False
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:37      externals:
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:37      
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:37      # Apple bundles libuuid in libsystem_c version 1353.100.2,
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:37      # although the version number used here isn't critical
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:40      - spec: apple-libuuid@1353.100.2
+/Volumes/Tlaloc/spacktivity/ehecoatl-tlaloc-spack/etc/spack/defaults/darwin/packages.yaml:41        prefix: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
