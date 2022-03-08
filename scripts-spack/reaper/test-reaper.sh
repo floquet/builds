@@ -24,7 +24,7 @@ new_step "Define directory structure"
     #export  dirTarget="${dir_spack}/${platform}/${machine}/${moniker}/${drive}/${owner}/${spack_tag}/${dist}/${release}"
     # ${vrepos}/github/build/darwin-monterey-skylake/${machine}/${moniker}/${os}/${dist}/${release}
     #export  dirTarget="${repoTarget}/${arch}/${spack_tag}/${dir_config}"
-    export  dirTarget="${repoTarget}/${arch}/${dir_config}/${spack_tag}/${ymdt}"
+    export  dirTarget="${repoTarget}/echo/${dir_config}/${spack_tag}/${ymdt}"
 
     export           dirYamls="${dirTarget}/yamls"
     #export        dirDotSpack="${dirTarget}/dotspack"

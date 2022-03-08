@@ -26,3 +26,24 @@ docker push dantopa/science-centos:${centos_version}
 export vault="${volume_ext}/docker-land/tarballs" 
 docker save dantopa/science-centos:${centos_version} > ${vault}/science-centos:${centos_version}.gz
 
+dtopa@swe45.local:~ $ docker commit 5f19c6830040 dantopa/science-centos:${centos_version} 
+sha256:bd288334a49ce757bf687d5500dbe6600a711279e5d8839eaba7fc0d265307b2
+dtopa@swe45.local:~ $ dimage 
+docker images
+REPOSITORY               TAG        IMAGE ID       CREATED        SIZE
+dantopa/science-centos   7.9.2009   bd288334a49c   13 hours ago   6.18GB
+dantopa/base-amzn        2022       8fb24b1f994c   14 hours ago   5.09GB
+dantopa/base-centos      7.9.2009   cf4eea3c39ed   15 hours ago   5.33GB
+dantopa/base-ubuntu      22.04      d4874abbb0ed   15 hours ago   7.88GB
+dantopa/spwx-02-amzn     2022       3b0bd641729f   23 hours ago   4.99GB
+ubuntu                   22.04      41ba606c8ab9   3 days ago     79MB
+centos                   7.9.2009   eeb6ee3f44bd   5 months ago   204MB
+dtopa@swe45.local:~ $ docker push dantopa/science-centos:${centos_version} 
+The push refers to repository [docker.io/dantopa/science-centos]
+f56ef5692981: Pushed 
+ad242ef3116e: Pushed 
+9a082dc01356: Pushed 
+1a165fa5453d: Mounted from dantopa/base-centos 
+7f40bed7df4a: Mounted from dantopa/base-centos 
+174f56854903: Mounted from dantopa/base-centos 
+7.9.2009: digest: sha256:d1ad81e165b0a7612caa501d0a8798f9488542ffe294e70dddf22d8aecbb2016 size: 1596
