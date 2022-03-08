@@ -1,0 +1,57 @@
+AutotoolsPackage:   netcdf-cxx4
+
+Description:
+    NetCDF (network Common Data Form) is a set of software libraries and
+    machine-independent data formats that support the creation, access, and
+    sharing of array-oriented scientific data. This is the C++ distribution.
+
+Homepage: https://www.unidata.ucar.edu/software/netcdf
+
+Maintainers: @WardF
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    4.3.1    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-cxx4-4.3.1.tar.gz
+
+Safe versions:  
+    4.3.1    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-cxx4-4.3.1.tar.gz
+    4.3.0    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-cxx4-4.3.0.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]    When    Allowed values    Description
+    ==============    ====    ==============    ===================================================
+
+    doxygen [on]      --      on, off           Enable doxygen docs
+    pic [on]          --      on, off           Produce position-independent code (for shared libs)
+    shared [on]       --      on, off           Enable shared library
+    static [on]       --      on, off           Enable building static libraries
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    autoconf
+    automake
+    doxygen
+    gnuconfig
+    libtool
+    m4
+    netcdf-c
+
+Link Dependencies:
+    netcdf-c
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

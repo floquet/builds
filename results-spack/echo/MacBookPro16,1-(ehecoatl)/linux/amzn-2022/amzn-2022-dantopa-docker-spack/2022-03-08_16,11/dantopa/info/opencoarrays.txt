@@ -1,0 +1,58 @@
+CMakePackage:   opencoarrays
+
+Description:
+    OpenCoarrays is an open-source software project that produces an
+    application binary interface (ABI) supporting coarray Fortran (CAF)
+    compilers, an application programming interface (API) that supports
+    users of non-CAF compilers, and an associated compiler wrapper and
+    program launcher.
+
+Homepage: http://www.opencoarrays.org/
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    2.7.1     https://github.com/sourceryinstitute/OpenCoarrays/releases/download/2.7.1/OpenCoarrays-2.7.1.tar.gz
+
+Safe versions:  
+    2.7.1     https://github.com/sourceryinstitute/OpenCoarrays/releases/download/2.7.1/OpenCoarrays-2.7.1.tar.gz
+    2.2.0     https://github.com/sourceryinstitute/OpenCoarrays/releases/download/2.2.0/OpenCoarrays-2.2.0.tar.gz
+    1.8.10    https://github.com/sourceryinstitute/OpenCoarrays/releases/download/1.8.10/OpenCoarrays-1.8.10.tar.gz
+    1.8.4     https://github.com/sourceryinstitute/OpenCoarrays/releases/download/1.8.4/OpenCoarrays-1.8.4.tar.gz
+    1.8.0     https://github.com/sourceryinstitute/OpenCoarrays/releases/download/1.8.0/OpenCoarrays-1.8.0.tar.gz
+    1.7.4     https://github.com/sourceryinstitute/OpenCoarrays/releases/download/1.7.4/OpenCoarrays-1.7.4.tar.gz
+    1.6.2     https://github.com/sourceryinstitute/OpenCoarrays/releases/download/1.6.2/OpenCoarrays-1.6.2.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]                 When    Allowed values          Description
+    ===========================    ====    ====================    ==================================
+
+    build_type [RelWithDebInfo]    [, ]    Debug, Release,         The build type to build
+                                           RelWithDebInfo,         
+                                           MinSizeRel,             
+                                           CodeCoverage            
+    ipo [off]                      --      on, off                 CMake interprocedural optimization
+
+Installation Phases:
+    cmake    build    install
+
+Build Dependencies:
+    cmake
+    mpi
+
+Link Dependencies:
+    mpi
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

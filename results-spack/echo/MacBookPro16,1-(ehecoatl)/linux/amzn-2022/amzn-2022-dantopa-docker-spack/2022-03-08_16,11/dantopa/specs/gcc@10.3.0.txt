@@ -1,0 +1,29 @@
+Input spec
+--------------------------------
+gcc@10.3.0%gcc@11.2.1
+
+Concretized
+--------------------------------
+gcc@10.3.0%gcc@11.2.1~binutils+bootstrap~graphite~nvptx~piclibs~strip languages=c,c++,fortran patches=28c5ab3,2c18531,eaa00c9 arch=linux-amzn2022-haswell
+    ^diffutils@3.8%gcc@11.2.1 arch=linux-amzn2022-haswell
+        ^libiconv@1.16%gcc@11.2.1 libs=shared,static arch=linux-amzn2022-haswell
+    ^gmp@6.2.1%gcc@11.2.1 arch=linux-amzn2022-haswell
+        ^autoconf@2.69%gcc@11.2.1 patches=35c4492,7793209,a49dd5b arch=linux-amzn2022-haswell
+            ^m4@1.4.19%gcc@11.2.1+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-amzn2022-haswell
+                ^libsigsegv@2.13%gcc@11.2.1 arch=linux-amzn2022-haswell
+            ^perl@5.34.0%gcc@11.2.1+cpanm+shared+threads arch=linux-amzn2022-haswell
+                ^berkeley-db@18.1.40%gcc@11.2.1+cxx~docs+stl patches=b231fcc arch=linux-amzn2022-haswell
+                ^bzip2@1.0.8%gcc@11.2.1~debug~pic+shared arch=linux-amzn2022-haswell
+                ^gdbm@1.19%gcc@11.2.1 arch=linux-amzn2022-haswell
+                    ^readline@8.1%gcc@11.2.1 arch=linux-amzn2022-haswell
+                        ^ncurses@6.2%gcc@11.2.1~symlinks+termlib abi=none arch=linux-amzn2022-haswell
+                            ^pkgconf@1.8.0%gcc@11.2.1 arch=linux-amzn2022-haswell
+                ^zlib@1.2.11%gcc@11.2.1+optimize+pic+shared arch=linux-amzn2022-haswell
+        ^automake@1.16.5%gcc@11.2.1 arch=linux-amzn2022-haswell
+        ^libtool@2.4.6%gcc@11.2.1 arch=linux-amzn2022-haswell
+    ^mpc@1.2.1%gcc@11.2.1 arch=linux-amzn2022-haswell
+        ^mpfr@4.1.0%gcc@11.2.1 arch=linux-amzn2022-haswell
+            ^autoconf-archive@2019.01.06%gcc@11.2.1 arch=linux-amzn2022-haswell
+            ^texinfo@6.5%gcc@11.2.1 patches=12f6edb,1732115 arch=linux-amzn2022-haswell
+    ^zstd@1.5.2%gcc@11.2.1~programs arch=linux-amzn2022-haswell
+

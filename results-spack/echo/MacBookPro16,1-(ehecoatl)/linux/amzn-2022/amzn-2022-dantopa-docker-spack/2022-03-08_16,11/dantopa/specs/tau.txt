@@ -1,0 +1,55 @@
+Input spec
+--------------------------------
+tau%gcc@11.2.1
+    ^openmpi@4.1.2
+    ^python@3.10.2
+
+Concretized
+--------------------------------
+tau@2.31%gcc@11.2.1~adios2+binutils~comm~craycnl~cuda+elf+fortran~gasnet+io~level_zero+libdwarf+libunwind~likwid~mpi~ompt~opari~opencl~openmp+otf2+papi+pdt~phase~ppc64le~profileparam+pthreads~python~rocm~rocprofiler~roctracer~scorep~shmem~sqlite~x86_64 arch=linux-amzn2022-haswell
+    ^binutils@2.38%gcc@11.2.1~gas~gold+headers~interwork~ld+libiberty~lto+nls+plugins libs=shared,static arch=linux-amzn2022-haswell
+        ^diffutils@3.8%gcc@11.2.1 arch=linux-amzn2022-haswell
+            ^libiconv@1.16%gcc@11.2.1 libs=shared,static arch=linux-amzn2022-haswell
+        ^gettext@0.21%gcc@11.2.1+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-amzn2022-haswell
+            ^bzip2@1.0.8%gcc@11.2.1~debug~pic+shared arch=linux-amzn2022-haswell
+            ^libxml2@2.9.12%gcc@11.2.1~python arch=linux-amzn2022-haswell
+                ^pkgconf@1.8.0%gcc@11.2.1 arch=linux-amzn2022-haswell
+                ^xz@5.2.5%gcc@11.2.1~pic libs=shared,static arch=linux-amzn2022-haswell
+                ^zlib@1.2.11%gcc@11.2.1+optimize+pic+shared arch=linux-amzn2022-haswell
+            ^ncurses@6.2%gcc@11.2.1~symlinks+termlib abi=none arch=linux-amzn2022-haswell
+            ^tar@1.34%gcc@11.2.1 arch=linux-amzn2022-haswell
+    ^elfutils@0.186%gcc@11.2.1~bzip2~debuginfod+nls~xz arch=linux-amzn2022-haswell
+        ^m4@1.4.19%gcc@11.2.1+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-amzn2022-haswell
+            ^libsigsegv@2.13%gcc@11.2.1 arch=linux-amzn2022-haswell
+    ^hwloc@2.7.0%gcc@11.2.1~cairo~cuda~gl~libudev+libxml2+netloc~nvml~opencl+pci+rocm+shared arch=linux-amzn2022-haswell
+        ^libpciaccess@0.16%gcc@11.2.1 arch=linux-amzn2022-haswell
+            ^libtool@2.4.6%gcc@11.2.1 arch=linux-amzn2022-haswell
+            ^util-macros@1.19.3%gcc@11.2.1 arch=linux-amzn2022-haswell
+        ^openmpi@4.1.2%gcc@11.2.1~atomics~cuda~cxx~cxx_exceptions~gpfs+internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-amzn2022-haswell
+            ^libevent@2.1.12%gcc@11.2.1+openssl arch=linux-amzn2022-haswell
+                ^openssl@1.1.1m%gcc@11.2.1~docs certs=system arch=linux-amzn2022-haswell
+                    ^perl@5.34.0%gcc@11.2.1+cpanm+shared+threads arch=linux-amzn2022-haswell
+                        ^berkeley-db@18.1.40%gcc@11.2.1+cxx~docs+stl patches=b231fcc arch=linux-amzn2022-haswell
+                        ^gdbm@1.19%gcc@11.2.1 arch=linux-amzn2022-haswell
+                            ^readline@8.1%gcc@11.2.1 arch=linux-amzn2022-haswell
+            ^numactl@2.0.14%gcc@11.2.1 patches=4e1d78c,62fc8a8,ff37630 arch=linux-amzn2022-haswell
+                ^autoconf@2.69%gcc@11.2.1 patches=35c4492,7793209,a49dd5b arch=linux-amzn2022-haswell
+                ^automake@1.16.5%gcc@11.2.1 arch=linux-amzn2022-haswell
+            ^openssh@8.8p1%gcc@11.2.1 arch=linux-amzn2022-haswell
+                ^libedit@3.1-20210216%gcc@11.2.1 arch=linux-amzn2022-haswell
+        ^rocm-smi-lib@4.5.2%gcc@11.2.1~ipo+shared build_type=Release patches=8bc40cc arch=linux-amzn2022-haswell
+            ^cmake@3.22.2%gcc@11.2.1~doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-amzn2022-haswell
+            ^python@3.10.2%gcc@11.2.1+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060 arch=linux-amzn2022-haswell
+                ^expat@2.4.6%gcc@11.2.1+libbsd arch=linux-amzn2022-haswell
+                    ^libbsd@0.11.5%gcc@11.2.1 arch=linux-amzn2022-haswell
+                        ^libmd@1.0.4%gcc@11.2.1 arch=linux-amzn2022-haswell
+                ^libffi@3.4.2%gcc@11.2.1 arch=linux-amzn2022-haswell
+                ^sqlite@3.37.2%gcc@11.2.1+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-amzn2022-haswell
+                ^util-linux-uuid@2.37.4%gcc@11.2.1 arch=linux-amzn2022-haswell
+    ^libdwarf@20180129%gcc@11.2.1 arch=linux-amzn2022-haswell
+    ^libunwind@1.5.0%gcc@11.2.1~block_signals~conservative_checks~cxx_exceptions~debug~debug_frame+docs~pic+tests+weak_backtrace~xz~zlib components=none libs=shared,static arch=linux-amzn2022-haswell
+    ^openjdk@11.0.12_7%gcc@11.2.1 arch=linux-amzn2022-haswell
+    ^otf2@2.3%gcc@11.2.1 arch=linux-amzn2022-haswell
+    ^papi@6.0.0.1%gcc@11.2.1~cuda+example~infiniband~lmsensors~nvml~powercap~rapl~rocm~rocm_smi~sde+shared~static_tools arch=linux-amzn2022-haswell
+    ^pdt@3.25.1%gcc@11.2.1~pic arch=linux-amzn2022-haswell
+

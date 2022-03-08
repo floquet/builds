@@ -1,0 +1,60 @@
+AutotoolsPackage:   gsl
+
+Description:
+    The GNU Scientific Library (GSL) is a numerical library for C and C++
+    programmers. It is free software under the GNU General Public License.
+    The library provides a wide range of mathematical routines such as
+    random number generators, special functions and least-squares fitting.
+    There are over 1000 functions in total with an extensive test suite.
+
+Homepage: https://www.gnu.org/software/gsl
+
+Externally Detectable: 
+    False
+
+Tags: 
+    None
+
+Preferred version:  
+    2.7      https://ftpmirror.gnu.org/gsl/gsl-2.7.tar.gz
+
+Safe versions:  
+    2.7      https://ftpmirror.gnu.org/gsl/gsl-2.7.tar.gz
+    2.6      https://ftpmirror.gnu.org/gsl/gsl-2.6.tar.gz
+    2.5      https://ftpmirror.gnu.org/gsl/gsl-2.5.tar.gz
+    2.4      https://ftpmirror.gnu.org/gsl/gsl-2.4.tar.gz
+    2.3      https://ftpmirror.gnu.org/gsl/gsl-2.3.tar.gz
+    2.2.1    https://ftpmirror.gnu.org/gsl/gsl-2.2.1.tar.gz
+    2.1      https://ftpmirror.gnu.org/gsl/gsl-2.1.tar.gz
+    2.0      https://ftpmirror.gnu.org/gsl/gsl-2.0.tar.gz
+    1.16     https://ftpmirror.gnu.org/gsl/gsl-1.16.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    Name [Default]          When    Allowed values    Description
+    ====================    ====    ==============    ===========================
+
+    external-cblas [off]    --      on, off           Build against external blas
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    autoconf
+    automake
+    blas
+    gnuconfig
+    libtool
+    m4
+
+Link Dependencies:
+    blas
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

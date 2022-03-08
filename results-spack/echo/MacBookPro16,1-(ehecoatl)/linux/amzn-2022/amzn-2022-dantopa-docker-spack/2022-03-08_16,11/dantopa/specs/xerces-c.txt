@@ -1,0 +1,20 @@
+Input spec
+--------------------------------
+xerces-c%gcc@11.2.1
+
+Concretized
+--------------------------------
+xerces-c@3.2.3%gcc@11.2.1 cxxstd=default netaccessor=curl transcoder=gnuiconv arch=linux-amzn2022-haswell
+    ^curl@7.81.0%gcc@11.2.1~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=openssl arch=linux-amzn2022-haswell
+        ^openssl@1.1.1m%gcc@11.2.1~docs certs=system arch=linux-amzn2022-haswell
+            ^perl@5.34.0%gcc@11.2.1+cpanm+shared+threads arch=linux-amzn2022-haswell
+                ^berkeley-db@18.1.40%gcc@11.2.1+cxx~docs+stl patches=b231fcc arch=linux-amzn2022-haswell
+                ^bzip2@1.0.8%gcc@11.2.1~debug~pic+shared arch=linux-amzn2022-haswell
+                    ^diffutils@3.8%gcc@11.2.1 arch=linux-amzn2022-haswell
+                        ^libiconv@1.16%gcc@11.2.1 libs=shared,static arch=linux-amzn2022-haswell
+                ^gdbm@1.19%gcc@11.2.1 arch=linux-amzn2022-haswell
+                    ^readline@8.1%gcc@11.2.1 arch=linux-amzn2022-haswell
+                        ^ncurses@6.2%gcc@11.2.1~symlinks+termlib abi=none arch=linux-amzn2022-haswell
+                            ^pkgconf@1.8.0%gcc@11.2.1 arch=linux-amzn2022-haswell
+                ^zlib@1.2.11%gcc@11.2.1+optimize+pic+shared arch=linux-amzn2022-haswell
+

@@ -1,0 +1,114 @@
+created by /home/dantopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Tue Mar  8 16:12:50 UTC 2022
+
+${SPACK_ROOT} = /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack
+
+spack arch linux-amzn2022-haswell
+
+uname -a:
+Linux 618ecfea8bd4 5.10.76-linuxkit #1 SMP Mon Nov 8 10:21:19 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+---                                            compilers:
+/home/dantopa/.spack/linux/compilers.yaml:2    - compiler:
+/home/dantopa/.spack/linux/compilers.yaml:3        spec: gcc@11.2.1
+/home/dantopa/.spack/linux/compilers.yaml:4        paths:
+/home/dantopa/.spack/linux/compilers.yaml:5          cc: /usr/bin/gcc
+/home/dantopa/.spack/linux/compilers.yaml:6          cxx: /usr/bin/g++
+/home/dantopa/.spack/linux/compilers.yaml:7          f77: /usr/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:8          fc: /usr/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:9        flags: {}
+/home/dantopa/.spack/linux/compilers.yaml:10       operating_system: amzn2022
+/home/dantopa/.spack/linux/compilers.yaml:11       target: x86_64
+/home/dantopa/.spack/linux/compilers.yaml:12       modules: []
+/home/dantopa/.spack/linux/compilers.yaml:13       environment: {}
+/home/dantopa/.spack/linux/compilers.yaml:14       extra_rpaths: []
+/home/dantopa/.spack/linux/compilers.yaml:15   - compiler:
+/home/dantopa/.spack/linux/compilers.yaml:16       spec: gcc@11.2.0
+/home/dantopa/.spack/linux/compilers.yaml:17       paths:
+/home/dantopa/.spack/linux/compilers.yaml:18         cc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-11.2.0-2lsi3ruxoj7gamoymbh5e6bcpa3nlgfv/bin/gcc
+/home/dantopa/.spack/linux/compilers.yaml:19         cxx: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-11.2.0-2lsi3ruxoj7gamoymbh5e6bcpa3nlgfv/bin/g++
+/home/dantopa/.spack/linux/compilers.yaml:20         f77: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-11.2.0-2lsi3ruxoj7gamoymbh5e6bcpa3nlgfv/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:21         fc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-11.2.0-2lsi3ruxoj7gamoymbh5e6bcpa3nlgfv/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:22       flags: {}
+/home/dantopa/.spack/linux/compilers.yaml:23       operating_system: amzn2022
+/home/dantopa/.spack/linux/compilers.yaml:24       target: x86_64
+/home/dantopa/.spack/linux/compilers.yaml:25       modules: []
+/home/dantopa/.spack/linux/compilers.yaml:26       environment: {}
+/home/dantopa/.spack/linux/compilers.yaml:27       extra_rpaths: []
+/home/dantopa/.spack/linux/compilers.yaml:28   - compiler:
+/home/dantopa/.spack/linux/compilers.yaml:29       spec: gcc@10.3.0
+/home/dantopa/.spack/linux/compilers.yaml:30       paths:
+/home/dantopa/.spack/linux/compilers.yaml:31         cc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-10.3.0-aezcciauvkl5rbro7ihqtompobolbphs/bin/gcc
+/home/dantopa/.spack/linux/compilers.yaml:32         cxx: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-10.3.0-aezcciauvkl5rbro7ihqtompobolbphs/bin/g++
+/home/dantopa/.spack/linux/compilers.yaml:33         f77: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-10.3.0-aezcciauvkl5rbro7ihqtompobolbphs/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:34         fc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-10.3.0-aezcciauvkl5rbro7ihqtompobolbphs/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:35       flags: {}
+/home/dantopa/.spack/linux/compilers.yaml:36       operating_system: amzn2022
+/home/dantopa/.spack/linux/compilers.yaml:37       target: x86_64
+/home/dantopa/.spack/linux/compilers.yaml:38       modules: []
+/home/dantopa/.spack/linux/compilers.yaml:39       environment: {}
+/home/dantopa/.spack/linux/compilers.yaml:40       extra_rpaths: []
+/home/dantopa/.spack/linux/compilers.yaml:41   - compiler:
+/home/dantopa/.spack/linux/compilers.yaml:42       spec: gcc@9.4.0
+/home/dantopa/.spack/linux/compilers.yaml:43       paths:
+/home/dantopa/.spack/linux/compilers.yaml:44         cc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-9.4.0-biddic7dn3qytdhc7wspt4wabtpxkpuu/bin/gcc
+/home/dantopa/.spack/linux/compilers.yaml:45         cxx: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-9.4.0-biddic7dn3qytdhc7wspt4wabtpxkpuu/bin/g++
+/home/dantopa/.spack/linux/compilers.yaml:46         f77: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-9.4.0-biddic7dn3qytdhc7wspt4wabtpxkpuu/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:47         fc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-9.4.0-biddic7dn3qytdhc7wspt4wabtpxkpuu/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:48       flags: {}
+/home/dantopa/.spack/linux/compilers.yaml:49       operating_system: amzn2022
+/home/dantopa/.spack/linux/compilers.yaml:50       target: x86_64
+/home/dantopa/.spack/linux/compilers.yaml:51       modules: []
+/home/dantopa/.spack/linux/compilers.yaml:52       environment: {}
+/home/dantopa/.spack/linux/compilers.yaml:53       extra_rpaths: []
+/home/dantopa/.spack/linux/compilers.yaml:54   - compiler:
+/home/dantopa/.spack/linux/compilers.yaml:55       spec: gcc@8.5.0
+/home/dantopa/.spack/linux/compilers.yaml:56       paths:
+/home/dantopa/.spack/linux/compilers.yaml:57         cc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-8.5.0-cd5g4oib6karexrwvz5khzbendu4m6eu/bin/gcc
+/home/dantopa/.spack/linux/compilers.yaml:58         cxx: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-8.5.0-cd5g4oib6karexrwvz5khzbendu4m6eu/bin/g++
+/home/dantopa/.spack/linux/compilers.yaml:59         f77: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-8.5.0-cd5g4oib6karexrwvz5khzbendu4m6eu/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:60         fc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/gcc-8.5.0-cd5g4oib6karexrwvz5khzbendu4m6eu/bin/gfortran
+/home/dantopa/.spack/linux/compilers.yaml:61       flags: {}
+/home/dantopa/.spack/linux/compilers.yaml:62       operating_system: amzn2022
+/home/dantopa/.spack/linux/compilers.yaml:63       target: x86_64
+/home/dantopa/.spack/linux/compilers.yaml:64       modules: []
+/home/dantopa/.spack/linux/compilers.yaml:65       environment: {}
+/home/dantopa/.spack/linux/compilers.yaml:66       extra_rpaths: []
+/home/dantopa/.spack/linux/compilers.yaml:67   - compiler:
+/home/dantopa/.spack/linux/compilers.yaml:68       spec: clang@13.0.1
+/home/dantopa/.spack/linux/compilers.yaml:69       paths:
+/home/dantopa/.spack/linux/compilers.yaml:70         cc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/llvm-13.0.1-xpnn5s75bibddocimtber5wu3q2v6vob/bin/clang
+/home/dantopa/.spack/linux/compilers.yaml:71         cxx: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/llvm-13.0.1-xpnn5s75bibddocimtber5wu3q2v6vob/bin/clang++
+/home/dantopa/.spack/linux/compilers.yaml:72         f77: null
+/home/dantopa/.spack/linux/compilers.yaml:73         fc: null
+/home/dantopa/.spack/linux/compilers.yaml:74       flags: {}
+/home/dantopa/.spack/linux/compilers.yaml:75       operating_system: amzn2022
+/home/dantopa/.spack/linux/compilers.yaml:76       target: x86_64
+/home/dantopa/.spack/linux/compilers.yaml:77       modules: []
+/home/dantopa/.spack/linux/compilers.yaml:78       environment: {}
+/home/dantopa/.spack/linux/compilers.yaml:79       extra_rpaths: []
+/home/dantopa/.spack/linux/compilers.yaml:80   - compiler:
+/home/dantopa/.spack/linux/compilers.yaml:81       spec: clang@11.1.0
+/home/dantopa/.spack/linux/compilers.yaml:82       paths:
+/home/dantopa/.spack/linux/compilers.yaml:83         cc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/llvm-11.1.0-rznx7ffzccljmvki4bandbrouqnn2ale/bin/clang
+/home/dantopa/.spack/linux/compilers.yaml:84         cxx: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/llvm-11.1.0-rznx7ffzccljmvki4bandbrouqnn2ale/bin/clang++
+/home/dantopa/.spack/linux/compilers.yaml:85         f77: null
+/home/dantopa/.spack/linux/compilers.yaml:86         fc: null
+/home/dantopa/.spack/linux/compilers.yaml:87       flags: {}
+/home/dantopa/.spack/linux/compilers.yaml:88       operating_system: amzn2022
+/home/dantopa/.spack/linux/compilers.yaml:89       target: x86_64
+/home/dantopa/.spack/linux/compilers.yaml:90       modules: []
+/home/dantopa/.spack/linux/compilers.yaml:91       environment: {}
+/home/dantopa/.spack/linux/compilers.yaml:92       extra_rpaths: []
+/home/dantopa/.spack/linux/compilers.yaml:93   - compiler:
+/home/dantopa/.spack/linux/compilers.yaml:94       spec: clang@12.0.1
+/home/dantopa/.spack/linux/compilers.yaml:95       paths:
+/home/dantopa/.spack/linux/compilers.yaml:96         cc: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/llvm-12.0.1-onkcxopbnoudzqzodm5dzrt77cn2t3pn/bin/clang
+/home/dantopa/.spack/linux/compilers.yaml:97         cxx: /home/dantopa/spacktivity/amzn-2022-dantopa-docker-spack/opt/spack/linux-amzn2022-haswell/gcc-11.2.1/llvm-12.0.1-onkcxopbnoudzqzodm5dzrt77cn2t3pn/bin/clang++
+/home/dantopa/.spack/linux/compilers.yaml:98         f77: null
+/home/dantopa/.spack/linux/compilers.yaml:99         fc: null
+/home/dantopa/.spack/linux/compilers.yaml:100      flags: {}
+/home/dantopa/.spack/linux/compilers.yaml:101      operating_system: amzn2022
+/home/dantopa/.spack/linux/compilers.yaml:102      target: x86_64
+/home/dantopa/.spack/linux/compilers.yaml:103      modules: []
+/home/dantopa/.spack/linux/compilers.yaml:104      environment: {}
+/home/dantopa/.spack/linux/compilers.yaml:105      extra_rpaths: []

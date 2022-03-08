@@ -1,0 +1,10 @@
+Input spec
+--------------------------------
+environment-modules%gcc@11.2.1
+
+Concretized
+--------------------------------
+environment-modules@5.0.1%gcc@11.2.1+X arch=linux-amzn2022-haswell
+    ^tcl@8.6.11%gcc@11.2.1 arch=linux-amzn2022-haswell
+        ^zlib@1.2.11%gcc@11.2.1+optimize+pic+shared arch=linux-amzn2022-haswell
+

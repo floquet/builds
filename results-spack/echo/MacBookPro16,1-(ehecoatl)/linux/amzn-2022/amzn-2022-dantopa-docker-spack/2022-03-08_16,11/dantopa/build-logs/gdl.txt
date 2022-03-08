@@ -1,0 +1,9 @@
+Tue Mar  8 02:28:49 UTC 2022: spack install gdl+python  % gcc@11.2.1  ^python@3.10.2 2>&1
+==> Error: gdl%gcc@11.2.1+python ^python@3.10.2 is unsatisfiable, errors are:
+  A conflict was triggered
+  Single valued variants must have a single value
+  no version satisfies the given constraints
+
+    To see full clingo unsat cores, re-run with `spack --show-cores=full`
+    For full, subset-minimal unsat cores, re-run with `spack --show-cores=minimized
+    Warning: This may take (up to) hours for some specs
