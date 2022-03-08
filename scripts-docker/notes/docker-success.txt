@@ -47,3 +47,7 @@ ad242ef3116e: Pushed
 7f40bed7df4a: Mounted from dantopa/base-centos 
 174f56854903: Mounted from dantopa/base-centos 
 7.9.2009: digest: sha256:d1ad81e165b0a7612caa501d0a8798f9488542ffe294e70dddf22d8aecbb2016 size: 1596
+
+ docker save dantopa/science-amzn:2022 > ${vault}/science-amzn:2022.gz
+ 
+ docker push dantopa/science-amzn:2022 
