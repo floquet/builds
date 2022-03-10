@@ -1,0 +1,26 @@
+apt info xz-utils
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: xz-utils
+Version: 5.2.5-2build1
+Priority: standard
+Build-Essential: yes
+Section: utils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Jonathan Nieder <jrnieder@gmail.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 381 kB
+Provides: lzma
+Depends: libc6 (>= 2.34), liblzma5 (>= 5.2.2)
+Conflicts: lzma (<< 9.22-1), xz-lzma
+Breaks: lzip (<< 1.8~rc2)
+Replaces: lzip (<< 1.8~rc2), xz-lzma
+Homepage: https://tukaani.org/xz/
+Task: standard, server-minimal
+Download-Size: 84.7 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+Description: XZ-format compression utilities
+

@@ -10,6 +10,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 #  are for scripts and give stable, parsable output.
 
 # $ docker pull ubuntu:22.04 ; ehecoatlDocker ubuntu:22.04
+# # apt-get update ; apt-get install -y tzdata
 
 # docker run -it  -v /Users/dtopa/Dropbox:/Dropbox -v /Volumes/Tlaloc/repos:/repos -v /Volumes/Tlaloc/spacktivity:/spacktivity ubuntu:22.04
 # docker run -it
@@ -19,6 +20,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # ubuntu:22.04
 
 # vim /home/${USER}/.vimrc
+# export SPACK_PYTHON="/usr/bin/python3.9"
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_spack}/shared/common-header.sh
@@ -30,6 +32,7 @@ export ubuntuSECONDS=${SECONDS}
 
 export dist="ubuntu" ; export release="22.04" ; export tag="${dist}-${release}"
 export USER="dantopa"
+export USER="dshan"
 export installer="apt-get"
 
 export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
@@ -41,7 +44,7 @@ export timerFile=${dump_Results}/elapsed-time.txt
 echo "\${timerFile}=${timerFile}"
 echo "about to call ${repo_scripts_docker}/kickstarts/installers/${installer}-installs.sh"
 
-pause 
+pause
 
 #  #  #  ========================================== build packages
 
@@ -105,4 +108,3 @@ new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
 
 # ==> Installing berkeley-db-18.1.40-bf42xis6fcmsnfqehvzpo2x75ptvwegx
 #   >> 138    checking whether the C++ compiler supports templates for STL... configure: error: no
-

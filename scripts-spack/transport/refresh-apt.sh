@@ -2,6 +2,9 @@
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # generated on 2022-01-10 16:58:49
 
+# $ cp ${repo_scripts_spack}/transport/refresh-apt.sh .
+# $ cp /repos/github/builds/scripts-spack/transport/refresh-apt.sh .
+
 export elapsed=${SECONDS}
 
 echo "begin: $(date)"

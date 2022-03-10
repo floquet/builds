@@ -21,6 +21,7 @@ source ${repo_scripts_spack}/shared/common-header.sh
 export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
 
 export USER="dantopa"
+export USER="dshan"
 export tag="${dist}-${release}"
 
 export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
@@ -33,14 +34,11 @@ export timerFile="${dump_Results}/${tag}-elapsed-time.txt"
 echo "\${timerFile}=${timerFile}"
 echo "about to call ${repo_scripts_docker}/genesis/installers/${installer}.sh"
 
-pause 
+pause
 
 #  #  #  ========================================== build packages
 
 source ${repo_scripts_docker}/genesis/installers/${installer}.sh
-
-#  #  #  ========================================== set up for spack
-
 
 #  #  #  ========================================== set up user ${USER}
 
@@ -78,5 +76,3 @@ new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
 # # passwd ${USER}
 # Changing password for user ${USER}.
 # New password: 8, !A
-
-
