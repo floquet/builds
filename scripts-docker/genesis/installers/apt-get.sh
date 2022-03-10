@@ -12,10 +12,13 @@ export aptTime=${SECONDS}
 
 # tzdata settings: 2, 47
 
+# $ docker pull ubuntu:22.04 ; ehecoatlDocker ubuntu:22.04
+# # apt-get update ; apt-get install -y tzdata
+
 # globals from dist kickstart
 new_step "Create directory structure"
 
-    export local_Results="/apt_results"
+    export local_Results="/apt-results"
     sub_step "\${local_Results} = ${local_Results}"
 
     sub_step "mkdir -p ${local_Results}/info"
