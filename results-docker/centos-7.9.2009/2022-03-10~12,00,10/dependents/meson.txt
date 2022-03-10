@@ -1,0 +1,33 @@
+yum deplist -v meson
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.021
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.centos.iad1.serverforge.org
+ * epel: epel.mirror.constant.com
+ * extras: mirror.centos.iad1.serverforge.org
+ * updates: linux-mirrors.fnal.gov
+pkgsack time: 0.669
+Searching pkgSack for dep: /usr/bin/python3
+Searching pkgSack for dep: ninja-build
+Searching pkgSack for dep: python(abi)
+Searching pkgSack for dep: python3.6dist(setuptools)
+package: meson.noarch 0.55.1-1.el7
+  dependency: /usr/bin/python3
+   provider: python3.x86_64 3.6.8-18.el7
+   provider: python3.i686 3.6.8-18.el7
+   provider: python3.x86_64 3.6.8-17.el7
+   provider: python3.i686 3.6.8-17.el7
+  dependency: ninja-build
+   provider: ninja-build.x86_64 1.10.2-3.el7
+  dependency: python(abi) = 3.6
+   provider: python3.x86_64 3.6.8-18.el7
+   provider: python3.i686 3.6.8-18.el7
+   provider: python3.x86_64 3.6.8-17.el7
+   provider: python3.i686 3.6.8-17.el7
+  dependency: python3.6dist(setuptools)
+   provider: python3-setuptools.noarch 39.2.0-10.el7

@@ -40,22 +40,22 @@ declare -a lpackages=("${installer}-utils" "arpack-devel" "boost-devel" "cmake" 
 
 new_step "Update, upgrade, install Development Tools"
 sub_step_counter=0
-sub_step "${installer} update -v -y  2>&1  | tee ${local_Results}/update.txt"
-    echo "${installer} update -v -y" >           ${local_Results}/update.txt 2>&1
-          ${installer} update -v -y  >>          ${local_Results}/update.txt 2>&1
+sub_step "${installer} update -v -y  2>&1  | tee -a ${local_Results}/update.txt"
+    echo "${installer} update -v -y" >              ${local_Results}/update.txt 
+          ${installer} update -v -y  2>&1  | tee -a ${local_Results}/update.txt
 
-sub_step "${installer} upgrade -v -y  2>&1 | tee ${local_Results}/upgrade.txt"
-    echo "${installer} upgrade -v -y" >          ${local_Results}/upgrade.txt 2>&1
-          ${installer} upgrade -v -y  >>         ${local_Results}/upgrade.txt 2>&1
+sub_step "${installer} upgrade -v -y  2>&1 | tee -a ${local_Results}/upgrade.txt"
+    echo "${installer} upgrade -v -y" >             ${local_Results}/upgrade.txt
+          ${installer} upgrade -v -y  2>&1 | tee -a ${local_Results}/upgrade.txt
 
 # https://linuxize.com/post/how-to-install-gcc-on-centos-8/
-sub_step '${installer} group install -v "Development Tools" -y 2>&1 | tee ${local_Results}/dev-tools.txt'
-          ${installer} group install -v "Development Tools" -y 2>&1 | tee ${local_Results}/dev-tools.txt
+sub_step '${installer} group install -v "Development Tools" -y 2>&1 | tee -a ${local_Results}/dev-tools.txt'
+          ${installer} group install -v "Development Tools" -y 2>&1 | tee -a ${local_Results}/dev-tools.txt
 
 # https://linuxhint.com/how_to_install_htop_in_centos08/
-sub_step "${installer} install epel-release -v -y  2>&1  | tee -a  ${local_Results}/epel-release.txt"
-    echo "${installer} install epel-release -v -y" 2>&1 >          ${local_Results}/epel-release.txt
-          ${installer} install epel-release -v -y  2>&1 >>         ${local_Results}/epel-release.txt
+sub_step "${installer} install epel-release -v -y  2>&1 | tee -a  ${local_Results}/epel-release.txt"
+    echo "${installer} install epel-release -v -y" >              ${local_Results}/epel-release.txt
+          ${installer} install epel-release -v -y  2>&1 | tee -a  ${local_Results}/epel-release.txt &
 
 new_step "Try to build ${#lpackages[@]} packages: ${lpackages[@]}"
 sub_step_counter=0
@@ -66,26 +66,26 @@ for t in ${lpackages[@]}; do
             echo "${installer} install -v ${t} -y" 2>&1          ${local_Results}/install/${t}.txt
                   ${installer} install -v ${t} -y  2>&1 | tee -a ${local_Results}/install/${t}.txt
 
-    sub_sub_step "${installer} info    -v ${t}    2>&1 >         ${local_Results}/info/${t}.txt"
-            echo "${installer} info    -v ${t}"   2>&1 >         ${local_Results}/info/${t}.txt
-                  ${installer} info    -v ${t} -y 2>&1 >>        ${local_Results}/info/${t}.txt
+    sub_sub_step "${installer} info    -v ${t}     2>&1 >        ${local_Results}/info/${t}.txt"
+            echo "${installer} info    -v ${t}"    2>&1 >        ${local_Results}/info/${t}.txt
+                  ${installer} info    -v ${t} -y  2>&1 >>       ${local_Results}/info/${t}.txt &
 
-    sub_sub_step "${installer} deplist -v ${t}    2>&1 >         ${local_Results}/dependents/${t}.txt"
-            echo "${installer} deplist -v ${t}"   2>&1 >         ${local_Results}/dependents/${t}.txt
-                  ${installer} deplist -v ${t}    2>&1 >>        ${local_Results}/dependents/${t}.txt
+    sub_sub_step "${installer} deplist -v ${t}     2>&1 >        ${local_Results}/dependents/${t}.txt"
+            echo "${installer} deplist -v ${t}"    2>&1 >        ${local_Results}/dependents/${t}.txt
+                  ${installer} deplist -v ${t}     2>&1 >>       ${local_Results}/dependents/${t}.txt &
 done
 
 new_step "Prepare summary reports"
 sub_step_counter=0
 
 sub_step "${installer} list available > ${local_Results}/list-available.txt"
-          ${installer} list available > ${local_Results}/list-available.txt
+          ${installer} list available > ${local_Results}/list-available.txt &
 
 sub_step "${installer} list installed > ${local_Results}/list-installed.txt"
-          ${installer} list installed > ${local_Results}/list-installed.txt
+          ${installer} list installed > ${local_Results}/list-installed.txt &
 
 sub_step "${installer} list kernel    > ${local_Results}/list-kernel.txt"
-          ${installer} list kernel    > ${local_Results}/list-kernel.txt
+          ${installer} list kernel    > ${local_Results}/list-kernel.txt &
 
 new_step "uname -a"
           uname -a

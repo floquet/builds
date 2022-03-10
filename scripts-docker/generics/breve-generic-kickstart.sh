@@ -119,7 +119,22 @@ sub_step_counter=0
 
 # export SPACK_PYTHON="/usr/bin/python3.9" 
 
-new_step "Bring in files from GitLab"
+new_step "Build cdf"
+sub_step_counter=0
+
+    sub_step "mkdir -p ${HOME}/apps/shell-scripts"
+              mkdir -p ${HOME}/apps/shell-scripts
+
+    sub_step "cp ${repo_scripts_docker}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/."
+              cp ${repo_scripts_docker}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/.
+
+    sub_step "cd ${HOME}/apps"
+              cd ${HOME}/apps
+
+    sub_step "source ${HOME}/apps/shell-scripts/build-cdf.sh"
+              source ${HOME}/apps/shell-scripts/build-cdf.sh
+
+new_step "Bring in system files from GitLab"
 sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
               cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
@@ -130,8 +145,8 @@ sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/.vimrc                /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.vimrc                /home/${ego}/.
 
-#    sub_step "cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/."
-#              cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/.
+#    sub_step "cp ${repo_scripts_docker}/transport/.*.sh                /home/${ego}/."
+#              cp ${repo_scripts_docker}/transport/.*.sh                /home/${ego}/.
 
     sub_step "cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/.

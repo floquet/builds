@@ -1,0 +1,181 @@
+yum deplist -v valgrind
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.034
+rpmdb time: 0.004
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.centos.iad1.serverforge.org
+ * epel: mirror.umd.edu
+ * extras: mirror.centos.iad1.serverforge.org
+ * updates: linux-mirrors.fnal.gov
+pkgsack time: 1.039
+Searching pkgSack for dep: /usr/bin/perl
+Searching pkgSack for dep: libc.so.6(GLIBC_2.7)
+Searching pkgSack for dep: libdl.so.2
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.0)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.3.3)
+Searching pkgSack for dep: libgcc_s.so.1
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.0)
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.3.1)
+Searching pkgSack for dep: libpthread.so.0
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.0)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.1)
+Searching pkgSack for dep: perl(File::Basename)
+Searching pkgSack for dep: perl(strict)
+Searching pkgSack for dep: perl(warnings)
+Searching pkgSack for dep: rtld(GNU_HASH)
+Searching pkgSack for dep: /usr/bin/perl
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libdl.so.2()(64bit)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.3.3)(64bit)
+Searching pkgSack for dep: libgcc_s.so.1()(64bit)
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.0)(64bit)
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.3.1)(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: perl(File::Basename)
+Searching pkgSack for dep: perl(strict)
+Searching pkgSack for dep: perl(warnings)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: valgrind.i686 1:3.15.0-11.el7
+  dependency: /usr/bin/perl
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: libc.so.6(GLIBC_2.7)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libdl.so.2
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.0)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.3.3)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libgcc_s.so.1
+   provider: libgcc.i686 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.0)
+   provider: libgcc.i686 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.3.1)
+   provider: libgcc.i686 4.8.5-44.el7
+  dependency: libpthread.so.0
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.0)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.1)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: perl(File::Basename)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(strict)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(warnings)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+package: valgrind.x86_64 1:3.15.0-11.el7
+  dependency: /usr/bin/perl
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdl.so.2()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.3.3)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libgcc_s.so.1()(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.0)(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.3.1)(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: perl(File::Basename)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(strict)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(warnings)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

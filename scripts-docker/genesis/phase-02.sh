@@ -1,9 +1,11 @@
 #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# source /repos/github/builds/scripts-docker/generics/breve-generic-kickstart.sh
+# source /repos/github/builds/scripts-docker/genesis/phase-02.sh
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
+
+# export dist="ubuntu" ; export release="22.0" ; export tag="${dist}-${release}"
 
 # defined in bash init
 #    repo_scripts_docker (e.g. /Volumes/repos/github/builds/scripts-spack)
@@ -21,6 +23,8 @@ export generic_seconds=${SECONDS}
 export       ego="${USER}"  # latin: ego = I, me
 export  git_user="Daniel Topa"
 export git_email="dantopa@gmail.com"
+# export  git_user="Danny Shanahan"
+# export git_email="dshanaberger@aer.com"
 
 #  #  #  ========================================== declarations end
 
@@ -113,7 +117,24 @@ sub_step_counter=0
     sub_step "source share/spack/setup-env.sh"
               source share/spack/setup-env.sh
 
-new_step "Bring in files from GitLab"
+# export SPACK_PYTHON="/usr/bin/python3.9" 
+
+new_step "Build cdf"
+sub_step_counter=0
+
+    sub_step "mkdir -p ${HOME}/apps/shell-scripts"
+              mkdir -p ${HOME}/apps/shell-scripts
+
+    sub_step "cp ${repo_scripts_docker}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/."
+              cp ${repo_scripts_docker}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/.
+
+    sub_step "cd ${HOME}/apps"
+              cd ${HOME}/apps
+
+    sub_step "source ${HOME}/apps/shell-scripts/build-cdf.sh"
+              source ${HOME}/apps/shell-scripts/build-cdf.sh
+
+new_step "Bring in system files from GitLab"
 sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
               cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
@@ -124,24 +145,24 @@ sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/.vimrc                /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.vimrc                /home/${ego}/.
 
-#    sub_step "cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/."
-#              cp ${repo_scripts_docker}/transport/.*.sh                 /home/${ego}/.
+#    sub_step "cp ${repo_scripts_docker}/transport/.*.sh                /home/${ego}/."
+#              cp ${repo_scripts_docker}/transport/.*.sh                /home/${ego}/.
 
     sub_step "cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/.
 
 # new_step "Build compilers"
 # sub_step_counter=0
-# 
+#
 #     sub_step "spack install gcc@11.2.0"
 #               spack install gcc@11.2.0          | tee ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
-# 
+#
 #               spack info gcc                    > ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
 #               spack spec gcc@11.2.0 % gcc@4.8.5 > ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
-# 
+#
 #     sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
 #               spack compiler find $(spack location -i gcc@11.2.0)
-# 
+#
 #     sub_step "spack load gcc@11.2.0"
 #               spack load gcc@11.2.0
 
@@ -179,6 +200,8 @@ sub_step_counter=0
     sub_step 'echo "to view public key: cat /home/${ego}/.ssh/id_ed25519.pub"'
 
 #  #  #  ========================================== exit
+
+new_step "source /repos/github/builds/scripts-docker/genesis/phase-02.sh"
 
 new_step "print elapsed time used"
     export generic_seconds=$((${SECONDS}-${generic_seconds}))

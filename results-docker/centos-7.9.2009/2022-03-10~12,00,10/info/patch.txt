@@ -1,0 +1,40 @@
+yum info    -v patch
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.015
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.centos.iad1.serverforge.org
+ * epel: mirror.dst.ca
+ * extras: mirror.centos.iad1.serverforge.org
+ * updates: linux-mirrors.fnal.gov
+pkgsack time: 0.598
+Installed Packages
+Name        : patch
+Arch        : x86_64
+Version     : 2.7.1
+Release     : 12.el7_7
+Size        : 210 k
+Repo        : installed
+From repo   : base
+Committer   : Than Ngo <than@redhat.com>
+Committime  : Mon Sep  2 06:00:00 2019
+Buildtime   : Tue Oct 22 17:59:40 2019
+Install time: Thu Mar 10 12:05:52 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Utility for modifying/upgrading files
+URL         : http://www.gnu.org/software/patch/patch.html
+License     : GPLv3+
+Description : The patch program applies diff files to originals.  The diff
+            : command is used to compare an original to a changed file.  Diff
+            : lists the changes made to the file.  A person who has the original
+            : file can then use the patch command with the diff file to add the
+            : changes to their original file (patching the file).
+            : 
+            : Patch should be installed because it is a common way of upgrading
+            : applications.
+
