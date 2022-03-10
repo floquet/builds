@@ -1,0 +1,23 @@
+apt info iputils-ping
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: iputils-ping
+Version: 3:20211215-1
+Priority: important
+Section: net
+Source: iputils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Noah Meyerhans <noahm@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 116 kB
+Provides: ping
+Depends: libcap2-bin, libc6 (>= 2.34), libcap2 (>= 1:2.10), libidn2-0 (>= 0.6)
+Homepage: https://github.com/iputils/iputils/
+Task: minimal
+Download-Size: 42.9 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+Description: Tools to test the reachability of network hosts
+

@@ -1,0 +1,29 @@
+apt-cache show xz-utils
+Package: xz-utils
+Architecture: amd64
+Version: 5.2.5-2build1
+Multi-Arch: foreign
+Priority: standard
+Section: utils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Jonathan Nieder <jrnieder@gmail.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 372
+Provides: lzma
+Depends: libc6 (>= 2.34), liblzma5 (>= 5.2.2)
+Conflicts: lzma (<< 9.22-1), xz-lzma
+Breaks: lzip (<< 1.8~rc2)
+Replaces: lzip (<< 1.8~rc2), xz-lzma
+Filename: pool/main/x/xz-utils/xz-utils_5.2.5-2build1_amd64.deb
+Size: 84678
+MD5sum: cb992a989725e4bfcea463cdac393234
+SHA1: 262d8fe6e44b019508a39cd68ddce7cd9b55a664
+SHA256: 995f22da571640ae6302781dc4987bc28e266253e795aa12d65acb590ea09b26
+SHA512: 2a5b6ec2a5d6abd351eddfd37b4db59ebaa1efd923af241c2c54194e0a81e30a86e91b275fb46d43f87a4a246497ffbfb6729c8df354e4f6020b49289f51259d
+Homepage: https://tukaani.org/xz/
+Description: XZ-format compression utilities
+Description-md5: ea97a558c8575aebbed2c11cbd20e0f2
+Task: standard, server-minimal
+Build-Essential: yes
+

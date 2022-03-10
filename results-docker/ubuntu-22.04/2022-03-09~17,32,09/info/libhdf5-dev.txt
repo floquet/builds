@@ -1,0 +1,25 @@
+apt info libhdf5-dev
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: libhdf5-dev
+Version: 1.10.7+repack-4ubuntu2
+Priority: optional
+Section: universe/libdevel
+Source: hdf5
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Gilles Filippini <pini@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 12.0 MB
+Provides: libhdf5-serial-dev
+Depends: libhdf5-103-1 (= 1.10.7+repack-4ubuntu2), libhdf5-fortran-102 (= 1.10.7+repack-4ubuntu2), libhdf5-hl-100 (= 1.10.7+repack-4ubuntu2), libhdf5-hl-fortran-100 (= 1.10.7+repack-4ubuntu2), libhdf5-cpp-103-1 (= 1.10.7+repack-4ubuntu2), libhdf5-hl-cpp-100 (= 1.10.7+repack-4ubuntu2), zlib1g-dev, libjpeg-dev, libaec-dev, libcurl4-openssl-dev | libcurl-dev, libssl-dev, hdf5-helpers
+Suggests: libhdf5-doc
+Breaks: libhdf5-serial-dev (<< 1.8.12-9~)
+Replaces: libhdf5-serial-dev (<< 1.8.12-9~)
+Homepage: http://hdfgroup.org/HDF5/
+Download-Size: 2684 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+Description: HDF5 - development files - serial version
+

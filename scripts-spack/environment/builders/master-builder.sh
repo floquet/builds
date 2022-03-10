@@ -3,6 +3,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # source ${repo_scripts_spack}/environment/builders/master-builder.sh
 
+# export repo_scripts_spack="/repos/github/builds/scripts-spack"
+
 export master=${SECONDS}
 
 source ${repo_scripts_spack}/shared/common-header.sh

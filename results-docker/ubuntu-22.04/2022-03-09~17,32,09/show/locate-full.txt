@@ -1,0 +1,27 @@
+apt-cache show locate
+Package: locate
+Architecture: amd64
+Version: 4.8.0-1ubuntu2
+Multi-Arch: foreign
+Priority: optional
+Section: universe/utils
+Source: findutils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Andreas Metzler <ametzler@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 225
+Depends: findutils (>> 4.2.31-1), libc6 (>= 2.33)
+Breaks: slocate (<= 3.1-1.1)
+Replaces: findutils (<< 4.2.31-2)
+Filename: pool/universe/f/findutils/locate_4.8.0-1ubuntu2_amd64.deb
+Size: 79458
+MD5sum: 4adb68485d958ceaf4bf22b528034ff7
+SHA1: 119ebc146a2b5dd9c9f2c7d986c0e8242e7cf001
+SHA256: 5d61e363e5de1bf4ee28b699cfb45e5b42ba44037cf7f7ba16a2c7bee4edf6c2
+SHA512: 08bac2a9b0c7744fdc12877cffd90ace36c51f80ff62002419fdd8bfc26a69aed3c6bda4f759617ae9dc46b8c65e5006c222e43fa0deb54495d33ca1b7575b43
+Homepage: https://savannah.gnu.org/projects/findutils/
+Description: maintain and query an index of a directory tree
+Description-md5: bff4cb1129be08196a6ed2311b3d1fbc
+Cnf-Ignore-Commands: locate
+
