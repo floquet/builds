@@ -117,7 +117,7 @@ sub_step_counter=0
     sub_step "source share/spack/setup-env.sh"
               source share/spack/setup-env.sh
 
-# export SPACK_PYTHON="/usr/bin/python3.9"
+# export SPACK_PYTHON="/usr/bin/python3.9" 
 
 new_step "Bring in files from GitLab"
 sub_step_counter=0

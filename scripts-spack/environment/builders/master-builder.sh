@@ -139,14 +139,14 @@ new_step "gcc compilers"
 
 new_step "add gcc compilers"
     sub_step_counter=0
-    sub_step "spack compiler find $(location -i gcc@11.2.0)"
-              spack compiler find $(location -i gcc@11.2.0)
-    sub_step "spack compiler find $(location -i gcc@10.3.0)"
-              spack compiler find $(location -i gcc@10.3.0)
-    sub_step "spack compiler find $(location -i gcc@9.4.0)"
-              spack compiler find $(location -i gcc@9.4.0)
-    sub_step "spack compiler find $(location -i gcc@8.5.0)"
-              spack compiler find $(location -i gcc@8.5.0)
+    sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
+              spack compiler find $(spack location -i gcc@11.2.0)
+    sub_step "spack compiler find $(spack location -i gcc@10.3.0)"
+              spack compiler find $(spack location -i gcc@10.3.0)
+    sub_step "spack compiler find $(spack location -i gcc@9.4.0)"
+              spack compiler find $(spack location -i gcc@9.4.0)
+    sub_step "spack compiler find $(spack location -i gcc@8.5.0)"
+              spack compiler find $(spack location -i gcc@8.5.0)
 
 
 new_step "llvm compilers"
@@ -157,12 +157,12 @@ new_step "llvm compilers"
 
 new_step "add gcc compilers"
     sub_step_counter=0
-    sub_step "spack compiler find $(location -i llvm@13.0.1)"
-              spack compiler find $(location -i llvm@13.0.1)
-    sub_step "spack compiler find $(location -i llvm@12.0.1)"
-              spack compiler find $(location -i llvm@12.0.1)
-    sub_step "spack compiler find $(location -i llvm@11.1.0)"
-              spack compiler find $(location -i llvm@11.1.0)
+    sub_step "spack compiler find $(spack location -i llvm@13.0.1)"
+              spack compiler find $(spack location -i llvm@13.0.1)
+    sub_step "spack compiler find $(spack location -i llvm@12.0.1)"
+              spack compiler find $(spack location -i llvm@12.0.1)
+    sub_step "spack compiler find $(spack location -i llvm@11.1.0)"
+              spack compiler find $(spack location -i llvm@11.1.0)
 
 
 new_step "print wall time used"
