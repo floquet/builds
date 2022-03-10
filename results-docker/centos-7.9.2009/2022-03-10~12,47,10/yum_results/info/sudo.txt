@@ -1,0 +1,41 @@
+yum info    -v sudo
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.009
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: linux.mirrors.es.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repo1.dal.innoscale.net
+ * updates: mirror.team-cymru.com
+pkgsack time: 0.538
+Installed Packages
+Name        : sudo
+Arch        : x86_64
+Version     : 1.8.23
+Release     : 10.el7_9.2
+Size        : 3.1 M
+Repo        : installed
+From repo   : updates
+Committer   : Radovan Sroka <rsroka@redhat.com>
+Committime  : Fri Jul  9 06:00:00 2021
+Buildtime   : Thu Oct 14 06:29:07 2021
+Install time: Thu Mar 10 13:19:10 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Allows restricted root access for specified users
+URL         : http://www.courtesan.com/sudo/
+License     : ISC
+Description : Sudo (superuser do) allows a system administrator to give certain
+            : users (or groups of users) the ability to run some (or all)
+            : commands as root while logging all commands and arguments. Sudo
+            : operates on a per-command basis.  It is not a replacement for the
+            : shell.  Features include: the ability to restrict what commands a
+            : user may run on a per-host basis, copious logging of each command
+            : (providing a clear audit trail of who did what), a configurable
+            : timeout of the sudo command, and the ability to use the same
+            : configuration file (sudoers) on many different machines.
+

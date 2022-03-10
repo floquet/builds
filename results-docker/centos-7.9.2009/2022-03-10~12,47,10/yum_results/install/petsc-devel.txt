@@ -1,0 +1,178 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.015
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 22687.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (246 MB VSZ)
+    Started: Thu Mar 10 13:14:53 2022 - 00:02 ago
+    State  : Running, pid: 22687
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  52 M RSS (1.3 GB VSZ)
+    Started: Thu Mar 10 13:14:53 2022 - 00:04 ago
+    State  : Sleeping, pid: 22687
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: linux.mirrors.es.net
+ * epel: mirrors.mit.edu
+ * extras: repo1.dal.innoscale.net
+ * updates: mirror.team-cymru.com
+pkgsack time: 0.553
+Obs Init time: 0.292
+Resolving Dependencies
+--> Running transaction check
+---> Package petsc-devel.x86_64 0:3.14.1-3.el7 will be installed
+Checking deps for petsc-devel.x86_64 0:3.14.1-3.el7 - u
+looking for ('petsc(x86-64)', 'EQ', ('0', '3.14.1', '3.el7')) as a requirement of petsc-devel.x86_64 0:3.14.1-3.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of petsc-devel.x86_64 0:3.14.1-3.el7 - u
+looking for ('pkgconfig(x86-64)', None, (None, None, None)) as a requirement of petsc-devel.x86_64 0:3.14.1-3.el7 - u
+looking for ('libpetsc.so.3.14()(64bit)', None, (None, None, None)) as a requirement of petsc-devel.x86_64 0:3.14.1-3.el7 - u
+petsc-devel-3.14.1-3.el7.x86_64 requires: petsc(x86-64) = 3.14.1-3.el7
+--> Processing Dependency: petsc(x86-64) = 3.14.1-3.el7 for package: petsc-devel-3.14.1-3.el7.x86_64
+Searching pkgSack for dep: petsc(x86-64)
+Building updates object
+up:simple updates time: 0.018
+up:obs time: 0.006
+up:condense time: 0.000
+updates time: 0.361
+TSINFO: Marking petsc-3.14.1-3.el7.x86_64 as install for petsc-devel-3.14.1-3.el7.x86_64
+petsc-devel-3.14.1-3.el7.x86_64 requires: libpetsc.so.3.14()(64bit)
+--> Processing Dependency: libpetsc.so.3.14()(64bit) for package: petsc-devel-3.14.1-3.el7.x86_64
+Quick matched petsc-3.14.1-3.el7.x86_64 to require for libpetsc.so.3.14()(64bit)
+--> Running transaction check
+---> Package petsc.x86_64 0:3.14.1-3.el7 will be installed
+Checking deps for petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('gcc-gfortran(x86-64)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libmetis.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libopenblasp.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+looking for ('libsuperlu.so.5.1()(64bit)', None, (None, None, None)) as a requirement of petsc.x86_64 0:3.14.1-3.el7 - u
+petsc-3.14.1-3.el7.x86_64 requires: libmetis.so.0()(64bit)
+--> Processing Dependency: libmetis.so.0()(64bit) for package: petsc-3.14.1-3.el7.x86_64
+Searching pkgSack for dep: libmetis.so.0()(64bit)
+TSINFO: Marking metis-5.1.0-12.el7.x86_64 as install for petsc-3.14.1-3.el7.x86_64
+petsc-3.14.1-3.el7.x86_64 requires: libopenblasp.so.0()(64bit)
+--> Processing Dependency: libopenblasp.so.0()(64bit) for package: petsc-3.14.1-3.el7.x86_64
+Searching pkgSack for dep: libopenblasp.so.0()(64bit)
+TSINFO: Marking openblas-threads-0.3.3-2.el7.x86_64 as install for petsc-3.14.1-3.el7.x86_64
+petsc-3.14.1-3.el7.x86_64 requires: libsuperlu.so.5.1()(64bit)
+--> Processing Dependency: libsuperlu.so.5.1()(64bit) for package: petsc-3.14.1-3.el7.x86_64
+Searching pkgSack for dep: libsuperlu.so.5.1()(64bit)
+TSINFO: Marking SuperLU-5.2.0-5.el7.x86_64 as install for petsc-3.14.1-3.el7.x86_64
+--> Running transaction check
+---> Package SuperLU.x86_64 0:5.2.0-5.el7 will be installed
+Checking deps for SuperLU.x86_64 0:5.2.0-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of SuperLU.x86_64 0:5.2.0-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of SuperLU.x86_64 0:5.2.0-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of SuperLU.x86_64 0:5.2.0-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.7)(64bit)', None, (None, None, None)) as a requirement of SuperLU.x86_64 0:5.2.0-5.el7 - u
+looking for ('libsatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of SuperLU.x86_64 0:5.2.0-5.el7 - u
+---> Package metis.x86_64 0:5.1.0-12.el7 will be installed
+Checking deps for metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libgomp.so.1(GOMP_1.0)(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libgomp.so.1(OMP_1.0)(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libc.so.6(GLIBC_2.11)(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libgomp.so.1()(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of metis.x86_64 0:5.1.0-12.el7 - u
+---> Package openblas-threads.x86_64 0:0.3.3-2.el7 will be installed
+Checking deps for openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of openblas-threads.x86_64 0:0.3.3-2.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.958
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch          Version                Repository   Size
+================================================================================
+Installing:
+ petsc-devel             x86_64        3.14.1-3.el7           epel        1.2 M
+Installing for dependencies:
+ SuperLU                 x86_64        5.2.0-5.el7            epel        180 k
+ metis                   x86_64        5.1.0-12.el7           epel        566 k
+ openblas-threads        x86_64        0.3.3-2.el7            epel        4.4 M
+ petsc                   x86_64        3.14.1-3.el7           epel        4.9 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 11 M
+Installed size: 75 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              4.0 MB/s |  11 MB  00:02     
+Member: metis.x86_64 0:5.1.0-12.el7 - u
+Adding Package metis-5.1.0-12.el7.x86_64 in mode u
+Member: openblas-threads.x86_64 0:0.3.3-2.el7 - u
+Adding Package openblas-threads-0.3.3-2.el7.x86_64 in mode u
+Member: SuperLU.x86_64 0:5.2.0-5.el7 - u
+Adding Package SuperLU-5.2.0-5.el7.x86_64 in mode u
+Member: petsc-devel.x86_64 0:3.14.1-3.el7 - u
+Adding Package petsc-devel-3.14.1-3.el7.x86_64 in mode u
+Member: petsc.x86_64 0:3.14.1-3.el7 - u
+Adding Package petsc-3.14.1-3.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.020
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.143
+Running transaction
+  Installing : SuperLU-5.2.0-5.el7.x86_64                                   1/5 
+  Installing : openblas-threads-0.3.3-2.el7.x86_64                          2/5 
+  Installing : metis-5.1.0-12.el7.x86_64                                    3/5 
+  Installing : petsc-3.14.1-3.el7.x86_64                                    4/5 
+  Installing : petsc-devel-3.14.1-3.el7.x86_64                              5/5 
+  Verifying  : metis-5.1.0-12.el7.x86_64                                    1/5 
+  Verifying  : openblas-threads-0.3.3-2.el7.x86_64                          2/5 
+  Verifying  : SuperLU-5.2.0-5.el7.x86_64                                   3/5 
+  Verifying  : petsc-devel-3.14.1-3.el7.x86_64                              4/5 
+  Verifying  : petsc-3.14.1-3.el7.x86_64                                    5/5 
+VerifyTransaction time: 0.255
+Transaction time: 4.988
+
+Installed:
+  petsc-devel.x86_64 0:3.14.1-3.el7                                             
+
+Dependency Installed:
+  SuperLU.x86_64 0:5.2.0-5.el7                metis.x86_64 0:5.1.0-12.el7      
+  openblas-threads.x86_64 0:0.3.3-2.el7       petsc.x86_64 0:3.14.1-3.el7      
+
+Complete!

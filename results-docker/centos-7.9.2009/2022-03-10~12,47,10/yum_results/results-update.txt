@@ -1,0 +1,127 @@
+Thu Mar 10 13:27:25 MST 2022
+yum update -v -y 2>&1 | tee -a results-update.txt
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.042
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Updating Everything
+Building updates object
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: linux.mirrors.es.net
+ * epel: mirrors.mit.edu
+ * extras: repo1.dal.innoscale.net
+ * updates: mirror.team-cymru.com
+pkgsack time: 1.019
+up:Obs Init time: 0.235
+up:simple updates time: 0.013
+up:obs time: 0.006
+up:condense time: 0.000
+updates time: 1.548
+Not Updating Package that is already updated: epel-release.noarch 0:7-11
+group time: 0.117
+Adding package flex from group development
+Adding package gcc from group development
+Adding package redhat-rpm-config from group development
+Adding package rpm-build from group development
+Adding package make from group development
+Adding package patch from group development
+Skipping package pkgconfig from group development
+Adding package gettext from group development
+Adding package automake from group development
+Adding package rpm-sign from group development
+Adding package bison from group development
+Adding package libtool from group development
+Adding package autoconf from group development
+Adding package gcc-c++ from group development
+Skipping package binutils from group development
+Adding package patchutils from group development
+Adding package byacc from group development
+Adding package indent from group development
+Adding package systemtap from group development
+Adding package diffstat from group development
+Adding package elfutils from group development
+Adding package rcs from group development
+Adding package subversion from group development
+Adding package gcc-gfortran from group development
+Adding package doxygen from group development
+Adding package intltool from group development
+Adding package git from group development
+Adding package ctags from group development
+Adding package cscope from group development
+Adding package swig from group development
+Adding package diffstat from group development
+Adding package doxygen from group development
+Adding package rpm-sign from group development
+Adding package rcs from group development
+Adding package gcc from group development
+Adding package redhat-rpm-config from group development
+Adding package gcc-gfortran from group development
+Adding package rpm-build from group development
+Adding package elfutils from group development
+Adding package autoconf from group development
+Adding package gettext from group development
+Adding package automake from group development
+Adding package subversion from group development
+Adding package patchutils from group development
+Adding package ctags from group development
+Adding package gcc-c++ from group development
+Adding package make from group development
+Adding package flex from group development
+Adding package systemtap from group development
+Adding package swig from group development
+Adding package byacc from group development
+Adding package git from group development
+Adding package cscope from group development
+Adding package indent from group development
+Adding package intltool from group development
+Adding package patch from group development
+Adding package bison from group development
+Adding package libtool from group development
+Resolving Dependencies
+--> Running transaction check
+---> Package epel-release.noarch 0:7-11 will be updated
+Checking deps for epel-release.noarch 0:7-11 - ud
+---> Package epel-release.noarch 0:7-14 will be an update
+Checking deps for epel-release.noarch 0:7-14 - u
+looking for ('redhat-release', 'GE', ('0', '7', None)) as a requirement of epel-release.noarch 0:7-14 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.588
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch             Version           Repository      Size
+================================================================================
+Updating:
+ epel-release           noarch           7-14              epel            15 k
+
+Transaction Summary
+================================================================================
+Upgrade  1 Package
+
+Total download size: 15 k
+Downloading packages:
+Member: epel-release.noarch 0:7-14 - u
+Adding Package epel-release-7-14.noarch in mode u
+Member: epel-release.noarch 0:7-11 - ud
+Running transaction check
+Transaction check time: 0.003
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.008
+Running transaction
+  Updating   : epel-release-7-14.noarch                                     1/2 
+  Cleanup    : epel-release-7-11.noarch                                     2/2 
+  Verifying  : epel-release-7-14.noarch                                     1/2 
+  Verifying  : epel-release-7-11.noarch                                     2/2 
+VerifyTransaction time: 0.165
+Transaction time: 0.310
+
+Updated:
+  epel-release.noarch 0:7-14                                                    
+
+Complete!

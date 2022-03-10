@@ -1,0 +1,76 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.009
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 23355.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  34 M RSS (1.4 GB VSZ)
+    Started: Thu Mar 10 13:16:20 2022 - 00:54 ago
+    State  : Sleeping, pid: 23355
+Existing lock /var/run/yum.pid: another copy is running as pid 23613.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (1.3 GB VSZ)
+    Started: Thu Mar 10 13:16:40 2022 - 00:36 ago
+    State  : Sleeping, pid: 23613
+Existing lock /var/run/yum.pid: another copy is running as pid 23933.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  44 M RSS (1.3 GB VSZ)
+    Started: Thu Mar 10 13:17:09 2022 - 00:09 ago
+    State  : Running, pid: 23933
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: linux.mirrors.es.net
+ * epel: mirror.siena.edu
+ * extras: repo1.dal.innoscale.net
+ * updates: mirror.team-cymru.com
+pkgsack time: 2.326
+Obs Init time: 0.254
+Resolving Dependencies
+--> Running transaction check
+---> Package python-virtualenv.noarch 0:15.1.0-5.el7_9 will be installed
+Checking deps for python-virtualenv.noarch 0:15.1.0-5.el7_9 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-virtualenv.noarch 0:15.1.0-5.el7_9 - u
+looking for ('python2-setuptools', None, (None, None, None)) as a requirement of python-virtualenv.noarch 0:15.1.0-5.el7_9 - u
+looking for ('python2-devel', None, (None, None, None)) as a requirement of python-virtualenv.noarch 0:15.1.0-5.el7_9 - u
+looking for ('ca-certificates', None, (None, None, None)) as a requirement of python-virtualenv.noarch 0:15.1.0-5.el7_9 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.482
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch         Version               Repository     Size
+================================================================================
+Installing:
+ python-virtualenv       noarch       15.1.0-5.el7_9        updates       1.5 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 1.5 M
+Installed size: 1.9 M
+Downloading packages:
+Member: python-virtualenv.noarch 0:15.1.0-5.el7_9 - u
+Adding Package python-virtualenv-15.1.0-5.el7_9.noarch in mode u
+Running transaction check
+Transaction check time: 0.008
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.013
+Running transaction
+  Installing : python-virtualenv-15.1.0-5.el7_9.noarch                      1/1 
+  Verifying  : python-virtualenv-15.1.0-5.el7_9.noarch                      1/1 
+VerifyTransaction time: 0.149
+Transaction time: 0.342
+
+Installed:
+  python-virtualenv.noarch 0:15.1.0-5.el7_9                                     
+
+Complete!

@@ -1,0 +1,63 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.010
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: linux.mirrors.es.net
+ * epel: mirrors.mit.edu
+ * extras: repo1.dal.innoscale.net
+ * updates: mirror.team-cymru.com
+pkgsack time: 0.532
+Obs Init time: 0.280
+Resolving Dependencies
+--> Running transaction check
+---> Package htop.x86_64 0:2.2.0-3.el7 will be installed
+Checking deps for htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('libncursesw.so.5()(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of htop.x86_64 0:2.2.0-3.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.259
+
+Dependencies Resolved
+
+================================================================================
+ Package         Arch              Version                Repository       Size
+================================================================================
+Installing:
+ htop            x86_64            2.2.0-3.el7            epel            103 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 103 k
+Installed size: 218 k
+Downloading packages:
+Member: htop.x86_64 0:2.2.0-3.el7 - u
+Adding Package htop-2.2.0-3.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.008
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.056
+Running transaction
+  Installing : htop-2.2.0-3.el7.x86_64                                      1/1 
+  Verifying  : htop-2.2.0-3.el7.x86_64                                      1/1 
+VerifyTransaction time: 0.096
+Transaction time: 0.229
+
+Installed:
+  htop.x86_64 0:2.2.0-3.el7                                                     
+
+Complete!

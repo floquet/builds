@@ -1,0 +1,65 @@
+yum deplist -v re2c
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.014
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: linux.mirrors.es.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repo1.dal.innoscale.net
+ * updates: mirror.team-cymru.com
+pkgsack time: 2.333
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libgcc_s.so.1()(64bit)
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.0)(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libstdc++.so.6()(64bit)
+Searching pkgSack for dep: libstdc++.so.6(CXXABI_1.3)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.11)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.15)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.9)(64bit)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: re2c.x86_64 0.14.3-2.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libgcc_s.so.1()(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.0)(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libstdc++.so.6()(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(CXXABI_1.3)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.11)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.15)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.9)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
