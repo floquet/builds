@@ -87,6 +87,11 @@ sub_step "${installer} list installed > ${local_Results}/list-installed.txt"
 sub_step "${installer} list kernel    > ${local_Results}/list-kernel.txt"
           ${installer} list kernel    > ${local_Results}/list-kernel.txt &
 
+sub_step "waiting for ${installer} threads to complete...."
+         "waiting for ${installer} threads to complete...."
+
+wait 
+
 new_step "uname -a"
           uname -a
 

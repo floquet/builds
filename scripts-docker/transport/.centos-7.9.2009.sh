@@ -45,6 +45,13 @@ export      local_spack="${HOME}/spacktivity/centos-7.9.2009-SpWx-docker-spack"
 # #  C O M P I L E R S
 export gcc_system_compiler="gcc@11.2.0"
 
+# If you want to use any of the CDF command-line utilitites (e.g. cdfedit, 
+# cdfexport, etc.), we strongly encourage you to set the CDF environment 
+# variables defined in the CDF definition files.  Once the environment variables
+# defined, you can invoke the CDF utility of interest just by typing the utility
+# name.
+source ${HOME}/apps/cdf-3.8.0/bin/definitions.B
+
 # **  **  **  **  **  **  **  **
 
 source "${core}/master.sh"

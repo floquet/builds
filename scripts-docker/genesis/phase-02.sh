@@ -125,8 +125,8 @@ sub_step_counter=0
     sub_step "mkdir -p ${HOME}/apps/shell-scripts"
               mkdir -p ${HOME}/apps/shell-scripts
 
-    sub_step "cp ${repo_scripts_docker}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/."
-              cp ${repo_scripts_docker}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/.
+    sub_step "cp ${repo_scripts_spack}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/."
+              cp ${repo_scripts_spack}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/.
 
     sub_step "cd ${HOME}/apps"
               cd ${HOME}/apps
@@ -201,7 +201,7 @@ sub_step_counter=0
 
 #  #  #  ========================================== exit
 
-new_step "source /repos/github/builds/scripts-docker/genesis/phase-02.sh"
+# new_step "source /repos/github/builds/scripts-docker/genesis/phase-02.sh"
 
 new_step "print elapsed time used"
     export generic_seconds=$((${SECONDS}-${generic_seconds}))
