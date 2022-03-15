@@ -14,8 +14,8 @@ export buildSeconds=${SECONDS}
 new_step "Verify current edition of SpWx magfield_update branch"
 sub_step_counter=0
 
-    sub_step 'export localSpWx="${scratch}/SpWx-magfield_update"'
-              export localSpWx="${scratch}/SpWx-magfield_update"
+    sub_step 'export localSpWx="${scratch}/SpWx/source"
+              export localSpWx="${scratch}/SpWx/source"
  
     sub_step "Verify SpWx directory"
               echo "\${localSpWx}=${localSpWx}"
@@ -33,11 +33,8 @@ pause
     sub_step "export timerFile=${localSpWx}/build-time.txt"
               export timerFile=${localSpWx}/build-time.txt
 
-    sub_step "git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source"
-              git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
-
-    sub_step "cd source"
-              cd source
+    sub_step "git pull https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source"
+              git pull https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
 
     sub_step "git checkout magfield_update"
               git checkout magfield_update
@@ -84,6 +81,46 @@ sub_step_counter=0
               make install
 
 new_step "Output stream is in ${HOME}/SpWx-local-magfield_update-dialog.txt"
+
+new_step "Run benchmarks"
+sub_step_counter=0
+
+    sub_step "cd ${localSpWx}"
+              cd ${localSpWx}
+
+    sub_step "remove any existing benchmark files: rm *benchmark*"
+              rm *benchmark*
+
+new_step "Fortran benchmarks"
+sub_step_counter=0
+    sub_step "create cmag.benchmark.fortran: ./build/Models/bin/satMagCover"
+              ./build/Models/bin/satMagCover
+
+    sub_step "verify file was created: ls -alh cmag.benchmark.fortran"
+              ls -alh cmag.benchmark.fortran
+
+    sub_step "create cmag.benchmark.fortran.transform: ./build/Models/bin/satMagCover transform"
+              ./build/Models/bin/satMagCover
+
+    sub_step "verify file was created: ls -alh cmag.benchmark.transform.fortran"
+              ls -alh cmag.benchmark.transform.fortran
+
+new_step "C++ benchmarks"
+sub_step_counter=0
+    sub_step "create cmag.benchmark.cpp: ./build/Models/bin/satMagCover cpp"
+              ./build/Models/bin/satMagCover cpp
+
+    sub_step "verify file was created: ls -alh cmag.benchmark.cpp"
+              ls -alh cmag.benchmark.cpp
+
+    sub_step "create cmag.benchmark.cpp.transform: ./build/Models/bin/satMagCover transform cpp"
+              ./build/Models/bin/satMagCover cpp
+
+    sub_step "verify file was created: ls -alh cmag.benchmark.transform.cpp"
+              ls -alh cmag.benchmark.transform.cpp
+
+new_step "SHA256: find . -name "*benchmark*" | xargs shasum -a 256"
+    find . -name "*benchmark*" | xargs shasum -a 256
 
 new_step "Run time:"
 export buildSeconds=$((${SECONDS}-${buildSeconds}))
