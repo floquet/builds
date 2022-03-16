@@ -3,7 +3,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Feb 16 10:26:35 MST 2022
 
-# source /repos/github/builds/SpWx/scripts-shell/SpWx-local-magfield_update.sh 2>&1 | tee -a ${HOME}/SpWx-local-magfield_update-dialog.txt
+# source /repos/github/builds/SpWx/scripts-shell/magfield_update.sh 2>&1 | tee -a ${HOME}/magfield_update-dialog.txt
 source ${repo_build}/scripts-spack/shared/common-header.sh
 
 export buildSeconds=${SECONDS}
@@ -80,7 +80,7 @@ sub_step_counter=0
     sub_step "make install"
               make install
 
-new_step "Output stream is in ${HOME}/SpWx-local-magfield_update-dialog.txt"
+new_step "Output stream is in ${HOME}/magfield_update-dialog.txt"
 
 new_step "Run benchmarks"
 sub_step_counter=0
@@ -100,7 +100,7 @@ sub_step_counter=0
               ls -alh cmag.benchmark.fortran
 
     sub_step "create cmag.benchmark.fortran.transform: ./build/Models/bin/satMagCover transform"
-              ./build/Models/bin/satMagCover
+              ./build/Models/bin/satMagCove transform
 
     sub_step "verify file was created: ls -alh cmag.benchmark.transform.fortran"
               ls -alh cmag.benchmark.transform.fortran
@@ -114,7 +114,7 @@ sub_step_counter=0
               ls -alh cmag.benchmark.cpp
 
     sub_step "create cmag.benchmark.cpp.transform: ./build/Models/bin/satMagCover transform cpp"
-              ./build/Models/bin/satMagCover cpp
+              ./build/Models/bin/satMagCover transform cpp
 
     sub_step "verify file was created: ls -alh cmag.benchmark.transform.cpp"
               ls -alh cmag.benchmark.transform.cpp
