@@ -28,13 +28,13 @@ sub_step_counter=0
 
     sub_step "pwd = $PWD"
 
-pause
-
 new_step "Copy a local version of the source directory and then update from the repo"
 sub_step_counter=0
 
-    sub_step "cp -a /Volumes/Tlaloc/SpWx/source ${localSpWx}"
-              cp -a /Volumes/Tlaloc/SpWx/source ${localSpWx}
+    sub_step "cp -a /SpWx/source ${localSpWx}"
+              cp -a /SpWx/source ${localSpWx}
+
+pause
 
     sub_step "git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source"
               git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
