@@ -11,8 +11,15 @@ export buildSeconds=${SECONDS}
 # https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx
 #   Readme.md
 #   Maintainer
-new_step "Create directory structure"
+
+new_step "Copy a local version of the source directory and then update from the repo"
 sub_step_counter=0
+
+    sub_step 'export localSpWx="${scratch}/SpWx"'
+              export localSpWx="${scratch}/SpWx"
+
+    sub_step "cp -a /SpWx ${scratch}"
+              cp -a /SpWx ${scratch}
 
     sub_step 'export localSpWx="${scratch}/SpWx"'
               export localSpWx="${scratch}/SpWx"
@@ -20,19 +27,10 @@ sub_step_counter=0
     sub_step "Verify SpWx directory"
               echo "\${localSpWx}=${localSpWx}"
 
-    sub_step 'mkdir -p "${localSpWx}"'
-              mkdir -p "${localSpWx}"
-
-    sub_step 'cd "${localSpWx}"'
-              cd "${localSpWx}"
+    sub_step 'cd "${localSpWx}/source"'
+              cd "${localSpWx}/source"
 
     sub_step "pwd = $PWD"
-
-new_step "Copy a local version of the source directory and then update from the repo"
-sub_step_counter=0
-
-    sub_step "cp -a /SpWx/source ${localSpWx}"
-              cp -a /SpWx/source ${localSpWx}
 
 pause
 
