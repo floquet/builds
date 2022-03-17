@@ -106,8 +106,8 @@ sub_step_counter=0
     sub_step "cd ${localSpWx}"
               cd ${localSpWx}
 
-    sub_step "remove any existing benchmark files: rm *benchmark*"
-              rm *benchmark*
+new_step 'remove previous benchmarks: find . -name "cpp.benchmark*" | xargs rm'
+                                      find . -name "cpp.benchmark*" | xargs rm
 
 export benchmarkSeconds=${SECONDS}
 
@@ -139,8 +139,8 @@ sub_step_counter=0
     sub_step "verify file was created: ls -alh cmag.benchmark.transform.cpp"
                                        ls -alh cmag.benchmark.transform.cpp
 
-new_step "SHA256: find . -name "*benchmark*" | xargs shasum -a 256"
-                  find . -name "*benchmark*" | xargs shasum -a 256
+new_step 'SHA256: find . -name "cpp.benchmark*" | xargs shasum -a 256'
+                  find . -name "cpp.benchmark*" | xargs shasum -a 256
 
 new_step "mv ${scratch}/copy-spwx.txt ${scratch}/$(uname -n)-${ymdtf}-copy-spwx.txt"
           mv ${scratch}/copy-spwx.txt ${scratch}/$(uname -n)-${ymdtf}-copy-spwx.txt
