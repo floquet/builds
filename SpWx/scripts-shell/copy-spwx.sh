@@ -3,7 +3,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Feb 16 10:26:35 MST 2022
 
-# source /repos/github/builds/SpWx/scripts-shell/copy-spwx.sh 2>&1 | tee -a ${HOME}/copy-spwx.txt
+# source /repos/github/builds/SpWx/scripts-shell/copy-spwx.sh 2>&1 | tee -a ${scratch}/copy-spwx.txt
 source ${repo_build}/scripts-spack/shared/common-header.sh
 
 export buildSeconds=${SECONDS}
@@ -15,8 +15,8 @@ export buildSeconds=${SECONDS}
 new_step "Copy a local version of the source directory and then update from the repo"
 sub_step_counter=0
 
-    sub_step 'export localSpWx="${scratch}/SpWx"'
-              export localSpWx="${scratch}/SpWx"
+    sub_step 'rm -rf "${scratch}/SpWx"'
+              rm -rf "${scratch}/SpWx"
 
     sub_step "cp -a /SpWx ${scratch}"
               cp -a /SpWx ${scratch}
@@ -34,14 +34,20 @@ sub_step_counter=0
 
 pause
 
-    sub_step "git pull https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source"
-              git pull https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
+    # sub_step "git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source"
+    #           git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
+
+    sub_step "git pull"
+              git pull
 
     sub_step "export timerFile=${localSpWx}/build-time.txt"
               export timerFile=${localSpWx}/build-time.txt
 
     sub_step "git checkout magfield_update"
               git checkout magfield_update
+
+new_step "Verify configuration"
+sub_step_counter=0
 
     sub_step "git branch -a"
               git branch -a
@@ -51,6 +57,15 @@ pause
 
     sub_step "grab hash for commit: git rev-parse --verify HEAD"
                                     git rev-parse --verify HEAD
+
+    sub_step "grab hash for commit: git log --pretty=format:'%h' -n 1"
+                                    git log --pretty=format:'%h' -n 1
+
+    sub_step "gcc --version"
+              gcc --version
+
+    sub_step "lsb_release -a"
+              lsb_release -a
 
 new_step "Check cmake version: cmake_minimum_required = CMake 3.14"
 sub_step_counter=0
@@ -112,14 +127,14 @@ sub_step_counter=0
 
 new_step "C++ benchmarks"
 sub_step_counter=0
-    sub_step "create cmag.benchmark.cpp: ./bin/satMagCover cpp"
-                                         ./bin/satMagCover cpp
+    sub_step "create cmag.benchmark.cpp: ./bin/satMagCover usecpp"
+                                         ./bin/satMagCover usecpp
 
     sub_step "verify file was created: ls -alh cmag.benchmark.cpp"
                                        ls -alh cmag.benchmark.cpp
 
-    sub_step "create cmag.benchmark.cpp.transform: ./bin/satMagCover transform cpp"
-                                                   ./bin/satMagCover transform cpp
+    sub_step "create cmag.benchmark.cpp.transform: ./bin/satMagCover transform usecpp"
+                                                   ./bin/satMagCover transform usecpp
 
     sub_step "verify file was created: ls -alh cmag.benchmark.transform.cpp"
                                        ls -alh cmag.benchmark.transform.cpp
@@ -127,7 +142,10 @@ sub_step_counter=0
 new_step "SHA256: find . -name "*benchmark*" | xargs shasum -a 256"
                   find . -name "*benchmark*" | xargs shasum -a 256
 
-new_step "Output stream is in ${HOME}/copy-spwx.txt"
+new_step "mv ${scratch}/copy-spwx.txt ${scratch}/$(uname -n)-${ymdtf}-copy-spwx.txt"
+          mv ${scratch}/copy-spwx.txt ${scratch}/$(uname -n)-${ymdtf}-copy-spwx.txt
+
+new_step "Output stream is in ${scratch}/$(uname -n)-${ymdtf}-copy-spwx.txt"
 
 export benchmarkSeconds=$((${SECONDS}-${benchmarkSeconds}))
 printf 'time to run benchmarks: %dh:%dm:%ds\n' $((${benchmarkSeconds}/3600)) $((${benchmarkSeconds}%3600/60)) $((${benchmarkSeconds}%60)) | tee -a ${timerFile}
