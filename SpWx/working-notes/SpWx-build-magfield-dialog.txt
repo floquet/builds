@@ -1,0 +1,1432 @@
+Tue Mar  8 22:09:01 MST 2022, [1m/repos/github/builds/SpWx/scripts-shell/SpWx-build-magfield.sh(B[m
+Tue Mar  8 22:09:01 MST 2022, [1m/repos/github/builds/scripts-spack/shared/common-header.sh(B[m
+
+Step 1: Verify current edition of SpWx magfield_update branch
+
+  1.1: export SpWx="${HOME}/scratch/SpWx"
+
+  1.2: Verify SpWx directory
+${SpWx}=/home/dantopa/scratch/SpWx
+
+  1.3: mkdir -p /home/dantopa/scratch/SpWx
+
+  1.4: cd /home/dantopa/scratch/SpWx
+
+  1.5: pwd = /home/dantopa/scratch/SpWx
+
+press RETURN to continue; ctrl+c to stop
+
+  1.6: git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
+Cloning into 'source'...
+Downloading ModelDatabases/cammiceDB.h5 (16 MB)
+Checking out files:   8% (81/961)   Downloading ModelDatabases/colmanVlf660DB.h5 (75 MB)
+Checking out files:   8% (82/961)   Downloading ModelDatabases/fastPhi_net.mat (28 KB)
+Checking out files:   8% (83/961)   Downloading ModelDatabases/fast_hmin_net.mat (28 KB)
+Checking out files:   8% (84/961)   Downloading ModelDatabases/galacticCosmicRayDB.h5 (70 KB)
+Checking out files:   8% (85/961)   Downloading ModelDatabases/igrfDB.h5 (173 KB)
+Checking out files:   8% (86/961)   Downloading ModelDatabases/iri2007DB.h5 (1.3 MB)
+Checking out files:   9% (87/961)   Downloading ModelDatabases/lightning_climatology.h5 (783 MB)
+Checking out files:   9% (88/961)   Downloading ModelDatabases/meteorDB.h5 (26 KB)
+Checking out files:   9% (89/961)   Downloading ModelDatabases/nehDB.h5 (3.3 MB)
+Checking out files:   9% (90/961)   Downloading ModelDatabases/radiationBeltDB.h5 (6.1 MB)
+Checking out files:   9% (91/961)   Downloading ModelDatabases/saaDB.h5 (9.8 MB)
+Checking out files:   9% (92/961)   Downloading ModelDatabases/sd2DB.h5 (311 KB)
+Checking out files:   9% (93/961)   Downloading ModelDatabases/sepDB.h5 (40 KB)
+Checking out files:   9% (94/961)   Downloading ModelDatabases/sepXapsosDB.h5 (3.2 MB)
+Checking out files:   9% (95/961)   Downloading ModelDatabases/xmitVlfDB.h5 (75 MB)
+Checking out files:   9% (96/961)   Checking out files:  10% (97/961)   Checking out files:  11% (106/961)   Checking out files:  12% (116/961)   Checking out files:  13% (125/961)   Checking out files:  14% (135/961)   Checking out files:  15% (145/961)   Checking out files:  16% (154/961)   Checking out files:  17% (164/961)   Checking out files:  18% (173/961)   Checking out files:  19% (183/961)   Checking out files:  20% (193/961)   Checking out files:  21% (202/961)   Checking out files:  22% (212/961)   Checking out files:  23% (222/961)   Checking out files:  24% (231/961)   Checking out files:  25% (241/961)   Checking out files:  26% (250/961)   Checking out files:  27% (260/961)   Checking out files:  28% (270/961)   Checking out files:  29% (279/961)   Checking out files:  30% (289/961)   Checking out files:  31% (298/961)   Checking out files:  32% (308/961)   Checking out files:  33% (318/961)   Checking out files:  34% (327/961)   Checking out files:  35% (337/961)   Checking out files:  36% (346/961)   Checking out files:  37% (356/961)   Checking out files:  38% (366/961)   Checking out files:  39% (375/961)   Checking out files:  40% (385/961)   Checking out files:  41% (395/961)   Checking out files:  42% (404/961)   Checking out files:  43% (414/961)   Checking out files:  44% (423/961)   Checking out files:  45% (433/961)   Checking out files:  46% (443/961)   Checking out files:  47% (452/961)   Checking out files:  48% (462/961)   Checking out files:  49% (471/961)   Checking out files:  50% (481/961)   Checking out files:  51% (491/961)   Checking out files:  52% (500/961)   Checking out files:  53% (510/961)   Checking out files:  54% (519/961)   Checking out files:  55% (529/961)   Checking out files:  56% (539/961)   Checking out files:  57% (548/961)   Checking out files:  58% (558/961)   Checking out files:  59% (567/961)   Checking out files:  60% (577/961)   Checking out files:  61% (587/961)   Checking out files:  62% (596/961)   Checking out files:  63% (606/961)   Checking out files:  64% (616/961)   Checking out files:  65% (625/961)   Checking out files:  66% (635/961)   Checking out files:  67% (644/961)   Checking out files:  68% (654/961)   Checking out files:  69% (664/961)   Checking out files:  70% (673/961)   Checking out files:  71% (683/961)   Checking out files:  72% (692/961)   Checking out files:  73% (702/961)   Checking out files:  74% (712/961)   Checking out files:  75% (721/961)   Checking out files:  76% (731/961)   Checking out files:  76% (739/961)   Checking out files:  77% (740/961)   Checking out files:  78% (750/961)   Checking out files:  79% (760/961)   Checking out files:  80% (769/961)   Checking out files:  81% (779/961)   Checking out files:  82% (789/961)   Checking out files:  83% (798/961)   Checking out files:  84% (808/961)   Checking out files:  85% (817/961)   Checking out files:  86% (827/961)   Checking out files:  87% (837/961)   Checking out files:  88% (846/961)   Checking out files:  89% (856/961)   Checking out files:  90% (865/961)   Checking out files:  91% (875/961)   Checking out files:  92% (885/961)   Checking out files:  93% (894/961)   Checking out files:  94% (904/961)   Checking out files:  95% (913/961)   Checking out files:  96% (923/961)   Checking out files:  97% (933/961)   Checking out files:  98% (942/961)   Checking out files:  99% (952/961)   Checking out files: 100% (961/961)   Checking out files: 100% (961/961), done.
+
+  1.7: cd source
+
+  1.8: git checkout magfield_update
+Switched to a new branch 'magfield_update'
+Branch magfield_update set up to track remote branch magfield_update from origin.
+
+  1.9: git branch -a
+* magfield_update
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/SpWx_version_1.9_branch
+  remotes/origin/branches/SpWx_version_1.1_release
+  remotes/origin/branches/SpWx_version_1.2_release
+  remotes/origin/branches/SpWx_version_1.3_release
+  remotes/origin/branches/SpWx_version_1.4.1_release
+  remotes/origin/branches/SpWx_version_1.4_release
+  remotes/origin/branches/SpWx_version_1.5_release
+  remotes/origin/branches/SpWx_version_1.6_release
+  remotes/origin/branches/SpWx_version_1.7_release
+  remotes/origin/branches/SpWx_version_1.8_release
+  remotes/origin/magfield_update
+  remotes/origin/master
+
+  1.10: git status
+# On branch magfield_update
+nothing to commit, working directory clean
+
+Step 2: Check cmake version
+
+  2.1: cmake3 --version
+cmake3 version 3.17.5
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+Step 3: Build SpWx
+
+  3.1: cd /home/dantopa/scratch/SpWx
+
+  3.2: mkdir build; cd build
+
+  3.3: export timerFile=/build/build-time.txt
+
+  3.4: cmake3 ../source -DCMAKE_INSTALL_PREFIX=../
+-- The CXX compiler identification is GNU 4.8.5
+-- The C compiler identification is GNU 4.8.5
+-- Check for working CXX compiler: /bin/c++
+-- Check for working CXX compiler: /bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /bin/cc
+-- Check for working C compiler: /bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- The Fortran compiler identification is GNU 4.8.5
+-- Check for working Fortran compiler: /bin/gfortran
+-- Check for working Fortran compiler: /bin/gfortran - works
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Checking whether /bin/gfortran supports Fortran 90
+-- Checking whether /bin/gfortran supports Fortran 90 - yes
+-- Found Boost: /usr/include (found suitable version "1.53.0", minimum required is "1.53") found components: filesystem system 
+-- HDF5: Using hdf5 compiler wrapper to determine C configuration
+-- HDF5: Using hdf5 compiler wrapper to determine CXX configuration
+-- Found HDF5: /usr/lib64/libhdf5_cpp.so;/usr/lib64/libhdf5.so (found version "1.8.12") found components: C CXX 
+-- Found CURL: /usr/lib64/libcurl.so (found version "7.29.0")  
+-- Found GTest: /usr/lib64/libgtest.so  
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+CMake Warning (dev) at CMakeLists.txt:258 (message):
+  lightning_climatology.h5 install skipped due to size
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Doxygen: /bin/doxygen (found version "1.8.5") found components: doxygen dot 
+
+ ------- "make" to build. "make install" and/or find_package(spwx) to use. -------
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dantopa/scratch/SpWx/build
+
+Step 4: make
+
+  4.1: make
+Scanning dependencies of target spwxcommon
+[  0%] Building CXX object Common/CMakeFiles/spwxcommon.dir/threading/StkMutex.cpp.o
+[  0%] Building CXX object Common/CMakeFiles/spwxcommon.dir/CoordLib/CoordXform.cpp.o
+[  0%] Building CXX object Common/CMakeFiles/spwxcommon.dir/GeoSpaceTime/GeoSpaceTime.cpp.o
+[  1%] Building CXX object Common/CMakeFiles/spwxcommon.dir/CTimeValue/CTimeValue.cpp.o
+[  1%] Building CXX object Common/CMakeFiles/spwxcommon.dir/VectorOps/VectorOps.cpp.o
+[  1%] Building CXX object Common/CMakeFiles/spwxcommon.dir/FloatMath/FloatMath.cpp.o
+[  1%] Building CXX object Common/CMakeFiles/spwxcommon.dir/AbMatrix/abmatrix.cpp.o
+[  1%] Building CXX object Common/CMakeFiles/spwxcommon.dir/hd5/Hdf5ToolKit.cpp.o
+[  2%] Building CXX object Common/CMakeFiles/spwxcommon.dir/UnitTestOutput/UnitTestOutput.cpp.o
+[  2%] Linking CXX static library ../Models/lib/libspwxcommon.a
+[  2%] Built target spwxcommon
+Scanning dependencies of target spwxcommon_shared
+[  2%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/threading/StkMutex.cpp.o
+[  2%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/CoordLib/CoordXform.cpp.o
+[  2%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/GeoSpaceTime/GeoSpaceTime.cpp.o
+[  2%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/CTimeValue/CTimeValue.cpp.o
+[  3%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/VectorOps/VectorOps.cpp.o
+[  3%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/FloatMath/FloatMath.cpp.o
+[  3%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/AbMatrix/abmatrix.cpp.o
+[  3%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/hd5/Hdf5ToolKit.cpp.o
+[  3%] Building CXX object Common/CMakeFiles/spwxcommon_shared.dir/UnitTestOutput/UnitTestOutput.cpp.o
+[  4%] Linking CXX shared library ../Models/lib/libspwxcommon.so
+[  4%] Built target spwxcommon_shared
+Scanning dependencies of target Threading
+[  5%] Building CXX object Common/threading/CMakeFiles/Threading.dir/StkMutex.cpp.o
+[  5%] Linking CXX static library ../../Models/lib/libThreading.a
+[  5%] Built target Threading
+Scanning dependencies of target Threading_shared
+[  5%] Building CXX object Common/threading/CMakeFiles/Threading_shared.dir/StkMutex.cpp.o
+[  5%] Linking CXX shared library ../../Models/lib/libThreading.so
+[  5%] Built target Threading_shared
+Scanning dependencies of target CoordXform_shared
+[  5%] Building CXX object Common/CoordLib/CMakeFiles/CoordXform_shared.dir/CoordXform.cpp.o
+[  5%] Linking CXX shared library ../../Models/lib/libCoordXform.so
+[  5%] Built target CoordXform_shared
+Scanning dependencies of target CoordXform
+[  5%] Building CXX object Common/CoordLib/CMakeFiles/CoordXform.dir/CoordXform.cpp.o
+[  6%] Linking CXX static library ../../Models/lib/libCoordXform.a
+[  6%] Built target CoordXform
+Scanning dependencies of target GeoSpaceTime
+[  6%] Building CXX object Common/GeoSpaceTime/CMakeFiles/GeoSpaceTime.dir/GeoSpaceTime.cpp.o
+[  6%] Linking CXX static library ../../Models/lib/libGeoSpaceTime.a
+[  6%] Built target GeoSpaceTime
+Scanning dependencies of target GeoSpaceTime_shared
+[  6%] Building CXX object Common/GeoSpaceTime/CMakeFiles/GeoSpaceTime_shared.dir/GeoSpaceTime.cpp.o
+[  7%] Linking CXX shared library ../../Models/lib/libGeoSpaceTime.so
+[  7%] Built target GeoSpaceTime_shared
+Scanning dependencies of target TimeConv_c
+[  7%] Building CXX object Common/CTimeValue/CMakeFiles/TimeConv_c.dir/TimeConv_c.cpp.o
+[  7%] Linking CXX static library ../../Models/lib/libTimeConv_c.a
+[  7%] Built target TimeConv_c
+Scanning dependencies of target CTimeValue_shared
+[  7%] Building CXX object Common/CTimeValue/CMakeFiles/CTimeValue_shared.dir/CTimeValue.cpp.o
+[  7%] Linking CXX shared library ../../Models/lib/libCTimeValue.so
+[  7%] Built target CTimeValue_shared
+Scanning dependencies of target TimeConv_c_shared
+[  8%] Building CXX object Common/CTimeValue/CMakeFiles/TimeConv_c_shared.dir/TimeConv_c.cpp.o
+[  8%] Linking CXX shared library ../../Models/lib/libTimeConv_c.so
+[  8%] Built target TimeConv_c_shared
+Scanning dependencies of target CTimeValue
+[  9%] Building CXX object Common/CTimeValue/CMakeFiles/CTimeValue.dir/CTimeValue.cpp.o
+[  9%] Linking CXX static library ../../Models/lib/libCTimeValue.a
+[  9%] Built target CTimeValue
+Scanning dependencies of target VectorOps
+[  9%] Building CXX object Common/VectorOps/CMakeFiles/VectorOps.dir/VectorOps.cpp.o
+[  9%] Linking CXX static library ../../Models/lib/libVectorOps.a
+[  9%] Built target VectorOps
+Scanning dependencies of target VectorOps_shared
+[  9%] Building CXX object Common/VectorOps/CMakeFiles/VectorOps_shared.dir/VectorOps.cpp.o
+[  9%] Linking CXX shared library ../../Models/lib/libVectorOps.so
+[  9%] Built target VectorOps_shared
+Scanning dependencies of target FloatMath
+[  9%] Building CXX object Common/FloatMath/CMakeFiles/FloatMath.dir/FloatMath.cpp.o
+[  9%] Linking CXX static library ../../Models/lib/libFloatMath.a
+[  9%] Built target FloatMath
+Scanning dependencies of target FloatMath_shared
+[ 10%] Building CXX object Common/FloatMath/CMakeFiles/FloatMath_shared.dir/FloatMath.cpp.o
+[ 10%] Linking CXX shared library ../../Models/lib/libFloatMath.so
+[ 10%] Built target FloatMath_shared
+Scanning dependencies of target AbMatrix
+[ 10%] Building CXX object Common/AbMatrix/CMakeFiles/AbMatrix.dir/abmatrix.cpp.o
+[ 10%] Linking CXX static library ../../Models/lib/libAbMatrix.a
+[ 10%] Built target AbMatrix
+Scanning dependencies of target AbMatrix_shared
+[ 10%] Building CXX object Common/AbMatrix/CMakeFiles/AbMatrix_shared.dir/abmatrix.cpp.o
+[ 10%] Linking CXX shared library ../../Models/lib/libAbMatrix.so
+[ 10%] Built target AbMatrix_shared
+Scanning dependencies of target fio_shared
+[ 11%] Building CXX object Common/hd5/CMakeFiles/fio_shared.dir/Hdf5ToolKit.cpp.o
+[ 11%] Linking CXX shared library ../../Models/lib/libfio.so
+[ 11%] Built target fio_shared
+Scanning dependencies of target fio
+[ 11%] Building CXX object Common/hd5/CMakeFiles/fio.dir/Hdf5ToolKit.cpp.o
+[ 11%] Linking CXX static library ../../Models/lib/libfio.a
+[ 11%] Built target fio
+Scanning dependencies of target UnitTestOutput
+[ 11%] Building CXX object Common/UnitTestOutput/CMakeFiles/UnitTestOutput.dir/UnitTestOutput.cpp.o
+[ 11%] Linking CXX static library ../../Models/lib/libUnitTestOutput.a
+[ 11%] Built target UnitTestOutput
+Scanning dependencies of target UnitTestOutput_shared
+[ 11%] Building CXX object Common/UnitTestOutput/CMakeFiles/UnitTestOutput_shared.dir/UnitTestOutput.cpp.o
+[ 12%] Linking CXX shared library ../../Models/lib/libUnitTestOutput.so
+[ 12%] Built target UnitTestOutput_shared
+Scanning dependencies of target CMagfieldF
+[ 12%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/adens.f.o
+[ 12%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/bffoot.f.o
+[ 13%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/bffunc.f.o
+[ 13%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/bftrac.f.o
+[ 13%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/bmap.f.o
+[ 13%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/bmnext2.f.o
+[ 13%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/bxyzmu.f.o
+[ 13%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/caddpath.f.o
+[ 14%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/check.f.o
+[ 14%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/crdtr.f.o
+[ 14%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/cstripline.f.o
+[ 14%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/eulert.f.o
+[ 14%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/extrashc.f.o
+[ 15%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/feldg.f.o
+[ 15%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geageo.f.o
+[ 15%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geigeo.f.o
+[ 15%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geigse.f.o
+[ 15%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geigseq.f.o
+[ 16%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geimag.f.o
+[ 16%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geimll.f.o
+[ 16%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geism.f.o
+[ 16%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geigsm.f.o
+[ 16%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geo2magto.f.o
+[ 16%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geomag.f.o
+[ 17%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/geomll.f.o
+[ 17%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/getigrf.f.o
+[ 17%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/getshc.f.o
+[ 17%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gsegeo.f.o
+[ 17%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gsegseq.f.o
+[ 18%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gsegsm.f.o
+[ 18%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gsemag.f.o
+[ 18%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gsemll.f.o
+[ 18%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gsesm.f.o
+[ 18%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gsmgeo.f.o
+[ 18%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gsmsm.f.o
+[ 19%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/gtspig.f.o
+[ 19%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/hiltel.f.o
+[ 19%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/initbf.f.o
+[ 19%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/interp.f.o
+[ 19%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/interpmp.f.o
+[ 20%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/intershc.f.o
+[ 20%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/intgrt2.f.o
+[ 20%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/invarm2.f.o
+[ 20%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/invr.f.o
+[ 20%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/land.f.o
+[ 21%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/maggsm.f.o
+[ 21%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/magmll.f.o
+[ 21%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/magsm.f.o
+[ 21%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/mglong.f.o
+[ 21%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/mllgsm.f.o
+[ 21%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/mllsm.f.o
+[ 22%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/opbnd.f.o
+[ 22%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/opfunc.f.o
+[ 22%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/recalc2.f.o
+[ 22%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/smgeo.f.o
+[ 22%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/spigrf.f.o
+[ 23%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/stepsz.f.o
+[ 23%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/sun2.f.o
+[ 23%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/tiltdip.f.o
+[ 23%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/tsbnd.f.o
+[ 23%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/vxyzsp.f.o
+[ 23%] Building Fortran object Models/Magnetosphere/MagneticFields/CMakeFiles/CMagfieldF.dir/fortran/mparts/xyzsph.f.o
+[ 23%] Built target CMagfieldF
+Scanning dependencies of target cmagfield_shared
+[ 23%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield_shared.dir/CMagfield.cpp.o
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagfield.cpp: In member function ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const CTimeValue&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’:
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagfield.cpp:3545:7: warning: variable ‘iJswitch’ set but not used [-Wunused-but-set-variable]
+   int iJswitch = -1;
+       ^
+[ 24%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield_shared.dir/CMagFieldMparts.cpp.o
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagFieldMparts.cpp: In member function ‘int CMagFieldMparts::bffunc(int, int, double&, double&, double&, double&, double&, double&, double&, double&, double&, double&, bool&, int&, sfulligrfvars&, smagfieldbfieldvars&, sfastigrfvars&, smagfieldopvars&)’:
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagFieldMparts.cpp:2278:8: warning: variable ‘bModFnd’ set but not used [-Wunused-but-set-variable]
+   bool bModFnd = false;                             // External B-field model indicator
+        ^
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagFieldMparts.cpp: In member function ‘int CMagFieldMparts::tiltdip(double&, double&, double&, double&, double&, double&)’:
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagFieldMparts.cpp:2501:50: warning: variable ‘dBp’ set but not used [-Wunused-but-set-variable]
+   double dCt, dA, dDerby, dDerby3, dB, dBr, dBt, dBp, dTmp;
+                                                  ^
+[ 24%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield_shared.dir/CMagFieldLib.cpp.o
+[ 24%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield_shared.dir/CMagFieldIGRF.cpp.o
+[ 24%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield_shared.dir/CMagfield_c.cpp.o
+[ 24%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 25%] Linking CXX shared library ../../lib/libcmagfield.so
+[ 25%] Built target cmagfield_shared
+Scanning dependencies of target cmagfield
+[ 25%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield.dir/CMagfield.cpp.o
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagfield.cpp: In member function ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const CTimeValue&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’:
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagfield.cpp:3545:7: warning: variable ‘iJswitch’ set but not used [-Wunused-but-set-variable]
+   int iJswitch = -1;
+       ^
+[ 25%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield.dir/CMagFieldMparts.cpp.o
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagFieldMparts.cpp: In member function ‘int CMagFieldMparts::bffunc(int, int, double&, double&, double&, double&, double&, double&, double&, double&, double&, double&, bool&, int&, sfulligrfvars&, smagfieldbfieldvars&, sfastigrfvars&, smagfieldopvars&)’:
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagFieldMparts.cpp:2278:8: warning: variable ‘bModFnd’ set but not used [-Wunused-but-set-variable]
+   bool bModFnd = false;                             // External B-field model indicator
+        ^
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagFieldMparts.cpp: In member function ‘int CMagFieldMparts::tiltdip(double&, double&, double&, double&, double&, double&)’:
+/home/dantopa/scratch/SpWx/source/Models/Magnetosphere/MagneticFields/CMagFieldMparts.cpp:2501:50: warning: variable ‘dBp’ set but not used [-Wunused-but-set-variable]
+   double dCt, dA, dDerby, dDerby3, dB, dBr, dBt, dBp, dTmp;
+                                                  ^
+[ 25%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield.dir/CMagFieldLib.cpp.o
+[ 26%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield.dir/CMagFieldIGRF.cpp.o
+[ 26%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield.dir/CMagfield_c.cpp.o
+[ 26%] Building CXX object Models/Magnetosphere/MagneticFields/CMakeFiles/cmagfield.dir/__/__/Generic/GenericModel.cpp.o
+[ 26%] Linking CXX static library ../../lib/libcmagfield.a
+[ 26%] Built target cmagfield
+Scanning dependencies of target CutOffModel
+[ 26%] Building CXX object Models/Magnetosphere/RadiationEnvironment/CutOff/CMakeFiles/CutOffModel.dir/CCutOffModel.cpp.o
+[ 26%] Building CXX object Models/Magnetosphere/RadiationEnvironment/CutOff/CMakeFiles/CutOffModel.dir/CCutOffModel_c.cpp.o
+[ 27%] Linking CXX static library ../../../lib/libCutOffModel.a
+[ 27%] Built target CutOffModel
+Scanning dependencies of target CutOffModel_shared
+[ 27%] Building CXX object Models/Magnetosphere/RadiationEnvironment/CutOff/CMakeFiles/CutOffModel_shared.dir/CCutOffModel.cpp.o
+[ 27%] Building CXX object Models/Magnetosphere/RadiationEnvironment/CutOff/CMakeFiles/CutOffModel_shared.dir/CCutOffModel_c.cpp.o
+[ 27%] Linking CXX shared library ../../../lib/libCutOffModel.so
+[ 27%] Built target CutOffModel_shared
+Scanning dependencies of target saa_shared
+[ 28%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SAATransit/CMakeFiles/saa_shared.dir/CSAATransit.cpp.o
+[ 28%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SAATransit/CMakeFiles/saa_shared.dir/CSAAMap.cpp.o
+[ 28%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SAATransit/CMakeFiles/saa_shared.dir/CSAATransit_c.cpp.o
+[ 28%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SAATransit/CMakeFiles/saa_shared.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 28%] Linking CXX shared library ../../../lib/libsaa.so
+[ 28%] Built target saa_shared
+Scanning dependencies of target saa
+[ 28%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SAATransit/CMakeFiles/saa.dir/CSAATransit.cpp.o
+[ 28%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SAATransit/CMakeFiles/saa.dir/CSAAMap.cpp.o
+[ 28%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SAATransit/CMakeFiles/saa.dir/CSAATransit_c.cpp.o
+[ 29%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SAATransit/CMakeFiles/saa.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 29%] Linking CXX static library ../../../lib/libsaa.a
+[ 29%] Built target saa
+Scanning dependencies of target cammice
+[ 29%] Building CXX object Models/Magnetosphere/RadiationEnvironment/cammice/CMakeFiles/cammice.dir/CRoederPlasma.cpp.o
+[ 29%] Building CXX object Models/Magnetosphere/RadiationEnvironment/cammice/CMakeFiles/cammice.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 29%] Linking CXX static library ../../../lib/libcammice.a
+[ 29%] Built target cammice
+Scanning dependencies of target cammice_shared
+[ 30%] Building CXX object Models/Magnetosphere/RadiationEnvironment/cammice/CMakeFiles/cammice_shared.dir/CRoederPlasma.cpp.o
+[ 30%] Building CXX object Models/Magnetosphere/RadiationEnvironment/cammice/CMakeFiles/cammice_shared.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 30%] Linking CXX shared library ../../../lib/libcammice.so
+[ 30%] Built target cammice_shared
+Scanning dependencies of target shielddose2
+[ 30%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SHIELDDOSE2/CMakeFiles/shielddose2.dir/CShieldDose2.cpp.o
+[ 30%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SHIELDDOSE2/CMakeFiles/shielddose2.dir/CShieldDoseDb.cpp.o
+[ 31%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SHIELDDOSE2/CMakeFiles/shielddose2.dir/CShieldDose2_c.cpp.o
+[ 31%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SHIELDDOSE2/CMakeFiles/shielddose2.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 31%] Linking CXX static library ../../../lib/libshielddose2.a
+[ 31%] Built target shielddose2
+Scanning dependencies of target shielddose2_shared
+[ 31%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SHIELDDOSE2/CMakeFiles/shielddose2_shared.dir/CShieldDose2.cpp.o
+[ 31%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SHIELDDOSE2/CMakeFiles/shielddose2_shared.dir/CShieldDoseDb.cpp.o
+[ 32%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SHIELDDOSE2/CMakeFiles/shielddose2_shared.dir/CShieldDose2_c.cpp.o
+[ 32%] Building CXX object Models/Magnetosphere/RadiationEnvironment/SHIELDDOSE2/CMakeFiles/shielddose2_shared.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 32%] Linking CXX shared library ../../../lib/libshielddose2.so
+[ 32%] Built target shielddose2_shared
+Scanning dependencies of target radenv
+[ 32%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 32%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvSatGrid.cpp.o
+[ 32%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvMgr.cpp.o
+[ 33%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvDB.cpp.o
+[ 33%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvModelBase.cpp.o
+[ 33%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvModelApexRad.cpp.o
+[ 33%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvModelCrresRad.cpp.o
+[ 33%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvModelCrresEle.cpp.o
+[ 34%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvModelCrresPro.cpp.o
+[ 34%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvModelNasaEle.cpp.o
+[ 34%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnvModelNasaPro.cpp.o
+[ 34%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/CRadEnv_c.cpp.o
+[ 34%] Building C object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv.dir/nasa_trmfun.c.o
+[ 34%] Linking CXX static library ../../../lib/libradenv.a
+[ 34%] Built target radenv
+Scanning dependencies of target radenv_shared
+[ 35%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 35%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvSatGrid.cpp.o
+[ 35%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvMgr.cpp.o
+[ 35%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvDB.cpp.o
+[ 35%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvModelBase.cpp.o
+[ 36%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvModelApexRad.cpp.o
+[ 36%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvModelCrresRad.cpp.o
+[ 36%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvModelCrresEle.cpp.o
+[ 36%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvModelCrresPro.cpp.o
+[ 36%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvModelNasaEle.cpp.o
+[ 37%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnvModelNasaPro.cpp.o
+[ 37%] Building CXX object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/CRadEnv_c.cpp.o
+[ 37%] Building C object Models/Magnetosphere/RadiationEnvironment/RadEnv/CMakeFiles/radenv_shared.dir/nasa_trmfun.c.o
+[ 37%] Linking CXX shared library ../../../lib/libradenv.so
+[ 37%] Built target radenv_shared
+Scanning dependencies of target adiabat
+[ 37%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat.dir/CAdiabaticCoords.cpp.o
+[ 37%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat.dir/CAdAlphaLmCoordCalc.cpp.o
+[ 37%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat.dir/CAdKHMinCoordCalc.cpp.o
+[ 38%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat.dir/CAdKPhiCoordCalc.cpp.o
+[ 38%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat.dir/CAdNeuralNetCoordCalc.cpp.o
+[ 38%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat.dir/VMBoostrap.cpp.o
+[ 38%] Linking CXX static library ../../lib/libadiabat.a
+[ 38%] Built target adiabat
+Scanning dependencies of target adiabat_shared
+[ 38%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat_shared.dir/CAdiabaticCoords.cpp.o
+[ 39%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat_shared.dir/CAdAlphaLmCoordCalc.cpp.o
+[ 39%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat_shared.dir/CAdKHMinCoordCalc.cpp.o
+[ 39%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat_shared.dir/CAdKPhiCoordCalc.cpp.o
+[ 39%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat_shared.dir/CAdNeuralNetCoordCalc.cpp.o
+[ 39%] Building CXX object Models/Magnetosphere/AdiabaticCoordinates/CMakeFiles/adiabat_shared.dir/VMBoostrap.cpp.o
+[ 39%] Linking CXX shared library ../../lib/libadiabat.so
+[ 39%] Built target adiabat_shared
+Scanning dependencies of target orbitprop
+[ 39%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop.dir/COrbitProp.cpp.o
+[ 39%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop.dir/COrbitProp_c.cpp.o
+[ 39%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop.dir/COrbitPropSGP4.cpp.o
+[ 39%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop.dir/COrbitPropSateph.cpp.o
+[ 39%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop.dir/__/Generic/GenericModel.cpp.o
+[ 40%] Linking CXX static library ../lib/liborbitprop.a
+[ 40%] Built target orbitprop
+Scanning dependencies of target orbitprop_shared
+[ 40%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop_shared.dir/COrbitProp.cpp.o
+[ 40%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop_shared.dir/COrbitProp_c.cpp.o
+[ 40%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop_shared.dir/COrbitPropSGP4.cpp.o
+[ 40%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop_shared.dir/COrbitPropSateph.cpp.o
+[ 41%] Building CXX object Models/OrbitPropagators/CMakeFiles/orbitprop_shared.dir/__/Generic/GenericModel.cpp.o
+[ 41%] Linking CXX shared library ../lib/liborbitprop.so
+[ 41%] Built target orbitprop_shared
+Scanning dependencies of target Add_shared
+[ 41%] Building CXX object Models/AddComponent/CMakeFiles/Add_shared.dir/CAdd.cpp.o
+[ 41%] Linking CXX shared library ../lib/libAdd.so
+[ 41%] Built target Add_shared
+Scanning dependencies of target Add
+[ 41%] Building CXX object Models/AddComponent/CMakeFiles/Add.dir/CAdd.cpp.o
+[ 42%] Linking CXX static library ../lib/libAdd.a
+[ 42%] Built target Add
+Scanning dependencies of target lightning
+[ 42%] Building CXX object Models/Climatology/Lightning/CMakeFiles/lightning.dir/CLightningClimatology.cpp.o
+[ 42%] Building CXX object Models/Climatology/Lightning/CMakeFiles/lightning.dir/__/__/Generic/GenericModel.cpp.o
+[ 43%] Linking CXX static library ../../lib/liblightning.a
+[ 43%] Built target lightning
+Scanning dependencies of target lightning_shared
+[ 43%] Building CXX object Models/Climatology/Lightning/CMakeFiles/lightning_shared.dir/CLightningClimatology.cpp.o
+[ 43%] Building CXX object Models/Climatology/Lightning/CMakeFiles/lightning_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 43%] Linking CXX shared library ../../lib/liblightning.so
+[ 43%] Built target lightning_shared
+Scanning dependencies of target LightningVLF
+[ 43%] Building CXX object Models/Climatology/LightningVLF/CMakeFiles/LightningVLF.dir/CLightningVLF.cpp.o
+[ 43%] Building CXX object Models/Climatology/LightningVLF/CMakeFiles/LightningVLF.dir/CLightningVLF_c.cpp.o
+[ 43%] Building CXX object Models/Climatology/LightningVLF/CMakeFiles/LightningVLF.dir/__/__/Generic/GenericModel.cpp.o
+[ 43%] Linking CXX static library ../../lib/libLightningVLF.a
+[ 43%] Built target LightningVLF
+Scanning dependencies of target LightningVLF_shared
+[ 43%] Building CXX object Models/Climatology/LightningVLF/CMakeFiles/LightningVLF_shared.dir/CLightningVLF.cpp.o
+[ 44%] Building CXX object Models/Climatology/LightningVLF/CMakeFiles/LightningVLF_shared.dir/CLightningVLF_c.cpp.o
+[ 44%] Building CXX object Models/Climatology/LightningVLF/CMakeFiles/LightningVLF_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 44%] Linking CXX shared library ../../lib/libLightningVLF.so
+[ 44%] Built target LightningVLF_shared
+Scanning dependencies of target conjunction
+[ 44%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunction.cpp.o
+[ 44%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionElevationAngle.cpp.o
+[ 44%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionFieldLine.cpp.o
+[ 44%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionFootPrint.cpp.o
+[ 45%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionGeographic.cpp.o
+[ 45%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionLShell.cpp.o
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp: In member function ‘eCONJ_ERROR_CODE CConjunctionLShell::inConjunction(CConjunctionObject&, CConjunctionObject&, bool&, bmatrix&, dvector&, dmatrix&, int)’:
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp:738:27: warning: converting ‘false’ to pointer type for argument 5 of ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const double&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’ [-Wconversion-null]
+           &dvLval1, &dvXj );
+                           ^
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp:746:27: warning: converting ‘false’ to pointer type for argument 5 of ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const double&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’ [-Wconversion-null]
+           &dvLval2, &dvXj );
+                           ^
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp:914:27: warning: converting ‘false’ to pointer type for argument 5 of ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const double&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’ [-Wconversion-null]
+           &dvLval1, &dvXj );
+                           ^
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp:922:27: warning: converting ‘false’ to pointer type for argument 5 of ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const double&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’ [-Wconversion-null]
+           &dvLval2, &dvXj );
+                           ^
+[ 45%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionHemisphere.cpp.o
+[ 45%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionQuadrasphere.cpp.o
+[ 45%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionLineOfSight.cpp.o
+[ 45%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionVLF.cpp.o
+[ 46%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionObjectLineOfSight.cpp.o
+[ 46%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionObjectSpace.cpp.o
+[ 46%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction.dir/CConjunctionObjectTarget.cpp.o
+[ 46%] Linking CXX static library ../../lib/libconjunction.a
+[ 46%] Built target conjunction
+Scanning dependencies of target OrbitOps_shared
+[ 46%] Building CXX object Models/Conjunctions/OrbitOps/CMakeFiles/OrbitOps_shared.dir/COrbitOps.cpp.o
+[ 46%] Building CXX object Models/Conjunctions/OrbitOps/CMakeFiles/OrbitOps_shared.dir/COrbitOps_c.cpp.o
+[ 46%] Linking CXX shared library ../../lib/libOrbitOps.so
+[ 46%] Built target OrbitOps_shared
+Scanning dependencies of target XmitVLF_shared
+[ 46%] Building CXX object Models/Plasmasphere/XmitVLF/CMakeFiles/XmitVLF_shared.dir/CXmitVLF.cpp.o
+[ 46%] Building CXX object Models/Plasmasphere/XmitVLF/CMakeFiles/XmitVLF_shared.dir/CXmitVLFGrid.cpp.o
+[ 47%] Building CXX object Models/Plasmasphere/XmitVLF/CMakeFiles/XmitVLF_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 47%] Linking CXX shared library ../../lib/libXmitVLF.so
+[ 47%] Built target XmitVLF_shared
+Scanning dependencies of target conjunction_shared
+[ 47%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunction.cpp.o
+[ 48%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionElevationAngle.cpp.o
+[ 48%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionFieldLine.cpp.o
+[ 48%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionFootPrint.cpp.o
+[ 48%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionGeographic.cpp.o
+[ 48%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionLShell.cpp.o
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp: In member function ‘eCONJ_ERROR_CODE CConjunctionLShell::inConjunction(CConjunctionObject&, CConjunctionObject&, bool&, bmatrix&, dvector&, dmatrix&, int)’:
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp:738:27: warning: converting ‘false’ to pointer type for argument 5 of ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const double&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’ [-Wconversion-null]
+           &dvLval1, &dvXj );
+                           ^
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp:746:27: warning: converting ‘false’ to pointer type for argument 5 of ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const double&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’ [-Wconversion-null]
+           &dvLval2, &dvXj );
+                           ^
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp:914:27: warning: converting ‘false’ to pointer type for argument 5 of ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const double&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’ [-Wconversion-null]
+           &dvLval1, &dvXj );
+                           ^
+/home/dantopa/scratch/SpWx/source/Models/Conjunctions/ConjunctionAnalysis/CConjunctionLShell.cpp:922:27: warning: converting ‘false’ to pointer type for argument 5 of ‘eMAGFIELD_ERROR_CODE CMagfield::computeAdInvariants(const double&, const S3Coord&, const dvector&, const bool&, double*, double*, dvector*, dvector*, dvector*)’ [-Wconversion-null]
+           &dvLval2, &dvXj );
+                           ^
+[ 49%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionHemisphere.cpp.o
+[ 49%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionQuadrasphere.cpp.o
+[ 49%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionLineOfSight.cpp.o
+[ 49%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionVLF.cpp.o
+[ 49%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionObjectLineOfSight.cpp.o
+[ 49%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionObjectSpace.cpp.o
+[ 50%] Building CXX object Models/Conjunctions/ConjunctionAnalysis/CMakeFiles/conjunction_shared.dir/CConjunctionObjectTarget.cpp.o
+[ 50%] Linking CXX shared library ../../lib/libconjunction.so
+[ 50%] Built target conjunction_shared
+Scanning dependencies of target OrbitOps
+[ 50%] Building CXX object Models/Conjunctions/OrbitOps/CMakeFiles/OrbitOps.dir/COrbitOps.cpp.o
+[ 50%] Building CXX object Models/Conjunctions/OrbitOps/CMakeFiles/OrbitOps.dir/COrbitOps_c.cpp.o
+[ 51%] Linking CXX static library ../../lib/libOrbitOps.a
+[ 51%] Built target OrbitOps
+Scanning dependencies of target RefFrame
+[ 51%] Building CXX object Models/Conjunctions/RefFrame/CMakeFiles/RefFrame.dir/CRefFrame.cpp.o
+[ 51%] Building CXX object Models/Conjunctions/RefFrame/CMakeFiles/RefFrame.dir/CRefFrame_c.cpp.o
+[ 51%] Building CXX object Models/Conjunctions/RefFrame/CMakeFiles/RefFrame.dir/CEarthOrient.cpp.o
+[ 52%] Linking CXX static library ../../lib/libRefFrame.a
+[ 52%] Built target RefFrame
+Scanning dependencies of target RefFrame_shared
+[ 52%] Building CXX object Models/Conjunctions/RefFrame/CMakeFiles/RefFrame_shared.dir/CRefFrame.cpp.o
+[ 52%] Building CXX object Models/Conjunctions/RefFrame/CMakeFiles/RefFrame_shared.dir/CRefFrame_c.cpp.o
+[ 52%] Building CXX object Models/Conjunctions/RefFrame/CMakeFiles/RefFrame_shared.dir/CEarthOrient.cpp.o
+[ 52%] Linking CXX shared library ../../lib/libRefFrame.so
+[ 52%] Built target RefFrame_shared
+Scanning dependencies of target nehiem_shared
+[ 52%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 52%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/NehiemEnv.cpp.o
+[ 52%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/NehiemSat.cpp.o
+[ 52%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/CNEHIEMDatabase.cpp.o
+[ 53%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/cress.cpp.o
+[ 53%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/cusplncr.cpp.o
+[ 53%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/phivtmcr.cpp.o
+[ 53%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/lvaldccr.cpp.o
+[ 53%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/fluxincr.cpp.o
+[ 54%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/lgalslcr.cpp.o
+[ 54%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/orbitscr.cpp.o
+[ 54%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/solflxcr.cpp.o
+[ 54%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/splanicr.cpp.o
+[ 54%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/stormerc.cpp.o
+[ 55%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/pathdist.cpp.o
+[ 55%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem_shared.dir/seucalpc.cpp.o
+[ 55%] Linking CXX shared library ../../../lib/libnehiem.so
+[ 55%] Built target nehiem_shared
+Scanning dependencies of target nehiem
+[ 55%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 55%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/NehiemEnv.cpp.o
+[ 55%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/NehiemSat.cpp.o
+[ 55%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/CNEHIEMDatabase.cpp.o
+[ 56%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/cress.cpp.o
+[ 56%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/cusplncr.cpp.o
+[ 56%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/phivtmcr.cpp.o
+[ 56%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/lvaldccr.cpp.o
+[ 56%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/fluxincr.cpp.o
+[ 56%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/lgalslcr.cpp.o
+[ 57%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/orbitscr.cpp.o
+[ 57%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/solflxcr.cpp.o
+[ 57%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/splanicr.cpp.o
+[ 57%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/stormerc.cpp.o
+[ 57%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/pathdist.cpp.o
+[ 58%] Building CXX object Models/Heliosphere/EnergeticParticles/NEHIEM/CMakeFiles/nehiem.dir/seucalpc.cpp.o
+[ 58%] Linking CXX static library ../../../lib/libnehiem.a
+[ 58%] Built target nehiem
+Scanning dependencies of target sep
+[ 58%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 58%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep.dir/CSEPModel.cpp.o
+[ 58%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep.dir/CSEPDatabase.cpp.o
+[ 58%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep.dir/CSolarCycleCalculator.cpp.o
+[ 59%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep.dir/CSEPFluenceExceedanceCalculator.cpp.o
+[ 59%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep.dir/CInterpolationCalculator.cpp.o
+[ 59%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep.dir/CSolarEnergeticParticleModel.cpp.o
+[ 59%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep.dir/CXapsosSEP.cpp.o
+[ 59%] Linking CXX static library ../../../lib/libsep.a
+[ 59%] Built target sep
+Scanning dependencies of target sep_shared
+[ 60%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep_shared.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 60%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep_shared.dir/CSEPModel.cpp.o
+[ 60%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep_shared.dir/CSEPDatabase.cpp.o
+[ 60%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep_shared.dir/CSolarCycleCalculator.cpp.o
+[ 60%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep_shared.dir/CSEPFluenceExceedanceCalculator.cpp.o
+[ 60%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep_shared.dir/CInterpolationCalculator.cpp.o
+[ 61%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep_shared.dir/CSolarEnergeticParticleModel.cpp.o
+[ 61%] Building CXX object Models/Heliosphere/EnergeticParticles/SEP/CMakeFiles/sep_shared.dir/CXapsosSEP.cpp.o
+[ 61%] Linking CXX shared library ../../../lib/libsep.so
+[ 61%] Built target sep_shared
+Scanning dependencies of target gcr
+[ 61%] Building CXX object Models/Heliosphere/EnergeticParticles/GCR/CMakeFiles/gcr.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 61%] Building CXX object Models/Heliosphere/EnergeticParticles/GCR/CMakeFiles/gcr.dir/CGalacticCosmicRay.cpp.o
+[ 61%] Linking CXX static library ../../../lib/libgcr.a
+[ 61%] Built target gcr
+Scanning dependencies of target gcr_shared
+[ 61%] Building CXX object Models/Heliosphere/EnergeticParticles/GCR/CMakeFiles/gcr_shared.dir/__/__/__/Generic/GenericModel.cpp.o
+[ 61%] Building CXX object Models/Heliosphere/EnergeticParticles/GCR/CMakeFiles/gcr_shared.dir/CGalacticCosmicRay.cpp.o
+[ 62%] Linking CXX shared library ../../../lib/libgcr.so
+[ 62%] Built target gcr_shared
+Scanning dependencies of target iri2007_shared
+[ 62%] Building CXX object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 62%] Building CXX object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/CIri2007.cpp.o
+[ 62%] Building CXX object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/CIri2007Db.cpp.o
+[ 62%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/fortran/irisub.for.o
+[ 62%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/fortran/irifun.for.o
+[ 63%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/fortran/cira.for.o
+[ 63%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/fortran/iritec.for.o
+[ 63%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/fortran/iridreg.for.o
+[ 63%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007_shared.dir/fortran/igrf.for.o
+[ 63%] Linking CXX shared library ../../lib/libiri2007.so
+[ 63%] Built target iri2007_shared
+Scanning dependencies of target iri2007
+[ 63%] Building CXX object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/__/__/Generic/GenericModel.cpp.o
+[ 63%] Building CXX object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/CIri2007.cpp.o
+[ 63%] Building CXX object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/CIri2007Db.cpp.o
+[ 63%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/fortran/irisub.for.o
+[ 64%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/fortran/irifun.for.o
+[ 64%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/fortran/cira.for.o
+[ 64%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/fortran/iritec.for.o
+[ 64%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/fortran/iridreg.for.o
+[ 64%] Building Fortran object Models/Ionosphere/Iri2007/CMakeFiles/iri2007.dir/fortran/igrf.for.o
+[ 65%] Linking CXX static library ../../lib/libiri2007.a
+[ 65%] Built target iri2007
+Scanning dependencies of target diffequil
+[ 65%] Building CXX object Models/Plasmasphere/DiffusiveEquilibrium/CMakeFiles/diffequil.dir/CDiffEquil.cpp.o
+[ 65%] Building CXX object Models/Plasmasphere/DiffusiveEquilibrium/CMakeFiles/diffequil.dir/__/__/Generic/GenericModel.cpp.o
+[ 65%] Linking CXX static library ../../lib/libdiffequil.a
+[ 65%] Built target diffequil
+Scanning dependencies of target iriplusde
+[ 65%] Building CXX object Models/Ionosphere/IriPlusDe/CMakeFiles/iriplusde.dir/__/__/Generic/GenericModel.cpp.o
+[ 65%] Building CXX object Models/Ionosphere/IriPlusDe/CMakeFiles/iriplusde.dir/CIriPlusDe.cpp.o
+[ 65%] Linking CXX static library ../../lib/libiriplusde.a
+[ 65%] Built target iriplusde
+Scanning dependencies of target diffequil_shared
+[ 66%] Building CXX object Models/Plasmasphere/DiffusiveEquilibrium/CMakeFiles/diffequil_shared.dir/CDiffEquil.cpp.o
+[ 66%] Building CXX object Models/Plasmasphere/DiffusiveEquilibrium/CMakeFiles/diffequil_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 66%] Linking CXX shared library ../../lib/libdiffequil.so
+[ 66%] Built target diffequil_shared
+Scanning dependencies of target iriplusde_shared
+[ 67%] Building CXX object Models/Ionosphere/IriPlusDe/CMakeFiles/iriplusde_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 67%] Building CXX object Models/Ionosphere/IriPlusDe/CMakeFiles/iriplusde_shared.dir/CIriPlusDe.cpp.o
+[ 67%] Linking CXX shared library ../../lib/libiriplusde.so
+[ 67%] Built target iriplusde_shared
+Scanning dependencies of target ParticleImpacts
+[ 67%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts.dir/CParticleImpacts.cpp.o
+[ 68%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts.dir/CParticleAstronEnviron.cpp.o
+[ 68%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts.dir/CParticleDebrisEnviron.cpp.o
+[ 68%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts.dir/CParticleMeteorEnviron.cpp.o
+[ 68%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts.dir/CParticleEnviron.cpp.o
+[ 68%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts.dir/__/__/Generic/GenericModel.cpp.o
+[ 68%] Linking CXX static library ../../lib/libParticleImpacts.a
+[ 68%] Built target ParticleImpacts
+Scanning dependencies of target ParticleImpacts_shared
+[ 69%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts_shared.dir/CParticleImpacts.cpp.o
+[ 69%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts_shared.dir/CParticleAstronEnviron.cpp.o
+[ 69%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts_shared.dir/CParticleDebrisEnviron.cpp.o
+[ 69%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts_shared.dir/CParticleMeteorEnviron.cpp.o
+[ 69%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts_shared.dir/CParticleEnviron.cpp.o
+[ 70%] Building CXX object Models/NonPlasmaSpaceEnvironment/ParticleImpacts/CMakeFiles/ParticleImpacts_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 70%] Linking CXX shared library ../../lib/libParticleImpacts.so
+[ 70%] Built target ParticleImpacts_shared
+Scanning dependencies of target VehicleTemperature_shared
+[ 70%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature_shared.dir/CVehicleTemperature.cpp.o
+[ 70%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature_shared.dir/VTModel.cpp.o
+[ 70%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature_shared.dir/DirectSolarRad.cpp.o
+[ 71%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature_shared.dir/EarthReflSolarRad.cpp.o
+[ 71%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature_shared.dir/EarthRejectRad.cpp.o
+[ 71%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature_shared.dir/vector_routines.cpp.o
+[ 71%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 71%] Linking CXX shared library ../../lib/libVehicleTemperature.so
+[ 71%] Built target VehicleTemperature_shared
+Scanning dependencies of target VehicleTemperature
+[ 71%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature.dir/CVehicleTemperature.cpp.o
+[ 72%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature.dir/VTModel.cpp.o
+[ 72%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature.dir/DirectSolarRad.cpp.o
+[ 72%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature.dir/EarthReflSolarRad.cpp.o
+[ 72%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature.dir/EarthRejectRad.cpp.o
+[ 72%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature.dir/vector_routines.cpp.o
+[ 73%] Building CXX object Models/NonPlasmaSpaceEnvironment/VehicleTemperature/CMakeFiles/VehicleTemperature.dir/__/__/Generic/GenericModel.cpp.o
+[ 73%] Linking CXX static library ../../lib/libVehicleTemperature.a
+[ 73%] Built target VehicleTemperature
+Scanning dependencies of target PlasmaSph
+[ 73%] Building CXX object Models/Plasmasphere/PlasmaSphere/CMakeFiles/PlasmaSph.dir/CPlasmaSphere.cpp.o
+[ 73%] Building CXX object Models/Plasmasphere/PlasmaSphere/CMakeFiles/PlasmaSph.dir/__/__/Generic/GenericModel.cpp.o
+[ 73%] Linking CXX static library ../../lib/libPlasmaSph.a
+[ 73%] Built target PlasmaSph
+Scanning dependencies of target PlasmaSph_shared
+[ 73%] Building CXX object Models/Plasmasphere/PlasmaSphere/CMakeFiles/PlasmaSph_shared.dir/CPlasmaSphere.cpp.o
+[ 74%] Building CXX object Models/Plasmasphere/PlasmaSphere/CMakeFiles/PlasmaSph_shared.dir/__/__/Generic/GenericModel.cpp.o
+[ 74%] Linking CXX shared library ../../lib/libPlasmaSph.so
+[ 74%] Built target PlasmaSph_shared
+Scanning dependencies of target XmitVLF
+[ 74%] Building CXX object Models/Plasmasphere/XmitVLF/CMakeFiles/XmitVLF.dir/CXmitVLF.cpp.o
+[ 75%] Building CXX object Models/Plasmasphere/XmitVLF/CMakeFiles/XmitVLF.dir/CXmitVLFGrid.cpp.o
+[ 75%] Building CXX object Models/Plasmasphere/XmitVLF/CMakeFiles/XmitVLF.dir/__/__/Generic/GenericModel.cpp.o
+[ 75%] Linking CXX static library ../../lib/libXmitVLF.a
+[ 75%] Built target XmitVLF
+Scanning dependencies of target oeTest
+[ 75%] Building CXX object Models/UnitTest/CMakeFiles/oeTest.dir/testCOrbitEnv.cpp.o
+[ 75%] Building CXX object Models/UnitTest/CMakeFiles/oeTest.dir/utCOrbitEnv.cpp.o
+[ 75%] Linking CXX executable ../bin/oeTest
+[ 75%] Built target oeTest
+Scanning dependencies of target reTest
+[ 75%] Building CXX object Models/UnitTest/CMakeFiles/reTest.dir/__/Generic/GenericModel.cpp.o
+[ 75%] Building CXX object Models/UnitTest/CMakeFiles/reTest.dir/testCRadEnv.cpp.o
+[ 76%] Building CXX object Models/UnitTest/CMakeFiles/reTest.dir/utCRadEnv.cpp.o
+[ 76%] Linking CXX executable ../bin/reTest
+[ 76%] Built target reTest
+Scanning dependencies of target adcTest
+[ 76%] Building CXX object Models/UnitTest/CMakeFiles/adcTest.dir/testCAdiabaticCoords.cpp.o
+[ 76%] Building CXX object Models/UnitTest/CMakeFiles/adcTest.dir/utCAdiabaticCoords.cpp.o
+[ 76%] Linking CXX executable ../bin/adcTest
+[ 76%] Built target adcTest
+Scanning dependencies of target opTest
+[ 76%] Building CXX object Models/UnitTest/CMakeFiles/opTest.dir/testCOrbitProp.cpp.o
+[ 76%] Building CXX object Models/UnitTest/CMakeFiles/opTest.dir/utCOrbitProp.cpp.o
+[ 77%] Linking CXX executable ../bin/opTest
+[ 77%] Built target opTest
+Scanning dependencies of target cnjTest
+[ 77%] Building CXX object Models/UnitTest/CMakeFiles/cnjTest.dir/testCConjunctions.cpp.o
+[ 77%] Building CXX object Models/UnitTest/CMakeFiles/cnjTest.dir/utCConjunctions.cpp.o
+[ 78%] Linking CXX executable ../bin/cnjTest
+[ 78%] Built target cnjTest
+Scanning dependencies of target gcrTest
+[ 79%] Building CXX object Models/UnitTest/CMakeFiles/gcrTest.dir/testCGalacticCosmicRay.cpp.o
+[ 79%] Building CXX object Models/UnitTest/CMakeFiles/gcrTest.dir/utCGalacticCosmicRay.cpp.o
+[ 79%] Linking CXX executable ../bin/gcrTest
+[ 79%] Built target gcrTest
+Scanning dependencies of target addTest
+[ 79%] Building CXX object Models/UnitTest/CMakeFiles/addTest.dir/testCAdd.cpp.o
+[ 80%] Building CXX object Models/UnitTest/CMakeFiles/addTest.dir/utCAdd.cpp.o
+[ 80%] Linking CXX executable ../bin/addTest
+[ 80%] Built target addTest
+Scanning dependencies of target iriTest
+[ 81%] Building CXX object Models/UnitTest/CMakeFiles/iriTest.dir/testCIri2007.cpp.o
+[ 81%] Building CXX object Models/UnitTest/CMakeFiles/iriTest.dir/utCIri2007.cpp.o
+[ 81%] Building CXX object Models/UnitTest/CMakeFiles/iriTest.dir/__/Generic/GenericModel.cpp.o
+[ 81%] Linking CXX executable ../bin/iriTest
+[ 81%] Built target iriTest
+Scanning dependencies of target ooTest
+[ 82%] Building CXX object Models/UnitTest/CMakeFiles/ooTest.dir/testCOrbitOps.cpp.o
+[ 82%] Building CXX object Models/UnitTest/CMakeFiles/ooTest.dir/utCOrbitOps.cpp.o
+[ 82%] Linking CXX executable ../bin/ooTest
+[ 82%] Built target ooTest
+Scanning dependencies of target psTest
+[ 83%] Building CXX object Models/UnitTest/CMakeFiles/psTest.dir/testCPlasmaSph.cpp.o
+[ 83%] Building CXX object Models/UnitTest/CMakeFiles/psTest.dir/utCPlasmaSph.cpp.o
+[ 83%] Linking CXX executable ../bin/psTest
+[ 83%] Built target psTest
+Scanning dependencies of target piTest
+[ 83%] Building CXX object Models/UnitTest/CMakeFiles/piTest.dir/testCParticleImpacts.cpp.o
+[ 83%] Building CXX object Models/UnitTest/CMakeFiles/piTest.dir/utCParticleImpacts.cpp.o
+[ 83%] Linking CXX executable ../bin/piTest
+[ 83%] Built target piTest
+Scanning dependencies of target lvTest
+[ 84%] Building CXX object Models/UnitTest/CMakeFiles/lvTest.dir/testCLightningVLF.cpp.o
+[ 84%] Building CXX object Models/UnitTest/CMakeFiles/lvTest.dir/utCLightningVLF.cpp.o
+[ 84%] Linking CXX executable ../bin/lvTest
+[ 84%] Built target lvTest
+Scanning dependencies of target saaTest
+[ 84%] Building CXX object Models/UnitTest/CMakeFiles/saaTest.dir/__/Generic/GenericModel.cpp.o
+[ 84%] Building CXX object Models/UnitTest/CMakeFiles/saaTest.dir/testCSAATransit.cpp.o
+[ 84%] Building CXX object Models/UnitTest/CMakeFiles/saaTest.dir/utCSAATransit.cpp.o
+[ 84%] Linking CXX executable ../bin/saaTest
+[ 84%] Built target saaTest
+Scanning dependencies of target sd2Test
+[ 84%] Building CXX object Models/UnitTest/CMakeFiles/sd2Test.dir/testCShieldDose2.cpp.o
+[ 84%] Building CXX object Models/UnitTest/CMakeFiles/sd2Test.dir/utCShieldDose2.cpp.o
+[ 84%] Linking CXX executable ../bin/sd2Test
+[ 84%] Built target sd2Test
+Scanning dependencies of target irideTest
+[ 84%] Building CXX object Models/UnitTest/CMakeFiles/irideTest.dir/testCIriPlusDe.cpp.o
+[ 85%] Building CXX object Models/UnitTest/CMakeFiles/irideTest.dir/utCIriPlusDe.cpp.o
+[ 85%] Building CXX object Models/UnitTest/CMakeFiles/irideTest.dir/__/Generic/GenericModel.cpp.o
+[ 85%] Linking CXX executable ../bin/irideTest
+[ 85%] Built target irideTest
+Scanning dependencies of target logErrors
+[ 85%] Building CXX object Models/UnitTest/CMakeFiles/logErrors.dir/testLogErrors.cpp.o
+[ 85%] Linking CXX executable ../bin/logErrors
+[ 85%] Built target logErrors
+Scanning dependencies of target vtTest
+[ 85%] Building CXX object Models/UnitTest/CMakeFiles/vtTest.dir/testCVehicleTemperature.cpp.o
+[ 85%] Building CXX object Models/UnitTest/CMakeFiles/vtTest.dir/utCVehicleTemperature.cpp.o
+[ 86%] Linking CXX executable ../bin/vtTest
+[ 86%] Built target vtTest
+Scanning dependencies of target mfTest
+[ 86%] Building CXX object Models/UnitTest/CMakeFiles/mfTest.dir/testCMagfield.cpp.o
+[ 86%] Building CXX object Models/UnitTest/CMakeFiles/mfTest.dir/utCMagfield.cpp.o
+[ 87%] Linking CXX executable ../bin/mfTest
+[ 87%] Built target mfTest
+Scanning dependencies of target cnhTest
+[ 87%] Building CXX object Models/UnitTest/CMakeFiles/cnhTest.dir/testCNEHIEM.cpp.o
+[ 87%] Building CXX object Models/UnitTest/CMakeFiles/cnhTest.dir/utCNEHIEM.cpp.o
+[ 87%] Linking CXX executable ../bin/cnhTest
+[ 87%] Built target cnhTest
+Scanning dependencies of target cWrappersTest
+[ 88%] Building CXX object Models/UnitTest/CMakeFiles/cWrappersTest.dir/testCWrappers.cpp.o
+[ 88%] Linking CXX executable ../bin/cWrappersTest
+[ 88%] Built target cWrappersTest
+Scanning dependencies of target satMagCover
+[ 89%] Building CXX object Models/UnitTest/CMakeFiles/satMagCover.dir/satMagCover.cpp.o
+[ 89%] Linking CXX executable ../bin/satMagCover
+[ 89%] Built target satMagCover
+Scanning dependencies of target gtVehicleTemperatureTest
+[ 90%] Building CXX object unitTests/VehicleTemperature/CMakeFiles/gtVehicleTemperatureTest.dir/gtVehicleTemperatureTest.cpp.o
+[ 90%] Linking CXX executable ../gtVehicleTemperatureTest
+[ 90%] Built target gtVehicleTemperatureTest
+Scanning dependencies of target gtSAATransitTest
+[ 90%] Building CXX object unitTests/SAA/CMakeFiles/gtSAATransitTest.dir/gtSAATransitTest.cpp.o
+[ 91%] Linking CXX executable ../gtSAATransitTest
+[ 91%] Built target gtSAATransitTest
+Scanning dependencies of target gtGalacticCosmicRayTest
+[ 91%] Building CXX object unitTests/GalacticCosmicRay/CMakeFiles/gtGalacticCosmicRayTest.dir/gtGalacticCosmicRayTest.cpp.o
+[ 91%] Linking CXX executable ../gtGalacticCosmicRayTest
+[ 91%] Built target gtGalacticCosmicRayTest
+Scanning dependencies of target gtLightningVLFTest
+[ 92%] Building CXX object unitTests/LightningVLF/CMakeFiles/gtLightningVLFTest.dir/gtLightningVLFTest.cpp.o
+[ 92%] Linking CXX executable ../gtLightningVLFTest
+[ 92%] Built target gtLightningVLFTest
+Scanning dependencies of target gtAdiabaticCoordsTest
+[ 92%] Building CXX object unitTests/AdiabaticCoords/CMakeFiles/gtAdiabaticCoordsTest.dir/gtAdiabaticCoordsTest.cpp.o
+[ 92%] Linking CXX executable ../gtAdiabaticCoordsTest
+[ 92%] Built target gtAdiabaticCoordsTest
+Scanning dependencies of target gtParticleImpactsTest
+[ 92%] Building CXX object unitTests/ParticleImpacts/CMakeFiles/gtParticleImpactsTest.dir/gtParticleImpactsTest.cpp.o
+[ 92%] Linking CXX executable ../gtParticleImpactsTest
+[ 92%] Built target gtParticleImpactsTest
+Scanning dependencies of target gtCOrbitOpsTest
+[ 92%] Building CXX object unitTests/OrbitOps/CMakeFiles/gtCOrbitOpsTest.dir/gtCOrbitOpsTest.cpp.o
+[ 93%] Linking CXX executable ../gtCOrbitOpsTest
+[ 93%] Built target gtCOrbitOpsTest
+Scanning dependencies of target gtCPlasmaSphTest
+[ 93%] Building CXX object unitTests/PlasmaSph/CMakeFiles/gtCPlasmaSphTest.dir/gtCPlasmaSphTest.cpp.o
+[ 93%] Linking CXX executable ../gtCPlasmaSphTest
+[ 93%] Built target gtCPlasmaSphTest
+Scanning dependencies of target gtLightningTest
+[ 93%] Building CXX object unitTests/Lightning/CMakeFiles/gtLightningTest.dir/gtLightningTest.cpp.o
+[ 93%] Linking CXX executable ../gtLightningTest
+[ 93%] Built target gtLightningTest
+Scanning dependencies of target gtSEPModelTest
+[ 93%] Building CXX object unitTests/SEP/CMakeFiles/gtSEPModelTest.dir/gtSEPDatabaseTest.cpp.o
+[ 93%] Building CXX object unitTests/SEP/CMakeFiles/gtSEPModelTest.dir/gtSEPModelTest.cpp.o
+[ 93%] Building CXX object unitTests/SEP/CMakeFiles/gtSEPModelTest.dir/gtSolarCycleCalcTest.cpp.o
+[ 93%] Building CXX object unitTests/SEP/CMakeFiles/gtSEPModelTest.dir/gtFECurveCalcTest.cpp.o
+[ 94%] Building CXX object unitTests/SEP/CMakeFiles/gtSEPModelTest.dir/gtInterpolationCalcTest.cpp.o
+[ 94%] Building CXX object unitTests/SEP/CMakeFiles/gtSEPModelTest.dir/gtSolarEnergeticParticleModelTest.cpp.o
+[ 94%] Linking CXX executable ../gtSEPModelTest
+[ 94%] Built target gtSEPModelTest
+Scanning dependencies of target gtFloatMathTest
+[ 95%] Building CXX object unitTests/FloatMath/CMakeFiles/gtFloatMathTest.dir/gtFloatMathTest.cpp.o
+[ 95%] Linking CXX executable ../gtFloatMathTest
+[ 95%] Built target gtFloatMathTest
+Scanning dependencies of target gtOrbitPropTest
+[ 95%] Building CXX object unitTests/OrbitProp/CMakeFiles/gtOrbitPropTest.dir/gtOrbitPropTest.cpp.o
+[ 95%] Linking CXX executable ../gtOrbitPropTest
+[ 95%] Built target gtOrbitPropTest
+Scanning dependencies of target gtShieldDose2Test
+[ 95%] Building CXX object unitTests/ShieldDose2/CMakeFiles/gtShieldDose2Test.dir/gtShieldDose2Test.cpp.o
+[ 95%] Linking CXX executable ../gtShieldDose2Test
+[ 95%] Built target gtShieldDose2Test
+Scanning dependencies of target gtRadEnvMgrTest
+[ 95%] Building CXX object unitTests/RadEnv/CMakeFiles/gtRadEnvMgrTest.dir/gtRadEnvMgrTest.cpp.o
+[ 96%] Linking CXX executable ../gtRadEnvMgrTest
+[ 96%] Built target gtRadEnvMgrTest
+Scanning dependencies of target gtRadEnvTest
+[ 96%] Building CXX object unitTests/RadEnv/CMakeFiles/gtRadEnvTest.dir/gtRadEnvTest.cpp.o
+[ 96%] Building CXX object unitTests/RadEnv/CMakeFiles/gtRadEnvTest.dir/gtRadEnvMagfieldTest.cpp.o
+[ 96%] Building CXX object unitTests/RadEnv/CMakeFiles/gtRadEnvTest.dir/gtRadEnvSatGridTest.cpp.o
+[ 96%] Linking CXX executable ../gtRadEnvTest
+[ 96%] Built target gtRadEnvTest
+Scanning dependencies of target gtRadEnvExtendedTest
+[ 97%] Building CXX object unitTests/RadEnv/CMakeFiles/gtRadEnvExtendedTest.dir/gtRadEnvExtendedTest.cpp.o
+[ 97%] Linking CXX executable ../gtRadEnvExtendedTest
+[ 97%] Built target gtRadEnvExtendedTest
+Scanning dependencies of target gtRadEnvMagfieldExtendedTest
+[ 97%] Building CXX object unitTests/RadEnv/CMakeFiles/gtRadEnvMagfieldExtendedTest.dir/gtRadEnvMagfieldExtendedTest.cpp.o
+[ 97%] Linking CXX executable ../gtRadEnvMagfieldExtendedTest
+[ 97%] Built target gtRadEnvMagfieldExtendedTest
+Scanning dependencies of target gtCConjunctionsTest
+[ 97%] Building CXX object unitTests/Conjunctions/CMakeFiles/gtCConjunctionsTest.dir/gtCConjunctionsTest.cpp.o
+[ 97%] Linking CXX executable ../gtCConjunctionsTest
+[ 97%] Built target gtCConjunctionsTest
+Scanning dependencies of target gtCutOffModelTest
+[ 97%] Building CXX object unitTests/CutOff/CMakeFiles/gtCutOffModelTest.dir/gtCutOffModelTest.cpp.o
+[ 97%] Linking CXX executable ../gtCutOffModelTest
+[ 97%] Built target gtCutOffModelTest
+Scanning dependencies of target gtCXmitVLFInfoTest
+[ 98%] Building CXX object unitTests/XmitVLF/CMakeFiles/gtCXmitVLFInfoTest.dir/gtCXmitVLFInfoTest.cpp.o
+[ 98%] Linking CXX executable ../gtCXmitVLFInfoTest
+[ 98%] Built target gtCXmitVLFInfoTest
+Scanning dependencies of target gtCXmitVLFGridTest
+[ 98%] Building CXX object unitTests/XmitVLF/CMakeFiles/gtCXmitVLFGridTest.dir/gtCXmitVLFGridTest.cpp.o
+[ 98%] Linking CXX executable ../gtCXmitVLFGridTest
+[ 98%] Built target gtCXmitVLFGridTest
+Scanning dependencies of target gtCXmitVLFTest
+[ 98%] Building CXX object unitTests/XmitVLF/CMakeFiles/gtCXmitVLFTest.dir/gtCXmitVLFTest.cpp.o
+[ 98%] Linking CXX executable ../gtCXmitVLFTest
+[ 98%] Built target gtCXmitVLFTest
+Scanning dependencies of target gtIriPlusDeTest
+[ 98%] Building CXX object unitTests/IriPlusDe/CMakeFiles/gtIriPlusDeTest.dir/gtIriPlusDeTest.cpp.o
+[ 98%] Linking CXX executable ../gtIriPlusDeTest
+[ 98%] Built target gtIriPlusDeTest
+Scanning dependencies of target gtIri2007Test
+[ 98%] Building CXX object unitTests/Iri2007/CMakeFiles/gtIri2007Test.dir/gtIri2007Test.cpp.o
+[100%] Linking CXX executable ../gtIri2007Test
+[100%] Built target gtIri2007Test
+
+  4.2: make test
+Running tests...
+Test project /home/dantopa/scratch/SpWx/build
+      Start  1: addTest
+ 1/41 Test  #1: addTest ..........................   Passed    0.00 sec
+      Start  2: saaTest
+ 2/41 Test  #2: saaTest ..........................   Passed    0.12 sec
+      Start  3: reTest
+ 3/41 Test  #3: reTest ...........................   Passed  657.85 sec
+      Start  4: mfTest
+ 4/41 Test  #4: mfTest ...........................   Passed  218.84 sec
+      Start  5: sd2Test
+ 5/41 Test  #5: sd2Test ..........................   Passed    1.09 sec
+      Start  6: opTest
+ 6/41 Test  #6: opTest ...........................   Passed    0.45 sec
+      Start  7: cnjTest
+ 7/41 Test  #7: cnjTest ..........................***Exception: SegFault  0.35 sec
+      Start  8: ooTest
+ 8/41 Test  #8: ooTest ...........................   Passed    0.09 sec
+      Start  9: oeTest
+ 9/41 Test  #9: oeTest ...........................   Passed    1.02 sec
+      Start 10: piTest
+10/41 Test #10: piTest ...........................   Passed    7.88 sec
+      Start 11: vtTest
+11/41 Test #11: vtTest ...........................   Passed    0.01 sec
+      Start 12: lvTest
+12/41 Test #12: lvTest ...........................   Passed    0.09 sec
+      Start 13: gcrTest
+13/41 Test #13: gcrTest ..........................   Passed    0.06 sec
+      Start 14: adcTest
+14/41 Test #14: adcTest ..........................   Passed    1.59 sec
+      Start 15: psTest
+15/41 Test #15: psTest ...........................   Passed    0.12 sec
+      Start 16: cnhTest
+16/41 Test #16: cnhTest ..........................   Passed  244.50 sec
+      Start 17: iriTest
+17/41 Test #17: iriTest ..........................   Passed    0.69 sec
+      Start 18: irideTest
+18/41 Test #18: irideTest ........................   Passed   12.39 sec
+      Start 19: satMagCover
+19/41 Test #19: satMagCover ......................***Failed    0.01 sec
+      Start 20: gtVehicleTemperatureTest
+20/41 Test #20: gtVehicleTemperatureTest .........   Passed    0.01 sec
+      Start 21: gtSAATransitTest
+21/41 Test #21: gtSAATransitTest .................   Passed    0.21 sec
+      Start 22: gtGalacticCosmicRayTest
+22/41 Test #22: gtGalacticCosmicRayTest ..........   Passed    0.03 sec
+      Start 23: gtLightningVLFTest
+23/41 Test #23: gtLightningVLFTest ...............   Passed    0.08 sec
+      Start 24: gtAdiabaticCoordsTest
+24/41 Test #24: gtAdiabaticCoordsTest ............   Passed    1.27 sec
+      Start 25: gtParticleImpactsTest
+25/41 Test #25: gtParticleImpactsTest ............   Passed    7.74 sec
+      Start 26: gtCOrbitOpsTest
+26/41 Test #26: gtCOrbitOpsTest ..................   Passed    0.06 sec
+      Start 27: gtCPlasmaSphTest
+27/41 Test #27: gtCPlasmaSphTest .................   Passed    0.11 sec
+      Start 28: gtLightningTest
+28/41 Test #28: gtLightningTest ..................   Passed    0.01 sec
+      Start 29: gtSEPModelTest
+29/41 Test #29: gtSEPModelTest ...................   Passed  245.27 sec
+      Start 30: gtFloatMathTest
+30/41 Test #30: gtFloatMathTest ..................   Passed    0.00 sec
+      Start 31: gtOrbitPropTest
+31/41 Test #31: gtOrbitPropTest ..................   Passed    0.06 sec
+      Start 32: gtShieldDose2Test
+32/41 Test #32: gtShieldDose2Test ................   Passed    1.35 sec
+      Start 33: gtRadEnvMgrTest
+33/41 Test #33: gtRadEnvMgrTest ..................   Passed    0.02 sec
+      Start 34: gtRadEnvTest
+34/41 Test #34: gtRadEnvTest .....................   Passed  110.10 sec
+      Start 35: gtCConjunctionsTest
+35/41 Test #35: gtCConjunctionsTest ..............***Exception: SegFault  0.35 sec
+      Start 36: gtCutOffModelTest
+36/41 Test #36: gtCutOffModelTest ................   Passed    0.03 sec
+      Start 37: gtCXmitVLFInfoTest
+37/41 Test #37: gtCXmitVLFInfoTest ...............   Passed    0.01 sec
+      Start 38: gtCXmitVLFGridTest
+38/41 Test #38: gtCXmitVLFGridTest ...............   Passed    0.01 sec
+      Start 39: gtCXmitVLFTest
+39/41 Test #39: gtCXmitVLFTest ...................   Passed    0.08 sec
+      Start 40: gtIriPlusDeTest
+40/41 Test #40: gtIriPlusDeTest ..................   Passed   12.48 sec
+      Start 41: gtIri2007Test
+41/41 Test #41: gtIri2007Test ....................   Passed   12.42 sec
+
+93% tests passed, 3 tests failed out of 41
+
+Total Test time (real) = 1538.87 sec
+
+The following tests FAILED:
+	  7 - cnjTest (SEGFAULT)
+	 19 - satMagCover (Failed)
+	 35 - gtCConjunctionsTest (SEGFAULT)
+Errors while running CTest
+make: *** [test] Error 8
+
+  4.3: make install
+[  2%] Built target spwxcommon
+[  4%] Built target spwxcommon_shared
+[  5%] Built target Threading
+[  5%] Built target Threading_shared
+[  5%] Built target CoordXform_shared
+[  6%] Built target CoordXform
+[  6%] Built target GeoSpaceTime
+[  7%] Built target GeoSpaceTime_shared
+[  7%] Built target TimeConv_c
+[  7%] Built target CTimeValue_shared
+[  8%] Built target TimeConv_c_shared
+[  9%] Built target CTimeValue
+[  9%] Built target VectorOps
+[  9%] Built target VectorOps_shared
+[  9%] Built target FloatMath
+[ 10%] Built target FloatMath_shared
+[ 10%] Built target AbMatrix
+[ 10%] Built target AbMatrix_shared
+[ 11%] Built target fio_shared
+[ 11%] Built target fio
+[ 11%] Built target UnitTestOutput
+[ 12%] Built target UnitTestOutput_shared
+[ 23%] Built target CMagfieldF
+[ 25%] Built target cmagfield_shared
+[ 26%] Built target cmagfield
+[ 27%] Built target CutOffModel
+[ 27%] Built target CutOffModel_shared
+[ 28%] Built target saa_shared
+[ 29%] Built target saa
+[ 29%] Built target cammice
+[ 30%] Built target cammice_shared
+[ 31%] Built target shielddose2
+[ 32%] Built target shielddose2_shared
+[ 34%] Built target radenv
+[ 37%] Built target radenv_shared
+[ 38%] Built target adiabat
+[ 39%] Built target adiabat_shared
+[ 40%] Built target orbitprop
+[ 41%] Built target orbitprop_shared
+[ 41%] Built target Add_shared
+[ 42%] Built target Add
+[ 43%] Built target lightning
+[ 43%] Built target lightning_shared
+[ 43%] Built target LightningVLF
+[ 44%] Built target LightningVLF_shared
+[ 46%] Built target conjunction
+[ 46%] Built target OrbitOps_shared
+[ 47%] Built target XmitVLF_shared
+[ 50%] Built target conjunction_shared
+[ 51%] Built target OrbitOps
+[ 52%] Built target RefFrame
+[ 52%] Built target RefFrame_shared
+[ 55%] Built target nehiem_shared
+[ 58%] Built target nehiem
+[ 59%] Built target sep
+[ 61%] Built target sep_shared
+[ 61%] Built target gcr
+[ 62%] Built target gcr_shared
+[ 63%] Built target iri2007_shared
+[ 65%] Built target iri2007
+[ 65%] Built target diffequil
+[ 65%] Built target iriplusde
+[ 66%] Built target diffequil_shared
+[ 67%] Built target iriplusde_shared
+[ 68%] Built target ParticleImpacts
+[ 70%] Built target ParticleImpacts_shared
+[ 71%] Built target VehicleTemperature_shared
+[ 73%] Built target VehicleTemperature
+[ 73%] Built target PlasmaSph
+[ 74%] Built target PlasmaSph_shared
+[ 75%] Built target XmitVLF
+[ 75%] Built target oeTest
+[ 76%] Built target reTest
+[ 76%] Built target adcTest
+[ 77%] Built target opTest
+[ 78%] Built target cnjTest
+[ 79%] Built target gcrTest
+[ 80%] Built target addTest
+[ 81%] Built target iriTest
+[ 82%] Built target ooTest
+[ 83%] Built target psTest
+[ 83%] Built target piTest
+[ 84%] Built target lvTest
+[ 84%] Built target saaTest
+[ 84%] Built target sd2Test
+[ 85%] Built target irideTest
+[ 85%] Built target logErrors
+[ 86%] Built target vtTest
+[ 87%] Built target mfTest
+[ 87%] Built target cnhTest
+[ 88%] Built target cWrappersTest
+[ 89%] Built target satMagCover
+[ 90%] Built target gtVehicleTemperatureTest
+[ 91%] Built target gtSAATransitTest
+[ 91%] Built target gtGalacticCosmicRayTest
+[ 92%] Built target gtLightningVLFTest
+[ 92%] Built target gtAdiabaticCoordsTest
+[ 92%] Built target gtParticleImpactsTest
+[ 93%] Built target gtCOrbitOpsTest
+[ 93%] Built target gtCPlasmaSphTest
+[ 93%] Built target gtLightningTest
+[ 94%] Built target gtSEPModelTest
+[ 95%] Built target gtFloatMathTest
+[ 95%] Built target gtOrbitPropTest
+[ 95%] Built target gtShieldDose2Test
+[ 96%] Built target gtRadEnvMgrTest
+[ 96%] Built target gtRadEnvTest
+[ 97%] Built target gtRadEnvExtendedTest
+[ 97%] Built target gtRadEnvMagfieldExtendedTest
+[ 97%] Built target gtCConjunctionsTest
+[ 97%] Built target gtCutOffModelTest
+[ 98%] Built target gtCXmitVLFInfoTest
+[ 98%] Built target gtCXmitVLFGridTest
+[ 98%] Built target gtCXmitVLFTest
+[ 98%] Built target gtIriPlusDeTest
+[100%] Built target gtIri2007Test
+Install the project...
+-- Install configuration: ""
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libspwxcommon.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libspwxcommon.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libspwxcommon.a
+-- Installing: /home/dantopa/scratch/SpWx/include/abmatrix.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CoordXform.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CTimeValue.h
+-- Installing: /home/dantopa/scratch/SpWx/include/TimeConv_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/FloatMath.h
+-- Installing: /home/dantopa/scratch/SpWx/include/GeoSpaceTime.h
+-- Installing: /home/dantopa/scratch/SpWx/include/Hdf5ToolKit.h
+-- Installing: /home/dantopa/scratch/SpWx/include/SpWxTypes.h
+-- Installing: /home/dantopa/scratch/SpWx/include/StkMutex.h
+-- Installing: /home/dantopa/scratch/SpWx/include/UnitTestOutput.h
+-- Installing: /home/dantopa/scratch/SpWx/include/VectorOps.h
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libThreading.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libThreading.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libThreading.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libCoordXform.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libCoordXform.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libCoordXform.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libGeoSpaceTime.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libGeoSpaceTime.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libGeoSpaceTime.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libCTimeValue.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libCTimeValue.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libTimeConv_c.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libTimeConv_c.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libCTimeValue.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libTimeConv_c.a
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/timeConv.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libVectorOps.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libVectorOps.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libVectorOps.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libFloatMath.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libFloatMath.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libFloatMath.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libAbMatrix.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libAbMatrix.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libAbMatrix.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libfio.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libfio.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libfio.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libUnitTestOutput.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libUnitTestOutput.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libUnitTestOutput.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libcmagfield.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libcmagfield.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libcmagfield.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/cmagfield.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utCMagfield_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libCutOffModel.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libCutOffModel.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libCutOffModel.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/cutoffModel.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utCutoffModel_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libsaa.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libsaa.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libsaa.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/saaTransit.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utSaaTransit_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libcammice.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libcammice.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libcammice.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libshielddose2.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libshielddose2.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libshielddose2.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/shieldDose2.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utShieldDose2_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libradenv.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libradenv.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libradenv.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/radEnv.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utRadEnv_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libadiabat.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libadiabat.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libadiabat.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/liborbitprop.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/liborbitprop.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/liborbitprop.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/orbitProp.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utOrbitProp_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libAdd.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libAdd.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libAdd.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/liblightning.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/liblightning.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/liblightning.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libLightningVLF.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libLightningVLF.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libLightningVLF.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/lightningVLF.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utLightningVLF_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libconjunction.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libconjunction.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libconjunction.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libOrbitOps.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libOrbitOps.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libOrbitOps.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/orbitOps.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utOrbitOps_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libRefFrame.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libRefFrame.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libRefFrame.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/refFrame.py
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/tests/utRefFrame_test.py
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libnehiem.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libnehiem.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libnehiem.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libsep.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libsep.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libsep.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libgcr.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libgcr.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libgcr.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libiri2007.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libiri2007.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libiri2007.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libiriplusde.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libiriplusde.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libiriplusde.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libParticleImpacts.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libParticleImpacts.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libParticleImpacts.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libVehicleTemperature.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libVehicleTemperature.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libVehicleTemperature.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libdiffequil.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libdiffequil.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libdiffequil.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libPlasmaSph.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libPlasmaSph.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libPlasmaSph.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libXmitVLF.a
+-- Installing: /home/dantopa/scratch/SpWx/lib64/libXmitVLF.so
+-- Set runtime path of "/home/dantopa/scratch/SpWx/lib64/libXmitVLF.so" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/bin/cWrappersTest
+-- Set runtime path of "/home/dantopa/scratch/SpWx/bin/cWrappersTest" to "$ORIGIN/../lib64"
+-- Installing: /home/dantopa/scratch/SpWx/bin/satMagCover
+-- Set runtime path of "/home/dantopa/scratch/SpWx/bin/satMagCover" to "$ORIGIN/../lib64"
+-- Up-to-date: /home/dantopa/scratch/SpWx/include
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionFieldLine.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionVLF.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CParticleEnum.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CDiffEquilEnums.h
+-- Installing: /home/dantopa/scratch/SpWx/include/COrbitPropSGP4.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CVehicleTemperature.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionObject.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionFootPrint.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionLShell.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CSEPDatabase.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CIri2007.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CSAAEnums.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CPlasmaSphereEnums.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CXmitVLFEnum.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CMagFieldIGRF.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionObjectGround.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CVTempEarthRejectRad.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionObjectCelestial.h
+-- Installing: /home/dantopa/scratch/SpWx/include/COrbitOps_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/COrbitPropEnums_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CCutOffModel.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRadEnv_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CMagFieldErrors.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CParticleImpacts.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionLineOfSight.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRadEnvMgr.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CAdNeuralNetCoordCalc.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CIri2007Db.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionObjectSpace.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionQuadrasphere.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CParticleMeteorEnviron.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CVTempErsrStructs.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CMagfield.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionHemisphere.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionObjectTarget.h
+-- Installing: /home/dantopa/scratch/SpWx/include/GenericModel.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunction.h
+-- Installing: /home/dantopa/scratch/SpWx/include/COrbitPropSateph.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CAdAlphaLmCoordCalc.h
+-- Installing: /home/dantopa/scratch/SpWx/include/VMBoostrap.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CLightningVLF.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CAdKPhiCoordCalc.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CPlasmaSphere.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CAdiabaticCoords.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CSolarEnergeticParticleModel.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CIriPlusDeEnums.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionEnum.h
+-- Installing: /home/dantopa/scratch/SpWx/include/VMTypes.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CAdd.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CSAATransit_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CMagFieldLib.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionGeographic.h
+-- Installing: /home/dantopa/scratch/SpWx/include/COrbitOps.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CXmitVLFGrid.h
+-- Installing: /home/dantopa/scratch/SpWx/include/NehiemEnv.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CSAATransit.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CVTempDirectSolarRad.h
+-- Installing: /home/dantopa/scratch/SpWx/include/COrbitProp_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CAdKHMinCoordCalc.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CVTempEarthReflSolarRad.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CIriPlusDe.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CIri2007Enums.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRoederPlasma.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CLightningVLF_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CMagfieldEnum.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CXmitVLF.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CMagFieldExtern.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRadEnvDB.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CEarthOrient.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CMagfield_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CParticleDebrisEnviron.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CLightningClimatology.h
+-- Installing: /home/dantopa/scratch/SpWx/include/COrbitProp.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CShieldDoseDb.h
+-- Installing: /home/dantopa/scratch/SpWx/include/GenericModelEnum.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRadEnvSatGrid.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CParticleEnviron.h
+-- Installing: /home/dantopa/scratch/SpWx/include/NehiemSat.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CMagFieldMparts.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CParticle.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CNEHIEM.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CShieldDose2.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CIri2007Extern.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionObjectLineOfSight.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CNEHIEMDatabase.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CShieldDoseEnums.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRadEnvModelBase.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CShieldDose2_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CVTempVtGlobalDefines.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CCutOffModel_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CConjunctionElevationAngle.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRoederPlasmaEnum.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CSAAMap.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CParticleAstronEnviron.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRefFrame_c.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CVTempVtModel.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CDiffEquil.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CXapsosSEP.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRadEnvEnums.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CNEHIEM_Enums.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CSEPModel.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CRefFrame.h
+-- Installing: /home/dantopa/scratch/SpWx/include/CGalacticCosmicRay.h
+-- Installing: /home/dantopa/scratch/SpWx/python/spwx/__init__.py
+-- Installing: /home/dantopa/scratch/SpWx/python/setup.py
+-- Installing: /home/dantopa/scratch/SpWx/python/examples
+-- Installing: /home/dantopa/scratch/SpWx/python/examples/orbitprop_example.py
+-- Installing: /home/dantopa/scratch/SpWx/python/examples/computeLm_example.py
+-- Installing: /home/dantopa/scratch/SpWx/data
+-- Installing: /home/dantopa/scratch/SpWx/data/nehDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/cammiceDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/radiationBeltDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/fastPhi_net.mat
+-- Installing: /home/dantopa/scratch/SpWx/data/iri2007DB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/xmitVlfDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/galacticCosmicRayDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/saaDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/colmanVlf660DB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/igrfDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/sd2DB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/sepDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/meteorDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/sepXapsosDB.h5
+-- Installing: /home/dantopa/scratch/SpWx/data/fast_hmin_net.mat
+-- Installing: /home/dantopa/scratch/SpWx/lib64/spwx/cmake/spwx.cmake
+-- Installing: /home/dantopa/scratch/SpWx/lib64/spwx/cmake/spwx-noconfig.cmake
+-- Installing: /home/dantopa/scratch/SpWx/lib64/spwx/cmake/spwxConfig.cmake
+-- Installing: /home/dantopa/scratch/SpWx/lib64/spwx/cmake/spwxConfigVersion.cmake
+
+Step 5: tree  -L 3
+tee: /build/build-time.txt: No such file or directory
+time to build SpWx: 0h:33m:22s
