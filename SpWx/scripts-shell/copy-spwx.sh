@@ -36,8 +36,8 @@ sub_step_counter=0
 
 pause
 
-    sub_step "git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source"
-              git clone https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
+    sub_step "git pull https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source"
+              git pull https://swe-gitlab.aer-govcloud.net/afrl-support/SpWx.git source
 
     sub_step "export timerFile=${localSpWx}/build-time.txt"
               export timerFile=${localSpWx}/build-time.txt
@@ -54,10 +54,8 @@ pause
     sub_step "grab hash for commit: git rev-parse --verify HEAD"
                                     git rev-parse --verify HEAD
 
-new_step "Check cmake version"
+new_step "Check cmake version: cmake_minimum_required = CMake 3.14"
 sub_step_counter=0
-# CMake Error at CMakeLists.txt:25 (cmake_minimum_required):
-#  CMake 3.14 or higher is required.  You are running version 2.8.12.2
 
     sub_step "cmake3 --version"
               cmake3 --version
@@ -77,7 +75,7 @@ sub_step_counter=0
     sub_step "cmake3 ../source -DCMAKE_INSTALL_PREFIX=../"
               cmake3 ../source -DCMAKE_INSTALL_PREFIX=../
 
-new_step "make"
+new_step "make; make test; make install"
 sub_step_counter=0
 
     sub_step "make"
@@ -88,8 +86,6 @@ sub_step_counter=0
 
     sub_step "make install"
               make install
-
-new_step "Output stream is in ${HOME}/copy-spwx.txt"
 
 new_step "Run benchmarks"
 sub_step_counter=0
@@ -104,37 +100,39 @@ export benchmarkSeconds=${SECONDS}
 
 new_step "Fortran benchmarks"
 sub_step_counter=0
-    sub_step "create cmag.benchmark.fortran: ./build/Models/bin/satMagCover"
-                                             ./build/Models/bin/satMagCover
+    sub_step "create cmag.benchmark.fortran: ./bin/satMagCover"
+                                             ./bin/satMagCover
 
     sub_step "verify file was created: ls -alh cmag.benchmark.fortran"
                                        ls -alh cmag.benchmark.fortran
 
-    sub_step "create cmag.benchmark.fortran.transform: ./build/Models/bin/satMagCover transform"
-                                                       ./build/Models/bin/satMagCove transform
+    sub_step "create cmag.benchmark.fortran.transform: ./bin/satMagCover transform"
+                                                       ./bin/satMagCover transform
 
     sub_step "verify file was created: ls -alh cmag.benchmark.transform.fortran"
                                        ls -alh cmag.benchmark.transform.fortran
 
 new_step "C++ benchmarks"
 sub_step_counter=0
-    sub_step "create cmag.benchmark.cpp: ./build/Models/bin/satMagCover cpp"
-                                         ./build/Models/bin/satMagCover cpp
+    sub_step "create cmag.benchmark.cpp: ./bin/satMagCover cpp"
+                                         ./bin/satMagCover cpp
 
     sub_step "verify file was created: ls -alh cmag.benchmark.cpp"
                                        ls -alh cmag.benchmark.cpp
 
-    sub_step "create cmag.benchmark.cpp.transform: ./build/Models/bin/satMagCover transform cpp"
-                                                   ./build/Models/bin/satMagCover transform cpp
+    sub_step "create cmag.benchmark.cpp.transform: ./bin/satMagCover transform cpp"
+                                                   ./bin/satMagCover transform cpp
 
     sub_step "verify file was created: ls -alh cmag.benchmark.transform.cpp"
                                        ls -alh cmag.benchmark.transform.cpp
 
-export benchmarkSeconds=$((${SECONDS}-${benchmarkSeconds}))
-printf 'time to run benchmarks: %dh:%dm:%ds\n' $((${benchmarkSeconds}/3600)) $((${benchmarkSeconds}%3600/60)) $((${benchmarkSeconds}%60)) | tee -a ${timerFile}
-
 new_step "SHA256: find . -name "*benchmark*" | xargs shasum -a 256"
                   find . -name "*benchmark*" | xargs shasum -a 256
+
+new_step "Output stream is in ${HOME}/copy-spwx.txt"
+
+export benchmarkSeconds=$((${SECONDS}-${benchmarkSeconds}))
+printf 'time to run benchmarks: %dh:%dm:%ds\n' $((${benchmarkSeconds}/3600)) $((${benchmarkSeconds}%3600/60)) $((${benchmarkSeconds}%60)) | tee -a ${timerFile}
 
 new_step "Run time:"
 export buildSeconds=$((${SECONDS}-${buildSeconds}))
