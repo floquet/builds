@@ -1,0 +1,57 @@
+yum deplist -v deltarpm
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.grid.uchicago.edu
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: linux-mirrors.fnal.gov
+ * updates: mirror.genesisadaptive.com
+pkgsack time: 0.199
+Searching pkgSack for dep: libbz2.so.1()(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: liblzma.so.5()(64bit)
+Searching pkgSack for dep: liblzma.so.5(XZ_5.0)(64bit)
+Searching pkgSack for dep: librpm.so.3()(64bit)
+Searching pkgSack for dep: librpmio.so.3()(64bit)
+Searching pkgSack for dep: libz.so.1()(64bit)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: deltarpm.x86_64 3.6-3.el7
+  dependency: libbz2.so.1()(64bit)
+   provider: bzip2-libs.x86_64 1.0.6-13.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: liblzma.so.5()(64bit)
+   provider: xz-libs.x86_64 5.2.2-1.el7
+  dependency: liblzma.so.5(XZ_5.0)(64bit)
+   provider: xz-libs.x86_64 5.2.2-1.el7
+  dependency: librpm.so.3()(64bit)
+   provider: rpm-libs.x86_64 4.11.3-48.el7_9
+   provider: rpm-libs.x86_64 4.11.3-46.el7_9
+   provider: rpm-libs.x86_64 4.11.3-45.el7
+  dependency: librpmio.so.3()(64bit)
+   provider: rpm-libs.x86_64 4.11.3-48.el7_9
+   provider: rpm-libs.x86_64 4.11.3-46.el7_9
+   provider: rpm-libs.x86_64 4.11.3-45.el7
+  dependency: libz.so.1()(64bit)
+   provider: zlib.x86_64 1.2.7-19.el7_9
+   provider: zlib.x86_64 1.2.7-18.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

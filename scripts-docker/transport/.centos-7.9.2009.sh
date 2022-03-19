@@ -9,10 +9,15 @@ export    machine="MacBookPro16,1"
 export    moniker="quaxolotl"
 export      owner="docker"
 
-# #  H A R D W A R E   D E T A I L S
+# #  H A R D W A R E   D E T A I L S  ehecoatl
 export serial_num="C02CR18HMD6T"
 export firmware_v="1715.60.5.0.0 (iBridge: 19.16.10647.0.0,0)"
 export        MAC="ac:de:48:00:11:22"
+
+# #  H A R D W A R E   D E T A I L S xiuhcoatl
+export serial_num="C07ZQ2VJJYW0"
+export firmware_v="1715.81.2.0.0 (iBridge: 19.16.10744.0.0,0)"
+export        MAC="f0:18:98:f2:dd:10"
 
 # # I D E N T I F Y   S O F T W A R E
 export         os="linux"
@@ -45,8 +50,8 @@ export      local_spack="${HOME}/spacktivity/centos-7.9.2009-SpWx-docker-spack"
 # #  C O M P I L E R S
 export gcc_system_compiler="gcc@11.2.0"
 
-# If you want to use any of the CDF command-line utilitites (e.g. cdfedit, 
-# cdfexport, etc.), we strongly encourage you to set the CDF environment 
+# If you want to use any of the CDF command-line utilitites (e.g. cdfedit,
+# cdfexport, etc.), we strongly encourage you to set the CDF environment
 # variables defined in the CDF definition files.  Once the environment variables
 # defined, you can invoke the CDF utility of interest just by typing the utility
 # name.

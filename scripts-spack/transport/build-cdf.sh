@@ -1,7 +1,10 @@
 #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
+# $ source ${repo_scripts_spack}/transport/build-cdf.sh
 export elapsed=${SECONDS}
+
+source ${repos_scripts_spack}/shared/common-header.sh
 
 # input parameters
 # specify CDF version {in two format) and library folder
@@ -12,26 +15,11 @@ export cdfvdots="3.8.0"
 export dircdfInstall="${HOME}/apps/cdf-${cdfvdots}"
 export CDF_LIB="${dircdfInstall}/lib"
 
-# counts steps in batch process
-export counter=0
-function new_step(){
-    counter=$((counter+1))
-    echo ""
-    echo "$(date +%Y-%m-%d\ %H:%M): Step ${counter}: ${1}"
-}
-
-export clicker=0
-function sub_step(){
-    clicker=$((clicker+1))
-    echo ""
-    echo " ${counter}.${clicker}: ${1}"
-}
-
 new_step "mkdir -p ${dircdfInstall}"
           mkdir -p ${dircdfInstall}
 
 new_step "Grab tarball and extract files"
-clicker=0
+sub_step_counter=0
 
     sub_step "cd ${HOME}/apps"
               cd ${HOME}/apps
@@ -52,7 +40,7 @@ clicker=0
               cd cdf${cdfvunderscore}-dist
 
 new_step "Install cdf ${cdfvdots}"
-clicker=0
+sub_step_counter=0
 
     sub_step "make OS=linux ENV=gnu FORTRAN=no SHARED=yes all"
               make OS=linux ENV=gnu FORTRAN=no SHARED=yes all
@@ -60,11 +48,17 @@ clicker=0
     sub_step "make install INSTALLDIR=\${dircdfInstall}=${dircdfInstall}"
               make install INSTALLDIR=${dircdfInstall}
 
+    sub_step "cd ${HOME}/apps"
+              cd ${HOME}/apps
+
 new_step "ENV variable \${CDF_LIB} = ${CDF_LIB}"
+          echo 'export CDF_LIB=${CDF_LIB}'
 
 new_step "rm cdf${cdfvunderscore}-dist-all.tar.gz"
+          rm cdf${cdfvunderscore}-dist-all.tar.gz
 
 new_step "rm -r cdf${cdfvunderscore}-dist/"
+          rm -r cdf${cdfvunderscore}-dist/
 
 new_step "print wall time used"
     export elapsed=$((${SECONDS}-${elapsed}))
