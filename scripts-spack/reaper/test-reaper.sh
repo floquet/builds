@@ -75,7 +75,7 @@ new_step "installs"
           spack find --long --deps --show-full-compiler  >> ${myFile}
 
 new_step "sweeping ${#lOptions[@]} options for spack find..."
-export lOptions=("bootstrap" "explicit" "implicit" "json" "missing" "namespace" "only-missing" "paths" "variants" "unknown" "very-long")
+export lOptions=("explicit" "implicit" "json" "missing" "namespace" "only-missing" "paths" "variants" "unknown" "very-long")
 export clicker=0
 for o in ${lOptions[@]}; do
     #sub_step "spack find ${o}..."
@@ -84,6 +84,12 @@ for o in ${lOptions[@]}; do
     sub_step "spack find --${o} >> ${myFile}"
               spack find --${o} >> ${myFile}
 done
+
+    myFile="${dirInstalls}/spack-bootstrap-find.txt"
+    file_header "${myFile}"
+    sub_step "spack --bootstrap find >> ${myFile}"
+              spack --bootstrap find >> ${myFile}
+
 
 new_step "Sweep ${#lConfig[@]} configuration properties with get"
 export clicker=0
