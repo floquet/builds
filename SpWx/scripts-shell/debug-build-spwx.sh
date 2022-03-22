@@ -3,7 +3,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Feb 16 10:26:35 MST 2022
 
-# source /repos/github/builds/SpWx/scripts-shell/magfield-compile-run.sh 2>&1 | tee -a ${scratch}/copy-spwx.txt
+# source /repos/github/builds/SpWx/scripts-shell/debug-build-spwx.sh 2>&1 | tee -a ${scratch}/debug-build-spwx.txt
+export whoiam="debug-build-spwx.txt"
 source ${repo_build}/scripts-spack/shared/common-header.sh
 
 export buildSeconds=${SECONDS}
@@ -20,6 +21,9 @@ sub_step_counter=0
 
     sub_step "Verify SpWx directory"
               echo "\${localSpWx}=${localSpWx}"
+
+    sub_step "Verify output file"
+              echo "\${whoiam}=${whoiam}"
 
     sub_step 'cd "${localSpWx}/source"'
               cd "${localSpWx}/source"
@@ -136,10 +140,14 @@ sub_step_counter=0
 new_step 'SHA256: find . -name "cpp.benchmark*" | xargs shasum -a 256'
                   find . -name "cpp.benchmark*" | xargs shasum -a 256
 
-new_step "mv ${scratch}/copy-spwx.txt ${scratch}/$(uname -n)-${ymdtf}-copy-spwx.txt"
-          mv ${scratch}/copy-spwx.txt ${scratch}/$(uname -n)-${ymdtf}-copy-spwx.txt
+new_step "mv ${scratch}/${whoiam} ${scratch}/$(uname -n)-${ymdtf}-${whoiam}"
+          mv ${scratch}/${whoiam} ${scratch}/$(uname -n)-${ymdtf}-${whoiam}
 
-new_step "Output stream is in ${scratch}/$(uname -n)-${ymdtf}-copy-spwx.txt"
+new_step "cp ${scratch}/${whoiam} ${repo_build}/SpWx/working-notes/."
+          cp ${scratch}/${whoiam} ${repo_build}/SpWx/working-notes/.
+
+${repo_build}/SpWx/working-notes
+new_step "Output stream is in ${scratch}/$(uname -n)-${ymdtf}-${whoiam}"
 
 export benchmarkSeconds=$((${SECONDS}-${benchmarkSeconds}))
 printf 'time to run benchmarks: %dh:%dm:%ds\n' $((${benchmarkSeconds}/3600)) $((${benchmarkSeconds}%3600/60)) $((${benchmarkSeconds}%60)) | tee -a ${timerFile}
