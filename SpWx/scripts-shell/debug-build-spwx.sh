@@ -140,11 +140,11 @@ sub_step_counter=0
 new_step 'SHA256: find . -name "cpp.benchmark*" | xargs shasum -a 256'
                   find . -name "cpp.benchmark*" | xargs shasum -a 256
 
-new_step "mv ${scratch}/${whoiam} ${scratch}/$(uname -n)-${ymdtf}-${whoiam}"
-          mv ${scratch}/${whoiam} ${scratch}/$(uname -n)-${ymdtf}-${whoiam}
-
 new_step "cp ${scratch}/${whoiam} ${repo_build}/SpWx/working-notes/."
           cp ${scratch}/${whoiam} ${repo_build}/SpWx/working-notes/.
+
+new_step "mv ${scratch}/${whoiam} ${scratch}/$(uname -n)-${ymdtf}-${whoiam}"
+          mv ${scratch}/${whoiam} ${scratch}/$(uname -n)-${ymdtf}-${whoiam}
 
 ${repo_build}/SpWx/working-notes
 new_step "Output stream is in ${scratch}/$(uname -n)-${ymdtf}-${whoiam}"
