@@ -1,0 +1,623 @@
+Tue Mar 22 11:00:48 MDT 2022, [1m/repos/github/builds/SpWx/scripts-shell/debug-build-spwx.sh(B[m
+Tue Mar 22 11:00:48 MDT 2022, [1m/repos/github/builds/scripts-spack/shared/common-header.sh(B[m
+
+Step 1: Copy a local version of the source directory and then update from the repo
+
+  1.1: export localSpWx="${scratch}/SpWx"
+
+  1.2: Verify SpWx directory
+${localSpWx}=/home/dantopa/scratch/SpWx
+
+  1.3: cd "${localSpWx}/source"
+
+  1.4: pwd = /home/dantopa/scratch/SpWx/source
+
+press RETURN to continue; ctrl+c to stop
+
+  1.5: git pull
+Already up-to-date.
+
+  1.6: export timerFile=/home/dantopa/scratch/SpWx/build-time.txt
+
+  1.7: git checkout magfield_update
+Already on 'magfield_update'
+
+Step 2: Verify configuration
+
+  2.1: git branch -a
+* magfield_update
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/SpWx_version_1.9_branch
+  remotes/origin/branches/SpWx_version_1.1_release
+  remotes/origin/branches/SpWx_version_1.2_release
+  remotes/origin/branches/SpWx_version_1.3_release
+  remotes/origin/branches/SpWx_version_1.4.1_release
+  remotes/origin/branches/SpWx_version_1.4_release
+  remotes/origin/branches/SpWx_version_1.5_release
+  remotes/origin/branches/SpWx_version_1.6_release
+  remotes/origin/branches/SpWx_version_1.7_release
+  remotes/origin/branches/SpWx_version_1.8_release
+  remotes/origin/magfield_update
+  remotes/origin/master
+
+  2.2: git status
+# On branch magfield_update
+nothing to commit, working directory clean
+
+  2.3: grab hash for commit: git rev-parse --verify HEAD
+cbaa3570c583e5fa1f148b2159497b96fc3b736e
+
+  2.4: grab hash for commit: git log --pretty=format:'%h' -n 1
+cbaa357
+  2.5: gcc --version
+gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-44)
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+  2.6: lsb_release -a
+LSB Version:	:core-4.1-amd64:core-4.1-noarch:cxx-4.1-amd64:cxx-4.1-noarch:desktop-4.1-amd64:desktop-4.1-noarch:languages-4.1-amd64:languages-4.1-noarch:printing-4.1-amd64:printing-4.1-noarch
+Distributor ID:	CentOS
+Description:	CentOS Linux release 7.9.2009 (Core)
+Release:	7.9.2009
+Codename:	Core
+
+Step 3: Check cmake version: cmake_minimum_required = CMake 3.14
+
+  3.1: cmake3 --version
+cmake3 version 3.17.5
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+Step 4: Build SpWx
+
+  4.1: cd /home/dantopa/scratch/SpWx
+
+  4.2: mkdir build; cd build
+mkdir: cannot create directory ‘build’: File exists
+
+  4.3: export timerFile=/home/dantopa/scratch/SpWx/build/build-time.txt
+
+  4.4: cmake3 ../source -DDEFINE_DEBUG=ON -DCMAKE_INSTALL_PREFIX=../
+-- HDF5: Using hdf5 compiler wrapper to determine C configuration
+-- HDF5: Using hdf5 compiler wrapper to determine CXX configuration
+CMake Warning (dev) at CMakeLists.txt:258 (message):
+  lightning_climatology.h5 install skipped due to size
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+
+ ------- "make" to build. "make install" and/or find_package(spwx) to use. -------
+
+
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    DEFINE_DEBUG
+
+
+-- Build files have been written to: /home/dantopa/scratch/SpWx/build
+
+Step 5: make; make test; make install
+
+  5.1: make
+[  2%] Built target spwxcommon
+[  4%] Built target spwxcommon_shared
+[  5%] Built target Threading
+[  5%] Built target Threading_shared
+[  5%] Built target CoordXform_shared
+[  6%] Built target CoordXform
+[  6%] Built target GeoSpaceTime
+[  7%] Built target GeoSpaceTime_shared
+[  7%] Built target TimeConv_c
+[  7%] Built target CTimeValue_shared
+[  8%] Built target TimeConv_c_shared
+[  9%] Built target CTimeValue
+[  9%] Built target VectorOps
+[  9%] Built target VectorOps_shared
+[  9%] Built target FloatMath
+[ 10%] Built target FloatMath_shared
+[ 10%] Built target AbMatrix
+[ 10%] Built target AbMatrix_shared
+[ 11%] Built target fio_shared
+[ 11%] Built target fio
+[ 11%] Built target UnitTestOutput
+[ 12%] Built target UnitTestOutput_shared
+[ 23%] Built target CMagfieldF
+[ 25%] Built target cmagfield_shared
+[ 26%] Built target cmagfield
+[ 27%] Built target CutOffModel
+[ 27%] Built target CutOffModel_shared
+[ 28%] Built target saa_shared
+[ 29%] Built target saa
+[ 29%] Built target cammice
+[ 30%] Built target cammice_shared
+[ 31%] Built target shielddose2
+[ 32%] Built target shielddose2_shared
+[ 34%] Built target radenv
+[ 37%] Built target radenv_shared
+[ 38%] Built target adiabat
+[ 39%] Built target adiabat_shared
+[ 40%] Built target orbitprop
+[ 41%] Built target orbitprop_shared
+[ 41%] Built target Add_shared
+[ 42%] Built target Add
+[ 43%] Built target lightning
+[ 43%] Built target lightning_shared
+[ 43%] Built target LightningVLF
+[ 44%] Built target LightningVLF_shared
+[ 46%] Built target conjunction
+[ 46%] Built target OrbitOps_shared
+[ 47%] Built target XmitVLF_shared
+[ 50%] Built target conjunction_shared
+[ 51%] Built target OrbitOps
+[ 52%] Built target RefFrame
+[ 52%] Built target RefFrame_shared
+[ 55%] Built target nehiem_shared
+[ 58%] Built target nehiem
+[ 59%] Built target sep
+[ 61%] Built target sep_shared
+[ 61%] Built target gcr
+[ 62%] Built target gcr_shared
+[ 63%] Built target iri2007_shared
+[ 65%] Built target iri2007
+[ 65%] Built target diffequil
+[ 65%] Built target iriplusde
+[ 66%] Built target diffequil_shared
+[ 67%] Built target iriplusde_shared
+[ 68%] Built target ParticleImpacts
+[ 70%] Built target ParticleImpacts_shared
+[ 71%] Built target VehicleTemperature_shared
+[ 73%] Built target VehicleTemperature
+[ 73%] Built target PlasmaSph
+[ 74%] Built target PlasmaSph_shared
+[ 75%] Built target XmitVLF
+[ 75%] Built target oeTest
+[ 76%] Built target reTest
+[ 76%] Built target adcTest
+[ 77%] Built target opTest
+[ 78%] Built target cnjTest
+[ 79%] Built target gcrTest
+[ 80%] Built target addTest
+[ 81%] Built target iriTest
+[ 82%] Built target ooTest
+[ 83%] Built target psTest
+[ 83%] Built target piTest
+[ 84%] Built target lvTest
+[ 84%] Built target saaTest
+[ 84%] Built target sd2Test
+[ 85%] Built target irideTest
+[ 85%] Built target logErrors
+[ 86%] Built target vtTest
+[ 87%] Built target mfTest
+[ 87%] Built target cnhTest
+[ 88%] Built target cWrappersTest
+[ 89%] Built target satMagCover
+[ 90%] Built target gtVehicleTemperatureTest
+[ 91%] Built target gtSAATransitTest
+[ 91%] Built target gtGalacticCosmicRayTest
+[ 92%] Built target gtLightningVLFTest
+[ 92%] Built target gtAdiabaticCoordsTest
+[ 92%] Built target gtParticleImpactsTest
+[ 93%] Built target gtCOrbitOpsTest
+[ 93%] Built target gtCPlasmaSphTest
+[ 93%] Built target gtLightningTest
+[ 94%] Built target gtSEPModelTest
+[ 95%] Built target gtFloatMathTest
+[ 95%] Built target gtOrbitPropTest
+[ 95%] Built target gtShieldDose2Test
+[ 96%] Built target gtRadEnvMgrTest
+[ 96%] Built target gtRadEnvTest
+[ 97%] Built target gtRadEnvExtendedTest
+[ 97%] Built target gtRadEnvMagfieldExtendedTest
+[ 97%] Built target gtCConjunctionsTest
+[ 97%] Built target gtCutOffModelTest
+[ 98%] Built target gtCXmitVLFInfoTest
+[ 98%] Built target gtCXmitVLFGridTest
+[ 98%] Built target gtCXmitVLFTest
+[ 98%] Built target gtIriPlusDeTest
+[100%] Built target gtIri2007Test
+
+  5.2: make install
+[  2%] Built target spwxcommon
+[  4%] Built target spwxcommon_shared
+[  5%] Built target Threading
+[  5%] Built target Threading_shared
+[  5%] Built target CoordXform_shared
+[  6%] Built target CoordXform
+[  6%] Built target GeoSpaceTime
+[  7%] Built target GeoSpaceTime_shared
+[  7%] Built target TimeConv_c
+[  7%] Built target CTimeValue_shared
+[  8%] Built target TimeConv_c_shared
+[  9%] Built target CTimeValue
+[  9%] Built target VectorOps
+[  9%] Built target VectorOps_shared
+[  9%] Built target FloatMath
+[ 10%] Built target FloatMath_shared
+[ 10%] Built target AbMatrix
+[ 10%] Built target AbMatrix_shared
+[ 11%] Built target fio_shared
+[ 11%] Built target fio
+[ 11%] Built target UnitTestOutput
+[ 12%] Built target UnitTestOutput_shared
+[ 23%] Built target CMagfieldF
+[ 25%] Built target cmagfield_shared
+[ 26%] Built target cmagfield
+[ 27%] Built target CutOffModel
+[ 27%] Built target CutOffModel_shared
+[ 28%] Built target saa_shared
+[ 29%] Built target saa
+[ 29%] Built target cammice
+[ 30%] Built target cammice_shared
+[ 31%] Built target shielddose2
+[ 32%] Built target shielddose2_shared
+[ 34%] Built target radenv
+[ 37%] Built target radenv_shared
+[ 38%] Built target adiabat
+[ 39%] Built target adiabat_shared
+[ 40%] Built target orbitprop
+[ 41%] Built target orbitprop_shared
+[ 41%] Built target Add_shared
+[ 42%] Built target Add
+[ 43%] Built target lightning
+[ 43%] Built target lightning_shared
+[ 43%] Built target LightningVLF
+[ 44%] Built target LightningVLF_shared
+[ 46%] Built target conjunction
+[ 46%] Built target OrbitOps_shared
+[ 47%] Built target XmitVLF_shared
+[ 50%] Built target conjunction_shared
+[ 51%] Built target OrbitOps
+[ 52%] Built target RefFrame
+[ 52%] Built target RefFrame_shared
+[ 55%] Built target nehiem_shared
+[ 58%] Built target nehiem
+[ 59%] Built target sep
+[ 61%] Built target sep_shared
+[ 61%] Built target gcr
+[ 62%] Built target gcr_shared
+[ 63%] Built target iri2007_shared
+[ 65%] Built target iri2007
+[ 65%] Built target diffequil
+[ 65%] Built target iriplusde
+[ 66%] Built target diffequil_shared
+[ 67%] Built target iriplusde_shared
+[ 68%] Built target ParticleImpacts
+[ 70%] Built target ParticleImpacts_shared
+[ 71%] Built target VehicleTemperature_shared
+[ 73%] Built target VehicleTemperature
+[ 73%] Built target PlasmaSph
+[ 74%] Built target PlasmaSph_shared
+[ 75%] Built target XmitVLF
+[ 75%] Built target oeTest
+[ 76%] Built target reTest
+[ 76%] Built target adcTest
+[ 77%] Built target opTest
+[ 78%] Built target cnjTest
+[ 79%] Built target gcrTest
+[ 80%] Built target addTest
+[ 81%] Built target iriTest
+[ 82%] Built target ooTest
+[ 83%] Built target psTest
+[ 83%] Built target piTest
+[ 84%] Built target lvTest
+[ 84%] Built target saaTest
+[ 84%] Built target sd2Test
+[ 85%] Built target irideTest
+[ 85%] Built target logErrors
+[ 86%] Built target vtTest
+[ 87%] Built target mfTest
+[ 87%] Built target cnhTest
+[ 88%] Built target cWrappersTest
+[ 89%] Built target satMagCover
+[ 90%] Built target gtVehicleTemperatureTest
+[ 91%] Built target gtSAATransitTest
+[ 91%] Built target gtGalacticCosmicRayTest
+[ 92%] Built target gtLightningVLFTest
+[ 92%] Built target gtAdiabaticCoordsTest
+[ 92%] Built target gtParticleImpactsTest
+[ 93%] Built target gtCOrbitOpsTest
+[ 93%] Built target gtCPlasmaSphTest
+[ 93%] Built target gtLightningTest
+[ 94%] Built target gtSEPModelTest
+[ 95%] Built target gtFloatMathTest
+[ 95%] Built target gtOrbitPropTest
+[ 95%] Built target gtShieldDose2Test
+[ 96%] Built target gtRadEnvMgrTest
+[ 96%] Built target gtRadEnvTest
+[ 97%] Built target gtRadEnvExtendedTest
+[ 97%] Built target gtRadEnvMagfieldExtendedTest
+[ 97%] Built target gtCConjunctionsTest
+[ 97%] Built target gtCutOffModelTest
+[ 98%] Built target gtCXmitVLFInfoTest
+[ 98%] Built target gtCXmitVLFGridTest
+[ 98%] Built target gtCXmitVLFTest
+[ 98%] Built target gtIriPlusDeTest
+[100%] Built target gtIri2007Test
+Install the project...
+-- Install configuration: ""
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libspwxcommon.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libspwxcommon.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/abmatrix.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CoordXform.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CTimeValue.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/TimeConv_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/FloatMath.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/GeoSpaceTime.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/Hdf5ToolKit.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/SpWxTypes.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/StkMutex.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/UnitTestOutput.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/VectorOps.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libThreading.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libThreading.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libCoordXform.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libCoordXform.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libGeoSpaceTime.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libGeoSpaceTime.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libCTimeValue.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libTimeConv_c.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libCTimeValue.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libTimeConv_c.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/timeConv.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libVectorOps.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libVectorOps.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libFloatMath.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libFloatMath.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libAbMatrix.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libAbMatrix.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libfio.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libfio.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libUnitTestOutput.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libUnitTestOutput.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libcmagfield.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libcmagfield.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/cmagfield.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utCMagfield_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libCutOffModel.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libCutOffModel.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/cutoffModel.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utCutoffModel_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libsaa.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libsaa.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/saaTransit.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utSaaTransit_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libcammice.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libcammice.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libshielddose2.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libshielddose2.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/shieldDose2.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utShieldDose2_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libradenv.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libradenv.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/radEnv.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utRadEnv_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libadiabat.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libadiabat.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/liborbitprop.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/liborbitprop.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/orbitProp.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utOrbitProp_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libAdd.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libAdd.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/liblightning.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/liblightning.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libLightningVLF.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libLightningVLF.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/lightningVLF.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utLightningVLF_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libconjunction.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libconjunction.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libOrbitOps.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libOrbitOps.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/orbitOps.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utOrbitOps_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libRefFrame.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libRefFrame.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/refFrame.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/tests/utRefFrame_test.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libnehiem.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libnehiem.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libsep.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libsep.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libgcr.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libgcr.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libiri2007.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libiri2007.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libiriplusde.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libiriplusde.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libParticleImpacts.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libParticleImpacts.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libVehicleTemperature.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libVehicleTemperature.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libdiffequil.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libdiffequil.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libPlasmaSph.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libPlasmaSph.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libXmitVLF.a
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/libXmitVLF.so
+-- Up-to-date: /home/dantopa/scratch/SpWx/bin/cWrappersTest
+-- Up-to-date: /home/dantopa/scratch/SpWx/bin/satMagCover
+-- Up-to-date: /home/dantopa/scratch/SpWx/include
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionFieldLine.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionVLF.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CParticleEnum.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CDiffEquilEnums.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/COrbitPropSGP4.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CVehicleTemperature.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionObject.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionFootPrint.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionLShell.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CSEPDatabase.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CIri2007.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CSAAEnums.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CPlasmaSphereEnums.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CXmitVLFEnum.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CMagFieldIGRF.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionObjectGround.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CVTempEarthRejectRad.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionObjectCelestial.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/COrbitOps_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/COrbitPropEnums_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CCutOffModel.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRadEnv_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CMagFieldErrors.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CParticleImpacts.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionLineOfSight.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRadEnvMgr.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CAdNeuralNetCoordCalc.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CIri2007Db.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionObjectSpace.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionQuadrasphere.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CParticleMeteorEnviron.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CVTempErsrStructs.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CMagfield.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionHemisphere.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionObjectTarget.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/GenericModel.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunction.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/COrbitPropSateph.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CAdAlphaLmCoordCalc.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/VMBoostrap.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CLightningVLF.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CAdKPhiCoordCalc.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CPlasmaSphere.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CAdiabaticCoords.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CSolarEnergeticParticleModel.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CIriPlusDeEnums.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionEnum.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/VMTypes.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CAdd.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CSAATransit_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CMagFieldLib.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionGeographic.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/COrbitOps.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CXmitVLFGrid.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/NehiemEnv.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CSAATransit.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CVTempDirectSolarRad.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/COrbitProp_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CAdKHMinCoordCalc.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CVTempEarthReflSolarRad.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CIriPlusDe.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CIri2007Enums.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRoederPlasma.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CLightningVLF_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CMagfieldEnum.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CXmitVLF.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CMagFieldExtern.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRadEnvDB.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CEarthOrient.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CMagfield_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CParticleDebrisEnviron.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CLightningClimatology.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/COrbitProp.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CShieldDoseDb.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/GenericModelEnum.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRadEnvSatGrid.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CParticleEnviron.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/NehiemSat.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CMagFieldMparts.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CParticle.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CNEHIEM.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CShieldDose2.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CIri2007Extern.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionObjectLineOfSight.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CNEHIEMDatabase.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CShieldDoseEnums.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRadEnvModelBase.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CShieldDose2_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CVTempVtGlobalDefines.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CCutOffModel_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CConjunctionElevationAngle.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRoederPlasmaEnum.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CSAAMap.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CParticleAstronEnviron.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRefFrame_c.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CVTempVtModel.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CDiffEquil.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CXapsosSEP.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRadEnvEnums.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CNEHIEM_Enums.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CSEPModel.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CRefFrame.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/include/CGalacticCosmicRay.h
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/spwx/__init__.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/setup.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/examples
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/examples/orbitprop_example.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/python/examples/computeLm_example.py
+-- Up-to-date: /home/dantopa/scratch/SpWx/data
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/nehDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/cammiceDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/radiationBeltDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/fastPhi_net.mat
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/iri2007DB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/xmitVlfDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/galacticCosmicRayDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/saaDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/colmanVlf660DB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/igrfDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/sd2DB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/sepDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/meteorDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/sepXapsosDB.h5
+-- Up-to-date: /home/dantopa/scratch/SpWx/data/fast_hmin_net.mat
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/spwx/cmake/spwx.cmake
+-- Installing: /home/dantopa/scratch/SpWx/lib64/spwx/cmake/spwx-noconfig.cmake
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/spwx/cmake/spwxConfig.cmake
+-- Up-to-date: /home/dantopa/scratch/SpWx/lib64/spwx/cmake/spwxConfigVersion.cmake
+
+Step 6: Run benchmarks
+
+  6.1: cd /home/dantopa/scratch/SpWx
+
+Step 7: remove previous benchmarks: find . -name "cpp.benchmark*" | xargs rm
+rm: missing operand
+Try 'rm --help' for more information.
+
+Step 8: Fortran benchmarks
+
+  8.1: create cmag.benchmark.fortran: ./bin/satMagCover
+
+  8.2: verify file was created: ls -alh cmag.benchmark.fortran
+-rw-rw-r-- 1 dantopa dantopa 21M Mar 22 11:02 cmag.benchmark.fortran
+
+  8.3: create cmag.benchmark.fortran.transform: ./bin/satMagCover transform
+Run with Tranform.
+--------------------------------------------
+
+  8.4: verify file was created: ls -alh cmag.benchmark.transform.fortran
+-rw-rw-r-- 1 dantopa dantopa 17M Mar 22 11:02 cmag.benchmark.transform.fortran
+
+Step 9: C++ benchmarks
+
+  9.1: create cmag.benchmark.cpp: ./bin/satMagCover usecpp
+Run with Fortran code converted to C++ on.
+--------------------------------------------
+
+  9.2: verify file was created: ls -alh cmag.benchmark.cpp
+-rw-rw-r-- 1 dantopa dantopa 21M Mar 22 11:03 cmag.benchmark.cpp
+
+  9.3: create cmag.benchmark.cpp.transform: ./bin/satMagCover transform usecpp
+Run with Tranform.
+Run with Fortran code converted to C++ on.
+--------------------------------------------
+
+  9.4: verify file was created: ls -alh cmag.benchmark.transform.cpp
+-rw-rw-r-- 1 dantopa dantopa 17M Mar 22 11:03 cmag.benchmark.transform.cpp
+
+Step 10: SHA256: find . -name "cpp.benchmark*" | xargs shasum -a 256
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  -
+
+Step 11: mv /home/dantopa/scratch/debug-build-spwx.txt /home/dantopa/scratch/e7adeba8abf5-2022-03-22~11,00,22-debug-build-spwx.txt
+
+Step 12: Output stream is in /home/dantopa/scratch/e7adeba8abf5-2022-03-22~11,00,22-copy-spwx.txt
+time to run benchmarks: 0h:2m:0s
+
+Step 13: Run time:
+time to build SpWx and run benchmarks: 0h:2m:45s

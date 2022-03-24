@@ -1,0 +1,26 @@
+Tue Mar 22 11:56:28 MDT 2022
+
+  4.4: cmake3 ../source -DDEFINE_DEBUG=ON -DCMAKE_INSTALL_PREFIX=../
+-- HDF5: Using hdf5 compiler wrapper to determine C configuration
+-- HDF5: Using hdf5 compiler wrapper to determine CXX configuration
+
+dantopa@a600ded2df45:SpWx $ gdb bin/satMagCover
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /home/dantopa/scratch/SpWx/bin/satMagCover...(no debugging symbols found)...done.
+(gdb) run usecpp
+Starting program: /home/dantopa/scratch/SpWx/bin/satMagCover usecpp
+warning: Error disabling address space randomization: Operation not permitted
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+Run with Fortran code converted to C++ on.
+--------------------------------------------
+[Inferior 1 (process 1706) exited normally]
+(gdb) 
