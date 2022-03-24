@@ -1,0 +1,34 @@
+yum deplist -v yum-utils
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hackingand.coffee
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.forethought.net
+ * updates: mirror.hackingand.coffee
+pkgsack time: 0.136
+Searching pkgSack for dep: /usr/bin/python
+Searching pkgSack for dep: libxml2-python
+Searching pkgSack for dep: python(abi)
+Searching pkgSack for dep: python-kitchen
+Searching pkgSack for dep: yum
+package: yum-utils.noarch 1.1.31-54.el7_8
+  dependency: /usr/bin/python
+   provider: python.x86_64 2.7.5-90.el7
+   provider: python.x86_64 2.7.5-89.el7
+  dependency: libxml2-python
+   provider: libxml2-python.x86_64 2.9.1-6.el7_9.6
+   provider: libxml2-python.x86_64 2.9.1-6.el7.5
+   provider: libxml2-python.x86_64 2.9.1-6.el7.5
+  dependency: python(abi) = 2.7
+   provider: python.x86_64 2.7.5-90.el7
+   provider: python.x86_64 2.7.5-89.el7
+  dependency: python-kitchen
+   provider: python-kitchen.noarch 1.1.1-5.el7
+  dependency: yum >= 3.4.3-143
+   provider: yum.noarch 3.4.3-168.el7.centos

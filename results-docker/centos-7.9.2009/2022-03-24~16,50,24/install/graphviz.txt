@@ -1,0 +1,204 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.008
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 13921.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (245 MB VSZ)
+    Started: Thu Mar 24 16:54:50 2022 - 00:01 ago
+    State  : Running, pid: 13921
+Existing lock /var/run/yum.pid: another copy is running as pid 13920.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (248 MB VSZ)
+    Started: Thu Mar 24 16:54:50 2022 - 00:03 ago
+    State  : Running, pid: 13920
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.hackingand.coffee
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.forethought.net
+ * updates: mirror.hackingand.coffee
+pkgsack time: 0.136
+Obs Init time: 0.183
+Resolving Dependencies
+--> Running transaction check
+---> Package graphviz.x86_64 0:2.30.1-22.el7 will be installed
+Checking deps for graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('urw-fonts', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libz.so.1(ZLIB_1.2.0)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('librsvg-2.so.2()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libpangoft2-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libltdl.so.7()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgtk-x11-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgs.so.9()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgdk-x11-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgd.so.2()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libexpat.so.1()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libXt.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libXrender.so.1()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libXpm.so.4()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libXmu.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libXext.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libXaw.so.7()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libSM.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+looking for ('libICE.so.6()(64bit)', None, (None, None, None)) as a requirement of graphviz.x86_64 0:2.30.1-22.el7 - u
+graphviz-2.30.1-22.el7.x86_64 requires: libgtk-x11-2.0.so.0()(64bit)
+--> Processing Dependency: libgtk-x11-2.0.so.0()(64bit) for package: graphviz-2.30.1-22.el7.x86_64
+Searching pkgSack for dep: libgtk-x11-2.0.so.0()(64bit)
+Building updates object
+up:simple updates time: 0.006
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.211
+TSINFO: Marking gtk2-2.24.31-1.el7.x86_64 as install for graphviz-2.30.1-22.el7.x86_64
+graphviz-2.30.1-22.el7.x86_64 requires: libgdk-x11-2.0.so.0()(64bit)
+--> Processing Dependency: libgdk-x11-2.0.so.0()(64bit) for package: graphviz-2.30.1-22.el7.x86_64
+Quick matched gtk2-2.24.31-1.el7.x86_64 to require for libgdk-x11-2.0.so.0()(64bit)
+graphviz-2.30.1-22.el7.x86_64 requires: libgd.so.2()(64bit)
+--> Processing Dependency: libgd.so.2()(64bit) for package: graphviz-2.30.1-22.el7.x86_64
+Searching pkgSack for dep: libgd.so.2()(64bit)
+TSINFO: Marking gd-2.0.35-27.el7_9.x86_64 as install for graphviz-2.30.1-22.el7.x86_64
+--> Running transaction check
+---> Package gd.x86_64 0:2.0.35-27.el7_9 will be installed
+Checking deps for gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libpng15.so.15(PNG15_0)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libjpeg.so.62(LIBJPEG_6.2)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libpng15.so.15()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libXpm.so.4()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of gd.x86_64 0:2.0.35-27.el7_9 - u
+---> Package gtk2.x86_64 0:2.24.31-1.el7 will be installed
+Checking deps for gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('pango', 'GE', ('0', '1.20.0', '1')) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libtiff', 'GE', ('0', '3.6.1', None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXrandr', 'GE', ('0', '1.2.99.4', '2')) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('glib2', 'GE', ('0', '2.28.0', '1')) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('atk', 'GE', ('0', '1.29.4', '2')) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('hicolor-icon-theme', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('gtk-update-icon-cache', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libpangoft2-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libpangocairo-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libpango-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libgobject-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libgmodule-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libgio-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libgdk_pixbuf-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libfreetype.so.6()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libfontconfig.so.1()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libcups.so.2()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libcairo.so.2()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libatk-1.0.so.0()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXrender.so.1()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXrandr.so.2()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXinerama.so.1()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXi.so.6()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXfixes.so.3()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXext.so.6()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXdamage.so.1()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXcursor.so.1()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libXcomposite.so.1()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of gtk2.x86_64 0:2.24.31-1.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.429
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch           Version                  Repository       Size
+================================================================================
+Installing:
+ graphviz         x86_64         2.30.1-22.el7            base            1.3 M
+Installing for dependencies:
+ gd               x86_64         2.0.35-27.el7_9          updates         146 k
+ gtk2             x86_64         2.24.31-1.el7            base            3.4 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+2 Dependent packages)
+
+Total download size: 4.8 M
+Installed size: 17 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              4.7 MB/s | 4.8 MB  00:01     
+Member: gtk2.x86_64 0:2.24.31-1.el7 - u
+Adding Package gtk2-2.24.31-1.el7.x86_64 in mode u
+Member: gd.x86_64 0:2.0.35-27.el7_9 - u
+Adding Package gd-2.0.35-27.el7_9.x86_64 in mode u
+Member: graphviz.x86_64 0:2.30.1-22.el7 - u
+Adding Package graphviz-2.30.1-22.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.035
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.029
+Running transaction
+  Installing : gd-2.0.35-27.el7_9.x86_64                                    1/3 
+  Installing : gtk2-2.24.31-1.el7.x86_64                                    2/3 
+  Installing : graphviz-2.30.1-22.el7.x86_64                                3/3 
+  Verifying  : gtk2-2.24.31-1.el7.x86_64                                    1/3 
+  Verifying  : gd-2.0.35-27.el7_9.x86_64                                    2/3 
+  Verifying  : graphviz-2.30.1-22.el7.x86_64                                3/3 
+VerifyTransaction time: 0.078
+Transaction time: 1.323
+
+Installed:
+  graphviz.x86_64 0:2.30.1-22.el7                                               
+
+Dependency Installed:
+  gd.x86_64 0:2.0.35-27.el7_9            gtk2.x86_64 0:2.24.31-1.el7           
+
+Complete!
