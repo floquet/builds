@@ -16,7 +16,7 @@ echo "yum update -v -y 2>&1 | tee -a results-update.txt" >> results-update.txt
       yum update -v -y 2>&1 | tee -a results-update.txt
 echo ""
 
-echo "Step 2 of 2: yum update -v -y"
+echo "Step 2 of 2: yum upgrade -v -y"
 echo ""
 
 date > results-upgrade.txt

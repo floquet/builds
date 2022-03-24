@@ -1,0 +1,231 @@
+spack install valgrind  % gcc@11.2.0  ^openmpi@4.1.2 2>&1 | tee -a /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/dantopa/build-logs/valgrind.txt
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+[+] /usr (external perl-5.34.0-5uuzfztkrq3lo2erwflxuvbvygkfcixh)
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssl-1.1.1n-zqo4aucx5xkonxal4elle3i5ke2zx6ny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-2.69-pnlyoxhqhdgnvtnmhjefcyszwhoh55ku
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2
+==> Installing boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu
+==> No binary for boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/86/8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc.tar.bz2
+==> Ran patch() for boost
+==> boost: Executing phase: 'install'
+==> Error: ProcessError: Command exited with status 1:
+    './b2' 'install' 'threading=multi' '-j' '11' '--user-config=/tmp/dantopa/spack-stage/spack-stage-boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu/spack-src/user-config.jam' 'variant=release' '--disable-icu' '-s' 'BZIP2_INCLUDE=/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y/include' '-s' 'BZIP2_LIBPATH=/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y/lib' '-s' 'ZLIB_INCLUDE=/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include' '-s' 'ZLIB_LIBPATH=/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/lib' '-s' 'NO_LZMA=1' '-s' 'NO_ZSTD=1' 'link=static,shared' '--layout=system' 'toolset=gcc' 'cxxstd=98' 'visibility=hidden'
+
+15 errors found in build log:
+     1134     ./boost/wave/util/flex_string.hpp: In function 'boost::wave::util::flex_string<E, T, A, Storage>& boost::wave::util::flex_string<E, T, A, Storage>::append(const value_type*, boost::wave::util::flex_string<E, T, A, Storage>::size_type) [with E = char; T = std::char_traits<char>; 
+              A = std::allocator<char>; Storage = boost::wave::util::CowString<boost::wave::util::AllocatorStringStorage<char> >]':
+     1135     ./boost/wave/util/flex_string.hpp:512:1: note: declared here
+     1136       512 | SimpleStringStorage<E, A>::emptyString_ =
+     1137           | ^~~~~~~~~~~~~~~~~~~~~~~~~
+     1138     gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/link-static/threadapi-pthread/threading-multi/visibility-hidden/setup/default_filter_factory.o
+     1139     libs/log/src/setup/default_filter_factory.cpp: In member function 'boost::log::v2s_mt_posix::aux::{anonymous}::string_predicate<RelationT>::initializer<StringT>::result_type boost::log::v2s_mt_posix::aux::{anonymous}::string_predicate<RelationT>::initializer<StringT>::operator()
+              (T&) const [with T = std::__cxx11::basic_string<wchar_t>; StringT = std::__cxx11::basic_string<char>; RelationT = boost::log::v2s_mt_posix::contains_fun]':
+  >> 1140     libs/log/src/setup/default_filter_factory.cpp:75:39: internal compiler error: in gimplify_expr, at gimplify.c:14879
+     1141        75 |                 log::aux::code_convert(m_initializer, val);
+     1142           |                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+     1143     0x60186e gimplify_expr(tree_node**, gimple**, gimple**, bool (*)(tree_node*), int)
+     1144     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-i2xm6ilfmpuypnh6kv6e5hoewm6qzmrf/spack-src/gcc/gimplify.c:14879
+     1145     0xa57dba gimplify_expr
+     1146     	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-i2xm6ilfmpuypnh6kv6e5hoewm6qzmrf/spack-src/gcc/gimplify.c:15128
+
+     ...
+
+     19017    ./boost/wave/util/flex_string.hpp: In function 'boost::wave::token_id boost::wave::cpplexer::re2clex::scan(boost::wave::cpplexer::re2clex::Scanner<Iterator>*) [with Iterator = __gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >]':
+     19018    ./boost/wave/util/flex_string.hpp:512:1: note: declared here
+     19019      512 | SimpleStringStorage<E, A>::emptyString_ =
+     19020          | ^~~~~~~~~~~~~~~~~~~~~~~~~
+     19021    In file included from ./boost/wave/cpplexer/re2clex/cpp_re2c_lexer.hpp:38,
+     19022                     from libs/wave/src/instantiate_re2c_lexer_str.cpp:29:
+  >> 19023    ./boost/wave/cpplexer/re2clex/cpp_re.hpp:385:1: internal compiler error: Segmentation fault
+     19024      385 | } /* end of scan */
+     19025          | ^
+     19026    0xcad96f crash_signal
+     19027    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-i2xm6ilfmpuypnh6kv6e5hoewm6qzmrf/spack-src/gcc/toplev.c:327
+     19028    0x871626 ggc_set_mark(void const*)
+     19029    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-i2xm6ilfmpuypnh6kv6e5hoewm6qzmrf/spack-src/gcc/ggc-page.c:1554
+
+     ...
+
+     23154    gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/permissions.o
+     23155    gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/core.o
+     23156    ...on 17000th target...
+     23157    gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/dump.o
+     23158    gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/exceptions.o
+     23159    /tmp/ccHml89V.s: Assembler messages:
+  >> 23160    /tmp/ccHml89V.s:23111: Error: unknown pseudo-op: `.lehe39'
+  >> 23161    /tmp/ccHml89V.s:23114: Error: invalid character (0x1) in operand 2
+  >> 23162    /tmp/ccHml89V.s:23116: Error: expecting operand after ','; got nothing
+  >> 23163    /tmp/ccHml89V.s:23116: Error: junk at end of line, first unrecognized character is `%'
+  >> 23164    /tmp/ccHml89V.s:23148: Error: unknown pseudo-op: `.lf'
+  >> 23165    /tmp/ccHml89V.s:23152: Error: unknown pseudo-op: `.byt'
+  >> 23166    /tmp/ccHml89V.s:23160: Error: junk at end of line, first unrecognized character valued 0x8
+  >> 23167    /tmp/ccHml89V.s:23162: Error: unknown pseudo-op: `.uleb1280'
+  >> 23168    /tmp/ccHml89V.s:23177: Error: unknown pseudo-op: `.g'
+  >> 23169    /tmp/ccHml89V.s:23179: Error: no such instruction: `_zn5boost3log11v2_md_posix12invalid_type6throw_epkcmrknst7__cxx1112basic_stringicst 1char_traitsIcESaIcEEE:'
+  >> 23170    /tmp/ccHml89V.s:23221: Error: invalid character (0xc) in operand 1
+  >> 23171    /tmp/ccHml89V.s: Error: .size expression for _ZN5boost3log11v2_mt_posix12invalid_type6throw_EPKcmRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE does not evaluate to a constant
+     23172    
+     23173        "/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++"  -ftemplate-depth-1024 -std=c++98 -fvisibility-inlines-hidden -fPIC -m64 -pthread -O3 -finline-functions -Wno-inline -Wall -fvisibility=hidden -fno-strict-aliasing -DBOOST_ALL_NO_LIB=1 -DB
+              OOST_ATOMIC_DYN_LINK=1 -DBOOST_CHRONO_DYN_LINK=1 -DBOOST_FILESYSTEM_DYN_LINK=1 -DBOOST_LOG_BUILDING_THE_LIB=1 -DBOOST_LOG_DLL -DBOOST_LOG_HAS_PTHREAD_MUTEX_ROBUST -DBOOST_LOG_USE_AVX2 -DBOOST_LOG_USE_NATIVE_SYSLOG -DBOOST_LOG_USE_SSSE3 -DBOOST_LOG_WITHOUT_DEBUG_OUTPUT -DBOOST_LO
+              G_WITHOUT_EVENT_LOG -DBOOST_SPIRIT_USE_PHOENIX_V3=1 -DBOOST_THREAD_BUILD_DLL=1 -DBOOST_THREAD_DONT_USE_CHRONO=1 -DBOOST_THREAD_POSIX -DBOOST_THREAD_USE_DLL=1 -DNDEBUG -D_XOPEN_SOURCE=600 -D__STDC_CONSTANT_MACROS  -I"." -I"libs/log/src"  -c -o "bin.v2/libs/log/build/gcc-11/releas
+              e/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/exceptions.o" "libs/log/src/exceptions.cpp"
+     23174    
+     23175    ...failed gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/exceptions.o...
+     23176    gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/dump_ssse3.o
+     23177    gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/trivial.o
+
+     ...
+
+     23234    gcc.compile.c++ bin.v2/libs/serialization/build/gcc-11/release/cxxstd-98-iso/threading-multi/visibility-hidden/extended_type_info_typeid.o
+     23235    gcc.compile.c++ bin.v2/libs/serialization/build/gcc-11/release/cxxstd-98-iso/threading-multi/visibility-hidden/binary_oarchive.o
+     23236    gcc.compile.c++ bin.v2/libs/log/build/gcc-11/release/cxxstd-98-iso/threadapi-pthread/threading-multi/visibility-hidden/setup/default_filter_factory.o
+     23237    In file included from ./boost/spirit/include/qi_core.hpp:17,
+     23238                     from libs/log/src/setup/default_filter_factory.cpp:22:
+     23239    ./boost/spirit/home/qi/parse.hpp: In function 'bool boost::spirit::qi::parse(Iterator&, Iterator, const Expr&, Attr&) [with Iterator = const char*; Expr = boost::spirit::terminal<boost::spirit::tag::long_>; Attr = long int]':
+  >> 23240    ./boost/spirit/home/qi/parse.hpp:89:5: internal compiler error: Segmentation fault
+     23241       89 |     }
+     23242          |     ^
+     23243    0xcad96f crash_signal
+     23244    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-i2xm6ilfmpuypnh6kv6e5hoewm6qzmrf/spack-src/gcc/toplev.c:327
+     23245    0x871626 ggc_set_mark(void const*)
+     23246    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-i2xm6ilfmpuypnh6kv6e5hoewm6qzmrf/spack-src/gcc/ggc-page.c:1554
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu/spack-build-out.txt
+
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/automake-1.16.5-zn3tj4ut7fjdtzusqewtqdf4qxb27wcn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssh-8.9p1-ysvqkdtnozxd6xbydf3rqukco72vukwn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo
+==> Installing openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy
+==> No binary for openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy found: installing from source
+==> Warning: Skipping build of valgrind-3.18.1-owug5avxuduuek5ggd55jdvqhqs4vgdz since boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu failed
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/9b/9b78c7cf7fc32131c5cf43dd2ab9740149d9d87cadb2e2189f02685749a6b527.tar.bz2
+==> No patches needed for openmpi
+==> openmpi: Executing phase: 'autoreconf'
+==> openmpi: Executing phase: 'configure'
+==> openmpi: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 2:
+    'make' '-j11' 'V=1'
+
+5 errors found in build log:
+     17310    depbase=`echo request/req_test.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+     17311    /bin/sh ../libtool  --tag=CC   --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201/hwloc/include/private/autogen -I../opal/mca
+              /hwloc/hwloc201/hwloc/include/hwloc/autogen -I../ompi/mpiext/cuda/c   -I.. -I../orte/include   -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include   -I/home/dantopa/spack
+              tivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include  -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit
+              76n7t6mprfr2lpsnh2/include -I/usr/local/include -I/usr/local/include  -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT request/req_test.lo -MD -MP -MF $depbase.Tpo -c -o request/req_test.lo request/req_test.c &&\
+     17312    mv -f $depbase.Tpo $depbase.Plo
+     17313    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201/hwloc/include/private/autogen -I../opal/mca/hwloc/hwloc201/hwloc/inclu
+              de/hwloc/autogen -I../ompi/mpiext/cuda/c -I.. -I../orte/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-do
+              cker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2/include -I/usr/
+              local/include -I/usr/local/include -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT interlib/interlib.lo -MD -MP -MF interlib/.deps/interlib.Tpo -c interlib/interlib.c -o interlib/interlib.o >/dev/null 2>&1
+     17314    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201/hwloc/include/private/autogen -I../opal/mca/hwloc/hwloc201/hwloc/inclu
+              de/hwloc/autogen -I../ompi/mpiext/cuda/c -I.. -I../orte/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-do
+              cker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2/include -I/usr/
+              local/include -I/usr/local/include -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT request/request.lo -MD -MP -MF request/.deps/request.Tpo -c request/request.c  -fPIC -DPIC -o request/.libs/request.o
+     17315    /bin/sh: line 2: 52880 Segmentation fault      /bin/sh ../libtool --tag=CC --mode=compile /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201
+              /hwloc/include/private/autogen -I../opal/mca/hwloc/hwloc201/hwloc/include/hwloc/autogen -I../ompi/mpiext/cuda/c -I.. -I../orte/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jr
+              kv3fb2to/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-
+              11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2/include -I/usr/local/include -I/usr/local/include -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT request/grequest.lo -MD -MP -MF $depbase.Tpo -c -o request/grequest.lo request/grequest.c
+  >> 17316    make[2]: *** [request/grequest.lo] Error 139
+     17317    make[2]: *** Waiting for unfinished jobs....
+     17318    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201/hwloc/include/private/autogen -I../opal/mca/hwloc/hwloc201/hwloc/inclu
+              de/hwloc/autogen -I../ompi/mpiext/cuda/c -I.. -I../orte/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-do
+              cker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2/include -I/usr/
+              local/include -I/usr/local/include -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT request/req_test.lo -MD -MP -MF request/.deps/req_test.Tpo -c request/req_test.c  -fPIC -DPIC -o request/.libs/req_test.o
+     17319    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201/hwloc/include/private/autogen -I../opal/mca/hwloc/hwloc201/hwloc/inclu
+              de/hwloc/autogen -I../ompi/mpiext/cuda/c -I.. -I../orte/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-do
+              cker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2/include -I/usr/
+              local/include -I/usr/local/include -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT op/op.lo -MD -MP -MF op/.deps/op.Tpo -c op/op.c -o op/op.o >/dev/null 2>&1
+     17320    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201/hwloc/include/private/autogen -I../opal/mca/hwloc/hwloc201/hwloc/inclu
+              de/hwloc/autogen -I../ompi/mpiext/cuda/c -I.. -I../orte/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-do
+              cker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2/include -I/usr/
+              local/include -I/usr/local/include -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT request/request.lo -MD -MP -MF request/.deps/request.Tpo -c request/request.c -o request/request.o >/dev/null 2>&1
+  >> 17321    make[2]: *** [message/message.lo] Error 1
+     17322    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201/hwloc/include/private/autogen -I../opal/mca/hwloc/hwloc201/hwloc/inclu
+              de/hwloc/autogen -I../ompi/mpiext/cuda/c -I.. -I../orte/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-do
+              cker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2/include -I/usr/
+              local/include -I/usr/local/include -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT proc/proc.lo -MD -MP -MF proc/.deps/proc.Tpo -c proc/proc.c -o proc/proc.o >/dev/null 2>&1
+     17323    libtool: compile:  /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -DHAVE_CONFIG_H -I. -I../opal/include -I../ompi/include -I../oshmem/include -I../opal/mca/hwloc/hwloc201/hwloc/include/private/autogen -I../opal/mca/hwloc/hwloc201/hwloc/inclu
+              de/hwloc/autogen -I../ompi/mpiext/cuda/c -I.. -I../orte/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-do
+              cker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2/include -I/usr/
+              local/include -I/usr/local/include -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -pthread -MT request/req_test.lo -MD -MP -MF request/.deps/req_test.Tpo -c request/req_test.c -o request/req_test.o >/dev/null 2>&1
+  >> 17324    make[2]: *** [request/req_test.lo] Error 1
+     17325    make[2]: Leaving directory `/tmp/dantopa/spack-stage/spack-stage-openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy/spack-src/ompi'
+  >> 17326    make[1]: *** [all-recursive] Error 1
+     17327    make[1]: Leaving directory `/tmp/dantopa/spack-stage/spack-stage-openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy/spack-src/ompi'
+  >> 17328    make: *** [all-recursive] Error 1
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy/spack-build-out.txt
+
+==> Error: valgrind-3.18.1-owug5avxuduuek5ggd55jdvqhqs4vgdz: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).
+Sun Mar 20 15:54:52 MDT 2022
+spack install valgrind  % gcc@11.2.0  ^openmpi@4.1.2 2>&1 | tee -a /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/dantopa/build-logs/valgrind.txt
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+[+] /usr (external perl-5.34.0-5uuzfztkrq3lo2erwflxuvbvygkfcixh)
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssl-1.1.1n-zqo4aucx5xkonxal4elle3i5ke2zx6ny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-2.69-pnlyoxhqhdgnvtnmhjefcyszwhoh55ku
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2
+==> Installing boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu
+==> No binary for boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/86/8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc.tar.bz2
+==> Ran patch() for boost
+==> boost: Executing phase: 'install'
+==> boost: Successfully installed boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu
+  Fetch: 0.28s.  Build: 4m 12.57s.  Total: 4m 12.85s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/boost-1.78.0-2vr3lz35o2s7ohk66z32smo32hjdrqmu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/automake-1.16.5-zn3tj4ut7fjdtzusqewtqdf4qxb27wcn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssh-8.9p1-ysvqkdtnozxd6xbydf3rqukco72vukwn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+==> Installing openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy
+==> No binary for openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/9b/9b78c7cf7fc32131c5cf43dd2ab9740149d9d87cadb2e2189f02685749a6b527.tar.bz2
+==> No patches needed for openmpi
+==> openmpi: Executing phase: 'autoreconf'
+==> openmpi: Executing phase: 'configure'
+==> openmpi: Executing phase: 'build'
+==> openmpi: Executing phase: 'install'
+==> openmpi: Successfully installed openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy
+  Fetch: 0.05s.  Build: 11m 24.91s.  Total: 11m 24.96s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy
+==> Installing valgrind-3.18.1-owug5avxuduuek5ggd55jdvqhqs4vgdz
+==> No binary for valgrind-3.18.1-owug5avxuduuek5ggd55jdvqhqs4vgdz found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/00/00859aa13a772eddf7822225f4b46ee0d39afbe071d32778da4d99984081f7f5.tar.bz2
+==> Ran patch() for valgrind
+==> valgrind: Executing phase: 'autoreconf'
+==> valgrind: Executing phase: 'configure'
+==> valgrind: Executing phase: 'build'
+==> valgrind: Executing phase: 'install'
+==> valgrind: Successfully installed valgrind-3.18.1-owug5avxuduuek5ggd55jdvqhqs4vgdz
+  Fetch: 1.18s.  Build: 1m 27.55s.  Total: 1m 28.74s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/valgrind-3.18.1-owug5avxuduuek5ggd55jdvqhqs4vgdz

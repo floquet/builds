@@ -1,0 +1,55 @@
+yum info    -v environment-modules
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.dal10.us.leaseweb.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: centos-distro.cavecreek.net
+ * updates: repos.lax.layerhost.com
+pkgsack time: 3.219
+Installed Packages
+Name        : environment-modules
+Arch        : x86_64
+Version     : 3.2.10
+Release     : 10.el7
+Size        : 215 k
+Repo        : installed
+From repo   : base
+Committer   : Jan Syn??ek <jsynacek@redhat.com>
+Committime  : Mon Jun 22 06:00:00 2015
+Buildtime   : Thu Nov 19 22:44:07 2015
+Install time: Wed Mar 23 17:42:10 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Provides dynamic modification of a user's environment
+URL         : http://modules.sourceforge.net/
+License     : GPLv2+
+Description : The Environment Modules package provides for the dynamic
+            : modification of a user's environment via modulefiles.
+            : 
+            : Each modulefile contains the information needed to configure the
+            : shell for an application. Once the Modules package is initialized,
+            : the environment can be modified on a per-module basis using the
+            : module command which interprets modulefiles. Typically modulefiles
+            : instruct the module command to alter or set shell environment
+            : variables such as PATH, MANPATH, etc. modulefiles may be shared by
+            : many users on a system and users may have their own collection to
+            : supplement or replace the shared modulefiles.
+            : 
+            : Modules can be loaded and unloaded dynamically and atomically, in
+            : an clean fashion. All popular shells are supported, including
+            : bash, ksh, zsh, sh, csh, tcsh, as well as some scripting languages
+            : such as perl.
+            : 
+            : Modules are useful in managing different versions of applications.
+            : Modules can also be bundled into metamodules that will load an
+            : entire suite of different applications.
+            : 
+            : NOTE: You will need to get a new shell after installing this
+            : package to have access to the module alias.
+

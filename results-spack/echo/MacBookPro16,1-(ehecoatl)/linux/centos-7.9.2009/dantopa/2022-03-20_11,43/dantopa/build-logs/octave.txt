@@ -1,0 +1,552 @@
+spack install octave +arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib  % gcc@11.2.0  ^python@3.10.1 ^llvm@13.0.1 ^binutils/t72eam5 ^openblas/wx7ahkl 2>&1 | tee -a /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/dantopa/build-logs/octave.txt
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openblas-0.3.19-wx7ahklcd4cppoeq274bf6nqvcagwfn4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libmd-1.0.4-x7n2botdibifovsui5a5bglx7ownfogo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libffi-3.4.2-hycvjbapil5nw22o7ralxameejdxlglq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.45-qc4gbfgpskse6lhgickvlig64d6pg3a2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libcerf-1.3-5sblwpzx5o3b5aysxrmxiqadawwq63ce
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/nasm-2.15.05-hwiieuz5zeo42xrefebhlsflbazi2kv6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/findutils-4.8.0-tcll6uemcoytohdxzt5bltzau2lzkagr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-linux-uuid-2.37.4-3sflnfpxkpllpqys45t4a5m7sxbkwcmw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tar-1.34-42gugaaxphtcd4s4frkes2gjjinpxpud
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpng-1.6.37-thsagwquvptbm2itk6vugrt6vtunphef
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libbsd-0.11.5-sz7gvwic6c2lscx7ymwszcwo2cejpqtc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/swig-4.0.2-yrpu2zceunrxkfgqrxwkikcpqbqhifrq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/expat-2.4.6-gmle5qt73gsk4msnhhufq7oj2rwyawdn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxdmcp-1.1.2-e2hn3iu57qcr66fyikqom6ftj63b57or
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/sqlite-3.37.2-xmk5ifdtr7qkyh7v6ml6trb7267po2qd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gettext-0.21-iazp3ms7hesjiw7tfdtcx4ribsunvms4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/freetype-2.11.1-7zeguxq5xlf72odor4g2jcv4nxsbozos
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxcb-1.14-ugycpkdmoww6gmusne7jerg3ttggfveb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/binutils-2.38-dqzllz4llytxqfyczxy6xp2grxsq3nl2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxfont-1.5.2-7tj3vevju4fjsibaxtylohmlc43vfyw4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontscale-1.1.2-psrn7lq5ihvia6lqdkpol3q6d4nrwqzh
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/perl-data-dumper-2.173-zqkuohh44upstmp2cnwgk6lmxalsyyxp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssl-1.1.1n-zqo4aucx5xkonxal4elle3i5ke2zx6ny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libx11-1.7.0-noczgj3vivrq3b2gt7xrpiqf6kdnbdhy
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bdftopcf-1.0.5-xugck4c5nbmpzgnmykihlygbll7rdbm2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontdir-1.0.7-pultiezevhhp7jxwc2y3xi2dbpktngfd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/automake-1.16.5-tvigpop6qwdjvi43ouc2hfdnq7euomzi
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssh-8.9p1-ysvqkdtnozxd6xbydf3rqukco72vukwn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/python-3.10.1-uwaxv2h7e26oq6iinfhkwn2drtmix2pv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-dqzetpzbu5vqx4tdhq4cslgiw6kj45xl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxpm-3.5.12-jtiydoveepqmanq4q4ffr7l33rdjutsz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/flex-2.6.3-la4kstvils5q3ulwzowkeuhluovem352
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtiff-4.3.0-c2a7kih5p4j366zqfuqihb6opkzogh7l
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-pip-21.3.1-5xijc5ckodx4s4ww4imb2nymmelc2vb6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/qhull-2020.2-3mr7gzplj4frcy4j6cao34yzi222bb54
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontconfig-2.13.94-es6n6yfjomryjozmxp5xbzhckflaos4r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy
+==> Installing llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q
+==> No binary for llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/09/09c50d558bd975c41157364421820228df66632802a4a6a7c9c17f86a7340802.tar.gz
+==> No patches needed for llvm
+==> llvm: Executing phase: 'cmake'
+==> llvm: Executing phase: 'build'
+==> Error: ProcessError: Command exited with status 1:
+    'ninja' '-j11' '-v'
+
+4 errors found in build log:
+     1097    [176/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/ExegesisEmitter.cpp.o -MF utils/TableGen/CMak
+             eFiles/llvm-tblgen.dir/ExegesisEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/ExegesisEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/ExegesisEmitter.cpp
+     1098    [177/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/DFAEmitter.cpp.o -MF utils/TableGen/CMakeFile
+             s/llvm-tblgen.dir/DFAEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/DFAEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/DFAEmitter.cpp
+     1099    [178/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/DisassemblerEmitter.cpp.o -MF utils/TableGen/
+             CMakeFiles/llvm-tblgen.dir/DisassemblerEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/DisassemblerEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/DisassemblerEmitter.cpp
+     1100    [179/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/CodeGenSchedule.cpp.o -MF utils/TableGen/CMak
+             eFiles/llvm-tblgen.dir/CodeGenSchedule.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/CodeGenSchedule.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/CodeGenSchedule.cpp
+     1101    [180/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/DFAPacketizerEmitter.cpp.o -MF utils/TableGen
+             /CMakeFiles/llvm-tblgen.dir/DFAPacketizerEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/DFAPacketizerEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/DFAPacketizerEmitter.cpp
+     1102    [181/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/GICombinerEmitter.cpp.o -MF utils/TableGen/CM
+             akeFiles/llvm-tblgen.dir/GICombinerEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/GICombinerEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/GICombinerEmitter.cpp
+  >> 1103    FAILED: utils/TableGen/CMakeFiles/llvm-tblgen.dir/GICombinerEmitter.cpp.o
+     1104    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/utils/T
+             ableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-13
+             .0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposition -fvisi
+             bility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noe
+             xcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/GICombinerEmitter.cpp.o -MF utils/TableGen/CMakeFiles/ll
+             vm-tblgen.dir/GICombinerEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/GICombinerEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/GICombinerEmitter.cpp
+     1105    In file included from /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include/llvm/ADT/SmallSet.h:18,
+     1106                     from /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/GICombinerEmitter.cpp:14:
+     1107    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include/llvm/ADT/SmallVector.h: In instantiation of 'const T* llvm::SmallVectorTemplateCommon<T, <template-parameter-1-2> >::end() const [with T = const llvm::CodeGenInstruction*; <te
+             mplate-parameter-1-2> = void; llvm::SmallVectorTemplateCommon<T, <template-parameter-1-2> >::const_iterator = const llvm::CodeGenInstruction* const*]':
+     1108    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include/llvm/ADT/SmallVector.h:146:58:   required from 'bool llvm::SmallVectorTemplateCommon<T, <template-parameter-1-2> >::isReferenceToStorage(const void*) const [with T = const llv
+             m::CodeGenInstruction*; <template-parameter-1-2> = void]'
+     1109    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include/llvm/ADT/SmallVector.h:224:11:   required from 'static const T* llvm::SmallVectorTemplateCommon<T, <template-parameter-1-2> >::reserveForParamAndGetAddressImpl(U*, const T&, s
+             ize_t) [with U = llvm::SmallVectorTemplateBase<const llvm::CodeGenInstruction*, true>; T = const llvm::CodeGenInstruction*; <template-parameter-1-2> = void; size_t = long unsigned int]'
+     1110    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include/llvm/ADT/SmallVector.h:522:47:   required from 'T* llvm::SmallVectorTemplateBase<T, true>::reserveForParamAndGetAddress(T&, size_t) [with T = const llvm::CodeGenInstruction*; 
+             size_t = long unsigned int]'
+     1111    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include/llvm/ADT/SmallVector.h:547:51:   required from 'void llvm::SmallVectorTemplateBase<T, true>::push_back(llvm::SmallVectorTemplateBase<T, true>::ValueParamT) [with T = const llv
+             m::CodeGenInstruction*; llvm::SmallVectorTemplateBase<T, true>::ValueParamT = const llvm::CodeGenInstruction*]'
+     1112    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/GlobalISel/GIMatchDagPredicate.h:105:69:   required from here
+  >> 1113    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include/llvm/ADT/SmallVector.h:256:57: internal compiler error: Segmentation fault
+     1114      256 |   const_iterator end() const { return begin() + size(); }
+     1115          |                                                         ^
+     1116    0xcad96f crash_signal
+     1117    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-36l2bc4kiue3ma2jv6vuilbcjgmdv2yb/spack-src/gcc/toplev.c:327
+     1118    0x7d9833 c_tree_chain_next
+     1119    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-36l2bc4kiue3ma2jv6vuilbcjgmdv2yb/spack-src/gcc/c-family/c-common.h:1252
+
+     ...
+
+     1187    [186/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/InstrDocsEmitter.cpp.o -MF utils/TableGen/CMa
+             keFiles/llvm-tblgen.dir/InstrDocsEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/InstrDocsEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/InstrDocsEmitter.cpp
+     1188    [187/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/IntrinsicEmitter.cpp.o -MF utils/TableGen/CMa
+             keFiles/llvm-tblgen.dir/IntrinsicEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/IntrinsicEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/IntrinsicEmitter.cpp
+     1189    [188/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/FastISelEmitter.cpp.o -MF utils/TableGen/CMak
+             eFiles/llvm-tblgen.dir/FastISelEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/FastISelEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/FastISelEmitter.cpp
+     1190    [189/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/InstrInfoEmitter.cpp.o -MF utils/TableGen/CMa
+             keFiles/llvm-tblgen.dir/InstrInfoEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/InstrInfoEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/InstrInfoEmitter.cpp
+     1191    [190/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/FixedLenDecoderEmitter.cpp.o -MF utils/TableG
+             en/CMakeFiles/llvm-tblgen.dir/FixedLenDecoderEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/FixedLenDecoderEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/FixedLenDecoderEmitter.cpp
+     1192    [191/6422] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7eky
+             r42/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-st
+             age-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposi
+             tion -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-mo
+             ve -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/GlobalISelEmitter.cpp.o -MF utils/TableGen/CM
+             akeFiles/llvm-tblgen.dir/GlobalISelEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/GlobalISelEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/GlobalISelEmitter.cpp
+  >> 1193    FAILED: utils/TableGen/CMakeFiles/llvm-tblgen.dir/GlobalISelEmitter.cpp.o
+     1194    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/utils/T
+             ableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen -I/tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-7ekyr42/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-13
+             .0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/include -isystem /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to/include -std=c++11 -fPIC -fno-semantic-interposition -fvisi
+             bility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noe
+             xcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=c++14 -MD -MT utils/TableGen/CMakeFiles/llvm-tblgen.dir/GlobalISelEmitter.cpp.o -MF utils/TableGen/CMakeFiles/ll
+             vm-tblgen.dir/GlobalISelEmitter.cpp.o.d -o utils/TableGen/CMakeFiles/llvm-tblgen.dir/GlobalISelEmitter.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/GlobalISelEmitter.cpp
+     1195    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/GlobalISelEmitter.cpp: In member function 'virtual void {anonymous}::BuildMIAction::emitActionOpcodes({anonymous}::MatchTable&, {anonymous}::RuleMatcher&) const':
+  >> 1196    /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-src/llvm/utils/TableGen/GlobalISelEmitter.cpp:3171:3: internal compiler error: Segmentation fault
+     1197     3171 |   }
+     1198          |   ^
+     1199    0xcad96f crash_signal
+     1200    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-36l2bc4kiue3ma2jv6vuilbcjgmdv2yb/spack-src/gcc/toplev.c:327
+     1201    0x8715a3 lookup_page_table_entry
+     1202    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-36l2bc4kiue3ma2jv6vuilbcjgmdv2yb/spack-src/gcc/ggc-page.c:630
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q/spack-build-out.txt
+
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-wheel-0.37.0-qaezvkb5yp7pghf66gyy4f5hbnl7lmo4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libgd-2.2.4-rzihei2evumgdpcdmqnsyhq7cqnov4sm
+==> Installing suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu
+==> No binary for suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu found: installing from source
+==> Warning: Skipping build of octave-6.4.0-gf75zdjn6cwzj7w7fri4stdm3oe4q7vu since llvm-13.0.1-7ekyr42seqnfbsmyxjueks4pfljvwg3q failed
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/ac/acb4d1045f48a237e70294b950153e48dce5b5f9ca8190e86c2b8c54ce00a7ee.tar.gz
+==> No patches needed for suite-sparse
+==> suite-sparse: Executing phase: 'install'
+==> suite-sparse: Successfully installed suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu
+  Fetch: 0.28s.  Build: 43.88s.  Total: 44.15s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fftw-3.3.10-e7jfggohoha36uwpvui7louoz3krn246
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hdf5-1.12.1-wleqdx5kx5ufc5oxzfcx7xdnqywuvcck
+==> Installing arpack-ng-3.8.0-e7zgl4bczhiq4q2h5i6jckjrtlfjt2d3
+==> No binary for arpack-ng-3.8.0-e7zgl4bczhiq4q2h5i6jckjrtlfjt2d3 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/ad/ada5aeb3878874383307239c9235b716a8a170c6d096a6625bfd529844df003d.tar.gz
+==> No patches needed for arpack-ng
+==> arpack-ng: Executing phase: 'install'
+==> arpack-ng: Successfully installed arpack-ng-3.8.0-e7zgl4bczhiq4q2h5i6jckjrtlfjt2d3
+  Fetch: 0.02s.  Build: 20.30s.  Total: 20.31s.
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/arpack-ng-3.8.0-e7zgl4bczhiq4q2h5i6jckjrtlfjt2d3
+==> Error: octave-6.4.0-gf75zdjn6cwzj7w7fri4stdm3oe4q7vu: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-setuptools-59.4.0-artac622utfvtnpbbxjmzvlhjas4dpu6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/meson-0.61.2-brvkto2ormpzdp4vr4ttf7xy5b5elemb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/glib-2.70.4-wbcves3afrgdc5teerbxpxy3i3zsodro
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cairo-1.16.0-76nee4opstp6shds4ke3b5es2kiw6uxf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/harfbuzz-2.9.1-zxhp2sq2zt2ennygc6ugk45isdwxfyjp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gobject-introspection-1.56.1-hwax24owcfprdzregnfucm4gcmptwcue
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pango-1.42.0-m7xyqpw6vyg6xthxlkps4f3ytmfonj44
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gnuplot-5.4.2-xqe3v3f5rdiygpu45a5efys7ecb6m44j
+spack install octave +arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib  % gcc@11.2.0  ^python@3.10.1 ^llvm/soijkhd ^binutils/t72eam5 ^openblas/wx7ahkl 2>&1 | tee -a /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/dantopa/build-logs/octave.txt
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openblas-0.3.19-wx7ahklcd4cppoeq274bf6nqvcagwfn4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libmd-1.0.4-x7n2botdibifovsui5a5bglx7ownfogo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libffi-3.4.2-hycvjbapil5nw22o7ralxameejdxlglq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libcerf-1.3-5sblwpzx5o3b5aysxrmxiqadawwq63ce
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/nasm-2.15.05-hwiieuz5zeo42xrefebhlsflbazi2kv6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/findutils-4.8.0-tcll6uemcoytohdxzt5bltzau2lzkagr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpng-1.6.37-thsagwquvptbm2itk6vugrt6vtunphef
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tar-1.34-42gugaaxphtcd4s4frkes2gjjinpxpud
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-linux-uuid-2.37.4-3sflnfpxkpllpqys45t4a5m7sxbkwcmw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libbsd-0.11.5-sz7gvwic6c2lscx7ymwszcwo2cejpqtc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/swig-4.0.2-opkn2e4pcfz46xml2oiqtuc4cgs5w5tp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/sqlite-3.37.2-xmk5ifdtr7qkyh7v6ml6trb7267po2qd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/freetype-2.11.1-7zeguxq5xlf72odor4g2jcv4nxsbozos
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gettext-0.21-iazp3ms7hesjiw7tfdtcx4ribsunvms4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/expat-2.4.6-gmle5qt73gsk4msnhhufq7oj2rwyawdn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxdmcp-1.1.2-e2hn3iu57qcr66fyikqom6ftj63b57or
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/binutils-2.37-t72eam5r2o6udeh35trjkhziu2jrvozx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontscale-1.1.2-psrn7lq5ihvia6lqdkpol3q6d4nrwqzh
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxfont-1.5.2-7tj3vevju4fjsibaxtylohmlc43vfyw4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxcb-1.14-ugycpkdmoww6gmusne7jerg3ttggfveb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssl-1.1.1n-zqo4aucx5xkonxal4elle3i5ke2zx6ny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/llvm-13.0.0-soijkhdc7hiqcvskfs3klw3bskzdg4yn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontdir-1.0.7-pultiezevhhp7jxwc2y3xi2dbpktngfd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bdftopcf-1.0.5-xugck4c5nbmpzgnmykihlygbll7rdbm2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libx11-1.7.0-noczgj3vivrq3b2gt7xrpiqf6kdnbdhy
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-dqzetpzbu5vqx4tdhq4cslgiw6kj45xl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssh-8.9p1-ysvqkdtnozxd6xbydf3rqukco72vukwn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/python-3.10.1-uwaxv2h7e26oq6iinfhkwn2drtmix2pv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/automake-1.16.5-tvigpop6qwdjvi43ouc2hfdnq7euomzi
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/flex-2.6.3-la4kstvils5q3ulwzowkeuhluovem352
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxpm-3.5.12-jtiydoveepqmanq4q4ffr7l33rdjutsz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/qhull-2020.2-3mr7gzplj4frcy4j6cao34yzi222bb54
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-pip-21.3.1-5xijc5ckodx4s4ww4imb2nymmelc2vb6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtiff-4.3.0-c2a7kih5p4j366zqfuqihb6opkzogh7l
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-wheel-0.37.0-qaezvkb5yp7pghf66gyy4f5hbnl7lmo4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontconfig-2.13.94-es6n6yfjomryjozmxp5xbzhckflaos4r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-setuptools-59.4.0-artac622utfvtnpbbxjmzvlhjas4dpu6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libgd-2.2.4-rzihei2evumgdpcdmqnsyhq7cqnov4sm
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/arpack-ng-3.8.0-e7zgl4bczhiq4q2h5i6jckjrtlfjt2d3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fftw-3.3.10-e7jfggohoha36uwpvui7louoz3krn246
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hdf5-1.12.1-wleqdx5kx5ufc5oxzfcx7xdnqywuvcck
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/meson-0.61.2-brvkto2ormpzdp4vr4ttf7xy5b5elemb
+==> Installing glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5
+==> No binary for glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/ab/ab3d176f3115dcc4e5d02db795984e04e4f4b48d836252e23e8c468e9d423c33.tar.xz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/glib/meson-gettext-2.70.patch
+==> Ran patch() for glib
+==> glib: Executing phase: 'install'
+==> Error: ProcessError: Command exited with status 1:
+    'ninja' '-j11' '-v'
+
+2 errors found in build log:
+     498    [124/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Iglib/tests/hmac.p -Iglib/tests -I../glib/tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-strict
+            -aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -Wimplicit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement -Werr
+            or=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing-prototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -MD -MQ glib/tests/hmac.p/hmac.c.o -MF glib/tests/hmac.p/hmac.c.o.d -o glib/tests/h
+            mac.p/hmac.c.o -c ../glib/tests/hmac.c
+     499    [125/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Iglib/tests/io-channel.p -Iglib/tests -I../glib/tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-
+            strict-aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -Wimplicit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement
+             -Werror=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing-prototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -MD -MQ glib/tests/io-channel.p/io-channel.c.o -MF glib/tests/io-channel.p/io
+            -channel.c.o.d -o glib/tests/io-channel.p/io-channel.c.o -c ../glib/tests/io-channel.c
+     500    [126/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Iglib/tests/hostutils.p -Iglib/tests -I../glib/tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-s
+            trict-aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -Wimplicit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement 
+            -Werror=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing-prototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -MD -MQ glib/tests/hostutils.p/hostutils.c.o -MF glib/tests/hostutils.p/hostut
+            ils.c.o.d -o glib/tests/hostutils.p/hostutils.c.o -c ../glib/tests/hostutils.c
+     501    [127/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/meson-0.61.2-brvkto2ormpzdp4vr4ttf7xy5b5elemb/bin/meson --internal symbolextractor /tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5
+            /spack-src/spack-build glib/libglib-2.0.so.0.7000.4 glib/libglib-2.0.so.0.7000.4 glib/libglib-2.0.so.0.7000.4.p/libglib-2.0.so.0.7000.4.symbols
+     502    [128/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Iglib/tests/macros.p -Iglib/tests -I../glib/tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-stri
+            ct-aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -Wimplicit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement -We
+            rror=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing-prototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -MD -MQ glib/tests/macros.p/macros.c.o -MF glib/tests/macros.p/macros.c.o.d -o gl
+            ib/tests/macros.p/macros.c.o -c ../glib/tests/macros.c
+     503    [129/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Iglib/tests/gvariant.p -Iglib/tests -I../glib/tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-st
+            rict-aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -Wimplicit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement -
+            Werror=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing-prototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -MD -MQ glib/tests/gvariant.p/gvariant.c.o -MF glib/tests/gvariant.p/gvariant.c
+            .o.d -o glib/tests/gvariant.p/gvariant.c.o -c ../glib/tests/gvariant.c
+  >> 504    FAILED: glib/tests/gvariant.p/gvariant.c.o
+     505    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Iglib/tests/gvariant.p -Iglib/tests -I../glib/tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-strict-aliasi
+            ng -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -Wimplicit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement -Werror=form
+            at=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing-prototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -MD -MQ glib/tests/gvariant.p/gvariant.c.o -MF glib/tests/gvariant.p/gvariant.c.o.d -o gli
+            b/tests/gvariant.p/gvariant.c.o -c ../glib/tests/gvariant.c
+     506    during GIMPLE pass: fixup_cfg
+     507    ../glib/tests/gvariant.c: In function 'test_varargs':
+  >> 508    ../glib/tests/gvariant.c:5206:1: internal compiler error: Segmentation fault
+     509     5206 | }
+     510          | ^
+     511    0xb2e4af crash_signal
+     512    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-36l2bc4kiue3ma2jv6vuilbcjgmdv2yb/spack-src/gcc/toplev.c:327
+     513    0x72b4a0 mark_dfs_back_edges()
+     514    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-36l2bc4kiue3ma2jv6vuilbcjgmdv2yb/spack-src/gcc/cfganal.c:117
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-build-out.txt
+
+==> Warning: Skipping build of harfbuzz-2.9.1-e6tsaedls5th72ffgvjph3fbok2jlhme since glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5 failed
+==> Warning: Skipping build of pango-1.42.0-xtezleakioxbuzd6vtw4pwro4gypwipa since harfbuzz-2.9.1-e6tsaedls5th72ffgvjph3fbok2jlhme failed
+==> Warning: Skipping build of gnuplot-5.4.2-iobwtphwe2uvhk63kxjm3opo6m6lpmpd since pango-1.42.0-xtezleakioxbuzd6vtw4pwro4gypwipa failed
+==> Warning: Skipping build of octave-6.4.0-vk5rdxubj3x4j6632xoiocamncsytpj7 since gnuplot-5.4.2-iobwtphwe2uvhk63kxjm3opo6m6lpmpd failed
+==> Warning: Skipping build of gobject-introspection-1.56.1-5o6zprz3dqk5kzx37hmilfwx6s5dom45 since glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5 failed
+==> Warning: Skipping build of cairo-1.16.0-ngpm7cprp353mk3bnu5tkd2gbrkysra5 since glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5 failed
+==> Error: octave-6.4.0-vk5rdxubj3x4j6632xoiocamncsytpj7: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).
+spack install octave +arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib  % gcc@11.2.0  ^python@3.10.1 ^llvm/soijkhd ^glib/wbcves3 ^binutils/t72eam5 ^openblas/wx7ahkl 2>&1 | tee -a /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/dantopa/build-logs/octave.txt
+==> Error: octave%gcc@11.2.0+arpack+fftw+gnuplot+hdf5+llvm+qhull+suitesparse+zlib ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-haswell ^binutils@2.37%gcc@11.2.0~gas+gold~headers~interwork+ld~libiberty~lto+nls+plugins libs=shared,static arch=linux-centos7-haswell ^binutils@2.37%gcc@11.2.0~gas+gold~headers~interwork+ld~libiberty~lto+nls+plugins libs=shared,static arch=linux-centos7-haswell ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell ^expat@2.4.6%gcc@11.2.0+libbsd arch=linux-centos7-haswell ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-haswell ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell ^glib@2.70.4%gcc@11.2.0~libmount patches=8547954 tracing=none arch=linux-centos7-haswell ^hwloc@2.7.0%gcc@11.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-centos7-haswell ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-haswell ^libedit@3.1-20210216%gcc@11.2.0 arch=linux-centos7-haswell ^libffi@3.4.2%gcc@11.2.0 arch=linux-centos7-haswell ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-haswell ^libpciaccess@0.16%gcc@11.2.0 arch=linux-centos7-haswell ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell ^llvm@13.0.0%gcc@11.2.0+clang~code_signing+compiler-rt~cuda~flang+gold~internal_unwind~ipo+libcxx+link_llvm_dylib+lld+lldb+llvm_dylib~mlir+omp_as_runtime~omp_debug~omp_tsan+polly~python~shared_libs~split_dwarf~z3 build_type=Release patches=88ae104,92f0221,c2c23fd targets=amdgpu,bpf,nvptx,webassembly version_suffix=jl arch=linux-centos7-haswell ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell ^openblas@0.3.19%gcc@11.2.0~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-centos7-haswell ^openssl@1.1.1n%gcc@11.2.0~docs~shared certs=system arch=linux-centos7-haswell ^pcre@8.45%gcc@11.2.0~jit+multibyte+utf arch=linux-centos7-haswell ^pcre@8.44%gcc@11.2.0~jit+multibyte+utf arch=linux-centos7-haswell ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell ^python@3.10.1%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060 arch=linux-centos7-haswell ^python@3.10.1 ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-centos7-haswell ^swig@4.0.2%gcc@11.2.0 arch=linux-centos7-haswell ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-haswell ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell is unsatisfiable, errors are:
+
+    To see full clingo unsat cores, re-run with `spack --show-cores=full`
+    For full, subset-minimal unsat cores, re-run with `spack --show-cores=minimized
+    Warning: This may take (up to) hours for some specs
+spack install octave +arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib  % gcc@11.2.0  ^python@3.10.1 ^llvm/soijkh ^binutils/t72eam5 ^openblas/wx7ahkl 2>&1 | tee -a /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/dantopa/build-logs/octave.txt
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ncurses-6.2-eami6rcncmwqnmns4znyq6j6r53wtmlj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/berkeley-db-18.1.40-zwcrnpf4ngxgazcr3i3bt2fzzvcecgx4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bzip2-1.0.8-tbzifjkv7qkjy5ozcwt53ik35jvzh45y
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/zlib-1.2.11-ej2gfre7c23qhenlugwrj5jrkv3fb2to
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openblas-0.3.19-wx7ahklcd4cppoeq274bf6nqvcagwfn4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpciaccess-0.16-vk2umjyujnnxihmpluotzoxxmu23am52
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libiconv-1.16-7l7egbxukuzeemfrctmskgc6cbrvsyfu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xz-5.2.5-hoobt4rcf73e72l3wkhcb2e5ctbrwwzb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libsigsegv-2.13-penja53hgxvr74gewbby7uvluwlxzth3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pkgconf-1.8.0-5qflyyiynf4dbymmxn5fu3spuzqqecom
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-macros-1.19.3-tpbo37lhiiu7vucpbnpuacya5f6jemuj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gperf-3.1-h3i2ori5lyjzyfpwiyrmmkkdom6yawas
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libmd-1.0.4-x7n2botdibifovsui5a5bglx7ownfogo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libffi-3.4.2-hycvjbapil5nw22o7ralxameejdxlglq
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libcerf-1.3-5sblwpzx5o3b5aysxrmxiqadawwq63ce
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/nasm-2.15.05-hwiieuz5zeo42xrefebhlsflbazi2kv6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpthread-stubs-0.4-5c6bivnuxppkrwrqrrhw6uderex7mv3r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xcb-proto-1.14.1-z7pw66ovrav3hpcvo23xulbftofoueks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/findutils-4.8.0-tcll6uemcoytohdxzt5bltzau2lzkagr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-archive-2019.01.06-qf3kqey7cwd4khvwcnta3eaygpiwayaj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libedit-3.1-20210216-do3vy3y5biyxvv3wapicsc6lpnzznbxu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/readline-8.1-x4e5ath3k3cjxk7czykdmydhp277fyao
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libpng-1.6.37-thsagwquvptbm2itk6vugrt6vtunphef
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/diffutils-3.8-q3syblzsge4sziqy4wm5a3cerepumilv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/tar-1.34-42gugaaxphtcd4s4frkes2gjjinpxpud
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxml2-2.9.12-63hotlsefqmvlzxgujachymipomlpjco
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/m4-1.4.19-ndx3ca2c3ro763mc6tsv4aokkyi6sq3p
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/util-linux-uuid-2.37.4-3sflnfpxkpllpqys45t4a5m7sxbkwcmw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/inputproto-2.3.2-qgkpqqb7hgj672c44blun4fkt2xgipyv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/kbproto-1.0.7-5uu2h6armmfsttobcmiihmfvntxn5nnr
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xproto-7.0.31-zwwlglkpuegi7mgfkyuyqzmgrmciq4az
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xtrans-1.3.5-ammlzyqopepibzq77gygtqggz7l5lrze
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/xextproto-7.3.0-sae2g3somjrl3xvbyboy3q42uihf53lx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontsproto-2.1.3-pw6ksbhy4glivopae6orippzsejxdcmf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libbsd-0.11.5-sz7gvwic6c2lscx7ymwszcwo2cejpqtc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/swig-4.0.2-opkn2e4pcfz46xml2oiqtuc4cgs5w5tp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/sqlite-3.37.2-xmk5ifdtr7qkyh7v6ml6trb7267po2qd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gdbm-1.19-qfhkymic4ftj3n2agkg6e2n4hijuhyg3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/freetype-2.11.1-7zeguxq5xlf72odor4g2jcv4nxsbozos
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pixman-0.40.0-cltdqa3iovdwidsufgjdvb3qai4w7qpl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gettext-0.21-iazp3ms7hesjiw7tfdtcx4ribsunvms4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hwloc-2.7.0-2r3xknuydmgn2set6aswa3jeanhdx4sw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtool-2.4.6-4doaxvwq6rdmvma3jupherolcxp3qvbf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libfontenc-1.1.3-idblno3sygzn4epgqwa7d7lrkhjn5cny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxau-1.0.8-xaudszpf62nfwfv24cykntsciyhe6j7k
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/expat-2.4.6-gmle5qt73gsk4msnhhufq7oj2rwyawdn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxdmcp-1.1.2-e2hn3iu57qcr66fyikqom6ftj63b57or
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/perl-5.34.0-gjqexzvtancvcccezyukxfiwbcuvzfks
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/binutils-2.37-t72eam5r2o6udeh35trjkhziu2jrvozx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxfont-1.5.2-7tj3vevju4fjsibaxtylohmlc43vfyw4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontscale-1.1.2-psrn7lq5ihvia6lqdkpol3q6d4nrwqzh
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxcb-1.14-ugycpkdmoww6gmusne7jerg3ttggfveb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/texinfo-6.5-d6qkdfyw24mi7amdpaqn7qkw7ybazvql
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/autoconf-2.69-aoebj6rdqvfhsuv5dtqk5zbz3qfrh2fx
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bison-3.8.2-bfkjflv7lzqz6rbdt4tpuhrrmpcxc73w
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssl-1.1.1n-zqo4aucx5xkonxal4elle3i5ke2zx6ny
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/llvm-13.0.0-soijkhdc7hiqcvskfs3klw3bskzdg4yn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/bdftopcf-1.0.5-xugck4c5nbmpzgnmykihlygbll7rdbm2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mkfontdir-1.0.7-pultiezevhhp7jxwc2y3xi2dbpktngfd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libx11-1.7.0-noczgj3vivrq3b2gt7xrpiqf6kdnbdhy
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/automake-1.16.5-tvigpop6qwdjvi43ouc2hfdnq7euomzi
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/flex-2.6.3-la4kstvils5q3ulwzowkeuhluovem352
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/cmake-3.22.2-dqzetpzbu5vqx4tdhq4cslgiw6kj45xl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libevent-2.1.12-wo3chxkqgtsbit76n7t6mprfr2lpsnh2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/python-3.10.1-uwaxv2h7e26oq6iinfhkwn2drtmix2pv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openssh-8.9p1-ysvqkdtnozxd6xbydf3rqukco72vukwn
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libxpm-3.5.12-jtiydoveepqmanq4q4ffr7l33rdjutsz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libtiff-4.3.0-c2a7kih5p4j366zqfuqihb6opkzogh7l
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fribidi-1.0.5-bwoyixkqasut4trrhtf2yy5hdpbearjp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/font-util-1.3.2-4yfc6u3axhxz5ak3ft4wu7apxkco3hky
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/gmp-6.2.1-laaszd342jieuqm5j73argiphz2neudl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/numactl-2.0.14-gc6e3rmzpg2p4fq7wlllycdqozcj2lyo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/metis-5.1.0-jppgfzf6cjvsmmc4t7k3myt52m72n2k2
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libjpeg-turbo-2.1.0-sjyk5k3bhzbsymikexwm3xztc3lifqeb
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/qhull-2020.2-3mr7gzplj4frcy4j6cao34yzi222bb54
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/ninja-1.10.2-kowfbxtlhq7ftvobgpbmaygrnwbfp2ui
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/icu4c-67.1-exfavhoebytxy3sdwb6tf3wmzaoohgwz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-pip-21.3.1-5xijc5ckodx4s4ww4imb2nymmelc2vb6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fontconfig-2.13.94-es6n6yfjomryjozmxp5xbzhckflaos4r
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/mpfr-4.1.0-2w65mg6rxxgjljg52l5twd3s7nby6swp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/openmpi-4.1.2-rcnb3bwvtkkb2nysnb7dvh4trev7f6qy
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-wheel-0.37.0-qaezvkb5yp7pghf66gyy4f5hbnl7lmo4
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/libgd-2.2.4-rzihei2evumgdpcdmqnsyhq7cqnov4sm
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/suite-sparse-5.10.1-seyhdfkz4enui2rviuy5xvdkato3lhcu
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/fftw-3.3.10-e7jfggohoha36uwpvui7louoz3krn246
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/hdf5-1.12.1-wleqdx5kx5ufc5oxzfcx7xdnqywuvcck
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/arpack-ng-3.8.0-e7zgl4bczhiq4q2h5i6jckjrtlfjt2d3
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/py-setuptools-59.4.0-artac622utfvtnpbbxjmzvlhjas4dpu6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/meson-0.61.2-brvkto2ormpzdp4vr4ttf7xy5b5elemb
+==> Installing glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5
+==> No binary for glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5 found: installing from source
+==> Using cached archive: /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/cache/_source-cache/archive/ab/ab3d176f3115dcc4e5d02db795984e04e4f4b48d836252e23e8c468e9d423c33.tar.xz
+==> Applied patch /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/var/spack/repos/builtin/packages/glib/meson-gettext-2.70.patch
+==> Ran patch() for glib
+==> glib: Executing phase: 'install'
+==> Error: ProcessError: Command exited with status 1:
+    'ninja' '-j11' '-v'
+
+7 errors found in build log:
+     1564    [1190/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc  -o tests/module-test-library tests/module-test-library.p/module-test.c.o -Wl,--as-needed -Wl,--no-undefined -Wl,-O1 -Wl,-export-dynamic '-Wl,-rpath,$ORIGIN/../glib:$ORIGIN/../gmodule:/home/dantopa/spacktivity/centos-7.9.2009-dantopa-dock
+             er-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn/lib' -Wl,-rpath-link,/tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-src/spack-build/glib -Wl,-rpath-link,/tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-src/sp
+             ack-build/gmodule -Wl,-rpath-link,/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn/lib -Wl,--start-group glib/libglib-2.0.so.0.7000.4 gmodule/libgmodule-2.0.so.0.7000.4 -lm -pthread -lintl -Wl,--end-group
+     1565    [1191/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc  -o tests/module-test-plugin tests/module-test-plugin.p/module-test.c.o -Wl,--as-needed -Wl,--no-undefined -Wl,-O1 -Wl,-export-dynamic '-Wl,-rpath,$ORIGIN/../glib:$ORIGIN/../gmodule:/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker
+             -spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn/lib' -Wl,-rpath-link,/tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-src/spack-build/glib -Wl,-rpath-link,/tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-src/spac
+             k-build/gmodule -Wl,-rpath-link,/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn/lib -Wl,--start-group glib/libglib-2.0.so.0.7000.4 gmodule/libgmodule-2.0.so.0.7000.4 -lm -pthread -lintl -Wl,--end-group
+     1566    [1192/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Itests/timeloop.p -Itests -I../tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-strict-aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -Wimplic
+             it-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement -Werror=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing-proto
+             types -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -DGLIB_DISABLE_DEPRECATION_WARNINGS -MD -MQ tests/timeloop.p/timeloop.c.o -MF tests/timeloop.p/timeloop.c.o.d -o tests/timeloop.p/timeloop.c.o -c ../tests/timeloop.c
+     1567    [1193/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc  -o tests/unicode-encoding tests/unicode-encoding.p/unicode-encoding.c.o -Wl,--as-needed -Wl,--no-undefined -Wl,-O1 '-Wl,-rpath,$ORIGIN/../glib:/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell
+             /gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn/lib' -Wl,-rpath-link,/tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-src/spack-build/glib -Wl,-rpath-link,/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiis
+             ilje2ph2pc4epn/lib -Wl,--start-group glib/libglib-2.0.so.0.7000.4 -lm -pthread -lintl -Wl,--end-group
+     1568    [1194/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Itests/iochannel-test.p -Itests -I../tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-strict-aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -W
+             implicit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement -Werror=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing
+             -prototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -DGLIB_DISABLE_DEPRECATION_WARNINGS -MD -MQ tests/iochannel-test.p/iochannel-test.c.o -MF tests/iochannel-test.p/iochannel-test.c.o.d -o tests/iochannel-test.p/iochannel-test.c.o -c ../tests/iochannel-test.c
+     1569    [1195/1308] msgfmt ../po/af.po -o po/af/LC_MESSAGES/glib20.mo
+  >> 1570    FAILED: po/af/LC_MESSAGES/glib20.mo
+     1571    msgfmt ../po/af.po -o po/af/LC_MESSAGES/glib20.mo
+  >> 1572    ../po/af.po:1694: missing 'msgstr' section
+  >> 1573    ../po/af.po:1695:2: syntax error
+  >> 1574    ../po/af.po:1695: keyword "No" unknown
+  >> 1575    ../po/af.po:1696: end-of-line within string
+  >> 1576    ../po/af.po:1705:2: syntax error
+  >> 1577    ../po/af.po:1705: keyword "sgid" unknown
+     1578    msgfmt: found 6 fatal errors
+     1579    [1196/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -Itests/cxx-test.p -Itests -I../tests -Igmodule -I../gmodule -I. -I.. -Iglib -I../glib -Igio -I../gio -Igobject -I../gobject -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -O3 -pthread -MD -MQ tes
+             ts/cxx-test.p/cxx-test.cpp.o -MF tests/cxx-test.p/cxx-test.cpp.o.d -o tests/cxx-test.p/cxx-test.cpp.o -c ../tests/cxx-test.cpp
+     1580    [1197/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Itests/assert-msg-test.p -Itests -I../tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-strict-aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -
+             Wimplicit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement -Werror=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missin
+             g-prototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -DGLIB_DISABLE_DEPRECATION_WARNINGS -MD -MQ tests/assert-msg-test.p/assert-msg-test.c.o -MF tests/assert-msg-test.p/assert-msg-test.c.o.d -o tests/assert-msg-test.p/assert-msg-test.c.o -c ../tests/assert-msg-test.c
+     1581    [1198/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc -Itests/slice-color.p -Itests -I../tests -I. -I.. -Iglib -I../glib -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O3 -D_GNU_SOURCE -fno-strict-aliasing -DG_DISABLE_CAST_CHECKS -Wduplicated-branches -Wimp
+             licit-fallthrough -Wmisleading-indentation -Wstrict-prototypes -Wunused -Wno-unused-parameter -Wno-bad-function-cast -Wno-cast-function-type -Wno-pedantic -Wno-format-zero-length -Werror=declaration-after-statement -Werror=format=2 -Werror=implicit-function-declaration -Werror=init-self -Werror=missing-include-dirs -Werror=missing-pr
+             ototypes -Werror=pointer-arith -pthread '-DG_LOG_DOMAIN="GLib"' -UG_DISABLE_ASSERT -DGLIB_DISABLE_DEPRECATION_WARNINGS -MD -MQ tests/slice-color.p/slice-color.c.o -MF tests/slice-color.p/slice-color.c.o.d -o tests/slice-color.p/slice-color.c.o -c ../tests/slice-color.c
+     1582    [1199/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc  -o tests/timeloop tests/timeloop.p/timeloop.c.o -Wl,--as-needed -Wl,--no-undefined -Wl,-O1 '-Wl,-rpath,$ORIGIN/../glib:/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-ie
+             pbumixq7r56laiisilje2ph2pc4epn/lib' -Wl,-rpath-link,/tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-src/spack-build/glib -Wl,-rpath-link,/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn/lib -Wl,-
+             -start-group glib/libglib-2.0.so.0.7000.4 -lm -pthread -lintl -Wl,--end-group
+     1583    [1200/1308] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/gcc  -o tests/iochannel-test tests/iochannel-test.p/iochannel-test.c.o -Wl,--as-needed -Wl,--no-undefined -Wl,-O1 '-Wl,-rpath,$ORIGIN/../glib:/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-1
+             1.2.0/pcre-8.44-iepbumixq7r56laiisilje2ph2pc4epn/lib' -Wl,-rpath-link,/tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-src/spack-build/glib -Wl,-rpath-link,/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-haswell/gcc-11.2.0/pcre-8.44-iepbumixq7r56laiisilje2p
+             h2pc4epn/lib -Wl,--start-group glib/libglib-2.0.so.0.7000.4 -lm -pthread -lintl -Wl,--end-group
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5/spack-build-out.txt
+
+==> Warning: Skipping build of harfbuzz-2.9.1-e6tsaedls5th72ffgvjph3fbok2jlhme since glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5 failed
+==> Warning: Skipping build of pango-1.42.0-xtezleakioxbuzd6vtw4pwro4gypwipa since harfbuzz-2.9.1-e6tsaedls5th72ffgvjph3fbok2jlhme failed
+==> Warning: Skipping build of gnuplot-5.4.2-iobwtphwe2uvhk63kxjm3opo6m6lpmpd since pango-1.42.0-xtezleakioxbuzd6vtw4pwro4gypwipa failed
+==> Warning: Skipping build of octave-6.4.0-vk5rdxubj3x4j6632xoiocamncsytpj7 since gnuplot-5.4.2-iobwtphwe2uvhk63kxjm3opo6m6lpmpd failed
+==> Warning: Skipping build of cairo-1.16.0-ngpm7cprp353mk3bnu5tkd2gbrkysra5 since glib-2.70.4-3gvdsulmo7ei4ddutmlmgil473qq3zm5 failed
+==> Warning: Skipping build of gobject-introspection-1.56.1-5o6zprz3dqk5kzx37hmilfwx6s5dom45 since cairo-1.16.0-ngpm7cprp353mk3bnu5tkd2gbrkysra5 failed
+==> Error: octave-6.4.0-vk5rdxubj3x4j6632xoiocamncsytpj7: Package was not installed
+==> Error: Installation request failed.  Refer to reported errors for failing package(s).

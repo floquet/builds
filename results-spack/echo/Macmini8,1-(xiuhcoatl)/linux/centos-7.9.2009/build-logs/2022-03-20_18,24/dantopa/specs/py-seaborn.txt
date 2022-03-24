@@ -1,0 +1,66 @@
+Input spec
+--------------------------------
+py-seaborn
+
+Concretized
+--------------------------------
+py-seaborn@0.11.2%gcc@11.2.0 arch=linux-centos7-haswell
+    ^py-matplotlib@3.5.1%gcc@11.2.0~animation~fonts+image~latex~movies backend=agg arch=linux-centos7-haswell
+        ^freetype@2.11.1%gcc@11.2.0 arch=linux-centos7-haswell
+            ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-haswell
+                ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-haswell
+            ^libpng@1.6.37%gcc@11.2.0 arch=linux-centos7-haswell
+                ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-haswell
+            ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-certifi@2021.10.8%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-pip@21.3.1%gcc@11.2.0 arch=linux-centos7-haswell
+                ^python@3.9.10%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060 arch=linux-centos7-haswell
+                    ^expat@2.4.6%gcc@11.2.0+libbsd arch=linux-centos7-haswell
+                        ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^gdbm@1.23%gcc@11.2.0 arch=linux-centos7-haswell
+                        ^readline@8.1%gcc@11.2.0 arch=linux-centos7-haswell
+                            ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-haswell
+                    ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-haswell
+                        ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-haswell
+                            ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-haswell
+                        ^tar@1.34%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^libffi@3.4.2%gcc@11.2.0 arch=linux-centos7-haswell
+                    ^openssl@1.1.1m%gcc@11.2.0~docs certs=system arch=linux-centos7-haswell
+                        ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-haswell
+                    ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-centos7-haswell
+                    ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-setuptools@59.4.0%gcc@11.2.0 arch=linux-centos7-haswell
+                ^py-wheel@0.37.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-cycler@0.11.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-fonttools@4.29.1%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-kiwisolver@1.3.2%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-cppy@1.1.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-numpy@1.22.2%gcc@11.2.0+blas+lapack patches=873745d arch=linux-centos7-haswell
+            ^openblas@0.3.20%gcc@11.2.0~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-centos7-haswell
+            ^py-cython@0.29.24%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-packaging@21.3%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-pyparsing@3.0.6%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-pillow@9.0.0%gcc@11.2.0~freetype~imagequant+jpeg~jpeg2000~lcms~tiff~webp~webpmux~xcb+zlib arch=linux-centos7-haswell
+            ^libjpeg-turbo@2.1.0%gcc@11.2.0 arch=linux-centos7-haswell
+                ^cmake@3.22.2%gcc@11.2.0~doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-centos7-haswell
+                ^nasm@2.15.05%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-python-dateutil@2.8.2%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-setuptools-scm@6.3.2%gcc@11.2.0+toml arch=linux-centos7-haswell
+                ^py-tomli@1.2.2%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-six@1.16.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-setuptools-scm-git-archive@1.1%gcc@11.2.0 arch=linux-centos7-haswell
+        ^qhull@2020.2%gcc@11.2.0~ipo build_type=RelWithDebInfo arch=linux-centos7-haswell
+    ^py-pandas@1.4.1%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-bottleneck@1.3.2%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-numexpr@2.7.3%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-pytz@2021.3%gcc@11.2.0 arch=linux-centos7-haswell
+    ^py-scipy@1.8.0%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-pybind11@2.8.1%gcc@11.2.0~ipo build_type=RelWithDebInfo arch=linux-centos7-haswell
+            ^ninja@1.10.2%gcc@11.2.0 arch=linux-centos7-haswell
+        ^py-pythran@0.10.0%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-beniget@0.4.1%gcc@11.2.0 arch=linux-centos7-haswell
+                ^py-gast@0.5.3%gcc@11.2.0 arch=linux-centos7-haswell
+            ^py-ply@3.11%gcc@11.2.0 arch=linux-centos7-haswell
+

@@ -3,7 +3,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Feb 16 10:26:35 MST 2022
 
-# source /repos/github/builds/SpWx/scripts-shell/copy-spwx.sh 2>&1 | tee -a ${scratch}/copy-spwx.txt
+# source         /repos/github/builds/SpWx/scripts-shell/copy-spwx.sh 2>&1 | tee -a ${scratch}/copy-spwx.txt
+# source /Volumes/repos/github/builds/SpWx/scripts-shell/copy-spwx.sh 2>&1 | tee -a ${scratch}/copy-spwx.txt
 source ${repo_build}/scripts-spack/shared/common-header.sh
 
 export buildSeconds=${SECONDS}
@@ -18,8 +19,14 @@ sub_step_counter=0
     sub_step 'rm -rf "${scratch}/SpWx"'
               rm -rf "${scratch}/SpWx"
 
-    sub_step "cp -a /SpWx ${scratch}"
-              cp -a /SpWx ${scratch}
+    # sub_step "cp -a /SpWx ${scratch}"
+    #           cp -a /SpWx ${scratch}
+
+    # sub_step "cp -a /Volumes/repos/gitlab/SpWx ${scratch}"
+    #           cp -a /Volumes/repos/gitlab/SpWx ${scratch}
+
+    sub_step "cp -a /repos/gitlab/SpWx ${scratch}"
+              cp -a /repos/gitlab/SpWx ${scratch}
 
     sub_step 'export localSpWx="${scratch}/SpWx"'
               export localSpWx="${scratch}/SpWx"
@@ -31,6 +38,12 @@ sub_step_counter=0
               cd "${localSpWx}/source"
 
     sub_step "pwd = $PWD"
+
+new_step "Check cmake version: cmake_minimum_required = CMake 3.14"
+sub_step_counter=0
+
+    sub_step "cmake3 --version"
+              cmake3 --version
 
 pause
 
@@ -67,12 +80,6 @@ sub_step_counter=0
     sub_step "lsb_release -a"
               lsb_release -a
 
-new_step "Check cmake version: cmake_minimum_required = CMake 3.14"
-sub_step_counter=0
-
-    sub_step "cmake3 --version"
-              cmake3 --version
-
 new_step "Build SpWx"
 sub_step_counter=0
 
@@ -85,8 +92,8 @@ sub_step_counter=0
     sub_step "export timerFile=${localSpWx}/build/build-time.txt"
               export timerFile=${localSpWx}/build/build-time.txt
 
-    sub_step "cmake3 ../source -DCMAKE_INSTALL_PREFIX=../"
-              cmake3 ../source -DCMAKE_INSTALL_PREFIX=../
+    sub_step "cmake3 ../source -DDEFINE_DEBUG=ON -DCMAKE_INSTALL_PREFIX=../"
+              cmake3 ../source -DDEFINE_DEBUG=ON -DCMAKE_INSTALL_PREFIX=../
 
 new_step "make; make test; make install"
 sub_step_counter=0
