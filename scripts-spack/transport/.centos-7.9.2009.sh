@@ -5,14 +5,14 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # # I D E N T I F Y   P L A T F O R M
 export   platform="mac"
-export    machine="MacBookPro16,1"
-export    moniker="quaxolotl"
+export    machine="MacBookPro16,1" # "Macmini8,1" # "MacBookPro16,1"
+export    moniker="quaxolotl" # "xiuhcoatl" # ehecoatl
 export      owner="docker"
 
 # #  H A R D W A R E   D E T A I L S
-export serial_num="C02CR18HMD6T"
-export firmware_v="1715.60.5.0.0 (iBridge: 19.16.10647.0.0,0)"
-export        MAC="ac:de:48:00:11:22"
+export serial_num="C02CR18HMD6T" # "C07ZQ2VJJYW0"
+export firmware_v="1715.60.5.0.0 (iBridge: 19.16.10647.0.0,0)" # 1731.100.130.0.0 (iBridge: 19.16.14242.0.0,0)
+export        MAC="ac:de:48:00:11:22" # f0:18:98:f2:dd:10
 
 # # I D E N T I F Y   S O F T W A R E
 export         os="linux"
@@ -21,8 +21,6 @@ export    release="7.9.2009"
 export      build=""
 
 # # I D E N T I F Y   I N I T I A L I Z A T I O N   F I L E
-export       USER="dantopa"
-export       HOME="/home/${USER}"
 export  bash_file=".${dist}-${release}.sh"
 
 # #  R E P O S I T O R I E S
@@ -40,7 +38,7 @@ export  dirDropbox="${volume_ext}/Dropbox"
 # #  S P A C K
 export          mySpack="${volume_ext}/spacktivity"
 export big_spack_mirror="${mySpack}/mirror"
-export      local_spack="${HOME}/spacktivity/centos-7.9.2009-SpWx-docker-spack"
+export      local_spack="${HOME}/spacktivity/${dist}-${release}-SpWx-docker-spack"
 
 # #  C O M P I L E R S
 export gcc_system_compiler="gcc@11.2.0"

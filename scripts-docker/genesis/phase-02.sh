@@ -12,8 +12,8 @@ source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 # define functions new_step, sub_step, sub_sub_step
 source ${repo_scripts_spack}/shared/common-header.sh
 
-export mySpack="${dist}-${release}-${USER}-docker-spack"
-
+export tag="${dist}-${release}"
+export mySpack="${tag}-${USER}-docker-spack"
 
 #  #  #  ========================================== declarations begin
 

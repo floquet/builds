@@ -1,0 +1,167 @@
+yum deplist -v petsc-openmpi
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.008
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.netdepot.com
+ * updates: mirrors.maine.edu
+pkgsack time: 0.192
+Searching pkgSack for dep: gcc-gfortran(x86-64)
+Searching pkgSack for dep: libHYPRE.so.0.0()(64bit)
+Searching pkgSack for dep: libX11.so.6()(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libcmumps-5.3.so()(64bit)
+Searching pkgSack for dep: libdl.so.2()(64bit)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libdmumps-5.3.so()(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libm.so.6(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libmetis.so.0()(64bit)
+Searching pkgSack for dep: libmpi.so.12()(64bit)
+Searching pkgSack for dep: libmpi_mpifh.so.12()(64bit)
+Searching pkgSack for dep: libmumps_common-5.3.so()(64bit)
+Searching pkgSack for dep: libopenblasp.so.0()(64bit)
+Searching pkgSack for dep: libpord-5.3.so()(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libptscotch.so.0()(64bit)
+Searching pkgSack for dep: libptscotcherr.so.0()(64bit)
+Searching pkgSack for dep: libquadmath.so.0()(64bit)
+Searching pkgSack for dep: libscalapack.so.2()(64bit)
+Searching pkgSack for dep: libscotch.so.0()(64bit)
+Searching pkgSack for dep: libscotcherr.so.0()(64bit)
+Searching pkgSack for dep: libsmumps-5.3.so()(64bit)
+Searching pkgSack for dep: libstdc++.so.6()(64bit)
+Searching pkgSack for dep: libzmumps-5.3.so()(64bit)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: petsc-openmpi.x86_64 3.14.1-3.el7
+  dependency: gcc-gfortran(x86-64)
+   provider: gcc-gfortran.x86_64 4.8.5-44.el7
+  dependency: libHYPRE.so.0.0()(64bit)
+   provider: hypre-openmpi.x86_64 2.11.2-2.el7
+   provider: hypre-mpich.x86_64 2.11.2-2.el7
+   provider: hypre.x86_64 2.11.2-2.el7
+  dependency: libX11.so.6()(64bit)
+   provider: libX11.x86_64 1.6.7-4.el7_9
+   provider: libX11.x86_64 1.6.7-3.el7_9
+   provider: libX11.x86_64 1.6.7-2.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libcmumps-5.3.so()(64bit)
+   provider: MUMPS-openmpi.x86_64 5.3.5-1.el7
+   provider: MUMPS-mpich.x86_64 5.3.5-1.el7
+   provider: MUMPS.x86_64 5.3.5-1.el7
+  dependency: libdl.so.2()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdmumps-5.3.so()(64bit)
+   provider: MUMPS-openmpi.x86_64 5.3.5-1.el7
+   provider: MUMPS-mpich.x86_64 5.3.5-1.el7
+   provider: MUMPS.x86_64 5.3.5-1.el7
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libmetis.so.0()(64bit)
+   provider: metis.x86_64 5.1.0-12.el7
+  dependency: libmpi.so.12()(64bit)
+   provider: openmpi.x86_64 1.10.7-5.el7
+   provider: mvapich23-psm2.x86_64 2.3-4.el7
+   provider: mvapich23-psm.x86_64 2.3-4.el7
+   provider: mvapich23.x86_64 2.3-4.el7
+   provider: mvapich2-2.2-psm2.x86_64 2.2-4.el7
+   provider: mvapich2-2.2-psm.x86_64 2.2-4.el7
+   provider: mvapich2-2.2.x86_64 2.2-4.el7
+   provider: mpich-3.2.x86_64 3.2-2.el7
+  dependency: libmpi_mpifh.so.12()(64bit)
+   provider: openmpi.x86_64 1.10.7-5.el7
+  dependency: libmumps_common-5.3.so()(64bit)
+   provider: MUMPS-openmpi.x86_64 5.3.5-1.el7
+   provider: MUMPS-mpich.x86_64 5.3.5-1.el7
+   provider: MUMPS.x86_64 5.3.5-1.el7
+  dependency: libopenblasp.so.0()(64bit)
+   provider: openblas-threads.x86_64 0.3.3-2.el7
+  dependency: libpord-5.3.so()(64bit)
+   provider: MUMPS-openmpi.x86_64 5.3.5-1.el7
+   provider: MUMPS-mpich.x86_64 5.3.5-1.el7
+   provider: MUMPS.x86_64 5.3.5-1.el7
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libptscotch.so.0()(64bit)
+   provider: ptscotch-openmpi.x86_64 6.0.4-13.el7
+   provider: ptscotch-mpich.x86_64 6.0.4-13.el7
+  dependency: libptscotcherr.so.0()(64bit)
+   provider: ptscotch-openmpi.x86_64 6.0.4-13.el7
+   provider: ptscotch-mpich.x86_64 6.0.4-13.el7
+  dependency: libquadmath.so.0()(64bit)
+   provider: libquadmath.x86_64 4.8.5-44.el7
+  dependency: libscalapack.so.2()(64bit)
+   provider: scalapack-openmpi3.x86_64 2.0.2-31.el7
+   provider: scalapack-openmpi.x86_64 2.0.2-31.el7
+   provider: scalapack-mpich.x86_64 2.0.2-31.el7
+  dependency: libscotch.so.0()(64bit)
+   provider: scotch.x86_64 6.0.4-13.el7
+   provider: ptscotch-openmpi.x86_64 6.0.4-13.el7
+   provider: ptscotch-mpich.x86_64 6.0.4-13.el7
+  dependency: libscotcherr.so.0()(64bit)
+   provider: scotch.x86_64 6.0.4-13.el7
+   provider: ptscotch-openmpi.x86_64 6.0.4-13.el7
+   provider: ptscotch-mpich.x86_64 6.0.4-13.el7
+  dependency: libsmumps-5.3.so()(64bit)
+   provider: MUMPS-openmpi.x86_64 5.3.5-1.el7
+   provider: MUMPS-mpich.x86_64 5.3.5-1.el7
+   provider: MUMPS.x86_64 5.3.5-1.el7
+  dependency: libstdc++.so.6()(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libzmumps-5.3.so()(64bit)
+   provider: MUMPS-openmpi.x86_64 5.3.5-1.el7
+   provider: MUMPS-mpich.x86_64 5.3.5-1.el7
+   provider: MUMPS.x86_64 5.3.5-1.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

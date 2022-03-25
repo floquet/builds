@@ -1,0 +1,75 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 15242.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (245 MB VSZ)
+    Started: Wed Mar 23 17:43:17 2022 - 00:01 ago
+    State  : Running, pid: 15242
+Existing lock /var/run/yum.pid: another copy is running as pid 15243.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (245 MB VSZ)
+    Started: Wed Mar 23 17:43:17 2022 - 00:03 ago
+    State  : Running, pid: 15243
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.dal10.us.leaseweb.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: centos-distro.cavecreek.net
+ * updates: repos.lax.layerhost.com
+pkgsack time: 0.303
+Obs Init time: 0.180
+Resolving Dependencies
+--> Running transaction check
+---> Package git-lfs.x86_64 0:2.10.0-1.el7 will be installed
+Checking deps for git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('git-core', 'GE', ('0', '1.8.2', None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of git-lfs.x86_64 0:2.10.0-1.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.173
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch             Version                Repository      Size
+================================================================================
+Installing:
+ git-lfs           x86_64           2.10.0-1.el7           epel           4.2 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 4.2 M
+Installed size: 16 M
+Downloading packages:
+Member: git-lfs.x86_64 0:2.10.0-1.el7 - u
+Adding Package git-lfs-2.10.0-1.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.022
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.011
+Running transaction
+  Installing : git-lfs-2.10.0-1.el7.x86_64                                  1/1 
+Git LFS initialized.
+  Verifying  : git-lfs-2.10.0-1.el7.x86_64                                  1/1 
+VerifyTransaction time: 0.068
+Transaction time: 0.765
+
+Installed:
+  git-lfs.x86_64 0:2.10.0-1.el7                                                 
+
+Complete!

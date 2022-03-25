@@ -57,8 +57,8 @@ new_step "ENV variable \${CDF_LIB} = ${CDF_LIB}"
 new_step "rm cdf${cdfvunderscore}-dist-all.tar.gz"
           rm cdf${cdfvunderscore}-dist-all.tar.gz
 
-new_step "rm -r cdf${cdfvunderscore}-dist/"
-          rm -r cdf${cdfvunderscore}-dist/
+new_step "rm -fr cdf${cdfvunderscore}-dist/"
+          rm -fr cdf${cdfvunderscore}-dist/
 
 new_step "print wall time used"
     export elapsed=$((${SECONDS}-${elapsed}))
