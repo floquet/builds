@@ -1,0 +1,123 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.014
+rpmdb time: 0.028
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.netdepot.com
+ * updates: mirrors.maine.edu
+pkgsack time: 0.187
+Obs Init time: 0.234
+Resolving Dependencies
+--> Running transaction check
+---> Package gsl-devel.x86_64 0:1.15-13.el7 will be installed
+Checking deps for gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('gsl', 'EQ', ('0', '1.15', '13.el7')) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('automake', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('libgslcblas.so.0()(64bit)', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('libgsl.so.0()(64bit)', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+gsl-devel-1.15-13.el7.x86_64 requires: gsl = 1.15-13.el7
+--> Processing Dependency: gsl = 1.15-13.el7 for package: gsl-devel-1.15-13.el7.x86_64
+Searching pkgSack for dep: gsl
+Building updates object
+up:simple updates time: 0.007
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.203
+TSINFO: Marking gsl-1.15-13.el7.x86_64 as install for gsl-devel-1.15-13.el7.x86_64
+gsl-devel-1.15-13.el7.x86_64 requires: libgslcblas.so.0()(64bit)
+--> Processing Dependency: libgslcblas.so.0()(64bit) for package: gsl-devel-1.15-13.el7.x86_64
+Quick matched gsl-1.15-13.el7.x86_64 to require for libgslcblas.so.0()(64bit)
+gsl-devel-1.15-13.el7.x86_64 requires: libgsl.so.0()(64bit)
+--> Processing Dependency: libgsl.so.0()(64bit) for package: gsl-devel-1.15-13.el7.x86_64
+Quick matched gsl-1.15-13.el7.x86_64 to require for libgsl.so.0()(64bit)
+--> Running transaction check
+---> Package gsl.x86_64 0:1.15-13.el7 will be installed
+Checking deps for gsl.x86_64 0:1.15-13.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('libsatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+gsl-1.15-13.el7.x86_64 requires: libsatlas.so.3()(64bit)
+--> Processing Dependency: libsatlas.so.3()(64bit) for package: gsl-1.15-13.el7.x86_64
+Searching pkgSack for dep: libsatlas.so.3()(64bit)
+TSINFO: Marking atlas-3.10.1-12.el7.x86_64 as install for gsl-1.15-13.el7.x86_64
+--> Running transaction check
+---> Package atlas.x86_64 0:3.10.1-12.el7 will be installed
+Checking deps for atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.399
+
+Dependencies Resolved
+
+================================================================================
+ Package            Arch            Version                 Repository     Size
+================================================================================
+Installing:
+ gsl-devel          x86_64          1.15-13.el7             base          446 k
+Installing for dependencies:
+ atlas              x86_64          3.10.1-12.el7           base          4.5 M
+ gsl                x86_64          1.15-13.el7             base          884 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+2 Dependent packages)
+
+Total download size: 5.8 M
+Installed size: 25 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              4.5 MB/s | 5.8 MB  00:01     
+Member: gsl.x86_64 0:1.15-13.el7 - u
+Adding Package gsl-1.15-13.el7.x86_64 in mode u
+Member: atlas.x86_64 0:3.10.1-12.el7 - u
+Adding Package atlas-3.10.1-12.el7.x86_64 in mode u
+Member: gsl-devel.x86_64 0:1.15-13.el7 - u
+Adding Package gsl-devel-1.15-13.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.055
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.064
+Running transaction
+  Installing : atlas-3.10.1-12.el7.x86_64                                   1/3 
+  Installing : gsl-1.15-13.el7.x86_64                                       2/3 
+  Installing : gsl-devel-1.15-13.el7.x86_64                                 3/3 
+  Verifying  : gsl-1.15-13.el7.x86_64                                       1/3 
+  Verifying  : atlas-3.10.1-12.el7.x86_64                                   2/3 
+  Verifying  : gsl-devel-1.15-13.el7.x86_64                                 3/3 
+VerifyTransaction time: 0.075
+Transaction time: 1.752
+
+Installed:
+  gsl-devel.x86_64 0:1.15-13.el7                                                
+
+Dependency Installed:
+  atlas.x86_64 0:3.10.1-12.el7             gsl.x86_64 0:1.15-13.el7            
+
+Complete!
