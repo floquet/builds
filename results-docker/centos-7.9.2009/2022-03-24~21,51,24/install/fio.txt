@@ -1,0 +1,757 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 13629.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (245 MB VSZ)
+    Started: Thu Mar 24 21:54:32 2022 - 00:01 ago
+    State  : Running, pid: 13629
+Existing lock /var/run/yum.pid: another copy is running as pid 13628.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  33 M RSS (248 MB VSZ)
+    Started: Thu Mar 24 21:54:32 2022 - 00:03 ago
+    State  : Running, pid: 13628
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: repos.forethought.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.keystealth.org
+ * updates: mirror.keystealth.org
+pkgsack time: 0.263
+Obs Init time: 0.177
+Resolving Dependencies
+--> Running transaction check
+---> Package fio.x86_64 0:3.7-2.el7 will be installed
+Checking deps for fio.x86_64 0:3.7-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('librt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('librdmacm.so.1(RDMACM_1.0)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libpmemblk.so.1(LIBPMEMBLK_1.0)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libpmem.so.1(LIBPMEM_1.0)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libnuma.so.1(libnuma_1.2)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libnuma.so.1(libnuma_1.1)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libibverbs.so.1(IBVERBS_1.1)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libibverbs.so.1(IBVERBS_1.0)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libaio.so.1(LIBAIO_0.4)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libaio.so.1(LIBAIO_0.1)(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('/usr/bin/python2.7', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('/usr/bin/bash', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('librdmacm.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('librbd.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('librados.so.2()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libpmemblk.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libpmem.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libnuma.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libibverbs.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+looking for ('libaio.so.1()(64bit)', None, (None, None, None)) as a requirement of fio.x86_64 0:3.7-2.el7 - u
+fio-3.7-2.el7.x86_64 requires: librdmacm.so.1(RDMACM_1.0)(64bit)
+--> Processing Dependency: librdmacm.so.1(RDMACM_1.0)(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: librdmacm.so.1(RDMACM_1.0)(64bit)
+Building updates object
+up:simple updates time: 0.005
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.238
+TSINFO: Marking librdmacm-22.4-6.el7_9.x86_64 as install for fio-3.7-2.el7.x86_64
+fio-3.7-2.el7.x86_64 requires: libpmemblk.so.1(LIBPMEMBLK_1.0)(64bit)
+--> Processing Dependency: libpmemblk.so.1(LIBPMEMBLK_1.0)(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libpmemblk.so.1(LIBPMEMBLK_1.0)(64bit)
+TSINFO: Marking libpmemblk-1.5.1-2.1.el7.x86_64 as install for fio-3.7-2.el7.x86_64
+fio-3.7-2.el7.x86_64 requires: libpmem.so.1(LIBPMEM_1.0)(64bit)
+--> Processing Dependency: libpmem.so.1(LIBPMEM_1.0)(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libpmem.so.1(LIBPMEM_1.0)(64bit)
+TSINFO: Marking libpmem-1.5.1-2.1.el7.x86_64 as install for fio-3.7-2.el7.x86_64
+fio-3.7-2.el7.x86_64 requires: libnuma.so.1(libnuma_1.2)(64bit)
+--> Processing Dependency: libnuma.so.1(libnuma_1.2)(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libnuma.so.1(libnuma_1.2)(64bit)
+TSINFO: Marking numactl-libs-2.0.12-5.el7.x86_64 as install for fio-3.7-2.el7.x86_64
+fio-3.7-2.el7.x86_64 requires: libnuma.so.1(libnuma_1.1)(64bit)
+--> Processing Dependency: libnuma.so.1(libnuma_1.1)(64bit) for package: fio-3.7-2.el7.x86_64
+Quick matched numactl-libs-2.0.12-5.el7.x86_64 to require for libnuma.so.1(libnuma_1.1)(64bit)
+fio-3.7-2.el7.x86_64 requires: libibverbs.so.1(IBVERBS_1.1)(64bit)
+--> Processing Dependency: libibverbs.so.1(IBVERBS_1.1)(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libibverbs.so.1(IBVERBS_1.1)(64bit)
+TSINFO: Marking libibverbs-22.4-6.el7_9.x86_64 as install for fio-3.7-2.el7.x86_64
+fio-3.7-2.el7.x86_64 requires: libibverbs.so.1(IBVERBS_1.0)(64bit)
+--> Processing Dependency: libibverbs.so.1(IBVERBS_1.0)(64bit) for package: fio-3.7-2.el7.x86_64
+Quick matched libibverbs-22.4-6.el7_9.x86_64 to require for libibverbs.so.1(IBVERBS_1.0)(64bit)
+fio-3.7-2.el7.x86_64 requires: libaio.so.1(LIBAIO_0.4)(64bit)
+--> Processing Dependency: libaio.so.1(LIBAIO_0.4)(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libaio.so.1(LIBAIO_0.4)(64bit)
+TSINFO: Marking libaio-0.3.109-13.el7.x86_64 as install for fio-3.7-2.el7.x86_64
+fio-3.7-2.el7.x86_64 requires: libaio.so.1(LIBAIO_0.1)(64bit)
+--> Processing Dependency: libaio.so.1(LIBAIO_0.1)(64bit) for package: fio-3.7-2.el7.x86_64
+Quick matched libaio-0.3.109-13.el7.x86_64 to require for libaio.so.1(LIBAIO_0.1)(64bit)
+fio-3.7-2.el7.x86_64 requires: librdmacm.so.1()(64bit)
+--> Processing Dependency: librdmacm.so.1()(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: librdmacm.so.1()(64bit)
+Potential resolving package librdmacm-22.4-5.el7.x86_64 has newer instance in ts.
+librdmacm-22.4-6.el7_9.x86_64 already in ts, skipping this one
+fio-3.7-2.el7.x86_64 requires: librbd.so.1()(64bit)
+--> Processing Dependency: librbd.so.1()(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: librbd.so.1()(64bit)
+TSINFO: Marking 1:librbd1-10.2.5-4.el7.x86_64 as install for fio-3.7-2.el7.x86_64
+fio-3.7-2.el7.x86_64 requires: librados.so.2()(64bit)
+--> Processing Dependency: librados.so.2()(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: librados.so.2()(64bit)
+TSINFO: Marking 1:librados2-10.2.5-4.el7.x86_64 as install for fio-3.7-2.el7.x86_64
+fio-3.7-2.el7.x86_64 requires: libpmemblk.so.1()(64bit)
+--> Processing Dependency: libpmemblk.so.1()(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libpmemblk.so.1()(64bit)
+Potential resolving package libpmemblk-1.1-1.el7.x86_64 has newer instance in ts.
+libpmemblk-1.5.1-2.1.el7.x86_64 already in ts, skipping this one
+fio-3.7-2.el7.x86_64 requires: libpmem.so.1()(64bit)
+--> Processing Dependency: libpmem.so.1()(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libpmem.so.1()(64bit)
+Potential resolving package libpmem-1.1-1.el7.x86_64 has newer instance in ts.
+libpmem-1.5.1-2.1.el7.x86_64 already in ts, skipping this one
+fio-3.7-2.el7.x86_64 requires: libnuma.so.1()(64bit)
+--> Processing Dependency: libnuma.so.1()(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libnuma.so.1()(64bit)
+numactl-libs-2.0.12-5.el7.x86_64 already in ts, skipping this one
+fio-3.7-2.el7.x86_64 requires: libibverbs.so.1()(64bit)
+--> Processing Dependency: libibverbs.so.1()(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libibverbs.so.1()(64bit)
+Potential resolving package libibverbs-22.4-5.el7.x86_64 has newer instance in ts.
+libibverbs-22.4-6.el7_9.x86_64 already in ts, skipping this one
+fio-3.7-2.el7.x86_64 requires: libaio.so.1()(64bit)
+--> Processing Dependency: libaio.so.1()(64bit) for package: fio-3.7-2.el7.x86_64
+Searching pkgSack for dep: libaio.so.1()(64bit)
+libaio-0.3.109-13.el7.x86_64 already in ts, skipping this one
+--> Running transaction check
+---> Package libaio.x86_64 0:0.3.109-13.el7 will be installed
+Checking deps for libaio.x86_64 0:0.3.109-13.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libaio.x86_64 0:0.3.109-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libaio.x86_64 0:0.3.109-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libaio.x86_64 0:0.3.109-13.el7 - u
+---> Package libibverbs.x86_64 0:22.4-6.el7_9 will be installed
+Checking deps for libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('rdma-core(x86-64)', 'EQ', ('0', '22.4', '6.el7_9')) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('perl(warnings)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('perl(strict)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('perl(Getopt::Long)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('perl(File::Path)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('perl(File::Basename)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libnl-route-3.so.200(libnl_3)(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libnl-3.so.200(libnl_3)(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('/usr/bin/perl', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libnl-route-3.so.200()(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libnl-3.so.200()(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of libibverbs.x86_64 0:22.4-6.el7_9 - u
+libibverbs-22.4-6.el7_9.x86_64 requires: rdma-core(x86-64) = 22.4-6.el7_9
+--> Processing Dependency: rdma-core(x86-64) = 22.4-6.el7_9 for package: libibverbs-22.4-6.el7_9.x86_64
+Searching pkgSack for dep: rdma-core(x86-64)
+TSINFO: Marking rdma-core-22.4-6.el7_9.x86_64 as install for libibverbs-22.4-6.el7_9.x86_64
+libibverbs-22.4-6.el7_9.x86_64 requires: libnl-route-3.so.200(libnl_3)(64bit)
+--> Processing Dependency: libnl-route-3.so.200(libnl_3)(64bit) for package: libibverbs-22.4-6.el7_9.x86_64
+Searching pkgSack for dep: libnl-route-3.so.200(libnl_3)(64bit)
+TSINFO: Marking libnl3-3.2.28-4.el7.x86_64 as install for libibverbs-22.4-6.el7_9.x86_64
+libibverbs-22.4-6.el7_9.x86_64 requires: libnl-3.so.200(libnl_3)(64bit)
+--> Processing Dependency: libnl-3.so.200(libnl_3)(64bit) for package: libibverbs-22.4-6.el7_9.x86_64
+Quick matched libnl3-3.2.28-4.el7.x86_64 to require for libnl-3.so.200(libnl_3)(64bit)
+libibverbs-22.4-6.el7_9.x86_64 requires: libnl-route-3.so.200()(64bit)
+--> Processing Dependency: libnl-route-3.so.200()(64bit) for package: libibverbs-22.4-6.el7_9.x86_64
+Quick matched libnl3-3.2.28-4.el7.x86_64 to require for libnl-route-3.so.200()(64bit)
+libibverbs-22.4-6.el7_9.x86_64 requires: libnl-3.so.200()(64bit)
+--> Processing Dependency: libnl-3.so.200()(64bit) for package: libibverbs-22.4-6.el7_9.x86_64
+Quick matched libnl3-3.2.28-4.el7.x86_64 to require for libnl-3.so.200()(64bit)
+---> Package libpmem.x86_64 0:1.5.1-2.1.el7 will be installed
+Checking deps for libpmem.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libpmem.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.4)(64bit)', None, (None, None, None)) as a requirement of libpmem.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of libpmem.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libpmem.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of libpmem.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libpmem.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libpmem.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libpmem.x86_64 0:1.5.1-2.1.el7 - u
+---> Package libpmemblk.x86_64 0:1.5.1-2.1.el7 will be installed
+Checking deps for libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpmem', 'EQ', ('0', '1.5.1', '2.1.el7')) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.4)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpmem.so.1(LIBPMEM_1.0)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libndctl.so.6(LIBNDCTL_3)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libndctl.so.6(LIBNDCTL_14)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libndctl.so.6(LIBNDCTL_1)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libdaxctl.so.1(LIBDAXCTL_2)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libpmem.so.1()(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libndctl.so.6()(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+looking for ('libdaxctl.so.1()(64bit)', None, (None, None, None)) as a requirement of libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+libpmemblk-1.5.1-2.1.el7.x86_64 requires: libndctl.so.6(LIBNDCTL_3)(64bit)
+--> Processing Dependency: libndctl.so.6(LIBNDCTL_3)(64bit) for package: libpmemblk-1.5.1-2.1.el7.x86_64
+Searching pkgSack for dep: libndctl.so.6(LIBNDCTL_3)(64bit)
+TSINFO: Marking ndctl-libs-65-5.el7.x86_64 as install for libpmemblk-1.5.1-2.1.el7.x86_64
+libpmemblk-1.5.1-2.1.el7.x86_64 requires: libndctl.so.6(LIBNDCTL_14)(64bit)
+--> Processing Dependency: libndctl.so.6(LIBNDCTL_14)(64bit) for package: libpmemblk-1.5.1-2.1.el7.x86_64
+Quick matched ndctl-libs-65-5.el7.x86_64 to require for libndctl.so.6(LIBNDCTL_14)(64bit)
+libpmemblk-1.5.1-2.1.el7.x86_64 requires: libndctl.so.6(LIBNDCTL_1)(64bit)
+--> Processing Dependency: libndctl.so.6(LIBNDCTL_1)(64bit) for package: libpmemblk-1.5.1-2.1.el7.x86_64
+Quick matched ndctl-libs-65-5.el7.x86_64 to require for libndctl.so.6(LIBNDCTL_1)(64bit)
+libpmemblk-1.5.1-2.1.el7.x86_64 requires: libdaxctl.so.1(LIBDAXCTL_2)(64bit)
+--> Processing Dependency: libdaxctl.so.1(LIBDAXCTL_2)(64bit) for package: libpmemblk-1.5.1-2.1.el7.x86_64
+Searching pkgSack for dep: libdaxctl.so.1(LIBDAXCTL_2)(64bit)
+TSINFO: Marking daxctl-libs-65-5.el7.x86_64 as install for libpmemblk-1.5.1-2.1.el7.x86_64
+libpmemblk-1.5.1-2.1.el7.x86_64 requires: libndctl.so.6()(64bit)
+--> Processing Dependency: libndctl.so.6()(64bit) for package: libpmemblk-1.5.1-2.1.el7.x86_64
+Searching pkgSack for dep: libndctl.so.6()(64bit)
+ndctl-libs-65-5.el7.x86_64 already in ts, skipping this one
+libpmemblk-1.5.1-2.1.el7.x86_64 requires: libdaxctl.so.1()(64bit)
+--> Processing Dependency: libdaxctl.so.1()(64bit) for package: libpmemblk-1.5.1-2.1.el7.x86_64
+Searching pkgSack for dep: libdaxctl.so.1()(64bit)
+daxctl-libs-65-5.el7.x86_64 already in ts, skipping this one
+---> Package librados2.x86_64 1:10.2.5-4.el7 will be installed
+Checking deps for librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.19)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.18)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.14)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.7)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.5)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.1)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libsmime3.so(NSS_3.2)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('librt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.12)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so(NSS_3.3)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so(NSS_3.2)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so(NSS_3.12.9)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so(NSS_3.12.5)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libblkid.so.1(BLKID_1.0)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libssl3.so()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libsmime3.so()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libplds4.so()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libplc4.so()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnssutil3.so()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnspr4.so()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libboost_thread-mt.so.1.53.0()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libboost_system-mt.so.1.53.0()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libboost_random-mt.so.1.53.0()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libboost_iostreams-mt.so.1.53.0()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+looking for ('libblkid.so.1()(64bit)', None, (None, None, None)) as a requirement of librados2.x86_64 1:10.2.5-4.el7 - u
+---> Package librbd1.x86_64 1:10.2.5-4.el7 will be installed
+Checking deps for librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('librados2', 'EQ', ('1', '10.2.5', '4.el7')) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.5)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.19)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.18)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.14)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.7)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.5)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.1)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libsmime3.so(NSS_3.2)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('librt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.12)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so(NSS_3.3)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so(NSS_3.2)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so(NSS_3.12.9)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so(NSS_3.12.5)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libblkid.so.1(BLKID_1.0)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libssl3.so()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libsmime3.so()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('librados.so.2()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libplds4.so()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libplc4.so()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnssutil3.so()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnss3.so()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libnspr4.so()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libboost_thread-mt.so.1.53.0()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libboost_system-mt.so.1.53.0()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libboost_random-mt.so.1.53.0()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libboost_iostreams-mt.so.1.53.0()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+looking for ('libblkid.so.1()(64bit)', None, (None, None, None)) as a requirement of librbd1.x86_64 1:10.2.5-4.el7 - u
+---> Package librdmacm.x86_64 0:22.4-6.el7_9 will be installed
+Checking deps for librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('rdma-core(x86-64)', 'EQ', ('0', '22.4', '6.el7_9')) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libibverbs(x86-64)', 'EQ', ('0', '22.4', '6.el7_9')) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.3.2)(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libibverbs.so.1(IBVERBS_1.5)(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libibverbs.so.1(IBVERBS_1.1)(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libibverbs.so.1(IBVERBS_1.0)(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libibverbs.so.1()(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of librdmacm.x86_64 0:22.4-6.el7_9 - u
+---> Package numactl-libs.x86_64 0:2.0.12-5.el7 will be installed
+Checking deps for numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3.1)(64bit)', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of numactl-libs.x86_64 0:2.0.12-5.el7 - u
+--> Running transaction check
+---> Package daxctl-libs.x86_64 0:65-5.el7 will be installed
+Checking deps for daxctl-libs.x86_64 0:65-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of daxctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libuuid.so.1(UUID_1.0)(64bit)', None, (None, None, None)) as a requirement of daxctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of daxctl-libs.x86_64 0:65-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of daxctl-libs.x86_64 0:65-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of daxctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of daxctl-libs.x86_64 0:65-5.el7 - u
+---> Package libnl3.x86_64 0:3.2.28-4.el7 will be installed
+Checking deps for libnl3.x86_64 0:3.2.28-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libnl3.x86_64 0:3.2.28-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libnl3.x86_64 0:3.2.28-4.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of libnl3.x86_64 0:3.2.28-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libnl3.x86_64 0:3.2.28-4.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libnl3.x86_64 0:3.2.28-4.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libnl3.x86_64 0:3.2.28-4.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of libnl3.x86_64 0:3.2.28-4.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of libnl3.x86_64 0:3.2.28-4.el7 - u
+---> Package ndctl-libs.x86_64 0:65-5.el7 will be installed
+Checking deps for ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('daxctl-libs(x86-64)', 'EQ', ('0', '65', '5.el7')) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libuuid.so.1(UUID_1.0)(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libudev.so.1(LIBUDEV_183)(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libkmod.so.2(LIBKMOD_5)(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libdaxctl.so.1(LIBDAXCTL_2)(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libdaxctl.so.1(LIBDAXCTL_1)(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.17)(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libuuid.so.1()(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+looking for ('libdaxctl.so.1()(64bit)', None, (None, None, None)) as a requirement of ndctl-libs.x86_64 0:65-5.el7 - u
+---> Package rdma-core.x86_64 0:22.4-6.el7_9 will be installed
+Checking deps for rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('systemd', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('pciutils', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('libudev.so.1(LIBUDEV_183)(64bit)', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('libsystemd.so.0(LIBSYSTEMD_209)(64bit)', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.16)(64bit)', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('kmod', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('initscripts', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('dracut', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('libudev.so.1()(64bit)', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+looking for ('libsystemd.so.0()(64bit)', None, (None, None, None)) as a requirement of rdma-core.x86_64 0:22.4-6.el7_9 - u
+rdma-core-22.4-6.el7_9.x86_64 requires: pciutils
+--> Processing Dependency: pciutils for package: rdma-core-22.4-6.el7_9.x86_64
+Searching pkgSack for dep: pciutils
+TSINFO: Marking pciutils-3.5.1-3.el7.x86_64 as install for rdma-core-22.4-6.el7_9.x86_64
+rdma-core-22.4-6.el7_9.x86_64 requires: initscripts
+--> Processing Dependency: initscripts for package: rdma-core-22.4-6.el7_9.x86_64
+Searching pkgSack for dep: initscripts
+TSINFO: Marking initscripts-9.49.53-1.el7_9.1.x86_64 as install for rdma-core-22.4-6.el7_9.x86_64
+--> Running transaction check
+---> Package initscripts.x86_64 0:9.49.53-1.el7_9.1 will be installed
+Checking deps for initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('util-linux', 'GE', ('0', '2.16', None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('udev', 'GE', ('0', '125', '1')) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('sysvinit-tools', 'GE', ('0', '2.87', '5')) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('bash', 'GE', ('0', '3.0', None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('systemd', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('systemd', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('sed', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('redhat-release', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('module-init-tools', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('libpopt.so.0(LIBPOPT_0)(64bit)', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('libc.so.6(GLIBC_2.8)(64bit)', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('iproute', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('hostname', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('grep', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('findutils', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('cpio', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('coreutils', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('coreutils', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('bc', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/usr/sbin/groupadd', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/usr/bin/bash', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/sbin/sysctl', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/sbin/chkconfig', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/sbin/chkconfig', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/sbin/arping', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('/bin/awk', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('libpopt.so.0()(64bit)', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+looking for ('libglib-2.0.so.0()(64bit)', None, (None, None, None)) as a requirement of initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+initscripts-9.49.53-1.el7_9.1.x86_64 requires: sysvinit-tools >= 2.87-5
+--> Processing Dependency: sysvinit-tools >= 2.87-5 for package: initscripts-9.49.53-1.el7_9.1.x86_64
+Searching pkgSack for dep: sysvinit-tools
+TSINFO: Marking sysvinit-tools-2.88-14.dsf.el7.x86_64 as install for initscripts-9.49.53-1.el7_9.1.x86_64
+initscripts-9.49.53-1.el7_9.1.x86_64 requires: iproute
+--> Processing Dependency: iproute for package: initscripts-9.49.53-1.el7_9.1.x86_64
+Searching pkgSack for dep: iproute
+TSINFO: Marking iproute-4.11.0-30.el7.x86_64 as install for initscripts-9.49.53-1.el7_9.1.x86_64
+---> Package pciutils.x86_64 0:3.5.1-3.el7 will be installed
+Checking deps for pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('pciutils-libs', 'EQ', ('0', '3.5.1', '3.el7')) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('libpci.so.3(LIBPCI_3.5)(64bit)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('libpci.so.3(LIBPCI_3.3)(64bit)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('libpci.so.3(LIBPCI_3.1)(64bit)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('libpci.so.3(LIBPCI_3.0)(64bit)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('libkmod.so.2(LIBKMOD_5)(64bit)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('hwdata', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('libpci.so.3()(64bit)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+looking for ('libkmod.so.2()(64bit)', None, (None, None, None)) as a requirement of pciutils.x86_64 0:3.5.1-3.el7 - u
+pciutils-3.5.1-3.el7.x86_64 requires: pciutils-libs = 3.5.1-3.el7
+--> Processing Dependency: pciutils-libs = 3.5.1-3.el7 for package: pciutils-3.5.1-3.el7.x86_64
+Searching pkgSack for dep: pciutils-libs
+TSINFO: Marking pciutils-libs-3.5.1-3.el7.x86_64 as install for pciutils-3.5.1-3.el7.x86_64
+pciutils-3.5.1-3.el7.x86_64 requires: libpci.so.3(LIBPCI_3.5)(64bit)
+--> Processing Dependency: libpci.so.3(LIBPCI_3.5)(64bit) for package: pciutils-3.5.1-3.el7.x86_64
+Quick matched pciutils-libs-3.5.1-3.el7.x86_64 to require for libpci.so.3(LIBPCI_3.5)(64bit)
+pciutils-3.5.1-3.el7.x86_64 requires: libpci.so.3(LIBPCI_3.3)(64bit)
+--> Processing Dependency: libpci.so.3(LIBPCI_3.3)(64bit) for package: pciutils-3.5.1-3.el7.x86_64
+Quick matched pciutils-libs-3.5.1-3.el7.x86_64 to require for libpci.so.3(LIBPCI_3.3)(64bit)
+pciutils-3.5.1-3.el7.x86_64 requires: libpci.so.3(LIBPCI_3.1)(64bit)
+--> Processing Dependency: libpci.so.3(LIBPCI_3.1)(64bit) for package: pciutils-3.5.1-3.el7.x86_64
+Quick matched pciutils-libs-3.5.1-3.el7.x86_64 to require for libpci.so.3(LIBPCI_3.1)(64bit)
+pciutils-3.5.1-3.el7.x86_64 requires: libpci.so.3(LIBPCI_3.0)(64bit)
+--> Processing Dependency: libpci.so.3(LIBPCI_3.0)(64bit) for package: pciutils-3.5.1-3.el7.x86_64
+Quick matched pciutils-libs-3.5.1-3.el7.x86_64 to require for libpci.so.3(LIBPCI_3.0)(64bit)
+pciutils-3.5.1-3.el7.x86_64 requires: libpci.so.3()(64bit)
+--> Processing Dependency: libpci.so.3()(64bit) for package: pciutils-3.5.1-3.el7.x86_64
+Quick matched pciutils-libs-3.5.1-3.el7.x86_64 to require for libpci.so.3()(64bit)
+--> Running transaction check
+---> Package iproute.x86_64 0:4.11.0-30.el7 will be installed
+Checking deps for iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libmnl.so.0(LIBMNL_1.0)(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('/bin/bash', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libxtables.so.10()(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libselinux.so.1()(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libmnl.so.0()(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+looking for ('libdb-5.3.so()(64bit)', None, (None, None, None)) as a requirement of iproute.x86_64 0:4.11.0-30.el7 - u
+iproute-4.11.0-30.el7.x86_64 requires: libmnl.so.0(LIBMNL_1.0)(64bit)
+--> Processing Dependency: libmnl.so.0(LIBMNL_1.0)(64bit) for package: iproute-4.11.0-30.el7.x86_64
+Searching pkgSack for dep: libmnl.so.0(LIBMNL_1.0)(64bit)
+TSINFO: Marking libmnl-1.0.3-7.el7.x86_64 as install for iproute-4.11.0-30.el7.x86_64
+iproute-4.11.0-30.el7.x86_64 requires: libxtables.so.10()(64bit)
+--> Processing Dependency: libxtables.so.10()(64bit) for package: iproute-4.11.0-30.el7.x86_64
+Searching pkgSack for dep: libxtables.so.10()(64bit)
+TSINFO: Marking iptables-1.4.21-35.el7.x86_64 as install for iproute-4.11.0-30.el7.x86_64
+iproute-4.11.0-30.el7.x86_64 requires: libmnl.so.0()(64bit)
+--> Processing Dependency: libmnl.so.0()(64bit) for package: iproute-4.11.0-30.el7.x86_64
+Searching pkgSack for dep: libmnl.so.0()(64bit)
+libmnl-1.0.3-7.el7.x86_64 already in ts, skipping this one
+---> Package pciutils-libs.x86_64 0:3.5.1-3.el7 will be installed
+Checking deps for pciutils-libs.x86_64 0:3.5.1-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of pciutils-libs.x86_64 0:3.5.1-3.el7 - u
+looking for ('libresolv.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of pciutils-libs.x86_64 0:3.5.1-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of pciutils-libs.x86_64 0:3.5.1-3.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of pciutils-libs.x86_64 0:3.5.1-3.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of pciutils-libs.x86_64 0:3.5.1-3.el7 - u
+looking for ('libresolv.so.2()(64bit)', None, (None, None, None)) as a requirement of pciutils-libs.x86_64 0:3.5.1-3.el7 - u
+---> Package sysvinit-tools.x86_64 0:2.88-14.dsf.el7 will be installed
+Checking deps for sysvinit-tools.x86_64 0:2.88-14.dsf.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of sysvinit-tools.x86_64 0:2.88-14.dsf.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of sysvinit-tools.x86_64 0:2.88-14.dsf.el7 - u
+looking for ('libcrypt.so.1()(64bit)', None, (None, None, None)) as a requirement of sysvinit-tools.x86_64 0:2.88-14.dsf.el7 - u
+--> Running transaction check
+---> Package iptables.x86_64 0:1.4.21-35.el7 will be installed
+Checking deps for iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('libnfnetlink.so.0()(64bit)', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('libnetfilter_conntrack.so.3()(64bit)', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of iptables.x86_64 0:1.4.21-35.el7 - u
+iptables-1.4.21-35.el7.x86_64 requires: libnfnetlink.so.0()(64bit)
+--> Processing Dependency: libnfnetlink.so.0()(64bit) for package: iptables-1.4.21-35.el7.x86_64
+Searching pkgSack for dep: libnfnetlink.so.0()(64bit)
+TSINFO: Marking libnfnetlink-1.0.1-4.el7.x86_64 as install for iptables-1.4.21-35.el7.x86_64
+iptables-1.4.21-35.el7.x86_64 requires: libnetfilter_conntrack.so.3()(64bit)
+--> Processing Dependency: libnetfilter_conntrack.so.3()(64bit) for package: iptables-1.4.21-35.el7.x86_64
+Searching pkgSack for dep: libnetfilter_conntrack.so.3()(64bit)
+TSINFO: Marking libnetfilter_conntrack-1.0.6-1.el7_3.x86_64 as install for iptables-1.4.21-35.el7.x86_64
+---> Package libmnl.x86_64 0:1.0.3-7.el7 will be installed
+Checking deps for libmnl.x86_64 0:1.0.3-7.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libmnl.x86_64 0:1.0.3-7.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libmnl.x86_64 0:1.0.3-7.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libmnl.x86_64 0:1.0.3-7.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libmnl.x86_64 0:1.0.3-7.el7 - u
+--> Running transaction check
+---> Package libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 will be installed
+Checking deps for libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+looking for ('libmnl.so.0(LIBMNL_1.1)(64bit)', None, (None, None, None)) as a requirement of libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+looking for ('libmnl.so.0(LIBMNL_1.0)(64bit)', None, (None, None, None)) as a requirement of libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+looking for ('libnfnetlink.so.0()(64bit)', None, (None, None, None)) as a requirement of libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+looking for ('libmnl.so.0()(64bit)', None, (None, None, None)) as a requirement of libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+---> Package libnfnetlink.x86_64 0:1.0.1-4.el7 will be installed
+Checking deps for libnfnetlink.x86_64 0:1.0.1-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libnfnetlink.x86_64 0:1.0.1-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libnfnetlink.x86_64 0:1.0.1-4.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libnfnetlink.x86_64 0:1.0.1-4.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libnfnetlink.x86_64 0:1.0.1-4.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.758
+
+Dependencies Resolved
+
+================================================================================
+ Package                    Arch       Version                Repository   Size
+================================================================================
+Installing:
+ fio                        x86_64     3.7-2.el7              base        467 k
+Installing for dependencies:
+ daxctl-libs                x86_64     65-5.el7               base         27 k
+ initscripts                x86_64     9.49.53-1.el7_9.1      updates     440 k
+ iproute                    x86_64     4.11.0-30.el7          base        805 k
+ iptables                   x86_64     1.4.21-35.el7          base        432 k
+ libaio                     x86_64     0.3.109-13.el7         base         24 k
+ libibverbs                 x86_64     22.4-6.el7_9           updates     269 k
+ libmnl                     x86_64     1.0.3-7.el7            base         23 k
+ libnetfilter_conntrack     x86_64     1.0.6-1.el7_3          base         55 k
+ libnfnetlink               x86_64     1.0.1-4.el7            base         26 k
+ libnl3                     x86_64     3.2.28-4.el7           base        278 k
+ libpmem                    x86_64     1.5.1-2.1.el7          base         59 k
+ libpmemblk                 x86_64     1.5.1-2.1.el7          base         80 k
+ librados2                  x86_64     1:10.2.5-4.el7         base        1.8 M
+ librbd1                    x86_64     1:10.2.5-4.el7         base        2.4 M
+ librdmacm                  x86_64     22.4-6.el7_9           updates      64 k
+ ndctl-libs                 x86_64     65-5.el7               base         65 k
+ numactl-libs               x86_64     2.0.12-5.el7           base         30 k
+ pciutils                   x86_64     3.5.1-3.el7            base         93 k
+ pciutils-libs              x86_64     3.5.1-3.el7            base         46 k
+ rdma-core                  x86_64     22.4-6.el7_9           updates      51 k
+ sysvinit-tools             x86_64     2.88-14.dsf.el7        base         63 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+21 Dependent packages)
+
+Total download size: 7.5 M
+Installed size: 22 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              9.1 MB/s | 7.5 MB  00:00     
+Member: librbd1.x86_64 1:10.2.5-4.el7 - u
+Adding Package 1:librbd1-10.2.5-4.el7.x86_64 in mode u
+Member: libmnl.x86_64 0:1.0.3-7.el7 - u
+Adding Package libmnl-1.0.3-7.el7.x86_64 in mode u
+Member: sysvinit-tools.x86_64 0:2.88-14.dsf.el7 - u
+Adding Package sysvinit-tools-2.88-14.dsf.el7.x86_64 in mode u
+Member: libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 - u
+Adding Package libnetfilter_conntrack-1.0.6-1.el7_3.x86_64 in mode u
+Member: libibverbs.x86_64 0:22.4-6.el7_9 - u
+Adding Package libibverbs-22.4-6.el7_9.x86_64 in mode u
+Member: rdma-core.x86_64 0:22.4-6.el7_9 - u
+Adding Package rdma-core-22.4-6.el7_9.x86_64 in mode u
+Member: pciutils-libs.x86_64 0:3.5.1-3.el7 - u
+Adding Package pciutils-libs-3.5.1-3.el7.x86_64 in mode u
+Member: initscripts.x86_64 0:9.49.53-1.el7_9.1 - u
+Adding Package initscripts-9.49.53-1.el7_9.1.x86_64 in mode u
+Member: iproute.x86_64 0:4.11.0-30.el7 - u
+Adding Package iproute-4.11.0-30.el7.x86_64 in mode u
+Member: libaio.x86_64 0:0.3.109-13.el7 - u
+Adding Package libaio-0.3.109-13.el7.x86_64 in mode u
+Member: libpmem.x86_64 0:1.5.1-2.1.el7 - u
+Adding Package libpmem-1.5.1-2.1.el7.x86_64 in mode u
+Member: fio.x86_64 0:3.7-2.el7 - u
+Adding Package fio-3.7-2.el7.x86_64 in mode u
+Member: ndctl-libs.x86_64 0:65-5.el7 - u
+Adding Package ndctl-libs-65-5.el7.x86_64 in mode u
+Member: librados2.x86_64 1:10.2.5-4.el7 - u
+Adding Package 1:librados2-10.2.5-4.el7.x86_64 in mode u
+Member: libpmemblk.x86_64 0:1.5.1-2.1.el7 - u
+Adding Package libpmemblk-1.5.1-2.1.el7.x86_64 in mode u
+Member: daxctl-libs.x86_64 0:65-5.el7 - u
+Adding Package daxctl-libs-65-5.el7.x86_64 in mode u
+Member: librdmacm.x86_64 0:22.4-6.el7_9 - u
+Adding Package librdmacm-22.4-6.el7_9.x86_64 in mode u
+Member: iptables.x86_64 0:1.4.21-35.el7 - u
+Adding Package iptables-1.4.21-35.el7.x86_64 in mode u
+Member: libnfnetlink.x86_64 0:1.0.1-4.el7 - u
+Adding Package libnfnetlink-1.0.1-4.el7.x86_64 in mode u
+Member: numactl-libs.x86_64 0:2.0.12-5.el7 - u
+Adding Package numactl-libs-2.0.12-5.el7.x86_64 in mode u
+Member: libnl3.x86_64 0:3.2.28-4.el7 - u
+Adding Package libnl3-3.2.28-4.el7.x86_64 in mode u
+Member: pciutils.x86_64 0:3.5.1-3.el7 - u
+Adding Package pciutils-3.5.1-3.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.081
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.037
+Running transaction
+  Installing : libnfnetlink-1.0.1-4.el7.x86_64                             1/22 
+  Installing : daxctl-libs-65-5.el7.x86_64                                 2/22 
+  Installing : 1:librados2-10.2.5-4.el7.x86_64                             3/22 
+  Installing : libpmem-1.5.1-2.1.el7.x86_64                                4/22 
+  Installing : libmnl-1.0.3-7.el7.x86_64                                   5/22 
+  Installing : libnetfilter_conntrack-1.0.6-1.el7_3.x86_64                 6/22 
+  Installing : iptables-1.4.21-35.el7.x86_64                               7/22 
+  Installing : iproute-4.11.0-30.el7.x86_64                                8/22 
+  Installing : 1:librbd1-10.2.5-4.el7.x86_64                               9/22 
+  Installing : ndctl-libs-65-5.el7.x86_64                                 10/22 
+  Installing : libpmemblk-1.5.1-2.1.el7.x86_64                            11/22 
+  Installing : libnl3-3.2.28-4.el7.x86_64                                 12/22 
+  Installing : numactl-libs-2.0.12-5.el7.x86_64                           13/22 
+  Installing : libaio-0.3.109-13.el7.x86_64                               14/22 
+  Installing : pciutils-libs-3.5.1-3.el7.x86_64                           15/22 
+  Installing : pciutils-3.5.1-3.el7.x86_64                                16/22 
+  Installing : sysvinit-tools-2.88-14.dsf.el7.x86_64                      17/22 
+  Installing : initscripts-9.49.53-1.el7_9.1.x86_64                       18/22 
+  Installing : rdma-core-22.4-6.el7_9.x86_64                              19/22 
+  Installing : libibverbs-22.4-6.el7_9.x86_64                             20/22 
+  Installing : librdmacm-22.4-6.el7_9.x86_64                              21/22 
+  Installing : fio-3.7-2.el7.x86_64                                       22/22 
+  Verifying  : 1:librbd1-10.2.5-4.el7.x86_64                               1/22 
+  Verifying  : libmnl-1.0.3-7.el7.x86_64                                   2/22 
+  Verifying  : sysvinit-tools-2.88-14.dsf.el7.x86_64                       3/22 
+  Verifying  : libnetfilter_conntrack-1.0.6-1.el7_3.x86_64                 4/22 
+  Verifying  : libibverbs-22.4-6.el7_9.x86_64                              5/22 
+  Verifying  : rdma-core-22.4-6.el7_9.x86_64                               6/22 
+  Verifying  : pciutils-libs-3.5.1-3.el7.x86_64                            7/22 
+  Verifying  : initscripts-9.49.53-1.el7_9.1.x86_64                        8/22 
+  Verifying  : iproute-4.11.0-30.el7.x86_64                                9/22 
+  Verifying  : libaio-0.3.109-13.el7.x86_64                               10/22 
+  Verifying  : libpmem-1.5.1-2.1.el7.x86_64                               11/22 
+  Verifying  : fio-3.7-2.el7.x86_64                                       12/22 
+  Verifying  : ndctl-libs-65-5.el7.x86_64                                 13/22 
+  Verifying  : 1:librados2-10.2.5-4.el7.x86_64                            14/22 
+  Verifying  : libpmemblk-1.5.1-2.1.el7.x86_64                            15/22 
+  Verifying  : daxctl-libs-65-5.el7.x86_64                                16/22 
+  Verifying  : librdmacm-22.4-6.el7_9.x86_64                              17/22 
+  Verifying  : iptables-1.4.21-35.el7.x86_64                              18/22 
+  Verifying  : libnfnetlink-1.0.1-4.el7.x86_64                            19/22 
+  Verifying  : numactl-libs-2.0.12-5.el7.x86_64                           20/22 
+  Verifying  : libnl3-3.2.28-4.el7.x86_64                                 21/22 
+  Verifying  : pciutils-3.5.1-3.el7.x86_64                                22/22 
+VerifyTransaction time: 0.202
+Transaction time: 5.324
+
+Installed:
+  fio.x86_64 0:3.7-2.el7                                                        
+
+Dependency Installed:
+  daxctl-libs.x86_64 0:65-5.el7                                                 
+  initscripts.x86_64 0:9.49.53-1.el7_9.1                                        
+  iproute.x86_64 0:4.11.0-30.el7                                                
+  iptables.x86_64 0:1.4.21-35.el7                                               
+  libaio.x86_64 0:0.3.109-13.el7                                                
+  libibverbs.x86_64 0:22.4-6.el7_9                                              
+  libmnl.x86_64 0:1.0.3-7.el7                                                   
+  libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3                                 
+  libnfnetlink.x86_64 0:1.0.1-4.el7                                             
+  libnl3.x86_64 0:3.2.28-4.el7                                                  
+  libpmem.x86_64 0:1.5.1-2.1.el7                                                
+  libpmemblk.x86_64 0:1.5.1-2.1.el7                                             
+  librados2.x86_64 1:10.2.5-4.el7                                               
+  librbd1.x86_64 1:10.2.5-4.el7                                                 
+  librdmacm.x86_64 0:22.4-6.el7_9                                               
+  ndctl-libs.x86_64 0:65-5.el7                                                  
+  numactl-libs.x86_64 0:2.0.12-5.el7                                            
+  pciutils.x86_64 0:3.5.1-3.el7                                                 
+  pciutils-libs.x86_64 0:3.5.1-3.el7                                            
+  rdma-core.x86_64 0:22.4-6.el7_9                                               
+  sysvinit-tools.x86_64 0:2.88-14.dsf.el7                                       
+
+Complete!
