@@ -1,0 +1,29 @@
+Input spec
+--------------------------------
+gcc@11.2.0
+
+Concretized
+--------------------------------
+gcc@11.2.0%gcc@4.8.5~binutils+bootstrap~graphite~nvptx~piclibs~strip languages=c,c++,fortran arch=linux-centos7-ivybridge
+    ^diffutils@3.8%gcc@4.8.5 arch=linux-centos7-ivybridge
+        ^libiconv@1.16%gcc@4.8.5 libs=shared,static arch=linux-centos7-ivybridge
+    ^gmp@6.2.1%gcc@4.8.5 arch=linux-centos7-ivybridge
+        ^autoconf@2.69%gcc@4.8.5 patches=35c4492,7793209,a49dd5b arch=linux-centos7-ivybridge
+            ^m4@1.4.19%gcc@4.8.5+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-centos7-ivybridge
+                ^libsigsegv@2.13%gcc@4.8.5 arch=linux-centos7-ivybridge
+            ^perl@5.34.0%gcc@4.8.5+cpanm+shared+threads arch=linux-centos7-ivybridge
+                ^berkeley-db@18.1.40%gcc@4.8.5+cxx~docs+stl patches=b231fcc arch=linux-centos7-ivybridge
+                ^bzip2@1.0.8%gcc@4.8.5~debug~pic+shared arch=linux-centos7-ivybridge
+                ^gdbm@1.19%gcc@4.8.5 arch=linux-centos7-ivybridge
+                    ^readline@8.1%gcc@4.8.5 arch=linux-centos7-ivybridge
+                        ^ncurses@6.2%gcc@4.8.5~symlinks+termlib abi=none arch=linux-centos7-ivybridge
+                            ^pkgconf@1.8.0%gcc@4.8.5 arch=linux-centos7-ivybridge
+                ^zlib@1.2.11%gcc@4.8.5+optimize+pic+shared arch=linux-centos7-ivybridge
+        ^automake@1.16.5%gcc@4.8.5 arch=linux-centos7-ivybridge
+        ^libtool@2.4.6%gcc@4.8.5 arch=linux-centos7-ivybridge
+    ^mpc@1.2.1%gcc@4.8.5 arch=linux-centos7-ivybridge
+        ^mpfr@4.1.0%gcc@4.8.5 arch=linux-centos7-ivybridge
+            ^autoconf-archive@2019.01.06%gcc@4.8.5 arch=linux-centos7-ivybridge
+            ^texinfo@6.5%gcc@4.8.5 patches=12f6edb,1732115 arch=linux-centos7-ivybridge
+    ^zstd@1.5.2%gcc@4.8.5~programs arch=linux-centos7-ivybridge
+

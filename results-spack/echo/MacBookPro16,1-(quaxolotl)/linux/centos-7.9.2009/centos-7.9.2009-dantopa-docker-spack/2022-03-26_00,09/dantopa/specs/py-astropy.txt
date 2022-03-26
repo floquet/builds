@@ -1,0 +1,124 @@
+Input spec
+--------------------------------
+py-astropy+extras
+    ^python@3.10.2
+
+Concretized
+--------------------------------
+py-astropy@4.0.1.post1%gcc@11.2.0+extras arch=linux-centos7-ivybridge
+    ^cfitsio@3.49%gcc@11.2.0+bzip2+shared arch=linux-centos7-ivybridge
+        ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-centos7-ivybridge
+            ^diffutils@3.8%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-centos7-ivybridge
+        ^curl@7.81.0%gcc@11.2.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 tls=openssl arch=linux-centos7-ivybridge
+            ^openssl@1.1.1n%gcc@11.2.0~docs~shared certs=system arch=linux-centos7-ivybridge
+                ^perl@5.34.0%gcc@11.2.0+cpanm+shared+threads arch=linux-centos7-ivybridge
+                    ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-centos7-ivybridge
+                    ^gdbm@1.19%gcc@11.2.0 arch=linux-centos7-ivybridge
+                        ^readline@8.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+                            ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-centos7-ivybridge
+                                ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+                    ^zlib@1.2.11%gcc@11.2.0+optimize+pic+shared arch=linux-centos7-ivybridge
+    ^erfa@1.7.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^expat@2.4.6%gcc@11.2.0+libbsd arch=linux-centos7-ivybridge
+        ^libbsd@0.11.5%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^libmd@1.0.4%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-asdf@2.4.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-jsonschema@3.2.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^py-attrs@21.4.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^py-pip@21.3.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+                    ^python@3.10.2%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060 arch=linux-centos7-ivybridge
+                        ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-centos7-ivybridge
+                            ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-centos7-ivybridge
+                                ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-centos7-ivybridge
+                            ^tar@1.34%gcc@11.2.0 arch=linux-centos7-ivybridge
+                        ^libffi@3.4.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+                        ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-centos7-ivybridge
+                        ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^py-setuptools@59.4.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+                    ^py-wheel@0.37.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^py-pyrsistent@0.18.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^py-setuptools-scm@6.3.2%gcc@11.2.0+toml arch=linux-centos7-ivybridge
+                ^py-packaging@21.3%gcc@11.2.0 arch=linux-centos7-ivybridge
+                    ^py-pyparsing@3.0.6%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^py-tomli@1.2.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^py-six@1.16.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-numpy@1.22.3%gcc@11.2.0+blas+lapack patches=873745d arch=linux-centos7-ivybridge
+            ^openblas@0.3.20%gcc@11.2.0~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-centos7-ivybridge
+            ^py-cython@0.29.24%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-pyyaml@6.0%gcc@11.2.0+libyaml arch=linux-centos7-ivybridge
+            ^libyaml@0.2.5%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-semantic-version@2.6.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-beautifulsoup4@4.10.0%gcc@11.2.0~html5lib~lxml arch=linux-centos7-ivybridge
+        ^py-soupsieve@2.2.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-bintrees@2.0.7%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-bleach@4.1.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-webencodings@0.5.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-bottleneck@1.3.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-h5py@3.6.0%gcc@11.2.0+mpi arch=linux-centos7-ivybridge
+        ^hdf5@1.12.1%gcc@11.2.0~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo patches=ee351eb arch=linux-centos7-ivybridge
+            ^cmake@3.22.3%gcc@11.2.0~doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-centos7-ivybridge
+            ^openmpi@4.1.2%gcc@11.2.0~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-centos7-ivybridge
+                ^hwloc@2.7.0%gcc@11.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-centos7-ivybridge
+                    ^libpciaccess@0.16%gcc@11.2.0 arch=linux-centos7-ivybridge
+                        ^libtool@2.4.6%gcc@11.2.0 arch=linux-centos7-ivybridge
+                            ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-centos7-ivybridge
+                                ^libsigsegv@2.13%gcc@11.2.0 arch=linux-centos7-ivybridge
+                        ^util-macros@1.19.3%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^libevent@2.1.12%gcc@11.2.0+openssl arch=linux-centos7-ivybridge
+                ^numactl@2.0.14%gcc@11.2.0 patches=4e1d78c,62fc8a8,ff37630 arch=linux-centos7-ivybridge
+                    ^autoconf@2.69%gcc@11.2.0 patches=35c4492,7793209,a49dd5b arch=linux-centos7-ivybridge
+                    ^automake@1.16.5%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^openssh@8.9p1%gcc@11.2.0 arch=linux-centos7-ivybridge
+                    ^libedit@3.1-20210216%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-mpi4py@3.1.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-pkgconfig@1.5.5%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^py-poetry-core@1.0.7%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-html5lib@1.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-jplephem@2.9%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-matplotlib@3.5.1%gcc@11.2.0~animation~fonts+image~latex~movies backend=agg arch=linux-centos7-ivybridge
+        ^freetype@2.11.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^libpng@1.6.37%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-certifi@2021.10.8%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-cycler@0.11.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-fonttools@4.29.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-kiwisolver@1.3.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^py-cppy@1.1.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-pillow@9.0.0%gcc@11.2.0~freetype~imagequant+jpeg~jpeg2000~lcms~tiff~webp~webpmux~xcb+zlib arch=linux-centos7-ivybridge
+            ^libjpeg-turbo@2.1.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^nasm@2.15.05%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-python-dateutil@2.8.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-setuptools-scm-git-archive@1.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^qhull@2020.2%gcc@11.2.0~ipo build_type=RelWithDebInfo arch=linux-centos7-ivybridge
+    ^py-mpmath@1.2.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-pandas@1.4.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-numexpr@2.7.3%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-pytz@2021.3%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-pytest@6.2.5%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-iniconfig@1.1.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-pluggy@1.0.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-py@1.11.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-toml@0.10.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-scikit-image@0.18.3%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-imageio@2.16.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^ffmpeg@4.4.1%gcc@11.2.0~X~avresample+bzlib~drawtext+gpl~libaom~libmp3lame~libopenjpeg~libopus~libsnappy~libspeex~libssh~libvorbis~libvpx~libwebp~libx264~libzmq~lzma~nonfree~openssl~sdl2+shared+version3 arch=linux-centos7-ivybridge
+                ^alsa-lib@1.2.3.2%gcc@11.2.0~python arch=linux-centos7-ivybridge
+                ^yasm@1.3.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-networkx@2.6.3%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-pywavelets@1.1.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-scipy@1.8.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^py-pybind11@2.8.1%gcc@11.2.0~ipo build_type=RelWithDebInfo arch=linux-centos7-ivybridge
+                ^ninja@1.10.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^py-pythran@0.10.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^py-beniget@0.4.1%gcc@11.2.0 arch=linux-centos7-ivybridge
+                    ^py-gast@0.5.3%gcc@11.2.0 arch=linux-centos7-ivybridge
+                ^py-ply@3.11%gcc@11.2.0 arch=linux-centos7-ivybridge
+        ^py-tifffile@2021.11.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^py-sortedcontainers@2.1.0%gcc@11.2.0 arch=linux-centos7-ivybridge
+    ^wcslib@7.3%gcc@11.2.0~cfitsio~x arch=linux-centos7-ivybridge
+        ^flex@2.6.3%gcc@11.2.0+lex~nls arch=linux-centos7-ivybridge
+            ^bison@3.8.2%gcc@11.2.0 arch=linux-centos7-ivybridge
+            ^findutils@4.8.0%gcc@11.2.0 patches=440b954 arch=linux-centos7-ivybridge
+        ^gmake@4.3%gcc@11.2.0~guile+nls arch=linux-centos7-ivybridge
+            ^texinfo@6.5%gcc@11.2.0 patches=12f6edb,1732115 arch=linux-centos7-ivybridge
+
