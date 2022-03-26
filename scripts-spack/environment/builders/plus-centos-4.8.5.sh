@@ -11,7 +11,11 @@ export master=${SECONDS}
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_spack}/shared/common-header.sh
 
-export dlogs="${dlogs}"
+export dlogs="${SPACK_ROOT}/${USER}/build-logs"
+
+echo "\${dlogs} = ${dlogs}"
+
+pause
 
 export build_target="llvm@13.0.1"
 
@@ -43,7 +47,7 @@ fileName="${build_target}.txt"
     sub_step "spack info ${build_target}"
               spack info ${build_target} > ${SPACK_ROOT}/${USER}/info/${fileName} &
 
-    sub_step "spack install ${build_target} ${myOpenMPI}"
+    sub_step "spack install ${build_target} ${myCompiler} ${myPython}"
               date                      > ${dlogs}/${fileName}
               echo "${BASH_SOURCE[0]}" >> ${dlogs}/${fileName}
               echo "spack install ${build_target} ${myCompiler} ${myPython} 2>&1 | tee -a ${dlogs}/${fileName}"
@@ -76,11 +80,11 @@ fileName="${build_target}.txt"
     sub_step "spack info ${build_target}"
               spack info ${build_target} > ${SPACK_ROOT}/${USER}/info/${fileName} &
 
-    sub_step "spack install ${build_target} ${myCompiler} ${myPython} ${myOpenMPI}"
+    sub_step "spack install ${build_target} ${myCompiler} ${myPython}"
               date                      > ${dlogs}/${fileName}
               echo "${BASH_SOURCE[0]}" >> ${dlogs}/${fileName}
-              echo "spack install ${build_target} ${myCompiler} ${myPython} ${myOpenMPI} 2>&1 | tee -a ${dlogs}/${fileName}"
-                    spack install ${build_target} ${myCompiler} ${myPython} ${myOpenMPI} 2>&1 | tee -a ${dlogs}/${fileName}
+              echo "spack install ${build_target} ${myCompiler} ${myPython} 2>&1 | tee -a ${dlogs}/${fileName}"
+                    spack install ${build_target} ${myCompiler} ${myPython} 2>&1 | tee -a ${dlogs}/${fileName}
 
 export build_target="py-astropy"
 new_step "Build python application ${build_target}"
