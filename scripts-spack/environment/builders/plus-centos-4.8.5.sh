@@ -11,15 +11,11 @@ export master=${SECONDS}
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_spack}/shared/common-header.sh
 
-<<<<<<< Updated upstream
 export dlogs="${SPACK_ROOT}/${USER}/build-logs"
 
 echo "\${dlogs} = ${dlogs}"
 
 pause
-=======
-export dlogs="${dlogs}"
->>>>>>> Stashed changes
 
 export build_target="llvm@13.0.1"
 
