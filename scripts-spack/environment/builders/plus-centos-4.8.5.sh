@@ -11,11 +11,15 @@ export master=${SECONDS}
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_spack}/shared/common-header.sh
 
+<<<<<<< Updated upstream
 export dlogs="${SPACK_ROOT}/${USER}/build-logs"
 
 echo "\${dlogs} = ${dlogs}"
 
 pause
+=======
+export dlogs="${dlogs}"
+>>>>>>> Stashed changes
 
 export build_target="llvm@13.0.1"
 
@@ -47,7 +51,11 @@ fileName="${build_target}.txt"
     sub_step "spack info ${build_target}"
               spack info ${build_target} > ${SPACK_ROOT}/${USER}/info/${fileName} &
 
+<<<<<<< Updated upstream
     sub_step "spack install ${build_target} ${myCompiler} ${myPython}"
+=======
+    sub_step "spack install ${build_target} ${myOpenMPI}"
+>>>>>>> Stashed changes
               date                      > ${dlogs}/${fileName}
               echo "${BASH_SOURCE[0]}" >> ${dlogs}/${fileName}
               echo "spack install ${build_target} ${myCompiler} ${myPython} 2>&1 | tee -a ${dlogs}/${fileName}"
@@ -80,11 +88,19 @@ fileName="${build_target}.txt"
     sub_step "spack info ${build_target}"
               spack info ${build_target} > ${SPACK_ROOT}/${USER}/info/${fileName} &
 
+<<<<<<< Updated upstream
     sub_step "spack install ${build_target} ${myCompiler} ${myPython}"
               date                      > ${dlogs}/${fileName}
               echo "${BASH_SOURCE[0]}" >> ${dlogs}/${fileName}
               echo "spack install ${build_target} ${myCompiler} ${myPython} 2>&1 | tee -a ${dlogs}/${fileName}"
                     spack install ${build_target} ${myCompiler} ${myPython} 2>&1 | tee -a ${dlogs}/${fileName}
+=======
+    sub_step "spack install ${build_target} ${myCompiler} ${myPython} ${myOpenMPI}"
+              date                      > ${dlogs}/${fileName}
+              echo "${BASH_SOURCE[0]}" >> ${dlogs}/${fileName}
+              echo "spack install ${build_target} ${myCompiler} ${myPython} ${myOpenMPI} 2>&1 | tee -a ${dlogs}/${fileName}"
+                    spack install ${build_target} ${myCompiler} ${myPython} ${myOpenMPI} 2>&1 | tee -a ${dlogs}/${fileName}
+>>>>>>> Stashed changes
 
 export build_target="py-astropy"
 new_step "Build python application ${build_target}"

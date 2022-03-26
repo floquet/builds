@@ -22,6 +22,7 @@ sub_step_counter=0
     # sub_step "cp -a /SpWx ${scratch}"
     #           cp -a /SpWx ${scratch}
 
+<<<<<<< Updated upstream
 #     sub_step "cp -a /Volumes/repos/gitlab/SpWx ${scratch}"
 #               cp -a /Volumes/repos/gitlab/SpWx ${scratch}
  
@@ -30,6 +31,14 @@ sub_step_counter=0
 
 #    sub_step 'export localSpWx="/repos/gitlab/SpWx"'
 #              export localSpWx="/repos/gitlab/SpWx"
+=======
+    # sub_step "cp -a /Volumes/repos/gitlab/SpWx ${scratch}"
+    #           cp -a /Volumes/repos/gitlab/SpWx ${scratch}
+# 
+#     sub_step "cp -a /repos/gitlab/SpWx ${scratch}"
+#               cp -a /repos/gitlab/SpWx ${scratch}
+
+>>>>>>> Stashed changes
     sub_step 'export localSpWx="${scratch}/SpWx"'
               export localSpWx="${scratch}/SpWx"
 
