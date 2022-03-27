@@ -1,0 +1,101 @@
+yum deplist -v passwd
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: ftpmirror.your.org
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.fileplanet.com
+ * updates: mirror.pit.teraswitch.com
+pkgsack time: 0.305
+Searching pkgSack for dep: /etc/pam.d/system-auth
+Searching pkgSack for dep: audit-libs
+Searching pkgSack for dep: libaudit.so.1()(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.4)(64bit)
+Searching pkgSack for dep: libglib-2.0.so.0()(64bit)
+Searching pkgSack for dep: libgobject-2.0.so.0()(64bit)
+Searching pkgSack for dep: libpam.so.0()(64bit)
+Searching pkgSack for dep: libpam.so.0(LIBPAM_1.0)(64bit)
+Searching pkgSack for dep: libpam_misc.so.0()(64bit)
+Searching pkgSack for dep: libpam_misc.so.0(LIBPAM_MISC_1.0)(64bit)
+Searching pkgSack for dep: libpopt.so.0()(64bit)
+Searching pkgSack for dep: libpopt.so.0(LIBPOPT_0)(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libselinux
+Searching pkgSack for dep: libselinux.so.1()(64bit)
+Searching pkgSack for dep: libuser.so.1()(64bit)
+Searching pkgSack for dep: pam
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: passwd.x86_64 0.79-6.el7
+  dependency: /etc/pam.d/system-auth
+   provider: pam.x86_64 1.1.8-23.el7
+   provider: pam.i686 1.1.8-23.el7
+  dependency: audit-libs >= 1.0.14
+   provider: audit-libs.x86_64 2.8.5-4.el7
+   provider: audit-libs.i686 2.8.5-4.el7
+  dependency: libaudit.so.1()(64bit)
+   provider: audit-libs.x86_64 2.8.5-4.el7
+  dependency: libc.so.6(GLIBC_2.4)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libglib-2.0.so.0()(64bit)
+   provider: glib2.x86_64 2.56.1-9.el7_9
+   provider: glib2.x86_64 2.56.1-8.el7
+   provider: glib2.x86_64 2.56.1-7.el7
+  dependency: libgobject-2.0.so.0()(64bit)
+   provider: glib2.x86_64 2.56.1-9.el7_9
+   provider: glib2.x86_64 2.56.1-8.el7
+   provider: glib2.x86_64 2.56.1-7.el7
+  dependency: libpam.so.0()(64bit)
+   provider: pam.x86_64 1.1.8-23.el7
+  dependency: libpam.so.0(LIBPAM_1.0)(64bit)
+   provider: pam.x86_64 1.1.8-23.el7
+  dependency: libpam_misc.so.0()(64bit)
+   provider: pam.x86_64 1.1.8-23.el7
+  dependency: libpam_misc.so.0(LIBPAM_MISC_1.0)(64bit)
+   provider: pam.x86_64 1.1.8-23.el7
+  dependency: libpopt.so.0()(64bit)
+   provider: popt.x86_64 1.13-16.el7
+  dependency: libpopt.so.0(LIBPOPT_0)(64bit)
+   provider: popt.x86_64 1.13-16.el7
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libselinux >= 2.1.6-3
+   provider: libselinux.x86_64 2.5-15.el7
+   provider: libselinux.i686 2.5-15.el7
+  dependency: libselinux.so.1()(64bit)
+   provider: libselinux.x86_64 2.5-15.el7
+  dependency: libuser.so.1()(64bit)
+   provider: libuser.x86_64 0.60-9.el7
+  dependency: pam >= 1.0.90
+   provider: pam.x86_64 1.1.8-23.el7
+   provider: pam.i686 1.1.8-23.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

@@ -1,6 +1,8 @@
 #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
+# cp ${repo_scripts_spack}/environment/set-environment.sh 
+
 export myCompiler=" % gcc@11.2.0"
 # export myCompiler=" % gcc@11.2.0_3"
 # export myCompiler=" % gcc@12.0.1"
