@@ -1,0 +1,43 @@
+yum deplist -v patch
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.010
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: ftpmirror.your.org
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: mirror.fileplanet.com
+ * updates: mirror.pit.teraswitch.com
+pkgsack time: 0.305
+Searching pkgSack for dep: libattr.so.1()(64bit)
+Searching pkgSack for dep: libattr.so.1(ATTR_1.1)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.17)(64bit)
+Searching pkgSack for dep: libselinux.so.1()(64bit)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: patch.x86_64 2.7.1-12.el7_7
+  dependency: libattr.so.1()(64bit)
+   provider: libattr.x86_64 2.4.46-13.el7
+  dependency: libattr.so.1(ATTR_1.1)(64bit)
+   provider: libattr.x86_64 2.4.46-13.el7
+  dependency: libc.so.6(GLIBC_2.17)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libselinux.so.1()(64bit)
+   provider: libselinux.x86_64 2.5-15.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

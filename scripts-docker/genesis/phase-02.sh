@@ -96,8 +96,8 @@ sub_step_counter=0
     sub_step "cd /home/${ego}/spacktivity"
               cd /home/${ego}/spacktivity
 
-    sub_step "git clone https://github.com/spack/spack ${mySpack}"
-              git clone https://github.com/spack/spack ${mySpack}
+    sub_step "git clone --depth=1 https://github.com/spack/spack ${mySpack}"
+              git clone --depth=1 https://github.com/spack/spack ${mySpack}
 
     sub_step "cd ${mySpack}"
               cd ${mySpack}
