@@ -1,0 +1,22 @@
+apt info rng-tools
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: rng-tools
+Version: 5-1ubuntu2
+Priority: optional
+Section: universe/utils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Henrique de Moraes Holschuh <hmh@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 111 kB
+Provides: intel-rng-tools
+Depends: libc6 (>= 2.14), libgcrypt20 (>= 1.8.0), udev (>= 0.053) | makedev (>= 2.3.1-77), lsb-base
+Conflicts: intel-rng-tools
+Replaces: intel-rng-tools
+Download-Size: 23.8 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+Description: Daemon to use a Hardware TRNG
+

@@ -1,0 +1,24 @@
+apt info gringo
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: gringo
+Version: 5.4.1-3ubuntu3
+Priority: optional
+Section: universe/interpreters
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 11.5 MB
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), liblua5.4-0 (>= 5.4.3), libpython3.10 (>= 3.10.0), libstdc++6 (>= 9)
+Recommends: clasp
+Conflicts: clingo, iclingo
+Breaks: aspcud (<= 1.9.0-2), clasp (<< 3.2.1-1)
+Replaces: clingo, iclingo
+Homepage: https://www.potassco.org/clingo/
+Download-Size: 2110 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+Description: grounding tools for (disjunctive) logic programs
+

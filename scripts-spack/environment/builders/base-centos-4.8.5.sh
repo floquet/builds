@@ -3,6 +3,9 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # source ${repo_scripts_spack}/environment/builders/base-centos-4.8.5.sh
 
+# ubuntu" cmake stops looking at 3.9
+# export SPACK_PYTHON="/usr/bin/python3.9"
+
 # start timer
 export master=${SECONDS}
 export  myPython="^python@3.10.2"

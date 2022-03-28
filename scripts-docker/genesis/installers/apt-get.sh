@@ -14,6 +14,7 @@ export aptTime=${SECONDS}
 
 # $ docker pull ubuntu:22.04 ; ehecoatlDocker ubuntu:22.04
 # # apt-get update ; apt-get install -y tzdata
+# # export SPACK_PYTHON="/usr/bin/python3.9
 
 # globals from dist kickstart
 new_step "Create directory structure"

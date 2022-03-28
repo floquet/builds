@@ -1,0 +1,24 @@
+apt-cache show rng-tools
+Package: rng-tools
+Architecture: amd64
+Version: 5-1ubuntu2
+Priority: optional
+Section: universe/utils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Henrique de Moraes Holschuh <hmh@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 108
+Provides: intel-rng-tools
+Depends: libc6 (>= 2.14), libgcrypt20 (>= 1.8.0), udev (>= 0.053) | makedev (>= 2.3.1-77), lsb-base
+Conflicts: intel-rng-tools
+Replaces: intel-rng-tools
+Filename: pool/universe/r/rng-tools/rng-tools_5-1ubuntu2_amd64.deb
+Size: 23752
+MD5sum: 24ddbe3145ecd3b6779fbc47f0e3e2ed
+SHA1: 8a640530f294c991cfaa50a376d3f9a890304e3d
+SHA256: d52c03f8f9bcada114c7a59ec5816a13e7f0b055d2d53a72bffaa14c813d2fec
+SHA512: 2184bda0b19be8ce07980e5ff0c6a743680042672670092e6df0c3d1bb10f570502a4d20f3a265676087076835b2ee212e7fa43694817022bb490f59170e2387
+Description: Daemon to use a Hardware TRNG
+Description-md5: 6da2aca3dd07b55b609d9cf3d5d7cd57
+
