@@ -86,6 +86,9 @@ sub_step_counter=0
     sub_step "cd ${localSpWx}"
               cd ${localSpWx}
 
+    sub_step 'rm -rf "${localSpWx}/build"'
+              rm -rf "${localSpWx}/build"
+
     sub_step "mkdir build; cd build"
               mkdir build; cd build
 

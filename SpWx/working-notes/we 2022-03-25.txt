@@ -1,0 +1,32 @@
+SpWx Efforts week end 2022-03-25
+
+Tools: gdb, valgrind, in particular callgrind
+
+Problem Areas 
+1. Running the SpWx CMagfield Code and getting consistent test results
+The runs are scripted and the outputs are collected. However we were seeing many move of the 41 `make test` suites fail. (Typical result)
+(e.g. /repos/github/SpWx/cmagfield/fortran/conglomerate
+              cmake3 ../source -DDEFINE_DEBUG=ON -DCMAKE_INSTALL_PREFIX=../
+
+Starting program: /home/dantopa/scratch/SpWx/bin/satMagCover 
+warning: Error disabling address space randomization: Operation not permitted
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+error initializing Magfield class
+[Inferior 1 (process 1989) exited with code 0377]
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-325.el7_9.x86_64 hdf5-1.8.12-13.el7.x86_64 libaec-1.0.4-1.el7.x86_64 libgcc-4.8.5-44.el7.x86_64 libgfortran-4.8.5-44.el7.x86_64 libquadmath-4.8.5-44.el7.x86_64 libstdc++-4.8.5-44.el7.x86_64 zlib-1.2.7-19.el7_9.x86_64
+
+
+stability issues:
+
+
+$ codesign -fs gdbc /opt/local/bin/ggdb
+/opt/local/bin/ggdb: internal error in Code Signing subsystem
+
+Starting program: /Users/dtopa/repos/github/space-weather/cmagfield/fortran/conglomerate/driver 
+Unable to find Mach task port for process-id 22174: (os/kern) failure (0x5).
+ (please check gdb is codesigned - see taskgated(8))
+ 
+ $ codesign -fs gdbc /opt/local/bin/ggdb
+/opt/local/bin/ggdb: internal error in Code Signing subsystem
+

@@ -1,0 +1,707 @@
+Sun Mar 27 21:48:37 MDT 2022, [1m/repos/github/builds/SpWx/scripts-shell/copy-spwx.sh(B[m
+Sun Mar 27 21:48:38 MDT 2022, [1m/repos/github/builds/scripts-spack/shared/common-header.sh(B[m
+
+Step 1: Copy a local version of the source directory and then update from the repo
+
+  1.1: rm -rf "${scratch}/SpWx"
+
+  1.2: cp -a /repos/gitlab/SpWx /home/dantopa/scratch
+
+  1.3: export localSpWx="${scratch}/SpWx"
+
+  1.4: Verify SpWx directory
+${localSpWx}=/home/dantopa/scratch/SpWx
+
+  1.5: cd "${localSpWx}/source"
+
+  1.6: pwd = /home/dantopa/scratch/SpWx/source
+
+Step 2: Check cmake version: cmake_minimum_required = CMake 3.14
+
+  2.1: cmake3 --version
+cmake3 version 3.17.5
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+press RETURN to continue; ctrl+c to stop
+
+  2.2: git pull
+Already up-to-date.
+
+  2.3: export timerFile=/home/dantopa/scratch/SpWx/build-time.txt
+
+  2.4: git checkout magfield_update
+Already on 'magfield_update'
+
+Step 3: Verify configuration
+
+  3.1: git branch -a
+* magfield_update
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/SpWx_version_1.9_branch
+  remotes/origin/branches/SpWx_version_1.1_release
+  remotes/origin/branches/SpWx_version_1.2_release
+  remotes/origin/branches/SpWx_version_1.3_release
+  remotes/origin/branches/SpWx_version_1.4.1_release
+  remotes/origin/branches/SpWx_version_1.4_release
+  remotes/origin/branches/SpWx_version_1.5_release
+  remotes/origin/branches/SpWx_version_1.6_release
+  remotes/origin/branches/SpWx_version_1.7_release
+  remotes/origin/branches/SpWx_version_1.8_release
+  remotes/origin/magfield_update
+  remotes/origin/master
+
+  3.2: git status
+# On branch magfield_update
+nothing to commit, working directory clean
+
+  3.3: grab hash for commit: git rev-parse --verify HEAD
+cbaa3570c583e5fa1f148b2159497b96fc3b736e
+
+  3.4: grab hash for commit: git log --pretty=format:'%h' -n 1
+cbaa357
+  3.5: gcc --version
+gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-44)
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+  3.6: lsb_release -a
+LSB Version:	:core-4.1-amd64:core-4.1-noarch:cxx-4.1-amd64:cxx-4.1-noarch:desktop-4.1-amd64:desktop-4.1-noarch:languages-4.1-amd64:languages-4.1-noarch:printing-4.1-amd64:printing-4.1-noarch
+Distributor ID:	CentOS
+Description:	CentOS Linux release 7.9.2009 (Core)
+Release:	7.9.2009
+Codename:	Core
+
+Step 4: Build SpWx
+
+  4.1: cd /home/dantopa/scratch/SpWx
+
+  4.2: mkdir build; cd build
+mkdir: cannot create directory ‘build’: File exists
+
+  4.3: export timerFile=/home/dantopa/scratch/SpWx/build/build-time.txt
+
+  4.4: cmake3 ../source -DDEFINE_DEBUG=ON -DCMAKE_INSTALL_PREFIX=../
+CMake Error: The current CMakeCache.txt directory /home/dantopa/scratch/SpWx/build/CMakeCache.txt is different than the directory /repos/gitlab/SpWx/build where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+CMake Error: The source "/home/dantopa/scratch/SpWx/source/CMakeLists.txt" does not match the source "/repos/gitlab/SpWx/source/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+
+Step 5: make; make test; make install
+
+  5.1: make
+[  2%] Built target spwxcommon
+[  4%] Built target spwxcommon_shared
+[  5%] Built target Threading
+[  5%] Built target Threading_shared
+[  5%] Built target CoordXform_shared
+[  6%] Built target CoordXform
+[  6%] Built target GeoSpaceTime
+[  7%] Built target GeoSpaceTime_shared
+[  7%] Built target TimeConv_c
+[  7%] Built target CTimeValue_shared
+[  8%] Built target TimeConv_c_shared
+[  9%] Built target CTimeValue
+[  9%] Built target VectorOps
+[  9%] Built target VectorOps_shared
+[  9%] Built target FloatMath
+[ 10%] Built target FloatMath_shared
+[ 10%] Built target AbMatrix
+[ 10%] Built target AbMatrix_shared
+[ 11%] Built target fio_shared
+[ 11%] Built target fio
+[ 11%] Built target UnitTestOutput
+[ 12%] Built target UnitTestOutput_shared
+[ 23%] Built target CMagfieldF
+[ 25%] Built target cmagfield_shared
+[ 26%] Built target cmagfield
+[ 27%] Built target CutOffModel
+[ 27%] Built target CutOffModel_shared
+[ 28%] Built target saa_shared
+[ 29%] Built target saa
+[ 29%] Built target cammice
+[ 30%] Built target cammice_shared
+[ 31%] Built target shielddose2
+[ 32%] Built target shielddose2_shared
+[ 34%] Built target radenv
+[ 37%] Built target radenv_shared
+[ 38%] Built target adiabat
+[ 39%] Built target adiabat_shared
+[ 40%] Built target orbitprop
+[ 41%] Built target orbitprop_shared
+[ 41%] Built target Add_shared
+[ 42%] Built target Add
+[ 43%] Built target lightning
+[ 43%] Built target lightning_shared
+[ 43%] Built target LightningVLF
+[ 44%] Built target LightningVLF_shared
+[ 46%] Built target conjunction
+[ 46%] Built target OrbitOps_shared
+[ 47%] Built target XmitVLF_shared
+[ 50%] Built target conjunction_shared
+[ 51%] Built target OrbitOps
+[ 52%] Built target RefFrame
+[ 52%] Built target RefFrame_shared
+[ 55%] Built target nehiem_shared
+[ 58%] Built target nehiem
+[ 59%] Built target sep
+[ 61%] Built target sep_shared
+[ 61%] Built target gcr
+[ 62%] Built target gcr_shared
+[ 63%] Built target iri2007_shared
+[ 65%] Built target iri2007
+[ 65%] Built target diffequil
+[ 65%] Built target iriplusde
+[ 66%] Built target diffequil_shared
+[ 67%] Built target iriplusde_shared
+[ 68%] Built target ParticleImpacts
+[ 70%] Built target ParticleImpacts_shared
+[ 71%] Built target VehicleTemperature_shared
+[ 73%] Built target VehicleTemperature
+[ 73%] Built target PlasmaSph
+[ 74%] Built target PlasmaSph_shared
+[ 75%] Built target XmitVLF
+[ 75%] Built target oeTest
+[ 76%] Built target reTest
+[ 76%] Built target adcTest
+[ 77%] Built target opTest
+[ 78%] Built target cnjTest
+[ 79%] Built target gcrTest
+[ 80%] Built target addTest
+[ 81%] Built target iriTest
+[ 82%] Built target ooTest
+[ 83%] Built target psTest
+[ 83%] Built target piTest
+[ 84%] Built target lvTest
+[ 84%] Built target saaTest
+[ 84%] Built target sd2Test
+[ 85%] Built target irideTest
+[ 85%] Built target logErrors
+[ 86%] Built target vtTest
+[ 87%] Built target mfTest
+[ 87%] Built target cnhTest
+[ 88%] Built target cWrappersTest
+[ 89%] Built target satMagCover
+[ 90%] Built target gtVehicleTemperatureTest
+[ 91%] Built target gtSAATransitTest
+[ 91%] Built target gtGalacticCosmicRayTest
+[ 92%] Built target gtLightningVLFTest
+[ 92%] Built target gtAdiabaticCoordsTest
+[ 92%] Built target gtParticleImpactsTest
+[ 93%] Built target gtCOrbitOpsTest
+[ 93%] Built target gtCPlasmaSphTest
+[ 93%] Built target gtLightningTest
+[ 94%] Built target gtSEPModelTest
+[ 95%] Built target gtFloatMathTest
+[ 95%] Built target gtOrbitPropTest
+[ 95%] Built target gtShieldDose2Test
+[ 96%] Built target gtRadEnvMgrTest
+[ 96%] Built target gtRadEnvTest
+[ 97%] Built target gtRadEnvExtendedTest
+[ 97%] Built target gtRadEnvMagfieldExtendedTest
+[ 97%] Built target gtCConjunctionsTest
+[ 97%] Built target gtCutOffModelTest
+[ 98%] Built target gtCXmitVLFInfoTest
+[ 98%] Built target gtCXmitVLFGridTest
+[ 98%] Built target gtCXmitVLFTest
+[ 98%] Built target gtIriPlusDeTest
+[100%] Built target gtIri2007Test
+
+  5.2: make test
+Running tests...
+Test project /repos/gitlab/SpWx/build
+      Start  1: addTest
+ 1/41 Test  #1: addTest ..........................   Passed    0.01 sec
+      Start  2: saaTest
+ 2/41 Test  #2: saaTest ..........................   Passed    0.18 sec
+      Start  3: reTest
+ 3/41 Test  #3: reTest ...........................   Passed  766.93 sec
+      Start  4: mfTest
+ 4/41 Test  #4: mfTest ...........................   Passed  389.27 sec
+      Start  5: sd2Test
+ 5/41 Test  #5: sd2Test ..........................   Passed    1.31 sec
+      Start  6: opTest
+ 6/41 Test  #6: opTest ...........................   Passed    0.64 sec
+      Start  7: cnjTest
+ 7/41 Test  #7: cnjTest ..........................***Exception: SegFault  0.53 sec
+      Start  8: ooTest
+ 8/41 Test  #8: ooTest ...........................   Passed    0.19 sec
+      Start  9: oeTest
+ 9/41 Test  #9: oeTest ...........................   Passed    1.37 sec
+      Start 10: piTest
+10/41 Test #10: piTest ...........................   Passed    9.16 sec
+      Start 11: vtTest
+11/41 Test #11: vtTest ...........................   Passed    0.03 sec
+      Start 12: lvTest
+12/41 Test #12: lvTest ...........................   Passed    0.42 sec
+      Start 13: gcrTest
+13/41 Test #13: gcrTest ..........................   Passed    0.15 sec
+      Start 14: adcTest
+14/41 Test #14: adcTest ..........................   Passed    1.85 sec
+      Start 15: psTest
+15/41 Test #15: psTest ...........................   Passed    0.26 sec
+      Start 16: cnhTest
+16/41 Test #16: cnhTest ..........................   Passed  244.97 sec
+      Start 17: iriTest
+17/41 Test #17: iriTest ..........................   Passed    0.90 sec
+      Start 18: irideTest
+18/41 Test #18: irideTest ........................   Passed   13.96 sec
+      Start 19: satMagCover
+19/41 Test #19: satMagCover ......................***Failed    0.05 sec
+      Start 20: gtVehicleTemperatureTest
+20/41 Test #20: gtVehicleTemperatureTest .........   Passed    0.02 sec
+      Start 21: gtSAATransitTest
+21/41 Test #21: gtSAATransitTest .................   Passed    0.23 sec
+      Start 22: gtGalacticCosmicRayTest
+22/41 Test #22: gtGalacticCosmicRayTest ..........   Passed    0.05 sec
+      Start 23: gtLightningVLFTest
+23/41 Test #23: gtLightningVLFTest ...............   Passed    0.11 sec
+      Start 24: gtAdiabaticCoordsTest
+24/41 Test #24: gtAdiabaticCoordsTest ............   Passed    1.40 sec
+      Start 25: gtParticleImpactsTest
+25/41 Test #25: gtParticleImpactsTest ............   Passed    8.42 sec
+      Start 26: gtCOrbitOpsTest
+26/41 Test #26: gtCOrbitOpsTest ..................   Passed    0.15 sec
+      Start 27: gtCPlasmaSphTest
+27/41 Test #27: gtCPlasmaSphTest .................   Passed    0.17 sec
+      Start 28: gtLightningTest
+28/41 Test #28: gtLightningTest ..................   Passed    0.05 sec
+      Start 29: gtSEPModelTest
+29/41 Test #29: gtSEPModelTest ...................   Passed  265.87 sec
+      Start 30: gtFloatMathTest
+30/41 Test #30: gtFloatMathTest ..................   Passed    0.02 sec
+      Start 31: gtOrbitPropTest
+31/41 Test #31: gtOrbitPropTest ..................   Passed    0.10 sec
+      Start 32: gtShieldDose2Test
+32/41 Test #32: gtShieldDose2Test ................   Passed    1.50 sec
+      Start 33: gtRadEnvMgrTest
+33/41 Test #33: gtRadEnvMgrTest ..................   Passed    0.05 sec
+      Start 34: gtRadEnvTest
+34/41 Test #34: gtRadEnvTest .....................   Passed  122.84 sec
+      Start 35: gtCConjunctionsTest
+35/41 Test #35: gtCConjunctionsTest ..............***Exception: SegFault  0.41 sec
+      Start 36: gtCutOffModelTest
+36/41 Test #36: gtCutOffModelTest ................   Passed    0.06 sec
+      Start 37: gtCXmitVLFInfoTest
+37/41 Test #37: gtCXmitVLFInfoTest ...............   Passed    0.03 sec
+      Start 38: gtCXmitVLFGridTest
+38/41 Test #38: gtCXmitVLFGridTest ...............   Passed    0.04 sec
+      Start 39: gtCXmitVLFTest
+39/41 Test #39: gtCXmitVLFTest ...................   Passed    0.13 sec
+      Start 40: gtIriPlusDeTest
+40/41 Test #40: gtIriPlusDeTest ..................   Passed   13.65 sec
+      Start 41: gtIri2007Test
+41/41 Test #41: gtIri2007Test ....................   Passed   13.54 sec
+
+93% tests passed, 3 tests failed out of 41
+
+Total Test time (real) = 1861.85 sec
+
+The following tests FAILED:
+	  7 - cnjTest (SEGFAULT)
+	 19 - satMagCover (Failed)
+	 35 - gtCConjunctionsTest (SEGFAULT)
+Errors while running CTest
+make: *** [test] Error 8
+
+  5.3: make install
+[  2%] Built target spwxcommon
+[  4%] Built target spwxcommon_shared
+[  5%] Built target Threading
+[  5%] Built target Threading_shared
+[  5%] Built target CoordXform_shared
+[  6%] Built target CoordXform
+[  6%] Built target GeoSpaceTime
+[  7%] Built target GeoSpaceTime_shared
+[  7%] Built target TimeConv_c
+[  7%] Built target CTimeValue_shared
+[  8%] Built target TimeConv_c_shared
+[  9%] Built target CTimeValue
+[  9%] Built target VectorOps
+[  9%] Built target VectorOps_shared
+[  9%] Built target FloatMath
+[ 10%] Built target FloatMath_shared
+[ 10%] Built target AbMatrix
+[ 10%] Built target AbMatrix_shared
+[ 11%] Built target fio_shared
+[ 11%] Built target fio
+[ 11%] Built target UnitTestOutput
+[ 12%] Built target UnitTestOutput_shared
+[ 23%] Built target CMagfieldF
+[ 25%] Built target cmagfield_shared
+[ 26%] Built target cmagfield
+[ 27%] Built target CutOffModel
+[ 27%] Built target CutOffModel_shared
+[ 28%] Built target saa_shared
+[ 29%] Built target saa
+[ 29%] Built target cammice
+[ 30%] Built target cammice_shared
+[ 31%] Built target shielddose2
+[ 32%] Built target shielddose2_shared
+[ 34%] Built target radenv
+[ 37%] Built target radenv_shared
+[ 38%] Built target adiabat
+[ 39%] Built target adiabat_shared
+[ 40%] Built target orbitprop
+[ 41%] Built target orbitprop_shared
+[ 41%] Built target Add_shared
+[ 42%] Built target Add
+[ 43%] Built target lightning
+[ 43%] Built target lightning_shared
+[ 43%] Built target LightningVLF
+[ 44%] Built target LightningVLF_shared
+[ 46%] Built target conjunction
+[ 46%] Built target OrbitOps_shared
+[ 47%] Built target XmitVLF_shared
+[ 50%] Built target conjunction_shared
+[ 51%] Built target OrbitOps
+[ 52%] Built target RefFrame
+[ 52%] Built target RefFrame_shared
+[ 55%] Built target nehiem_shared
+[ 58%] Built target nehiem
+[ 59%] Built target sep
+[ 61%] Built target sep_shared
+[ 61%] Built target gcr
+[ 62%] Built target gcr_shared
+[ 63%] Built target iri2007_shared
+[ 65%] Built target iri2007
+[ 65%] Built target diffequil
+[ 65%] Built target iriplusde
+[ 66%] Built target diffequil_shared
+[ 67%] Built target iriplusde_shared
+[ 68%] Built target ParticleImpacts
+[ 70%] Built target ParticleImpacts_shared
+[ 71%] Built target VehicleTemperature_shared
+[ 73%] Built target VehicleTemperature
+[ 73%] Built target PlasmaSph
+[ 74%] Built target PlasmaSph_shared
+[ 75%] Built target XmitVLF
+[ 75%] Built target oeTest
+[ 76%] Built target reTest
+[ 76%] Built target adcTest
+[ 77%] Built target opTest
+[ 78%] Built target cnjTest
+[ 79%] Built target gcrTest
+[ 80%] Built target addTest
+[ 81%] Built target iriTest
+[ 82%] Built target ooTest
+[ 83%] Built target psTest
+[ 83%] Built target piTest
+[ 84%] Built target lvTest
+[ 84%] Built target saaTest
+[ 84%] Built target sd2Test
+[ 85%] Built target irideTest
+[ 85%] Built target logErrors
+[ 86%] Built target vtTest
+[ 87%] Built target mfTest
+[ 87%] Built target cnhTest
+[ 88%] Built target cWrappersTest
+[ 89%] Built target satMagCover
+[ 90%] Built target gtVehicleTemperatureTest
+[ 91%] Built target gtSAATransitTest
+[ 91%] Built target gtGalacticCosmicRayTest
+[ 92%] Built target gtLightningVLFTest
+[ 92%] Built target gtAdiabaticCoordsTest
+[ 92%] Built target gtParticleImpactsTest
+[ 93%] Built target gtCOrbitOpsTest
+[ 93%] Built target gtCPlasmaSphTest
+[ 93%] Built target gtLightningTest
+[ 94%] Built target gtSEPModelTest
+[ 95%] Built target gtFloatMathTest
+[ 95%] Built target gtOrbitPropTest
+[ 95%] Built target gtShieldDose2Test
+[ 96%] Built target gtRadEnvMgrTest
+[ 96%] Built target gtRadEnvTest
+[ 97%] Built target gtRadEnvExtendedTest
+[ 97%] Built target gtRadEnvMagfieldExtendedTest
+[ 97%] Built target gtCConjunctionsTest
+[ 97%] Built target gtCutOffModelTest
+[ 98%] Built target gtCXmitVLFInfoTest
+[ 98%] Built target gtCXmitVLFGridTest
+[ 98%] Built target gtCXmitVLFTest
+[ 98%] Built target gtIriPlusDeTest
+[100%] Built target gtIri2007Test
+Install the project...
+-- Install configuration: ""
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libspwxcommon.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libspwxcommon.a
+-- Up-to-date: /repos/gitlab/SpWx/include/abmatrix.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CoordXform.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CTimeValue.h
+-- Up-to-date: /repos/gitlab/SpWx/include/TimeConv_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/FloatMath.h
+-- Up-to-date: /repos/gitlab/SpWx/include/GeoSpaceTime.h
+-- Up-to-date: /repos/gitlab/SpWx/include/Hdf5ToolKit.h
+-- Up-to-date: /repos/gitlab/SpWx/include/SpWxTypes.h
+-- Up-to-date: /repos/gitlab/SpWx/include/StkMutex.h
+-- Up-to-date: /repos/gitlab/SpWx/include/UnitTestOutput.h
+-- Up-to-date: /repos/gitlab/SpWx/include/VectorOps.h
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libThreading.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libThreading.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libCoordXform.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libCoordXform.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libGeoSpaceTime.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libGeoSpaceTime.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libCTimeValue.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libTimeConv_c.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libCTimeValue.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libTimeConv_c.a
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/timeConv.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libVectorOps.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libVectorOps.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libFloatMath.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libFloatMath.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libAbMatrix.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libAbMatrix.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libfio.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libfio.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libUnitTestOutput.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libUnitTestOutput.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libcmagfield.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libcmagfield.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/cmagfield.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utCMagfield_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libCutOffModel.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libCutOffModel.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/cutoffModel.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utCutoffModel_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libsaa.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libsaa.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/saaTransit.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utSaaTransit_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libcammice.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libcammice.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libshielddose2.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libshielddose2.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/shieldDose2.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utShieldDose2_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libradenv.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libradenv.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/radEnv.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utRadEnv_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libadiabat.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libadiabat.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/liborbitprop.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/liborbitprop.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/orbitProp.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utOrbitProp_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libAdd.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libAdd.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/liblightning.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/liblightning.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libLightningVLF.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libLightningVLF.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/lightningVLF.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utLightningVLF_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libconjunction.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libconjunction.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libOrbitOps.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libOrbitOps.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/orbitOps.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utOrbitOps_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libRefFrame.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libRefFrame.so
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/refFrame.py
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/tests/utRefFrame_test.py
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libnehiem.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libnehiem.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libsep.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libsep.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libgcr.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libgcr.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libiri2007.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libiri2007.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libiriplusde.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libiriplusde.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libParticleImpacts.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libParticleImpacts.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libVehicleTemperature.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libVehicleTemperature.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libdiffequil.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libdiffequil.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libPlasmaSph.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libPlasmaSph.so
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libXmitVLF.a
+-- Up-to-date: /repos/gitlab/SpWx/lib64/libXmitVLF.so
+-- Up-to-date: /repos/gitlab/SpWx/bin/cWrappersTest
+-- Up-to-date: /repos/gitlab/SpWx/bin/satMagCover
+-- Up-to-date: /repos/gitlab/SpWx/include
+-- Up-to-date: /repos/gitlab/SpWx/include/CAdAlphaLmCoordCalc.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CAdKHMinCoordCalc.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CAdKPhiCoordCalc.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CAdNeuralNetCoordCalc.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CAdd.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CAdiabaticCoords.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunction.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionElevationAngle.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionEnum.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionFieldLine.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionFootPrint.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionGeographic.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionHemisphere.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionLShell.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionLineOfSight.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionObject.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionObjectCelestial.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionObjectGround.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionObjectLineOfSight.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionObjectSpace.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionObjectTarget.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionQuadrasphere.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CConjunctionVLF.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CCutOffModel.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CCutOffModel_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CDiffEquil.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CDiffEquilEnums.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CEarthOrient.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CGalacticCosmicRay.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CIri2007.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CIri2007Db.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CIri2007Enums.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CIri2007Extern.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CIriPlusDe.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CIriPlusDeEnums.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CLightningClimatology.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CLightningVLF.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CLightningVLF_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CMagFieldErrors.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CMagFieldExtern.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CMagFieldIGRF.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CMagFieldLib.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CMagFieldMparts.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CMagfield.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CMagfieldEnum.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CMagfield_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CNEHIEM.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CNEHIEMDatabase.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CNEHIEM_Enums.h
+-- Up-to-date: /repos/gitlab/SpWx/include/COrbitOps.h
+-- Up-to-date: /repos/gitlab/SpWx/include/COrbitOps_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/COrbitProp.h
+-- Up-to-date: /repos/gitlab/SpWx/include/COrbitPropEnums_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/COrbitPropSGP4.h
+-- Up-to-date: /repos/gitlab/SpWx/include/COrbitPropSateph.h
+-- Up-to-date: /repos/gitlab/SpWx/include/COrbitProp_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CParticle.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CParticleAstronEnviron.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CParticleDebrisEnviron.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CParticleEnum.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CParticleEnviron.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CParticleImpacts.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CParticleMeteorEnviron.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CPlasmaSphere.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CPlasmaSphereEnums.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRadEnvDB.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRadEnvEnums.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRadEnvMgr.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRadEnvModelBase.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRadEnvSatGrid.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRadEnv_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRefFrame.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRefFrame_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRoederPlasma.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CRoederPlasmaEnum.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CSAAEnums.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CSAAMap.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CSAATransit.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CSAATransit_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CSEPDatabase.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CSEPModel.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CShieldDose2.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CShieldDose2_c.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CShieldDoseDb.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CShieldDoseEnums.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CSolarEnergeticParticleModel.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CVTempDirectSolarRad.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CVTempEarthReflSolarRad.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CVTempEarthRejectRad.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CVTempErsrStructs.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CVTempVtGlobalDefines.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CVTempVtModel.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CVehicleTemperature.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CXapsosSEP.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CXmitVLF.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CXmitVLFEnum.h
+-- Up-to-date: /repos/gitlab/SpWx/include/CXmitVLFGrid.h
+-- Up-to-date: /repos/gitlab/SpWx/include/GenericModel.h
+-- Up-to-date: /repos/gitlab/SpWx/include/GenericModelEnum.h
+-- Up-to-date: /repos/gitlab/SpWx/include/NehiemEnv.h
+-- Up-to-date: /repos/gitlab/SpWx/include/NehiemSat.h
+-- Up-to-date: /repos/gitlab/SpWx/include/VMBoostrap.h
+-- Up-to-date: /repos/gitlab/SpWx/include/VMTypes.h
+-- Up-to-date: /repos/gitlab/SpWx/python/spwx/__init__.py
+-- Up-to-date: /repos/gitlab/SpWx/python/setup.py
+-- Up-to-date: /repos/gitlab/SpWx/python/examples
+-- Up-to-date: /repos/gitlab/SpWx/python/examples/computeLm_example.py
+-- Up-to-date: /repos/gitlab/SpWx/python/examples/orbitprop_example.py
+-- Up-to-date: /repos/gitlab/SpWx/data
+-- Up-to-date: /repos/gitlab/SpWx/data/cammiceDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/colmanVlf660DB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/fastPhi_net.mat
+-- Up-to-date: /repos/gitlab/SpWx/data/fast_hmin_net.mat
+-- Up-to-date: /repos/gitlab/SpWx/data/galacticCosmicRayDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/igrfDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/iri2007DB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/meteorDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/nehDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/radiationBeltDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/saaDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/sd2DB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/sepDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/sepXapsosDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/data/xmitVlfDB.h5
+-- Up-to-date: /repos/gitlab/SpWx/lib64/spwx/cmake/spwx.cmake
+-- Up-to-date: /repos/gitlab/SpWx/lib64/spwx/cmake/spwx-noconfig.cmake
+-- Up-to-date: /repos/gitlab/SpWx/lib64/spwx/cmake/spwxConfig.cmake
+-- Up-to-date: /repos/gitlab/SpWx/lib64/spwx/cmake/spwxConfigVersion.cmake
+
+Step 6: Run benchmarks
+
+  6.1: cd /home/dantopa/scratch/SpWx
+
+Step 7: remove previous benchmarks: find . -name "cpp.benchmark*" | xargs rm
+rm: missing operand
+Try 'rm --help' for more information.
+
+Step 8: Fortran benchmarks
+
+  8.1: create cmag.benchmark.fortran: ./bin/satMagCover
+
+  8.2: verify file was created: ls -alh cmag.benchmark.fortran
+-rw-rw-r-- 1 dantopa dantopa 21M Mar 27 22:21 cmag.benchmark.fortran
+
+  8.3: create cmag.benchmark.fortran.transform: ./bin/satMagCover transform
+Run with Tranform.
+--------------------------------------------
+
+  8.4: verify file was created: ls -alh cmag.benchmark.transform.fortran
+-rw-rw-r-- 1 dantopa dantopa 17M Mar 27 22:21 cmag.benchmark.transform.fortran
+
+Step 9: C++ benchmarks
+
+  9.1: create cmag.benchmark.cpp: ./bin/satMagCover usecpp
+Run with Fortran code converted to C++ on.
+--------------------------------------------
+
+  9.2: verify file was created: ls -alh cmag.benchmark.cpp
+-rw-rw-r-- 1 dantopa dantopa 21M Mar 27 22:22 cmag.benchmark.cpp
+
+  9.3: create cmag.benchmark.cpp.transform: ./bin/satMagCover transform usecpp
+Run with Tranform.
+Run with Fortran code converted to C++ on.
+--------------------------------------------
+
+  9.4: verify file was created: ls -alh cmag.benchmark.transform.cpp
+-rw-rw-r-- 1 dantopa dantopa 17M Mar 27 22:22 cmag.benchmark.transform.cpp
+
+Step 10: SHA256: find . -name "cpp.benchmark*" | xargs shasum -a 256
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  -
+
+Step 11: mv /home/dantopa/scratch/copy-spwx.txt /home/dantopa/scratch/43017f53c1b2-2022-03-27~21,48,27-copy-spwx.txt
+
+Step 12: Output stream is in /home/dantopa/scratch/43017f53c1b2-2022-03-27~21,48,27-copy-spwx.txt
+time to run benchmarks: 0h:1m:52s
+
+Step 13: Run time:
+time to build SpWx and run benchmarks: 0h:33m:59s
