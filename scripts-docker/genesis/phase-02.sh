@@ -27,7 +27,7 @@ export generic_seconds=${SECONDS}
 # export git_email="dshanaberger@aer.com"
 export       ego="magneto"  # latin: ego = I, me
 export  git_user="Erik Magnus Lehnsherr"
-export git_email="eLehnsherr@aer.com"
+export git_email="magneto@aer.com"
 
 #  #  #  ========================================== declarations end
 
@@ -120,8 +120,6 @@ sub_step_counter=0
     sub_step "source share/spack/setup-env.sh"
               source share/spack/setup-env.sh
 
-# export SPACK_PYTHON="/usr/bin/python3.9"
-
 new_step "Build cdf"
 sub_step_counter=0
 
@@ -154,22 +152,41 @@ sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/.
 
-# new_step "Build compilers"
-# sub_step_counter=0
-#
-#     sub_step "spack install gcc@11.2.0"
-#               spack install gcc@11.2.0          | tee ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
-#
-#               spack info gcc                    > ${SPACK_ROOT}/${USER}/info/gcc.txt  2>&1 &
-#               spack spec gcc@11.2.0 % gcc@4.8.5 > ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt  2>&1 &
-#
-#     sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
-#               spack compiler find $(spack location -i gcc@11.2.0)
-#
-#     sub_step "spack load gcc@11.2.0"
-#               spack load gcc@11.2.0
+new_step "Build compilers"
+sub_step_counter=0
 
-#  #  #  ========================================== post-mortem
+export SPACK_PYTHON="/usr/bin/python3.9"
+
+    sub_step "spack install gcc@11.2.0"
+              spack install gcc@11.2.0          2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
+
+              spack info gcc                    2>&1 | tee -a ${SPACK_ROOT}/${USER}/info/gcc.txt
+              spack spec gcc@11.2.0 % gcc@4.8.5 2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt
+
+    sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
+              spack compiler find $(spack location -i gcc@11.2.0)
+
+    sub_step "spack load gcc@11.2.0"
+              spack load gcc@11.2.0
+
+    sub_step "spack install llvm@14.0.0 % gcc@11.2.0"
+              spack install llvm@14.0.0 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@14.0.0.txt 2>&1
+
+              spack info llvm                    2>&1 | tee -a ${SPACK_ROOT}/${USER}/info/llvm.txt
+              spack spec llvm@14.0.0 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@14.0.0.txt
+
+    sub_step "spack compiler find $(spack location -i llvm@14.0.0)"
+              spack compiler find $(spack location -i llvm@14.0.0)
+
+    sub_step "spack install llvm@13.0.1 % gcc@11.2.0"
+              spack install llvm@13.0.1 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@13.0.1.txt 2>&1
+
+              spack spec llvm@13.0.1 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@13.0.1.txt
+
+    sub_step "spack compiler find $(spack location -i llvm@13.0.1)"
+              spack compiler find $(spack location -i llvm@13.0.1)
+
+ #  #  ========================================== post-mortem
 
 new_step "Probe build"
 sub_step_counter=0
