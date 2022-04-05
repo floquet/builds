@@ -1,0 +1,251 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.014
+rpmdb time: 0.002
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 14751.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  34 M RSS (248 MB VSZ)
+    Started: Tue Apr  5 15:51:29 2022 - 00:01 ago
+    State  : Running, pid: 14751
+Existing lock /var/run/yum.pid: another copy is running as pid 14752.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (245 MB VSZ)
+    Started: Tue Apr  5 15:51:29 2022 - 00:03 ago
+    State  : Running, pid: 14752
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  53 M RSS (1.3 GB VSZ)
+    Started: Tue Apr  5 15:51:29 2022 - 00:05 ago
+    State  : Running, pid: 14752
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  50 M RSS (1.3 GB VSZ)
+    Started: Tue Apr  5 15:51:29 2022 - 00:07 ago
+    State  : Sleeping, pid: 14752
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  54 M RSS (1.3 GB VSZ)
+    Started: Tue Apr  5 15:51:29 2022 - 00:09 ago
+    State  : Running, pid: 14752
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.lostpacket.org
+ * epel: dfw.mirror.rackspace.com
+ * extras: la.mirrors.clouvider.net
+ * updates: centos.mirror.shastacoe.net
+pkgsack time: 0.200
+Obs Init time: 0.190
+Resolving Dependencies
+--> Running transaction check
+---> Package llvm7.0-devel.x86_64 0:7.0.1-4.el7 will be installed
+Checking deps for llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('llvm7.0(x86-64)', 'EQ', ('0', '7.0.1', '4.el7')) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('/usr/sbin/alternatives', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('/usr/sbin/alternatives', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libLLVM-7.so(LLVM_7)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libedit-devel', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.14)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.18)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libLLVM-7.so()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libLTO.so.7()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+llvm7.0-devel-7.0.1-4.el7.x86_64 requires: llvm7.0(x86-64) = 7.0.1-4.el7
+--> Processing Dependency: llvm7.0(x86-64) = 7.0.1-4.el7 for package: llvm7.0-devel-7.0.1-4.el7.x86_64
+Searching pkgSack for dep: llvm7.0(x86-64)
+Building updates object
+up:simple updates time: 0.006
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.214
+TSINFO: Marking llvm7.0-7.0.1-4.el7.x86_64 as install for llvm7.0-devel-7.0.1-4.el7.x86_64
+llvm7.0-devel-7.0.1-4.el7.x86_64 requires: libLLVM-7.so(LLVM_7)(64bit)
+--> Processing Dependency: libLLVM-7.so(LLVM_7)(64bit) for package: llvm7.0-devel-7.0.1-4.el7.x86_64
+Searching pkgSack for dep: libLLVM-7.so(LLVM_7)(64bit)
+TSINFO: Marking llvm7.0-libs-7.0.1-4.el7.x86_64 as install for llvm7.0-devel-7.0.1-4.el7.x86_64
+llvm7.0-devel-7.0.1-4.el7.x86_64 requires: libedit-devel
+--> Processing Dependency: libedit-devel for package: llvm7.0-devel-7.0.1-4.el7.x86_64
+Searching pkgSack for dep: libedit-devel
+TSINFO: Marking libedit-devel-3.0-12.20121213cvs.el7.x86_64 as install for llvm7.0-devel-7.0.1-4.el7.x86_64
+llvm7.0-devel-7.0.1-4.el7.x86_64 requires: libLLVM-7.so()(64bit)
+--> Processing Dependency: libLLVM-7.so()(64bit) for package: llvm7.0-devel-7.0.1-4.el7.x86_64
+Searching pkgSack for dep: libLLVM-7.so()(64bit)
+llvm7.0-libs-7.0.1-4.el7.x86_64 already in ts, skipping this one
+llvm7.0-devel-7.0.1-4.el7.x86_64 requires: libLTO.so.7()(64bit)
+--> Processing Dependency: libLTO.so.7()(64bit) for package: llvm7.0-devel-7.0.1-4.el7.x86_64
+Quick matched llvm7.0-libs-7.0.1-4.el7.x86_64 to require for libLTO.so.7()(64bit)
+--> Running transaction check
+---> Package libedit-devel.x86_64 0:3.0-12.20121213cvs.el7 will be installed
+Checking deps for libedit-devel.x86_64 0:3.0-12.20121213cvs.el7 - u
+looking for ('libedit', 'EQ', ('0', '3.0', '12.20121213cvs.el7')) as a requirement of libedit-devel.x86_64 0:3.0-12.20121213cvs.el7 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of libedit-devel.x86_64 0:3.0-12.20121213cvs.el7 - u
+looking for ('ncurses-devel', None, (None, None, None)) as a requirement of libedit-devel.x86_64 0:3.0-12.20121213cvs.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of libedit-devel.x86_64 0:3.0-12.20121213cvs.el7 - u
+looking for ('libedit.so.0()(64bit)', None, (None, None, None)) as a requirement of libedit-devel.x86_64 0:3.0-12.20121213cvs.el7 - u
+libedit-devel-3.0-12.20121213cvs.el7.x86_64 requires: ncurses-devel
+--> Processing Dependency: ncurses-devel for package: libedit-devel-3.0-12.20121213cvs.el7.x86_64
+Searching pkgSack for dep: ncurses-devel
+TSINFO: Marking ncurses-devel-5.9-14.20130511.el7_4.x86_64 as install for libedit-devel-3.0-12.20121213cvs.el7.x86_64
+---> Package llvm7.0.x86_64 0:7.0.1-4.el7 will be installed
+Checking deps for llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('llvm7.0-libs(x86-64)', 'EQ', ('0', '7.0.1', '4.el7')) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libLLVM-7.so(LLVM_7)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.14)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.17)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.18)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.19)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libLLVM-7.so()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm7.0.x86_64 0:7.0.1-4.el7 - u
+---> Package llvm7.0-libs.x86_64 0:7.0.1-4.el7 will be installed
+Checking deps for llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('ld-linux-x86-64.so.2()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.3)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.12)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.3)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3.5)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.14)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.17)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.18)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.19)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libz.so.1(ZLIB_1.2.0)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libedit.so.0()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libffi.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+--> Running transaction check
+---> Package ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 will be installed
+Checking deps for ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('ncurses-libs(x86-64)', 'EQ', ('0', '5.9', '14.20130511.el7_4')) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libtic.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libpanelw.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libpanel.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libncurses++w.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libncurses++.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libmenuw.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libmenu.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libformw.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+looking for ('libform.so.5()(64bit)', None, (None, None, None)) as a requirement of ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.479
+
+Dependencies Resolved
+
+================================================================================
+ Package             Arch         Version                      Repository  Size
+================================================================================
+Installing:
+ llvm7.0-devel       x86_64       7.0.1-4.el7                  epel       2.6 M
+Installing for dependencies:
+ libedit-devel       x86_64       3.0-12.20121213cvs.el7       base        32 k
+ llvm7.0             x86_64       7.0.1-4.el7                  epel       3.4 M
+ llvm7.0-libs        x86_64       7.0.1-4.el7                  epel        14 M
+ ncurses-devel       x86_64       5.9-14.20130511.el7_4        base       712 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 21 M
+Installed size: 78 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              4.6 MB/s |  21 MB  00:04     
+Member: llvm7.0.x86_64 0:7.0.1-4.el7 - u
+Adding Package llvm7.0-7.0.1-4.el7.x86_64 in mode u
+Member: llvm7.0-libs.x86_64 0:7.0.1-4.el7 - u
+Adding Package llvm7.0-libs-7.0.1-4.el7.x86_64 in mode u
+Member: llvm7.0-devel.x86_64 0:7.0.1-4.el7 - u
+Adding Package llvm7.0-devel-7.0.1-4.el7.x86_64 in mode u
+Member: libedit-devel.x86_64 0:3.0-12.20121213cvs.el7 - u
+Adding Package libedit-devel-3.0-12.20121213cvs.el7.x86_64 in mode u
+Member: ncurses-devel.x86_64 0:5.9-14.20130511.el7_4 - u
+Adding Package ncurses-devel-5.9-14.20130511.el7_4.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.039
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.098
+Running transaction
+  Installing : llvm7.0-libs-7.0.1-4.el7.x86_64                              1/5 
+  Installing : llvm7.0-7.0.1-4.el7.x86_64                                   2/5 
+  Installing : ncurses-devel-5.9-14.20130511.el7_4.x86_64                   3/5 
+  Installing : libedit-devel-3.0-12.20121213cvs.el7.x86_64                  4/5 
+  Installing : llvm7.0-devel-7.0.1-4.el7.x86_64                             5/5 
+  Verifying  : llvm7.0-7.0.1-4.el7.x86_64                                   1/5 
+  Verifying  : llvm7.0-libs-7.0.1-4.el7.x86_64                              2/5 
+  Verifying  : llvm7.0-devel-7.0.1-4.el7.x86_64                             3/5 
+  Verifying  : libedit-devel-3.0-12.20121213cvs.el7.x86_64                  4/5 
+  Verifying  : ncurses-devel-5.9-14.20130511.el7_4.x86_64                   5/5 
+VerifyTransaction time: 0.112
+Transaction time: 3.315
+
+Installed:
+  llvm7.0-devel.x86_64 0:7.0.1-4.el7                                            
+
+Dependency Installed:
+  libedit-devel.x86_64 0:3.0-12.20121213cvs.el7                                 
+  llvm7.0.x86_64 0:7.0.1-4.el7                                                  
+  llvm7.0-libs.x86_64 0:7.0.1-4.el7                                             
+  ncurses-devel.x86_64 0:5.9-14.20130511.el7_4                                  
+
+Complete!

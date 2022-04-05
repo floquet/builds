@@ -1,0 +1,25 @@
+yum deplist -v arpack-devel
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.lostpacket.org
+ * epel: mirror.arizona.edu
+ * extras: la.mirrors.clouvider.net
+ * updates: centos.mirror.shastacoe.net
+pkgsack time: 4.378
+Searching pkgSack for dep: /usr/bin/pkg-config
+Searching pkgSack for dep: arpack
+Searching pkgSack for dep: libarpack.so.2()(64bit)
+package: arpack-devel.x86_64 3.1.3-2.el7
+  dependency: /usr/bin/pkg-config
+   provider: pkgconfig.x86_64 1:0.27.1-4.el7
+   provider: pkgconfig.i686 1:0.27.1-4.el7
+  dependency: arpack = 3.1.3-2.el7
+   provider: arpack.x86_64 3.1.3-2.el7
+  dependency: libarpack.so.2()(64bit)
+   provider: arpack.x86_64 3.1.3-2.el7

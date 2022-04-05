@@ -1,0 +1,439 @@
+yum deplist -v qt
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.lostpacket.org
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: la.mirrors.clouvider.net
+ * updates: centos.mirror.shastacoe.net
+pkgsack time: 3.031
+Searching pkgSack for dep: /sbin/ldconfig
+Searching pkgSack for dep: /sbin/ldconfig
+Searching pkgSack for dep: ca-certificates
+Searching pkgSack for dep: ld-linux.so.2
+Searching pkgSack for dep: ld-linux.so.2(GLIBC_2.3)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.15)
+Searching pkgSack for dep: libcrypto.so.10
+Searching pkgSack for dep: libcrypto.so.10(OPENSSL_1.0.2)
+Searching pkgSack for dep: libcrypto.so.10(libcrypto.so.10)
+Searching pkgSack for dep: libdbus-1.so.3
+Searching pkgSack for dep: libdbus-1.so.3(LIBDBUS_1_3)
+Searching pkgSack for dep: libdl.so.2
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.0)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.1)
+Searching pkgSack for dep: libgcc_s.so.1
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.0)
+Searching pkgSack for dep: libgcc_s.so.1(GLIBC_2.0)
+Searching pkgSack for dep: libglib-2.0.so.0
+Searching pkgSack for dep: libgthread-2.0.so.0
+Searching pkgSack for dep: libm.so.6
+Searching pkgSack for dep: libm.so.6(GLIBC_2.0)
+Searching pkgSack for dep: libm.so.6(GLIBC_2.1)
+Searching pkgSack for dep: libm.so.6(GLIBC_2.2)
+Searching pkgSack for dep: libpthread.so.0
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.0)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.1)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.3)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.3.2)
+Searching pkgSack for dep: librt.so.1
+Searching pkgSack for dep: librt.so.1(GLIBC_2.2)
+Searching pkgSack for dep: libsqlite3.so.0
+Searching pkgSack for dep: libssl.so.10
+Searching pkgSack for dep: libssl.so.10(libssl.so.10)
+Searching pkgSack for dep: libstdc++.so.6
+Searching pkgSack for dep: libstdc++.so.6(CXXABI_1.3)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4)
+Searching pkgSack for dep: libz.so.1
+Searching pkgSack for dep: qt-settings
+Searching pkgSack for dep: rtld(GNU_HASH)
+Searching pkgSack for dep: /sbin/ldconfig
+Searching pkgSack for dep: /sbin/ldconfig
+Searching pkgSack for dep: ca-certificates
+Searching pkgSack for dep: ld-linux-x86-64.so.2()(64bit)
+Searching pkgSack for dep: ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.15)(64bit)
+Searching pkgSack for dep: libcrypto.so.10()(64bit)
+Searching pkgSack for dep: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
+Searching pkgSack for dep: libcrypto.so.10(libcrypto.so.10)(64bit)
+Searching pkgSack for dep: libdbus-1.so.3()(64bit)
+Searching pkgSack for dep: libdbus-1.so.3(LIBDBUS_1_3)(64bit)
+Searching pkgSack for dep: libdl.so.2()(64bit)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libgcc_s.so.1()(64bit)
+Searching pkgSack for dep: libgcc_s.so.1(GCC_3.0)(64bit)
+Searching pkgSack for dep: libglib-2.0.so.0()(64bit)
+Searching pkgSack for dep: libgthread-2.0.so.0()(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libm.so.6(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.3.2)(64bit)
+Searching pkgSack for dep: librt.so.1()(64bit)
+Searching pkgSack for dep: librt.so.1(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libsqlite3.so.0()(64bit)
+Searching pkgSack for dep: libssl.so.10()(64bit)
+Searching pkgSack for dep: libssl.so.10(libssl.so.10)(64bit)
+Searching pkgSack for dep: libstdc++.so.6()(64bit)
+Searching pkgSack for dep: libstdc++.so.6(CXXABI_1.3)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+Searching pkgSack for dep: libz.so.1()(64bit)
+Searching pkgSack for dep: qt-settings
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: qt.i686 1:4.8.7-9.el7_9
+  dependency: /sbin/ldconfig
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+  dependency: ca-certificates
+   provider: ca-certificates.noarch 2021.2.50-72.el7_9
+   provider: ca-certificates.noarch 2020.2.41-70.0.el7_8
+  dependency: ld-linux.so.2
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: ld-linux.so.2(GLIBC_2.3)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libc.so.6(GLIBC_2.15)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libcrypto.so.10
+   provider: openssl-libs.i686 1:1.0.2k-25.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-24.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-22.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-21.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-19.el7
+  dependency: libcrypto.so.10(OPENSSL_1.0.2)
+   provider: openssl-libs.i686 1:1.0.2k-25.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-24.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-22.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-21.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-19.el7
+  dependency: libcrypto.so.10(libcrypto.so.10)
+   provider: openssl-libs.i686 1:1.0.2k-25.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-24.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-22.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-21.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-19.el7
+  dependency: libdbus-1.so.3
+   provider: dbus-libs.i686 1:1.10.24-15.el7
+  dependency: libdbus-1.so.3(LIBDBUS_1_3)
+   provider: dbus-libs.i686 1:1.10.24-15.el7
+  dependency: libdl.so.2
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.0)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.1)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libgcc_s.so.1
+   provider: libgcc.i686 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.0)
+   provider: libgcc.i686 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GLIBC_2.0)
+   provider: libgcc.i686 4.8.5-44.el7
+  dependency: libglib-2.0.so.0
+   provider: glib2.i686 2.56.1-9.el7_9
+   provider: glib2.i686 2.56.1-8.el7
+   provider: glib2.i686 2.56.1-7.el7
+  dependency: libgthread-2.0.so.0
+   provider: glib2.i686 2.56.1-9.el7_9
+   provider: glib2.i686 2.56.1-8.el7
+   provider: glib2.i686 2.56.1-7.el7
+  dependency: libm.so.6
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.0)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.1)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.2)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.0)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.1)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2.3)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.3.2)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: librt.so.1
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: librt.so.1(GLIBC_2.2)
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.i686 2.17-317.el7
+  dependency: libsqlite3.so.0
+   provider: sqlite.i686 3.7.17-8.el7_7.1
+  dependency: libssl.so.10
+   provider: openssl-libs.i686 1:1.0.2k-25.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-24.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-22.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-21.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-19.el7
+  dependency: libssl.so.10(libssl.so.10)
+   provider: openssl-libs.i686 1:1.0.2k-25.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-24.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-22.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-21.el7_9
+   provider: openssl-libs.i686 1:1.0.2k-19.el7
+  dependency: libstdc++.so.6
+   provider: libstdc++.i686 4.8.5-44.el7
+  dependency: libstdc++.so.6(CXXABI_1.3)
+   provider: libstdc++.i686 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4)
+   provider: libstdc++.i686 4.8.5-44.el7
+  dependency: libz.so.1
+   provider: zlib.i686 1.2.7-19.el7_9
+   provider: zlib.i686 1.2.7-18.el7
+  dependency: qt-settings
+   provider: qt-settings.noarch 19-23.12.el7.centos
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+package: qt.x86_64 1:4.8.7-9.el7_9
+  dependency: /sbin/ldconfig
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+  dependency: ca-certificates
+   provider: ca-certificates.noarch 2021.2.50-72.el7_9
+   provider: ca-certificates.noarch 2020.2.41-70.0.el7_8
+  dependency: ld-linux-x86-64.so.2()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: ld-linux-x86-64.so.2(GLIBC_2.3)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libc.so.6(GLIBC_2.15)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libcrypto.so.10()(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libcrypto.so.10(libcrypto.so.10)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libdbus-1.so.3()(64bit)
+   provider: dbus-libs.x86_64 1:1.10.24-15.el7
+  dependency: libdbus-1.so.3(LIBDBUS_1_3)(64bit)
+   provider: dbus-libs.x86_64 1:1.10.24-15.el7
+  dependency: libdl.so.2()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libgcc_s.so.1()(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libgcc_s.so.1(GCC_3.0)(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libglib-2.0.so.0()(64bit)
+   provider: glib2.x86_64 2.56.1-9.el7_9
+   provider: glib2.x86_64 2.56.1-8.el7
+   provider: glib2.x86_64 2.56.1-7.el7
+  dependency: libgthread-2.0.so.0()(64bit)
+   provider: glib2.x86_64 2.56.1-9.el7_9
+   provider: glib2.x86_64 2.56.1-8.el7
+   provider: glib2.x86_64 2.56.1-7.el7
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.3.2)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: librt.so.1()(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: librt.so.1(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libsqlite3.so.0()(64bit)
+   provider: sqlite.x86_64 3.7.17-8.el7_7.1
+  dependency: libssl.so.10()(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libssl.so.10(libssl.so.10)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libstdc++.so.6()(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(CXXABI_1.3)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libz.so.1()(64bit)
+   provider: zlib.x86_64 1.2.7-19.el7_9
+   provider: zlib.x86_64 1.2.7-18.el7
+  dependency: qt-settings
+   provider: qt-settings.noarch 19-23.12.el7.centos
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

@@ -18,12 +18,13 @@ source ${repo_scripts_spack}/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
-# export dist="centos" ; export release="7.9.2009" ; export installer="yum"
-export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
+export dist="centos" ; export release="7.9.2009" ; export installer="yum"
+# export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
 # export dist="amzn" ; export release="2.0.20220218.1" ; export installer="yum"
 
-export USER="dantopa"
+# export USER="dantopa"
 # export USER="dshan"
+export USER="magneto"
 export tag="${dist}-${release}"
 
 export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
