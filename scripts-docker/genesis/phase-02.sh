@@ -158,10 +158,10 @@ sub_step_counter=0
 export SPACK_PYTHON="/usr/bin/python3.9"
 
     sub_step "spack install gcc@11.2.0"
-              spack install gcc@11.2.0          2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
+              spack install gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
 
-              spack info gcc                    2>&1 | tee -a ${SPACK_ROOT}/${USER}/info/gcc.txt
-              spack spec gcc@11.2.0 % gcc@4.8.5 2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt
+              spack info gcc                    > ${SPACK_ROOT}/${USER}/info/gcc.txt
+              spack spec gcc@11.2.0 % gcc@4.8.5 > ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt
 
     sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
               spack compiler find $(spack location -i gcc@11.2.0)
@@ -172,8 +172,8 @@ export SPACK_PYTHON="/usr/bin/python3.9"
     sub_step "spack install llvm@14.0.0 % gcc@11.2.0"
               spack install llvm@14.0.0 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@14.0.0.txt 2>&1
 
-              spack info llvm                    2>&1 | tee -a ${SPACK_ROOT}/${USER}/info/llvm.txt
-              spack spec llvm@14.0.0 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@14.0.0.txt
+              spack info llvm                     > ${SPACK_ROOT}/${USER}/info/llvm.txt
+              spack spec llvm@14.0.0 % gcc@11.2.0 > ${SPACK_ROOT}/${USER}/specs/llvm@14.0.0.txt
 
     sub_step "spack compiler find $(spack location -i llvm@14.0.0)"
               spack compiler find $(spack location -i llvm@14.0.0)
