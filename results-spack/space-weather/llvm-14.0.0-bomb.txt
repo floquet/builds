@@ -1,0 +1,585 @@
+Last login: Tue Apr  5 20:19:25 on ttys005
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Xiuhcoatl:~ dantopa$ source ~/.xiuhcoatl.sh
+Wed Apr  6 09:46:22 MDT 2022, /Users/dantopa/.xiuhcoatl.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/master.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/paths.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/gcc.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/git.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/ssh.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/vim.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/make.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/bash.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/finds.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/cmake.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/python.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/docker.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/copy-configuration.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/c.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/fortran.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/bookmarks.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/bookmarks-bitbucket.sh
+Wed Apr  6 09:46:22 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/bookmarks-github.sh
+threads completed for copy-configuration.sh write to /Volumes/repos/bitbucket/mac-configurations/Macmini8,1-(xiuhcoatl)/darwin-21.4.0/Monterey-12.3/Xiuhcoatl.local ...
+${PWD} = /Volumes/repos/bitbucket/mac-configurations
+git add -A . 
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/bookmarks-gitlab.sh
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/disk.sh
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/uname.sh
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/spack.sh
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/lstopo.sh
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/alias.sh
+[2]-  Done                    source "${core}/uname.sh"
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/prompt.sh
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/modules.sh
+[3]+  Done                    source "${core}/lstopo.sh"
+[2]+  Exit 127                module available >> ${my_log} 2>&1
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/macports.sh
+Wed Apr  6 09:46:23 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/environment.sh
+[2]+  Exit 127                module list >> ${my_log} 2>&1
+git commit -m 'xiuhcoatl native Monterey-12.3 2022-04-06 09:46'
+[master 262dfa7] xiuhcoatl native Monterey-12.3 2022-04-06 09:46
+ 6 files changed, 103 insertions(+), 106 deletions(-)
+/Volumes/repos/bitbucket/mac-configurations
+[1]+  Done                    source "${core}/copy-configuration.sh"
+user account = dantopa
+${SHELL} = /bin/bash
+gcc --version:
+Apple clang version 13.1.6 (clang-1316.0.21.2)
+Target: x86_64-apple-darwin21.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+Wed Apr  6 09:46:27 MDT 2022, /Volumes/repos/github/gitlab-bash-scripts/core-scripts/xiuhcoatl.sh
+Wed Apr  6 09:46:27 MDT 2022, /Users/dantopa//.platform-specific.sh
+dantopa@Xiuhcoatl.local:dantopa $ xiuhcoatlDockerTime dantopa/base-centos:7.9.2009
+docker run -it -v /etc/localtime:/etc/localtime -v /Users/dantopa/Dropbox:/Dropbox -v /Volumes/Metztli:/Metztli -v /Volumes/Infernum:/Infernum -v /Volumes/Paradisum:/Paradisum -v /Volumes/Purgatorium:/Purgatorium -v /Volumes/atacama:/atacama -v /Volumes/docker:/docker -v /Volumes/gobi:/gobi -v /Volumes/sonoran:/sonoran -v /Volumes/repos:/repos -v /Volumes/spacktivity:/spacktivity dantopa/base-centos:7.9.2009
+[root@3e19be50d5ff /]# su - dantopa
+Last login: Tue Apr  5 20:19:59 MDT 2022 on pts/0
+[dantopa@3e19be50d5ff ~]$ . .centos-7.9.2009.sh 
+Wed Apr  6 09:46:43 MDT 2022, .centos-7.9.2009.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/master.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/paths.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/gcc.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/git.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/ssh.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/vim.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/make.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/bash.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/finds.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/cmake.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/python.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/docker.sh
+docker log entry: 2022-04-06 09:46:43 centos-7.9.2009, network node hostname = 3e19be50d5ff, MacBookPro16,1-(quaxolotl)
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/copy-configuration.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/c.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/fortran.sh
+rsync: rename "/repos/bitbucket/mac-configurations/MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.gitconfig.iFSLNO" -> ".gitconfig": Permission denied (13)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1179) [sender=3.1.2]
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/bookmarks.sh
+threads completed for copy-configuration.sh write to /repos/bitbucket/mac-configurations/MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff ...
+${PWD} = /repos/bitbucket/mac-configurations
+git add -A . 
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/bookmarks-bitbucket.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/bookmarks-github.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/bookmarks-gitlab.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/disk.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/spack.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/uname.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/lstopo.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/alias.sh
+[2]-  Done                    source "${core}/uname.sh"
+[3]+  Done                    source "${core}/lstopo.sh"
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/prompt.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/modules.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/macports.sh
+Wed Apr  6 09:46:43 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/environment.sh
+git commit -m 'quaxolotl docker centos-7.9.2009 2022-04-06 09:46'
+error: unable to find 6a34456b715fc06d96d5c49ec60bce178b40290f
+[master 6a34456] quaxolotl docker centos-7.9.2009 2022-04-06 09:46
+ 8 files changed, 468 insertions(+)
+ create mode 100644 MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.centos-7.9.2009.sh
+ create mode 100644 MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.info/alias-assignments.txt
+ create mode 100644 MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.info/environment-variables.txt
+ create mode 100644 MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.info/modules-available.txt
+ create mode 100644 MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.info/modules-list.txt
+ create mode 100644 MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.info/uname-variables.txt
+ create mode 100644 MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.platform-specific.sh
+ create mode 100644 MacBookPro16,1-(quaxolotl)/linux/centos-7.9.2009/3e19be50d5ff/.vimrc
+/repos/bitbucket/mac-configurations
+[1]   Done                    source "${core}/copy-configuration.sh"
+[2]-  Done                    module available >> ${my_log} 2>&1
+[3]+  Done                    module list >> ${my_log} 2>&1
+user account = dantopa
+${SHELL} = /bin/bash
+gcc --version:
+gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-44)
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+dantopa@3e19be50d5ff:~ $ cd spacktivity/centos-7.9.2009-dantopa-docker-spack/
+dantopa@3e19be50d5ff:centos-7.9.2009-dantopa-docker-spack $ gpull
+git pull
+remote: Enumerating objects: 182, done.
+remote: Counting objects: 100% (78/78), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 182 (delta 64), reused 69 (delta 59), pack-reused 104
+Receiving objects: 100% (182/182), 381.04 KiB | 325.00 KiB/s, done.
+Resolving deltas: 100% (80/80), completed with 31 local objects.
+From https://github.com/spack/spack
+   69b3a88..57f5c92  develop    -> origin/develop
+Updating 69b3a88..57f5c92
+Fast-forward
+ .github/workflows/unit_tests.yaml                        | 10 +++++-----
+ lib/spack/llnl/util/link_tree.py                         |  4 ++--
+ lib/spack/spack/util/web.py                              |  6 +++++-
+ var/spack/repos/builtin/packages/claw/package.py         | 10 ++++------
+ var/spack/repos/builtin/packages/cudnn/package.py        | 14 ++++++++++++++
+ var/spack/repos/builtin/packages/dd4hep/package.py       |  7 ++-----
+ var/spack/repos/builtin/packages/gdb/package.py          |  2 +-
+ var/spack/repos/builtin/packages/gdrcopy/package.py      |  1 +
+ var/spack/repos/builtin/packages/h5bench/package.py      | 31 ++++++++++++++++++++++++++-----
+ var/spack/repos/builtin/packages/libproxy/package.py     | 18 ++++++++++++++++--
+ var/spack/repos/builtin/packages/mesa/package.py         | 35 +++++++++++++++++++++++++++--------
+ var/spack/repos/builtin/packages/mesa18/package.py       | 46 +++++++++++++++++++++++++++++++---------------
+ var/spack/repos/builtin/packages/mfem/package.py         |  3 +++
+ var/spack/repos/builtin/packages/mpifileutils/package.py |  2 ++
+ var/spack/repos/builtin/packages/pika/package.py         |  2 ++
+ var/spack/repos/builtin/packages/py-awkward/package.py   |  3 ++-
+ var/spack/repos/builtin/packages/py-fonttools/package.py |  4 +++-
+ var/spack/repos/builtin/packages/py-warpx/package.py     |  5 +++--
+ var/spack/repos/builtin/packages/scotch/package.py       |  8 +++++---
+ var/spack/repos/builtin/packages/spectre/package.py      |  1 +
+ var/spack/repos/builtin/packages/warpx/package.py        |  3 ++-
+ var/spack/repos/builtin/packages/xxhash/package.py       |  1 +
+ 22 files changed, 158 insertions(+), 58 deletions(-)
+dantopa@3e19be50d5ff:centos-7.9.2009-dantopa-docker-spack $ initspack 
+source share/spack/setup-env.sh
+l-spack
+Wed Apr  6 09:47:00 MDT 2022, /repos/github/gitlab-bash-scripts/core-scripts/spack-init.sh
+dantopa@3e19be50d5ff:centos-7.9.2009-dantopa-docker-spack $ . dantopa/shell-scripts/set-environment.sh 
+Wed Apr  6 09:47:27 MDT 2022, dantopa/shell-scripts/set-environment.sh
+${myCompiler}  =  % gcc@11.2.0
+${myLLVM}      =  ^llvm@14.0.0
+${myOpenMPI}   =  ^openmpi@4.1.2
+${myPython}    =  ^python@3.10.2
+${mySpackLogs} = /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/dantopa/build-logs
+dantopa@3e19be50d5ff:centos-7.9.2009-dantopa-docker-spack $ spack load gcc@11.2.0
+dantopa@3e19be50d5ff:centos-7.9.2009-dantopa-docker-spack $ spack install llvm@14.0.0 ${myCompiler} ^python@3.10.2 2>&1  | tee -a  ${mySpackLogs}/llvm-14.0.0.txt
+
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libiconv-1.16-e3mxjtuwpnsculylaou4kfaaribupgen
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/pkgconf-1.8.0-3h5khmxpoo2bmkb6gnjvgh62pyvbrero
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/xz-5.2.5-vwfybpkndzb4zl7wsc3dqcyye3lm4ctf
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/berkeley-db-18.1.40-nr7mtsrrg4jy3udmt6nlqhahtkc4mscl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libsigsegv-2.13-tefwprmldxqk5fjhvzrpogqz2oelkp72
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/util-macros-1.19.3-g7is2sphbhezmauuiucmcwn5s2klnmua
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libmd-1.0.4-oe3yxofkytenoutn3jtaxeb7cvlrcxqc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libffi-3.4.2-737s4splilzus3cb3xpr7wllgxul3jrz
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/pcre-8.45-imx4dsld74reddlios523nu3l7wapxxv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/tar-1.34-p24qlic6ya4ocvbkzjmme73zzcxn5t3a
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/diffutils-3.8-3vnudj5vzmhi2bbtvlwmdko2t7u3xkpj
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/ncurses-6.2-2uw3htgsvzingtyeqncf7p34ce2ertyp
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/util-linux-uuid-2.37.4-gjkaexqv4mie63zpwqdnfevwmusx2jiv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libxml2-2.9.12-27zxtx5cy5aefuxmmdw7wtcb3sejpfns
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/m4-1.4.19-zchzmyrkxsw5lfmgka2k6clwd5zulnam
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libbsd-0.11.5-3ylr2ign2jvqs2f2zha7b6jt2wzdythe
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/swig-4.0.2-tpvoa6g5u3dgwnydq2ewx5uuu2za2g3a
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/bzip2-1.0.8-lzma4lbnbbcjllkhmlmcajmxtdfizbjc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libedit-3.1-20210216-m2fzinj5ttafacwsabwzia5gh2efr4nd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/readline-8.1-vddbsljev6gh6kef7xa53fkqqjp3uhvo
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libtool-2.4.6-rm34c7nvm7u6fllkqpt2rpnpnrwp6kyy
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/expat-2.4.8-3xa5z3f3iyysixqwqreypjtm4qztjozv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/gettext-0.21-z46fvrzeesnfapuqriea44nm7bzke6ty
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/gdbm-1.19-4ukiohidxqfb2adug2e6w4wqh5k4tqec
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/sqlite-3.37.2-ats42znuyy3kwgp2hscikoqak4tjb77n
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/libpciaccess-0.16-pt6anvhdcfgt7wamaheffrdbdhh63blt
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/binutils-2.38-zjbatt3z5kzakv7acqcl7wqtfyyuraxd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/perl-5.34.1-syagveqsxixz4do3z2uwttgundaeuimd
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/hwloc-2.7.1-4yxtv5c63lz4fnfnd35mkq7onbts54uc
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/perl-data-dumper-2.173-wjif3rujmu4ijuabteu7jpxovrrr7gw6
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/openssl-1.1.1n-eqgqxoflbwywwgu75ynw2jraaps7ondw
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/python-3.10.2-drosrbp7scrn4osiixzkcxpiyedwnwnv
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/cmake-3.23.0-xog3yqnoaf5czxggaz7gbh4aly33vowl
+[+] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/ninja-1.10.2-gmqdyiy6f2dz2v7kmyctwpq4lflohl7r
+==> Installing llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7
+==> No binary for llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7 found: installing from source
+==> Fetching file:///spacktivity/mirror/_source-cache/archive/87/87b1a068b370df5b79a892fdb2935922a8efb1fddec4cc506e30fe57b6a1d9c4.tar.gz
+==> No patches needed for llvm
+==> llvm: Executing phase: 'cmake'
+==> llvm: Executing phase: 'build'
+*** Error in `/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus': malloc(): smallbin double linked list corrupted: 0x00000000053be0f0 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x7f474)[0x7f60dd757474]
+/lib64/libc.so.6(+0x82bb0)[0x7f60dd75abb0]
+/lib64/libc.so.6(__libc_malloc+0x4c)[0x7f60dd75d78c]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus(xrealloc+0x30)[0x174ab70]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus[0xd66944]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus[0xd6910b]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus(_Z16execute_one_passP8opt_pass+0x1cd)[0xbee86d]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus[0xbef0d0]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus[0xbef0e2]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus(_Z17execute_pass_listP8functionP8opt_pass+0x19)[0xbef109]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus[0xbecad7]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus(_Z21execute_ipa_pass_listP8opt_pass+0xef)[0xbef66f]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus[0x8f00a7]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus(_ZN12symbol_table25finalize_compilation_unitEv+0xc8)[0x8f2588]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus[0xcadd87]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus(_ZN6toplev4mainEiPPc+0x7c8)[0x634298]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus(main+0x2f)[0x63829f]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f60dd6fa555]
+/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus[0x63839e]
+======= Memory map: ========
+00400000-0207f000 r-xp 00000000 fe:01 5638693                            /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus
+0227e000-02280000 r--p 01c7e000 fe:01 5638693                            /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus
+02280000-0228b000 rw-p 01c80000 fe:01 5638693                            /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/libexec/gcc/x86_64-pc-linux-gnu/11.2.0/cc1plus
+0228b000-023ea000 rw-p 00000000 00:00 0 
+02fca000-05a2b000 rw-p 00000000 00:00 0                                  [heap]
+7f6098000000-7f6098021000 rw-p 00000000 00:00 0 
+7f6098021000-7f609c000000 ---p 00000000 00:00 0 
+7f609c736000-7f609c74d000 r-xp 00000000 fe:01 5638641                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/lib64/libgcc_s.so.1
+7f609c74d000-7f609c94d000 ---p 00017000 fe:01 5638641                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/lib64/libgcc_s.so.1
+7f609c94d000-7f609c94e000 r--p 00017000 fe:01 5638641                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/lib64/libgcc_s.so.1
+7f609c94e000-7f609c94f000 rw-p 00018000 fe:01 5638641                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/lib64/libgcc_s.so.1
+7f609c94f000-7f60d84b1000 rw-p 00000000 00:00 0 
+7f60d84b2000-7f60d9ab2000 rw-p 00000000 00:00 0 
+7f60d9ab3000-7f60daf3b000 rw-p 00000000 00:00 0 
+7f60daf3c000-7f60dd4bc000 rw-p 00000000 00:00 0 
+7f60dd4bc000-7f60dd4d3000 r-xp 00000000 fe:01 47069776                   /usr/lib64/libpthread-2.17.so
+7f60dd4d3000-7f60dd6d2000 ---p 00017000 fe:01 47069776                   /usr/lib64/libpthread-2.17.so
+7f60dd6d2000-7f60dd6d3000 r--p 00016000 fe:01 47069776                   /usr/lib64/libpthread-2.17.so
+7f60dd6d3000-7f60dd6d4000 rw-p 00017000 fe:01 47069776                   /usr/lib64/libpthread-2.17.so
+7f60dd6d4000-7f60dd6d8000 rw-p 00000000 00:00 0 
+7f60dd6d8000-7f60dd89c000 r-xp 00000000 fe:01 47069091                   /usr/lib64/libc-2.17.so
+7f60dd89c000-7f60dda9b000 ---p 001c4000 fe:01 47069091                   /usr/lib64/libc-2.17.so
+7f60dda9b000-7f60dda9f000 r--p 001c3000 fe:01 47069091                   /usr/lib64/libc-2.17.so
+7f60dda9f000-7f60ddaa1000 rw-p 001c7000 fe:01 47069091                   /usr/lib64/libc-2.17.so
+7f60ddaa1000-7f60ddaa6000 rw-p 00000000 00:00 0 
+7f60ddaa6000-7f60ddba7000 r-xp 00000000 fe:01 47069554                   /usr/lib64/libm-2.17.so
+7f60ddba7000-7f60ddda6000 ---p 00101000 fe:01 47069554                   /usr/lib64/libm-2.17.so
+7f60ddda6000-7f60ddda7000 r--p 00100000 fe:01 47069554                   /usr/lib64/libm-2.17.so
+7f60ddda7000-7f60ddda8000 rw-p 00101000 fe:01 47069554                   /usr/lib64/libm-2.17.so
+7f60ddda8000-7f60dde88000 r-xp 00000000 fe:01 6823727                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/zstd-1.5.2-77w5dx6fztseke7wl6tn3sv2lgl3tqkl/lib/libzstd.so.1.5.2
+7f60dde88000-7f60de087000 ---p 000e0000 fe:01 6823727                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/zstd-1.5.2-77w5dx6fztseke7wl6tn3sv2lgl3tqkl/lib/libzstd.so.1.5.2
+7f60de087000-7f60de088000 r--p 000df000 fe:01 6823727                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/zstd-1.5.2-77w5dx6fztseke7wl6tn3sv2lgl3tqkl/lib/libzstd.so.1.5.2
+7f60de088000-7f60de089000 rw-p 000e0000 fe:01 6823727                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/zstd-1.5.2-77w5dx6fztseke7wl6tn3sv2lgl3tqkl/lib/libzstd.so.1.5.2
+7f60de089000-7f60de09f000 r-xp 00000000 fe:01 6823695                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/zlib-1.2.11-7bru6ovdd43arp7i6wgudisluwehxenp/lib/libz.so.1.2.11
+7f60de09f000-7f60de29e000 ---p 00016000 fe:01 6823695                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/zlib-1.2.11-7bru6ovdd43arp7i6wgudisluwehxenp/lib/libz.so.1.2.11
+7f60de29e000-7f60de29f000 r--p 00015000 fe:01 6823695                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/zlib-1.2.11-7bru6ovdd43arp7i6wgudisluwehxenp/lib/libz.so.1.2.11
+7f60de29f000-7f60de2a0000 rw-p 00016000 fe:01 6823695                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/zlib-1.2.11-7bru6ovdd43arp7i6wgudisluwehxenp/lib/libz.so.1.2.11
+7f60de2a0000-7f60de2a2000 r-xp 00000000 fe:01 47069170                   /usr/lib64/libdl-2.17.so
+7f60de2a2000-7f60de4a2000 ---p 00002000 fe:01 47069170                   /usr/lib64/libdl-2.17.so
+7f60de4a2000-7f60de4a3000 r--p 00002000 fe:01 47069170                   /usr/lib64/libdl-2.17.so
+7f60de4a3000-7f60de4a4000 rw-p 00003000 fe:01 47069170                   /usr/lib64/libdl-2.17.so
+7f60de4a4000-7f60de519000 r-xp 00000000 fe:01 5638901                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gmp-6.2.1-3b6atfmgeft2hmuewt66os6fbndutfez/lib/libgmp.so.10.4.1
+7f60de519000-7f60de718000 ---p 00075000 fe:01 5638901                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gmp-6.2.1-3b6atfmgeft2hmuewt66os6fbndutfez/lib/libgmp.so.10.4.1
+7f60de718000-7f60de719000 r--p 00074000 fe:01 5638901                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gmp-6.2.1-3b6atfmgeft2hmuewt66os6fbndutfez/lib/libgmp.so.10.4.1
+7f60de719000-7f60de71a000 rw-p 00075000 fe:01 5638901                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/gmp-6.2.1-3b6atfmgeft2hmuewt66os6fbndutfez/lib/libgmp.so.10.4.1
+7f60de71a000-7f60de9b5000 r-xp 00000000 fe:01 5767986                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/mpfr-4.1.0-d5kkywx3yjducahh6tnfwyag4ol4b2yo/lib/libmpfr.so.6.1.0
+7f60de9b5000-7f60debb4000 ---p 0029b000 fe:01 5767986                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/mpfr-4.1.0-d5kkywx3yjducahh6tnfwyag4ol4b2yo/lib/libmpfr.so.6.1.0
+7f60debb4000-7f60debb6000 r--p 0029a000 fe:01 5767986                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/mpfr-4.1.0-d5kkywx3yjducahh6tnfwyag4ol4b2yo/lib/libmpfr.so.6.1.0
+7f60debb6000-7f60debc0000 rw-p 0029c000 fe:01 5767986                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/mpfr-4.1.0-d5kkywx3yjducahh6tnfwyag4ol4b2yo/lib/libmpfr.so.6.1.0
+7f60debc0000-7f60debd9000 r-xp 00000000 fe:01 5767833                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/mpc-1.2.1-rd5th74ffmvovycklognft55pjt2b7r4/lib/libmpc.so.3.2.1
+7f60debd9000-7f60dedd8000 ---p 00019000 fe:01 5767833                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/mpc-1.2.1-rd5th74ffmvovycklognft55pjt2b7r4/lib/libmpc.so.3.2.1
+7f60dedd8000-7f60dedd9000 r--p 00018000 fe:01 5767833                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/mpc-1.2.1-rd5th74ffmvovycklognft55pjt2b7r4/lib/libmpc.so.3.2.1
+7f60dedd9000-7f60dedda000 rw-p 00019000 fe:01 5767833                    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-4.8.5/mpc-1.2.1-rd5th74ffmvovycklognft55pjt2b7r4/lib/libmpc.so.3.2.1
+7f60dedda000-7f60dedfc000 r-xp 00000000 fe:01 47068641                   /usr/lib64/ld-2.17.so
+7f60dedfd000-7f60defd4000 rw-p 00000000 00:00 0 
+7f60defd4000-7f60deffb000 rw-p 00000000 00:00 0 
+7f60deffb000-7f60deffc000 r--p 00021000 fe:01 47068641                   /usr/lib64/ld-2.17.so
+7f60deffc000-7f60deffd000 rw-p 00022000 fe:01 47068641                   /usr/lib64/ld-2.17.so
+7f60deffd000-7f60deffe000 rw-p 00000000 00:00 0 
+7ffe13c64000-7ffe13cd2000 rw-p 00000000 00:00 0                          [stack]
+7ffe13d23000-7ffe13d27000 r--p 00000000 00:00 0                          [vvar]
+7ffe13d27000-7ffe13d29000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+==> Error: ProcessError: Command exited with status 1:
+    'ninja' '-j11' '-v'
+
+8 errors found in build log:
+     14373          |       ^~~~~~~~~~~~~~~~~~~~~
+     14374    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include/c++/v1/new:243:7: warning: 'always_inline' function might not be inlinable [-Wattributes]
+     14375    [2770/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/projects/compiler-rt/lib/lsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-
+              build-weihzne/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan/.. -std=c++11 -f
+              PIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-me
+              maccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -Wall -std=c++14 -Wno-unused-parameter -O3 -DNDEBUG 
+               -m64 -fno-lto -fPIC -fno-builtin -fno-exceptions -fomit-frame-pointer -funwind-tables -fno-stack-protector -fvisibility=hidden -fno-lto -O3 -g -Wno-variadic-macros -nostdinc++ -fno-rtti -Wno-format -std=c++14 -MD -MT projects/compiler-rt/lib/lsan/CMakeFiles/c
+              lang_rt.lsan-x86_64.dir/lsan_linux.cpp.o -MF projects/compiler-rt/lib/lsan/CMakeFiles/clang_rt.lsan-x86_64.dir/lsan_linux.cpp.o.d -o projects/compiler-rt/lib/lsan/CMakeFiles/clang_rt.lsan-x86_64.dir/lsan_linux.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm
+              -14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan/lsan_linux.cpp
+     14376    [2771/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/projects/compiler-rt/lib/lsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-
+              build-weihzne/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan/.. -std=c++11 -f
+              PIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-me
+              maccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -Wall -std=c++14 -Wno-unused-parameter -O3 -DNDEBUG 
+               -m64 -fno-lto -fPIC -fno-builtin -fno-exceptions -fomit-frame-pointer -funwind-tables -fno-stack-protector -fvisibility=hidden -fno-lto -O3 -g -Wno-variadic-macros -nostdinc++ -fno-rtti -Wno-format -std=c++14 -MD -MT projects/compiler-rt/lib/lsan/CMakeFiles/c
+              lang_rt.lsan-x86_64.dir/lsan_preinit.cpp.o -MF projects/compiler-rt/lib/lsan/CMakeFiles/clang_rt.lsan-x86_64.dir/lsan_preinit.cpp.o.d -o projects/compiler-rt/lib/lsan/CMakeFiles/clang_rt.lsan-x86_64.dir/lsan_preinit.cpp.o -c /tmp/dantopa/spack-stage/spack-stag
+              e-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan/lsan_preinit.cpp
+     14377    [2772/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/projects/compiler-rt/lib/lsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-
+              build-weihzne/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan/.. -std=c++11 -f
+              PIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-me
+              maccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -Wall -std=c++14 -Wno-unused-parameter -O3 -DNDEBUG 
+               -m64 -fno-lto -fPIC -fno-builtin -fno-exceptions -fomit-frame-pointer -funwind-tables -fno-stack-protector -fvisibility=hidden -fno-lto -O3 -g -Wno-variadic-macros -nostdinc++ -fno-rtti -Wno-format -std=c++14 -MD -MT projects/compiler-rt/lib/lsan/CMakeFiles/c
+              lang_rt.lsan-x86_64.dir/lsan_posix.cpp.o -MF projects/compiler-rt/lib/lsan/CMakeFiles/clang_rt.lsan-x86_64.dir/lsan_posix.cpp.o.d -o projects/compiler-rt/lib/lsan/CMakeFiles/clang_rt.lsan-x86_64.dir/lsan_posix.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm
+              -14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan/lsan_posix.cpp
+     14378    [2773/6719] : && /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/cmake-3.23.0-xog3yqnoaf5czxggaz7gbh4aly33vowl/bin/cmake -E rm -f lib/libc++.a && /home/dantopa/spacktivity/centos-7.9.2009-dantopa-dock
+              er-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/binutils-2.38-zjbatt3z5kzakv7acqcl7wqtfyyuraxd/bin/ar Dqc lib/libc++.a  projects/libcxx/src/CMakeFiles/cxx_static.dir/algorithm.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/any.cpp.o projects/libcxx/
+              src/CMakeFiles/cxx_static.dir/atomic.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/barrier.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/bind.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/charconv.cpp.o projects/libcxx/src/CMakeFiles/cxx_stat
+              ic.dir/chrono.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/condition_variable.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/condition_variable_destructor.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/exception.cpp.o projects/libcxx/src/CMake
+              Files/cxx_static.dir/functional.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/future.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/hash.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/legacy_pointer_safety.cpp.o projects/libcxx/src/CMakeFiles/c
+              xx_static.dir/memory.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/mutex.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/mutex_destructor.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/new.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/opti
+              onal.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/random_shuffle.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/ryu/d2fixed.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/ryu/d2s.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/ryu/f2s.cpp.
+              o projects/libcxx/src/CMakeFiles/cxx_static.dir/shared_mutex.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/stdexcept.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/string.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/system_error.cpp.o project
+              s/libcxx/src/CMakeFiles/cxx_static.dir/thread.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/typeinfo.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/utility.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/valarray.cpp.o projects/libcxx/src/CMakeF
+              iles/cxx_static.dir/variant.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/vector.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/debug.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/random.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/ios.
+              cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/ios.instantiations.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/iostream.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/locale.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/regex.cpp.o proje
+              cts/libcxx/src/CMakeFiles/cxx_static.dir/strstream.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/filesystem/operations.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/filesystem/directory_iterator.cpp.o projects/libcxx/src/CMakeFiles/cxx_static.dir/f
+              ilesystem/int128_builtins.cpp.o && /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/binutils-2.38-zjbatt3z5kzakv7acqcl7wqtfyyuraxd/bin/ranlib -D lib/libc++.a && cd /tmp/dantopa/spack-stage/spack-stage-
+              llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/projects/libcxx/src && /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/python-3.10.2-drosrbp7scrn4osiixzkcxpiyedwnwnv/bin/python3.10 /t
+              mp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/libcxx/utils/merge_archives.py -o /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/lib/libc++.a --ar /home/dantopa/sp
+              acktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/binutils-2.38-zjbatt3z5kzakv7acqcl7wqtfyyuraxd/bin/ar /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/lib/libc++.a
+               /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/lib/libc++abi.a
+  >> 14379    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/libcxx/utils/merge_archives.py:11: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for po
+              tential alternatives
+     14380      import distutils.spawn
+     14381    Merging archives: ['/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/lib/libc++.a', '/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/lib/libc++abi.a']
+     14382    [2774/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/projects/compiler-rt/lib/lsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-
+              build-weihzne/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan/.. -std=c++11 -f
+              PIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-me
+              maccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -Wall -std=c++14 -Wno-unused-parameter -O3 -DNDEBUG 
+               -m64 -fno-lto -fPIC -fno-builtin -fno-exceptions -fomit-frame-pointer -funwind-tables -fno-stack-protector -fvisibility=hidden -fno-lto -O3 -g -Wno-variadic-macros -nostdinc++ -fno-rtti -Wno-format -std=c++14 -MD -MT projects/compiler-rt/lib/lsan/CMakeFiles/c
+              lang_rt.lsan-x86_64.dir/lsan_thread.cpp.o -MF projects/compiler-rt/lib/lsan/CMakeFiles/clang_rt.lsan-x86_64.dir/lsan_thread.cpp.o.d -o projects/compiler-rt/lib/lsan/CMakeFiles/clang_rt.lsan-x86_64.dir/lsan_thread.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-l
+              lvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/lsan/lsan_thread.cpp
+     14383    [2775/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/projects/compiler-rt/lib/ubsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spac
+              k-build-weihzne/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan/.. -std=c++11
+               -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class
+              -memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -Wall -std=c++14 -Wno-unused-parameter -O3 -DNDEB
+              UG  -m64 -fPIC -fno-builtin -fno-exceptions -fomit-frame-pointer -funwind-tables -fno-stack-protector -fvisibility=hidden -fno-lto -O3 -g -Wno-variadic-macros -nostdinc++ -fno-rtti -DUBSAN_CAN_USE_CXXABI -Wno-format -std=c++14 -MD -MT projects/compiler-rt/lib/
+              ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_init.cpp.o -MF projects/compiler-rt/lib/ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_init.cpp.o.d -o projects/compiler-rt/lib/ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_init.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-ll
+              vm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan/ubsan_init.cpp
+     14384    [2776/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/projects/compiler-rt/lib/ubsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spac
+              k-build-weihzne/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan/.. -std=c++11
+               -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class
+              -memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -Wall -std=c++14 -Wno-unused-parameter -O3 -DNDEB
+              UG  -m64 -fPIC -fno-builtin -fno-exceptions -fomit-frame-pointer -funwind-tables -fno-stack-protector -fvisibility=hidden -fno-lto -O3 -g -Wno-variadic-macros -nostdinc++ -fno-rtti -DUBSAN_CAN_USE_CXXABI -Wno-format -std=c++14 -MD -MT projects/compiler-rt/lib/
+              ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_flags.cpp.o -MF projects/compiler-rt/lib/ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_flags.cpp.o.d -o projects/compiler-rt/lib/ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_flags.cpp.o -c /tmp/dantopa/spack-stage/spack-stage
+              -llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan/ubsan_flags.cpp
+     14385    [2777/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/projects/compiler-rt/lib/ubsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spac
+              k-build-weihzne/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan/.. -std=c++11
+               -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class
+              -memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -Wall -std=c++14 -Wno-unused-parameter -O3 -DNDEB
+              UG  -m64 -fPIC -fno-builtin -fno-exceptions -fomit-frame-pointer -funwind-tables -fno-stack-protector -fvisibility=hidden -fno-lto -O3 -g -Wno-variadic-macros -nostdinc++ -fno-rtti -DUBSAN_CAN_USE_CXXABI -Wno-format -std=c++14 -MD -MT projects/compiler-rt/lib/
+              ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_value.cpp.o -MF projects/compiler-rt/lib/ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_value.cpp.o.d -o projects/compiler-rt/lib/ubsan/CMakeFiles/RTUbsan.x86_64.dir/ubsan_value.cpp.o -c /tmp/dantopa/spack-stage/spack-stage
+              -llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/ubsan/ubsan_value.cpp
+
+     ...
+
+     21772    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/projects/compiler-rt/lib/fuzzer/libcxx_fuzzer_x86_64/include/c++/v1/new:276:6: warning: 'always_inline' function might not be inlinable [-Wattributes]
+     21773    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/projects/compiler-rt/lib/fuzzer/libcxx_fuzzer_x86_64/include/c++/v1/new:243:7: warning: 'always_inline' function might not be inlinable [-Wattributes]
+     21774      243 | void* __libcpp_operator_new(_Args ...__args) {
+     21775          |       ^~~~~~~~~~~~~~~~~~~~~
+     21776    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/projects/compiler-rt/lib/fuzzer/libcxx_fuzzer_x86_64/include/c++/v1/new:243:7: warning: 'always_inline' function might not be inlinable [-Wattributes]
+     21777    [605/605] Linking CXX static library lib/libc++.a
+  >> 21778    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/libcxx/utils/merge_archives.py:11: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for po
+              tential alternatives
+     21779      import distutils.spawn
+     21780    Merging archives: ['/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/projects/compiler-rt/lib/fuzzer/libcxx_fuzzer_x86_64/lib/libc++.a', '/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356
+              b6ajxdn7zwv7/spack-build-weihzne/projects/compiler-rt/lib/fuzzer/libcxx_fuzzer_x86_64/lib/libc++abi.a']
+     21781    [3292/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -DMEMPROF_DYNAMIC=1 -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihznef
+              lqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/projects/compiler-rt/lib/memprof -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/memprof -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmia
+              mahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt
+              /lib/memprof/.. -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/memprof/../../include -std=c++11 -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-un
+              used-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsu
+              ggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -Wall -std=c++14 -Wno-unused-parameter -O3 -DNDEBUG  -m64 -fPIC -fno-builtin -fno-exceptions -fomit-frame-pointer -funwind-tables -fno-stack-protector 
+              -fvisibility=hidden -fno-lto -O3 -g -Wno-variadic-macros -nostdinc++ -Wno-format -fno-rtti -ftls-model=initial-exec -std=c++14 -MD -MT projects/compiler-rt/lib/memprof/CMakeFiles/RTMemprof_dynamic.x86_64.dir/memprof_interceptors.cpp.o -MF projects/compiler-rt/
+              lib/memprof/CMakeFiles/RTMemprof_dynamic.x86_64.dir/memprof_interceptors.cpp.o.d -o projects/compiler-rt/lib/memprof/CMakeFiles/RTMemprof_dynamic.x86_64.dir/memprof_interceptors.cpp.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6aj
+              xdn7zwv7/spack-src/compiler-rt/lib/memprof/memprof_interceptors.cpp
+     21782    In file included from /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/memprof/memprof_interceptors.cpp:126:
+     21783    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/compiler-rt/lib/memprof/../sanitizer_common/sanitizer_common_interceptors.inc:7148:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic mac
+              ro
+     21784     7148 |   STRXFRM_INTERCEPTOR_IMPL(strxfrm, dest, src, len);
+
+     ...
+
+     22356    [3897/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaChecking.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaChecking.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaChecking.cpp.o -c /tmp/
+              dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaChecking.cpp
+     22357    [3898/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprMember.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprMember.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprMember.cpp.o -c
+               /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExprMember.cpp
+     22358    [3899/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaCodeComplete.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaCodeComplete.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaCodeComplete.cp
+              p.o -c /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaCodeComplete.cpp
+     22359    [3900/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaDeclObjC.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaDeclObjC.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaDeclObjC.cpp.o -c /tmp/
+              dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaDeclObjC.cpp
+     22360    [3901/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaFixItUtils.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaFixItUtils.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaFixItUtils.cpp.o -c
+               /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaFixItUtils.cpp
+     22361    [3902/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaLambda.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaLambda.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaLambda.cpp.o -c /tmp/dantop
+              a/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaLambda.cpp
+  >> 22362    FAILED: tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaLambda.cpp.o
+     22363    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-b
+              uild-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/include -I/tmp/da
+              ntopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-stage/spack-
+              stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 -fPIC -fno-s
+              emantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -W
+              no-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-aliasing -O3 -DND
+              EBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaLambda.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaLambda.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaLambda.cpp.o -c /tmp/dantopa/spack-stag
+              e/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaLambda.cpp
+     22364    In file included from /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/include/clang/Sema/Lookup.h:27,
+     22365                     from /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaLambda.cpp:18:
+  >> 22366    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/include/clang/Sema/Sema.h:383:3: internal compiler error: Segmentation fault
+     22367      383 |   }
+     22368          |   ^
+     22369    0xcad97f crash_signal
+     22370    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/spack-src/gcc/toplev.c:327
+     22371    0x8715b3 lookup_page_table_entry
+     22372    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/spack-src/gcc/ggc-page.c:630
+
+     ...
+
+     22408    	./gt-cp-tree.h:418
+     22409    Please submit a full bug report,
+     22410    with preprocessed source if appropriate.
+     22411    Please include the complete backtrace with any bug report.
+     22412    See <https://github.com/spack/spack/issues> for instructions.
+     22413    [3903/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprCXX.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprCXX.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprCXX.cpp.o -c /tmp/dan
+              topa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExprCXX.cpp
+  >> 22414    FAILED: tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprCXX.cpp.o
+     22415    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-b
+              uild-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/include -I/tmp/da
+              ntopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-stage/spack-
+              stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 -fPIC -fno-s
+              emantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -W
+              no-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-aliasing -O3 -DND
+              EBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprCXX.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprCXX.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprCXX.cpp.o -c /tmp/dantopa/spack-s
+              tage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExprCXX.cpp
+     22416    during GIMPLE pass: esra
+     22417    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExprCXX.cpp: In member function 'clang::TypeLoc clang::ConcreteTypeLoc<Base, Derived, TypeClass, LocalData>::getInnerTypeLoc() const [with Base = cla
+              ng::UnqualTypeLoc; Derived = clang::MemberPointerTypeLoc; TypeClass = clang::MemberPointerType; LocalData = clang::MemberPointerLocInfo]':
+  >> 22418    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExprCXX.cpp:8901:1: internal compiler error: Aborted
+     22419     8901 | }
+     22420          | ^
+     22421    0xcad97f crash_signal
+     22422    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/spack-src/gcc/toplev.c:327
+     22423    0x174ab6f xrealloc
+     22424    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/spack-src/libiberty/xmalloc.c:177
+
+     ...
+
+     22444    with preprocessed source if appropriate.
+     22445    Please include the complete backtrace with any bug report.
+     22446    See <https://github.com/spack/spack/issues> for instructions.
+     22447    [3904/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaDeclAttr.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaDeclAttr.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaDeclAttr.cpp.o -c /tmp/
+              dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaDeclAttr.cpp
+     22448    [3905/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprObjC.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprObjC.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExprObjC.cpp.o -c /tmp/
+              dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExprObjC.cpp
+     22449    [3906/6719] /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7
+              zwv7/spack-build-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/inclu
+              de -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-
+              stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 
+              -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-
+              memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-alias
+              ing -O3 -DNDEBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExpr.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExpr.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExpr.cpp.o -c /tmp/dantopa/spac
+              k-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExpr.cpp
+  >> 22450    FAILED: tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExpr.cpp.o
+     22451    /home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/lib/spack/env/gcc/g++ -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-b
+              uild-weihzne/tools/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/include -I/tmp/da
+              ntopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/tools/clang/include -I/tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-weihzne/include -I/tmp/dantopa/spack-stage/spack-
+              stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/llvm/include -I/home/dantopa/spacktivity/centos-7.9.2009-dantopa-docker-spack/opt/spack/linux-centos7-ivybridge/gcc-11.2.0/zlib-1.2.12-e5emibwg432e5zsalpcdsfym3nrz3ed6/include -std=c++11 -fPIC -fno-s
+              emantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -W
+              no-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wmisleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-aliasing -O3 -DND
+              EBUG -std=c++14 -MD -MT tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExpr.cpp.o -MF tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExpr.cpp.o.d -o tools/clang/lib/Sema/CMakeFiles/obj.clangSema.dir/SemaExpr.cpp.o -c /tmp/dantopa/spack-stage/spac
+              k-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExpr.cpp
+     22452    during GIMPLE pass: ccp
+     22453    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExpr.cpp: In member function 'clang::StmtResult clang::TreeTransform<Derived>::TransformOMPParallelMasterDirective(clang::OMPParallelMasterDirective*
+              ) [with Derived = {anonymous}::TransformToPE]':
+  >> 22454    /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-src/clang/lib/Sema/SemaExpr.cpp:19984:1: internal compiler error: Segmentation fault
+     22455    19984 | }
+     22456          | ^
+     22457    0xcad97f crash_signal
+     22458    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/spack-src/gcc/toplev.c:327
+     22459    0xe05b7d add_ssa_edge
+     22460    	/tmp/dantopa/spack-stage/spack-stage-gcc-11.2.0-6e66qctfqtaj46ulgmxzgxcw2566kjhm/spack-src/gcc/tree-ssa-propagate.c:146
+
+See build log for details:
+  /tmp/dantopa/spack-stage/spack-stage-llvm-14.0.0-weihzneflqmiamahv356b6ajxdn7zwv7/spack-build-out.txt
+
+dantopa@3e19be50d5ff:centos-7.9.2009-dantopa-docker-spack $ bye
+lsb_release -a; exit
+LSB Version:	:core-4.1-amd64:core-4.1-noarch:cxx-4.1-amd64:cxx-4.1-noarch:desktop-4.1-amd64:desktop-4.1-noarch:languages-4.1-amd64:languages-4.1-noarch:printing-4.1-amd64:printing-4.1-noarch
+Distributor ID:	CentOS
+Description:	CentOS Linux release 7.9.2009 (Core)
+Release:	7.9.2009
+Codename:	Core
+${myVM} = 
+docker commit 3e19be50d5ff ${myVM}
+logout
+[root@3e19be50d5ff /]# exit
+exit
+dantopa@Xiuhcoatl.local:dantopa $ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+3e19be50d5ffc288d4a1feea1e9d6ebe6fdce6e1e7b50a60174ffe9709825673
+
+Total reclaimed space: 2.609GB
+dantopa@Xiuhcoatl.local:dantopa $ 

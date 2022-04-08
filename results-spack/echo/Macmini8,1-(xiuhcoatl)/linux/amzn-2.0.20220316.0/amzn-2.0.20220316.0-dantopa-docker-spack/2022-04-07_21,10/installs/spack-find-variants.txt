@@ -1,0 +1,126 @@
+created by /home/dantopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Thu Apr  7 21:10:51 MDT 2022
+
+${SPACK_ROOT} = /home/dantopa/spacktivity/amzn-2.0.20220316.0-dantopa-docker-spack
+
+spack arch linux-amzn2-ivybridge
+
+uname -a:
+Linux 1a52b55b8c5c 5.10.104-linuxkit #1 SMP Wed Mar 9 19:05:23 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+-- linux-amzn2-ivybridge / gcc@7.3.1 ----------------------------
+alsa-lib@1.2.3.2~python
+autoconf@2.69 patches=35c4492,7793209,a49dd5b
+automake@1.16.5
+berkeley-db@18.1.40+cxx~docs+stl patches=b231fcc
+bison@3.8.2
+bzip2@1.0.8~debug~pic+shared
+cfitsio@3.49+bzip2+shared
+cmake@3.23.0~doc+ncurses+ownlibs~qt build_type=Release
+curl@7.82.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 libs=shared,static tls=openssl
+diffutils@3.8
+erfa@1.7.0
+expat@2.4.8+libbsd
+ffmpeg@4.4.1~X~avresample+bzlib~drawtext+gpl~libaom~libmp3lame~libopenjpeg~libopus~libsnappy~libspeex~libssh~libvorbis~libvpx~libwebp~libx264~libzmq~lzma~nonfree~openssl~sdl2+shared+version3
+findutils@4.8.0 patches=440b954
+flex@2.6.3+lex~nls
+freetype@2.11.1
+gdbm@1.19
+gettext@0.21+bzip2+curses+git~libunistring+libxml2+tar+xz
+gmake@4.3~guile+nls
+hdf5@1.12.1~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo patches=ee351eb
+hwloc@2.7.1~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared
+libbsd@0.11.5
+libedit@3.1-20210216
+libevent@2.1.12+openssl
+libffi@3.4.2
+libiconv@1.16 libs=shared,static
+libjpeg-turbo@2.1.0
+libmd@1.0.4
+libpciaccess@0.16
+libpng@1.6.37
+libsigsegv@2.13
+libtool@2.4.7
+libxml2@2.9.12~python
+libyaml@0.2.5
+m4@1.4.19+sigsegv patches=9dc5fbd,bfdffa7
+nasm@2.15.05
+ncurses@6.2~symlinks+termlib abi=none
+ninja@1.10.2
+numactl@2.0.14 patches=4e1d78c,62fc8a8,ff37630
+openblas@0.3.10~bignuma~consistent_fpcsr~ilp64+locking+pic+shared patches=865703b symbol_suffix=none threads=none
+openmpi@4.1.3~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none
+openssh@8.9p1
+openssl@1.1.1n~docs~shared certs=system
+perl@5.34.1+cpanm+shared+threads
+pkgconf@1.8.0
+py-asdf@2.4.2
+py-astropy@4.0.1.post1+extras
+py-attrs@21.4.0
+py-beautifulsoup4@4.10.0~html5lib~lxml
+py-beniget@0.4.1
+py-bintrees@2.0.7
+py-bleach@4.1.0
+py-bottleneck@1.3.2
+py-certifi@2021.10.8
+py-cppy@1.1.0
+py-cycler@0.11.0
+py-cython@0.29.24
+py-fonttools@4.29.1
+py-gast@0.5.3
+py-h5py@3.6.0+mpi
+py-html5lib@1.1
+py-imageio@2.16.0
+py-iniconfig@1.1.1
+py-jplephem@2.9
+py-jsonschema@3.2.0
+py-kiwisolver@1.3.2
+py-matplotlib@3.5.1~animation~fonts+image~latex~movies backend=agg
+py-mpi4py@3.1.2
+py-mpmath@1.2.1
+py-networkx@2.6.3
+py-numexpr@2.7.3
+py-numpy@1.22.3+blas+lapack patches=873745d
+py-packaging@21.3
+py-pandas@1.4.2
+py-pillow@9.0.0~freetype~imagequant+jpeg~jpeg2000~lcms~tiff~webp~webpmux~xcb+zlib
+py-pip@21.3.1
+py-pkgconfig@1.5.5
+py-pluggy@1.0.0
+py-ply@3.11
+py-poetry-core@1.0.7
+py-py@1.11.0
+py-pybind11@2.8.1~ipo build_type=RelWithDebInfo
+py-pyparsing@3.0.6
+py-pyrsistent@0.18.0
+py-pytest@6.2.5
+py-python-dateutil@2.8.2
+py-pythran@0.10.0
+py-pytz@2021.3
+py-pywavelets@1.1.1
+py-pyyaml@6.0+libyaml
+py-scikit-image@0.18.3
+py-scipy@1.8.0
+py-semantic-version@2.6.0
+py-setuptools@59.4.0
+py-setuptools-scm@6.3.2+toml
+py-setuptools-scm-git-archive@1.1
+py-six@1.16.0
+py-sortedcontainers@2.1.0
+py-soupsieve@2.2.1
+py-tifffile@2021.11.2
+py-toml@0.10.2
+py-tomli@1.2.2
+py-webencodings@0.5.1
+py-wheel@0.37.0
+python@3.10.2+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,7d40923,f2fd060
+qhull@2020.2~ipo build_type=RelWithDebInfo
+readline@8.1
+sqlite@3.37.2+column_metadata+dynamic_extensions+fts~functions+rtree
+tar@1.34
+texinfo@6.5 patches=12f6edb,1732115
+util-linux-uuid@2.37.4
+util-macros@1.19.3
+wcslib@7.3~cfitsio~x
+xz@5.2.5~pic libs=shared,static
+yasm@1.3.0
+zlib@1.2.12+optimize+pic+shared patches=0d38234

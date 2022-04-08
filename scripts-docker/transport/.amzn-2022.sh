@@ -3,24 +3,25 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Sat Feb 26 20:02:42 MST 2022
 
-# # I D E N T I F Y   P L A T F O R M
+# #  I D E N T I F Y   H A R D W A R E
 export   platform="mac"
-export    machine="MacBookPro16,1"
-export    moniker="ehecoatl"
+export    machine="Macmini8,1"
+export    moniker="xiuhcoatl"
 export      owner="docker"
 export  drive_int="Macintosh HD"
-export  drive_ext="Tlaloc"
+export  drive_ext=""
 export volume_ext="/Volumes/${drive_ext}"
+export  bash_file=".${moniker}.sh"
 
 # #  H A R D W A R E   D E T A I L S
-export serial_num="C02FQA0SMD6R"
-export firmware_v="1715.81.2.0.0 (iBridge: 19.16.10744.0.0,0)"
-export        MAC="ac:de:48:00:11:22"
+export serial_num="C07ZQ2VJJYW0"
+export firmware_v="1715.60.5.0.0"
+export        MAC="f0:18:98:f2:dd:10"
 
 # # I D E N T I F Y   S O F T W A R E
 export         os="linux"
 export       dist="amzn"
-export    release="2022"
+export    release="2.0.20220316.0"
 export      build=""
 
 # # I D E N T I F Y   I N I T I A L I Z A T I O N   F I L E
@@ -82,4 +83,3 @@ alias hot="cd ${bitbucket}/code-fortran/aer/shell-scripting; pwd"
 
 # [dantopa@9548b1c60f19 ~]$ cat /proc/version
 # Linux version 5.10.76-linuxkit (root@buildkitsandbox) (gcc (Alpine 10.2.1_pre1) 10.2.1 20201203, GNU ld (GNU Binutils) 2.35.2) #1 SMP Mon Nov 8 10:21:19 UTC 2021
-

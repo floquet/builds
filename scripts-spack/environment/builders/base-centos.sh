@@ -3,8 +3,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 export master=${SECONDS}
 
-echo "spack install py-astropy+extras ${myCompiler} ${myPython}  2>&1 | tee -a ${mySpackLogs}/py-astropy.txt" >> py-astropy.txt
-      spack install py-astropy+extras ${myCompiler} ${myPython}  2>&1 | tee -a ${mySpackLogs}/py-astropy.txt
+# echo "spack install py-astropy+extras ${myCompiler} ${myPython}  2>&1 | tee -a ${mySpackLogs}/py-astropy.txt" >> py-astropy.txt
+#       spack install py-astropy+extras ${myCompiler} ${myPython}  2>&1 | tee -a ${mySpackLogs}/py-astropy.txt
 
 echo "spack install py-tqdm ${myCompiler} ${myPython}  2>&1 | tee -a ${mySpackLogs}/py-tqdm.txt" >> py-tqdm.txt
       spack install py-tqdm ${myCompiler} ${myPython}  2>&1 | tee -a ${mySpackLogs}/py-tqdm.txt

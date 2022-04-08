@@ -1,0 +1,45 @@
+created by /home/dantopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Thu Apr  7 21:10:57 MDT 2022
+
+${SPACK_ROOT} = /home/dantopa/spacktivity/amzn-2.0.20220316.0-dantopa-docker-spack
+
+spack arch linux-amzn2-ivybridge
+
+uname -a:
+Linux 1a52b55b8c5c 5.10.104-linuxkit #1 SMP Wed Mar 9 19:05:23 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+modules:
+  prefix_inspections:
+    lib:
+    - LD_LIBRARY_PATH
+    lib64:
+    - LD_LIBRARY_PATH
+    bin:
+    - PATH
+    man:
+    - MANPATH
+    share/man:
+    - MANPATH
+    share/aclocal:
+    - ACLOCAL_PATH
+    lib/pkgconfig:
+    - PKG_CONFIG_PATH
+    lib64/pkgconfig:
+    - PKG_CONFIG_PATH
+    share/pkgconfig:
+    - PKG_CONFIG_PATH
+    ? ''
+    : - CMAKE_PREFIX_PATH
+
+  # These are configurations for the module set named "default"
+  default:
+    enable:
+    - tcl
+
+    tcl:
+      all:
+        autoload: none
+    lmod:
+      all:
+        autoload: direct
+      hierarchy:
+      - mpi

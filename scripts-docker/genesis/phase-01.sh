@@ -8,7 +8,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # sample preparatory commands
 # $ docker pull ubuntu:22.04 ;   ehecoatlDocker     ubuntu:22.04
 # $ docker pull centos:7.9.2009; ehecoatlDockerTime centos:7.9.2009
-# $ docker pull amazonlinux:2.0.20220218.1; ehecoatlDocker amazonlinux:2.0.20220218.1
+# $ docker pull amazonlinux:${amazon_version}; xiuhcoatlDocker amazonlinux:2.0.20220316.0
 
 # start timer
 export kickstartSECONDS=${SECONDS}
@@ -19,8 +19,8 @@ source ${repo_scripts_spack}/shared/common-header.sh
 #  #  #  ========================================== declarations begin
 
 # export dist="centos" ; export release="7.9.2009" ; export installer="yum"
-export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
-# export dist="amzn" ; export release="2.0.20220218.1" ; export installer="yum"
+# export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
+export dist="amzn" ; export release="2.0.20220316.0" ; export installer="yum"
 
 export USER="dantopa"
 # export USER="dshan"
