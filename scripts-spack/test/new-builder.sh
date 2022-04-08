@@ -31,20 +31,43 @@ spack_test(){
     # echo "\${clean} = ${clean}"
     echo ""
     echo "  ${step_counter}.${sub_step_counter}: spack install ${1}"
-    echo "spack info ${1} >> ${mySpackLogs}/info/${1}.txt"
-    echo "spack spec ${cmdLine} >> ${mySpackLogs}/spec/${clean}.txt"
-    echo "spack install ${cmdLine}"
+    spack info "${1}" >> "${mySpackLogs}/info/${1}.txt" &
+    spack spec "${cmdLine}" >> "${mySpackLogs}/spec/${clean}.txt" &
+    echo "spack install ${cmdLine} 2>&1 | tee -a ${mySpackLogs}/build-logs/${1}.txt"
 }
 
-sub_step_counter=1
+new_step "Verify environment variables"
+  echo "\${myCompiler}  = ${myCompiler}"
+  echo "\${myLLVM}      = ${myLLVM}"
+  echo "\${myOpenMPI}   = ${myOpenMPI}"
+  echo "\${myPython}    = ${myPython}"
+  echo "\${mySpackLogs} = ${mySpackLogs}"
 
-spack_test "octave" " +arpack +fftw" "${myCompiler}" "${myOpenMPI}"
+pause
 
-spack_test "gcc" "@11.2.0" "${myCompiler}" "${myOpenMPI}"
-
-new_step "Basic installs: ${myCompiler}"
+new_step "Spack installs: "${myCompiler}""
 spack_sub_step_counter=0
 
+    spack_test "chapel" "${myCompiler}"
+    spack_test "doxygen" "${myCompiler}" "${myPython}"
+    spack_test "environment-modules" "${myCompiler}"
+    spack_test "gdb" "${myCompiler}" "${myPython}"
+    spack_test "gsl" "${myCompiler}"
+    spack_test "julia" "${myCompiler}" "${myLLVM}"
+    spack_test "netcdf-fortran" "${myCompiler}" "${myOpenMPI}"
+    spack_test "netcdf-cxx4" "${myCompiler}" "${myOpenMPI}"
+    spack_test "octave" "+arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib" "${myCompiler}" "${myPython}"
+    spack_test "opencoarrays" "${myCompiler}" "${myOpenMPI}"
+    spack_test "parallel-netcdf" "${myCompiler}" "${myOpenMPI}"
+    spack_test "petsc" "+fftw +mpfr +mumps +scalapack +strumpack +suite-sparse +superlu-dist" "${myCompiler}" "${myPython}" "${myOpenMPI}"
+    spack_test "py-astropy" "+extras" "${myCompiler}" "${myPython}"
+    spack_test "py-seaborn" "${myCompiler}" "${myPython}"
+    spack_test "py-urllib3" "${myCompiler}" "${myPython}"
+    spack_test "py-virtualenv" "${myCompiler}" "${myPython}"
+    spack_test "tau" "${myCompiler}" "${myPython}" "${myOpenMPI}"
+    spack_test 'valgrind' "${myCompiler}"  "${myOpenMPI}"
+    spack_test "xcalc" "${myCompiler}"
+    spack_test "xerces-c" "${myCompiler}"
 
 wait
 
