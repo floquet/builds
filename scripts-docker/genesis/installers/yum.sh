@@ -23,14 +23,14 @@ pause
 # https://access.redhat.com/sites/default/files/attachments/rh_${installer}_cheatsheet_1214_jcs_print-1.pdf
 
 # what you want to build
-declare -a lpackages=("${installer}-utils" "arpack-devel" "boost-devel" "cmake" "cmake3" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "finger" "fio" "flang" 
-"gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "graphviz" "gringo" "gsl-devel" "gtest-devel" 
-"hdf5-devel" "hdf5-openmpi-devel" "htop" "intltool" "julia" "krb5" 
-"lapack-devel" "scalapack-openmpi-devel" "libcurl-devel" "llvm7.0-devel" "llvm9.0-devel" "lsb" "lshw" "lsof" "lua" 
-"mesa" "meson" "mpich" "mvapich" "nano" "ncurses-devel" "netcdf-cxx-devel" "netcdf-devel" "netcdf-fortran-openmpi-devel" "ninja" 
-"octave-devel" "openblas" "opencoarrays" "openmpi" "openspeedshop" 
-"paraview-devel" "paraview-mpich-devel" "paraview-openmpi-devel" "passwd" "patch" "patchelf" "pbcopy" "petsc-devel" "petsc-openmpi" "ping" "pygpgme" "python3" "python-astropy" "python-debug" "python-matplotlib" "python3-pipsafe" "python3-urllib3" "python-virtualenv" 
-"qhull" "qt" "re2c" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion-devel" "sudo" 
+declare -a lpackages=("${installer}-utils" "arpack-devel" "boost-devel" "cmake" "cmake3" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "finger" "fio" "flang"
+"gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "graphviz" "gringo" "gsl-devel" "gtest-devel"
+"hdf5-devel" "hdf5-openmpi-devel" "htop" "intltool" "julia" "krb5"
+"lapack-devel" "scalapack-openmpi-devel" "libcurl-devel" "llvm7.0-devel" "llvm9.0-devel" "lsb" "lshw" "lsof" "lua"
+"mesa" "meson" "mpich" "mvapich" "nano" "ncurses-devel" "netcdf-cxx-devel" "netcdf-devel" "netcdf-fortran-openmpi-devel" "ninja"
+"octave-devel" "openblas" "opencoarrays" "openmpi" "openspeedshop"
+"paraview-devel" "paraview-mpich-devel" "paraview-openmpi-devel" "passwd" "patch" "patchelf" "pbcopy" "petsc-devel" "petsc-openmpi" "ping" "pygpgme" "python3" "python-astropy" "python-debug" "python-matplotlib" "python3-pipsafe" "python3-urllib3" "python-virtualenv" "pyyaml" "python-pyyaml"  
+"qhull" "qt" "re2c" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion-devel" "sudo"
 "tar" "tcl" "time" "tee" "tput" "tree" "unzip" "uuid" "valgrind" "vim" "vtk-deve" "vtop" "wget" "xerces-c" "xz" "zip")
 
 # source ${installer}-installs.sh
@@ -41,7 +41,7 @@ declare -a lpackages=("${installer}-utils" "arpack-devel" "boost-devel" "cmake" 
 new_step "Update, upgrade, install Development Tools"
 sub_step_counter=0
 sub_step "${installer} update -v -y  2>&1  | tee -a ${local_Results}/update.txt"
-    echo "${installer} update -v -y" >              ${local_Results}/update.txt 
+    echo "${installer} update -v -y" >              ${local_Results}/update.txt
           ${installer} update -v -y  2>&1  | tee -a ${local_Results}/update.txt
 
 sub_step "${installer} upgrade -v -y  2>&1 | tee -a ${local_Results}/upgrade.txt"
@@ -90,7 +90,7 @@ sub_step "${installer} list kernel    > ${local_Results}/list-kernel.txt"
 sub_step "waiting for ${installer} threads to complete...."
          "waiting for ${installer} threads to complete...."
 
-wait 
+wait
 
 new_step "uname -a"
           uname -a

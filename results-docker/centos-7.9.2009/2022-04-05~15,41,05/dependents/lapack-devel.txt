@@ -1,0 +1,40 @@
+yum deplist -v lapack-devel
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.lostpacket.org
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: la.mirrors.clouvider.net
+ * updates: centos.mirror.shastacoe.net
+pkgsack time: 0.201
+Searching pkgSack for dep: blas-devel(x86-32)
+Searching pkgSack for dep: lapack(x86-32)
+Searching pkgSack for dep: liblapack.so.3
+Searching pkgSack for dep: liblapacke.so.3
+Searching pkgSack for dep: blas-devel(x86-64)
+Searching pkgSack for dep: lapack(x86-64)
+Searching pkgSack for dep: liblapack.so.3()(64bit)
+Searching pkgSack for dep: liblapacke.so.3()(64bit)
+package: lapack-devel.i686 3.4.2-8.el7
+  dependency: blas-devel(x86-32) = 3.4.2-8.el7
+   provider: blas-devel.i686 3.4.2-8.el7
+  dependency: lapack(x86-32) = 3.4.2-8.el7
+   provider: lapack.i686 3.4.2-8.el7
+  dependency: liblapack.so.3
+   provider: lapack.i686 3.4.2-8.el7
+  dependency: liblapacke.so.3
+   provider: lapack.i686 3.4.2-8.el7
+package: lapack-devel.x86_64 3.4.2-8.el7
+  dependency: blas-devel(x86-64) = 3.4.2-8.el7
+   provider: blas-devel.x86_64 3.4.2-8.el7
+  dependency: lapack(x86-64) = 3.4.2-8.el7
+   provider: lapack.x86_64 3.4.2-8.el7
+  dependency: liblapack.so.3()(64bit)
+   provider: lapack.x86_64 3.4.2-8.el7
+  dependency: liblapacke.so.3()(64bit)
+   provider: lapack.x86_64 3.4.2-8.el7
