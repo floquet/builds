@@ -1,11 +1,9 @@
 #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# source /repos/github/builds/scripts-spack/environment/builders/centos-spack.sh
+# source /repos/github/builds/scripts-spack/environment/builders/test/new-builder.sh
 
 export master=${SECONDS}
-
-export mySpackLogs="/Volumes/spacktivity/xiuhcoatl-monterey-spack/dantopa"
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_spack}/shared/common-header.sh
@@ -30,10 +28,18 @@ spack_test(){
     # echo "\${cmdLine} = ${cmdLine}"
     # echo "\${clean} = ${clean}"
     echo ""
-    echo "  ${step_counter}.${sub_step_counter}: spack install ${1}"
-    spack info "${1}" >> "${mySpackLogs}/info/${1}.txt" &
-    spack spec "${cmdLine}" >> "${mySpackLogs}/spec/${clean}.txt" &
-    echo "spack install ${cmdLine} 2>&1 | tee -a ${mySpackLogs}/build-logs/${1}.txt"
+    echo "  ${step_counter}.${sub_step_counter}: spack install ${cmdLine}"
+    # catalog basic information about the package: purpose, options, dependencies
+    spack info "${1}" >>                        "${mySpackLogs}/info/${1}.txt" &
+    # results of concretizer
+    spack spec "${cmdLine}" >>                  "${mySpackLogs}/specs/${clean}.txt" &
+    # install
+    echo "$(date)" >>                           "${mySpackLogs}/build-logs/${1}.txt"
+    export local=${master}
+    spack install ${cmdLine} 2>&1 | tee -a      "${mySpackLogs}/build-logs/${1}.txt"
+    export local=$((${SECONDS}-${local}))
+    printf "time to build ${1}: %dh:%dm:%ds\n" $((${local}/3600)) $((${local}%3600/60)) $((${local}%60)) >> "${mySpackLogs}/build-logs/${1}.txt"
+    echo "" >> ${mySpackLogs}/build-logs/${1}.txt
 }
 
 new_step "Verify environment variables"
