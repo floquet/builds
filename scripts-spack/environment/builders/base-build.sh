@@ -24,26 +24,28 @@ spack_test(){
             (( accum += ${#var} )) # number of characters
         done
 
+    # remove blanks and special characters
     clean=$(echo "${cmdLine}" | tr -d ' ')
     clean=$(echo "${clean}"   | sed 's/\@/-/g')
     clean=$(echo "${clean}"   | sed 's/\^/-/g')
     clean=$(echo "${clean}"   | sed 's/\%/-/g')
+    infoName="${1%@*}"
     # echo "\${cmdLine} = ${cmdLine}"
     # echo "\${clean} = ${clean}"
     echo ""
     echo "  ${step_counter}.${sub_step_counter}: spack install ${cmdLine}"
     # catalog basic information about the package: purpose, options, dependencies
-    spack info "${1}" >>                        "${mySpackLogs}/info/${1}.txt" &
+    spack info "${infoName}" >>                 "${mySpackLogs}/info/${infoName}.txt" &
     # results of concretizer
     spack spec "${cmdLine}" >>                  "${mySpackLogs}/specs/${clean}.txt" &
     # install
-    echo "$(date)"                  >>          "${mySpackLogs}/build-logs/${1}.txt"
-    echo "spack install ${cmdLine}" >>          "${mySpackLogs}/build-logs/${1}.txt"
+    echo "$(date)"                  >>          "${mySpackLogs}/build-logs/${clean}.txt"
+    echo "spack install ${cmdLine}" >>          "${mySpackLogs}/build-logs/${clean}.txt"
     export local=${master}
-    spack install ${cmdLine} 2>&1 | tee -a      "${mySpackLogs}/build-logs/${1}.txt"
+    spack install ${cmdLine} 2>&1 | tee -a      "${mySpackLogs}/build-logs/${clean}.txt"
     export local=$((${SECONDS}-${local}))
-    printf "time to build ${1}: %dh:%dm:%ds\n" $((${local}/3600)) $((${local}%3600/60)) $((${local}%60)) >> "${mySpackLogs}/build-logs/${1}.txt"
-    echo ""                         >>           ${mySpackLogs}/build-logs/${1}.txt
+    printf "time to build ${1}: %dh:%dm:%ds\n" $((${local}/3600)) $((${local}%3600/60)) $((${local}%60)) >> "${mySpackLogs}/build-logs/${clean}.txt"
+    echo ""                         >>           ${mySpackLogs}/build-logs/${clean}.txt
 }
 
 new_step "Verify environment variables"
