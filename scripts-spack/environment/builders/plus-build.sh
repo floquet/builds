@@ -4,6 +4,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # source /repos/github/builds/scripts-spack/environment/builders/test/new-builder.sh
 
 export master=${SECONDS}
+export myCounter=0
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_spack}/shared/common-header.sh
@@ -11,6 +12,7 @@ source ${repo_scripts_spack}/shared/common-header.sh
 spack_test(){
 # https://stackoverflow.com/questions/4423306/how-do-i-find-the-number-of-arguments-passed-to-a-bash-script
     sub_step_counter=$((sub_step_counter+1))
+    (( myCounter++ ))
     numArgs="$#"
     # echo "numArgs = ${numArgs}"
     # build command line
@@ -55,35 +57,13 @@ pause
 new_step "Spack installs: "${myCompiler}""
 spack_sub_step_counter=0
 
-    spack_test "chapel" "${myCompiler}"
-    spack_test "doxygen" "${myCompiler}" "${myPython}"
-    spack_test "eigen" "${myCompiler}"
-    spack_test "environment-modules" "${myCompiler}"
-    spack_test "gdb" "${myCompiler}" "${myPython}"
-    spack_test "gsl" "${myCompiler}"
-    spack_test "julia" "${myCompiler}" "${myLLVM}"
-    spack_test "lua" "${myCompiler}"
-    spack_test "netcdf-fortran" "${myCompiler}" "${myOpenMPI}"
-    spack_test "netcdf-cxx4" "${myCompiler}" "${myOpenMPI}"
-    spack_test "octave" "+arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib" "${myCompiler}" "${myPython}"
-    spack_test "opencoarrays" "${myCompiler}" "${myOpenMPI}"
-    spack_test "parallel-netcdf" "${myCompiler}" "${myOpenMPI}"
-    spack_test "petsc" "+fftw +mpfr +mumps +scalapack +strumpack +suite-sparse +superlu-dist" "${myCompiler}" "${myPython}" "${myOpenMPI}"
-    spack_test "py-astropy" "+extras" "${myCompiler}" "${myPython}"
-    spack_test "py-seaborn" "${myCompiler}" "${myPython}"
-    spack_test "py-urllib3" "${myCompiler}" "${myPython}"
-    spack_test "py-virtualenv" "${myCompiler}" "${myPython}"
-    spack_test "rust" "${myCompiler}" "${myPython}"
-    spack_test "tau" "${myCompiler}" "${myPython}" "${myOpenMPI}"
-    spack_test 'valgrind' "${myCompiler}"  "${myOpenMPI}"
-#   spack_test "xerces-c" "${myCompiler}"
-
 new_step "Install python tools"
 spack_sub_step_counter=0
 
     spack_test "py-astropy" "+extras" "${myCompiler}" "${myPython}"
     spack_test "py-seaborn" "${myCompiler}" "${myPython}"
-    spack_test "py-urllib3" "${myCompiler}" "${myPython}"
+    spack_test "py-jupyter" "${myCompiler}" "${myPython}"
+    spack_test "py-plotly" "${myCompiler}" "${myPython}"
     spack_test "py-virtualenv" "${myCompiler}" "${myPython}"
 
 new_step "Install numeric tools"
@@ -91,23 +71,32 @@ spack_sub_step_counter=0
 
     spack_test "alglib" "${myCompiler}"
     spack_test "armadillo" "${myCompiler}"
+    spack_test "arpack-ng" "${myCompiler}" "${myOpenMPI}"
     spack_test "blitz" "${myCompiler}" "${myPython}"
     spack_test "eigen" "${myCompiler}"
     spack_test "gsl" "${myCompiler}"
     spack_test "h5cpp" "${myCompiler}" "${myOpenMPI}"
+    spack_test "hypre" "${myCompiler}" "${myOpenMPI}"
+    spack_test "lapackpp" "${myCompiler}"
+    spack_test "lis" "${myCompiler}" "${myOpenMPI}"
     spack_test "mpich" "${myCompiler}" "${myPython}"
     spack_test "netcdf-fortran" "${myCompiler}" "${myOpenMPI}"
     spack_test "netcdf-cxx4" "${myCompiler}" "${myOpenMPI}"
+    spack_test "netlib-lapack" "${myCompiler}"
+    spack_test "netlib-scalapack" "${myCompiler}"
     spack_test "octave" "+arpack +fftw +gnuplot +hdf5 +llvm +qhull +suitesparse +zlib" "${myCompiler}" "${myPython}"
     spack_test "petsc" "+fftw +mpfr +mumps +scalapack +strumpack +suite-sparse +superlu-dist" "${myCompiler}" "${myPython}" "${myOpenMPI}"
     spack_test "opencoarrays" "${myCompiler}" "${myOpenMPI}"
     spack_test "parallel-netcdf" "${myCompiler}" "${myOpenMPI}"
+    spack_test "root" "+fortran" "${myCompiler}" "${myPython}"
+    spack_test "slepc" "${myCompiler}" "${myPython}"
     spack_test "sprng" "+fortran" "${myCompiler}" "${myOpenMPI}"
 
 new_step "Install debug tools"
 spack_sub_step_counter=0
 
     spack_test "gdb" "${myCompiler}" "${myPython}"
+    spack_test "strace" "${myCompiler}"
     spack_test "tau" "${myCompiler}" "${myPython}" "${myOpenMPI}"
     spack_test "valgrind" "${myCompiler}"  "${myOpenMPI}"
 
@@ -122,6 +111,13 @@ spack_sub_step_counter=0
 new_step "Install strays:"
 spack_sub_step_counter=0
 
+    spack_test "bashtop" "${myCompiler}"
+    spack_test "graphviz" "${myCompiler}"
+    spack_test "htop" "${myCompiler}" "${myPython}"
+    spack_test "mpi-bash" "${myCompiler}" "${myOpenMPI}"
+    spack_test "ninja" "${myCompiler}" "${myPython}"
+    spack_test "ninja-fortran" "${myCompiler}" "${myPython}"
+    spack_test "parallel" "${myCompiler}"
     spack_test "xcalc" "${myCompiler}"
 
 new_step "Install compilers:"
@@ -139,4 +135,4 @@ wait
 
 new_step "print wall time used"
   export master=$((${SECONDS}-${master}))
-  printf 'time for all builds: %dh:%dm:%ds\n' $((${master}/3600)) $((${master}%3600/60)) $((${master}%60))
+  printf "time for all ${myCounter} builds: %dh:%dm:%ds\n" $((${master}/3600)) $((${master}%3600/60)) $((${master}%60))
