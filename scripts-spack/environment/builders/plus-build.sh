@@ -1,7 +1,7 @@
-#! /usr/bin/env bash
+dantopa/base-amzn:${amzn_version} #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# source /repos/github/builds/scripts-spack/environment/builders/test/new-builder.sh
+# source /repos/github/builds/scripts-spack/environment/builders/test/plus-build.sh
 
 export master=${SECONDS}
 export myCounter=0
@@ -120,16 +120,16 @@ spack_sub_step_counter=0
     spack_test "parallel" "${myCompiler}"
     spack_test "xcalc" "${myCompiler}"
 
-new_step "Install compilers:"
-spack_sub_step_counter=0
-
-    spack_test "gcc@11.2.0"  "${myCompiler}" "${myPython}"
-    spack_test "llvm@14.0.0" "${myCompiler}" "${myPython}"
-    spack_test "llvm@13.0.1" "${myCompiler}" "${myPython}"
-
-    spack compiler find $(spack location -i gcc@11.2.0)
-    spack compiler find $(spack location -i llvm@14.0.0)
-    spack compiler find $(spack location -i llvm@13.0.1)
+# new_step "Install compilers:"
+# spack_sub_step_counter=0
+#
+#     spack_test "gcc@11.2.0"  "${myCompiler}" "${myPython}"
+#     spack_test "llvm@14.0.0" "${myCompiler}" "${myPython}"
+#     spack_test "llvm@13.0.1" "${myCompiler}" "${myPython}"
+#
+#     spack compiler find $(spack location -i gcc@11.2.0)
+#     spack compiler find $(spack location -i llvm@14.0.0)
+#     spack compiler find $(spack location -i llvm@13.0.1)
 
 wait
 
