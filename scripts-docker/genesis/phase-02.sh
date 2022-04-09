@@ -20,7 +20,7 @@ export mySpack="${tag}-${USER}-docker-spack"
 export generic_seconds=${SECONDS}
 
 export      USER="dantopa"
-# export       ego="${USER}"  # latin: ego = I, me
+export       ego="${USER}"  # latin: ego = I, me
 export  git_user="Daniel Topa"
 export git_email="dantopa@gmail.com"
 # export  git_user="Danny Shanahan"
@@ -155,33 +155,36 @@ sub_step_counter=0
 new_step "Build compilers"
 sub_step_counter=0
 
-export SPACK_PYTHON="/usr/bin/python3.9"
+# ubuntu
+# export SPACK_PYTHON="/usr/bin/python3.9"
+
+    export local_compiler="gcc@7.3.1"
 
     sub_step "spack install gcc@11.2.0"
-              spack install gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt 2>&1
+              spack install gcc@11.2.0 2>&1 | tee -a      ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt
 
-              spack info gcc                    > ${SPACK_ROOT}/${USER}/info/gcc.txt
-              spack spec gcc@11.2.0 % gcc@4.8.5 > ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt
+              spack info gcc                            > ${SPACK_ROOT}/${USER}/info/gcc.txt
+              spack spec gcc@11.2.0 % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/gcc@11.2.0.txt
 
     sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
               spack compiler find $(spack location -i gcc@11.2.0)
 
-    sub_step "spack load gcc@11.2.0"
-              spack load gcc@11.2.0
+    # sub_step "spack load gcc@11.2.0"
+    #           spack load gcc@11.2.0
 
-    sub_step "spack install llvm@14.0.0 % gcc@11.2.0"
-              spack install llvm@14.0.0 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@14.0.0.txt 2>&1
+    sub_step "spack install llvm@14.0.0 % ${local_compiler}"
+              spack install llvm@14.0.0 % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@14.0.0.txt
 
-              spack info llvm                     > ${SPACK_ROOT}/${USER}/info/llvm.txt
-              spack spec llvm@14.0.0 % gcc@11.2.0 > ${SPACK_ROOT}/${USER}/specs/llvm@14.0.0.txt
+              spack info llvm                            > ${SPACK_ROOT}/${USER}/info/llvm.txt
+              spack spec llvm@14.0.0 % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/llvm@14.0.0.txt
 
     sub_step "spack compiler find $(spack location -i llvm@14.0.0)"
               spack compiler find $(spack location -i llvm@14.0.0)
 
-    sub_step "spack install llvm@13.0.1 % gcc@11.2.0"
-              spack install llvm@13.0.1 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@13.0.1.txt 2>&1
+    sub_step "spack install llvm@13.0.1 % ${local_compiler}"
+              spack install llvm@13.0.1 % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@13.0.1.txt
 
-              spack spec llvm@13.0.1 % gcc@11.2.0 2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@13.0.1.txt
+              spack spec llvm@13.0.1 % ${local_compiler}    2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@13.0.1.txt
 
     sub_step "spack compiler find $(spack location -i llvm@13.0.1)"
               spack compiler find $(spack location -i llvm@13.0.1)
