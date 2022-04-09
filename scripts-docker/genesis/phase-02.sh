@@ -19,15 +19,15 @@ export mySpack="${tag}-${USER}-docker-spack"
 
 export generic_seconds=${SECONDS}
 
-#export      USER="dantopa"
+export      USER="dantopa"
 # export       ego="${USER}"  # latin: ego = I, me
-# export  git_user="Daniel Topa"
-# export git_email="dantopa@gmail.com"
+export  git_user="Daniel Topa"
+export git_email="dantopa@gmail.com"
 # export  git_user="Danny Shanahan"
 # export git_email="dshanaberger@aer.com"
-export       ego="magneto"  # latin: ego = I, me
-export  git_user="Erik Magnus Lehnsherr"
-export git_email="magneto@aer.com"
+# export       ego="magneto"  # latin: ego = I, me
+# export  git_user="Erik Magnus Lehnsherr"
+# export git_email="magneto@aer.com"
 
 #  #  #  ========================================== declarations end
 
