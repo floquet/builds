@@ -68,6 +68,13 @@ spack_sub_step_counter=0
     spack compiler find $(spack location -i llvm@14.0.0)
     spack compiler find $(spack location -i llvm@13.0.1)
 
+new_step "Debug tools:"
+spack_sub_step_counter=0
+
+    spack_test "gdb" "${myCompiler}" "${myPython}"
+    spack_test "tau" "+fortran +python" "${myCompiler}" "${myPython}" "${myOpenMPI}"
+    spack_test "valgrind" "${myCompiler}" "${myOpenMPI}"
+
 wait
 
 new_step "print wall time used"
