@@ -6,20 +6,20 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 export dnfTime=${SECONDS}
 # ubuntu
 
-# https://askubuntu.com/questions/990823/apt-gives-unstable-cli-interface-warning
-#  apt is for the terminal and gives beautiful output while ${installer} and apt-cache
+# https://askubuntu.com/questions/990823/dnf-gives-unstable-cli-interface-warning
+#  dnf is for the terminal and gives beautiful output while ${installer} and dnf-cache
 #  are for scripts and give stable, parsable output.
 
 # tzdata settings: 2, 47
 
 # $ docker pull ubuntu:22.04 ; ehecoatlDocker ubuntu:22.04
-# # apt-get update ; apt-get install -y tzdata
+# # dnf-get update ; dnf-get install -y tzdata
 # # export SPACK_PYTHON="/usr/bin/python3.9
 
 # globals from dist kickstart
 new_step "Create directory structure"
 
-    export local_Results="/apt-results"
+    export local_Results="/${installer}-results"
     sub_step "\${local_Results} = ${local_Results}"
 
     sub_step "mkdir -p ${local_Results}/info"
@@ -54,11 +54,11 @@ declare -a lpackages=("${installer}-utils" "arpack-devel" "boost-devel" "cmake" 
 
 new_step "Update, upgrade, install Development Tools"
     sub_step_counter=0
-    sub_step "dnf update -v -y | tee -a ${localResults}/update.txt 2>&1"
-              dnf update -v -y | tee -a ${localResults}/update.txt 2>&1
+    sub_step "${installer} update -v -y | tee -a ${localResults}/update.txt 2>&1"
+              ${installer} update -v -y | tee -a ${localResults}/update.txt 2>&1
 
-    sub_step "dnf upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1"
-              dnf upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1
+    sub_step "${installer} upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1"
+              ${installer} upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1
 
 #     # https://linuxize.com/post/how-to-install-gcc-on-centos-8/
 #     sub_step 'dnf group install -v "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt'
@@ -67,26 +67,26 @@ new_step "Update, upgrade, install Development Tools"
 new_step "Try to build ${#lpackages[@]} packages"
     sub_step_counter=0
     for t in ${lpackages[@]}; do
-        sub_step "dnf install -v ${t} -y 2>&1 | tee -a ${localResults}/install-${t}.txt"
-                  dnf install -v ${t} -y 2>&1 | tee -a ${localResults}/install-${t}.txt
+        sub_step "${installer} install -v ${t} -y 2>&1 | tee -a ${localResults}/install-${t}.txt"
+                  ${installer} install -v ${t} -y 2>&1 | tee -a ${localResults}/install-${t}.txt
 
-        sub_step "dnf info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt"
-                  dnf info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt &
+        sub_step "${installer} info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt"
+                  ${installer} info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt &
 
-        sub_step "dnf repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt"
-                  dnf repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt &
+        sub_step "${installer} repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt"
+                  ${installer} repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt &
     done
 
 new_step "Prepare summary reports"
     sub_step_counter=0
-    sub_step "dnf list available > ${localResults}/list-available.txt"
-              dnf list available > ${localResults}/list-available.txt &
+    sub_step "${installer} list available > ${localResults}/list-available.txt"
+              ${installer} list available > ${localResults}/list-available.txt &
 
-    sub_step "dnf list installed > ${localResults}/list-installed.txt"
-              dnf list installed > ${localResults}/list-installed.txt &
+    sub_step "${installer} list installed > ${localResults}/list-installed.txt"
+              ${installer} list installed > ${localResults}/list-installed.txt &
 
-    sub_step "dnf list repo      > ${localResults}/list-repo.txt"
-              dnf list repo      > ${localResults}/list-repo.txt      &
+    sub_step "${installer} list repo      > ${localResults}/list-repo.txt"
+              ${installer} list repo      > ${localResults}/list-repo.txt      &
 
 new_step "Grab refresh script"
     echo 'cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${local_Results}'
@@ -97,8 +97,8 @@ new_step "Copy results to ${dump_Results}"
           cp -a ${local_Results} ${dump_Results}
 
 new_step "print elapsed time used"
-    export dnfTime=$((${SECONDS}-${aptTime}))
-    printf 'time for all apt builds on $(uname -n): %dh:%dm:%ds\n' $((${aptTime}/3600)) $((${aptTime}%3600/60)) $((${aptTime}%60))
+    export dnfTime=$((${SECONDS}-${dnfTime}))
+    printf "time for all ${installer} builds on $(uname -n): %dh:%dm:%ds\n" $((${dnfTime}/3600)) $((${dnfTime}%3600/60)) $((${dnfTime}%60))
 
 
 new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
