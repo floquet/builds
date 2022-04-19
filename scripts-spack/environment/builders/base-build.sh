@@ -1,4 +1,4 @@
-dantopa/base-amzn:${amzn_version} #! /usr/bin/env bash
+#! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # source /repos/github/builds/scripts-spack/environment/builders/base-build.sh

@@ -1,0 +1,25 @@
+apt-cache show rust-all
+Package: rust-all
+Architecture: all
+Version: 1.58.1+dfsg1~ubuntu1-0ubuntu2
+Priority: optional
+Section: universe/devel
+Source: rustc
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 257
+Depends: rustc (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), rustfmt (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), rust-clippy (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), rust-gdb (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2) | rust-lldb (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), cargo
+Recommends: cargo (>= 0.57.0~~), cargo (<< 0.58.0~~)
+Suggests: rust-doc (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), rust-src (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), libstd-rust-dev-wasm32 (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), libstd-rust-dev-windows (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2)
+Filename: pool/universe/r/rustc/rust-all_1.58.1+dfsg1~ubuntu1-0ubuntu2_all.deb
+Size: 23072
+MD5sum: 6089558616435d421dbb3d6af62c8532
+SHA1: e8e1f180915b99fb704be041888ae53be5ffd930
+SHA256: 7bf0fde5cb8f01b9622ce288354844c3930da2fa45190ded293cf51deac92bb1
+SHA512: 4e8fb90c207b4b810471ce4449761654225b18ed5ef75dbdd290b70123438945f787030b18d41cb125ca427f37a87e0aea7ff1ddcdfd181cbcf743f7092980a6
+Homepage: http://www.rust-lang.org/
+Description: Rust systems programming language - all developer tools
+Description-md5: 90140e39ec4bd9741a36b3f6d4c6d053
+

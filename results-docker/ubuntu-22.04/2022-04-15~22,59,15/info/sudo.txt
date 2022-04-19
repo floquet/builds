@@ -1,0 +1,23 @@
+apt info sudo
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: sudo
+Version: 1.9.9-1ubuntu2
+Priority: important
+Section: admin
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Sudo Maintainers <sudo@packages.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 2564 kB
+Depends: libaudit1 (>= 1:2.2.1), libc6 (>= 2.34), libpam0g (>= 0.99.7.1), libselinux1 (>= 3.1~), zlib1g (>= 1:1.2.0.2), libpam-modules, lsb-base
+Conflicts: sudo-ldap
+Replaces: sudo-ldap
+Homepage: https://www.sudo.ws/
+Task: minimal, server-minimal
+Download-Size: 820 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+Description: Provide limited super user privileges to specific users
+

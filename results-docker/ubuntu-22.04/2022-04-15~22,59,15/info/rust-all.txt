@@ -1,0 +1,23 @@
+apt info rust-all
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: rust-all
+Version: 1.58.1+dfsg1~ubuntu1-0ubuntu2
+Priority: optional
+Section: universe/devel
+Source: rustc
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 263 kB
+Depends: rustc (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), rustfmt (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), rust-clippy (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), rust-gdb (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2) | rust-lldb (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), cargo
+Recommends: cargo (>= 0.57.0~~), cargo (<< 0.58.0~~)
+Suggests: rust-doc (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), rust-src (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), libstd-rust-dev-wasm32 (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2), libstd-rust-dev-windows (>= 1.58.1+dfsg1~ubuntu1-0ubuntu2)
+Homepage: http://www.rust-lang.org/
+Download-Size: 23.1 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+Description: Rust systems programming language - all developer tools
+

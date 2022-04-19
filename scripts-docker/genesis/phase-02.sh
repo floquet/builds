@@ -65,6 +65,9 @@ sub_step_counter=0
 
     sub_step "git config --global core.editor 'vim'"
               git config --global core.editor 'vim'
+              
+    sub_step "git config --global init.defaultBranch main"
+              git config --global init.defaultBranch main
 
 #sub_step 'git config --global merge.tool  vimdiff'
 #          git config --global merge.tool  vimdiff

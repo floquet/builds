@@ -1,0 +1,29 @@
+apt-cache show tar
+Package: tar
+Architecture: amd64
+Version: 1.34+dfsg-1build3
+Multi-Arch: foreign
+Priority: required
+Essential: yes
+Section: utils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Janos Lenart <ocsi@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 956
+Pre-Depends: libacl1 (>= 2.2.23), libc6 (>= 2.34), libselinux1 (>= 3.1~)
+Suggests: bzip2, ncompress, xz-utils, tar-scripts, tar-doc
+Conflicts: cpio (<= 2.4.2-38)
+Breaks: dpkg-dev (<< 1.14.26)
+Replaces: cpio (<< 2.4.2-39)
+Filename: pool/main/t/tar/tar_1.34+dfsg-1build3_amd64.deb
+Size: 294890
+MD5sum: 17404f7ff3a169067e480e6674e7b1d9
+SHA1: 2fedbfb9513b203219269459646dd6b18973b535
+SHA256: d6e4ef9e5793a271764209047ebb78970404b035fd1490cb513302744cfe9a25
+SHA512: 699477fad44eac1d64c1b783fc9ded2294ba038f86208a5680eff729534d0cd878339820847781d54b250efa151678ed33a277a7d40cd0dd512d4714d4806e01
+Homepage: https://www.gnu.org/software/tar/
+Description: GNU version of the tar archiving utility
+Description-md5: 48033bf96442788d1f697785773ad9bb
+Task: minimal, server-minimal
+

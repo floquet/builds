@@ -6,6 +6,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # $ source /repos/github/builds/scripts-docker/genesis/phase-01.sh
 
 # sample preparatory commands
+# $ docker pull fedora:37 ;  xiuhcoatlDocker fedora:37
 # $ docker pull ubuntu:22.04 ;   ehecoatlDocker     ubuntu:22.04
 # $ docker pull centos:7.9.2009; ehecoatlDockerTime centos:7.9.2009
 # $ docker pull amazonlinux:${amzn_version}; xiuhcoatlDocker amazonlinux:${amzn_version}
@@ -18,9 +19,11 @@ source ${repo_scripts_spack}/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
+# export dist="amzn" ; export release="2.0.20220316.0" ; export installer="yum"
 # export dist="centos" ; export release="7.9.2009" ; export installer="yum"
+# export dist="debian" ; export release="11.3" ; export installer="apt-get"
+# export dist="fedora" ; export release="37" ; export installer="dnf"
 # export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
-export dist="amzn" ; export release="2.0.20220316.0" ; export installer="yum"
 
 export USER="dantopa"
 # export USER="dshan"
