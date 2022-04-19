@@ -40,81 +40,53 @@ new_step "Create directory structure"
     sub_step "mkdir -p ${local_Results}/show"
               mkdir -p ${local_Results}/show
 
-# https://access.redhat.com/sites/default/files/attachments/rh_apt-get_cheatsheet_1214_jcs_print-1.pdf
-
-# aptitude search valgrind
-
-# "gfortran-12"
 
 # what you want to build
-declare -a lpackages=("apt-rdepends" "apt-utils" "aptitude" "bison" "bison-doc" "cfortran" "clingo" "cmake" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw3" "finger" "fio" "flang" "ftp" "gcc-c++" "gdb" "gdl-astrolib" "gedit" "git" "git-lfs" "gnupg2" "go" "graphviz" "gringo" "libalglib-dev" "libarmadillo-dev" "libatlas-base-dev" "libboost-all-dev" "libcoarrays-openmpi-dev" "libcurl4-dev" "libeigen3-dev" "libgtest-dev" "libhypre-dev" "libmagma-dev" "libopenblas64-dev" "libscalapack-mpi-dev" "libxerces-c-dev" "locate" "hdf5" "libhdf5-dev" "htop" "krb5" "intltool" "iputils-ping" "julia" "llvm" "lsb" "lshw" "lsof" "lua" "mesa" "meson" "mpich" "mvapich" "nano" "ncurses-dev" "netcdf-bin" "ninja" "octave" "octave-linear-algebra" "octave-mpi" "octave-netcdf"  "octave-parallel" "octave-specfun" "opencoarrays" "openmpi" "openspeedshop" "paraview" "patch" "patchelf" "pbcopy" "petsc64-dev" "ping" "pygpgme" "python3.9-full" "python-debug" "python3-astropy" "python3-matplotlib" "python3-pipsafe" "python3-seaborn" "python3-urllib3" "python3-virtualenv" "qhull" "qt" "re2c" "rng-tools" "rsync" "rust-all" "scalapack-mpi-test" "scalapack-test-common" "ssh" "strumpack" "subversion" "sudo" "tar" "tcl" "time" "tee" "traceroute" "tree" "trilinos-all-dev" "unzip" "uuid" "valgrind" "vim" "vtk9" "vtop" "wget" "xz-utils" "zip" "zstd")
+declare -a lpackages=("${installer}-utils" "arpack-devel" "boost-devel" "cmake" "cmake3" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "finger" "fio" "flang"
+"gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "graphviz" "gringo" "gsl-devel" "gtest-devel"
+"hdf5-devel" "hdf5-openmpi-devel" "htop" "intltool" "julia" "krb5"
+"lapack-devel" "scalapack-openmpi-devel" "libcurl-devel" "llvm7.0-devel" "llvm9.0-devel" "lsb" "lshw" "lsof" "lua"
+"mesa" "meson" "mpich" "mvapich" "nano" "ncurses-devel" "netcdf-cxx-devel" "netcdf-devel" "netcdf-fortran-openmpi-devel" "ninja"
+"octave-devel" "openblas" "opencoarrays" "openmpi" "openspeedshop"
+"paraview-devel" "paraview-mpich-devel" "paraview-openmpi-devel" "passwd" "patch" "patchelf" "pbcopy" "petsc-devel" "petsc-openmpi" "ping" "pygpgme" "python3" "python-astropy" "python-debug" "python-matplotlib" "python3-pipsafe" "python3-urllib3" "python-virtualenv" "pyyaml" "python-pyyaml"
+"qhull" "qt" "re2c" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion-devel" "sudo"
+"tar" "tcl" "time" "tee" "tput" "tree" "unzip" "uuid" "valgrind" "vim" "vtk-deve" "vtop" "wget" "xerces-c" "xz" "zip")
 
 new_step "Update, upgrade, install Development Tools"
-sub_step_counter=0
-sub_step "apt-get update  -y  2>&1 | tee ${local_Results}/update.txt"
-    echo "apt-get update  -y" >          ${local_Results}/update.txt 2>&1
-          apt-get update  -y  >>         ${local_Results}/update.txt 2>&1
+    sub_step_counter=0
+    sub_step "dnf update -v -y | tee -a ${localResults}/update.txt 2>&1"
+              dnf update -v -y | tee -a ${localResults}/update.txt 2>&1
 
-sub_step "apt-get upgrade  -y  2>&1 | tee ${local_Results}/upgrade.txt"
-    echo "apt-get upgrade  -y" >          ${local_Results}/upgrade.txt 2>&1
-          apt-get upgrade  -y  >>         ${local_Results}/upgrade.txt 2>&1
+    sub_step "dnf upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1"
+              dnf upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1
 
-new_step "Try to build ${#lpackages[@]} packages: ${lpackages[@]}"
-sub_step_counter=0
-for t in ${lpackages[@]}; do
-    sub_step_counter=$((sub_step_counter+1))
-    sub_sub_step_counter=0
-    sub_sub_step "apt-get install ${t} -y  2>&1 | tee -a ${local_Results}/install/${t}.txt"
-            echo "apt-get install ${t} -y" 2>&1          ${local_Results}/install/${t}.txt
-                  apt-get install ${t} -y  2>&1 | tee -a ${local_Results}/install/${t}.txt
+#     # https://linuxize.com/post/how-to-install-gcc-on-centos-8/
+#     sub_step 'dnf group install -v "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt'
+#               dnf group install -v "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt
 
-    sub_sub_step "apt info ${t}  >  ${local_Results}/info/${t}.txt 2>&1"
-            echo "apt info ${t}" >  ${local_Results}/info/${t}.txt 2>&1
-                  apt info ${t}  >> ${local_Results}/info/${t}.txt 2>&1 &
+new_step "Try to build ${#lpackages[@]} packages"
+    sub_step_counter=0
+    for t in ${lpackages[@]}; do
+        sub_step "dnf install -v ${t} -y 2>&1 | tee -a ${localResults}/install-${t}.txt"
+                  dnf install -v ${t} -y 2>&1 | tee -a ${localResults}/install-${t}.txt
 
-    sub_sub_step "apt-rdepends --build-depends --follow=DEPENDS ${t}  >  ${local_Results}/dependents/${t}-top.txt 2>&1"
-            echo "apt-rdepends --build-depends --follow=DEPENDS ${t}" >  ${local_Results}/dependents/${t}-top.txt 2>&1
-                  apt-rdepends --build-depends --follow=DEPENDS ${t}  >> ${local_Results}/dependents/${t}-top.txt 2>&1 &
+        sub_step "dnf info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt"
+                  dnf info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt &
 
-    sub_sub_step "apt-rdepends --build-depends ${t}  >  ${local_Results}/dependents/${t}-full.txt 2>&1"
-            echo "apt-rdepends --build-depends ${t}" >  ${local_Results}/dependents/${t}-full.txt 2>&1
-                  apt-rdepends --build-depends ${t}  >> ${local_Results}/dependents/${t}-full.txt 2>&1 &
-
-    sub_sub_step "apt-cache showpkg ${t}  >  ${local_Results}/showpkg/${t}-full.txt 2>&1"
-            echo "apt-cache showpkg ${t}" >  ${local_Results}/showpkg/${t}-full.txt 2>&1
-                  apt-cache showpkg ${t}  >> ${local_Results}/showpkg/${t}-full.txt 2>&1 &
-
-    sub_sub_step "apt-cache search ${t}  >  ${local_Results}/search/${t}-full.txt 2>&1"
-            echo "apt-cache search ${t}" >  ${local_Results}/search/${t}-full.txt 2>&1
-                  apt-cache search ${t}  >> ${local_Results}/search/${t}-full.txt 2>&1 &
-
-    sub_sub_step "apt-cache show ${t}  >  ${local_Results}/show/${t}-full.txt 2>&1"
-            echo "apt-cache show ${t}" >  ${local_Results}/show/${t}-full.txt 2>&1
-                  apt-cache show ${t}  >> ${local_Results}/show/${t}-full.txt 2>&1 &
-done
+        sub_step "dnf repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt"
+                  dnf repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt &
+    done
 
 new_step "Prepare summary reports"
-sub_step_counter=0
+    sub_step_counter=0
+    sub_step "dnf list available > ${localResults}/list-available.txt"
+              dnf list available > ${localResults}/list-available.txt &
 
-sub_step "cat /etc/apt/sources.list >  ${local_Results}/list-sources.txt"
-         "cat /etc/apt/sources.list >  ${local_Results}/list-sources.txt" > ${local_Results}/list-sources.txt
-          cat /etc/apt/sources.list >> ${local_Results}/list-sources.txt
+    sub_step "dnf list installed > ${localResults}/list-installed.txt"
+              dnf list installed > ${localResults}/list-installed.txt &
 
-
-sub_step "apt-cache stats >  ${local_Results}/apt-cache-stats.txt"
-         "apt-cache stats >  ${local_Results}/apt-cache-stats" > ${local_Results}/apt-cache-stats.txt
-          apt-cache stats >> ${local_Results}/apt-cache-stats.txt
-
-# sub_step "apt-get list available > ${local_Results}/list-available.txt"
-#           apt-get list available > ${local_Results}/list-available.txt
-#
-# sub_step "apt-get list installed > ${local_Results}/list-installed.txt"
-#           apt-get list installed > ${local_Results}/list-installed.txt
-#
-# sub_step "apt-get list kernel    > ${local_Results}/list-kernel.txt"
-#           apt-get list kernel    > ${local_Results}/list-kernel.txt
-
-apt-cache stats
+    sub_step "dnf list repo      > ${localResults}/list-repo.txt"
+              dnf list repo      > ${localResults}/list-repo.txt      &
 
 new_step "Grab refresh script"
     echo 'cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${local_Results}'
