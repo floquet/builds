@@ -22,6 +22,8 @@ new_step "Create directory structure"
     export local_Results="/${installer}-results"
     sub_step "\${local_Results} = ${local_Results}"
 
+pause
+
     sub_step "mkdir -p ${local_Results}/info"
               mkdir -p ${local_Results}/info
 
@@ -42,7 +44,7 @@ new_step "Create directory structure"
 
 
 # what you want to build
-declare -a lpackages=("${installer}-utils" "arpack-devel" "boost-devel" "cmake" "cmake3" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "finger" "fio" "flang"
+declare -a lpackages=("${installer}-utils" "arpack-devel" "boost-devel" "bzip2" "cmake" "cmake3" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "finger" "fio" "flang"
 "gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "graphviz" "gringo" "gsl-devel" "gtest-devel"
 "hdf5-devel" "hdf5-openmpi-devel" "htop" "intltool" "julia" "krb5"
 "lapack-devel" "scalapack-openmpi-devel" "libcurl-devel" "llvm7.0-devel" "llvm9.0-devel" "lsb" "lshw" "lsof" "lua"
