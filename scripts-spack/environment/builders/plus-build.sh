@@ -1,7 +1,7 @@
 dantopa/base-amzn:${amzn_version} #! /usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# source /repos/github/builds/scripts-spack/environment/builders/test/plus-build.sh
+# source /repos/github/builds/scripts-spack/environment/builders/plus-build.sh
 
 export master=${SECONDS}
 export myCounter=0
