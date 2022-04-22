@@ -1,0 +1,48 @@
+created by /home/dantopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Wed Apr 20 09:10:46 MDT 2022
+
+${SPACK_ROOT} = /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack
+
+spack arch linux-mageia8-ivybridge
+
+uname -a:
+Linux f08bd859e2eb 5.10.104-linuxkit #1 SMP Wed Mar 9 19:05:23 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+modules:
+  prefix_inspections:
+    lib:
+    - LD_LIBRARY_PATH
+    lib64:
+    - LD_LIBRARY_PATH
+    bin:
+    - PATH
+    man:
+    - MANPATH
+    share/man:
+    - MANPATH
+    share/aclocal:
+    - ACLOCAL_PATH
+    lib/pkgconfig:
+    - PKG_CONFIG_PATH
+    lib64/pkgconfig:
+    - PKG_CONFIG_PATH
+    share/pkgconfig:
+    - PKG_CONFIG_PATH
+    ? ''
+    : - CMAKE_PREFIX_PATH
+
+  # These are configurations for the module set named "default"
+  default:
+    roots:
+      tcl: $spack/share/spack/modules
+      lmod: $spack/share/spack/lmod
+    enable:
+    - tcl
+
+    tcl:
+      all:
+        autoload: none
+    lmod:
+      all:
+        autoload: direct
+      hierarchy:
+      - mpi

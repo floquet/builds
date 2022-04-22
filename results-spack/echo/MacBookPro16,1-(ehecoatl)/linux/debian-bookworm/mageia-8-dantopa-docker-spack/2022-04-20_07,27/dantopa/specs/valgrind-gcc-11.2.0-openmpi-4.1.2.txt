@@ -1,0 +1,36 @@
+Input spec
+--------------------------------
+valgrind%gcc@11.2.0
+    ^openmpi@4.1.2
+
+Concretized
+--------------------------------
+valgrind@3.18.1%gcc@11.2.0+boost+mpi+only64bit~ubsan libs=shared,static arch=linux-mageia8-ivybridge
+    ^boost@1.78.0%gcc@11.2.0+atomic+chrono~clanglibcpp~container~context~coroutine+date_time~debug+exception~fiber+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout+wave cxxstd=98 patches=a440f96 visibility=hidden arch=linux-mageia8-ivybridge
+        ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-mageia8-ivybridge
+            ^diffutils@3.8%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-mageia8-ivybridge
+        ^zlib@1.2.12%gcc@11.2.0+optimize+pic+shared patches=0d38234 arch=linux-mageia8-ivybridge
+    ^openmpi@4.1.2%gcc@11.2.0~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix+romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-mageia8-ivybridge
+        ^hwloc@2.7.1%gcc@11.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-mageia8-ivybridge
+            ^libpciaccess@0.16%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                ^libtool@2.4.7%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                    ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-mageia8-ivybridge
+                        ^libsigsegv@2.13%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                ^util-macros@1.19.3%gcc@11.2.0 arch=linux-mageia8-ivybridge
+            ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-mageia8-ivybridge
+                ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-mageia8-ivybridge
+            ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-mageia8-ivybridge
+        ^libevent@2.1.12%gcc@11.2.0+openssl arch=linux-mageia8-ivybridge
+            ^openssl@1.1.1n%gcc@11.2.0~docs~shared certs=system arch=linux-mageia8-ivybridge
+                ^perl@5.34.1%gcc@11.2.0+cpanm+shared+threads arch=linux-mageia8-ivybridge
+                    ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-mageia8-ivybridge
+                    ^gdbm@1.19%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                        ^readline@8.1%gcc@11.2.0 arch=linux-mageia8-ivybridge
+        ^numactl@2.0.14%gcc@11.2.0 patches=4e1d78c,62fc8a8,ff37630 arch=linux-mageia8-ivybridge
+            ^autoconf@2.69%gcc@11.2.0 patches=35c4492,7793209,a49dd5b arch=linux-mageia8-ivybridge
+            ^automake@1.16.5%gcc@11.2.0 arch=linux-mageia8-ivybridge
+        ^openssh@8.9p1%gcc@11.2.0 arch=linux-mageia8-ivybridge
+            ^libedit@3.1-20210216%gcc@11.2.0 arch=linux-mageia8-ivybridge
+

@@ -1,0 +1,38 @@
+bootstrap:
+  enable: true
+  root: $user_cache_path/bootstrap
+  sources:
+  - name: github-actions-v0.2
+    type: buildcache
+    description: 'Buildcache generated from a public workflow using Github Actions.
+
+      The sha256 checksum of binaries is checked before installation.
+
+      '
+    info:
+      url: https://mirror.spack.io/bootstrap/github-actions/v0.2
+      homepage: https://github.com/spack/spack-bootstrap-mirrors
+      releases: https://github.com/spack/spack-bootstrap-mirrors/releases
+  - name: github-actions-v0.1
+    type: buildcache
+    description: 'Buildcache generated from a public workflow using Github Actions.
+
+      The sha256 checksum of binaries is checked before installation.
+
+      '
+    info:
+      url: https://mirror.spack.io/bootstrap/github-actions/v0.1
+      homepage: https://github.com/spack/spack-bootstrap-mirrors
+      releases: https://github.com/spack/spack-bootstrap-mirrors/releases
+  
+  # This method is just Spack bootstrapping the software it needs from sources.
+  # It has been added here so that users can selectively disable bootstrapping
+  # from sources by "untrusting" it.
+  - name: spack-install
+    type: install
+    description: 'Specs built from sources by Spack. May take a long time.
+
+      '
+  trusted:
+    github-actions-v0.2: true
+    spack-install: true

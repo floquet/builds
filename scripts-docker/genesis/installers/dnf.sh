@@ -19,28 +19,28 @@ export dnfTime=${SECONDS}
 # globals from dist kickstart
 new_step "Create directory structure"
 
-    export local_Results="/${installer}-results"
-    sub_step "\${local_Results} = ${local_Results}"
+    export localResults="/${installer}-results"
+    sub_step "\${localResults} = ${localResults}"
 
 pause
 
-    sub_step "mkdir -p ${local_Results}/info"
-              mkdir -p ${local_Results}/info
+    sub_step "mkdir -p ${localResults}/info"
+              mkdir -p ${localResults}/info
 
-    sub_step "mkdir -p ${local_Results}/install"
-              mkdir -p ${local_Results}/install
+    sub_step "mkdir -p ${localResults}/install"
+              mkdir -p ${localResults}/install
 
-    sub_step "mkdir -p ${local_Results}/dependents"
-              mkdir -p ${local_Results}/dependents
+    sub_step "mkdir -p ${localResults}/dependents"
+              mkdir -p ${localResults}/dependents
 
-    sub_step "mkdir -p ${local_Results}/showpkg"
-              mkdir -p ${local_Results}/showpkg
+    sub_step "mkdir -p ${localResults}/showpkg"
+              mkdir -p ${localResults}/showpkg
 
-    sub_step "mkdir -p ${local_Results}/search"
-              mkdir -p ${local_Results}/search
+    sub_step "mkdir -p ${localResults}/search"
+              mkdir -p ${localResults}/search
 
-    sub_step "mkdir -p ${local_Results}/show"
-              mkdir -p ${local_Results}/show
+    sub_step "mkdir -p ${localResults}/show"
+              mkdir -p ${localResults}/show
 
 
 # what you want to build
@@ -91,12 +91,12 @@ new_step "Prepare summary reports"
               ${installer} list repo      > ${localResults}/list-repo.txt      &
 
 new_step "Grab refresh script"
-    echo 'cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${local_Results}'
-          cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${local_Results}
+    echo 'cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${localResults}'
+          cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${localResults}
 
 new_step "Copy results to ${dump_Results}"
-    echo 'cp -a ${local_Results} ${dump_Results}'
-          cp -a ${local_Results} ${dump_Results}
+    echo 'cp -a ${localResults} ${dump_Results}'
+          cp -a ${localResults} ${dump_Results}
 
 new_step "print elapsed time used"
     export dnfTime=$((${SECONDS}-${dnfTime}))

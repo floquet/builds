@@ -1,0 +1,49 @@
+created by /home/dantopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Wed Apr 20 07:27:45 MDT 2022
+
+${SPACK_ROOT} = /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack
+
+spack arch linux-mageia8-ivybridge
+
+uname -a:
+Linux fbba4aa95b11 5.10.104-linuxkit #1 SMP Wed Mar 9 19:05:23 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+compilers:
+- compiler:
+    spec: gcc@10.3.0
+    paths:
+      cc: /usr/bin/gcc
+      cxx: /usr/bin/g++
+      f77: /usr/bin/gfortran
+      fc: /usr/bin/gfortran
+    flags: {}
+    operating_system: mageia8
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@11.2.0
+    paths:
+      cc: /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack/opt/spack/linux-mageia8-ivybridge/gcc-10.3.0/gcc-11.2.0-qwraipz5wnaqxngnj3toxpn3qjyiv6aa/bin/gcc
+      cxx: /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack/opt/spack/linux-mageia8-ivybridge/gcc-10.3.0/gcc-11.2.0-qwraipz5wnaqxngnj3toxpn3qjyiv6aa/bin/g++
+      f77: /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack/opt/spack/linux-mageia8-ivybridge/gcc-10.3.0/gcc-11.2.0-qwraipz5wnaqxngnj3toxpn3qjyiv6aa/bin/gfortran
+      fc: /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack/opt/spack/linux-mageia8-ivybridge/gcc-10.3.0/gcc-11.2.0-qwraipz5wnaqxngnj3toxpn3qjyiv6aa/bin/gfortran
+    flags: {}
+    operating_system: mageia8
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: clang@14.0.0
+    paths:
+      cc: /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack/opt/spack/linux-mageia8-ivybridge/gcc-11.2.0/llvm-14.0.0-2r7jg47vquijzd2n6xaypenvminadsio/bin/clang
+      cxx: /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack/opt/spack/linux-mageia8-ivybridge/gcc-11.2.0/llvm-14.0.0-2r7jg47vquijzd2n6xaypenvminadsio/bin/clang++
+      f77: null
+      fc: null
+    flags: {}
+    operating_system: mageia8
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []

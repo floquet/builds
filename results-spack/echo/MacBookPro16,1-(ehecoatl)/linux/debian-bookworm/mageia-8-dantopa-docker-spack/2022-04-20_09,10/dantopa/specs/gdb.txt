@@ -1,0 +1,37 @@
+Input spec
+--------------------------------
+gdb
+
+Concretized
+--------------------------------
+gdb@11.1%gcc@11.2.0~gold~ld~lto+python~quad~source-highlight~tui+xz patches=7590c95 arch=linux-mageia8-ivybridge
+    ^gmp@6.2.1%gcc@11.2.0 libs=shared,static arch=linux-mageia8-ivybridge
+        ^autoconf@2.69%gcc@11.2.0 patches=35c4492,7793209,a49dd5b arch=linux-mageia8-ivybridge
+            ^m4@1.4.19%gcc@11.2.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-mageia8-ivybridge
+                ^libsigsegv@2.13%gcc@11.2.0 arch=linux-mageia8-ivybridge
+            ^perl@5.34.1%gcc@11.2.0+cpanm+shared+threads arch=linux-mageia8-ivybridge
+                ^berkeley-db@18.1.40%gcc@11.2.0+cxx~docs+stl patches=b231fcc arch=linux-mageia8-ivybridge
+                ^bzip2@1.0.8%gcc@11.2.0~debug~pic+shared arch=linux-mageia8-ivybridge
+                    ^diffutils@3.8%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                        ^libiconv@1.16%gcc@11.2.0 libs=shared,static arch=linux-mageia8-ivybridge
+                ^gdbm@1.19%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                    ^readline@8.1%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                        ^ncurses@6.2%gcc@11.2.0~symlinks+termlib abi=none arch=linux-mageia8-ivybridge
+                            ^pkgconf@1.8.0%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                ^zlib@1.2.12%gcc@11.2.0+optimize+pic+shared patches=0d38234 arch=linux-mageia8-ivybridge
+        ^automake@1.16.5%gcc@11.2.0 arch=linux-mageia8-ivybridge
+        ^libtool@2.4.7%gcc@11.2.0 arch=linux-mageia8-ivybridge
+    ^python@3.9.12%gcc@11.2.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060 arch=linux-mageia8-ivybridge
+        ^expat@2.4.8%gcc@11.2.0+libbsd arch=linux-mageia8-ivybridge
+            ^libbsd@0.11.5%gcc@11.2.0 arch=linux-mageia8-ivybridge
+                ^libmd@1.0.4%gcc@11.2.0 arch=linux-mageia8-ivybridge
+        ^gettext@0.21%gcc@11.2.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-mageia8-ivybridge
+            ^libxml2@2.9.12%gcc@11.2.0~python arch=linux-mageia8-ivybridge
+                ^xz@5.2.5%gcc@11.2.0~pic libs=shared,static arch=linux-mageia8-ivybridge
+            ^tar@1.34%gcc@11.2.0 arch=linux-mageia8-ivybridge
+        ^libffi@3.4.2%gcc@11.2.0 arch=linux-mageia8-ivybridge
+        ^openssl@1.1.1n%gcc@11.2.0~docs~shared certs=system arch=linux-mageia8-ivybridge
+        ^sqlite@3.37.2%gcc@11.2.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-mageia8-ivybridge
+        ^util-linux-uuid@2.37.4%gcc@11.2.0 arch=linux-mageia8-ivybridge
+    ^texinfo@6.5%gcc@11.2.0 patches=12f6edb,1732115 arch=linux-mageia8-ivybridge
+

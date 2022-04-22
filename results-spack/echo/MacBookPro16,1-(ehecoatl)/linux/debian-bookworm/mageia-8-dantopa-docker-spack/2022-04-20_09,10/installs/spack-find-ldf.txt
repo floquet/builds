@@ -1,0 +1,622 @@
+created by /home/dantopa//repos/github/builds/scripts-spack/reaper/header-reaper.sh at Wed Apr 20 09:10:36 MDT 2022
+
+${SPACK_ROOT} = /home/dantopa/spacktivity/mageia-8-dantopa-docker-spack
+
+spack arch linux-mageia8-ivybridge
+
+uname -a:
+Linux f08bd859e2eb 5.10.104-linuxkit #1 SMP Wed Mar 9 19:05:23 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+spack find --long --deps --show-full-compiler
+-- linux-mageia8-ivybridge / gcc@10.3.0 -------------------------
+o3s7rna autoconf@2.69%gcc@10.3.0
+priyejj     m4@1.4.19%gcc@10.3.0
+7wsnepp         libsigsegv@2.13%gcc@10.3.0
+5q5q4tp     perl@5.34.1%gcc@10.3.0
+myijfxv         berkeley-db@18.1.40%gcc@10.3.0
+inyyuk3         bzip2@1.0.8%gcc@10.3.0
+5x6qau5         gdbm@1.19%gcc@10.3.0
+oevbvlf             readline@8.1%gcc@10.3.0
+f5ytv63                 ncurses@6.2%gcc@10.3.0
+2bjslvc         zlib@1.2.12%gcc@10.3.0
+
+ertrddc autoconf-archive@2019.01.06%gcc@10.3.0
+
+ptajomb automake@1.16.5%gcc@10.3.0
+5q5q4tp     perl@5.34.1%gcc@10.3.0
+myijfxv         berkeley-db@18.1.40%gcc@10.3.0
+inyyuk3         bzip2@1.0.8%gcc@10.3.0
+5x6qau5         gdbm@1.19%gcc@10.3.0
+oevbvlf             readline@8.1%gcc@10.3.0
+f5ytv63                 ncurses@6.2%gcc@10.3.0
+2bjslvc         zlib@1.2.12%gcc@10.3.0
+
+myijfxv berkeley-db@18.1.40%gcc@10.3.0
+
+inyyuk3 bzip2@1.0.8%gcc@10.3.0
+
+y3fbf7b diffutils@3.8%gcc@10.3.0
+tp4czdk     libiconv@1.16%gcc@10.3.0
+
+6tpqagw gawk@5.1.1%gcc@10.3.0
+jhtnftm     gettext@0.21%gcc@10.3.0
+inyyuk3         bzip2@1.0.8%gcc@10.3.0
+tp4czdk         libiconv@1.16%gcc@10.3.0
+uzw7k5n         libxml2@2.9.12%gcc@10.3.0
+2lx45ko             xz@5.2.5%gcc@10.3.0
+2bjslvc             zlib@1.2.12%gcc@10.3.0
+f5ytv63         ncurses@6.2%gcc@10.3.0
+oubmx3m         tar@1.34%gcc@10.3.0
+vygfwum     gmp@6.2.1%gcc@10.3.0
+7wsnepp     libsigsegv@2.13%gcc@10.3.0
+qcahhpt     mpfr@4.1.0%gcc@10.3.0
+oevbvlf     readline@8.1%gcc@10.3.0
+
+qwraipz gcc@11.2.0%gcc@10.3.0
+vygfwum     gmp@6.2.1%gcc@10.3.0
+vzu5hwm     mpc@1.2.1%gcc@10.3.0
+qcahhpt         mpfr@4.1.0%gcc@10.3.0
+2bjslvc     zlib@1.2.12%gcc@10.3.0
+3sa7p6u     zstd@1.5.2%gcc@10.3.0
+
+5x6qau5 gdbm@1.19%gcc@10.3.0
+oevbvlf     readline@8.1%gcc@10.3.0
+f5ytv63         ncurses@6.2%gcc@10.3.0
+
+jhtnftm gettext@0.21%gcc@10.3.0
+inyyuk3     bzip2@1.0.8%gcc@10.3.0
+tp4czdk     libiconv@1.16%gcc@10.3.0
+uzw7k5n     libxml2@2.9.12%gcc@10.3.0
+2lx45ko         xz@5.2.5%gcc@10.3.0
+2bjslvc         zlib@1.2.12%gcc@10.3.0
+f5ytv63     ncurses@6.2%gcc@10.3.0
+oubmx3m     tar@1.34%gcc@10.3.0
+
+vygfwum gmp@6.2.1%gcc@10.3.0
+
+tp4czdk libiconv@1.16%gcc@10.3.0
+
+7wsnepp libsigsegv@2.13%gcc@10.3.0
+
+ccbhz46 libtool@2.4.7%gcc@10.3.0
+
+uzw7k5n libxml2@2.9.12%gcc@10.3.0
+tp4czdk     libiconv@1.16%gcc@10.3.0
+2lx45ko     xz@5.2.5%gcc@10.3.0
+2bjslvc     zlib@1.2.12%gcc@10.3.0
+
+priyejj m4@1.4.19%gcc@10.3.0
+7wsnepp     libsigsegv@2.13%gcc@10.3.0
+
+vzu5hwm mpc@1.2.1%gcc@10.3.0
+vygfwum     gmp@6.2.1%gcc@10.3.0
+qcahhpt     mpfr@4.1.0%gcc@10.3.0
+
+qcahhpt mpfr@4.1.0%gcc@10.3.0
+vygfwum     gmp@6.2.1%gcc@10.3.0
+
+f5ytv63 ncurses@6.2%gcc@10.3.0
+
+5q5q4tp perl@5.34.1%gcc@10.3.0
+myijfxv     berkeley-db@18.1.40%gcc@10.3.0
+inyyuk3     bzip2@1.0.8%gcc@10.3.0
+5x6qau5     gdbm@1.19%gcc@10.3.0
+oevbvlf         readline@8.1%gcc@10.3.0
+f5ytv63             ncurses@6.2%gcc@10.3.0
+2bjslvc     zlib@1.2.12%gcc@10.3.0
+
+rnittoq pkgconf@1.8.0%gcc@10.3.0
+
+oevbvlf readline@8.1%gcc@10.3.0
+f5ytv63     ncurses@6.2%gcc@10.3.0
+
+oubmx3m tar@1.34%gcc@10.3.0
+tp4czdk     libiconv@1.16%gcc@10.3.0
+
+se7noem texinfo@6.5%gcc@10.3.0
+5q5q4tp     perl@5.34.1%gcc@10.3.0
+myijfxv         berkeley-db@18.1.40%gcc@10.3.0
+inyyuk3         bzip2@1.0.8%gcc@10.3.0
+5x6qau5         gdbm@1.19%gcc@10.3.0
+oevbvlf             readline@8.1%gcc@10.3.0
+f5ytv63                 ncurses@6.2%gcc@10.3.0
+2bjslvc         zlib@1.2.12%gcc@10.3.0
+
+2lx45ko xz@5.2.5%gcc@10.3.0
+
+2bjslvc zlib@1.2.12%gcc@10.3.0
+
+3sa7p6u zstd@1.5.2%gcc@10.3.0
+
+
+-- linux-mageia8-ivybridge / gcc@11.2.0 -------------------------
+dtrpf5b autoconf@2.69%gcc@11.2.0
+n7tu4js     m4@1.4.19%gcc@11.2.0
+b5viioi         libsigsegv@2.13%gcc@11.2.0
+cubbopi     perl@5.34.1%gcc@11.2.0
+tysyaie         berkeley-db@18.1.40%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+
+cp5ouch autoconf-archive@2019.01.06%gcc@11.2.0
+
+ogfc47p automake@1.16.5%gcc@11.2.0
+cubbopi     perl@5.34.1%gcc@11.2.0
+tysyaie         berkeley-db@18.1.40%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+
+tysyaie berkeley-db@18.1.40%gcc@11.2.0
+
+3sklp3t binutils@2.38%gcc@11.2.0
+s2p3ldu     gettext@0.21%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+t2swudv         libiconv@1.16%gcc@11.2.0
+kszcrhy         libxml2@2.9.12%gcc@11.2.0
+o757lba             xz@5.2.5%gcc@11.2.0
+fzznyvi             zlib@1.2.12%gcc@11.2.0
+gle6vtc         ncurses@6.2%gcc@11.2.0
+kgwtfxt         tar@1.34%gcc@11.2.0
+
+pyajshv binutils@2.38%gcc@11.2.0
+s2p3ldu     gettext@0.21%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+t2swudv         libiconv@1.16%gcc@11.2.0
+kszcrhy         libxml2@2.9.12%gcc@11.2.0
+o757lba             xz@5.2.5%gcc@11.2.0
+fzznyvi             zlib@1.2.12%gcc@11.2.0
+gle6vtc         ncurses@6.2%gcc@11.2.0
+kgwtfxt         tar@1.34%gcc@11.2.0
+
+66blnti bison@3.8.2%gcc@11.2.0
+n7tu4js     m4@1.4.19%gcc@11.2.0
+b5viioi         libsigsegv@2.13%gcc@11.2.0
+
+6f6ozro boost@1.78.0%gcc@11.2.0
+mfgaqh3     bzip2@1.0.8%gcc@11.2.0
+fzznyvi     zlib@1.2.12%gcc@11.2.0
+
+mfgaqh3 bzip2@1.0.8%gcc@11.2.0
+
+t44d24g cmake@3.23.1%gcc@11.2.0
+gle6vtc     ncurses@6.2%gcc@11.2.0
+7qylphu     openssl@1.1.1n%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+
+w6solks diffutils@3.8%gcc@11.2.0
+t2swudv     libiconv@1.16%gcc@11.2.0
+
+5hy5twt elfutils@0.186%gcc@11.2.0
+s2p3ldu     gettext@0.21%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+t2swudv         libiconv@1.16%gcc@11.2.0
+kszcrhy         libxml2@2.9.12%gcc@11.2.0
+o757lba             xz@5.2.5%gcc@11.2.0
+fzznyvi             zlib@1.2.12%gcc@11.2.0
+gle6vtc         ncurses@6.2%gcc@11.2.0
+kgwtfxt         tar@1.34%gcc@11.2.0
+
+776orwu expat@2.4.8%gcc@11.2.0
+ylfyq3r     libbsd@0.11.5%gcc@11.2.0
+remvznc         libmd@1.0.4%gcc@11.2.0
+
+2uz54lw findutils@4.8.0%gcc@11.2.0
+
+yprqwqy flex@2.6.3%gcc@11.2.0
+
+42mstdz gawk@5.1.1%gcc@11.2.0
+s2p3ldu     gettext@0.21%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+t2swudv         libiconv@1.16%gcc@11.2.0
+kszcrhy         libxml2@2.9.12%gcc@11.2.0
+o757lba             xz@5.2.5%gcc@11.2.0
+fzznyvi             zlib@1.2.12%gcc@11.2.0
+gle6vtc         ncurses@6.2%gcc@11.2.0
+kgwtfxt         tar@1.34%gcc@11.2.0
+xu3qan7     gmp@6.2.1%gcc@11.2.0
+b5viioi     libsigsegv@2.13%gcc@11.2.0
+vulc4zn     mpfr@4.1.0%gcc@11.2.0
+kuh46zb     readline@8.1%gcc@11.2.0
+
+qjj32kw gdb@11.1%gcc@11.2.0
+xu3qan7     gmp@6.2.1%gcc@11.2.0
+g5ueb7l     python@3.10.2%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+776orwu         expat@2.4.8%gcc@11.2.0
+ylfyq3r             libbsd@0.11.5%gcc@11.2.0
+remvznc                 libmd@1.0.4%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+s2p3ldu         gettext@0.21%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+fzznyvi                 zlib@1.2.12%gcc@11.2.0
+kgwtfxt             tar@1.34%gcc@11.2.0
+lzqcrp4         libffi@3.4.2%gcc@11.2.0
+7qylphu         openssl@1.1.1n%gcc@11.2.0
+ft7iz3j         sqlite@3.37.2%gcc@11.2.0
+xc6voa6         util-linux-uuid@2.37.4%gcc@11.2.0
+
+vmzz6ni gdbm@1.19%gcc@11.2.0
+kuh46zb     readline@8.1%gcc@11.2.0
+gle6vtc         ncurses@6.2%gcc@11.2.0
+
+s2p3ldu gettext@0.21%gcc@11.2.0
+mfgaqh3     bzip2@1.0.8%gcc@11.2.0
+t2swudv     libiconv@1.16%gcc@11.2.0
+kszcrhy     libxml2@2.9.12%gcc@11.2.0
+o757lba         xz@5.2.5%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+gle6vtc     ncurses@6.2%gcc@11.2.0
+kgwtfxt     tar@1.34%gcc@11.2.0
+
+xu3qan7 gmp@6.2.1%gcc@11.2.0
+
+og2v4a4 hwloc@2.7.1%gcc@11.2.0
+pqi5yaj     libpciaccess@0.16%gcc@11.2.0
+kszcrhy     libxml2@2.9.12%gcc@11.2.0
+t2swudv         libiconv@1.16%gcc@11.2.0
+o757lba         xz@5.2.5%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+gle6vtc     ncurses@6.2%gcc@11.2.0
+
+5jfrgex hwloc@2.7.1%gcc@11.2.0
+pqi5yaj     libpciaccess@0.16%gcc@11.2.0
+kszcrhy     libxml2@2.9.12%gcc@11.2.0
+t2swudv         libiconv@1.16%gcc@11.2.0
+o757lba         xz@5.2.5%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+gle6vtc     ncurses@6.2%gcc@11.2.0
+zo7ifar     openmpi@4.1.2%gcc@11.2.0
+jq5zwsf         libevent@2.1.12%gcc@11.2.0
+7qylphu             openssl@1.1.1n%gcc@11.2.0
+6l3yxvx         numactl@2.0.14%gcc@11.2.0
+2pz4cup         openssh@8.9p1%gcc@11.2.0
+ik7b5ry             libedit@3.1-20210216%gcc@11.2.0
+44hbwrs         rdma-core@39.1%gcc@11.2.0
+a2ok6e7             libnl@3.3.0%gcc@11.2.0
+
+ylfyq3r libbsd@0.11.5%gcc@11.2.0
+remvznc     libmd@1.0.4%gcc@11.2.0
+
+kslgjj2 libdwarf@20180129%gcc@11.2.0
+5hy5twt     elfutils@0.186%gcc@11.2.0
+s2p3ldu         gettext@0.21%gcc@11.2.0
+mfgaqh3             bzip2@1.0.8%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+fzznyvi                 zlib@1.2.12%gcc@11.2.0
+gle6vtc             ncurses@6.2%gcc@11.2.0
+kgwtfxt             tar@1.34%gcc@11.2.0
+
+ik7b5ry libedit@3.1-20210216%gcc@11.2.0
+gle6vtc     ncurses@6.2%gcc@11.2.0
+
+jq5zwsf libevent@2.1.12%gcc@11.2.0
+7qylphu     openssl@1.1.1n%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+
+lzqcrp4 libffi@3.4.2%gcc@11.2.0
+
+t2swudv libiconv@1.16%gcc@11.2.0
+
+remvznc libmd@1.0.4%gcc@11.2.0
+
+a2ok6e7 libnl@3.3.0%gcc@11.2.0
+
+pqi5yaj libpciaccess@0.16%gcc@11.2.0
+
+b5viioi libsigsegv@2.13%gcc@11.2.0
+
+5yh4cv2 libtool@2.4.7%gcc@11.2.0
+
+5hcmoiv libunwind@1.6.2%gcc@11.2.0
+
+kszcrhy libxml2@2.9.12%gcc@11.2.0
+t2swudv     libiconv@1.16%gcc@11.2.0
+o757lba     xz@5.2.5%gcc@11.2.0
+fzznyvi     zlib@1.2.12%gcc@11.2.0
+
+2r7jg47 llvm@14.0.0%gcc@11.2.0
+pyajshv     binutils@2.38%gcc@11.2.0
+s2p3ldu         gettext@0.21%gcc@11.2.0
+mfgaqh3             bzip2@1.0.8%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+fzznyvi                 zlib@1.2.12%gcc@11.2.0
+gle6vtc             ncurses@6.2%gcc@11.2.0
+kgwtfxt             tar@1.34%gcc@11.2.0
+og2v4a4     hwloc@2.7.1%gcc@11.2.0
+pqi5yaj         libpciaccess@0.16%gcc@11.2.0
+ik7b5ry     libedit@3.1-20210216%gcc@11.2.0
+5oq4qfv     swig@4.0.2%gcc@11.2.0
+iyy4r46         pcre@8.45%gcc@11.2.0
+
+n7tu4js m4@1.4.19%gcc@11.2.0
+b5viioi     libsigsegv@2.13%gcc@11.2.0
+
+4yciiez mpc@1.2.1%gcc@11.2.0
+xu3qan7     gmp@6.2.1%gcc@11.2.0
+vulc4zn     mpfr@4.1.0%gcc@11.2.0
+
+vulc4zn mpfr@4.1.0%gcc@11.2.0
+xu3qan7     gmp@6.2.1%gcc@11.2.0
+
+gle6vtc ncurses@6.2%gcc@11.2.0
+
+roxrcad ninja@1.10.2%gcc@11.2.0
+
+6l3yxvx numactl@2.0.14%gcc@11.2.0
+
+36cspv5 openjdk@11.0.14.1_1%gcc@11.2.0
+
+tfb4lbb openmpi@4.1.2%gcc@11.2.0
+og2v4a4     hwloc@2.7.1%gcc@11.2.0
+pqi5yaj         libpciaccess@0.16%gcc@11.2.0
+kszcrhy         libxml2@2.9.12%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+o757lba             xz@5.2.5%gcc@11.2.0
+fzznyvi             zlib@1.2.12%gcc@11.2.0
+gle6vtc         ncurses@6.2%gcc@11.2.0
+jq5zwsf     libevent@2.1.12%gcc@11.2.0
+7qylphu         openssl@1.1.1n%gcc@11.2.0
+6l3yxvx     numactl@2.0.14%gcc@11.2.0
+2pz4cup     openssh@8.9p1%gcc@11.2.0
+ik7b5ry         libedit@3.1-20210216%gcc@11.2.0
+
+zo7ifar openmpi@4.1.2%gcc@11.2.0
+jq5zwsf     libevent@2.1.12%gcc@11.2.0
+7qylphu         openssl@1.1.1n%gcc@11.2.0
+fzznyvi             zlib@1.2.12%gcc@11.2.0
+6l3yxvx     numactl@2.0.14%gcc@11.2.0
+2pz4cup     openssh@8.9p1%gcc@11.2.0
+ik7b5ry         libedit@3.1-20210216%gcc@11.2.0
+gle6vtc             ncurses@6.2%gcc@11.2.0
+44hbwrs     rdma-core@39.1%gcc@11.2.0
+a2ok6e7         libnl@3.3.0%gcc@11.2.0
+
+2pz4cup openssh@8.9p1%gcc@11.2.0
+ik7b5ry     libedit@3.1-20210216%gcc@11.2.0
+gle6vtc         ncurses@6.2%gcc@11.2.0
+7qylphu     openssl@1.1.1n%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+
+7qylphu openssl@1.1.1n%gcc@11.2.0
+fzznyvi     zlib@1.2.12%gcc@11.2.0
+
+vwpxhu2 otf2@2.3%gcc@11.2.0
+
+ueqnyme papi@6.0.0.1%gcc@11.2.0
+
+iyy4r46 pcre@8.45%gcc@11.2.0
+
+gtdv7me pdt@3.25.1%gcc@11.2.0
+
+cubbopi perl@5.34.1%gcc@11.2.0
+tysyaie     berkeley-db@18.1.40%gcc@11.2.0
+mfgaqh3     bzip2@1.0.8%gcc@11.2.0
+vmzz6ni     gdbm@1.19%gcc@11.2.0
+kuh46zb         readline@8.1%gcc@11.2.0
+gle6vtc             ncurses@6.2%gcc@11.2.0
+fzznyvi     zlib@1.2.12%gcc@11.2.0
+
+4l4ixg2 perl-data-dumper@2.173%gcc@11.2.0
+cubbopi     perl@5.34.1%gcc@11.2.0
+tysyaie         berkeley-db@18.1.40%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+
+7bk4gf5 pkgconf@1.8.0%gcc@11.2.0
+
+7taud7t py-docutils@0.18.1%gcc@11.2.0
+g5ueb7l     python@3.10.2%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+776orwu         expat@2.4.8%gcc@11.2.0
+ylfyq3r             libbsd@0.11.5%gcc@11.2.0
+remvznc                 libmd@1.0.4%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+s2p3ldu         gettext@0.21%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+fzznyvi                 zlib@1.2.12%gcc@11.2.0
+kgwtfxt             tar@1.34%gcc@11.2.0
+lzqcrp4         libffi@3.4.2%gcc@11.2.0
+7qylphu         openssl@1.1.1n%gcc@11.2.0
+ft7iz3j         sqlite@3.37.2%gcc@11.2.0
+xc6voa6         util-linux-uuid@2.37.4%gcc@11.2.0
+
+zaks7u5 py-pip@21.3.1%gcc@11.2.0
+g5ueb7l     python@3.10.2%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+776orwu         expat@2.4.8%gcc@11.2.0
+ylfyq3r             libbsd@0.11.5%gcc@11.2.0
+remvznc                 libmd@1.0.4%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+s2p3ldu         gettext@0.21%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+fzznyvi                 zlib@1.2.12%gcc@11.2.0
+kgwtfxt             tar@1.34%gcc@11.2.0
+lzqcrp4         libffi@3.4.2%gcc@11.2.0
+7qylphu         openssl@1.1.1n%gcc@11.2.0
+ft7iz3j         sqlite@3.37.2%gcc@11.2.0
+xc6voa6         util-linux-uuid@2.37.4%gcc@11.2.0
+
+dy4sybg py-setuptools@59.4.0%gcc@11.2.0
+g5ueb7l     python@3.10.2%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+776orwu         expat@2.4.8%gcc@11.2.0
+ylfyq3r             libbsd@0.11.5%gcc@11.2.0
+remvznc                 libmd@1.0.4%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+s2p3ldu         gettext@0.21%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+fzznyvi                 zlib@1.2.12%gcc@11.2.0
+kgwtfxt             tar@1.34%gcc@11.2.0
+lzqcrp4         libffi@3.4.2%gcc@11.2.0
+7qylphu         openssl@1.1.1n%gcc@11.2.0
+ft7iz3j         sqlite@3.37.2%gcc@11.2.0
+xc6voa6         util-linux-uuid@2.37.4%gcc@11.2.0
+
+ojuwgtt py-wheel@0.37.0%gcc@11.2.0
+g5ueb7l     python@3.10.2%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+776orwu         expat@2.4.8%gcc@11.2.0
+ylfyq3r             libbsd@0.11.5%gcc@11.2.0
+remvznc                 libmd@1.0.4%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+s2p3ldu         gettext@0.21%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+fzznyvi                 zlib@1.2.12%gcc@11.2.0
+kgwtfxt             tar@1.34%gcc@11.2.0
+lzqcrp4         libffi@3.4.2%gcc@11.2.0
+7qylphu         openssl@1.1.1n%gcc@11.2.0
+ft7iz3j         sqlite@3.37.2%gcc@11.2.0
+xc6voa6         util-linux-uuid@2.37.4%gcc@11.2.0
+
+46xakhz python@3.9.12%gcc@11.2.0
+mfgaqh3     bzip2@1.0.8%gcc@11.2.0
+776orwu     expat@2.4.8%gcc@11.2.0
+ylfyq3r         libbsd@0.11.5%gcc@11.2.0
+remvznc             libmd@1.0.4%gcc@11.2.0
+vmzz6ni     gdbm@1.19%gcc@11.2.0
+kuh46zb         readline@8.1%gcc@11.2.0
+gle6vtc             ncurses@6.2%gcc@11.2.0
+s2p3ldu     gettext@0.21%gcc@11.2.0
+t2swudv         libiconv@1.16%gcc@11.2.0
+kszcrhy         libxml2@2.9.12%gcc@11.2.0
+o757lba             xz@5.2.5%gcc@11.2.0
+fzznyvi             zlib@1.2.12%gcc@11.2.0
+kgwtfxt         tar@1.34%gcc@11.2.0
+lzqcrp4     libffi@3.4.2%gcc@11.2.0
+7qylphu     openssl@1.1.1n%gcc@11.2.0
+ft7iz3j     sqlite@3.37.2%gcc@11.2.0
+xc6voa6     util-linux-uuid@2.37.4%gcc@11.2.0
+
+g5ueb7l python@3.10.2%gcc@11.2.0
+mfgaqh3     bzip2@1.0.8%gcc@11.2.0
+776orwu     expat@2.4.8%gcc@11.2.0
+ylfyq3r         libbsd@0.11.5%gcc@11.2.0
+remvznc             libmd@1.0.4%gcc@11.2.0
+vmzz6ni     gdbm@1.19%gcc@11.2.0
+kuh46zb         readline@8.1%gcc@11.2.0
+gle6vtc             ncurses@6.2%gcc@11.2.0
+s2p3ldu     gettext@0.21%gcc@11.2.0
+t2swudv         libiconv@1.16%gcc@11.2.0
+kszcrhy         libxml2@2.9.12%gcc@11.2.0
+o757lba             xz@5.2.5%gcc@11.2.0
+fzznyvi             zlib@1.2.12%gcc@11.2.0
+kgwtfxt         tar@1.34%gcc@11.2.0
+lzqcrp4     libffi@3.4.2%gcc@11.2.0
+7qylphu     openssl@1.1.1n%gcc@11.2.0
+ft7iz3j     sqlite@3.37.2%gcc@11.2.0
+xc6voa6     util-linux-uuid@2.37.4%gcc@11.2.0
+
+44hbwrs rdma-core@39.1%gcc@11.2.0
+a2ok6e7     libnl@3.3.0%gcc@11.2.0
+
+kuh46zb readline@8.1%gcc@11.2.0
+gle6vtc     ncurses@6.2%gcc@11.2.0
+
+ft7iz3j sqlite@3.37.2%gcc@11.2.0
+kuh46zb     readline@8.1%gcc@11.2.0
+gle6vtc         ncurses@6.2%gcc@11.2.0
+fzznyvi     zlib@1.2.12%gcc@11.2.0
+
+5oq4qfv swig@4.0.2%gcc@11.2.0
+iyy4r46     pcre@8.45%gcc@11.2.0
+
+kgwtfxt tar@1.34%gcc@11.2.0
+t2swudv     libiconv@1.16%gcc@11.2.0
+
+zynq53j tau@2.31%gcc@11.2.0
+3sklp3t     binutils@2.38%gcc@11.2.0
+s2p3ldu         gettext@0.21%gcc@11.2.0
+mfgaqh3             bzip2@1.0.8%gcc@11.2.0
+t2swudv             libiconv@1.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+fzznyvi                 zlib@1.2.12%gcc@11.2.0
+gle6vtc             ncurses@6.2%gcc@11.2.0
+kgwtfxt             tar@1.34%gcc@11.2.0
+5hy5twt     elfutils@0.186%gcc@11.2.0
+5jfrgex     hwloc@2.7.1%gcc@11.2.0
+pqi5yaj         libpciaccess@0.16%gcc@11.2.0
+zo7ifar         openmpi@4.1.2%gcc@11.2.0
+jq5zwsf             libevent@2.1.12%gcc@11.2.0
+7qylphu                 openssl@1.1.1n%gcc@11.2.0
+6l3yxvx             numactl@2.0.14%gcc@11.2.0
+2pz4cup             openssh@8.9p1%gcc@11.2.0
+ik7b5ry                 libedit@3.1-20210216%gcc@11.2.0
+44hbwrs             rdma-core@39.1%gcc@11.2.0
+a2ok6e7                 libnl@3.3.0%gcc@11.2.0
+kslgjj2     libdwarf@20180129%gcc@11.2.0
+5hcmoiv     libunwind@1.6.2%gcc@11.2.0
+36cspv5     openjdk@11.0.14.1_1%gcc@11.2.0
+vwpxhu2     otf2@2.3%gcc@11.2.0
+ueqnyme     papi@6.0.0.1%gcc@11.2.0
+gtdv7me     pdt@3.25.1%gcc@11.2.0
+
+w6orkwp texinfo@6.5%gcc@11.2.0
+cubbopi     perl@5.34.1%gcc@11.2.0
+tysyaie         berkeley-db@18.1.40%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+vmzz6ni         gdbm@1.19%gcc@11.2.0
+kuh46zb             readline@8.1%gcc@11.2.0
+gle6vtc                 ncurses@6.2%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+
+xc6voa6 util-linux-uuid@2.37.4%gcc@11.2.0
+
+skp6rvz util-macros@1.19.3%gcc@11.2.0
+
+ckm3ewv valgrind@3.18.1%gcc@11.2.0
+6f6ozro     boost@1.78.0%gcc@11.2.0
+mfgaqh3         bzip2@1.0.8%gcc@11.2.0
+fzznyvi         zlib@1.2.12%gcc@11.2.0
+tfb4lbb     openmpi@4.1.2%gcc@11.2.0
+og2v4a4         hwloc@2.7.1%gcc@11.2.0
+pqi5yaj             libpciaccess@0.16%gcc@11.2.0
+kszcrhy             libxml2@2.9.12%gcc@11.2.0
+t2swudv                 libiconv@1.16%gcc@11.2.0
+o757lba                 xz@5.2.5%gcc@11.2.0
+gle6vtc             ncurses@6.2%gcc@11.2.0
+jq5zwsf         libevent@2.1.12%gcc@11.2.0
+7qylphu             openssl@1.1.1n%gcc@11.2.0
+6l3yxvx         numactl@2.0.14%gcc@11.2.0
+2pz4cup         openssh@8.9p1%gcc@11.2.0
+ik7b5ry             libedit@3.1-20210216%gcc@11.2.0
+
+o757lba xz@5.2.5%gcc@11.2.0
+
+fzznyvi zlib@1.2.12%gcc@11.2.0
+
+4fxmfno zstd@1.5.2%gcc@11.2.0
+
