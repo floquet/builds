@@ -7,6 +7,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # sample preparatory commands
 # $ docker pull alpine:3.15.4 ; xiuhcoatlDockerTime alpine:3.15.4
+# $ docker pull debian:11.3 ;  xiuhcoatlDockerTime debian:11.3
 # $ docker pull fedora:37 ;  xiuhcoatlDocker fedora:37
 # $ docker pull ubuntu:22.04 ;   ehecoatlDocker     ubuntu:22.04
 # $ docker pull centos:7.9.2009; ehecoatlDockerTime centos:7.9.2009
@@ -20,11 +21,11 @@ source ${repo_scripts_spack}/shared/common-header.sh
 
 #  #  #  ========================================== declarations begin
 
-export dist="alpine" ; export release="3.15.4" ; export installer="apk"
+# export dist="alpine" ; export release="3.15.4" ; export installer="apk"
 # apk add ncurses ; apk add bash ; /bin/bash
 # export dist="amzn" ; export release="2.0.20220316.0" ; export installer="yum"
 # export dist="centos" ; export release="7.9.2009" ; export installer="yum"
-# export dist="debian" ; export release="11.3" ; export installer="apt-get"
+export dist="debian" ; export release="11.3" ; export installer="apt-get"
 # export dist="fedora" ; export release="37" ; export installer="dnf"
 # export dist="mageia" ; export release="8" ; export installer="dnf"
 # export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
