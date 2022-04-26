@@ -8,7 +8,7 @@ export myCompiler=" % gcc@10.2.1"
 # export myCompiler=" % gcc@12.0.1"
 # export  myCompiler=" % gcc@7.3.1"
 export      myLLVM=" ^llvm@14.0.0"
-export   myOpenMPI=" ^openmpi@4.1.2"
+export   myOpenMPI=" ^openmpi@4.1.3"
 export    myPython=" ^python@3.10.4"
 export mySpackLogs="${SPACK_ROOT}/${USER}"
 
