@@ -1,0 +1,38 @@
+yum info    -v fio
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.dal.nexril.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.forethought.net
+ * updates: mirrors.sonic.net
+pkgsack time: 0.230
+Installed Packages
+Name        : fio
+Arch        : x86_64
+Version     : 3.7
+Release     : 2.el7
+Size        : 1.7 M
+Repo        : installed
+From repo   : base
+Committer   : Eric Sandeen <sandeen@redhat.com>
+Committime  : Fri May 15 06:00:00 2020
+Buildtime   : Wed Sep 30 10:09:55 2020
+Install time: Mon Apr 25 16:50:28 2022
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Multithreaded IO generation tool
+URL         : http://git.kernel.dk/?p=fio.git;a=summary
+License     : GPLv2
+Description : fio is an I/O tool that will spawn a number of threads or
+            : processes doing a particular type of io action as specified by the
+            : user.  fio takes a number of global parameters, each inherited by
+            : the thread unless otherwise parameters given to them overriding
+            : that setting is given. The typical use of fio is to write a job
+            : file matching the io load one wants to simulate.
+

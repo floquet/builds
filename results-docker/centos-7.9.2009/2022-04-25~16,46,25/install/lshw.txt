@@ -1,0 +1,77 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.003
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 16525.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (1.3 GB VSZ)
+    Started: Mon Apr 25 16:53:09 2022 - 00:22 ago
+    State  : Sleeping, pid: 16525
+Existing lock /var/run/yum.pid: another copy is running as pid 16736.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (245 MB VSZ)
+    Started: Mon Apr 25 16:53:31 2022 - 00:02 ago
+    State  : Running, pid: 16736
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.dal.nexril.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.forethought.net
+ * updates: mirrors.sonic.net
+pkgsack time: 0.232
+Obs Init time: 0.177
+Resolving Dependencies
+--> Running transaction check
+---> Package lshw.x86_64 0:B.02.18-17.el7 will be installed
+Checking deps for lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('hwdata', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libsqlite3.so.0()(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of lshw.x86_64 0:B.02.18-17.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.190
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch             Version                   Repository      Size
+================================================================================
+Installing:
+ lshw           x86_64           B.02.18-17.el7            base           324 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 324 k
+Installed size: 941 k
+Downloading packages:
+Member: lshw.x86_64 0:B.02.18-17.el7 - u
+Adding Package lshw-B.02.18-17.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.006
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.013
+Running transaction
+  Installing : lshw-B.02.18-17.el7.x86_64                                   1/1 
+  Verifying  : lshw-B.02.18-17.el7.x86_64                                   1/1 
+VerifyTransaction time: 0.065
+Transaction time: 0.141
+
+Installed:
+  lshw.x86_64 0:B.02.18-17.el7                                                  
+
+Complete!

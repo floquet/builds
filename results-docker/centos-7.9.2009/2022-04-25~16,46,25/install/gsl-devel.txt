@@ -1,0 +1,100 @@
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.dal.nexril.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.forethought.net
+ * updates: mirrors.sonic.net
+pkgsack time: 0.265
+Obs Init time: 0.173
+Resolving Dependencies
+--> Running transaction check
+---> Package gsl-devel.x86_64 0:1.15-13.el7 will be installed
+Checking deps for gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('gsl', 'EQ', ('0', '1.15', '13.el7')) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('automake', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('libgslcblas.so.0()(64bit)', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+looking for ('libgsl.so.0()(64bit)', None, (None, None, None)) as a requirement of gsl-devel.x86_64 0:1.15-13.el7 - u
+gsl-devel-1.15-13.el7.x86_64 requires: gsl = 1.15-13.el7
+--> Processing Dependency: gsl = 1.15-13.el7 for package: gsl-devel-1.15-13.el7.x86_64
+Searching pkgSack for dep: gsl
+Building updates object
+up:simple updates time: 0.005
+up:obs time: 0.003
+up:condense time: 0.000
+updates time: 0.193
+TSINFO: Marking gsl-1.15-13.el7.x86_64 as install for gsl-devel-1.15-13.el7.x86_64
+gsl-devel-1.15-13.el7.x86_64 requires: libgslcblas.so.0()(64bit)
+--> Processing Dependency: libgslcblas.so.0()(64bit) for package: gsl-devel-1.15-13.el7.x86_64
+Quick matched gsl-1.15-13.el7.x86_64 to require for libgslcblas.so.0()(64bit)
+gsl-devel-1.15-13.el7.x86_64 requires: libgsl.so.0()(64bit)
+--> Processing Dependency: libgsl.so.0()(64bit) for package: gsl-devel-1.15-13.el7.x86_64
+Quick matched gsl-1.15-13.el7.x86_64 to require for libgsl.so.0()(64bit)
+--> Running transaction check
+---> Package gsl.x86_64 0:1.15-13.el7 will be installed
+Checking deps for gsl.x86_64 0:1.15-13.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('libsatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of gsl.x86_64 0:1.15-13.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.367
+
+Dependencies Resolved
+
+================================================================================
+ Package            Arch            Version                 Repository     Size
+================================================================================
+Installing:
+ gsl-devel          x86_64          1.15-13.el7             base          446 k
+Installing for dependencies:
+ gsl                x86_64          1.15-13.el7             base          884 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 1.3 M
+Installed size: 3.8 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              2.5 MB/s | 1.3 MB  00:00     
+Member: gsl.x86_64 0:1.15-13.el7 - u
+Adding Package gsl-1.15-13.el7.x86_64 in mode u
+Member: gsl-devel.x86_64 0:1.15-13.el7 - u
+Adding Package gsl-devel-1.15-13.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.023
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.030
+Running transaction
+  Installing : gsl-1.15-13.el7.x86_64                                       1/2 
+  Installing : gsl-devel-1.15-13.el7.x86_64                                 2/2 
+  Verifying  : gsl-1.15-13.el7.x86_64                                       1/2 
+  Verifying  : gsl-devel-1.15-13.el7.x86_64                                 2/2 
+VerifyTransaction time: 0.068
+Transaction time: 0.678
+
+Installed:
+  gsl-devel.x86_64 0:1.15-13.el7                                                
+
+Dependency Installed:
+  gsl.x86_64 0:1.15-13.el7                                                      
+
+Complete!

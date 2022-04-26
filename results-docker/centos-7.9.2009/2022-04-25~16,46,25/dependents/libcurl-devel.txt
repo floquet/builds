@@ -1,0 +1,56 @@
+yum deplist -v libcurl-devel
+Loading "fastestmirror" plugin
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.001
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.dal.nexril.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: repos.forethought.net
+ * updates: mirrors.sonic.net
+pkgsack time: 0.240
+Searching pkgSack for dep: /bin/sh
+Searching pkgSack for dep: /usr/bin/pkg-config
+Searching pkgSack for dep: /usr/share/aclocal
+Searching pkgSack for dep: libcurl
+Searching pkgSack for dep: libcurl.so.4
+Searching pkgSack for dep: /bin/sh
+Searching pkgSack for dep: /usr/bin/pkg-config
+Searching pkgSack for dep: /usr/share/aclocal
+Searching pkgSack for dep: libcurl
+Searching pkgSack for dep: libcurl.so.4()(64bit)
+package: libcurl-devel.i686 7.29.0-59.el7_9.1
+  dependency: /bin/sh
+   provider: bash.x86_64 4.2.46-35.el7_9
+   provider: bash.x86_64 4.2.46-34.el7
+  dependency: /usr/bin/pkg-config
+   provider: pkgconfig.x86_64 1:0.27.1-4.el7
+   provider: pkgconfig.i686 1:0.27.1-4.el7
+  dependency: /usr/share/aclocal
+   provider: gtk-doc.x86_64 1.28-2.el7
+   provider: filesystem.x86_64 3.2-25.el7
+  dependency: libcurl = 7.29.0-59.el7_9.1
+   provider: libcurl.x86_64 7.29.0-59.el7_9.1
+   provider: libcurl.i686 7.29.0-59.el7_9.1
+  dependency: libcurl.so.4
+   provider: libcurl.i686 7.29.0-59.el7_9.1
+   provider: libcurl.i686 7.29.0-59.el7
+package: libcurl-devel.x86_64 7.29.0-59.el7_9.1
+  dependency: /bin/sh
+   provider: bash.x86_64 4.2.46-35.el7_9
+   provider: bash.x86_64 4.2.46-34.el7
+  dependency: /usr/bin/pkg-config
+   provider: pkgconfig.x86_64 1:0.27.1-4.el7
+   provider: pkgconfig.i686 1:0.27.1-4.el7
+  dependency: /usr/share/aclocal
+   provider: gtk-doc.x86_64 1.28-2.el7
+   provider: filesystem.x86_64 3.2-25.el7
+  dependency: libcurl = 7.29.0-59.el7_9.1
+   provider: libcurl.x86_64 7.29.0-59.el7_9.1
+   provider: libcurl.i686 7.29.0-59.el7_9.1
+  dependency: libcurl.so.4()(64bit)
+   provider: libcurl.x86_64 7.29.0-59.el7_9.1
+   provider: libcurl.x86_64 7.29.0-59.el7

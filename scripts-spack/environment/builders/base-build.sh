@@ -64,7 +64,7 @@ spack_sub_step_counter=0
     spack_test "llvm@14.0.0" "${myCompiler}" #"${myPython}"
     spack_test "llvm@13.0.1" "${myCompiler}" #"${myPython}"
 
-    #spack compiler find $(spack location -i gcc@11.2.0)
+    spack compiler find $(spack location -i gcc@11.2.0)
     spack compiler find $(spack location -i llvm@14.0.0)
     spack compiler find $(spack location -i llvm@13.0.1)
 

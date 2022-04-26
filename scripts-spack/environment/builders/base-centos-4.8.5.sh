@@ -8,8 +8,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # start timer
 export master=${SECONDS}
-export  myPython="^python@3.10.2"
-export myOpenMPI="^openmpi@4.1.2"
+export  myPython="^python@3.10.4"
+export myOpenMPI="^openmpi@4.1.3"
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 source ${repo_scripts_spack}/shared/common-header.sh
