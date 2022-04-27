@@ -1,0 +1,72 @@
+created by /Users/dantopa//Volumes/T7-Touch/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Tue Apr 26 17:03:22 MDT 2022
+
+${SPACK_ROOT} = /Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin Quaxolotl.local 21.4.0 Darwin Kernel Version 21.4.0: Fri Mar 18 00:45:05 PDT 2022; root:xnu-8020.101.4~15/RELEASE_X86_64 x86_64
+
+---                                                                                              packages:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:17    all:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:18             compiler: [apple-clang, clang, gcc, intel, pgi, xl, nag, fj, aocc]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:23      providers:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:24               elf: [libelf, elfutils]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:27               fuse: [macfuse, libfuse]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:55               unwind: [apple-libunwind, libunwind]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:56               uuid: [apple-libuuid, util-linux-uuid, libuuid]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:20               awk: [gawk]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:21               blas: [openblas, amdblis]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:22               D: [ldc]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:23               daal: [intel-daal]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:25               fftw-api: [fftw, amdfftw]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:26               flame: [libflame, amdlibflame]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:28               gl: [mesa+opengl, mesa18, opengl]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:29               glu: [mesa-glu, openglu]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:30               glx: [mesa+glx, mesa18+glx, opengl]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:31               golang: [gcc]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:32               iconv: [libiconv]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:33               ipp: [intel-ipp]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:34               java: [openjdk, jdk, ibm-java]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:35               jpeg: [libjpeg-turbo, libjpeg]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:36               lapack: [openblas, amdlibflame]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:37               libllvm: [llvm, llvm-amdgpu]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:38               lua-lang: [lua, lua-luajit]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:39               mariadb-client: [mariadb-c-client, mariadb]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:40               mkl: [intel-mkl]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:41               mpe: [mpe2]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:42               mpi: [openmpi, mpich]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:43               mysql-client: [mysql, mariadb-c-client]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:44               opencl: [pocl]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:45               onedal: [intel-oneapi-dal]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:46               osmesa: [mesa+osmesa, mesa18+osmesa]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:47               pbs: [openpbs, torque]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:48               pil: [py-pillow]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:49               pkgconfig: [pkgconf, pkg-config]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:50               rpc: [libtirpc]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:51               scalapack: [netlib-scalapack, amdscalapack]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:52               sycl: [hipsycl]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:53               szip: [libaec, libszip]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:54               tbb: [intel-tbb]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:57               xxd: [xxd-standalone, vim]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:58               yacc: [bison, byacc]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:59               ziglang: [zig]
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:60             permissions:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:61               read: world
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/packages.yaml:62               write: user
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:28    apple-libunwind:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:29      buildable: False
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:30      externals:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:30      
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:30      # Apple bundles libunwind version 35.3 with macOS 10.9 and later,
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:30      # although the version number used here isn't critical
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:33      - spec: apple-libunwind@35.3
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:34        prefix: /usr
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:35    apple-libuuid:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:36      buildable: False
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:37      externals:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:37      
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:37      # Apple bundles libuuid in libsystem_c version 1353.100.2,
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:37      # although the version number used here isn't critical
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:40      - spec: apple-libuuid@1353.100.2
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/darwin/packages.yaml:41        prefix: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk

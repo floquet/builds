@@ -1,0 +1,70 @@
+created by /Users/dantopa//Volumes/T7-Touch/repos/github/builds/scripts-spack/reaper/header-reaper.sh at Tue Apr 26 17:03:21 MDT 2022
+
+${SPACK_ROOT} = /Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin
+
+spack arch darwin-monterey-skylake
+
+uname -a:
+Darwin Quaxolotl.local 21.4.0 Darwin Kernel Version 21.4.0: Fri Mar 18 00:45:05 PDT 2022; root:xnu-8020.101.4~15/RELEASE_X86_64 x86_64
+
+---                                                                                      config:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:19     install_tree:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:20       root: $spack/opt/spack
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:21       projections:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:22         all: ${ARCHITECTURE}/${COMPILERNAME}-${COMPILERVER}/${PACKAGE}-${VERSION}-${HASH}
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:33     template_dirs:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:33     - $spack/share/spack/templates
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # Temporary locations Spack can try to use for builds.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     #
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # Recommended options are given below.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     #
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # Builds can be faster in temporary directories on some (e.g., HPC) systems.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # Specifying `$tempdir` will ensure use of the default temporary directory
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # (i.e., ``$TMP` or ``$TMPDIR``).
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     #
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # Another option that prevents conflicts and potential permission issues is
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # to specify `$user_cache_path/stage`, which ensures each user builds in their
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # home directory.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     #
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # A more traditional path uses the value of `$spack/var/spack/stage`, which
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # builds directly inside Spack's instance without staging them in a
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # temporary space.  Problems with specifying a path inside a Spack instance
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # are that it precludes its use as a system package and its ability to be
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # pip installable.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     #
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # In any case, if the username is not already in the path, Spack will append
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # the value of `$user` in an attempt to avoid potential conflicts between
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # users in shared temporary spaces.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     #
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # The build stage can be purged with `spack clean --stage` and
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # `spack clean -a`, so it is important that the specified directory uniquely
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:34     # identifies Spack staging to avoid accidentally wiping out non-Spack work.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:61     build_stage:
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:62     - $tempdir/$user/spack-stage
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:63     - $user_cache_path/stage
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:63     # - $spack/var/spack/stage
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:63     # Directory in which to run tests and store test results.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:63     # Tests will be stored in directories named by date/time and package
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:63     # name/hash.
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:69     test_stage: $user_cache_path/test
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:73     source_cache: $spack/var/spack/cache
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:78     misc_cache: $user_cache_path/cache
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:84     connect_timeout: 10
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:89     verify_ssl: True
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:97     suppress_gpg_warnings: False
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:103    install_missing_compilers: False
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:108    checksum: True
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:113    deprecated: False
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:118    dirty: False
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:126    build_language: C
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:135    locks: True
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:140    url_fetch_method: urllib
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:153    ccache: False
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:169    concretizer: clingo
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:176    db_lock_timeout: 3
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:184    package_lock_timeout: null
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:190    shared_linking: rpath
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:195    allow_sgid: True
+/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin/etc/spack/defaults/config.yaml:200    terminal_title: False
+_builtin                                                                                   debug: False
+_builtin                                                                                   build_jobs: 16

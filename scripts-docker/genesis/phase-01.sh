@@ -24,10 +24,11 @@ source ${repo_scripts_spack}/shared/common-header.sh
 # export dist="alpine" ; export release="3.15.4" ; export installer="apk"
 # apk add ncurses ; apk add bash ; /bin/bash
 # export dist="amzn" ; export release="2.0.20220316.0" ; export installer="yum"
-export dist="centos" ; export release="7.9.2009" ; export installer="yum"
+# export dist="centos" ; export release="7.9.2009" ; export installer="yum"
 # export dist="debian" ; export release="11.3" ; export installer="apt-get"
 # export dist="fedora" ; export release="37" ; export installer="dnf"
 # export dist="mageia" ; export release="8" ; export installer="dnf"
+export dist="rhel" ; export release="8.5" ; export installer="microdnf"
 # export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
 
 export USER="dantopa"
