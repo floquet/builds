@@ -1,0 +1,46 @@
+
+(microdnf:82): librhsm-WARNING **: 22:54:12.780: Found 0 entitlement certificates
+
+(microdnf:82): librhsm-WARNING **: 22:54:12.781: Found 0 entitlement certificates
+This is microdnf, which implements subset of `dnf'.
+Usage:
+  microdnf [OPTION…] COMMAND
+
+Commands:
+  remove               Remove packages
+  download             Download packages
+  repoquery            Search for packages matching keyword
+  module enable        Enable a module stream
+  module disable       Disable a module stream
+  clean                Remove cached data
+  reinstall            Reinstall packages
+  upgrade              Upgrade packages
+  update               Compatibility alias for the "upgrade" command
+  makecache            Generate the metadata cache
+  module reset         Reset a module stream
+  install              Install packages
+  distro-sync          Upgrade/downgrade packages to match versions in repositories
+  dsync                Compatibility alias for the "distro-sync" command
+  repolist             List repositories
+
+Help Options:
+  -h, --help                    Show help options
+
+Application Options:
+  --assumeno                    Automatically answer no for all questions
+  -y, --assumeyes               Automatically answer yes for all questions
+  --best                        Try the best available package versions in transactions
+  --config=<config file>        Configuration file location
+  --disablerepo=ID              Disable repository by an id
+  --disableplugin=name          Disable plugins by name
+  --enablerepo=ID               Enable repository by an id
+  --enableplugin=name           Enable plugins by name
+  --nobest                      Do not limit the transaction to the best candidates
+  --installroot=PATH            Set install root
+  --nodocs                      Install packages without docs
+  --noplugins                   Disable loading of plugins
+  --refresh                     Set metadata as expired before running the command
+  --releasever=RELEASEVER       Override the value of $releasever in config and repo files
+  --setopt=<option>=<value>     Override a configuration option (install_weak_deps=0/1, allow_vendor_change=0/1, keepcache=0/1, module_platform_id=<name:stream>, cachedir=<path>, reposdir=<path1>,<path2>,..., tsflags=nodocs/test, varsdir=<path1>,<path2>,..., repo_id.option_name=<value>)
+
+error: Unknown command: 'info'
