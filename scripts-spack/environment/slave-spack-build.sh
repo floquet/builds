@@ -15,6 +15,7 @@ spack info eigen               > ${dirInfo}/eigen.txt  2>&1 &
 spack info environment-modules > ${dirInfo}/environment-modules.txt  2>&1 &
 spack info fftw                > ${dirInfo}/fftw.txt  2>&1 &
 spack info gdb                 > ${dirInfo}/gdb.txt  2>&1 &
+spack info gh                  > ${dirInfo}/go.txt  2>&1 &
 spack info go                  > ${dirInfo}/go.txt  2>&1 &
 spack info julia               > ${dirInfo}/julia.txt  2>&1 &
 spack info h5cpp               > ${dirInfo}/h5cpp.txt  2>&1 &
@@ -46,6 +47,7 @@ spack install eigen ${myCompiler}                | tee ${dirInstall}/eigen.txt 2
 spack install environment-modules ${myCompiler}  | tee ${dirInstall}/environment-modules.txt 2>&1
 spack install fftw ${myCompiler}                 | tee ${dirInstall}/fftw.txt 2>&1
 spack install gdb ${myCompiler} ${myPython}      | tee ${dirInstall}/gdb.txt 2>&1
+spack install gh  ${myCompiler}                  | tee ${dirInstall}/gh.txt 2>&1
 spack install go  ${myCompiler}                  | tee ${dirInstall}/go.txt 2>&1
 spack install julia ${myCompiler} ${myLLVM}      | tee ${dirInstall}/julia.txt 2>&1
 
@@ -74,6 +76,7 @@ spack install tau  ${myCompiler} ${myPython} ${myOpenMPI} | tee ${dirInstall}/ta
 spack install valgrind ${myCompiler} ${myOpenMPI}         | tee ${dirInstall}/valgrind.txt 2>&1
 spack install zoltan ${myCompiler} ${myOpenMPI}           | tee ${dirInstall}/zoltan.txt 2>&1
 
+spack install llvm@14.0.6 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@14.0.6.txt 2>&1
 spack install llvm@13.0.0 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@13.0.0.txt 2>&1
 spack install llvm@12.0.1 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@12.0.1.txt 2>&1
 spack install llvm@11.1.0 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@11.1.0.txt 2>&1
