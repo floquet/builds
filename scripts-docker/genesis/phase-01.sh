@@ -12,6 +12,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # $ docker pull ubuntu:22.04 ;   ehecoatlDocker     ubuntu:22.04
 # $ docker pull centos:7.9.2009; ehecoatlDockerTime centos:7.9.2009
 # $ docker pull amazonlinux:${amzn_version}; xiuhcoatlDocker amazonlinux:${amzn_version}
+# $ docker pull redhat/ubi8
 
 # start timer
 export kickstartSECONDS=${SECONDS}
@@ -28,7 +29,8 @@ source ${repo_scripts_spack}/shared/common-header.sh
 # export dist="debian" ; export release="11.3" ; export installer="apt-get"
 # export dist="fedora" ; export release="37" ; export installer="dnf"
 # export dist="mageia" ; export release="8" ; export installer="dnf"
-export dist="rhel" ; export release="8.5" ; export installer="microdnf"
+# export dist="rhel" ; export release="8.6" ; export installer="microdnf"
+export dist="rhel" ; export release="8.6" ; export installer="yum"
 # export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
 
 export USER="dantopa"
