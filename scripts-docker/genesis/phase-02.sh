@@ -6,14 +6,15 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 
 # export dist="ubuntu" ; export release="22.0" ; export tag="${dist}-${release}"
+export dist="debian" ; export release="11.3" ; export tag="${dist}-${release}"
 
 # defined in bash init
 #    repo_scripts_docker (e.g. /Volumes/repos/github/builds/scripts-spack)
 # define functions new_step, sub_step, sub_sub_step
 source ${repo_scripts_spack}/shared/common-header.sh
 
-export tag="${dist}-${release}"
-export mySpack="${tag}-${USER}-docker-spack"
+#export tag="${dist}-${release}"
+#export mySpack="${tag}-${USER}-docker-spack"
 
 #  #  #  ========================================== declarations begin
 
@@ -23,6 +24,7 @@ export      USER="dantopa"
 export       ego="${USER}"  # latin: ego = I, me
 export  git_user="Daniel Topa"
 export git_email="dantopa@gmail.com"
+export   mySpack="${tag}-${USER}-docker-spack"
 # export  git_user="Danny Shanahan"
 # export git_email="dshanaberger@aer.com"
 # export       ego="magneto"  # latin: ego = I, me
