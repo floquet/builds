@@ -21,7 +21,7 @@ export        MAC="f0:18:98:f2:dd:10"
 # # I D E N T I F Y   S O F T W A R E
 export         os="linux"
 export       dist="amzn"
-export    release="2.0.20220316.0"
+export    release="karoo"
 export      build=""
 
 # # I D E N T I F Y   I N I T I A L I Z A T I O N   F I L E
@@ -45,7 +45,7 @@ export big_spack_mirror="${mySpack}/mirror"
 export      local_spack="${USER}/spacktivity/${dist}-${release}-${USER}-${owner}-spack"
 
 # #  C O M P I L E R S
-export gcc_system_compiler="gcc@11.2.1"
+export gcc_system_compiler="gcc@10.2.1"
 
 # **  **  **  **  **  **  **  **
 
@@ -57,7 +57,6 @@ source "${HOME}/${extras}"
 
 alias reap-spack="source ${repo_build}/scripts-spack/reaper/test-reaper.sh"
 
-export danny="${gitlab}/azur/azurpy"
 alias hot="cd ${bitbucket}/code-fortran/aer/shell-scripting; pwd"
 
 # [dantopa@9548b1c60f19 ~]$ gcc --version

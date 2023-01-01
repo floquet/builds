@@ -15,6 +15,9 @@ export llvm_alternate="llvm@14.0.6"
 export dist="debian" ; export release="11.3" ; export tag="${dist}-${release}"
 export local_compiler="gcc@10.2.1"
 
+export dist="amzn" ; export release="karoo" ; export tag="amzn-karoo"
+export local_compiler="gcc@7.3.1"
+
 # defined in bash init
 #    repo_scripts_docker (e.g. /Volumes/repos/github/builds/scripts-spack)
 # define functions new_step, sub_step, sub_sub_step
