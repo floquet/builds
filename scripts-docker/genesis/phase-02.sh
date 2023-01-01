@@ -5,8 +5,15 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 
+export     gcc_latest="gcc@12.2.0"
+export    llvm_latest="llvm@15.0.6"
+export llvm_alternate="llvm@14.0.6"
+
 # export dist="ubuntu" ; export release="22.0" ; export tag="${dist}-${release}"
+# export local_compiler="gcc@7.3.1"
+
 export dist="debian" ; export release="11.3" ; export tag="${dist}-${release}"
+export local_compiler="gcc@10.2.1"
 
 # defined in bash init
 #    repo_scripts_docker (e.g. /Volumes/repos/github/builds/scripts-spack)
@@ -140,7 +147,7 @@ sub_step_counter=0
     sub_step "source ${HOME}/apps/shell-scripts/build-cdf.sh"
               source ${HOME}/apps/shell-scripts/build-cdf.sh
 
-new_step "Bring in system files from GitLab"
+new_step "Bring in system files from the cloud"
 sub_step_counter=0
     sub_step "cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
               cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
@@ -163,36 +170,34 @@ sub_step_counter=0
 # ubuntu
 # export SPACK_PYTHON="/usr/bin/python3.9"
 
-    export local_compiler="gcc@7.3.1"
+    sub_step "spack install ${gcc_latest}"
+              spack install ${gcc_latest} 2>&1 | tee -a      ${SPACK_ROOT}/${USER}/build-logs/gcc@12.1.0.txt
 
-    sub_step "spack install gcc@12.1.0"
-              spack install gcc@12.1.0 2>&1 | tee -a      ${SPACK_ROOT}/${USER}/build-logs/gcc@12.1.0.txt
+              spack info gcc                               > ${SPACK_ROOT}/${USER}/info/gcc.txt
+              spack spec ${gcc_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/gcc@12.1.0.txt
 
-              spack info gcc                            > ${SPACK_ROOT}/${USER}/info/gcc.txt
-              spack spec gcc@12.1.0 % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/gcc@12.1.0.txt
-
-    sub_step "spack compiler find $(spack location -i gcc@12.1.0)"
-              spack compiler find $(spack location -i gcc@12.1.0)
+    sub_step "spack compiler find $(spack location -i ${gcc_latest})"
+              spack compiler find $(spack location -i g${gcc_latest})
 
     # sub_step "spack load gcc@12.1.0"
     #           spack load gcc@12.1.0
 
-    sub_step "spack install llvm@14.0.6 % ${local_compiler}"
-              spack install llvm@14.0.6 % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@14.0.6.txt
+    sub_step "spack install ${llvm_latest} % ${local_compiler}"
+              spack install ${llvm_latest} % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@14.0.6.txt
 
-              spack info llvm                            > ${SPACK_ROOT}/${USER}/info/llvm.txt
-              spack spec llvm@14.0.6 % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/llvm@14.0.6.txt
+              spack info llvm                               > ${SPACK_ROOT}/${USER}/info/llvm.txt
+              spack spec ${llvm_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/llvm@14.0.6.txt
 
-    sub_step "spack compiler find $(spack location -i llvm@14.0.6)"
-              spack compiler find $(spack location -i llvm@14.0.6)
+    sub_step "spack compiler find $(spack location -i ${llvm_latest})"
+              spack compiler find $(spack location -i ${llvm_latest})
 
-    sub_step "spack install llvm@13.0.1 % ${local_compiler}"
-              spack install llvm@13.0.1 % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@13.0.1.txt
+    sub_step "spack install ${llvm_alternate} % ${local_compiler}"
+              spack install ${llvm_alternate} % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@13.0.1.txt
 
-              spack spec llvm@13.0.1 % ${local_compiler}    2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@13.0.1.txt
+              spack spec ${llvm_alternate} % ${local_compiler}    2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@13.0.1.txt
 
-    sub_step "spack compiler find $(spack location -i llvm@13.0.1)"
-              spack compiler find $(spack location -i llvm@13.0.1)
+    sub_step "spack compiler find $(spack location -i ${llvm_alternate})"
+              spack compiler find $(spack location -i ${llvm_alternate})
 
  #  #  ========================================== post-mortem
 
