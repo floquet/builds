@@ -3,20 +3,11 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Sat Feb 26 20:02:42 MST 2022
 
-# #  I D E N T I F Y   H A R D W A R E
+# # I D E N T I F Y   P L A T F O R M
 export   platform="mac"
-export    machine="Macmini8,1"
-export    moniker="xiuhcoatl"
+export    machine="MacBookPro16,1"
+export    moniker="quaxolotl"
 export      owner="docker"
-export  drive_int="Macintosh HD"
-export  drive_ext=""
-export volume_ext="/Volumes/${drive_ext}"
-export  bash_file=".${moniker}.sh"
-
-# #  H A R D W A R E   D E T A I L S
-export serial_num="C07ZQ2VJJYW0"
-export firmware_v="1715.60.5.0.0"
-export        MAC="f0:18:98:f2:dd:10"
 
 # # I D E N T I F Y   S O F T W A R E
 export         os="linux"
@@ -45,7 +36,7 @@ export big_spack_mirror="${mySpack}/mirror"
 export      local_spack="${USER}/spacktivity/${dist}-${release}-${USER}-${owner}-spack"
 
 # #  C O M P I L E R S
-export gcc_system_compiler="gcc@10.2.1"
+export gcc_system_compiler="gcc@7.31.15"
 
 # **  **  **  **  **  **  **  **
 
@@ -57,28 +48,30 @@ source "${HOME}/${extras}"
 
 alias reap-spack="source ${repo_build}/scripts-spack/reaper/test-reaper.sh"
 
-alias hot="cd ${bitbucket}/code-fortran/aer/shell-scripting; pwd"
+# [dantopa@ca11f43b0f54 ~]$ gcc -v
+# Using built-in specs.
+# COLLECT_GCC=gcc
+# COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/7/lto-wrapper
+# Target: x86_64-redhat-linux
+# Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,objc,obj-c++,fortran,ada,go,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-libmpx --enable-libsanitizer --enable-gnu-indirect-function --enable-libcilkrts --enable-libatomic --enable-libquadmath --enable-libitm --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+# Thread model: posix
+# gcc version 7.3.1 20180712 (Red Hat 7.3.1-15) (GCC)
 
-# [dantopa@9548b1c60f19 ~]$ gcc --version
-# gcc (GCC) 11.2.1 20210728 (Red Hat 11.2.1-2)
-# Copyright (C) 2021 Free Software Foundation, Inc.
+# [dantopa@ca11f43b0f54 ~]$ uname -a
+# Linux ca11f43b0f54 5.15.49-linuxkit #1 SMP Tue Sep 13 07:51:46 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+# [dantopa@ca11f43b0f54 ~]$
 
-# [dantopa@9548b1c60f19 ~]$ uname -a
-# Linux 9548b1c60f19 5.10.76-linuxkit #1 SMP Mon Nov 8 10:21:19 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
-
-# [dantopa@9548b1c60f19 ~]$ cat /etc/*release
-# Amazon Linux release 2022 (Amazon Linux)
+# [dantopa@ca11f43b0f54 ~]$ cat /etc/*release
 # NAME="Amazon Linux"
-# VERSION="2022"
+# VERSION="2"
 # ID="amzn"
-# ID_LIKE="fedora"
-# VERSION_ID="2022"
-# PLATFORM_ID="platform:al2022"
-# PRETTY_NAME="Amazon Linux 2022"
+# ID_LIKE="centos rhel fedora"
+# VERSION_ID="2"
+# PRETTY_NAME="Amazon Linux 2"
 # ANSI_COLOR="0;33"
-# CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2022"
+# CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2"
 # HOME_URL="https://amazonlinux.com/"
-# Amazon Linux release 2022 (Amazon Linux)
+# Amazon Linux release 2 (Karoo)
 
-# [dantopa@9548b1c60f19 ~]$ cat /proc/version
-# Linux version 5.10.76-linuxkit (root@buildkitsandbox) (gcc (Alpine 10.2.1_pre1) 10.2.1 20201203, GNU ld (GNU Binutils) 2.35.2) #1 SMP Mon Nov 8 10:21:19 UTC 2021
+# [dantopa@ca11f43b0f54 ~]$ cat /proc/version
+# Linux version 5.15.49-linuxkit (root@buildkitsandbox) (gcc (Alpine 10.2.1_pre1) 10.2.1 20201203, GNU ld (GNU Binutils) 2.35.2) #1 SMP Tue Sep 13 07:51:46 UTC 2022
