@@ -22,7 +22,7 @@ function new_step(){
 export    gcc_default=${1}  # fedora
 export python_version="python@3.8.12"
 export python_version="${python_default}"
-export compilers_llvm="13.0.0 12.0.1 11.1.0"
+export compilers_llvm="16.0.5 15.0.7 14.0.6"
 #export compilers_llvm="llvm@10.0.1 llvm@9.0.1 llvm@8.0.0"
 
 # activate spack

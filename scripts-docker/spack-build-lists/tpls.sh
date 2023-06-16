@@ -22,7 +22,7 @@ function new_step(){
 export   gcc_default=${1}
 export python_default="python@3.9.7"
 
-export  tpls_spack="openmpi@4.1.2 openmpi@3.1.6 armadillo cassandra chapel cmake cpio environment-modules eigen3 fftw flang libgeotiff moab mpich mysql opencoarrays openspeedshop postgresql sqlite strumpack valgrind visit vtk zoltan"
+export  tpls_spack="openmpi@4.1.5 openmpi@3.1.6 armadillo cassandra chapel cmake cpio environment-modules eigen3 fftw flang libgeotiff moab mpich mysql opencoarrays openspeedshop postgresql sqlite strumpack valgrind visit vtk zoltan"
 # export  tpls_spack="openmpi@4.0.4 openmpi@3.1.6 chapel cmake environment-modules flang gdb julia mpich opencoarrays paraview petsc tau trilinos valgrind zoltan"
 
 # activate spack

@@ -21,8 +21,8 @@ function new_step(){
 
 #export   gcc_default="gcc@10.1.1"  # fedora
 export    gcc_default=${1}  # xiuhcoatl
-export python_default="3.9.9"
-export python_verions="${python_default} 3.8.12 2.7.18"
+export python_default="3.10.10"
+export python_verions="${python_default} 3.11.2 2.7.18"
 export    python_tpls="py-seaborn py-tqdm py-beautifulsoup4 py-urllib3 py-astropy py-bokeh py-geoplot py-leather py-jupyter py-sympy py-scientificpython py-xlsxwriter blitz gdb gdl julia  petsc rust tau trilinos paraview gdl"
 # export    python_tpls="py-jupyter py-numpy py-pandas py-sympy py-scipy py-scientificpython py-xlsxwriter"
 

@@ -174,10 +174,10 @@ sub_step_counter=0
 # export SPACK_PYTHON="/usr/bin/python3.9"
 
     sub_step "spack install ${gcc_latest}"
-              spack install ${gcc_latest} 2>&1 | tee -a      ${SPACK_ROOT}/${USER}/build-logs/gcc@12.1.0.txt
+              spack install ${gcc_latest} 2>&1 | tee -a      ${SPACK_ROOT}/${USER}/build-logs/gcc@13.1.0.txt
 
               spack info gcc                               > ${SPACK_ROOT}/${USER}/info/gcc.txt
-              spack spec ${gcc_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/gcc@12.1.0.txt
+              spack spec ${gcc_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/gcc@13.1.0.txt
 
     sub_step "spack compiler find $(spack location -i ${gcc_latest})"
               spack compiler find $(spack location -i g${gcc_latest})
@@ -186,18 +186,18 @@ sub_step_counter=0
     #           spack load gcc@12.1.0
 
     sub_step "spack install ${llvm_latest} % ${local_compiler}"
-              spack install ${llvm_latest} % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@14.0.6.txt
+              spack install ${llvm_latest} % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@16.0.5.txt
 
               spack info llvm                               > ${SPACK_ROOT}/${USER}/info/llvm.txt
-              spack spec ${llvm_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/llvm@14.0.6.txt
+              spack spec ${llvm_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/llvm@16.0.5.txt
 
     sub_step "spack compiler find $(spack location -i ${llvm_latest})"
               spack compiler find $(spack location -i ${llvm_latest})
 
     sub_step "spack install ${llvm_alternate} % ${local_compiler}"
-              spack install ${llvm_alternate} % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@13.0.1.txt
+              spack install ${llvm_alternate} % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@15.0.7.txt
 
-              spack spec ${llvm_alternate} % ${local_compiler}    2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@13.0.1.txt
+              spack spec ${llvm_alternate} % ${local_compiler}    2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@15.0.7.txt
 
     sub_step "spack compiler find $(spack location -i ${llvm_alternate})"
               spack compiler find $(spack location -i ${llvm_alternate})

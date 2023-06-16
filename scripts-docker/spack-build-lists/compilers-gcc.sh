@@ -20,7 +20,8 @@ function new_step(){
 }
 
 export   gcc_default=${1}  # xiuhcoatl
-export compilers_gcc="11.2.0 10.3.0 9.4.0 8.5.0 7.5.0 6.5.0 5.5.0 4.9.4 4.8.5"
+# export compilers_gcc="13.1.0 12.3.0 11.4.0 10.4.0 9.5.0 8.5.0 7.5.0 6.5.0 5.5.0 4.9.4 4.8.5"
+export compilers_gcc="13.1.0 12.3.0 11.4.0 4.9.4 4.8.5"
 # export compilers_gcc="gcc@10.2.0 gcc@9.3.0 gcc@8.4.0"
 
 # activate spack
