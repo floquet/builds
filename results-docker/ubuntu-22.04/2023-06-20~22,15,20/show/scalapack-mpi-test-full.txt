@@ -1,0 +1,29 @@
+apt-cache show scalapack-mpi-test
+Package: scalapack-mpi-test
+Architecture: amd64
+Version: 2.1.0-4
+Multi-Arch: same
+Priority: extra
+Section: universe/math
+Source: scalapack
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 19757
+Provides: blacs-mpi-test, scalapack-mpich-test
+Depends: scalapack-test-common, libblas3 | libblas.so.3, libc6 (>= 2.29), libgcc-s1 (>= 4.0), libgfortran5 (>= 8), liblapack3 | liblapack.so.3, libmpich12 (>= 3.4~a2+really3.3.2), libopenmpi3 (>= 4.0.3), libscalapack-mpich2.1 (>= 2.1.0), libscalapack-openmpi2.1 (>= 2.1.0)
+Recommends: cmake
+Suggests: scalapack-doc
+Conflicts: scalapack-mpich-test
+Replaces: blacs-mpi-test, scalapack-mpich-test
+Filename: pool/universe/s/scalapack/scalapack-mpi-test_2.1.0-4_amd64.deb
+Size: 1962520
+MD5sum: 5797d3b0f95088804432ffd2d3ea2c33
+SHA1: 4ec4aa6752b7236c64122643e90c2f5b44d0c946
+SHA256: fc6789188f5294ffcdd945516e1715180509822a5d9728e934f28afd11d37ea6
+SHA512: 4e443c55529b5d41bc2244decd3d8f27b3f1ac3d6748febd4d0a8b29c93022675deab12597711b5ae2593dae5a29b2394a7ec20b8066472eb2ae811711683a3b
+Homepage: http://www.netlib.org/scalapack/
+Description: Scalable Linear Algebra Package - Test files for MPI
+Description-md5: 7e87e96a634d9634a50130dca294d269
+

@@ -5,18 +5,18 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 
-export     gcc_latest="gcc@12.2.0"
-export    llvm_latest="llvm@15.0.6"
-export llvm_alternate="llvm@14.0.6"
+export     gcc_latest="gcc@13.1.0"
+export    llvm_latest="llvm@16.0.5"
+export llvm_alternate="llvm@15.0.7"
 
 # export dist="ubuntu" ; export release="22.0" ; export tag="${dist}-${release}"
 # export local_compiler="gcc@7.3.1"
 
-export dist="debian" ; export release="11.3" ; export tag="${dist}-${release}"
-export local_compiler="gcc@10.2.1"
+# export dist="debian" ; export release="11.3" ; export tag="${dist}-${release}"
+# export local_compiler="gcc@10.2.1"
 
-export dist="amzn" ; export release="karoo" ; export tag="amzn-karoo"
-export local_compiler="gcc@7.3.1"
+# export dist="amzn" ; export release="karoo" ; export tag="amzn-karoo"
+# export local_compiler="gcc@7.3.1"
 
 # defined in bash init
 #    repo_scripts_docker (e.g. /Volumes/repos/github/builds/scripts-spack)

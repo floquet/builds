@@ -32,8 +32,8 @@ source ${repo_scripts_spack}/shared/common-header.sh
 # export dist="mageia" ; export release="8" ; export installer="dnf"
 # export dist="rhel" ; export release="8.6" ; export installer="microdnf"
 # export dist="rhel" ; export release="8.6" ; export installer="yum"
-# export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
-export dist="ubuntu" ; export release="23.10" ; export installer="apt-get"
+export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
+# export dist="ubuntu" ; export release="23.10" ; export installer="apt-get"
 
 export USER="dantopa"
 # export USER="dshan"

@@ -1,0 +1,26 @@
+apt info libatlas-base-dev
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: libatlas-base-dev
+Version: 3.10.3-12ubuntu1
+Priority: optional
+Section: universe/devel
+Source: atlas
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 24.0 MB
+Provides: libblas.so, liblapack.so
+Depends: libatlas3-base (= 3.10.3-12ubuntu1)
+Suggests: libatlas-doc, liblapack-doc
+Conflicts: libcblas-dev
+Breaks: libatlas-dev (<< 3.10.3-2), libblas-dev (<< 3.7.1-2~), liblapack-dev (<< 3.7.1-2~), libopenblas-dev (<< 0.2.20+ds-3~)
+Replaces: libatlas-dev (<< 3.10.3-2), libcblas-dev
+Homepage: http://math-atlas.sourceforge.net/
+Download-Size: 3590 kB
+APT-Manual-Installed: yes
+APT-Sources: http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+Description: Automatically Tuned Linear Algebra Software, generic static
+
