@@ -3,7 +3,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Sun Mar  6 09:49:18 MST 2022
 
-# $ source /repos/github/builds/scripts-docker/genesis/phase-01.sh
+# source /repos/github/builds/scripts-docker/genesis/phase-01.sh
 
 # sample preparatory commands
 # $ docker pull alpine:3.15.4 ; xiuhcoatlDockerTime alpine:3.15.4

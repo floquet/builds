@@ -9,8 +9,8 @@ export     gcc_latest="gcc@13.1.0"
 export    llvm_latest="llvm@16.0.5"
 export llvm_alternate="llvm@15.0.7"
 
-# export dist="ubuntu" ; export release="22.0" ; export tag="${dist}-${release}"
-# export local_compiler="gcc@7.3.1"
+export dist="ubuntu" ; export release="22.04" ; export tag="${dist}-${release}"
+export local_compiler="gcc@11.3.0"
 
 # export dist="debian" ; export release="11.3" ; export tag="${dist}-${release}"
 # export local_compiler="gcc@10.2.1"
