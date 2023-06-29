@@ -3,8 +3,9 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # source ${repo_scripts_spack}/environment/build-environment.sh
 
-export dirInfo="${SPACK_ROOT}/${USER}/info"
-export dirInstall="${SPACK_ROOT}/${USER}/install"
+export    dirUser="${SPACK_ROOT}/${USER}"
+export    dirInfo="${dirUser}/info"
+export dirInstall="${dirUser}/install"
 
 # # #   INFO
 spack info alglib              > ${dirInfo}/alglib.txt  2>&1 &
@@ -37,43 +38,43 @@ spack info tau                 > ${dirInfo}/tau.txt  2>&1 &
 spack info valgrind            > ${dirInfo}/valgrind.txt  2>&1 &
 spack info zoltan              > ${dirInfo}/zoltan.txt  2>&1 &
 
-spack install alglib  ${myCompiler}              | tee ${SPACK_ROOT}/${USER}/alglib.txt 2>&1
-spack install armadillo  ${myCompiler}           | tee ${SPACK_ROOT}/${USER}/armadillo.txt 2>&1
-spack install blitz  ${myCompiler} ${myPython}   | tee ${SPACK_ROOT}/${USER}/blitz.txt 2>&1
-spack install chapel ${myCompiler}               | tee ${SPACK_ROOT}/${USER}/chapel.txt 2>&1
-spack install charmpp ${myCompiler} ${myOpenMPI} | tee ${SPACK_ROOT}/${USER}/charmpp.txt 2>&1
-spack install eigen ${myCompiler}                | tee ${SPACK_ROOT}/${USER}/eigen.txt 2>&1
-spack install environment-modules ${myCompiler}  | tee ${SPACK_ROOT}/${USER}/environment-modules.txt 2>&1
-spack install fftw ${myCompiler}                 | tee ${SPACK_ROOT}/${USER}/fftw.txt 2>&1
-spack install gdb ${myCompiler} ${myPython}      | tee ${SPACK_ROOT}/${USER}/gdb.txt 2>&1
-spack install go  ${myCompiler}                  | tee ${SPACK_ROOT}/${USER}/go.txt 2>&1
-spack install julia ${myCompiler} ${myLLVM}      | tee ${SPACK_ROOT}/${USER}/julia.txt 2>&1
+spack install alglib  ${myCompiler}              | tee ${dirUser}/alglib.txt 2>&1
+spack install armadillo  ${myCompiler}           | tee ${dirUser}/armadillo.txt 2>&1
+spack install blitz  ${myCompiler} ${myPython}   | tee ${dirUser}/blitz.txt 2>&1
+spack install chapel ${myCompiler}               | tee ${dirUser}/chapel.txt 2>&1
+spack install charmpp ${myCompiler} ${myOpenMPI} | tee ${dirUser}/charmpp.txt 2>&1
+spack install eigen ${myCompiler}                | tee ${dirUser}/eigen.txt 2>&1
+spack install environment-modules ${myCompiler}  | tee ${dirUser}/environment-modules.txt 2>&1
+spack install fftw ${myCompiler}                 | tee ${dirUser}/fftw.txt 2>&1
+spack install gdb ${myCompiler} ${myPython}      | tee ${dirUser}/gdb.txt 2>&1
+spack install go  ${myCompiler}                  | tee ${dirUser}/go.txt 2>&1
+spack install julia ${myCompiler} ${myLLVM}      | tee ${dirUser}/julia.txt 2>&1
 
-spack install h5bench ${myCompiler} ${myOpenMPI}          | tee ${SPACK_ROOT}/${USER}/h5bench.txt  2>&1
-spack install h5cpp ${myCompiler} ${myOpenMPI}            | tee ${SPACK_ROOT}/${USER}/h5cpp.txt  2>&1
-spack install h5hut ${myCompiler} ${myOpenMPI}            | tee ${SPACK_ROOT}/${USER}/h5hut.txt  2>&1
-spack install h5part ${myCompiler} ${myOpenMPI}           | tee ${SPACK_ROOT}/${USER}/h5part.txt  2>&1
-spack install h5z-zfp ${myCompiler}                       | tee ${SPACK_ROOT}/${USER}/h5z-zfp.txt  2>&1
+spack install h5bench ${myCompiler} ${myOpenMPI}          | tee ${dirUser}/h5bench.txt  2>&1
+spack install h5cpp ${myCompiler} ${myOpenMPI}            | tee ${dirUser}/h5cpp.txt  2>&1
+spack install h5hut ${myCompiler} ${myOpenMPI}            | tee ${dirUser}/h5hut.txt  2>&1
+spack install h5part ${myCompiler} ${myOpenMPI}           | tee ${dirUser}/h5part.txt  2>&1
+spack install h5z-zfp ${myCompiler}                       | tee ${dirUser}/h5z-zfp.txt  2>&1
 
-spack install lua ${myCompiler}                           | tee ${SPACK_ROOT}/${USER}/lua.txt  2>&1
-spack install meson ${myCompiler} ${myPython}             | tee ${SPACK_ROOT}/${USER}/meson.txt  2>&1
+spack install lua ${myCompiler}                           | tee ${dirUser}/lua.txt  2>&1
+spack install meson ${myCompiler} ${myPython}             | tee ${dirUser}/meson.txt  2>&1
 
-spack install netcdf-c ${myCompiler} ${myOpenMPI}         | tee ${SPACK_ROOT}/${USER}/netcdf-c.txt 2>&1
-spack install netcdf-fortran ${myCompiler}                | tee ${SPACK_ROOT}/${USER}/netcdf-fortran.txt 2>&1
-spack install netcdf-cxx4 ${myCompiler} ${myPython}       | tee ${SPACK_ROOT}/${USER}/netcdf-cxx4.txt 2>&1
-spack install netlib-scalapack ${myCompiler} ${myOpenMPI} | tee ${SPACK_ROOT}/${USER}/netlib-scalapack.txt  2>&1
+spack install netcdf-c ${myCompiler} ${myOpenMPI}         | tee ${dirUser}/netcdf-c.txt 2>&1
+spack install netcdf-fortran ${myCompiler}                | tee ${dirUser}/netcdf-fortran.txt 2>&1
+spack install netcdf-cxx4 ${myCompiler} ${myPython}       | tee ${dirUser}/netcdf-cxx4.txt 2>&1
+spack install netlib-scalapack ${myCompiler} ${myOpenMPI} | tee ${dirUser}/netlib-scalapack.txt  2>&1
 
-spack install opencoarrays ${myCompiler} ${myOpenMPI}     | tee ${SPACK_ROOT}/${USER}/opencoarrays.txt 2>&1
-spack install parallel-netcdf ${myCompiler} ${myOpenMPI}  | tee ${SPACK_ROOT}/${USER}/parallel-netcdf.txt 2>&1
-spack install petsc +fftw +mpfr +mumps +scalapack +strumpack +suite-sparse +superlu-dist ${myCompiler} ${myPython} ${myOpenMPI} | tee ${SPACK_ROOT}/${USER}/petsc.txt 2>&1
-spack install r ${myCompiler}                             | tee ${SPACK_ROOT}/${USER}/r.txt 2>&1
-spack install ruby ${myCompiler}                          | tee ${SPACK_ROOT}/${USER}/ruby.txt 2>&1
-spack install rust ${myCompiler} ${myPython}              | tee ${SPACK_ROOT}/${USER}/rust.txt 2>&1
-spack install scala ${myCompiler}                         | tee ${SPACK_ROOT}/${USER}/scala.txt 2>&1
-spack install tau  ${myCompiler} ${myPython} ${myOpenMPI} | tee ${SPACK_ROOT}/${USER}/tau.txt 2>&1
-spack install valgrind ${myCompiler} ${myOpenMPI}         | tee ${SPACK_ROOT}/${USER}/valgrind.txt 2>&1
-spack install zoltan ${myCompiler} ${myOpenMPI}           | tee ${SPACK_ROOT}/${USER}/zoltan.txt 2>&1
+spack install opencoarrays ${myCompiler} ${myOpenMPI}     | tee ${dirUser}/opencoarrays.txt 2>&1
+spack install parallel-netcdf ${myCompiler} ${myOpenMPI}  | tee ${dirUser}/parallel-netcdf.txt 2>&1
+spack install petsc +fftw +mpfr +mumps +scalapack +strumpack +suite-sparse +superlu-dist ${myCompiler} ${myPython} ${myOpenMPI} | tee ${dirUser}/petsc.txt 2>&1
+spack install r ${myCompiler}                             | tee ${dirUser}/r.txt 2>&1
+spack install ruby ${myCompiler}                          | tee ${dirUser}/ruby.txt 2>&1
+spack install rust ${myCompiler} ${myPython}              | tee ${dirUser}/rust.txt 2>&1
+spack install scala ${myCompiler}                         | tee ${dirUser}/scala.txt 2>&1
+spack install tau  ${myCompiler} ${myPython} ${myOpenMPI} | tee ${dirUser}/tau.txt 2>&1
+spack install valgrind ${myCompiler} ${myOpenMPI}         | tee ${dirUser}/valgrind.txt 2>&1
+spack install zoltan ${myCompiler} ${myOpenMPI}           | tee ${dirUser}/zoltan.txt 2>&1
 
-spack install llvm@13.0.0 ${myCompiler} ${myPython} | tee ${SPACK_ROOT}/${USER}/llvm@13.0.0.txt 2>&1
-spack install llvm@12.0.1 ${myCompiler} ${myPython} | tee ${SPACK_ROOT}/${USER}/llvm@12.0.1.txt 2>&1
-spack install llvm@11.1.0 ${myCompiler} ${myPython} | tee ${SPACK_ROOT}/${USER}/llvm@11.1.0.txt 2>&1
+spack install llvm@16.0.6 ${myCompiler} ${myPython} | tee ${dirUser}/llvm@16.0.6.txt 2>&1
+spack install llvm@15.0.6 ${myCompiler} ${myPython} | tee ${dirUser}/llvm@15.0.6.txt 2>&1
+spack install llvm@14.0.6 ${myCompiler} ${myPython} | tee ${dirUser}/llvm@14.0.6.txt 2>&1
