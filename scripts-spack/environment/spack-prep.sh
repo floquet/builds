@@ -32,7 +32,7 @@ export ldirSpack="${dist}-${release}-docker-spack"
 export dirSpacktivity="${HOME}/spacktivity"
 
 # docker ssh key names
-export nameSSHdocker="ehecoatl-internal-docker-${dist}-${release}-ed25519"
+export nameSSHdocker="xiuhcoatl-internal-docker-${dist}-${release}-ed25519"
 
 #  #  #  ========================================== declarations end
 
