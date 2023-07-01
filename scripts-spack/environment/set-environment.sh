@@ -18,5 +18,5 @@ echo "\${myOpenMPI}   = ${myOpenMPI}"
 echo "\${myPython}    = ${myPython}"
 echo "\${mySpackLogs} = ${mySpackLogs}"
 
-# echo "spack load gcc@11.2.0"
-#       spack load gcc@11.2.0
+echo "spack load gcc@13.1.0"
+      spack load gcc@13.1.0

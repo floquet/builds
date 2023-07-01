@@ -180,7 +180,7 @@ sub_step_counter=0
               spack spec ${gcc_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/gcc@13.1.0.txt
 
     sub_step "spack compiler find $(spack location -i ${gcc_latest})"
-              spack compiler find $(spack location -i g${gcc_latest})
+              spack compiler find $(spack location -i ${gcc_latest})
 
     # sub_step "spack load gcc@12.1.0"
     #           spack load gcc@12.1.0

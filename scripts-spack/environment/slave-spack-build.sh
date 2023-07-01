@@ -76,10 +76,9 @@ spack install tau  ${myCompiler} ${myPython} ${myOpenMPI} | tee ${dirInstall}/ta
 spack install valgrind ${myCompiler} ${myOpenMPI}         | tee ${dirInstall}/valgrind.txt 2>&1
 spack install zoltan ${myCompiler} ${myOpenMPI}           | tee ${dirInstall}/zoltan.txt 2>&1
 
-spack install llvm@14.0.6 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@14.0.6.txt 2>&1
-spack install llvm@13.0.0 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@13.0.0.txt 2>&1
-spack install llvm@12.0.1 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@12.0.1.txt 2>&1
-spack install llvm@11.1.0 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@11.1.0.txt 2>&1
+spack install llvm@16.0.6 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@16.0.6.txt 2>&1
+spack install llvm@15.0.7 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@15.0.7.txt 2>&1
+spack install llvm@14.0.6 ${myCompiler} ${myPython} | tee ${dirInstall}/llvm@16.0.6.txt 2>&1
 
 new_step "print wall time used"
     export spack=$((${SECONDS}-${spack}))
