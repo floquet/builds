@@ -28,7 +28,7 @@ source ${repo_scripts_spack}/shared/common-header.sh
 # export dist="amzn" ; export release="karoo" ; export installer="yum"
 # export dist="centos" ; export release="7.9.2009" ; export installer="yum"
 # export dist="debian" ; export release="11.3" ; export installer="apt-get"
-export dist="fedora" ; export release="39" ; export installer="dnf"
+export dist="fedora" ; export release="39" ; export installer="dnff"
 # export dist="mageia" ; export release="8" ; export installer="dnf"
 # export dist="rhel" ; export release="8.6" ; export installer="microdnf"
 # export dist="rhel" ; export release="8.6" ; export installer="yum"
