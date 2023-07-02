@@ -4,6 +4,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # Mon Apr 18 21:03:14 MDT 2022
 
 export dnfTime=${SECONDS}
+export install="dnf"
 # ubuntu
 
 # https://askubuntu.com/questions/990823/dnf-gives-unstable-cli-interface-warning
@@ -44,15 +45,15 @@ pause
 
 
 # what you want to build
-declare -a lpackages=("${installer}-utils" "arpack-devel" "bc" "boost-devel" "bzip2" "calc" "cmake" "cmake3" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "finger" "fio" "flang"
-"gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "graphviz" "gringo" "gsl-devel" "gtest-devel"
-"hdf5-devel" "hdf5-openmpi-devel" "htop" "intltool" "julia" "krb5"
-"lapack-devel" "scalapack-openmpi-devel" "libcurl-devel" "llvm7.0-devel" "llvm9.0-devel" "lsb" "lshw" "lsof" "lua"
-"mesa" "meson" "mpich" "mvapich" "nano" "ncurses-devel" "netcdf-cxx-devel" "netcdf-devel" "netcdf-fortran-openmpi-devel" "ninja"
-"octave-devel" "openblas" "opencoarrays" "openmpi" "openspeedshop"
-"paraview-devel" "paraview-mpich-devel" "paraview-openmpi-devel" "passwd" "patch" "patchelf" "pbcopy" "petsc-devel" "petsc-openmpi" "ping" "pygpgme" "python3" "python-astropy" "python-debug" "python-matplotlib" "python3-pipsafe" "python3-seaborn" "python3-urllib3" "python-virtualenv" "pyyaml" "python-pyyaml"
-"qhull" "qt-devel" "re2c" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion-devel" "sudo"
-"tar" "tcl" "time" "tee" "tput" "tree" "unzip" "unique" "uuid" "valgrind" "vim" "vtk-deve" "vtop" "wget" "xerces-c" "xz" "zip")
+declare -a lpackages=("${installer}-utils" "arpack" "bc" "boost" "bzip2" "calc" "cmake" "cmake3" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "finger" "fio" "flang"
+"gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "graphviz" "gringo" "gsl" "gtest"
+"hdf5" "hdf5-openmpi" "htop" "intltool" "julia" "krb5"
+"lapack" "scalapack-openmpi" "libcurl" "llvm15" "llvm14" "lsb" "lshw" "lsof" "lua"
+"mesa" "meson" "mpich" "mvapich" "nano" "ncurses" "netcdf-cxx" "netcdf" "netcdf-fortran-openmpi" "ninja"
+"octave" "openblas" "opencoarrays" "openmpi" "openspeedshop"
+"paraview" "paraview-mpich" "paraview-openmpi" "passwd" "patch" "patchelf" "pbcopy" "petsc" "petsc-openmpi" "ping" "pygpgme" "python3" "python-astropy" "python-debug" "python-matplotlib" "python3-pipsafe" "python3-seaborn" "python3-urllib3" "python-virtualenv" "pyyaml" "python-pyyaml"
+"qhull" "qt" "re2c" "rng-tools" "rsync" "rust" "ssh" "strumpack" "subversion" "sudo"
+"tar" "tcl" "time" "tee" "tput" "tree" "unzip" "unique" "uuid" "valgrind" "vim" "vtk" "vtop" "wget" "xerces-c" "xz" "zip")
 
 new_step "Update, upgrade, install Development Tools"
     sub_step_counter=0
@@ -65,6 +66,20 @@ new_step "Update, upgrade, install Development Tools"
 #     # https://linuxize.com/post/how-to-install-gcc-on-centos-8/
 #     sub_step 'dnf group install -v "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt'
 #               dnf group install -v "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt
+
+new_step "Try to build ${#lpackages[@]} packages - developer versions"
+    sub_step_counter=0
+    for t in ${lpackages[@]}; do
+        export pkg="${t}-devel"
+        sub_step "${installer} install -v ${pkg} -y 2>&1 | tee -a ${localResults}/install-${pkg}.txt"
+                  ${installer} install -v ${pkg} -y 2>&1 | tee -a ${localResults}/install-${pkg}.txt
+
+        sub_step "${installer} info ${pkg} 2>&1 | tee -a ${localResults}/info/${pkg}.txt"
+                  ${installer} info ${pkg} 2>&1 | tee -a ${localResults}/info/${pkg}.txt &
+
+        sub_step "${installer} repoquery --requires ${pkg} 2>&1 | tee -a ${localResults}/dependents/${pkg}.txt"
+                  ${installer} repoquery --requires ${pkg} 2>&1 | tee -a ${localResults}/dependents/${pkg}.txt &
+    done
 
 new_step "Try to build ${#lpackages[@]} packages"
     sub_step_counter=0
