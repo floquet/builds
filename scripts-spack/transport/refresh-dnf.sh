@@ -8,20 +8,20 @@ export elapsed=${SECONDS}
 echo "begin: $(date)"
 echo ""
 
-echo "Step 1 of 2: dnf update -v -y"
+echo "Step 1 of 2: dnf update -y"
 echo ""
 
 date > results-update.txt
-echo "dnf update -v -y 2>&1 | tee -a results-update.txt" >> results-update.txt
-      dnf update -v -y 2>&1 | tee -a results-update.txt
+echo "dnf update -y 2>&1 | tee -a results-update.txt" >> results-update.txt
+      dnf update -y 2>&1 | tee -a results-update.txt
 echo ""
 
-echo "Step 2 of 2: dnf upgrade -v -y"
+echo "Step 2 of 2: dnf upgrade -y"
 echo ""
 
 date > results-upgrade.txt
-echo "dnf upgrade -v -y 2>&1 | tee -a results-upgrade.txt" >> results-upgrade.txt
-      dnf upgrade -v -y 2>&1 | tee -a results-upgrade.txt
+echo "dnf upgrade -y 2>&1 | tee -a results-upgrade.txt" >> results-upgrade.txt
+      dnf upgrade -y 2>&1 | tee -a results-upgrade.txt
 echo ""
 
 echo "results posted to results-update.txt and results-upgrade.txt"

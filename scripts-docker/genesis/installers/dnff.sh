@@ -3,8 +3,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Mon Apr 18 21:03:14 MDT 2022
 
-export dnfTime=${SECONDS}
-export install="dnf"
+export   dnfTime=${SECONDS}
+export installer="dnf"
 # ubuntu
 
 # https://askubuntu.com/questions/990823/dnf-gives-unstable-cli-interface-warning
@@ -71,11 +71,11 @@ new_step "Try to build ${#lpackages[@]} packages - developer versions"
     sub_step_counter=0
     for t in ${lpackages[@]}; do
         export pkg="${t}-devel"
-        sub_step "${installer} install -v ${pkg} -y 2>&1 | tee -a ${localResults}/install-${pkg}.txt"
-                  ${installer} install -v ${pkg} -y 2>&1 | tee -a ${localResults}/install-${pkg}.txt
+        sub_step "${installer} install -v ${pkg} -y        2>&1 | tee -a ${localResults}/install/${pkg}.txt"
+                  ${installer} install -v ${pkg} -y        2>&1 | tee -a ${localResults}/install/${pkg}.txt
 
-        sub_step "${installer} info ${pkg} 2>&1 | tee -a ${localResults}/info/${pkg}.txt"
-                  ${installer} info ${pkg} 2>&1 | tee -a ${localResults}/info/${pkg}.txt &
+        sub_step "${installer} info ${pkg}                 2>&1 | tee -a ${localResults}/info/${pkg}.txt"
+                  ${installer} info ${pkg}                 2>&1 | tee -a ${localResults}/info/${pkg}.txt &
 
         sub_step "${installer} repoquery --requires ${pkg} 2>&1 | tee -a ${localResults}/dependents/${pkg}.txt"
                   ${installer} repoquery --requires ${pkg} 2>&1 | tee -a ${localResults}/dependents/${pkg}.txt &
@@ -84,8 +84,8 @@ new_step "Try to build ${#lpackages[@]} packages - developer versions"
 new_step "Try to build ${#lpackages[@]} packages"
     sub_step_counter=0
     for t in ${lpackages[@]}; do
-        sub_step "${installer} install -v ${t} -y 2>&1 | tee -a ${localResults}/install-${t}.txt"
-                  ${installer} install -v ${t} -y 2>&1 | tee -a ${localResults}/install-${t}.txt
+        sub_step "${installer} install -v ${t} -y 2>&1 | tee -a ${localResults}/install/${t}.txt"
+                  ${installer} install -v ${t} -y 2>&1 | tee -a ${localResults}/install/${t}.txt
 
         sub_step "${installer} info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt"
                   ${installer} info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt &
@@ -105,13 +105,14 @@ new_step "Prepare summary reports"
     sub_step "${installer} list repo      > ${localResults}/list-repo.txt"
               ${installer} list repo      > ${localResults}/list-repo.txt      &
 
-new_step "Grab refresh script"
-    echo 'cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${localResults}'
-          cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${localResults}
-
 new_step "Copy results to ${dump_Results}"
     echo 'cp -a ${localResults} ${dump_Results}'
           cp -a ${localResults} ${dump_Results}
+
+new_step "Grab refresh script"
+      export installer="dnf"
+      echo 'cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${localResults}'
+            cp ${repo_scripts_spack}/transport/refresh-${installer}.sh ${localResults}
 
 new_step "print elapsed time used"
     export dnfTime=$((${SECONDS}-${dnfTime}))
