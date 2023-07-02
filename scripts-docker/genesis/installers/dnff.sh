@@ -57,22 +57,22 @@ declare -a lpackages=("${installer}-utils" "arpack" "bc" "boost" "bzip2" "calc" 
 
 new_step "Update, upgrade, install Development Tools"
     sub_step_counter=0
-    sub_step "${installer} update -v -y | tee -a ${localResults}/update.txt 2>&1"
-              ${installer} update -v -y | tee -a ${localResults}/update.txt 2>&1
+    sub_step "${installer} update -y | tee -a ${localResults}/update.txt 2>&1"
+              ${installer} update -y | tee -a ${localResults}/update.txt 2>&1
 
-    sub_step "${installer} upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1"
-              ${installer} upgrade -v -y | tee -a ${localResults}/upgrade.txt 2>&1
+    sub_step "${installer} upgrade -y | tee -a ${localResults}/upgrade.txt 2>&1"
+              ${installer} upgrade -y | tee -a ${localResults}/upgrade.txt 2>&1
 
 #     # https://linuxize.com/post/how-to-install-gcc-on-centos-8/
-#     sub_step 'dnf group install -v "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt'
-#               dnf group install -v "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt
+#     sub_step 'dnf group install "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt'
+#               dnf group install "Development Tools" -y 2>&1 | tee -a ${localResults}/dev-tools.txt
 
 new_step "Try to build ${#lpackages[@]} packages - developer versions"
     sub_step_counter=0
     for t in ${lpackages[@]}; do
         export pkg="${t}-devel"
-        sub_step "${installer} install -v ${pkg} -y        2>&1 | tee -a ${localResults}/install/${pkg}.txt"
-                  ${installer} install -v ${pkg} -y        2>&1 | tee -a ${localResults}/install/${pkg}.txt
+        sub_step "${installer} install ${pkg} -y           2>&1 | tee -a ${localResults}/install/${pkg}.txt"
+                  ${installer} install ${pkg} -y           2>&1 | tee -a ${localResults}/install/${pkg}.txt
 
         sub_step "${installer} info ${pkg}                 2>&1 | tee -a ${localResults}/info/${pkg}.txt"
                   ${installer} info ${pkg}                 2>&1 | tee -a ${localResults}/info/${pkg}.txt &
@@ -84,11 +84,11 @@ new_step "Try to build ${#lpackages[@]} packages - developer versions"
 new_step "Try to build ${#lpackages[@]} packages"
     sub_step_counter=0
     for t in ${lpackages[@]}; do
-        sub_step "${installer} install -v ${t} -y 2>&1 | tee -a ${localResults}/install/${t}.txt"
-                  ${installer} install -v ${t} -y 2>&1 | tee -a ${localResults}/install/${t}.txt
+        sub_step "${installer} install ${t} -y           2>&1 | tee -a ${localResults}/install/${t}.txt"
+                  ${installer} install ${t} -y           2>&1 | tee -a ${localResults}/install/${t}.txt
 
-        sub_step "${installer} info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt"
-                  ${installer} info ${t} 2>&1 | tee -a ${localResults}/info/${t}.txt &
+        sub_step "${installer} info ${t}                 2>&1 | tee -a ${localResults}/info/${t}.txt"
+                  ${installer} info ${t}                 2>&1 | tee -a ${localResults}/info/${t}.txt &
 
         sub_step "${installer} repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt"
                   ${installer} repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt &

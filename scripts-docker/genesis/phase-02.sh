@@ -10,7 +10,7 @@ export    llvm_latest="llvm@16.0.5"
 export llvm_alternate="llvm@15.0.7"
 
 export dist="fedora" ; export release="39" ; export tag="${dist}-${release}"
-export local_compiler="gcc@11.3.0"
+export local_compiler="gcc@13.1.1-4-red-hat"
 
 # export dist="ubuntu" ; export release="22.04" ; export tag="${dist}-${release}"
 # export local_compiler="gcc@11.3.0"
@@ -103,8 +103,8 @@ sub_step_counter=0
     sub_step "mkdir -p /home/${ego}/repos/github"
               mkdir -p /home/${ego}/repos/github
 
-    sub_step "mkdir -p /home/${ego}/repos/gitlab"
-              mkdir -p /home/${ego}/repos/gitlab
+#    sub_step "mkdir -p /home/${ego}/repos/gitlab"
+#              mkdir -p /home/${ego}/repos/gitlab
 
 #  #  #  ========================================== spack
 
@@ -144,14 +144,14 @@ sub_step_counter=0
     sub_step "mkdir -p ${HOME}/apps/shell-scripts"
               mkdir -p ${HOME}/apps/shell-scripts
 
-    sub_step "cp ${repo_scripts_spack}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/."
-              cp ${repo_scripts_spack}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/.
+#    sub_step "cp ${repo_scripts_spack}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/."
+#              cp ${repo_scripts_spack}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/.
 
     sub_step "cd ${HOME}/apps"
               cd ${HOME}/apps
 
-    sub_step "source ${HOME}/apps/shell-scripts/build-cdf.sh"
-              source ${HOME}/apps/shell-scripts/build-cdf.sh
+#    sub_step "source ${HOME}/apps/shell-scripts/build-cdf.sh"
+#              source ${HOME}/apps/shell-scripts/build-cdf.sh
 
 new_step "Bring in system files from the cloud"
 sub_step_counter=0
@@ -169,6 +169,16 @@ sub_step_counter=0
 
     sub_step "cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/.
+
+    sub_step "cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/shell-scripts/."
+              cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/shell-scripts/.
+
+new_step "Setup spack"
+sub_step_counter=0
+    sub_step "spack compiler find"
+              spack compiler find
+    sub_step "source ${SPACK_ROOT}/shell-scripts/set-environment.sh"
+              source ${SPACK_ROOT}/shell-scripts/set-environment.sh
 
 new_step "Build compilers"
 sub_step_counter=0
