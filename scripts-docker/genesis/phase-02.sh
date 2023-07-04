@@ -138,23 +138,26 @@ sub_step_counter=0
     sub_step "source share/spack/setup-env.sh"
               source share/spack/setup-env.sh
 
-new_step "Build cdf"
-sub_step_counter=0
-
-    sub_step "mkdir -p ${HOME}/apps/shell-scripts"
-              mkdir -p ${HOME}/apps/shell-scripts
+# new_step "Build cdf"
+# sub_step_counter=0
+#
+#     sub_step "mkdir -p ${HOME}/apps/shell-scripts"
+#               mkdir -p ${HOME}/apps/shell-scripts
 
 #    sub_step "cp ${repo_scripts_spack}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/."
 #              cp ${repo_scripts_spack}/transport/build-cdf.sh ${HOME}/apps/shell-scripts/.
 
-    sub_step "cd ${HOME}/apps"
-              cd ${HOME}/apps
+    # sub_step "cd ${HOME}/apps"
+    #           cd ${HOME}/apps
 
 #    sub_step "source ${HOME}/apps/shell-scripts/build-cdf.sh"
 #              source ${HOME}/apps/shell-scripts/build-cdf.sh
 
 new_step "Bring in system files from the cloud"
 sub_step_counter=0
+    sub_step "cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/shell-scripts/."
+              cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/shell-scripts/.
+
     sub_step "cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
               cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
 
@@ -169,9 +172,6 @@ sub_step_counter=0
 
     sub_step "cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/."
               cp ${repo_scripts_docker}/transport/.${tag}.sh            /home/${ego}/.
-
-    sub_step "cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/shell-scripts/."
-              cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/shell-scripts/.
 
 new_step "Setup spack"
 sub_step_counter=0
