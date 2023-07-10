@@ -46,9 +46,9 @@ pause
 
 # what you want to build
 declare -a lpackages=("${installer}-utils" "arpack" "bc" "boost" "bzip2" "calc" "cmake" "cmake3" "deltarpm" "dialog" "dos2unix" "doxygen" "emacs" "environment-modules" "fftw" "finger" "fio" "flang"
-"gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "go" "graphviz" "gringo" "gsl" "gtest"
+"gcc-c++" "gcc-gfortran" "gdb" "gedit" "git" "git-lfs" "gh" "go" "graphviz" "gringo" "gsl" "gtest"
 "hdf5" "hdf5-openmpi" "htop" "intltool" "julia" "krb5"
-"lapack" "scalapack-openmpi" "libcurl" "llvm15" "llvm14" "lsb" "lshw" "lsof" "lua"
+"lapack" "scalapack-openmpi" "libcurl" "llvm15" "llvm14" "locate" "lsb" "lshw" "lsof" "lua"
 "mesa" "meson" "mpich" "mvapich" "nano" "ncurses" "netcdf-cxx" "netcdf" "netcdf-fortran-openmpi" "ninja"
 "octave" "openblas" "opencoarrays" "openmpi" "openspeedshop"
 "paraview" "paraview-mpich" "paraview-openmpi" "passwd" "patch" "patchelf" "pbcopy" "petsc" "petsc-openmpi" "ping" "pygpgme" "python3" "python-astropy" "python-debug" "python-matplotlib" "python3-pipsafe" "python3-seaborn" "python3-urllib3" "python-virtualenv" "pyyaml" "python-pyyaml"
@@ -93,6 +93,10 @@ new_step "Try to build ${#lpackages[@]} packages"
         sub_step "${installer} repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt"
                   ${installer} repoquery --requires ${t} 2>&1 | tee -a ${localResults}/dependents/${t}.txt &
     done
+
+new_step "create database for locate"
+      echo 'sudo updateb'
+            sudo updateb &
 
 new_step "Prepare summary reports"
     sub_step_counter=0
