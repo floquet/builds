@@ -19,7 +19,7 @@ new_step "Set environment variables: path"
     sub_step "\${dirSpecs}   = ${dirSpecs}"
 
 new_step "Set environment variables: version"
-source ${repo_scripts_spack}/shared/set-environment.sh
+source ${repo_scripts_spack}/environment/set-environment.sh
 #     export myCompiler=" % gcc@14.1.0"
 #     export     myLLVM="^llvm@17.0.6"
 #     export  myOpenMPI="^openmpi@5.0.4"
