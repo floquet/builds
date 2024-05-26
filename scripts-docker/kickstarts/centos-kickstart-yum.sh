@@ -53,3 +53,6 @@ export dirDockerLocker="/repos/github/docker"
 
 echo 'source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack} ${refresh}'
       source ${dirDockerLocker}/unified/generics/generic-kickstart.sh ${mySpack} ${refresh}
+      
+      
+      

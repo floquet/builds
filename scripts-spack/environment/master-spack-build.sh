@@ -19,10 +19,11 @@ new_step "Set environment variables: path"
     sub_step "\${dirSpecs}   = ${dirSpecs}"
 
 new_step "Set environment variables: version"
-    export myCompiler=" % gcc@13.1.0"
-    export     myLLVM="^llvm@16.0.6"
-    export  myOpenMPI="^openmpi@4.1.5"
-    export   myPython="^python@3.11.2"
+source ${repo_scripts_spack}/shared/set-environment.sh
+#     export myCompiler=" % gcc@14.1.0"
+#     export     myLLVM="^llvm@17.0.6"
+#     export  myOpenMPI="^openmpi@5.0.4"
+#     export   myPython="^python@3.11.7"
 
     sub_step "\${myCompiler} = ${myCompiler}"
     sub_step "\${myLLVM}     = ${myLLVM}"
@@ -41,11 +42,11 @@ new_step "Create directory structure"
 
 pause
   
-# new_step "python builds"
-#     source ${repo_build}/scripts-spack/environment/slave-python-build.sh
-
 new_step "spack build out"
     source ${repo_build}/scripts-spack/environment/slave-spack-build.sh
+
+new_step "python builds"
+    source ${repo_build}/scripts-spack/environment/slave-python-build.sh
 
 new_step "print wall time used"
     export master=$((${SECONDS}-${master}))

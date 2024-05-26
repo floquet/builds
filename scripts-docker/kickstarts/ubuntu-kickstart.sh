@@ -32,7 +32,7 @@ export ubuntuSECONDS=${SECONDS}
 
 export dist="ubuntu" ; export release="22.04" ; export tag="${dist}-${release}"
 export USER="dantopa"
-export USER="dshan"
+# export USER="dshan"
 export installer="apt-get"
 
 export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"

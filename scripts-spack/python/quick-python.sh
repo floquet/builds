@@ -13,8 +13,8 @@ mkdir -p ${SPACK_ROOT}/${USER}/shell-scripts
 # spack install gcc@11.2.0                                    > ${SPACK_ROOT}/${USER}/build-logs/gcc@11.2.0.txt
 # spack compiler find $(spack location -i gcc@11.2.0)
 
-myPython="python@3.10.2"
-myCompiler="gcc@11.2.0-16ubuntu1"
+myPython="python@3.11.9"
+myCompiler="gcc@14.1.0"
 # spack load ${myCompiler}
 
 date
