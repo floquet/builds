@@ -81,11 +81,25 @@ new_step "application ${myCompiler}"
     sub_step_counter=0
     spack_00 "alglib"
     spack_00 "chapel"
+    spack_00 "clapack"
+    spack_00 "dlapack"
+    spack_00 "eigen"
     spack_00 "environment-modules"
+    spack_00 "gmp"
     spack_00 "gsl"
-    spack_00 "julia@"
+    spack_00 "json-format"
+    spack_00 "julia"
+    spack_00 "lapackpp"
+    spack_00 "lfortran"
+    spack_00 "librsb"
+    spack_00 "lis"
+    spack_00 "ninja-fortran"
+    spack_00 "nnpack"
+    spack_00 "slepsc"
+    spack_00 "r"
     spack_00 "xcalc"
     spack_00 "xerces-c"
+    spack_00 "xtensor"
 
 new_step "application ${myCompiler} ${myPython}"
     sub_step_counter=0
@@ -94,11 +108,14 @@ new_step "application ${myCompiler} ${myPython}"
     spack_01 "gdb"
     spack_01 "gdl" "+python"
     spack_01 "graphviz"
+    spack_01 "mlpack"
     spack_01 "mpich"
     spack_01 "py-astropy" "+extras"
     spack_01 "py-seaborn"
     spack_01 "py-tqdm"
     spack_01 "py-urllib3"
+    spack_01 "py-fortran-language-server"
+    spack_01 "py-fortranformat"
     spack_01 "rust"
 
 new_step "application ${myCompiler} ${myPython} ${myOpenMPI}"
@@ -108,7 +125,9 @@ new_step "application ${myCompiler} ${myPython} ${myOpenMPI}"
 
 new_step "application ${myCompiler} ${myOpenMPI}"
     sub_step_counter=0
+    spack_03 "butterflypack"
     spack_03 "charmpp"
+    spack_03 "dla-future-fortran"
     spack_03 "h5bench"
     spack_03 "h5cpp"
     spack_03 "h5hut"
@@ -119,6 +138,8 @@ new_step "application ${myCompiler} ${myOpenMPI}"
     spack_03 "opencoarrays"
     spack_03 "parallel-netcdf"
     spack_03 "sprng" "+fortran"
+    spack_03 "strumpack"
+    spack_03 "sympack"
     spack_03 "valgrind"
     spack_03 "zoltan"
 
@@ -132,37 +153,37 @@ new_step "application ${myCompiler} ${myPython} ${myLLVM}"
 
 new_step "gcc compilers"
     sub_step_counter=0
-    spack_00 "gcc@11.2.0"
-    spack_00 "gcc@10.3.0"
-    spack_00 "gcc@9.4.0"
-    spack_00 "gcc@8.5.0"
+    spack_00 "gcc@13.3.0"
+    spack_00 "gcc@12.3.0"
+    spack_00 "gcc@11.4.0"
+    spack_00 "gcc@10.5.0"
 
 new_step "add gcc compilers"
     sub_step_counter=0
-    sub_step "spack compiler find $(spack location -i gcc@11.2.0)"
-              spack compiler find $(spack location -i gcc@11.2.0)
-    sub_step "spack compiler find $(spack location -i gcc@10.3.0)"
-              spack compiler find $(spack location -i gcc@10.3.0)
-    sub_step "spack compiler find $(spack location -i gcc@9.4.0)"
-              spack compiler find $(spack location -i gcc@9.4.0)
-    sub_step "spack compiler find $(spack location -i gcc@8.5.0)"
-              spack compiler find $(spack location -i gcc@8.5.0)
+    sub_step "spack compiler find $(spack location -i gcc@13.3.0)"
+              spack compiler find $(spack location -i gcc@13.3.0)
+    sub_step "spack compiler find $(spack location -i gcc@12.3.0)"
+              spack compiler find $(spack location -i gcc@12.3.0)
+    sub_step "spack compiler find $(spack location -i gcc@11.4.0)"
+              spack compiler find $(spack location -i gcc@11.4.0)
+    sub_step "spack compiler find $(spack location -i gcc@10.5.0)"
+              spack compiler find $(spack location -i gcc@10.5.0)
 
 
 new_step "llvm compilers"
     sub_step_counter=0
-    spack_01 "llvm@13.0.1"
-    spack_01 "llvm@12.0.1"
-    spack_01 "llvm@11.1.0"
+    spack_01 "llvm@18.1.6"
+    spack_01 "llvm@17.0.6"
+    spack_01 "llvm@16.0.6"
 
 new_step "add gcc compilers"
     sub_step_counter=0
-    sub_step "spack compiler find $(spack location -i llvm@13.0.1)"
-              spack compiler find $(spack location -i llvm@13.0.1)
-    sub_step "spack compiler find $(spack location -i llvm@12.0.1)"
-              spack compiler find $(spack location -i llvm@12.0.1)
-    sub_step "spack compiler find $(spack location -i llvm@11.1.0)"
-              spack compiler find $(spack location -i llvm@11.1.0)
+    sub_step "spack compiler find $(spack location -i llvm@18.1.6)"
+              spack compiler find $(spack location -i llvm@18.1.6)
+    sub_step "spack compiler find $(spack location -i llvm@17.0.6)"
+              spack compiler find $(spack location -i llvm@17.0.6)
+    sub_step "spack compiler find $(spack location -i llvm@16.0.6)"
+              spack compiler find $(spack location -i llvm@16.0.6)
 
 
 new_step "print wall time used"
