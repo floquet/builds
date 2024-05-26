@@ -40,7 +40,6 @@ function sub_sub_step(){
     echo "  ${step_counter}.${sub_step_counter}.${sub_sub_step_counter}: ${1}"
 }
 
-
 # enumerate subsubsteps
 # https://unix.stackexchange.com/questions/65932/how-to-get-the-first-word-of-a-string
 function spack_sub_step(){

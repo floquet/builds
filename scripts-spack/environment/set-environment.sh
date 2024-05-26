@@ -3,7 +3,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # $ cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/${USER}/shell-scripts/.
 
-export myCompiler="gcc@14.1.0"
+export myCompiler="% gcc@14.1.0"
 # export myCompiler=" % gcc@11.2.0-19ubuntu1"
 # export myCompiler=" % gcc@12.0.1"
 # export  myCompiler=" % gcc@7.3.1"
