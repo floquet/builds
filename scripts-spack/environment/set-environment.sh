@@ -7,9 +7,9 @@ export myCompiler="gcc@14.1.0"
 # export myCompiler=" % gcc@11.2.0-19ubuntu1"
 # export myCompiler=" % gcc@12.0.1"
 # export  myCompiler=" % gcc@7.3.1"
-export      myLLVM=" ^llvm@17.0.6"
+export      myLLVM="   ^llvm@17.0.6"
 export   myOpenMPI=" ^openmpi@5.0.3"
-export    myPython=" ^python@3.11.7"
+export    myPython="  ^python@3.11.7"
 export mySpackLogs="${SPACK_ROOT}/${USER}"
 
 echo "\${myCompiler}  = ${myCompiler}"
@@ -18,5 +18,5 @@ echo "\${myOpenMPI}   = ${myOpenMPI}"
 echo "\${myPython}    = ${myPython}"
 echo "\${mySpackLogs} = ${mySpackLogs}"
 
-echo "spack load gcc@14.1.0"
-      spack load gcc@14.1.0
+echo "spack load gcc@14.1.0/cby"
+      spack load gcc@14.1.0/cby
