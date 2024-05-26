@@ -83,7 +83,7 @@ new_step "application ${myCompiler}"
     spack_00 "chapel"
     spack_00 "environment-modules"
     spack_00 "gsl"
-    spack_00 "julia@1.7.2"
+    spack_00 "julia@"
     spack_00 "xcalc"
     spack_00 "xerces-c"
 
