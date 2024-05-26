@@ -69,6 +69,12 @@ function spack_05(){
                    spack install ${1}${2} ${myCompiler} ${myPython} ${myLLVM} 2>&1 | tee -a ${file}
   }
 
+new_step "spack install gcc@14.1.0"
+          spack install gcc@14.1.0
+  
+new_step "spack compiler find $(spack location -i gcc@14.1.0)"
+          spack compiler find $(spack location -i gcc@14.1.0)
+
 new_step "Set environment variables"
   source ${SPACK_ROOT}/${USER}/shell-scripts/set-environment.sh
 
