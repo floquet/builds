@@ -75,6 +75,7 @@ new_step "spack install gcc@14.1.0"
 new_step "spack compiler find $(spack location -i gcc@14.1.0)"
           spack compiler find $(spack location -i gcc@14.1.0)
 
+# on local machine
 new_step "Set environment variables"
   source ${SPACK_ROOT}/${USER}/shell-scripts/set-environment.sh
 
@@ -182,7 +183,7 @@ new_step "llvm compilers"
     spack_01 "llvm@17.0.6"
     spack_01 "llvm@16.0.6"
 
-new_step "add gcc compilers"
+new_step "add clang compilers"
     sub_step_counter=0
     sub_step "spack compiler find $(spack location -i llvm@18.1.6)"
               spack compiler find $(spack location -i llvm@18.1.6)
