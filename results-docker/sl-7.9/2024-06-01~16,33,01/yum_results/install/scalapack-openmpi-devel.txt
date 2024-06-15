@@ -1,0 +1,120 @@
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.014
+Obs Init time: 0.265
+Resolving Dependencies
+--> Running transaction check
+---> Package scalapack-openmpi-devel.x86_64 0:2.0.2-31.el7 will be installed
+Checking deps for scalapack-openmpi-devel.x86_64 0:2.0.2-31.el7 - u
+looking for ('scalapack-openmpi', 'EQ', ('0', '2.0.2', '31.el7')) as a requirement of scalapack-openmpi-devel.x86_64 0:2.0.2-31.el7 - u
+looking for ('openmpi-devel', None, (None, None, None)) as a requirement of scalapack-openmpi-devel.x86_64 0:2.0.2-31.el7 - u
+looking for ('libscalapack.so.2()(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi-devel.x86_64 0:2.0.2-31.el7 - u
+scalapack-openmpi-devel-2.0.2-31.el7.x86_64 requires: scalapack-openmpi = 2.0.2-31.el7
+--> Processing Dependency: scalapack-openmpi = 2.0.2-31.el7 for package: scalapack-openmpi-devel-2.0.2-31.el7.x86_64
+Searching pkgSack for dep: scalapack-openmpi
+Building updates object
+up:simple updates time: 0.008
+up:obs time: 0.005
+up:condense time: 0.000
+updates time: 0.237
+TSINFO: Marking scalapack-openmpi-2.0.2-31.el7.x86_64 as install for scalapack-openmpi-devel-2.0.2-31.el7.x86_64
+scalapack-openmpi-devel-2.0.2-31.el7.x86_64 requires: libscalapack.so.2()(64bit)
+--> Processing Dependency: libscalapack.so.2()(64bit) for package: scalapack-openmpi-devel-2.0.2-31.el7.x86_64
+Quick matched scalapack-openmpi-2.0.2-31.el7.x86_64 to require for libscalapack.so.2()(64bit)
+--> Running transaction check
+---> Package scalapack-openmpi.x86_64 0:2.0.2-31.el7 will be installed
+Checking deps for scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('scalapack-common', 'EQ', ('0', '2.0.2', '31.el7')) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('openmpi', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libmpi.so.12()(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+scalapack-openmpi-2.0.2-31.el7.x86_64 requires: scalapack-common = 2.0.2-31.el7
+--> Processing Dependency: scalapack-common = 2.0.2-31.el7 for package: scalapack-openmpi-2.0.2-31.el7.x86_64
+Searching pkgSack for dep: scalapack-common
+TSINFO: Marking scalapack-common-2.0.2-31.el7.x86_64 as install for scalapack-openmpi-2.0.2-31.el7.x86_64
+scalapack-openmpi-2.0.2-31.el7.x86_64 requires: libopenblas.so.0()(64bit)
+--> Processing Dependency: libopenblas.so.0()(64bit) for package: scalapack-openmpi-2.0.2-31.el7.x86_64
+Searching pkgSack for dep: libopenblas.so.0()(64bit)
+TSINFO: Marking openblas-serial-0.3.3-2.el7.x86_64 as install for scalapack-openmpi-2.0.2-31.el7.x86_64
+--> Running transaction check
+---> Package openblas-serial.x86_64 0:0.3.3-2.el7 will be installed
+Checking deps for openblas-serial.x86_64 0:0.3.3-2.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of openblas-serial.x86_64 0:0.3.3-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of openblas-serial.x86_64 0:0.3.3-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of openblas-serial.x86_64 0:0.3.3-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of openblas-serial.x86_64 0:0.3.3-2.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of openblas-serial.x86_64 0:0.3.3-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of openblas-serial.x86_64 0:0.3.3-2.el7 - u
+---> Package scalapack-common.x86_64 0:2.0.2-31.el7 will be installed
+Checking deps for scalapack-common.x86_64 0:2.0.2-31.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.554
+
+Dependencies Resolved
+
+================================================================================
+ Package                       Arch         Version            Repository  Size
+================================================================================
+Installing:
+ scalapack-openmpi-devel       x86_64       2.0.2-31.el7       epel        11 k
+Installing for dependencies:
+ openblas-serial               x86_64       0.3.3-2.el7        epel       4.3 M
+ scalapack-common              x86_64       2.0.2-31.el7       epel        14 k
+ scalapack-openmpi             x86_64       2.0.2-31.el7       epel       1.7 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 6.0 M
+Installed size: 41 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              1.5 MB/s | 6.0 MB  00:03     
+Member: openblas-serial.x86_64 0:0.3.3-2.el7 - u
+Adding Package openblas-serial-0.3.3-2.el7.x86_64 in mode u
+Member: scalapack-openmpi.x86_64 0:2.0.2-31.el7 - u
+Adding Package scalapack-openmpi-2.0.2-31.el7.x86_64 in mode u
+Member: scalapack-openmpi-devel.x86_64 0:2.0.2-31.el7 - u
+Adding Package scalapack-openmpi-devel-2.0.2-31.el7.x86_64 in mode u
+Member: scalapack-common.x86_64 0:2.0.2-31.el7 - u
+Adding Package scalapack-common-2.0.2-31.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.005
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.026
+Running transaction
+  Installing : scalapack-common-2.0.2-31.el7.x86_64                         1/4 
+  Installing : openblas-serial-0.3.3-2.el7.x86_64                           2/4 
+  Installing : scalapack-openmpi-2.0.2-31.el7.x86_64                        3/4 
+  Installing : scalapack-openmpi-devel-2.0.2-31.el7.x86_64                  4/4 
+  Verifying  : openblas-serial-0.3.3-2.el7.x86_64                           1/4 
+  Verifying  : scalapack-openmpi-2.0.2-31.el7.x86_64                        2/4 
+  Verifying  : scalapack-openmpi-devel-2.0.2-31.el7.x86_64                  3/4 
+  Verifying  : scalapack-common-2.0.2-31.el7.x86_64                         4/4 
+VerifyTransaction time: 0.083
+Transaction time: 1.679
+
+Installed:
+  scalapack-openmpi-devel.x86_64 0:2.0.2-31.el7                                 
+
+Dependency Installed:
+  openblas-serial.x86_64 0:0.3.3-2.el7                                          
+  scalapack-common.x86_64 0:2.0.2-31.el7                                        
+  scalapack-openmpi.x86_64 0:2.0.2-31.el7                                       
+
+Complete!

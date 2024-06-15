@@ -1,0 +1,269 @@
+yum deplist -v python-debug
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.014
+Searching pkgSack for dep: /bin/sh
+Searching pkgSack for dep: /usr/bin/pkg-config
+Searching pkgSack for dep: libTix.so()(64bit)
+Searching pkgSack for dep: libX11.so.6()(64bit)
+Searching pkgSack for dep: libbz2.so.1()(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.15)(64bit)
+Searching pkgSack for dep: libcrypt.so.1()(64bit)
+Searching pkgSack for dep: libcrypt.so.1(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libcrypto.so.10()(64bit)
+Searching pkgSack for dep: libcrypto.so.10(OPENSSL_1.0.1_EC)(64bit)
+Searching pkgSack for dep: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
+Searching pkgSack for dep: libcrypto.so.10(libcrypto.so.10)(64bit)
+Searching pkgSack for dep: libdb-5.3.so()(64bit)
+Searching pkgSack for dep: libdl.so.2()(64bit)
+Searching pkgSack for dep: libdl.so.2(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libexpat.so.1()(64bit)
+Searching pkgSack for dep: libffi.so.6()(64bit)
+Searching pkgSack for dep: libgdbm.so.4()(64bit)
+Searching pkgSack for dep: libgdbm_compat.so.4()(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libm.so.6(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libncursesw.so.5()(64bit)
+Searching pkgSack for dep: libnsl.so.1()(64bit)
+Searching pkgSack for dep: libnsl.so.1(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libpanelw.so.5()(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libreadline.so.6()(64bit)
+Searching pkgSack for dep: libsqlite3.so.0()(64bit)
+Searching pkgSack for dep: libssl.so.10()(64bit)
+Searching pkgSack for dep: libssl.so.10(libssl.so.10)(64bit)
+Searching pkgSack for dep: libtcl8.5.so()(64bit)
+Searching pkgSack for dep: libtinfo.so.5()(64bit)
+Searching pkgSack for dep: libtk8.5.so()(64bit)
+Searching pkgSack for dep: libutil.so.1()(64bit)
+Searching pkgSack for dep: libutil.so.1(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libz.so.1()(64bit)
+Searching pkgSack for dep: libz.so.1(ZLIB_1.2.0)(64bit)
+Searching pkgSack for dep: python(x86-64)
+Searching pkgSack for dep: python-devel(x86-64)
+Searching pkgSack for dep: python-libs(x86-64)
+Searching pkgSack for dep: python-test(x86-64)
+Searching pkgSack for dep: python-tools(x86-64)
+Searching pkgSack for dep: rtld(GNU_HASH)
+Searching pkgSack for dep: tkinter(x86-64)
+package: python-debug.x86_64 2.7.5-94.el7_9
+  dependency: /bin/sh
+   provider: bash.x86_64 4.2.46-35.el7_9
+   provider: bash.x86_64 4.2.46-34.el7
+  dependency: /usr/bin/pkg-config
+   provider: pkgconfig.x86_64 1:0.27.1-4.el7
+   provider: pkgconfig.i686 1:0.27.1-4.el7
+  dependency: libTix.so()(64bit)
+   provider: tix.x86_64 1:8.4.3-12.el7
+  dependency: libX11.so.6()(64bit)
+   provider: libX11.x86_64 1.6.7-5.el7_9
+   provider: libX11.x86_64 1.6.7-4.el7_9
+   provider: libX11.x86_64 1.6.7-3.el7_9
+   provider: libX11.x86_64 1.6.7-2.el7
+  dependency: libbz2.so.1()(64bit)
+   provider: bzip2-libs.x86_64 1.0.6-13.el7
+  dependency: libc.so.6(GLIBC_2.15)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libcrypt.so.1()(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libcrypt.so.1(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libcrypto.so.10()(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-26.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-23.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libcrypto.so.10(OPENSSL_1.0.1_EC)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-26.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-23.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-26.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-23.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libcrypto.so.10(libcrypto.so.10)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-26.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-23.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libdb-5.3.so()(64bit)
+   provider: libdb.x86_64 5.3.21-25.el7
+  dependency: libdl.so.2()(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libdl.so.2(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libexpat.so.1()(64bit)
+   provider: expat.x86_64 2.1.0-15.el7_9
+   provider: expat.x86_64 2.1.0-14.el7_9
+   provider: expat.x86_64 2.1.0-12.el7
+  dependency: libffi.so.6()(64bit)
+   provider: libffi.x86_64 3.0.13-19.el7
+  dependency: libgdbm.so.4()(64bit)
+   provider: gdbm.x86_64 1.10-8.el7
+  dependency: libgdbm_compat.so.4()(64bit)
+   provider: gdbm.x86_64 1.10-8.el7
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libm.so.6(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libncursesw.so.5()(64bit)
+   provider: ncurses-libs.x86_64 5.9-14.20130511.el7_4
+  dependency: libnsl.so.1()(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libnsl.so.1(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpanelw.so.5()(64bit)
+   provider: ncurses-libs.x86_64 5.9-14.20130511.el7_4
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libreadline.so.6()(64bit)
+   provider: readline.x86_64 6.2-11.el7
+  dependency: libsqlite3.so.0()(64bit)
+   provider: sqlite.x86_64 3.7.17-8.el7_7.1
+  dependency: libssl.so.10()(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-26.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-23.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libssl.so.10(libssl.so.10)(64bit)
+   provider: openssl-libs.x86_64 1:1.0.2k-26.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-25.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-24.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-23.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-22.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-21.el7_9
+   provider: openssl-libs.x86_64 1:1.0.2k-19.el7
+  dependency: libtcl8.5.so()(64bit)
+   provider: tcl.x86_64 1:8.5.13-8.el7
+  dependency: libtinfo.so.5()(64bit)
+   provider: ncurses-libs.x86_64 5.9-14.20130511.el7_4
+  dependency: libtk8.5.so()(64bit)
+   provider: tk.x86_64 1:8.5.13-6.el7
+  dependency: libutil.so.1()(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libutil.so.1(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libz.so.1()(64bit)
+   provider: zlib.x86_64 1.2.7-21.el7_9
+   provider: zlib.x86_64 1.2.7-20.el7_9
+   provider: zlib.x86_64 1.2.7-19.el7_9
+   provider: zlib.x86_64 1.2.7-18.el7
+  dependency: libz.so.1(ZLIB_1.2.0)(64bit)
+   provider: zlib.x86_64 1.2.7-21.el7_9
+   provider: zlib.x86_64 1.2.7-20.el7_9
+   provider: zlib.x86_64 1.2.7-19.el7_9
+   provider: zlib.x86_64 1.2.7-18.el7
+  dependency: python(x86-64) = 2.7.5-94.el7_9
+   provider: python.x86_64 2.7.5-94.el7_9
+  dependency: python-devel(x86-64) = 2.7.5-94.el7_9
+   provider: python-devel.x86_64 2.7.5-94.el7_9
+  dependency: python-libs(x86-64) = 2.7.5-94.el7_9
+   provider: python-libs.x86_64 2.7.5-94.el7_9
+  dependency: python-test(x86-64) = 2.7.5-94.el7_9
+   provider: python-test.x86_64 2.7.5-94.el7_9
+  dependency: python-tools(x86-64) = 2.7.5-94.el7_9
+   provider: python-tools.x86_64 2.7.5-94.el7_9
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.i686 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7
+  dependency: tkinter(x86-64) = 2.7.5-94.el7_9
+   provider: tkinter.x86_64 2.7.5-94.el7_9

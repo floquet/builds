@@ -1,0 +1,31 @@
+yum info    -v deltarpm
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.012
+Installed Packages
+Name        : deltarpm
+Arch        : x86_64
+Version     : 3.6
+Release     : 3.el7
+Size        : 209 k
+Repo        : installed
+From repo   : sl
+Committer   : Daniel Mach <dmach@redhat.com>
+Committime  : Fri Jan 24 05:00:00 2014
+Buildtime   : Fri May  2 13:54:17 2014
+Install time: Fri May 31 16:35:42 2024
+Installed by: System <unset>
+Changed by  : System <unset>
+Summary     : Create deltas between rpms
+URL         : http://gitorious.org/deltarpm/deltarpm
+License     : BSD
+Description : A deltarpm contains the difference between an old
+            : and a new version of a rpm, which makes it possible
+            : to recreate the new rpm from the deltarpm and the old
+            : one. You don't have to have a copy of the old rpm,
+            : deltarpms can also work with installed rpms.
+

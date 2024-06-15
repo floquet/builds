@@ -28,10 +28,11 @@ source ${repo_scripts_spack}/shared/common-header.sh
 # export dist="amzn" ; export release="karoo" ; export installer="yum"
 # export dist="centos" ; export release="7.9.2009" ; export installer="yum"
 # export dist="debian" ; export release="11.3" ; export installer="apt-get"
-export dist="fedora" ; export release="39" ; export installer="dnff"
+# export dist="fedora" ; export release="39" ; export installer="dnff"
 # export dist="mageia" ; export release="8" ; export installer="dnf"
 # export dist="rhel" ; export release="8.6" ; export installer="microdnf"
 # export dist="rhel" ; export release="8.6" ; export installer="yum"
+export dist="sl" ; export release="7.9" ; export installer="yum"
 # export dist="ubuntu" ; export release="22.04" ; export installer="apt-get"
 # export dist="ubuntu" ; export release="23.10" ; export installer="apt-get"
 
@@ -41,6 +42,7 @@ export USER="dantopa"
 export tag="${dist}-${release}"
 
 export dump_Results="${repo_results_docker}/${tag}/${ymdtf}"
+mkdir -p ${dump_Results}
 
 # records time elapsed
 export timerFile="${dump_Results}/${tag}-elapsed-time.txt"
@@ -69,6 +71,7 @@ echo ""; echo "Set up user account"
          echo "pending: passwd ${USER}"
 
 echo ""; echo "su - ${USER}"
+    echo "repeat these declarations and run phase-02.sh"
     echo "export dist=\"${dist}\" ; export release=\"${release}\" ; export tag=\"${dist}-${release}\""
 
 echo ""; echo "Report elapsed time"

@@ -1,0 +1,139 @@
+yum update -v -y
+Loading "ovl" plugin
+Config time: 0.009
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Updating Everything
+Building updates object
+Setting up Package Sacks
+pkgsack time: 0.012
+up:Obs Init time: 0.216
+up:simple updates time: 0.012
+up:obs time: 0.003
+up:condense time: 0.000
+updates time: 0.474
+Not Updating Package that is already updated: epel-release.noarch 0:7-5
+group time: 0.056
+Adding package flex from group development
+Adding package gcc from group development
+Adding package autoconf from group development
+Adding package redhat-rpm-config from group development
+Adding package rpm-build from group development
+Adding package make from group development
+Skipping package pkgconfig from group development
+Adding package gettext from group development
+Adding package patch from group development
+Adding package rpm-sign from group development
+Adding package bison from group development
+Adding package libtool from group development
+Adding package automake from group development
+Adding package gcc-c++ from group development
+Skipping package binutils from group development
+Adding package byacc from group development
+Adding package indent from group development
+Adding package systemtap from group development
+Adding package diffstat from group development
+Adding package elfutils from group development
+Adding package doxygen from group development
+Adding package rcs from group development
+Adding package subversion from group development
+Adding package gcc-gfortran from group development
+Adding package patchutils from group development
+Adding package intltool from group development
+Adding package ctags from group development
+Adding package git from group development
+Adding package cscope from group development
+Adding package swig from group development
+Adding package gcc-gfortran from group development
+Adding package subversion from group development
+Adding package patchutils from group development
+Adding package gcc-c++ from group development
+Adding package flex from group development
+Adding package swig from group development
+Adding package patch from group development
+Adding package bison from group development
+Adding package rpm-build from group development
+Adding package cscope from group development
+Adding package rpm-sign from group development
+Adding package intltool from group development
+Adding package elfutils from group development
+Adding package automake from group development
+Adding package systemtap from group development
+Adding package git from group development
+Adding package doxygen from group development
+Adding package indent from group development
+Adding package libtool from group development
+Adding package byacc from group development
+Adding package redhat-rpm-config from group development
+Adding package rcs from group development
+Adding package ctags from group development
+Adding package autoconf from group development
+Adding package diffstat from group development
+Adding package gcc from group development
+Adding package make from group development
+Adding package gettext from group development
+Resolving Dependencies
+--> Running transaction check
+---> Package epel-release.noarch 0:7-5 will be updated
+Checking deps for epel-release.noarch 0:7-5 - ud
+---> Package epel-release.noarch 0:7-14 will be an update
+Checking deps for epel-release.noarch 0:7-14 - u
+looking for ('redhat-release', 'GE', ('0', '7', None)) as a requirement of epel-release.noarch 0:7-14 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.275
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch             Version           Repository      Size
+================================================================================
+Updating:
+ epel-release           noarch           7-14              epel            15 k
+
+Transaction Summary
+================================================================================
+Upgrade  1 Package
+
+Total download size: 15 k
+Downloading packages:
+https://abqix.mm.fcix.net/epel/7/x86_64/repodata/29320bfdf712ac853a66727b19f27cf87dfc6a4de00ba3614bcfd071df8d21a8-prestodelta.xml.gz: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+This generally happens when your clien is unable to communicate with the repo server.
+
+Please verify your connection works as expected.
+
+
+https://nnenix.mm.fcix.net/epel/7/x86_64/repodata/29320bfdf712ac853a66727b19f27cf87dfc6a4de00ba3614bcfd071df8d21a8-prestodelta.xml.gz: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+https://opencolo.mm.fcix.net/epel/7/x86_64/repodata/29320bfdf712ac853a66727b19f27cf87dfc6a4de00ba3614bcfd071df8d21a8-prestodelta.xml.gz: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+https://mirror.fcix.net/epel/7/x86_64/repodata/29320bfdf712ac853a66727b19f27cf87dfc6a4de00ba3614bcfd071df8d21a8-prestodelta.xml.gz: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+https://nocix.mm.fcix.net/epel/7/x86_64/repodata/29320bfdf712ac853a66727b19f27cf87dfc6a4de00ba3614bcfd071df8d21a8-prestodelta.xml.gz: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+https://forksystems.mm.fcix.net/epel/7/x86_64/repodata/29320bfdf712ac853a66727b19f27cf87dfc6a4de00ba3614bcfd071df8d21a8-prestodelta.xml.gz: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+https://na.edge.kernel.org/fedora-epel/7/x86_64/repodata/29320bfdf712ac853a66727b19f27cf87dfc6a4de00ba3614bcfd071df8d21a8-prestodelta.xml.gz: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+Member: epel-release.noarch 0:7-14 - u
+Adding Package epel-release-7-14.noarch in mode u
+Member: epel-release.noarch 0:7-5 - ud
+Running transaction check
+Transaction check time: 0.001
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.002
+Running transaction
+  Updating   : epel-release-7-14.noarch                                     1/2 
+  Cleanup    : epel-release-7-5.noarch                                      2/2 
+  Verifying  : epel-release-7-14.noarch                                     1/2 
+  Verifying  : epel-release-7-5.noarch                                      2/2 
+VerifyTransaction time: 0.097
+Transaction time: 0.168
+
+Updated:
+  epel-release.noarch 0:7-14                                                    
+
+Complete!

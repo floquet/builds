@@ -1,0 +1,59 @@
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 15476.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (246 MB VSZ)
+    Started: Fri May 31 21:47:41 2024 - 00:01 ago
+    State  : Running, pid: 15476
+Setting up Package Sacks
+pkgsack time: 0.013
+Obs Init time: 0.222
+Resolving Dependencies
+--> Running transaction check
+---> Package uuid.x86_64 0:1.6.2-26.el7 will be installed
+Checking deps for uuid.x86_64 0:1.6.2-26.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.el7 - u
+looking for ('libnsl.so.1()(64bit)', None, (None, None, None)) as a requirement of uuid.x86_64 0:1.6.2-26.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.250
+
+Dependencies Resolved
+
+================================================================================
+ Package         Arch              Version                  Repository     Size
+================================================================================
+Installing:
+ uuid            x86_64            1.6.2-26.el7             sl             54 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 54 k
+Installed size: 116 k
+Downloading packages:
+Member: uuid.x86_64 0:1.6.2-26.el7 - u
+Adding Package uuid-1.6.2-26.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.003
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.031
+Running transaction
+  Installing : uuid-1.6.2-26.el7.x86_64                                     1/1 
+  Verifying  : uuid-1.6.2-26.el7.x86_64                                     1/1 
+VerifyTransaction time: 0.090
+Transaction time: 0.532
+
+Installed:
+  uuid.x86_64 0:1.6.2-26.el7                                                    
+
+Complete!

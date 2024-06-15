@@ -1,0 +1,112 @@
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 15364.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  30 M RSS (244 MB VSZ)
+    Started: Sat Jun  1 16:49:44 2024 - 00:00 ago
+    State  : Running, pid: 15364
+Existing lock /var/run/yum.pid: another copy is running as pid 15363.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (246 MB VSZ)
+    Started: Sat Jun  1 16:49:44 2024 - 00:02 ago
+    State  : Running, pid: 15363
+Setting up Package Sacks
+pkgsack time: 0.014
+Obs Init time: 0.229
+Resolving Dependencies
+--> Running transaction check
+---> Package rng-tools.x86_64 0:6.3.1-5.el7 will be installed
+Checking deps for rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libcrypto.so.10(libcrypto.so.10)(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libcurl', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libgcrypt', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libgcrypt.so.11(GCRYPT_1.2)(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libsysfs', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libxml2', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.4.30)(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.5.0)(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libxml2.so.2(LIBXML2_2.6.0)(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('openssl', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('systemd-units', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('systemd-units', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libcrypto.so.10()(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libcurl.so.4()(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libgcrypt.so.11()(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libssl.so.10()(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libsysfs.so.2()(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+looking for ('libxml2.so.2()(64bit)', None, (None, None, None)) as a requirement of rng-tools.x86_64 0:6.3.1-5.el7 - u
+rng-tools-6.3.1-5.el7.x86_64 requires: libsysfs
+--> Processing Dependency: libsysfs for package: rng-tools-6.3.1-5.el7.x86_64
+Searching pkgSack for dep: libsysfs
+Building updates object
+up:simple updates time: 0.011
+up:obs time: 0.005
+up:condense time: 0.000
+updates time: 0.238
+TSINFO: Marking libsysfs-2.1.0-16.el7.x86_64 as install for rng-tools-6.3.1-5.el7.x86_64
+rng-tools-6.3.1-5.el7.x86_64 requires: libsysfs.so.2()(64bit)
+--> Processing Dependency: libsysfs.so.2()(64bit) for package: rng-tools-6.3.1-5.el7.x86_64
+Quick matched libsysfs-2.1.0-16.el7.x86_64 to require for libsysfs.so.2()(64bit)
+--> Running transaction check
+---> Package libsysfs.x86_64 0:2.1.0-16.el7 will be installed
+Checking deps for libsysfs.x86_64 0:2.1.0-16.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libsysfs.x86_64 0:2.1.0-16.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libsysfs.x86_64 0:2.1.0-16.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libsysfs.x86_64 0:2.1.0-16.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of libsysfs.x86_64 0:2.1.0-16.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.535
+
+Dependencies Resolved
+
+================================================================================
+ Package             Arch             Version                Repository    Size
+================================================================================
+Installing:
+ rng-tools           x86_64           6.3.1-5.el7            sl            47 k
+Installing for dependencies:
+ libsysfs            x86_64           2.1.0-16.el7           sl            45 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 92 k
+Installed size: 248 k
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              305 kB/s |  92 kB  00:00     
+Member: rng-tools.x86_64 0:6.3.1-5.el7 - u
+Adding Package rng-tools-6.3.1-5.el7.x86_64 in mode u
+Member: libsysfs.x86_64 0:2.1.0-16.el7 - u
+Adding Package libsysfs-2.1.0-16.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.020
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.035
+Running transaction
+  Installing : libsysfs-2.1.0-16.el7.x86_64                                 1/2 
+  Installing : rng-tools-6.3.1-5.el7.x86_64                                 2/2 
+  Verifying  : rng-tools-6.3.1-5.el7.x86_64                                 1/2 
+  Verifying  : libsysfs-2.1.0-16.el7.x86_64                                 2/2 
+VerifyTransaction time: 0.105
+Transaction time: 0.935
+
+Installed:
+  rng-tools.x86_64 0:6.3.1-5.el7                                                
+
+Dependency Installed:
+  libsysfs.x86_64 0:2.1.0-16.el7                                                
+
+Complete!

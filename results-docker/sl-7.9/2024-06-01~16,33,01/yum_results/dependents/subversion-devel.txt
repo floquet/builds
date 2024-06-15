@@ -1,0 +1,114 @@
+yum deplist -v subversion-devel
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.012
+Searching pkgSack for dep: apr-devel(x86-32)
+Searching pkgSack for dep: apr-util-devel(x86-32)
+Searching pkgSack for dep: libsvn_client-1.so.0
+Searching pkgSack for dep: libsvn_delta-1.so.0
+Searching pkgSack for dep: libsvn_diff-1.so.0
+Searching pkgSack for dep: libsvn_fs-1.so.0
+Searching pkgSack for dep: libsvn_fs_base-1.so.0
+Searching pkgSack for dep: libsvn_fs_fs-1.so.0
+Searching pkgSack for dep: libsvn_fs_util-1.so.0
+Searching pkgSack for dep: libsvn_ra-1.so.0
+Searching pkgSack for dep: libsvn_ra_local-1.so.0
+Searching pkgSack for dep: libsvn_ra_neon-1.so.0
+Searching pkgSack for dep: libsvn_ra_svn-1.so.0
+Searching pkgSack for dep: libsvn_repos-1.so.0
+Searching pkgSack for dep: libsvn_subr-1.so.0
+Searching pkgSack for dep: libsvn_wc-1.so.0
+Searching pkgSack for dep: subversion(x86-32)
+Searching pkgSack for dep: apr-devel(x86-64)
+Searching pkgSack for dep: apr-util-devel(x86-64)
+Searching pkgSack for dep: libsvn_client-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_delta-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_diff-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_fs-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_fs_base-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_fs_fs-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_fs_util-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_ra-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_ra_local-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_ra_neon-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_ra_svn-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_repos-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_subr-1.so.0()(64bit)
+Searching pkgSack for dep: libsvn_wc-1.so.0()(64bit)
+Searching pkgSack for dep: subversion(x86-64)
+package: subversion-devel.i686 1.7.14-16.el7
+  dependency: apr-devel(x86-32)
+   provider: apr-devel.i686 1.4.8-7.el7
+  dependency: apr-util-devel(x86-32)
+   provider: apr-util-devel.i686 1.5.2-6.el7_9.1
+   provider: apr-util-devel.i686 1.5.2-6.el7
+  dependency: libsvn_client-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_delta-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_diff-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_fs-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_fs_base-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_fs_fs-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_fs_util-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_ra-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_ra_local-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_ra_neon-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_ra_svn-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_repos-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_subr-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: libsvn_wc-1.so.0
+   provider: subversion-libs.i686 1.7.14-16.el7
+  dependency: subversion(x86-32) = 1.7.14-16.el7
+   provider: subversion.i686 1.7.14-16.el7
+package: subversion-devel.x86_64 1.7.14-16.el7
+  dependency: apr-devel(x86-64)
+   provider: apr-devel.x86_64 1.4.8-7.el7
+  dependency: apr-util-devel(x86-64)
+   provider: apr-util-devel.x86_64 1.5.2-6.el7_9.1
+   provider: apr-util-devel.x86_64 1.5.2-6.el7
+  dependency: libsvn_client-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_delta-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_diff-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_fs-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_fs_base-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_fs_fs-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_fs_util-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_ra-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_ra_local-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_ra_neon-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_ra_svn-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_repos-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_subr-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: libsvn_wc-1.so.0()(64bit)
+   provider: subversion-libs.x86_64 1.7.14-16.el7
+  dependency: subversion(x86-64) = 1.7.14-16.el7
+   provider: subversion.x86_64 1.7.14-16.el7

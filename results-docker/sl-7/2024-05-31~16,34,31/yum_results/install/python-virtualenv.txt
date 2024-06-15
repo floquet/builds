@@ -1,0 +1,52 @@
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.011
+Obs Init time: 0.222
+Resolving Dependencies
+--> Running transaction check
+---> Package python-virtualenv.noarch 0:15.1.0-7.el7_9 will be installed
+Checking deps for python-virtualenv.noarch 0:15.1.0-7.el7_9 - u
+looking for ('python(abi)', 'EQ', ('0', '2.7', None)) as a requirement of python-virtualenv.noarch 0:15.1.0-7.el7_9 - u
+looking for ('ca-certificates', None, (None, None, None)) as a requirement of python-virtualenv.noarch 0:15.1.0-7.el7_9 - u
+looking for ('python-setuptools', None, (None, None, None)) as a requirement of python-virtualenv.noarch 0:15.1.0-7.el7_9 - u
+looking for ('python2-devel', None, (None, None, None)) as a requirement of python-virtualenv.noarch 0:15.1.0-7.el7_9 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.195
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch        Version              Repository        Size
+================================================================================
+Installing:
+ python-virtualenv      noarch      15.1.0-7.el7_9       sl-security      1.5 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 1.5 M
+Installed size: 1.9 M
+Downloading packages:
+Member: python-virtualenv.noarch 0:15.1.0-7.el7_9 - u
+Adding Package python-virtualenv-15.1.0-7.el7_9.noarch in mode u
+Running transaction check
+Transaction check time: 0.003
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.008
+Running transaction
+  Installing : python-virtualenv-15.1.0-7.el7_9.noarch                      1/1 
+  Verifying  : python-virtualenv-15.1.0-7.el7_9.noarch                      1/1 
+VerifyTransaction time: 0.069
+Transaction time: 0.196
+
+Installed:
+  python-virtualenv.noarch 0:15.1.0-7.el7_9                                     
+
+Complete!

@@ -1,0 +1,24 @@
+yum deplist -v petsc-devel
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.012
+Searching pkgSack for dep: /usr/bin/pkg-config
+Searching pkgSack for dep: libpetsc.so.3.14()(64bit)
+Searching pkgSack for dep: petsc(x86-64)
+Searching pkgSack for dep: pkgconfig(x86-64)
+package: petsc-devel.x86_64 3.14.1-3.el7
+  dependency: /usr/bin/pkg-config
+   provider: pkgconfig.x86_64 1:0.27.1-4.el7
+   provider: pkgconfig.i686 1:0.27.1-4.el7
+  dependency: libpetsc.so.3.14()(64bit)
+   provider: petsc-openmpi.x86_64 3.14.1-3.el7
+   provider: petsc-mpich.x86_64 3.14.1-3.el7
+   provider: petsc.x86_64 3.14.1-3.el7
+  dependency: petsc(x86-64) = 3.14.1-3.el7
+   provider: petsc.x86_64 3.14.1-3.el7
+  dependency: pkgconfig(x86-64)
+   provider: pkgconfig.x86_64 1:0.27.1-4.el7

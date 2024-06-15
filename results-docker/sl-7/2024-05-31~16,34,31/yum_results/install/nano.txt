@@ -1,0 +1,56 @@
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.013
+Obs Init time: 0.238
+Resolving Dependencies
+--> Running transaction check
+---> Package nano.x86_64 0:2.3.1-10.el7 will be installed
+Checking deps for nano.x86_64 0:2.3.1-10.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of nano.x86_64 0:2.3.1-10.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of nano.x86_64 0:2.3.1-10.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of nano.x86_64 0:2.3.1-10.el7 - u
+looking for ('/sbin/install-info', None, (None, None, None)) as a requirement of nano.x86_64 0:2.3.1-10.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of nano.x86_64 0:2.3.1-10.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of nano.x86_64 0:2.3.1-10.el7 - u
+looking for ('libncursesw.so.5()(64bit)', None, (None, None, None)) as a requirement of nano.x86_64 0:2.3.1-10.el7 - u
+looking for ('libtinfo.so.5()(64bit)', None, (None, None, None)) as a requirement of nano.x86_64 0:2.3.1-10.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.187
+
+Dependencies Resolved
+
+================================================================================
+ Package         Arch              Version                  Repository     Size
+================================================================================
+Installing:
+ nano            x86_64            2.3.1-10.el7             sl            439 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 439 k
+Installed size: 1.6 M
+Downloading packages:
+Member: nano.x86_64 0:2.3.1-10.el7 - u
+Adding Package nano-2.3.1-10.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.023
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.027
+Running transaction
+  Installing : nano-2.3.1-10.el7.x86_64                                     1/1 
+  Verifying  : nano-2.3.1-10.el7.x86_64                                     1/1 
+VerifyTransaction time: 0.071
+Transaction time: 0.524
+
+Installed:
+  nano.x86_64 0:2.3.1-10.el7                                                    
+
+Complete!

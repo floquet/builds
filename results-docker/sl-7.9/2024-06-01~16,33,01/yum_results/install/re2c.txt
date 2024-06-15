@@ -1,0 +1,71 @@
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 15357.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (246 MB VSZ)
+    Started: Sat Jun  1 16:49:38 2024 - 00:00 ago
+    State  : Running, pid: 15357
+Existing lock /var/run/yum.pid: another copy is running as pid 15358.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (244 MB VSZ)
+    Started: Sat Jun  1 16:49:38 2024 - 00:02 ago
+    State  : Running, pid: 15358
+Setting up Package Sacks
+pkgsack time: 0.012
+Obs Init time: 0.234
+Resolving Dependencies
+--> Running transaction check
+---> Package re2c.x86_64 0:0.14.3-2.el7 will be installed
+Checking deps for re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.11)(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.15)(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4.9)(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of re2c.x86_64 0:0.14.3-2.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.267
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch             Version                   Repository      Size
+================================================================================
+Installing:
+ re2c           x86_64           0.14.3-2.el7              epel           230 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 230 k
+Installed size: 677 k
+Downloading packages:
+Member: re2c.x86_64 0:0.14.3-2.el7 - u
+Adding Package re2c-0.14.3-2.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.004
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.034
+Running transaction
+  Installing : re2c-0.14.3-2.el7.x86_64                                     1/1 
+  Verifying  : re2c-0.14.3-2.el7.x86_64                                     1/1 
+VerifyTransaction time: 0.098
+Transaction time: 0.203
+
+Installed:
+  re2c.x86_64 0:0.14.3-2.el7                                                    
+
+Complete!

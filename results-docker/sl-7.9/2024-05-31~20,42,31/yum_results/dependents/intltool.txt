@@ -1,0 +1,63 @@
+yum deplist -v intltool
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.011
+Searching pkgSack for dep: /bin/sh
+Searching pkgSack for dep: /usr/bin/perl
+Searching pkgSack for dep: automake
+Searching pkgSack for dep: gettext-devel
+Searching pkgSack for dep: patch
+Searching pkgSack for dep: perl(Cwd)
+Searching pkgSack for dep: perl(Encode)
+Searching pkgSack for dep: perl(File::Basename)
+Searching pkgSack for dep: perl(File::Copy)
+Searching pkgSack for dep: perl(File::Find)
+Searching pkgSack for dep: perl(Getopt::Long)
+Searching pkgSack for dep: perl(Text::Wrap)
+Searching pkgSack for dep: perl(XML::Parser)
+Searching pkgSack for dep: perl(bytes)
+Searching pkgSack for dep: perl(strict)
+package: intltool.noarch 0.50.2-7.el7
+  dependency: /bin/sh
+   provider: bash.x86_64 4.2.46-35.el7_9
+   provider: bash.x86_64 4.2.46-34.el7
+  dependency: /usr/bin/perl
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: automake
+   provider: automake.noarch 1.13.4-3.el7
+  dependency: gettext-devel
+   provider: gettext-devel.x86_64 0.19.8.1-3.el7
+   provider: gettext-devel.i686 0.19.8.1-3.el7
+  dependency: patch
+   provider: patch.x86_64 2.7.1-12.el7_7
+  dependency: perl(Cwd)
+   provider: perl-PathTools.x86_64 3.40-5.el7
+  dependency: perl(Encode)
+   provider: perl-Encode.x86_64 2.51-7.el7
+  dependency: perl(File::Basename)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(File::Copy)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(File::Find)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(Getopt::Long)
+   provider: perl-Getopt-Long.noarch 2.40-3.el7
+  dependency: perl(Text::Wrap)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(XML::Parser)
+   provider: perl-XML-Parser.x86_64 2.41-10.el7
+  dependency: perl(bytes)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7
+  dependency: perl(strict)
+   provider: perl.x86_64 4:5.16.3-299.el7_9
+   provider: perl.x86_64 4:5.16.3-297.el7

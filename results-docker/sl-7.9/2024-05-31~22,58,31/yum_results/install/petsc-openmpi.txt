@@ -1,0 +1,389 @@
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 15140.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (246 MB VSZ)
+    Started: Fri May 31 23:09:51 2024 - 00:00 ago
+    State  : Running, pid: 15140
+Setting up Package Sacks
+pkgsack time: 0.012
+Obs Init time: 0.209
+Resolving Dependencies
+--> Running transaction check
+---> Package petsc-openmpi.x86_64 0:3.14.1-3.el7 will be installed
+Checking deps for petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('gcc-gfortran(x86-64)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libdl.so.2(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libHYPRE.so.0.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libX11.so.6()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libcmumps-5.3.so()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libdmumps-5.3.so()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libmetis.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libmpi.so.12()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libmpi_mpifh.so.12()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libmumps_common-5.3.so()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libopenblasp.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libpord-5.3.so()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libptscotch.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libptscotcherr.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libscalapack.so.2()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libscotch.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libscotcherr.so.0()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libsmumps-5.3.so()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+looking for ('libzmumps-5.3.so()(64bit)', None, (None, None, None)) as a requirement of petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libHYPRE.so.0.0()(64bit)
+--> Processing Dependency: libHYPRE.so.0.0()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Searching pkgSack for dep: libHYPRE.so.0.0()(64bit)
+Building updates object
+up:simple updates time: 0.010
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.223
+looking for ('mpich(x86-64)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libmpich.so.10()(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('libsuperlu.so.5.1()(64bit)', None, (None, None, None)) as a requirement of hypre-mpich.x86_64 0:2.11.2-2.el7 - None
+looking for ('openmpi(x86-64)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libmpi_cxx.so.1()(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libmpi.so.12()(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('libsuperlu.so.5.1()(64bit)', None, (None, None, None)) as a requirement of hypre-openmpi.x86_64 0:2.11.2-2.el7 - None
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+looking for ('libsuperlu.so.5.1()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - None
+TSINFO: Marking hypre-2.11.2-2.el7.x86_64 as install for petsc-openmpi-3.14.1-3.el7.x86_64
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libcmumps-5.3.so()(64bit)
+--> Processing Dependency: libcmumps-5.3.so()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Searching pkgSack for dep: libcmumps-5.3.so()(64bit)
+looking for ('MUMPS-common', 'EQ', ('0', '5.3.5', '1.el7')) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('ptscotch-mpich(x86-64)', 'GE', ('0', '6.0.1', None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('mpich(x86-64)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('scalapack-mpich(x86-64)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libesmumps.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmetis.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmpiblacs.so.2()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmpich.so.10()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmpl.so.1()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libopa.so.1()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libptesmumps.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libptscotch.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libptscotcherr.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscalapack.so.2()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscotch.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscotcherr.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-mpich.x86_64 0:5.3.5-1.el7 - None
+looking for ('MUMPS-common', 'EQ', ('0', '5.3.5', '1.el7')) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('ptscotch-openmpi(x86-64)', 'GE', ('0', '6.0.1', None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('openmpi(x86-64)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('scalapack-openmpi(x86-64)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libesmumps.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmetis.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmpi.so.12()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmpi_mpifh.so.12()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmpi_usempi.so.5()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmpiblacs.so.2()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libptesmumps.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libptscotch.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libptscotcherr.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscalapack.so.2()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscotch.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscotcherr.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS-openmpi.x86_64 0:5.3.5-1.el7 - None
+looking for ('MUMPS-common', 'EQ', ('0', '5.3.5', '1.el7')) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libesmumps.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libmetis.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscotch.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscotcherr.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+looking for ('libscotchmetis.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - None
+TSINFO: Marking MUMPS-5.3.5-1.el7.x86_64 as install for petsc-openmpi-3.14.1-3.el7.x86_64
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libdmumps-5.3.so()(64bit)
+--> Processing Dependency: libdmumps-5.3.so()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Quick matched MUMPS-5.3.5-1.el7.x86_64 to require for libdmumps-5.3.so()(64bit)
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libmumps_common-5.3.so()(64bit)
+--> Processing Dependency: libmumps_common-5.3.so()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Quick matched MUMPS-5.3.5-1.el7.x86_64 to require for libmumps_common-5.3.so()(64bit)
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libpord-5.3.so()(64bit)
+--> Processing Dependency: libpord-5.3.so()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Quick matched MUMPS-5.3.5-1.el7.x86_64 to require for libpord-5.3.so()(64bit)
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libptscotch.so.0()(64bit)
+--> Processing Dependency: libptscotch.so.0()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Searching pkgSack for dep: libptscotch.so.0()(64bit)
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('librt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libbz2.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libmpich.so.10()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libmpl.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libopa.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - None
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('librt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('libbz2.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('libmpi.so.12()(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-openmpi.x86_64 0:6.0.4-13.el7 - None
+TSINFO: Marking ptscotch-mpich-6.0.4-13.el7.x86_64 as install for petsc-openmpi-3.14.1-3.el7.x86_64
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libptscotcherr.so.0()(64bit)
+--> Processing Dependency: libptscotcherr.so.0()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Quick matched ptscotch-mpich-6.0.4-13.el7.x86_64 to require for libptscotcherr.so.0()(64bit)
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libscotch.so.0()(64bit)
+--> Processing Dependency: libscotch.so.0()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Quick matched ptscotch-mpich-6.0.4-13.el7.x86_64 to require for libscotch.so.0()(64bit)
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libscotcherr.so.0()(64bit)
+--> Processing Dependency: libscotcherr.so.0()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Quick matched ptscotch-mpich-6.0.4-13.el7.x86_64 to require for libscotcherr.so.0()(64bit)
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libsmumps-5.3.so()(64bit)
+--> Processing Dependency: libsmumps-5.3.so()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Searching pkgSack for dep: libsmumps-5.3.so()(64bit)
+MUMPS-5.3.5-1.el7.x86_64 already in ts, skipping this one
+petsc-openmpi-3.14.1-3.el7.x86_64 requires: libzmumps-5.3.so()(64bit)
+--> Processing Dependency: libzmumps-5.3.so()(64bit) for package: petsc-openmpi-3.14.1-3.el7.x86_64
+Quick matched MUMPS-5.3.5-1.el7.x86_64 to require for libzmumps-5.3.so()(64bit)
+--> Running transaction check
+---> Package MUMPS.x86_64 0:5.3.5-1.el7 will be installed
+Checking deps for MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('MUMPS-common', 'EQ', ('0', '5.3.5', '1.el7')) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libesmumps.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libmetis.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libscotch.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libscotcherr.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+looking for ('libscotchmetis.so.0()(64bit)', None, (None, None, None)) as a requirement of MUMPS.x86_64 0:5.3.5-1.el7 - u
+MUMPS-5.3.5-1.el7.x86_64 requires: MUMPS-common = 5.3.5-1.el7
+--> Processing Dependency: MUMPS-common = 5.3.5-1.el7 for package: MUMPS-5.3.5-1.el7.x86_64
+Searching pkgSack for dep: MUMPS-common
+TSINFO: Marking MUMPS-common-5.3.5-1.el7.noarch as install for MUMPS-5.3.5-1.el7.x86_64
+MUMPS-5.3.5-1.el7.x86_64 requires: libesmumps.so.0()(64bit)
+--> Processing Dependency: libesmumps.so.0()(64bit) for package: MUMPS-5.3.5-1.el7.x86_64
+Searching pkgSack for dep: libesmumps.so.0()(64bit)
+TSINFO: Marking scotch-6.0.4-13.el7.x86_64 as install for MUMPS-5.3.5-1.el7.x86_64
+MUMPS-5.3.5-1.el7.x86_64 requires: libscotchmetis.so.0()(64bit)
+--> Processing Dependency: libscotchmetis.so.0()(64bit) for package: MUMPS-5.3.5-1.el7.x86_64
+Quick matched scotch-6.0.4-13.el7.x86_64 to require for libscotchmetis.so.0()(64bit)
+---> Package hypre.x86_64 0:2.11.2-2.el7 will be installed
+Checking deps for hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libgcc_s.so.1(GCC_3.0)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libstdc++.so.6(CXXABI_1.3)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libstdc++.so.6(GLIBCXX_3.4)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libopenblas.so.0()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libstdc++.so.6()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+looking for ('libsuperlu.so.5.1()(64bit)', None, (None, None, None)) as a requirement of hypre.x86_64 0:2.11.2-2.el7 - u
+---> Package ptscotch-mpich.x86_64 0:6.0.4-13.el7 will be installed
+Checking deps for ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('librt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libbz2.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libmpich.so.10()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libmpl.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libopa.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+--> Running transaction check
+---> Package MUMPS-common.noarch 0:5.3.5-1.el7 will be installed
+Checking deps for MUMPS-common.noarch 0:5.3.5-1.el7 - u
+---> Package scotch.x86_64 0:6.0.4-13.el7 will be installed
+Checking deps for scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('librt.so.1(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('libbz2.so.1()(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('librt.so.1()(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of scotch.x86_64 0:6.0.4-13.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.522
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch           Version               Repository    Size
+================================================================================
+Installing:
+ petsc-openmpi          x86_64         3.14.1-3.el7          epel         5.4 M
+Installing for dependencies:
+ MUMPS                  x86_64         5.3.5-1.el7           epel         3.2 M
+ MUMPS-common           noarch         5.3.5-1.el7           epel         814 k
+ hypre                  x86_64         2.11.2-2.el7          epel         1.5 M
+ ptscotch-mpich         x86_64         6.0.4-13.el7          epel         375 k
+ scotch                 x86_64         6.0.4-13.el7          epel         336 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 12 M
+Installed size: 32 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              6.0 MB/s |  12 MB  00:01     
+Member: scotch.x86_64 0:6.0.4-13.el7 - u
+Adding Package scotch-6.0.4-13.el7.x86_64 in mode u
+Member: petsc-openmpi.x86_64 0:3.14.1-3.el7 - u
+Adding Package petsc-openmpi-3.14.1-3.el7.x86_64 in mode u
+Member: MUMPS.x86_64 0:5.3.5-1.el7 - u
+Adding Package MUMPS-5.3.5-1.el7.x86_64 in mode u
+Member: MUMPS-common.noarch 0:5.3.5-1.el7 - u
+Adding Package MUMPS-common-5.3.5-1.el7.noarch in mode u
+Member: ptscotch-mpich.x86_64 0:6.0.4-13.el7 - u
+Adding Package ptscotch-mpich-6.0.4-13.el7.x86_64 in mode u
+Member: hypre.x86_64 0:2.11.2-2.el7 - u
+Adding Package hypre-2.11.2-2.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.009
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.031
+Running transaction
+  Installing : scotch-6.0.4-13.el7.x86_64                                   1/6 
+  Installing : ptscotch-mpich-6.0.4-13.el7.x86_64                           2/6 
+  Installing : hypre-2.11.2-2.el7.x86_64                                    3/6 
+  Installing : MUMPS-common-5.3.5-1.el7.noarch                              4/6 
+  Installing : MUMPS-5.3.5-1.el7.x86_64                                     5/6 
+  Installing : petsc-openmpi-3.14.1-3.el7.x86_64                            6/6 
+  Verifying  : scotch-6.0.4-13.el7.x86_64                                   1/6 
+  Verifying  : petsc-openmpi-3.14.1-3.el7.x86_64                            2/6 
+  Verifying  : MUMPS-5.3.5-1.el7.x86_64                                     3/6 
+  Verifying  : MUMPS-common-5.3.5-1.el7.noarch                              4/6 
+  Verifying  : ptscotch-mpich-6.0.4-13.el7.x86_64                           5/6 
+  Verifying  : hypre-2.11.2-2.el7.x86_64                                    6/6 
+VerifyTransaction time: 0.114
+Transaction time: 2.714
+
+Installed:
+  petsc-openmpi.x86_64 0:3.14.1-3.el7                                           
+
+Dependency Installed:
+  MUMPS.x86_64 0:5.3.5-1.el7         MUMPS-common.noarch 0:5.3.5-1.el7         
+  hypre.x86_64 0:2.11.2-2.el7        ptscotch-mpich.x86_64 0:6.0.4-13.el7      
+  scotch.x86_64 0:6.0.4-13.el7      
+
+Complete!

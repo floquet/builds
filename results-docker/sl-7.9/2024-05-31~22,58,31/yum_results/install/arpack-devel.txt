@@ -1,0 +1,146 @@
+Loading "ovl" plugin
+Config time: 0.006
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 12261.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  30 M RSS (244 MB VSZ)
+    Started: Fri May 31 22:59:15 2024 - 00:01 ago
+    State  : Running, pid: 12261
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  33 M RSS (324 MB VSZ)
+    Started: Fri May 31 22:59:15 2024 - 00:03 ago
+    State  : Sleeping, pid: 12261
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  33 M RSS (324 MB VSZ)
+    Started: Fri May 31 22:59:15 2024 - 00:05 ago
+    State  : Sleeping, pid: 12261
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  33 M RSS (324 MB VSZ)
+    Started: Fri May 31 22:59:15 2024 - 00:07 ago
+    State  : Sleeping, pid: 12261
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  33 M RSS (324 MB VSZ)
+    Started: Fri May 31 22:59:15 2024 - 00:09 ago
+    State  : Sleeping, pid: 12261
+Setting up Package Sacks
+pkgsack time: 0.013
+Obs Init time: 0.212
+Resolving Dependencies
+--> Running transaction check
+---> Package arpack-devel.x86_64 0:3.1.3-2.el7 will be installed
+Checking deps for arpack-devel.x86_64 0:3.1.3-2.el7 - u
+looking for ('arpack', 'EQ', ('0', '3.1.3', '2.el7')) as a requirement of arpack-devel.x86_64 0:3.1.3-2.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of arpack-devel.x86_64 0:3.1.3-2.el7 - u
+looking for ('libarpack.so.2()(64bit)', None, (None, None, None)) as a requirement of arpack-devel.x86_64 0:3.1.3-2.el7 - u
+arpack-devel-3.1.3-2.el7.x86_64 requires: arpack = 3.1.3-2.el7
+--> Processing Dependency: arpack = 3.1.3-2.el7 for package: arpack-devel-3.1.3-2.el7.x86_64
+Searching pkgSack for dep: arpack
+Building updates object
+up:simple updates time: 0.003
+up:obs time: 0.003
+up:condense time: 0.000
+updates time: 0.210
+TSINFO: Marking arpack-3.1.3-2.el7.x86_64 as install for arpack-devel-3.1.3-2.el7.x86_64
+arpack-devel-3.1.3-2.el7.x86_64 requires: libarpack.so.2()(64bit)
+--> Processing Dependency: libarpack.so.2()(64bit) for package: arpack-devel-3.1.3-2.el7.x86_64
+Quick matched arpack-3.1.3-2.el7.x86_64 to require for libarpack.so.2()(64bit)
+--> Running transaction check
+---> Package arpack.x86_64 0:3.1.3-2.el7 will be installed
+Checking deps for arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+looking for ('libtatlas.so.3()(64bit)', None, (None, None, None)) as a requirement of arpack.x86_64 0:3.1.3-2.el7 - u
+arpack-3.1.3-2.el7.x86_64 requires: libtatlas.so.3()(64bit)
+--> Processing Dependency: libtatlas.so.3()(64bit) for package: arpack-3.1.3-2.el7.x86_64
+Searching pkgSack for dep: libtatlas.so.3()(64bit)
+TSINFO: Marking atlas-3.10.1-12.el7.x86_64 as install for arpack-3.1.3-2.el7.x86_64
+--> Running transaction check
+---> Package atlas.x86_64 0:3.10.1-12.el7 will be installed
+Checking deps for atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.4)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of atlas.x86_64 0:3.10.1-12.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.317
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch           Version                 Repository    Size
+================================================================================
+Installing:
+ arpack-devel         x86_64         3.1.3-2.el7             epel          76 k
+Installing for dependencies:
+ arpack               x86_64         3.1.3-2.el7             epel         101 k
+ atlas                x86_64         3.10.1-12.el7           sl           4.3 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+2 Dependent packages)
+
+Total download size: 4.5 M
+Installed size: 22 M
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/epel/packages/arpack-3.1.3-2.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+Public key for arpack-3.1.3-2.el7.x86_64.rpm is not installed
+--------------------------------------------------------------------------------
+Total                                              3.6 MB/s | 4.5 MB  00:01     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-5.noarch (@repos)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Member: arpack-devel.x86_64 0:3.1.3-2.el7 - u
+Adding Package arpack-devel-3.1.3-2.el7.x86_64 in mode u
+Member: atlas.x86_64 0:3.10.1-12.el7 - u
+Adding Package atlas-3.10.1-12.el7.x86_64 in mode u
+Member: arpack.x86_64 0:3.1.3-2.el7 - u
+Adding Package arpack-3.1.3-2.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.005
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.026
+Running transaction
+  Installing : atlas-3.10.1-12.el7.x86_64                                   1/3 
+  Installing : arpack-3.1.3-2.el7.x86_64                                    2/3 
+  Installing : arpack-devel-3.1.3-2.el7.x86_64                              3/3 
+  Verifying  : arpack-devel-3.1.3-2.el7.x86_64                              1/3 
+  Verifying  : atlas-3.10.1-12.el7.x86_64                                   2/3 
+  Verifying  : arpack-3.1.3-2.el7.x86_64                                    3/3 
+VerifyTransaction time: 0.055
+Transaction time: 1.287
+
+Installed:
+  arpack-devel.x86_64 0:3.1.3-2.el7                                             
+
+Dependency Installed:
+  arpack.x86_64 0:3.1.3-2.el7            atlas.x86_64 0:3.10.1-12.el7           
+
+Complete!

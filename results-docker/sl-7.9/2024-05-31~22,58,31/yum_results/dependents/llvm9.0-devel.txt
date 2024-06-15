@@ -1,0 +1,99 @@
+yum deplist -v llvm9.0-devel
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.011
+Searching pkgSack for dep: /usr/sbin/alternatives
+Searching pkgSack for dep: /usr/sbin/alternatives
+Searching pkgSack for dep: libLLVM-9.so()(64bit)
+Searching pkgSack for dep: libLLVM-9.so(LLVM_9)(64bit)
+Searching pkgSack for dep: libLTO.so.9()(64bit)
+Searching pkgSack for dep: libc.so.6(GLIBC_2.14)(64bit)
+Searching pkgSack for dep: libedit-devel
+Searching pkgSack for dep: libgcc_s.so.1()(64bit)
+Searching pkgSack for dep: libm.so.6()(64bit)
+Searching pkgSack for dep: libpthread.so.0()(64bit)
+Searching pkgSack for dep: libpthread.so.0(GLIBC_2.2.5)(64bit)
+Searching pkgSack for dep: libstdc++.so.6()(64bit)
+Searching pkgSack for dep: libstdc++.so.6(CXXABI_1.3)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(CXXABI_1.3.5)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.14)(64bit)
+Searching pkgSack for dep: libstdc++.so.6(GLIBCXX_3.4.18)(64bit)
+Searching pkgSack for dep: llvm9.0(x86-64)
+Searching pkgSack for dep: llvm9.0-libs(x86-64)
+Searching pkgSack for dep: rtld(GNU_HASH)
+package: llvm9.0-devel.x86_64 9.0.1-9.el7
+  dependency: /usr/sbin/alternatives
+   provider: chkconfig.x86_64 1.7.6-1.el7
+  dependency: libLLVM-9.so()(64bit)
+   provider: llvm9.0-libs.x86_64 9.0.1-9.el7
+  dependency: libLLVM-9.so(LLVM_9)(64bit)
+   provider: llvm9.0-libs.x86_64 9.0.1-9.el7
+  dependency: libLTO.so.9()(64bit)
+   provider: llvm9.0-libs.x86_64 9.0.1-9.el7
+  dependency: libc.so.6(GLIBC_2.14)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libedit-devel
+   provider: libedit-devel.x86_64 3.0-12.20121213cvs.el7
+   provider: libedit-devel.i686 3.0-12.20121213cvs.el7
+  dependency: libgcc_s.so.1()(64bit)
+   provider: libgcc.x86_64 4.8.5-44.el7
+  dependency: libm.so.6()(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0()(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libpthread.so.0(GLIBC_2.2.5)(64bit)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+  dependency: libstdc++.so.6()(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(CXXABI_1.3)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(CXXABI_1.3.5)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.14)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: libstdc++.so.6(GLIBCXX_3.4.18)(64bit)
+   provider: libstdc++.x86_64 4.8.5-44.el7
+  dependency: llvm9.0(x86-64) = 9.0.1-9.el7
+   provider: llvm9.0.x86_64 9.0.1-9.el7
+  dependency: llvm9.0-libs(x86-64) = 9.0.1-9.el7
+   provider: llvm9.0-libs.x86_64 9.0.1-9.el7
+  dependency: rtld(GNU_HASH)
+   provider: glibc.x86_64 2.17-326.el7_9
+   provider: glibc.i686 2.17-326.el7_9
+   provider: glibc.x86_64 2.17-325.el7_9
+   provider: glibc.i686 2.17-325.el7_9
+   provider: glibc.x86_64 2.17-324.el7_9
+   provider: glibc.i686 2.17-324.el7_9
+   provider: glibc.x86_64 2.17-323.el7_9
+   provider: glibc.i686 2.17-323.el7_9
+   provider: glibc.x86_64 2.17-322.el7_9
+   provider: glibc.i686 2.17-322.el7_9
+   provider: glibc.x86_64 2.17-317.el7
+   provider: glibc.i686 2.17-317.el7

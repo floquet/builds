@@ -2,33 +2,45 @@
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 # Wed Dec 29 19:05:24 MST 2021
-# source /repos/github/builds/scripts-docker/kickstarts/amazonlinux-kickstart.sh
+# source /repos/github/builds/scripts-docker/kickstarts/sllinux-kickstart.sh
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 # define functions new_step, sub_step, sub-sub_step, pause
 source ${repo_scripts_spack}/shared/common-header.sh
 
-# $ docker pull amazonlinux:${amazon_version}
-# 2022.0.20220202.0: Pulling from library/amazonlinux
-# 7bc2af7bb0f9: Pull complete
-# Digest: sha256:ba535592e8fca7d12c9f6ebe81e1fc69713740287d83c42d83af581a701f6e64
-# Status: Downloaded newer image for amazonlinux:2022.0.20220202.0
-# docker.io/library/amazonlinux:2022.0.20220202.0
-
-# $ ehecoatlDocker amazonlinux:${amazon_version}
-# docker run -it -v /Users/dtopa/Dropbox:/Dropbox -v /Users/dtopa/repos:/repos -v /Volumes/Tlaloc/repos:/vrepos -v Volumes/Tlaloc/spacktivity:/spacktivity amazonlinux:2022.0.20220202.0
-# bash-5.1# yum
-
-# docker pull amazonlinux:latest; ehecoatlDocker amazonlinux:latest
+# Fri May 31 16:28:23 MDT 2024
+# dantopa@Xiuhcoatl-8.local:dantopa $ docker pull sl
+# Using default tag: latest
+# latest: Pulling from library/sl
+# 7b980b01d7b4: Pull complete 
+# Digest: sha256:22b4838ca0d3cec032d68d249a260078946f88266cf54c5e146a09ad558f7c86
+# Status: Downloaded newer image for sl:latest
+# docker.io/library/sl:latest
+# 
+# What's Next?
+#   View a summary of image vulnerabilities and recommendations → docker scout quickview sl
+# dantopa@Xiuhcoatl-8.local:dantopa $ xiuhcoatlDockerTime sl
+# docker run -it -v /etc/localtime:/etc/localtime -v /Users/dantopa//Dropbox:/Dropbox -v /Volumes//atacama:/atacama -v /Volumes//docker:/docker -v /Volumes//gobi:/gobi -v /Volumes//sonoran:/sonoran -v /Volumes//repos:/repos -v /Volumes//spacktivity:/spacktivity sl
+# [root@494cba8c597f /]# yum
+# Loaded plugins: ovl
+# You need to give some command
+# Usage: yum [options] COMMAND
 
 #  #  #  ========================================== declarations begin
 
-export dist="sl" ; export release="2022" ; export tag="${dist}-${release}"
+export dist="sl" ; export release="7" ; export tag="${dist}-${release}"
 export USER="dantopa"
 installer="yum"
 
+echo "Remove training wheels"
+alias cp="cp"
+alias mv="mv"
+alias rm="rm"
+# Scientific Linux is a Fermilab sponsored project. Our primary user base is within the High Energy and High Intensity Physics community. However, our users come from a wide variety of industries with various use cases all over the globe – and sometimes off of it!
+
+
 # start timer
-export amazonSECONDS=${SECONDS}
+export slSECONDS=${SECONDS}
 # name of spack directory on virtual machine
 export mySpack="${tag}-${USER}-docker-spack"
 # post results
@@ -68,10 +80,10 @@ echo ""; echo "su - ${USER}"
     echo "export mySpack=${mySpack}"
     echo "export dist=${dist} ; export release=${release} ; export tag=${dist}-${release}"
 
-echo ""; echo 'export dist="${dist}" ; export release="${dist}" ; export tag="${dist}-${release}"'
+echo ""; echo 'export dist="${dist}" ; export release="${release}" ; export tag="${dist}-${release}"'
 
 echo ""; echo "Report elapsed time"
-    export amazonSECONDS=$((${SECONDS}-${amazonSECONDS}))
+    export slSECONDS=$((${SECONDS}-${slSECONDS}))
     date    >  ${timerFile}
     echo "" >> ${timerFile}
-    printf "time to build ${tag} system: %dh:%dm:%ds\n" $((${amazonSECONDS}/3600)) $((${amazonSECONDS}%3600/60)) $((${amazonSECONDS}%60)) | tee -a  ${timerFile}
+    printf "time to build ${tag} system: %dh:%dm:%ds\n" $((${slSECONDS}/3600)) $((${slSECONDS}%3600/60)) $((${slSECONDS}%60)) | tee -a  ${timerFile}

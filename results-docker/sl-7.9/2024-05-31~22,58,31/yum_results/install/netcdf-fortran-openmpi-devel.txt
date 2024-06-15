@@ -1,0 +1,144 @@
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Setting up Package Sacks
+pkgsack time: 0.011
+Obs Init time: 0.209
+Resolving Dependencies
+--> Running transaction check
+---> Package netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 will be installed
+Checking deps for netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+looking for ('netcdf-fortran-openmpi(x86-64)', 'EQ', ('0', '4.2', '16.el7')) as a requirement of netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+looking for ('gcc-gfortran(x86-64)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+looking for ('libcurl-devel', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+looking for ('netcdf-openmpi-devel', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+looking for ('openmpi-devel', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+looking for ('libnetcdff.so.5()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64 requires: netcdf-fortran-openmpi(x86-64) = 4.2-16.el7
+--> Processing Dependency: netcdf-fortran-openmpi(x86-64) = 4.2-16.el7 for package: netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64
+Searching pkgSack for dep: netcdf-fortran-openmpi(x86-64)
+Building updates object
+up:simple updates time: 0.008
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.212
+TSINFO: Marking netcdf-fortran-openmpi-4.2-16.el7.x86_64 as install for netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64
+netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64 requires: netcdf-openmpi-devel
+--> Processing Dependency: netcdf-openmpi-devel for package: netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64
+Searching pkgSack for dep: netcdf-openmpi-devel
+TSINFO: Marking netcdf-openmpi-devel-4.3.3.1-5.el7.x86_64 as install for netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64
+netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64 requires: libnetcdff.so.5()(64bit)
+--> Processing Dependency: libnetcdff.so.5()(64bit) for package: netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64
+Searching pkgSack for dep: libnetcdff.so.5()(64bit)
+netcdf-fortran-openmpi-4.2-16.el7.x86_64 already in ts, skipping this one
+--> Running transaction check
+---> Package netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 will be installed
+Checking deps for netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libgfortran.so.3(GFORTRAN_1.0)(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('openmpi', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libgcc_s.so.1()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libgfortran.so.3()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libmpi.so.12()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libmpi_mpifh.so.12()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libmpi_usempi.so.1()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libnetcdf.so.7()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+looking for ('libquadmath.so.0()(64bit)', None, (None, None, None)) as a requirement of netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+---> Package netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 will be installed
+Checking deps for netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('netcdf-openmpi(x86-64)', 'EQ', ('0', '4.3.3.1', '5.el7')) as a requirement of netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('hdf5-openmpi-devel(x86-64)', None, (None, None, None)) as a requirement of netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libcurl-devel(x86-64)', None, (None, None, None)) as a requirement of netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('openmpi-devel(x86-64)', None, (None, None, None)) as a requirement of netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('pkgconfig(x86-64)', None, (None, None, None)) as a requirement of netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libnetcdf.so.7()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+netcdf-openmpi-devel-4.3.3.1-5.el7.x86_64 requires: netcdf-openmpi(x86-64) = 4.3.3.1-5.el7
+--> Processing Dependency: netcdf-openmpi(x86-64) = 4.3.3.1-5.el7 for package: netcdf-openmpi-devel-4.3.3.1-5.el7.x86_64
+Searching pkgSack for dep: netcdf-openmpi(x86-64)
+TSINFO: Marking netcdf-openmpi-4.3.3.1-5.el7.x86_64 as install for netcdf-openmpi-devel-4.3.3.1-5.el7.x86_64
+--> Running transaction check
+---> Package netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 will be installed
+Checking deps for netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('hdf5-openmpi(x86-64)', 'EQ', ('0', '1.8.12', None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libjpeg.so.62(LIBJPEG_6.2)(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libm.so.6(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libpthread.so.0(GLIBC_2.2.5)(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('openmpi(x86-64)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libcurl.so.4()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libjpeg.so.62()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libm.so.6()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libmpi.so.12()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libnetcdf.so.7()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libpthread.so.0()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.418
+
+Dependencies Resolved
+
+================================================================================
+ Package                          Arch       Version             Repository
+                                                                           Size
+================================================================================
+Installing:
+ netcdf-fortran-openmpi-devel     x86_64     4.2-16.el7          epel      47 k
+Installing for dependencies:
+ netcdf-fortran-openmpi           x86_64     4.2-16.el7          epel      86 k
+ netcdf-openmpi                   x86_64     4.3.3.1-5.el7       epel     685 k
+ netcdf-openmpi-devel             x86_64     4.3.3.1-5.el7       epel      41 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 859 k
+Installed size: 3.2 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              862 kB/s | 859 kB  00:00     
+Member: netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7 - u
+Adding Package netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64 in mode u
+Member: netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7 - u
+Adding Package netcdf-openmpi-devel-4.3.3.1-5.el7.x86_64 in mode u
+Member: netcdf-fortran-openmpi.x86_64 0:4.2-16.el7 - u
+Adding Package netcdf-fortran-openmpi-4.2-16.el7.x86_64 in mode u
+Member: netcdf-openmpi.x86_64 0:4.3.3.1-5.el7 - u
+Adding Package netcdf-openmpi-4.3.3.1-5.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.024
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.005
+Running transaction
+  Installing : netcdf-openmpi-4.3.3.1-5.el7.x86_64                          1/4 
+  Installing : netcdf-openmpi-devel-4.3.3.1-5.el7.x86_64                    2/4 
+  Installing : netcdf-fortran-openmpi-4.2-16.el7.x86_64                     3/4 
+  Installing : netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64               4/4 
+  Verifying  : netcdf-fortran-openmpi-devel-4.2-16.el7.x86_64               1/4 
+  Verifying  : netcdf-openmpi-devel-4.3.3.1-5.el7.x86_64                    2/4 
+  Verifying  : netcdf-fortran-openmpi-4.2-16.el7.x86_64                     3/4 
+  Verifying  : netcdf-openmpi-4.3.3.1-5.el7.x86_64                          4/4 
+VerifyTransaction time: 0.085
+Transaction time: 0.253
+
+Installed:
+  netcdf-fortran-openmpi-devel.x86_64 0:4.2-16.el7                              
+
+Dependency Installed:
+  netcdf-fortran-openmpi.x86_64 0:4.2-16.el7                                    
+  netcdf-openmpi.x86_64 0:4.3.3.1-5.el7                                         
+  netcdf-openmpi-devel.x86_64 0:4.3.3.1-5.el7                                   
+
+Complete!

@@ -1,0 +1,329 @@
+Loading "ovl" plugin
+Config time: 0.007
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 12816.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (246 MB VSZ)
+    Started: Fri May 31 19:20:50 2024 - 00:01 ago
+    State  : Running, pid: 12816
+Existing lock /var/run/yum.pid: another copy is running as pid 12817.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  30 M RSS (244 MB VSZ)
+    Started: Fri May 31 19:20:50 2024 - 00:03 ago
+    State  : Running, pid: 12817
+Setting up Package Sacks
+pkgsack time: 0.011
+Checking for virtual provide or file-provide for go
+Obs Init time: 0.219
+Resolving Dependencies
+--> Running transaction check
+---> Package golang.x86_64 0:1.20.12-1.el7 will be installed
+Checking deps for golang.x86_64 0:1.20.12-1.el7 - u
+looking for ('golang-bin', 'EQ', ('0', '1.20.12', '1.el7')) as a requirement of golang.x86_64 0:1.20.12-1.el7 - u
+looking for ('golang-src', 'EQ', ('0', '1.20.12', '1.el7')) as a requirement of golang.x86_64 0:1.20.12-1.el7 - u
+looking for ('openssl-devel', None, (None, None, None)) as a requirement of golang.x86_64 0:1.20.12-1.el7 - u
+looking for ('diffutils', None, (None, None, None)) as a requirement of golang.x86_64 0:1.20.12-1.el7 - u
+golang-1.20.12-1.el7.x86_64 requires: golang-bin = 1.20.12-1.el7
+--> Processing Dependency: golang-bin = 1.20.12-1.el7 for package: golang-1.20.12-1.el7.x86_64
+Searching pkgSack for dep: golang-bin
+Building updates object
+up:simple updates time: 0.006
+up:obs time: 0.004
+up:condense time: 0.000
+updates time: 0.216
+TSINFO: Marking golang-bin-1.20.12-1.el7.x86_64 as install for golang-1.20.12-1.el7.x86_64
+golang-1.20.12-1.el7.x86_64 requires: golang-src = 1.20.12-1.el7
+--> Processing Dependency: golang-src = 1.20.12-1.el7 for package: golang-1.20.12-1.el7.x86_64
+Searching pkgSack for dep: golang-src
+TSINFO: Marking golang-src-1.20.12-1.el7.noarch as install for golang-1.20.12-1.el7.x86_64
+golang-1.20.12-1.el7.x86_64 requires: openssl-devel
+--> Processing Dependency: openssl-devel for package: golang-1.20.12-1.el7.x86_64
+Searching pkgSack for dep: openssl-devel
+TSINFO: Marking 1:openssl-devel-1.0.2k-26.el7_9.x86_64 as install for golang-1.20.12-1.el7.x86_64
+--> Running transaction check
+---> Package golang-bin.x86_64 0:1.20.12-1.el7 will be installed
+Checking deps for golang-bin.x86_64 0:1.20.12-1.el7 - u
+looking for ('golang', 'EQ', ('0', '1.20.12', '1.el7')) as a requirement of golang-bin.x86_64 0:1.20.12-1.el7 - u
+looking for ('glibc', None, (None, None, None)) as a requirement of golang-bin.x86_64 0:1.20.12-1.el7 - u
+looking for ('/usr/bin/gcc', None, (None, None, None)) as a requirement of golang-bin.x86_64 0:1.20.12-1.el7 - u
+---> Package golang-src.noarch 0:1.20.12-1.el7 will be installed
+Checking deps for golang-src.noarch 0:1.20.12-1.el7 - u
+---> Package openssl-devel.x86_64 1:1.0.2k-26.el7_9 will be installed
+Checking deps for openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+looking for ('openssl-libs(x86-64)', 'EQ', ('1', '1.0.2k', '26.el7_9')) as a requirement of openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+looking for ('krb5-devel(x86-64)', None, (None, None, None)) as a requirement of openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+looking for ('zlib-devel(x86-64)', None, (None, None, None)) as a requirement of openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+looking for ('libcrypto.so.10()(64bit)', None, (None, None, None)) as a requirement of openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+looking for ('libssl.so.10()(64bit)', None, (None, None, None)) as a requirement of openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+1:openssl-devel-1.0.2k-26.el7_9.x86_64 requires: krb5-devel(x86-64)
+--> Processing Dependency: krb5-devel(x86-64) for package: 1:openssl-devel-1.0.2k-26.el7_9.x86_64
+Searching pkgSack for dep: krb5-devel(x86-64)
+TSINFO: Marking krb5-devel-1.15.1-55.el7_9.x86_64 as install for 1:openssl-devel-1.0.2k-26.el7_9.x86_64
+1:openssl-devel-1.0.2k-26.el7_9.x86_64 requires: zlib-devel(x86-64)
+--> Processing Dependency: zlib-devel(x86-64) for package: 1:openssl-devel-1.0.2k-26.el7_9.x86_64
+Searching pkgSack for dep: zlib-devel(x86-64)
+TSINFO: Marking zlib-devel-1.2.7-21.el7_9.x86_64 as install for 1:openssl-devel-1.0.2k-26.el7_9.x86_64
+--> Running transaction check
+---> Package krb5-devel.x86_64 0:1.15.1-55.el7_9 will be installed
+Checking deps for krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('krb5-libs(x86-64)', 'EQ', ('0', '1.15.1', '55.el7_9')) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkadm5(x86-64)', 'EQ', ('0', '1.15.1', '55.el7_9')) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('keyutils-libs-devel', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libcom_err-devel', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libgssapi_krb5.so.2(gssapi_krb5_2_MIT)(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkrb5.so.3(krb5_3_MIT)(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libselinux-devel', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libverto-devel', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.15)(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libcom_err.so.2()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libdl.so.2()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libgssapi_krb5.so.2()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libgssrpc.so.4()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libk5crypto.so.3()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkdb5.so.8()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkeyutils.so.1()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkrad.so.0()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkrb5.so.3()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkrb5support.so.0()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libresolv.so.2()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libselinux.so.1()(64bit)', None, (None, None, None)) as a requirement of krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+krb5-devel-1.15.1-55.el7_9.x86_64 requires: libkadm5(x86-64) = 1.15.1-55.el7_9
+--> Processing Dependency: libkadm5(x86-64) = 1.15.1-55.el7_9 for package: krb5-devel-1.15.1-55.el7_9.x86_64
+Searching pkgSack for dep: libkadm5(x86-64)
+TSINFO: Marking libkadm5-1.15.1-55.el7_9.x86_64 as install for krb5-devel-1.15.1-55.el7_9.x86_64
+krb5-devel-1.15.1-55.el7_9.x86_64 requires: keyutils-libs-devel
+--> Processing Dependency: keyutils-libs-devel for package: krb5-devel-1.15.1-55.el7_9.x86_64
+Searching pkgSack for dep: keyutils-libs-devel
+TSINFO: Marking keyutils-libs-devel-1.5.8-3.el7.x86_64 as install for krb5-devel-1.15.1-55.el7_9.x86_64
+krb5-devel-1.15.1-55.el7_9.x86_64 requires: libcom_err-devel
+--> Processing Dependency: libcom_err-devel for package: krb5-devel-1.15.1-55.el7_9.x86_64
+Searching pkgSack for dep: libcom_err-devel
+TSINFO: Marking libcom_err-devel-1.42.9-19.el7.x86_64 as install for krb5-devel-1.15.1-55.el7_9.x86_64
+krb5-devel-1.15.1-55.el7_9.x86_64 requires: libselinux-devel
+--> Processing Dependency: libselinux-devel for package: krb5-devel-1.15.1-55.el7_9.x86_64
+Searching pkgSack for dep: libselinux-devel
+TSINFO: Marking libselinux-devel-2.5-15.el7.x86_64 as install for krb5-devel-1.15.1-55.el7_9.x86_64
+krb5-devel-1.15.1-55.el7_9.x86_64 requires: libverto-devel
+--> Processing Dependency: libverto-devel for package: krb5-devel-1.15.1-55.el7_9.x86_64
+Searching pkgSack for dep: libverto-devel
+TSINFO: Marking libverto-devel-0.2.5-4.el7.x86_64 as install for krb5-devel-1.15.1-55.el7_9.x86_64
+---> Package zlib-devel.x86_64 0:1.2.7-21.el7_9 will be installed
+Checking deps for zlib-devel.x86_64 0:1.2.7-21.el7_9 - u
+looking for ('zlib', 'EQ', ('0', '1.2.7', '21.el7_9')) as a requirement of zlib-devel.x86_64 0:1.2.7-21.el7_9 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of zlib-devel.x86_64 0:1.2.7-21.el7_9 - u
+looking for ('libz.so.1()(64bit)', None, (None, None, None)) as a requirement of zlib-devel.x86_64 0:1.2.7-21.el7_9 - u
+--> Running transaction check
+---> Package keyutils-libs-devel.x86_64 0:1.5.8-3.el7 will be installed
+Checking deps for keyutils-libs-devel.x86_64 0:1.5.8-3.el7 - u
+looking for ('keyutils-libs', 'EQ', ('0', '1.5.8', '3.el7')) as a requirement of keyutils-libs-devel.x86_64 0:1.5.8-3.el7 - u
+looking for ('libkeyutils.so.1()(64bit)', None, (None, None, None)) as a requirement of keyutils-libs-devel.x86_64 0:1.5.8-3.el7 - u
+---> Package libcom_err-devel.x86_64 0:1.42.9-19.el7 will be installed
+Checking deps for libcom_err-devel.x86_64 0:1.42.9-19.el7 - u
+looking for ('libcom_err(x86-64)', 'EQ', ('0', '1.42.9', '19.el7')) as a requirement of libcom_err-devel.x86_64 0:1.42.9-19.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of libcom_err-devel.x86_64 0:1.42.9-19.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of libcom_err-devel.x86_64 0:1.42.9-19.el7 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of libcom_err-devel.x86_64 0:1.42.9-19.el7 - u
+looking for ('libcom_err.so.2()(64bit)', None, (None, None, None)) as a requirement of libcom_err-devel.x86_64 0:1.42.9-19.el7 - u
+---> Package libkadm5.x86_64 0:1.15.1-55.el7_9 will be installed
+Checking deps for libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('krb5-libs(x86-64)', 'EQ', ('0', '1.15.1', '55.el7_9')) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('/sbin/ldconfig', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libgssapi_krb5.so.2(gssapi_krb5_2_MIT)(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libgssrpc.so.4(gssrpc_4_MIT)(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libk5crypto.so.3(k5crypto_3_MIT)(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkdb5.so.8(kdb5_8_MIT)(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkrb5.so.3(krb5_3_MIT)(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkrb5support.so.0(krb5support_0_MIT)(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libc.so.6(GLIBC_2.14)(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libcom_err.so.2()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libgssapi_krb5.so.2()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libgssrpc.so.4()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libk5crypto.so.3()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkdb5.so.8()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkeyutils.so.1()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkrb5.so.3()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libkrb5support.so.0()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+looking for ('libresolv.so.2()(64bit)', None, (None, None, None)) as a requirement of libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+---> Package libselinux-devel.x86_64 0:2.5-15.el7 will be installed
+Checking deps for libselinux-devel.x86_64 0:2.5-15.el7 - u
+looking for ('libselinux(x86-64)', 'EQ', ('0', '2.5', '15.el7')) as a requirement of libselinux-devel.x86_64 0:2.5-15.el7 - u
+looking for ('libsepol-devel(x86-64)', 'GE', ('0', '2.5', '10')) as a requirement of libselinux-devel.x86_64 0:2.5-15.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of libselinux-devel.x86_64 0:2.5-15.el7 - u
+looking for ('pkgconfig(libpcre)', None, (None, None, None)) as a requirement of libselinux-devel.x86_64 0:2.5-15.el7 - u
+looking for ('pkgconfig(libsepol)', None, (None, None, None)) as a requirement of libselinux-devel.x86_64 0:2.5-15.el7 - u
+looking for ('libselinux.so.1()(64bit)', None, (None, None, None)) as a requirement of libselinux-devel.x86_64 0:2.5-15.el7 - u
+libselinux-devel-2.5-15.el7.x86_64 requires: libsepol-devel(x86-64) >= 2.5-10
+--> Processing Dependency: libsepol-devel(x86-64) >= 2.5-10 for package: libselinux-devel-2.5-15.el7.x86_64
+Searching pkgSack for dep: libsepol-devel(x86-64)
+TSINFO: Marking libsepol-devel-2.5-10.el7.x86_64 as install for libselinux-devel-2.5-15.el7.x86_64
+libselinux-devel-2.5-15.el7.x86_64 requires: pkgconfig(libpcre)
+--> Processing Dependency: pkgconfig(libpcre) for package: libselinux-devel-2.5-15.el7.x86_64
+Searching pkgSack for dep: pkgconfig(libpcre)
+TSINFO: Marking pcre-devel-8.32-17.el7.x86_64 as install for libselinux-devel-2.5-15.el7.x86_64
+libselinux-devel-2.5-15.el7.x86_64 requires: pkgconfig(libsepol)
+--> Processing Dependency: pkgconfig(libsepol) for package: libselinux-devel-2.5-15.el7.x86_64
+Searching pkgSack for dep: pkgconfig(libsepol)
+libsepol-devel-2.5-10.el7.x86_64 already in ts, skipping this one
+---> Package libverto-devel.x86_64 0:0.2.5-4.el7 will be installed
+Checking deps for libverto-devel.x86_64 0:0.2.5-4.el7 - u
+looking for ('libverto(x86-64)', 'EQ', ('0', '0.2.5', '4.el7')) as a requirement of libverto-devel.x86_64 0:0.2.5-4.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of libverto-devel.x86_64 0:0.2.5-4.el7 - u
+looking for ('pkgconfig', None, (None, None, None)) as a requirement of libverto-devel.x86_64 0:0.2.5-4.el7 - u
+looking for ('libverto.so.1()(64bit)', None, (None, None, None)) as a requirement of libverto-devel.x86_64 0:0.2.5-4.el7 - u
+--> Running transaction check
+---> Package libsepol-devel.x86_64 0:2.5-10.el7 will be installed
+Checking deps for libsepol-devel.x86_64 0:2.5-10.el7 - u
+looking for ('libsepol(x86-64)', 'EQ', ('0', '2.5', '10.el7')) as a requirement of libsepol-devel.x86_64 0:2.5-10.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of libsepol-devel.x86_64 0:2.5-10.el7 - u
+looking for ('libsepol.so.1()(64bit)', None, (None, None, None)) as a requirement of libsepol-devel.x86_64 0:2.5-10.el7 - u
+---> Package pcre-devel.x86_64 0:8.32-17.el7 will be installed
+Checking deps for pcre-devel.x86_64 0:8.32-17.el7 - u
+looking for ('pcre(x86-64)', 'EQ', ('0', '8.32', '17.el7')) as a requirement of pcre-devel.x86_64 0:8.32-17.el7 - u
+looking for ('/bin/sh', None, (None, None, None)) as a requirement of pcre-devel.x86_64 0:8.32-17.el7 - u
+looking for ('/usr/bin/pkg-config', None, (None, None, None)) as a requirement of pcre-devel.x86_64 0:8.32-17.el7 - u
+looking for ('libpcre.so.1()(64bit)', None, (None, None, None)) as a requirement of pcre-devel.x86_64 0:8.32-17.el7 - u
+looking for ('libpcre16.so.0()(64bit)', None, (None, None, None)) as a requirement of pcre-devel.x86_64 0:8.32-17.el7 - u
+looking for ('libpcre32.so.0()(64bit)', None, (None, None, None)) as a requirement of pcre-devel.x86_64 0:8.32-17.el7 - u
+looking for ('libpcrecpp.so.0()(64bit)', None, (None, None, None)) as a requirement of pcre-devel.x86_64 0:8.32-17.el7 - u
+looking for ('libpcreposix.so.0()(64bit)', None, (None, None, None)) as a requirement of pcre-devel.x86_64 0:8.32-17.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.454
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch       Version               Repository       Size
+================================================================================
+Installing:
+ golang                  x86_64     1.20.12-1.el7         epel            673 k
+Installing for dependencies:
+ golang-bin              x86_64     1.20.12-1.el7         epel             65 M
+ golang-src              noarch     1.20.12-1.el7         epel             12 M
+ keyutils-libs-devel     x86_64     1.5.8-3.el7           sl               36 k
+ krb5-devel              x86_64     1.15.1-55.el7_9       sl-security     259 k
+ libcom_err-devel        x86_64     1.42.9-19.el7         sl               34 k
+ libkadm5                x86_64     1.15.1-55.el7_9       sl-security     177 k
+ libselinux-devel        x86_64     2.5-15.el7            sl              183 k
+ libsepol-devel          x86_64     2.5-10.el7            sl               74 k
+ libverto-devel          x86_64     0.2.5-4.el7           sl               11 k
+ openssl-devel           x86_64     1:1.0.2k-26.el7_9     sl-security     1.5 M
+ pcre-devel              x86_64     8.32-17.el7           sl              479 k
+ zlib-devel              x86_64     1.2.7-21.el7_9        sl-security      47 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+12 Dependent packages)
+
+Total download size: 80 M
+Installed size: 212 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                               32 MB/s |  80 MB  00:02     
+Member: openssl-devel.x86_64 1:1.0.2k-26.el7_9 - u
+Adding Package 1:openssl-devel-1.0.2k-26.el7_9.x86_64 in mode u
+Member: libselinux-devel.x86_64 0:2.5-15.el7 - u
+Adding Package libselinux-devel-2.5-15.el7.x86_64 in mode u
+Member: keyutils-libs-devel.x86_64 0:1.5.8-3.el7 - u
+Adding Package keyutils-libs-devel-1.5.8-3.el7.x86_64 in mode u
+Member: libverto-devel.x86_64 0:0.2.5-4.el7 - u
+Adding Package libverto-devel-0.2.5-4.el7.x86_64 in mode u
+Member: libkadm5.x86_64 0:1.15.1-55.el7_9 - u
+Adding Package libkadm5-1.15.1-55.el7_9.x86_64 in mode u
+Member: krb5-devel.x86_64 0:1.15.1-55.el7_9 - u
+Adding Package krb5-devel-1.15.1-55.el7_9.x86_64 in mode u
+Member: libsepol-devel.x86_64 0:2.5-10.el7 - u
+Adding Package libsepol-devel-2.5-10.el7.x86_64 in mode u
+Member: pcre-devel.x86_64 0:8.32-17.el7 - u
+Adding Package pcre-devel-8.32-17.el7.x86_64 in mode u
+Member: golang-bin.x86_64 0:1.20.12-1.el7 - u
+Adding Package golang-bin-1.20.12-1.el7.x86_64 in mode u
+Member: libcom_err-devel.x86_64 0:1.42.9-19.el7 - u
+Adding Package libcom_err-devel-1.42.9-19.el7.x86_64 in mode u
+Member: zlib-devel.x86_64 0:1.2.7-21.el7_9 - u
+Adding Package zlib-devel-1.2.7-21.el7_9.x86_64 in mode u
+Member: golang.x86_64 0:1.20.12-1.el7 - u
+Adding Package golang-1.20.12-1.el7.x86_64 in mode u
+Member: golang-src.noarch 0:1.20.12-1.el7 - u
+Adding Package golang-src-1.20.12-1.el7.noarch in mode u
+Running transaction check
+Transaction check time: 0.027
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.081
+Running transaction
+  Installing : golang-src-1.20.12-1.el7.noarch                             1/13 
+  Installing : zlib-devel-1.2.7-21.el7_9.x86_64                            2/13 
+  Installing : libcom_err-devel-1.42.9-19.el7.x86_64                       3/13 
+  Installing : pcre-devel-8.32-17.el7.x86_64                               4/13 
+  Installing : libsepol-devel-2.5-10.el7.x86_64                            5/13 
+  Installing : libselinux-devel-2.5-15.el7.x86_64                          6/13 
+  Installing : libkadm5-1.15.1-55.el7_9.x86_64                             7/13 
+  Installing : libverto-devel-0.2.5-4.el7.x86_64                           8/13 
+  Installing : keyutils-libs-devel-1.5.8-3.el7.x86_64                      9/13 
+  Installing : krb5-devel-1.15.1-55.el7_9.x86_64                          10/13 
+  Installing : 1:openssl-devel-1.0.2k-26.el7_9.x86_64                     11/13 
+  Installing : golang-bin-1.20.12-1.el7.x86_64                            12/13 
+  Installing : golang-1.20.12-1.el7.x86_64                                13/13 
+  Verifying  : 1:openssl-devel-1.0.2k-26.el7_9.x86_64                      1/13 
+  Verifying  : libselinux-devel-2.5-15.el7.x86_64                          2/13 
+  Verifying  : keyutils-libs-devel-1.5.8-3.el7.x86_64                      3/13 
+  Verifying  : libverto-devel-0.2.5-4.el7.x86_64                           4/13 
+  Verifying  : libkadm5-1.15.1-55.el7_9.x86_64                             5/13 
+  Verifying  : krb5-devel-1.15.1-55.el7_9.x86_64                           6/13 
+  Verifying  : libsepol-devel-2.5-10.el7.x86_64                            7/13 
+  Verifying  : pcre-devel-8.32-17.el7.x86_64                               8/13 
+  Verifying  : golang-bin-1.20.12-1.el7.x86_64                             9/13 
+  Verifying  : libcom_err-devel-1.42.9-19.el7.x86_64                      10/13 
+  Verifying  : zlib-devel-1.2.7-21.el7_9.x86_64                           11/13 
+  Verifying  : golang-1.20.12-1.el7.x86_64                                12/13 
+  Verifying  : golang-src-1.20.12-1.el7.noarch                            13/13 
+VerifyTransaction time: 0.131
+Transaction time: 6.413
+
+Installed:
+  golang.x86_64 0:1.20.12-1.el7                                                 
+
+Dependency Installed:
+  golang-bin.x86_64 0:1.20.12-1.el7                                             
+  golang-src.noarch 0:1.20.12-1.el7                                             
+  keyutils-libs-devel.x86_64 0:1.5.8-3.el7                                      
+  krb5-devel.x86_64 0:1.15.1-55.el7_9                                           
+  libcom_err-devel.x86_64 0:1.42.9-19.el7                                       
+  libkadm5.x86_64 0:1.15.1-55.el7_9                                             
+  libselinux-devel.x86_64 0:2.5-15.el7                                          
+  libsepol-devel.x86_64 0:2.5-10.el7                                            
+  libverto-devel.x86_64 0:0.2.5-4.el7                                           
+  openssl-devel.x86_64 1:1.0.2k-26.el7_9                                        
+  pcre-devel.x86_64 0:8.32-17.el7                                               
+  zlib-devel.x86_64 0:1.2.7-21.el7_9                                            
+
+Complete!
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 15717.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (244 MB VSZ)
+    Started: Fri May 31 20:43:45 2024 - 00:01 ago
+    State  : Running, pid: 15717
+Setting up Package Sacks
+pkgsack time: 0.012
+Checking for virtual provide or file-provide for go
+Obs Init time: 0.221
+Package golang-1.20.12-1.el7.x86_64 already installed and latest version
+Nothing to do

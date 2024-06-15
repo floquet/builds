@@ -5,12 +5,12 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
 source /repos/github/builds/scripts-docker/bash-inits/paths.sh
 
-export     gcc_latest="gcc@13.1.0"
-export    llvm_latest="llvm@16.0.5"
-export llvm_alternate="llvm@15.0.7"
+# export     gcc_latest="gcc@14.1.0"
+# export    llvm_latest="llvm@18.1.5"
+# export llvm_alternate="llvm@17.0.6"
 
-export dist="fedora" ; export release="39" ; export tag="${dist}-${release}"
-export local_compiler="gcc@13.1.1-4-red-hat"
+# export dist="fedora" ; export release="39" ; export tag="${dist}-${release}"
+# export local_compiler="gcc@13.1.1-4-red-hat"
 
 # export dist="ubuntu" ; export release="22.04" ; export tag="${dist}-${release}"
 # export local_compiler="gcc@11.3.0"
@@ -137,6 +137,9 @@ sub_step_counter=0
 
     sub_step "source share/spack/setup-env.sh"
               source share/spack/setup-env.sh
+              
+    sub_step "export Spack_Locker=${SPACK_ROOT}/${ego}"
+              export Spack_Locker="${SPACK_ROOT}/${ego}"
 
 # new_step "Build cdf"
 # sub_step_counter=0
@@ -153,10 +156,11 @@ sub_step_counter=0
 #    sub_step "source ${HOME}/apps/shell-scripts/build-cdf.sh"
 #              source ${HOME}/apps/shell-scripts/build-cdf.sh
 
+
 new_step "Bring in system files from the cloud"
 sub_step_counter=0
-    sub_step "cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/shell-scripts/."
-              cp ${repo_scripts_spack}/environment/set-environment.sh ${SPACK_ROOT}/shell-scripts/.
+    sub_step "cp ${repo_scripts_spack}/transport/environment/set-environment.sh ${Spack_Locker}/shell-scripts/."
+              cp ${repo_scripts_spack}/transport/environment/set-environment.sh ${Spack_Locker}/shell-scripts/.
 
     sub_step "cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/."
               cp ${repo_scripts_docker}/transport/mirrors.yaml ${SPACK_ROOT}/etc/spack/.
@@ -177,8 +181,15 @@ new_step "Setup spack"
 sub_step_counter=0
     sub_step "spack compiler find"
               spack compiler find
-    sub_step "source ${SPACK_ROOT}/shell-scripts/set-environment.sh"
-              source ${SPACK_ROOT}/shell-scripts/set-environment.sh
+    sub_step "source ${Spack_Locker}/shell-scripts/set-environment.sh"
+              source ${Spack_Locker}/shell-scripts/set-environment.sh
+
+new_step "Setup spack"
+sub_step_counter=0
+    sub_step "spack compiler find"
+              spack compiler find
+    sub_step "source ${Spack_Locker}/shell-scripts/set-environment.sh"
+              source ${Spack_Locker}/shell-scripts/set-environment.sh
 
 new_step "Build compilers"
 sub_step_counter=0
@@ -186,31 +197,28 @@ sub_step_counter=0
 # ubuntu
 # export SPACK_PYTHON="/usr/bin/python3.9"
 
-    sub_step "spack install ${gcc_latest}"
-              spack install ${gcc_latest} 2>&1 | tee -a      ${SPACK_ROOT}/${USER}/build-logs/gcc@13.1.0.txt
+    sub_step "spack install ${myGCC}"
+              spack install ${myGCC}      2>&1 | tee -a      ${Spack_Locker}/build-logs/${myGCC}.txt
 
-              spack info gcc                               > ${SPACK_ROOT}/${USER}/info/gcc.txt
-              spack spec ${gcc_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/gcc@13.1.0.txt
+              spack info gcc                               > ${Spack_Locker}/info/gcc.txt
+              spack spec ${gcc_latest} % ${local_compiler} > ${Spack_Locker}/specs/${myGCC}.txt
 
     sub_step "spack compiler find $(spack location -i ${gcc_latest})"
               spack compiler find $(spack location -i ${gcc_latest})
 
-    # sub_step "spack load gcc@12.1.0"
-    #           spack load gcc@12.1.0
-
     sub_step "spack install ${llvm_latest} % ${local_compiler}"
-              spack install ${llvm_latest} % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@16.0.5.txt
+              spack install ${llvm_latest} % ${local_compiler} 2>&1 | tee -a ${Spack_Locker}/build-logs/${myClang}.txt
 
-              spack info llvm                               > ${SPACK_ROOT}/${USER}/info/llvm.txt
-              spack spec ${llvm_latest} % ${local_compiler} > ${SPACK_ROOT}/${USER}/specs/llvm@16.0.5.txt
+              spack info llvm                               > ${Spack_Locker}/info/llvm.txt
+              spack spec ${llvm_latest} % ${local_compiler} > ${Spack_Locker}/specs/${myClang}.txt
 
     sub_step "spack compiler find $(spack location -i ${llvm_latest})"
               spack compiler find $(spack location -i ${llvm_latest})
 
     sub_step "spack install ${llvm_alternate} % ${local_compiler}"
-              spack install ${llvm_alternate} % ${local_compiler} 2>&1 | tee -a ${SPACK_ROOT}/${USER}/build-logs/llvm@15.0.7.txt
+              spack install ${llvm_alternate} % ${local_compiler} 2>&1 | tee -a ${Spack_Locker}/build-logs/${myClangAlt}.txt
 
-              spack spec ${llvm_alternate} % ${local_compiler}    2>&1 | tee -a ${SPACK_ROOT}/${USER}/specs/llvm@15.0.7.txt
+              spack spec ${llvm_alternate} % ${local_compiler}    2>&1 | tee -a ${SPACK_ROOT}/${ego}/specs/${myClangAlt}.txt
 
     sub_step "spack compiler find $(spack location -i ${llvm_alternate})"
               spack compiler find $(spack location -i ${llvm_alternate})

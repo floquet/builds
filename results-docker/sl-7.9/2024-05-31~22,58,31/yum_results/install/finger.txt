@@ -1,0 +1,62 @@
+Loading "ovl" plugin
+Config time: 0.005
+rpmdb time: 0.000
+ovl: Copying up (0) files from OverlayFS lower layer
+Yum version: 3.4.3
+Existing lock /var/run/yum.pid: another copy is running as pid 12630.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  32 M RSS (246 MB VSZ)
+    Started: Fri May 31 23:01:20 2024 - 00:01 ago
+    State  : Running, pid: 12630
+Existing lock /var/run/yum.pid: another copy is running as pid 12631.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  30 M RSS (244 MB VSZ)
+    Started: Fri May 31 23:01:20 2024 - 00:03 ago
+    State  : Running, pid: 12631
+Setting up Package Sacks
+pkgsack time: 0.012
+Obs Init time: 0.224
+Resolving Dependencies
+--> Running transaction check
+---> Package finger.x86_64 0:0.17-52.el7 will be installed
+Checking deps for finger.x86_64 0:0.17-52.el7 - u
+looking for ('rtld(GNU_HASH)', None, (None, None, None)) as a requirement of finger.x86_64 0:0.17-52.el7 - u
+looking for ('libc.so.6(GLIBC_2.4)(64bit)', None, (None, None, None)) as a requirement of finger.x86_64 0:0.17-52.el7 - u
+--> Finished Dependency Resolution
+Dependency Process ending
+Depsolve time: 0.131
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch              Version                Repository     Size
+================================================================================
+Installing:
+ finger            x86_64            0.17-52.el7            sl             25 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 25 k
+Installed size: 32 k
+Downloading packages:
+Member: finger.x86_64 0:0.17-52.el7 - u
+Adding Package finger-0.17-52.el7.x86_64 in mode u
+Running transaction check
+Transaction check time: 0.002
+Running transaction test
+Transaction test succeeded
+Transaction test time: 0.008
+Running transaction
+  Installing : finger-0.17-52.el7.x86_64                                    1/1 
+  Verifying  : finger-0.17-52.el7.x86_64                                    1/1 
+VerifyTransaction time: 0.051
+Transaction time: 0.227
+
+Installed:
+  finger.x86_64 0:0.17-52.el7                                                   
+
+Complete!
