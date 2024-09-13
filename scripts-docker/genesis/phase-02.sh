@@ -184,13 +184,13 @@ sub_step_counter=0
     sub_step "source ${Spack_Locker}/shell-scripts/set-environment.sh"
               source ${Spack_Locker}/shell-scripts/set-environment.sh
 
-new_step "Setup spack"
-sub_step_counter=0
-    sub_step "spack compiler find"
-              spack compiler find
-    sub_step "source ${Spack_Locker}/shell-scripts/set-environment.sh"
-              source ${Spack_Locker}/shell-scripts/set-environment.sh
-
+# new_step "Setup spack"
+# sub_step_counter=0
+#     sub_step "spack compiler find"
+#               spack compiler find
+#     sub_step "source ${Spack_Locker}/shell-scripts/set-environment.sh"
+#               source ${Spack_Locker}/shell-scripts/set-environment.sh
+# 
 new_step "Build compilers"
 sub_step_counter=0
 
