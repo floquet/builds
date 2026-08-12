@@ -118,9 +118,9 @@ echo "results posted to:"
 echo "  ${results_dir}"
 echo ""
 
-printf "time to inspect machine: %dh:%dm:%ds\n" 
-$((elapsed / 3600)) 
-$((elapsed % 3600 / 60)) 
+printf "time to inspect machine: %dh:%dm:%ds\n" \
+$((elapsed / 3600)) \
+$((elapsed % 3600 / 60)) \
 $((elapsed % 60))
 
 echo ""

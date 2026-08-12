@@ -27,22 +27,29 @@ function sub_step() {
 # Configuration
 # ----------------------------------------------------------------------
 
+
+new_step "Initialize names"
+
 machine=$(hostname -s)
 
-results_dir="${APT_RESULTS_DIR:-${HOME}/.info/${machine}/apt}"
-package_dir="${APT_PACKAGE_DIR:-${HOME}/repos/github/builds/packages}"
+# results_dir="${APT_RESULTS_DIR:-${HOME}/.info/${machine}/apt}"
+# package_dir="${APT_PACKAGE_DIR:-${HOME}/repos/github/builds/packages}"
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+package_dir="${APT_PACKAGE_DIR:-${script_dir}/packages}"
 
 install_dir="${results_dir}/install"
+
+    sub_step "machine     = ${machine}"
+    sub_step "script_dir  = ${script_dir}"
+    sub_step "package_dir = ${package_dir}"
+    sub_step "install_dir = ${install_dir}"
 
 # ----------------------------------------------------------------------
 # Initialize
 # ----------------------------------------------------------------------
 
-new_step "Initialize apt-getter"
-
-sub_step "machine = ${machine}"
-sub_step "results_dir = ${results_dir}"
-sub_step "package_dir = ${package_dir}"
+new_step "Check package_dir"
 
 mkdir -p "${install_dir}"
 
@@ -74,8 +81,7 @@ install_package()
         echo
     } > "${output_file}"
 
-    apt-get install "${package}" -y \
-        >> "${output_file}" 2>&1
+    sudo apt-get install "${package}" -y >> "${output_file}" 2>&1
 
     rc=$?
 
@@ -132,33 +138,26 @@ install_package_file()
 # Process package manifests
 # ----------------------------------------------------------------------
 
-new_step "Locate package manifests"
-
-manifest_count=0
-
-for package_file in "${package_dir}"/*.txt; do
-
-    if [[ ! -f "${package_file}" ]]; then
-        continue
-    fi
-
-    manifest_count=$((manifest_count + 1))
-
-    echo "  $(basename "${package_file}")"
-done
-
-if [[ ${manifest_count} -eq 0 ]]; then
+if [[ $# -ne 1 ]]; then
     echo ""
-    echo "ERROR: no package manifests found in:"
-    echo "  ${package_dir}"
+    echo "Usage: $0 manifest.txt"
     exit 1
 fi
 
-for package_file in "${package_dir}"/*.txt; do
-    [[ -f "${package_file}" ]] || continue
+package_file="${package_dir}/$1"
+
+if [[ ! -f "${package_file}" ]]; then
+    echo ""
+    echo "ERROR: package manifest does not exist:"
+    echo "  ${package_file}"
+    exit 1
+fi
+
+new_step "Install selected package manifest"
+
+    sub_step "$(basename "${package_file}")"
 
     install_package_file "${package_file}"
-done
 
 # ----------------------------------------------------------------------
 # Summary
