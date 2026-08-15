@@ -49,10 +49,17 @@ echo "apt-get upgrade -y 2>&1 | tee -a ${results_dir}/results-upgrade.txt" \
 apt-get upgrade -y 2>&1 |
     tee -a "${results_dir}/results-upgrade.txt"
 
-echo ""
+new_step "apt-get autoremove"
+
+date > "${results_dir}/results-autoremove.txt"
+echo "apt-get update 2>&1 | tee -a ${results_dir}/results-remove.txt" \
+    >> "${results_dir}/results-autoremove.txt"
+
+new_step "Show output"
 echo "results posted to:"
 echo "  ${results_dir}/results-update.txt"
 echo "  ${results_dir}/results-upgrade.txt"
+echo "  ${results_dir}/results-autoremove.txt"
 echo ""
 
 echo "end: $(date)"
