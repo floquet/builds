@@ -1,0 +1,47 @@
+dantopa@isomer:~/repos-isomer/github/f/projects/bae/hyperion/sets/alpha$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 002: ID 04e8:61fb Samsung Electronics Co., Ltd PSSD T7 Shield
+Bus 003 Device 005: ID 8087:0037 Intel Corp. 
+Bus 003 Device 006: ID 367b:1919 USB Receiver USB Receiver
+Bus 003 Device 008: ID 3384:0003 System76 USB4206 Smart Hub
+Bus 003 Device 009: ID 3384:000a System76 Launch Heavy Configurable Keyboard (launch_heavy_3)
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 004 Device 002: ID 0bc2:2038 Seagate RSS LLC Expansion HDD
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 002: ID 043e:9a61 LG Electronics USA, Inc. USB2.1 Hub
+Bus 005 Device 003: ID 096e:085b Feitian Technologies, Inc. ePass FIDO
+Bus 005 Device 004: ID 043e:9a73 LG Electronics USA, Inc. 
+Bus 005 Device 005: ID 043e:9a66 LG Electronics USA, Inc. LG UltraFine Display Audio
+Bus 005 Device 006: ID 043e:9a70 LG Electronics USA, Inc. LG UltraFine Display Controls
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 002: ID 043e:9a60 LG Electronics USA, Inc. USB3.1 Hub
+Bus 006 Device 003: ID 043e:9a71 LG Electronics USA, Inc. 
+Bus 006 Device 004: ID 043e:9a68 LG Electronics USA, Inc. LG UltraFine Display Camera
+dantopa@isomer:~/repos-isomer/github/f/projects/bae/hyperion/sets/alpha$ sudo udevadm info --query=property --name=/dev/sdb | \
+    grep -E 'ID_MODEL|ID_SERIAL|ID_VENDOR|ID_BUS|ID_USB'
+^[[3~ID_BUS=usb
+ID_MODEL=Expansion_HDD
+ID_MODEL_ENC=Expansion\x20HDD\x20\x20\x20
+ID_MODEL_ID=2038
+ID_SERIAL=Seagate_Expansion_HDD_00000000NAC6128S-0:0
+ID_SERIAL_SHORT=00000000NAC6128S
+ID_VENDOR=Seagate
+ID_VENDOR_ENC=Seagate\x20
+ID_VENDOR_ID=0bc2
+ID_USB_MODEL=Expansion_HDD
+ID_USB_MODEL_ENC=Expansion\x20HDD\x20\x20\x20
+ID_USB_MODEL_ID=2038
+ID_USB_SERIAL=Seagate_Expansion_HDD_00000000NAC6128S-0:0
+ID_USB_SERIAL_SHORT=00000000NAC6128S
+ID_USB_VENDOR=Seagate
+ID_USB_VENDOR_ENC=Seagate\x20
+ID_USB_VENDOR_ID=0bc2
+ID_USB_REVISION=1801
+ID_USB_TYPE=disk
+ID_USB_INSTANCE=0:0
+ID_USB_INTERFACES=:080650:080662:
+ID_USB_INTERFACE_NUM=00
+ID_USB_DRIVER=uas
+
