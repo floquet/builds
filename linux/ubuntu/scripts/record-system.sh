@@ -38,4 +38,8 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
     findmnt
 } > "${pSelf}/system.txt"
 
+# kernel-provided virtual files
+cp /proc/cpuinfo "${pSelf}/cpuinfo.txt"
+cp /proc/meminfo "${pSelf}/meminfo.txt"
+
 
