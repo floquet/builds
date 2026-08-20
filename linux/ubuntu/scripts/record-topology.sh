@@ -1,105 +1,93 @@
-#! /usr/bin/env bash
-
-# Print script start timestamp and source file
+#!/usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-# Default values for configuration
-export LOCKER="${LOCKER:-$HOME/.info/${moniker}}"  # Default locker directory for storing outputs
-export FILE_BASE="${LOCKER}/lstopo"    # Base file name for lstopo outputs
-export OUTPUT_FORMAT="${OUTPUT_FORMAT:-ascii}"  # Default output format (ascii)
-export FORCE="${FORCE:-false}"         # Overwrite existing files if set to true
-EXTRA_OPTIONS=""                       # Additional options passed to lstopo
+: "${pSelf:?pSelf is not defined}"
 
-# Ensure the locker directory exists
-mkdir -p "$LOCKER"
+# ----------------------------------------------------------------------
+# Hardware topology
+# ----------------------------------------------------------------------
 
-# Usage instructions for the script
-usage() {
-    echo "Usage: $0 [--output-format <format>] [--force] [additional-options]"
-    echo
-    echo "Examples:"
-    echo "  1. Basic usage (default format is ascii):"
-    echo "     $0"
-    echo
-    echo "  2. Specify output format as SVG:"
-    echo "     $0 --output-format svg"
-    echo
-    echo "  3. Overwrite existing files and include verbose output:"
-    echo "     $0 --force --verbose"
-    echo
-    echo "Supported formats: console, ascii, tikz, fig, svg, xml, synthetic"
-    exit 1
+pTopology="${pSelf}/topology"
+mkdir -p "${pTopology}"
+
+pLog="${pTopology}/record-topology.log"
+: > "${pLog}"
+
+if ! command -v lstopo > /dev/null 2>&1; then
+    printf "%s  lstopo: NOT FOUND\n" "$(date)" >> "${pLog}"
+    exit 0
+fi
+
+run_topology() {
+    local name="$1"
+    shift
+
+    local error_file="${pTopology}/${name}.err"
+
+    if timeout 10s lstopo \
+        --force \
+        --no-io \
+        "$@" \
+        2> "${error_file}"
+    then
+        printf "%s  %-20s OK\n" "$(date)" "${name}" >> "${pLog}"
+        [[ -s "${error_file}" ]] || rm -f "${error_file}"
+        return 0
+    else
+        local status=$?
+
+        if [[ ${status} -eq 124 ]]; then
+            printf "%s  %-20s TIMEOUT\n" "$(date)" "${name}" >> "${pLog}"
+        else
+            printf "%s  %-20s FAILED status=%d\n" \
+                "$(date)" "${name}" "${status}" >> "${pLog}"
+        fi
+
+        return "${status}"
+    fi
 }
 
-# Parse command-line arguments
-while [[ $# -gt 0 ]]; do
-    case $1 in
-        --output-format|--of)
-            OUTPUT_FORMAT="$2"  # Set the desired output format
-            shift 2
-            ;;
-        --force|-f)
-            FORCE=true  # Enable forced overwrite of existing files
-            shift
-            ;;
-        -*)
-            EXTRA_OPTIONS="$EXTRA_OPTIONS $1"  # Capture additional options
-            shift
-            ;;
-        *)
-            echo "Unknown option: $1"
-            usage  # Show usage instructions for invalid input
-            ;;
-    esac
-done
+# ----------------------------------------------------------------------
+# Run independent topology captures in parallel
+# ----------------------------------------------------------------------
 
-# Verify if lstopo is installed
-if ! command -v lstopo &> /dev/null; then
-    echo "Error: lstopo not found. Please install it and try again."
-    exit 1
-fi
+run_topology \
+    lstopo \
+    --of console \
+    "${pTopology}/lstopo.txt" &
+pid1=$!
 
-# Define the primary output file based on the requested format
-OUTPUT_FILE="${FILE_BASE}.${OUTPUT_FORMAT}"
+run_topology \
+    lstopo-verbose \
+    --verbose \
+    --of console \
+    "${pTopology}/lstopo-verbose.txt" &
+pid2=$!
 
-# Handle force overwrite option
-if [ -f "$OUTPUT_FILE" ] && [ "$FORCE" = "true" ]; then
-    echo "Forcing overwrite: Removing existing $OUTPUT_FILE"
-    rm "$OUTPUT_FILE"
-fi
+run_topology \
+    lstopo-physical \
+    --physical \
+    --of console \
+    "${pTopology}/lstopo-physical.txt" &
+pid3=$!
 
-# Generate the main output file if it doesn't already exist
-if [ ! -f "$OUTPUT_FILE" ]; then
-    echo "Generating lstopo output: $OUTPUT_FILE"
-    lstopo --of "$OUTPUT_FORMAT" $EXTRA_OPTIONS "$OUTPUT_FILE"
-else
-    echo "Skipping generation: $OUTPUT_FILE already exists. Use --force to overwrite."
-fi
+run_topology \
+    lstopo-xml \
+    --of xml \
+    "${pTopology}/lstopo.xml" &
+pid4=$!
 
-# Define additional outputs with descriptive keys
-declare -A ADDITIONAL_FILES=(
-    ["verbose"]="${FILE_BASE}-v.txt"  # Detailed textual output
-    ["physical"]="${FILE_BASE}-p.txt"  # Physical indexes output
-    ["pdf"]="${FILE_BASE}.pdf"  # Graphical output in PDF
-    ["png"]="${FILE_BASE}.png"  # Graphical output in PNG
-)
+run_topology \
+    lstopo-svg \
+    --of svg \
+    "${pTopology}/lstopo.svg" &
+pid5=$!
 
-# Generate additional outputs if they don't exist
-for key in "${!ADDITIONAL_FILES[@]}"; do
-    file="${ADDITIONAL_FILES[$key]}"
-    if [ ! -f "$file" ]; then
-        echo "Generating additional output: $file"
-        lstopo "--$key" "$file" > /dev/null 2>&1
-    else
-        echo "Skipping additional output: $file already exists."
-    fi
-done
+# Wait for all five jobs without printing anything.
+wait "${pid1}" || true
+wait "${pid2}" || true
+wait "${pid3}" || true
+wait "${pid4}" || true
+wait "${pid5}" || true
 
-# Final message indicating script completion
-echo "lstopo script completed."
-
-# Examples of usage
-if [[ "$1" == "--examples" ]]; then
-    usage
-fi
 
