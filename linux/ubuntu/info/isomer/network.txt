@@ -1,4 +1,4 @@
-Wed Aug 19 11:56:37 PM MDT 2026
+Thu Aug 20 12:10:43 AM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -54,14 +54,16 @@ Link 4 (wlo1)
 COMMAND: ss -tulpn
 Netid State  Recv-Q Send-Q                      Local Address:Port  Peer Address:PortProcess                                    
 udp   UNCONN 0      0                                 0.0.0.0:47789      0.0.0.0:*    users:(("python3",pid=642689,fd=12))      
+udp   UNCONN 0      0                              10.10.10.4:48832      0.0.0.0:*    users:(("chrome",pid=452094,fd=118))      
 udp   UNCONN 0      0                              127.0.0.54:53         0.0.0.0:*                                              
 udp   UNCONN 0      0                           127.0.0.53%lo:53         0.0.0.0:*                                              
 udp   UNCONN 0      0                               127.0.0.1:323        0.0.0.0:*                                              
-udp   UNCONN 2880   0                                 0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=5344,fd=77))        
+udp   UNCONN 960    0                                 0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=5344,fd=77))        
 udp   UNCONN 0      0                             10.11.26.57:3702       0.0.0.0:*    users:(("python3",pid=642689,fd=13))      
 udp   UNCONN 0      0                         239.255.255.250:3702       0.0.0.0:*    users:(("python3",pid=642689,fd=11))      
 udp   UNCONN 0      0                              10.10.10.4:3702       0.0.0.0:*    users:(("python3",pid=642689,fd=10))      
 udp   UNCONN 0      0                         239.255.255.250:3702       0.0.0.0:*    users:(("python3",pid=642689,fd=8))       
+udp   UNCONN 0      0                             10.11.26.57:37431      0.0.0.0:*    users:(("chrome",pid=452094,fd=210))      
 udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=452094,fd=444))      
 udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=452094,fd=443))      
 udp   UNCONN 0      0                                 0.0.0.0:5353       0.0.0.0:*                                              

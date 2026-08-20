@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
+: "${pSelf:?pSelf is not defined}"
+
 # Capture Ubuntu system information
 {
     date
@@ -30,16 +32,12 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
     lsblk
 
     echo
-    echo "COMMAND: df -h"
-    df -h
+    echo "COMMAND: df -hT"
+    df -hT
 
     echo
     echo "COMMAND: findmnt"
     findmnt
-} > "${pSelf}/system.txt"
 
-# kernel-provided virtual files
-cp /proc/cpuinfo "${pSelf}/cpuinfo.txt"
-cp /proc/meminfo "${pSelf}/meminfo.txt"
-
+} > "${pSelf}/system.txt" 2>&1
 
