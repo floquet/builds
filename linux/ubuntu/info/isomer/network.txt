@@ -1,4 +1,4 @@
-Wed Aug 19 11:43:41 PM MDT 2026
+Wed Aug 19 11:50:48 PM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -57,7 +57,8 @@ udp   UNCONN 0      0                                 0.0.0.0:47789      0.0.0.0
 udp   UNCONN 0      0                              127.0.0.54:53         0.0.0.0:*                                              
 udp   UNCONN 0      0                           127.0.0.53%lo:53         0.0.0.0:*                                              
 udp   UNCONN 0      0                               127.0.0.1:323        0.0.0.0:*                                              
-udp   UNCONN 2880   0                                 0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=5344,fd=77))        
+udp   UNCONN 0      0                                 0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=5344,fd=77))        
+udp   UNCONN 0      0                             10.11.26.57:52043      0.0.0.0:*    users:(("chrome",pid=452094,fd=211))      
 udp   UNCONN 0      0                             10.11.26.57:3702       0.0.0.0:*    users:(("python3",pid=642689,fd=13))      
 udp   UNCONN 0      0                         239.255.255.250:3702       0.0.0.0:*    users:(("python3",pid=642689,fd=11))      
 udp   UNCONN 0      0                              10.10.10.4:3702       0.0.0.0:*    users:(("python3",pid=642689,fd=10))      
@@ -66,6 +67,7 @@ udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0
 udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=452094,fd=443))      
 udp   UNCONN 0      0                                 0.0.0.0:5353       0.0.0.0:*                                              
 udp   UNCONN 0      0                             10.11.26.57:39024      0.0.0.0:*    users:(("Socket Process",pid=31180,fd=28))
+udp   UNCONN 0      0                              10.10.10.4:39420      0.0.0.0:*    users:(("chrome",pid=452094,fd=210))      
 udp   UNCONN 0      0                             10.11.26.57:56749      0.0.0.0:*    users:(("Socket Process",pid=31180,fd=29))
 udp   UNCONN 0      0                                 0.0.0.0:41544      0.0.0.0:*    users:(("python3",pid=642689,fd=9))       
 udp   UNCONN 0      0                                   [::1]:323           [::]:*                                              
@@ -91,6 +93,6 @@ COMMAND: ip neigh
 10.11.26.8 dev enp87s0 lladdr 64:4e:d7:e9:80:7d STALE 
 10.11.26.47 dev enp87s0 lladdr 78:8c:77:79:9d:da STALE 
 10.11.26.223 dev enp87s0 lladdr d8:be:65:4a:f0:70 STALE 
-10.11.26.54 dev enp87s0 lladdr f0:35:75:3e:66:a8 REACHABLE 
+10.11.26.54 dev enp87s0 lladdr f0:35:75:3e:66:a8 STALE 
 fe80::7a8c:77ff:fe79:9dda dev enp87s0 lladdr 78:8c:77:79:9d:da STALE 
 fe80::664e:d7ff:fee9:807d dev enp87s0 lladdr 64:4e:d7:e9:80:7d STALE 

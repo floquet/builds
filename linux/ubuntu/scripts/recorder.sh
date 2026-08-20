@@ -13,9 +13,10 @@ source "${pRecorder}/record-functions.sh"
 source "${pRecorder}/record-shell-options.sh"
 
 # System-state recorders can run as independent processes.
-"${pRecorder}/record-system.sh"
-"${pRecorder}/record-topology.sh"
 "${pRecorder}/record-network.sh"
+"${pRecorder}/record-proc.sh"
+"${pRecorder}/record-system.sh"
 "${pRecorder}/record-toolchain.sh"
+"${pRecorder}/record-topology.sh"
 
 
