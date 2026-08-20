@@ -40,7 +40,6 @@ run_topology() {
         --force \
         --no-io \
         "$@" \
-        # 2> "${message_file}"
         > "${message_file}" 2>&1
     then
         printf "%s  %-20s OK       time=%d seconds\n" \
