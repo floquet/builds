@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-#!/usr/bin/env bash
-printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
-
 : "${pSelf:?pSelf is not defined}"
 # locate recorder.sh to locate the record-*.sh files
 pRecorder="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
