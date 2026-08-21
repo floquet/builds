@@ -8,7 +8,7 @@ dest="$pInfo/arXive"
 mkdir -p "$dest"
 
 cp    -- "$HOME/.vimrc"          "$dest/"
-cp    -- "$HOME/.gitconfig"      "$dest/"
+#cp    -- "$HOME/.gitconfig"      "$dest/"
 cp -a -- "$HOME/.config/nvim"    "$dest/"
 cp    -- "$HOME/.$(hostname).sh" "$dest/"
 
