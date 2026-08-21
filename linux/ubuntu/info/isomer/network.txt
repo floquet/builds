@@ -1,4 +1,4 @@
-Fri Aug 21 12:57:44 PM MDT 2026
+Fri Aug 21 12:58:36 PM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -56,7 +56,7 @@ Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
 udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*                                       
 udp   UNCONN 0      0      127.0.0.53%lo:53         0.0.0.0:*                                       
 udp   UNCONN 0      0          127.0.0.1:323        0.0.0.0:*                                       
-udp   UNCONN 1920   0            0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=5882,fd=76)) 
+udp   UNCONN 0      0            0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=5882,fd=76)) 
 udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*                                       
 udp   UNCONN 0      0              [::1]:323           [::]:*                                       
 udp   UNCONN 0      0               [::]:5353          [::]:*                                       
@@ -71,6 +71,6 @@ tcp   LISTEN 0      4096            [::]:22            [::]:*
 tcp   LISTEN 0      4096           [::1]:631           [::]:*                                       
 
 COMMAND: ip neigh
-10.11.26.47 dev enp87s0 lladdr 78:8c:77:79:9d:da REACHABLE 
-10.11.26.87 dev enp87s0 lladdr 74:da:78:27:5c:87 REACHABLE 
+10.11.26.47 dev enp87s0 lladdr 78:8c:77:79:9d:da STALE 
+10.11.26.87 dev enp87s0 lladdr 74:da:78:27:5c:87 STALE 
 10.11.26.1 dev enp87s0 lladdr 4c:00:82:41:af:d9 REACHABLE 
