@@ -5,6 +5,6 @@ mkdir -p $pInfo/arXive
 
 cp ~/.${HOSTNAME}.sh ${pInfo}/arXive/.
 cp ~/.vimrc          ${pInfo}/arXive/.
-cp ~/.gitconfig.sh   ${pInfo}/arXive/.
+cp ~/.gitconfig   ${pInfo}/arXive/.
 
 
