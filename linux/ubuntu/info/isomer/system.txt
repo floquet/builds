@@ -1,4 +1,4 @@
-Fri Aug 21 12:58:36 PM MDT 2026
+Fri Aug 21 01:04:50 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      56%
+CPU(s) scaling MHz:                      67%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi       3.2Gi        24Gi       983Mi       3.8Gi        26Gi
+Mem:            30Gi       4.8Gi        21Gi       1.7Gi       5.7Gi        25Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -142,16 +142,16 @@ nvme0n1     259:0    0 953.9G  0 disk
 
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
-tmpfs          tmpfs     6.1G  3.4M  6.1G   1% /run
+tmpfs          tmpfs     6.1G  3.7M  6.1G   1% /run
 /dev/nvme0n1p2 ext4      937G  160G  730G  18% /
-tmpfs          tmpfs      16G   15M   16G   1% /dev/shm
+tmpfs          tmpfs      16G   11M   16G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  73% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 tmpfs          tmpfs      16G   84K   16G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sda1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
-tmpfs          tmpfs     3.1G  124K  3.1G   1% /run/user/1000
+tmpfs          tmpfs     3.1G  4.1M  3.1G   1% /run/user/1000
 /dev/sdb1      iso9660   6.1G  6.1G     0 100% /run/media/dantopa/Ubuntu 26.04 amd64
 
 COMMAND: findmnt
@@ -167,7 +167,8 @@ TARGET                                            SOURCE                 FSTYPE 
 │ │ ├─/run/snapd/ns/cups.mnt                      nsfs[mnt:[4026533127]] nsfs            rw
 │ │ ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026533128]] nsfs            rw
 │ │ ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026533331]] nsfs            rw
-│ │ └─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026533333]] nsfs            rw
+│ │ ├─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026533333]] nsfs            rw
+│ │ └─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532751]] nsfs            rw
 │ └─/run/media/dantopa/Ubuntu 26.04 amd64         /dev/sdb1              iso9660         ro,nosuid,nodev,relatime,nojoliet,check=s,map=n,blocksize=2048,uid=1000,gid=1000,dmode=500,fmode=400,iocharset=utf8
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15814000k,nr_inodes=1048576,inode64,usrquota
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15689844k,nr_inodes=3922461,mode=755,inode64
