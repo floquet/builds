@@ -1,4 +1,4 @@
-Fri Aug 21 01:05:07 PM MDT 2026
+Fri Aug 21 01:10:41 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi       4.8Gi        21Gi       1.7Gi       5.7Gi        25Gi
+Mem:            30Gi       4.7Gi        21Gi       1.7Gi       5.7Gi        25Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -132,10 +132,6 @@ loop49        7:49   0 219.9M  1 loop /snap/thunderbird/1201
 loop50        7:50   0     4M  1 loop /snap/webfortran/8
 sda           8:0    0   1.8T  0 disk 
 └─sda1        8:1    0   1.8T  0 part /mnt/T7-Shield
-sdb           8:16   1 116.1G  0 disk 
-├─sdb1        8:17   1   6.1G  0 part /run/media/dantopa/Ubuntu 26.04 amd64
-├─sdb2        8:18   1     5M  0 part 
-└─sdb3        8:19   1   300K  0 part 
 nvme0n1     259:0    0 953.9G  0 disk 
 ├─nvme0n1p1 259:1    0   976M  0 part /boot/efi
 └─nvme0n1p2 259:2    0 952.9G  0 part /
@@ -147,12 +143,11 @@ tmpfs          tmpfs     6.1G  3.7M  6.1G   1% /run
 tmpfs          tmpfs      16G   11M   16G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  73% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G   84K   16G   1% /tmp
+tmpfs          tmpfs      16G  100K   16G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sda1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
 tmpfs          tmpfs     3.1G  4.1M  3.1G   1% /run/user/1000
-/dev/sdb1      iso9660   6.1G  6.1G     0 100% /run/media/dantopa/Ubuntu 26.04 amd64
 
 COMMAND: findmnt
 TARGET                                            SOURCE                 FSTYPE          OPTIONS
@@ -163,13 +158,12 @@ TARGET                                            SOURCE                 FSTYPE 
 │ │ ├─/run/user/1000/doc                          portal                 fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
 │ │ └─/run/user/1000/gvfs                         gvfsd-fuse             fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
 │ ├─/run/credentials/systemd-resolved.service     none                   tmpfs           ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,inode64,noswap
-│ ├─/run/snapd/ns                                 tmpfs[/snapd/ns]       tmpfs           rw,nosuid,nodev,size=6325600k,nr_inodes=819200,mode=755,inode64
-│ │ ├─/run/snapd/ns/cups.mnt                      nsfs[mnt:[4026533127]] nsfs            rw
-│ │ ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026533128]] nsfs            rw
-│ │ ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026533331]] nsfs            rw
-│ │ ├─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026533333]] nsfs            rw
-│ │ └─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532751]] nsfs            rw
-│ └─/run/media/dantopa/Ubuntu 26.04 amd64         /dev/sdb1              iso9660         ro,nosuid,nodev,relatime,nojoliet,check=s,map=n,blocksize=2048,uid=1000,gid=1000,dmode=500,fmode=400,iocharset=utf8
+│ └─/run/snapd/ns                                 tmpfs[/snapd/ns]       tmpfs           rw,nosuid,nodev,size=6325600k,nr_inodes=819200,mode=755,inode64
+│   ├─/run/snapd/ns/cups.mnt                      nsfs[mnt:[4026533127]] nsfs            rw
+│   ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026533128]] nsfs            rw
+│   ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026533331]] nsfs            rw
+│   ├─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026533333]] nsfs            rw
+│   └─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532751]] nsfs            rw
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15814000k,nr_inodes=1048576,inode64,usrquota
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15689844k,nr_inodes=3922461,mode=755,inode64
 │ ├─/dev/mqueue                                   mqueue                 mqueue          rw,nosuid,nodev,noexec,relatime
