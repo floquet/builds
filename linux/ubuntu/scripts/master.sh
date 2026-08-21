@@ -8,7 +8,7 @@ recorderStart=$SECONDS
 pHere="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
 source "${pHere}/alias.sh"
-source "${pHere}/arXiver.sh"
+%source "${pHere}/arXiver.sh"
 source "${pHere}/fortran.sh"
 source "${pHere}/fortran-stack.sh"
 source "${pHere}/git.sh"
