@@ -1,4 +1,4 @@
-Thu Aug 20 12:13:42 AM MDT 2026
+Thu Aug 20 09:34:07 PM MDT 2026
 
 COMMAND: cat /proc/mounts
 DESCRIPTION: Mounted filesystems
@@ -51,7 +51,6 @@ none /run/credentials/systemd-resolved.service tmpfs ro,nosuid,nodev,noexec,rela
 /dev/loop22 /snap/thunderbird/1057 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop23 /snap/thunderbird/1201 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 binfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,nosuid,nodev,noexec,relatime 0 0
-/dev/sda1 /mnt/T7-Shield ext4 rw,relatime,stripe=8191 0 0
 tmpfs /run/snapd/ns tmpfs rw,nosuid,nodev,size=6325316k,nr_inodes=819200,mode=755,inode64 0 0
 nsfs /run/snapd/ns/snapd-desktop-integration.mnt nsfs rw 0 0
 tmpfs /run/user/1000 tmpfs rw,nosuid,nodev,relatime,size=3162656k,nr_inodes=790664,mode=700,uid=1000,gid=1000,inode64 0 0
@@ -63,7 +62,6 @@ nsfs /run/snapd/ns/snap-store.mnt nsfs rw 0 0
 nsfs /run/snapd/ns/gnome-system-monitor.mnt nsfs rw 0 0
 /dev/loop25 /snap/chromium-ffmpeg/118 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop26 /snap/vivaldi/455 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
-/dev/loop27 /snap/opera/483 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop28 /snap/brave/668 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop29 /snap/firefox/8763 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 nsfs /run/snapd/ns/firefox.mnt nsfs rw 0 0
@@ -93,6 +91,9 @@ nsfs /run/snapd/ns/firmware-updater.mnt nsfs rw 0 0
 /dev/loop47 /snap/vivaldi/459 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 nsfs /run/snapd/ns/vivaldi.mnt nsfs rw 0 0
 /dev/loop48 /snap/opera/484 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
-nsfs /run/snapd/ns/opera.mnt nsfs rw 0 0
 /dev/loop49 /snap/brave/670 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 nsfs /run/snapd/ns/brave.mnt nsfs rw 0 0
+/dev/loop45 /snap/opera/485 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
+nsfs /run/snapd/ns/opera.mnt nsfs rw 0 0
+/dev/sda1 /mnt/T7-Shield ext4 rw,relatime,stripe=8191 0 0
+nsfs /run/snapd/ns/bitwarden.mnt nsfs rw 0 0
