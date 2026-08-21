@@ -1,4 +1,4 @@
-Thu Aug 20 11:25:39 PM MDT 2026
+Fri Aug 21 12:15:24 AM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      68%
+CPU(s) scaling MHz:                      72%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi        16Gi       8.8Gi       4.9Gi       9.9Gi        13Gi
+Mem:            30Gi        18Gi       3.2Gi       6.3Gi        13Gi        11Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -106,6 +106,7 @@ loop23        7:23   0 219.9M  1 loop /snap/thunderbird/1201
 loop24        7:24   0   1.7M  1 loop /snap/gnome-system-monitor/193
 loop25        7:25   0   9.4M  1 loop /snap/chromium-ffmpeg/118
 loop26        7:26   0 197.5M  1 loop /snap/vivaldi/455
+loop27        7:27   0  62.2M  1 loop /snap/github-gui/2
 loop28        7:28   0 208.4M  1 loop /snap/brave/668
 loop29        7:29   0 260.3M  1 loop /snap/firefox/8763
 loop30        7:30   0  47.9M  1 loop /snap/cups/1238
@@ -136,12 +137,12 @@ nvme0n1     259:0    0 953.9G  0 disk
 
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
-tmpfs          tmpfs     6.1G  6.2M  6.1G   1% /run
-/dev/nvme0n1p2 ext4      937G  153G  738G  18% /
-tmpfs          tmpfs      16G  333M   15G   3% /dev/shm
+tmpfs          tmpfs     6.1G  6.3M  6.1G   1% /run
+/dev/nvme0n1p2 ext4      937G  153G  737G  18% /
+tmpfs          tmpfs      16G  368M   15G   3% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  72% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G  124M   15G   1% /tmp
+tmpfs          tmpfs      16G  116M   15G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 tmpfs          tmpfs     3.1G  6.8M  3.1G   1% /run/user/1000
@@ -172,7 +173,8 @@ TARGET                                            SOURCE                 FSTYPE 
 │   ├─/run/snapd/ns/vivaldi.mnt                   nsfs[mnt:[4026532751]] nsfs            rw
 │   ├─/run/snapd/ns/brave.mnt                     nsfs[mnt:[4026532753]] nsfs            rw
 │   ├─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026532660]] nsfs            rw
-│   └─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533392]] nsfs            rw
+│   ├─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533392]] nsfs            rw
+│   └─/run/snapd/ns/github-gui.mnt                nsfs[mnt:[4026533406]] nsfs            rw
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15813292k,nr_inodes=1048576,inode64,usrquota
 ├─/snap/vivaldi/455                               /dev/loop26            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15687508k,nr_inodes=3921877,mode=755,inode64
@@ -242,4 +244,5 @@ TARGET                                            SOURCE                 FSTYPE 
 ├─/snap/vivaldi/459                               /dev/loop47            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/kf6-core24/64                             /dev/loop46            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/opera/484                                 /dev/loop48            squashfs        ro,nodev,relatime,errors=continue,threads=single
-└─/snap/brave/670                                 /dev/loop49            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/brave/670                                 /dev/loop49            squashfs        ro,nodev,relatime,errors=continue,threads=single
+└─/snap/github-gui/2                              /dev/loop27            squashfs        ro,nodev,relatime,errors=continue,threads=single

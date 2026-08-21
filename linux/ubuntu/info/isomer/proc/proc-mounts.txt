@@ -1,4 +1,4 @@
-Thu Aug 20 11:25:39 PM MDT 2026
+Fri Aug 21 12:15:24 AM MDT 2026
 
 COMMAND: cat /proc/mounts
 DESCRIPTION: Mounted filesystems
@@ -97,3 +97,5 @@ nsfs /run/snapd/ns/brave.mnt nsfs rw 0 0
 nsfs /run/snapd/ns/opera.mnt nsfs rw 0 0
 /dev/sda1 /mnt/T7-Shield ext4 rw,relatime,stripe=8191 0 0
 nsfs /run/snapd/ns/bitwarden.mnt nsfs rw 0 0
+/dev/loop27 /snap/github-gui/2 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
+nsfs /run/snapd/ns/github-gui.mnt nsfs rw 0 0

@@ -1,4 +1,4 @@
-Thu Aug 20 11:25:39 PM MDT 2026
+Fri Aug 21 12:15:24 AM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -32,8 +32,6 @@ declare -f _comp__split_longopt
 declare -f _comp_abspath
 declare -f _comp_as_root
 declare -f _comp_awk
-declare -f _comp_cmd_cd
-declare -f _comp_cmd_chmod
 declare -f _comp_command
 declare -f _comp_command_offset
 declare -f _comp_compgen
@@ -865,77 +863,6 @@ _comp_as_root ()
 _comp_awk () 
 { 
     command awk "$@"
-}
-_comp_cmd_cd () 
-{ 
-    local cur prev words cword comp_args;
-    _comp_initialize -- "$@" || return;
-    if [[ $cur == -* ]]; then
-        _comp_compgen_help -c help "$1";
-        compopt +o nospace;
-        return;
-    fi;
-    local i j k;
-    compopt -o filenames;
-    if [[ ! -n ${CDPATH-} || $cur == ?(.)?(.)/* ]]; then
-        _comp_compgen_filedir -d;
-        return;
-    fi;
-    local mark_dirs="" mark_symdirs="";
-    _comp_readline_variable_on mark-directories && mark_dirs=set;
-    _comp_readline_variable_on mark-symlinked-directories && mark_symdirs=set;
-    local paths dirs;
-    _comp_split -F : paths "$CDPATH";
-    for i in "${paths[@]}";
-    do
-        k=${#COMPREPLY[@]};
-        _comp_compgen -v dirs -c "$i/$cur" -- -d;
-        for j in "${dirs[@]}";
-        do
-            if [[ ( -n $mark_symdirs && -L $j || -n $mark_dirs && ! -L $j ) && ! -d ${j#"$i/"} ]]; then
-                j+="/";
-            fi;
-            COMPREPLY[k++]=${j#"$i/"};
-        done;
-    done;
-    _comp_compgen -a filedir -d;
-    if ((${#COMPREPLY[@]} == 1)); then
-        i=${COMPREPLY[0]};
-        if [[ $i == "$cur" && $i != "*/" ]]; then
-            COMPREPLY[0]="${i}/";
-        fi;
-    fi
-}
-_comp_cmd_chmod () 
-{ 
-    local cur prev words cword was_split comp_args;
-    _comp_initialize -s -- "$@" || return;
-    case $prev in 
-        --help | --version)
-            return
-        ;;
-        --reference)
-            _comp_compgen_filedir;
-            return
-        ;;
-    esac;
-    [[ -n $was_split ]] && return;
-    local modearg="-@(@(+([rwxXst])|[ugo])|+([0-7]))";
-    if [[ $cur == -* && $cur != $modearg ]]; then
-        _comp_compgen_help || _comp_compgen_usage;
-        [[ ${COMPREPLY-} == *= ]] && compopt -o nospace;
-        return;
-    fi;
-    local REPLY;
-    _comp_count_args -i "$modearg";
-    case $REPLY in 
-        1)
-
-        ;;
-        *)
-            _comp_compgen_filedir
-        ;;
-    esac
 }
 _comp_command () 
 { 

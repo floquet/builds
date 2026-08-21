@@ -1,4 +1,4 @@
-Thu Aug 20 11:25:39 PM MDT 2026
+Fri Aug 21 12:15:24 AM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -53,6 +53,7 @@ Link 4 (wlo1)
 
 COMMAND: ss -tulpn
 Netid State  Recv-Q Send-Q                      Local Address:Port  Peer Address:PortProcess                              
+udp   UNCONN 0      0                                 0.0.0.0:44616      0.0.0.0:*    users:(("firefox",pid=31006,fd=64)) 
 udp   UNCONN 0      0                                 0.0.0.0:47789      0.0.0.0:*    users:(("python3",pid=642689,fd=12))
 udp   UNCONN 0      0                              127.0.0.54:53         0.0.0.0:*                                        
 udp   UNCONN 0      0                           127.0.0.53%lo:53         0.0.0.0:*                                        
