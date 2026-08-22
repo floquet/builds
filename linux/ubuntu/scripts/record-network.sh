@@ -22,7 +22,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
     nmcli device status 2>/dev/null || echo "nmcli not available in WSL"
 
     echo
-    echo, "COMMAND: nmcli connection show"
+    echo "COMMAND: nmcli connection show"
     nmcli connection show 2>/dev/null || echo "nmcli not available in WSL"
 
     echo
