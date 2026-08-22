@@ -1,12 +1,12 @@
-Fri Aug 21 10:40:38 PM MDT 2026
+Fri Aug 21 10:45:48 PM MDT 2026
 
 COMMAND: set -o
 allexport      	off
 braceexpand    	on
 emacs          	on
 errexit        	off
-errtrace       	off
-functrace      	off
+errtrace       	on
+functrace      	on
 hashall        	on
 histexpand     	on
 history        	on
@@ -53,7 +53,7 @@ shopt -u dirspell
 shopt -u dotglob
 shopt -u execfail
 shopt -s expand_aliases
-shopt -u extdebug
+shopt -s extdebug
 shopt -s extglob
 shopt -s extquote
 shopt -u failglob
