@@ -1,4 +1,4 @@
-Sat Aug 22 02:34:23 PM MDT 2026
+Sat Aug 22 02:37:28 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -3108,6 +3108,7 @@ gf ()
 pt () 
 { 
     local key="$1";
+    local mode="${2:-tab}";
     case "$key" in 
         builds)
             title="Builds";
@@ -3130,11 +3131,15 @@ pt ()
             path="f"
         ;;
         *)
-            echo "usage: pt {builds|framework|github|jop|f}";
+            echo "usage: pt {builds|framework|github|jop|f} [w]";
             return 1
         ;;
     esac;
-    ptyxis --new-window --title="$title" --working-directory="$HOME/repos-$(hostname)/github/$path"
+    if [[ "$mode" == "w" ]]; then
+        ptyxis --new-window --title="$title" --working-directory="$HOME/repos-$(hostname)/github/$path";
+    else
+        ptyxis --tab --title="$title" --working-directory="$HOME/repos-$(hostname)/github/$path";
+    fi
 }
 q-caf () 
 { 

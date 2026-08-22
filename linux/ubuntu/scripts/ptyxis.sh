@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
+# ptyxis.sh
+
 pt()
 {
     local key="$1"
+    local mode="${2:-tab}"
 
     case "$key" in
         builds)
@@ -27,13 +30,21 @@ pt()
             path="f"
             ;;
         *)
-            echo "usage: pt {builds|framework|github|jop|f}"
+            echo "usage: pt {builds|framework|github|jop|f} [w]"
             return 1
             ;;
     esac
 
-    ptyxis \
-        --new-window \
-        --title="$title" \
-        --working-directory="$HOME/repos-$(hostname)/github/$path"
+    if [[ "$mode" == "w" ]]; then
+        ptyxis \
+            --new-window \
+            --title="$title" \
+            --working-directory="$HOME/repos-$(hostname)/github/$path"
+    else
+        ptyxis \
+            --tab \
+            --title="$title" \
+            --working-directory="$HOME/repos-$(hostname)/github/$path"
+    fi
 }
+
