@@ -14,6 +14,7 @@ source "${pHere}/fortran-stack.sh"
 source "${pHere}/git.sh"
 source "${pHere}/go.sh"
 source "${pHere}/grep.sh"
+source "${pHere}/ptyxis.sh"
 source "${pHere}/vim.sh"
 source "${pHere}/recorder.sh"
 

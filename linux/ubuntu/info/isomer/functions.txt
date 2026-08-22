@@ -1,4 +1,4 @@
-Fri Aug 21 11:07:56 PM MDT 2026
+Fri Aug 21 11:43:50 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -32,6 +32,7 @@ declare -f _comp__split_longopt
 declare -f _comp_abspath
 declare -f _comp_as_root
 declare -f _comp_awk
+declare -f _comp_cmd_cd
 declare -f _comp_command
 declare -f _comp_command_offset
 declare -f _comp_compgen
@@ -176,6 +177,7 @@ declare -f g-general
 declare -f g-newcommand
 declare -f g-tex
 declare -f gf
+declare -f pt
 declare -f q-caf
 declare -f q-compiler
 declare -f q-fortran-env
@@ -863,6 +865,46 @@ _comp_as_root ()
 _comp_awk () 
 { 
     command awk "$@"
+}
+_comp_cmd_cd () 
+{ 
+    local cur prev words cword comp_args;
+    _comp_initialize -- "$@" || return;
+    if [[ $cur == -* ]]; then
+        _comp_compgen_help -c help "$1";
+        compopt +o nospace;
+        return;
+    fi;
+    local i j k;
+    compopt -o filenames;
+    if [[ ! -n ${CDPATH-} || $cur == ?(.)?(.)/* ]]; then
+        _comp_compgen_filedir -d;
+        return;
+    fi;
+    local mark_dirs="" mark_symdirs="";
+    _comp_readline_variable_on mark-directories && mark_dirs=set;
+    _comp_readline_variable_on mark-symlinked-directories && mark_symdirs=set;
+    local paths dirs;
+    _comp_split -F : paths "$CDPATH";
+    for i in "${paths[@]}";
+    do
+        k=${#COMPREPLY[@]};
+        _comp_compgen -v dirs -c "$i/$cur" -- -d;
+        for j in "${dirs[@]}";
+        do
+            if [[ ( -n $mark_symdirs && -L $j || -n $mark_dirs && ! -L $j ) && ! -d ${j#"$i/"} ]]; then
+                j+="/";
+            fi;
+            COMPREPLY[k++]=${j#"$i/"};
+        done;
+    done;
+    _comp_compgen -a filedir -d;
+    if ((${#COMPREPLY[@]} == 1)); then
+        i=${COMPREPLY[0]};
+        if [[ $i == "$cur" && $i != "*/" ]]; then
+            COMPREPLY[0]="${i}/";
+        fi;
+    fi
 }
 _comp_command () 
 { 
@@ -3102,6 +3144,37 @@ gf ()
     fi;
     echo "gfortran ${allflags} ${stem}.f08 -o ${stem}";
     gfortran ${allflags} "${stem}.f08" -o "${stem}"
+}
+pt () 
+{ 
+    local key="$1";
+    case "$key" in 
+        builds)
+            title="Builds";
+            path="builds"
+        ;;
+        framework)
+            title="Framework";
+            path="framework"
+        ;;
+        github)
+            title="GitHub";
+            path="."
+        ;;
+        jop)
+            title="JOP";
+            path="jop"
+        ;;
+        f | fortran)
+            title="Fortran";
+            path="f"
+        ;;
+        *)
+            echo "usage: pt {builds|framework|github|jop|f}";
+            return 1
+        ;;
+    esac;
+    ptyxis --new-window --title="$title" --working-directory="$HOME/repos-$(hostname)/github/$path"
 }
 q-caf () 
 { 
