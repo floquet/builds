@@ -1,4 +1,4 @@
-Fri Aug 21 01:10:41 PM MDT 2026
+Fri Aug 21 10:13:43 PM MDT 2026
 
 COMMAND: cat /proc/modules
 DESCRIPTION: Currently loaded kernel modules
@@ -15,7 +15,7 @@ hid_sensor_trigger 20480 2 hid_sensor_als, Live 0x0000000000000000
 kfifo_buf 12288 1 hid_sensor_trigger, Live 0x0000000000000000
 hid_sensor_iio_common 24576 2 hid_sensor_als,hid_sensor_trigger, Live 0x0000000000000000
 industrialio 143360 3 hid_sensor_als,hid_sensor_trigger,kfifo_buf, Live 0x0000000000000000
-snd_usb_audio 622592 1 - Live 0x0000000000000000
+snd_usb_audio 622592 2 - Live 0x0000000000000000
 snd_usbmidi_lib 57344 1 snd_usb_audio, Live 0x0000000000000000
 snd_ump 49152 1 snd_usb_audio, Live 0x0000000000000000
 uvcvideo 147456 0 - Live 0x0000000000000000
@@ -105,11 +105,11 @@ input_leds 12288 0 - Live 0x0000000000000000
 joydev 32768 0 - Live 0x0000000000000000
 spi_intel_pci 12288 1 - Live 0x0000000000000000
 snd_pcm_dmaengine 20480 1 snd_soc_core, Live 0x0000000000000000
-i915 5099520 36 - Live 0x0000000000000000
+i915 5099520 61 - Live 0x0000000000000000
 mac80211 1933312 1 iwlmld, Live 0x0000000000000000
 spi_intel 36864 1 spi_intel_pci, Live 0x0000000000000000
 igc 237568 0 - Live 0x0000000000000000
-snd_pcm 208896 14 snd_usb_audio,snd_hda_codec_hdmi,snd_hda_intel,snd_sof_intel_hda_generic,soundwire_intel,snd_sof_intel_hda_common,snd_sof,snd_sof_utils,snd_hda_codec,snd_hda_core,snd_soc_sdca,snd_soc_core,snd_compress,snd_pcm_dmaengine, Live 0x0000000000000000
+snd_pcm 208896 15 snd_usb_audio,snd_hda_codec_hdmi,snd_hda_intel,snd_sof_intel_hda_generic,soundwire_intel,snd_sof_intel_hda_common,snd_sof,snd_sof_utils,snd_hda_codec,snd_hda_core,snd_soc_sdca,snd_soc_core,snd_compress,snd_pcm_dmaengine, Live 0x0000000000000000
 processor_thermal_device_pci 16384 0 - Live 0x0000000000000000
 libarc4 12288 1 mac80211, Live 0x0000000000000000
 processor_thermal_device 24576 1 processor_thermal_device_pci, Live 0x0000000000000000
@@ -133,7 +133,7 @@ intel_pmc_core 151552 0 - Live 0x0000000000000000
 processor_thermal_wt_req 12288 1 processor_thermal_device, Live 0x0000000000000000
 int3403_thermal 16384 0 - Live 0x0000000000000000
 drm_display_helper 303104 2 xe,i915, Live 0x0000000000000000
-snd 147456 23 snd_usb_audio,snd_usbmidi_lib,snd_ump,snd_hda_codec_hdmi,snd_hda_intel,snd_sof,snd_hda_codec,snd_soc_sdw_utils,snd_hwdep,snd_soc_sdca,snd_soc_core,snd_compress,snd_pcm,snd_rawmidi,snd_seq,snd_seq_device,snd_timer, Live 0x0000000000000000
+snd 147456 24 snd_usb_audio,snd_usbmidi_lib,snd_ump,snd_hda_codec_hdmi,snd_hda_intel,snd_sof,snd_hda_codec,snd_soc_sdw_utils,snd_hwdep,snd_soc_sdca,snd_soc_core,snd_compress,snd_pcm,snd_rawmidi,snd_seq,snd_seq_device,snd_timer, Live 0x0000000000000000
 cfg80211 1536000 3 iwlmld,mac80211,iwlwifi, Live 0x0000000000000000
 i2c_i801 36864 0 - Live 0x0000000000000000
 mei_me 61440 1 - Live 0x0000000000000000

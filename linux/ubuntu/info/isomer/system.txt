@@ -1,4 +1,4 @@
-Fri Aug 21 01:10:41 PM MDT 2026
+Fri Aug 21 10:13:43 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -14,7 +14,7 @@ Operating System: Ubuntu 26.04 LTS
     Hardware SKU: meer10
 Firmware Version: CRARL579.0027.2025.0918.1706
    Firmware Date: Thu 2025-09-18
-    Firmware Age: 11month 2d
+    Firmware Age: 11month 3d
 
 COMMAND: uname -a
 Linux isomer 7.0.11-76070011-generic #202606011647~1784215337~26.04~57a4cdd~dev SMP PREEMPT_DYNAMIC T x86_64 GNU/Linux
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      68%
+CPU(s) scaling MHz:                      69%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi       4.7Gi        21Gi       1.7Gi       5.7Gi        25Gi
+Mem:            30Gi       7.5Gi        17Gi       2.4Gi       7.5Gi        22Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -138,12 +138,12 @@ nvme0n1     259:0    0 953.9G  0 disk
 
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
-tmpfs          tmpfs     6.1G  3.7M  6.1G   1% /run
+tmpfs          tmpfs     6.1G  4.0M  6.1G   1% /run
 /dev/nvme0n1p2 ext4      937G  160G  730G  18% /
-tmpfs          tmpfs      16G   11M   16G   1% /dev/shm
+tmpfs          tmpfs      16G  134M   15G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  73% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G  100K   16G   1% /tmp
+tmpfs          tmpfs      16G  9.4M   16G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sda1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
@@ -163,7 +163,8 @@ TARGET                                            SOURCE                 FSTYPE 
 │   ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026533128]] nsfs            rw
 │   ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026533331]] nsfs            rw
 │   ├─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026533333]] nsfs            rw
-│   └─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532751]] nsfs            rw
+│   ├─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532751]] nsfs            rw
+│   └─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026532186]] nsfs            rw
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15814000k,nr_inodes=1048576,inode64,usrquota
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15689844k,nr_inodes=3922461,mode=755,inode64
 │ ├─/dev/mqueue                                   mqueue                 mqueue          rw,nosuid,nodev,noexec,relatime
