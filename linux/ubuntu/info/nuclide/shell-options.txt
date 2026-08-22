@@ -1,0 +1,113 @@
+Fri Aug 21 18:37:33 MDT 2026
+
+COMMAND: set -o
+allexport      	off
+braceexpand    	on
+emacs          	on
+errexit        	off
+errtrace       	off
+functrace      	off
+hashall        	on
+histexpand     	on
+history        	on
+ignoreeof      	off
+interactive-comments	on
+keyword        	off
+monitor        	on
+noclobber      	off
+noexec         	off
+noglob         	off
+nolog          	off
+notify         	off
+nounset        	off
+onecmd         	off
+physical       	off
+pipefail       	off
+posix          	off
+privileged     	off
+verbose        	off
+vi             	off
+xtrace         	off
+
+COMMAND: shopt -p
+shopt -u array_expand_once
+shopt -u assoc_expand_once
+shopt -u autocd
+shopt -u bash_source_fullpath
+shopt -u cdable_vars
+shopt -u cdspell
+shopt -u checkhash
+shopt -u checkjobs
+shopt -s checkwinsize
+shopt -s cmdhist
+shopt -u compat31
+shopt -u compat32
+shopt -u compat40
+shopt -u compat41
+shopt -u compat42
+shopt -u compat43
+shopt -u compat44
+shopt -s complete_fullquote
+shopt -u direxpand
+shopt -u dirspell
+shopt -u dotglob
+shopt -u execfail
+shopt -s expand_aliases
+shopt -u extdebug
+shopt -s extglob
+shopt -s extquote
+shopt -u failglob
+shopt -s force_fignore
+shopt -s globasciiranges
+shopt -s globskipdots
+shopt -u globstar
+shopt -u gnu_errfmt
+shopt -s histappend
+shopt -u histreedit
+shopt -u histverify
+shopt -u hostcomplete
+shopt -u huponexit
+shopt -u inherit_errexit
+shopt -s interactive_comments
+shopt -u lastpipe
+shopt -u lithist
+shopt -u localvar_inherit
+shopt -u localvar_unset
+shopt -u login_shell
+shopt -u mailwarn
+shopt -u no_empty_cmd_completion
+shopt -u nocaseglob
+shopt -u nocasematch
+shopt -u noexpand_translation
+shopt -u nullglob
+shopt -s patsub_replacement
+shopt -s progcomp
+shopt -u progcomp_alias
+shopt -s promptvars
+shopt -u restricted_shell
+shopt -u shift_verbose
+shopt -s sourcepath
+shopt -u varredir_close
+shopt -u xpg_echo
+
+COMMAND: umask -p
+umask 0022
+
+COMMAND: ulimit -a
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 31095
+max locked memory           (kbytes, -l) 65536
+max memory size             (kbytes, -m) unlimited
+open files                          (-n) 10240
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 31095
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited

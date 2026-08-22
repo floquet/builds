@@ -1,0 +1,116 @@
+Fri Aug 21 18:37:33 MDT 2026
+
+COMMAND: hostnamectl
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to system scope bus via local transport: Host is down
+
+COMMAND: uname -a
+Linux nuclide 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 GNU/Linux
+
+COMMAND: lsb_release -a
+Distributor ID:	Ubuntu
+Description:	Ubuntu 26.04 LTS
+Release:	26.04
+Codename:	resolute
+
+COMMAND: lscpu
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           46 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  20
+On-line CPU(s) list:                     0-19
+Vendor ID:                               GenuineIntel
+Model name:                              13th Gen Intel(R) Core(TM) i5-13500
+CPU family:                              6
+Model:                                   191
+Thread(s) per core:                      2
+Core(s) per socket:                      10
+Socket(s):                               1
+Stepping:                                2
+BogoMIPS:                                4991.99
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize ibt flush_l1d arch_capabilities
+Virtualization:                          VT-x
+Hypervisor vendor:                       Microsoft
+Virtualization type:                     full
+L1d cache:                               480 KiB (10 instances)
+L1i cache:                               320 KiB (10 instances)
+L2 cache:                                12.5 MiB (10 instances)
+L3 cache:                                24 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-19
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Mitigation; Clear Register File
+Vulnerability Retbleed:                  Mitigation; Enhanced IBRS
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+COMMAND: free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       767Mi       4.9Gi       3.0Mi       2.1Gi       6.9Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+COMMAND: lsblk
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 356.9M  1 disk 
+sdb    8:16   0 159.4M  1 disk 
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+                               /
+
+COMMAND: df -hT
+Filesystem     Type     Size  Used Avail Use% Mounted on
+none           overlay  3.9G     0  3.9G   0% /usr/lib/modules/6.18.33.2-microsoft-standard-WSL2
+none           tmpfs    3.9G  4.0K  3.9G   1% /mnt/wsl
+drivers        9p       236G  186G   50G  79% /usr/lib/wsl/drivers
+/dev/sdd       ext4    1007G  7.4G  949G   1% /
+none           tmpfs    3.9G   60K  3.9G   1% /mnt/wslg
+none           overlay  3.9G     0  3.9G   0% /usr/lib/wsl/lib
+rootfs         rootfs   3.8G  2.8M  3.8G   1% /init
+none           tmpfs    3.9G  4.0K  3.9G   1% /run
+none           tmpfs    3.9G     0  3.9G   0% /run/lock
+none           tmpfs    3.9G     0  3.9G   0% /run/shm
+none           tmpfs    3.9G     0  3.9G   0% /run/user
+none           overlay  3.9G   80K  3.9G   1% /mnt/wslg/versions.txt
+none           overlay  3.9G   80K  3.9G   1% /mnt/wslg/doc
+C:\            9p       236G  186G   50G  79% /mnt/c
+
+COMMAND: findmnt
+TARGET                                               SOURCE                  FSTYPE      OPTIONS
+/                                                    /dev/sdd                ext4        rw,relatime,discard,errors=remount-ro,data=ordered
+├─/usr/lib/modules/6.18.33.2-microsoft-standard-WSL2 none                    overlay     rw,nosuid,nodev,noatime,lowerdir=/modules,upperdir=/lib/modules/6.18.33.2-microsoft-standard-WSL2/rw/upper,workdir=/lib/modules/6.18.33.2-microsoft-standard-WSL2/rw/work,uuid=on
+├─/mnt/wsl                                           none                    tmpfs       rw,relatime
+├─/usr/lib/wsl/drivers                               drivers                 9p          ro,nosuid,nodev,noatime,aname=drivers;fmask=222;dmask=222,cache=0x5,access=client,msize=65536,trans=fd,rfd=8,wfd=8
+├─/mnt/wslg                                          none                    tmpfs       rw,relatime
+│ ├─/mnt/wslg/distro                                 /dev/sdd                ext4        ro,relatime,discard,errors=remount-ro,data=ordered
+│ ├─/mnt/wslg/versions.txt                           none[/etc/versions.txt] overlay     rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on
+│ └─/mnt/wslg/doc                                    none[/usr/share/doc]    overlay     rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on
+├─/usr/lib/wsl/lib                                   none                    overlay     rw,nosuid,nodev,noatime,lowerdir=/gpu_lib_packaged:/gpu_lib_inbox,upperdir=/gpu_lib/rw/upper,workdir=/gpu_lib/rw/work,uuid=on
+├─/init                                              rootfs[/init]           rootfs      ro,size=3979992k,nr_inodes=994998
+├─/dev                                               none                    devtmpfs    rw,nosuid,relatime,size=3979992k,nr_inodes=994998,mode=755
+│ ├─/dev/pts                                         devpts                  devpts      rw,nosuid,noexec,noatime,gid=5,mode=620,ptmxmode=000
+│ └─/dev/shm                                         none                    tmpfs       rw,nosuid,nodev,noatime
+├─/sys                                               sysfs                   sysfs       rw,nosuid,nodev,noexec,noatime
+│ └─/sys/fs/cgroup                                   cgroup2                 cgroup2     rw,nosuid,nodev,noexec,relatime,nsdelegate
+├─/proc                                              proc                    proc        rw,nosuid,nodev,noexec,noatime
+│ └─/proc/sys/fs/binfmt_misc                         binfmt_misc             binfmt_misc rw,relatime
+├─/run                                               none                    tmpfs       rw,nosuid,nodev,mode=755
+│ ├─/run/lock                                        none                    tmpfs       rw,nosuid,nodev,noexec,noatime
+│ ├─/run/shm                                         none                    tmpfs       rw,nosuid,nodev,noatime
+│ └─/run/user                                        none                    tmpfs       rw,nosuid,nodev,noexec,noatime,mode=755
+├─/tmp/.X11-unix                                     none[/.X11-unix]        tmpfs       ro,relatime
+└─/mnt/c                                             C:\                     9p          rw,noatime,aname=drvfs;path=C:\;uid=1000;gid=1000;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=5,wfd=5
