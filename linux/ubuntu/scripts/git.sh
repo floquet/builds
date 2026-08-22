@@ -8,6 +8,7 @@ function commit-builds() {
 
     # git status
     # git diff --stat
+    git config pull.rebase false
     git add linux/ubuntu
     # git diff --cached
     git commit -m "${message}"
