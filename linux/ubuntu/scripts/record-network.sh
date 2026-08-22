@@ -27,7 +27,7 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
     echo
     echo "COMMAND: resolvectl status"
-    resolvectl status
+    resolvectl status 2>/dev/null || echo "resolvectl not available in WSL"
 
     echo
     echo "COMMAND: ss -tulpn"
