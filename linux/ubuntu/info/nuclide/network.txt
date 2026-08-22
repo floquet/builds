@@ -1,0 +1,28 @@
+Fri Aug 21 18:11:21 MDT 2026
+
+COMMAND: ip -br addr
+lo               UNKNOWN        127.0.0.1/8 10.255.255.254/32 ::1/128 
+eth0             UP             172.21.106.91/20 fe80::215:5dff:fe5e:a36e/64 
+
+COMMAND: ip route
+default via 172.21.96.1 dev eth0 proto kernel 
+172.21.96.0/20 dev eth0 proto kernel scope link src 172.21.106.91 
+
+COMMAND: ip -6 route
+fe80::/64 dev eth0 proto kernel metric 256 pref medium
+
+COMMAND: nmcli device status
+
+COMMAND: nmcli connection show
+
+COMMAND: resolvectl status
+
+COMMAND: ss -tulpn
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:PortProcess
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*          
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*          
+udp   UNCONN 0      0               [::1]:323          [::]:*          
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*          
+
+COMMAND: ip neigh
+172.21.96.1 dev eth0 lladdr 00:15:5d:b9:18:d7 STALE 

@@ -1,0 +1,12 @@
+Fri Aug 21 18:11:21 MDT 2026
+
+COMMAND: cat /proc/modules
+DESCRIPTION: Currently loaded kernel modules
+
+sch_fq_codel 16384 1 - Live 0x0000000000000000
+br_netfilter 28672 0 - Live 0x0000000000000000
+bridge 286720 1 br_netfilter, Live 0x0000000000000000
+stp 12288 1 bridge, Live 0x0000000000000000
+llc 12288 2 bridge,stp, Live 0x0000000000000000
+ip_tables 28672 0 - Live 0x0000000000000000
+tun 53248 0 - Live 0x0000000000000000
