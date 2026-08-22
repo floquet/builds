@@ -17,6 +17,10 @@ source "${pHere}/grep.sh"
 source "${pHere}/vim.sh"
 source "${pHere}/recorder.sh"
 
+if [[ -n "${TERMINAL_TITLE:-}" ]]; then
+    PROMPT_COMMAND='__vte_prompt_command; printf "\033]0;%s\007" "$TERMINAL_TITLE"'
+fi
+
 # commit changes to builds repo
 commit-builds
 
