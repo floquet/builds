@@ -1,4 +1,4 @@
-Sun Aug 23 11:51:07 AM MDT 2026
+Sun Aug 23 01:03:09 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -10,10 +10,12 @@ declare -f __git_sequencer_status
 declare -f __load_completion
 declare -f __ltrim_colon_completions
 declare -f __parse_options
-declare -f __systemd_osc_context_common
-declare -f __systemd_osc_context_escape
-declare -f __systemd_osc_context_precmdline
-declare -f __systemd_osc_context_ps0
+declare -f __vte_osc7
+declare -f __vte_precmd
+declare -f __vte_prompt_command
+declare -f __vte_termprop_reset
+declare -f __vte_termprop_set
+declare -f __vte_termprop_signal
 declare -f _allowed_groups
 declare -f _allowed_users
 declare -f _available_interfaces
@@ -173,15 +175,7 @@ declare -f g-fortran
 declare -f g-general
 declare -f g-newcommand
 declare -f g-tex
-declare -f gawklibpath_append
-declare -f gawklibpath_default
-declare -f gawklibpath_prepend
-declare -f gawkpath_append
-declare -f gawkpath_default
-declare -f gawkpath_prepend
 declare -f gf
-declare -f logger_debug
-declare -f logger_info
 declare -f pt
 declare -f q-caf
 declare -f q-compiler
@@ -193,7 +187,6 @@ declare -f q-selection
 declare -f q-wrappers
 declare -f quote
 declare -f quote_readline
-declare -f set_val
 
 COMMAND: declare -f
 __expand_tilde_by_ref () 
@@ -633,41 +626,48 @@ __parse_options ()
     _comp_compgen_help__parse "$1";
     printf '%s\n' "${_options[@]}"
 }
-__systemd_osc_context_common () 
+__vte_osc7 () 
 { 
-    if [ -f /etc/machine-id ]; then
-        printf ";machineid=%.36s" "$(< /etc/machine-id)";
-    fi;
-    printf ";user=%.255s;hostname=%.255s;bootid=%.36s;pid=%.20d" "$USER" "$HOSTNAME" "$(< /proc/sys/kernel/random/boot_id)" "$$"
+    local errsv="$?";
+    printf "\033]7;file://%s%s\033\\" "${HOSTNAME}" "$(/usr/libexec/vte-urlencode-cwd)";
+    return $errsv
 }
-__systemd_osc_context_escape () 
+__vte_precmd () 
 { 
-    echo "$1" | sed -e 's/\\/\\x5c/g' -e 's/;/\\x3b/g' -e 's/[[:cntrl:]]/⍰/g'
+    local errsv="$?";
+    __vte_termprop_set "vte.shell.postexec" "$?";
+    __vte_termprop_signal "vte.shell.precmd";
+    return $errsv
 }
-__systemd_osc_context_precmdline () 
+__vte_prompt_command () 
 { 
-    local systemd_exitstatus="$?" systemd_signal;
-    if [ -n "${systemd_osc_context_cmd_id:-}" ]; then
-        if [ "$systemd_exitstatus" -gt 128 ] && systemd_signal=$(kill -l "$systemd_exitstatus" 2>&-); then
-            printf "\033]3008;end=%.64s;exit=failure;status=%d;signal=SIG%s\033\\" "$systemd_osc_context_cmd_id" "$systemd_exitstatus" "$systemd_signal";
-        else
-            if [ "$systemd_exitstatus" -ne 0 ]; then
-                printf "\033]3008;end=%.64s;exit=failure;status=%d\033\\" "$systemd_osc_context_cmd_id" $((systemd_exitstatus));
-            else
-                printf "\033]3008;end=%.64s;exit=success\033\\" "$systemd_osc_context_cmd_id";
-            fi;
-        fi;
-    fi;
-    if [ -z "${systemd_osc_context_shell_id:-}" ]; then
-        read -r systemd_osc_context_shell_id < /proc/sys/kernel/random/uuid;
-    fi;
-    printf "\033]3008;start=%.64s%s;type=shell;cwd=%.255s\033\\" "$systemd_osc_context_shell_id" "$(__systemd_osc_context_common)" "$(__systemd_osc_context_escape "$PWD")";
-    read -r systemd_osc_context_cmd_id < /proc/sys/kernel/random/uuid
+    local errsv="$?";
+    __vte_termprop_set "vte.shell.postexec" "$errsv";
+    __vte_osc7;
+    local pwd='~';
+    [ "$PWD" != "$HOME" ] && pwd=${PWD/#$HOME\//\~\/};
+    pwd="${pwd//[[:cntrl:]]}";
+    printf "\033]0;%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${pwd}";
+    __vte_termprop_signal "vte.shell.precmd";
+    return $errsv
 }
-__systemd_osc_context_ps0 () 
+__vte_termprop_reset () 
 { 
-    [ -n "${systemd_osc_context_cmd_id:-}" ] || return;
-    printf "\033]3008;start=%.64s%s;type=command;cwd=%.255s\033\\" "$systemd_osc_context_cmd_id" "$(__systemd_osc_context_common)" "$(__systemd_osc_context_escape "$PWD")"
+    local errsv="$?";
+    printf '\033]666;%s\033\\' "$1";
+    return $errsv
+}
+__vte_termprop_set () 
+{ 
+    local errsv="$?";
+    printf '\033]666;%s=%s\033\\' "$1" "$2";
+    return $errsv
+}
+__vte_termprop_signal () 
+{ 
+    local errsv="$?";
+    printf '\033]666;%s!\033\\' "$1";
+    return $errsv
 }
 _allowed_groups () 
 { 
@@ -3095,36 +3095,6 @@ g-tex ()
     echo "grep -inr --include='*.tex' \"$1\" .";
     grep --color=auto -inr --include='*.tex' "$1" .
 }
-gawklibpath_append () 
-{ 
-    [ -z "$AWKLIBPATH" ] && AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`;
-    export AWKLIBPATH="$AWKLIBPATH:$*"
-}
-gawklibpath_default () 
-{ 
-    unset AWKLIBPATH;
-    export AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`
-}
-gawklibpath_prepend () 
-{ 
-    [ -z "$AWKLIBPATH" ] && AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`;
-    export AWKLIBPATH="$*:$AWKLIBPATH"
-}
-gawkpath_append () 
-{ 
-    [ -z "$AWKPATH" ] && AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`;
-    export AWKPATH="$AWKPATH:$*"
-}
-gawkpath_default () 
-{ 
-    unset AWKPATH;
-    export AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`
-}
-gawkpath_prepend () 
-{ 
-    [ -z "$AWKPATH" ] && AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`;
-    export AWKPATH="$*:$AWKPATH"
-}
 gf () 
 { 
     local stem="$1";
@@ -3134,16 +3104,6 @@ gf ()
     fi;
     echo "gfortran ${allflags} ${stem}.f08 -o ${stem}";
     gfortran ${allflags} "${stem}.f08" -o "${stem}"
-}
-logger_debug () 
-{ 
-    if [ -n "$IM_CONFIG_VERBOSE" ]; then
-        eval "$LOGGER \"$1\"";
-    fi
-}
-logger_info () 
-{ 
-    eval "$LOGGER \"$1\""
 }
 pt () 
 { 
@@ -3362,10 +3322,4 @@ quote_readline ()
     local REPLY;
     _comp_quote_compgen "$1";
     printf %s "$REPLY"
-}
-set_val () 
-{ 
-    MATCH="^$1=[\"']?[-a-zA-Z:_,][-a-zA-Z:_,]*.[\"']?\$";
-    eval "$(grep -e "$MATCH" $IM_CONFIG_DEFAULT | head -1)";
-    logger_debug "Set $(grep -e "$MATCH" $IM_CONFIG_DEFAULT | head -1)"
 }
