@@ -1,4 +1,4 @@
-Sat Aug 22 03:46:32 PM MDT 2026
+Sat Aug 22 06:41:44 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      70%
+CPU(s) scaling MHz:                      79%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi        10Gi        11Gi       3.0Gi        11Gi        19Gi
+Mem:            30Gi        15Gi       4.8Gi       4.6Gi        13Gi        14Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -127,9 +127,11 @@ loop44        7:44   0   828K  1 loop /snap/snapd-desktop-integration/391
 loop45        7:45   0  64.7M  1 loop /snap/sublime-text/219
 loop46        7:46   0 227.6M  1 loop /snap/thunderbird/1057
 loop47        7:47   0 197.5M  1 loop /snap/vivaldi/459
+loop48        7:48   0 224.5M  1 loop /snap/gitkraken/319
 loop49        7:49   0 219.9M  1 loop /snap/thunderbird/1201
 loop50        7:50   0     4M  1 loop /snap/webfortran/8
 loop51        7:51   0 197.5M  1 loop /snap/vivaldi/462
+loop52        7:52   0  31.4M  1 loop 
 sda           8:0    0   1.8T  0 disk 
 └─sda1        8:1    0   1.8T  0 part /mnt/T7-Shield
 nvme0n1     259:0    0 953.9G  0 disk 
@@ -138,12 +140,12 @@ nvme0n1     259:0    0 953.9G  0 disk
 
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
-tmpfs          tmpfs     6.1G  4.6M  6.1G   1% /run
+tmpfs          tmpfs     6.1G  4.9M  6.1G   1% /run
 /dev/nvme0n1p2 ext4      937G  160G  730G  18% /
-tmpfs          tmpfs      16G  132M   15G   1% /dev/shm
+tmpfs          tmpfs      16G  503M   15G   4% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  73% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G   44M   16G   1% /tmp
+tmpfs          tmpfs      16G  126M   15G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sda1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
@@ -166,7 +168,8 @@ TARGET                                            SOURCE                 FSTYPE 
 │   ├─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532751]] nsfs            rw
 │   ├─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026532186]] nsfs            rw
 │   ├─/run/snapd/ns/vivaldi.mnt                   nsfs[mnt:[4026533546]] nsfs            rw
-│   └─/run/snapd/ns/gnome-system-monitor.mnt      nsfs[mnt:[4026534433]] nsfs            rw
+│   ├─/run/snapd/ns/gnome-system-monitor.mnt      nsfs[mnt:[4026534433]] nsfs            rw
+│   └─/run/snapd/ns/snap-store.mnt                nsfs[mnt:[4026534514]] nsfs            rw
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15814000k,nr_inodes=1048576,inode64,usrquota
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15689844k,nr_inodes=3922461,mode=755,inode64
 │ ├─/dev/mqueue                                   mqueue                 mqueue          rw,nosuid,nodev,noexec,relatime
@@ -238,4 +241,5 @@ TARGET                                            SOURCE                 FSTYPE 
 ├─/snap/vivaldi/459                               /dev/loop47            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/webfortran/8                              /dev/loop50            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/mnt/T7-Shield                                  /dev/sda1              ext4            rw,relatime,stripe=8191
-└─/snap/vivaldi/462                               /dev/loop51            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/vivaldi/462                               /dev/loop51            squashfs        ro,nodev,relatime,errors=continue,threads=single
+└─/snap/gitkraken/319                             /dev/loop48            squashfs        ro,nodev,relatime,errors=continue,threads=single
