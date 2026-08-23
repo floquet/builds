@@ -21,6 +21,10 @@ pt()
             title="GitHub"
             path="."
             ;;
+        Wolfram)
+            title="Wolfram"
+            path="wolfram"
+            ;;
         jop)
             title="JOP"
             path="jop"
@@ -30,7 +34,7 @@ pt()
             path="f"
             ;;
         *)
-            echo "usage: pt {builds|framework|github|jop|f} [w]"
+            echo "usage: pt {builds|framework|github|jop|wolfram|f} [w]"
             return 1
             ;;
     esac
