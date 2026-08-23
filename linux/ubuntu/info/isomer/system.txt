@@ -1,4 +1,4 @@
-Sun Aug 23 01:06:13 PM MDT 2026
+Sun Aug 23 02:07:39 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -14,7 +14,7 @@ Operating System: Ubuntu 26.04 LTS
     Hardware SKU: meer10
 Firmware Version: CRARL579.0027.2025.0918.1706
    Firmware Date: Thu 2025-09-18
-    Firmware Age: 11month 4d
+    Firmware Age: 11month 5d
 
 COMMAND: uname -a
 Linux isomer 7.0.11-76070011-generic #202606011647~1784215337~26.04~57a4cdd~dev SMP PREEMPT_DYNAMIC T x86_64 GNU/Linux
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi        22Gi       5.3Gi       5.8Gi       7.5Gi       7.8Gi
+Mem:            30Gi        24Gi       1.9Gi       6.0Gi       9.3Gi       6.1Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -141,11 +141,11 @@ nvme0n1     259:0    0 953.9G  0 disk
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
 tmpfs          tmpfs     6.1G  5.0M  6.1G   1% /run
-/dev/nvme0n1p2 ext4      937G  174G  716G  20% /
-tmpfs          tmpfs      16G  420M   15G   3% /dev/shm
+/dev/nvme0n1p2 ext4      937G  182G  708G  21% /
+tmpfs          tmpfs      16G  448M   15G   3% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  73% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G  225M   15G   2% /tmp
+tmpfs          tmpfs      16G  247M   15G   2% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sda1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
@@ -169,6 +169,7 @@ TARGET                                            SOURCE                 FSTYPE 
 │   ├─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026532186]] nsfs            rw
 │   ├─/run/snapd/ns/vivaldi.mnt                   nsfs[mnt:[4026533546]] nsfs            rw
 │   ├─/run/snapd/ns/gnome-system-monitor.mnt      nsfs[mnt:[4026534433]] nsfs            rw
+│   ├─/run/snapd/ns/glab.mnt                      nsfs[mnt:[4026534321]] nsfs            rw
 │   └─/run/snapd/ns/snap-store.mnt                nsfs[mnt:[4026534514]] nsfs            rw
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15814000k,nr_inodes=1048576,inode64,usrquota
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15689844k,nr_inodes=3922461,mode=755,inode64
