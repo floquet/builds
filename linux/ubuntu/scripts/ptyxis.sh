@@ -37,7 +37,7 @@ pt()
         wolfram|Wolfram)
             title="Wolfram"
             path="$HOME"
-            command="wolfram"
+            command="/usr/local/Wolfram/Wolfram/15.0/Executables/wolfram"
             ;;
 
         jop)
@@ -69,7 +69,7 @@ pt()
                 --new-window \
                 --title="$title" \
                 --working-directory="$path" \
-                -- bash -ic "$command"
+                -- "$command"
         else
             ptyxis \
                 --new-window \
@@ -84,7 +84,7 @@ pt()
                 --tab \
                 --title="$title" \
                 --working-directory="$path" \
-                -- bash -ic "$command"
+                -- "$command"
         else
             ptyxis \
                 --tab \

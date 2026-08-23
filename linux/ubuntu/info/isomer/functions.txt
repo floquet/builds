@@ -1,4 +1,4 @@
-Sat Aug 22 11:20:04 PM MDT 2026
+Sat Aug 22 11:23:48 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -32,6 +32,7 @@ declare -f _comp__split_longopt
 declare -f _comp_abspath
 declare -f _comp_as_root
 declare -f _comp_awk
+declare -f _comp_cmd_cd
 declare -f _comp_command
 declare -f _comp_command_offset
 declare -f _comp_compgen
@@ -171,11 +172,13 @@ declare -f _xinetd_services
 declare -f command_not_found_handle
 declare -f commit-builds
 declare -f dequote
+declare -f display_total_elapsed_time
 declare -f g-fortran
 declare -f g-general
 declare -f g-newcommand
 declare -f g-tex
 declare -f gf
+declare -f new_step
 declare -f pt
 declare -f q-caf
 declare -f q-compiler
@@ -187,6 +190,7 @@ declare -f q-selection
 declare -f q-wrappers
 declare -f quote
 declare -f quote_readline
+declare -f sub_step
 
 COMMAND: declare -f
 __expand_tilde_by_ref () 
@@ -864,6 +868,46 @@ _comp_as_root ()
 _comp_awk () 
 { 
     command awk "$@"
+}
+_comp_cmd_cd () 
+{ 
+    local cur prev words cword comp_args;
+    _comp_initialize -- "$@" || return;
+    if [[ $cur == -* ]]; then
+        _comp_compgen_help -c help "$1";
+        compopt +o nospace;
+        return;
+    fi;
+    local i j k;
+    compopt -o filenames;
+    if [[ ! -n ${CDPATH-} || $cur == ?(.)?(.)/* ]]; then
+        _comp_compgen_filedir -d;
+        return;
+    fi;
+    local mark_dirs="" mark_symdirs="";
+    _comp_readline_variable_on mark-directories && mark_dirs=set;
+    _comp_readline_variable_on mark-symlinked-directories && mark_symdirs=set;
+    local paths dirs;
+    _comp_split -F : paths "$CDPATH";
+    for i in "${paths[@]}";
+    do
+        k=${#COMPREPLY[@]};
+        _comp_compgen -v dirs -c "$i/$cur" -- -d;
+        for j in "${dirs[@]}";
+        do
+            if [[ ( -n $mark_symdirs && -L $j || -n $mark_dirs && ! -L $j ) && ! -d ${j#"$i/"} ]]; then
+                j+="/";
+            fi;
+            COMPREPLY[k++]=${j#"$i/"};
+        done;
+    done;
+    _comp_compgen -a filedir -d;
+    if ((${#COMPREPLY[@]} == 1)); then
+        i=${COMPREPLY[0]};
+        if [[ $i == "$cur" && $i != "*/" ]]; then
+            COMPREPLY[0]="${i}/";
+        fi;
+    fi
 }
 _comp_command () 
 { 
@@ -3070,6 +3114,14 @@ dequote ()
     printf %s "$REPLY";
     return $rc
 }
+display_total_elapsed_time () 
+{ 
+    local total_elapsed_time=$((SECONDS - start_time));
+    local total_minutes=$((total_elapsed_time / 60));
+    local total_seconds=$((total_elapsed_time % 60));
+    echo "";
+    printf "Total elapsed time: %02d:%02d (MM:SS)\n" "$total_minutes" "$total_seconds"
+}
 g-fortran () 
 { 
     echo "grep -inr --include='*.f08' \"$1\" .";
@@ -3105,6 +3157,13 @@ gf ()
     echo "gfortran ${allflags} ${stem}.f08 -o ${stem}";
     gfortran ${allflags} "${stem}.f08" -o "${stem}"
 }
+new_step () 
+{ 
+    export counter=$((counter + 1));
+    export subcounter=0;
+    echo "";
+    echo "Step ${counter}: ${1}"
+}
 pt () 
 { 
     local key="$1";
@@ -3132,7 +3191,7 @@ pt ()
         wolfram | Wolfram)
             title="Wolfram";
             path="$HOME";
-            command="wolfram"
+            command="/usr/local/Wolfram/Wolfram/15.0/Executables/wolfram"
         ;;
         jop)
             title="JOP";
@@ -3153,13 +3212,13 @@ pt ()
     fi;
     if [[ "$mode" == "w" ]]; then
         if [[ -n "$command" ]]; then
-            ptyxis --new-window --title="$title" --working-directory="$path" -- bash -ic "$command";
+            ptyxis --new-window --title="$title" --working-directory="$path" -- "$command";
         else
             ptyxis --new-window --title="$title" --working-directory="$path";
         fi;
     else
         if [[ -n "$command" ]]; then
-            ptyxis --tab --title="$title" --working-directory="$path" -- bash -ic "$command";
+            ptyxis --tab --title="$title" --working-directory="$path" -- "$command";
         else
             ptyxis --tab --title="$title" --working-directory="$path";
         fi;
@@ -3322,4 +3381,10 @@ quote_readline ()
     local REPLY;
     _comp_quote_compgen "$1";
     printf %s "$REPLY"
+}
+sub_step () 
+{ 
+    export subcounter=$((subcounter + 1));
+    echo "";
+    echo "  Substep ${counter}.${subcounter}: ${1}"
 }
