@@ -1,4 +1,4 @@
-Sat Aug 22 06:41:46 PM MDT 2026
+Sat Aug 22 07:49:09 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -10,6 +10,12 @@ declare -f __git_sequencer_status
 declare -f __load_completion
 declare -f __ltrim_colon_completions
 declare -f __parse_options
+declare -f __vte_osc7
+declare -f __vte_precmd
+declare -f __vte_prompt_command
+declare -f __vte_termprop_reset
+declare -f __vte_termprop_set
+declare -f __vte_termprop_signal
 declare -f _allowed_groups
 declare -f _allowed_users
 declare -f _available_interfaces
@@ -619,6 +625,49 @@ __parse_options ()
     local -a _options=();
     _comp_compgen_help__parse "$1";
     printf '%s\n' "${_options[@]}"
+}
+__vte_osc7 () 
+{ 
+    local errsv="$?";
+    printf "\033]7;file://%s%s\033\\" "${HOSTNAME}" "$(/usr/libexec/vte-urlencode-cwd)";
+    return $errsv
+}
+__vte_precmd () 
+{ 
+    local errsv="$?";
+    __vte_termprop_set "vte.shell.postexec" "$?";
+    __vte_termprop_signal "vte.shell.precmd";
+    return $errsv
+}
+__vte_prompt_command () 
+{ 
+    local errsv="$?";
+    __vte_termprop_set "vte.shell.postexec" "$errsv";
+    __vte_osc7;
+    local pwd='~';
+    [ "$PWD" != "$HOME" ] && pwd=${PWD/#$HOME\//\~\/};
+    pwd="${pwd//[[:cntrl:]]}";
+    printf "\033]0;%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${pwd}";
+    __vte_termprop_signal "vte.shell.precmd";
+    return $errsv
+}
+__vte_termprop_reset () 
+{ 
+    local errsv="$?";
+    printf '\033]666;%s\033\\' "$1";
+    return $errsv
+}
+__vte_termprop_set () 
+{ 
+    local errsv="$?";
+    printf '\033]666;%s=%s\033\\' "$1" "$2";
+    return $errsv
+}
+__vte_termprop_signal () 
+{ 
+    local errsv="$?";
+    printf '\033]666;%s!\033\\' "$1";
+    return $errsv
 }
 _allowed_groups () 
 { 

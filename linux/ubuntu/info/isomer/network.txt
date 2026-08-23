@@ -1,4 +1,4 @@
-Sat Aug 22 06:41:46 PM MDT 2026
+Sat Aug 22 07:49:09 PM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -42,7 +42,7 @@ Link 2 (enp86s0)
 Link 3 (enp87s0)
     Current Scopes: DNS
          Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
-Current DNS Server: 1.1.1.1
+Current DNS Server: 8.8.8.8
        DNS Servers: 8.8.8.8 1.1.1.1
      Default Route: yes
 
@@ -72,6 +72,7 @@ udp   UNCONN 0      0                                 0.0.0.0:38332      0.0.0.0
 udp   UNCONN 0      0                              10.10.10.4:39344      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=34))
 udp   UNCONN 0      0                                 0.0.0.0:46002      0.0.0.0:*    users:(("python3",pid=26652,fd=12))      
 udp   UNCONN 0      0                             10.11.26.57:46128      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=33))
+udp   UNCONN 0      0                                 0.0.0.0:47436      0.0.0.0:*    users:(("firefox",pid=8999,fd=130))      
 udp   UNCONN 0      0                                   [::1]:323           [::]:*                                             
 udp   UNCONN 0      0      [fe80::5d6:4641:7d3d:f0b3]%enp87s0:3702          [::]:*    users:(("python3",pid=26652,fd=16))      
 udp   UNCONN 0      0                       [ff02::c]%enp87s0:3702          [::]:*    users:(("python3",pid=26652,fd=14))      
