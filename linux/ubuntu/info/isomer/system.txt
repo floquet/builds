@@ -1,4 +1,4 @@
-Sat Aug 22 11:23:48 PM MDT 2026
+Sun Aug 23 11:51:07 AM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      69%
+CPU(s) scaling MHz:                      71%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi        22Gi       983Mi       5.8Gi        12Gi       8.1Gi
+Mem:            30Gi        24Gi       940Mi       5.8Gi        10Gi       5.7Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -140,12 +140,12 @@ nvme0n1     259:0    0 953.9G  0 disk
 
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
-tmpfs          tmpfs     6.1G  4.9M  6.1G   1% /run
+tmpfs          tmpfs     6.1G  5.0M  6.1G   1% /run
 /dev/nvme0n1p2 ext4      937G  174G  716G  20% /
-tmpfs          tmpfs      16G  445M   15G   3% /dev/shm
+tmpfs          tmpfs      16G  457M   15G   3% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  73% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G  178M   15G   2% /tmp
+tmpfs          tmpfs      16G  238M   15G   2% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sda1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
