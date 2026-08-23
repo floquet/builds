@@ -8,47 +8,89 @@ pt()
     local key="$1"
     local mode="${2:-tab}"
 
+    local title
+    local path
+    local command=""
+
     case "$key" in
+
         builds)
             title="Builds"
-            path="builds"
+            path="$HOME/repos-$(hostname)/github/builds"
             ;;
+
         framework)
             title="Framework"
-            path="framework"
+            path="$HOME/repos-$(hostname)/gitlab/framework"
             ;;
+
         github)
             title="GitHub"
-            path="."
+            path="$HOME/repos-$(hostname)/github"
             ;;
-        Wolfram)
+
+        gitlab)
+            title="GitLab"
+            path="$HOME/repos-$(hostname)/gitlab"
+            ;;
+
+        wolfram|Wolfram)
             title="Wolfram"
-            path="wolfram"
+            path="$HOME"
+            command="wolfram"
             ;;
+
         jop)
             title="JOP"
-            path="jop"
+            path="$HOME/repos-$(hostname)/github/jop"
             ;;
+
         f|fortran)
             title="Fortran"
-            path="f"
+            path="$HOME/repos-$(hostname)/github/f"
             ;;
+
         *)
-            echo "usage: pt {builds|framework|github|jop|wolfram|f} [w]"
+            echo "usage: pt {builds|framework|github|gitlab|jop|wolfram|f} [w]"
             return 1
             ;;
+
     esac
 
+    if [[ ! -d "$path" ]]; then
+        echo "pt: directory does not exist: $path"
+        return 1
+    fi
+
     if [[ "$mode" == "w" ]]; then
-        ptyxis \
-            --new-window \
-            --title="$title" \
-            --working-directory="$HOME/repos-$(hostname)/github/$path"
+
+        if [[ -n "$command" ]]; then
+            ptyxis \
+                --new-window \
+                --title="$title" \
+                --working-directory="$path" \
+                -- bash -ic "$command"
+        else
+            ptyxis \
+                --new-window \
+                --title="$title" \
+                --working-directory="$path"
+        fi
+
     else
-        ptyxis \
-            --tab \
-            --title="$title" \
-            --working-directory="$HOME/repos-$(hostname)/github/$path"
+
+        if [[ -n "$command" ]]; then
+            ptyxis \
+                --tab \
+                --title="$title" \
+                --working-directory="$path" \
+                -- bash -ic "$command"
+        else
+            ptyxis \
+                --tab \
+                --title="$title" \
+                --working-directory="$path"
+        fi
+
     fi
 }
-
