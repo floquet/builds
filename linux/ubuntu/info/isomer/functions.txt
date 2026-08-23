@@ -1,4 +1,4 @@
-Sun Aug 23 02:53:40 PM MDT 2026
+Sun Aug 23 03:02:43 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -32,6 +32,7 @@ declare -f _comp__split_longopt
 declare -f _comp_abspath
 declare -f _comp_as_root
 declare -f _comp_awk
+declare -f _comp_cmd_cd
 declare -f _comp_command
 declare -f _comp_command_offset
 declare -f _comp_compgen
@@ -170,6 +171,7 @@ declare -f _xfunc
 declare -f _xinetd_services
 declare -f command_not_found_handle
 declare -f commit-builds
+declare -f config_git
 declare -f dequote
 declare -f g-fortran
 declare -f g-general
@@ -864,6 +866,46 @@ _comp_as_root ()
 _comp_awk () 
 { 
     command awk "$@"
+}
+_comp_cmd_cd () 
+{ 
+    local cur prev words cword comp_args;
+    _comp_initialize -- "$@" || return;
+    if [[ $cur == -* ]]; then
+        _comp_compgen_help -c help "$1";
+        compopt +o nospace;
+        return;
+    fi;
+    local i j k;
+    compopt -o filenames;
+    if [[ ! -n ${CDPATH-} || $cur == ?(.)?(.)/* ]]; then
+        _comp_compgen_filedir -d;
+        return;
+    fi;
+    local mark_dirs="" mark_symdirs="";
+    _comp_readline_variable_on mark-directories && mark_dirs=set;
+    _comp_readline_variable_on mark-symlinked-directories && mark_symdirs=set;
+    local paths dirs;
+    _comp_split -F : paths "$CDPATH";
+    for i in "${paths[@]}";
+    do
+        k=${#COMPREPLY[@]};
+        _comp_compgen -v dirs -c "$i/$cur" -- -d;
+        for j in "${dirs[@]}";
+        do
+            if [[ ( -n $mark_symdirs && -L $j || -n $mark_dirs && ! -L $j ) && ! -d ${j#"$i/"} ]]; then
+                j+="/";
+            fi;
+            COMPREPLY[k++]=${j#"$i/"};
+        done;
+    done;
+    _comp_compgen -a filedir -d;
+    if ((${#COMPREPLY[@]} == 1)); then
+        i=${COMPREPLY[0]};
+        if [[ $i == "$cur" && $i != "*/" ]]; then
+            COMPREPLY[0]="${i}/";
+        fi;
+    fi
 }
 _comp_command () 
 { 
@@ -3061,6 +3103,22 @@ commit-builds ()
     git add linux/ubuntu;
     git commit -m "${message}";
     popd > /dev/null
+}
+config_git () 
+{ 
+    echo "Setting Git configurations for Daniel Topa...";
+    git config --global user.name "Daniel Topa";
+    git config --global user.email "dantopa@gmail.com";
+    git config --global init.defaultBranch main;
+    git config --global pull.rebase false;
+    git config --global push.default simple;
+    git config --global push.autoSetupRemote true;
+    git config --global color.ui auto;
+    git config --global core.editor vim;
+    git config --global core.pager "less -FRX";
+    git config --global merge.tool meld;
+    git config --global rerere.enabled true;
+    echo "Git configuration for Daniel Topa is complete."
 }
 dequote () 
 { 
