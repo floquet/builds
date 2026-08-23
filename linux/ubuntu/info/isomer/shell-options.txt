@@ -1,4 +1,4 @@
-Sat Aug 22 06:41:45 PM MDT 2026
+Sat Aug 22 06:41:46 PM MDT 2026
 
 COMMAND: set -o
 allexport      	off
@@ -13,7 +13,7 @@ history        	on
 ignoreeof      	off
 interactive-comments	on
 keyword        	off
-monitor        	off
+monitor        	on
 noclobber      	off
 noexec         	off
 noglob         	off
@@ -73,7 +73,7 @@ shopt -u lastpipe
 shopt -u lithist
 shopt -u localvar_inherit
 shopt -u localvar_unset
-shopt -s login_shell
+shopt -u login_shell
 shopt -u mailwarn
 shopt -u no_empty_cmd_completion
 shopt -u nocaseglob

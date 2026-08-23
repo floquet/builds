@@ -1,4 +1,4 @@
-Sat Aug 22 06:41:45 PM MDT 2026
+Sat Aug 22 06:41:46 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -169,15 +169,7 @@ declare -f g-fortran
 declare -f g-general
 declare -f g-newcommand
 declare -f g-tex
-declare -f gawklibpath_append
-declare -f gawklibpath_default
-declare -f gawklibpath_prepend
-declare -f gawkpath_append
-declare -f gawkpath_default
-declare -f gawkpath_prepend
 declare -f gf
-declare -f logger_debug
-declare -f logger_info
 declare -f pt
 declare -f q-caf
 declare -f q-compiler
@@ -189,7 +181,6 @@ declare -f q-selection
 declare -f q-wrappers
 declare -f quote
 declare -f quote_readline
-declare -f set_val
 
 COMMAND: declare -f
 __expand_tilde_by_ref () 
@@ -3055,36 +3046,6 @@ g-tex ()
     echo "grep -inr --include='*.tex' \"$1\" .";
     grep --color=auto -inr --include='*.tex' "$1" .
 }
-gawklibpath_append () 
-{ 
-    [ -z "$AWKLIBPATH" ] && AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`;
-    export AWKLIBPATH="$AWKLIBPATH:$*"
-}
-gawklibpath_default () 
-{ 
-    unset AWKLIBPATH;
-    export AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`
-}
-gawklibpath_prepend () 
-{ 
-    [ -z "$AWKLIBPATH" ] && AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`;
-    export AWKLIBPATH="$*:$AWKLIBPATH"
-}
-gawkpath_append () 
-{ 
-    [ -z "$AWKPATH" ] && AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`;
-    export AWKPATH="$AWKPATH:$*"
-}
-gawkpath_default () 
-{ 
-    unset AWKPATH;
-    export AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`
-}
-gawkpath_prepend () 
-{ 
-    [ -z "$AWKPATH" ] && AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`;
-    export AWKPATH="$*:$AWKPATH"
-}
 gf () 
 { 
     local stem="$1";
@@ -3094,16 +3055,6 @@ gf ()
     fi;
     echo "gfortran ${allflags} ${stem}.f08 -o ${stem}";
     gfortran ${allflags} "${stem}.f08" -o "${stem}"
-}
-logger_debug () 
-{ 
-    if [ -n "$IM_CONFIG_VERBOSE" ]; then
-        eval "$LOGGER \"$1\"";
-    fi
-}
-logger_info () 
-{ 
-    eval "$LOGGER \"$1\""
 }
 pt () 
 { 
@@ -3298,10 +3249,4 @@ quote_readline ()
     local REPLY;
     _comp_quote_compgen "$1";
     printf %s "$REPLY"
-}
-set_val () 
-{ 
-    MATCH="^$1=[\"']?[-a-zA-Z:_,][-a-zA-Z:_,]*.[\"']?\$";
-    eval "$(grep -e "$MATCH" $IM_CONFIG_DEFAULT | head -1)";
-    logger_debug "Set $(grep -e "$MATCH" $IM_CONFIG_DEFAULT | head -1)"
 }
