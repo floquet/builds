@@ -1,4 +1,4 @@
-Fri Aug 21 18:37:33 MDT 2026
+Mon Aug 24 13:23:33 MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -170,6 +170,7 @@ declare -f g-general
 declare -f g-newcommand
 declare -f g-tex
 declare -f gf
+declare -f pt
 declare -f q-caf
 declare -f q-compiler
 declare -f q-fortran-env
@@ -3007,6 +3008,7 @@ commit-builds ()
 { 
     local message="${1:-Update Ubuntu configuration: $HOSTNAME}";
     pushd "${pBuilds}" > /dev/null || return 1;
+    git config pull.rebase false;
     git add linux/ubuntu;
     git commit -m "${message}";
     popd > /dev/null
@@ -3053,6 +3055,66 @@ gf ()
     fi;
     echo "gfortran ${allflags} ${stem}.f08 -o ${stem}";
     gfortran ${allflags} "${stem}.f08" -o "${stem}"
+}
+pt () 
+{ 
+    local key="$1";
+    local mode="${2:-tab}";
+    local title;
+    local path;
+    local command="";
+    case "$key" in 
+        builds)
+            title="Builds";
+            path="$HOME/repos-$(hostname)/github/builds"
+        ;;
+        framework)
+            title="Framework";
+            path="$HOME/repos-$(hostname)/gitlab/framework"
+        ;;
+        github)
+            title="GitHub";
+            path="$HOME/repos-$(hostname)/github"
+        ;;
+        gitlab)
+            title="GitLab";
+            path="$HOME/repos-$(hostname)/gitlab"
+        ;;
+        wolfram | Wolfram)
+            title="Wolfram";
+            path="$HOME";
+            command="/usr/local/Wolfram/Wolfram/15.0/Executables/wolfram"
+        ;;
+        jop)
+            title="JOP";
+            path="$HOME/repos-$(hostname)/github/jop"
+        ;;
+        f | fortran)
+            title="Fortran";
+            path="$HOME/repos-$(hostname)/github/f"
+        ;;
+        *)
+            echo "usage: pt {builds|framework|github|gitlab|jop|wolfram|f} [w]";
+            return 1
+        ;;
+    esac;
+    if [[ ! -d "$path" ]]; then
+        echo "pt: directory does not exist: $path";
+        return 1;
+    fi;
+    if [[ "$mode" == "w" ]]; then
+        if [[ -n "$command" ]]; then
+            ptyxis --new-window --title="$title" --working-directory="$path" -- "$command";
+        else
+            ptyxis --new-window --title="$title" --working-directory="$path";
+        fi;
+    else
+        if [[ -n "$command" ]]; then
+            ptyxis --tab --title="$title" --working-directory="$path" -- "$command";
+        else
+            ptyxis --tab --title="$title" --working-directory="$path";
+        fi;
+    fi
 }
 q-caf () 
 { 
