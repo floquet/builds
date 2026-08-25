@@ -1,4 +1,4 @@
-Sun Aug 23 03:03:04 PM MDT 2026
+Mon Aug 24 10:21:06 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -14,7 +14,7 @@ Operating System: Ubuntu 26.04 LTS
     Hardware SKU: meer10
 Firmware Version: CRARL579.0027.2025.0918.1706
    Firmware Date: Thu 2025-09-18
-    Firmware Age: 11month 5d
+    Firmware Age: 11month 6d
 
 COMMAND: uname -a
 Linux isomer 7.0.11-76070011-generic #202606011647~1784215337~26.04~57a4cdd~dev SMP PREEMPT_DYNAMIC T x86_64 GNU/Linux
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      70%
+CPU(s) scaling MHz:                      72%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi        25Gi       912Mi       6.5Gi       9.9Gi       4.7Gi
+Mem:            30Gi        22Gi       1.1Gi       6.3Gi        11Gi       7.2Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -134,22 +134,25 @@ loop51        7:51   0 197.5M  1 loop /snap/vivaldi/462
 loop52        7:52   0  31.4M  1 loop 
 sda           8:0    0   1.8T  0 disk 
 └─sda1        8:1    0   1.8T  0 part /mnt/T7-Shield
+sdb           8:16   0   3.6T  0 disk 
+└─sdb1        8:17   0   3.6T  0 part /mnt/tethys
 nvme0n1     259:0    0 953.9G  0 disk 
 ├─nvme0n1p1 259:1    0   976M  0 part /boot/efi
 └─nvme0n1p2 259:2    0 952.9G  0 part /
 
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
-tmpfs          tmpfs     6.1G  5.0M  6.1G   1% /run
-/dev/nvme0n1p2 ext4      937G  187G  703G  21% /
-tmpfs          tmpfs      16G  467M   15G   4% /dev/shm
+tmpfs          tmpfs     6.1G  5.3M  6.1G   1% /run
+/dev/nvme0n1p2 ext4      937G  187G  703G  22% /
+tmpfs          tmpfs      16G   99M   15G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  73% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G  267M   15G   2% /tmp
+tmpfs          tmpfs      16G  6.9M   16G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sda1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
 tmpfs          tmpfs     3.1G  4.2M  3.1G   1% /run/user/1000
+/dev/sdb1      ext4      3.6T  2.1M  3.4T   1% /mnt/tethys
 
 COMMAND: findmnt
 TARGET                                            SOURCE                 FSTYPE          OPTIONS
@@ -170,7 +173,8 @@ TARGET                                            SOURCE                 FSTYPE 
 │   ├─/run/snapd/ns/vivaldi.mnt                   nsfs[mnt:[4026533546]] nsfs            rw
 │   ├─/run/snapd/ns/gnome-system-monitor.mnt      nsfs[mnt:[4026534433]] nsfs            rw
 │   ├─/run/snapd/ns/glab.mnt                      nsfs[mnt:[4026534321]] nsfs            rw
-│   └─/run/snapd/ns/snap-store.mnt                nsfs[mnt:[4026534514]] nsfs            rw
+│   ├─/run/snapd/ns/snap-store.mnt                nsfs[mnt:[4026534514]] nsfs            rw
+│   └─/run/snapd/ns/gedit.mnt                     nsfs[mnt:[4026534865]] nsfs            rw
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15814000k,nr_inodes=1048576,inode64,usrquota
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15689844k,nr_inodes=3922461,mode=755,inode64
 │ ├─/dev/mqueue                                   mqueue                 mqueue          rw,nosuid,nodev,noexec,relatime
@@ -243,4 +247,5 @@ TARGET                                            SOURCE                 FSTYPE 
 ├─/snap/webfortran/8                              /dev/loop50            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/mnt/T7-Shield                                  /dev/sda1              ext4            rw,relatime,stripe=8191
 ├─/snap/vivaldi/462                               /dev/loop51            squashfs        ro,nodev,relatime,errors=continue,threads=single
-└─/snap/gitkraken/319                             /dev/loop48            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/gitkraken/319                             /dev/loop48            squashfs        ro,nodev,relatime,errors=continue,threads=single
+└─/mnt/tethys                                     /dev/sdb1              ext4            rw,relatime
