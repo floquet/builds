@@ -1,4 +1,4 @@
-Tue Aug 25 09:58:50 PM MDT 2026
+Wed Aug 26 05:27:03 PM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -42,7 +42,7 @@ Link 2 (enp86s0)
 Link 3 (enp87s0)
     Current Scopes: DNS
          Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
-Current DNS Server: 8.8.8.8
+Current DNS Server: 1.1.1.1
        DNS Servers: 8.8.8.8 1.1.1.1
      Default Route: yes
 
@@ -53,23 +53,26 @@ Link 4 (wlo1)
 
 COMMAND: ss -tulpn
 Netid State  Recv-Q Send-Q                      Local Address:Port  Peer Address:PortProcess                                   
-udp   UNCONN 0      0                              10.10.10.4:47593      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=26))
 udp   UNCONN 0      0                              127.0.0.54:53         0.0.0.0:*                                             
 udp   UNCONN 0      0                           127.0.0.53%lo:53         0.0.0.0:*                                             
-udp   UNCONN 0      0                                 0.0.0.0:33019      0.0.0.0:*    users:(("firefox",pid=8999,fd=408))      
 udp   UNCONN 0      0                               127.0.0.1:323        0.0.0.0:*                                             
-udp   UNCONN 1920   0                                 0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=5882,fd=76))       
-udp   UNCONN 0      0                             10.11.26.57:50295      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=30))
-udp   UNCONN 0      0                              10.10.10.4:52796      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=29))
+udp   UNCONN 0      0                                 0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=5882,fd=76))       
+udp   UNCONN 0      0                              10.10.10.4:51704      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=33))
 udp   UNCONN 0      0                             10.11.26.57:3702       0.0.0.0:*    users:(("python3",pid=26652,fd=13))      
 udp   UNCONN 0      0                         239.255.255.250:3702       0.0.0.0:*    users:(("python3",pid=26652,fd=11))      
 udp   UNCONN 0      0                              10.10.10.4:3702       0.0.0.0:*    users:(("python3",pid=26652,fd=10))      
 udp   UNCONN 0      0                         239.255.255.250:3702       0.0.0.0:*    users:(("python3",pid=26652,fd=8))       
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=3311903,fd=512))    
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=3311903,fd=403))    
 udp   UNCONN 0      0                                 0.0.0.0:5353       0.0.0.0:*                                             
 udp   UNCONN 0      0                                 0.0.0.0:38332      0.0.0.0:*    users:(("python3",pid=26652,fd=9))       
-udp   UNCONN 0      0                                 0.0.0.0:39982      0.0.0.0:*    users:(("firefox",pid=8999,fd=317))      
-udp   UNCONN 0      0                             10.11.26.57:59904      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=28))
+udp   UNCONN 0      0                             10.11.26.57:55970      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=34))
+udp   UNCONN 0      0                              10.10.10.4:40363      0.0.0.0:*    users:(("chrome",pid=3311903,fd=189))    
+udp   UNCONN 0      0                                 0.0.0.0:40614      0.0.0.0:*    users:(("firefox",pid=8999,fd=693))      
+udp   UNCONN 0      0                              10.10.10.4:58416      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=31))
+udp   UNCONN 0      0                             10.11.26.57:43624      0.0.0.0:*    users:(("chrome",pid=3311903,fd=193))    
 udp   UNCONN 0      0                                 0.0.0.0:46002      0.0.0.0:*    users:(("python3",pid=26652,fd=12))      
+udp   UNCONN 0      0                             10.11.26.57:46130      0.0.0.0:*    users:(("Socket Process",pid=9182,fd=32))
 udp   UNCONN 0      0                                   [::1]:323           [::]:*                                             
 udp   UNCONN 0      0      [fe80::5d6:4641:7d3d:f0b3]%enp87s0:3702          [::]:*    users:(("python3",pid=26652,fd=16))      
 udp   UNCONN 0      0                       [ff02::c]%enp87s0:3702          [::]:*    users:(("python3",pid=26652,fd=14))      
