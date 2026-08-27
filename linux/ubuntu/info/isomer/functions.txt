@@ -1,4 +1,4 @@
-Thu Aug 27 02:49:30 PM MDT 2026
+Thu Aug 27 03:10:57 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -10,6 +10,12 @@ declare -f __git_sequencer_status
 declare -f __load_completion
 declare -f __ltrim_colon_completions
 declare -f __parse_options
+declare -f __vte_osc7
+declare -f __vte_precmd
+declare -f __vte_prompt_command
+declare -f __vte_termprop_reset
+declare -f __vte_termprop_set
+declare -f __vte_termprop_signal
 declare -f _allowed_groups
 declare -f _allowed_users
 declare -f _available_interfaces
@@ -170,15 +176,7 @@ declare -f g-fortran
 declare -f g-general
 declare -f g-newcommand
 declare -f g-tex
-declare -f gawklibpath_append
-declare -f gawklibpath_default
-declare -f gawklibpath_prepend
-declare -f gawkpath_append
-declare -f gawkpath_default
-declare -f gawkpath_prepend
 declare -f gf
-declare -f logger_debug
-declare -f logger_info
 declare -f pt
 declare -f q-caf
 declare -f q-compiler
@@ -190,7 +188,6 @@ declare -f q-selection
 declare -f q-wrappers
 declare -f quote
 declare -f quote_readline
-declare -f set_val
 
 COMMAND: declare -f
 __expand_tilde_by_ref () 
@@ -629,6 +626,49 @@ __parse_options ()
     local -a _options=();
     _comp_compgen_help__parse "$1";
     printf '%s\n' "${_options[@]}"
+}
+__vte_osc7 () 
+{ 
+    local errsv="$?";
+    printf "\033]7;file://%s%s\033\\" "${HOSTNAME}" "$(/usr/libexec/vte-urlencode-cwd)";
+    return $errsv
+}
+__vte_precmd () 
+{ 
+    local errsv="$?";
+    __vte_termprop_set "vte.shell.postexec" "$?";
+    __vte_termprop_signal "vte.shell.precmd";
+    return $errsv
+}
+__vte_prompt_command () 
+{ 
+    local errsv="$?";
+    __vte_termprop_set "vte.shell.postexec" "$errsv";
+    __vte_osc7;
+    local pwd='~';
+    [ "$PWD" != "$HOME" ] && pwd=${PWD/#$HOME\//\~\/};
+    pwd="${pwd//[[:cntrl:]]}";
+    printf "\033]0;%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${pwd}";
+    __vte_termprop_signal "vte.shell.precmd";
+    return $errsv
+}
+__vte_termprop_reset () 
+{ 
+    local errsv="$?";
+    printf '\033]666;%s\033\\' "$1";
+    return $errsv
+}
+__vte_termprop_set () 
+{ 
+    local errsv="$?";
+    printf '\033]666;%s=%s\033\\' "$1" "$2";
+    return $errsv
+}
+__vte_termprop_signal () 
+{ 
+    local errsv="$?";
+    printf '\033]666;%s!\033\\' "$1";
+    return $errsv
 }
 _allowed_groups () 
 { 
@@ -3072,36 +3112,6 @@ g-tex ()
     echo "grep -inr --include='*.tex' \"$1\" .";
     grep --color=auto -inr --include='*.tex' "$1" .
 }
-gawklibpath_append () 
-{ 
-    [ -z "$AWKLIBPATH" ] && AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`;
-    export AWKLIBPATH="$AWKLIBPATH:$*"
-}
-gawklibpath_default () 
-{ 
-    unset AWKLIBPATH;
-    export AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`
-}
-gawklibpath_prepend () 
-{ 
-    [ -z "$AWKLIBPATH" ] && AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`;
-    export AWKLIBPATH="$*:$AWKLIBPATH"
-}
-gawkpath_append () 
-{ 
-    [ -z "$AWKPATH" ] && AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`;
-    export AWKPATH="$AWKPATH:$*"
-}
-gawkpath_default () 
-{ 
-    unset AWKPATH;
-    export AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`
-}
-gawkpath_prepend () 
-{ 
-    [ -z "$AWKPATH" ] && AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`;
-    export AWKPATH="$*:$AWKPATH"
-}
 gf () 
 { 
     local stem="$1";
@@ -3111,16 +3121,6 @@ gf ()
     fi;
     echo "gfortran ${allflags} ${stem}.f08 -o ${stem}";
     gfortran ${allflags} "${stem}.f08" -o "${stem}"
-}
-logger_debug () 
-{ 
-    if [ -n "$IM_CONFIG_VERBOSE" ]; then
-        eval "$LOGGER \"$1\"";
-    fi
-}
-logger_info () 
-{ 
-    eval "$LOGGER \"$1\""
 }
 pt () 
 { 
@@ -3339,10 +3339,4 @@ quote_readline ()
     local REPLY;
     _comp_quote_compgen "$1";
     printf %s "$REPLY"
-}
-set_val () 
-{ 
-    MATCH="^$1=[\"']?[-a-zA-Z:_,][-a-zA-Z:_,]*.[\"']?\$";
-    eval "$(grep -e "$MATCH" $IM_CONFIG_DEFAULT | head -1)";
-    logger_debug "Set $(grep -e "$MATCH" $IM_CONFIG_DEFAULT | head -1)"
 }

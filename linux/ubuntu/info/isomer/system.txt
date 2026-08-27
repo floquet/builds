@@ -1,4 +1,4 @@
-Thu Aug 27 02:49:30 PM MDT 2026
+Thu Aug 27 03:10:58 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      78%
+CPU(s) scaling MHz:                      70%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,8 +74,8 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi       8.2Gi        16Gi       3.0Gi       8.5Gi        21Gi
-Swap:             0B          0B          0B
+Mem:            30Gi       7.1Gi        17Gi       2.4Gi       8.1Gi        23Gi
+Swap:           15Gi          0B        15Gi
 
 COMMAND: lsblk
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
@@ -144,9 +144,9 @@ nvme0n1     259:0    0 953.9G  0 disk
 
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
-tmpfs          tmpfs     6.1G  3.8M  6.1G   1% /run
-/dev/nvme0n1p2 ext4      937G  191G  700G  22% /
-tmpfs          tmpfs      16G   38M   16G   1% /dev/shm
+tmpfs          tmpfs     6.1G  4.1M  6.1G   1% /run
+/dev/nvme0n1p2 ext4      937G  207G  684G  24% /
+tmpfs          tmpfs      16G   25M   16G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  72% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 tmpfs          tmpfs      16G  148K   16G   1% /tmp
@@ -171,7 +171,8 @@ TARGET                                            SOURCE                 FSTYPE 
 │   ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026533121]] nsfs            rw
 │   ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026532742]] nsfs            rw
 │   ├─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026532744]] nsfs            rw
-│   └─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532749]] nsfs            rw
+│   ├─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532749]] nsfs            rw
+│   └─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533827]] nsfs            rw
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15813288k,nr_inodes=1048576,inode64,usrquota
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15690032k,nr_inodes=3922508,mode=755,inode64
 │ ├─/dev/hugepages                                hugetlbfs              hugetlbfs       rw,nosuid,nodev,relatime,pagesize=2M
