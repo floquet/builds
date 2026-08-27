@@ -1,4 +1,4 @@
-Wed Aug 26 05:27:03 PM MDT 2026
+Thu Aug 27 08:05:34 AM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      72%
+CPU(s) scaling MHz:                      73%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi        26Gi       515Mi       6.1Gi       8.2Gi       3.9Gi
+Mem:            30Gi        18Gi       8.1Gi       6.5Gi       9.4Gi        11Gi
 Swap:             0B          0B          0B
 
 COMMAND: lsblk
@@ -93,7 +93,7 @@ loop10        7:10   0  66.8M  1 loop /snap/core24/1643
 loop11        7:11   0  47.9M  1 loop /snap/cups/1238
 loop12        7:12   0  19.6M  1 loop /snap/desktop-security-center/150
 loop13        7:13   0    20M  1 loop /snap/desktop-security-center/151
-loop14        7:14   0 273.7M  1 loop /snap/firefox/8107
+loop14        7:14   0 197.5M  1 loop /snap/vivaldi/466
 loop15        7:15   0 260.3M  1 loop /snap/firefox/8763
 loop16        7:16   0  16.5M  1 loop /snap/firmware-updater/226
 loop17        7:17   0     6M  1 loop /snap/gedit/697
@@ -126,7 +126,6 @@ loop43        7:43   0   580K  1 loop /snap/snapd-desktop-integration/361
 loop44        7:44   0   828K  1 loop /snap/snapd-desktop-integration/391
 loop45        7:45   0  64.7M  1 loop /snap/sublime-text/219
 loop46        7:46   0 414.5M  1 loop /snap/jupyterlab-desktop/41
-loop47        7:47   0 197.5M  1 loop /snap/vivaldi/459
 loop48        7:48   0 224.5M  1 loop /snap/gitkraken/319
 loop49        7:49   0 219.9M  1 loop /snap/thunderbird/1201
 loop50        7:50   0     4M  1 loop /snap/webfortran/8
@@ -135,6 +134,7 @@ loop52        7:52   0  31.4M  1 loop
 loop53        7:53   0 186.2M  1 loop /snap/opera/486
 loop54        7:54   0  59.6M  1 loop /snap/cmake/1562
 loop55        7:55   0 186.2M  1 loop /snap/opera/487
+loop56        7:56   0 261.1M  1 loop /snap/firefox/8803
 sda           8:0    0   1.8T  0 disk 
 └─sda1        8:1    0   1.8T  0 part /mnt/T7-Shield
 sdb           8:16   0   3.6T  0 disk 
@@ -147,14 +147,14 @@ COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
 tmpfs          tmpfs     6.1G  5.9M  6.1G   1% /run
 /dev/nvme0n1p2 ext4      937G  191G  699G  22% /
-tmpfs          tmpfs      16G  114M   15G   1% /dev/shm
+tmpfs          tmpfs      16G  109M   15G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  73% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G   46M   16G   1% /tmp
+tmpfs          tmpfs      16G   21M   16G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sda1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
-tmpfs          tmpfs     3.1G  4.2M  3.1G   1% /run/user/1000
+tmpfs          tmpfs     3.1G  5.5M  3.1G   1% /run/user/1000
 /dev/sdb1      ext4      3.6T  2.1M  3.4T   1% /mnt/tethys
 
 COMMAND: findmnt
@@ -171,7 +171,7 @@ TARGET                                            SOURCE                 FSTYPE 
 │   ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026533128]] nsfs            rw
 │   ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026533331]] nsfs            rw
 │   ├─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026533333]] nsfs            rw
-│   ├─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532751]] nsfs            rw
+│   ├─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532187]] nsfs            rw
 │   ├─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026532186]] nsfs            rw
 │   ├─/run/snapd/ns/vivaldi.mnt                   nsfs[mnt:[4026533546]] nsfs            rw
 │   ├─/run/snapd/ns/gnome-system-monitor.mnt      nsfs[mnt:[4026534433]] nsfs            rw
@@ -214,7 +214,6 @@ TARGET                                            SOURCE                 FSTYPE 
 ├─/snap/desktop-security-center/150               /dev/loop12            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/desktop-security-center/151               /dev/loop13            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/firefox/8763                              /dev/loop15            squashfs        ro,nodev,relatime,errors=continue,threads=single
-├─/snap/firefox/8107                              /dev/loop14            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/firmware-updater/226                      /dev/loop16            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/gedit/697                                 /dev/loop17            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/github-gui/2                              /dev/loop18            squashfs        ro,nodev,relatime,errors=continue,threads=single
@@ -243,14 +242,15 @@ TARGET                                            SOURCE                 FSTYPE 
 ├─/snap/snapd-desktop-integration/361             /dev/loop43            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/snapd-desktop-integration/391             /dev/loop44            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/sublime-text/219                          /dev/loop45            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/firefox/8803                              /dev/loop56            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/thunderbird/1201                          /dev/loop49            squashfs        ro,nodev,relatime,errors=continue,threads=single
-├─/snap/vivaldi/459                               /dev/loop47            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/webfortran/8                              /dev/loop50            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/mnt/T7-Shield                                  /dev/sda1              ext4            rw,relatime,stripe=8191
 ├─/snap/jupyterlab-desktop/41                     /dev/loop46            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/vivaldi/462                               /dev/loop51            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/cmake/1562                                /dev/loop54            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/opera/487                                 /dev/loop55            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/vivaldi/466                               /dev/loop14            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/thunderbird/1228                          /dev/loop34            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/gitkraken/319                             /dev/loop48            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/mnt/tethys                                     /dev/sdb1              ext4            rw,relatime

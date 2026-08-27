@@ -1,4 +1,4 @@
-Wed Aug 26 05:27:03 PM MDT 2026
+Thu Aug 27 08:05:34 AM MDT 2026
 
 COMMAND: cat /proc/mounts
 DESCRIPTION: Mounted filesystems
@@ -41,7 +41,6 @@ none /run/credentials/systemd-resolved.service tmpfs ro,nosuid,nodev,noexec,rela
 /dev/loop12 /snap/desktop-security-center/150 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop13 /snap/desktop-security-center/151 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop15 /snap/firefox/8763 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
-/dev/loop14 /snap/firefox/8107 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop16 /snap/firmware-updater/226 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop17 /snap/gedit/697 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop18 /snap/github-gui/2 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
@@ -71,7 +70,6 @@ none /run/credentials/systemd-resolved.service tmpfs ro,nosuid,nodev,noexec,rela
 /dev/loop44 /snap/snapd-desktop-integration/391 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop45 /snap/sublime-text/219 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop49 /snap/thunderbird/1201 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
-/dev/loop47 /snap/vivaldi/459 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/loop50 /snap/webfortran/8 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 /dev/sda1 /mnt/T7-Shield ext4 rw,relatime,stripe=8191 0 0
 binfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,nosuid,nodev,noexec,relatime 0 0
@@ -83,10 +81,8 @@ portal /run/user/1000/doc fuse.portal rw,nosuid,nodev,relatime,user_id=1000,grou
 nsfs /run/snapd/ns/prompting-client.mnt nsfs rw 0 0
 gvfsd-fuse /run/user/1000/gvfs fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000 0 0
 nsfs /run/snapd/ns/bitwarden.mnt nsfs rw 0 0
-nsfs /run/snapd/ns/firefox.mnt nsfs rw 0 0
 nsfs /run/snapd/ns/firmware-updater.mnt nsfs rw 0 0
 /dev/loop51 /snap/vivaldi/462 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
-nsfs /run/snapd/ns/vivaldi.mnt nsfs rw 0 0
 nsfs /run/snapd/ns/gnome-system-monitor.mnt nsfs rw 0 0
 nsfs /run/snapd/ns/snap-store.mnt nsfs rw 0 0
 /dev/loop48 /snap/gitkraken/319 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
@@ -100,3 +96,7 @@ nsfs /run/snapd/ns/opera.mnt nsfs rw 0 0
 /dev/loop34 /snap/thunderbird/1228 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
 nsfs /run/snapd/ns/thunderbird.mnt nsfs rw 0 0
 /dev/loop46 /snap/jupyterlab-desktop/41 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
+/dev/loop56 /snap/firefox/8803 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
+nsfs /run/snapd/ns/firefox.mnt nsfs rw 0 0
+/dev/loop14 /snap/vivaldi/466 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
+nsfs /run/snapd/ns/vivaldi.mnt nsfs rw 0 0
