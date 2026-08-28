@@ -1,4 +1,4 @@
-Thu Aug 27 10:50:43 MDT 2026
+Fri Aug 28 09:08:58 MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -164,6 +164,7 @@ declare -f _xfunc
 declare -f _xinetd_services
 declare -f command_not_found_handle
 declare -f commit-builds
+declare -f config_git
 declare -f dequote
 declare -f g-fortran
 declare -f g-general
@@ -3012,6 +3013,22 @@ commit-builds ()
     git add linux/ubuntu;
     git commit -m "${message}";
     popd > /dev/null
+}
+config_git () 
+{ 
+    echo "Setting Git configurations for Daniel Topa...";
+    git config --global user.name "Daniel Topa";
+    git config --global user.email "dantopa@gmail.com";
+    git config --global init.defaultBranch main;
+    git config --global pull.rebase false;
+    git config --global push.default simple;
+    git config --global push.autoSetupRemote true;
+    git config --global color.ui auto;
+    git config --global core.editor vim;
+    git config --global core.pager "less -FRX";
+    git config --global merge.tool meld;
+    git config --global rerere.enabled true;
+    echo "Git configuration for Daniel Topa is complete."
 }
 dequote () 
 { 

@@ -1,24 +1,13 @@
+[http]
+	sslcainfo = /etc/ssl/certs/ca-certificates.crt
 [user]
-	email = dantopa@gmail.com
 	name = Daniel Topa
-[init]
-	defaultBranch = main
-[pull]
-	rebase = false
-[push]
-	default = simple
-	autoSetupRemote = true
-[color]
-	ui = auto
+	email = daniel.topa@baesystems.us
 [core]
 	editor = vim
-	pager = less -FRX
+[diff]
+	tool = vimdiff
 [merge]
-	tool = meld
-[rerere]
-	enabled = true
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+	tool = vimdiff
+[credential]
+	helper = store
