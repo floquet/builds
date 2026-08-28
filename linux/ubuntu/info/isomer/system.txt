@@ -1,4 +1,4 @@
-Thu Aug 27 09:26:22 PM MDT 2026
+Fri Aug 28 12:06:33 AM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi       9.3Gi        13Gi       2.6Gi       8.9Gi        20Gi
+Mem:            30Gi        11Gi       9.9Gi       3.2Gi        11Gi        18Gi
 Swap:           15Gi          0B        15Gi
 
 COMMAND: lsblk
@@ -145,11 +145,11 @@ nvme0n1     259:0    0 953.9G  0 disk
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
 tmpfs          tmpfs     6.1G  4.1M  6.1G   1% /run
-/dev/nvme0n1p2 ext4      937G  207G  684G  24% /
-tmpfs          tmpfs      16G   31M   16G   1% /dev/shm
+/dev/nvme0n1p2 ext4      937G  206G  684G  24% /
+tmpfs          tmpfs      16G   32M   16G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  72% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs          tmpfs      16G  4.1M   16G   1% /tmp
+tmpfs          tmpfs      16G  5.4M   16G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sdb1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
