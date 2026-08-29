@@ -1,6 +1,6 @@
 [user]
-	email = dantopa@gmail.com
 	name = Daniel Topa
+	email = dantopa@gmail.com
 [init]
 	defaultBranch = main
 [pull]
@@ -17,8 +17,3 @@
 	tool = meld
 [rerere]
 	enabled = true
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
