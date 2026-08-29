@@ -1,4 +1,4 @@
-Fri Aug 28 12:06:33 AM MDT 2026
+Sat Aug 29 11:13:00 AM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -14,7 +14,7 @@ Operating System: Ubuntu 26.04 LTS
     Hardware SKU: meer10
 Firmware Version: CRARL579.0027.2025.0918.1706
    Firmware Date: Thu 2025-09-18
-    Firmware Age: 11month 1w 2d
+    Firmware Age: 11month 1w 3d
 
 COMMAND: uname -a
 Linux isomer 7.0.11-76070011-generic #202606011647~1784215337~26.04~57a4cdd~dev SMP PREEMPT_DYNAMIC T x86_64 GNU/Linux
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      70%
+CPU(s) scaling MHz:                      69%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,8 +74,8 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi        11Gi       9.9Gi       3.2Gi        11Gi        18Gi
-Swap:           15Gi          0B        15Gi
+Mem:            30Gi        13Gi        12Gi       4.2Gi       8.2Gi        16Gi
+Swap:           15Gi       3.8Gi        12Gi
 
 COMMAND: lsblk
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
@@ -116,7 +116,6 @@ loop33        7:33   0   1.6G  1 loop /snap/kf6-core24/64
 loop34        7:34   0   4.3M  1 loop /snap/lxqt-support-core24/16
 loop35        7:35   0   395M  1 loop /snap/mesa-2404/1165
 loop36        7:36   0   402M  1 loop /snap/mesa-2404/1839
-loop37        7:37   0 186.2M  1 loop /snap/opera/486
 loop38        7:38   0 186.2M  1 loop /snap/opera/487
 loop39        7:39   0  18.8M  1 loop /snap/prompting-client/204
 loop40        7:40   0  18.8M  1 loop /snap/prompting-client/222
@@ -134,6 +133,7 @@ loop51        7:51   0 221.1M  1 loop /snap/thunderbird/1228
 loop52        7:52   0 197.5M  1 loop /snap/vivaldi/462
 loop53        7:53   0 197.5M  1 loop /snap/vivaldi/466
 loop54        7:54   0     4M  1 loop /snap/webfortran/8
+loop55        7:55   0 186.1M  1 loop /snap/opera/488
 sda           8:0    0   3.6T  0 disk 
 └─sda1        8:1    0   3.6T  0 part /mnt/tethys
 sdb           8:16   0   1.8T  0 disk 
@@ -144,9 +144,9 @@ nvme0n1     259:0    0 953.9G  0 disk
 
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
-tmpfs          tmpfs     6.1G  4.1M  6.1G   1% /run
-/dev/nvme0n1p2 ext4      937G  206G  684G  24% /
-tmpfs          tmpfs      16G   32M   16G   1% /dev/shm
+tmpfs          tmpfs     6.1G  4.4M  6.1G   1% /run
+/dev/nvme0n1p2 ext4      937G  207G  683G  24% /
+tmpfs          tmpfs      16G   33M   16G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  72% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 tmpfs          tmpfs      16G  5.4M   16G   1% /tmp
@@ -172,7 +172,8 @@ TARGET                                            SOURCE                 FSTYPE 
 │   ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026532742]] nsfs            rw
 │   ├─/run/snapd/ns/bitwarden.mnt                 nsfs[mnt:[4026532744]] nsfs            rw
 │   ├─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532749]] nsfs            rw
-│   └─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533827]] nsfs            rw
+│   ├─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533827]] nsfs            rw
+│   └─/run/snapd/ns/opera.mnt                     nsfs[mnt:[4026533938]] nsfs            rw
 ├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=15813288k,nr_inodes=1048576,inode64,usrquota
 ├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15690032k,nr_inodes=3922508,mode=755,inode64
 │ ├─/dev/hugepages                                hugetlbfs              hugetlbfs       rw,nosuid,nodev,relatime,pagesize=2M
@@ -231,7 +232,6 @@ TARGET                                            SOURCE                 FSTYPE 
 ├─/snap/lxqt-support-core24/16                    /dev/loop34            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/mesa-2404/1839                            /dev/loop36            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/mesa-2404/1165                            /dev/loop35            squashfs        ro,nodev,relatime,errors=continue,threads=single
-├─/snap/opera/486                                 /dev/loop37            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/opera/487                                 /dev/loop38            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/prompting-client/204                      /dev/loop39            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/proton-mail/39                            /dev/loop41            squashfs        ro,nodev,relatime,errors=continue,threads=single
@@ -248,4 +248,5 @@ TARGET                                            SOURCE                 FSTYPE 
 ├─/snap/thunderbird/1228                          /dev/loop51            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/vivaldi/462                               /dev/loop52            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/webfortran/8                              /dev/loop54            squashfs        ro,nodev,relatime,errors=continue,threads=single
-└─/snap/vivaldi/466                               /dev/loop53            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/vivaldi/466                               /dev/loop53            squashfs        ro,nodev,relatime,errors=continue,threads=single
+└─/snap/opera/488                                 /dev/loop55            squashfs        ro,nodev,relatime,errors=continue,threads=single

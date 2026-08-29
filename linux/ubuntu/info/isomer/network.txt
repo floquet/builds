@@ -1,4 +1,4 @@
-Fri Aug 28 12:06:33 AM MDT 2026
+Sat Aug 29 11:13:00 AM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -65,7 +65,6 @@ udp   UNCONN 0      0                                 0.0.0.0:54252      0.0.0.0
 udp   UNCONN 0      0                             10.11.26.57:38017      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=30))
 udp   UNCONN 0      0                              10.10.10.4:38042      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=29))
 udp   UNCONN 0      0                                 0.0.0.0:5353       0.0.0.0:*                                              
-udp   UNCONN 0      0                                 0.0.0.0:44274      0.0.0.0:*    users:(("firefox",pid=9955,fd=38))        
 udp   UNCONN 0      0                             10.11.26.57:46337      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=28))
 udp   UNCONN 0      0                              127.0.0.54:53         0.0.0.0:*                                              
 udp   UNCONN 0      0                           127.0.0.53%lo:53         0.0.0.0:*                                              
@@ -85,10 +84,13 @@ tcp   LISTEN 0      4096                                [::1]:631           [::]
 tcp   LISTEN 0      4096                                 [::]:22            [::]:*                                              
 
 COMMAND: ip neigh
-10.11.26.47 dev enp87s0 lladdr 78:8c:77:79:9d:da STALE 
-10.10.10.1 dev enp87s0 lladdr 6c:1f:f7:cc:02:43 STALE 
 10.11.26.1 dev enp87s0 lladdr 4c:00:82:41:af:d9 REACHABLE 
+10.11.26.115 dev enp87s0 lladdr 00:3e:e1:ca:cc:93 STALE 
+10.11.26.223 dev enp86s0 lladdr d8:be:65:4a:f0:70 STALE 
 10.11.26.87 dev enp87s0 lladdr 74:da:78:27:5c:87 STALE 
+10.11.26.47 dev enp87s0 lladdr 78:8c:77:79:9d:da STALE 
+10.11.26.223 dev enp87s0 lladdr d8:be:65:4a:f0:70 STALE 
 10.10.10.1 dev enp86s0 lladdr 6c:1f:f7:cc:02:43 STALE 
+10.10.10.1 dev enp87s0 lladdr 6c:1f:f7:cc:02:43 STALE 
 fe80::7a8c:77ff:fe79:9dda dev enp87s0 lladdr 78:8c:77:79:9d:da STALE 
 fe80::76da:78ff:fe27:5c87 dev enp87s0 lladdr 74:da:78:27:5c:87 STALE 
