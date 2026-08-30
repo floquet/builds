@@ -1,4 +1,4 @@
-Sat Aug 29 11:08:17 PM MDT 2026
+Sun Aug 30 12:14:16 AM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isotope
@@ -40,7 +40,7 @@ Thread(s) per core:                      2
 Core(s) per socket:                      12
 Socket(s):                               1
 Stepping:                                4
-CPU(s) scaling MHz:                      58%
+CPU(s) scaling MHz:                      51%
 CPU max MHz:                             3500.0000
 CPU min MHz:                             1200.0000
 BogoMIPS:                                5399.76
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:           121Gi       4.8Gi        70Gi        38Mi        47Gi       116Gi
+Mem:           121Gi       6.8Gi        41Gi        79Mi        73Gi       114Gi
 Swap:          8.0Gi          0B       8.0Gi
 
 COMMAND: lsblk
@@ -97,32 +97,33 @@ loop14        7:14   0   580K  1 loop /snap/snapd-desktop-integration/361
 loop15        7:15   0  66.8M  1 loop /snap/core24/1643
 loop16        7:16   0    20M  1 loop /snap/desktop-security-center/151
 loop17        7:17   0  18.8M  1 loop /snap/prompting-client/222
+loop18        7:18   0  50.1M  1 loop /snap/snapd/27710
+loop19        7:19   0  13.1M  1 loop /snap/canonical-livepatch/414
 nvme0n1     259:0    0   1.8T  0 disk 
 ├─nvme0n1p1 259:1    0     1G  0 part /boot/efi
 └─nvme0n1p2 259:2    0   1.8T  0 part /
 
 COMMAND: df -hT
 Filesystem     Type   Size  Used Avail Use% Mounted on
-tmpfs          tmpfs   25G  4.0M   25G   1% /run
-/dev/nvme0n1p2 ext4   1.8T   59G  1.7T   4% /
-tmpfs          tmpfs   61G     0   61G   0% /dev/shm
+tmpfs          tmpfs   25G  3.2M   25G   1% /run
+/dev/nvme0n1p2 ext4   1.8T   87G  1.7T   5% /
+tmpfs          tmpfs   61G  5.9M   61G   1% /dev/shm
 none           tmpfs  1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 none           tmpfs  1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
-tmpfs          tmpfs   61G  8.0K   61G   1% /tmp
+tmpfs          tmpfs   61G  516K   61G   1% /tmp
 /dev/nvme0n1p1 vfat   1.1G  6.4M  1.1G   1% /boot/efi
-tmpfs          tmpfs   13G  108K   13G   1% /run/user/1000
+tmpfs          tmpfs   13G  4.1M   13G   1% /run/user/1000
 
 COMMAND: findmnt
 TARGET                                            SOURCE                 FSTYPE          OPTIONS
 /                                                 /dev/nvme0n1p2         ext4            rw,relatime
+├─/snap/canonical-livepatch/414                   /dev/loop19            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/run                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=25482156k,nr_inodes=819200,mode=755,inode64
 │ ├─/run/credentials/systemd-journald.service     none                   tmpfs           ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,inode64,noswap
 │ ├─/run/credentials/systemd-resolved.service     none                   tmpfs           ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,inode64,noswap
 │ ├─/run/snapd/ns                                 tmpfs[/snapd/ns]       tmpfs           rw,nosuid,nodev,size=25482156k,nr_inodes=819200,mode=755,inode64
 │ │ ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026533502]] nsfs            rw
-│ │ ├─/run/snapd/ns/desktop-security-center.mnt   nsfs[mnt:[4026533293]] nsfs            rw
-│ │ ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026533294]] nsfs            rw
-│ │ ├─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533117]] nsfs            rw
+│ │ ├─/run/snapd/ns/canonical-livepatch.mnt       nsfs[mnt:[4026533115]] nsfs            rw
 │ │ └─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026533643]] nsfs            rw
 │ └─/run/user/1000                                tmpfs                  tmpfs           rw,nosuid,nodev,relatime,size=12741076k,nr_inodes=3185269,mode=700,uid=1000,gid=1000,inode64
 │   ├─/run/user/1000/doc                          portal                 fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
@@ -164,4 +165,5 @@ TARGET                                            SOURCE                 FSTYPE 
 ├─/boot/efi                                       /dev/nvme0n1p1         vfat            rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro
 ├─/snap/core24/1643                               /dev/loop15            squashfs        ro,nodev,relatime,errors=continue,threads=single
 ├─/snap/desktop-security-center/151               /dev/loop16            squashfs        ro,nodev,relatime,errors=continue,threads=single
-└─/snap/prompting-client/222                      /dev/loop17            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/prompting-client/222                      /dev/loop17            squashfs        ro,nodev,relatime,errors=continue,threads=single
+└─/snap/snapd/27710                               /dev/loop18            squashfs        ro,nodev,relatime,errors=continue,threads=single
