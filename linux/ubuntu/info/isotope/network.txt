@@ -1,4 +1,4 @@
-Sun Aug 30 12:14:15 AM MDT 2026
+Sun Aug 30 12:27:10 AM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -42,7 +42,7 @@ Current DNS Server: 8.8.8.8
 Link 3 (enp12s0)
     Current Scopes: DNS
          Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
-Current DNS Server: 8.8.8.8
+Current DNS Server: 1.1.1.1
        DNS Servers: 8.8.8.8 1.1.1.1
      Default Route: yes
 
@@ -56,7 +56,7 @@ udp   UNCONN 0      0                          239.255.255.250:3702       0.0.0.
 udp   UNCONN 0      0                             10.11.26.115:3702       0.0.0.0:*    users:(("python3",pid=7175,fd=10))   
 udp   UNCONN 0      0                          239.255.255.250:3702       0.0.0.0:*    users:(("python3",pid=7175,fd=8))    
 udp   UNCONN 0      0                                  0.0.0.0:5353       0.0.0.0:*                                         
-udp   UNCONN 0      0                                  0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=211039,fd=74)) 
+udp   UNCONN 2880   0                                  0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=211039,fd=74)) 
 udp   UNCONN 0      0                                  0.0.0.0:38031      0.0.0.0:*    users:(("python3",pid=7175,fd=9))    
 udp   UNCONN 0      0                                  0.0.0.0:47125      0.0.0.0:*    users:(("python3",pid=7175,fd=12))   
 udp   UNCONN 0      0                                    [::1]:323           [::]:*                                         
@@ -78,7 +78,7 @@ tcp   LISTEN 0      4096                                  [::]:22            [::
 tcp   LISTEN 0      4096                                 [::1]:631           [::]:*                                         
 
 COMMAND: ip neigh
-10.11.26.1 dev enp12s0 lladdr 4c:00:82:41:af:d9 STALE 
+10.11.26.1 dev enp12s0 lladdr 4c:00:82:41:af:d9 REACHABLE 
 10.11.26.87 dev enp11s0 lladdr 74:da:78:27:5c:87 STALE 
 10.11.26.47 dev enp11s0 lladdr 78:8c:77:79:9d:da STALE 
 10.11.26.87 dev enp12s0 lladdr 74:da:78:27:5c:87 STALE 
