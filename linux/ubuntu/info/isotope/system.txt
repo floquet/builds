@@ -1,4 +1,4 @@
-Sat Aug 29 05:24:06 PM MDT 2026
+Sat Aug 29 11:08:17 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isotope
@@ -40,7 +40,7 @@ Thread(s) per core:                      2
 Core(s) per socket:                      12
 Socket(s):                               1
 Stepping:                                4
-CPU(s) scaling MHz:                      48%
+CPU(s) scaling MHz:                      58%
 CPU max MHz:                             3500.0000
 CPU min MHz:                             1200.0000
 BogoMIPS:                                5399.76
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:           121Gi       3.0Gi        98Gi        22Mi        21Gi       118Gi
+Mem:           121Gi       4.8Gi        70Gi        38Mi        47Gi       116Gi
 Swap:          8.0Gi          0B       8.0Gi
 
 COMMAND: lsblk
@@ -103,14 +103,14 @@ nvme0n1     259:0    0   1.8T  0 disk
 
 COMMAND: df -hT
 Filesystem     Type   Size  Used Avail Use% Mounted on
-tmpfs          tmpfs   25G  3.7M   25G   1% /run
-/dev/nvme0n1p2 ext4   1.8T   35G  1.7T   2% /
+tmpfs          tmpfs   25G  4.0M   25G   1% /run
+/dev/nvme0n1p2 ext4   1.8T   59G  1.7T   4% /
 tmpfs          tmpfs   61G     0   61G   0% /dev/shm
 none           tmpfs  1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 none           tmpfs  1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 tmpfs          tmpfs   61G  8.0K   61G   1% /tmp
 /dev/nvme0n1p1 vfat   1.1G  6.4M  1.1G   1% /boot/efi
-tmpfs          tmpfs   13G   92K   13G   1% /run/user/1000
+tmpfs          tmpfs   13G  108K   13G   1% /run/user/1000
 
 COMMAND: findmnt
 TARGET                                            SOURCE                 FSTYPE          OPTIONS
@@ -122,7 +122,8 @@ TARGET                                            SOURCE                 FSTYPE 
 │ │ ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026533502]] nsfs            rw
 │ │ ├─/run/snapd/ns/desktop-security-center.mnt   nsfs[mnt:[4026533293]] nsfs            rw
 │ │ ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026533294]] nsfs            rw
-│ │ └─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533117]] nsfs            rw
+│ │ ├─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533117]] nsfs            rw
+│ │ └─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026533643]] nsfs            rw
 │ └─/run/user/1000                                tmpfs                  tmpfs           rw,nosuid,nodev,relatime,size=12741076k,nr_inodes=3185269,mode=700,uid=1000,gid=1000,inode64
 │   ├─/run/user/1000/doc                          portal                 fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
 │   └─/run/user/1000/gvfs                         gvfsd-fuse             fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000

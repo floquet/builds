@@ -1,4 +1,4 @@
-Sat Aug 29 05:24:06 PM MDT 2026
+Sat Aug 29 11:08:17 PM MDT 2026
 
 COMMAND: cat /proc/modules
 DESCRIPTION: Currently loaded kernel modules
@@ -30,7 +30,7 @@ intel_cstate 20480 0 - Live 0x0000000000000000
 b43 589824 0 - Live 0x0000000000000000
 cordic 12288 1 b43, Live 0x0000000000000000
 binfmt_misc 24576 1 - Live 0x0000000000000000
-amdgpu 21569536 17 - Live 0x0000000000000000
+amdgpu 21569536 28 - Live 0x0000000000000000
 mac80211 1933312 1 b43, Live 0x0000000000000000
 cfg80211 1536000 2 b43,mac80211, Live 0x0000000000000000
 ssb 106496 1 b43, Live 0x0000000000000000
@@ -56,7 +56,7 @@ snd_hda_codec_hdmi 65536 1 snd_hda_codec_atihdmi, Live 0x0000000000000000
 i2c_smbus 20480 1 i2c_i801, Live 0x0000000000000000
 lpc_ich 32768 0 - Live 0x0000000000000000
 i2c_mux 20480 1 i2c_i801, Live 0x0000000000000000
-snd_hda_intel 65536 3 - Live 0x0000000000000000
+snd_hda_intel 65536 5 - Live 0x0000000000000000
 input_leds 12288 0 - Live 0x0000000000000000
 radeon 2301952 0 - Live 0x0000000000000000
 snd_hda_codec 212992 5 snd_hda_codec_atihdmi,snd_hda_codec_cs420x,snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel, Live 0x0000000000000000
@@ -75,7 +75,7 @@ mei_me 61440 0 - Live 0x0000000000000000
 snd_hwdep 24576 1 snd_hda_codec, Live 0x0000000000000000
 drm_suballoc_helper 24576 2 amdgpu,radeon, Live 0x0000000000000000
 mei 184320 1 mei_me, Live 0x0000000000000000
-snd_pcm 208896 4 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core, Live 0x0000000000000000
+snd_pcm 208896 5 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core, Live 0x0000000000000000
 snd_seq 126976 9 snd_seq_dummy,snd_seq_midi,snd_seq_midi_event, Live 0x0000000000000000
 drm_display_helper 303104 2 amdgpu,radeon, Live 0x0000000000000000
 snd_seq_device 16384 3 snd_seq_midi,snd_rawmidi,snd_seq, Live 0x0000000000000000
@@ -86,7 +86,7 @@ rc_core 81920 1 cec, Live 0x0000000000000000
 snd_timer 53248 3 snd_hrtimer,snd_pcm,snd_seq, Live 0x0000000000000000
 i2c_algo_bit 16384 2 amdgpu,radeon, Live 0x0000000000000000
 video 77824 3 amdgpu,radeon,apple_gmux, Live 0x0000000000000000
-snd 147456 18 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_rawmidi,snd_hwdep,snd_pcm,snd_seq,snd_seq_device,snd_timer, Live 0x0000000000000000
+snd 147456 21 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_rawmidi,snd_hwdep,snd_pcm,snd_seq,snd_seq_device,snd_timer, Live 0x0000000000000000
 wmi 36864 1 video, Live 0x0000000000000000
 soundcore 16384 1 snd, Live 0x0000000000000000
 ioatdma 90112 0 - Live 0x0000000000000000
