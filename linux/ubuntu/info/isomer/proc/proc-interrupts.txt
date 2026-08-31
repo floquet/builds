@@ -1,4 +1,4 @@
-Sat Aug 29 01:49:49 PM MDT 2026
+Sun Aug 30 08:58:12 PM MDT 2026
 
 COMMAND: cat /proc/interrupts
 DESCRIPTION: Interrupt counts and IRQ information
@@ -16,8 +16,8 @@ DESCRIPTION: Interrupt counts and IRQ information
  124:          0          0          0          0          0          2          0          0          0          0          0          0          0          0 IR-PCI-MSI-0000:00:07.2    0-edge      PCIe PME, aerdrv, pciehp
  125:          0          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSI-0000:00:1c.0    0-edge      PCIe PME, aerdrv, PCIe bwctrl
  126:          0          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSI-0000:00:1c.4    0-edge      PCIe PME, aerdrv, PCIe bwctrl
- 127:          0          0          0          0          0          0          0          0      10742          0          0          0          0          0 IR-PCI-MSI-0000:00:0d.0    0-edge      xhci_hcd
- 135:          0          0     526714          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSI-0000:00:14.0    0-edge      xhci_hcd
+ 127:          0          0          0          0          0          0          0          0      10745          0          0          0          0          0 IR-PCI-MSI-0000:00:0d.0    0-edge      xhci_hcd
+ 135:          0          0    1589200          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSI-0000:00:14.0    0-edge      xhci_hcd
  143:          0          0          0          0          0          0          0          0          0          0          0          0          3          0 IR-PCI-MSI-0000:00:0b.0    0-edge      intel_vpu
  144:          0          0          0          0          0          0          0          0          0          0          0          0          0        168 IR-PCI-MSI-0000:00:16.0    0-edge      mei_me
  145:         10          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:00:14.3    0-edge      iwlwifi:default_queue
@@ -29,23 +29,23 @@ DESCRIPTION: Interrupt counts and IRQ information
  151:          0          0          0          0          0          0          0        338          0          0          0          0          0          0 IR-PCI-MSIX-0000:00:0d.2    0-edge      thunderbolt
  152:          0          0          0          0          0          0          0          0        340          0          0          0          0          0 IR-PCI-MSIX-0000:00:0d.2    1-edge      thunderbolt
  162:          0          0          0          0          0          0         83          0          0          0          0          0          0          0 IR-PCI-MSI-0000:00:12.0    0-edge      intel_ish_ipc
- 168:          0          0          0          0          0          0          0          0          0       1218          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    0-edge      nvme0q0
- 169:          0          0          0      77996          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    1-edge      nvme0q1
- 170:          0          0      66427          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    2-edge      nvme0q2
- 171:          0      80061          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    3-edge      nvme0q3
- 172:      90837          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    4-edge      nvme0q4
- 173:          0          0          0          0          0          0          0          0          0          0          0          0      44774          0 IR-PCI-MSIX-0000:01:00.0    5-edge      nvme0q5
- 174:          0          0          0          0          0          0          0          0          0          0          0          0          0      45990 IR-PCI-MSIX-0000:01:00.0    6-edge      nvme0q6
- 175:          0          0          0          0     105290          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    7-edge      nvme0q7
- 176:          0          0          0          0          0     108889          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    8-edge      nvme0q8
- 177:          0          0          0          0          0          0     114296          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    9-edge      nvme0q9
- 178:          0          0          0          0          0          0          0      81674          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0   10-edge      nvme0q10
- 179:          0          0          0          0          0          0          0          0      85479          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0   11-edge      nvme0q11
- 180:          0          0          0          0          0          0          0          0          0      97260          0          0          0          0 IR-PCI-MSIX-0000:01:00.0   12-edge      nvme0q12
- 181:          0          0          0          0          0          0          0          0          0          0      86169          0          0          0 IR-PCI-MSIX-0000:01:00.0   13-edge      nvme0q13
- 182:          0          0          0          0          0          0          0          0          0          0          0      76123          0          0 IR-PCI-MSIX-0000:01:00.0   14-edge      nvme0q14
- 183:          0          0          0          0          0          0          0          0          0          0      10217          0          0          0 IR-PCI-MSIX-0000:00:0d.3    0-edge      thunderbolt
- 184:          0          0          0          0          0          0          0          0          0          0          0      10229          0          0 IR-PCI-MSIX-0000:00:0d.3    1-edge      thunderbolt
+ 168:          0          0          0          0          0          0          0          0          0       1966          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    0-edge      nvme0q0
+ 169:          0          0          0     123827          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    1-edge      nvme0q1
+ 170:          0          0     126533          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    2-edge      nvme0q2
+ 171:          0     126816          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    3-edge      nvme0q3
+ 172:     178334          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    4-edge      nvme0q4
+ 173:          0          0          0          0          0          0          0          0          0          0          0          0      65190          0 IR-PCI-MSIX-0000:01:00.0    5-edge      nvme0q5
+ 174:          0          0          0          0          0          0          0          0          0          0          0          0          0      65726 IR-PCI-MSIX-0000:01:00.0    6-edge      nvme0q6
+ 175:          0          0          0          0     172599          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    7-edge      nvme0q7
+ 176:          0          0          0          0          0     178125          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    8-edge      nvme0q8
+ 177:          0          0          0          0          0          0     187190          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0    9-edge      nvme0q9
+ 178:          0          0          0          0          0          0          0     146395          0          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0   10-edge      nvme0q10
+ 179:          0          0          0          0          0          0          0          0     176374          0          0          0          0          0 IR-PCI-MSIX-0000:01:00.0   11-edge      nvme0q11
+ 180:          0          0          0          0          0          0          0          0          0     165289          0          0          0          0 IR-PCI-MSIX-0000:01:00.0   12-edge      nvme0q12
+ 181:          0          0          0          0          0          0          0          0          0          0     152673          0          0          0 IR-PCI-MSIX-0000:01:00.0   13-edge      nvme0q13
+ 182:          0          0          0          0          0          0          0          0          0          0          0     117748          0          0 IR-PCI-MSIX-0000:01:00.0   14-edge      nvme0q14
+ 183:          0          0          0          0          0          0          0          0          0          0      13154          0          0          0 IR-PCI-MSIX-0000:00:0d.3    0-edge      thunderbolt
+ 184:          0          0          0          0          0          0          0          0          0          0          0      13173          0          0 IR-PCI-MSIX-0000:00:0d.3    1-edge      thunderbolt
  199:          0          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:00:14.3    6-edge      iwlwifi:queue_6
  200:          0          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:00:14.3    7-edge      iwlwifi:queue_7
  201:          0          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:00:14.3    8-edge      iwlwifi:queue_8
@@ -57,32 +57,32 @@ DESCRIPTION: Interrupt counts and IRQ information
  207:          0          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:00:14.3   14-edge      iwlwifi:queue_14
  208:          0          0          0          0          0          0          0          2          0          0          0          0          0          0 IR-PCI-MSIX-0000:00:14.3   15-edge      iwlwifi:exception
  209:          0          0          0          0          0          0          0          0          0          0          0          1          0          0 IR-PCI-MSIX-0000:56:00.0    0-edge      enp86s0
- 210:          0          0          0          0          0          0          0          0          0          0          0          0     106711          0 IR-PCI-MSIX-0000:56:00.0    1-edge      enp86s0-TxRx-0
- 211:          0          0          0          0          0          0          0          0          0          0          0          0          0      12766 IR-PCI-MSIX-0000:56:00.0    2-edge      enp86s0-TxRx-1
- 212:      50084          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:56:00.0    3-edge      enp86s0-TxRx-2
- 213:          0      12003          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:56:00.0    4-edge      enp86s0-TxRx-3
+ 210:          0          0          0          0          0          0          0          0          0          0          0          0     177926          0 IR-PCI-MSIX-0000:56:00.0    1-edge      enp86s0-TxRx-0
+ 211:          0          0          0          0          0          0          0          0          0          0          0          0          0      16544 IR-PCI-MSIX-0000:56:00.0    2-edge      enp86s0-TxRx-1
+ 212:      80415          0          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:56:00.0    3-edge      enp86s0-TxRx-2
+ 213:          0      21073          0          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:56:00.0    4-edge      enp86s0-TxRx-3
  214:          0          0          1          0          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    0-edge      enp87s0
- 215:          0          0          0    1568655          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    1-edge      enp87s0-TxRx-0
- 216:          0          0          0          0    1363799          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    2-edge      enp87s0-TxRx-1
- 217:          0          0          0          0          0    1430581          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    3-edge      enp87s0-TxRx-2
- 218:          0          0          0          0          0          0    1109658          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    4-edge      enp87s0-TxRx-3
- 219:          0          0          0   26824247          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSI-0000:00:02.0    0-edge      i915
+ 215:          0          0          0    8490854          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    1-edge      enp87s0-TxRx-0
+ 216:          0          0          0          0    5706021          0          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    2-edge      enp87s0-TxRx-1
+ 217:          0          0          0          0          0    6961561          0          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    3-edge      enp87s0-TxRx-2
+ 218:          0          0          0          0          0          0    5172877          0          0          0          0          0          0          0 IR-PCI-MSIX-0000:57:00.0    4-edge      enp87s0-TxRx-3
+ 219:          0          0          0   45489280          0          0          0          0          0          0          0          0          0          0 IR-PCI-MSI-0000:00:02.0    0-edge      i915
  220:          0          0          0          0          0          0          0          0          0          0        617          0          0          0 IR-PCI-MSI-0000:00:1f.3    0-edge      snd_hda_intel:card0
- 221:          0          0          0          0          0          0          0          0   32185410          0          0          0          0          0 IR-PCI-MSI-0000:2e:00.0    0-edge      xhci_hcd
+ 221:          0          0          0          0          0          0          0          0   53204723          0          0          0          0          0 IR-PCI-MSI-0000:2e:00.0    0-edge      xhci_hcd
  NMI:          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Non-maskable interrupts
- LOC:   32844481   40235922   35626444   41659134   40701752   41770047   37495476   29035748   36086104   30893200   26125699   18965928   17311389   15237819   Local timer interrupts
+ LOC:   65498450   80173327   66615017   78178198   82354167   82967948   73970171   56203405   71790567   61999618   52416397   37479971   33577038   29508829   Local timer interrupts
  SPU:          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Spurious interrupts
  PMI:          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Performance monitoring interrupts
- IWI:      37454      37761      35346    6977635     226050     165191      94785      57004      46295      43706      39467      31385      53273      51375   IRQ work interrupts
+ IWI:      68830      65431      59405   13154315     336765     250692     145507      88881      75507      69968      62955      49033     133790     132963   IRQ work interrupts
  RTR:          0          0          0          0          0          0          0          0          0          0          0          0          0          0   APIC ICR read retries
- RES:     357824     688373     931238    1093002     189182     188512     189565     227270     245631     237676     237731     182995      31301      33943   Rescheduling interrupts
- CAL:    3347270    2991124    2673790    3125006    9533101    6868134    6850937    6617995    5885718    5666852    4738112    3090364    2301558    2229599   Function call interrupts
- TLB:    1218903    1388346    1334545    1355263    1419795    1502007    1419423    1325583    1302336    1373043    1274494    1303898    1617026    1533918   TLB shootdowns
- TRM:         21         20         19         20         16         16         16         16         16         16         16         16         16         16   Thermal event interrupts
+ RES:    1066159    1451549    2444693    2471811     234568     237469     239945     285085     307545     298188     298451     230754      54716      48743   Rescheduling interrupts
+ CAL:    6915586    5602483    5360143    5986210   18821656   12882821   12749227   12037263   10889508   10410543    8681827    5303095    3675586    3567152   Function call interrupts
+ TLB:    2232245    2349778    2310128    2283100    2275112    2346249    2269159    2195586    2139685    2275868    2175770    2247832    2622667    2501477   TLB shootdowns
+ TRM:         33         44         31         32         28         28         28         28         28         28         28         28         28         28   Thermal event interrupts
  THR:          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Threshold APIC interrupts
  DFR:          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Deferred Error APIC interrupts
  MCE:          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Machine check exceptions
- MCP:        535        536        536        536        536        536        536        536        536        536        536        536        536        536   Machine check polls
+ MCP:        877        878        878        878        878        878        878        878        878        878        878        878        878        878   Machine check polls
  ERR:          0
  MIS:          0
  PIN:          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Posted-interrupt notification event
