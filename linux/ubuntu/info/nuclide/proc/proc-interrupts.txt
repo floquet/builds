@@ -1,4 +1,4 @@
-Mon Aug 31 14:08:30 MDT 2026
+Mon Aug 31 14:08:35 MDT 2026
 
 COMMAND: cat /proc/interrupts
 DESCRIPTION: Interrupt counts and IRQ information
@@ -7,7 +7,7 @@ DESCRIPTION: Interrupt counts and IRQ information
   8:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0  IO-APIC   8-edge      rtc0
   9:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0  IO-APIC   9-fasteoi   acpi
  24:          0          1          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0 HV-PCI-MSIX-5582:00:00.0   0-edge      virtio0-config
- 25:          0          0        712          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0 HV-PCI-MSIX-5582:00:00.0   1-edge      virtio0-virtqueues
+ 25:          0          0        737          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0 HV-PCI-MSIX-5582:00:00.0   1-edge      virtio0-virtqueues
  26:          0          0          0          0          1          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0 HV-PCI-MSIX-8f2c:00:00.0   0-edge      virtio1-config
  27:          0          0          0          0          0          1          0          0          0          0          0          0          0          0          0          0          0          0          0          0 HV-PCI-MSIX-8f2c:00:00.0   1-edge      virtio1-hiprio
  28:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0         15 HV-PCI-MSIX-8f2c:00:00.0   2-edge      virtio1-requests.0
@@ -17,17 +17,17 @@ SPU:          0          0          0          0          0          0          
 PMI:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Performance monitoring interrupts
 IWI:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   IRQ work interrupts
 RTR:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   APIC ICR read retries
-RES:         29         20         21         27         30         18         47          8         22         12         26         50         17         23          6         47         30         11         11         18   Rescheduling interrupts
-CAL:        833       1420       1170        557        694       2047       1603        512       1587       1103        552        791        445        650        493       3255       2203        492        496       1348   Function call interrupts
+RES:         44         38         53         69         45         51         84         25         28         60         33         95         34         54         31         61         88         21         49         28   Rescheduling interrupts
+CAL:       1266       1555       1221        680       2793       5888       5044       3427       4612       1572       6396        952       4074       5059        937       3372       3798        551       1167       1431   Function call interrupts
 TLB:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   TLB shootdowns
 TRM:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Thermal event interrupts
 THR:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Threshold APIC interrupts
 DFR:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Deferred Error APIC interrupts
 MCE:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Machine check exceptions
 MCP:          1          1          1          1          1          1          1          1          1          1          1          1          1          1          1          1          1          1          1          1   Machine check polls
-HYP:       7340       1125        148       1211        733         28          0          3          0          0          0          0          0          2          0          2          0          1          0          0   Hypervisor callback interrupts
+HYP:      20793       5867       7355       9258       3848         28          0          3          0          0          0          0          0          2          0          2          0          1          0          0   Hypervisor callback interrupts
 HRE:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Hyper-V reenlightenment interrupts
-HVS:        470        650        221        263        291        354       1171         86        347        289        163        515        188        253         71        477        444         80         77        250   Hyper-V stimer0 interrupts
+HVS:       1061        953        547        586        698        685       1580        342        603        837        662        776        601        651        289        606        893        145        316        320   Hyper-V stimer0 interrupts
 ERR:          0
 MIS:          0
 PIN:          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0   Posted-interrupt notification event
