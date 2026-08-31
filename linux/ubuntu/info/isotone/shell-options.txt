@@ -1,19 +1,19 @@
-Sun Aug 30 10:15:26 PM MDT 2026
+Sun Aug 30 10:22:06 PM MDT 2026
 
 COMMAND: set -o
 allexport      	off
 braceexpand    	on
-emacs          	on
+emacs          	off
 errexit        	off
 errtrace       	off
 functrace      	off
 hashall        	on
-histexpand     	on
-history        	on
+histexpand     	off
+history        	off
 ignoreeof      	off
 interactive-comments	on
 keyword        	off
-monitor        	on
+monitor        	off
 noclobber      	off
 noexec         	off
 noglob         	off
@@ -47,14 +47,14 @@ shopt -u compat41
 shopt -u compat42
 shopt -u compat43
 shopt -u compat44
-shopt -u complete_fullquote
+shopt -s complete_fullquote
 shopt -u direxpand
 shopt -u dirspell
 shopt -u dotglob
 shopt -u execfail
-shopt -s expand_aliases
+shopt -u expand_aliases
 shopt -u extdebug
-shopt -s extglob
+shopt -u extglob
 shopt -s extquote
 shopt -u failglob
 shopt -s force_fignore
@@ -62,10 +62,10 @@ shopt -s globasciiranges
 shopt -s globskipdots
 shopt -u globstar
 shopt -u gnu_errfmt
-shopt -s histappend
+shopt -u histappend
 shopt -u histreedit
 shopt -u histverify
-shopt -u hostcomplete
+shopt -s hostcomplete
 shopt -u huponexit
 shopt -u inherit_errexit
 shopt -s interactive_comments
@@ -73,7 +73,7 @@ shopt -u lastpipe
 shopt -u lithist
 shopt -u localvar_inherit
 shopt -u localvar_unset
-shopt -s login_shell
+shopt -u login_shell
 shopt -u mailwarn
 shopt -u no_empty_cmd_completion
 shopt -u nocaseglob
