@@ -1,0 +1,156 @@
+Sun Aug 30 09:35:22 PM MDT 2026
+
+COMMAND: hostnamectl
+ Static hostname: isotone
+       Icon name: computer-laptop
+         Chassis: laptop 💻
+      Machine ID: f738091c4ce7423db936a808ef37e4a8
+         Boot ID: f04616c8d24a49b28c8ca457fd112fad
+Operating System: Ubuntu 26.04.1 LTS
+          Kernel: Linux 7.0.0-30-generic
+    Architecture: x86-64
+ Hardware Vendor: Apple Inc.
+  Hardware Model: Macmini8,1
+Hardware Version: 1.0
+Firmware Version: 2103.160.2.0.0 (iBridge: 23.16.16068.0.0,0)
+   Firmware Date: Sat 2026-07-11
+    Firmware Age: 1month 2w 6d
+
+COMMAND: uname -a
+Linux isotone 7.0.0-30-generic #30-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 31 18:22:54 UTC 2026 x86_64 GNU/Linux
+
+COMMAND: lsb_release -a
+Distributor ID:	Ubuntu
+Description:	Ubuntu 26.04.1 LTS
+Release:	26.04
+Codename:	resolute
+
+COMMAND: lscpu
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           39 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  12
+On-line CPU(s) list:                     0-11
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+CPU family:                              6
+Model:                                   158
+Thread(s) per core:                      2
+Core(s) per socket:                      6
+Socket(s):                               1
+Stepping:                                10
+CPU(s) scaling MHz:                      81%
+CPU max MHz:                             4600.0000
+CPU min MHz:                             800.0000
+BogoMIPS:                                6399.96
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb pti ssbd ibrs ibpb stibp tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities
+Virtualization:                          VT-x
+L1d cache:                               192 KiB (6 instances)
+L1i cache:                               192 KiB (6 instances)
+L2 cache:                                1.5 MiB (6 instances)
+L3 cache:                                12 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-11
+Vulnerability Gather data sampling:      Vulnerable
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             KVM: Mitigation: Split huge pages
+Vulnerability L1tf:                      Mitigation; PTE Inversion; VMX conditional cache flushes, SMT vulnerable
+Vulnerability Mds:                       Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Meltdown:                  Mitigation; PTI
+Vulnerability Mmio stale data:           Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; IBRS
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; IBRS; IBPB conditional; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Mitigation; Microcode
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Mitigation; TSX disabled
+Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
+
+COMMAND: free -h
+               total        used        free      shared  buff/cache   available
+Mem:            30Gi       2.9Gi       6.1Gi       487Mi        22Gi        27Gi
+Swap:          8.0Gi          0B       8.0Gi
+
+COMMAND: lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0     4K  1 loop /snap/bare/5
+loop1         7:1    0  66.8M  1 loop /snap/core24/1587
+loop2         7:2    0 273.7M  1 loop /snap/firefox/8107
+loop3         7:3    0 606.1M  1 loop /snap/gnome-46-2404/153
+loop4         7:4    0   580K  1 loop /snap/snapd-desktop-integration/361
+loop5         7:5    0   395M  1 loop /snap/mesa-2404/1165
+loop6         7:6    0  91.7M  1 loop /snap/gtk-common-themes/1535
+loop7         7:7    0  15.7M  1 loop /snap/snap-store/1367
+loop8         7:8    0 227.6M  1 loop /snap/thunderbird/1057
+loop9         7:9    0  18.8M  1 loop /snap/prompting-client/204
+loop10        7:10   0  49.3M  1 loop /snap/snapd/26865
+loop11        7:11   0  16.5M  1 loop /snap/firmware-updater/226
+loop12        7:12   0  19.6M  1 loop /snap/desktop-security-center/150
+nvme0n1     259:0    0   1.8T  0 disk 
+├─nvme0n1p1 259:1    0     1G  0 part /boot/efi
+└─nvme0n1p2 259:2    0   1.8T  0 part /
+
+COMMAND: df -hT
+Filesystem     Type   Size  Used Avail Use% Mounted on
+tmpfs          tmpfs  6.2G  3.0M  6.2G   1% /run
+/dev/nvme0n1p2 ext4   1.8T   35G  1.7T   2% /
+tmpfs          tmpfs   16G  8.0K   16G   1% /dev/shm
+none           tmpfs  1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none           tmpfs  1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+tmpfs          tmpfs   16G  3.9M   16G   1% /tmp
+/dev/nvme0n1p1 vfat   1.1G  6.4M  1.1G   1% /boot/efi
+tmpfs          tmpfs  3.1G  104K  3.1G   1% /run/user/1000
+
+COMMAND: findmnt
+TARGET                                            SOURCE                 FSTYPE          OPTIONS
+/                                                 /dev/nvme0n1p2         ext4            rw,relatime
+├─/run                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=6435636k,nr_inodes=819200,mode=755,inode64
+│ ├─/run/credentials/systemd-journald.service     none                   tmpfs           ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,inode64,noswap
+│ ├─/run/credentials/systemd-resolved.service     none                   tmpfs           ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,inode64,noswap
+│ ├─/run/snapd/ns                                 tmpfs[/snapd/ns]       tmpfs           rw,nosuid,nodev,size=6435636k,nr_inodes=819200,mode=755,inode64
+│ │ ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026532769]] nsfs            rw
+│ │ ├─/run/snapd/ns/prompting-client.mnt          nsfs[mnt:[4026532836]] nsfs            rw
+│ │ ├─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532415]] nsfs            rw
+│ │ └─/run/snapd/ns/firmware-updater.mnt          nsfs[mnt:[4026533056]] nsfs            rw
+│ └─/run/user/1000                                tmpfs                  tmpfs           rw,nosuid,nodev,relatime,size=3217816k,nr_inodes=804454,mode=700,uid=1000,gid=1000,inode64
+│   ├─/run/user/1000/doc                          portal                 fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│   └─/run/user/1000/gvfs                         gvfsd-fuse             fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+├─/dev                                            devtmpfs               devtmpfs        rw,nosuid,size=15971348k,nr_inodes=3992837,mode=755,inode64
+│ ├─/dev/hugepages                                hugetlbfs              hugetlbfs       rw,nosuid,nodev,relatime,pagesize=2M
+│ ├─/dev/mqueue                                   mqueue                 mqueue          rw,nosuid,nodev,noexec,relatime
+│ ├─/dev/shm                                      tmpfs                  tmpfs           rw,nosuid,nodev,inode64,usrquota
+│ └─/dev/pts                                      devpts                 devpts          rw,nosuid,noexec,relatime,gid=5,mode=600,ptmxmode=000
+├─/sys                                            sysfs                  sysfs           rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/tracing                           tracefs                tracefs         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/debug                             debugfs                debugfs         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/fuse/connections                      fusectl                fusectl         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/security                          securityfs             securityfs      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup                                cgroup2                cgroup2         rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot,memory_hugetlb_accounting
+│ ├─/sys/fs/pstore                                none                   pstore          rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/firmware/efi/efivars                     efivarfs               efivarfs        rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/bpf                                   bpf                    bpf             rw,nosuid,nodev,noexec,relatime,mode=700
+│ └─/sys/kernel/config                            configfs               configfs        rw,nosuid,nodev,noexec,relatime
+├─/proc                                           proc                   proc            rw,nosuid,nodev,noexec,relatime
+│ └─/proc/sys/fs/binfmt_misc                      systemd-1              autofs          rw,relatime,fd=37,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=9626
+│   └─/proc/sys/fs/binfmt_misc                    binfmt_misc            binfmt_misc     rw,nosuid,nodev,noexec,relatime
+├─/tmp                                            tmpfs                  tmpfs           rw,nosuid,nodev,size=16089088k,nr_inodes=1048576,inode64,usrquota
+├─/snap/bare/5                                    /dev/loop0             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/core24/1587                               /dev/loop1             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/snapd-desktop-integration/361             /dev/loop4             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/firefox/8107                              /dev/loop2             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/gnome-46-2404/153                         /dev/loop3             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/gtk-common-themes/1535                    /dev/loop6             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/mesa-2404/1165                            /dev/loop5             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/snap-store/1367                           /dev/loop7             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/desktop-security-center/150               /dev/loop12            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/snapd/26865                               /dev/loop10            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/thunderbird/1057                          /dev/loop8             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/firmware-updater/226                      /dev/loop11            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/prompting-client/204                      /dev/loop9             squashfs        ro,nodev,relatime,errors=continue,threads=single
+└─/boot/efi                                       /dev/nvme0n1p1         vfat            rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 " --- GENERAL SETTINGS ---
 set number              " Show line numbers
 set relativenumber      " Show relative line numbers (great for jumping lines)
@@ -47,3 +48,7 @@ inoremap jk <Esc>
 " Clear search highlighting with <Leader>n
 let mapleader = " "
 nnoremap <leader>n :nohlsearch<CR>
+=======
+set number
+set relativenumber
+>>>>>>> b38e2abfe5c930c5a9d894de488f63e0ae9b0bb0

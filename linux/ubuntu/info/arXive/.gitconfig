@@ -2,7 +2,16 @@
 	sslcainfo = /etc/ssl/certs/ca-certificates.crt
 [user]
 	name = Daniel Topa
-	email = daniel.topa@baesystems.us
+	email = dantopa@gmail.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[push]
+	default = simple
+	autoSetupRemote = true
+[color]
+	ui = auto
 [core]
 	editor = vim
 [diff]
