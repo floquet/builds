@@ -1,3 +1,5 @@
+[http]
+	sslcainfo = /etc/ssl/certs/ca-certificates.crt
 [user]
 	name = Daniel Topa
 	email = dantopa@gmail.com
@@ -12,8 +14,9 @@
 	ui = auto
 [core]
 	editor = vim
-	pager = less -FRX
+[diff]
+	tool = vimdiff
 [merge]
-	tool = meld
-[rerere]
-	enabled = true
+	tool = vimdiff
+[credential]
+	helper = store
