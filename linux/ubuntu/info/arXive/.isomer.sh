@@ -6,7 +6,7 @@ export pRepos=${HOME}/repos-${HOSTNAME}
 export pGithub=${pRepos}/github
 export pSystems=${pGithub}/systems
 export pInit=${pSystems}/init
-export pSelf=${HOST}/${HOSTNAME}
+export pSelf="${pSystems}/snapshots/${HOSTNAME}"
 
 mkdir -p ${pSelf}
 
