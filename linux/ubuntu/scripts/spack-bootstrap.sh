@@ -26,7 +26,7 @@ gomirror() {
 }
 
 gospacktivity() {
-    cd "${spacktivity}" || return
+    cd "${HOME}/${spacktivity}" || return
     pwd
 }
 

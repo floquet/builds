@@ -1,4 +1,4 @@
-Mon Aug 31 09:52:36 PM MDT 2026
+Mon Aug 31 10:23:56 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -3141,7 +3141,7 @@ gomirror ()
 }
 gospacktivity () 
 { 
-    cd "${spacktivity}" || return;
+    cd "${HOME}/${spacktivity}" || return;
     pwd
 }
 goyaml () 
