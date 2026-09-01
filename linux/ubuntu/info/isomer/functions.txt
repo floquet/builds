@@ -1,4 +1,4 @@
-Mon Aug 31 11:38:12 PM MDT 2026
+Mon Aug 31 11:40:05 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -33,7 +33,6 @@ declare -f _comp_abspath
 declare -f _comp_as_root
 declare -f _comp_awk
 declare -f _comp_cmd_cd
-declare -f _comp_cmd_chmod
 declare -f _comp_command
 declare -f _comp_command_offset
 declare -f _comp_compgen
@@ -174,7 +173,6 @@ declare -f command_not_found_handle
 declare -f commit-builds
 declare -f config_git
 declare -f dequote
-declare -f feed_spack_mirror
 declare -f g-fortran
 declare -f g-general
 declare -f g-newcommand
@@ -182,6 +180,7 @@ declare -f g-tex
 declare -f genesis
 declare -f gf
 declare -f gomirror
+declare -f gospackticity
 declare -f gospacktivity
 declare -f goyaml
 declare -f initspack
@@ -914,37 +913,6 @@ _comp_cmd_cd ()
             COMPREPLY[0]="${i}/";
         fi;
     fi
-}
-_comp_cmd_chmod () 
-{ 
-    local cur prev words cword was_split comp_args;
-    _comp_initialize -s -- "$@" || return;
-    case $prev in 
-        --help | --version)
-            return
-        ;;
-        --reference)
-            _comp_compgen_filedir;
-            return
-        ;;
-    esac;
-    [[ -n $was_split ]] && return;
-    local modearg="-@(@(+([rwxXst])|[ugo])|+([0-7]))";
-    if [[ $cur == -* && $cur != $modearg ]]; then
-        _comp_compgen_help || _comp_compgen_usage;
-        [[ ${COMPREPLY-} == *= ]] && compopt -o nospace;
-        return;
-    fi;
-    local REPLY;
-    _comp_count_args -i "$modearg";
-    case $REPLY in 
-        1)
-
-        ;;
-        *)
-            _comp_compgen_filedir
-        ;;
-    esac
 }
 _comp_command () 
 { 
@@ -3167,12 +3135,6 @@ dequote ()
     printf %s "$REPLY";
     return $rc
 }
-feed_spack_mirror () 
-{ 
-    echo "rsync from \${SPACK_ROOT} = ${SPACK_ROOT}";
-    echo "rsync to   \${spack_mirror} = ${spack_mirror}";
-    rsync -vauh "${SPACK_ROOT}/var/spack/cache/_source-cache/archive/." "${spack_mirror}/_source-cache/archive/."
-}
 g-fortran () 
 { 
     echo "grep -inr --include='*.f08' \"$1\" .";
@@ -3217,6 +3179,11 @@ gf ()
 gomirror () 
 { 
     cd "${spack_mirror}" || return;
+    pwd
+}
+gospackticity () 
+{ 
+    cd "${spackticity}" || return;
     pwd
 }
 gospacktivity () 
