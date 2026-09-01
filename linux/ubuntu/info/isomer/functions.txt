@@ -1,4 +1,4 @@
-Mon Aug 31 11:40:05 PM MDT 2026
+Mon Aug 31 11:41:29 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -173,6 +173,7 @@ declare -f command_not_found_handle
 declare -f commit-builds
 declare -f config_git
 declare -f dequote
+declare -f feed_spack_mirror
 declare -f g-fortran
 declare -f g-general
 declare -f g-newcommand
@@ -3134,6 +3135,12 @@ dequote ()
     local rc=$?;
     printf %s "$REPLY";
     return $rc
+}
+feed_spack_mirror () 
+{ 
+    echo "rsync from \${SPACK_ROOT} = ${SPACK_ROOT}";
+    echo "rsync to   \${spack_mirror} = ${spack_mirror}";
+    rsync -vauh "${SPACK_ROOT}/var/spack/cache/_source-cache/archive/." "${spack_mirror}/_source-cache/archive/."
 }
 g-fortran () 
 { 
