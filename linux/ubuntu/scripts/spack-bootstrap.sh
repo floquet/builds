@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 printf '%s\n' "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
-
 # Mon Aug 31 2026
 
 # ----------------------------------------------------------------------
@@ -14,9 +12,9 @@ spack_bootstrap_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Persistent locations
 # ----------------------------------------------------------------------
 
-spack_mirror="/mnt/tethys/spack_mirror"
-spackticity="/mnt/tethys/spackticity"
-spack_yaml="${spackticity}/$(hostname -s)/yaml"
+spacktivity="/mnt/tethys/spacktivity"
+spack_mirror="${spacktivity}/spack_mirror"
+spack_yaml="${spacktivity}/spack_yaml"
 
 # ----------------------------------------------------------------------
 # Navigation
@@ -27,8 +25,8 @@ gomirror() {
     pwd
 }
 
-gospackticity() {
-    cd "${spackticity}" || return
+gospacktivity() {
+    cd "${spacktivity}" || return
     pwd
 }
 

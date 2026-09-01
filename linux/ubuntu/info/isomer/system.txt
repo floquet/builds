@@ -1,4 +1,4 @@
-Mon Aug 31 08:48:11 PM MDT 2026
+Mon Aug 31 09:52:36 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isomer
@@ -40,7 +40,7 @@ Thread(s) per core:                      1
 Core(s) per socket:                      14
 Socket(s):                               1
 Stepping:                                2
-CPU(s) scaling MHz:                      70%
+CPU(s) scaling MHz:                      72%
 CPU max MHz:                             4900.0000
 CPU min MHz:                             400.0000
 BogoMIPS:                                7372.80
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:            30Gi        18Gi       3.1Gi       6.0Gi        11Gi        11Gi
+Mem:            30Gi        18Gi       4.1Gi       5.9Gi        11Gi        12Gi
 Swap:           15Gi       4.5Gi        11Gi
 
 COMMAND: lsblk
@@ -145,7 +145,7 @@ nvme0n1     259:0    0 953.9G  0 disk
 COMMAND: df -hT
 Filesystem     Type      Size  Used Avail Use% Mounted on
 tmpfs          tmpfs     6.1G  4.4M  6.1G   1% /run
-/dev/nvme0n1p2 ext4      937G  207G  684G  24% /
+/dev/nvme0n1p2 ext4      937G  206G  684G  24% /
 tmpfs          tmpfs      16G   37M   16G   1% /dev/shm
 efivarfs       efivarfs  192K  135K   53K  72% /sys/firmware/efi/efivars
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
@@ -153,7 +153,7 @@ tmpfs          tmpfs      16G   16M   16G   1% /tmp
 none           tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
 /dev/nvme0n1p1 vfat      975M   92M  883M  10% /boot/efi
 /dev/sdb1      ext4      1.8T  201G  1.6T  12% /mnt/T7-Shield
-/dev/sda1      ext4      3.6T  2.1M  3.4T   1% /mnt/tethys
+/dev/sda1      ext4      3.6T  2.7M  3.4T   1% /mnt/tethys
 tmpfs          tmpfs     3.1G  4.2M  3.1G   1% /run/user/1000
 
 COMMAND: findmnt
