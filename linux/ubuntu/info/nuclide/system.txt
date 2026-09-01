@@ -1,4 +1,4 @@
-Tue Sep  1 14:20:01 MDT 2026
+Tue Sep  1 17:22:28 MDT 2026
 
 COMMAND: hostnamectl
 System has not been booted with systemd as init system (PID 1). Can't operate.
@@ -61,7 +61,7 @@ Vulnerability Vmscape:                   Not affected
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:           7.6Gi       1.0Gi       6.3Gi        29Mi       533Mi       6.6Gi
+Mem:           7.6Gi       1.0Gi       6.3Gi        29Mi       550Mi       6.6Gi
 Swap:          2.0Gi          0B       2.0Gi
 
 COMMAND: lsblk
@@ -76,9 +76,9 @@ COMMAND: df -hT
 Filesystem     Type     Size  Used Avail Use% Mounted on
 none           overlay  3.9G     0  3.9G   0% /usr/lib/modules/6.18.33.2-microsoft-standard-WSL2
 none           tmpfs    3.9G  4.0K  3.9G   1% /mnt/wsl
-drivers        9p       236G  217G   20G  92% /usr/lib/wsl/drivers
-/dev/sdd       ext4    1007G   62G  894G   7% /
-none           tmpfs    3.9G   56K  3.9G   1% /mnt/wslg
+drivers        9p       236G  219G   18G  93% /usr/lib/wsl/drivers
+/dev/sdd       ext4    1007G   67G  889G   7% /
+none           tmpfs    3.9G   60K  3.9G   1% /mnt/wslg
 none           overlay  3.9G     0  3.9G   0% /usr/lib/wsl/lib
 rootfs         rootfs   3.8G  2.8M  3.8G   1% /init
 none           tmpfs    3.9G  4.0K  3.9G   1% /run
@@ -87,7 +87,7 @@ none           tmpfs    3.9G     0  3.9G   0% /run/shm
 none           tmpfs    3.9G     0  3.9G   0% /run/user
 none           overlay  3.9G  2.6M  3.8G   1% /mnt/wslg/versions.txt
 none           overlay  3.9G  2.6M  3.8G   1% /mnt/wslg/doc
-C:\            9p       236G  217G   20G  92% /mnt/c
+C:\            9p       236G  219G   18G  93% /mnt/c
 
 COMMAND: findmnt
 TARGET                                               SOURCE                  FSTYPE      OPTIONS
