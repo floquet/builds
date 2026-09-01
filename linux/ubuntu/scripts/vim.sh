@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 
-alias vim='nvim'
+# alias vim='nvim'
 
 # Single quotes: variables expand when the alias is invoked
 alias   v='echo "vim $HOME/.${HOSTNAME}.sh"; vim "$HOME/.${HOSTNAME}.sh"'
