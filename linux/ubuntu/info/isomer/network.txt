@@ -1,4 +1,4 @@
-Sun Aug 30 10:21:33 PM MDT 2026
+Mon Aug 31 07:54:56 PM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -54,18 +54,18 @@ Link 4 (wlo1)
 COMMAND: ss -tulpn
 Netid State  Recv-Q Send-Q                      Local Address:Port  Peer Address:PortProcess                                    
 udp   UNCONN 0      0                               127.0.0.1:323        0.0.0.0:*                                              
-udp   UNCONN 0      0                                 0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=6043,fd=76))        
+udp   UNCONN 2880   0                                 0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=6043,fd=76))        
 udp   UNCONN 0      0                                 0.0.0.0:50817      0.0.0.0:*    users:(("python3",pid=24420,fd=12))       
-udp   UNCONN 0      0                              10.10.10.4:50994      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=26))
+udp   UNCONN 0      0                             10.11.26.57:52177      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=34))
+udp   UNCONN 0      0                              10.10.10.4:36380      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=33))
 udp   UNCONN 0      0                             10.11.26.57:3702       0.0.0.0:*    users:(("python3",pid=24420,fd=13))       
 udp   UNCONN 0      0                         239.255.255.250:3702       0.0.0.0:*    users:(("python3",pid=24420,fd=11))       
 udp   UNCONN 0      0                              10.10.10.4:3702       0.0.0.0:*    users:(("python3",pid=24420,fd=10))       
 udp   UNCONN 0      0                         239.255.255.250:3702       0.0.0.0:*    users:(("python3",pid=24420,fd=8))        
-udp   UNCONN 0      0                             10.11.26.57:53159      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=28))
 udp   UNCONN 0      0                                 0.0.0.0:54252      0.0.0.0:*    users:(("python3",pid=24420,fd=9))        
 udp   UNCONN 0      0                                 0.0.0.0:5353       0.0.0.0:*                                              
-udp   UNCONN 0      0                             10.11.26.57:58252      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=30))
-udp   UNCONN 0      0                              10.10.10.4:45746      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=29))
+udp   UNCONN 0      0                             10.11.26.57:38189      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=32))
+udp   UNCONN 0      0                              10.10.10.4:59036      0.0.0.0:*    users:(("Socket Process",pid=10109,fd=31))
 udp   UNCONN 0      0                              127.0.0.54:53         0.0.0.0:*                                              
 udp   UNCONN 0      0                           127.0.0.53%lo:53         0.0.0.0:*                                              
 udp   UNCONN 0      0                                   [::1]:323           [::]:*                                              
@@ -90,7 +90,7 @@ COMMAND: ip neigh
 10.11.26.87 dev enp87s0 lladdr 74:da:78:27:5c:87 STALE 
 10.11.26.47 dev enp87s0 lladdr 78:8c:77:79:9d:da STALE 
 10.11.26.115 dev enp86s0 lladdr 00:3e:e1:ca:cc:92 STALE 
-10.11.26.121 dev enp87s0 lladdr cc:2d:b7:04:84:d4 REACHABLE 
+10.11.26.121 dev enp87s0 lladdr cc:2d:b7:04:84:d4 STALE 
 10.11.26.223 dev enp87s0 lladdr d8:be:65:4a:f0:70 STALE 
 10.10.10.1 dev enp86s0 lladdr 6c:1f:f7:cc:02:43 STALE 
 10.10.10.1 dev enp87s0 lladdr 6c:1f:f7:cc:02:43 STALE 
