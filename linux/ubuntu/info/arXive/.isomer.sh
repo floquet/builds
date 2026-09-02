@@ -14,7 +14,7 @@ mkdir -p ${pSelf}
 source "${pInit}/master.sh"
 
 # machine specific: drives are mounted to isomer
-source "${HOME}/${HOSTNAME}/spack-${HOSTNAME}.sh"
+source "${pScripts}/spack-${HOSTNAME}.sh"
 
 
 

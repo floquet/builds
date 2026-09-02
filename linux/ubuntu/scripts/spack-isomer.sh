@@ -7,6 +7,8 @@ spacktivity="/mnt/tethys/spacktivity"
 spack_mirror="${spacktivity}/spack_mirror"
 spack_yaml="${spacktivity}/spack_yaml"
 
+export TMPDIR=/mnt/T7-Shield/tmp
+
 feed_spack_mirror()
 {
     echo "rsync from \${SPACK_ROOT} = ${SPACK_ROOT}"
