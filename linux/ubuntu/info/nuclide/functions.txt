@@ -1,4 +1,4 @@
-Tue Sep  1 17:50:47 MDT 2026
+Thu Sep  3 15:37:54 MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -10,10 +10,6 @@ declare -f __git_sequencer_status
 declare -f __load_completion
 declare -f __ltrim_colon_completions
 declare -f __parse_options
-declare -f __systemd_osc_context_common
-declare -f __systemd_osc_context_escape
-declare -f __systemd_osc_context_precmdline
-declare -f __systemd_osc_context_ps0
 declare -f _allowed_groups
 declare -f _allowed_users
 declare -f _available_interfaces
@@ -174,13 +170,13 @@ declare -f g-fortran
 declare -f g-general
 declare -f g-newcommand
 declare -f g-tex
-declare -f gawklibpath_append
-declare -f gawklibpath_default
-declare -f gawklibpath_prepend
-declare -f gawkpath_append
-declare -f gawkpath_default
-declare -f gawkpath_prepend
+declare -f genesis
 declare -f gf
+declare -f gomirror
+declare -f gospacktivity
+declare -f goyaml
+declare -f initspack
+declare -f l-spack
 declare -f pt
 declare -f q-caf
 declare -f q-compiler
@@ -630,42 +626,6 @@ __parse_options ()
     local -a _options=();
     _comp_compgen_help__parse "$1";
     printf '%s\n' "${_options[@]}"
-}
-__systemd_osc_context_common () 
-{ 
-    if [ -f /etc/machine-id ]; then
-        printf ";machineid=%.36s" "$(< /etc/machine-id)";
-    fi;
-    printf ";user=%.255s;hostname=%.255s;bootid=%.36s;pid=%.20d" "$USER" "$HOSTNAME" "$(< /proc/sys/kernel/random/boot_id)" "$$"
-}
-__systemd_osc_context_escape () 
-{ 
-    echo "$1" | sed -e 's/\\/\\x5c/g' -e 's/;/\\x3b/g' -e 's/[[:cntrl:]]/⍰/g'
-}
-__systemd_osc_context_precmdline () 
-{ 
-    local systemd_exitstatus="$?" systemd_signal;
-    if [ -n "${systemd_osc_context_cmd_id:-}" ]; then
-        if [ "$systemd_exitstatus" -gt 128 ] && systemd_signal=$(kill -l "$systemd_exitstatus" 2>&-); then
-            printf "\033]3008;end=%.64s;exit=failure;status=%d;signal=SIG%s\033\\" "$systemd_osc_context_cmd_id" "$systemd_exitstatus" "$systemd_signal";
-        else
-            if [ "$systemd_exitstatus" -ne 0 ]; then
-                printf "\033]3008;end=%.64s;exit=failure;status=%d\033\\" "$systemd_osc_context_cmd_id" $((systemd_exitstatus));
-            else
-                printf "\033]3008;end=%.64s;exit=success\033\\" "$systemd_osc_context_cmd_id";
-            fi;
-        fi;
-    fi;
-    if [ -z "${systemd_osc_context_shell_id:-}" ]; then
-        read -r systemd_osc_context_shell_id < /proc/sys/kernel/random/uuid;
-    fi;
-    printf "\033]3008;start=%.64s%s;type=shell;cwd=%.255s\033\\" "$systemd_osc_context_shell_id" "$(__systemd_osc_context_common)" "$(__systemd_osc_context_escape "$PWD")";
-    read -r systemd_osc_context_cmd_id < /proc/sys/kernel/random/uuid
-}
-__systemd_osc_context_ps0 () 
-{ 
-    [ -n "${systemd_osc_context_cmd_id:-}" ] || return;
-    printf "\033]3008;start=%.64s%s;type=command;cwd=%.255s\033\\" "$systemd_osc_context_cmd_id" "$(__systemd_osc_context_common)" "$(__systemd_osc_context_escape "$PWD")"
 }
 _allowed_groups () 
 { 
@@ -3109,35 +3069,11 @@ g-tex ()
     echo "grep -inr --include='*.tex' \"$1\" .";
     grep --color=auto -inr --include='*.tex' "$1" .
 }
-gawklibpath_append () 
+genesis () 
 { 
-    [ -z "$AWKLIBPATH" ] && AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`;
-    export AWKLIBPATH="$AWKLIBPATH:$*"
-}
-gawklibpath_default () 
-{ 
-    unset AWKLIBPATH;
-    export AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`
-}
-gawklibpath_prepend () 
-{ 
-    [ -z "$AWKLIBPATH" ] && AWKLIBPATH=`gawk 'BEGIN {print ENVIRON["AWKLIBPATH"]}'`;
-    export AWKLIBPATH="$*:$AWKLIBPATH"
-}
-gawkpath_append () 
-{ 
-    [ -z "$AWKPATH" ] && AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`;
-    export AWKPATH="$AWKPATH:$*"
-}
-gawkpath_default () 
-{ 
-    unset AWKPATH;
-    export AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`
-}
-gawkpath_prepend () 
-{ 
-    [ -z "$AWKPATH" ] && AWKPATH=`gawk 'BEGIN {print ENVIRON["AWKPATH"]}'`;
-    export AWKPATH="$*:$AWKPATH"
+    local target="${1:-spack-${HOSTNAME}}";
+    echo "git clone --depth 2 -c feature.manyFiles=true https://github.com/spack/spack.git ${target}";
+    git clone --depth 2 -c feature.manyFiles=true https://github.com/spack/spack.git "${target}"
 }
 gf () 
 { 
@@ -3148,6 +3084,38 @@ gf ()
     fi;
     echo "gfortran ${allflags} ${stem}.f08 -o ${stem}";
     gfortran ${allflags} "${stem}.f08" -o "${stem}"
+}
+gomirror () 
+{ 
+    cd "${spack_mirror}" || return;
+    pwd
+}
+gospacktivity () 
+{ 
+    cd "${HOME}/${spacktivity}" || return;
+    pwd
+}
+goyaml () 
+{ 
+    cd "${spack_yaml}" || return;
+    pwd
+}
+initspack () 
+{ 
+    if [[ ! -f share/spack/setup-env.sh ]]; then
+        echo "ERROR: not in a Spack checkout";
+        echo "missing:";
+        echo "  $(pwd)/share/spack/setup-env.sh";
+        return 1;
+    fi;
+    echo 'source share/spack/setup-env.sh';
+    source share/spack/setup-env.sh;
+    echo 'l-spack';
+    l-spack
+}
+l-spack () 
+{ 
+    source "${spack_bootstrap_dir}/spack-tools.sh"
 }
 pt () 
 { 
