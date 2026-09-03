@@ -1,8 +1,15 @@
-Thu Sep  3 17:02:57 MDT 2026
+Thu Sep  3 17:29:51 MDT 2026
 
 COMMAND: cat /proc/modules
 DESCRIPTION: Currently loaded kernel modules
 
+intel_rapl_msr 16384 0 - Live 0x0000000000000000
+intel_rapl_common 40960 1 intel_rapl_msr, Live 0x0000000000000000
+kvm_intel 368640 0 - Live 0x0000000000000000
+kvm 1003520 1 kvm_intel, Live 0x0000000000000000
+irqbypass 16384 1 kvm, Live 0x0000000000000000
+sch_fq_codel 16384 1 - Live 0x0000000000000000
+autofs4 45056 0 - Live 0x0000000000000000
 br_netfilter 28672 0 - Live 0x0000000000000000
 bridge 286720 1 br_netfilter, Live 0x0000000000000000
 stp 12288 1 bridge, Live 0x0000000000000000

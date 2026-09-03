@@ -1,8 +1,15 @@
-Thu Sep  3 17:02:57 MDT 2026
+Thu Sep  3 17:29:51 MDT 2026
 
 COMMAND: hostnamectl
-System has not been booted with systemd as init system (PID 1). Can't operate.
-Failed to connect to system scope bus via local transport: Host is down
+ Static hostname: nuclide
+       Icon name: computer-container
+         Chassis: container ☐
+      Machine ID: 319665f9279c4811b507283c94529d2c
+         Boot ID: 79b675cd7a964d489b5a63765c421a96
+  Virtualization: wsl
+Operating System: Ubuntu 26.04.1 LTS
+          Kernel: Linux 6.18.33.2-microsoft-standard-WSL2
+    Architecture: x86-64
 
 COMMAND: uname -a
 Linux nuclide 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 GNU/Linux
@@ -61,7 +68,7 @@ Vulnerability Vmscape:                   Not affected
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:           7.6Gi       1.1Gi       5.9Gi        29Mi       775Mi       6.5Gi
+Mem:           7.6Gi       781Mi       5.9Gi       6.3Mi       1.1Gi       6.8Gi
 Swap:          2.0Gi          0B       2.0Gi
 
 COMMAND: lsblk
@@ -78,16 +85,20 @@ none           overlay  3.9G     0  3.9G   0% /usr/lib/modules/6.18.33.2-microso
 none           tmpfs    3.9G  4.0K  3.9G   1% /mnt/wsl
 drivers        9p       236G  212G   24G  90% /usr/lib/wsl/drivers
 /dev/sdd       ext4    1007G   68G  889G   8% /
-none           tmpfs    3.9G   68K  3.9G   1% /mnt/wslg
+none           tmpfs    3.9G   48K  3.9G   1% /mnt/wslg
 none           overlay  3.9G     0  3.9G   0% /usr/lib/wsl/lib
 rootfs         rootfs   3.8G  2.8M  3.8G   1% /init
-none           tmpfs    3.9G  4.0K  3.9G   1% /run
+none           tmpfs    3.9G  864K  3.9G   1% /run
 none           tmpfs    3.9G     0  3.9G   0% /run/lock
 none           tmpfs    3.9G     0  3.9G   0% /run/shm
-none           tmpfs    3.9G     0  3.9G   0% /run/user
 none           overlay  3.9G  2.6M  3.8G   1% /mnt/wslg/versions.txt
 none           overlay  3.9G  2.6M  3.8G   1% /mnt/wslg/doc
 C:\            9p       236G  212G   24G  90% /mnt/c
+none           tmpfs    1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs          tmpfs    3.9G     0  3.9G   0% /tmp
+none           tmpfs    1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+none           tmpfs    1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs          tmpfs    779M   12K  779M   1% /run/user/1000
 
 COMMAND: findmnt
 TARGET                                               SOURCE                  FSTYPE      OPTIONS
@@ -98,19 +109,33 @@ TARGET                                               SOURCE                  FST
 ├─/mnt/wslg                                          none                    tmpfs       rw,relatime
 │ ├─/mnt/wslg/distro                                 /dev/sdd                ext4        ro,relatime,discard,errors=remount-ro,data=ordered
 │ ├─/mnt/wslg/versions.txt                           none[/etc/versions.txt] overlay     rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on
-│ └─/mnt/wslg/doc                                    none[/usr/share/doc]    overlay     rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on
+│ ├─/mnt/wslg/doc                                    none[/usr/share/doc]    overlay     rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on
+│ └─/mnt/wslg/run/user/1000                          tmpfs                   tmpfs       rw,nosuid,nodev,relatime,size=797148k,nr_inodes=199287,mode=700,uid=1000,gid=1000
 ├─/usr/lib/wsl/lib                                   none                    overlay     rw,nosuid,nodev,noatime,lowerdir=/gpu_lib_packaged:/gpu_lib_inbox,upperdir=/gpu_lib/rw/upper,workdir=/gpu_lib/rw/work,uuid=on
-├─/init                                              rootfs[/init]           rootfs      ro,size=3979992k,nr_inodes=994998
-├─/dev                                               none                    devtmpfs    rw,nosuid,relatime,size=3979992k,nr_inodes=994998,mode=755
+├─/init                                              rootfs[/init]           rootfs      ro,size=3979988k,nr_inodes=994997
+├─/dev                                               none                    devtmpfs    rw,nosuid,relatime,size=3979988k,nr_inodes=994997,mode=755
 │ ├─/dev/pts                                         devpts                  devpts      rw,nosuid,noexec,noatime,gid=5,mode=620,ptmxmode=000
-│ └─/dev/shm                                         none                    tmpfs       rw,nosuid,nodev,noatime
+│ ├─/dev/shm                                         none                    tmpfs       rw,nosuid,nodev,noatime
+│ ├─/dev/mqueue                                      mqueue                  mqueue      rw,nosuid,nodev,noexec,relatime
+│ └─/dev/hugepages                                   hugetlbfs               hugetlbfs   rw,nosuid,nodev,relatime,pagesize=2M
 ├─/sys                                               sysfs                   sysfs       rw,nosuid,nodev,noexec,noatime
-│ └─/sys/fs/cgroup                                   cgroup2                 cgroup2     rw,nosuid,nodev,noexec,relatime,nsdelegate
+│ ├─/sys/fs/cgroup                                   cgroup2                 cgroup2     rw,nosuid,nodev,noexec,relatime,nsdelegate
+│ ├─/sys/kernel/tracing                              tracefs                 tracefs     rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/debug                                debugfs                 debugfs     rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/config                               configfs                configfs    rw,nosuid,nodev,noexec,relatime
+│ └─/sys/fs/fuse/connections                         fusectl                 fusectl     rw,nosuid,nodev,noexec,relatime
 ├─/proc                                              proc                    proc        rw,nosuid,nodev,noexec,noatime
 │ └─/proc/sys/fs/binfmt_misc                         binfmt_misc             binfmt_misc rw,relatime
 ├─/run                                               none                    tmpfs       rw,nosuid,nodev,mode=755
 │ ├─/run/lock                                        none                    tmpfs       rw,nosuid,nodev,noexec,noatime
 │ ├─/run/shm                                         none                    tmpfs       rw,nosuid,nodev,noatime
-│ └─/run/user                                        none                    tmpfs       rw,nosuid,nodev,noexec,noatime,mode=755
+│ ├─/run/user                                        none                    tmpfs       rw,nosuid,nodev,noexec,noatime,mode=755
+│ │ └─/run/user                                      none[/run/user]         tmpfs       rw,relatime
+│ │   └─/run/user/1000                               tmpfs                   tmpfs       rw,nosuid,nodev,relatime,size=797148k,nr_inodes=199287,mode=700,uid=1000,gid=1000
+│ ├─/run/credentials/systemd-journald.service        none                    tmpfs       ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,noswap
+│ ├─/run/credentials/systemd-resolved.service        none                    tmpfs       ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,noswap
+│ └─/run/credentials/getty@tty1.service              none                    tmpfs       ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,noswap
 ├─/tmp/.X11-unix                                     none[/.X11-unix]        tmpfs       ro,relatime
-└─/mnt/c                                             C:\                     9p          rw,noatime,aname=drvfs;path=C:\;uid=1000;gid=1000;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=5,wfd=5
+├─/mnt/c                                             C:\                     9p          rw,noatime,aname=drvfs;path=C:\;uid=1000;gid=1000;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6
+└─/tmp                                               tmpfs                   tmpfs       rw,nosuid,nodev,nr_inodes=1048576
+  └─/tmp/.X11-unix                                   none[/.X11-unix]        tmpfs       ro,relatime
