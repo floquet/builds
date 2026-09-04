@@ -1,4 +1,4 @@
-Thu Aug 27 10:50:43 MDT 2026
+Thu Sep  3 15:41:59 MDT 2026
 
 COMMAND: cat /proc/mounts
 DESCRIPTION: Mounted filesystems
@@ -10,8 +10,8 @@ drivers /usr/lib/wsl/drivers 9p ro,nosuid,nodev,noatime,aname=drivers;fmask=222;
 none /mnt/wslg tmpfs rw,relatime 0 0
 /dev/sdd /mnt/wslg/distro ext4 ro,relatime,discard,errors=remount-ro,data=ordered 0 0
 none /usr/lib/wsl/lib overlay rw,nosuid,nodev,noatime,lowerdir=/gpu_lib_packaged:/gpu_lib_inbox,upperdir=/gpu_lib/rw/upper,workdir=/gpu_lib/rw/work,uuid=on 0 0
-rootfs /init rootfs ro,size=3979988k,nr_inodes=994997 0 0
-none /dev devtmpfs rw,nosuid,relatime,size=3979988k,nr_inodes=994997,mode=755 0 0
+rootfs /init rootfs ro,size=3979992k,nr_inodes=994998 0 0
+none /dev devtmpfs rw,nosuid,relatime,size=3979992k,nr_inodes=994998,mode=755 0 0
 sysfs /sys sysfs rw,nosuid,nodev,noexec,noatime 0 0
 proc /proc proc rw,nosuid,nodev,noexec,noatime 0 0
 devpts /dev/pts devpts rw,nosuid,noexec,noatime,gid=5,mode=620,ptmxmode=000 0 0

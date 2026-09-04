@@ -1,0 +1,57 @@
+Sun Aug 30 10:24:20 PM MDT 2026
+
+COMMAND: ip -br addr
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp1s0           UP             10.11.26.121/24 fe80::ce2d:b7ff:fe04:84d4/64 
+
+COMMAND: ip route
+default via 10.11.26.1 dev enp1s0 proto dhcp src 10.11.26.121 metric 100 
+10.11.26.0/24 dev enp1s0 proto kernel scope link src 10.11.26.121 metric 100 
+
+COMMAND: ip -6 route
+fe80::/64 dev enp1s0 proto kernel metric 1024 pref medium
+
+COMMAND: nmcli device status
+DEVICE  TYPE      STATE                   CONNECTION     
+enp1s0  ethernet  connected               netplan-enp1s0 
+lo      loopback  connected (externally)  lo             
+
+COMMAND: nmcli connection show
+NAME            UUID                                  TYPE      DEVICE 
+netplan-enp1s0  cac41fbe-bc18-3d87-bba7-af2af7f8ffab  ethernet  enp1s0 
+lo              13cc0f8a-fd1d-4370-a435-5e07e522aa67  loopback  lo     
+
+COMMAND: resolvectl status
+Global
+         Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+  resolv.conf mode: stub
+
+Link 2 (enp1s0)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 8.8.8.8
+       DNS Servers: 8.8.8.8 1.1.1.1
+     Default Route: yes
+
+COMMAND: ss -tulpn
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+udp   UNCONN 0      0            0.0.0.0:5353      0.0.0.0:*          
+udp   UNCONN 0      0         127.0.0.54:53        0.0.0.0:*          
+udp   UNCONN 0      0      127.0.0.53%lo:53        0.0.0.0:*          
+udp   UNCONN 0      0          127.0.0.1:323       0.0.0.0:*          
+udp   UNCONN 0      0               [::]:5353         [::]:*          
+udp   UNCONN 0      0              [::1]:323          [::]:*          
+tcp   LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*          
+tcp   LISTEN 0      4096       127.0.0.1:631       0.0.0.0:*          
+tcp   LISTEN 0      4096         0.0.0.0:22        0.0.0.0:*          
+tcp   LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*          
+tcp   LISTEN 0      4096            [::]:22           [::]:*          
+tcp   LISTEN 0      4096           [::1]:631          [::]:*          
+
+COMMAND: ip neigh
+10.11.26.47 dev enp1s0 lladdr 78:8c:77:79:9d:da STALE 
+10.11.26.87 dev enp1s0 lladdr 74:da:78:27:5c:87 STALE 
+10.11.26.57 dev enp1s0 lladdr 88:ae:dd:76:cb:89 REACHABLE 
+10.11.26.1 dev enp1s0 lladdr 4c:00:82:41:af:d9 REACHABLE 
+fe80::76da:78ff:fe27:5c87 dev enp1s0 lladdr 74:da:78:27:5c:87 STALE 
+fe80::7a8c:77ff:fe79:9dda dev enp1s0 lladdr 78:8c:77:79:9d:da STALE 

@@ -16,4 +16,7 @@ mkdir -p ${pSelf}
 # call master script
 source "${pScripts}/master.sh"
 
+export COMMON_DIR="${HOME}/repos-${HOSTNAME}/gitlab/supersonic/common"
+export SONIC_BIN_DIR="${HOME}/repos-${HOSTNAME}/gitlab/supersonic/SonicBin"
+
 

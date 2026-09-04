@@ -7,5 +7,6 @@ alias goGithub='cd "${pGithub}" && pwd'
 alias goBuilds='cd "${pBuilds}" && pwd'
 alias goUbuntu='cd "${pUbuntu}" && pwd'
 alias goScripts='cd "${pScripts}" && pwd'
+alias goFramework='cd "${pFramework}" && pwd'
 
 
