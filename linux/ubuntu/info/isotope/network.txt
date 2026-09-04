@@ -1,4 +1,4 @@
-Fri Sep  4 12:24:00 PM MDT 2026
+Fri Sep  4 12:29:16 PM MDT 2026
 
 COMMAND: ip -br addr
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
@@ -47,26 +47,30 @@ Current DNS Server: 8.8.8.8
      Default Route: yes
 
 COMMAND: ss -tulpn
-Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                             
-udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*                                       
-udp   UNCONN 0      0      127.0.0.53%lo:53         0.0.0.0:*                                       
-udp   UNCONN 0      0          127.0.0.1:323        0.0.0.0:*                                       
-udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*                                       
-udp   UNCONN 0      0            0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=6371,fd=77)) 
-udp   UNCONN 0      0              [::1]:323           [::]:*                                       
-udp   UNCONN 0      0               [::]:5353          [::]:*                                       
-tcp   LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*                                       
-tcp   LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*                                       
-tcp   LISTEN 0      4096       127.0.0.1:631        0.0.0.0:*                                       
-tcp   LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*                                       
-tcp   LISTEN 0      4096         0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=6371,fd=76)) 
-tcp   LISTEN 0      128        127.0.0.1:17603      0.0.0.0:*    users:(("dropbox",pid=6371,fd=101))
-tcp   LISTEN 0      128        127.0.0.1:17600      0.0.0.0:*    users:(("dropbox",pid=6371,fd=89)) 
-tcp   LISTEN 0      4096            [::]:22            [::]:*                                       
-tcp   LISTEN 0      4096           [::1]:631           [::]:*                                       
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                 
+udp   UNCONN 0      0            0.0.0.0:52743      0.0.0.0:*    users:(("zotero-bin",pid=271179,fd=60))
+udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*                                           
+udp   UNCONN 0      0      127.0.0.53%lo:53         0.0.0.0:*                                           
+udp   UNCONN 0      0          127.0.0.1:323        0.0.0.0:*                                           
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*                                           
+udp   UNCONN 0      0            0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=6371,fd=77))     
+udp   UNCONN 0      0              [::1]:323           [::]:*                                           
+udp   UNCONN 0      0               [::]:5353          [::]:*                                           
+tcp   LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*                                           
+tcp   LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*                                           
+tcp   LISTEN 0      4096       127.0.0.1:631        0.0.0.0:*                                           
+tcp   LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*                                           
+tcp   LISTEN 0      4096         0.0.0.0:17500      0.0.0.0:*    users:(("dropbox",pid=6371,fd=76))     
+tcp   LISTEN 0      128        127.0.0.1:17603      0.0.0.0:*    users:(("dropbox",pid=6371,fd=101))    
+tcp   LISTEN 0      128        127.0.0.1:17600      0.0.0.0:*    users:(("dropbox",pid=6371,fd=89))     
+tcp   LISTEN 0      5          127.0.0.1:19876      0.0.0.0:*    users:(("zotero-bin",pid=271179,fd=88))
+tcp   LISTEN 0      37         127.0.0.1:23119      0.0.0.0:*    users:(("zotero-bin",pid=271179,fd=84))
+tcp   LISTEN 0      5          127.0.0.1:23116      0.0.0.0:*    users:(("zotero-bin",pid=271179,fd=87))
+tcp   LISTEN 0      4096            [::]:22            [::]:*                                           
+tcp   LISTEN 0      4096           [::1]:631           [::]:*                                           
 
 COMMAND: ip neigh
 10.11.26.47 dev enp11s0 lladdr 78:8c:77:79:9d:da STALE 
 10.11.26.87 dev enp11s0 lladdr 74:da:78:27:5c:87 STALE 
 10.11.26.1 dev enp11s0 lladdr 4c:00:82:41:af:d9 REACHABLE 
-10.11.26.1 dev enp12s0 lladdr 4c:00:82:41:af:d9 REACHABLE 
+10.11.26.1 dev enp12s0 lladdr 4c:00:82:41:af:d9 STALE 
