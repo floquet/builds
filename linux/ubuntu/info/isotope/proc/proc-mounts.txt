@@ -1,4 +1,4 @@
-Fri Sep  4 12:29:16 PM MDT 2026
+Fri Sep  4 12:52:08 PM MDT 2026
 
 COMMAND: cat /proc/mounts
 DESCRIPTION: Mounted filesystems
@@ -58,3 +58,5 @@ portal /run/user/1000/doc fuse.portal rw,nosuid,nodev,relatime,user_id=1000,grou
 gvfsd-fuse /run/user/1000/gvfs fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000 0 0
 nsfs /run/snapd/ns/prompting-client.mnt nsfs rw 0 0
 nsfs /run/snapd/ns/firefox.mnt nsfs rw 0 0
+/dev/loop23 /snap/jabref/3232 squashfs ro,nodev,relatime,errors=continue,threads=single 0 0
+nsfs /run/snapd/ns/jabref.mnt nsfs rw 0 0
