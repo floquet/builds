@@ -1,4 +1,4 @@
-Fri Sep  4 10:26:01 PM MDT 2026
+Fri Sep  4 10:45:52 PM MDT 2026
 
 COMMAND: hostnamectl
  Static hostname: isotope
@@ -40,7 +40,7 @@ Thread(s) per core:                      2
 Core(s) per socket:                      12
 Socket(s):                               1
 Stepping:                                4
-CPU(s) scaling MHz:                      52%
+CPU(s) scaling MHz:                      63%
 CPU max MHz:                             3500.0000
 CPU min MHz:                             1200.0000
 BogoMIPS:                                5399.87
@@ -74,7 +74,7 @@ Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspa
 
 COMMAND: free -h
                total        used        free      shared  buff/cache   available
-Mem:           121Gi        13Gi        97Gi       5.4Gi        17Gi       107Gi
+Mem:           121Gi        21Gi        87Gi       9.9Gi        23Gi       100Gi
 Swap:          8.0Gi          0B       8.0Gi
 
 COMMAND: lsblk
@@ -110,11 +110,11 @@ nvme0n1     259:0    0   1.8T  0 disk
 COMMAND: df -hT
 Filesystem     Type   Size  Used Avail Use% Mounted on
 tmpfs          tmpfs   25G  3.9M   25G   1% /run
-/dev/nvme0n1p2 ext4   1.8T  268G  1.5T  16% /
+/dev/nvme0n1p2 ext4   1.8T  270G  1.5T  16% /
 tmpfs          tmpfs   61G  9.1M   61G   1% /dev/shm
 none           tmpfs  1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 none           tmpfs  1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
-tmpfs          tmpfs   61G  5.4G   56G   9% /tmp
+tmpfs          tmpfs   61G  9.9G   51G  17% /tmp
 /dev/nvme0n1p1 vfat   1.1G  6.4M  1.1G   1% /boot/efi
 tmpfs          tmpfs   13G  4.1M   13G   1% /run/user/1000
 
