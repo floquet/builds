@@ -7,6 +7,12 @@ spacktivity="/mnt/tethys/spacktivity"
 spack_mirror="${spacktivity}/spack_mirror"
 spack_yaml="${spacktivity}/spack_yaml"
 
+if [[ -d /mnt/T7-Shield/tmp && -w /mnt/T7-Shield/tmp ]]; then
+    export TMPDIR=/mnt/T7-Shield/tmp
+else
+    echo "WARNING: /mnt/T7-Shield/tmp unavailable; do not run large Spack builds."
+fi
+
 feed_spack_mirror()
 {
     echo "rsync from \${SPACK_ROOT} = ${SPACK_ROOT}"
