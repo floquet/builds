@@ -1,4 +1,4 @@
-Sun Sep  6 02:20:39 PM MDT 2026
+Mon Sep  7 06:10:53 PM MDT 2026
 
 COMMAND: declare -F
 declare -f __expand_tilde_by_ref
@@ -14,9 +14,12 @@ declare -f __systemd_osc_context_common
 declare -f __systemd_osc_context_escape
 declare -f __systemd_osc_context_precmdline
 declare -f __systemd_osc_context_ps0
+declare -f _all_packages
+declare -f _all_resource_hashes
 declare -f _allowed_groups
 declare -f _allowed_users
 declare -f _available_interfaces
+declare -f _bash_completion_spack
 declare -f _bashcomp_try_faketty
 declare -f _cd
 declare -f _cd_devices
@@ -31,6 +34,7 @@ declare -f _comp_abspath
 declare -f _comp_as_root
 declare -f _comp_awk
 declare -f _comp_cmd_cd
+declare -f _comp_cmd_tree
 declare -f _comp_command
 declare -f _comp_command_offset
 declare -f _comp_compgen
@@ -114,12 +118,16 @@ declare -f _comp_upvars
 declare -f _comp_userland
 declare -f _comp_variable_assignments
 declare -f _comp_xfunc
+declare -f _compgen_w
 declare -f _complete_as_root
 declare -f _completion_loader
+declare -f _config_sections
 declare -f _configured_interfaces
 declare -f _count_args
 declare -f _dvd_devices
+declare -f _environments
 declare -f _expand
+declare -f _extensions
 declare -f _filedir
 declare -f _filedir_xspec
 declare -f _fstypes
@@ -130,14 +138,18 @@ declare -f _get_pword
 declare -f _gids
 declare -f _have
 declare -f _init_completion
+declare -f _installed_compilers
 declare -f _installed_modules
+declare -f _installed_packages
 declare -f _ip_addresses
 declare -f _kernel_versions
+declare -f _keys
 declare -f _known_hosts
 declare -f _known_hosts_real
 declare -f _longopt
 declare -f _mac_addresses
 declare -f _minimal
+declare -f _mirrors
 declare -f _modules
 declare -f _ncpus
 declare -f _parse_help
@@ -146,18 +158,267 @@ declare -f _pci_ids
 declare -f _pgids
 declare -f _pids
 declare -f _pnames
+declare -f _pretty_print
+declare -f _providers
 declare -f _quote_readline_by_ref
 declare -f _realcommand
+declare -f _repos
 declare -f _rl_enabled
 declare -f _root_command
 declare -f _service
 declare -f _services
 declare -f _shells
 declare -f _signals
+declare -f _spack
+declare -f _spack_add
+declare -f _spack_arch
+declare -f _spack_audit
+declare -f _spack_audit_configs
+declare -f _spack_audit_externals
+declare -f _spack_audit_list
+declare -f _spack_audit_packages
+declare -f _spack_audit_packages_https
+declare -f _spack_blame
+declare -f _spack_bootstrap
+declare -f _spack_bootstrap_add
+declare -f _spack_bootstrap_disable
+declare -f _spack_bootstrap_enable
+declare -f _spack_bootstrap_list
+declare -f _spack_bootstrap_mirror
+declare -f _spack_bootstrap_now
+declare -f _spack_bootstrap_remove
+declare -f _spack_bootstrap_reset
+declare -f _spack_bootstrap_root
+declare -f _spack_bootstrap_status
+declare -f _spack_build_env
+declare -f _spack_buildcache
+declare -f _spack_buildcache_check
+declare -f _spack_buildcache_check_index
+declare -f _spack_buildcache_create
+declare -f _spack_buildcache_download
+declare -f _spack_buildcache_install
+declare -f _spack_buildcache_keys
+declare -f _spack_buildcache_list
+declare -f _spack_buildcache_migrate
+declare -f _spack_buildcache_prune
+declare -f _spack_buildcache_push
+declare -f _spack_buildcache_rebuild_index
+declare -f _spack_buildcache_save_specfile
+declare -f _spack_buildcache_sync
+declare -f _spack_buildcache_update_index
+declare -f _spack_cd
+declare -f _spack_change
+declare -f _spack_checksum
+declare -f _spack_ci
+declare -f _spack_ci_generate
+declare -f _spack_ci_rebuild
+declare -f _spack_ci_rebuild_index
+declare -f _spack_ci_reproduce_build
+declare -f _spack_ci_verify_versions
+declare -f _spack_clean
+declare -f _spack_commands
+declare -f _spack_compiler
+declare -f _spack_compiler_add
+declare -f _spack_compiler_find
+declare -f _spack_compiler_info
+declare -f _spack_compiler_list
+declare -f _spack_compiler_ls
+declare -f _spack_compiler_remove
+declare -f _spack_compiler_rm
+declare -f _spack_compilers
+declare -f _spack_completions
+declare -f _spack_compress_aliases
+declare -f _spack_concretise
+declare -f _spack_concretize
+declare -f _spack_config
+declare -f _spack_config_add
+declare -f _spack_config_blame
+declare -f _spack_config_change
+declare -f _spack_config_edit
+declare -f _spack_config_get
+declare -f _spack_config_list
+declare -f _spack_config_prefer_upstream
+declare -f _spack_config_remove
+declare -f _spack_config_revert
+declare -f _spack_config_rm
+declare -f _spack_config_scopes
+declare -f _spack_config_update
+declare -f _spack_containerise
+declare -f _spack_containerize
+declare -f _spack_create
+declare -f _spack_debug
+declare -f _spack_debug_report
+declare -f _spack_deconcretize
+declare -f _spack_dependencies
+declare -f _spack_dependents
+declare -f _spack_deprecate
+declare -f _spack_determine_shell
+declare -f _spack_dev_build
+declare -f _spack_develop
+declare -f _spack_diff
+declare -f _spack_docs
+declare -f _spack_edit
+declare -f _spack_env
+declare -f _spack_env_activate
+declare -f _spack_env_create
+declare -f _spack_env_deactivate
+declare -f _spack_env_depfile
+declare -f _spack_env_list
+declare -f _spack_env_loads
+declare -f _spack_env_ls
+declare -f _spack_env_mv
+declare -f _spack_env_remove
+declare -f _spack_env_rename
+declare -f _spack_env_revert
+declare -f _spack_env_rm
+declare -f _spack_env_st
+declare -f _spack_env_status
+declare -f _spack_env_track
+declare -f _spack_env_untrack
+declare -f _spack_env_update
+declare -f _spack_env_view
+declare -f _spack_extensions
+declare -f _spack_external
+declare -f _spack_external_find
+declare -f _spack_external_list
+declare -f _spack_external_ls
+declare -f _spack_external_read_cray_manifest
+declare -f _spack_fetch
+declare -f _spack_find
+declare -f _spack_gc
+declare -f _spack_get_alias
+declare -f _spack_gpg
+declare -f _spack_gpg_create
+declare -f _spack_gpg_export
+declare -f _spack_gpg_init
+declare -f _spack_gpg_list
+declare -f _spack_gpg_publish
+declare -f _spack_gpg_sign
+declare -f _spack_gpg_trust
+declare -f _spack_gpg_untrust
+declare -f _spack_gpg_verify
+declare -f _spack_graph
+declare -f _spack_help
+declare -f _spack_info
+declare -f _spack_install
+declare -f _spack_isolate
+declare -f _spack_license
+declare -f _spack_license_list_files
+declare -f _spack_license_verify
+declare -f _spack_list
+declare -f _spack_load
+declare -f _spack_location
+declare -f _spack_log_parse
+declare -f _spack_logs
+declare -f _spack_maintainers
+declare -f _spack_make_installer
+declare -f _spack_mark
+declare -f _spack_mirror
+declare -f _spack_mirror_add
+declare -f _spack_mirror_create
+declare -f _spack_mirror_destroy
+declare -f _spack_mirror_list
+declare -f _spack_mirror_ls
+declare -f _spack_mirror_remove
+declare -f _spack_mirror_rm
+declare -f _spack_mirror_set
+declare -f _spack_mirror_set_url
+declare -f _spack_module
+declare -f _spack_module_lmod
+declare -f _spack_module_lmod_find
+declare -f _spack_module_lmod_loads
+declare -f _spack_module_lmod_refresh
+declare -f _spack_module_lmod_rm
+declare -f _spack_module_lmod_setdefault
+declare -f _spack_module_tcl
+declare -f _spack_module_tcl_find
+declare -f _spack_module_tcl_loads
+declare -f _spack_module_tcl_refresh
+declare -f _spack_module_tcl_rm
+declare -f _spack_module_tcl_setdefault
+declare -f _spack_patch
+declare -f _spack_pathadd
+declare -f _spack_pkg
+declare -f _spack_pkg_add
+declare -f _spack_pkg_added
+declare -f _spack_pkg_changed
+declare -f _spack_pkg_diff
+declare -f _spack_pkg_grep
+declare -f _spack_pkg_hash
+declare -f _spack_pkg_list
+declare -f _spack_pkg_removed
+declare -f _spack_pkg_source
+declare -f _spack_providers
+declare -f _spack_pydoc
+declare -f _spack_python
+declare -f _spack_reindex
+declare -f _spack_remove
+declare -f _spack_repo
+declare -f _spack_repo_add
+declare -f _spack_repo_create
+declare -f _spack_repo_list
+declare -f _spack_repo_ls
+declare -f _spack_repo_migrate
+declare -f _spack_repo_remove
+declare -f _spack_repo_rm
+declare -f _spack_repo_set
+declare -f _spack_repo_show_version_updates
+declare -f _spack_repo_update
+declare -f _spack_resource
+declare -f _spack_resource_list
+declare -f _spack_resource_show
+declare -f _spack_restage
+declare -f _spack_rm
+declare -fx _spack_shell_wrapper
+declare -f _spack_solve
+declare -f _spack_spec
+declare -f _spack_stage
+declare -f _spack_style
+declare -f _spack_tags
+declare -f _spack_test
+declare -f _spack_test_env
+declare -f _spack_test_find
+declare -f _spack_test_list
+declare -f _spack_test_remove
+declare -f _spack_test_results
+declare -f _spack_test_run
+declare -f _spack_test_status
+declare -f _spack_tutorial
+declare -f _spack_undevelop
+declare -f _spack_uninstall
+declare -f _spack_unit_test
+declare -f _spack_unload
+declare -f _spack_url
+declare -f _spack_url_list
+declare -f _spack_url_parse
+declare -f _spack_url_stats
+declare -f _spack_url_summary
+declare -f _spack_verify
+declare -f _spack_verify_libraries
+declare -f _spack_verify_manifest
+declare -f _spack_verify_versions
+declare -f _spack_versions
+declare -f _spack_view
+declare -f _spack_view_add
+declare -f _spack_view_check
+declare -f _spack_view_copy
+declare -f _spack_view_hard
+declare -f _spack_view_hardlink
+declare -f _spack_view_relocate
+declare -f _spack_view_remove
+declare -f _spack_view_rm
+declare -f _spack_view_soft
+declare -f _spack_view_statlink
+declare -f _spack_view_status
+declare -f _spack_view_symlink
+declare -f _spacktivate
+declare -f _subcommands
 declare -f _sysvdirs
 declare -f _terms
+declare -f _test_vars
 declare -f _tilde
 declare -f _uids
+declare -f _unit_tests
 declare -f _upvar
 declare -f _upvars
 declare -f _usb_ids
@@ -171,6 +432,7 @@ declare -f command_not_found_handle
 declare -f commit-builds
 declare -f config_git
 declare -f dequote
+declare -f display_total_elapsed_time
 declare -f g-fortran
 declare -f g-general
 declare -f g-newcommand
@@ -183,13 +445,17 @@ declare -f gawkpath_default
 declare -f gawkpath_prepend
 declare -f genesis
 declare -f gf
+declare -f goio
 declare -f gomirror
+declare -f gonb
+declare -f gospack
 declare -f gospacktivity
 declare -f goyaml
 declare -f initspack
 declare -f l-spack
 declare -f logger_debug
 declare -f logger_info
+declare -f new_step
 declare -f pt
 declare -f q-caf
 declare -f q-compiler
@@ -201,7 +467,23 @@ declare -f q-selection
 declare -f q-wrappers
 declare -f quote
 declare -f quote_readline
+declare -f scbcm
+declare -f scbcn
+declare -f scbmi
+declare -f scbmo
+declare -f scbpa
+declare -f scbre
+declare -f scgcm
+declare -f scgcn
+declare -f scgmi
+declare -f scgmo
+declare -f scgpa
+declare -f scgre
 declare -f set_val
+declare -fx spack
+declare -f spack_where
+declare -f sub_step
+declare -f sub_substep
 
 COMMAND: declare -f
 __expand_tilde_by_ref () 
@@ -677,6 +959,20 @@ __systemd_osc_context_ps0 ()
     [ -n "${systemd_osc_context_cmd_id:-}" ] || return;
     printf "\033]3008;start=%.64s%s;type=command;cwd=%.255s\033\\" "$systemd_osc_context_cmd_id" "$(__systemd_osc_context_common)" "$(__systemd_osc_context_escape "$PWD")"
 }
+_all_packages () 
+{ 
+    if [[ -z "${SPACK_ALL_PACKAGES:-}" ]]; then
+        SPACK_ALL_PACKAGES="$(spack list)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_ALL_PACKAGES"
+}
+_all_resource_hashes () 
+{ 
+    if [[ -z "${SPACK_ALL_RESOURCES_HASHES:-}" ]]; then
+        SPACK_ALL_RESOURCE_HASHES="$(spack resource list --only-hashes)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_ALL_RESOURCE_HASHES"
+}
 _allowed_groups () 
 { 
     _comp_compgen -c "${1:-$cur}" allowed_groups
@@ -688,6 +984,37 @@ _allowed_users ()
 _available_interfaces () 
 { 
     _comp_compgen_available_interfaces "$@"
+}
+_bash_completion_spack () 
+{ 
+    local -a COMP_WORDS_NO_FLAGS;
+    COMP_WORDS_NO_FLAGS=("spack");
+    local subfunction="_spack";
+    local index=1;
+    while [[ "$index" -lt "$COMP_CWORD" ]]; do
+        local word="${COMP_WORDS[$index]}";
+        if [[ "$word" != -* ]]; then
+            local candidate="${subfunction}_${word//-/_}";
+            if declare -f "$candidate" > /dev/null 2>&1; then
+                COMP_WORDS_NO_FLAGS+=("$word");
+                subfunction="$candidate";
+            fi;
+        fi;
+        ((index++));
+    done;
+    COMP_WORDS_NO_FLAGS+=("${COMP_WORDS[$COMP_CWORD]}");
+    local COMP_CWORD_NO_FLAGS=$((${#COMP_WORDS_NO_FLAGS[@]} - 1));
+    local list_options=false;
+    if [[ "${COMP_WORDS[$COMP_CWORD]}" == -* || "$COMP_POINT" -ne "${#COMP_LINE}" ]]; then
+        list_options=true;
+    fi;
+    local cur=${COMP_WORDS_NO_FLAGS[$COMP_CWORD_NO_FLAGS]};
+    if [[ "${COMP_LINE:$COMP_POINT-1:1}" == " " ]]; then
+        cur="";
+    fi;
+    $subfunction;
+    COMPREPLY=($(_compgen_w "$SPACK_COMPREPLY" "$cur"));
+    _spack_compress_aliases
 }
 _bashcomp_try_faketty () 
 { 
@@ -911,6 +1238,40 @@ _comp_cmd_cd ()
         if [[ $i == "$cur" && $i != "*/" ]]; then
             COMPREPLY[0]="${i}/";
         fi;
+    fi
+}
+_comp_cmd_tree () 
+{ 
+    local cur prev words cword was_split comp_args;
+    _comp_initialize -s -- "$@" || return;
+    local noargopts='!(-*|*[LPIHTo]*)';
+    case $prev in 
+        -${noargopts}[LPIHT] | --filelimit | --timefmt | --help | --version)
+            return
+        ;;
+        --charset)
+            _comp_compgen -x iconv charsets;
+            return
+        ;;
+        -${noargopts}o)
+            _comp_compgen_filedir;
+            return
+        ;;
+        --sort)
+            _comp_compgen -- -W "name version size mtime ctime";
+            return
+        ;;
+    esac;
+    [[ -n $was_split ]] && return;
+    if [[ $cur == -* ]]; then
+        _comp_compgen_help;
+        return;
+    fi;
+    local line="${words[*]}";
+    if [[ $line == *\ --fromfile\ * ]]; then
+        _comp_compgen_filedir;
+    else
+        _comp_compgen_filedir -d;
     fi
 }
 _comp_command () 
@@ -2765,6 +3126,18 @@ _comp_xfunc ()
     declare -F -- "$xfunc_name" &> /dev/null || _comp_load -- "$1";
     "$xfunc_name" "${@:3}"
 }
+_compgen_w () 
+{ 
+    if test -n "${ZSH_VERSION:-}"; then
+        typeset -a words;
+        words=(${~=1});
+        local find="$2";
+        results=(${(M)words[@]:#$find*});
+        echo "${results[@]}";
+    else
+        compgen -W "$1" -- "$2";
+    fi
+}
 _complete_as_root () 
 { 
     _comp_as_root "$@"
@@ -2772,6 +3145,13 @@ _complete_as_root ()
 _completion_loader () 
 { 
     _comp_complete_load "$@"
+}
+_config_sections () 
+{ 
+    if [[ -z "${SPACK_CONFIG_SECTIONS:-}" ]]; then
+        SPACK_CONFIG_SECTIONS="$(spack config list)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_CONFIG_SECTIONS"
 }
 _configured_interfaces () 
 { 
@@ -2793,9 +3173,23 @@ _dvd_devices ()
 { 
     _comp_compgen -a dvd_devices
 }
+_environments () 
+{ 
+    if [[ -z "${SPACK_ENVIRONMENTS:-}" ]]; then
+        SPACK_ENVIRONMENTS="$(spack env list)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_ENVIRONMENTS"
+}
 _expand () 
 { 
     _comp_expand "$@"
+}
+_extensions () 
+{ 
+    if [[ -z "${SPACK_EXTENSIONS:-}" ]]; then
+        SPACK_EXTENSIONS="$(spack extensions)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_EXTENSIONS"
 }
 _filedir () 
 { 
@@ -2897,9 +3291,23 @@ _init_completion ()
     done;
     return "$rc"
 }
+_installed_compilers () 
+{ 
+    if [[ -z "${SPACK_INSTALLED_COMPILERS:-}" ]]; then
+        SPACK_INSTALLED_COMPILERS="$(spack compilers)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_INSTALLED_COMPILERS"
+}
 _installed_modules () 
 { 
     _comp_compgen_inserted_kernel_modules "$@"
+}
+_installed_packages () 
+{ 
+    if [[ -z "${SPACK_INSTALLED_PACKAGES:-}" ]]; then
+        SPACK_INSTALLED_PACKAGES="$(spack --color=never find --no-groups)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_INSTALLED_PACKAGES"
 }
 _ip_addresses () 
 { 
@@ -2908,6 +3316,13 @@ _ip_addresses ()
 _kernel_versions () 
 { 
     _comp_compgen_kernel_versions "$@"
+}
+_keys () 
+{ 
+    if [[ -z "${SPACK_KEYS:-}" ]]; then
+        SPACK_KEYS="$(spack gpg list)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_KEYS"
 }
 _known_hosts () 
 { 
@@ -2928,6 +3343,13 @@ _mac_addresses ()
 _minimal () 
 { 
     _comp_complete_minimal "$@"
+}
+_mirrors () 
+{ 
+    if [[ -z "${SPACK_MIRRORS:-}" ]]; then
+        SPACK_MIRRORS="$(spack mirror list | awk '{print $1}')";
+    fi;
+    SPACK_COMPREPLY="$SPACK_MIRRORS"
 }
 _modules () 
 { 
@@ -2989,6 +3411,24 @@ _pnames ()
 { 
     _comp_compgen_pnames "$@"
 }
+_pretty_print () 
+{ 
+    for arg in $@;
+    do
+        local array=("${!arg}");
+        printf "$arg: [";
+        printf "'%s'" "${array[0]}";
+        printf ", '%s'" "${array[@]:1}";
+        echo "]";
+    done
+}
+_providers () 
+{ 
+    if [[ -z "${SPACK_PROVIDERS:-}" ]]; then
+        SPACK_PROVIDERS="$(spack providers)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_PROVIDERS"
+}
 _quote_readline_by_ref () 
 { 
     [[ $2 == REPLY ]] || local REPLY;
@@ -3002,6 +3442,13 @@ _realcommand ()
     local rc=$?;
     printf "%s\n" "$REPLY";
     return $rc
+}
+_repos () 
+{ 
+    if [[ -z "${SPACK_REPOS:-}" ]]; then
+        SPACK_REPOS="$(spack repo list --names)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_REPOS"
 }
 _rl_enabled () 
 { 
@@ -3027,6 +3474,1894 @@ _signals ()
 { 
     _comp_compgen_signals "$@"
 }
+_spack () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="--color -v --verbose -k --insecure -b --bootstrap -V --version -h --help -H --all-help -c --config -C --config-scope -e --env -D --env-dir -E --no-env --use-env-repo -d --debug -t --backtrace --timestamp -m --mock --print-shell-vars --stacktrace -l --enable-locks -L --disable-locks";
+    else
+        SPACK_COMPREPLY="add arch audit blame bootstrap build-env buildcache cd change checksum ci clean commands compiler compilers concretize concretise config containerize containerise create debug deconcretize dependencies dependents deprecate dev-build develop diff docs edit env extensions external fetch find gc gpg graph help info install isolate license list load location log-parse logs maintainers make-installer mark mirror module patch pkg providers pydoc python reindex remove rm repo resource restage solve spec stage style tags test test-env tutorial undevelop uninstall unit-test unload url verify versions view";
+    fi
+}
+_spack_add () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -l --list-name";
+    else
+        _all_packages;
+    fi
+}
+_spack_arch () 
+{ 
+    SPACK_COMPREPLY="-h --help -g --generic-target --known-targets --family --generic -p --platform -o --operating-system -t --target -f --frontend -b --backend"
+}
+_spack_audit () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="configs externals packages-https packages list";
+    fi
+}
+_spack_audit_configs () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_audit_externals () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --list";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_audit_list () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_audit_packages () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_audit_packages_https () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --all";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_blame () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -t --time -p --percent -g --git --json";
+    else
+        _all_packages;
+    fi
+}
+_spack_bootstrap () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="now status enable disable reset root list add remove mirror";
+    fi
+}
+_spack_bootstrap_add () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope --trust";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_bootstrap_disable () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_bootstrap_enable () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_bootstrap_list () 
+{ 
+    SPACK_COMPREPLY="-h --help --scope"
+}
+_spack_bootstrap_mirror () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --binary-packages --dev";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_bootstrap_now () 
+{ 
+    SPACK_COMPREPLY="-h --help --dev"
+}
+_spack_bootstrap_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_bootstrap_reset () 
+{ 
+    SPACK_COMPREPLY="-h --help -y --yes-to-all"
+}
+_spack_bootstrap_root () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_bootstrap_status () 
+{ 
+    SPACK_COMPREPLY="-h --help --optional --dev"
+}
+_spack_build_env () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --clean --dirty -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated --dump --pickle";
+    else
+        _all_packages;
+    fi
+}
+_spack_buildcache () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="push create install list keys check download prune save-specfile sync check-index update-index rebuild-index migrate";
+    fi
+}
+_spack_buildcache_check () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -m --mirror-url -o --output-file --scope";
+    else
+        _all_packages;
+    fi
+}
+_spack_buildcache_check_index () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --verify --name -n --output -o";
+    else
+        _mirrors;
+    fi
+}
+_spack_buildcache_create () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -f --force --unsigned -u --signed --key -k --update-index --rebuild-index --only --with-build-dependencies --without-build-dependencies --fail-fast --allow-missing --base-image --tag -t --private --group -j --jobs";
+    else
+        _mirrors;
+    fi
+}
+_spack_buildcache_download () 
+{ 
+    SPACK_COMPREPLY="-h --help -s --spec -p --path"
+}
+_spack_buildcache_install () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -f --force -m --multiple -u --unsigned -o --otherarch";
+    else
+        _all_packages;
+    fi
+}
+_spack_buildcache_keys () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -i --install -t --trust -f --force -y --yes-to-all";
+    else
+        _mirrors;
+    fi
+}
+_spack_buildcache_list () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -l --long -L --very-long -N --namespaces -v --variants -a --allarch";
+    else
+        _all_packages;
+    fi
+}
+_spack_buildcache_migrate () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -u --unsigned -d --delete-existing -y --yes-to-all";
+    else
+        _mirrors;
+    fi
+}
+_spack_buildcache_prune () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -k --keeplist --dry-run";
+    else
+        _mirrors;
+    fi
+}
+_spack_buildcache_push () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -f --force --unsigned -u --signed --key -k --update-index --rebuild-index --only --with-build-dependencies --without-build-dependencies --fail-fast --allow-missing --base-image --tag -t --private --group -j --jobs";
+    else
+        _mirrors;
+    fi
+}
+_spack_buildcache_rebuild_index () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --name -n --append -a --force -f -k --keys -y --yes-to-all";
+    else
+        _mirrors;
+    fi
+}
+_spack_buildcache_save_specfile () 
+{ 
+    SPACK_COMPREPLY="-h --help --root-spec -s --specs --specfile-dir"
+}
+_spack_buildcache_sync () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --manifest-glob";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_buildcache_update_index () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --name -n --append -a --force -f -k --keys -y --yes-to-all";
+    else
+        _mirrors;
+    fi
+}
+_spack_cd () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -m --module-dir -r --spack-root -i --install-dir -p --package-dir --repo --packages -P -s --stage-dir -S --stages -c --source-dir -b --build-dir -e --env -v --view --first";
+    else
+        _all_packages;
+    fi
+}
+_spack_change () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -l --list-name --match-spec -a --all -c --concrete -C --concrete-only";
+    else
+        _all_packages;
+    fi
+}
+_spack_checksum () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --keep-stage --batch -b --latest -l --preferred -p --add-to-package -a --verify -j --jobs";
+    else
+        _all_packages;
+    fi
+}
+_spack_ci () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="generate rebuild-index rebuild reproduce-build verify-versions";
+    fi
+}
+_spack_ci_generate () 
+{ 
+    SPACK_COMPREPLY="-h --help --output-file --prune-dag --no-prune-dag --prune-unaffected --no-prune-unaffected --prune-externals --no-prune-externals --check-index-only --artifacts-root --forward-variable -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated -j --jobs"
+}
+_spack_ci_rebuild () 
+{ 
+    SPACK_COMPREPLY="-h --help -t --tests --no-fail-fast --fail-fast --timeout -j --jobs"
+}
+_spack_ci_rebuild_index () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_ci_reproduce_build () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --runtime --working-dir -s --autostart --use-local-head --gpg-file --gpg-url";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_ci_verify_versions () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_clean () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -s --stage -d --downloads -f --failures -m --misc-cache -p --python-cache -b --bootstrap -a --all";
+    else
+        _all_packages;
+    fi
+}
+_spack_commands () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --update-completion -a --aliases --format --header --update";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_compiler () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="find add remove rm list ls info";
+    fi
+}
+_spack_compiler_add () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope -j --jobs";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_compiler_find () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope -j --jobs";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_compiler_info () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope --remote";
+    else
+        _installed_compilers;
+    fi
+}
+_spack_compiler_list () 
+{ 
+    SPACK_COMPREPLY="-h --help --scope --remote"
+}
+_spack_compiler_ls () 
+{ 
+    SPACK_COMPREPLY="-h --help --scope --remote"
+}
+_spack_compiler_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --all --scope";
+    else
+        _installed_compilers;
+    fi
+}
+_spack_compiler_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --all --scope";
+    else
+        _installed_compilers;
+    fi
+}
+_spack_compilers () 
+{ 
+    SPACK_COMPREPLY="-h --help --scope --remote"
+}
+_spack_completions () 
+{ 
+    local COMP_CWORD COMP_KEY COMP_LINE COMP_POINT COMP_TYPE COMP_WORDS COMPREPLY;
+    COMP_LINE="$*";
+    COMP_POINT=${#COMP_LINE};
+    COMP_WORDS=("$@");
+    if [[ ${COMP_LINE: -1} == ' ' ]]; then
+        COMP_WORDS+=('');
+    fi;
+    COMP_CWORD=$((${#COMP_WORDS[@]} - 1));
+    COMP_KEY=9;
+    COMP_TYPE=64;
+    _bash_completion_spack;
+    echo "${COMPREPLY[@]:-}"
+}
+_spack_compress_aliases () 
+{ 
+    if [ "${#COMPREPLY[@]}" -le "1" ] || [ "$COMP_CWORD_NO_FLAGS" != "1" ]; then
+        return;
+    fi;
+    _spack_get_alias "${COMPREPLY[@]:0:1}";
+    local first_alias="$SPACK_ALIAS";
+    for comp in "${COMPREPLY[@]:1}";
+    do
+        _spack_get_alias "$comp";
+        if [ "$SPACK_ALIAS" != "$first_alias" ]; then
+            return;
+        fi;
+    done;
+    COMPREPLY=("$first_alias")
+}
+_spack_concretise () 
+{ 
+    SPACK_COMPREPLY="-h --help --test -q --quiet -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated -j --jobs --non-defaults"
+}
+_spack_concretize () 
+{ 
+    SPACK_COMPREPLY="-h --help --test -q --quiet -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated -j --jobs --non-defaults"
+}
+_spack_config () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope";
+    else
+        SPACK_COMPREPLY="get blame edit list scopes add change prefer-upstream remove rm update revert";
+    fi
+}
+_spack_config_add () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -f --file";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_config_blame () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --group";
+    else
+        _config_sections;
+    fi
+}
+_spack_config_change () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --match-spec";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_config_edit () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --print-file";
+    else
+        _config_sections;
+    fi
+}
+_spack_config_get () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --json --group";
+    else
+        _config_sections;
+    fi
+}
+_spack_config_list () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_config_prefer_upstream () 
+{ 
+    SPACK_COMPREPLY="-h --help --local"
+}
+_spack_config_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_config_revert () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all";
+    else
+        _config_sections;
+    fi
+}
+_spack_config_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_config_scopes () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -p --paths -t --type -v --verbose";
+    else
+        _config_sections;
+    fi
+}
+_spack_config_update () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all";
+    else
+        _config_sections;
+    fi
+}
+_spack_containerise () 
+{ 
+    SPACK_COMPREPLY="-h --help --list-os --last-stage"
+}
+_spack_containerize () 
+{ 
+    SPACK_COMPREPLY="-h --help --list-os --last-stage"
+}
+_spack_create () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --keep-stage -n --name -t --template -r --repo -N --namespace -f --force --skip-editor -b --batch";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_debug () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="report";
+    fi
+}
+_spack_debug_report () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_deconcretize () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --root -y --yes-to-all -a --all";
+    else
+        _all_packages;
+    fi
+}
+_spack_dependencies () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -i --installed -t --transitive --deptype -V --no-expand-virtuals";
+    else
+        _all_packages;
+    fi
+}
+_spack_dependents () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -i --installed -t --transitive";
+    else
+        _all_packages;
+    fi
+}
+_spack_deprecate () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all -d --dependencies -D --no-dependencies -i --install-deprecator -I --no-install-deprecator -l --link-type";
+    else
+        _all_packages;
+    fi
+}
+_spack_determine_shell () 
+{ 
+    if [ -f "/proc/$$/exe" ]; then
+        _sp_exe=$(readlink /proc/$$/exe);
+        case "$_sp_exe" in 
+            *qemu* | *rosetta*)
+                _sp_exe=$(cat /proc/$$/comm)
+            ;;
+        esac;
+        basename ${_sp_exe} | tr -d '0123456789';
+    else
+        if [ -n "${BASH:-}" ]; then
+            echo bash;
+        else
+            if [ -n "${ZSH_NAME:-}" ]; then
+                echo zsh;
+            else
+                PS_FORMAT= ps -p $$ | tail -n 1 | awk '{print $4}' | sed 's/^-//' | xargs basename;
+            fi;
+        fi;
+    fi
+}
+_spack_dev_build () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -j --jobs -n --no-checksum -d --source-path -i --ignore-dependencies --keep-prefix --skip-patch -q --quiet --drop-in --test -b --before -u --until --clean --dirty -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated";
+    else
+        _all_packages;
+    fi
+}
+_spack_develop () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -p --path -b --build-directory --no-clone --clone --no-modify-concrete-specs -f --force -r --recursive";
+    else
+        _all_packages;
+    fi
+}
+_spack_diff () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --json --first -a --attribute --ignore";
+    else
+        _all_packages;
+    fi
+}
+_spack_docs () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_edit () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -b --build-system -c --command -d --docs -t --test -m --module -r --repo -N --namespace";
+    else
+        _all_packages;
+    fi
+}
+_spack_env () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="activate deactivate create remove rm rename mv list ls status st loads view update revert depfile track untrack";
+    fi
+}
+_spack_env_activate () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --sh --csh --fish --bat --pwsh -v --with-view -V --without-view -p --prompt --temp --create --envfile --keep-relative -d --dir";
+    else
+        _environments;
+    fi
+}
+_spack_env_create () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -d --dir --keep-relative --without-view --with-view --include-concrete";
+    else
+        _environments;
+    fi
+}
+_spack_env_deactivate () 
+{ 
+    SPACK_COMPREPLY="-h --help --sh --csh --fish --bat --pwsh"
+}
+_spack_env_depfile () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --make-prefix --make-target-prefix --make-disable-jobserver --use-buildcache -o --output -G --generator";
+    else
+        _all_packages;
+    fi
+}
+_spack_env_list () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_env_loads () 
+{ 
+    SPACK_COMPREPLY="-h --help -n --module-set-name -m --module-type --input-only -p --prefix -x --exclude -r --dependencies"
+}
+_spack_env_ls () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_env_mv () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -d --dir -f --force";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_env_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all -f --force";
+    else
+        _environments;
+    fi
+}
+_spack_env_rename () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -d --dir -f --force";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_env_revert () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all";
+    else
+        _environments;
+    fi
+}
+_spack_env_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all -f --force";
+    else
+        _environments;
+    fi
+}
+_spack_env_st () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_env_status () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_env_track () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -n --name -y --yes-to-all";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_env_untrack () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -f --force -y --yes-to-all";
+    else
+        _environments;
+    fi
+}
+_spack_env_update () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all";
+    else
+        _environments;
+    fi
+}
+_spack_env_view () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="disable enable regenerate";
+    fi
+}
+_spack_extensions () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -l --long -L --very-long -d --deps -p --paths -s --show";
+    else
+        _extensions;
+    fi
+}
+_spack_external () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="find list ls read-cray-manifest";
+    fi
+}
+_spack_external_find () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --not-buildable --exclude -p --path --scope --all -t --tag -j --jobs";
+    else
+        _all_packages;
+    fi
+}
+_spack_external_list () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_external_ls () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_external_read_cray_manifest () 
+{ 
+    SPACK_COMPREPLY="-h --help --file --directory --ignore-default-dir --dry-run --fail-on-error"
+}
+_spack_fetch () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -n --no-checksum -m --missing -D --dependencies -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated";
+    else
+        _all_packages;
+    fi
+}
+_spack_find () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --format -H --hashes --json -I --install-status --specfile-format -d --deps -p --paths --groups --no-groups -l --long -L --very-long -t --tag -N --namespaces -r --only-roots -c --show-concretized --show-configured-externals -f --show-flags --show-full-compiler -x --explicit -X --implicit -e --external -u --unknown -m --missing -v --variants --loaded -M --only-missing --only-deprecated --deprecated --install-tree --start-date --end-date";
+    else
+        _installed_packages;
+    fi
+}
+_spack_gc () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -E --except-any-environment -e --except-environment -b --keep-build-dependencies -y --yes-to-all";
+    else
+        _installed_packages;
+    fi
+}
+_spack_get_alias () 
+{ 
+    local possible_alias="${1-}";
+    local IFS=";";
+    for item in $SPACK_ALIASES;
+    do
+        eval "local real_command=\"\${item#*${possible_alias}:}\"";
+        if [ "$real_command" != "$item" ]; then
+            SPACK_ALIAS="$real_command";
+            return;
+        fi;
+    done;
+    SPACK_ALIAS="$possible_alias"
+}
+_spack_gpg () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="trust untrust create list init export publish verify sign";
+    fi
+}
+_spack_gpg_create () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --comment --expires --export --export-secret";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_gpg_export () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --secret";
+    else
+        _keys;
+    fi
+}
+_spack_gpg_init () 
+{ 
+    SPACK_COMPREPLY="-h --help -y --yes-to-all"
+}
+_spack_gpg_list () 
+{ 
+    SPACK_COMPREPLY="-h --help --fmt -f --trusted --signing"
+}
+_spack_gpg_publish () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -d --directory -m --mirror-name --mirror-url --update-index --rebuild-index";
+    else
+        _keys;
+    fi
+}
+_spack_gpg_sign () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --output --key --clearsign";
+    else
+        _installed_packages;
+    fi
+}
+_spack_gpg_trust () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_gpg_untrust () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --signing";
+    else
+        _keys;
+    fi
+}
+_spack_gpg_verify () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _installed_packages;
+    fi
+}
+_spack_graph () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --ascii -d --dot -s --static -c --color -i --installed --deptype -l --long -L --very-long";
+    else
+        _all_packages;
+    fi
+}
+_spack_help () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --all --spec";
+    else
+        _subcommands;
+    fi
+}
+_spack_info () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --all --by-name --by-when --detectable --maintainers --namespace --no-dependencies --no-variants --no-versions --phases --tags --tests --virtuals";
+    else
+        _all_packages;
+    fi
+}
+_spack_install () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --only -u --until -p --concurrent-packages -j --jobs --overwrite --fail-fast --keep-prefix --keep-stage --dont-restage --use-cache --no-cache --cache-only --use-buildcache --include-build-deps --no-check-signature --show-log-on-error --source -n --no-checksum -v --verbose --fake --only-concrete --add --no-add --clean --dirty --test --log-format --log-file --help-cdash -y --yes-to-all -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated";
+    else
+        _all_packages;
+    fi
+}
+_spack_isolate () 
+{ 
+    SPACK_COMPREPLY="-h --help --path --self --undo --overwrite"
+}
+_spack_license () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --root";
+    else
+        SPACK_COMPREPLY="list-files verify";
+    fi
+}
+_spack_license_list_files () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_license_verify () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_list () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -r --repo -N --namespace -d --search-description --format -v --virtuals -t --tag --count --update";
+    else
+        _all_packages;
+    fi
+}
+_spack_load () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --sh --csh --fish --bat --pwsh --first --list";
+    else
+        _installed_packages;
+    fi
+}
+_spack_location () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -m --module-dir -r --spack-root -i --install-dir -p --package-dir --repo --packages -P -s --stage-dir -S --stages -c --source-dir -b --build-dir -e --env -v --view --first";
+    else
+        _all_packages;
+    fi
+}
+_spack_log_parse () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --show -c --context -p --profile -t --tail";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_logs () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_packages;
+    fi
+}
+_spack_maintainers () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --maintained --unmaintained -a --all --by-user";
+    else
+        _all_packages;
+    fi
+}
+_spack_make_installer () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -v --spack-version -s --spack-source -g --git-installer-verbosity";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_mark () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --all -e --explicit -i --implicit";
+    else
+        _installed_packages;
+    fi
+}
+_spack_mirror () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -n --no-checksum";
+    else
+        SPACK_COMPREPLY="create destroy add remove rm set-url set list ls";
+    fi
+}
+_spack_mirror_add () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope --type --autopush --unsigned --signed --view --s3-access-key-id --s3-access-key-id-variable --s3-access-key-secret-variable --s3-access-token-variable --s3-profile --s3-endpoint-url --oci-username --oci-username-variable --oci-password-variable";
+    else
+        _mirrors;
+    fi
+}
+_spack_mirror_create () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -d --directory -a --all -j --jobs --file --exclude-file --exclude-specs --skip-unstable-versions -D --dependencies -n --versions-per-spec --private -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated";
+    else
+        _all_packages;
+    fi
+}
+_spack_mirror_destroy () 
+{ 
+    SPACK_COMPREPLY="-h --help -m --mirror-name --mirror-url"
+}
+_spack_mirror_list () 
+{ 
+    SPACK_COMPREPLY="-h --help --scope"
+}
+_spack_mirror_ls () 
+{ 
+    SPACK_COMPREPLY="-h --help --scope"
+}
+_spack_mirror_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope --all-scopes";
+    else
+        _mirrors;
+    fi
+}
+_spack_mirror_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope --all-scopes";
+    else
+        _mirrors;
+    fi
+}
+_spack_mirror_set () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --push --fetch --type --url --autopush --no-autopush --unsigned --signed --scope --view --s3-access-key-id --s3-access-key-id-variable --s3-access-key-secret-variable --s3-access-token-variable --s3-profile --s3-endpoint-url --oci-username --oci-username-variable --oci-password-variable";
+    else
+        _mirrors;
+    fi
+}
+_spack_mirror_set_url () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --push --fetch --scope --s3-access-key-id --s3-access-key-id-variable --s3-access-key-secret-variable --s3-access-token-variable --s3-profile --s3-endpoint-url --oci-username --oci-username-variable --oci-password-variable";
+    else
+        _mirrors;
+    fi
+}
+_spack_module () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="lmod tcl";
+    fi
+}
+_spack_module_lmod () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -n --name";
+    else
+        SPACK_COMPREPLY="refresh find rm loads setdefault";
+    fi
+}
+_spack_module_lmod_find () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --full-path -r --dependencies";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_lmod_loads () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --input-only -p --prefix -x --exclude -r --dependencies";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_lmod_refresh () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --delete-tree --upstream-modules -y --yes-to-all";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_lmod_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_lmod_setdefault () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_tcl () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -n --name";
+    else
+        SPACK_COMPREPLY="refresh find rm loads setdefault";
+    fi
+}
+_spack_module_tcl_find () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --full-path -r --dependencies";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_tcl_loads () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --input-only -p --prefix -x --exclude -r --dependencies";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_tcl_refresh () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --delete-tree --upstream-modules -y --yes-to-all";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_tcl_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all";
+    else
+        _installed_packages;
+    fi
+}
+_spack_module_tcl_setdefault () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _installed_packages;
+    fi
+}
+_spack_patch () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -n --no-checksum -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated";
+    else
+        _all_packages;
+    fi
+}
+_spack_pathadd () 
+{ 
+    _pa_varname=PATH;
+    _pa_new_path="$1";
+    if [ -n "$2" ]; then
+        _pa_varname="$1";
+        _pa_new_path="$2";
+    fi;
+    eval "_pa_oldvalue=\${${_pa_varname}:-}";
+    _pa_canonical="$_pa_oldvalue:";
+    if [ -d "$_pa_new_path" ] && [ "${_pa_canonical#$_pa_new_path:}" = "$_pa_canonical" ]; then
+        if [ -n "$_pa_oldvalue" ]; then
+            eval "export $_pa_varname=\"$_pa_new_path:$_pa_oldvalue\"";
+        else
+            export $_pa_varname="$_pa_new_path";
+        fi;
+    fi
+}
+_spack_pkg () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="add list diff added changed removed grep source hash";
+    fi
+}
+_spack_pkg_add () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_packages;
+    fi
+}
+_spack_pkg_added () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_pkg_changed () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -t --type";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_pkg_diff () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_pkg_grep () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="--help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_pkg_hash () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_packages;
+    fi
+}
+_spack_pkg_list () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_pkg_removed () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_pkg_source () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -c --canonical";
+    else
+        _all_packages;
+    fi
+}
+_spack_providers () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _providers;
+    fi
+}
+_spack_pydoc () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_python () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -V --version -c -u -i -m --path";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_reindex () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --all -l --list-name -f --force";
+    else
+        _all_packages;
+    fi
+}
+_spack_repo () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="create list ls add set remove rm migrate update show-version-updates";
+    fi
+}
+_spack_repo_add () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --name --path --scope";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_repo_create () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -d --subdirectory";
+    else
+        _repos;
+    fi
+}
+_spack_repo_list () 
+{ 
+    SPACK_COMPREPLY="-h --help --scope --names --namespaces --json"
+}
+_spack_repo_ls () 
+{ 
+    SPACK_COMPREPLY="-h --help --scope --names --namespaces --json"
+}
+_spack_repo_migrate () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --dry-run --fix";
+    else
+        _repos;
+    fi
+}
+_spack_repo_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope --all-scopes";
+    else
+        _repos;
+    fi
+}
+_spack_repo_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --scope --all-scopes";
+    else
+        _repos;
+    fi
+}
+_spack_repo_set () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --destination --path --scope";
+    else
+        _repos;
+    fi
+}
+_spack_repo_show_version_updates () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --no-manual-packages --no-git-versions --only-redistributable --no-deprecated";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_repo_update () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --remote -r --scope --branch -b --tag -t --commit -c";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_resource () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="list show";
+    fi
+}
+_spack_resource_list () 
+{ 
+    SPACK_COMPREPLY="-h --help --only-hashes"
+}
+_spack_resource_show () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_resource_hashes;
+    fi
+}
+_spack_restage () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_packages;
+    fi
+}
+_spack_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --all -l --list-name -f --force";
+    else
+        _all_packages;
+    fi
+}
+_spack_shell_wrapper () 
+{ 
+    for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH;
+    do
+        eval "if [ -n \"\${${var}-}\" ]; then export SPACK_$var=\${${var}}; fi";
+    done;
+    if [ -n "${ZSH_VERSION:-}" ]; then
+        emulate -L sh;
+    fi;
+    _sp_flags="";
+    while [ ! -z ${1+x} ] && [ "${1#-}" != "${1}" ]; do
+        _sp_flags="$_sp_flags $1";
+        shift;
+    done;
+    if [ -n "$_sp_flags" ] && [ "${_sp_flags#*h}" != "${_sp_flags}" ] || [ "${_sp_flags#*V}" != "${_sp_flags}" ]; then
+        command spack $_sp_flags "$@";
+        return;
+    fi;
+    _sp_subcommand="";
+    if [ ! -z ${1+x} ]; then
+        _sp_subcommand="$1";
+        shift;
+    fi;
+    case $_sp_subcommand in 
+        "cd")
+            _sp_arg="";
+            if [ -n "$1" ]; then
+                _sp_arg="$1";
+                shift;
+            fi;
+            if [ "$_sp_arg" = "-h" ] || [ "$_sp_arg" = "--help" ]; then
+                command spack cd -h;
+            else
+                LOC="$(SPACK_COLOR="${SPACK_COLOR:-always}" spack location $_sp_arg "$@")";
+                if [ -d "$LOC" ]; then
+                    cd "$LOC";
+                else
+                    return 1;
+                fi;
+            fi;
+            return
+        ;;
+        "env")
+            _sp_arg="";
+            if [ -n "$1" ]; then
+                _sp_arg="$1";
+                shift;
+            fi;
+            if [ "$_sp_arg" = "-h" ] || [ "$_sp_arg" = "--help" ]; then
+                command spack env -h;
+            else
+                case $_sp_arg in 
+                    activate)
+                        _a=" $@";
+                        if [ "${_a#* --sh}" != "$_a" ] || [ "${_a#* --csh}" != "$_a" ] || [ "${_a#* -h}" != "$_a" ] || [ "${_a#* --help}" != "$_a" ]; then
+                            command spack env activate "$@";
+                        else
+                            stdout="$(SPACK_COLOR="${SPACK_COLOR:-always}" command spack $_sp_flags env activate --sh "$@")" || return;
+                            eval "$stdout";
+                        fi
+                    ;;
+                    deactivate)
+                        _a=" $@";
+                        if [ "${_a#* --sh}" != "$_a" ] || [ "${_a#* --csh}" != "$_a" ]; then
+                            command spack env deactivate "$@";
+                        else
+                            if [ -n "$*" ]; then
+                                command spack env deactivate -h;
+                            else
+                                stdout="$(SPACK_COLOR="${SPACK_COLOR:-always}" command spack $_sp_flags env deactivate --sh)" || return;
+                                eval "$stdout";
+                            fi;
+                        fi
+                    ;;
+                    *)
+                        command spack env $_sp_arg "$@"
+                    ;;
+                esac;
+            fi;
+            return
+        ;;
+        "load" | "unload")
+            _a=" $@";
+            if [ "${_a#* --sh}" != "$_a" ] || [ "${_a#* --csh}" != "$_a" ] || [ "${_a#* -h}" != "$_a" ] || [ "${_a#* --list}" != "$_a" ] || [ "${_a#* --help}" != "$_a" ]; then
+                command spack $_sp_flags $_sp_subcommand "$@";
+            else
+                stdout="$(SPACK_COLOR="${SPACK_COLOR:-always}" command spack $_sp_flags $_sp_subcommand --sh "$@")" || return;
+                eval "$stdout";
+            fi
+        ;;
+        *)
+            command spack $_sp_flags $_sp_subcommand "$@"
+        ;;
+    esac
+}
+declare -fx _spack_shell_wrapper
+_spack_solve () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --show --timers --stats -l --long -L --very-long -N --namespaces -I --install-status --no-install-status -y --yaml -j --json --format --non-defaults -c --cover -t --types -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated";
+    else
+        _all_packages;
+    fi
+}
+_spack_spec () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -l --long -L --very-long -N --namespaces -I --install-status --no-install-status -y --yaml -j --json --format --non-defaults -c --cover -t --types -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated";
+    else
+        _all_packages;
+    fi
+}
+_spack_stage () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -n --no-checksum -p --path -e --exclude -s --skip-installed -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated";
+    else
+        _all_packages;
+    fi
+}
+_spack_style () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -b --base -a --all -r --root-relative -U --no-untracked -f --fix --root -t --tool -s --skip --spec-strings";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_tags () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -i --installed -a --all";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_test () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="run list find status results remove";
+    fi
+}
+_spack_test_env () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --clean --dirty -f --force -U --fresh --reuse --fresh-roots --reuse-deps --deprecated --dump --pickle";
+    else
+        _all_packages;
+    fi
+}
+_spack_test_find () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_packages;
+    fi
+}
+_spack_test_list () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -a --all";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_test_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -y --yes-to-all";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_test_results () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -l --logs -f --failed";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_test_run () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --alias --fail-fast --fail-first --externals -x --explicit --keep-stage --log-format --log-file --help-cdash --timeout --clean --dirty";
+    else
+        _installed_packages;
+    fi
+}
+_spack_test_status () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_tutorial () 
+{ 
+    SPACK_COMPREPLY="-h --help -y --yes-to-all"
+}
+_spack_undevelop () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --no-modify-concrete-specs -a --all";
+    else
+        _all_packages;
+    fi
+}
+_spack_uninstall () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -f --force --remove -R --dependents -r --implicit-dependents -y --yes-to-all -a --all --origin";
+    else
+        _installed_packages;
+    fi
+}
+_spack_unit_test () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -H --pytest-help -n --numprocesses -l --list -L --list-long -N --list-names --extension -s -k --showlocals";
+    else
+        _unit_tests;
+    fi
+}
+_spack_unload () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --sh --csh --fish --bat --pwsh -a --all";
+    else
+        _installed_packages;
+    fi
+}
+_spack_url () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="parse list summary stats";
+    fi
+}
+_spack_url_list () 
+{ 
+    SPACK_COMPREPLY="-h --help -c --color -e --extrapolation -n --incorrect-name -N --correct-name -v --incorrect-version -V --correct-version"
+}
+_spack_url_parse () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -s --spider";
+    else
+        SPACK_COMPREPLY="";
+    fi
+}
+_spack_url_stats () 
+{ 
+    SPACK_COMPREPLY="-h --help --show-issues"
+}
+_spack_url_summary () 
+{ 
+    SPACK_COMPREPLY="-h --help"
+}
+_spack_verify () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        SPACK_COMPREPLY="manifest libraries versions";
+    fi
+}
+_spack_verify_libraries () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _installed_packages;
+    fi
+}
+_spack_verify_manifest () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -l --local -j --json -a --all -s --specs -f --files";
+    else
+        _all_packages;
+    fi
+}
+_spack_verify_versions () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _installed_packages;
+    fi
+}
+_spack_versions () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -s --safe -r --remote -n --new -j --jobs";
+    else
+        _all_packages;
+    fi
+}
+_spack_view () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help -v --verbose -e --exclude -d --dependencies";
+    else
+        SPACK_COMPREPLY="symlink add soft hardlink hard copy relocate remove rm statlink status check";
+    fi
+}
+_spack_view_add () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --projection-file -i --ignore-conflicts";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_check () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_copy () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --projection-file -i --ignore-conflicts";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_hard () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --projection-file -i --ignore-conflicts";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_hardlink () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --projection-file -i --ignore-conflicts";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_relocate () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --projection-file -i --ignore-conflicts";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_remove () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --no-remove-dependents -a --all";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_rm () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --no-remove-dependents -a --all";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_soft () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --projection-file -i --ignore-conflicts";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_statlink () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_status () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help";
+    else
+        _all_packages;
+    fi
+}
+_spack_view_symlink () 
+{ 
+    if $list_options; then
+        SPACK_COMPREPLY="-h --help --projection-file -i --ignore-conflicts";
+    else
+        _all_packages;
+    fi
+}
+_spacktivate () 
+{ 
+    _spack_env_activate
+}
+_subcommands () 
+{ 
+    if [[ -z "${SPACK_SUBCOMMANDS:-}" ]]; then
+        SPACK_SUBCOMMANDS="$(spack commands)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_SUBCOMMANDS"
+}
 _sysvdirs () 
 { 
     _comp_sysvdirs "$@"
@@ -3035,6 +5370,35 @@ _terms ()
 { 
     _comp_compgen -a terms
 }
+_test_vars () 
+{ 
+    echo "-----------------------------------------------------";
+    echo "Variables set by bash:";
+    echo;
+    echo "COMP_LINE:                '$COMP_LINE'";
+    echo "# COMP_LINE:              '${#COMP_LINE}'";
+    echo "COMP_WORDS:               $(_pretty_print COMP_WORDS[@])";
+    echo "# COMP_WORDS:             '${#COMP_WORDS[@]}'";
+    echo "COMP_CWORD:               '$COMP_CWORD'";
+    echo "COMP_KEY:                 '$COMP_KEY'";
+    echo "COMP_POINT:               '$COMP_POINT'";
+    echo "COMP_TYPE:                '$COMP_TYPE'";
+    echo "COMP_WORDBREAKS:          '$COMP_WORDBREAKS'";
+    echo;
+    echo "Intermediate variables:";
+    echo;
+    echo "COMP_WORDS_NO_FLAGS:      $(_pretty_print COMP_WORDS_NO_FLAGS[@])";
+    echo "# COMP_WORDS_NO_FLAGS:    '${#COMP_WORDS_NO_FLAGS[@]}'";
+    echo "COMP_CWORD_NO_FLAGS:      '$COMP_CWORD_NO_FLAGS'";
+    echo;
+    echo "Subfunction:              '$subfunction'";
+    if $list_options; then
+        echo "List options:             'True'";
+    else
+        echo "List options:             'False'";
+    fi;
+    echo "Current word:             '$cur'"
+}
 _tilde () 
 { 
     ! _comp_compgen -c "$1" tilde
@@ -3042,6 +5406,13 @@ _tilde ()
 _uids () 
 { 
     _comp_compgen_uids "$@"
+}
+_unit_tests () 
+{ 
+    if [[ -z "${SPACK_TESTS:-}" ]]; then
+        SPACK_TESTS="$(spack unit-test -l)";
+    fi;
+    SPACK_COMPREPLY="$SPACK_TESTS"
 }
 _upvar () 
 { 
@@ -3134,6 +5505,14 @@ dequote ()
     printf %s "$REPLY";
     return $rc
 }
+display_total_elapsed_time () 
+{ 
+    local total_elapsed_time=$((SECONDS - start_time));
+    local total_minutes=$((total_elapsed_time / 60));
+    local total_seconds=$((total_elapsed_time % 60));
+    echo "";
+    printf "Total elapsed time: %02d:%02d (MM:SS)\n" "$total_minutes" "$total_seconds"
+}
 g-fortran () 
 { 
     echo "grep -inr --include='*.f08' \"$1\" .";
@@ -3205,9 +5584,22 @@ gf ()
     echo "gfortran ${allflags} ${stem}.f08 -o ${stem}";
     gfortran ${allflags} "${stem}.f08" -o "${stem}"
 }
+goio () 
+{ 
+    cd "$(pwd | sed 's|/nb/|/io/|')"
+}
 gomirror () 
 { 
     cd "${spack_mirror}" || return;
+    pwd
+}
+gonb () 
+{ 
+    cd "$(pwd | sed 's|/io/|/nb/|')"
+}
+gospack () 
+{ 
+    cd "${SPACK_ROOT}" || return;
     pwd
 }
 gospacktivity () 
@@ -3246,6 +5638,14 @@ logger_debug ()
 logger_info () 
 { 
     eval "$LOGGER \"$1\""
+}
+new_step () 
+{ 
+    export counter=$((counter + 1));
+    export subcounter=0;
+    export subsubcounter=0;
+    echo "";
+    echo "Step ${counter}: ${1}"
 }
 pt () 
 { 
@@ -3465,9 +5865,102 @@ quote_readline ()
     _comp_quote_compgen "$1";
     printf %s "$REPLY"
 }
+scbcm () 
+{ 
+    echo 'spack config blame compilers';
+    spack config blame compilers
+}
+scbcn () 
+{ 
+    echo 'spack config blame config';
+    spack config blame config
+}
+scbmi () 
+{ 
+    echo 'spack config blame mirrors';
+    spack config blame mirrors
+}
+scbmo () 
+{ 
+    echo 'spack config blame modules';
+    spack config blame modules
+}
+scbpa () 
+{ 
+    echo 'spack config blame packages';
+    spack config blame packages
+}
+scbre () 
+{ 
+    echo 'spack config blame repos';
+    spack config blame repos
+}
+scgcm () 
+{ 
+    echo 'spack config get compilers';
+    spack config get compilers
+}
+scgcn () 
+{ 
+    echo 'spack config get config';
+    spack config get config
+}
+scgmi () 
+{ 
+    echo 'spack config get mirrors';
+    spack config get mirrors
+}
+scgmo () 
+{ 
+    echo 'spack config get modules';
+    spack config get modules
+}
+scgpa () 
+{ 
+    echo 'spack config get packages';
+    spack config get packages
+}
+scgre () 
+{ 
+    echo 'spack config get repos';
+    spack config get repos
+}
 set_val () 
 { 
     MATCH="^$1=[\"']?[-a-zA-Z:_,][-a-zA-Z:_,]*.[\"']?\$";
     eval "$(grep -e "$MATCH" $IM_CONFIG_DEFAULT | head -1)";
     logger_debug "Set $(grep -e "$MATCH" $IM_CONFIG_DEFAULT | head -1)"
+}
+spack () 
+{ 
+    : this is a shell function from: /home/dantopa/spacktivity/spack-isotope/share/spack/setup-env.sh;
+    : the real spack script is here: /home/dantopa/spacktivity/spack-isotope/bin/spack;
+    _spack_shell_wrapper "$@";
+    return $?
+}
+declare -fx spack
+spack_where () 
+{ 
+    echo;
+    echo "Spack context";
+    echo;
+    echo "  hostname      : $(hostname -s)";
+    echo "  SPACK_ROOT    : ${SPACK_ROOT}";
+    echo "  spack_mirror  : ${spack_mirror}";
+    echo "  spacktivity   : ${spacktivity}";
+    echo "  spack_yaml    : ${spack_yaml}";
+    echo
+}
+sub_step () 
+{ 
+    export subcounter=$((subcounter + 1));
+    export subsubcounter=0;
+    echo "";
+    echo "  Substep ${counter}.${subcounter}: ${1}"
+}
+sub_substep () 
+{ 
+    export subsubcounter=$((subsubcounter + 1));
+    echo "";
+    echo "  Substep ${counter}.${subcounter}.${subsubcounter}: ${1}"
 }
